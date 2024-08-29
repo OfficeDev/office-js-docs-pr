@@ -157,6 +157,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     ![The Insert Paragraph button in the add-in.](../images/word-tutorial-insert-paragraph-2.png)
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
+
 ## Format text
 
 In this step of the tutorial, you'll apply a built-in style to text, apply a custom style to text, and change the font of text.

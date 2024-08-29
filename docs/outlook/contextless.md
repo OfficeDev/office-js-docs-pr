@@ -210,7 +210,7 @@ To activate your add-in with the Reading Pane turned off or without a message se
 
 1. From a terminal, run the following code in the root directory of your project. This starts the local web server and sideloads your add-in.
 
-    ```command line
+    ```command&nbsp;line
     npm start
     ```
 
@@ -225,6 +225,8 @@ To activate your add-in with the Reading Pane turned off or without a message se
 1. Select **Show Taskpane** from the ribbon.
 
 1. Explore and test the suggestions listed in the task pane.
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Support for the item multi-select and pinnable task pane features
 

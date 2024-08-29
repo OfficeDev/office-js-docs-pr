@@ -100,7 +100,13 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Enter text into the text box and then select **Insert text**.
 
-![Custom text inserted into the document after selecting the Insert button from the add-in task pane.](../images/word-task-pane-react-component.png)
+    ![Custom text inserted into the document after selecting the Insert button from the add-in task pane.](../images/word-task-pane-react-component.png)
+
+1. When you're ready to stop the dev server and uninstall the add-in, run the following command.
+
+    ```command&nbsp;line
+    npm stop
+    ```
 
 ## Migrate to Fluent UI React v9
 
