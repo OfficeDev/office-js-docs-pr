@@ -1,7 +1,7 @@
 ---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 07/03/2024
+ms.date: 09/19/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -48,7 +48,7 @@ You can have more than one capability object. The following example shows how to
 
 ## Filter features
 
-The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application.
+The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source at the time of add-in installation by Office.
 
 ### extensions.alternates.requirements
 
@@ -158,6 +158,50 @@ For example, suppose you want to show context menus only in Excel versions that 
                         {
                             "name": "AddinCommands",
                             "minVersion": "1.1"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
+```
+
+### extensions.getStartedMessages.requirements
+
+The objects in the `extensions.getStartedMessages` array provide information about an Office add-in that appears in various places in Office, such as the callout that appears in Office when an Office add-in is installed. There can be up to three objects in the array. If there is more than one, use the `extensions.getStartedMessages.requirements` property to ensure that no more than one of these objects is used in any given Office client. If `extensions.getStartedMessages` is omitted or all of the objects in the array are filtered out, the callout uses the values from the "name.short" and "description.short" manifest properties instead.
+
+For example, suppose an Excel add-in simplifies the process of adding conditional formatting to ranges. Some of the APIs that the add-in uses were introduced with the **ExcelApi 1.17** requirement set, but the add-in still provides useful functionality that only requires the **ExcelApi 1.6** requirement set. The `extensions.getStartedMessages` array can be configured to provide one description of the add-in for Excel clients that support the requirement sets from **1.6** to **1.16**, but a different description for clients that support **1.17** and later. The following is an example. Note that in this example, if the add-in is configured to be installable on Excel clients that don't support requirement set **1.6**, then on those clients neither of these getStartedMessage objects would be used. Instead, Office would use the "name.short" and "description.short" properties.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "getStartedMessages": [
+            {
+                "title": "Contoso Excel Formatting",
+                "description": "Use conditional formatting with our add-in.",
+                "learnMoreUrl": "https://contoso.com/simple-conditional-formatting-details.html",
+                "requirements": {
+                    "capabilities": [
+                        {
+                            "name": "ExcelApi",
+                            "minVersion": "1.6",
+                            "maxVersion": "1.16"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Contoso Advanced Excel Formatting",
+                "description": "Use conditional formatting and dynamic formatting changes with our add-in.",
+                "learnMoreUrl": "https://contoso.com/advanced-conditional-formatting-details.html",
+                "requirements": {
+                    "capabilities": [
+                        {
+                            "name": "ExcelApi",
+                            "minVersion": "1.17"
                         }
                     ]
                 }
