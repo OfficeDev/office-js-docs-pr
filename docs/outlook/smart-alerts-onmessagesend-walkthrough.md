@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 06/25/2024
+ms.date: 09/05/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -647,8 +647,8 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
         ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
 
-    > [!TIP]
-    > If you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
+    > [!NOTE]
+    > In supported versions of classic Outlook on Windows prior to Version 2410 (Build 18031.15000), if you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
 
 1. Add an attachment to your message. If you implemented the optional step to customize the **Don't Send** button, use the task pane to add an attachment.
 
