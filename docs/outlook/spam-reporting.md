@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 08/27/2024
+ms.date: 09/05/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -474,12 +474,10 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 
   :::image type="content" source="../images/outlook-spam-timeout-dialog.png" alt-text="The dialog shown when a spam-reporting add-in times out.":::
 
-- A spam-reporting add-in can be used to report a message even if the Reading Pane of the Outlook client is turned off. However, this isn't supported in Outlook on Mac. In Outlook on Mac, the Reading Pane must be turned on to use a spam-reporting add-in.
-- In classic Outlook on Windows, only one message can be reported at a time. If a user attempts to report another message while the previous one is still being processed, a dialog will be shown to them to notify them of this.
+- In classic Outlook on Windows, a spam-reporting add-in can be used to report a message even if the Reading Pane of the Outlook client is turned off. However, this isn't supported in Outlook on the web, on Mac, and in new Outlook on Windows. In these Outlook clients, the Reading Pane must be turned on to use a spam-reporting add-in.
+- Only one message can be reported at a time. If a user attempts to report another message while the previous one is still being processed, a dialog will be shown to them to notify them of this.
 
   :::image type="content" source="../images/outlook-spam-report-error.png" alt-text="The dialog shown when the user attempts to report another message while the previous one is still being processed.":::
-
-  This doesn't apply to Outlook on the web or on Mac, or to new Outlook on Windows. In these Outlook clients, a user can report a message from the Reading Pane and can simultaneously report each message that's open in a separate window.
 
 - The add-in can still process the reported message even if the user navigates away from the selected message. In Outlook on Mac, this is only supported if a user reports a message while it's open in a separate window. If the user reports a message while viewing it from the Reading Pane and then navigates away from it, the reporting process is terminated.
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
