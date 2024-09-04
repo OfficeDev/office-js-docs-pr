@@ -709,14 +709,14 @@ items:
         displayName: event-based activation
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md
-    - name: Prepend or append content on send
-      href: outlook/append-on-send.md
     - name: Activate add-in without Reading Pane or selected message
       href: outlook/contextless.md
     - name: Item multi-select
       href: outlook/item-multi-select.md
     - name: Pinnable task pane
       href: outlook/pinnable-taskpane.md
+    - name: Prepend or append content on send
+      href: outlook/append-on-send.md
     - name: Shared folders and shared mailboxes
       href: outlook/delegate-access.md
       displayName: delegate access
