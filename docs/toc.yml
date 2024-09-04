@@ -681,43 +681,10 @@ items:
     - name: API reference - latest release
       href: reference/outlook-api-reference-latest.md
       displayName: Outlook
+    - name: Add-in requirements
+      href: outlook/add-in-requirements.md
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
-    - name: Contextual add-ins
-      href: outlook/contextual-outlook-add-ins.md
-    - name: Module extension add-ins
-      href: outlook/extension-module-outlook-add-ins.md
-    - name: Activate add-in without Reading Pane or selected message
-      href: outlook/contextless.md
-    - name: Item multi-select
-      href: outlook/item-multi-select.md
-    - name: Pinnable task pane
-      href: outlook/pinnable-taskpane.md
-    - name: Add-ins for Outlook on mobile devices
-      items:
-      - name: Overview
-        href: outlook/outlook-mobile-addins.md
-        displayName: outlook, add-ins, mobile
-      - name: Add support for Outlook on mobile devices
-        href: outlook/add-mobile-support.md
-        displayName: outlook, add-ins, mobile
-      - name: Outlook JavaScript API support on mobile devices
-        href: outlook/outlook-mobile-apis.md
-        displayName: outlook, add-ins, mobile
-      - name: Log appointment notes on mobile
-        href: outlook/mobile-log-appointments.md
-        displayName: outlook, add-ins, mobile
-      - name: Event-based activation in Outlook on mobile devices
-        href: outlook/mobile-event-based.md
-        displayName: outlook, add-ins, mobile, event-based activation
-    - name: Create an online meeting add-in
-      href: outlook/online-meeting.md
-    - name: On-send add-ins
-      href: outlook/outlook-on-send-addins.md
-    - name: Prepend or append content on send
-      href: outlook/append-on-send.md
-    - name: Implement a spam reporting add-in
-      href: outlook/spam-reporting.md
     - name: Event-based activation
       items:
       - name: Implement an event-based add-in
@@ -740,17 +707,48 @@ items:
       - name: AppSource options
         href: outlook/autolaunch-store-options.md
         displayName: event-based activation
+    - name: Implement a spam reporting add-in
+      href: outlook/spam-reporting.md
+    - name: Prepend or append content on send
+      href: outlook/append-on-send.md
+    - name: Activate add-in without Reading Pane or selected message
+      href: outlook/contextless.md
+    - name: Item multi-select
+      href: outlook/item-multi-select.md
+    - name: Pinnable task pane
+      href: outlook/pinnable-taskpane.md
     - name: Shared folders and shared mailboxes
       href: outlook/delegate-access.md
       displayName: delegate access
-    - name: Manifests
+    - name: Add-ins for Outlook on mobile devices
       items:
-      - name: Activation rules
-        href: outlook/activation-rules.md
+      - name: Overview
+        href: outlook/outlook-mobile-addins.md
+        displayName: outlook, add-ins, mobile
       - name: Add support for Outlook on mobile devices
         href: outlook/add-mobile-support.md
-    - name: Add-in requirements
-      href: outlook/add-in-requirements.md
+        displayName: outlook, add-ins, mobile
+      - name: Outlook JavaScript API support on mobile devices
+        href: outlook/outlook-mobile-apis.md
+        displayName: outlook, add-ins, mobile
+      - name: Log appointment notes on mobile
+        href: outlook/mobile-log-appointments.md
+        displayName: outlook, add-ins, mobile
+      - name: Event-based activation in Outlook on mobile devices
+        href: outlook/mobile-event-based.md
+        displayName: outlook, add-ins, mobile, event-based activation
+    - name: Create an online meeting add-in
+      href: outlook/online-meeting.md
+    - name: Contextual add-ins
+      items:
+      - name: Overview
+        href: outlook/contextual-outlook-add-ins.md
+      - name: Troubleshoot contextual add-in activation
+        href: outlook/troubleshoot-outlook-add-in-activation.md
+    - name: Module extension add-ins
+      href: outlook/extension-module-outlook-add-ins.md
+    - name: On-send add-ins
+      href: outlook/outlook-on-send-addins.md
     - name: Call Outlook REST APIs
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
@@ -827,8 +825,6 @@ items:
         href: outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md
       - name: Compare add-in support in Outlook on Mac
         href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
-      - name: Troubleshoot add-in activation
-        href: outlook/troubleshoot-outlook-add-in-activation.md
       - name: Debug function commands
         href: outlook/debug-ui-less.md
       - name: Troubleshoot event-based and spam-reporting add-ins
