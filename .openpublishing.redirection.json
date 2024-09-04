@@ -1284,6 +1284,10 @@
         {
             "source_path": "docs/outlook/use-regular-expressions-to-show-an-outlook-add-in.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/activation-rules.md",
+            "redirect_url": "/javascript/api/manifest/rule"
         }
     ]
 }
