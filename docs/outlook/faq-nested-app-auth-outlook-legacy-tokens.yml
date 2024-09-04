@@ -18,42 +18,23 @@ sections:
         answer: |
           Nested app authentication enables single sign-on (SSO) for applications nested inside of supported Microsoft applications such as Outlook. Compared with existing full-trust authentication models, and the on-behalf-of flow, NAA provides better security and greater flexibility in app architecture, enabling the creation of rich, client-driven applications. For more information, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
-      - question: What is the timeline for shutting down legacy tokens?
+      - question: What is the timeline for shutting down legacy Exchange online tokens?
         answer: |
           The following tables list the key milestones based on which channel customers are using. Note that the general availability (GA) date for NAA will vary based on channel. We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA.
 
-          **Current Channel**
+          | Office / Microsoft 365 apps release channel in use | Date | Legacy tokens turned off1 (admin can re-enable) | NAA General Availability (GA) |
+          | ------------- | ------------- | ------------- | ------------- | 
+          | Current | October 2024 | Exchange online tokens are turned off for Current Channel tenants we detect that are not using tokens. | NAA is GA in Current Channel.
+          | Current | January 2025 | Exchange online tokens are turned off for all Current Channel tenants. | |
+          | Monthly Enterprise |  November 2024 | Exchange online tokens are turned off for Monthly Enterprise tenants we detect that are not using tokens. | NAA is GA in Monthly Enterprise Channel. |
+          | Monthly Enterprise | February 2025 | Exchange online tokens are turned off for all Monthly Enterprise tenants. | |
+          | Semi-annual | January 2025 | Exchange online tokens are turned off for all Semi-annual tenants. | NAA is GA in Semi-annual Channel. |
+          | Semi-annual Extended | June 2025 | Exchange online tokens are turned off for all Semi-annual Extended tenants. | NAA is GA in Semi-annual Extended Channel. |
+          | All channels | October 2025 | Exchange online tokens are turned off for all channels across all tenants. There is no longer any option to re-enable Exchange online tokens. | |
 
-          | Date          | Action      |
-          | ------------- | ------------- |
-          | October 2024 | NAA is GA for Current Channel. <br>Exchange online tokens are turned off by default for new tenants and existing tenants known not to be using Exchange tokens. <br>The administrator can choose to reenable Exchange tokens on tenants or add-ins as needed.  |
-          | January 2025 | Exchange online tokens are turned off by default for all tenants. <br>The administrator can choose to reenable Exchange tokens on tenants and add-ins as needed.  |
-          | June 2025    | The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
-          | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
-
-          **Monthly Enterprise Channel**
-
-          | Date          | Action      |
-          | ------------- | ------------- |
-          | November 2024 | NAA is GA for Monthly Enterprise Channel. <br>Exchange online tokens are turned off by default for new tenants and existing tenants known not to be using Exchange tokens. <br>The administrator can choose to reenable Exchange tokens on tenants or add-ins as needed. |
-          | February 2025 | Exchange online tokens are turned off by default for all tenants. <br>The administrator can choose to reenable Exchange tokens on tenants and add-ins as needed.  |
-          | June 2025     | The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
-          | October 2025  | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
-
-          **Semi-annual Channel**
-
-          | Date          | Action      |
-          | ------------- | ------------- |
-          | January 2025  | NAA is GA for Semi-annual Channel. <br>Exchange online tokens are turned off by default for all tenants. <br>The administrator can choose to reenable Exchange tokens on tenants and add-ins as needed. |
-          | June 2025    | The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
-          | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
-
-          **Semi-annual Channel Extended**
-          
-          | Date          | Action      |
-          | ------------- | ------------- |
-          | June 2025    | NAA is GA for Semi-annual Channel Extended. <br>The ability for the administrator to reenable Exchange online tokens is removed. If a tenant or add-in needs Exchange tokens reenabled, the administrator must contact Microsoft. |
-          | October 2025 | Exchange online tokens are turned off for all tenants and add-ins, including any that were reenabled. |
+      - question: Can I opt out of legacy Exchange online tokens being turned off?
+        answer: |
+          We’ll provide a switch for Microsoft 365 administrators in October 2024 to turn legacy Exchange tokens on or off in your tenant. You can use it to ensure add-ins aren't broken if they haven't updated to use NAA yet. However, in June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025 it will not be possible to turn on legacy Exchange Online tokens and they will be turned off for all tenants.
 
   - name: Outlook add-in migration FAQ
     questions:
