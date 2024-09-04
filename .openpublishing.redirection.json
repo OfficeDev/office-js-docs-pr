@@ -86,7 +86,11 @@
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-vue.md",
-            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-vue"
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-yo"
+        },
+        {
+            "source_path": "docs/excel/excel-quickstart-vue.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-yo"
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-react.md",
