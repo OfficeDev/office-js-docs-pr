@@ -424,9 +424,6 @@ items:
     - name: Task pane (React)
       href: quickstarts/excel-quickstart-react.md
       displayName: Excel
-    - name: Task pane (Vue)
-      href: quickstarts/excel-quickstart-vue.md
-      displayName: Excel
     - name: Content
       href: quickstarts/excel-quickstart-content.md
       displayName: Excel
