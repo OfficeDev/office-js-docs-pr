@@ -76,8 +76,6 @@ Get the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/
 
 :::image type="content" source="../images/outlook-delay-delivery-script-lab.png" alt-text="The message delivery sample snippet in Script Lab.":::
 
-[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
-
 ## See also
 
 - [Create Outlook add-ins for compose forms](compose-scenario.md)
