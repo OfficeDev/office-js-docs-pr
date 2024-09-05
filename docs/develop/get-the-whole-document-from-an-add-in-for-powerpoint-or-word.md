@@ -43,6 +43,84 @@ The manifest file for an Office Add-in provides important information about the 
 
 1. In a text editor, add the following code to the manifest file.
 
+    # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+    > [!IMPORTANT]
+    > If you're using a Visual Studio project, select the "Add-in only manifest" option.
+
+    ```json
+    {
+        "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json#",
+        "manifestVersion": "devPreview",
+        "version": "1.0.0.0",
+        "id": "[Replace_With_Your_GUID]",
+        "localizationInfo": {
+            "defaultLanguageTag": "en-us"
+        },
+        "developer": {
+            "name": "[Provider Name e.g., Contoso]",
+            "websiteUrl": "[Insert the URL for the app e.g., https://www.contoso.com]",
+            "privacyUrl": "[Insert the URL of a page that provides privacy information for the app e.g., https://www.contoso.com/privacy]",
+            "termsOfUseUrl": "[Insert the URL of a page that provides terms of use for the app e.g., https://www.contoso.com/servicesagreement]"
+        },
+        "name": {
+            "short": "Get Doc add-in",
+            "full": "Get Doc add-in"
+        },
+        "description": {
+            "short": "My get PowerPoint or Word document add-in.",
+            "full": "My get PowerPoint or Word document add-in."
+        },
+        "icons": {
+            "outline": "_layouts/images/general/office_logo.jpg",
+            "color": "_layouts/images/general/office_logo.jpg"
+        },
+        "accentColor": "#230201",
+        "validDomains": [
+            "https://www.contoso.com"
+        ],
+        "showLoadingIndicator": false,
+        "isFullScreen": false,
+        "defaultBlockUntilAdminAction": false,
+        "authorization": {
+            "permissions": {
+                "resourceSpecific": [
+                    {
+                        "name": "Document.ReadWrite.User",
+                        "type": "Delegated"
+                    }
+                ]
+            }
+        },
+        "extensions": [
+            {
+                "requirements": {
+                    "scopes": [
+                        "document",
+                        "presentation"
+                    ]
+                },
+                "alternates": [
+                    {
+                        "alternateIcons": {
+                            "icon": {
+                                "size": 32,
+                                "url": "http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"
+                            },
+                            "highResolutionIcon": {
+                                "size": 64,
+                                "url": "http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    ```
+
+    # [Add-in only manifest](#tab/xmlmanifest)
+
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
     <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
@@ -55,6 +133,7 @@ The manifest file for an Office Add-in provides important information about the 
         <DisplayName DefaultValue="Get Doc add-in" />
         <Description DefaultValue="My get PowerPoint or Word document add-in." />
         <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+        <HighResolutionIconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
         <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
         <Hosts>
             <Host Name="Document" />
@@ -66,6 +145,8 @@ The manifest file for an Office Add-in provides important information about the 
         <Permissions>ReadWriteDocument</Permissions>
     </OfficeApp>
     ```
+
+    ---
 
 1. Save the file as **GetDoc_App.xml** using UTF-8 encoding to a network location or to an add-in catalog.
 
