@@ -50,7 +50,7 @@ Each Outlook client enforces certain limits in the JavaScript object model, as d
 
 [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
-Follow these guidelines when designing activation rules for [contextual Outlook add-ins](activation-rules.md).
+Follow these guidelines when designing activation rules for [contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
 - Limit the size of the manifest to 256 KB. You can't install the Outlook add-in for an Exchange mailbox if you exceed that limit.
 

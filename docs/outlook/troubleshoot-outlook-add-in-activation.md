@@ -141,7 +141,7 @@ See [Validate and troubleshoot issues with your manifest](../testing/troubleshoo
 
 ## Are you using the appropriate activation rules?
 
-Starting in version 1.1 of the Office Add-ins manifests schema, you can create add-ins that are activated when the user is in a compose form (compose add-ins) or in a read form (read add-ins). Make sure you specify the appropriate activation rules for each type of form that your add-in is supposed to activate in. For example, you can activate compose add-ins using only [ItemIs](/javascript/api/manifest/rule#itemis-rule) rules with the **FormType** attribute set to **Edit** or **ReadOrEdit**, and you can't use any of the other types of rules, such as [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules for compose add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
+Starting in version 1.1 of the Office Add-ins manifests schema, you can create add-ins that are activated when the user is in a compose form (compose add-ins) or in a read form (read add-ins). Make sure you specify the appropriate activation rules for each type of form that your add-in is supposed to activate in. For example, you can activate compose add-ins using only [ItemIs](/javascript/api/manifest/rule#itemis-rule) rules with the **FormType** attribute set to **Edit** or **ReadOrEdit**, and you can't use any of the other types of rules, such as [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules for compose add-ins.
 
 ## If you use a regular expression, is it properly specified?
 
@@ -235,7 +235,6 @@ This section applies to all activation rules that use regular expressions, parti
 ## See also
 
 - [Deploy and install Outlook add-ins for testing](testing-and-tips.md)
-- [Activation rules for Outlook add-ins](activation-rules.md)
 - [Contextual Outlook add-ins](contextual-outlook-add-ins.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
 - [Validate and troubleshoot issues with your manifest](../testing/troubleshoot-manifest.md)
