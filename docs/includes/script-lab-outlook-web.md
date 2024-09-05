@@ -1,2 +1,0 @@
-> [!NOTE]
-> Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developers.google.com/privacy-sandbox/3pcd/storage-partitioning) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This change is preventing Script Lab snippets from running in Outlook on the web.
