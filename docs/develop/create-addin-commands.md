@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the add-in only manifest
 description: Configure an add-in only manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or menus, and perform actions.
-ms.date: 02/29/2024
+ms.date: 09/05/2024
 ms.localizationpriority: medium
 ---
 
@@ -129,7 +129,6 @@ The following examples show how to use the **\<ExtensionPoint\>** element with *
         <bt:Image size="32" resid="icon1_32x32" />
         <bt:Image size="80" resid="icon1_32x32" />
       </Icon>
-      <Tooltip resid="residToolTip" />
       <Control xsi:type="Button" id="Button1Id1">
 
         <!-- information about the control -->
@@ -163,7 +162,6 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
 <!-- Define a control that calls a JavaScript function. -->
 <Control xsi:type="Button" id="Button1Id1">
   <Label resid="residLabel" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
@@ -181,7 +179,6 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
 <!-- Define a control that shows a task pane. -->
 <Control xsi:type="Button" id="Button2Id1">
   <Label resid="residLabel2" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
@@ -246,7 +243,6 @@ The following example shows how to define a menu item with two submenu items. Th
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
