@@ -43,7 +43,7 @@ The manifest file for an Office Add-in provides important information about the 
 
 1. In a text editor, add the following code to the manifest file.
 
-    # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+    # [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
 
     > [!IMPORTANT]
     > If you're using a Visual Studio project, select the "Add-in only manifest" option.
