@@ -45,8 +45,9 @@ The manifest file for an Office Add-in provides important information about the 
 
     # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-> [!NOTE]
-> The unified manifest is generally available for production Outlook add-ins. It's available only for preview in Excel, PowerPoint, and Word add-ins.
+    > [!NOTE]
+    > The unified manifest is generally available for production Outlook add-ins. It's available only for preview in Excel, PowerPoint, and Word add-ins.
+
     > [!IMPORTANT]
     > If you're using a Visual Studio project, select the "Add-in only manifest" option.
 
