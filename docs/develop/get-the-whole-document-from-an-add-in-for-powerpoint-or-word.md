@@ -22,7 +22,7 @@ This article assumes that you are using a text editor to create the task pane ad
 
   - A CSS file (**Program.css**) to contain the styles and formatting for the add-in.
 
-- An add-in only manifest file (**GetDoc_App.xml**) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
+- A manifest file (**GetDoc_App.xml** or **GetDoc_App.json**) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
 
 Alternatively, you can create an add-in for your Office application using one of the following options. You won't have to create new files as the equivalent of each required file will be available for you to update. For example, the Yeoman generator options include **./src/taskpane/taskpane.html**, **./src/taskpane/taskpane.js**, **./src/taskpane/taskpane.css**, and **./manifest.xml**.
 
@@ -41,15 +41,12 @@ Before you begin creating this add-in for PowerPoint or Word, you should be fami
 
 The manifest file for an Office Add-in provides important information about the add-in: what applications can host it, the location of the HTML file, the add-in title and description, and many other characteristics.
 
-1. In a text editor, add the following code to the manifest file.
+1. In a text editor, add the following code to the manifest file. If you're using a Visual Studio project, select the "Add-in only manifest" option.
 
     # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
     > [!NOTE]
     > The unified manifest is generally available for production Outlook add-ins. It's available only for preview in Excel, PowerPoint, and Word add-ins.
-
-    > [!IMPORTANT]
-    > If you're using a Visual Studio project, select the "Add-in only manifest" option.
 
     ```json
     {
@@ -122,6 +119,8 @@ The manifest file for an Office Add-in provides important information about the 
     }
     ```
 
+1. Save the file as **GetDoc_App.json** using UTF-8 encoding to a network location or to an add-in catalog.
+
     # [Add-in only manifest](#tab/xmlmanifest)
 
     ```xml
@@ -149,9 +148,9 @@ The manifest file for an Office Add-in provides important information about the 
     </OfficeApp>
     ```
 
-    ---
-
 1. Save the file as **GetDoc_App.xml** using UTF-8 encoding to a network location or to an add-in catalog.
+
+    ---
 
 ## Create the user interface for the add-in
 
