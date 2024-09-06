@@ -35,7 +35,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 1. On the right side of iTunes, scroll down to **File Sharing**, and then choose **Excel** or **Word** in the **Add-ins** column.
 
-1. At the bottom of the **Excel** or **Word Documents** column, choose **Add File**, and then select the manifest .xml file of the add-in you want to sideload.
+1. At the bottom of the **Excel** or **Word Documents** column, choose **Add File**, and then select the manifest.xml file of the add-in you want to sideload.
 
 1. Open the Excel or Word app on your iPad. If the Excel or Word app is already running, choose the **Home** button, and then close and restart the app.
 
