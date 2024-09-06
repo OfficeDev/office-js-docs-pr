@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on iPad for testing
 description: Test your Office Add-in on iPad by sideloading.
-ms.date: 08/18/2023
+ms.date: 09/09/2024
 ms.localizationpriority: medium
 ---
 
@@ -22,6 +22,9 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 - The manifest .xml file for the add-in you want to test.
 
+> [!IMPORTANT]
+> You can't sideload an add-in on an iPad when it's running on localhost, so *first* [deploy the add-in](../publish/publish.md) to a non-local web server or web service. Then update all the URLs in the manifest to point to the new domain. 
+
 ## Sideload an add-in on Excel or Word on iPad using iTunes
 
 1. Use a sync cable to connect your iPad to your computer. If you're connecting the iPad to your computer for the first time, you'll be prompted with **Trust This Computer?**. Choose **Trust** to continue.
@@ -38,7 +41,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 1. Open a document.
 
-1. Select **Home** > **Add-ins**, then select **Get Add-ins**. Your sideloaded add-in is available to insert under the **Developer** heading in the **Add-ins** UI.
+1. Select **Home** > **Add-ins**. In the dialog that opens, select **See all** under the **My Add-ins** heading, then select your sideloaded add-in from the array under **My Add-ins**.
 
 ## Sideload an add-in on Excel or Word on iPad using macOS Catalina
 
@@ -57,7 +60,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 1. Open a document.
 
-1. Select **Home** > **Add-ins**, then select **Get Add-ins**. Your sideloaded add-in is available to insert under the **Developer** heading in the **Add-ins** UI.
+1. Select **Home** > **Add-ins**. In the dialog that opens, select **See all** under the **My Add-ins** heading, then select your sideloaded add-in from the array under **My Add-ins**.
 
 ## Remove a sideloaded add-in
 
