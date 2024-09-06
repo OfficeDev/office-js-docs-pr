@@ -20,10 +20,10 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 - An iPad running iOS 8.2 or later with [Excel](https://apps.apple.com/app/microsoft-excel/id586683407) or [Word](https://apps.apple.com/app/microsoft-word/id586447913) installed, and a sync cable.
 
-- The manifest .xml file for the add-in you want to test.
+- The **manifest.xml** file for the add-in you want to test.
 
 > [!IMPORTANT]
-> You can't sideload an add-in on an iPad when it's running on localhost, so *first* [deploy the add-in](../publish/publish.md) to a non-local web server or web service. Then update all the URLs in the manifest to point to the new domain. 
+> You can't sideload an add-in on an iPad when it's running on localhost. You must *first* [deploy the add-in](../publish/publish.md) to a non-local web server or web service. Then, update all the URLs in the manifest to point to the new domain. 
 
 ## Sideload an add-in on Excel or Word on iPad using iTunes
 
