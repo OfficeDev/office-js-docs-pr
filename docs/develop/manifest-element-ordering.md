@@ -1,7 +1,7 @@
 ---
 title: How to find the proper order of manifest elements
 description: Learn how to find the correct order in which to place child elements in a parent element.
-ms.date: 03/20/2023
+ms.date: 09/5/2024
 ms.localizationpriority: medium
 ---
 
@@ -204,7 +204,7 @@ The following sections show the manifest elements in the order in which they mus
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <Group> (can be below <ControlGroup>)
+                        <Group>
                             <OverriddenByRibbonApi>
                             <Label>
                             <Icon>
@@ -235,7 +235,6 @@ The following sections show the manifest elements in the order in which they mus
                                             <SourceLocation>
                                             <Title>
                                             <FunctionName>
-                        <ControlGroup> (can be above <Group>)
                         <Label>
                         <InsertAfter> (or <InsertBefore>)
                     <OfficeMenu>
@@ -400,6 +399,7 @@ The following sections show the manifest elements in the order in which they mus
                 <OfficeTab>
                     <Group>
                         <Label>
+                        <Tooltip>
                         <Control>
                             <Label>
                             <Supertip>

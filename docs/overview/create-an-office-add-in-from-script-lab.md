@@ -161,6 +161,12 @@ npm start
 
 Office will start and you can open the task pane for your add-in from the ribbon. Congratulations! Now you can continue building your add-in as a standalone project.
 
+When you're ready to stop the dev server and uninstall the add-in, run the following command.
+
+```command&nbsp;line
+npm stop
+```
+
 ## Console logging
 
 Many snippets in Script Lab write output to a console section at the bottom of the task pane. The Yo Office project doesn't have a console section. All `console.log*` statements will write to the default debug console (such as your browser developer tools). If you want the output to go to your task pane, you'll need to update the code.

@@ -99,7 +99,7 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 
 ## Root element
 
-The root element for the Office add-in manifest is **\<OfficeApp\>**. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element.
+The root element for the Office Add-in manifest is **\<OfficeApp\>**. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element.
 
 ```XML
 <OfficeApp

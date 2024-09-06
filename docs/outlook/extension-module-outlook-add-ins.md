@@ -135,6 +135,6 @@ The following is a section of a manifest file that defines a module extension.
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Add-in commands](../design/add-in-commands.md)
 - [Office Add-ins sample: Compute billable hours with a module extension add-in in Outlook](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension)

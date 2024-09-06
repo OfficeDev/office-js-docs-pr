@@ -1,7 +1,7 @@
 ---
 title: First-run experience tutorial
 description: Learn how to implement a first-run experience for your Office Add-in.
-ms.date: 08/09/2024
+ms.date: 09/06/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,16 +12,19 @@ In this article, you'll walk through the process of updating a task pane add-in 
 
 This tutorial provides instructions and screenshots for Excel but you can use a similar pattern to implement a first-run experience in other Office applications where Office Web Add-ins are supported.
 
+> [!TIP]
+> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/first-run-experience-tutorial).
+
 ## Prerequisites
 
-1. Select the quick start for the Office application you'd like to use. Make sure to choose the Yeoman generator version.
+1. Select the Yo Office quick start for the Office application you'd like to use.
 
     - [Excel](../quickstarts/excel-quickstart-jquery.md)
     - [OneNote](../quickstarts/onenote-quickstart.md)
-    - [Outlook](../quickstarts/outlook-quickstart.md)
-    - [PowerPoint](../quickstarts/powerpoint-quickstart.md)
+    - [Outlook](../quickstarts/outlook-quickstart-yo.md)
+    - [PowerPoint](../quickstarts/powerpoint-quickstart-yo.md)
     - [Project](../quickstarts/project-quickstart.md)
-    - [Word](../quickstarts/word-quickstart.md)
+    - [Word](../quickstarts/word-quickstart-yo.md)
 
 1. Follow the instructions in your selected quick start. After you complete its "Try it out" section, return here to continue.
 
@@ -132,6 +135,10 @@ Using this tutorial, you implemented a basic [first-run experience](../design/fi
 - Use a more secure and robust option for tracking first-run state. For example, use storage partitioning if available, or implement a Single Sign-on (SSO) authentication solution. For more about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md). For more about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
 
 If you're planning to make your add-in available in the AppSource marketplace, you'll need to have a robust and useful first-run experience. For more information, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
+
+## Code samples
+
+- [Completed first-run experience tutorial](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/first-run-experience-tutorial): The result of completing this tutorial with Excel.
 
 ## See also
 

@@ -19,7 +19,7 @@ The event-based activation feature lets a user use your add-in to complete their
 
 The following table lists events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Description** column includes a link to the related object where applicable.
 
-|Event canonical name</br>and add-only manifest name|Unified manifest for Microsoft 365 name|Description|Minimum requirement set and supported clients|
+|Event canonical name</br>and add-in only manifest name|Unified manifest for Microsoft 365 name|Description|Minimum requirement set and supported clients|
 |---|---|---|---|
 |`OnNewMessageCompose`| newMessageComposeCreated |On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li><li>Android<sup>2</sup></li><li>iOS<sup>2</sup></li></ul>|
 |`OnNewAppointmentOrganizer`|newAppointmentOrganizerCreated|On creating a new appointment but not on editing an existing one.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|

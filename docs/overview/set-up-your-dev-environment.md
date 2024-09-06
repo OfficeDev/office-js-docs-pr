@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 08/15/2024
+ms.date: 08/22/2024
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ You need a Microsoft 365 account. You might qualify for a Microsoft 365 E5 devel
 
 There are three kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the three environments is different, so if multiple people will be working on an add-in project, they must all use the same environment.
 
-- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. The project creation and scaffolding tool is a command line tool called the Office Yeoman Generator (also called "Yo Office"), though you can still use the Visual Studio Code extensions mentioned in the next option.
+- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called webpack. The project creation and scaffolding tool is a command line tool called the Office Yeoman Generator (also called "Yo Office"), though you can still use the Visual Studio Code extensions mentioned in the next option.
 - **Visual Studio Code**: Choose this environment if you use Visual Studio Code and would prefer to create projects from extensions rather than command line tools. The project creation and scaffolding tools are the Teams Toolkit or Office Add-ins Development Kit extensions.
 - **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. More information later on the **Visual Studio environment** tab.
 
@@ -138,7 +138,7 @@ This option only installs Visual Studio.
 
 ### Install Visual Studio
 
-If you do not have Visual Studio 2017 (for Windows) or later installed, install the latest version from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
+Install the latest version of Visual Studio from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
 
 > [!NOTE]
 > For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). Debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).
@@ -148,8 +148,6 @@ If you do not have Visual Studio 2017 (for Windows) or later installed, install 
 ## Install Script Lab
 
 Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
-
-[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
 
 ## Next steps
 

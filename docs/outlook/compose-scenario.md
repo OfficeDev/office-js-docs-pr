@@ -28,10 +28,10 @@ In each of these scenarios, any add-in command buttons defined by the add-in are
 
 ## Types of add-ins available in compose mode
 
-Compose add-ins are implemented as [add-in commands](../design/add-in-commands.md). To activate add-ins for composing email or meeting responses, add-ins include a [MessageComposeCommandSurface extension point element](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) in the manifest. To activate add-ins for composing or editing appointments or meetings where the user is the organizer, add-ins include a [AppointmentOrganizerCommandSurface extension point element](/javascript/api/manifest/extensionpoint#appointmentorganizercommandsurface). For more information on manifests, see [Office add-in manifests](../develop/add-in-manifests.md).
+Compose add-ins are implemented as [add-in commands](../design/add-in-commands.md). To activate add-ins for composing email or meeting responses, add-ins include a [MessageComposeCommandSurface extension point element](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) in the manifest. To activate add-ins for composing or editing appointments or meetings where the user is the organizer, add-ins include a [AppointmentOrganizerCommandSurface extension point element](/javascript/api/manifest/extensionpoint#appointmentorganizercommandsurface). For more information on manifests, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 > [!NOTE]
-> Add-ins developed for servers or clients that don't support add-in commands use [activation rules](activation-rules.md) in a [Rule](/javascript/api/manifest/rule) element contained in the [OfficeApp](/javascript/api/manifest/officeapp) element. Unless the add-in is being specifically developed for older clients and servers, new add-ins should use add-in commands.
+> Add-ins developed for servers or clients that don't support add-in commands define activation rules using the [Rule](/javascript/api/manifest/rule) element contained in the [OfficeApp](/javascript/api/manifest/officeapp) element. Unless the add-in is being specifically developed for older clients and servers, new add-ins should use add-in commands.
 >
 > Add-ins that use activation rules aren't supported in an add-in that uses a [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
@@ -49,4 +49,4 @@ Compose add-ins are implemented as [add-in commands](../design/add-in-commands.m
 
 ## See also
 
-- [Get Started with Outlook add-ins for Office](../quickstarts/outlook-quickstart.md)
+- [Get Started with Outlook add-ins for Office](../quickstarts/outlook-quickstart-yo.md)

@@ -1,94 +1,20 @@
 ---
-title: Build your first PowerPoint task pane add-in
-description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 12/11/2023
+title: Build your first PowerPoint task pane add-in with Visual Studio
+description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API and a Visual Studio template.
+ms.date: 08/20/2024
 ms.service: powerpoint
 ms.localizationpriority: high
 ---
 
-# Build your first PowerPoint task pane add-in
+# Build your first PowerPoint task pane add-in with Visual Studio
 
 In this article, you'll walk through the process of building a PowerPoint task pane add-in.
 
-## Create the add-in
-
-[!include[Choose your editor](../includes/quickstart-choose-editor.md)]
-
-# [Yeoman generator](#tab/yeomangenerator)
-
-### Prerequisites
-
-[!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-### Create the add-in project
-
-[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
-
-- **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
-- **What do you want to name your add-in?** `My Office Add-in`
-- **Which Office client application would you like to support?** `PowerPoint`
-
-![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
-
-After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
-### Explore the project
-
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
-
-### Try it out
-
-1. Navigate to the root folder of the project.
-
-    ```command&nbsp;line
-    cd "My Office Add-in"
-    ```
-
-1. Complete the following steps to start the local web server and sideload your add-in.
-
-    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
-
-    > [!TIP]
-    > If you're testing your add-in on Mac, run the following command before proceeding. When you run this command, the local web server starts.
-    >
-    > ```command&nbsp;line
-    > npm run dev-server
-    > ```
-
-    - To test your add-in in PowerPoint, run the following command in the root directory of your project. This starts the local web server (if it's not already running) and opens PowerPoint with your add-in loaded.
-
-        ```command&nbsp;line
-        npm start
-        ```
-
-    - To test your add-in in PowerPoint on a browser, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a PowerPoint document on your OneDrive or a SharePoint library to which you have permissions.
-
-        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
-
-1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
-
-    ![PowerPoint with the Show Taskpane button highlighted.](../images/powerpoint_quickstart_addin_1c.png)
-
-1. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
-
-    ![PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.](../images/powerpoint_quickstart_addin_3c.png)
-
-1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
-
-### Next steps
-
-Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.md).
-
-# [Visual Studio](#tab/visualstudio)
-
-### Prerequisites
+## Prerequisites
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
-### Create the add-in project
+## Create the add-in project
 
 1. In Visual Studio, choose **Create a new project**.
 
@@ -100,11 +26,11 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-### Explore the Visual Studio solution
+## Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### Update the code
+## Update the code
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
@@ -203,7 +129,7 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
     }
     ```
 
-### Update the manifest
+## Update the manifest
 
 1. Open the add-in only manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
@@ -225,7 +151,7 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
     ...
     ```
 
-### Try it out
+## Try it out
 
 1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
@@ -243,13 +169,11 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
-### Next steps
+## Next steps
 
 Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
----
-
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all Visual Studio quick starts](../includes/quickstart-troubleshooting-vs.md)]
 
 ## Code samples
 
@@ -259,4 +183,4 @@ Congratulations, you've successfully created a PowerPoint task pane add-in! Next
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
-- [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
+- [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio.md)

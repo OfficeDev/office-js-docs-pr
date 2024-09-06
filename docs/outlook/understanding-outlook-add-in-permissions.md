@@ -68,7 +68,7 @@ The **read item** permission is the next level of permission in the permissions 
 
 - [Write custom properties](/javascript/api/outlook/office.customproperties) set by the add-in on that item.
 
-- Use [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in a contextual add-in.
+- Use regular expressions in a [contextual add-in](contextual-outlook-add-ins.md).
 
 ### Can't do
 
