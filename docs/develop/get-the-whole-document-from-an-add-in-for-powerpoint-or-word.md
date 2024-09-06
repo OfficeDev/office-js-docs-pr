@@ -119,8 +119,6 @@ In a text editor, add the following code to the manifest file. If you're using a
 }
 ```
 
-Save the file as **GetDoc_App.json** to a network location or to an add-in catalog.
-
 # [Add-in only manifest](#tab/xmlmanifest)
 
 ```xml
