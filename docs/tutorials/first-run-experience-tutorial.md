@@ -1,7 +1,7 @@
 ---
 title: First-run experience tutorial
 description: Learn how to implement a first-run experience for your Office Add-in.
-ms.date: 08/09/2024
+ms.date: 09/06/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -11,6 +11,9 @@ ms.localizationpriority: medium
 In this article, you'll walk through the process of updating a task pane add-in to include a [first-run experience](../design/first-run-experience-patterns.md) using the value placemat pattern. When the user runs the add-in, the add-in determines whether or not to show the first-run experience by checking [local storage](../develop/persisting-add-in-state-and-settings.md#browser-storage) for a flag.
 
 This tutorial provides instructions and screenshots for Excel but you can use a similar pattern to implement a first-run experience in other Office applications where Office Web Add-ins are supported.
+
+> [!TIP]
+> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/first-run-experience-tutorial).
 
 ## Prerequisites
 
@@ -132,6 +135,10 @@ Using this tutorial, you implemented a basic [first-run experience](../design/fi
 - Use a more secure and robust option for tracking first-run state. For example, use storage partitioning if available, or implement a Single Sign-on (SSO) authentication solution. For more about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md). For more about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
 
 If you're planning to make your add-in available in the AppSource marketplace, you'll need to have a robust and useful first-run experience. For more information, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
+
+## Code samples
+
+- [Completed first-run experience tutorial](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/first-run-experience-tutorial): The result of completing this tutorial with Excel.
 
 ## See also
 
