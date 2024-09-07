@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 
 # Enable and Disable Add-in Commands
 
-When some functionality in your add-in should only be available in certain contexts, you can programmatically enable or disable your custom Add-in Commands. For example, a function that changes the header of a table should only be enabled when the cursor is in a table.
+When some functionality in your add-in should only be available in certain contexts, you can programmatically enable or disable your custom add-in commands. For example, a function that changes the header of a table should only be enabled when the cursor is in a table.
 
 You can also specify whether the command is enabled or disabled when the Office client application opens.
 
 > [!NOTE]
-> This article assumes that you're familiar with the [basic concepts for Add-in Commands](add-in-commands.md). Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
+> This article assumes that you're familiar with the [basic concepts for Add-in Commands](add-in-commands.md). Please review it if you haven't worked with add-in commands (custom menu items and ribbon buttons) recently.
 
 ## Office application and platform support
 
@@ -25,7 +25,7 @@ The APIs and manifest markup described in this article require that the add-in's
 
 ## Set the default state to disabled
 
-By default, any Add-in Command is enabled when the Office application launches. If you want a custom button or menu item to be disabled when the Office application launches, you specify this in the manifest. The process depends on which type of manifest your add-in uses. 
+By default, any add-in command is enabled when the Office application launches. If you want a custom button or menu item to be disabled when the Office application launches, you specify this in the manifest. The process depends on which type of manifest your add-in uses. 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -50,6 +50,7 @@ Just add an "enabled" property with the value `false` to the control or menu ite
                                 ...
                                 "controls": [
                                     {
+                                        "id": "Contoso.MyButton1",
                                         ...
                                         "enabled": false
                                     }
@@ -94,7 +95,7 @@ Just add an [Enabled](/javascript/api/manifest/enabled) element (with the value 
 
 ## Change the state programmatically
 
-The essential steps to changing the enabled status of an Add-in Command are:
+The essential steps to changing the enabled status of an add-in command are:
 
 1. Create a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the command, and its parent group and tab, by their IDs as declared in the manifest; and (2) specifies the enabled or disabled state of the command.
 1. Pass the **RibbonUpdaterData** object to the [Office.ribbon.requestUpdate()](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)) method.

@@ -63,7 +63,7 @@ Configure the manifest to specify the task pane page that should open automatica
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
-To specify the task pane to open automatically, find the runtime object in the "runtimes" array whose "code.page" property is set to the URL of the page that you want to open automatically. Ensure that the "actions" array in this same runtime object has at least one action whose "type" value is "openPage". Add a "view" property to this action object and set it to "Office.AutoShowTaskpaneWithDocument". You can only set this value on one action object and it must an action of type "openPage". If you set this value on multiple actions, the first occurrence of the value will be recognized and the others will be ignored.
+To specify the task pane to open automatically, find the runtime object in the "runtimes" array whose "code.page" property is set to the URL of the page that you want to open automatically. Ensure that the "actions" array in this same runtime object has at least one action whose "type" value is "openPage". Add a "view" property to this action object and set it to "Office.AutoShowTaskpaneWithDocument". You can only set this value on one action object and it must be an action of type "openPage". If you set this value on multiple actions, the first occurrence of the value will be recognized and the others will be ignored.
 
 The following example shows a "view" value set to "Office.AutoShowTaskpaneWithDocument".
 

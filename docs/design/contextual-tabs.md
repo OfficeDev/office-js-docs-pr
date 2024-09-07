@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 A contextual tab is a hidden tab control in the Office ribbon that's displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You include custom contextual tabs in your Office Add-in and specify when they're visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs don't respond to focus changes.)
 
 > [!NOTE]
-> This article assumes that you're familiar with the following documentation. Please review it if you haven't worked with Add-in Commands (custom menu items and ribbon buttons) recently.
+> This article assumes that you're familiar with the following documentation. Please review it if you haven't worked with add-in commands (custom menu items and ribbon buttons) recently.
 >
 > - [Basic concepts for Add-in Commands](add-in-commands.md)
 
@@ -537,7 +537,7 @@ Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the
 - If the add-in runs on an application and platform that support custom contextual tabs, then the custom controls and menu items won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
 - If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the controls and menu items do appear on the custom core tab.
 
-The following is an example. Note that "MyButton" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
+The following is an example. Note that "Contoso.MyButton1" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
 
 ```json
 "extensions": [
@@ -556,6 +556,7 @@ The following is an example. Note that "MyButton" will appear on the custom core
                                 ...
                                 "controls": [
                                     {
+                                        "id": "Contoso.MyButton1",
                                         ...
                                         "overriddenByRibbonApi": true
                                     }
