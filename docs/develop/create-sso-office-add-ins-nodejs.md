@@ -417,6 +417,18 @@ The sample must handle both fallback authentication through MSAL and SSO authent
 > [!NOTE]
 > If you were previously signed into Office with a different ID, and some Office applications that were open at the time are still open, Office may not reliably change your ID even if it appears to have done so. If this happens, the call to Microsoft Graph may fail or data from the previous ID may be returned. To prevent this, be sure to _close all other Office applications_ before you press **Get OneDrive File Names**.
 
+## Stop running the project
+
+When you're ready to stop the middle-tier server and uninstall the add-in, follow these instructions:
+
+1. Run the following command to stop the middle-tier server.
+
+    ```command&nbsp;line
+    npm stop
+    ```
+
+1. To uninstall or remove the add-in, see the specific sideload article you used for details.
+
 ## Security notes
 
 - The `/getuserfilenames` route in `getFilesroute.js` uses a literal string to compose the call for Microsoft Graph. If you change the call so that any part of the string comes from user input, sanitize the input so that it cannot be used in a Response header injection attack.

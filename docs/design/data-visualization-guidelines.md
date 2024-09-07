@@ -143,4 +143,4 @@ Motion follows data.
 ## See also
 
 - [The Five Best Libraries for Building Data Visualizations](https://www.fastcompany.com/3029760/the-five-best-libraries-for-building-data-vizualizations)
-- [The Visual Display of Quantitative Information](https://www.edwardtufte.com/tufte/books_vdqi)
+- [The Visual Display of Quantitative Information](https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/)

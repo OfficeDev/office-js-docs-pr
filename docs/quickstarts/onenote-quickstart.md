@@ -117,7 +117,7 @@ Congratulations, you've successfully created a OneNote task pane add-in! Next, l
 > [!div class="nextstepaction"]
 > [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## See also
 

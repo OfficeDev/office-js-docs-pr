@@ -20,7 +20,7 @@ Logging notes to an external application from an Outlook mobile add-in is suppor
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to create an add-in project with the Yeoman generator for Office Add-ins.
 
 ## Configure the manifest
 
@@ -577,7 +577,7 @@ To enable users to log appointment notes with your add-in, you must configure th
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Capture appointment notes
 
