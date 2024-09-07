@@ -36,7 +36,7 @@ The previous code is a handler that is registered for the [Office.Worksheet.onDe
 
 ## Additional details on showing the task pane
 
-When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you specified in the manifest. The configuration depends on what type of manifest you are using. 
+When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you specified in the manifest. The configuration depends on what type of manifest you're using. 
 
 - **Unified manifest for Microsoft 365**: The URL of the file is assigned as the value of a "runtimes.code.page" property of the runtime object which has an action object of type "openPage".
 

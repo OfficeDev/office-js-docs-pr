@@ -19,13 +19,13 @@ You can specify where you want your add-in's custom tab to appear on the Office 
 > - The add-in feature and markup described in this article is *only available in PowerPoint on the web*.
 > - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See [Behavior on unsupported platforms](#behavior-on-unsupported-platforms) below.
 
-By default, a custom tab is added to the end of the ribbon, but you can specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. Open the tab for the type of manifest your add-in uses for the details of the manifest markup.
+By default, a custom tab is added to the end of the ribbon. However, you can specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. Open the tab for the type of manifest your add-in uses for the details of the manifest markup.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
-To position your custom tab, include a "position" property in the tab object. Set the "position.builtInTabId" property to the ID of the built in tab that you want your custom tab to be next to. (See [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).) Set the "position.align" property to either "before" (left) or "after" (right). 
+To position your custom tab, include a "position" property in the "extensions.ribbons.tabs" object. Set the "position.builtInTabId" property to the ID of the built-in tab that you want your custom tab to be next to. (See [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).) Set the "position.align" property to either "before" (left) or "after" (right). 
 
 In the following example, the custom tab is configured to appear *just after* the **Review** tab. 
 

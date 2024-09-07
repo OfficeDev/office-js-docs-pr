@@ -58,7 +58,7 @@ Adding custom contextual tabs requires your add-in to use the [shared runtime](.
 
 ## Define the groups and controls that appear on the tab
 
-Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method may be run only once in a session of your add-in. If it's called again, an error is thrown.
+Unlike custom core tabs, which are defined in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method may be run only once in a session of your add-in. If it's called again, an error is thrown.
 
 We'll construct an example of a contextual tabs JSON blob step-by-step. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). If you're working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
@@ -532,12 +532,12 @@ The add-in's manifest provides a way to create a fallback experience in an add-i
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
-Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. But add a "overriddenByRibbonApi" property to each of the control objects and menu items and set its value to "true". The effect of doing so is the following:
+Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then, add an "overriddenByRibbonApi" property to each of the control objects and menu items and set its value to "true". The effect of doing so is the following:
 
 - If the add-in runs on an application and platform that support custom contextual tabs, then the custom controls and menu items won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
 - If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the controls and menu items do appear on the custom core tab.
 
-The following is an example. Note that "MyButton" will appear on the custom core tab only when custom contextual tabs aren't supported. But the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
+The following is an example. Note that "MyButton" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
 
 ```json
 "extensions": [

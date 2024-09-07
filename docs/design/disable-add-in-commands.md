@@ -164,17 +164,17 @@ Third, define the `enableChartFormat` handler. The following is a simple example
 ```javascript
 function enableChartFormat() {
     const button = {
-                      id: "ChartFormatButton", 
-                      enabled: true
-                   };
+        id: "ChartFormatButton", 
+        enabled: true
+    };
     const parentGroup = {
-                           id: "MyGroup",
-                           controls: [button]
-                        };
+        id: "MyGroup",
+        controls: [button]
+    };
     const parentTab = {
-                         id: "CustomChartTab", 
-                         groups: [parentGroup]
-                      };
+        id: "CustomChartTab", 
+        groups: [parentGroup]
+    };
     const ribbonUpdater = {tabs: [parentTab]};
     Office.ribbon.requestUpdate(ribbonUpdater);
 }
@@ -198,17 +198,17 @@ The following example shows a function that disables a button and records the bu
 ```javascript
 function disableChartFormat() {
     const button = {
-                      id: "ChartFormatButton", 
-                      enabled: false
-                   };
+        id: "ChartFormatButton", 
+        enabled: false
+    };
     const parentGroup = {
-                           id: "MyGroup",
-                           controls: [button]
-                        };
+        id: "MyGroup",
+        controls: [button]
+    };
     const parentTab = {
-                         id: "CustomChartTab", 
-                         groups: [parentGroup]
-                      };
+        id: "CustomChartTab", 
+        groups: [parentGroup]
+    };
     const ribbonUpdater = {tabs: [parentTab]};
     Office.ribbon.requestUpdate(ribbonUpdater);
 
@@ -240,17 +240,17 @@ In some scenarios, Office is unable to update the ribbon and will return an erro
 function disableChartFormat() {
     try {
         const button = {
-                          id: "ChartFormatButton", 
-                          enabled: false
-                       };
+            id: "ChartFormatButton", 
+            enabled: false
+        };
         const parentGroup = {
-                               id: "MyGroup",
-                               controls: [button]
-                            };
+            id: "MyGroup",
+            controls: [button]
+        };
         const parentTab = {
-                             id: "CustomChartTab", 
-                             groups: [parentGroup]
-                          };
+            id: "CustomChartTab", 
+            groups: [parentGroup]
+        };
         const ribbonUpdater = {tabs: [parentTab]};
         Office.ribbon.requestUpdate(ribbonUpdater);
 
