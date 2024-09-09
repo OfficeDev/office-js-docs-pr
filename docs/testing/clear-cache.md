@@ -68,7 +68,8 @@ To clear the cache in [new Outlook on Windows](https://support.microsoft.com/off
     ```
 
     This opens the new Outlook on Windows client and an instance of the Microsoft Edge DevTools.
-1. In the Microsoft Edge DevTools window, select the **Network** tab. Then, follow the steps in [Manually clear the browser cache](/microsoft-edge/devtools-guide-chromium/network/reference#manually-clear-the-browser-cache) to clear the cache.
+1. In the Microsoft Edge DevTools window, select the **Network** tab.
+1. Select and hold (or right-click) anywhere in the **Requests** table. Then, select **Clear browser cache**.
 
 ### Using the Microsoft Edge developer tools
 
