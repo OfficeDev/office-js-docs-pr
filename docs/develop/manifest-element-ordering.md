@@ -204,7 +204,7 @@ The following sections show the manifest elements in the order in which they mus
                                     <Title>
                                     <FunctionName>
                     <CustomTab>
-                        <Group>
+                        <Group> (can be below <OfficeGroup>)
                             <OverriddenByRibbonApi>
                             <Label>
                             <Icon>
@@ -235,6 +235,7 @@ The following sections show the manifest elements in the order in which they mus
                                             <SourceLocation>
                                             <Title>
                                             <FunctionName>
+                        <OfficeGroup> (can be above <Group>)
                         <Label>
                         <InsertAfter> (or <InsertBefore>)
                     <OfficeMenu>
