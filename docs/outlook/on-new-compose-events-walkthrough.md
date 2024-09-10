@@ -263,11 +263,9 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
         });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
-      Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
     ```
 
 1. Save your changes.

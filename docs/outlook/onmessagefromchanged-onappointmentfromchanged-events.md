@@ -334,14 +334,12 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
         result.asyncContext.completed();
     }
     
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to 
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to
     // map the event handler name specified in the manifest's LaunchEvent element (with the add-in only manifest)
     // or the "autoRunEvents.events.actionId" property (with the unified manifest for Microsoft 365)
     // to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-        Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
-        Office.actions.associate("onMessageFromChangedHandler", onMessageFromChangedHandler);
-    }
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onMessageFromChangedHandler", onMessageFromChangedHandler);
     ```
 
 > [!IMPORTANT]
