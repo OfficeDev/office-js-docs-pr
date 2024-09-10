@@ -29,7 +29,7 @@ The following tables list client-server combinations that support the `OnMessage
 |-----|-----|-----|-----|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -39,7 +39,7 @@ The following tables list client-server combinations that support the `OnMessage
 |-----|-----|-----|-----|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
