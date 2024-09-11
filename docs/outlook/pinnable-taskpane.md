@@ -18,7 +18,7 @@ However, by default, if a user has an add-in task pane open for a message in the
 > - Modern Outlook on the web
 > - [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 > - Classic Outlook 2016 or later on Windows (Build 7668.2000 or later for users in the Current or Microsoft 365 Insider Channels, Build 7900.xxxx or later for users in Deferred channels)
-> - Outlook on Mac (Version 16.13.503 or later)
+> - Outlook on Mac (Version 16.13 (18050300) or later)
 
 > [!IMPORTANT]
 > Pinnable task panes aren't available for the following:
