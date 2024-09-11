@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 08/21/2024
+ms.date: 09/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,8 +24,12 @@ There are three steps to add keyboard shortcuts to an add-in.
 Keyboard shortcuts are currently only supported in the following platforms and build of **Excel** and **Word**.
 
 - Office on the web
-- Office on Windows: Version 2102 (Build 13801.20632) and later
-- Office on Mac: Version 16.48 and later
+- Office on Windows
+  - **Excel**: Version 2102 (Build 13801.20632) and later
+  - **Word**: Version 2408 (Build 17928.20114) and later
+- Office on Mac
+  - **Excel**: Version 16.55 (21111400) and later
+  - **Word**: Version 16.88 (24081116) and later
 
 Additionally, keyboard shortcuts only work on platforms that support the following requirement sets. For information about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 
