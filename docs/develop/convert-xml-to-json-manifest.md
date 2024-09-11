@@ -10,6 +10,11 @@ ms.localizationpriority: medium
 
 To add Teams capabilities to an add-in that uses the add-in only manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
+> [!NOTE]
+> 
+> - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
+> - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
+
    [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
 
 There are three basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
@@ -78,8 +83,8 @@ Resolve any problems before you attempt to convert the project.
 There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project, and on the tool you used to create the project. 
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
-- [Projects created with the Office Yeoman Generator (aka "Yo Office")](#projects-created-with-the-office-yeoman-generator-aka-yo-office)
-- [NodeJS and npm projects that aren't created with Yeoman Generator](#nodejs-and-npm-projects-that-arent-created-with-yeoman-generator)
+- [Convert projects created with the Office Yeoman Generator (aka "Yo Office")](#convert-projects-created-with-the-office-yeoman-generator-aka-yo-office)
+- [Convert NodeJS and npm projects that aren't created with Yeoman Generator](#convert-nodejs-and-npm-projects-that-arent-created-with-yeoman-generator)
 
 ### Convert the project with Teams Toolkit
 
@@ -114,6 +119,9 @@ The easiest way to convert is to use Teams Toolkit.
 
 You can sideload the add-in using the Teams Toolkit or in a command prompt, bash shell, or terminal.
 
+> [!NOTE] 
+> Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
+
 ##### Sideload with the Teams Toolkit
 
 1. First, *make sure Office desktop application that you want to sideload into is closed.*
@@ -137,7 +145,7 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 1. You can now work with your add-in.
 1. When you're done working with your add-in, make sure to run the command `npm run stop`.
 
-### Projects created with the Office Yeoman Generator (aka "Yo Office")
+### Convert projects created with the Office Yeoman Generator (aka "Yo Office")
 
 If the project was created with the Office Yeoman Generator and you don't want to use the Teams Toolkit, convert it using the following steps.
 
@@ -150,9 +158,12 @@ If the project was created with the Office Yeoman Generator and you don't want t
 1. Run `npm install`.
 1. To sideload the add-in, run `npm run start:desktop`. This command puts the unified manifest and the two image files into a zip file and sideloads it to the Office application. It also starts the server in a separate NodeJS window to host the add-in files on localhost.
 
+   > [!NOTE] 
+   > Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
+
 1. When you're ready to stop the dev server and uninstall the add-in, run the command `npm run stop`.
 
-### NodeJS and npm projects that aren't created with Yeoman Generator
+### Convert NodeJS and npm projects that aren't created with Yeoman Generator
 
 If you don't want to use the Teams Toolkit and your project wasn't created with the Office Yeoman generator, use the office-addin-manifest-converter tool.
 
@@ -163,6 +174,9 @@ npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
 ```
 
 Once you have the unified manifest created, there are two ways to create the zip file and sideload it. They are described in the next two subsections.
+
+> [!NOTE] 
+> Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 
 #### Sideload with the Office-Addin-Debugging tool
 
@@ -202,5 +216,5 @@ Once you have the unified manifest created, there are two ways to create the zip
 
 ## Next steps
 
-Consider whether to maintain both the old and new versions of the add-in. See [Manage new and old versions of an add-in](../concepts/duplicate-legacy-metaos-add-ins.md).
+Consider whether to maintain both the old and new versions of the add-in. See [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins.md).
 
