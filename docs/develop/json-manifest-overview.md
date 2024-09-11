@@ -2,7 +2,7 @@
 title: Compare the add-in only manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the add-in only manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 08/15/2024
+ms.date: 09/09/2024
 ms.localizationpriority: high
 ---
 
@@ -81,7 +81,10 @@ The "extensions" property in the unified manifest primarily represents character
 > [!NOTE]
 > The **\<VersionOverrides\>** section of the add-in only manifest has a "double jump" system for many string resources. Strings, including URLs, are specified and assigned an ID in the **\<Resources\>** child of **\<VersionOverrides\>**. Elements that require a string have a `resid` attribute that matches the ID of a string in the **\<Resources\>** element. The "extensions" property of the unified manifest simplifies things by defining strings directly as property values. There is nothing in the unified manifest that is equivalent to the **\<Resources\>** element.
 
-The following table shows a mapping of some high level child properties of the "extensions" property in the unified manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
+The following table shows a mapping of *some* high-level child properties of the "extensions" property in the unified manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
+
+> [!NOTE]
+> This table contains only some selected representative descendant properties of "extensions". *It isn't an exhaustive list of all child properties of "extensions".* For the full reference of the unified manifest, see [Unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema). For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 |JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|

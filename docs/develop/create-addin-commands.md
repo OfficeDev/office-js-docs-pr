@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the add-in only manifest
 description: Configure an add-in only manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or menus, and perform actions.
-ms.date: 02/29/2024
+ms.date: 09/05/2024
 ms.localizationpriority: medium
 ---
 
@@ -129,7 +129,6 @@ The following examples show how to use the **\<ExtensionPoint\>** element with *
         <bt:Image size="32" resid="icon1_32x32" />
         <bt:Image size="80" resid="icon1_32x32" />
       </Icon>
-      <Tooltip resid="residToolTip" />
       <Control xsi:type="Button" id="Button1Id1">
 
         <!-- information about the control -->
@@ -163,7 +162,6 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
 <!-- Define a control that calls a JavaScript function. -->
 <Control xsi:type="Button" id="Button1Id1">
   <Label resid="residLabel" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
@@ -181,7 +179,6 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
 <!-- Define a control that shows a task pane. -->
 <Control xsi:type="Button" id="Button2Id1">
   <Label resid="residLabel2" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
@@ -246,7 +243,6 @@ The following example shows how to define a menu item with two submenu items. Th
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
@@ -346,7 +342,7 @@ Add-in commands are available in the following Outlook versions.
 
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
-If your add-in uses an add-in only manifest, then add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](../outlook/activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
+If your add-in uses an add-in only manifest, then add-in commands are only available for add-ins that don't use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](/javascript/api/manifest/rule) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
 
 ## See also
 
