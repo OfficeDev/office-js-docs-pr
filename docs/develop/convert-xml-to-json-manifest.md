@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 04/12/2024
+ms.date: 09/19/2024
 ms.localizationpriority: medium
 ---
 
@@ -10,11 +10,13 @@ ms.localizationpriority: medium
 
 To add Teams capabilities to an add-in that uses the add-in only manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
+   [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
+
 There are three basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
 
 - Ensure that your add-in is ready to convert.
 - Convert the XML-formatted add-in only manifest itself to the JSON format of the unified manifest.
-- Package the new manifest and the two icon image files into a zip file for sideloading or deployment.
+- Package the new manifest and two icon image files (described below) into a zip file for sideloading or deployment. *Depending on how you sideload the converted add-in, this task may be done for you automatically.*
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
@@ -28,9 +30,13 @@ There are three basic tasks to converting an add-in project from the add-in only
 
 The following sections describe conditions that must be met before you convert the manifest.
 
-### Ensure that you have the two image files
+### Uninstall the existing version of the add-in
 
-When you've added the files to the project, add **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) to the add-in only manifest just below the **\<Description\>** element. The following is an example.
+To avoid conflicts with UI control names and other problems, be sure the existing add-in isn't installed on the computer where you do the conversion.
+
+### Ensure that you have two special image files
+
+If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be, respectively, the full URLs of a 64x64 pixel image file and a 128x128 pixel image file. The following is an example.
 
 ```xml
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp">
@@ -46,14 +52,26 @@ When you've added the files to the project, add **\<IconUrl\>** and **\<HighReso
   <!-- Other markup omitted -->
 ```
 
-### Ensure that your function command names are short enough
+### Update the add-in ID, version, domain, and function names in the manifest
 
-If your manifest has any **\<FunctionName\>** elements, make sure their values have fewer than 65 characters. The value of this element must exactly match the name of a function in a JavaScript or TypeScript file. If you change it in the manifest, be sure to change it in the code file too.
+1. Change the the value of the `<ID>` element to a new random GUID.
 
-### Ensure that your SSO add-in requests permissions 
+1. Update the value of the `<Version>` element and ensure that it conforms to the [semver standard](https://semver.org/) (MAJOR.MINOR.PATCH). Each segment can have no more than five digits. For example, change the value `1.0.0.0` to `1.0.1`. The semver standard's prerelease and metadata version string extensions aren't supported.
 
-If your add-in uses Microsoft single sign-on with the on-behalf-of (OBO) flow, your add-in has a **\<Scopes\>** element that specifies the Microsoft Graph or other API permissions that the add-in needs. With the unified manifest, permissions must be requested at runtime in the code. Update your code as needed to request these permissions. The exact code depends on the architecture and authorization code libraries you are using. Typically, code requests permissions in a function that requests an access token. 
+1. Be sure that the domain segment of the add-in's URLs in the manifest are pointing to `https://localhost:3000`.
 
+1. If your manifest has any **\<FunctionName\>** elements, make sure their values have fewer than 65 characters. 
+
+   > [!IMPORTANT]
+   > The value of this element must exactly match the name of an action that is mapped to a function in a JavaScript or TypeScript file with the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) function. If you change it in the manifest, be sure to change it in the `actionId` parameter passed to `associate()` too.
+
+### Verify that the modified add-in only manifest works
+
+1. Validate the modified add-in only manifest. See [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).
+
+1. Verify that the add-in can be sideloaded and run. See [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing.md). 
+
+Resolve any problems before you attempt to convert the project.
 
 ## Conversion tools and options
 
@@ -78,14 +96,14 @@ The easiest way to convert is to use Teams Toolkit.
 
     :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Teams Toolkit icon.":::
 
-1. Select **Create a new app**.
-1. In the **New Project** drop down, select **Outlook Add-in**.
+1. Select **Create a New App**.
+1. In the **New Project** drop down, select **Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-outlook-add-in.png" alt-text="The four options in New Project drop down. The fourth option is called 'Outlook add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The five options in New Project drop down. The fifth option is called 'Office Add-in'.":::
 
-1. In the **App Features Using an Outlook Add-in** drop down, select **Import an Existing Outlook Add-in**.
+1. In the **App Features Using an Office Add-in** drop down, select **Import an Existing Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-outlook-task-pane-capability.png" alt-text="The two options in the App Features Using an Outlook Add-in drop down. The second option is called 'Import an Existing Outlook add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The three options in the App Features Using an Office Add-in drop down. The third option is called 'Import an Existing Office Add-in'.":::
 
 1. In the **Existing add-in project folder** drop down, browse to the root folder of the add-in project.
 1. In the **Select import project manifest file** drop down, browse to the add-in only manifest file, typically named **manifest.xml**.
@@ -98,17 +116,24 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 
 ##### Sideload with the Teams Toolkit
 
-1. First, *make sure Outlook desktop is closed.*
-1. In Visual Studio Code, open the Teams Toolkit.
-1. In the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
-1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press **F5**. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop opens.
-1. You can now work with your add-in. Be sure you're working in the **Inbox** of *your Microsoft 365 account identity*.
+1. First, *make sure Office desktop application that you want to sideload into is closed.*
+1. In Visual Studio Code, open Teams Toolkit.
+1. Required for Outlook only: in the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
+1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select one of these options as appropriate for your add-in.
+ 
+    - **Excel Desktop (Edge Chromium)**
+    - **Outlook Desktop (Edge Chromium)**
+    - **PowerPoint Desktop (Edge Chromium)**
+    - **Word Desktop (Edge Chromium)**
+
+1. Press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then the desktop version of the Office application that you selected opens. You can now work with your add-in. For an Outlook add-in, be sure you're working in the **Inbox** of *your Microsoft 365 account identity*.
+1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code.
 
 ##### Sideload with a system prompt, bash shell, or terminal
 
-1. First, *make sure Outlook desktop is closed.*
+1. First, *make sure Office desktop application that you want to sideload into is closed.*
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
-1. Run the command `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then Outlook desktop opens.
+1. Run the command `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then the Office host application (Excel, Outlook, PowerPoint, or Word) desktop opens.
 1. You can now work with your add-in.
 1. When you're done working with your add-in, make sure to run the command `npm run stop`.
 
@@ -125,7 +150,7 @@ If the project was created with the Office Yeoman Generator and you don't want t
 1. Run `npm install`.
 1. To sideload the add-in, run `npm run start:desktop`. This command puts the unified manifest and the two image files into a zip file and sideloads it to the Office application. It also starts the server in a separate NodeJS window to host the add-in files on localhost.
 
-When you're ready to stop the dev server and uninstall the add-in, run the command `npm run stop`.
+1. When you're ready to stop the dev server and uninstall the add-in, run the command `npm run stop`.
 
 ### NodeJS and npm projects that aren't created with Yeoman Generator
 
@@ -169,4 +194,13 @@ Once you have the unified manifest created, there are two ways to create the zip
     teamsfx m365 sideloading --file-path <relative-path-to-zip-file>
     ``` 
 
+1. When you finish a session working with the add-in, *always stop the session with the following command*, where `<GUID>` is replaced with the value of the "id" property of the manifest.
+
+    ```command&nbsp;line
+    teamsfx m365 unacquire --manifest-id <GUID>
+    ``` 
+
+## Next steps
+
+Consider whether to maintain both the old and new versions of the add-in. See [Manage new and old versions of an add-in](../concepts/duplicate-legacy-metaos-add-ins.md).
 
