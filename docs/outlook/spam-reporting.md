@@ -28,7 +28,7 @@ The following table identifies which Outlook clients support the integrated spam
 | **Outlook on the web** | Supported |
 | [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Supported |
 | **classic Outlook on Windows**<br>Version 2404 (Build 17530.15000) | Supported |
-| **Outlook on Mac**<br>Version 16.81 (24121700) or later | Preview (see [Preview the integrated spam-reporting feature in Outlook on Mac](#preview-the-integrated-spam-reporting-feature-in-outlook-on-mac)) |
+| **Outlook on Mac**<br>Version 16.81 (23121700) or later | Preview (see [Preview the integrated spam-reporting feature in Outlook on Mac](#preview-the-integrated-spam-reporting-feature-in-outlook-on-mac)) |
 | **Outlook on Android** | Not available |
 | **Outlook on iOS** | Not available |
 

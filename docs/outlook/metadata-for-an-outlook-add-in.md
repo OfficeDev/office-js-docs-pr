@@ -311,7 +311,7 @@ Office.context.mailbox.getCallbackTokenAsync(
 
 The following table summarizes saved custom properties behavior in messages for various Outlook clients.
 
-|Scenario|Outlook on the web and on new Windows client|classic Outlook on Windows|Outlook on |
+|Scenario|Outlook on the web and on new Windows client|classic Outlook on Windows|Outlook on Mac|
 |---|---|---|---|
 |New compose|null|null|null|
 |Reply, reply all|null|null|null|

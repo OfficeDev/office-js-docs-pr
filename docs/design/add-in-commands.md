@@ -96,7 +96,7 @@ Add-in commands are currently supported on the following platforms, except for l
 
 - Office on the web
 - Office on Windows (Version 1604 (Build 6769.2000) or later, connected to a Microsoft 365 subscription)
-- Office on Mac (Version 15.33 or later, connected to a Microsoft 365 subscription)
+- Office on Mac (Version 15.33 (17040900) or later, connected to a Microsoft 365 subscription)
 - Perpetual Office 2019 or later on Windows or on Mac
 
 > [!NOTE]
