@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 09/05/2024
+ms.date: 09/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -474,7 +474,7 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 
   :::image type="content" source="../images/outlook-spam-timeout-dialog.png" alt-text="The dialog shown when a spam-reporting add-in times out.":::
 
-- In classic Outlook on Windows, a spam-reporting add-in can be used to report a message even if the Reading Pane of the Outlook client is turned off. This isn't supported in Outlook on the web, on Mac, and in new Outlook on Windows. In these Outlook clients, the Reading Pane must be turned on to use a spam-reporting add-in.
+- In classic Outlook on Windows, a spam-reporting add-in can be used to report a message even if the Reading Pane of the Outlook client is turned off. In Outlook on the web, on Mac, and in new Outlook on Windows, the spam-reporting add-in can be used if the Reading Pane is turned on or the message to be reported is open in another window.
 - Only one message can be reported at a time. If you select multiple messages to report, the button of the spam-reporting add-in becomes unavailable.
 - In classic Outlook on Windows, only one reported message can be processed at a time. If a user attempts to report another message while the previous one is still being processed, a dialog will be shown to them to notify them of this.
 
