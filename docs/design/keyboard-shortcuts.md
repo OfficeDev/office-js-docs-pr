@@ -155,7 +155,7 @@ Use the following guidelines to create custom key combinations for your add-ins.
 - On macOS, the Alt key is mapped to the Option key. On Windows, the Command key is mapped to the Ctrl key.
 - The Shift key can't be used as the only modifier key. It must be combined with either Alt/Option or Ctrl/Command.
 - Key combinations can include characters "A-Z", "a-z", "0-9", and the punctuation marks "-", "_", and "+". By convention, lowercase letters aren't used in keyboard shortcuts.
-- When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, Alt+a and Alt+A are the same shortcut, as well as Ctrl+- and Ctrl+\_ ("-" and "_" are the linked to the same physical key).
+- When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, Alt+a and Alt+A are the same shortcut, as well as Ctrl+- and Ctrl+\_ ("-" and "_" are linked to the same physical key).
 
 > [!NOTE]
 > Custom keyboard shortcuts must be pressed simultaneously. KeyTips, also known as sequential key shortcuts (for example, Alt+H, H), aren't supported in Office Add-ins.
@@ -231,7 +231,7 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
 
 To find out what shortcuts are already in use for the user, call the [Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member) method. This method returns an object of type `[actionId:string]:string|null}`, where the values represent the current keyboard combination the user must use to invoke the specified action. The values can come from three different sources.
 
-- If there was a conflict with the shortcut and the user has chosen to use a different action (either native or another add-in) for that keyboard combination, the value returned will be `null` since the shortcut has been overridden and there is no keyboard combination the user can currently use to invoke that add-in action.
+- If there was a conflict with the shortcut and the user has chosen to use a different action (either native or another add-in) for that keyboard combination, the value returned will be `null` since the shortcut has been overridden and there's no keyboard combination the user can currently use to invoke that add-in action.
 - If the shortcut has been customized using the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) method, the value returned will be the customized keyboard combination.
 - If the shortcut hasn't been overridden or customized, it will return the value from the add-in's extended manifest JSON.
 
