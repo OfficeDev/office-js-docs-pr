@@ -12,13 +12,8 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 > [!IMPORTANT]
 > We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite that starts at 8:00 AM Pacific Time, please remove it and download the latest one at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for September 11, 2024 call
-Here is the agenda for the September Office Add-ins community call.
-* PowerPoint preview APIs and Ribbon 1.1 API updates​.
-* Word API updates​.
-* A new NAA sample for event-based Outlook add-ins​.
-* Visual Studio Code extension: Office Add-ins Developer Kit (public preview​).
-* Extend Teams apps to support Excel, PowerPoint, and Word add-ins (public preview).​
+## Agenda for October 9, 2024 call
+The agenda for the October Office Add-ins community call will be posted the week of the call.
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
