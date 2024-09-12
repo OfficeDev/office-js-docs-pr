@@ -30,7 +30,7 @@ For examples of the error handling described in this section, see:
 
 ### 13000
 
-The [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API is not supported by the add-in or the Office version.
+The [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) API isn't supported by the add-in or the Office version.
 
 - The version of Office does not support SSO. The required version is Microsoft 365 subscription, in any monthly channel.
 - The add-in manifest is missing the proper [WebApplicationInfo](/javascript/api/manifest/webapplicationinfo) section.
@@ -39,9 +39,9 @@ Your add-in should respond to this error by falling back to an alternate system 
 
 ### 13001
 
-The user is not signed into Office. In most scenarios, you should prevent this error from ever being seen by passing the option `allowSignInPrompt: true` in the `AuthOptions` parameter.
+The user isn't signed into Office. In most scenarios, you should prevent this error from ever being seen by passing the option `allowSignInPrompt: true` in the `AuthOptions` parameter.
 
-But there may be exceptions. For example, you want the add-in to open with features that require a logged in user; but *only if* the user is *already* logged into Office. If the user is not, you want the add-in to open with an alternate set of features that do not require that the user is signed in. In this case, logic which runs when the add-in launches calls `getAccessToken` without `allowSignInPrompt: true`. Use the 13001 error as the flag to tell the add-in to present the alternate set of features.
+But there may be exceptions. For example, you want the add-in to open with features that require a logged in user; but *only if* the user is *already* logged into Office. If the user isn't logged in, you want the add-in to open with an alternate set of features that do not require that the user is signed in. In this case, logic which runs when the add-in launches calls `getAccessToken` without `allowSignInPrompt: true`. Use the 13001 error as the flag to tell the add-in to present the alternate set of features.
 
 Another option is to respond to 13001 by falling back to an alternate system of user authentication. This will sign the user into AAD, but not sign the user into Office.
 
@@ -91,7 +91,7 @@ The user is running the add-in in Office on Microsoft Edge. The user's Microsoft
 
 There are several possible causes.
 
-- The add-in is running on a platform that does not support the `getAccessToken` API. For example, it is not supported on iPad. See also [Identity API requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
+- The add-in is running on a platform that does not support the `getAccessToken` API. For example, it isn't supported on iPad. See also [Identity API requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 - The Office document was opened from the **Files** tab of a Teams channel using the **Edit in Teams** option on the **Open** dropdown menu. The `getAccessToken` API isn't supported in this scenario.
 - The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the AAD `profile` scope.
 
@@ -101,11 +101,11 @@ In development, the add-in is sideloaded in Outlook and the `forMSGraphAccess` o
 
 ### 13013
 
-The `getAccessToken` was called too many times in a short amount of time, so Office throttled the most recent call. This is usually caused by an infinite loop of calls to the method. There are scenarios when recalling the method is advisable. However, your code should use a counter or flag variable to ensure that the method is not recalled repeatedly. If the same "retry" code path is running again, the code should fall back to an alternate system of user authentication. For a code example, see how the `retryGetAccessToken` variable is used in [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNETCore-WebAPI/wwwroot/js/HomeES6.js) or [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
+The `getAccessToken` was called too many times in a short amount of time, so Office throttled the most recent call. This is usually caused by an infinite loop of calls to the method. There are scenarios when recalling the method is advisable. However, your code should use a counter or flag variable to ensure that the method isn't recalled repeatedly. If the same "retry" code path is running again, the code should fall back to an alternate system of user authentication. For a code example, see how the `retryGetAccessToken` variable is used in [HomeES6.js](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNETCore-WebAPI/wwwroot/js/HomeES6.js) or [ssoAuthES6.js](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/public/javascripts/ssoAuthES6.js).
 
 ### 50001
 
-This error (which is not specific to `getAccessToken`) may indicate that the browser has cached an old copy of the office.js files. When you are developing, clear the browser's cache. Another possibility is that the version of Office is not recent enough to support SSO. On Windows, the minimum build is 16.0.12215.20006. On Mac, it's 16.32.19102902.
+This error (which isn't specific to `getAccessToken`) may indicate that the browser has cached an old copy of the office.js files. When you're developing, clear the browser's cache. Another possibility is that the version of Office isn't recent enough to support SSO. On Windows, the minimum version is Version 1911 (Build 12215.20006). On Mac, it's Version 16.32 (19102902).
 
 In a production add-in, the add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 

@@ -24,7 +24,7 @@ The following table lists supported client-server combinations for the Smart Ale
 |**Web browser (modern UI)**|Yes|Not applicable|Not applicable|
 |[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
 |**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|
-|**Mac**<br>Version 16.65.827.0 or later|Yes|Not applicable|Not applicable|
+|**Mac**<br>Version 16.65 (22082700) or later|Yes|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 

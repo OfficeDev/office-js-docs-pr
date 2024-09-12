@@ -77,7 +77,7 @@ Outlook add-ins activate on IRM-protected mail items when the item is accessed f
     >[!NOTE]
     > Digital signing relies on protection mechanisms, such as IRM. Starting in classic Outlook on Windows Version 1711 (Build 8711.1000) associated with a Microsoft 365 subscription, add-ins activate on digitally-signed messages.
 
-- Outlook on Mac starting in Version 16.77.827.0
+- Outlook on Mac starting in Version 16.77 (23082700)
 
 However, add-ins won't activate on IRM-protected items when:
 
