@@ -41,8 +41,6 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 ## Insert a range of text
 
 In this step of the tutorial, you'll programmatically test that your add-in supports the user's current version of Word, and then insert a paragraph into the document.

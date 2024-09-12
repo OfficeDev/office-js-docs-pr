@@ -27,8 +27,6 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 ## Explore the project
 
 [!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
