@@ -41,7 +41,13 @@ To avoid conflicts with UI control names and other problems, be sure the existin
 
 ### Ensure that you have two special image files
 
-If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be, respectively, the full URLs of a 64x64 pixel image file and a 128x128 pixel image file. The following is an example.
+If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be, respectively, the full URLs of image files. The files must be a specified size as shown in the following table. 
+
+|Office application|`IconUrl`|`HighResolutionIconUrl`|
+|:---------------|:---------------|:---------------|
+|Outlook|64x64 pixels|128x128 pixels|
+|All other Office</br>applications|32x32 pixels|64x64 pixels| 
+
 
 ```xml
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp">
@@ -84,7 +90,7 @@ There are several ways to carry out the remaining tasks, depending on the IDE an
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
 - [Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")](#convert-projects-created-with-the-office-yeoman-generator-aka-yo-office)
-- [Convert NodeJS and npm projects that aren't created with Yeoman Generator](#convert-nodejs-and-npm-projects-that-arent-created-with-yeoman-generator)
+- [Convert NodeJS and npm projects that weren't created with the Yeoman Generator](#convert-nodejs-and-npm-projects-that-werent-created-with-yeoman-generator)
 
 ### Convert the project with Teams Toolkit
 
