@@ -74,7 +74,7 @@ If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<H
 
 1. Validate the modified add-in only manifest. See [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).
 
-1. Verify that the add-in can be sideloaded and run. See [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing.md). 
+1. Verify that the add-in can be sideloaded and run. See [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing). 
 
 Resolve any problems before you attempt to convert the project.
 
