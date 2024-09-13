@@ -43,7 +43,7 @@ To avoid conflicts with UI control names and other problems, be sure the existin
 
 If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be the full URLs of image files. The images must be a specified size as shown in the following table. 
 
-|Office application|**\<IconUrl\>**|**\<HighResolutionIconUrl\>**|
+|Office application|\<IconUrl\>|\<HighResolutionIconUrl\>|
 |:---------------|:---------------|:---------------|
 |Outlook|64x64 pixels|128x128 pixels|
 |All other Office</br>applications|32x32 pixels|64x64 pixels| 
@@ -91,7 +91,7 @@ There are several ways to carry out the remaining tasks, depending on the IDE an
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
 - [Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")](#convert-projects-created-with-the-office-yeoman-generator-aka-yo-office)
-- [Convert NodeJS and npm projects that weren't created with the Yeoman Generator](#convert-nodejs-and-npm-projects-that-werent-created-with-yeoman-generator)
+- [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-yeoman-generator)
 
 ### Convert the project with Teams Toolkit
 
@@ -109,16 +109,16 @@ The easiest way to convert is to use Teams Toolkit.
     :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Teams Toolkit icon.":::
 
 1. Select **Create a New App**.
-1. In the **New Project** drop down, select **Office Add-in**.
+1. In the **New Project** dropdown menu, select **Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The five options in New Project drop down. The fifth option is called 'Office Add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The five options in New Project dropdown menu. The fifth option is called 'Office Add-in'.":::
 
 1. In the **App Features Using an Office Add-in** dropdown menu, select **Import an Existing Office Add-in**.
 
     :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The three options in the App Features Using an Office Add-in dropdown menu. The third option is called 'Import an Existing Office Add-in'.":::
 
-1. In the **Existing add-in project folder** drop down, browse to the root folder of the add-in project.
-1. In the **Select import project manifest file** drop down, browse to the add-in only manifest file, typically named **manifest.xml**.
+1. In the **Existing add-in project folder** dropdown menu, browse to the root folder of the add-in project.
+1. In the **Select import project manifest file** dropdown menu, browse to the add-in only manifest file, typically named **manifest.xml**.
 1. In the **Workspace folder** dialog, select the folder where you want to put the converted project.
 1. In the **Application name** dialog, give a name to the project (with no spaces). Teams Toolkit creates the project with your source files and scaffolding. It then opens the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 
@@ -145,7 +145,7 @@ If the project was created with the Yeoman generator for Office Add-ins and you 
 1. Run `npm install`.
 1. To sideload the add-in, see [Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)](../testing/sideload-add-in-with-unified-manifest.md#sideload-add-ins-created-with-the-office-yeoman-generator-yo-office).
 
-### Convert NodeJS and npm projects that weren't created with Yeoman Generator
+### Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)
 
 If you don't want to use the Teams Toolkit and your project wasn't created with Yo Office, use the office-addin-manifest-converter tool.
 
