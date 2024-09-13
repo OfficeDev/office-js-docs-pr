@@ -90,8 +90,8 @@ Resolve any problems before you attempt to convert the project.
 There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project, and on the tool you used to create the project. 
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
-- [Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")](#convert-projects-created-with-the-office-yeoman-generator-aka-yo-office)
-- [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-yeoman-generator)
+- [Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")](#convert-projects-created-with-the-yeoman-generator-for-office-add-ins-aka-yo-office)
+- [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-the-yeoman-generator-for-office-add-ins-yo-office)
 
 ### Convert the project with Teams Toolkit
 
@@ -143,7 +143,7 @@ If the project was created with the Yeoman generator for Office Add-ins and you 
     ```
 
 1. Run `npm install`.
-1. To sideload the add-in, see [Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)](../testing/sideload-add-in-with-unified-manifest.md#sideload-add-ins-created-with-the-office-yeoman-generator-yo-office).
+1. To sideload the add-in, see [Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)](../testing/sideload-add-in-with-unified-manifest.md#sideload-add-ins-created-with-the-yeoman-generator-for-office-add-ins-yo-office).
 
 ### Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)
 
