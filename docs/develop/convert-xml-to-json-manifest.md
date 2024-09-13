@@ -41,7 +41,7 @@ To avoid conflicts with UI control names and other problems, be sure the existin
 
 ### Ensure that you have two special image files
 
-If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be, respectively, the full URLs of image files. The images must be a specified size as shown in the following table. 
+If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be the full URLs of image files. The images must be a specified size as shown in the following table. 
 
 |Office application|**\<IconUrl\>**|**\<HighResolutionIconUrl\>**|
 |:---------------|:---------------|:---------------|
