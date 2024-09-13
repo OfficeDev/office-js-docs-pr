@@ -13,7 +13,7 @@ To add Teams capabilities to an add-in that uses the add-in only manifest, or to
 > [!NOTE]
 > 
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
-> - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
+> - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Yeoman generator for Office Add-ins (Yo Office)](yeoman-generator-overview.md), it already uses the unified manifest.
 
    [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
 
@@ -21,7 +21,7 @@ There are three basic tasks to converting an add-in project from the add-in only
 
 - Ensure that your add-in is ready to convert.
 - Convert the XML-formatted add-in only manifest itself to the JSON format of the unified manifest.
-- Package the new manifest and two icon image files (described below) into a zip file for sideloading or deployment. *Depending on how you sideload the converted add-in, this task may be done for you automatically.*
+- Package the new manifest and two icon image files (described later) into a zip file for sideloading or deployment. *Depending on how you sideload the converted add-in, this task may be done for you automatically.*
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
@@ -59,7 +59,7 @@ If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<H
 
 ### Update the add-in ID, version, domain, and function names in the manifest
 
-1. Change the the value of the `<ID>` element to a new random GUID.
+1. Change the value of the `<ID>` element to a new random GUID.
 
 1. Update the value of the `<Version>` element and ensure that it conforms to the [semver standard](https://semver.org/) (MAJOR.MINOR.PATCH). Each segment can have no more than five digits. For example, change the value `1.0.0.0` to `1.0.1`. The semver standard's prerelease and metadata version string extensions aren't supported.
 
@@ -68,7 +68,7 @@ If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<H
 1. If your manifest has any **\<FunctionName\>** elements, make sure their values have fewer than 65 characters. 
 
    > [!IMPORTANT]
-   > The value of this element must exactly match the name of an action that is mapped to a function in a JavaScript or TypeScript file with the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) function. If you change it in the manifest, be sure to change it in the `actionId` parameter passed to `associate()` too.
+   > The value of this element must exactly match the name of an action that's mapped to a function in a JavaScript or TypeScript file with the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) function. If you change it in the manifest, be sure to change it in the `actionId` parameter passed to `associate()` too.
 
 ### Verify that the modified add-in only manifest works
 
@@ -83,7 +83,7 @@ Resolve any problems before you attempt to convert the project.
 There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project, and on the tool you used to create the project. 
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
-- [Convert projects created with the Office Yeoman Generator (aka "Yo Office")](#convert-projects-created-with-the-office-yeoman-generator-aka-yo-office)
+- [Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")](#convert-projects-created-with-the-office-yeoman-generator-aka-yo-office)
 - [Convert NodeJS and npm projects that aren't created with Yeoman Generator](#convert-nodejs-and-npm-projects-that-arent-created-with-yeoman-generator)
 
 ### Convert the project with Teams Toolkit
@@ -106,9 +106,9 @@ The easiest way to convert is to use Teams Toolkit.
 
     :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The five options in New Project drop down. The fifth option is called 'Office Add-in'.":::
 
-1. In the **App Features Using an Office Add-in** drop down, select **Import an Existing Office Add-in**.
+1. In the **App Features Using an Office Add-in** dropdown menu, select **Import an Existing Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The three options in the App Features Using an Office Add-in drop down. The third option is called 'Import an Existing Office Add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The three options in the App Features Using an Office Add-in dropdown menu. The third option is called 'Import an Existing Office Add-in'.":::
 
 1. In the **Existing add-in project folder** drop down, browse to the root folder of the add-in project.
 1. In the **Select import project manifest file** drop down, browse to the add-in only manifest file, typically named **manifest.xml**.
@@ -125,9 +125,9 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 > [!NOTE] 
 > Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 
-### Convert projects created with the Office Yeoman Generator (aka "Yo Office")
+### Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")
 
-If the project was created with the Office Yeoman Generator and you don't want to use the Teams Toolkit, convert it using the following steps.
+If the project was created with the Yeoman generator for Office Add-ins and you don't want to use the Teams Toolkit, convert it using the following steps.
 
 1. In the root of the project, open a command prompt or bash shell and run the following command. This converts the manifest and updates the package.json to specify current tooling packages. The new unified manifest is in the root of the project and the old add-in only manifest is in a backup.zip file. For details about this command, see [Office-Addin-Project](https://www.npmjs.com/package/office-addin-project).
 
@@ -136,11 +136,11 @@ If the project was created with the Office Yeoman Generator and you don't want t
     ```
 
 1. Run `npm install`.
-1. To sideload the add-in, see [Sideload add-ins created with the Office Yeoman Generator](../testing/sideload-add-in-with-unified-manifest.md#sideload-add-ins-created-with-the-office-yeoman-generator-yo-office).
+1. To sideload the add-in, see [Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)](../testing/sideload-add-in-with-unified-manifest.md#sideload-add-ins-created-with-the-office-yeoman-generator-yo-office).
 
-### Convert NodeJS and npm projects that aren't created with Yeoman Generator
+### Convert NodeJS and npm projects that weren't created with Yeoman Generator
 
-If you don't want to use the Teams Toolkit and your project wasn't created with the Office Yeoman generator, use the office-addin-manifest-converter tool.
+If you don't want to use the Teams Toolkit and your project wasn't created with Yo Office, use the office-addin-manifest-converter tool.
 
 In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named **MyManifest.xml**, the unified manifest is created at **.\MyManifest\MyManifest.json**. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
@@ -148,7 +148,7 @@ In the root of the project, open a command prompt or bash shell and run the foll
 npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
 ```
 
-Once you have the unified manifest created, there are two ways to create the zip file and sideload it. For  more information, see [Sideload other NodeJS and npm projects](../testing/sideload-add-in-with-unified-manifest.md#sideload-other-nodejs-and-npm-projects).
+Once you have the unified manifest created, there are two ways to create the zip file and sideload it. For more information, see [Sideload other NodeJS and npm projects](../testing/sideload-add-in-with-unified-manifest.md#sideload-other-nodejs-and-npm-projects).
 
 ## Next steps
 

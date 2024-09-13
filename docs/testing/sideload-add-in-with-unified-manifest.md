@@ -10,9 +10,9 @@ ms.localizationpriority: medium
 The process of sideloading an add-in that uses the [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) varies depending on the tool you want to use and on how the add-in project was created. 
 
 > [!NOTE]
-> An add-in that uses the unified manifest can be sideloaded on Office on Windows, Version 2304 (Build 16320.20000) or later. Currently, it cannot be sideloaded on the web, Mac, or iPad.
+> An add-in that uses the unified manifest can be sideloaded on Office on Windows, Version 2304 (Build 16320.20000) or later. Currently, it can't be sideloaded on the web, Mac, or iPad.
 
-## Sideload add-ins created with the Office Yeoman Generator (Yo Office)
+## Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)
 
 Use the process described in [Sideload with a system prompt, bash shell, or terminal](#sideload-with-a-system-prompt-bash-shell-or-terminal).
 
@@ -21,7 +21,7 @@ Use the process described in [Sideload with a system prompt, bash shell, or term
 1. First, *make sure Office desktop application that you want to sideload into is closed.*
 1. In Visual Studio Code, open Teams Toolkit.
 1. Required for Outlook only: in the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
-1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select one of these options as appropriate for your add-in.
+1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select one of these options as appropriate for your add-in.
  
     - **Excel Desktop (Edge Chromium)**
     - **Outlook Desktop (Edge Chromium)**
@@ -33,7 +33,7 @@ Use the process described in [Sideload with a system prompt, bash shell, or term
 
 ## Sideload with a system prompt, bash shell, or terminal
 
-1. First, *make sure Office desktop application that you want to sideload into is closed.*
+1. First, *make sure the Office desktop application that you want to sideload into is closed.*
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
 1. Run the command `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then the Office host application (Excel, Outlook, PowerPoint, or Word) desktop opens.
 1. You can now work with your add-in.
@@ -69,7 +69,8 @@ There are two tools you can use to sideload.
 
     ```command&nbsp;line
     npm install -g @microsoft/teamsfx-cli
-
+    ```
+    ```command&nbsp;line
     teamsfx m365 sideloading --file-path <relative-path-to-zip-file>
     ``` 
 
