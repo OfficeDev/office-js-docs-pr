@@ -2,7 +2,7 @@
 title: Maintain your Office Add-in
 description: Understand our commitments to compatibility and how to keep your add-in up to date.
 ms.topic: best-practice
-ms.date: 08/09/2024
+ms.date: 09/13/2024
 ms.localizationpriority: medium
 ---
 
@@ -50,10 +50,6 @@ The [Yeoman Generator for Office Add-ins](../develop/yeoman-generator-overview.m
 - [Dependabot and other GitHub security features](https://github.com/features/security)
 
 This guidance also applies to copies of samples taken from the [Office Add-in code samples](https://github.com/OfficeDev/Office-Add-in-samples) and other sources.
-
-### office.js NPM package
-
-The [office-js NPM package](https://www.npmjs.com/package/@microsoft/office-js) is a copy of what is hosted on the [Office.js content delivery network (CDN)](../develop/understanding-the-javascript-api-for-office.md#accessing-the-office-javascript-api-library). It's intended for scenarios where direct access to the CDN isn't possible. The NPM package isn't intended to provide versioned references to office.js. We strongly recommend always using the CDN to ensure you're using the latest version of the Office JavaScript APIs.
 
 ## Current best practices
 
