@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 08/01/2024
+ms.date: 09/19/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,15 +15,7 @@ Sideload your Outlook add-in for testing without having to first put it in an ad
 
 ## Sideload an add-in that uses the unified app manifest for Microsoft 365
 
-The process to sideload an add-in that uses the unified app manifest for Microsoft 365 varies depending on the tool you used to create your add-in project.
-
-- For add-in projects created using the [Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode), use one of the following options.
-  - [Sideload in Visual Studio Code with Teams Toolkit](../develop/convert-xml-to-json-manifest.md#sideload-with-the-teams-toolkit)
-  - [Sideload in Visual Studio Code with a system prompt, bash shell, or terminal](../develop/convert-xml-to-json-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal)
-- For add-in projects created using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), in a command prompt, navigate to the root of your project. Then, run `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes before it opens Outlook desktop.
-- For NodeJS and npm projects that weren't created with the Yeoman generator, use one of the following options.
-  - [Sideload with the Office-Addin-Debugging tool](../develop/convert-xml-to-json-manifest.md#sideload-with-the-office-addin-debugging-tool)
-  - [Sideload with the Teams Toolkit CLI (command-line interface)](../develop/convert-xml-to-json-manifest.md#sideload-with-the-teams-toolkit-cli-command-line-interface)
+The process to sideload an add-in that uses the unified app manifest for Microsoft 365 varies depending on the tool you used to create your add-in project. For more information, see [Sideload Office Add-ins that use the unified manifest for Microsoft 365](../testing/sideload-add-in-with-unified-manifest.md).
 
 ## Sideload an add-in that uses an XML manifest
 
