@@ -100,13 +100,7 @@ sections:
            This can occur when NAA is not available in the Outlook client. If on Windows, check that you are using either the Beta Channel, or Current Channel (Preview). You need to join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join/windows) to switch to these channels.
            A good way to check if NAA is available is to check the requirement set using the following code snippet.
            `Office.context.requirements.isSetSupported("NestedAppAuth")`
-       - question: How do I get more debug information from MSAL and NAA?
-           Use the following code to enable debug information in the msalConfig when you initialize the nestable public client application. This will log additional details to the console.
-           ```javascript
-           const msalConfig = {
-              auth: {...}
-           ```
-
+       
 additionalContent: |
 
   ## Related content
