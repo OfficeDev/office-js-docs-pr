@@ -573,7 +573,7 @@ items:
       - name: Custom functions tutorial
         href: tutorials/excel-tutorial-create-custom-functions.md
         displayName: Excel, Custom Functions
-      - name: Share custom function data with the task pane tutorial
+      - name: Share custom function data with the task pane
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
     - name: Naming and localization
@@ -588,27 +588,33 @@ items:
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
+    - name: Manually create JSON metadata
+      href: excel/custom-functions-json.md
+      displayName: Excel, Custom Functions
+    - name: Call Excel JavaScript APIs
+      href: excel/call-excel-apis-from-custom-function.md
+      displayName: Excel, Custom Functions
     - name: Batching custom function remote calls
       href: excel/custom-functions-batching.md
       displayName: Excel, Custom Functions
     - name: Data types
       href: excel/custom-functions-data-types-concepts.md
       displayName: Excel, Custom Functions
-    - name: Call Excel JavaScript APIs
-      href: excel/call-excel-apis-from-custom-function.md
-      displayName: Excel, Custom Functions
     - name: Extend custom functions with XLL user-defined functions
       href: excel/make-custom-functions-compatible-with-xll-udf.md
-      displayName: Excel, Custom Functions
-    - name: Manually create JSON metadata
-      href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
     - name: Return a dynamic array
       href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
+    - name: Volatile functions
+      href: excel/custom-functions-volatile.md
+      displayName: Excel, Custom Functions
+    - name: Web requests
+      href: excel/custom-functions-web-reqs.md
+      displayName: Excel, Custom Functions
     - name: Custom functions without a shared runtime
       items: 
-        - name: Authentication for custom functions without a shared runtime
+        - name: Authentication
           href: excel/custom-functions-authentication.md
           displayName: Excel, Custom Functions
         - name: JavaScript-only runtime for custom functions
@@ -617,12 +623,6 @@ items:
         - name: Debugging
           href: excel/custom-functions-debugging.md
           displayName: Excel, Custom Functions
-    - name: Volatile functions
-      href: excel/custom-functions-volatile.md
-      displayName: Excel, Custom Functions
-    - name: Web requests
-      href: excel/custom-functions-web-reqs.md
-      displayName: Excel, Custom Functions
     - name: Troubleshooting
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
