@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 09/10/2024
+ms.date: 09/26/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -140,21 +140,18 @@ If the Smart Alerts add-in implements the **prompt user** option, it doesn't pro
 
 When a user navigates away from the message they're sending (for example, to read a message in their inbox), the behavior of a Smart Alerts add-in differs between Outlook clients. Select the tab for the Outlook client on which the add-in is running.
 
-# [Web/New Outlook on Windows](#tab/web)
+# [Web/Windows (new and classic)](#tab/web)
 
-In Outlook on the web or in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder. The user is then alerted that they must resend the message from the **Drafts** folder and remain on the message until the add-in completes processing it.
-
-:::image type="content" source="../images/outlook-smart-alerts-item-switch-dialog-web.png" alt-text="The dialog shown to the user in Outlook on the web or new Outlook on Windows when they navigate away from a message after selecting Send.":::
-
-# [Windows (classic)](#tab/windows)
+> [!NOTE]
+> In classic Outlook on Windows, the behavior described in this section applies to Version 2402 (Build 17310.10000) and later.
 
 #### Message composed in a window
 
-Starting in Version 2402 (Build 17310.10000), if a message is being composed in a separate window, such as a new message, and a user navigates away from it after they select **Send**, the Smart Alerts add-in will continue to process the message in the background. If additional actions are needed before the message can be sent, the appropriate Smart Alerts dialog is shown to the user (see [Available send mode options](#available-send-mode-options)).
+If a message is being composed in a separate window, such as a new message, and a user navigates away from it after they select **Send**, the Smart Alerts add-in will continue to process the message in the background. If additional actions are needed before the message can be sent, the appropriate Smart Alerts dialog is shown to the user (see [Available send mode options](#available-send-mode-options)).
 
 #### Message composed in the Reading Pane
 
-Starting in Version 2402 (Build 17310.10000), if a reply, forward, or existing draft is being composed in the Outlook Reading Pane, and a user navigates away from it after they select **Send**, a dialog with options is shown to the user. The options available depend on the [send mode option](#available-send-mode-options) implemented by the add-in.
+If a reply, forward, or existing draft is being composed in the Outlook Reading Pane, and a user navigates away from it after they select **Send**, a dialog with options is shown to the user. The options available depend on the [send mode option](#available-send-mode-options) implemented by the add-in.
 
 If the **prompt user** send mode option is implemented, the following options are shown.
 
