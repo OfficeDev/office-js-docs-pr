@@ -594,13 +594,13 @@ items:
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
-    - name: Batching custom function remote calls
-      href: excel/custom-functions-batching.md
-      displayName: Excel, Custom Functions
     - name: Data types
       href: excel/custom-functions-data-types-concepts.md
       displayName: Excel, Custom Functions
-    - name: Extend custom functions with XLL user-defined functions
+    - name: Batch custom function remote calls
+      href: excel/custom-functions-batching.md
+      displayName: Excel, Custom Functions
+    - name: Extend custom functions with XLL add-ins
       href: excel/make-custom-functions-compatible-with-xll-udf.md
       displayName: Excel, Custom Functions
     - name: Return a dynamic array
@@ -623,7 +623,7 @@ items:
         - name: Debugging
           href: excel/custom-functions-debugging.md
           displayName: Excel, Custom Functions
-    - name: Troubleshooting
+    - name: Troubleshoot custom functions
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
 
