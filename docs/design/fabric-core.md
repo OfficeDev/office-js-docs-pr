@@ -22,7 +22,7 @@ If your add-in's UI isn't React-based, you can also make use of a set of non-Rea
 1. Add the content delivery network (CDN) reference to the HTML on your page.
 
     ```html
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css">
+    <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/9.6.1/css/fabric.min.css">
     ```
 
 2. Use Fabric Core icons and fonts.
