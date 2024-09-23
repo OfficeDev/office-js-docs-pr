@@ -130,10 +130,6 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 1. Navigate to the root directory of the project.
 
     ```command&nbsp;line
@@ -216,6 +212,8 @@ Before going any further, let's test the basic add-in that the generator created
     If everything's been set up correctly, the task pane opens and renders the add-in's welcome page.
 
     ![The Show Taskpane button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Define buttons
 
@@ -1578,6 +1576,6 @@ In this tutorial, you've created an Outlook add-in that can be used in message c
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Outlook add-in design guidelines](../outlook/outlook-addin-design.md)
 - [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)

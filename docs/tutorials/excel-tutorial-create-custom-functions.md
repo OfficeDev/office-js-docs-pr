@@ -39,10 +39,6 @@ In this tutorial, you will:
 
     The Yeoman generator will create the project files and install supporting Node components.
 
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 1. Navigate to the root folder of the project.
 
     ```command&nbsp;line

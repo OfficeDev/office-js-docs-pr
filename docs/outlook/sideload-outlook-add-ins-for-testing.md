@@ -90,9 +90,11 @@ To learn how to access a sideloaded add-in in your Outlook client, see [Use add-
 
 ## Remove a sideloaded add-in
 
-On all versions of Outlook, the key to removing a sideloaded add-in is the **Add-Ins for Outlook** dialog, which lists your installed add-ins. To access the dialog on your Outlook client, use the steps listed for [manual sideloading](#sideload-manually) in the previous section of this article.
+If you ran the `npm start` command and your add-in was automatically sideloaded, then run the command `npm stop` when you're ready to stop the dev server and uninstall your add-in. If you ran `npm run start`, then run the command `npm run stop` instead.
 
-To remove a sideloaded add-in from Outlook, in the **Add-Ins for Outlook** dialog, navigate to the **Custom Addins** section. Choose the ellipsis (`...`) for the add-in, then choose **Remove**.
+Otherwise, on all versions of Outlook, the key to removing a sideloaded add-in is the **Add-Ins for Outlook** dialog, which lists your installed add-ins. To access the dialog on your Outlook client, use the steps listed for [manual sideloading](#sideload-manually) in the previous section of this article.
+
+To manually remove a sideloaded add-in from Outlook, in the **Add-Ins for Outlook** dialog, navigate to the **Custom Addins** section. Choose the ellipsis (`...`) for the add-in, then choose **Remove**.
 
 ## See also
 

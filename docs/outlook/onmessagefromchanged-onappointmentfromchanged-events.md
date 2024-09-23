@@ -29,7 +29,7 @@ The following tables list client-server combinations that support the `OnMessage
 |-----|-----|-----|-----|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -39,7 +39,7 @@ The following tables list client-server combinations that support the `OnMessage
 |-----|-----|-----|-----|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -51,7 +51,7 @@ To test the walkthrough, you must have at least two Exchange accounts.
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -250,7 +250,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
 > [!TIP]
 >
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the event handlers
 
@@ -404,6 +404,8 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 1. Select **From**, then choose a different Exchange account. Alternatively, manually enter the Exchange email address by selecting **From** > **Other Email Address**. An updated signature is added to the message, replacing the previous one.
 
    :::image type="content" source="../images/OnMessageFromChanged_update_signature.png" alt-text="A sample of an updated signature with a logo when the account in the From field is changed.":::
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Troubleshoot your add-in
 

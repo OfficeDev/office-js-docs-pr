@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 06/25/2024
+ms.date: 09/12/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -19,7 +19,7 @@ The following sections walk you through how to develop an event-based add-in tha
 
 Before you start the walkthrough, verify that your Outlook client supports the Smart Alerts feature. For guidance, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms).
 
-Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -217,13 +217,18 @@ To configure the manifest, select the tab for the type of manifest you are using
 > [!TIP]
 >
 > - For a list of send mode options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement event handling
 
 You have to implement handling for your selected event.
 
 In this scenario, you'll add handling for sending a message. Your add-in will check for certain keywords in the message. If any of those keywords are found, it will then check for any attachments. If there are no attachments, your add-in will recommend to the user to add the possibly missing attachment.
+
+> [!NOTE]
+> The event handler in this walkthrough implements the [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property. This property is currently in preview in Outlook on the web and on Windows (new and classic). Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the Feedback section at the end of this page).
+>
+> To test this feature in classic Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
 
 1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
@@ -339,7 +344,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 > [!NOTE]
 >
-> - Support to customize the **Don't Send** button was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> Support to customize the **Don't Send** button was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. The [send mode option](onmessagesend-onappointmentsend-events.md#available-send-mode-options) specified in the manifest determines the options that appear to the user in the dialog. The **Don't Send** option appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog. To provide the user with further guidance on how to meet the conditions of your add-in, customize the text of this button and program it to open a task pane where you can provide additional information and functionality.
 
@@ -410,7 +415,7 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 
 > [!NOTE]
 >
-> - Support to customize the **Don't Send** button was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> Support to customize the **Don't Send** button was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 There may be instances when you want your add-in to implement different send mode options. For example, you may want your add-in to enforce the **block** option on mail items that don't meet the information protection policies of your organization, but only have it apply the **prompt user** option to provide a recommendation if a user adds the incorrect recipient.
 
@@ -647,14 +652,16 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
         ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
 
-    > [!TIP]
-    > If you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
+    > [!NOTE]
+    > In supported versions of classic Outlook on Windows prior to Version 2410 (Build 18031.15000), if you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
 
 1. Add an attachment to your message. If you implemented the optional step to customize the **Don't Send** button, use the task pane to add an attachment.
 
     ![Task pane with an option to add an attachment.](../images/outlook-smart-alerts-task-pane.png)
 
 1. Send the message. There should be no alert this time.
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ### Try out overriding the send mode option at runtime (optional)
 
@@ -679,7 +686,7 @@ If you implemented the optional step to override the send mode option at runtime
 
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)

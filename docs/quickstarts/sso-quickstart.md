@@ -43,10 +43,6 @@ In this article, you'll use the Yeoman generator for Office Add-ins to create an
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 ## Explore the project
 
 The add-in project that you've created with the Yeoman generator contains code for an SSO-enabled task pane add-in.
@@ -155,7 +151,7 @@ Complete the following steps to try out an Outlook add-in.
 
 Congratulations, you've successfully created a task pane add-in that uses SSO when possible, and uses an alternate method of user authentication when SSO is not supported. To learn about customizing your add-in to add new functionality that requires different permissions, see [Customize your Node.js SSO-enabled add-in](sso-quickstart-customize.md).
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## See also
 

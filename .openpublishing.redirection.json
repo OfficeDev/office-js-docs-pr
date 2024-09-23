@@ -58,7 +58,7 @@
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
-            "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"
+            "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-preview"
         },
         {
             "source_path": "docs/reference/visio-api-reference.md",
@@ -86,7 +86,11 @@
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-vue.md",
-            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-vue"
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-yo"
+        },
+        {
+            "source_path": "docs/quickstarts/excel-quickstart-vue.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-yo"
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-react.md",
@@ -228,6 +232,11 @@
         {
             "source_path": "docs/develop/resource-limits-and-performance-optimization.md",
             "redirect_url": "/office/dev/add-ins/concepts/resource-limits-and-performance-optimization",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md",
+            "redirect_url": "/office/dev/add-ins/develop/referencing-the-javascript-api-for-office-library-from-its-cdn",
             "redirect_document_id": true
         },
         {
@@ -1226,8 +1235,23 @@
             "redirect_url": "/office/dev/add-ins/testing/sideload-an-office-add-in-on-mac"
         },
         {
+            "source_path": "docs/quickstarts/outlook-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/outlook-quickstart-yo",
+            "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/quickstarts/powerpoint-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/powerpoint-quickstart-yo",
+            "redirect_document_id": true
+        },
+        {
             "source_path": "docs/quickstarts/sso-quickstart-customize.md",
             "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
+        },
+        {
+            "source_path": "docs/quickstarts/word-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart-yo",
+            "redirect_document_id": true
         },
         {
             "source_path": "docs/outlook/manage-state-and-settings-outlook.md",
@@ -1264,6 +1288,10 @@
         {
             "source_path": "docs/outlook/use-regular-expressions-to-show-an-outlook-add-in.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/activation-rules.md",
+            "redirect_url": "/javascript/api/manifest/rule"
         }
     ]
 }
