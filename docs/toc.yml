@@ -393,7 +393,9 @@ items:
       items:
       - name: Publish your add-in (Visual Studio)
         href: publish/package-your-add-in-using-visual-studio.md
-      - name: Stage an Office Add-in on Microsoft Azure
+      - name: Stage an Office Add-in on Microsoft Azure with Visual Studio
+        href: publish/host-an-office-add-in-on-microsoft-azure.md
+      - name: Stage an Outlook add-in on Microsoft Azure with Visual Studio
         href: publish/host-an-office-add-in-on-microsoft-azure.md
     - name: Publish add-ins to AppSource
       href: publish/publish-office-add-ins-to-appsource.md

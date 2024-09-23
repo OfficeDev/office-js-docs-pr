@@ -1,7 +1,7 @@
 ---
-title: Stage an Office Add-in on Microsoft Azure
+title: Stage an Office Add-in on Microsoft Azure with Visual Studio
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application.
-ms.date: 08/09/2024
+ms.date: 09/25/2024
 ms.localizationpriority: medium
 ---
 
