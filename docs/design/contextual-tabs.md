@@ -56,7 +56,7 @@ Adding custom contextual tabs requires your add-in to use the [shared runtime](.
 
 ## Specify the icons for your contextual tab
 
-Before you can customize your contextual tab, you must first specify any icons that will appear on it in the [Resources](/javascript/api/manifest/resources) element of your add-in's manifest.
+Before you can customize your contextual tab, you must first specify any icons that will appear on it in with an [Image](/javascript/api/manifest/image) element in the [Resources](/javascript/api/manifest/resources) section of your add-in's manifest. Each icon must have at least three sizes: 16x16 px, 32x32 px, and 80x80 px.
 
 The following is an example.
 
@@ -154,7 +154,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
     }
     ```
 
-1. Every group must have an icon of at least two sizes, 32x32 px and 80x80 px. Optionally, you can also have icons of sizes 16x16 px, 20x20 px, 24x24 px, 40x40 px, 48x48 px, and 64x64 px. Office decides which icon to use based on the size of the ribbon and Office application window. Add the following objects to the icon array. (If the window and ribbon sizes are large enough for at least one of the *controls* on the group to appear, then no group icon at all appears. For an example, watch the **Styles** group on the Word ribbon as you shrink and expand the Word window.) About this markup, note:
+1. Every group must have an icon of at least three sizes: 16x16 px, 32x32 px, and 80x80 px. Optionally, you can also have icons of sizes 20x20 px, 24x24 px, 40x40 px, 48x48 px, and 64x64 px. Office decides which icon to use based on the size of the ribbon and Office application window. Add the following objects to the icon array. (If the window and ribbon sizes are large enough for at least one of the *controls* on the group to appear, then no group icon at all appears. For an example, watch the **Styles** group on the Word ribbon as you shrink and expand the Word window.) About this markup, note:
 
     - Both the properties are required.
     - The `size` property unit of measure is pixels. Icons are always square, so the number is both the height and the width.
