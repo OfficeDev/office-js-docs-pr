@@ -816,7 +816,7 @@ items:
       - name: "Scenario: Implement single sign-on"
         href: outlook/implement-sso-in-outlook-add-in.md
       - name: Legacy token deprecation FAQ 
-        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.yml
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
     - name: Testing and tips
       items:
       - name: Overview
