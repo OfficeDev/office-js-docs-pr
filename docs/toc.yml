@@ -396,7 +396,7 @@ items:
       - name: Stage an Office Add-in on Microsoft Azure with Visual Studio
         href: publish/host-an-office-add-in-on-microsoft-azure.md
       - name: Stage an Outlook add-in on Microsoft Azure with Visual Studio
-        href: publish/host-an-office-add-in-on-microsoft-azure.md
+        href: publish/stage-outlook-add-in-azure.md
     - name: Publish add-ins to AppSource
       href: publish/publish-office-add-ins-to-appsource.md
     - name: AppSource validation policies
