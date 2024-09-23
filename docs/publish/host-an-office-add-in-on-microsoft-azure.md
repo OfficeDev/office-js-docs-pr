@@ -5,14 +5,14 @@ ms.date: 09/25/2024
 ms.localizationpriority: medium
 ---
 
-# Stage an Office Add-in on Microsoft Azure
+# Stage an Office Add-in on Microsoft Azure with Visual Studio
 
 The simplest Office Add-in is made up of an manifest file and an HTML page. The manifest file describes the add-in's characteristics, such as its name, what Office desktop clients it can run in, and the URL for the add-in's HTML page. The HTML page is contained in a web app that users interact with when they install and run your add-in within an Office client application. You can host the web app of an Office Add-in on any web hosting platform, including Azure.
 
 This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/test-debug-non-local-server.md) for testing in an Office client application.
 
 > [!IMPORTANT]
-> The process described in this article doesn't apply to Outlook Add-ins.
+> The process described in this article doesn't apply to Outlook add-ins. For instructions about staging add-ins for Outlook on Azure, see [Stage an Outlook Add-in on Microsoft Azure with Visual Studio](stage-outlook-add-in-azure.md).
 
 ## Prerequisites
 
