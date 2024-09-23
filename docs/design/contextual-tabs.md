@@ -66,6 +66,9 @@ The following is an example.
         <bt:Image id="contextual-tab-icon-16" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"/>
         <bt:Image id="contextual-tab-icon-32" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"/>
         <bt:Image id="contextual-tab-icon-80" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/Group80x80.png"/>
+        <bt:Image id="contextual-button-icon-16" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"/>
+        <bt:Image id="contextual-button-icon-32" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"/>
+        <bt:Image id="contextual-button-icon-80" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton80x80.png"/>
     </bt:Images>
     ...
 </Resources>
@@ -165,6 +168,10 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 
     ```json
     {
+        "size": 16,
+        "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"
+    },
+    {
         "size": 32,
         "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"
     },
@@ -198,6 +205,10 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
         },
         "icon": [
             {
+                "size": 16,
+                "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+            },
+            {
                 "size": 32,
                 "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"
             },
@@ -230,6 +241,10 @@ The following is the complete example of the JSON blob.
           "label": "Insertion",
           "icon": [
             {
+                "size": 16,
+                "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"
+            },
+            {
                 "size": 32,
                 "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"
             },
@@ -250,6 +265,10 @@ The following is the complete example of the JSON blob.
                     "description": "Use this button to insert data into the document."
                 },
                 "icon": [
+                    {
+                        "size": 16,
+                        "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+                    },
                     {
                         "size": 32,
                         "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"
