@@ -35,10 +35,6 @@ The following tables list the key milestones based on which channel customers ar
 > [!NOTE]
 > If a single tenant uses multiple Microsoft 365 apps / Office release channels, Legacy Exchange Online tokens will be turned off based on the "slowest" release channel.
 
-### Can I opt out of legacy Exchange online tokens being turned off?
-
-We'll provide a switch for Microsoft 365 administrators in October 2024 to turn legacy Exchange tokens on or off in your tenant. You can use it to ensure add-ins aren't broken if they haven't updated to use NAA yet. However, in June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025 it will not be possible to turn on legacy Exchange Online tokens and they will be turned off for all tenants.
-
 ## Outlook add-in migration FAQ
 
 ### Why is Microsoft making Outlook add-ins migrate?
@@ -89,7 +85,7 @@ Add-ins may use the legacy Exchange tokens to get resources from Exchange throug
 - `makeEwsRequestAsync`
 - `getUserIdentityTokenAsync`
 - `getCallbackTokenAsync`
-          
+
 If you rely on an independent software vendor (ISV) for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, we recommend you ask them to review the [Updates on deprecating legacy Exchange Online tokens for Outlook add-ins blog](https://devblogs.microsoft.com/microsoft365dev/updates-on-deprecating-legacy-exchange-online-tokens-for-outlook-add-ins/?commentid=1131) and ask any questions to the Outlook extensibility PM team on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
 
 ### As an admin, I don't own an add-in that needs an update. What should I do?
