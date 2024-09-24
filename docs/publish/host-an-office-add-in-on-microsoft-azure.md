@@ -51,7 +51,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 1. Start Word and create a document.
 
     > [!NOTE]
-    > Although this example uses Word, you can use any Office application that supports Office Add-ins such as Excel, Outlook, PowerPoint, or Project.
+    > Although this example uses Word, you can use any Office application that supports Office Add-ins such as Excel, PowerPoint, or Project.
 
 1. Choose **File** > **Options**.
 
