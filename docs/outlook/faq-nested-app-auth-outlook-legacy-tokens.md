@@ -9,7 +9,7 @@ ms.date: 09/23/2024
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
 
-Exchange [user identity tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#exchange-user-identity-token) and [callback tokens](https://learn.microsoft.com/office/dev/add-ins/outlook/authentication#callback-tokens) are deprecated and will be turned off starting in October 2024. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
+Exchange [user identity tokens](authentication.md#exchange-user-identity-token) and [callback tokens](authentication.md#callback-tokens) are deprecated and will be turned off starting in October 2024. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
 
 ## General FAQ
 
@@ -39,7 +39,7 @@ The following table lists the key milestones based on which channel customers ar
 
 ### Why is Microsoft making Outlook add-ins migrate?
 
-Switching to Microsoft Graph using Entra ID tokens is a big improvement in security for Outlook and Exchange customers. Entra ID (formerly Azure Active Directory) is a leading cloud-based identity and access management service. Customers can take advantage of zero trust features such as conditional access, MFA requirements, continual token monitoring, real time safety heuristics, and more that aren't available with legacy Exchange tokens. Customers have much of their most important business data stored in Exchange, so it's vital that we ensure this data is protected. Migrating the whole Outlook ecosystem to use Entra ID tokens with Microsoft Graph greatly improves security for customer data.
+Switching to Microsoft Graph using Entra ID tokens is a big improvement in security for Outlook and Exchange customers. Entra ID (formerly Azure Active Directory) is a leading cloud-based identity and access management service. Customers can take advantage of zero trust features such as conditional access, MFA requirements, continual token monitoring, real time safety heuristics, and more that aren't available with legacy Exchange tokens. Customers store important business data stored in Exchange, so it's vital that we ensure this data is protected. Migrating the whole Outlook ecosystem to use Entra ID tokens with Microsoft Graph greatly improves security for customer data.
 
 ### Can I opt out?
 
@@ -87,11 +87,6 @@ Add-ins may use the legacy Exchange tokens to get resources from Exchange throug
 - `getCallbackTokenAsync`
 
 If you rely on an independent software vendor (ISV) for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, we recommend you ask them to review the [Updates on deprecating legacy Exchange Online tokens for Outlook add-ins blog](https://devblogs.microsoft.com/microsoft365dev/updates-on-deprecating-legacy-exchange-online-tokens-for-outlook-add-ins/?commentid=1131) and ask any questions to the Outlook extensibility PM team on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
-
-### As an admin, I don't own an add-in that needs an update. What should I do?
-
-If you rely on an independent software vendor (ISV) for your add-in, we recommend reaching out as soon as possible to confirm they have a plan and a timeline for moving off of legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens.
-If you rely on a developer within your organization, we recommend asking them to reach out to the Outlook extensibility PM team on GitHub: [https://github.com/officedev/office-js/issues](https://github.com/officedev/office-js/issues).
 
 ### How do I keep up with the latest guidance?
 
