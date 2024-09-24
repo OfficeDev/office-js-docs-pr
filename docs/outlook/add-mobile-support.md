@@ -1,7 +1,7 @@
 ---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 07/18/2024
+ms.date: 09/25/2024
 ms.localizationpriority: medium
 ---
 
