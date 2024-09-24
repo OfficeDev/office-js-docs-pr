@@ -1,14 +1,14 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 06/27/2023
+ms.date: 09/24/2024
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 
 # Troubleshoot Word add-ins
 
-This article discusses troubleshooting issues that are unique to Word. Use the feedback tool at the end of the page to suggest other issues that can be added to the article.
+This article discusses troubleshooting issues that are unique to Word. Use the feedback tool at the end of the page to suggest other issues that can be added to this article.
 
 ## Body.insertFileFromBase64 doesn't insert header or footer
 
