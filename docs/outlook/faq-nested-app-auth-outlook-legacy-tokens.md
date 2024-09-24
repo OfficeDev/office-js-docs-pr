@@ -69,7 +69,7 @@ If your add-in is for Exchange on-premises only (for example, Exchange 2019), it
 ### What will happen to my Outlook add-ins if I don't migrate to NAA?
 
 If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off (according to the previous tables), Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources.
-If your add-in only works on-premises or if your add-in is on a deprecation path, you may not need to update. However, most add-ins that access Exchange resources through EWS or Outlook REST will have to migrate to continue functioning as expected.
+If your add-in only works on-premises or if your add-in is on a deprecation path, you may not need to update. However, most add-ins that access Exchange resources through EWS or Outlook REST must migrate to continue functioning as expected.
 
 ### How do I migrate my Outlook add-ins to NAA?
 
@@ -80,7 +80,7 @@ To support NAA in your Outlook add-in, please refer to the following documentati
 
 ### As an admin, how do I know which add-ins in my org need to be updated?
 
-Add-ins may use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs:
+Add-ins may use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs.
 
 - `makeEwsRequestAsync`
 - `getUserIdentityTokenAsync`
@@ -96,7 +96,7 @@ If you rely on a developer within your organization, we recommend asking them to
 ### How do I keep up with the latest guidance?
 
 We'll share additional guidance moving forward on the [Office Add-ins community call](https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call) and the [M365 developer blog](https://devblogs.microsoft.com/microsoft365dev/).
-Finally, you can ask questions about NAA and legacy Exchange Online token deprecation on the OfficeDev/office-js GitHub issues site. Please put "NAA" in the title so we can group and prioritize issues.
+Finally, you can ask questions about NAA and legacy Exchange Online token deprecation on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues). Please put "NAA" in the title so we can group and prioritize issues.
 
 ## Developer troubleshooting questions
 
