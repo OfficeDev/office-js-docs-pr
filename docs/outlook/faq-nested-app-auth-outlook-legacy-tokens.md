@@ -64,11 +64,11 @@ We'll provide tooling via PowerShell for Microsoft 365 administrators in October
 ### Which Outlook add-ins are in scope?
 
 Many major add-ins are in scope. If your add-in is using EWS or Outlook REST to access Exchange Online resources, it almost certainly needs to migrate off of legacy Outlook tokens to NAA.
-If your add-in is for Exchange on-premises only (for example, Exchange 2019), it is not affected by this announcement.
+If your add-in is for Exchange on-premises only (for example, Exchange 2019), it's not affected by this change.
 
 ### What will happen to my Outlook add-ins if I don't migrate to NAA?
 
-If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off (according to the previous tables), Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources.
+If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off (according to the previous table), Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources.
 If your add-in only works on-premises or if your add-in is on a deprecation path, you may not need to update. However, most add-ins that access Exchange resources through EWS or Outlook REST must migrate to continue functioning as expected.
 
 ### How do I migrate my Outlook add-ins to NAA?
