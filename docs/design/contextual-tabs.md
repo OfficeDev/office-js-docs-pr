@@ -56,7 +56,7 @@ Adding custom contextual tabs requires your add-in to use the [shared runtime](.
 
 ## Specify the icons for your contextual tab
 
-Before you can customize your contextual tab, you must first specify any icons that will appear on it in with an [Image](/javascript/api/manifest/image) element in the [Resources](/javascript/api/manifest/resources) section of your add-in's manifest. Each icon must have at least three sizes: 16x16 px, 32x32 px, and 80x80 px.
+Before you can customize your contextual tab, you must first specify any icons that will appear on it with an [Image](/javascript/api/manifest/image) element in the [Resources](/javascript/api/manifest/resources) section of your add-in's manifest. Each icon must have at least three sizes: 16x16 px, 32x32 px, and 80x80 px.
 
 The following is an example.
 
