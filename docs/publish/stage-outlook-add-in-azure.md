@@ -55,13 +55,13 @@ Visual Studio creates a basic Outlook add-in that you'll be able to publish as-i
 
 1. In Visual Studio with the sample Outlook add-in open in **Solution Explorer**, expand the solution so that both projects show.
 
-1. Expand the Outlook add-in project (for example OutlookWebAddIn), right-click (or select and hold) the manifest folder, and then choose **Open**. The add-in manifest file opens.
+1. Expand the Outlook add-in project (for example, OutlookWebAddIn), right-click (or select and hold) the manifest folder, and then choose **Open**. The add-in manifest file opens.
 
 1. In the manifest file, find and replace all instances of "~remoteAppUrl" with the root URL of the add-in web app on Azure. This is the URL that you copied earlier after you published the add-in web app to Azure; for example, `https://YourDomain.azurewebsites.net`.
 
 ## Step 4: Sideload the manifest to Outlook
 
-Follow the guidance at [Sideload an Outlook add-in that uses an add-in only manifest](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-an-add-in-that-uses-an-xml-manifest) to sideload the add-in.
+Follow the guidance at [Sideload an Outlook add-in that uses an add-in only manifest](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-an-add-in-that-uses-an-add-in-only-manifest) to sideload the add-in.
 
 ## See also
 
