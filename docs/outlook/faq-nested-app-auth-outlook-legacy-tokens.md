@@ -90,7 +90,7 @@ If you rely on an independent software vendor (ISV) for your add-in, we recommen
 
 ### How do I keep up with the latest guidance?
 
-We'll share additional guidance moving forward on the [Office Add-ins community call](https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call) and the [M365 developer blog](https://devblogs.microsoft.com/microsoft365dev/).
+We'll share additional guidance moving forward on the [Office Add-ins community call](../overview/office-add-ins-community-call.md) and the [M365 developer blog](https://devblogs.microsoft.com/microsoft365dev/).
 Finally, you can ask questions about NAA and legacy Exchange Online token deprecation on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues). Please put "NAA" in the title so we can group and prioritize issues.
 
 ## Developer troubleshooting questions
