@@ -1,7 +1,7 @@
 ---
 title: Install the latest version of Office
 description: Information about how to opt in to getting the latest builds of Office.
-ms.date: 09/20/2024
+ms.date: 09/24/2024
 ms.localizationpriority: medium
 ---
 
