@@ -1,7 +1,7 @@
 ---
 title: Install the latest version of Office
 description: Information about how to opt in to getting the latest builds of Office.
-ms.date: 05/05/2023
+ms.date: 09/24/2024
 ms.localizationpriority: medium
 ---
 
@@ -39,6 +39,7 @@ New developer features, including those still in preview, are delivered first to
     ```
 
 1. Run the following command as an administrator.
+
     ```command&nbsp;line
     setup.exe /configure configuration.xml
     ```
@@ -46,9 +47,9 @@ New developer features, including those still in preview, are delivered first to
 > [!NOTE]
 > The command might take a long time to run without indicating progress.
 
-When the installation process finishes, you will have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under Office Updates, you'll see the (Office Insiders) label above the version number.
+When the installation process finishes, you will have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under the About section, you'll see the version and build number, along with Current Channel (Preview). The Microsoft 365 Insider section is displayed or hidden for business customers depending on their company's settings.
 
-![Product information, including the version number, with the Office Insiders label.](../images/office-insiders-label.png)
+![Product information, including the version number, build, and channel.](../images/microsoft-365-insider.png)
 
 ## Minimum Office builds for Office JavaScript API requirement sets
 
