@@ -19,7 +19,7 @@ Nested app authentication enables single sign-on (SSO) for applications nested i
 
 ### What is the timeline for shutting down legacy Exchange online tokens?
 
-The following tables list the key milestones based on which channel customers are using. Note that the general availability (GA) date for NAA will vary based on channel. We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA.
+The following table lists the key milestones based on which channel customers are using. Note that the general availability (GA) date for NAA will vary based on channel. We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA.
 
 | Date     | Release channel(s) | Legacy tokens status and NAA General Availability (GA) |
 | -------- | ------------------ | ------------------------------------------------------ | 
