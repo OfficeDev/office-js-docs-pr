@@ -33,25 +33,25 @@ The following table lists the key milestones based on which channel customers ar
 | Oct 2025 | All channels | Legacy tokens turned off for all tenants, there will be no re-enable option. |
 
 > [!NOTE]
-> If a single tenant uses multiple Microsoft 365 apps / Office release channels, Legacy Exchange Online tokens will be turned off based on the "slowest" release channel.
+> If a single tenant uses multiple Microsoft 365 apps via Office release channels, Legacy Exchange Online tokens will be turned off based on the "slowest" release channel.
 
 ## Outlook add-in migration FAQ
 
 ### Why is Microsoft making Outlook add-ins migrate?
 
-Switching to Microsoft Graph using Entra ID tokens is a big improvement in security for Outlook and Exchange customers. Entra ID (formerly Azure Active Directory) is a leader in the identity and access management space. Customers can take advantage of zero trust features such as conditional access, MFA requirements, continual token monitoring, real time safety heuristics, and more that aren't available with legacy Exchange tokens. Customers have much of their most important business data stored in Exchange, so it's vital that we ensure this data is protected. Migrating the whole Outlook ecosystem to using Entra ID tokens with Microsoft Graph greatly improves security for customer data.
+Switching to Microsoft Graph using Entra ID tokens is a big improvement in security for Outlook and Exchange customers. Entra ID (formerly Azure Active Directory) is a leading cloud-based identity and access management service. Customers can take advantage of zero trust features such as conditional access, MFA requirements, continual token monitoring, real time safety heuristics, and more that aren't available with legacy Exchange tokens. Customers have much of their most important business data stored in Exchange, so it's vital that we ensure this data is protected. Migrating the whole Outlook ecosystem to use Entra ID tokens with Microsoft Graph greatly improves security for customer data.
 
 ### Can I opt out?
 
-We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024 to turn legacy Exchange tokens on or off in your tenant. You can use it to ensure add-ins aren't broken if they haven't updated to use NAA yet. However, in June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025 it won't be possible to turn on legacy Exchange Online tokens and they'll be disabled for all tenants. We'll update this FAQ when more information about this tooling is available.
+We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024 to turn legacy Exchange tokens on or off in your tenant. You can use it to ensure add-ins aren't broken if they haven't updated to use NAA yet. However, in June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy Exchange Online tokens and they'll be disabled for all tenants. We'll update this FAQ when more information about this tooling is available.
 
 ### Does my Outlook add-in have to migrate to NAA?
 
-No. Outlook add-ins don't have to use NAA, although NAA offers the best authentication experience for users and best security posture for organizations. If add-ins aren't using legacy Exchange tokens, they won't be affected by the deprecation of Exchange tokens. Add-ins using MSAL.js or other SSO methods that rely on Entra ID will continue to work.
+No. Outlook add-ins don't have to use NAA, although NAA offers the best authentication experience for users and the best security posture for organizations. If add-ins aren't using legacy Exchange tokens, they won't be affected by the deprecation of Exchange tokens. Add-ins using MSAL.js or other SSO methods that rely on Entra ID will continue to work.
 
 ### How do I know if my Outlook add-in relies on legacy tokens?
 
-To find out whether your add-in uses legacy Exchange user identity tokens and callback tokens, you can search your code for calls to the following APIs.
+To find out whether your add-in uses legacy Exchange user identity tokens and callback tokens, search your code for calls to the following APIs.
 
 - `makeEwsRequestAsync`
 - `getUserIdentityTokenAsync`
@@ -59,11 +59,11 @@ To find out whether your add-in uses legacy Exchange user identity tokens and ca
 
 If your add-in calls any of these APIs, you should adopt NAA and migrate to using Entra ID tokens to access Microsoft Graph instead.
 
-Also, We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024 to turn legacy Exchange tokens on or off in your tenant. This will allow you to test if any add-ins are using Exchange tokens. We'll provide more information when the tooling is ready in this FAQ.
+We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024 to turn legacy Exchange tokens on or off in your tenant. This will allow you to test if any add-ins are using Exchange tokens. We'll provide more information when the tooling is ready in this FAQ.
 
 ### Which Outlook add-ins are in scope?
 
-Many of our most important add-ins are in scope. If your add-in is using EWS or Outlook REST to access Exchange Online resources, it almost certainly needs to migrate off of legacy Outlook tokens to NAA.
+Many major add-ins are in scope. If your add-in is using EWS or Outlook REST to access Exchange Online resources, it almost certainly needs to migrate off of legacy Outlook tokens to NAA.
 If your add-in is for Exchange on-premises only (for example, Exchange 2019), it is not affected by this announcement.
 
 ### What will happen to my Outlook add-ins if I don't migrate to NAA?
