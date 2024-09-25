@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 09/09/2024
+ms.date: 09/26/2024
 ms.localizationpriority: high
 ---
 
@@ -344,7 +344,7 @@ The following is an example of a unified app manifest for an add-in. It doesn't 
                   "controls": [
                     {
                       "id": "msgReadFunctionButton",
-                      "type": "MobileButton",
+                      "type": "mobileButton",
                       "label": "Action 1",
                       "icons": [
                         {
@@ -376,7 +376,7 @@ The following is an example of a unified app manifest for an add-in. It doesn't 
                   "controls": [
                     {
                       "id": "control1",
-                      "type": "MobileButton",
+                      "type": "mobileButton",
                       "label": "Action 1",
                       "icons": [
                         {
