@@ -1,7 +1,7 @@
 ---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 07/17/2024
+ms.date: 07/03/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -133,36 +133,6 @@ For example, suppose an Outlook add-in is configured to autolaunch in response t
     }
 ]
 ```
-
-### extensions.contentRuntimes.requirements
-
-The "extensions.contentRuntimes" property configures how a custom page in your add-in is embedded in the surface of an Office document. The "requirements" subproperty can be used to embed the page only when certain requirements are met.
-
-For example, suppose you want to embed the page only in Excel, not PowerPoint. You could do that with markup similar to the following:
-
-
-```json
-"extensions": [
-    ...
-    {
-        ...
-        "contentRuntimes": [
-            {
-                // Insert details of the contentRuntime configuration here.
-
-                "requirements": {
-                    "scopes": [
-                        "workbook"
-                    ]
-                },
-            }
-        ]
-    }
-]
-```
-
-> [!IMPORTANT]
-> The "requirements.capabilities" and "requirements.formFactors" properties have no effect and should not be used when the parent is a content runtimes object.
 
 ### extensions.contextMenus.requirements
 

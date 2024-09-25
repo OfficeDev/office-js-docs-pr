@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 07/17/2024
+ms.date: 09/26/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -51,17 +51,12 @@ There are minor differences in the manifests between content add-ins and add-ins
 Configure the manifest with the following steps.
 
 1. Add a "contentRuntimes" child array to the extension object in the "extensions" array.
+1. Remove the "runtimes" property if it is present. The "runtimes" array is for task pane or mail add-ins. These cannot be combined with a content add-in.
 1. Add an anonymous content runtime object in the "contentRuntimes" array.
 1. Set the "id" property of the object to a descriptive name.
 1. Set the "code.page" object to the full URL of the custom content that you want to embed in the document.
 1. Optionally, set the "requestedWidth" and "requestedHeight" properties to a size between 32 and 1000 pixels. If these properties aren't used, the Office application determines the size.
 1. Optionally, set the "disableSnapshot" property to `true` to prevent Office from saving a snapshot of the content component with the document. 
-1. Optionally, add a "requirements.scopes" property to restrict the availability of the embedded content to only Excel or only PowerPoint. The allowed values are "workbook" and "presentation".
-
-   > [!NOTE]
-   >
-   > - Listing both "workbook" and "presentation" means the content component is available in both, which is the same as having no "requirements" property at all.
-   > - The "requirements.capabilities" and "requirements.formFactors" properties have no effect and should not be used when the parent is a content runtimes object.
 
 The following is an example of a "contentRuntimes" property.
 
@@ -75,11 +70,6 @@ The following is an example of a "contentRuntimes" property.
         "requestedWidth": 100,
         "requestedHeight": 100,
         "disableSnapshot": true,
-        "requirements": {
-            "scopes": [
-                "workbook"
-            ]
-        },
     }
 ]
 ```
