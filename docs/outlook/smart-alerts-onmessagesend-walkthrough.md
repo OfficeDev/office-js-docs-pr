@@ -301,17 +301,11 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
         event.completed({
           allowEvent: false,
-          errorMessage: `
-            Looks like the body of your message includes an image or an inline file.
-            Attach a copy to the message before sending.`,
+          errorMessage: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.",
           // TIP: In addition to the formatted message, it's recommended to also set a
           // plain text message in the errorMessage property for compatibility on
           // older versions of Outlook clients.
-          errorMessageMarkdown: `
-            Looks like the body of your message includes an image or an inline file.
-            Attach a copy to the message before sending.\n\n
-            **Tip**: For guidance on how to attach a file, see
-            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`
+          errorMessageMarkdown: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook)."
         });
       } else {
         event.completed({
@@ -320,25 +314,19 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
           // TIP: In addition to the formatted message, it's recommended to also set a
           // plain text message in the errorMessage property for compatibility on
           // older versions of Outlook clients.
-          errorMessageMarkdown: `
-            Looks like you're forgetting to include an attachment.\n\n
-            **Tip**: For guidance on how to attach a file, see
-            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`
+          errorMessageMarkdown: "Looks like you're forgetting to include an attachment.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook)."
         });
       }
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
 
 > [!IMPORTANT]
-> When developing your Smart Alerts add-in to run in classic Outlook on Windows, keep the following in mind.
 >
-> - Imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
-> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs in Outlook on Windows, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
+> - In classic Outlook on Windows, imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
+> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
 
 ## Customize the Don't Send button (optional)
 
@@ -377,17 +365,11 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 
         event.completed({
           allowEvent: false,
-          errorMessage: `
-            Looks like the body of your message includes an image or an inline file.
-            Attach a copy to the message before sending.`,
+          errorMessage: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.",
           // TIP: In addition to the formatted message, it's recommended to also set a
           // plain text message in the errorMessage property for compatibility on
           // older versions of Outlook clients.
-          errorMessageMarkdown: `
-            Looks like the body of your message includes an image or an inline file.
-            Attach a copy to the message before sending.\n\n
-            **Tip**: For guidance on how to attach a file, see
-            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`,
+          errorMessageMarkdown: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
@@ -398,10 +380,7 @@ To modify the text of the **Don't Send** button or assign it a task pane command
           // TIP: In addition to the formatted message, it's recommended to also set a
           // plain text message in the errorMessage property for compatibility on
           // older versions of Outlook clients.
-          errorMessageMarkdown: `
-            Looks like you're forgetting to include an attachment.\n\n
-            **Tip**: For guidance on how to attach a file, see
-            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`,
+          errorMessageMarkdown: "Looks like you're forgetting to include an attachment.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
@@ -437,17 +416,11 @@ To override the send mode option at runtime, you must set the [sendModeOverride]
 
         event.completed({
           allowEvent: false,
-          errorMessage: `
-            Looks like the body of your message includes an image or an inline file.
-            Would you like to attach a copy of it to the message?`,
+          errorMessage: "Looks like the body of your message includes an image or an inline file. Would you like to attach a copy of it to the message?",
           // TIP: In addition to the formatted message, it's recommended to also set a
           // plain text message in the errorMessage property for compatibility on
           // older versions of Outlook clients.
-          errorMessageMarkdown: `
-            Looks like the body of your message includes an image or an inline file.
-            Would you like to attach a copy of it to the message?\n\n
-            **Tip**: For guidance on how to attach a file, see
-            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`,
+          errorMessageMarkdown: "Looks like the body of your message includes an image or an inline file. Would you like to attach a copy of it to the message?\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
           cancelLabel: "Attach a copy",
           commandId: "msgComposeOpenPaneButton",
           sendModeOverride: Office.MailboxEnums.SendModeOverride.PromptUser
@@ -459,10 +432,7 @@ To override the send mode option at runtime, you must set the [sendModeOverride]
           // TIP: In addition to the formatted message, it's recommended to also set a
           // plain text message in the errorMessage property for compatibility on
           // older versions of Outlook clients.
-          errorMessageMarkdown: `
-            Looks like you're forgetting to include an attachment.\n\n
-            **Tip**: For guidance on how to attach a file, see
-            [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).`,
+          errorMessageMarkdown: "Looks like you're forgetting to include an attachment.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
