@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 09/12/2024
+ms.date: 09/27/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -9,9 +9,6 @@ ms.localizationpriority: medium
 # Add custom keyboard shortcuts to your Office Add-ins
 
 Keyboard shortcuts, also known as key combinations, make it possible for your add-in's users to work more efficiently. Keyboard shortcuts also improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.
-
-> [!NOTE]
-> To start with a working version of an add-in with keyboard shortcuts already enabled, clone and run the sample [Excel Keyboard Shortcuts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). When you're ready to add keyboard shortcuts to your own add-in, continue with this article.
 
 There are three steps to add keyboard shortcuts to an add-in.
 
@@ -37,7 +34,7 @@ Additionally, keyboard shortcuts only work on platforms that support the followi
 - [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) (required if the add-in provides its users with the option to customize keyboard shortcuts)
 
 > [!TIP]
-> To start with a working version of an add-in with keyboard shortcuts already configured, clone and run the [Excel Keyboard Shortcuts sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). When you're ready to add keyboard shortcuts to your own add-in, continue with this article.
+> To start with a working version of an add-in with keyboard shortcuts already configured, clone and run the [Use keyboard shortcuts for Office Add-in actions](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keyboard-shortcuts) sample. When you're ready to add keyboard shortcuts to your own add-in, continue with this article.
 
 ## Configure the manifest
 
@@ -281,6 +278,6 @@ if (host === Office.HostType.Excel) {
 
 ## See also
 
-- [Excel keyboard shortcuts sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)
+- [Office Add-in sample: Use keyboard shortcuts for Office Add-in actions](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keyboard-shortcuts)
 - [Shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 - [Keyboard shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
