@@ -12,3 +12,6 @@
 >
 > - Office on iPad
 > - volume-licensed perpetual versions of Office 2019 or earlier on Windows
+
+> [!NOTE]
+> The unified manifest for Microsoft 365 that's currently in public preview doesn't support custom functions projects. You must use the add-in only manifest for custom functions projects. For more information, see [Office Add-ins manifest](/develop/add-in-manifests.md).
