@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
-ms.date: 09/27/2024
+ms.date: 10/10/2022
 ms.localizationpriority: medium
 ---
 
