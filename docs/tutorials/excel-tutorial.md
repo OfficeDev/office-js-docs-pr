@@ -480,7 +480,7 @@ There are two manifest options for Office Add-ins: the unified manifest for Micr
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> The unified manifest for Microsoft 365 is currently in public preview and shouldn't be used in production add-ins. We invite you to try it out in test or development environments.
+> The unified manifest for Microsoft 365 is currently in public developer preview and shouldn't be used in production add-ins. We invite you to try it out in test or development environments. Use the add-in only manifest for production add-ins.
 
 1. Open the manifest file **./manifest.json**.
 
