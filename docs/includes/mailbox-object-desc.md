@@ -5,12 +5,13 @@ Outlook add-ins primarily use a subset of the API exposed through the [Mailbox](
 const item = Office.context.mailbox.item;
 ```
 
+> [!IMPORTANT]
+> When calling `Office.context.mailbox.item` on a message, note that the Reading Pane in the Outlook client must be turned on. For guidance on how to configure the Reading Pane, see [Use and configure the Reading Pane to preview messages](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0).
+
 Additionally, Outlook add-ins can use the following objects.
 
 - **Office** object: for initialization.
 
 - **Context** object: for access to content and display language properties.
 
-- **RoamingSettings** object: for saving Outlook add-in-specific custom settings to the user's mailbox where the add-in is installed.
-
-For information about using JavaScript in Outlook add-ins, see [Outlook add-ins](../outlook/outlook-add-ins-overview.md).
+For information about using JavaScript in Outlook add-ins, see [Outlook add-ins](../outlook/outlook-add-ins-overview.md). To explore the Outlook JavaScript API, see the [Outlook API reference](/javascript/api/outlook) page.
