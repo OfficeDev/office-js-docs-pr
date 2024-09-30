@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 11/30/2023
+ms.date: 10/01/2024
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -81,6 +81,12 @@ See also: [runtime](#runtime), [shared runtime](#shared-runtime).
 An add-in that contains a custom function, but no UI such as a task pane. The custom functions in this kind of add-in run in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). A custom function that does include a UI can use either a shared runtime or a combination of a JavaScript-only runtime and an HTML-supporting runtime. We recommend that if you have a UI, you use a shared runtime.
 
 See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
+
+## function command
+
+Function commands are buttons or menu items that run JavaScript functions. Unlike task pane commands, function commands don't display any user interface other than the command button or menu item itself.
+
+See also: [add-in commands](#add-in-commands).
 
 ## host
 
