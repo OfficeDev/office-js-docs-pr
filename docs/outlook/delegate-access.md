@@ -114,7 +114,7 @@ To learn more about where add-ins do and don't activate in general, refer to the
 
 ## Configure the manifest
 
-To implement shared folders and shared mailbox scenarios in your add-in, you must first configure support in your manifest. The markup varies depending on the type of manifest your add-in uses.
+To implement shared folders and shared mailbox scenarios in your add-in, you must first configure support for the feature in your manifest. The markup varies depending on the type of manifest your add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -136,7 +136,7 @@ Add an additional object to the "authorization.permissions.resourceSpecific" arr
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true` in the manifest. At present, other form factors aren't supported.
+Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`. At present, other form factors aren't supported.
 
 ```XML
 ...
@@ -165,7 +165,7 @@ Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolde
 
 ## Identify if a folder or mailbox is shared
 
-Before you can run operations in a shared folder or mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) in compose or read mode. If the current folder or mailbox is shared, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
+Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) in compose or read mode. If the current folder or mailbox is shared, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
 
 The following example calls the `getSharedPropertiesAsync` method to identify the owner of the mailbox and the permissions of the delegate or shared mailbox user.
 
@@ -181,9 +181,9 @@ Office.context.mailbox.item.getSharedPropertiesAsync((result) => {
 });
 ```
 
-## Supported permissions
+### Supported permissions
 
-The following table describes the permissions that the Office JavaScript API supports for delegates and shared mailbox users.
+The following table describes the permissions that `getSharedPropertiesAsync` supports for delegates and shared mailbox users.
 
 |Permission|Value|Description|
 |---|---:|---|
@@ -195,13 +195,13 @@ The following table describes the permissions that the Office JavaScript API sup
 |EditAll|32 (100000)|Can edit any items.|
 
 > [!NOTE]
-> Currently the API supports getting existing permissions, but not setting permissions.
+> Currently, the API supports getting existing permissions, but not setting permissions.
 
-The [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) object is implemented using a bitmask to indicate the permissions. Each position in the bitmask represents a particular permission and if it's set to `1` then the user has the respective permission. For example, if the second bit from the right is `1`, then the user has **Write** permission.
+The [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) enum returned by the [delegatePermissions](/javascript/api/outlook/office.sharedproperties#outlook-office-sharedproperties-delegatepermissions-member) property is implemented using a bitmask to indicate the permissions. Each position in the bitmask represents a particular permission and if it's set to `1`, then the user has the respective permission. For example, if the second bit from the right is `1`, then the user has **Write** permission.
 
 ## Perform an operation as a delegate or shared mailbox user
 
-Once you've identified that the current folder or mailbox is shared, your add-in can then perform any necessary operations within the shared environment. If you need additional information about the shared folder or shared mailbox other than the properties returned from the `getSharedPropertiesAsync` call, you must configure your add-in's permission in the manifest, then use Microsoft Graph to complete the operations.
+Once you've identified that the current folder or mailbox is shared, your add-in can then perform any necessary operations within the shared environment. If you need additional information about the shared folder or shared mailbox other than the properties returned by the `getSharedPropertiesAsync` call, you must first configure your add-in's permission in the manifest. Then, use Microsoft Graph to complete the operations.
 
 > [!NOTE]
 > Exchange Web Services (EWS) isn't supported in shared folder and shared mailbox scenarios.
