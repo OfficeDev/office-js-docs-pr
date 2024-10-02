@@ -33,7 +33,7 @@ landingContent:
             url: /javascript/api/visio
 
   # Card
-  - title: Resources
+  - title: Visio Developer Resources
     linkLists:
       - linkListType: reference
         links:
@@ -49,3 +49,5 @@ landingContent:
             url: ../resources/resources-links-help.md
           - text: Join the developer community
             url: https://pnp.github.io/
+          - text: Download samples
+            url: https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Visio,Samples
