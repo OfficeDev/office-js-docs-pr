@@ -175,9 +175,9 @@ Office.context.mailbox.item.getSharedPropertiesAsync((result) => {
     console.error("The current folder or mailbox isn't shared.");
     return;
   }
-  const sharedResource = result.value;
-  console.log(`Owner: ${sharedResource.owner}`);
-  console.log(`Permissions: ${sharedResource.delegatePermissions} `);
+  const sharedProperties = result.value;
+  console.log(`Owner: ${sharedProperties.owner}`);
+  console.log(`Permissions: ${sharedProperties.delegatePermissions} `);
 });
 ```
 
