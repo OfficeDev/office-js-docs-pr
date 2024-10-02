@@ -165,7 +165,7 @@ Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolde
 
 ## Identify if a folder or mailbox is shared
 
-Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) in compose or read mode. If the current folder or mailbox is shared, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
+Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) on a message or appointment in compose or read mode. If the item is in a shared folder or shared mailbox, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
 
 The following example calls the `getSharedPropertiesAsync` method to identify the owner of the mailbox and the permissions of the delegate or shared mailbox user.
 
@@ -201,7 +201,7 @@ The [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepe
 
 ## Perform an operation as a delegate or shared mailbox user
 
-Once you've identified that the current folder or mailbox is shared, your add-in can then perform any necessary operations within the shared environment. If you need additional information about the shared folder or shared mailbox other than the properties returned by the `getSharedPropertiesAsync` call, you must first configure your add-in's permission in the manifest. Then, use Microsoft Graph to complete the operations.
+Once you've identified that the current mail item is in a shared folder or shared mailbox, your add-in can then perform the necessary operations on the item within the shared environment. To run operations on an item in a shared context, you must first configure your add-in's permission in the manifest. Then, use Microsoft Graph to complete the operations.
 
 > [!NOTE]
 > Exchange Web Services (EWS) isn't supported in shared folder and shared mailbox scenarios.
