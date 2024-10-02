@@ -1,7 +1,7 @@
 ---
 title: Referencing the Office JavaScript API library
 description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
-ms.date: 05/03/2023
+ms.date: 10/03/2024
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,7 @@ The [Office JavaScript API](../reference/javascript-api-for-office.md) library p
 ```html
 <head>
     ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
 </head>
 ```
 
