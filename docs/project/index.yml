@@ -51,7 +51,7 @@ landingContent:
             url: ../develop/develop-overview.md
 
   # Card
-  - title: Resources
+  - title: Project Developer Resources
     linkLists:
       - linkListType: reference
         links:
@@ -67,5 +67,7 @@ landingContent:
             url: ../resources/resources-links-help.md
           - text: Join the developer community
             url: https://pnp.github.io/
+          - text: Download samples
+            url: https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Project,Samples
         
 
