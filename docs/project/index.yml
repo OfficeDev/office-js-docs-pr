@@ -58,8 +58,14 @@ landingContent:
           - text: Ask questions
             url: https://stackoverflow.com/questions/tagged/office-js
           - text: Request features
-            url: https://aka.ms/m365dev-suggestions
+            url: https://feedbackportal.microsoft.com/feedback/forum/40792262-301c-ec11-b6e7-0022481f8472
           - text: Report issues
             url: https://github.com/officedev/office-js/issues
+          - text: Join Office Add-ins community call
+            url: https://aka.ms/M365DevCalls
           - text: Office Add-ins additional resources
             url: ../resources/resources-links-help.md
+          - text: Join the developer community
+            url: https://pnp.github.io/
+        
+
