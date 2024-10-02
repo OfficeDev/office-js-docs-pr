@@ -64,7 +64,21 @@ landingContent:
             url: ../testing/test-debug-office-add-ins.md
           - text: Deploy and publish a OneNote add-in
             url: ../publish/publish.md
+            
+  # Card (optional)
+  - title: OneNote developer resources
+    linkLists:
       - linkListType: reference
         links:
           - text: Office Add-ins additional resources
             url: ../resources/resources-links-help.md
+          - text: Join the developer community
+            url: https://pnp.github.io/
+          - text: Download OneNote samples
+            url: https://developer.microsoft.com/microsoft-365/gallery/?search=&filterBy=OneNote,Samples         
+          - text: Join Office Add-ins community call
+            url: https://aka.ms/M365DevCalls
+          - text: Read Office Add-ins blog
+            url: https://devblogs.microsoft.com/microsoft365dev/category/office-add-ins/
+          - text: Submit feedback or idea
+            url: https://feedbackportal.microsoft.com/feedback/forum/c06dcc30-2e1c-ec11-b6e7-0022481f8472
