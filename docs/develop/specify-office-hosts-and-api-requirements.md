@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 02/29/2024
+ms.date: 10/03/2024
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +33,7 @@ This article helps you understand which options you should choose to ensure that
 Your add-in should load the most current version of the Office JavaScript API library from the content delivery network (CDN). To do this, be sure you have the following `script` tag in the first HTML file your add-in opens. Using `/1/` in the CDN URL ensures that you reference the most recent version of Office.js.
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
 ```
 
 ## Specify which Office applications can host your add-in
