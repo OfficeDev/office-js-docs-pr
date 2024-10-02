@@ -66,19 +66,21 @@ landingContent:
             url: ../publish/publish.md
             
   # Card (optional)
-  - title: OneNote developer resources
+  - title: OneNote Developer Resources
     linkLists:
       - linkListType: reference
         links:
+          - text: Ask questions
+            url: https://stackoverflow.com/questions/tagged/office-js
+          - text: Request features
+            url: https://feedbackportal.microsoft.com/feedback/forum/c06dcc30-2e1c-ec11-b6e7-0022481f8472
+          - text: Report issues
+            url: https://github.com/officedev/office-js/issues
+          - text: Join Office Add-ins community call
+            url: https://aka.ms/M365DevCalls
           - text: Office Add-ins additional resources
             url: ../resources/resources-links-help.md
           - text: Join the developer community
             url: https://pnp.github.io/
           - text: Download OneNote samples
             url: https://developer.microsoft.com/microsoft-365/gallery/?search=&filterBy=OneNote,Samples         
-          - text: Join Office Add-ins community call
-            url: https://aka.ms/M365DevCalls
-          - text: Read Office Add-ins blog
-            url: https://devblogs.microsoft.com/microsoft365dev/category/office-add-ins/
-          - text: Submit feedback or idea
-            url: https://feedbackportal.microsoft.com/feedback/forum/c06dcc30-2e1c-ec11-b6e7-0022481f8472
