@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements with the unified manifest
 description: Learn how to specify in the unified manifest the Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 11/04/2024
+ms.date: 10/30/2024
 ms.localizationpriority: medium
 ---
 
@@ -123,7 +123,7 @@ The following code example shows how to configure an add-in that is installable 
 ```
 
 > [!TIP]
-> For more information and another example of using the "extensions.requirements" property, see [Specify Office Add-in requirements in the unified manifest for Microsoft 365 -- extensions.requirements](/develop/requirements-property-unified-manifest.md#extensionsrequirements).
+> For more information and another example of using the "extensions.requirements" property, see [Specify Office Add-in requirements in the unified manifest for Microsoft 365 -- extensions.requirements](requirements-property-unified-manifest.md#extensionsrequirements).
 
 ### Specify the form factors on which your add-in can be installed
 
@@ -157,10 +157,10 @@ If your add-in uses a specific extensibility feature for some of its functionali
 You implement this design differently depending on how the extensibility feature is implemented:
 
 - For features implemented entirely with JavaScript, see [Check for API availability at runtime](specify-api-requirements-runtime.md).
-- For features that require you to configure the manifest, see [Specify Office Add-in requirements in the unified manifest for Microsoft 365 -- Filter features](/develop/requirements-property-unified-manifest.md#filter-features).
+- For features that require you to configure the manifest, see [Specify Office Add-in requirements in the unified manifest for Microsoft 365 -- Filter features](requirements-property-unified-manifest.md#filter-features).
 
 ## See also
 
 - [Office Add-ins manifest](add-in-manifests.md)
 - [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
-- [Specify Office Add-in requirements in the unified manifest for Microsoft 365](/develop/requirements-property-unified-manifest.md).
+- [Specify Office Add-in requirements in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md).

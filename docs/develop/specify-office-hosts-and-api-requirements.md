@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements with the add-in only manifest
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 11/04/2024
+ms.date: 10/30/2024
 ms.localizationpriority: medium
 ---
 

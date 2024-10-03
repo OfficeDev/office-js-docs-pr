@@ -2,7 +2,7 @@
 title: Check for API availability at runtime
 description: Learn how to verify at runtime that the Office application supports your add-ins API calls.
 ms.topic: best-practice
-ms.date: 11/04/2024
+ms.date: 10/30/2024
 ms.localizationpriority: medium
 ---
 
@@ -60,7 +60,7 @@ else
 ```
 
 > [!NOTE]
-> The `isSetSupported` method and the requirement sets for these applications are available in the latest Office.js file on the CDN. If you don't use Office.js from the CDN, your add-in might generate exceptions if you are using an old version of the library in which `isSetSupported` is undefined. For more information, see [Use the latest Office JavaScript API library](#use-the-latest-office-javascript-api-library).
+> The `isSetSupported` method and the requirement sets for these applications are available in the latest Office.js file on the CDN. If you don't use Office.js from the CDN, your add-in might generate exceptions if you are using an old version of the library in which `isSetSupported` is undefined. For more information, see [Use the latest Office JavaScript API library](specify-office-hosts-and-api-requirements-unified.md#use-the-latest-office-javascript-api-library).
 
 ## Check for setless API support 
 
