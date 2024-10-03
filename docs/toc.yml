@@ -96,7 +96,13 @@ items:
       - name: Reference Office.js
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
       - name: Specify Office applications and API requirements
-        href: develop/specify-office-hosts-and-api-requirements.md
+        items: 
+        - name: Specify Office applications and API requirements with the unified manifest
+          href: develop/specify-office-hosts-and-api-requirements-unified.md
+        - name: Specify Office applications and API requirements with the add-in only manifest
+          href: develop/specify-office-hosts-and-api-requirements.md
+        - name: Check for API availability at runtime
+          href: develop/specify-api-requirements-runtime.md
       - name: Load sequence of an Office Add-in
         href: develop/loading-the-dom-and-runtime-environment.md
       - name: Initialize your add-in
