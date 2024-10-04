@@ -77,7 +77,7 @@ landingContent:
           - text: Report issues
             url: https://github.com/officedev/office-js/issues
           - text: Join Office Add-ins community call
-            url: https://aka.ms/M365DevCalls
+            url: https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call
           - text: Office Add-ins additional resources
             url: ../resources/resources-links-help.md
           - text: Join the developer community
