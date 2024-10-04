@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about embedding Visio diagrams in SharePoint. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: visio #Required
   ms.topic: landing-page # Required
-  ms.date: 101 #Required; mm/dd/yyyy format.
+  ms.date: 10/03/2024 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
