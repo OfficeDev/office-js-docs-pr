@@ -80,7 +80,5 @@ landingContent:
             url: https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call
           - text: Office Add-ins additional resources
             url: ../resources/resources-links-help.md
-          - text: Join the developer community
-            url: https://pnp.github.io/
           - text: Download OneNote samples
             url: https://developer.microsoft.com/microsoft-365/gallery/?search=&filterBy=OneNote,Samples         
