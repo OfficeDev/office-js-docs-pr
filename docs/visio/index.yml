@@ -33,7 +33,7 @@ landingContent:
             url: /javascript/api/visio
 
   # Card
-  - title: Visio Developer Resources
+  - title: Resources
     linkLists:
       - linkListType: reference
         links:
