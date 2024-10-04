@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about Project add-ins.  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: project #Required
   ms.topic: landing-page # Required
-  ms.date: 01/24/2024 #Required; mm/dd/yyyy format.
+  ms.date: 10/05/2024 #Required; mm/dd/yyyy format.
   ms.localizationpriority: medium
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
