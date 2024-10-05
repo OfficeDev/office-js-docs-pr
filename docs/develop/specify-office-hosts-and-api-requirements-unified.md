@@ -49,7 +49,7 @@ To specify the Office applications on which your add-in can be installed, use th
 | Name          | Office client applications                     | Available add-in types |
 |:--------------|:-----------------------------------------------|:-----------------------|
 | document      | Word on the web, Windows, Mac, iPad            | Task pane              |
-| mail          | Outlook on the web, Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Mac, Android, iOS | Mail |
+| mail          | Outlook on the web, Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Android, iOS | Mail |
 | presentation  | PowerPoint on the web, Windows, Mac, iPad      | Task pane, Content     |
 | workbook      | Excel on the web, Windows, Mac, iPad           | Task pane, Content     |
 
