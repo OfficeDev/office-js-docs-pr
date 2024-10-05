@@ -54,9 +54,9 @@ To specify the Office applications on which your add-in can be installed, use th
 | workbook      | Excel on the web, Windows, Mac, iPad           | Task pane, Content     |
 
 > [!NOTE]
-> Content add-ins have an "extensions.contentRuntimes" property. They cannot have an "extensions.runtimes" property so they cannot be combined with a Task pane or Mail add-in. For more information about Content add-ins, see [Content Office Add-ins](../design/content-add-ins.md).
+> Content add-ins have an "extensions.contentRuntimes" property. They can't have an "extensions.runtimes" property so they can't be combined with a Task pane or Mail add-in. For more information about Content add-ins, see [Content Office Add-ins](../design/content-add-ins.md).
 
-For example, the following JSON specifies that the add-in can install on any release of Excel, which includes Excel on the web, Windows, and iPad, but cannot be installed on any other Office application.
+For example, the following JSON specifies that the add-in can install on any release of Excel, which includes Excel on the web, Windows, and iPad, but can't be installed on any other Office application.
 
 ```json
 "extensions": [
@@ -77,7 +77,7 @@ For example, the following JSON specifies that the add-in can install on any rel
 You can't explicitly specify the Office versions and builds or the platforms on which your add-in should be installable, and you wouldn't want to because you would have to revise your manifest whenever support for the add-in features that your add-in uses is extended to a new version or platform. Instead, specify in the manifest the APIs that your add-in needs. Office prevents the add-in from being installed on combinations of Office version and platform that don't support the APIs and ensures that the add-in won't appear in **My Add-ins**.
 
 > [!IMPORTANT]
-> Only use the "requirements" property that is a direct child of "extensions" to specify the API members that your add-in must have to be of any significant value at all. If your add-in uses an API for some features but has other useful features that don't require the API, you should design the add-in so that it's installable on platform and Office version combinations that don't support the API but provides a diminished experience on those combinations. For this purpose, use "requirements" properties that aren't direct children of "extensions". For more information, see [Design for alternate experiences](#design-for-alternate-experiences).
+> Only use the "requirements" property that is a direct child of "extensions" to specify the API members that your add-in must have to be of any significant value at all. If your add-in uses an API for some features, but has other useful features that don't require the API, you should design the add-in so that it's installable on platform and Office version combinations that don't support the API but provides a diminished experience on those combinations. For this purpose, use "requirements" properties that aren't direct children of "extensions". For more information, see [Design for alternate experiences](#design-for-alternate-experiences).
 
 ### Requirement sets
 
@@ -95,7 +95,7 @@ Requirement set support varies by Office application, the version of the Office 
 Use the "requirements.capabilities" property to specify the minimum requirement sets that must be supported by the Office application to install your add-in. If the Office application or platform doesn't support the requirement sets or API members specified in the "requirements.capabilities" property, the add-in won't run in that application or platform, and won't display in **My Add-ins**.
 
 > [!TIP]
-> All APIs in the application specific models are in requirement sets, but some of those in the Common API model aren't. If your add-in requires an API that isn't in any requirement set, you can implement a runtime check for the availability of the API and display a message to the add-in's users if it isn't supported. For more information, see [Check for API availability at runtime](specify-api-requirements-runtime.md). 
+> All APIs in the application-specific models are in requirement sets, but some of those in the Common API model aren't. If your add-in requires an API that isn't in any requirement set, you can implement a runtime check for the availability of the API and display a message to the add-in's users if it isn't supported. For more information, see [Check for API availability at runtime](specify-api-requirements-runtime.md). 
 
 The following code example shows how to configure an add-in that is installable in all Office application and platform combinations that support the following:
 
@@ -123,11 +123,11 @@ The following code example shows how to configure an add-in that is installable 
 ```
 
 > [!TIP]
-> For more information and another example of using the "extensions.requirements" property, see [Specify Office Add-in requirements in the unified manifest for Microsoft 365 -- extensions.requirements](requirements-property-unified-manifest.md#extensionsrequirements).
+> For more information and another example of using the "extensions.requirements" property, see the "extensions.requirements" section in [Specify Office Add-in requirements in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md#extensionsrequirements).
 
 ### Specify the form factors on which your add-in can be installed
 
-For an Outlook add-in is installable on desktop, you can also specify whether the add-in should be installable on desktop (includes tablets) or mobile form factors. Use the "extensions.requirements.formFactors" property. The following example show how to make the Outlook add-in installable on both form factors.
+For an Outlook add-in, you can specify whether the add-in should be installable on desktop (includes tablets) or mobile form factors. To configure this, use the "extensions.requirements.formFactors" property. The following example show how to make the Outlook add-in installable on both form factors.
 
 ```json
 "extensions": [
@@ -157,10 +157,10 @@ If your add-in uses a specific extensibility feature for some of its functionali
 You implement this design differently depending on how the extensibility feature is implemented:
 
 - For features implemented entirely with JavaScript, see [Check for API availability at runtime](specify-api-requirements-runtime.md).
-- For features that require you to configure the manifest, see [Specify Office Add-in requirements in the unified manifest for Microsoft 365 -- Filter features](requirements-property-unified-manifest.md#filter-features).
+- For features that require you to configure the manifest, see the "Filter features" section of [Specify Office Add-in requirements in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md#filter-features).
 
 ## See also
 
 - [Office Add-ins manifest](add-in-manifests.md)
 - [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
-- [Specify Office Add-in requirements in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md).
+- [Specify Office Add-in requirements in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md)

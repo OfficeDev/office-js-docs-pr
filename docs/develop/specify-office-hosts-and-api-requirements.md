@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 Your Office Add-in might depend on a specific Office application (also called an Office host) or on specific members of the Office JavaScript Library (office.js). For example, your add-in might:
 
-- Run in a single Office application (e.g., Word or Excel), or several applications.
+- Run in a single Office application (for example, Word or Excel), or several applications.
 - Make use of Office JavaScript APIs that are only available in some versions of Office. For example, the volume-licensed perpetual version of Excel 2016 doesn't support all Excel-related APIs in the Office JavaScript library.
 
 In these situations, you need to ensure that your add-in is never installed on Office applications or Office versions in which it cannot run.
@@ -45,7 +45,7 @@ By default, an add-in is installable in all Office applications supported by the
 
 To ensure that your add-in is installable in only a subset of Office applications, use the [Hosts](/javascript/api/manifest/hosts) and [Host](/javascript/api/manifest/host) elements in the add-in only manifest.
 
-For example, the following **\<Hosts\>** and **\<Host\>** declaration specifies that the add-in can install on any release of Excel, which includes Excel on the web, Windows, and iPad, but cannot be installed on any other Office application.
+For example, the following **\<Hosts\>** and **\<Host\>** declaration specifies that the add-in can install on any release of Excel, which includes Excel on the web, Windows, and iPad, but can't be installed on any other Office application.
 
 ```xml
 <Hosts>
@@ -180,10 +180,10 @@ The following is an example.
 ```
 
 > [!WARNING]
-> If your add-in includes [add-in commands](../design/add-in-commands.md), use great care before including a **\<Requirements\>** element in a **\<VersionOverrides\>**, because on platform and version combinations that don't support the requirement, *none* of the add-in commands will be installed, *even those that invoke functionality that doesn't need the requirement*. Consider, for example, an add-in that has two custom ribbon buttons. One of them calls Office JavaScript APIs that are available in requirement set **ExcelApi 1.4** (and later). The other calls APIs that are only available in **ExcelApi 1.9** (and later). If you put a requirement for **ExcelApi 1.9** in the **\<VersionOverrides\>**, then when 1.9 is not supported *neither* button will appear on the ribbon. A better strategy in this scenario would be to use the technique described in [Check for API availability at runtime](specify-api-requirements-runtime.md). The code invoked by the second button first uses `isSetSupported` to check for support of **ExcelApi 1.9**. If it isn't supported, the code gives the user a message saying that this feature of the add-in is not available on their version of Office.
+> If your add-in includes [add-in commands](../design/add-in-commands.md), use great care before including a **\<Requirements\>** element in a **\<VersionOverrides\>**. On platform and version combinations that don't support the requirement, *none* of the add-in commands will be installed, *even those that invoke functionality that doesn't need the requirement*. Consider, for example, an add-in that has two custom ribbon buttons. One of them calls Office JavaScript APIs that are available in requirement set **ExcelApi 1.4** (and later). The other calls APIs that are only available in **ExcelApi 1.9** (and later). If you put a requirement for **ExcelApi 1.9** in the **\<VersionOverrides\>**, then when 1.9 isn't supported, *neither* button will appear on the ribbon. A better strategy in this scenario would be to use the technique described in [Check for API availability at runtime](specify-api-requirements-runtime.md). The code invoked by the second button first uses `isSetSupported` to check for support of **ExcelApi 1.9**. If it isn't supported, the code gives the user a message saying that this feature of the add-in isn't available on their version of Office.
 
 > [!TIP]
-> There's no point to repeating a **Requirement** element in a **\<VersionOverrides\>** that already appears in the base manifest. If the requirement is specified in the base manifest, then the add-in can't install where the requirement isn't supported so Office doesn't even parse the **\<VersionOverrides\>** element.
+> There's no point to repeating a **\<Requirement\>** element in a **\<VersionOverrides\>** that already appears in the base manifest. If the requirement is specified in the base manifest, then the add-in can't install where the requirement isn't supported so Office doesn't even parse the **\<VersionOverrides\>** element.
 
 ## See also
 
