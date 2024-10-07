@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: Learn how to add custom contextual tabs to your Office Add-in.
-ms.date: 09/19/2024
+ms.date: 09/24/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -11,23 +11,21 @@ ms.localizationpriority: medium
 A contextual tab is a hidden tab control in the Office ribbon that's displayed in the tab row when a specified event occurs in the Office document. For example, the **Table Design** tab that appears on the Excel ribbon when a table is selected. You include custom contextual tabs in your Office Add-in and specify when they're visible or hidden, by creating event handlers that change the visibility. (However, custom contextual tabs don't respond to focus changes.)
 
 > [!NOTE]
-> This article assumes that you're familiar with the following documentation. Please review it if you haven't worked with add-in commands (custom menu items and ribbon buttons) recently.
->
-> - [Basic concepts for Add-in Commands](add-in-commands.md)
+> This article assumes that you're familiar with [Basic concepts for add-in commands](add-in-commands.md). Please review it if you haven't worked with add-in commands (custom menu items and ribbon buttons) recently.
 
-> [!IMPORTANT]
-> Custom contextual tabs are currently only supported on Excel and only on these platforms and builds.
->
-> - Excel on the web
-> - Excel on Windows: Version 2102 (Build 13801.20294) or later.
-> - Excel on Mac: Version 16.53.806.0 or later.
+## Prerequisites
 
-> [!NOTE]
-> Custom contextual tabs work only on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
->
-> - [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
-> - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
->
+Custom contextual tabs are currently only supported on **Excel** and only on the following platforms and builds.
+
+- Excel on the web
+- Excel on Windows: Version 2102 (Build 13801.20294) and later.
+- Excel on Mac: Version 16.53 (21080600) and later.
+
+Additionally, custom contextual tabs only work on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
+
+- [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+- [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
+
 > [!TIP]
 > Use the runtime checks in your code to test whether the user's host and platform combination supports these requirement sets as described in [Check for API availability at runtime](../develop/specify-api-requirements-runtime.md). (The technique of specifying the requirement sets in the manifest, which is also described in that article, doesn't currently work for RibbonApi 1.2.) Alternatively, you can [implement an alternate UI experience when custom contextual tabs aren't supported](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-arent-supported).
 
@@ -48,14 +46,38 @@ The user experience for custom contextual tabs follows the pattern of built-in O
 
 The following are the major steps for including a custom contextual tab in an add-in.
 
-1. Configure the add-in to use a shared runtime.
-1. Define the tab and the groups and controls that appear on it.
-1. Register the contextual tab with Office.
-1. Specify the circumstances when the tab will be visible.
+1. [Configure the add-in to use a shared runtime](#configure-the-add-in-to-use-a-shared-runtime).
+1. [Specify the icons for your contextual tab](#specify-the-icons-for-your-contextual-tab).
+1. [Define the groups and controls that appear on the tab](#define-the-groups-and-controls-that-appear-on-the-tab).
+1. [Register the contextual tab with Office](#register-the-contextual-tab-with-office-with-requestcreatecontrols).
+1. [Specify the circumstances when the tab will be visible](#specify-the-contexts-when-the-tab-will-be-visible-with-requestupdate).
 
 ## Configure the add-in to use a shared runtime
 
 Adding custom contextual tabs requires your add-in to use the [shared runtime](../testing/runtimes.md#shared-runtime). For more information, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+
+## Specify the icons for your contextual tab
+
+Before you can customize your contextual tab, you must first specify any icons that will appear on it with an [Image](/javascript/api/manifest/image) element in the [Resources](/javascript/api/manifest/resources) section of your add-in's manifest. Each icon must have at least three sizes: 16x16 px, 32x32 px, and 80x80 px.
+
+The following is an example.
+
+```xml
+<Resources>
+    <bt:Images>
+        <bt:Image id="contextual-tab-icon-16" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"/>
+        <bt:Image id="contextual-tab-icon-32" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"/>
+        <bt:Image id="contextual-tab-icon-80" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/Group80x80.png"/>
+        <bt:Image id="contextual-button-icon-16" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"/>
+        <bt:Image id="contextual-button-icon-32" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"/>
+        <bt:Image id="contextual-button-icon-80" DefaultValue="https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton80x80.png"/>
+    </bt:Images>
+    ...
+</Resources>
+```
+
+> [!IMPORTANT]
+> When you move your add-in from development to production, remember to update the URLs in your manifest as needed (such as changing the domain from `localhost` to `contoso.com`).
 
 ## Define the groups and controls that appear on the tab
 
@@ -80,7 +102,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 
     - The `id` and `type` properties are mandatory.
     - The value of `type` can be either "ExecuteFunction" or "ShowTaskpane".
-    - The `functionName` property is only used when the value of `type` is `ExecuteFunction`. It's the name of a function defined in the FunctionFile. For more information about the FunctionFile, see [Basic concepts for Add-in Commands](add-in-commands.md).
+    - The `functionName` property is only used when the value of `type` is `ExecuteFunction`. It's the name of a function defined in the FunctionFile. For more information about the FunctionFile, see [Basic concepts for add-in commands](add-in-commands.md).
     - In a later step, you'll map this action to a button on the contextual tab.
 
     ```json
@@ -134,16 +156,20 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
     }
     ```
 
-1. Every group must have an icon of at least two sizes, 32x32 px and 80x80 px. Optionally, you can also have icons of sizes 16x16 px, 20x20 px, 24x24 px, 40x40 px, 48x48 px, and 64x64 px. Office decides which icon to use based on the size of the ribbon and Office application window. Add the following objects to the icon array. (If the window and ribbon sizes are large enough for at least one of the *controls* on the group to appear, then no group icon at all appears. For an example, watch the **Styles** group on the Word ribbon as you shrink and expand the Word window.) About this markup, note:
+1. Every group must have an icon of at least three sizes: 16x16 px, 32x32 px, and 80x80 px. Optionally, you can also have icons of sizes 20x20 px, 24x24 px, 40x40 px, 48x48 px, and 64x64 px. Office decides which icon to use based on the size of the ribbon and Office application window. Add the following objects to the icon array. (If the window and ribbon sizes are large enough for at least one of the *controls* on the group to appear, then no group icon at all appears. For an example, watch the **Styles** group on the Word ribbon as you shrink and expand the Word window.) About this markup, note:
 
     - Both the properties are required.
     - The `size` property unit of measure is pixels. Icons are always square, so the number is both the height and the width.
-    - The `sourceLocation` property specifies the full URL to the icon.
+    - The `sourceLocation` property specifies the full URL to the icon. Its value must match the URL specified in the **\<Image\>** element of the **\<Resources\>** section of your manifest (see [Specify the icons for your contextual tab](#specify-the-icons-for-your-contextual-tab)).
 
     > [!IMPORTANT]
-    > Just as you typically must change the URLs in the add-in's manifest when you move from development to production (such as changing the domain from localhost to contoso.com), you must also change the URLs in your contextual tabs JSON.
+    > Just as you typically must change the URLs in the add-in's manifest when you move from development to production, you must also change the URLs in your contextual tabs JSON.
 
     ```json
+    {
+        "size": 16,
+        "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"
+    },
     {
         "size": 32,
         "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"
@@ -178,6 +204,10 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
         },
         "icon": [
             {
+                "size": 16,
+                "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+            },
+            {
                 "size": 32,
                 "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"
             },
@@ -210,6 +240,10 @@ The following is the complete example of the JSON blob.
           "label": "Insertion",
           "icon": [
             {
+                "size": 16,
+                "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"
+            },
+            {
                 "size": 32,
                 "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"
             },
@@ -230,6 +264,10 @@ The following is the complete example of the JSON blob.
                     "description": "Use this button to insert data into the document."
                 },
                 "icon": [
+                    {
+                        "size": 16,
+                        "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+                    },
                     {
                         "size": 32,
                         "sourceLocation": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"
@@ -320,7 +358,7 @@ const showDataTab = async () => {
 
 ### Toggle tab visibility and the enabled status of a button at the same time
 
-The `requestUpdate` method is also used to toggle the enabled or disabled status of a custom button on either a custom contextual tab or a custom core tab. For details about this, see [Enable and Disable Add-in Commands](disable-add-in-commands.md). There may be scenarios in which you want to change both the visibility of a tab and the enabled status of a button at the same time. You do this with a single call of `requestUpdate`. The following is an example in which a button on a core tab is enabled at the same time as a contextual tab is made visible.
+The `requestUpdate` method is also used to toggle the enabled or disabled status of a custom button on either a custom contextual tab or a custom core tab. For details about this, see [Enable and disable add-in commands](disable-add-in-commands.md). There may be scenarios in which you want to change both the visibility of a tab and the enabled status of a button at the same time. You do this with a single call of `requestUpdate`. The following is an example in which a button on a core tab is enabled at the same time as a contextual tab is made visible.
 
 ```javascript
 function myContextChanges() {

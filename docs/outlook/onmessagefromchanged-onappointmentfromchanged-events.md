@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 04/12/2024
+ms.date: 10/08/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ The following tables list client-server combinations that support the `OnMessage
 |-----|-----|-----|-----|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -39,7 +39,7 @@ The following tables list client-server combinations that support the `OnMessage
 |-----|-----|-----|-----|
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.77.816.0 or later|Supported|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|
 
@@ -58,6 +58,23 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
+
+1. Navigate to the "authorization.permissions.resourceSpecific" array. In the array object, replace the value of the "name" property with "MailboxItem.ReadWrite.User". This is needed by the add-in to be able to update the signature of a message.
+
+    ```json
+    ...
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "MailboxItem.ReadWrite.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    ...
+    ```
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup.
 
@@ -334,14 +351,12 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
         result.asyncContext.completed();
     }
     
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to 
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to
     // map the event handler name specified in the manifest's LaunchEvent element (with the add-in only manifest)
     // or the "autoRunEvents.events.actionId" property (with the unified manifest for Microsoft 365)
     // to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-        Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
-        Office.actions.associate("onMessageFromChangedHandler", onMessageFromChangedHandler);
-    }
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onMessageFromChangedHandler", onMessageFromChangedHandler);
     ```
 
 > [!IMPORTANT]

@@ -1,7 +1,7 @@
 ---
 title: Manage the delivery date and time of a message
 description: Learn how to get and set the delivery date and time of a message in compose mode.
-ms.date: 04/12/2024
+ms.date: 09/27/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -66,9 +66,9 @@ Office.context.mailbox.item.delayDeliveryTime.setAsync(timeDelay, (asyncResult) 
 
 ## Feature behavior and limitations
 
-When you schedule the delivery of a message using the `item.delayDeliveryTime.setAsync` method, the delay is processed on the server. This allows the message to be sent even if the Outlook client isn’t running. However, because of this, the message doesn't appear in the Outbox folder, so you won't be able to edit the message or cancel its delivery after selecting **Send**. You'll be able to review the message from the **Sent Items** folder once the message is sent.
+When you schedule the delivery of a message using the `item.delayDeliveryTime.setAsync` method, the delay is processed on the server. This allows the message to be sent even if the Outlook client isn’t running. In classic Outlook on Windows, the message doesn't appear in the **Outbox** folder, so you won't be able to edit the message or cancel its delivery after selecting **Send**. However, you'll be able to review the message from the **Sent Items** folder. In Outlook on the web, on Mac, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), the message appears in the **Drafts** folder until the scheduled delivery time. While it's in the **Drafts** folder, you'll be able to edit the message before it's sent.
 
-This behavior differs from a message scheduled using the native **Delay Delivery** option in the Outlook client, which processes the delay client-side. A message scheduled using this option appears in the **Outbox** folder and is only delivered if the Outlook client from which it was sent is running at the specified delivery time.
+The `item.delayDeliveryTime.setAsync` behavior differs from a message scheduled using the native **Delay Delivery** option in the Outlook client, which processes the delay client-side. A message scheduled using this option appears in the **Outbox** folder and is only delivered if the Outlook client from which it was sent is running at the specified delivery time.
 
 ## Try sample snippets in Script Lab
 

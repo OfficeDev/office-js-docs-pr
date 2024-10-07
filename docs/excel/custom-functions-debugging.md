@@ -6,7 +6,7 @@ ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 
-# Custom functions debugging
+# Custom functions debugging in a non-shared runtime
 
 This article discusses debugging only for custom functions that **don't use a [shared runtime](../testing/runtimes.md#shared-runtime)**. To debug custom functions add-ins that use a shared runtime, see [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md).
 

@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 07/18/2024
+ms.date: 09/26/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -159,7 +159,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "mobileLogToCRM",
                                 "label": "Log to Contoso",
-                                "buttonType": "MobileButton",
+                                "type": "mobileButton",
                                 "icons": [
                                     {
                                         "scale": 1,
@@ -319,7 +319,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "mobileTaskpaneButton",
                                 "label": "Log to Contoso",
-                                "buttonType": "MobileButton",
+                                "type": "mobileButton",
                                 "icons": [
                                     {
                                         "scale": 1,

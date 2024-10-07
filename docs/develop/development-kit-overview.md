@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (preview)
 description: Learn how to create Office Add-in projects using Office Add-ins Development Kit extension.
-ms.date: 08/14/2024
+ms.date: 09/09/2024
 ms.localizationpriority: high
 ---
 
@@ -57,20 +57,29 @@ Samples show a working add-in that solves an end-to-end scenario. Samples are mo
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
 1. Select **View Samples**.
 1. Select the sample you would like to view.
-1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
-1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely close the original Visual Studio Code window.
+1. Select the **Create** button above the now-open sample readme.
+1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project. The extension copies a version of the sample to that folder. It then opens the project in a *second* Visual Studio Code window. You can freely close the original Visual Studio Code window.
 
 ## Test your add-in
 
 To understand how the add-in will work in an Office application, use the Office Add-ins Development Kit to run and debug your Office add-in in your local development environment.
 
-Select **Preview Your Office Add-in (F5)** to launch the add-in and debug the code. In the Quick Pick menu, select the option **Edge Desktop (Edge Chromium)**.
+> [!NOTE]
+> These steps are the same as the ones listed in Visual Studio Code by the extension when you create a new project.
 
-The development kit checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in.
+1. Open the extension by selecting the Office Add-ins Development Kit icon in the **Activity Bar**.
+1. Select **Preview Your Office Add-in (F5)**
+1. In the Quick Pick menu, select the option **{Office Host} Desktop (Edge Chromium)**. This will launch the add-in and debug the code.
+
+The development kit checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in. Please note that the first time you run a project, it may make take a few minutes to install the dependencies. You will need to install the certificate when prompted.
 
 ## Stop testing your Office Add-in
 
-Once you are finished testing and debugging the add-in, select **Stop Previewing Your Office Add-in**. This closes the web server and removes the add-in from the registry and cache.
+Once you are finished testing and debugging the add-in, close the add-in by following these steps.
+
+1. Open the extension by selecting the Office Add-ins Development Kit icon in the **Activity Bar**.
+1. Select **Stop Previewing Your Office Add-in**. This closes the web server and removes the add-in from the registry and cache.
+1. Close the Office application window at your convenience.
 
 ## Troubleshooting
 
