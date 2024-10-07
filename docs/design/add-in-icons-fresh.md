@@ -1,7 +1,7 @@
 ---
 title: Fresh style icon guidelines for Office Add-ins
 description: Guidelines for using Fresh style icons in Office Add-ins.
-ms.date: 08/18/2023
+ms.date: 09/19/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -127,6 +127,12 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 - Avoid large blocks of color with similar values.
 
 ## See also
+
+### Unified manifest reference
+
+- ["extensions.ribbons" array](/microsoftteams/platform/resources/schema/manifest-schema#extensionsribbons)
+
+### Add-in only manifest reference
 
 - [Icon manifest element](/javascript/api/manifest/icon)
 - [IconUrl manifest element](/javascript/api/manifest/iconurl)

@@ -1,7 +1,7 @@
 ---
 title: Monoline style icon guidelines for Office Add-ins
 description: Guidelines for using Monoline style icons in Office Add-ins.
-ms.date: 08/18/2023
+ms.date: 09/19/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -204,6 +204,12 @@ Avoid using text characters in icons. Since Office products are used around the 
 The final icons should be saved as .png image files. Use PNG format with a transparent background and have 32-bit depth.
 
 ## See also
+
+### Unified manifest reference
+
+- ["extensions.ribbons" array](/microsoftteams/platform/resources/schema/manifest-schema#extensionsribbons)
+
+### Add-in only manifest reference
 
 - [Icon manifest element](/javascript/api/manifest/icon)
 - [IconUrl manifest element](/javascript/api/manifest/iconurl)
