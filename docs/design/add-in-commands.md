@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 03/04/2024
+ms.date: 08/10/2024
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -12,7 +12,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 > [!NOTE]
 >
-> - SharePoint catalogs don't support add-in commands. You can deploy add-in commands via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing.
+> - SharePoint catalogs don't support add-in commands. You can deploy add-in commands via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), or use [sideloading](../testing/test-debug-non-local-server.md) to deploy your add-in command for testing.
 > - Content add-ins don't currently support add-in commands.
 
 ## Types of add-in commands
@@ -95,8 +95,8 @@ You can specify that a tab is only visible on the ribbon in certain contexts, su
 Add-in commands are currently supported on the following platforms, except for limitations specified in the subsections of [Command capabilities](#command-capabilities) earlier.
 
 - Office on the web
-- Office on Windows (build 16.0.6769+, connected to a Microsoft 365 subscription)
-- Office on Mac (build 15.33+, connected to a Microsoft 365 subscription)
+- Office on Windows (Version 1604 (Build 6769.2000) or later, connected to a Microsoft 365 subscription)
+- Office on Mac (Version 15.33 (17040900) or later, connected to a Microsoft 365 subscription)
 - Perpetual Office 2019 or later on Windows or on Mac
 
 > [!NOTE]

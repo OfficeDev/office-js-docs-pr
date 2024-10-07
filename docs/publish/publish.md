@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 06/13/2024
+ms.date: 07/13/2024
 ms.localizationpriority: high
 ---
 
@@ -86,7 +86,7 @@ It's important to note that some versions of Outlook clients and Exchange server
 
 ## See also
 
-- [Sideload Outlook add-ins for testing](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
 - [Submit to AppSource][AppSource]
 - [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)

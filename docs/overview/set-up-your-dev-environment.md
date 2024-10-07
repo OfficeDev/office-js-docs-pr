@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 07/28/2024
+ms.date: 08/22/2024
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -16,9 +16,10 @@ You need a Microsoft 365 account. You might qualify for a Microsoft 365 E5 devel
 
 ## Install the environment
 
-There are two kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the two environments is different, so if multiple people will be working on an add-in project, they must all use the same environment.
+There are three kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the three environments is different, so if multiple people will be working on an add-in project, they must all use the same environment.
 
-- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called WebPack. There are two project creation and scaffolding tools you can choose from: a command line tool called the Office Yeoman Generator (also called "Yo Office") and an extension to Visual Studio Code called Teams Toolkit.
+- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called webpack. The project creation and scaffolding tool is a command line tool called the Office Yeoman Generator (also called "Yo Office"), though you can still use the Visual Studio Code extensions mentioned in the next option.
+- **Visual Studio Code**: Choose this environment if you use Visual Studio Code and would prefer to create projects from extensions rather than command line tools. The project creation and scaffolding tools are the Teams Toolkit or Office Add-ins Development Kit extensions.
 - **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. More information later on the **Visual Studio environment** tab.
 
 > [!NOTE]
@@ -33,35 +34,12 @@ The main tools to be installed are:
 - Node.js
 - npm
 - A code editor of your choice
-- A project creation tool:
-
-    - Office Yeoman Generator (Yo Office)
-    - Teams Toolkit (requires Visual Studio Code)
-
+- Office Yeoman Generator (Yo Office)
 - The Office JavaScript linter
 
 This guide assumes that you know how to use a command-line tool.
 
-### Install Node.js and npm
-
-Node.js is a JavaScript runtime you use to develop modern Office Add-ins.
-
-Install Node.js by [downloading the latest recommended version from their website](https://nodejs.org). Follow the installation instructions for your operating system.
-
-npm is an open source software registry from which to download the packages used in developing Office Add-ins. It's usually installed automatically when you install Node.js. To check if you already have npm installed and see the installed version, run the following in the command line.
-
-```command&nbsp;line
-npm -v
-```
-
-If, for any reason, you want to install it manually, run the following in the command line.
-
-```command&nbsp;line
-npm install npm -g
-```
-
-> [!TIP]
-> You may wish to use a Node version manager to allow you to switch between multiple versions of Node.js and npm, but this isn't strictly necessary. For details on how to do this, [see npm's instructions](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+[!INCLUDE [Instructions to install Node.js.](../includes/install-node-js.md)]
 
 ### Install a code editor
 
@@ -71,21 +49,13 @@ You can use any code editor or IDE that supports client-side development to buil
 - [Atom](https://atom.io)
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
-### Install a project creation tool
-
-You can create Office add-in projects with either the Office Yeoman Generator (Yo Office) or the Teams Toolkit extension for Visual Studio Code.
-
-#### Install the Yeoman generator &mdash; Yo Office
+### Install the Yeoman generator &mdash; Yo Office
 
 The project creation and scaffolding tool is [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), affectionately known as **Yo Office**. You need to install the latest version of [Yeoman](https://github.com/yeoman/yo) and Yo Office. To install these tools globally, run the following command via the command prompt.
 
   ```command&nbsp;line
   npm install -g yo generator-office
   ```
-
-#### Install Teams Toolkit 
-
-Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Teams Toolkit as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 
 ### Install and use the Office JavaScript linter
 
@@ -127,11 +97,48 @@ Run the linter with the following command either in the terminal of an editor, s
 npm run lint
 ```
 
+# [Visual Studio Code](#tab/visualstudiocode)
+
+The main tools to be installed are:
+
+- Node.js
+- npm
+- Visual Studio Code
+- A project creation tool:
+  - Teams Toolkit
+  - The Office Add-ins Development Kit for VS Code
+
+This guide assumes that you know how to use a command-line tool.
+
+[!INCLUDE [Instructions to install Node.js.](../includes/install-node-js.md)]
+
+### Install Visual Studio Code
+
+Get the latest version of Visual Studio Code from [Visual Studio Code homepage](https://code.visualstudio.com). Select the appropriate option for your platform of choice.
+
+### Install a project creation tool
+
+You can create Office add-in projects in Visual Studio Code with either the Teams Toolkit or Office Add-ins Development Kit extensions. Currently, Teams Toolkit focuses on Outlook add-ins that use the modern unified manifest. The Office Add-ins Development Kit is in preview and only focuses on Excel, PowerPoint, and Word experiences. Both tools are being actively expanded with new samples and functionality.
+
+#### Install Teams Toolkit
+
+Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Teams Toolkit as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
+
+#### Install the Office Add-ins Development Kit extension (preview)
+
+The Office Add-ins Development Kit extension for Visual Studio Code lets you create and run new add-ins directly from the IDE. For more information about the extension, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](../develop/development-kit-overview.md).
+
+[!INCLUDE [Instructions to install the Office Add-ins Development Kit through VS Code.](../includes/install-dev-kit.md)]
+
+[!INCLUDE [Information about the preview status of the dev kit.](../includes/dev-kit-preview-note.md)]
+
 # [Visual Studio environment](#tab/visualstudio)
+
+This option only installs Visual Studio.
 
 ### Install Visual Studio
 
-If you do not have Visual Studio 2017 (for Windows) or later installed, install the latest version from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
+Install the latest version of Visual Studio from [Visual Studio Downloads](https://visualstudio.microsoft.com/downloads/). Be sure to include the **Office/SharePoint development** workload when the installer asks you to specify workloads. Other workloads that you may need are **Web development tools for .NET**, **JavaScript and TypeScript language support** (for coding the client-side of the add-in), and ASP.NET-related workloads.
 
 > [!NOTE]
 > For information about debugging client-side code when you're using the Visual Studio environment, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md). Debug the server-side code the same way you would any web application created in Visual Studio. See [Client-side or server-side](../testing/debug-add-ins-overview.md#server-side-or-client-side).
@@ -142,15 +149,13 @@ If you do not have Visual Studio 2017 (for Windows) or later installed, install 
 
 Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
 
-[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
-
 ## Next steps
 
 Try creating your own add-in or use [Script Lab](explore-with-script-lab.md) to try built-in samples.
 
 ### Create an Office Add-in
 
-You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.yml). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try a [tutorial](../index.yml).
+You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.yml#get-started-with-office-add-ins). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try a [tutorial](../index.yml#your-developer-journey).
 
 ### Explore the APIs with Script Lab
 

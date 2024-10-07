@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a mail item without leaving the item itself. For example, a contextual add-in can choose a string in the body of a mail item that opens a meeting suggestion add-in.
 
-You can specify regular expression rules to activate a contextual add-in when a match is found in specific fields of the message. Contextual add-ins only activate in read mode. Outlook doesn't activate contextual add-ins when the user is composing an item. There are also other scenarios where Outlook doesn't activate add-ins. For more information, see [Activation rules for Outlook add-ins](activation-rules.md).
+You can specify regular expression rules to activate a contextual add-in when a match is found in specific fields of the message. Contextual add-ins only activate in read mode. Outlook doesn't activate contextual add-ins when the user is composing an item.
 
 > [!IMPORTANT]
 > Entity-based contextual Outlook add-ins are now retired. As an alternative solution, implement regular expression rules in your contextual add-in.
@@ -88,5 +88,4 @@ const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 ## See also
 
 - [Outlook add-in: Contoso Order Number](https://github.com/OfficeDev/Outlook-Add-In-Contextual-Regex) (sample contextual add-in that activates based on a regular expression match)
-- [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md)
-- [Activation rules for contextual Outlook add-ins](activation-rules.md)
+- [Build your first Outlook add-in](../quickstarts/outlook-quickstart-yo.md)

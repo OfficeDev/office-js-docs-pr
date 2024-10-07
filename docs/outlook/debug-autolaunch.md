@@ -59,7 +59,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
    This sets the debugger port to `9223`.
 
 1. Start Outlook or restart it if it's already open.
-1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event or reporting spam messages. The Debug Event-based handler dialog should appear. Do *not* interact with the dialog yet.
+1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event or reporting spam messages. The **Debug Event-based handler** dialog should appear. Do *not* interact with the dialog yet.
 
     ![The Debug Event-based handler dialog in Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
 
@@ -142,6 +142,10 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
 To stop debugging the rest of the current Outlook on Windows session, in the **Debug Event-based handler** dialog, choose **Cancel**. To re-enable debugging, restart Outlook.
 
 To prevent the **Debug Event-based handler** dialog from popping up and stop debugging for subsequent Outlook sessions, delete the associated registry key, `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`, or set its value to `0`.
+
+## Stop the local server
+
+[!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 # [Mac](#tab/mac)
 

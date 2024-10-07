@@ -1,7 +1,7 @@
 ---
 title: VSTO add-in developer's guide to Office Web Add-ins
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
-ms.date: 05/20/2023
+ms.date: 08/22/2024
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -37,14 +37,11 @@ There are a lot of links in those articles, but if you're transitioning to Offic
 
 ## Step 2: Install tools and create your first add-in
 
-You've got the big picture now, so dive in with one of our quick starts. For purposes of learning the platform, we recommend the Excel quick start. There's a version based on Visual Studio and another based on Node.js and Visual Studio Code. If you're transitioning from VSTO add-ins, you'll probably find the Visual Studio version easier to work with.
-
-- [Visual Studio](../quickstarts/excel-quickstart-jquery.md?tabs=visualstudio)
-- [Node.js and Visual Studio Code](../quickstarts/excel-quickstart-jquery.md?tabs=yeomangenerator)
+You've got the big picture now, so dive in with one of our quick starts. For purposes of learning the platform, we recommend the [PowerPoint quick start for Visual Studio](../quickstarts/powerpoint-quickstart-vs.md).
 
 ## Step 3: Code
 
-You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial.md). You'll be using the Office JavaScript library and some XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later step.
+You can't learn to drive by reading the owner's manual, so start coding with this [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md?tabs=visualstudio). You'll be using the Office JavaScript library and some XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later step.
 
 ## Step 4: Understand the JavaScript library
 
@@ -70,11 +67,14 @@ Congratulations on finishing the VSTO add-in developer's learning path for Offic
 
 - Tutorials or quick starts for other Office applications:
 
+  - [Excel tutorial](../tutorials/excel-tutorial.md)
   - [OneNote quick start](../quickstarts/onenote-quickstart.md)
   - [Outlook tutorial](/outlook/add-ins/addin-tutorial)
-  - [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md)
   - [Project quick start](../quickstarts/project-quickstart.md)
   - [Word tutorial](../tutorials/word-tutorial.md)
+
+    > [!NOTE]
+    > These tutorials use Yo Office as their tooling infrastructure, instead of Visual Studio and the Office development templates.
 
 - Other important subjects:
 

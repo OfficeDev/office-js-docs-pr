@@ -2,7 +2,7 @@
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 03/29/2024
+ms.date: 08/15/2024
 ms.localizationpriority: medium
 ---
 
@@ -26,7 +26,7 @@ See [Validate an Office Add-in's manifest](troubleshoot-manifest.md) and [Debug 
    1. Select **Options**.
    1. In the **Options** dialog, select **Advanced**.
    1. In the **General** section (the **Developers** section for Outlook), enable **Show add-in user interface errors**.
-   
+
    Sideload the add-in again and see if there are any errors.
 
 ## Changes to add-in commands including ribbon buttons and menu items do not take effect
@@ -129,8 +129,12 @@ You can repeat the previous process for any additional schemas that are out-of-d
 
 When you're loading the Office JavaScript Library from a local copy instead of from the CDN, the APIs may stop working if the library isn't up-to-date. If you have been away from a project for a while, reinstall the library to get the latest version. The process varies according to your IDE. Choose one of the following options based on your environment.
 
-- **Visual Studio**: See [Update to the latest Office JavaScript API library](../develop/update-your-javascript-api-for-office-and-manifest-schema-version.md). 
-- **Any other IDE**: See the npm packages [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) and [@types/office-js](https://www.npmjs.com/package/@types/office-js).
+- **Visual Studio**: Follow these steps to update the NuGet package.
+    1. Choose **Tools** > **NuGet Package Manager** > **Manage Nuget Packages for Solution**.
+    1. Choose the **Updates** tab.
+    1. Select "Microsoft.Office.js". Ensure the package source is from nuget.org.
+    1. In the left pane, choose **Install** and complete the package update process.
+- **Any other IDE**: Get the latest npm packages [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) and [@types/office-js](https://www.npmjs.com/package/@types/office-js).
 
 ## See also
 

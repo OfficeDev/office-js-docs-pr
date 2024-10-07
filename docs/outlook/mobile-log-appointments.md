@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 07/18/2024
+ms.date: 09/26/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -20,7 +20,7 @@ Logging notes to an external application from an Outlook mobile add-in is suppor
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to create an add-in project with the Yeoman generator for Office Add-ins.
 
 ## Configure the manifest
 
@@ -159,7 +159,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "mobileLogToCRM",
                                 "label": "Log to Contoso",
-                                "buttonType": "MobileButton",
+                                "type": "mobileButton",
                                 "icons": [
                                     {
                                         "scale": 1,
@@ -319,7 +319,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "mobileTaskpaneButton",
                                 "label": "Log to Contoso",
-                                "buttonType": "MobileButton",
+                                "type": "mobileButton",
                                 "icons": [
                                     {
                                         "scale": 1,
@@ -577,7 +577,7 @@ To enable users to log appointment notes with your add-in, you must configure th
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Capture appointment notes
 

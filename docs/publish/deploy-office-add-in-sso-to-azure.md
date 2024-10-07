@@ -269,7 +269,7 @@ If you make additional code changes, you'll need to run `npm run build` again an
 
 ### Deploy updates
 
-[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
+[!INCLUDE [General statements about updating an add-in](../includes/deploy-updates-general.md)]
 
 ## Test the deployment
 

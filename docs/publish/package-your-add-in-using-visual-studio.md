@@ -44,7 +44,7 @@ You can now upload your manifest to the appropriate location to [publish your ad
 
 ## Deploy updates
 
-[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
+[!INCLUDE [General statements about updating an add-in](../includes/deploy-updates-general.md)]
 
 ## See also
 

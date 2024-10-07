@@ -110,6 +110,7 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
 1. Run the command `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then Outlook desktop opens.
 1. You can now work with your add-in.
+1. When you're done working with your add-in, make sure to run the command `npm run stop`.
 
 ### Projects created with the Office Yeoman Generator (aka "Yo Office")
 
@@ -119,10 +120,12 @@ If the project was created with the Office Yeoman Generator and you don't want t
 
     ```command&nbsp;line
     npx office-addin-project convert -m <relative-path-to-XML-manifest>
-    ``` 
-    
+    ```
+
 1. Run `npm install`.
-1. To sideload the add-in, run `npm run start:desktop`. This command puts the unified manifest and the two image files into a zip file and sideloads it to the Office application. It also starts server in a separate NodeJS window to host the add-in files on localhost.
+1. To sideload the add-in, run `npm run start:desktop`. This command puts the unified manifest and the two image files into a zip file and sideloads it to the Office application. It also starts the server in a separate NodeJS window to host the add-in files on localhost.
+
+When you're ready to stop the dev server and uninstall the add-in, run the command `npm run stop`.
 
 ### NodeJS and npm projects that aren't created with Yeoman Generator
 
@@ -131,7 +134,7 @@ If you don't want to use the Teams Toolkit and your project wasn't created with 
 In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named **MyManifest.xml**, the unified manifest is created at **.\MyManifest\MyManifest.json**. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
 ```command&nbsp;line
-npx office-addin-manifest-converter convert -m <relative-path-to-XML-manifest>
+npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
 ```
 
 Once you have the unified manifest created, there are two ways to create the zip file and sideload it. They are described in the next two subsections.
