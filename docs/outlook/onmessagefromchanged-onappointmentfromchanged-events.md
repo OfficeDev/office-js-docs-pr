@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 04/12/2024
+ms.date: 10/08/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -58,6 +58,23 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
+
+1. Navigate to the "authorization.permissions.resourceSpecific" array. In the array object, replace the value of the "name" property with "MailboxItem.ReadWrite.User". This is needed by the add-in to be able to update the signature of a message.
+
+    ```json
+    ...
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "MailboxItem.ReadWrite.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    ...
+    ```
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup.
 
