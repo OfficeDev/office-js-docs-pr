@@ -60,7 +60,7 @@ The **read item** permission is the next level of permission in the permissions 
 
 ### Can do
 
-- [Read all the properties](item-data.md) of the current item in a read or [compose form](get-and-set-item-data-in-a-compose-form.md), for example, [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) in a compose form.
+- Read all the properties of the current item in a read or compose form. For example, [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) in a compose form.
 
 - [Get a callback token to get item attachments](get-attachments-of-an-outlook-item.md) or the full item with Exchange Web Services (EWS) or [Outlook REST APIs](use-rest-api.md).
 
@@ -105,7 +105,7 @@ Specify **read/write item** permission in the manifest to request this permissio
 
 ### Can do
 
-- [Read and write all item-level properties](item-data.md) of the item that is being viewed or composed in Outlook.
+- Read and write all item-level properties of the item that is being viewed or composed in Outlook.
 
 - [Add or remove attachments](add-and-remove-attachments-to-an-item-in-a-compose-form.md) of that item.
 
