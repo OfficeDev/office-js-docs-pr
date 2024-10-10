@@ -1,7 +1,7 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: Learn how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
-ms.date: 02/21/2024
+ms.date: 10/03/2024
 ms.localizationpriority: medium
 ---
 
@@ -30,7 +30,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 1. To enable your browser to directly show the XML data from a REST query, turn off the feed reading view. For information about how to do this in Internet Explorer, see Procedure 1, step 4 in [Query OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
-1. Query the **ProjectData** service by using your browser with the following URL: **http://ServerName /ProjectServerName /_api/ProjectData**. For example, if the Project Web App instance is  `http://MyServer/pwa`, the browser shows the following results.
+1. Query the **ProjectData** service by using your browser with the following URL: `http://ServerName /ProjectServerName /_api/ProjectData`. For example, if the Project Web App instance is  `http://MyServer/pwa`, the browser shows the following results.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -56,7 +56,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 Office Developer Tools for Visual Studio includes a template for task pane add-ins for Project. If you create a solution named **HelloProjectOData**, the solution contains the following two Visual Studio projects:
 
-- The add-in project takes the name of the solution. It includes the XML manifest file for the add-in and targets the .NET Framework 4.5. Procedure 3 shows the steps to modify the manifest for the **HelloProjectOData** add-in.
+- The add-in project takes the name of the solution. It includes the add-in only manifest file for the add-in and targets the .NET Framework 4.5. Procedure 3 shows the steps to modify the manifest for the **HelloProjectOData** add-in.
 
 - The web project is named **HelloProjectODataWeb**. It includes the webpages, JavaScript files, CSS files, images, references, and configuration files for the web content in the task pane. The web project targets the .NET Framework 4. Procedure 4 and Procedure 5 show how to modify the files in the web project to create the functionality of the **HelloProjectOData** add-in.
 
@@ -116,7 +116,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
-1. In the HelloProjectOData.xml manifest, add an **\<IconUrl\>** element below the **\<Description\>** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml manifest file now contains the following (your **\<Id\>** value will be different):
+1. In the HelloProjectOData.xml, add an **\<IconUrl\>** element below the **\<Description\>** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml file now contains the following (your **\<Id\>** value will be different):
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -191,7 +191,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     <script src="../Scripts/jquery-1.7.1.js"></script>
 
     <!-- Use the CDN reference to office.js when deploying your add-in. -->
-    <!--<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>-->
+    <!--<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>-->
 
     <!-- Use the local script references for Office.js to enable offline debugging -->
     <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
@@ -669,7 +669,7 @@ The following code is in the `Pages\HelloProjectOData.html` file of the **HelloP
         <script src="../Scripts/jquery-1.7.1.js"></script>
 
         <!-- Use the CDN reference to Office.js when deploying your add-in -->
-        <!--<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>-->
+        <!--<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>-->
 
         <!-- Use the local script references for Office.js to enable offline debugging -->
         <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
@@ -1203,10 +1203,10 @@ If you modify the **HelloProjectOData** add-in for production use, do the follow
 - In the HelloProjectOData.html file, for better performance, change the office.js reference from the local project to the CDN reference:
 
     ```HTML
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     ```
 
-- Rewrite the `retrieveOData` function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the _$skip_ operator and _$top_ operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form:
+- Rewrite the `retrieveOData` function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the *$skip* operator and *$top* operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form:
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 

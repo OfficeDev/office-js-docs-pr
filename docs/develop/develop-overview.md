@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 05/26/2023
+ms.date: 08/15/2024
 ms.localizationpriority: high
 ---
 
@@ -15,7 +15,7 @@ All Office Add-ins are built upon the Office Add-ins platform. For any add-in yo
 
 ## Create an Office Add-in
 
-You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Visual Studio, or Teams Toolkit.
+You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Visual Studio, Teams Toolkit, or the [Office Add-ins Development Kit (preview)](development-kit-overview.md).
 
 ### Yeoman generator
 
@@ -35,11 +35,13 @@ Create your project using HTML, CSS and JavaScript (or TypeScript), or using Rea
 
 Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and PowerPoint. An Office Add-in project gets created as part of a Visual Studio solution and uses HTML, CSS, and JavaScript. For more information about creating add-ins with Visual Studio, see [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
-[!include[Yeoman vs Visual Studio comparison](../includes/yeoman-generator-recommendation.md)]
-
 ### Teams Toolkit
 
 The Teams Toolkit can be used to create almost any kind of Teams App, a term which includes all extensions of Microsoft 365, including those that don't extend the Teams application. For details about creating an add-in, see [Create Office Add-in projects with Teams Toolkit](teams-toolkit-overview.md).
+
+### Office Add-ins Development Kit (preview)
+
+The Office Add-ins Development Kit is an extension for Visual Studio Code. It lets you create new add-in projects and load samples directly from the IDE. Download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) or learn more in the article [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
 
 ## Understand the two parts of an Office Add-in
 

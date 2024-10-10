@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge WebView2
 description: Debug add-ins using the developer tools in Microsoft Edge WebView2 (Chromium-based).
-ms.date: 12/19/2023
+ms.date: 07/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ To determine which webview you're using, see [Browsers and webview controls used
 > [!NOTE]
 > If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the Microsoft Edge (Chromium-based) developer tools can't be launched from, so the technique described in this article can't be used to debug code in the function.
 
-1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
+1. [Sideload](test-debug-non-local-server.md) and run the add-in.
 
     > [!NOTE]
     > To sideload an add-in in Outlook, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
@@ -36,7 +36,7 @@ To determine which webview you're using, see [Browsers and webview controls used
    - Right-click (or select and hold) the task pane to open the context menu and select **Inspect**, or open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and select **Attach Debugger**. (The personality menu isn't supported in Outlook.)
 
    > [!NOTE]
-   > The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
+   > The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](../outlook/one-outlook.md#debug-your-add-in).
 
 1. Open the **Sources** tab.
 1. Open the file that you want to debug with the following steps.

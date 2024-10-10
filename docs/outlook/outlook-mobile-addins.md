@@ -1,7 +1,7 @@
 ---
 title: Add-ins for Outlook on mobile devices
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
-ms.date: 04/12/2024
+ms.date: 09/26/2024
 ms.localizationpriority: medium
 ---
 
@@ -30,32 +30,32 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
 
 - In general, only Message Read mode is supported. This has implications for how you configure the manifest.
   - **Unified manifest for Microsoft 365**: "mailRead" is the only item you should declare in the "extensions.ribbons.contexts" array.
-  - **XML manifest**: `MobileMessageReadCommandSurface` is the only [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) you should declare in the mobile section of your manifest. 
+  - **Add-in only manifest**: `MobileMessageReadCommandSurface` is the only [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) you should declare in the mobile section of your manifest. 
   
   However, there are some exceptions.
   1. Appointment Organizer mode is supported for online meeting provider integrated add-ins.
      - **Unified manifest for Microsoft 365**: "onlineMeetingDetailsOrganizer" is permitted in the "extensions.ribbons.contexts" array.
-     - **XML manifest**: The [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is permitted. 
+     - **Add-in only manifest**: The [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is permitted. 
   
      For more information on this scenario, see [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md).
 
   1. Appointment Attendee mode is supported for integrated add-ins created by providers of note-taking and customer relationship management (CRM) applications. 
      - **Unified manifest for Microsoft 365**: "logEventMeetingDetailsAttendee" is permitted in the "extensions.ribbons.contexts" array.
-     - **XML manifest**: The [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) is permitted. 
+     - **Add-in only manifest**: The [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) is permitted. 
     
      For more information on this scenario, see [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md).
 
   1. Event-based add-ins that activate on the `OnNewMessageCompose` event require an exception.
      - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the "extensions.ribbons.contexts" array. But note that event-based add-ins do require an "extensions.autoRunEvents" property in the manifest. 
-     - **XML manifest**: The [LaunchEvent extension point](/javascript/api/manifest/extensionpoint#launchevent) *must be declared*. 
+     - **Add-in only manifest**: The [LaunchEvent extension point](/javascript/api/manifest/extensionpoint#launchevent) *must be declared*. 
   
      For more information, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 - The [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) API isn't supported on mobile since the mobile app uses REST APIs to communicate with the server. If your app backend needs to connect to the Exchange server, you can use the callback token to make REST API calls. For details, see [Use the Outlook REST APIs from an Outlook add-in](use-rest-api.md).
 
 - Your manifest needs to declare mobile support including special mobile controls and icon sizes. 
-  - **Unified manifest for Microsoft 365**: Include the string "mobile" in the "extensions.ribbons.requirements.formFactors" array, and include a "customMobileRibbonGroups" array in the tab object of the "extensions.ribbons.tabs" array. The object in this array must include a "controls.buttonType" of "MobileButton" and a "controls.icons" array.
-  - **XML manifest**: Include a **\<MobileFormFactor\>**, and include the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon).
+  - **Unified manifest for Microsoft 365**: Include the string "mobile" in the "extensions.ribbons.requirements.formFactors" array, and include a "customMobileRibbonGroups" array in the tab object of the "extensions.ribbons.tabs" array. The object in this array must include a "controls.type" of "mobileButton" and a "controls.icons" array.
+  - **Add-in only manifest**: Include a **\<MobileFormFactor\>**, and include the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon).
   
   To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
@@ -81,7 +81,7 @@ Here are examples of scenarios that make sense in Outlook mobile.
 
 ## Testing your add-ins on mobile
 
-To test an add-in on Outlook mobile, first [sideload an add-in](sideload-outlook-add-ins-for-testing.md) using a Microsoft 365 or Outlook.com account in Outlook on the web, on Windows (classic or [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), or on Mac. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load in Outlook mobile.
+To test an add-in on Outlook mobile, first [sideload an add-in](sideload-outlook-add-ins-for-testing.md) using a Microsoft 365 or Outlook.com account in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) or classic), or on Mac. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load in Outlook mobile.
 
 After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets accessibility guidelines for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
 

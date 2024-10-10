@@ -27,13 +27,11 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 ## Explore the project
 
 The add-in project that you've created with the Yeoman generator contains sample code for a basic task pane add-in. If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
 
-- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in. To learn more about the **manifest.xml** file, see [Office Add-ins XML manifest](../develop/xml-manifest-overview.md).
+- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in. To learn more about the **manifest.xml** file, see [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md).
 - The **./src/taskpane/app/app.component.html** file contains the HTML markup for the task pane.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
 - The **./src/taskpane/app/app.component.ts** file contains the Office JavaScript API code that facilitates interaction between the task pane and Excel.

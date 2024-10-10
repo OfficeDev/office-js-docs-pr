@@ -12,7 +12,7 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 03/08/2024 #Required; mm/dd/yyyy format.
+  ms.date: 07/18/2024 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
@@ -39,11 +39,11 @@ productDirectory:
     links:
       - url: quickstarts/excel-quickstart-jquery.md
         text: "Excel: Build your first add-in"
-      - url: quickstarts/outlook-quickstart.md
+      - url: quickstarts/outlook-quickstart-yo.md
         text: "Outlook: Build your first add-in"
-      - url: quickstarts/powerpoint-quickstart.md
+      - url: quickstarts/powerpoint-quickstart-yo.md
         text: "PowerPoint: Build your first add-in"
-      - url: quickstarts/word-quickstart.md
+      - url: quickstarts/word-quickstart-yo.md
         text: "Word: Build your first add-in"
   
   - title: Add-in scenarios
@@ -85,6 +85,9 @@ conceptualContent:
         - url: https://devblogs.microsoft.com/microsoft365dev/category/office-add-ins/
           itemType: whats-new
           text: Microsoft 365 Developer Blog
+        - url: concepts/add-in-development-best-practices.md
+          itemType: concept
+          text: Best practices for developing Office Add-ins
     # Card 2
     - title: Build
       links:

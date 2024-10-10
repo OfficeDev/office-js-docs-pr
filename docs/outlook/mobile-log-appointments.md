@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 07/18/2024
+ms.date: 09/26/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -20,14 +20,14 @@ Logging notes to an external application from an Outlook mobile add-in is suppor
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to create an add-in project with the Yeoman generator for Office Add-ins.
 
 ## Configure the manifest
 
 To configure your add-in's manifest, select the type of manifest you're using.
 
 - [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365)
-- [XML manifest](#xml-manifest)
+- [Add-in only manifest](#add-in-only-manifest)
 
 ### Unified manifest for Microsoft 365
 
@@ -159,7 +159,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "mobileLogToCRM",
                                 "label": "Log to Contoso",
-                                "buttonType": "MobileButton",
+                                "type": "mobileButton",
                                 "icons": [
                                     {
                                         "scale": 1,
@@ -319,7 +319,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "mobileTaskpaneButton",
                                 "label": "Log to Contoso",
-                                "buttonType": "MobileButton",
+                                "type": "mobileButton",
                                 "icons": [
                                     {
                                         "scale": 1,
@@ -381,7 +381,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 ---
 
-### XML manifest
+### Add-in only manifest
 
 To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors aren't supported.
 
@@ -577,7 +577,7 @@ To enable users to log appointment notes with your add-in, you must configure th
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Capture appointment notes
 
@@ -858,7 +858,7 @@ If you'd like your users to undo logging or delete the logged appointment notes 
 ## Test and validate
 
 1. Follow the usual guidance to [test and validate your add-in](testing-and-tips.md).
-1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, on Windows (classic or [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), or on Mac, restart Outlook on your Android or iOS mobile device.
+1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) or classic), or on Mac, restart Outlook on your Android or iOS mobile device.
 1. Open an appointment as an attendee, then verify that under the **Meeting Insights** card, there's a new card with your add-in's name alongside the **Log** button.
 
 ### UI: Log the appointment notes

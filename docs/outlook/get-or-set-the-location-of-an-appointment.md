@@ -24,7 +24,7 @@ The following table lists the location APIs and the modes (i.e., Compose or Read
 | [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organizer/Compose |
 | [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organizer/Compose |
 
-To use the methods that are available only to compose add-ins, configure the add-in XML manifest to activate the add-in in Organizer/Compose mode. See [Create Outlook add-ins for compose forms](compose-scenario.md) for more details. Activation rules aren't supported in add-ins that use a [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md).
+To use the methods that are available only to compose add-ins, configure the add-in only manifest to activate the add-in in Organizer/Compose mode. See [Create Outlook add-ins for compose forms](compose-scenario.md) for more details. Activation rules aren't supported in add-ins that use a [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md).
 
 ## Use the `enhancedLocation` API
 
@@ -200,5 +200,5 @@ function write(message){
 
 ## See also
 
-- [Create your first Outlook add-in](../quickstarts/outlook-quickstart.md)
+- [Create your first Outlook add-in](../quickstarts/outlook-quickstart-yo.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)

@@ -1,11 +1,11 @@
 ---
-title: Develop Outlook add-ins for the new Outlook on Windows (preview)
-description: Learn how to develop add-ins that are compatible with the new Outlook on Windows (preview).
-ms.date: 07/01/2024
+title: Develop Outlook add-ins for the new Outlook on Windows
+description: Learn how to develop add-ins that are compatible with the new Outlook on Windows.
+ms.date: 08/16/2024
 ms.localizationpriority: medium
 ---
 
-# Develop Outlook add-ins for the new Outlook on Windows (preview)
+# Develop Outlook add-ins for the new Outlook on Windows
 
 The new Outlook on Windows desktop client unifies the Windows and web codebases to create a more consistent Outlook experience for users and administrators. Its modern and simplified interface has added capabilities and aims to improve productivity, organization, and collaboration for users. More importantly, the new Outlook on Windows supports Outlook web add-ins, so that you can continue to extend Outlook's functionality.
 
@@ -17,8 +17,8 @@ To help get you started on the migration process, review the following guidance.
 
 - The differences in features and scenarios supported by VSTO and COM add-ins and Outlook web add-ins are being addressed. To determine whether your add-in scenario is fully supported in an Outlook web add-in, see [Supported scenarios in Outlook web add-ins](#supported-scenarios-in-outlook-web-add-ins).
 - For guidance on how to transition your VSTO add-in to an Outlook web add-in, see [VSTO add-in developer's guide](../overview/learning-path-transition.md) and [Tutorial: Share code between both a VSTO Add-in and an Office Add-in with a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
-- If you're new to Outlook web add-ins, try out the [Outlook quick start](../quickstarts/outlook-quickstart.md) to build your first add-in.
-- If you're an IT administrator and would like to learn more about how to transition to Outlook web add-ins in your organization, see [Transitioning add-ins from classic Outlook to the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388).
+- If you're new to Outlook web add-ins, try out the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to build your first add-in.
+- If you're an IT administrator and would like to learn more about how to transition to Outlook web add-ins in your organization, see [Transitioning add-ins from classic Outlook to the new Outlook for Windows](/microsoft-365-apps/outlook/get-started/migrate-com-to-web-addins#transitioning-add-ins-from-classic-outlook-to-the-new-outlook-for-windows). By default, when a user switches to new Outlook on Windows for the first time, they can choose to import their Outlook settings and install existing add-ins from classic Outlook on Windows. Because COM add-ins aren't supported in the new client, web add-in counterparts are installed instead. For more information, see [Install web add-in counterparts of existing COM add-ins in new Outlook for Windows](/microsoft-365-apps/outlook/get-started/install-web-add-ins).
 
 > [!NOTE]
 > VSTO and COM add-ins are still supported in classic Outlook on Windows.
@@ -37,7 +37,7 @@ The following table identifies key Outlook scenarios and their support status in
 |Scenario|Description|Support status in Outlook web add-ins|Related features and samples|
 |-----|-----|-----|-----|
 |Spam email reporting and education|Enable users to report unsolicited and potentially unsafe messages and learn how to identify these messages.|Supported. Improvements are in development to further enhance the user experience.|<ul><li>[Implement an integrated spam-reporting add-in](spam-reporting.md)</li><li>[ReportPhishingCommandSurface extension point](/javascript/api/manifest/extensionpoint#reportphishingcommandsurface)</li><li>[Office.context.mailbox.item.getAsFileAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getasfileasync-member(1))</li></ul>|
-|Online meetings|Enable users to create and join online meetings.|Supported.|<ul><li>[Create an Outlook add-in for an online-meeting provider](online-meeting.md)</li><li>[Enable shared folders and shared mailbox scenarios in an Outlook add-in](delegate-access.md)</li><li>[Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item)</li><li>[Office.SharedProperties](/javascript/api/outlook/office.sharedproperties)</li></ul>|
+|Online meetings|Enable users to create and join online meetings.|Supported.|<ul><li>[Create an Outlook add-in for an online-meeting provider](online-meeting.md)</li><li>[Implement shared folders and shared mailbox scenarios in an Outlook add-in](delegate-access.md)</li><li>[Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item)</li><li>[Office.SharedProperties](/javascript/api/outlook/office.sharedproperties)</li></ul>|
 |Meeting enhancements|Provide additional services for users when they schedule meetings, such as location selection, catering services, and room lighting and temperature adjustments.|Supported.|<ul><li>[Configure your Outlook add-in for event-based activation](autolaunch.md)</li><li>[Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](smart-alerts-onmessagesend-walkthrough.md)</li><li>[Office.context.mailbox.item.enhancedLocation](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-enhancedlocation-member)</li></ul>|
 |Online signatures|Automatically add themed signatures to messages and appointments.|Supported.|<ul><li>[Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md)</li><li>[Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md)</li><li>[Use Outlook event-based activation to set the signature](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)</li><li>[Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)</li><li>[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))</li></ul>|
 |Customer relationship management (CRM) and tracking services|Enable users to send and retrieve information from their CRM system to track communications with existing and potential customers.|Supported.|<ul><li>[Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)</li><li>[Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md)</li><li>[Office.context.mailbox.item.loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)</li></ul>|
@@ -59,7 +59,7 @@ Classic Outlook on Windows with a Microsoft 365 subscription or a retail perpetu
 
 ## Test your add-in in the new Outlook on Windows
 
-Test your Outlook web add-in in the new Outlook on Windows today! To switch to the new Outlook on Windows that's in preview, you must meet the following requirements.
+Test your Outlook web add-in in the new Outlook on Windows today! To switch to the new Outlook on Windows, you must meet the following requirements.
 
 - Have a Microsoft 365 work or school account connected to Exchange Online. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
 
@@ -68,7 +68,7 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
-To help you sign up and install the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+To help you install and set up the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 
@@ -98,10 +98,10 @@ As you test your Outlook web add-in in the new Outlook on Windows, share feedbac
 
 ## See also
 
-- [Overview of the new Outlook for Windows](/deployoffice/outlook/overview-new-outlook)
+- [Overview of the new Outlook for Windows](/microsoft-365-apps/outlook/overview-new-outlook)
 - [Blog post: Add-ins in the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388)
 - [Podcast: Update on development with new Outlook for Windows](https://www.m365devpodcast.com/update-on-development-with-new-outlook-for-windows/)
 - [Outlook add-ins overview](outlook-add-ins-overview.md)
-- [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md)
+- [Build your first Outlook add-in](../quickstarts/outlook-quickstart-yo.md)
 - [VSTO add-in developer's guide](../overview/learning-path-transition.md)
 - [Tutorial: Share code between both a VSTO Add-in and an Office Add-in with a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md)

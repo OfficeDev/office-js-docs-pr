@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 07/18/2024
+ms.date: 09/26/2024
 ms.localizationpriority: high
 ---
 
@@ -12,8 +12,8 @@ This article introduces the unified app manifest for Microsoft 365. It assumes t
 
 > [!TIP]
 >
-> - For an overview of the XML manifest, see [Office Add-ins XML manifest](xml-manifest-overview.md).
-> - If you're familiar with the XML manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
+> - For an overview of the add-in only manifest, see [Office Add-ins with the add-in only manifest](xml-manifest-overview.md).
+> - If you're familiar with the add-in only manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
 
@@ -31,7 +31,7 @@ We've taken an important first step toward these goals by making it possible for
 
 ## Key properties of the unified manifest
 
-The main reference documentation for the version of the unified app manifest is at [Manifest schema](/microsoftteams/platform/resources/schema/manifest-schema). That article provides information about the critical base manifest properties, but may not include any documentation of the "extensions" property, which is the property where Office Add-ins are configured in the unified manifest. So, in this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office add-in. This is followed by some basic documentation for the "extensions" property and its descendent properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
+The main reference documentation for the version of the unified app manifest is at [Unified manifest reference](/microsoftteams/platform/resources/schema/manifest-schema). (For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).) In this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office Add-in. This is followed by some basic documentation for the "extensions" property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
 
 ### Base properties
 
@@ -53,7 +53,10 @@ Each of the base properties listed in the following table has more extensive doc
 
 ### "extensions" property
 
-We're working hard to complete reference documentation for the "extensions" property and its descendent properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the XML manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '"extensions" property' section of [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
+We're working hard to complete reference documentation for the "extensions" property and its descendant properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the add-in only manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '"extensions" property' section of [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
+
+> [!NOTE]
+> This table contains only some selected representative descendant properties of "extensions". *It isn't an exhaustive list of all child properties of "extensions".* For the full reference of the unified manifest, see [Unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema). For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 |JSON property|Purpose|
 |:-----|:-----|
@@ -61,6 +64,8 @@ We're working hard to complete reference documentation for the "extensions" prop
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. For example, "mail" means the add-in can be installed in Outlook. |
 | "ribbons" | The ribbons that the add-in customizes. |
 | "ribbons.contexts" | Specifies the command surfaces that the add-in customizes. For example, "mailRead" or "mailCompose". |
+| "ribbons.fixedControls" (developer preview) | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. |
+| "ribbons.spamPreProcessingDialog" (developer preview) | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. |
 | "ribbons.tabs" | Configures custom ribbon tabs. |
 | "alternates" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. |
 | "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). |
@@ -75,11 +80,11 @@ To override this behavior in desktop platforms, add each domain you want to open
 
 ## Sample unified manifest
 
-The following is an example of a unified app manifest for an add-in.
+The following is an example of a unified app manifest for an add-in. It doesn't contain every possible manifest property.
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/op/extensions/MicrosoftTeams.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
   "id": "00000000-0000-0000-0000-000000000000",
   "version": "1.0.0",
   "manifestVersion": "devPreview",
@@ -140,7 +145,8 @@ The following is an example of a unified app manifest for an add-in.
           "requirements": {
             "capabilities": [
               {
-                "name": "MailBox", "minVersion": "1.10"
+                "name": "MailBox",
+                "minVersion": "1.10"
               }
             ]
           },
@@ -339,7 +345,7 @@ The following is an example of a unified app manifest for an add-in.
                   "controls": [
                     {
                       "id": "msgReadFunctionButton",
-                      "type": "MobileButton",
+                      "type": "mobileButton",
                       "label": "Action 1",
                       "icons": [
                         {
@@ -371,7 +377,7 @@ The following is an example of a unified app manifest for an add-in.
                   "controls": [
                     {
                       "id": "control1",
-                      "type": "MobileButton",
+                      "type": "mobileButton",
                       "label": "Action 1",
                       "icons": [
                         {

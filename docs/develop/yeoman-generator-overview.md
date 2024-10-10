@@ -97,8 +97,6 @@ This option creates only a manifest for an add-in. The resulting project doesn't
 - You want to use different tools from the ones a Yeoman generator project installs and configures by default. For example, you want to use a different bundler, transpiler, task runner, or development server.
 - You want to use a web application development framework, other than React, such as Vue.
 
-For an example of using the generator with the manifest-only option, see [Use Vue to build an Excel task pane add-in](../quickstarts/excel-quickstart-vue.md).
-
 ## Use command line parameters
 
 You can also add parameters to the `yo office` command. The two most common are:

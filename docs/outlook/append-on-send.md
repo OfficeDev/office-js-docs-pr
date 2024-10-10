@@ -21,7 +21,7 @@ In this walkthrough, you'll develop an add-in that prepends a header and appends
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) which creates an add-in project with the Yeoman generator for Office Add-ins.
 
 ## Configure the manifest
 
@@ -174,7 +174,7 @@ The following shows how to configure your unified manifest to enable the prepend
 
 1. Save your changes.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable the prepend-on-send and append-on-send features in your add-in, you must include the `AppendOnSend` permission in the collection of [ExtendedPermissions](/javascript/api/manifest/extendedpermissions). Additionally, you'll configure function commands to prepend and append content to the message body.
 
@@ -294,7 +294,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 > [!TIP]
 >
 > - The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the prepend-on-send handler
 
@@ -395,7 +395,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest to its JavaScript counterpart. The location of the function name in the manifest varies depending on the type of manifest your add-in uses.
 
-- **XML manifest**: The function name specified in the **\<FunctionName\>** element.
+- **Add-in only manifest**: The function name specified in the **\<FunctionName\>** element.
 - **Unified manifest for Microsoft 365**: The function name specified in the "id" property of the objects in the "extensions.runtimes.actions" array.
 
     ```javascript
@@ -430,6 +430,8 @@ In this section, you'll implement the JavaScript code to append a sample company
     > [!TIP]
     > Because content is only prepended or appended once the message is sent, the sender will only be able to view the added content from their **Inbox** or **Sent Items** folder. If you require the sender to view the added content before the message is sent, see [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md).
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ## Review feature behavior and limitations
 
 As you implement prepend-on-send and append-on-send in your add-in, keep the following in mind.
@@ -461,6 +463,6 @@ If you encounter an error while implementing the prepend-on-send and append-on-s
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Office.Body](/javascript/api/outlook/office.body)
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)

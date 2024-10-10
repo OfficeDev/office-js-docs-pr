@@ -1,7 +1,7 @@
 ---
 title: Develop your Office Add-in to work with ITP when using third-party cookies
 description: How to work with ITP and Office Add-ins when using third-party cookies.
-ms.date: 01/22/2024
+ms.date: 08/05/2024
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +16,7 @@ If your Office Add-in and website must rely on third-party cookies, use the foll
     > [!NOTE]
     > If you're using cookies for purposes other than authentication, consider using `localStorage` for your scenario.
     >
-    > However, note that starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is being tested to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site. To work around this, in your browser, go to **chrome://flags** or **edge://flags**, then set the **Experimental third-party storage partitioning (#third-party-storage-partitioning)** flag to **Disabled**.
+    > However, note that starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site.
 
 The following code sample shows how to use the Storage Access API.
 
@@ -51,7 +51,7 @@ if (document.hasStorageAccess) {
 
 Third-party cookies are cookies that are loaded in an iframe, where the domain is different from the top level frame. ITP could affect complex authentication scenarios, where a pop-up dialog is used to enter credentials and then the cookie access is needed by an add-in iframe to complete the authentication flow. ITP could also affect silent authentication scenarios, where you have previously used a pop-up dialog to authenticate, but subsequent use of the add-in tries to authenticate through a hidden iframe.
 
-When developing Office Add-ins on Mac, access to third-party cookies is blocked by the MacOS Big Sur SDK. This is because WKWebView ITP is enabled by default on the Safari browser, and WKWebView blocks all third-party cookies. Office on Mac version 16.44 or later is integrated with the MacOS Big Sur SDK.
+When developing Office Add-ins on Mac, access to third-party cookies is blocked by the MacOS Big Sur SDK. This is because WKWebView ITP is enabled by default on the Safari browser, and WKWebView blocks all third-party cookies. Office on Mac Version 16.44 (20121301) or later is integrated with the MacOS Big Sur SDK.
 
 In the Safari browser, end users can toggle the **Prevent cross-site tracking** checkbox under **Preference** > **Privacy** to turn off ITP. However, ITP can't be turned off for the embedded WKWebView control.
 

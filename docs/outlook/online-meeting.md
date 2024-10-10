@@ -1,7 +1,7 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 07/11/2024
+ms.date: 09/26/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -11,13 +11,13 @@ ms.localizationpriority: medium
 Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook). However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can streamline the online meeting creation and joining experience for their Outlook add-in users.
 
 > [!IMPORTANT]
-> This feature is supported in Outlook on the web, Windows (classic and [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), Mac, Android, and iOS with a Microsoft 365 subscription.
+> This feature is supported in Outlook on the web, Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Mac, Android, and iOS with a Microsoft 365 subscription.
 
 In this article, you'll learn how to set up your Outlook add-in to enable users to organize and join a meeting using your online-meeting service. Throughout this article, we'll use a fictional online-meeting service provider, "Contoso".
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -193,7 +193,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
                     { 
                         "id": "mobileInsertMeetingButton",
                         "label": "Add meeting",
-                        "buttonType": "MobileButton",
+                        "type": "mobileButton",
                         "actionId": "insertContosoMeeting",
                         "icons": [
                             {
@@ -250,7 +250,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 ]  
 ```
 
-# [XML manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the Outlook quick start project you created.
 
@@ -360,7 +360,7 @@ To allow users to create an online meeting from their mobile device, the [Mobile
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Implement adding online meeting details
 
@@ -432,7 +432,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
 
 ## Testing and validation
 
-Follow the usual guidance to [test and validate your add-in](testing-and-tips.md), then [sideload](sideload-outlook-add-ins-for-testing.md) the manifest in Outlook on the web, on Windows (classic or new (preview)), or on Mac. If your add-in also supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
+Follow the usual guidance to [test and validate your add-in](testing-and-tips.md), then [sideload](sideload-outlook-add-ins-for-testing.md) the manifest in Outlook on the web, on Windows (new or classic), or on Mac. If your add-in also supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
 
 ### Create meeting UI
 
@@ -447,7 +447,7 @@ As a meeting attendee, you should see a screen similar to the following image wh
 [![The join meeting screen on Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
-> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview). If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service isn't registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
+> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows. If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service isn't registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
 
 ## Register your online-meeting template
 
@@ -455,7 +455,7 @@ Registering your online-meeting add-in is optional. It only applies if you want 
 
 > [!IMPORTANT]
 >
-> - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows (preview).
+> - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows.
 > - Only online-meeting add-ins published to AppSource can be registered. Line-of-business add-ins aren't supported.
 > - The **Join** button relies on the technology used by entity-based contextual Outlook add-ins. As this technology will be retired by the end of June 2024, an alternative implementation of the **Join** button is currently being developed. During the transition to this implementation, the **Join** button may not be visible when using an online meeting add-in. As a workaround, you must select the meeting link from the body of the meeting invitation to join the meeting directly. For more information on the retirement of entity-based contextual add-ins, see [Retirement of entity-based contextual Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/retirement-of-entity-based-contextual-outlook-add-ins/).
 

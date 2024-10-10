@@ -1,7 +1,7 @@
 ---
 title: Manage the delivery date and time of a message
 description: Learn how to get and set the delivery date and time of a message in compose mode.
-ms.date: 04/12/2024
+ms.date: 09/27/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,9 +15,9 @@ The Outlook client gives you the option to delay the delivery of a message, but 
 
 ## Configure the manifest
 
-To schedule the delivery of a message, your add-in must be able to activate in message compose mode. This is defined through the [MessageComposeCommandSurface](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) extension point in an XML manifest or the **mailCompose** "contexts" property in a [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
+To schedule the delivery of a message, your add-in must be able to activate in message compose mode. This is defined through the [MessageComposeCommandSurface](/javascript/api/manifest/extensionpoint#messagecomposecommandsurface) extension point in an add-in only manifest or the **mailCompose** "contexts" property in a [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
-For further guidance on how to configure an Outlook add-in manifest, see [Office add-in manifests](../develop/add-in-manifests.md).
+For further guidance on how to configure an Outlook add-in manifest, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Access the delivery property of a message
 
@@ -66,17 +66,15 @@ Office.context.mailbox.item.delayDeliveryTime.setAsync(timeDelay, (asyncResult) 
 
 ## Feature behavior and limitations
 
-When you schedule the delivery of a message using the `item.delayDeliveryTime.setAsync` method, the delay is processed on the server. This allows the message to be sent even if the Outlook client isn’t running. However, because of this, the message doesn't appear in the Outbox folder, so you won't be able to edit the message or cancel its delivery after selecting **Send**. You'll be able to review the message from the **Sent Items** folder once the message is sent.
+When you schedule the delivery of a message using the `item.delayDeliveryTime.setAsync` method, the delay is processed on the server. This allows the message to be sent even if the Outlook client isn’t running. In classic Outlook on Windows, the message doesn't appear in the **Outbox** folder, so you won't be able to edit the message or cancel its delivery after selecting **Send**. However, you'll be able to review the message from the **Sent Items** folder. In Outlook on the web, on Mac, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), the message appears in the **Drafts** folder until the scheduled delivery time. While it's in the **Drafts** folder, you'll be able to edit the message before it's sent.
 
-This behavior differs from a message scheduled using the native **Delay Delivery** option in the Outlook client, which processes the delay client-side. A message scheduled using this option appears in the **Outbox** folder and is only delivered if the Outlook client from which it was sent is running at the specified delivery time.
+The `item.delayDeliveryTime.setAsync` behavior differs from a message scheduled using the native **Delay Delivery** option in the Outlook client, which processes the delay client-side. A message scheduled using this option appears in the **Outbox** folder and is only delivered if the Outlook client from which it was sent is running at the specified delivery time.
 
 ## Try sample snippets in Script Lab
 
 Get the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/wa200001603) and try out the "Get and set message delivery (Message Compose)" sample snippet. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
 :::image type="content" source="../images/outlook-delay-delivery-script-lab.png" alt-text="The message delivery sample snippet in Script Lab.":::
-
-[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
 
 ## See also
 

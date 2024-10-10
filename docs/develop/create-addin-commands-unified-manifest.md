@@ -12,7 +12,7 @@ Add-in commands provide an easy way to customize the default Office user interfa
 This article describes how to configure the [Unified manifest for Microsoft 365](unified-manifest-overview.md) to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
 
 > [!TIP]
-> Instructions for creating add-in commands with the XML manifest are in [Create add-in commands with the XML manifest](create-addin-commands.md).
+> Instructions for creating add-in commands with the add-in only manifest are in [Create add-in commands with the add-in only manifest](create-addin-commands.md).
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
@@ -204,7 +204,7 @@ The following subsections explain how to include a [function command](../design/
     - For purposes of this article, the file is named **commands.js**.
     - The function will cause a small notification to appear on an open email message with the text "Action performed".
     - Like all code that call APIs in the Office JavaScript Library, it must begin by [initializing the library](initialize-add-in.md). It does this by calling `Office.onReady`.
-    - The last thing the code calls is [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) to tell Office which function in the file should be run when the UI for your function command is invoked. The function maps the function name to an action ID that you configure in the manifest in a later step. If you define multiple function commands in the same file, your code must call `associate` for each one.
+    - The last thing the code calls is [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) to tell Office which function in the file should be run when the UI for your function command is invoked. The function maps the function name to an action ID that you configure in the manifest in a later step. If you define multiple function commands in the same file, your code must call `associate` for each one.
     - The function must take a parameter of type [Office.AddinCommands.Event](/javascript/api/office/office.addincommands.event). The last line of the function must call [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)).
 
     ```javascript

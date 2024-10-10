@@ -113,7 +113,7 @@ The following instructions show how to share a global variable between custom fu
 
 - Start the project by using the following command.
 
-    ```command line
+    ```command&nbsp;line
     npm run start
     ```
 
@@ -121,6 +121,12 @@ Once Excel starts, you can use the task pane buttons to store or get shared data
 
 > [!NOTE]
 > Calling some Office APIs from custom functions using a shared runtime is possible. [See Call Microsoft Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md) for more details.
+
+When you're ready to stop the dev server and uninstall the add-in, run the following command.
+
+```command&nbsp;line
+npm run stop
+```
 
 ## See also
 

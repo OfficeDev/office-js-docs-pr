@@ -10,9 +10,7 @@ ms.localizationpriority: medium
 
 In this article, you'll walk through the process of building a PowerPoint [content add-in](../design/content-add-ins.md) using Visual Studio.
 
-## Create the add-in
-
-### Prerequisites
+## Prerequisites
 
 [!include[Quick Start prerequisites](../includes/quickstart-vs-prerequisites.md)]
 
@@ -28,11 +26,11 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
-### Explore the Visual Studio solution
+## Explore the Visual Studio solution
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### Update the code
+## Update the code
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, find the `<p>` element that contains the text "This example will read the current document selection." and the `<button>` element where the `id` is "get-data-from-selection". Replace these entire elements with the following markup then save the file.
 
@@ -67,9 +65,9 @@ In this article, you'll walk through the process of building a PowerPoint [conte
     }
     ```
 
-### Update the manifest
+## Update the manifest
 
-1. Open the XML manifest file in the add-in project. This file defines the add-in's settings and capabilities.
+1. Open the add-in only manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
 1. The `ProviderName` element has a placeholder value. Replace it with your name.
 
@@ -89,7 +87,7 @@ In this article, you'll walk through the process of building a PowerPoint [conte
     ...
     ```
 
-### Try it out
+## Try it out
 
 1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the content add-in displayed over the slide.
 
@@ -99,9 +97,11 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
-### Next steps
+## Next steps
 
 Congratulations, you've successfully created a PowerPoint content add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
+
+[!include[The common troubleshooting section for all Visual Studio quick starts](../includes/quickstart-troubleshooting-vs.md)]
 
 ## See also
 

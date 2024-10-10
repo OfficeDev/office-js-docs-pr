@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in APIs
 description: Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.
-ms.date: 04/12/2024
+ms.date: 10/03/2024
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -12,12 +12,12 @@ To use APIs in your Outlook add-in, you must specify the location of the Office.
 
 ## Office.js library
 
-To interact with the [Outlook add-in API](/javascript/api/outlook), you need to use the JavaScript APIs in Office.js. The content delivery network (CDN) for the library is `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Add-ins submitted to AppSource must reference Office.js by this CDN; they can't use a local reference.
+To interact with the [Outlook add-in API](/javascript/api/outlook), you need to use the JavaScript APIs in Office.js. The content delivery network (CDN) for the library is `https://appsforoffice.microsoft.com/lib/1.1/hosted/Office.js`. Add-ins submitted to AppSource must reference Office.js by this CDN; they can't use a local reference.
 
 Reference the CDN in a `<script>` tag in the `<head>` tag of the web page (.html, .aspx, or .php file) that implements the UI of your add-in.
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/Office.js" type="text/javascript"></script>
 ```
 
 As we add new APIs, the URL to Office.js will stay the same. We will change the version in the URL only if we break an existing API behavior.
@@ -46,10 +46,10 @@ if (item.somePropertyOrFunction) {
 
 Specify the minimum requirement set that supports the critical set of APIs for your scenario, without which features of your add-in won't work. You specify the requirement set in the manifest. The markup varies depending on the manifest that you are using.
 
-- **XML manifest**:  Use the **\<Requirements\>** element. Note that the **\<Methods\>** child element of **\<Requirements\>** isn't supported in Outlook add-ins, so you can't declare support for specific methods.
+- **Add-in only manifest**:  Use the **\<Requirements\>** element. Note that the **\<Methods\>** child element of **\<Requirements\>** isn't supported in Outlook add-ins, so you can't declare support for specific methods.
 - **Unified manifest for Microsoft 365**: Use the "extensions.capabilities" property.
 
-For more information, see [Office add-in manifests](../develop/add-in-manifests.md), and [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
+For more information, see [Office Add-in manifests](../develop/add-in-manifests.md), and [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 ## Permissions
 
@@ -63,7 +63,7 @@ There are four levels of permissions; **restricted**, **read item**, **read/writ
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets)
 - [Understanding Outlook add-in permissions](understanding-outlook-add-in-permissions.md)
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)

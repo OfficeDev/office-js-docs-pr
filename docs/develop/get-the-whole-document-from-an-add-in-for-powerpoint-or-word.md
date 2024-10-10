@@ -1,7 +1,7 @@
 ---
 title: Get the whole document from an add-in for PowerPoint or Word
 description: Learn to get the whole document from a PowerPoint or Word add-in.
-ms.date: 04/26/2024
+ms.date: 10/03/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -22,16 +22,16 @@ This article assumes that you are using a text editor to create the task pane ad
 
   - A CSS file (**Program.css**) to contain the styles and formatting for the add-in.
 
-- An XML manifest file (**GetDoc_App.xml**) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
+- An add-in only manifest file (**GetDoc_App.xml**) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
 
 Alternatively, you can create an add-in for your Office application using one of the following options. You won't have to create new files as the equivalent of each required file will be available for you to update. For example, the Yeoman generator options include **./src/taskpane/taskpane.html**, **./src/taskpane/taskpane.js**, **./src/taskpane/taskpane.css**, and **./manifest.xml**.
 
 - PowerPoint
-  - [Visual Studio](../quickstarts/powerpoint-quickstart.md?tabs=visualstudio)
-  - [Yeoman generator for Office Add-ins](../quickstarts/powerpoint-quickstart.md?tabs=yeomangenerator)
+  - [Visual Studio](../quickstarts/powerpoint-quickstart-vs.md)
+  - [Yeoman generator for Office Add-ins](../quickstarts/powerpoint-quickstart-yo.md)
 - Word
-  - [Visual Studio](../quickstarts/word-quickstart.md?tabs=visualstudio)
-  - [Yeoman generator for Office Add-ins](../quickstarts/word-quickstart.md?tabs=yeomangenerator)
+  - [Visual Studio](../quickstarts/word-quickstart-vs.md)
+  - [Yeoman generator for Office Add-ins](../quickstarts/word-quickstart-yo.md)
 
 ### Core concepts to know for creating a task pane add-in
 
@@ -39,7 +39,7 @@ Before you begin creating this add-in for PowerPoint or Word, you should be fami
 
 ## Create the manifest for the add-in
 
-The XML manifest file for an Office Add-in provides important information about the add-in: what applications can host it, the location of the HTML file, the add-in title and description, and many other characteristics.
+The manifest file for an Office Add-in provides important information about the add-in: what applications can host it, the location of the HTML file, the add-in title and description, and many other characteristics.
 
 1. In a text editor, add the following code to the manifest file.
 
@@ -88,7 +88,7 @@ Use the following procedure to create a simple user interface for the add-in tha
             <title>Publish presentation</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
             <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+            <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
             <script src="GetDoc_App.js"></script>
         </head>
         <body>
@@ -116,7 +116,7 @@ Use the following procedure to create a simple user interface for the add-in tha
             <title>Publish document</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
             <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+            <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
             <script src="GetDoc_App.js"></script>
         </head>
         <body>

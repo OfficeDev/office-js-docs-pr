@@ -11,7 +11,7 @@ ms.localizationpriority: high
 
 Outlook add-ins are solutions that extend the functionality of the Outlook client through a web-based platform. Outlook add-ins have three key aspects.
 
-- The same add-in and business logic works across web (Microsoft 365 and Outlook.com), desktop (Outlook on Windows and on Mac), and mobile.
+- The same add-in and business logic works across web (Microsoft 365 and Outlook.com), desktop (Outlook on Windows (classic) and on Mac), and mobile.
 - Outlook add-ins consist of a manifest, which describes how the add-in integrates into Outlook (for example, a button or a task pane), and JavaScript/HTML code, which makes up the UI and business logic of the add-in.
 - Outlook add-ins can be acquired from [AppSource](https://appsource.microsoft.com) or [sideloaded](sideload-outlook-add-ins-for-testing.md) by end-users or administrators.
 
@@ -19,7 +19,7 @@ Outlook add-ins are different from COM or VSTO add-ins, which are older integrat
 
 > [!IMPORTANT]
 >
-> - COM and VSTO add-ins aren't supported in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, these add-ins are still supported in the classic Outlook on Windows desktop client. To learn more, see [Develop Outlook add-ins for new Outlook on Windows (preview)](../outlook/one-outlook.md).
+> - COM and VSTO add-ins aren't supported in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, these add-ins are still supported in the classic Outlook on Windows desktop client. To learn more, see [Develop Outlook add-ins for new Outlook on Windows](../outlook/one-outlook.md).
 >
 > - In classic Outlook on Windows, it isn't recommended to install COM add-ins alongside Office web add-ins, especially if they operate on the same surface or mail item. The operations performed by COM and web add-ins could interfere with each other and lead to unexpected behavior. If you need to support both COM and web add-in versions of your solution, you must specify the COM solution as an equivalent add-in. To learn more, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
@@ -58,7 +58,7 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 - In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an [archive mailbox](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-client-and-compliance-&-security-feature-details?tabs=Archive-features#archive-mailbox), or in a public folder.
 
   > [!IMPORTANT]
-  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). To learn more, see [Enable shared folders and shared mailbox scenarios](delegate-access.md).
+  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). To learn more, see [Implement shared folders and shared mailbox scenarios](delegate-access.md).
 
 - Using a custom form.
 
@@ -71,13 +71,13 @@ Currently, there are additional considerations when designing and implementing a
 Outlook add-ins activate on IRM-protected mail items when the item is accessed from the following supported clients.
 
 - Outlook on the web
-- [New Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+- [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 - Classic Outlook on Windows starting in Version 2009 (Build 13229.10000)
 
     >[!NOTE]
-    > Digital signing relies on protection mechanisms, such as IRM. Starting in Outlook on Windows Version 1711 (Build 8711.1000) associated with a Microsoft 365 subscription, add-ins activate on digitally-signed messages.
+    > Digital signing relies on protection mechanisms, such as IRM. Starting in classic Outlook on Windows Version 1711 (Build 8711.1000) associated with a Microsoft 365 subscription, add-ins activate on digitally-signed messages.
 
-- Outlook on Mac starting in Version 16.77.827.0
+- Outlook on Mac starting in Version 16.77 (23082700)
 
 However, add-ins won't activate on IRM-protected items when:
 
@@ -86,13 +86,13 @@ However, add-ins won't activate on IRM-protected items when:
 
 ## Supported clients
 
-Outlook add-ins are supported in Outlook on Windows (classic and [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), Outlook on Mac, Outlook on the web, Outlook on iOS, Outlook on Android, and Outlook.com. Not all of the newest features are supported in all clients at the same time. For details about feature support on clients and servers, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) and articles specific to those features.
+Outlook add-ins are supported in Outlook on the web, Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Outlook on Mac, Outlook on iOS, Outlook on Android, and Outlook.com. Not all of the newest features are supported in all clients at the same time. For details about feature support on clients and servers, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) and articles specific to those features.
 
 ## Get started building Outlook add-ins
 
 To get started building Outlook add-ins, try the following:
 
-- [Quick start](../quickstarts/outlook-quickstart.md) - Build a simple task pane.
+- [Quick start](../quickstarts/outlook-quickstart-yo.md) - Build a simple task pane.
 - [Tutorial](../tutorials/outlook-tutorial.md) - Learn how to create an add-in that inserts GitHub gists into a new message.
 
 ## See also

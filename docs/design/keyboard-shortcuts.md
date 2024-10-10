@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 07/18/2024
+ms.date: 09/27/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -9,9 +9,6 @@ ms.localizationpriority: medium
 # Add custom keyboard shortcuts to your Office Add-ins
 
 Keyboard shortcuts, also known as key combinations, make it possible for your add-in's users to work more efficiently. Keyboard shortcuts also improve the add-in's accessibility for users with disabilities by providing an alternative to the mouse.
-
-> [!TIP]
-> To start with a working version of an add-in with keyboard shortcuts already configured, clone and run the [Excel Keyboard Shortcuts sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts). When you're ready to add keyboard shortcuts to your own add-in, continue with this article.
 
 There are three steps to add keyboard shortcuts to an add-in.
 
@@ -21,16 +18,23 @@ There are three steps to add keyboard shortcuts to an add-in.
 
 ## Prerequisites
 
-Keyboard shortcuts only work on platforms that support the following requirement sets. For information about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
+Keyboard shortcuts are currently only supported in the following platforms and build of **Excel** and **Word**.
+
+- Office on the web
+- Office on Windows
+  - **Excel**: Version 2102 (Build 13801.20632) and later
+  - **Word**: Version 2408 (Build 17928.20114) and later
+- Office on Mac
+  - **Excel**: Version 16.55 (21111400) and later
+  - **Word**: Version 16.88 (24081116) and later
+
+Additionally, keyboard shortcuts only work on platforms that support the following requirement sets. For information about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 
 - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 - [KeyboardShortcuts 1.1](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) (required if the add-in provides its users with the option to customize keyboard shortcuts)
 
-Keyboard shortcuts are currently only supported in **Excel** and only in these platforms and builds:
-
-- Excel on the web
-- Excel on Windows: Version 2102 (Build 13801.20632) and later
-- Excel on Mac: Version 16.48 and later
+> [!TIP]
+> To start with a working version of an add-in with keyboard shortcuts already configured, clone and run the [Use keyboard shortcuts for Office Add-in actions](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keyboard-shortcuts) sample. When you're ready to add keyboard shortcuts to your own add-in, continue with this article.
 
 ## Define custom keyboard shortcuts
 
@@ -136,7 +140,7 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
     - The specified actions will be mapped to functions that you create in a later step. In the example, you'll later map "ShowTaskpane" to a function that calls the `Office.addin.showAsTaskpane` method and "HideTaskpane" to a function that calls the `Office.addin.hide` method.
     - The "shortcuts" array contains objects that map key combinations to actions. The "shortcuts.action", "shortcuts.key", and "shortcuts.key.default" properties are required.
     - The value of the "shortcuts.action" property must match the "actions.id" property of the applicable action object.
-    - It's possible to customize shortcuts to be platform-specific. In the example, the `shortcuts` object customizes shortcuts for each of the following platforms: `windows`, `mac`, `web`. You must define a `default` shortcut key for each shortcut. This is used as a fallback key if a key combination isn't specified for a particular platform.
+    - It's possible to customize shortcuts to be platform-specific. In the example, the "shortcuts" object customizes shortcuts for each of the following platforms: "windows", "mac", and "web". You must define a default shortcut key for each shortcut. This is used as a fallback key if a key combination isn't specified for a particular platform.
 
     > [!TIP]
     > For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
@@ -203,25 +207,25 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
 
     ```javascript
     Office.actions.associate("ShowTaskpane", () => {
-        return Office.addin.showAsTaskpane()
-            .then(() => {
-                return;
-            })
-            .catch((error) => {
-                return error.code;
-            });
+        return Office.addin.showAsTaskpane()
+            .then(() => {
+                return;
+            })
+            .catch((error) => {
+                return error.code;
+            });
     });
     ```
 
     ```javascript
-    Office.actions.associate("HideTaskpane", () => {
-        return Office.addin.hide()
-            .then(() => {
-                return;
-            })
-            .catch((error) => {
-                return error.code;
-            });
+    Office.actions.associate("HideTaskpane", () => {
+        return Office.addin.hide()
+            .then(() => {
+                return;
+            })
+            .catch((error) => {
+                return error.code;
+            });
     });
     ```
 
@@ -234,7 +238,7 @@ Use the following guidelines to create custom key combinations for your add-ins.
 - On macOS, the Alt key is mapped to the Option key. On Windows, the Command key is mapped to the Ctrl key.
 - The Shift key can't be used as the only modifier key. It must be combined with either Alt/Option or Ctrl/Command.
 - Key combinations can include characters "A-Z", "a-z", "0-9", and the punctuation marks "-", "_", and "+". By convention, lowercase letters aren't used in keyboard shortcuts.
-- When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, Alt+a and Alt+A are the same shortcut, as well as Ctrl+- and Ctrl+\_ ("-" and "_" are the linked to the same physical key).
+- When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, Alt+a and Alt+A are the same shortcut, as well as Ctrl+- and Ctrl+\_ ("-" and "_" are linked to the same physical key).
 
 > [!NOTE]
 > Custom keyboard shortcuts must be pressed simultaneously. KeyTips, also known as sequential key shortcuts (for example, Alt+H, H), aren't supported in Office Add-ins.
@@ -411,7 +415,7 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
 
 To find out what shortcuts are already in use for the user, call the [Office.actions.getShortcuts](/javascript/api/office/office.actions#office-office-actions-getshortcuts-member) method. This method returns an object of type `[actionId:string]:string|null}`, where the values represent the current keyboard combination the user must use to invoke the specified action. The values can come from three different sources.
 
-- If there was a conflict with the shortcut and the user has chosen to use a different action (either native or another add-in) for that keyboard combination, the value returned will be `null` since the shortcut has been overridden and there is no keyboard combination the user can currently use to invoke that add-in action.
+- If there was a conflict with the shortcut and the user has chosen to use a different action (either native or another add-in) for that keyboard combination, the value returned will be `null` since the shortcut has been overridden and there's no keyboard combination the user can currently use to invoke that add-in action.
 - If the shortcut has been customized using the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) method, the value returned will be the customized keyboard combination.
 - If the shortcut hasn't been overridden or customized, the value returned varies depending on the type of manifest the add-in uses.
   - **Unified app manifest for Microsoft 365**: The shortcut specified in the **manifest.json** file of the add-in.
@@ -446,8 +450,22 @@ Office.actions.areShortcutsInUse(shortcuts)
     });
 ```
 
+## Implement custom keyboard shortcuts across supported Microsoft 365 apps
+
+You can implement a custom keyboard shortcut to be used across supported Microsoft 365 apps, such as Excel and Word. If the implementation to perform the same task is different on each app, you must use the `Office.actions.associate` method to call a different callback function for each app. The following code is an example.
+
+```javascript
+const host = Office.context.host;
+if (host === Office.HostType.Excel) {
+    Office.actions.associate("ChangeFormat", changeFormatExcel);
+} else if (host === Office.HostType.Word) {
+    Office.actions.associate("ChangeFormat", changeFormatWord);
+}
+...
+```
+
 ## See also
 
-- [Excel keyboard shortcuts sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-keyboard-shortcuts)
+- [Office Add-in sample: Use keyboard shortcuts for Office Add-in actions](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keyboard-shortcuts)
 - [Shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 - [Keyboard shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)

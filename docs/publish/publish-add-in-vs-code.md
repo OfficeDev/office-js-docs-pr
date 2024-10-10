@@ -26,7 +26,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 ## Using Visual Studio Code to publish
 
 >[!NOTE]
-> These steps only work for projects created with the Yeoman generator, and that use the XML-formatted manifest. They do not apply if you created the add-in using the Teams Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
+> These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They do not apply if you created the add-in using the Teams Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
 1. Select **View** > **Extensions** (Ctrl+Shift+X) to open the Extensions view.
@@ -122,7 +122,7 @@ Next, add a MIME type for JSON files.
 
 ## Deploy updates
 
-[!INCLUDE [deploy-updates-that-require-admin-consent](../includes/deploy-updates-that-require-admin-consent.md)]
+[!INCLUDE [General statements about updating an add-in](../includes/deploy-updates-general.md)]
 
 ## See also
 

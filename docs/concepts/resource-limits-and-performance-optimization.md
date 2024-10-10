@@ -36,7 +36,7 @@ Run-time resource usage limits apply to all types of Office Add-ins. These limit
 If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, the add-in becomes unavailable. The Exchange Admin Center displays the add-in status.
 
 > [!NOTE]
-> Even though only Outlook on Windows and on Mac monitor resource usage, if either of these clients makes an Outlook add-in unavailable, that add-in also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+> Even though only Outlook on Windows (classic) and on Mac monitor resource usage, if either of these clients makes an Outlook add-in unavailable, that add-in also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation.
 
@@ -44,7 +44,7 @@ In addition to the CPU core, memory, and reliability rules, Outlook add-ins shou
 
     Using a group policy or application-specific setting in the Windows registry, administrators can adjust this default threshold value of 1,000 milliseconds in the **OutlookActivationAlertThreshold** setting.
 
-- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook makes the add-in unavailable. The Exchange Admin Center displays the add-in status, and the add-in is unavailable in Outlook on Windows (classic and new (preview)), on Mac, on the web, and on mobile devices.
+- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails all three times by exceeding the applicable threshold (which is either the default of 1,000 milliseconds or a value specified by **OutlookActivationAlertThreshold**, if that setting exists in the Windows registry), Outlook makes the add-in unavailable. The Exchange Admin Center displays the add-in status, and the add-in is unavailable in Outlook on the web, on Windows (new and classic), on Mac, and on mobile devices.
 
     Using a group policy or application-specific setting in the Windows registry, administrators can adjust this number of times to retry evaluation in the **OutlookActivationManagerRetryLimit** setting.
 

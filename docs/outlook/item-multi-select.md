@@ -17,7 +17,7 @@ The following sections walk you through how to configure your add-in to retrieve
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -88,7 +88,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeo
 
 1. Save your changes.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
 
@@ -251,7 +251,7 @@ Now that you've registered an event handler, you then call the [getSelectedItems
 
 1. From a terminal, run the following code in the root directory of your project. This starts the local web server and sideloads your add-in.
 
-    ```command line
+    ```command&nbsp;line
     npm start
     ```
 
@@ -267,6 +267,8 @@ Now that you've registered an event handler, you then call the [getSelectedItems
 1. In the task pane, select **Run** to view a list of the selected messages' subject lines.
 
     :::image type="content" source="../images/outlook-multi-select.png" alt-text="A sample list of subject lines retrieved from multiple selected messages.":::
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Item multi-select behavior and limitations
 
@@ -287,7 +289,7 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 
 |Selection|Expanded conversation view|Collapsed conversation view|
 |------|------|------|
-|**Conversation header is selected**|If the conversation header is the only item selected, an add-in supporting multi-select doesn't activate. However, if other non-header messages are also selected, the add-in will only activate on those and not the selected header.|The behavior differs depending on the Outlook client.<br><br>**Outlook on Windows and on Mac**:<br>The newest message (that is, the first message in the conversation stack) is included in the message selection.<br><br>If the newest message in the conversation is located in another folder from the one currently in view, the subsequent message in the stack located in the current folder is included in the selection.<br><br>**Outlook on the web and new Outlook on Windows (preview)**:<br>All the messages in the conversation stack are selected. This includes messages in the conversation that are located in folders other than the one currently in view.|
+|**Conversation header is selected**|If the conversation header is the only item selected, an add-in supporting multi-select doesn't activate. However, if other non-header messages are also selected, the add-in will only activate on those and not the selected header.|The behavior differs depending on the Outlook client.<br><br>**Outlook on Windows (classic) and on Mac**:<br>The newest message (that is, the first message in the conversation stack) is included in the message selection.<br><br>If the newest message in the conversation is located in another folder from the one currently in view, the subsequent message in the stack located in the current folder is included in the selection.<br><br>**Outlook on the web and new Outlook on Windows**:<br>All the messages in the conversation stack are selected. This includes messages in the conversation that are located in folders other than the one currently in view.|
 |**Multiple selected messages in a conversation stack are located in the same folder as the one currently in view**|All chosen messages in the same conversation are included in the selection.|Not applicable. You must expand the conversation stack to select multiple messages from it.|
 |**Multiple selected messages in a conversation stack are located in different folders from the one currently in view** |All chosen messages in the same conversation are included in the selection.|Not applicable. You must expand the conversation stack to select multiple messages from it.|
 
@@ -296,9 +298,9 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 
 ### Task pane pinning in multi-select add-ins
 
-In Outlook on the web and in new Outlook on Windows (preview), when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
+In Outlook on the web and in new Outlook on Windows, when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
 
-Conversely, in Outlook on Windows and on Mac, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
+Conversely, in Outlook on Windows (classic) and on Mac, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Next steps
 
@@ -306,7 +308,7 @@ Now that you've enabled your add-in to operate on multiple selected messages, yo
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Call web services from an Outlook add-in](web-services.md)
 - [Overview of Microsoft Graph](/graph/overview)
 - [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)

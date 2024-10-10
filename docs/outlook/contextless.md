@@ -13,11 +13,11 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 >
-> Although Outlook on the web and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) support requirement set 1.13, an add-in won't activate if the Reading Pane is hidden or a message isn't selected. For more information, see [Feature support in Outlook on the web and new Outlook on Windows (preview)](#feature-support-in-outlook-on-the-web-and-new-outlook-on-windows-preview).
+> Although Outlook on the web and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) support requirement set 1.13, an add-in won't activate if the Reading Pane is hidden or a message isn't selected. For more information, see [Feature support in Outlook on the web and new Outlook on Windows](#feature-support-in-outlook-on-the-web-and-new-outlook-on-windows).
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an Outlook add-in with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) in which you create an Outlook add-in with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 To turn on this feature in a preexisting add-in project, see [Configure the manifest](#configure-the-manifest).
 
@@ -75,7 +75,7 @@ The steps to configure the manifest vary depending on which type of manifest you
 
 1. The "extensions.ribbons.tabs.groups.controls" array has two objects. Delete the second one, whose "id" is "ActionButton".
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action#supportsnoitemcontext) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 
@@ -210,7 +210,7 @@ To activate your add-in with the Reading Pane turned off or without a message se
 
 1. From a terminal, run the following code in the root directory of your project. This starts the local web server and sideloads your add-in.
 
-    ```command line
+    ```command&nbsp;line
     npm start
     ```
 
@@ -226,13 +226,15 @@ To activate your add-in with the Reading Pane turned off or without a message se
 
 1. Explore and test the suggestions listed in the task pane.
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ## Support for the item multi-select and pinnable task pane features
 
 Enabling support for no item context in the manifest automatically enables support for [item multi-select](item-multi-select.md) and [pinnable task pane](pinnable-taskpane.md) features, even if these features aren't explicitly configured in the manifest.
 
-## Feature support in Outlook on the web and new Outlook on Windows (preview)
+## Feature support in Outlook on the web and new Outlook on Windows
 
-In Outlook on the web and new Outlook on Windows (preview), add-ins that implement no item context don't activate when the Reading Pane is hidden or when a message isn't selected. This is because add-in commands in Outlook on the web don't appear on the ribbon. To activate an add-in from the Message Read surface, you must first select a message, then select the add-in command from the message action bar.
+In Outlook on the web and new Outlook on Windows, add-ins that implement no item context don't activate when the Reading Pane is hidden or when a message isn't selected. This is because add-in commands in Outlook on the web don't appear on the ribbon. To activate an add-in from the Message Read surface, you must first select a message, then select the add-in command from the message action bar.
 
 Since enabling no item context automatically enables the item multi-select feature, you'll be able to activate your add-in in Outlook on the web and new Outlook on Windows on multiple mail items.
 

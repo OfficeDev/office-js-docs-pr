@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 06/04/2024
+ms.date: 10/01/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -41,6 +41,9 @@ You can check for success or error of an asynchronous method call in the callbac
 ### Attach a file
 
 You can attach a file to a message or appointment in a compose form by using the `addFileAttachmentAsync` method and specifying the URI of the file. You can also use the `addFileAttachmentFromBase64Async` method, specifying the Base64-encoded string as input. If the file is protected, you can include an appropriate identity or authentication token as a URI query string parameter. Exchange will make a call to the URI to get the attachment, and the web service which protects the file will need to use the token as a means of authentication.
+
+> [!NOTE]
+> The URI of the file to be attached must support caching in production. The server hosting the image shouldn't return a `Cache-Control` header that specifies `no-cache`, `no-store`, or similar options in the HTTP response. However, when you're developing the add-in and making changes to files, caching can prevent you from seeing your changes. We recommend using `Cache-Control` headers during development.
 
 The following JavaScript example is a compose add-in that attaches a file, picture.png, from a web server to the message or appointment being composed. The callback function takes `asyncResult` as a parameter, checks for the result status, and gets the attachment ID if the method succeeds.
 
@@ -144,7 +147,7 @@ function addItemAttachment(itemId) {
 ```
 
 > [!NOTE]
-> You can use a compose add-in to attach an instance of a recurring appointment in Outlook on the web, on mobile devices, or in [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, in a supporting Outlook client on Windows or on Mac, attempting to attach an instance would result in attaching the recurring series (the parent appointment).
+> You can use a compose add-in to attach an instance of a recurring appointment in Outlook on the web, on mobile devices, or in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, in a supporting Outlook client on Windows or on Mac, attempting to attach an instance would result in attaching the recurring series (the parent appointment).
 
 ## Get attachments
 

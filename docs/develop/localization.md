@@ -43,7 +43,7 @@ The Office JavaScript API provides two properties that support displaying or int
 
 ## Control localization from the manifest
 
-The techniques for localizing with the manifest differ depending on whether you're using the XML manifest or the unified app manifest for Microsoft 365.
+The techniques for localizing with the manifest differ depending on whether you're using the add-in only manifest or the unified app manifest for Microsoft 365.
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -78,7 +78,7 @@ When using the unified app manifest for Microsoft 365, localize the public-facin
 }
 ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 Every Office Add-in specifies a [DefaultLocale] element and a locale in its manifest. By default, the Office Add-in platform and Office client applications apply the values of the [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl], and [SourceLocation] elements to all locales. You can optionally support specific values for specific locales, by specifying an [Override] child element for each additional locale, for any of these five elements. The value for the [DefaultLocale] element and for the `Locale` attribute of the [Override] element is specified according to [RFC 3066], "Tags for the Identification of Languages." The following table describes the localizing support for these elements.
 

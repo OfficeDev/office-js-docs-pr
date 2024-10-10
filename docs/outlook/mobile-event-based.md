@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 06/25/2024
+ms.date: 09/17/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,21 +12,21 @@ With the [event-based activation](autolaunch.md) feature, develop an add-in to a
 
 The following sections walk you through how to develop an Outlook mobile add-in that automatically adds a signature to new messages being composed. This highlights a sample scenario of how you can implement event-based activation in your mobile add-in. Significantly enhance the mobile user experience by exploring other scenarios and supported events in your add-in today.
 
-To learn how to implement an event-based add-in for Outlook on Windows (classic and [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), on Mac, and on the web, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
+To learn how to implement an event-based add-in for Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
 
 > [!NOTE]
 > Outlook on Android and on iOS only support up to Mailbox requirement set 1.5. However, to support the event-based activation feature, some APIs from later requirement sets have been enabled on mobile clients. For more information on this exception, see [Additional supported APIs](#additional-supported-apis).
 
 ## Supported events and clients
 
-| Event canonical name and XML manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
+| Event canonical name and add-in only manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
 | ----- | ----- | ----- | ----- |
 | `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0)</li><li>iOS (Version 4.2352.0)</li></ul> |
-| `OnMessageRecipientsChanged` | Not available | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
+| `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
 
 ## Set up your environment
 
-To run the feature, you must have a supported version of Outlook on Android or on iOS (see [Supported events and clients](#supported-events-and-clients)) and a Microsoft 365 subscription. Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+To run the feature, you must have a supported version of Outlook on Android or on iOS (see [Supported events and clients](#supported-events-and-clients)) and a Microsoft 365 subscription. Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -93,7 +93,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
       }
     ```
 
-# [XML manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable an event-based add-in on Outlook mobile, you must configure the following elements in the `VersionOverridesV1_1` node of the manifest.
 
@@ -122,7 +122,7 @@ To enable an event-based add-in on Outlook mobile, you must configure the follow
                         <Runtime resid="WebViewRuntime.Url">
                         </Runtime>
                     </Runtimes>
-                    <!-- Defines the add-in for Outlook on Windows (classic and new (preview)), on Mac, and on the web. -->
+                    <!-- Defines the add-in for Outlook on Windows (new and classic), on Mac, and on the web. -->
                     <DesktopFormFactor>
                         <FunctionFile resid="Commands.Url"/>
                         <ExtensionPoint xsi:type="MessageReadCommandSurface">
@@ -299,7 +299,7 @@ Ensure that the **./src/commands/commands.html** file has a reference to the Jav
 ## Test and validate your add-in
 
 1. Follow the guidance to [test and validate your add-in](testing-and-tips.md).
-1. [Sideload](sideload-outlook-add-ins-for-testing.md) your add-in in Outlook on Windows (classic or new (preview)), on Mac, or on the web.
+1. [Sideload](sideload-outlook-add-ins-for-testing.md) your add-in in Outlook on Windows (new or classic), on Mac, or on the web.
 1. Open Outlook on Android or on iOS. If you have Outlook already open on your device, restart it.
 1. Create a new message. The event-based add-in adds the signature to the message. If you have a signature saved on your mobile device, it will briefly appear in the message you create, but will be immediately replaced by the signature added by the add-in.
 

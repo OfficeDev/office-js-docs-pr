@@ -1,11 +1,11 @@
 ---
-title: Extend custom functions with XLL user-defined functions
-description: Enable compatibility with Excel XLL user-defined functions that have equivalent functionality to your custom functions.
-ms.date: 10/23/2023
+title: Extend custom functions with XLL add-ins
+description: Enable compatibility with Excel XLL add-ins that have equivalent functionality to your custom functions.
+ms.date: 09/20/2024
 ms.localizationpriority: medium
 ---
 
-# Extend custom functions with XLL user-defined functions
+# Extend custom functions with XLL add-ins
 
 > [!NOTE]
 > An XLL add-in is an Excel add-in file with the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that can only be opened by Excel. XLL add-in files must be written in C or C++. See [Developing Excel XLLs](/office/client-developer/excel/developing-excel-xlls) to learn more.

@@ -1,7 +1,7 @@
 ---
 title: Custom functions quick start
 description: Developing custom functions in Excel quick start guide.
-ms.date: 12/04/2023
+ms.date: 08/22/2024
 ms.service: excel
 ms.localizationpriority: high
 ---
@@ -76,6 +76,8 @@ The `ADD` custom function computes the sum of the two numbers that you specify a
 
 [!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 
+[!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
+
 ## Next steps
 
 Congratulations, you've successfully created a custom function in an Excel add-in! Next, build a more complex add-in with streaming data capability. The following link takes you through the next steps in the Excel add-in with custom functions tutorial.
@@ -83,11 +85,11 @@ Congratulations, you've successfully created a custom function in an Excel add-i
 > [!div class="nextstepaction"]
 > [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting-yo.md)]
 
-You may encounter issues if you run the quick start multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
+- You may encounter issues if you run the quick start multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start` and making sure to run `npm stop` before restarting the add-in.
 
-:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function with the same name already exists'.":::
+  :::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function with the same name already exists'.":::
 
 ## See also
 

@@ -22,7 +22,7 @@ In this tutorial, you will:
 > - Implement a task pane that inserts content into the body of a message
 
 > [!TIP]
-> If you want a completed version of this tutorial (using the XML manifest), head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
+> If you want a completed version of this tutorial (using the add-in only manifest), head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ In this tutorial, you will:
 
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor.
 
-- Outlook on the web, [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), or Outlook 2016 or later on Windows (connected to a Microsoft 365 account).
+- Outlook on the web, [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), or Outlook 2016 or later on Windows (connected to a Microsoft 365 account).
 
 - A [GitHub](https://www.github.com) account.
 
@@ -94,9 +94,9 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-1. The steps to create the project vary slightly depending on the type of manifest. 
+1. The steps to create the project vary slightly depending on the type of manifest.
 
-    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)] 
+    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
 
     # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -112,7 +112,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
       ![The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.](../images/yo-office-outlook-json-manifest-javascript-gist.png)
 
-    # [XML Manifest](#tab/xmlmanifest)
+    # [Add-in only manifest](#tab/xmlmanifest)
 
     - **Choose a project type** - `Office Add-in Task Pane project`
 
@@ -122,17 +122,13 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    - **Which manifest would you like to use?** - `XML manifest`
+    - **Which manifest would you like to use?** - `Add-in only manifest`
 
     ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-xml-manifest-javascript-gist.png)
 
     ---
 
     After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 1. Navigate to the root directory of the project.
 
@@ -177,7 +173,7 @@ Make the following updates in the manifest file to specify some basic informatio
 
 1. Save the file.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. Locate the **\<ProviderName\>** element and replace the default value with your company name.
 
@@ -216,6 +212,8 @@ Before going any further, let's test the basic add-in that the generator created
     If everything's been set up correctly, the task pane opens and renders the add-in's welcome page.
 
     ![The Show Taskpane button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Define buttons
 
@@ -371,7 +369,7 @@ Take the following steps:
 
 1. Save your changes to the manifest.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 ### Remove the MessageReadCommandSurface extension point
 
@@ -495,7 +493,7 @@ After you've reinstalled the add-in, you can verify that it installed successful
 
     ![The ribbon overflow menu in classic Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
 
-- If you're running this add-in in Outlook on the web or new Outlook on Windows (preview), select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Insert gist** and **Insert default gist** options.
+- If you're running this add-in in Outlook on the web or new Outlook on Windows, select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Insert gist** and **Insert default gist** options.
 
     ![The message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.](../images/add-in-buttons-in-owa.png)
 
@@ -526,7 +524,7 @@ Let's start by creating the UI for the dialog.
       <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-      <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+      <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
     
       <!-- Template styles -->
       <link href="dialog.css" rel="stylesheet" type="text/css" />
@@ -779,7 +777,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
     },
     ```
 
-    After you've done this, the `new CopyWebpackPlugin` object will look like the following. Note the slight difference if the add-in uses the XML manifest.
+    After you've done this, the `new CopyWebpackPlugin` object will look like the following. Note the slight difference if the add-in uses the add-in only manifest.
 
     ```js
     new CopyWebpackPlugin({
@@ -797,7 +795,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
         to: "assets/[name][ext][query]",
       },
       {
-        from: "manifest*.json", // The file extension is "xml" if the XML manifest is being used.
+        from: "manifest*.json", // The file extension is "xml" if the add-in only manifest is being used.
         to: "[name]" + "[ext]",
         transform(content) {
           if (dev) {
@@ -820,7 +818,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
     })
     ```
 
-    After you've done this, the new `plugins` array will look ike the following. Note the slight difference if the add-in uses the XML manifest.
+    After you've done this, the new `plugins` array will look ike the following. Note the slight difference if the add-in uses the add-in only manifest.
 
     ```js
     plugins: [
@@ -844,7 +842,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
             to: "assets/[name][ext][query]",
           },
           {
-            from: "manifest*.json", // The file extension is "xml" if the XML manifest is being used.
+            from: "manifest*.json", // The file extension is "xml" if the add-in only manifest is being used.
             to: "[name]." + buildType + "[ext]",
             transform(content) {
               if (dev) {
@@ -1215,7 +1213,7 @@ This add-in's **Insert gist** button opens a task pane and displays the user's g
         <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     
        <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-        <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+        <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
     
         <!-- Template styles -->
         <link href="taskpane.css" rel="stylesheet" type="text/css" />
@@ -1578,6 +1576,6 @@ In this tutorial, you've created an Outlook add-in that can be used in message c
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Outlook add-in design guidelines](../outlook/outlook-addin-design.md)
 - [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)

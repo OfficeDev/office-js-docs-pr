@@ -1,7 +1,7 @@
 ---
 title: Trident testing
 description: Test your Office Add-in on the Trident webview associated with Internet Explorer 11.
-ms.date: 05/20/2023
+ms.date: 07/14/2024
 ms.localizationpriority: medium
 ---
 
@@ -57,7 +57,7 @@ There are two ways to switch the Trident webview. You can run a simple command i
 ## See also
 
 - [Test and debug Office Add-ins](test-debug-office-add-ins.md)
-- [Sideload Office Add-ins for testing](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+- [Sideload Office Add-ins for testing](test-debug-non-local-server.md)
 - [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
 - [Runtimes in Office Add-ins](runtimes.md)

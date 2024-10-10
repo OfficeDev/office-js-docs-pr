@@ -20,18 +20,13 @@ In this tutorial, you'll create a Word task pane add-in that:
 > - Creates and updates content controls
 
 > [!TIP]
-> If you've already completed the [Build your first Word task pane add-in](../quickstarts/word-quickstart.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Insert a range of text](#insert-a-range-of-text) section to start this tutorial.
+> If you've already completed the [Build your first Word task pane add-in](../quickstarts/word-quickstart-yo.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Insert a range of text](#insert-a-range-of-text) section to start this tutorial.
 >
 > If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/word-tutorial).
 
 ## Prerequisites
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
-
-- Office connected to a Microsoft 365 subscription (including Office on the web).
-
-    > [!NOTE]
-    > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription to use for development through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ## Create your add-in project
 
@@ -45,10 +40,6 @@ In this tutorial, you'll create a Word task pane add-in that:
 ![The previous prompts and answers given to the Yeoman generator in a command line interface.](../images/yo-office-word.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## Insert a range of text
 
@@ -163,6 +154,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 1. Choose the **Insert Paragraph** button again. Note that the new paragraph appears above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
     ![The Insert Paragraph button in the add-in.](../images/word-tutorial-insert-paragraph-2.png)
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
 ## Format text
 

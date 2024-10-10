@@ -11,6 +11,7 @@ ms.localizationpriority: high
 In this article, you'll walk through the process of building a Project task pane add-in.
 
 ## Prerequisites
+
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
 
 - Project 2016 or later on Windows
@@ -27,10 +28,6 @@ In this article, you'll walk through the process of building a Project task pane
 ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-project.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## Explore the project
 
@@ -69,6 +66,16 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     ![The Project application with the task pane add-in loaded.](../images/project-quickstart-addin-1.png)
 
+1. When you want to stop the local web server and uninstall the add-in, follow these instructions:
+
+    - To stop the server, run the following command.
+
+        ```command&nbsp;line
+        npm stop
+        ```
+
+    - To uninstall the sideloaded add-in, see [Remove a sideloaded add-in](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md#remove-a-sideloaded-add-in).
+
 ## Next steps
 
 Congratulations, you've successfully created a Project task pane add-in! Next, learn more about the capabilities of a Project add-in and explore common scenarios.
@@ -76,7 +83,7 @@ Congratulations, you've successfully created a Project task pane add-in! Next, l
 > [!div class="nextstepaction"]
 > [Project add-ins](../project/project-add-ins.md)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## See also
 

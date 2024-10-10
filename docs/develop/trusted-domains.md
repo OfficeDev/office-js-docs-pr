@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Wildcard trusted domains
 
-Besides its own domain, an add-in can access resources in certain other domains such as authentication points for major identity providers and in any domain listed in the manifest. The latter domains are specified in the [AppDomains](/javascript/api/manifest/appdomains) element of the XML manifest or the [validDomains](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview#validdomains) property of the unified manifest. Wildcards aren't allowed in the XML manifest. They are allowed in the unified manifest because some Teams apps and other Microsoft 365 apps honor them; but Office Add-ins don't honor "validDomains" that contain wildcards. 
+Besides its own domain, an add-in can access resources in certain other domains such as authentication points for major identity providers and in any domain listed in the manifest. The latter domains are specified in the [AppDomains](/javascript/api/manifest/appdomains) element of the add-in only manifest or the [validDomains](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview#validdomains) property of the unified manifest. Wildcards aren't allowed in the add-in only manifest. They are allowed in the unified manifest because some Teams apps and other Microsoft 365 apps honor them; but Office Add-ins don't honor "validDomains" that contain wildcards. 
 
 Windows administrators can make Office Add-ins, *running on Windows only*, honor domains that include a wildcard by setting the **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\AllowedAppDomains** registry key with the domain. The following is an example.
 
