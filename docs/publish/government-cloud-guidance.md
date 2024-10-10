@@ -32,7 +32,7 @@ In addition to requirements applicable to all Sovereign Clouds, each Sovereign C
 
 These government clouds remain internet-connected, but the set of public endpoints made available is severely restricted. One such restricted endpoint is the public endpoint for loading the Office JavaScript API library. The public CDN location for Office.js will not be accessible from within these environments. However, there will be an internal, per-cloud Microsoft Office CDN provisioned with the same resource. This means the endpoint URL to access Office.js will be different and your Office Add-in may need some level of customization to run. Given the additional restrictions, it's likely that any solution provided to customers will require hosting provider services within the environment as well, necessitating additional customizations. You'll need to determine the best way to provide your solution to customers, such that it conforms to the additional restrictions imposed on services running within the boundaries of these environments. The Office JavaScript Library CDN URLs are as follows:
 
-- **GCC**: https://appsforoffice.dod.cdn.office.net/appsforoffice/lib/1/hosted/office.js
+- **GCC**: https://appsforoffice.gcc.cdn.office.net/appsforoffice/lib/1/hosted/office.js
 - **GCC High**: https://appsforoffice.gcch.cdn.office.net/appsforoffice/lib/1/hosted/office.js
 - **DOD**: https://appsforoffice.dod.cdn.office.net/appsforoffice/lib/1/hosted/office.js
 
