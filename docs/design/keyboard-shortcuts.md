@@ -121,7 +121,7 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
     ]
     ```
 
-# [XML manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 ### Configure the manifest to use a shared runtime
 
@@ -129,7 +129,7 @@ To customize keyboard shortcuts for your add-in, you must first configure the ad
 
 ### Create or edit the shortcuts JSON file
 
-If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a JSON file. This file describes your keyboard shortcuts and the actions that they'll invoke. The complete schema for the JSON file is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+If your add-in uses an add-in only manifest, custom keyboard shortcuts are defined in a JSON file. This file describes your keyboard shortcuts and the actions that they'll invoke. The complete schema for the JSON file is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
 
 1. In your add-in project, create a JSON file.
 1. Add the following markup to the file. Note the following about the code.
@@ -202,7 +202,7 @@ If your add-in uses an XML manifest, custom keyboard shortcuts are defined in a 
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action you specified in an earlier step to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
     - The first parameter is the name of an action that you mapped to a keyboard shortcut. The location of the name of the action depends on the type of manifest your add-in uses.
         - **Unified app manifest for Microsoft 365**: The value of the "extensions.keyboardShortcuts.shortcuts.actionId" property in the **manifest.json** file.
-        - **XML manifest**: The value of the "actions.id" property in the shortcuts JSON file.
+        - **Add-in only manifest**: The value of the "actions.id" property in the shortcuts JSON file.
     - The second parameter is the function that runs when a user presses the key combination that's mapped to an action.
 
     ```javascript
@@ -260,7 +260,7 @@ There are many keyboard shortcuts that are already in use by Microsoft 365. Avoi
 
 In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut. Note that the source of the text for the add-in option that's displayed in this dialog varies depending on the type of manifest your add-in uses.
     - **Unified app manifest for Microsoft 365**: The value of the "extensions.runtimes.actions.displayName" property in the **manifest.json** file.
-    - **XML manifest**: The value of the "actions.name" property in the shortcuts JSON file.
+    - **Add-in only manifest**: The value of the "actions.name" property in the shortcuts JSON file.
 
 ![A conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
 
@@ -288,7 +288,7 @@ Guidance on how to localize your keyboard shortcuts varies depending on the type
 
 To learn how to localize your custom keyboard shortcuts with the unified app manifest for Microsoft 365, see [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization).
 
-# [XML manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 Use the `ResourceUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Microsoft 365 to a file of localized resources. The following is an example.
 
@@ -419,7 +419,7 @@ To find out what shortcuts are already in use for the user, call the [Office.act
 - If the shortcut has been customized using the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) method, the value returned will be the customized keyboard combination.
 - If the shortcut hasn't been overridden or customized, the value returned varies depending on the type of manifest the add-in uses.
   - **Unified app manifest for Microsoft 365**: The shortcut specified in the **manifest.json** file of the add-in.
-  - **XML manifest**: The shortcut specified in the shortcuts JSON file of the add-in.
+  - **Add-in only manifest**: The shortcut specified in the shortcuts JSON file of the add-in.
 
 The following is an example.
 
