@@ -2,7 +2,7 @@
 title: Guidance for deploying Office Add-ins on government clouds
 description: Learn how to deploy your Office Add-in to secure, government cloud environments
 ms.topic: best-practice
-ms.date: 10/10/2023
+ms.date: 10/10/2024
 ms.localizationpriority: medium
 ---
 
