@@ -313,8 +313,6 @@ items:
       displayName: debug
     - name: Windows
       items:
-      - name: Sideload Office Add-ins that use the unified manifest for Microsoft 365
-        href: testing/sideload-add-in-with-unified-manifest.md
       - name: Sideload Office Add-ins on Windows from a network share
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
