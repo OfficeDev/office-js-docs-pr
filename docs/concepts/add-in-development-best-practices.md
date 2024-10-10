@@ -122,7 +122,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 ## Publish and market your add-in
 
-- Create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take time so if you plan to publish your add-in to AppSource, be sure to get this process going as soon as possible.
+- Create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. If you plan to publish your add-in to AppSource, get this process going as soon as possible.
 
 - Create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings).
 
