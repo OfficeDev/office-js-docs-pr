@@ -1,14 +1,14 @@
 ---
 title: Get and set metadata in an Outlook add-in
 description: Manage custom data in your Outlook add-in by using either roaming settings or custom properties.
-ms.date: 02/29/2024
+ms.date: 10/17/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Get and set add-in metadata for an Outlook add-in
 
-You can manage custom data in your Outlook add-in by using either of the following:
+Manage custom data in your Outlook add-in by using either of the following:
 
 - Roaming settings, which manage custom data for a user's mailbox.
 - Custom properties, which manage custom data for an item in a user's mailbox.
@@ -39,7 +39,7 @@ The following is an example of the structure, assuming there are three defined r
 
 A mail add-in typically loads roaming settings in the [Office.initialize](/javascript/api/office#Office_initialize_reason_) event handler. The following JavaScript code example shows how to load existing roaming settings and get the values of two settings, **customerName** and **customerBalance**.
 
-```js
+```javascript
 let _mailbox;
 let _settings;
 let _customerName;
@@ -61,7 +61,7 @@ Continuing with the preceding example, the following JavaScript function, `setAd
 
 The `set` method creates the setting if the setting doesn't already exist, and assigns the setting to the specified value. The `saveAsync` method saves roaming settings asynchronously. This code sample passes a callback function, `saveMyAddInSettingsCallback`, to `saveAsync`. When the asynchronous call finishes, `saveMyAddInSettingsCallback` is called by using one parameter, *asyncResult*. This parameter is an [AsyncResult](/javascript/api/office/office.asyncresult) object that contains the result of and any details about the asynchronous call. You can use the optional *userContext* parameter to pass any state information from the asynchronous call to the callback function.
 
-```js
+```javascript
 // Set a roaming setting.
 function setAddInSetting() {
   _settings.set("cookie", Date());
@@ -81,7 +81,7 @@ function saveMyAddInSettingsCallback(asyncResult) {
 
 Also extending the preceding examples, the following JavaScript function, `removeAddInSetting`, shows how to use the [RoamingSettings.remove](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-remove-member(1)) method to remove the `cookie` setting and save all the roaming settings to the mailbox.
 
-```js
+```javascript
 // Remove an add-in setting.
 function removeAddInSetting()
 {
@@ -97,7 +97,7 @@ You can specify data specific to an item in the user's mailbox using the [Custom
 
 Similar to roaming settings, changes to custom properties are stored on in-memory copies of the properties for the current Outlook session. To make sure these custom properties will be available in the next session, use [CustomProperties.saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)).
 
-These add-in-specific, item-specific custom properties can only be accessed by using the `CustomProperties` object. These properties are different from the custom, MAPI-based [UserProperties](/office/vba/api/Outlook.UserProperties) in the Outlook object model, and extended properties in Exchange Web Services (EWS). You can't directly access `CustomProperties` by using the Outlook object model, EWS, or REST. To learn how to access `CustomProperties` using EWS or REST, see the section [Get custom properties using EWS or REST](#get-custom-properties-using-ews-or-rest).
+These add-in-specific, item-specific custom properties can only be accessed by using the `CustomProperties` object. These properties are different from the custom, MAPI-based [UserProperties](/office/vba/api/Outlook.UserProperties) in the Outlook object model, and extended properties in Exchange Web Services (EWS). You can't directly access `CustomProperties` by using the Outlook object model, EWS, or Microsoft Graph. To learn how to access `CustomProperties` using Microsoft Graph or EWS, see the section [Get custom properties using Microsoft Graph or EWS](#get-custom-properties-using-microsoft-graph-or-ews).
 
 > [!NOTE]
 > Custom properties are only available to the add-in that created them and only through the mail item in which they were saved. Because of this, properties set while in compose mode aren't transmitted to recipients of the mail item. When a message or appointment with custom properties is sent, its properties can be accessed from the item in the **Sent Items** folder. To allow recipients to receive the custom data your add-in sets, consider using [InternetHeaders](internet-headers.md) instead.
@@ -126,7 +126,7 @@ This example includes the following functions and methods.
 
 - **removeProperty** -- Removes a specific property from the property bag, and then saves these changes.
 
-```js
+```javascript
 let _mailbox;
 let _customProps;
 
@@ -175,17 +175,37 @@ function saveCallback() {
 }
 ```
 
-### Get custom properties using EWS or REST
+### Get custom properties using Microsoft Graph or EWS
 
-To get **CustomProperties** using EWS or REST, you should first determine the name of its MAPI-based extended property. You can then get that property in the same way you would get any MAPI-based extended property.
+To get **CustomProperties** using Microsoft Graph or EWS, you should first determine the name of its MAPI-based extended property. You can then get that property in the same way you would get any MAPI-based extended property.
 
-#### How custom properties are stored on an item
+The use of Microsoft Graph or EWS depends on the type of Exchange environment in which the add-in runs. Select the applicable tab for your environment.
 
-Custom properties set by an add-in aren't equivalent to normal MAPI-based properties. Add-in APIs serialize all your add-in's `CustomProperties` as a JSON payload and then save them in a single MAPI-based extended property whose name is `cecp-<app-guid>` (`<app-guid>` is your add-in's ID) and property set GUID is `{00020329-0000-0000-C000-000000000046}`. (For more information about this object, see [MS-OXCEXT 2.2.5 Mail App Custom Properties](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481).) You can then use EWS or REST to get this MAPI-based property.
+# [Exchange Online](#tab/exchange-online)
 
-#### Get custom properties using EWS
+In Exchange Online environments, your add-in can construct a Microsoft Graph request against messages and events to get the ones that already have custom properties. In your request, you should include the **CustomProperties** MAPI-based property and its property set using the details provided in [How custom properties are stored on an item](#how-custom-properties-are-stored-on-an-item).
 
-Your mail add-in can get the `CustomProperties` MAPI-based extended property by using the EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation. Access `GetItem` on the server side by using a callback token, or on the client side by using the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method. In the `GetItem` request, specify the `CustomProperties` MAPI-based property in its property set using the details provided in the preceding section [How custom properties are stored on an item](#how-custom-properties-are-stored-on-an-item).
+The following example shows how to get all events that have any custom properties set by your add-in. It also ensures that the response includes the value of the property, so you can apply further filtering logic.
+
+> [!IMPORTANT]
+> In the following example, replace `<app-guid>` with your add-in's ID.
+
+```http
+GET https://graph.microsoft.com/v1.0/me/events?$filter=singleValueExtendedProperties/Any
+  (ep: ep/id eq 'String {00020329-0000-0000-C000-000000000046}
+  Name cecp-<app-guid>' and ep/value ne null)
+  &$expand=singleValueExtendedProperties($filter=id eq 'String
+  {00020329-0000-0000-C000-000000000046} Name cecp-<app-guid>')
+```
+
+For other examples that get single-value MAPI-based extended properties, see [Get singleValueLegacyExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0&preserve-view=true).
+
+> [!TIP]
+> To learn how to obtain an access code to Microsoft Graph, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+
+# [Exchange on-premises](#tab/exchange-on-prem)
+
+In Exchange on-premises environments, your mail add-in can get the `CustomProperties` MAPI-based extended property using the EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation. Access `GetItem` on the server side by using a callback token, or on the client side by using the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method. In the `GetItem` request, specify the `CustomProperties` MAPI-based property in its property set using the details provided in [How custom properties are stored on an item](#how-custom-properties-are-stored-on-an-item).
 
 The following example shows how to get an item and its custom properties.
 
@@ -240,72 +260,11 @@ Office.context.mailbox.makeEwsRequestAsync(
 
 You can also get more custom properties if you specify them in the request string as other [ExtendedFieldURI](/exchange/client-developer/web-service-reference/extendedfielduri) elements.
 
-#### Get custom properties using REST
+---
 
-In your add-in, you can construct your REST query against messages and events to get the ones that already have custom properties. In your query, you should include the **CustomProperties** MAPI-based property and its property set using the details provided in the section [How custom properties are stored on an item](#how-custom-properties-are-stored-on-an-item).
+#### How custom properties are stored on an item
 
-The following example shows how to get all events that have any custom properties set by your add-in and ensure that the response includes the value of the property so you can apply further filtering logic.
-
-> [!IMPORTANT]
-> In the following example, replace `<app-guid>` with your add-in's ID.
-
-```rest
-GET https://outlook.office.com/api/v2.0/Me/Events?$filter=SingleValueExtendedProperties/Any
-  (ep: ep/PropertyId eq 'String {00020329-0000-0000-C000-000000000046}
-  Name cecp-<app-guid>' and ep/Value ne null)
-  &$expand=SingleValueExtendedProperties($filter=PropertyId eq 'String
-  {00020329-0000-0000-C000-000000000046} Name cecp-<app-guid>')
-```
-
-For other examples that use REST to get single-value MAPI-based extended properties, see [Get singleValueExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0&preserve-view=true).
-
-The following example shows how to get an item and its custom properties. In the callback function for the `done` method, `item.SingleValueExtendedProperties` contains a list of the requested custom properties.
-
-> [!IMPORTANT]
-> In the following example, replace `<app-guid>` with your add-in's ID.
-
-```typescript
-Office.context.mailbox.getCallbackTokenAsync(
-    {
-        isRest: true
-    },
-    function (asyncResult) {
-        if (asyncResult.status === Office.AsyncResultStatus.Succeeded
-            && asyncResult.value !== "") {
-            let item_rest_id = Office.context.mailbox.convertToRestId(
-                Office.context.mailbox.item.itemId,
-                Office.MailboxEnums.RestVersion.v2_0);
-            let rest_url = Office.context.mailbox.restUrl +
-                           "/v2.0/me/messages('" +
-                           item_rest_id +
-                           "')";
-            rest_url += "?$expand=SingleValueExtendedProperties($filter=PropertyId eq 'String {00020329-0000-0000-C000-000000000046} Name cecp-<app-guid>')";
-
-            let auth_token = asyncResult.value;
-            $.ajax(
-                {
-                    url: rest_url,
-                    dataType: 'json',
-                    headers:
-                        {
-                            "Authorization":"Bearer " + auth_token
-                        }
-                }
-                ).done(
-                    function (item) {
-                        console.log(JSON.stringify(item));
-                    }
-                ).fail(
-                    function (error) {
-                        console.log(JSON.stringify(error));
-                    }
-                );
-        } else {
-            console.log(JSON.stringify(asyncResult));
-        }
-    }
-);
-```
+Custom properties set by an add-in aren't equivalent to normal MAPI-based properties. Add-in APIs serialize all your add-in's `CustomProperties` as a JSON payload and then save them in a single MAPI-based extended property whose name is `cecp-<app-guid>` (`<app-guid>` is your add-in's ID) and property set GUID is `{00020329-0000-0000-C000-000000000046}`. (For more information about this object, see [MS-OXCEXT 2.2.5 Mail App Custom Properties](/openspecs/exchange_server_protocols/ms-oxcext/4cf1da5e-c68e-433e-a97e-c45625483481).) You can then use Microsoft Grpah or EWS to get this MAPI-based property.
 
 ### Platform behavior in messages
 

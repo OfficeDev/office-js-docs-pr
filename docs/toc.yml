@@ -764,7 +764,7 @@ items:
       items:
       - name: Overview
         href: outlook/read-scenario.md
-      - name: Get attachments
+      - name: Get attachments from server
         href: outlook/get-attachments-of-an-outlook-item.md
     - name: Compose scenario
       items:

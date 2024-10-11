@@ -1,7 +1,7 @@
 ---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 09/25/2024
+ms.date: 10/17/2024
 ms.localizationpriority: medium
 ---
 
@@ -20,7 +20,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ```json
     "formFactors": [
         "mobile",
-        <!-- Typically there will be other form factors listed. -->
+        <!-- Typically, there will be other form factors listed. -->
     ]
     ```
 
@@ -58,7 +58,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
         {
             "builtInTabId": "TabDefault",
             "groups": [
-                <-- non-mobile group objects omitted -->
+                <-- Non-mobile group objects omitted. -->
             ],
             "customMobileRibbonGroups": [
                 {
@@ -181,11 +181,9 @@ This is very similar to the elements that appear in a [DesktopFormFactor](/javas
 
 Designing an add-in for mobile introduces some additional considerations.
 
-### Use REST instead of Exchange Web Services
+### Use Microsoft Graph
 
-The [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method isn't supported in Outlook mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](use-rest-api.md) to access the user's mailbox.
-
-Mailbox requirement set 1.5 introduced a new version of [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) that can request an access token compatible with the REST APIs, and a new [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property that can be used to find the REST API endpoint for the user.
+Add-ins should prefer to get information from the Office.js API when possible. If your add-in requires information not exposed by the Office.js API, use [Microsoft Graph](/graph/overview) to access the user's mailbox.
 
 ### Pinch zoom
 

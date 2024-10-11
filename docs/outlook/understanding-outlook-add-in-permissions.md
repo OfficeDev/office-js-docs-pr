@@ -1,7 +1,7 @@
 ---
 title: Understanding Outlook add-in permissions
 description: Outlook add-ins specify the required permission level in their manifest, which include restricted, read item, read/write item, or read/write mailbox. 
-ms.date: 07/18/2024
+ms.date: 10/17/2024
 ms.localizationpriority: medium
 ---
 
@@ -14,6 +14,9 @@ Outlook add-ins specify the required permission level in their manifest. There a
 The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item** and **restricted**, **read/write item** includes **read item** and **restricted**, and the **read item** permission includes **restricted**.
 
 You can see the permissions requested by a mail add-in before installing it from [AppSource](https://appsource.microsoft.com). You can also see the required permissions of installed add-ins in the Exchange Admin Center.
+
+> [!TIP]
+> To make sure that your Outlook add-in specifies the correct permission level, verify the minimum permission level required by each API implemented by your add-in. For information on minimum permission levels, see [Outlook API reference](/javascript/api/outlook).
 
 ## restricted permission
 
@@ -62,7 +65,7 @@ The **read item** permission is the next level of permission in the permissions 
 
 - Read all the properties of the current item in a read or compose form. For example, [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) in a compose form.
 
-- [Get a callback token to get item attachments](get-attachments-of-an-outlook-item.md) or the full item with Exchange Web Services (EWS) or [Outlook REST APIs](use-rest-api.md).
+- In Exchange on-premises environments, get a callback token to get the full mail item with Exchange Web Services (EWS).
 
     [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
@@ -123,13 +126,13 @@ Specify **read/write item** permission in the manifest to request this permissio
 
 The **read/write mailbox** permission is the highest level of permission.
 
-In addition to what the **read/write item** permission supports, the token provided by **mailbox.getCallbackTokenAsync** provides access to use Exchange Web Services (EWS) operations or Outlook REST APIs to do the following:
+In Exchange on-premises environments, the token provided by **mailbox.getCallbackTokenAsync** provides access to use Exchange Web Services (EWS) operations or Outlook REST APIs to do the following:
 
 - Read and write all properties of any item in the user's mailbox.
 - Create, read, and write to any folder or item in that mailbox.
-- Send an item from that mailbox
+- Send an item from that mailbox.
 
-Through **mailbox.makeEWSRequestAsync**, you can access the following EWS operations.
+Through **mailbox.makeEwsRequestAsync**, you can access the following EWS operations.
 
 - [CopyItem](/exchange/client-developer/web-service-reference/copyitem-operation)
 - [CreateFolder](/exchange/client-developer/web-service-reference/createfolder-operation)
