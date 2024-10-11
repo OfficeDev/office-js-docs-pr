@@ -1,8 +1,8 @@
 ---
 title: Publish your Office Add-in to Microsoft AppSource
-description: Learn how to publish your Office Add-in to Microsoft AppSource 
+description: Learn how to publish your Office Add-in to Microsoft AppSource and install the add-in with a Windows app or COM/VSTO add-in.
 ms.topic: concept-article
-ms.date: 10/10/2024
+ms.date: 10/16/2024
 CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft AppSource so that customers can deploy and use my new add-in.
 ---
 
@@ -20,7 +20,12 @@ Before you proceed:
 
 When you're ready to include your solution in Microsoft AppSource and within Office, submit it to Partner Center. Then, it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
 
-## Provide an installation link
+When your add-in is available in AppSource, there are two further steps you can take to make it more widely installed. 
+
+- [Provide an installation link](#provide-an-installation-link)
+- [Include the add-in in the installation of a Windows app or COM add-in](#include-the-add-in-in-the-installation-of-a-windows-app-or-comvsto-add-in)
+
+### Provide an installation link
 
 After you publish to Microsoft AppSource, you can create an installation link to help customers discover and install your add-in. The installation link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in.
 
@@ -52,6 +57,37 @@ The following parameter values are used for the Script Lab installation link.
 - **linkid:**  The value `2261819` specifies the Excel endpoint. Script Lab supports Word, Excel, and PowerPoint, so this value can be changed to support different endpoints.
 - **templateid:** The value `WA104380862` is the Microsoft AppSource ID for Script Lab.
 - **templatetitle:** The value `Script%20Lab,%20a%20Microsoft%20Garage%20project` which is the HTML encoded value of the title.
+
+### Include the add-in in the installation of a Windows app or COM/VSTO add-in
+
+When you have a Windows app or a COM or VSTO add-in whose functions overlap with your Office Web Add-in, consider including the web add-in in the installation (or an upgrade) of the Windows app or COM/VSTO add-in. (This installation option is supported only for Excel, PowerPoint, and Word add-ins.) To do this, include in the installation program a function to add an entry like the following example to the Windows Registry. (The exact code will depend on your installation framework.)
+
+```
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
+"AssetIds"="{{assetId}}"
+```
+
+Replace the placeholders as follows:
+
+- {{OfficeApplication}} with the name of the Office Application that the add-in should be installed in. Only `Word`, `Excel`, and `PowerPoint` are supported.
+- {{add-inName}} with the name of the add-in; for example `ContosoAdd-in`.
+- {{assetId}} with the AppSource asset ID of your add-in, such as `WA999999999`.
+
+The following is an example:
+
+```
+[HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\Word\ContosoAdd-in] 
+"AssetIds"="WA999999999"
+```
+
+When an end user runs your installation executable, their experience with the web add-in installation will depend on two factors.
+
+- Whether you are a [certified Microsoft 365 developer](/microsoft-365-app-certification/docs/certification). For more information, see [Microsoft 365 App Compliance Program](https://developer.microsoft.com/en-us/microsoft-365/app-compliance-program).
+- The security settings made by the user's Microsoft 365 administrator.
+
+If you are certified and the administrator has approved all apps from certified developers, then the web add-in is installed without the need for any special action by the user after the installation executable is started. If you are not certified or the administrator has not approved all apps from certified developers, then the user will be prompted to approve installation of the web add-in as part of the overall installation. After installation, the web add-in is available to the user in Office on the web as well as Office on Windows.
+
+If you are combining the installation of a web add-in with a COM/VSTO add-in, you need to think about the relationship between the two. For more information, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ## Related content
 
