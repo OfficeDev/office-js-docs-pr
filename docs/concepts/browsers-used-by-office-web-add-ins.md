@@ -2,7 +2,7 @@
 title: Browsers and webview controls used by Office Add-ins
 description: Specifies how the operating system and Office version determine what webview is used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 10/08/2024
+ms.date: 10/17/2024
 ms.localizationpriority: medium
 ---
 
