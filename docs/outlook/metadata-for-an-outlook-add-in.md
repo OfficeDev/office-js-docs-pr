@@ -288,9 +288,5 @@ To handle the situation in classic Outlook on Windows:
 ## See also
 
 - [MAPI Property Overview](/office/client-developer/outlook/mapi/mapi-property-overview)
-- [Outlook Properties Overview](/office/vba/outlook/How-to/Navigation/properties-overview)  
-- [Call Outlook REST APIs from an Outlook add-in](use-rest-api.md)
-- [Call web services from an Outlook add-in](web-services.md)
-- [Properties and extended properties in EWS in Exchange](/exchange/client-developer/exchange-web-services/properties-and-extended-properties-in-ews-in-exchange)
-- [Property sets and response shapes in EWS in Exchange](/exchange/client-developer/exchange-web-services/property-sets-and-response-shapes-in-ews-in-exchange)
+- [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md)
 - [Get and set internet headers on a message in an Outlook add-in](internet-headers.md)
