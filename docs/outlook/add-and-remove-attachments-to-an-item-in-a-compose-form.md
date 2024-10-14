@@ -195,7 +195,7 @@ function handleAttachmentsCallback(result) {
 ```
 
 > [!TIP]
-> If the Outlook client in which your add-in is running doesn't support Mailbox requirement set 1.8, you can still get an attachment and its contents from an item being composed using Microsoft Graph or EWS. To learn more, see [Get attachments of an Outlook item from Exchange](get-attachments-of-an-outlook-item.md).
+> If the Outlook client in which your add-in is running doesn't support Mailbox requirement set 1.8, you can still get an attachment and its contents from an item being composed using Microsoft Graph or EWS. To learn more, see [Get an Outlook item's attachments from Exchange](get-attachments-of-an-outlook-item.md).
 
 ## Remove an attachment
 
@@ -236,7 +236,7 @@ function removeAttachment(attachmentId) {
 
 ## See also
 
-- [Get attachments of an Outlook item from Exchange](get-attachments-of-an-outlook-item.md)
+- [Get an Outlook item's attachments from Exchange](get-attachments-of-an-outlook-item.md)
 - [Create Outlook add-ins for compose forms](compose-scenario.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
