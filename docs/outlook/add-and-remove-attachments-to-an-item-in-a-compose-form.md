@@ -30,7 +30,7 @@ const options = { asyncContext: { var1: 1, var2: 2 } };
 Office.context.mailbox.item.addFileAttachmentAsync("https://contoso.com/rtm/icon.png", "icon.png", options, callback);
 ```
 
-To check for a successful asynchronous method call in the callback function, use the `status` and `error` properties of the `AsyncResult` object. If the attaching completes successfully, use the `AsyncResult.value` property to get the attachment ID. The attachment ID is an integer which you can subsequently use to remove the attachment.
+To check for the outcome of an asynchronous method call in the callback function, use the `status` and `error` properties of the `AsyncResult` object. If the attaching completes successfully, use the `AsyncResult.value` property to get the attachment ID. The attachment ID is an integer which you can subsequently use to remove the attachment.
 
 > [!NOTE]
 > The attachment ID is valid only within the same session and isn't guaranteed to map to the same attachment across sessions. Examples of when a session is over include when the user closes the add-in, or if the user starts composing in an inline form and subsequently pops out the inline form to continue in a separate window.
@@ -72,7 +72,7 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 );
 ```
 
-To add an inline Base64 image to the body of a message or appointment being composed, you must first get the current item body using the `Office.context.mailbox.item.body.getAsync` method before inserting the image using the `addFileAttachmentFromBase64Async` method. Otherwise, the image won't render in the body once it's inserted. For guidance, see the following JavaScript example, which adds an inline Base64 image to the beginning of an item body.
+To add inline a Base64-encoded image to the body of a message or appointment being composed, you must first get the current item body using the `Office.context.mailbox.item.body.getAsync` method before inserting the image using the `addFileAttachmentFromBase64Async` method. Otherwise, the image won't render in the body once it's inserted. For guidance, see the following JavaScript example, which adds an inline Base64 image to the beginning of an item body.
 
 ```javascript
 const mailItem = Office.context.mailbox.item;
@@ -86,7 +86,7 @@ mailItem.body.getAsync(Office.CoercionType.Html, (bodyResult) => {
         return;
     }
 
-    // Insert the Base64 image to the beginning of the body.
+    // Insert the Base64-encoded image at the beginning of the body.
     const options = { isInline: true, asyncContext: bodyResult.value };
     mailItem.addFileAttachmentFromBase64Async(base64String, "sample.png", options, (attachResult) => {
         if (attachResult.status === Office.AsyncResultStatus.Failed) {

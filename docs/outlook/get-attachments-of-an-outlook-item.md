@@ -1,12 +1,12 @@
 ---
-title: Get attachments of an Outlook item from Exchange
+title: Get an Outlook item's attachments from Exchange
 description: Learn how your Outlook add-in can directly get attachments and their contents from Exchange Online or Exchange Server.
 ms.date: 10/17/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Get attachments of an Outlook item from Exchange
+# Get an Outlook item's attachments from Exchange
 
 The Office JavaScript API includes APIs to get attachments and their contents from messages and appointments in Outlook. The following table lists these attachment APIs, the Outlook modes they operate in, and the minimum Mailbox requirement set they need to operate.
 

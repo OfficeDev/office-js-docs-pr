@@ -20,7 +20,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ```json
     "formFactors": [
         "mobile",
-        <!-- Typically, there will be other form factors listed. -->
+        <!-- Typically, there'll be other form factors listed. -->
     ]
     ```
 
