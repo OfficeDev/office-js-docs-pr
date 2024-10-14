@@ -45,7 +45,7 @@ For information about how end users acquire, insert, and run add-ins, see [Start
 
 ### AppSource
 
-You can make your add-in available through [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office), Microsoft's online app store which is accessible through a browser and through the **My Add-ins** or **Add-ins** UI of Office applications. Distribution through AppSource gives you the option of including installation of your add-in with the installation of your Windows app or COM add-in. For more information, see [Publish to your Office Add-in to AppSource](publish-office-add-ins-to-appsource.md).
+You can make your add-in available through [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office), Microsoft's online app store which is accessible through a browser and through the UI of Office applications. Distribution through AppSource gives you the option of including installation of your add-in with the installation of your Windows app or a COM or VSTO add-in. For more information, see [Publish to your Office Add-in to AppSource](publish-office-add-ins-to-appsource.md).
 
 ### Integrated Apps via the Microsoft 365 admin center
 
