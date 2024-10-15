@@ -23,11 +23,11 @@ There are two types of add-in commands, based on the kind of action that the com
 - **Function commands**: The button or menu item runs any arbitrary JavaScript. The code almost always calls APIs in the Office JavaScript Library, but it doesn't have to. This type of add-in typically displays no UI other than the button or menu item itself. Note the following about function commands:
 
   - The runtime in which the function command runs is a full [browser-based runtime](../testing/runtimes.md#browser-runtime). It can render HTML and call out to the Internet to send or get data. 
-  - The runtime closes when the function completes or after 5 minutes, whichever is earlier.
-  - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) method to show a dialog, which is a good way to display an error, show progress, or prompt for input from the user. 
+  - The runtime closes when either the function completes or 5 minutes have passed, whichever is earlier.
+  - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) method to show a dialog. This is a good way to display an error, show progress, or prompt the user for input. 
 
      > [!NOTE]
-     > Because of the 5 minute timeout, the dialog should be designed so that users complete their interaction with it and close it within 5 minutes. Your add-in should use a task pane for interactions that take longer than this.
+     > Because of the 5-minute timeout, the dialog should be designed so that users complete their interaction and close it within 5 minutes. Your add-in should use a task pane for longer interactions.
 
   - If the add-in is configured to use a [shared runtime](../testing/runtimes.md#shared-runtime), the function can also call the [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method.
 
