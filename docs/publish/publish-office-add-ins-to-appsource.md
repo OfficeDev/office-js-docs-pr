@@ -73,7 +73,7 @@ Replace the placeholders as follows:
 - `{{add-inName}}` with the name of the add-in; for example `ContosoAdd-in`.
 - `{{assetId}}` with the AppSource asset ID of your add-in, such as `WA999999999`.
 
-The following is an example:
+The following is an example.
 
 ```
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\Word\ContosoAdd-in] 
@@ -82,12 +82,12 @@ The following is an example:
 
 When an end user runs your installation executable, their experience with the web add-in installation will depend on two factors.
 
-- Whether you are a [certified Microsoft 365 developer](/microsoft-365-app-certification/docs/certification). For more information, see [Microsoft 365 App Compliance Program](https://developer.microsoft.com/en-us/microsoft-365/app-compliance-program).
+- Whether you're a [certified Microsoft 365 developer](/microsoft-365-app-certification/docs/certification). For more information, see [Microsoft 365 App Compliance Program](https://developer.microsoft.com/microsoft-365/app-compliance-program).
 - The security settings made by the user's Microsoft 365 administrator.
 
-If you are certified and the administrator has enabled automatic approval for all apps from certified developers, then the web add-in is installed without the need for any special action by the user after the installation executable is started. If you are not certified or the administrator has not granted automatic approval for all apps from certified developers, then the user will be prompted to approve inclusion of the web add-in as part of the overall installation. After installation, the web add-in is available to the user in Office on the web as well as Office on Windows.
+If you're certified and the administrator has enabled automatic approval for all apps from certified developers, then the web add-in is installed without the need for any special action by the user after the installation executable is started. If you're not certified or the administrator hasn't granted automatic approval for all apps from certified developers, then the user will be prompted to approve inclusion of the web add-in as part of the overall installation. After installation, the web add-in is available to the user in Office on the web as well as Office on Windows.
 
-If you are combining the installation of a web add-in with a COM/VSTO add-in, you need to think about the relationship between the two. For more information, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+If you're combining the installation of a web add-in with a COM/VSTO add-in, you need to think about the relationship between the two. For more information, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ## Related content
 
