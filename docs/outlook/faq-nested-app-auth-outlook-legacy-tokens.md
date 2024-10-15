@@ -36,7 +36,7 @@ The general availability (GA) date for NAA depends on which channel you are usin
 | Oct 2024 | NAA will GA in Current Channel. |
 | Nov 2024 | NAA will GA in Monthly Enterprise Channel. |
 | Jan 2025 | NAA will GA in Semi-Annual Channel. |
-| Jun 2025 | NA will GA in Semi-Annual Extended Channel. |
+| Jun 2025 | NAA will GA in Semi-Annual Extended Channel. |
 
 ## Outlook add-in migration FAQ
 
