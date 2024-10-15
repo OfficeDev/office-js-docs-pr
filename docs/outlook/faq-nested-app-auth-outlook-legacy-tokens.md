@@ -23,9 +23,9 @@ Microsoft will turn off legacy Exchange online tokens in tenants according to th
 
 | Date     | Legacy tokens status |
 | -------- | ------------------------------------------------------ |
-| Jan 2025 | Legacy tokens turned off for all tenants. Admins can reenable via PowerShell. |
-| Jun 2025 | Admins can no longer reenable legacy tokens via PowerShell. Admins must contact Microsoft for any exception. |
-| Oct 2025 | Legacy tokens turned off for all tenants, there will be no re-enable option. |
+| Jan 2025 | Legacy tokens turned off for all tenants. Admins can reenable legacy tokens via PowerShell. |
+| Jun 2025 | Legacy tokens turned off for all tenants. Admins can no longer reenable legacy tokens via PowerShell and must contact Microsoft for any exception. |
+| Oct 2025 | Legacy tokens turned off for all tenants. Exceptions are no longer allowed. |
 
 ### When is NAA generally available for my channel?
 
