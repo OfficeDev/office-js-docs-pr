@@ -17,19 +17,14 @@ You can use the MSAL.js library with nested app authentication to use SSO from y
 
 ## NAA supported accounts and hosts
 
-> [!IMPORTANT]
-> Nested app authentication (NAA) is currently in preview. To try this feature, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support Azure Active Directory B2C for business-to-consumer identity management scenarios. The following table explains the current support by platform. Anything listed as "Coming soon" will be supported by the time that NAA is made generally available.
 
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support Azure Active Directory B2C for business-to-consumer identity management scenarios. The following table explains the current support in preview. Anything listed as "Coming soon" will be supported by the time that NAA is made generally available.
-
-| Application | Windows                                                                            | Mac | Web          | iOS/iPad   | Android        |
-|-------------|------------------------------------------------------------------------------------|-----|--------------|------------|----------------|
-| Excel       | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
-| Outlook     | Yes* (Current Channel (Preview) for classic Outlook only, new Outlook coming soon) | Yes | Yes          | Yes (iOS)  | Yes            |
-| PowerPoint  | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
-| Word        | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
-
-*\* - NAA for event-based activation in Outlook is currently supported in the Beta Channel.*
+| Application | Windows                                                                            | Mac | Web  | iOS/iPad   | Android        |
+|-------------|------------------------------------------------------------------------------------|-----|------|------------|----------------|
+| Excel       | Yes (GA in Current Channel, (Preview) in all other channels)                       | Yes | Yes  | Yes (iPad) | Not applicable |
+| Outlook     | Yes (GA in Current Channel, (Preview) in all other channels)                       | Yes | Yes  | Yes (iOS)  | Yes            |
+| PowerPoint  | Yes (GA in Current Channel, (Preview) in all other channels)                       | Yes | Yes  | Yes (iPad) | Not applicable |
+| Word        | Yes (GA in Current Channel, (Preview) in all other channels)                       | Yes | Yes  | Yes (iPad) | Not applicable |
 
 ## Register your single-page application
 
@@ -57,11 +52,11 @@ Configure your add-in to use NAA by calling the `createNestablePublicClientApp
 
 The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office` (**Office Add-in Task Pane** project).
 
-1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser).
+1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser). We recommend using the latest version of the package (at time of the last article update it was 3.26.0).
 
     ```json
     "dependencies": {
-        "@azure/msal-browser": "^3.24.0",
+        "@azure/msal-browser": "^3.26.0",
         ...
     ```
 
@@ -225,8 +220,17 @@ In certain cases, the `acquireTokenSilent` method's attempt to get the token f
 
 ### Have a fallback when NAA isn't supported
 
-While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. In general you'll want to use the MSAL SPA authentication pattern with the [Office JS dialog API](auth-with-office-dialog-api.md). For more information, see the following resources.
+While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. In general you'll want to use the MSAL SPA authentication pattern with the [Office JS dialog API](auth-with-office-dialog-api.md).
 
+Use the following code to check if NAA is supported when your add-in loads.
+
+```javascript
+   Office.context.requirements.isSetSupported("NestedAppAuth", "1.1");
+```
+
+For more information, see the following resources.
+
+- [Outlook sample: How to fall back and support Internet Explorer 11](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE/README.md)
 - [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
 - [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
 - [Microsoft identity samples for various app types and frameworks](/entra/identity-platform/sample-v2-code?tabs=apptype)
