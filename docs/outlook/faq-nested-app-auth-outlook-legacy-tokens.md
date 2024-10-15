@@ -62,7 +62,7 @@ To find out whether your add-in uses legacy Exchange user identity tokens and ca
 
 If your add-in calls any of these APIs, you should adopt NAA and migrate to using Entra ID tokens to access Microsoft Graph instead.
 
-We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024 to report the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. The tooling will also allow you to turn legacy Exchange online tokens on or off for the entire tenant. We'll provide more information when the tooling is ready in this FAQ.
+We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024. The tooling will report the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. The tooling will also allow you to turn legacy Exchange online tokens on or off for the entire tenant. We'll provide more information when the tooling is ready in this FAQ.
 
 ### Which Outlook add-ins are in scope?
 
@@ -88,6 +88,8 @@ Add-ins may use the legacy Exchange tokens to get resources from Exchange throug
 - `makeEwsRequestAsync`
 - `getUserIdentityTokenAsync`
 - `getCallbackTokenAsync`
+
+We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024. The tooling will report the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. The tooling will also allow you to turn legacy Exchange online tokens on or off for the entire tenant. We'll provide more information when the tooling is ready in this FAQ.
 
 If you rely on an independent software vendor (ISV) for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, we recommend you ask them to review the [Updates on deprecating legacy Exchange Online tokens for Outlook add-ins blog](https://devblogs.microsoft.com/microsoft365dev/updates-on-deprecating-legacy-exchange-online-tokens-for-outlook-add-ins/?commentid=1131) and ask any questions to the Outlook extensibility PM team on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
 
