@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 09/23/2024
+ms.date: 10/15/2024
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -19,21 +19,24 @@ Nested app authentication enables single sign-on (SSO) for applications nested i
 
 ### What is the timeline for shutting down legacy Exchange online tokens?
 
-The following table lists the key milestones based on which channel customers are using. Note that the general availability (GA) date for NAA will vary based on channel. We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA.
+Microsoft will turn off legacy Exchange online tokens in tenants according to the following schedule. In October, we'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA.
 
-| Date     | Release channel(s) | Legacy tokens status and NAA General Availability (GA) |
-| -------- | ------------------ | ------------------------------------------------------ | 
-| Oct 2024 | All channels | New PowerShell options for enabling/disabling legacy tokens for entire tenant or specific AppIDs. |
-| Oct 2024 | Current Channel | Legacy tokens turned off for <b>tenants not using them</b>; NAA will GA in Current Channel. |
-| Nov 2024 | Monthly Enterprise Channel | Legacy tokens turned off for <b>tenants not using them</b>; NAA will GA in Monthly Enterprise Channel. |
-| Jan 2025 | Current and Semi-Annual Channels | Legacy tokens turned off for all tenants in Current and Semi-Annual Channels. Admins can reenable via PowerShell. NAA will GA in Semi-Annual Channels. |
-| Feb 2025 | Monthly Enterprise Channel | Legacy tokens turned off for all tenants in Monthly Enterprise. Admins can reenable via PowerShell. |
-| Jun 2025 | Semi-Annual Extended Channel | Legacy tokens off for all tenants in Semi-Annual Extended Channel. NAA will GA in Semi-Annual Extended Channel. |
-| Jun 2025 | All channels | Admins can no longer re-enable legacy tokens via PowerShell; contact Microsoft. |
-| Oct 2025 | All channels | Legacy tokens turned off for all tenants, there will be no re-enable option. |
+| Date     | Legacy tokens status |
+| -------- | ------------------------------------------------------ |
+| Jan 2025 | Legacy tokens turned off for all tenants. Admins can reenable via PowerShell. |
+| Jun 2025 | Admins can no longer reenable legacy tokens via PowerShell. Admins must contact Microsoft for any exception. |
+| Oct 2025 | Legacy tokens turned off for all tenants, there will be no re-enable option. |
 
-> [!NOTE]
-> If a single tenant uses multiple Microsoft 365 apps via Office release channels, Legacy Exchange Online tokens will be turned off based on the "slowest" release channel.
+### When is NAA generally available for my channel?
+
+The general availability (GA) date for NAA depends on which channel you are using.
+
+| Date     | NAA General Availability (GA) |
+| -------- | ------------------------------------------------------ |
+| Oct 2024 | NAA will GA in Current Channel. |
+| Nov 2024 | NAA will GA in Monthly Enterprise Channel. |
+| Jan 2025 | NAA will GA in Semi-Annual Channel. |
+| Jun 2025 | NA will GA in Semi-Annual Extended Channel. |
 
 ## Outlook add-in migration FAQ
 
@@ -59,7 +62,7 @@ To find out whether your add-in uses legacy Exchange user identity tokens and ca
 
 If your add-in calls any of these APIs, you should adopt NAA and migrate to using Entra ID tokens to access Microsoft Graph instead.
 
-We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024 to turn legacy Exchange tokens on or off in your tenant. This will allow you to test if any add-ins are using Exchange tokens. We'll provide more information when the tooling is ready in this FAQ.
+We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024 to report the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. The tooling will also allow you to turn legacy Exchange online tokens on or off for the entire tenant. We'll provide more information when the tooling is ready in this FAQ.
 
 ### Which Outlook add-ins are in scope?
 
