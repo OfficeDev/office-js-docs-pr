@@ -41,7 +41,7 @@ Note the following about the code sample:
 - The  `registerActiveViewChanged` function calls the [addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) method to register a handler for the [Document.ActiveViewChanged](/javascript/api/office/office.document) event.
 
 ```js
-// General Office.initialize function. Fires on loading the add-in.
+// General Office.initialize function. Called after the add-in loads and Office JS is initialized.
 Office.initialize = function(){
 
     // Get whether the current view is edit or read.
@@ -57,7 +57,7 @@ Office.initialize = function(){
 function getActiveFileView()
 {
     Office.context.document.getActiveViewAsync(function (asyncResult) {
-        if (asyncResult.status == "failed") {
+        if (asyncResult.status === "failed") {
             app.showNotification("Action failed with error: " + asyncResult.error.message);
         } else {
             app.showNotification(asyncResult.value);
@@ -73,7 +73,7 @@ function registerActiveViewChanged() {
 
     Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, Globals.activeViewHandler,
         function (asyncResult) {
-            if (asyncResult.status == "failed") {
+            if (asyncResult.status === "failed") {
                 app.showNotification("Action failed with error: " + asyncResult.error.message);
             } else {
                 app.showNotification(asyncResult.status);
@@ -92,7 +92,7 @@ function getSelectedRange() {
     Globals.firstSlideId = 0;
 
     Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange, function (asyncResult) {
-        if (asyncResult.status == "failed") {
+        if (asyncResult.status === "failed") {
             app.showNotification("Action failed with error: " + asyncResult.error.message);
         } else {
             Globals.firstSlideId = asyncResult.value.slides[0].id;
@@ -107,7 +107,7 @@ In the following code sample, the `goToFirstSlide` function calls the [Document.
 ```js
 function goToFirstSlide() {
     Office.context.document.goToByIdAsync(Globals.firstSlideId, Office.GoToType.Slide, function (asyncResult) {
-        if (asyncResult.status == "failed") {
+        if (asyncResult.status === "failed") {
             app.showNotification("Action failed with error: " + asyncResult.error.message);
         } else {
             app.showNotification("Navigation successful");
@@ -128,7 +128,7 @@ function goToSlideByIndex() {
     const goToNext = Office.Index.Next;
 
     Office.context.document.goToByIdAsync(goToNext, Office.GoToType.Index, function (asyncResult) {
-        if (asyncResult.status == "failed") {
+        if (asyncResult.status === "failed") {
             app.showNotification("Action failed with error: " + asyncResult.error.message);
         } else {
             app.showNotification("Navigation successful");
@@ -146,7 +146,7 @@ function getFileUrl() {
     // Gets the URL of the current file.
     Office.context.document.getFilePropertiesAsync(function (asyncResult) {
         const fileUrl = asyncResult.value.url;
-        if (fileUrl == "") {
+        if (fileUrl === "") {
             app.showNotification("The file hasn't been saved yet. Save the file and try again.");
         } else {
             app.showNotification(fileUrl);
