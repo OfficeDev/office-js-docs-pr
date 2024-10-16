@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 10/08/2024
+ms.date: 10/17/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -220,24 +220,28 @@ By default, the **Running Outlook for Simple MAPI Mail Sending** setting is set 
 
 Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
 
-In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
+The following are additional constraints that apply to Smart Alerts add-ins.
 
-While you can change the Smart Alerts dialog message and **Don't Send** button to suit your add-in scenario, the following can't be customized.
+- Only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
 
-- The dialog's title bar. Your add-in's name is always displayed there.
-- The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
-- The icon next to the dialog message.
-- Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
+- While you can change the Smart Alerts dialog message and **Don't Send** button to suit your add-in scenario, the following can't be customized.
 
-You can customize the **Don't Send** button in the dialog to open a task pane or run a function. For guidance on the types of add-in commands, see [Types of add-in commands](../design/add-in-commands.md#types-of-add-in-commands).
+  - The dialog's title bar. Your add-in's name is always displayed there.
+  - The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
+  - The icon next to the dialog message.
+  - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 
-> [!NOTE]
-> Support to customize the **Don't Send** button was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14).
+- You can customize the **Don't Send** button in the dialog to open a task pane or run a function. For guidance on the types of add-in commands, see [Types of add-in commands](../design/add-in-commands.md#types-of-add-in-commands).
 
-In Outlook on the web and in new Outlook on Windows:
+    > [!NOTE]
+    > Support to customize the **Don't Send** button was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14).
 
-- The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
-- When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
+- The `OnMessageSend` event doesn't occur when sending a meeting cancellation or responding to a meeting invite with **Accept**, **Tentative**, or **Decline**. However, in classic Outlook on Windows, the `OnMessageSend` event does occur when you send an edited response to a meeting invite using the **Edit the Response before Sending** option.
+
+- In Outlook on the web and in new Outlook on Windows:
+
+  - The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
+  - When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
 
 ### Limitations to formatting the dialog message using Markdown
 
