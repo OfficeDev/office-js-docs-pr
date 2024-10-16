@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 10/10/2024
+ms.date: 10/16/2024
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -12,9 +12,9 @@ This article discusses troubleshooting issues that are unique to Word. Use the f
 
 ## All selected ranges aren't recognized
 
-If non-contiguous or discontinuous selections are made, the Word API only operates on the last contiguous range in the selection. An unexpected case of this is when you select a column in a table then call, for example, [Document.getSelection](/javascript/api/word/word.document#word-word-document-getselection-member(1)), only the final cell in the selection is returned by the API. Although the selection of a column seems contiguous, the API recognizes it as a non-contiguous selection (e.g., a cell per row).
+If noncontiguous selections are made, the Word API only operates on the last contiguous range in the selection. An unexpected case of this is when you select a column in a table then call, for example, [Document.getSelection](/javascript/api/word/word.document#word-word-document-getselection-member(1)), only the final cell in the selection is returned by the API. Although the selection of a column seems contiguous, the API recognizes it as a non-contiguous selection (e.g., a cell per row).
 
-To learn more generally about making non-contiguous selections, see [How to select items that are not next to each other](https://support.microsoft.com/topic/8b9c1be9-cca3-935a-7cbf-94403aa48d2e).
+To learn more generally about making noncontiguous selections, see [How to select items that are not next to each other](https://support.microsoft.com/topic/8b9c1be9-cca3-935a-7cbf-94403aa48d2e).
 
 ## Body.insertFileFromBase64 doesn't insert header or footer
 
