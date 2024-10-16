@@ -88,7 +88,7 @@ In the following code sample, the `getSelectedRange` function calls the [Documen
 
 ```js
 function getSelectedRange() {
-    // Get the ID, title, and index of the current slide (or selected slides) and store the first slide ID. */
+    // Gets the ID, title, and index of the current slide (or selected slides) and store the first slide ID. */
     Globals.firstSlideId = 0;
 
     Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange, function (asyncResult) {
@@ -143,7 +143,7 @@ In the following code sample, the  `getFileUrl` function calls the [Document.get
 
 ```js
 function getFileUrl() {
-    // Get the URL of the current file.
+    // Gets the URL of the current file.
     Office.context.document.getFilePropertiesAsync(function (asyncResult) {
         const fileUrl = asyncResult.value.url;
         if (fileUrl == "") {
