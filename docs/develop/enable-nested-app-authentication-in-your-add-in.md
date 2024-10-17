@@ -241,35 +241,35 @@ The following table shows which APIs are supported when NAA is enabled in the MS
 
 | Method                        | Supported by NAA      |
 | ----------------------------- | --------------------- |
-| *acquireTokenByCode*          | NO (throws exception) |
-| *acquireTokenPopup*           | YES                   |
-| *acquireTokenRedirect*        | NO (throws exception) |
-| *acquireTokenSilent*          | YES                   |
-| *addEventCallback*            | YES                   |
-| *addPerformanceCallback*      | NO (throws exception) |
-| *disableAccountStorageEvents* | NO (throws exception) |
-| *enableAccountStorageEvents*  | NO (throws exception) |
-| *getAccountByHomeId*          | YES                   |
-| *getAccountByLocalId*         | YES                   |
-| *getAccountByUsername*        | YES                   |
-| *getActiveAccount*            | YES                   |
-| *getAllAccounts*              | YES                   |
-| *getConfiguration*            | YES                   |
-| *getLogger*                   | YES                   |
-| *getTokenCache*               | NO (throws exception) |
-| *handleRedirectPromise*       | NO                    |
-| *initialize*                  | YES                   |
-| *initializeWrapperLibrary*    | YES                   |
-| *loginPopup*                  | YES                   |
-| *loginRedirect*               | NO (throws exception) |
-| *logout*                      | NO (throws exception) |
-| *logoutPopup*                 | NO (throws exception) |
-| *logoutRedirect*              | NO (throws exception) |
-| *removeEventCallback*         | YES                   |
-| *removePerformanceCallback*   | NO (throws exception) |
-| *setActiveAccount*            | NO                    |
-| *setLogger*                   | YES                   |
-| *ssoSilent*                   | YES                   |
+| `acquireTokenByCode`          | No (throws exception) |
+| `acquireTokenPopup`           | Yes                   |
+| `acquireTokenRedirect`        | No (throws exception) |
+| `acquireTokenSilent`          | Yes                   |
+| `addEventCallback`            | Yes                   |
+| `addPerformanceCallback`      | No (throws exception) |
+| `disableAccountStorageEvents` | No (throws exception) |
+| `enableAccountStorageEvents`  | No (throws exception) |
+| `getAccountByHomeId`          | Yes                   |
+| `getAccountByLocalId`         | Yes                   |
+| `getAccountByUsername`        | Yes                   |
+| `getActiveAccount`            | Yes                   |
+| `getAllAccounts`              | Yes                   |
+| `getConfiguration`            | Yes                   |
+| `getLogger`                   | Yes                   |
+| `getTokenCache`               | No (throws exception) |
+| `handleRedirectPromise`       | No                    |
+| `initialize`                  | Yes                   |
+| `initializeWrapperLibrary`    | Yes                   |
+| `loginPopup`                  | Yes                   |
+| `loginRedirect`               | No (throws exception) |
+| `logout`                      | No (throws exception) |
+| `logoutPopup`                 | No (throws exception) |
+| `logoutRedirect`              | No (throws exception) |
+| `removeEventCallback`         | Yes                   |
+| `removePerformanceCallback`   | No (throws exception) |
+| `setActiveAccount`            | No                    |
+| `setLogger`                   | Yes                   |
+| `ssoSilent`                   | Yes                   |
 
 ## Security reporting
 
