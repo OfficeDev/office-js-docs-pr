@@ -34,7 +34,7 @@ The plugin is [CustomFunctionsMetadataPlugin](https://github.com/OfficeDev/Offic
 
 ### Multiple custom function source files
 
-If, and only if, you have organized your custom functions into multiple source files, there are additional steps. 
+If, and only if, you have organized your custom functions into multiple source files, there are additional steps.
 
 1. In the webpack.config.js file, replace the string value of `input` with an array of string URLs that point to each of the files. The following is an example:
 
@@ -395,6 +395,23 @@ By specifying a parameter type, Excel will convert values into that type before 
 
 A single value may be represented using one of the following types: `boolean`, `number`, `string`.
 
+### Cell value type
+
+JavaScript Syntax: @param {any} *[cellValueType]* name description
+
+Use the `type` subfield `cellValueType` to specify that a custom function accept and return Excel data types. The `type` value must be `any` to use the `cellValueType` subfield. Accepted `cellValueType` values are:
+
+- `Excel.CellValue`
+- `Excel.BooleanCellValue`
+- `Excel.DoubleCellValue`
+- `Excel.EntityCellValue`
+- `Excel.ErrorCellValue`
+- `Excel.FormattedNumberCellValue`
+- `Excel.LinkedEntityCellValue`
+- `Excel.LocalImageCellValue`
+- `Excel.StringCellValue`
+- `Excel.WebImageCellValue`
+
 ### Matrix type
 
 Use a two-dimensional array type to have the parameter or return value be a matrix of values. For example, the type `number[][]` indicates a matrix of numbers and `string[][]` indicates a matrix of strings.
@@ -408,12 +425,6 @@ A streaming function can indicate an error by calling `setResult()` with an Erro
 ### Promise
 
 A custom function can return a promise that provides the value when the promise is resolved. If the promise is rejected, then the custom function will throw an error.
-
-### Cell value type
-
-JavaScript Syntax: @param {any} [cellValueType] name description
-
-Use the `type` subfield `cellValueType` to specify that a custom function accept and return Excel data types. The `type` value must be `any` to use the `cellValueType` subfield. Accepted `cellValueType` values are: `Excel.CellValue`, `Excel.BooleanCellValue`, `Excel.DoubleCellValue`, `Excel.EntityCellValue`, `Excel.ErrorCellValue`, `Excel.FormattedNumberCellValue`, `Excel.LinkedEntityCellValue`, `Excel.LocalImageCellValue`, `Excel.StringCellValue`, and `Excel.WebImageCellValue`.
 
 ### Other types
 
