@@ -397,8 +397,6 @@ A single value may be represented using one of the following types: `boolean`, `
 
 ### Cell value type
 
-JavaScript Syntax: @param {any} *[cellValueType]* name description
-
 Use the `type` subfield `cellValueType` to specify that a custom function accept and return Excel data types. The `type` value must be `any` to use the `cellValueType` subfield. Accepted `cellValueType` values are:
 
 - `Excel.CellValue`
@@ -411,6 +409,8 @@ Use the `type` subfield `cellValueType` to specify that a custom function accept
 - `Excel.LocalImageCellValue`
 - `Excel.StringCellValue`
 - `Excel.WebImageCellValue`
+
+For a code sample using the `Excel.EntityCellValue` type, see [Input an entity value](custom-functions-data-types-concepts.md#input-an-entity-value).
 
 ### Matrix type
 

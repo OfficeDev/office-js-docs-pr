@@ -142,6 +142,8 @@ The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting thi
 > [!NOTE]
 > Unlike most of the other JSON metadata properties, `allowCustomDataForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
 
+If your custom function uses the `cellValueType` [parameter](#parameters), then setting the `allowCustomDataForDataTypeAny` is not required to accept data types as parameters and return values.
+
 ### allowErrorForDataTypeAny
 
 The `allowErrorForDataTypeAny` property is a boolean data type. Setting the value to `true` allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to `true`. The default `allowErrorForDataTypeAny` value is `false`.
@@ -197,7 +199,7 @@ The `parameters` property is an array of parameter objects. The following table 
 >         "name": "range",
 >         "description": "the input range",
 >         "type": "any", /* A `type` value of `any` is required to use the `cellValueType` sub-field. */
->             "cellValueType": "??"
+>             "cellValueType": "webimagecellvalue"
 >     }
 > ]
 > ```
