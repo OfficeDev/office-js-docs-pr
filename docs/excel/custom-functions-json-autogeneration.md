@@ -1,7 +1,7 @@
 ---
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
-ms.date: 06/21/2024
+ms.date: 10/18/2024
 ms.localizationpriority: medium
 ---
 
@@ -413,7 +413,7 @@ A custom function can return a promise that provides the value when the promise 
 
 JavaScript Syntax: @param {any} [cellValueType] name description
 
-Use the `type` subfield `cellValueType` to specify that a custom function accept and return Excel data types. The `type` value must be `any` to use the `cellValueType` subfield. Accepted `cellValueType` values are ??, ??, ??. 
+Use the `type` subfield `cellValueType` to specify that a custom function accept and return Excel data types. The `type` value must be `any` to use the `cellValueType` subfield. Accepted `cellValueType` values are: `Excel.CellValue`, `Excel.BooleanCellValue`, `Excel.DoubleCellValue`, `Excel.EntityCellValue`, `Excel.ErrorCellValue`, `Excel.FormattedNumberCellValue`, `Excel.LinkedEntityCellValue`, `Excel.LocalImageCellValue`, `Excel.StringCellValue`, and `Excel.WebImageCellValue`.
 
 ### Other types
 
