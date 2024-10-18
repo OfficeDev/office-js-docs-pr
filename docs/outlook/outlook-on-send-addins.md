@@ -372,7 +372,7 @@ Add-ins will run during the send event, which will then either allow or block th
 
 #### Web browser (modern Outlook), Windows, Mac
 
-To enforce on-send, administrators should ensure the policy has been enabled on both mailboxes. To learn how to support delegate access in an add-in, see [Enable shared folders and shared mailbox scenarios](delegate-access.md).
+To enforce on-send, administrators should ensure the policy has been enabled on both mailboxes. To learn how to support delegate access in an add-in, see [Implement shared folders and shared mailbox scenarios](delegate-access.md).
 
 ### User mailbox with on-send add-in feature/policy enabled, add-ins that support on-send are installed and enabled and offline mode is enabled
 

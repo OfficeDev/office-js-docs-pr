@@ -16,13 +16,15 @@ A contextual tab is a hidden tab control in the Office ribbon that's displayed i
 ## Prerequisites
 
 Custom contextual tabs are currently only supported on **Excel** and only on the following platforms and builds.
-    - Excel on the web
-    - Excel on Windows: Version 2102 (Build 13801.20294) and later.
-    - Excel on Mac: Version 16.53 (21080600) and later.
+
+- Excel on the web
+- Excel on Windows: Version 2102 (Build 13801.20294) and later.
+- Excel on Mac: Version 16.53 (21080600) and later.
 
 Additionally, custom contextual tabs only work on platforms that support the following requirement sets. For more about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
-    - [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
-    - [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
+
+- [RibbonApi 1.2](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
+- [SharedRuntime 1.1](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)
 
 > [!TIP]
 > Use the runtime checks in your code to test whether the user's host and platform combination supports these requirement sets as described in [Runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). (The technique of specifying the requirement sets in the manifest, which is also described in that article, doesn't currently work for RibbonApi 1.2.) Alternatively, you can [implement an alternate UI experience when custom contextual tabs aren't supported](#implement-an-alternate-ui-experience-when-custom-contextual-tabs-arent-supported).
