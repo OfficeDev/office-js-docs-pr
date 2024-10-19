@@ -1,7 +1,7 @@
 ---
 description: Get started with Excel custom functions for Office Add-ins.
 title: Get started with custom functions in Excel
-ms.date: 10/13/2024
+ms.date: 10/18/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -21,7 +21,7 @@ The **custom functions add-in** defines the logic for your functions and how the
 
 An **external service** is optional. It can give your add-in capabilities like importing data from outside the workbook. The custom functions add-in specifies how external data is incorporated into the workbook. To learn more, see [Receive and handle data with custom functions](custom-functions-web-reqs.md).
 
-To develop a custom functions add-in with high performance, it’s important to ensure that these components operate in harmony. The following sections in this article describe how to optimize custom functions add-in development.
+To develop a custom functions add-in with high performance, it’s important to ensure that these three components operate in harmony.
 
 ## Optimize custom functions recalculation efficiency
 
@@ -31,7 +31,7 @@ In general, custom functions recalculation follows the established pattern of [r
 
 A custom function can accept another custom function as an argument, ensuring that any dependent values are updated during recalculation. The recalculation of the outer custom function depends on the result of the nested function, leading to increased time consumption with each additional nested function. Minimize the number of nested levels in your custom functions to improve recalculation efficiency. The following code snippets demonstrate two approaches that produce similar outputs. **Option 1** is more likely to reduce the nested levels for end users when adding values in the workbook compared to **Option 2**.
 
-#### Option 1
+#### Option 1: Less nesting
 
 ```js
     /**
@@ -48,7 +48,7 @@ A custom function can accept another custom function as an argument, ensuring th
     }
 ```
 
-#### Option 2
+#### Option 2: More nesting
 
 ```js
     /**
@@ -62,7 +62,7 @@ A custom function can accept another custom function as an argument, ensuring th
 
 ### Excel calculation mode
 
-Excel has three calculation modes: Automatic, Automatic Except Tables, and Manual. For a description of these calculation modes, see [Excel Recalculation](/office/client-developer/excel/excel-recalculation). The most frequently used calculation mode for custom functions add-ins is manual calculation mode. Set the appropriate calculation mode for your add-in with the [Excel.CalculationMode enum](/javascript/api/excel/excel.calculationmode) based on your scenario. Note that automatic calculation mode may trigger recalculation often and reduce the efficiency of your add-in.
+Excel has three calculation modes: Automatic, Automatic Except Tables, and Manual. For a description of these calculation modes, see [Excel Recalculation](/office/client-developer/excel/excel-recalculation). The most frequently used calculation mode for custom functions add-ins is manual calculation mode. Set the calculation mode for your add-in with the [Excel.CalculationMode enum](/javascript/api/excel/excel.calculationmode) based on your scenario. Note that automatic calculation mode may trigger recalculation often and reduce the efficiency of your add-in.
 
 ### Volatile function limitations
 
@@ -96,12 +96,12 @@ If your custom functions call a remote service, use a batching pattern to reduce
 
 Remote service connections can have a large impact on custom function performance. To reduce this impact, use these strategies:
 
-- Server heavy processing should be handled in the remote server efficiently to shorten the end-to-end latency for a custom function. For example, have parallel computing designed on the server side. If your service is deployed on Azure, consider optimization using [high-performance computing on Azure](/azure/architecture/topics/high-performance-computing).
+- Server-heavy processing should be handled efficiently in the remote server to shorten the end-to-end latency for a custom function. For example, have parallel computing designed on the server. If your service is deployed on Azure, consider optimization using [high-performance computing on Azure](/azure/architecture/topics/high-performance-computing).
 - Reduce the number of service calls by optimizing the add-in flow. For example, only send necessary calls to a remote service.
 
 ### Improve user-perceived performance through add-in UX
 
-If a delay while calling a remote service is inevitable, consider providing end users with messages through add-in task pane to explain the delay. This gives the user information to help manage their expectations. The following image shows an example.
+If a delay while calling a remote service is inevitable, consider providing messages through the add-in task pane to explain the delay to your end users. This information helps manage their expectations. The following image shows an example.
 
 :::image type="content" source="../images/custom-functions-delay-example.png" alt-text="The delay message says 'It may take some time as we are getting the data ready for you'.":::
 
