@@ -15,4 +15,4 @@ To help you get started, we've created toolkits for use with either the [Sketch]
 * [Fluent UI Design Adobe XD Toolkit](https://aka.ms/fabric-toolkit)
 * [Add-in Sketch Toolkit](https://aka.ms/addins_sketch_toolkit)
 * [Add-in Adobe XD Toolkit](https://aka.ms/addins_toolkit)
-* [Segoe UI and Fabric MDL2 icon font](https://res-1.cdn.office.net/files/fabric/fabric-website/files/segoeui_fabricmdl2_icon_fonts.zip)
+* [Segoe UI and Fabric MDL2 icon font](https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/fabric-website/files/segoeui_fabricmdl2_icon_fonts.zip)
