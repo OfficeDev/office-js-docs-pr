@@ -180,7 +180,7 @@ See also: [quick start](#quick-start).
 
 Other Microsoft content may use the term **commercial** to represent this concept.
 
-See also: [perpetual](#perpetual).
+See also: [Long-Term Service Channel (LTSC)](#long-term-service-channel-ltsc), [perpetual](#perpetual).
 
 ## web add-in
 
