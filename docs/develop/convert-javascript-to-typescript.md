@@ -103,7 +103,7 @@ Change your JavaScript files (**.js**) to TypeScript files (**.ts**). Then, make
 1. Find the **Home.js** file and rename it to **Home.ts**.
 
     > [!WARNING]
-    > There is currently a issue in template's **Home.js** file: the reference on line 95 to `textvalue` should be changed to `textValue`.
+    > There's currently an issue in the template's **Home.js** file: the reference on line 95 to `textvalue` should be changed to `textValue`.
 
 1. Find the **./Functions/FunctionFile.js** file and rename it to **FunctionFile.ts**.
 
