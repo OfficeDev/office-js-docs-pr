@@ -30,8 +30,6 @@ items:
       href: quickstarts/project-quickstart.md
     - name: Word add-in
       href: quickstarts/word-quickstart-yo.md
-    - name: Single sign-on (SSO)
-      href: quickstarts/sso-quickstart.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
