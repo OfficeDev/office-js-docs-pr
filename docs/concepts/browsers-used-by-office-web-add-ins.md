@@ -121,7 +121,7 @@ Office Add-ins don't support Service Workers when EdgeHTML is used. They're supp
 
 ### Scroll bar doesn't appear in task pane
 
-By default, scroll bars in EdgeHTML and WebView2 are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://reference.codeproject.com/css/-ms-overflow-style) property and it should be set to `scrollbar`.
+By default, scroll bars in EdgeHTML and WebView2 are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://devdoc.net/web/developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style.html) property and it should be set to `scrollbar`.
 
 ### When debugging with the Microsoft Edge DevTools, the add-in crashes or reloads
 

@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 10/01/2024
+ms.date: 10/22/2024
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -94,6 +94,12 @@ See also: [add-in commands](#add-in-commands).
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
+## Long-Term Service Channel (LTSC)
+
+**LTSC** refers to the perpetual version of Office available through a volume-licensing agreement between Microsoft and your company.
+
+See also: [perpetual](#perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing).
+
 ## Office application, Office client
 
 **Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
@@ -174,7 +180,7 @@ See also: [quick start](#quick-start).
 
 Other Microsoft content may use the term **commercial** to represent this concept.
 
-See also: [perpetual](#perpetual).
+See also: [Long-Term Service Channel (LTSC)](#long-term-service-channel-ltsc), [perpetual](#perpetual).
 
 ## web add-in
 
