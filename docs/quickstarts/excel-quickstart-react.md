@@ -1,7 +1,7 @@
 ---
 title: Use React to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and React.
-ms.date: 12/11/2023
+ms.date: 09/26/2024
 ms.service: excel
 ms.localizationpriority: high
 ---
@@ -31,7 +31,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 The add-in project that you've created with the Yeoman generator contains sample code for a basic task pane add-in. If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
 
-- The **manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in. To learn more about the **manifest.xml** file, see [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md).
+- The **./manifest.xml** or **manifest.json** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file defines the HTML framework of the task pane, and the files within the **./src/taskpane/components** folder define the various parts of the task pane UI.
 - The **./src/taskpane/taskpane.css** file contains the CSS that's applied to content in the task pane.
 - The **./src/taskpane/components/App.tsx** file contains the Office JavaScript API code that facilitates interaction between the task pane and Excel.

@@ -475,6 +475,19 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 
 ### Configure the manifest to add a second ribbon button
 
+There are two manifest options for Office Add-ins: the unified manifest for Microsoft 365, and the add-in only manifest.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+> [!NOTE]
+> The unified manifest for Microsoft 365 is currently in public developer preview for Excel and shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. Use the add-in only manifest for production Excel add-ins.
+
+1. Open the manifest file **./manifest.json**.
+
+1. (More steps TBD)
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
 1. Open the manifest file **./manifest.xml**.
 
 1. Locate the **\<Control\>** element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing **\</Control\>** tag and the closing **\</Group\>** tag, add the following markup.
