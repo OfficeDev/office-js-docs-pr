@@ -1,7 +1,7 @@
 ---
 title: Get an Outlook item's attachments from Exchange
 description: Learn how your Outlook add-in can directly get attachments and their contents from Exchange Online or Exchange Server.
-ms.date: 10/17/2024
+ms.date: 10/24/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -30,7 +30,7 @@ Each step is covered in the following sections.
 
 ## Get an access token
 
-Microsoft Graph provides access to users' Outlook mail data. Before your add-in can obtain data from Microsoft Graph, it must first get an access token for authorization. To get an access token, use nested app authentication (NAA) (preview). To learn more about NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+Microsoft Graph provides access to users' Outlook mail data. Before your add-in can obtain data from Microsoft Graph, it must first get an access token for authorization. To get an access token, use nested app authentication (NAA). To learn more about NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 ## Get the item ID of the mail item
 
