@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 10/03/2024
+ms.date: 10/23/2024
 ms.service: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -39,6 +39,11 @@ In this tutorial, you'll create an Excel task pane add-in that:
 - **Which Office client application would you like to support?** `Excel`
 
 ![The Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
+
+Next, select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
+
+> [!NOTE]
+> Creating an Excel add-in with the unified manifest for Microsoft 365 is in public developer preview. It shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
 
@@ -474,6 +479,22 @@ When a table is long enough that a user must scroll to see some rows, the header
 In this step of the tutorial, you'll add a button to the ribbon that toggles worksheet protection on and off.
 
 ### Configure the manifest to add a second ribbon button
+
+The steps vary depending on the type of manifest.
+
+# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
+
+> [!NOTE]
+> Creating an Excel add-in with the unified manifest for Microsoft 365 is in public developer preview. It shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+
+1. Open the manifest file **/manifest.json**.
+
+1. Local the Control element...
+
+1. 
+1. 
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. Open the manifest file **./manifest.xml**.
 
