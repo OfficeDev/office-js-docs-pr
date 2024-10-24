@@ -493,7 +493,7 @@ The steps vary depending on the type of manifest.
 
 1. Find the **extensions.runtimes** array.
 
-1. Create an object in the **extensions.runtimes** array with an **id** value of **CommandsRuntime**.
+1. Add an object to the **extensions.runtimes** array with an **id** value of **CommandsRuntime**.
 
 1. Add a **type** property with the value **general**.
 
@@ -503,7 +503,7 @@ The steps vary depending on the type of manifest.
 
 1. Add an **actions.type** property with the value **executeFunction**.
 
-1. Add an **actions.id** property with the value **ToggleProtection**. This matches the `id` for the JavaScript function you create in a later step. Your **runtimes** array should now look like this: 
+1. Add an **actions.id** property with the value **ToggleProtection**. This matches the `id` for the JavaScript function you create in a later step. Your **runtimes** array should now look like this:
 
 ```json
 "runtimes": [
@@ -527,6 +527,82 @@ The steps vary depending on the type of manifest.
 1. Ensure that the **requirements.capabilities** array contains an object that specifies the **AddinCommands** requirement set with a **minValue** of **1.1**.
 
 #### Configure the UI for the ribbon button
+
+1. After the **extensions.runtimes** object, add a **ribbons** array.
+
+1. Add an object with array properties named **contexts** and **tabs**, as shown in the following example.
+
+```json
+"ribbons": [
+    {
+        "contexts": [
+            // child objects omitted
+        ],
+        "tabs": [
+            // child objects omitted
+        ]
+    }
+]
+```
+
+1. Add a **"builtInTabId"** property to the **"tabs"** array with the value **"TabHome"**. This ensures that the new button displays in the Home tab.
+
+```json
+"tabs": [
+    {
+        "builtInTabID": "TabDefault",
+        "groups": [
+            {
+                // properties omitted
+            }
+        ]
+    }
+]
+```
+
+1. Find the **"groups"** array and add an **"id"** property with the value **"worksheetProtectionGroup"**.
+
+1. Add a **"label"** property with the value **"Contoso Add-in"**. Your **"groups"** array should look like this:
+
+```json
+"groups": [
+    {
+        "id": "worksheetProtectionGroup",
+        "label": "Contoso Add-in",
+        "controls": [
+            {
+                // properties omitted
+            }
+        ]
+    }
+]
+```
+
+1. In the **"groups.controls"** array, add the following properties and values:
+    - **"id": "toggleProtectionButton"**
+    - **"type": "button"**
+    - **"label": "Toggle worksheet protection"**
+
+1. Add a **"supertip"** object to the **"groups.controls"** array with the following properties and values:
+    - **"title": "Toggle worksheet protection"**
+    - **"description": "Enables or disables worksheet protection."**
+
+1. Add an **""actionId"** property to the **"groups.controls"** array with the value **"ShowTaskPane"**. Your **"controls"** array should now look like this:
+
+```json
+{
+    "id": "toggleProtectionButton",
+    "type": "button",
+    "label": "Toggle worksheet protection",
+    "supertip": {
+        "title": "Toggle worksheet protection",
+        "description": "Enables or disables worksheet protection."
+    },
+    "actionId": "ToggleProtection" // This must match the "runtimes.actions.id" value.
+}
+```
+
+1. Save the file.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
