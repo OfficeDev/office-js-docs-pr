@@ -45,7 +45,7 @@ But there may be exceptions. For example, you want the add-in to open with featu
 
 Another option is to respond to 13001 by falling back to an alternate system of user authentication. This will sign the user into AAD, but not sign the user into Office.
 
-This error doesn't typically occur in Office on the web. If the user's cookie expires, Office on the web returns [error 13006](#13006). However, if a user accesses Outlook on the web from Firefox (with the Enhanced Tracking Protection setting turned on) or Safari, they will encounter error 13001.
+This error doesn't typically occur in Office on the web. If the user's cookie expires, Office on the web returns [error 13006](#13006). However, if a user accesses Outlook on the web from Firefox with Enhanced Tracking Protection turned on, they'll encounter error 13001.
 
 ### 13002
 
