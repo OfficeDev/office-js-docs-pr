@@ -1,7 +1,7 @@
 ---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 10/08/2024
+ms.date: 10/24/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -218,7 +218,7 @@ To use Microsoft Graph services, an add-in must configure the **read/write mailb
 To implement your shared folder and shared mailbox scenarios, use Microsoft Graph to access additional mailbox information and resources. For example, you can use Microsoft Graph to [get the contents of an Outlook message that's attached to a message](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post) in a mailbox where a user has delegate access. For guidance on how to use Microsoft Graph, see [Overview of Microsoft Graph](/graph/overview) and [Outlook mail API in Microsoft Graph](/graph/outlook-mail-concept-overview).
 
 > [!TIP]
-> To access Microsoft Graph APIs from your add-in, use MSAL.js nested app authentication (NAA) (currently in preview). To learn more, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+> To access Microsoft Graph APIs from your add-in, use MSAL.js nested app authentication (NAA). To learn more, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 ## Limitations
 
