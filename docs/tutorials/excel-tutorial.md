@@ -485,25 +485,25 @@ The steps vary depending on the type of manifest.
 # [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
 
 > [!NOTE]
-> Creating an Excel add-in with the unified manifest for Microsoft 365 is in public developer preview. It shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. It shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 #### Configure the runtime for the ribbon button
 
 1. Open the manifest file **/manifest.json**.
 
-1. Find the **extensions.runtimes** array.
+1. Find the **"extensions.runtimes"** array.
 
-1. Add an object to the **extensions.runtimes** array with an **id** value of **CommandsRuntime**.
+1. Add an object to the **"extensions.runtimes"** array with an **"id"** value of **"CommandsRuntime"**.
 
-1. Add a **type** property with the value **general**.
+1. Add a **"type"** property with the value **"general"**.
 
-1. Add a **code.page** property to the object with the value **https://localhost:3000/commands.html**. This is the UI-less HTML page that loads your function file.
+1. Add a **"code.page"** property to the object with the value **"https://localhost:3000/commands.html"**. This is the UI-less HTML page that loads your function file.
 
-1. Add a **lifetime** property with the value **short**.
+1. Add a **"lifetime"** property with the value **"short"**.
 
-1. Add an **actions.type** property with the value **executeFunction**.
+1. Add an **"actions.type"** property with the value **"executeFunction"**.
 
-1. Add an **actions.id** property with the value **ToggleProtection**. This matches the `id` for the JavaScript function you create in a later step. Your **runtimes** array should now look like this:
+1. Add an **"actions.id"** property with the value **"ToggleProtection"**. This matches the `id` for the JavaScript function you create in a later step. Your **"runtimes"** array should now look like this:
 
 ```json
 "runtimes": [
@@ -524,13 +524,13 @@ The steps vary depending on the type of manifest.
 ]
 ```
 
-1. Ensure that the **requirements.capabilities** array contains an object that specifies the **AddinCommands** requirement set with a **minValue** of **1.1**.
+1. Ensure that the **"requirements.capabilities"** array contains an object that specifies the **"AddinCommands"** requirement set with a **"minValue"** of **"1.1"**.
 
 #### Configure the UI for the ribbon button
 
-1. After the **extensions.runtimes** object, add a **ribbons** array.
+1. After the **"extensions.runtimes"** object, add a **"ribbons"** array.
 
-1. Add an object with array properties named **contexts** and **tabs**, as shown in the following example.
+1. Add an object with array properties named **"contexts"** and **"tabs"**, as shown in the following example.
 
 ```json
 "ribbons": [
