@@ -517,7 +517,18 @@ The steps vary depending on the type of manifest.
     > [!TIP]
     > The value of **"actions.id"** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
 
-1. Ensure that the **"requirements.capabilities"** array contains an object that specifies the **"AddinCommands"** requirement set with a **"minValue"** of **"1.1"**.
+1. Ensure that the **"requirements.capabilities"** array contains an object that specifies the **"AddinCommands"** requirement set with a **"minVersion"** of **"1.1"**.
+
+    ```json
+    "requirements": {
+        "capabilities": [
+            {
+                "name": "AddinCommands",
+                "minVersion": "1.1"
+            }
+        ]
+    },
+    ```
 
 #### Configure the UI for the ribbon button
 
@@ -527,7 +538,7 @@ The steps vary depending on the type of manifest.
     "ribbons": [
         {
             "contexts": [
-                // child objects omitted
+                "default"
             ],
             "tabs": [
                 {
@@ -540,7 +551,7 @@ The steps vary depending on the type of manifest.
                                 {
                                     "id": "toggleProtectionButton",
                                     "type": "button",
-                                    "label": "Toggle worksheet protection",
+                                    "label": <!--TODO2: Label the button -->,
                                     "icons": [
                                         {
                                             "size": 16,
@@ -559,7 +570,7 @@ The steps vary depending on the type of manifest.
                                         "title": "Toggle worksheet protection",
                                         "description": "Enables or disables worksheet protection."
                                     },
-                                    "actionId": <!--TODO2: Set the action ID -->
+                                    "actionId": <!--TODO3: Set the action ID -->
                                 }
                             ]
                         }
@@ -570,11 +581,11 @@ The steps vary depending on the type of manifest.
     ]
     ```
 
-1. ** ADD STEPS FOR CONTEXTS **
-
 1. Find `TODO1` and replace it with **"TabHome"**. This ensures that the new button displays in the Home tab in Excel. For other available tab IDs, see [Find the IDs of built-in Office ribbon tabs](/develop/built-in-ui-ids.md).
 
-1. Find `TODO2` and replace it with **"toggleProtection"**. This value must match the **"runtimes.actions.id"** value.
+1. Find `TODO2` and replace it with **"Toggle worksheet protection"**. This is the label for your button in the Excel ribbon.
+
+1. Find `TODO3` and replace it with **"toggleProtection"**. This value must match the **"runtimes.actions.id"** value.
 
 1. Save the file.
 
