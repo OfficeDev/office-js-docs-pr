@@ -491,33 +491,20 @@ The steps vary depending on the type of manifest.
 
 1. Open the manifest file **./manifest.json**.
 
-1. Find the **"extensions.runtimes"** array.
-
-1. Add an object to the **"extensions.runtimes"** array with the following properties and values:
-    - **"id"**: **"CommandsRuntime"**
-    - **"type"**: **"general"**
-    - **"lifetime"**: **"short"**
-
-1. Add a **"code.page"** property to the object with the value **"https://localhost:3000/commands.html"**. This is the UI-less HTML page that loads your function file.
-
-1. Add an **"actions"** object with the following properties and values:
-    - **"id"**: **"ToggleProtection"**. This matches the `id` for the JavaScript function you create in a later step.
-    - **"type"**: **"executeFunction"**
-
-    The new object in your **"runtimes"** array should look like this:
+1. Find the **"extensions.runtimes"** array and add the following commands runtime object.
 
     ```json
     "runtimes": [
         {
             "id": "CommandsRuntime",
             "type": "general",
-            "lifetime": "short",
             "code": {
                 "page": "https://localhost:3000/commands.html"
             },
+            "lifetime": "short",
             "actions": [
                 {
-                    "id": "ToggleProtection",
+                    "id": <!--TODO1: Set the action ID -->,
                     "type": "executeFunction",
                 }
             ]
@@ -525,13 +512,16 @@ The steps vary depending on the type of manifest.
     ]
     ```
 
+1. Find `TODO1` and replace it with **"toggleProtection"**. This matches the `id` for the JavaScript function you create in a later step.
+
+    > [!TIP]
+    > The value of **"actions.id"** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
+
 1. Ensure that the **"requirements.capabilities"** array contains an object that specifies the **"AddinCommands"** requirement set with a **"minValue"** of **"1.1"**.
 
 #### Configure the UI for the ribbon button
 
-1. After the **"extensions.runtimes"** array, add a **"ribbons"** array.
-
-1. Add an object with array properties named **"contexts"** and **"tabs"**, as shown in the following example.
+1. After the **"extensions.runtimes"** array, add the following **"ribbons"** array.
 
     ```json
     "ribbons": [
@@ -540,77 +530,51 @@ The steps vary depending on the type of manifest.
                 // child objects omitted
             ],
             "tabs": [
-                // child objects omitted
-            ]
-        }
-    ]
-    ```
-
-1. Add a **"builtInTabId"** property to the **"tabs"** array with the value **"TabHome"**. This ensures that the new button displays in the Home tab in Excel.
-
-1. Add a **"groups"** array within the **"tabs"** array. The **"groups"** array should contain one object. Your **"tabs"** array should look like this:
-
-    ```json
-    "tabs": [
-        {
-            "builtInTabID": "TabHome",
-            "groups": [
                 {
-                    // properties omitted
+                    "builtInTabID": <!--TODO1: Set the tab ID -->,
+                    "groups": [
+                        {
+                            "id": "worksheetProtectionGroup",
+                            "label": "Contoso Add-in",
+                            "controls": [    
+                                {
+                                    "id": "toggleProtectionButton",
+                                    "type": "button",
+                                    "label": "Toggle worksheet protection",
+                                    "icons": [
+                                        {
+                                            "size": 16,
+                                            "url": "https://localhost:3000/assets/icon-16.png"
+                                        },
+                                        {
+                                            "size": 32,
+                                            "url": "https://localhost:3000/assets/icon-32.png"
+                                        },
+                                        {
+                                            "size": 80,
+                                            "url": "https://localhost:3000/assets/icon-80.png"
+                                        }
+                                    ],
+                                    "supertip": {
+                                        "title": "Toggle worksheet protection",
+                                        "description": "Enables or disables worksheet protection."
+                                    },
+                                    "actionId": <!--TODO2: Set the action ID -->
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         }
     ]
     ```
 
-1. Go to the **"groups"** array and add the following properties and values:
-    - **"id"**: **"worksheetProtectionGroup"**
-    - **"label"**: **"Contoso Add-in"**
+1. ** ADD STEPS FOR CONTEXTS **
 
-1. Add a **"controls"** array within the **"groups"** array. The **"controls"** array should contain one object. Your **"groups"** array should look like this:
+1. Find `TODO1` and replace it with **"TabHome"**. This ensures that the new button displays in the Home tab in Excel. For other available tab IDs, see [Find the IDs of built-in Office ribbon tabs](/develop/built-in-ui-ids.md).
 
-    ```json
-    "groups": [
-        {
-            "id": "worksheetProtectionGroup",
-            "label": "Contoso Add-in",
-            "controls": [
-                {
-                    // properties omitted
-                }
-            ]
-        }
-    ]
-    ```
-
-1. In the **"groups.controls"** array, add the following properties and values:
-    - **"id": "toggleProtectionButton"**
-    - **"type": "button"**
-    - **"label": "Toggle worksheet protection"**
-
-1. Add a **"supertip"** object to the **"groups.controls"** array with the following properties and values:
-    - **"title": "Toggle worksheet protection"**
-    - **"description": "Enables or disables worksheet protection."**
-
-1. Add an **""actionId"** property to the **"groups.controls"** array with the value **"ShowTaskPane"**. Your **"controls"** array should now look like this:
-
-    ```json
-    "controls": [    
-        {
-            "id": "toggleProtectionButton",
-            "type": "button",
-            "label": "Toggle worksheet protection",
-            "supertip": {
-                "title": "Toggle worksheet protection",
-                "description": "Enables or disables worksheet protection."
-            },
-            "actionId": "ToggleProtection"
-        }
-    ]
-    ```
-
-    > [!TIP]
-    > The **"controls.actionId"** value must match the **"runtimes.actions.id"** value.
+1. Find `TODO2` and replace it with **"toggleProtection"**. This value must match the **"runtimes.actions.id"** value.
 
 1. Save the file.
 
