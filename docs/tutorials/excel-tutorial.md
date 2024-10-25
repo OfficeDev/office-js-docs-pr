@@ -504,7 +504,7 @@ The steps vary depending on the type of manifest.
     - **"id"**: **"ToggleProtection"**. This matches the `id` for the JavaScript function you create in a later step.
     - **"type"**: **"executeFunction"**
 
-    Your **"runtimes"** array should now look like this:
+    The new object in your **"runtimes"** array should look like this:
 
     ```json
     "runtimes": [
@@ -563,11 +563,11 @@ The steps vary depending on the type of manifest.
     ]
     ```
 
-1. Go to the **"groups"** array and add an **"id"** property with the value **"worksheetProtectionGroup"**.
+1. Go to the **"groups"** array and add the following properties and values:
+    - **"id"**: **"worksheetProtectionGroup"**
+    - **"label"**: **"Contoso Add-in"**
 
-1. Add a **"label"** property to the **"groups"** array with the value **"Contoso Add-in"**.
-
-1. Add a **"controls"** array within the **"tabs"** array. The **"controls"** array should contain one object. Your **"groups"** array should look like this:
+1. Add a **"controls"** array within the **"groups"** array. The **"controls"** array should contain one object. Your **"groups"** array should look like this:
 
     ```json
     "groups": [
@@ -604,10 +604,13 @@ The steps vary depending on the type of manifest.
                 "title": "Toggle worksheet protection",
                 "description": "Enables or disables worksheet protection."
             },
-            "actionId": "ToggleProtection" // This must match the "runtimes.actions.id" value.
+            "actionId": "ToggleProtection"
         }
     ]
     ```
+
+    > [!TIP]
+    > The **"controls.actionId"** value must match the **"runtimes.actions.id"** value.
 
 1. Save the file.
 
@@ -706,6 +709,8 @@ The steps vary depending on the type of manifest.
     ```
 
 1. Save the file.
+
+---
 
 ### Create the function that protects the sheet
 
