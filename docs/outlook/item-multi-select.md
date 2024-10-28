@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 08/15/2024
+ms.date: 10/31/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -366,6 +366,8 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - The [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) in Outlook must be enabled. An exception to this is if the item multi-select feature is enabled through the no item context feature in the manifest. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
 - A maximum of 100 messages can be selected at a time.
 - The `loadItemByIdAsync` method only processes one selected message at a a time. Remember to call `unloadAsync` after `loadItemByIdAsync` finishes processing the message. This way, the add-in can load and process the next selected message.
+- Typically, you can only run get operations on a selected message that's loaded using the `loadItemByIdAsync` method. However, managing the [categories](/javascript/api/outlook/office.categories) of a loaded message is an exception. You can add, get, and remove categories from a loaded message.
+- The `loadItemByIdAsync` method is supported in task pane and function command add-ins. This method isn't supported in [event-based activation](autolaunch.md) add-ins.
 
 > [!NOTE]
 > Meeting invites and responses are considered messages, not appointments, and can therefore be included in a selection.
