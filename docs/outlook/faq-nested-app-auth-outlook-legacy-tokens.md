@@ -19,7 +19,7 @@ Nested app authentication enables single sign-on (SSO) for applications nested i
 
 ### What is the timeline for shutting down legacy Exchange online tokens?
 
-Microsoft will turn off legacy Exchange online tokens in tenants according to the following schedule. In October, we'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA.
+Microsoft will turn off legacy Exchange online tokens in tenants according to the following schedule. On October 30, 2024, we'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA.
 
 | Date     | Legacy tokens status |
 | -------- | ------------------------------------------------------ |
@@ -46,7 +46,7 @@ Switching to Microsoft Graph using Entra ID tokens is a big improvement in secur
 
 ### Can I opt out?
 
-We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024 to turn legacy Exchange tokens on or off in your tenant. You can use it to ensure add-ins aren't broken if they haven't updated to use NAA yet. However, in June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy Exchange Online tokens and they'll be disabled for all tenants. We'll update this FAQ when more information about this tooling is available.
+We'll provide tooling via PowerShell for Microsoft 365 administrators on October 30, 2024 to turn legacy Exchange tokens on or off in your tenant. You can use it to ensure add-ins aren't broken if they haven't updated to use NAA yet. However, in June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy Exchange Online tokens and they'll be disabled for all tenants. We'll update this FAQ when more information about this tooling is available.
 
 ### Does my Outlook add-in have to migrate to NAA?
 
@@ -62,7 +62,7 @@ To find out whether your add-in uses legacy Exchange user identity tokens and ca
 
 If your add-in calls any of these APIs, you should adopt NAA and migrate to using Entra ID tokens to access Microsoft Graph instead.
 
-We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024. The tooling will report the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. The tooling will also allow you to turn legacy Exchange online tokens on or off for the entire tenant. We'll provide more information when the tooling is ready in this FAQ.
+We'll provide tooling via PowerShell for Microsoft 365 administrators on October 30, 2024. The tooling will report the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. The tooling will also allow you to turn legacy Exchange online tokens on or off for the entire tenant. We'll provide more information when the tooling is ready in this FAQ.
 
 ### Which Outlook add-ins are in scope?
 
@@ -89,7 +89,7 @@ Add-ins may use the legacy Exchange tokens to get resources from Exchange throug
 - `getUserIdentityTokenAsync`
 - `getCallbackTokenAsync`
 
-We'll provide tooling via PowerShell for Microsoft 365 administrators in October 2024. The tooling will report the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. The tooling will also allow you to turn legacy Exchange online tokens on or off for the entire tenant. We'll provide more information when the tooling is ready in this FAQ.
+We'll provide tooling via PowerShell for Microsoft 365 administrators on October 30, 2024. The tooling will report the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. The tooling will also allow you to turn legacy Exchange online tokens on or off for the entire tenant. We'll provide more information when the tooling is ready in this FAQ.
 
 If you rely on an independent software vendor (ISV) for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, we recommend you ask them to review the [Updates on deprecating legacy Exchange Online tokens for Outlook add-ins blog](https://devblogs.microsoft.com/microsoft365dev/updates-on-deprecating-legacy-exchange-online-tokens-for-outlook-add-ins/?commentid=1131) and ask any questions to the Outlook extensibility PM team on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
 
