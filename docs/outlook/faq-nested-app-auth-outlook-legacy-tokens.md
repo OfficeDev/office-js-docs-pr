@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 10/15/2024
+ms.date: 10/28/2024
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
