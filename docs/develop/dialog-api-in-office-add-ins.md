@@ -254,18 +254,18 @@ Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.
 When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned. It should be assigned to a variable that has global scope so that you can reference it from other functions. The following is an example.
 
 ```javascript
-let dialog; // Declare as global variable.
+let dialog; // Declare as global variable.
 Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html',
-    (asyncResult) => {
-        dialog = asyncResult.value;
+    (asyncResult) => {
+        dialog = asyncResult.value;
         dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
     }
 );
 
-function processMessage(arg) {
+function processMessage(arg) {
     dialog.close();
 
-  // Add code to process the message here.
+    // Add code to process the message here.
 
 }
 ```
@@ -275,8 +275,8 @@ This `Dialog` object has a [messageChild](/javascript/api/office/office.dialog#o
 Consider a scenario in which the UI of the dialog is related to the currently active worksheet and that worksheet's position relative to the other worksheets. In the following example, `sheetPropertiesChanged` sends Excel worksheet properties to the dialog box. In this case, the current worksheet is named "My Sheet" and it's the second sheet in the workbook. The data is encapsulated in an object and stringified so that it can be passed to `messageChild`.
 
 ```javascript
-function sheetPropertiesChanged() {
-    const messageToDialog = JSON.stringify({ name: "My Sheet", position: 2 });
+function sheetPropertiesChanged() {
+    const messageToDialog = JSON.stringify({ name: "My Sheet", position: 2 });
     dialog.messageChild(messageToDialog);
 }
 ```
@@ -294,8 +294,8 @@ Office.onReady(() => {
 Then, define the `onMessageFromParent` handler. The following code continues the example from the preceding section. Note that Office passes an argument to the handler and that the `message` property of the argument object contains the string from the host page. In this example, the message is reconverted to an object and jQuery is used to set the top heading of the dialog to match the new worksheet name.
 
 ```javascript
-function onMessageFromParent(arg) {
-    const messageFromParent = JSON.parse(arg.message);
+function onMessageFromParent(arg) {
+    const messageFromParent = JSON.parse(arg.message);
     document.querySelector('h1').textContent = messageFromParent.name;
 }
 ```
@@ -311,8 +311,8 @@ Office.onReady(() => {
     );
 });
 
-function onRegisterMessageComplete(asyncResult) {
-    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+function onRegisterMessageComplete(asyncResult) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
         reportError(asyncResult.error.message);
     }
 }
@@ -350,7 +350,7 @@ dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 Because the runtime that is hosting the dialog can't access the **\<AppDomains\>** section of the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that is passed to the handler contains the domain that is currently hosted in the parent as its `origin` property. The following is an example of how to use the property.
 
 ```javascript
-function onMessageFromParent(arg) {
+function onMessageFromParent(arg) {
     if (arg.origin === "https://addin.fabrikam.com") {
         // Process the message.
     } else {
