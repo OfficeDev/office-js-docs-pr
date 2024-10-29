@@ -272,11 +272,20 @@ function processMessage(arg) {
 
 This `Dialog` object has a [messageChild](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) method that sends any string, including stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
 
-Consider a scenario in which the UI of the dialog is related to the currently active worksheet and that worksheet's position relative to the other worksheets. In the following example, `sheetPropertiesChanged` sends Excel worksheet properties to the dialog box. In this case, the current worksheet is named "My Sheet" and it's the second sheet in the workbook. The data is encapsulated in an object and stringified so that it can be passed to `messageChild`.
+Consider a scenario in which the UI of the dialog is related to the currently active Excel worksheet and that worksheet's position relative to the other worksheets. In the following example, `worksheetPropertiesChanged` sends the properties of the active worksheet to the dialog box. The data is stringified so that it can be passed to `messageChild`.
 
 ```javascript
-function sheetPropertiesChanged() {
-    const messageToDialog = JSON.stringify({ name: "My Sheet", position: 2 });
+await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();
+    worksheet.load();
+    await context.sync();
+    worksheetPropertiesChanged(worksheet);
+});
+
+...
+
+function worksheetPropertiesChanged(currentWorksheet) {
+    const messageToDialog = JSON.stringify(currentWorksheet);
     dialog.messageChild(messageToDialog);
 }
 ```
