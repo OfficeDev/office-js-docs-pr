@@ -1,7 +1,7 @@
 ---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 10/24/2024
+ms.date: 10/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

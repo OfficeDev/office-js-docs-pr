@@ -1,7 +1,7 @@
 ---
 title: Get an Outlook item's attachments from Exchange
 description: Learn how your Outlook add-in can directly get attachments and their contents from Exchange Online or Exchange Server.
-ms.date: 10/24/2024
+ms.date: 10/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
