@@ -73,3 +73,9 @@ Callback tokens provide access to the user's mailbox from your server back-end, 
 - Needs access to the user's mailbox from your server back-end.
 
 Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) methods. The level of access is controlled by the permissions specified in the add-in manifest.
+
+## See also
+
+- [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets)
+- [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md)
+- [Nested app authentication and Outlook legacy tokens deprecation FAQ](faq-nested-app-auth-outlook-legacy-tokens.md)
