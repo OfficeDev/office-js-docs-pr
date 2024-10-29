@@ -155,7 +155,7 @@ Try creating your own add-in or use [Script Lab](explore-with-script-lab.md) to 
 
 ### Create an Office Add-in
 
-You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.yml#get-started-with-office-add-ins). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try a [tutorial](../index.yml#your-developer-journey).
+You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.yml). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try a [tutorial](../index.yml).
 
 ### Explore the APIs with Script Lab
 
