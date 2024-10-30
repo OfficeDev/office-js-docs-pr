@@ -1,7 +1,7 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 10/15/2024
+ms.date: 10/30/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
