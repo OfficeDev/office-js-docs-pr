@@ -19,7 +19,7 @@ Nested app authentication enables single sign-on (SSO) for applications nested i
 
 ### What is the timeline for shutting down legacy Exchange online tokens?
 
-Microsoft begins turning off legacy Exchange online tokens in February 2025. We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA. See [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on) for more information.
+Microsoft begins turning off legacy Exchange online tokens in February 2025. From now until February 2025, existing and new tenants will not be affected.  We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA. See [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on) for more information.
 
 | Date     | Legacy tokens status |
 | -------- | ------------------------------------------------------ |
