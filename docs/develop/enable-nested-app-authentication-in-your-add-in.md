@@ -1,7 +1,7 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 10/30/2024
+ms.date: 10/31/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -19,12 +19,12 @@ You can use the MSAL.js library with nested app authentication to use SSO from y
 
 NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support Azure Active Directory B2C for business-to-consumer identity management scenarios. The following table explains the current support by platform. Platforms listed as generally available (GA) are ready for production usage in your add-in.
 
-| Application | Windows                                                                            | Mac | Web  | iOS/iPad   | Android        |
-|-------------|------------------------------------------------------------------------------------|-----|------|------------|----------------|
-| Excel       | In preview                                                    | In preview | In preview | In preview on iPad | Not applicable |
-| Outlook     | GA in Current Channel, Preview in all other channels                             | GA  | GA   | GA (iOS)   | GA             |
-| PowerPoint  | In preview                                                    | In preview | In preview | In preview on iPad | Not applicable |
-| Word        | In preview                                                    | In preview | In preview | In preview on iPad | Not applicable |
+| Application | Web        | Windows                                              | Mac        | iOS/iPad           | Android        |
+|-------------|------------|------------------------------------------------------|------------|--------------------|----------------|
+| Excel       | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
+| Outlook     | GA         | GA in Current Channel, Preview in all other channels | GA         | GA (iOS)           | GA             |
+| PowerPoint  | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
+| Word        | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
 
 > [!IMPORTANT]
 > To use NAA on platforms that are still in preview, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
