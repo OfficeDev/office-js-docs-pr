@@ -22,7 +22,7 @@ NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identi
 | Application | Windows                                                                            | Mac | Web  | iOS/iPad   | Android        |
 |-------------|------------------------------------------------------------------------------------|-----|------|------------|----------------|
 | Excel       | In preview                                                    | In preview | In preview | In preview on iPad | Not applicable |
-| Outlook     | GA in Current Channel, (Preview) in all other channels                             | GA  | GA   | GA (iOS)   | GA             |
+| Outlook     | GA in Current Channel, Preview in all other channels                             | GA  | GA   | GA (iOS)   | GA             |
 | PowerPoint  | In preview                                                    | In preview | In preview | In preview on iPad | Not applicable |
 | Word        | In preview                                                    | In preview | In preview | In preview on iPad | Not applicable |
 
