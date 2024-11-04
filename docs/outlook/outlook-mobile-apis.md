@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 09/27/2024
+ms.date: 11/07/2024
 ms.localizationpriority: medium
 ---
 
@@ -15,9 +15,9 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 
 |API|Minimum requirement set|Supported Outlook modes|Supported Outlook on mobile clients|
 |---|---|---|---|
-|[Office.context.mailbox.getIsIdentityManaged](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getisidentitymanaged-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android</li><li>iOS</li></ul>|
-|[Office.context.mailbox.getIsOpenFromLocationAllowed](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getisopenfromlocationallowed-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android</li><li>iOS</li></ul>|
-|[Office.context.mailbox.getIsSaveToLocationAllowed](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getissavetolocationallowed-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android</li><li>iOS</li></ul>|
+|[Office.context.mailbox.getIsIdentityManaged](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getisidentitymanaged-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
+|[Office.context.mailbox.getIsOpenFromLocationAllowed](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getisopenfromlocationallowed-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
+|[Office.context.mailbox.getIsSaveToLocationAllowed](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getissavetolocationallowed-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
 |[Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
 |[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))|Mailbox 1.10|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
 |[Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))|Mailbox 1.10|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
