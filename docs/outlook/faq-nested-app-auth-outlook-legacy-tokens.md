@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 10/29/2024
+ms.date: 10/31/2024
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -38,9 +38,31 @@ The general availability (GA) date for NAA depends on which channel you are usin
 | Jan 2025 | NAA will GA in Semi-Annual Channel. |
 | Jun 2025 | NAA will GA in Semi-Annual Extended Channel. |
 
+## Microsoft 365 administrator questions
+
 ### Can I turn legacy tokens back on?
 
 From October 30th through mid-November 2024, we'll roll out new tooling via PowerShell for Microsoft 365 administrators to turn legacy Exchange tokens on or off in your tenant. If you find you need to reenable legacy Exchange tokens, you can use the PowerShell cmdlets to do so. The tooling will also report if any add-ins are using legacy tokens over the last 28 days. We'll update this FAQ with additional information once the tool is available in all tenants.
+
+### How do I handle add-in updates from ISVs?
+
+If you have an add-in that uses legacy Exchange tokens, you should reach out to your ISV for information about their timeline to migrate their add-in to use NAA. Once the ISV migrates their add-in, they will most likely provide an admin consent URL. You use the link to sign in as an administrator and consent to any Microsoft Graph scopes the add-in requires. This provides consent for the entire tenant to use the add-in. If you don't consent the add-in will prompt users to consent, and may possibly not work correctly.
+
+The ISV may provide you with an updated manifest to deploy (when using central deployment). During central deployment, this may prompt you to consent to any Microsoft Graph scopes the add-in requires. In this scenario you won't need to use an admin consent URL.
+
+If the add-in is deployed from Microsoft AppSource, most likely you will be prompted to consent to Microsoft Graph scopes when the ISV rolls out updates to the add-in. Until you consent, users on the tenant will not be able to use the new version of the add-in with NAA.
+
+### Which add-ins in my org are impacted?
+
+We'll provide tooling for administrators that reports the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. We'll provide more information when the tooling is ready in this FAQ. See [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on) for more information.
+
+Add-ins may use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs.
+
+- `makeEwsRequestAsync`
+- `getUserIdentityTokenAsync`
+- `getCallbackTokenAsync`
+
+If you rely on an independent software vendor (ISV) for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, we recommend you ask them to review the [Updates on deprecating legacy Exchange Online tokens for Outlook add-ins blog](https://devblogs.microsoft.com/microsoft365dev/updates-on-deprecating-legacy-exchange-online-tokens-for-outlook-add-ins/?commentid=1131) and ask any questions to the Outlook extensibility PM team on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
 
 ## Outlook add-in migration FAQ
 
@@ -85,17 +107,7 @@ To support NAA in your Outlook add-in, please refer to the following documentati
 - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA).
 
-### As an admin, how do I know which add-ins in my org need to be updated?
 
-We'll provide tooling for administrators that reports the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. We'll provide more information when the tooling is ready in this FAQ. See [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on) for more information.
-
-Add-ins may use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs.
-
-- `makeEwsRequestAsync`
-- `getUserIdentityTokenAsync`
-- `getCallbackTokenAsync`
-
-If you rely on an independent software vendor (ISV) for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, we recommend you ask them to review the [Updates on deprecating legacy Exchange Online tokens for Outlook add-ins blog](https://devblogs.microsoft.com/microsoft365dev/updates-on-deprecating-legacy-exchange-online-tokens-for-outlook-add-ins/?commentid=1131) and ask any questions to the Outlook extensibility PM team on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
 
 ### How do I keep up with the latest guidance?
 
