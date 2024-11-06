@@ -1,12 +1,12 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 10/31/2024
+ms.date: 11/05/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
-# Enable SSO in an Office Add-in using nested app authentication (preview)
+# Enable SSO in an Office Add-in using nested app authentication
 
 You can use the MSAL.js library with nested app authentication to use SSO from your Office Add-in. Using nested app authentication offers several advantages over the On-Behalf-Of (OBO) flow.
 
