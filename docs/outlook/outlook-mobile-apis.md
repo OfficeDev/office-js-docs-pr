@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 07/18/2024
+ms.date: 11/07/2024
 ms.localizationpriority: medium
 ---
 
@@ -41,6 +41,7 @@ Although Outlook mobile supports up to requirement set 1.5, there are some APIs 
 |[Office.context.mailbox.getCallbackTokenAsync(options, callback)](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getcallbacktokenasync-member(1))|Mailbox 1.5|<ul><li>Message Compose</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.getCallbackTokenAsync(callback, userContext)](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getcallbacktokenasync-member(2))|Mailbox 1.1 (Read mode support)<br><br>Mailbox 1.3 (Compose mode support)|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1))|Mailbox 1.1|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
+|[Office.context.mailbox.item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1 (classic Windows, Mac)<br><br>Mailbox 1.8 (Web, new Windows)|<ul><li>Message Compose</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.item.dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
 |[Office.context.mailbox.item.displayReplyAllForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
 |[Office.context.mailbox.item.displayReplyForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
