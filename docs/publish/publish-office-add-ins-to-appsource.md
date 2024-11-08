@@ -69,7 +69,11 @@ When you have a Windows app or a COM or VSTO add-in whose functions overlap with
 
 Replace the placeholders as follows:
 
-- `{{OfficeApplication}}` with the name of the Office Application that the add-in should be installed in. Only `Word`, `Excel`, and `PowerPoint` are supported.
+- `{{OfficeApplication}}` with the name of the Office application that the add-in should be installed in. Only `Word`, `Excel`, and `PowerPoint` are supported.
+
+   > [!NOTE]
+   > If the add-in's manifest is configured to support more than one Office application, replace `{{OfficeApplication}}` with any *one* of the supported applications. Don't create separate registry entries for each supported application. The add-in will be installed for all the Office applications that it supports. 
+
 - `{{add-inName}}` with the name of the add-in; for example `ContosoAdd-in`.
 - `{{assetId}}` with the AppSource asset ID of your add-in, such as `WA999999999`.
 
