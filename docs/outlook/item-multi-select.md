@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 10/31/2024
+ms.date: 11/14/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -133,6 +133,8 @@ To enable your add-in to activate on multiple selected messages, you must add th
                                         </Icon>
                                         <Action xsi:type="ShowTaskpane">
                                             <SourceLocation resid="Taskpane.Url"/>
+                                            <SupportsPinning>false</SupportsPinning>
+                                            <SupportsNoItemContext>true</SupportsNoItemContext>
                                             <!-- Enables your add-in to activate on multiple selected messages. -->
                                             <SupportsMultiSelect>true</SupportsMultiSelect>
                                         </Action>
@@ -169,7 +171,7 @@ To enable your add-in to activate on multiple selected messages, you must add th
 ---
 
 > [!NOTE]
-> If you turn on the item multi-select feature in your add-in, your add-in will automatically support the [no item context](contextless.md) feature, even if it isn't explicitly configured in the manifest.
+> If you turn on the item multi-select feature in your add-in, your add-in will automatically support the [no item context](contextless.md) feature, even if it isn't explicitly configured in the manifest. For more information on task pane pinning behavior in multi-select add-ins, see [Task pane pinning in multi-select add-ins](#task-pane-pinning-in-multi-select-add-ins).
 
 ## Configure the task pane
 
