@@ -46,18 +46,18 @@ By mid-November 2024, we'll roll out new tooling via PowerShell for Microsoft 36
 
 ### How does the admin consent flow work?
 
-ISVs are updating their add-ins to use Entra ID tokens and Microsoft Graph scopes. When the add-in requests an access token it must have admin or user consent. If the administrator consents, all users on the tenant can use the add-in for the scopes the add-in requires. Otherwise, each end-user will be prompted for consent, if [user consent is enabled](/microsoft-365/admin/misc/user-consent). Completing admin consent provides a better experience so that users don't have to be prompted.
+Independant software vendors (ISVs) are updating their add-ins to use Entra ID tokens and Microsoft Graph scopes. When the add-in requests an access token, it must have admin or user consent. If the administrator consents, all users on the tenant can use the add-in for the scopes the add-in requires. Otherwise, each end-user will be prompted for consent, if [user consent is enabled](/microsoft-365/admin/misc/user-consent). Completing admin consent provides a better experience because the users aren't prompted.
 
-One option to consent is the ISV may provide you with an admin consent URI.
+One option for consent is that the ISV provides you with an admin consent URI.
 
-1. The ISV for an add-in provides an admin consent URI. This may be on documentation they provide, or you may need to reach out to them for more information.
+1. The add-in developer provides an admin consent URI. If this is not in the documentation they provide, you need to contact them for more information.
 1. The administrator browses to the admin consent URI.
 1. The administrator is prompted to sign in and consent to a list of scopes that the add-in requires.
 1. Once complete, the browser redirects to a web page from the ISV, which should show the consent was successful.
 
-As an alternative, the ISV may provide an updated app manifest that will prompt for admin consent as part of central deployment. In this scenario, when you deploy the updated app manifest, you'll be prompted to consent before the deployment can complete. There is no need for an admin consent URL.
+As an alternative, the ISV may provide an updated app manifest that will prompt for admin consent as part of central deployment. In this scenario, when you deploy the updated app manifest, you'll be prompted to consent before the deployment can complete. There is no need for an admin consent URI.
 
-Finally, if the add-in is published in the Microsoft 365 store, the update will deploy automatically and the administrator will be prompted to consent to the scopes. If the administrator does not consent, users will not be able to use the updated add-in.
+Finally, if the add-in is published in the Microsoft 365 store, the update will deploy automatically and the administrator will be prompted to consent to the scopes. If the administrator doesn't consent, users won't be able to use the updated add-in.
 
 ### What if the add-in doesn't work after admin consent?
 
