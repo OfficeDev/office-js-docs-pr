@@ -65,11 +65,11 @@ Ensure you don't disable features, or revoke permissions that the add-in require
 
 ### How do I deploy add-in updates from an ISV?
 
-If you have an add-in that uses legacy Exchange tokens, you should reach out to your ISV for information about their timeline to migrate their add-in to use NAA. Once the ISV migrates their add-in, they will most likely provide an admin consent URL. See [How does the admin consent flow work?](#how-does-the-admin-consent-flow-work) for more information.
+If you have an add-in that uses legacy Exchange tokens, you should reach out to your ISV for information about their timeline to migrate their add-in to use NAA. Once the ISV migrates their add-in, they will most likely provide an admin consent URL. For more information, see [How does the admin consent flow work?](#how-does-the-admin-consent-flow-work) .
 
 The ISV may also provide you with an updated app manifest to deploy (when using central deployment). During central deployment, this may prompt you to consent to any Microsoft Graph scopes the add-in requires. In this scenario you won't need to use an admin consent URL.
 
-If the add-in is deployed from Microsoft AppSource, most likely you will be prompted to consent to Microsoft Graph scopes when the ISV rolls out updates to the add-in. Until you consent, users on the tenant will not be able to use the new version of the add-in with NAA.
+If the add-in is deployed from Microsoft AppSource, most likely you'll be prompted to consent to Microsoft Graph scopes when the ISV rolls out updates to the add-in. Until you consent, users on the tenant won't be able to use the new version of the add-in with NAA.
 
 ### Which add-ins in my org are impacted?
 
