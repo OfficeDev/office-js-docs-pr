@@ -42,7 +42,7 @@ The general availability (GA) date for NAA depends on which channel you are usin
 
 ### Can I turn legacy tokens back on?
 
-From October 30th through mid-November 2024, we'll roll out new tooling via PowerShell for Microsoft 365 administrators to turn legacy Exchange tokens on or off in your tenant. If you find you need to reenable legacy Exchange tokens, you can use the PowerShell cmdlets to do so. The tooling will also report if any add-ins are using legacy tokens over the last 28 days. In June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy Exchange Online tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the tool is available in all tenants.
+By mid-November 2024, we'll roll out new tooling via PowerShell for Microsoft 365 administrators to turn legacy Exchange tokens on or off in your tenant. If you find you need to reenable legacy Exchange tokens, you can use the PowerShell cmdlets to do so. The tooling will also report if any add-ins are using legacy tokens over the last 28 days. In June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy Exchange Online tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the tool is available in all tenants.
 
 ### How does the admin consent flow work?
 
