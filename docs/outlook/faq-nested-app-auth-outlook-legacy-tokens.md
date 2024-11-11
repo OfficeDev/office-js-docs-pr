@@ -67,13 +67,13 @@ Ensure you don't disable features, or revoke permissions that the add-in require
 
 If you have an add-in that uses legacy Exchange tokens, you should reach out to your ISV for information about their timeline to migrate their add-in to use NAA. Once the ISV migrates their add-in, they will most likely provide an admin consent URL. For more information, see [How does the admin consent flow work?](#how-does-the-admin-consent-flow-work) .
 
-The ISV may also provide you with an updated app manifest to deploy (when using central deployment). During central deployment, this may prompt you to consent to any Microsoft Graph scopes the add-in requires. In this scenario you won't need to use an admin consent URL.
+The ISV may also provide you with an updated app manifest to deploy through centralized deployment. During centralized deployment, this may prompt you to consent to any Microsoft Graph scopes the add-in requires. In this scenario you won't need to use an admin consent URI.
 
 If the add-in is deployed from Microsoft AppSource, most likely you'll be prompted to consent to Microsoft Graph scopes when the ISV rolls out updates to the add-in. Until you consent, users on the tenant won't be able to use the new version of the add-in with NAA.
 
-### Which add-ins in my org are impacted?
+### Which add-ins in my organization are impacted?
 
-We'll provide tooling for administrators that reports the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. We'll provide more information when the tooling is ready in this FAQ. For more information, see [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on).
+We'll provide tooling for administrators that reports the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. We'll provide more information in this FAQ when the tooling is ready. For more information, see [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on).
 
 Add-ins may use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs.
 
@@ -81,7 +81,7 @@ Add-ins may use the legacy Exchange tokens to get resources from Exchange throug
 - `getUserIdentityTokenAsync`
 - `getCallbackTokenAsync`
 
-If you rely on an independent software vendor (ISV) for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, we recommend you ask them to review this FAQ and [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md). They can ask any questions to the Outlook extensibility PM team on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
+If you rely on an ISV for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off of legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, they should review this FAQ and the article [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md). Any questions should be raised on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
 
 ### Where do I find which add-ins have consent?
 
