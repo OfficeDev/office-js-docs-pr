@@ -61,7 +61,7 @@ Finally, if the add-in is published in the Microsoft 365 store, the update will 
 
 ### What if the add-in doesn't work after admin consent?
 
-Ensure you don't disable features, or revoke permissions that the add-in requires. For example, [modifying mailbox policy properties](/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/configure-outlook-web-app-mailbox-policy-properties). The add-in uses delegated permissions and therefore has access to the same resources as the signed-in user. However if a policy or setting blocks the user from a particular resource or action, the add-in will also be blocked.
+Ensure you don't disable features, or revoke permissions that the add-in requires. For an example, see [modifying mailbox policy properties](/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/configure-outlook-web-app-mailbox-policy-properties). The add-in uses delegated permissions and therefore has access to the same resources as the signed-in user. However, if a policy or setting blocks the user from a particular resource or action, the add-in will also be blocked.
 
 ### How do I deploy add-in updates from an ISV?
 
