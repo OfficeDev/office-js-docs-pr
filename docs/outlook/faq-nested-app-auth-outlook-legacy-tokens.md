@@ -87,7 +87,7 @@ If you rely on an independent software vendor (ISV) for your add-in, we recommen
 
 Once the admin or a user consents, it will be listed in the Microsoft Entra admin center. You can find app registrations using the following steps.
 
-1. Go to https://entra.microsoft.com/#home
+1. Go to [https://entra.microsoft.com/#home](https://entra.microsoft.com/#home).
 1. In the left navigation pane, select **Applications** > **App registrations**.
 1. On the **App registrations** page, select **All applications**.
 1. Now you can search for any app registration by name or ID.
