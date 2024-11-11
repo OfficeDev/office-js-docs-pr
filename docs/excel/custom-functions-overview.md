@@ -1,7 +1,7 @@
 ---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
-ms.date: 03/20/2023
+ms.date: 11/11/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -63,6 +63,11 @@ function add(first, second){
   return first + second;
 }
 ```
+
+> [!TIP]
+> In Excel on the web, custom function descriptions and parameter descriptions display inline. This gives users additional information writing custom functions. Configure the descriptions by exploring any of the [custom functions Script Lab samples](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/16-custom-functions) in Excel on the web. See the following screenshot for an example.
+>
+> ![A custom function with inline descriptions displayed in Excel on the web.](../images/custom-functions-inline-description.png)
 
 ### Manifest file
 
