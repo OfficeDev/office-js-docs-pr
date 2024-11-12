@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 04/12/2024
+ms.date: 12/11/2024
 ms.localizationpriority: high
 ---
 
@@ -20,9 +20,7 @@ One important improvement is the ability to create a single unit of distribution
 
 We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins with a unified manifest for Microsoft 365.
 
-> [!NOTE]
-> - The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
-> - The unified manifest requires Office Version 2304 (Build 16320.00000) or later.
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 > [!TIP]
 > Ready to get started with the unified manifest? Begin with [Build an Outlook add-in with the unified manifest for Microsoft 365](../quickstarts/outlook-quickstart-json-manifest.md).

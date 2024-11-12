@@ -2,7 +2,7 @@
 title: Compare the add-in only manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the add-in only manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 04/12/2024
+ms.date: 12/11/2024
 ms.localizationpriority: high
 ---
 
@@ -10,8 +10,7 @@ ms.localizationpriority: high
 
 This article is intended to help readers who are familiar with the add-in only manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
 
-> [!NOTE]
-> The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 ## Schemas and general points
 
