@@ -65,7 +65,7 @@ function add(first, second){
 ```
 
 > [!TIP]
-> In Excel on the web, custom function descriptions and parameter descriptions display inline. This gives users additional information writing custom functions. Configure the descriptions by exploring any of the [custom functions Script Lab samples](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/16-custom-functions) in Excel on the web. See the following screenshot for an example.
+> In Excel on the web, custom function descriptions and parameter descriptions display inline. This gives users additional information when writing custom functions. Configure the inline descriptions by exploring any of the [custom functions Script Lab samples](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/16-custom-functions) in Excel on the web. See the following screenshot from for an example.
 >
 > ![A custom function with inline descriptions displayed in Excel on the web.](../images/custom-functions-inline-description.png)
 
