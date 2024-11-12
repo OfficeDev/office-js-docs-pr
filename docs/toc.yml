@@ -189,7 +189,7 @@ items:
           href: design/accessibility-guidelines.md
         - name: Data visualization
           href: design/data-visualization-guidelines.md
-        - name: Voice
+        - name: Voice and tone
           href: design/voice-guidelines.md
       - name: UX design language and patterns
         items:
@@ -393,8 +393,10 @@ items:
       items:
       - name: Publish your add-in (Visual Studio)
         href: publish/package-your-add-in-using-visual-studio.md
-      - name: Stage an Office Add-in on Microsoft Azure
+      - name: Stage an Office Add-in on Microsoft Azure with Visual Studio
         href: publish/host-an-office-add-in-on-microsoft-azure.md
+      - name: Stage an Outlook add-in on Microsoft Azure with Visual Studio
+        href: publish/stage-outlook-add-in-azure.md
     - name: Publish add-ins to AppSource
       href: publish/publish-office-add-ins-to-appsource.md
     - name: AppSource validation policies
@@ -573,7 +575,7 @@ items:
       - name: Custom functions tutorial
         href: tutorials/excel-tutorial-create-custom-functions.md
         displayName: Excel, Custom Functions
-      - name: Share custom function data with the task pane tutorial
+      - name: Share custom function data with the task pane
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
     - name: Naming and localization
@@ -588,27 +590,33 @@ items:
     - name: Autogenerate JSON metadata
       href: excel/custom-functions-json-autogeneration.md
       displayName: Excel, Custom Functions
-    - name: Batching custom function remote calls
-      href: excel/custom-functions-batching.md
-      displayName: Excel, Custom Functions
-    - name: Data types
-      href: excel/custom-functions-data-types-concepts.md
+    - name: Manually create JSON metadata
+      href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
-    - name: Extend custom functions with XLL user-defined functions
-      href: excel/make-custom-functions-compatible-with-xll-udf.md
+    - name: Data types
+      href: excel/custom-functions-data-types-concepts.md
       displayName: Excel, Custom Functions
-    - name: Manually create JSON metadata
-      href: excel/custom-functions-json.md
+    - name: Batch custom function remote calls
+      href: excel/custom-functions-batching.md
+      displayName: Excel, Custom Functions
+    - name: Extend custom functions with XLL add-ins
+      href: excel/make-custom-functions-compatible-with-xll-udf.md
       displayName: Excel, Custom Functions
     - name: Return a dynamic array
       href: excel/custom-functions-dynamic-arrays.md
       displayName: Excel, Custom Functions
+    - name: Volatile functions
+      href: excel/custom-functions-volatile.md
+      displayName: Excel, Custom Functions
+    - name: Web requests
+      href: excel/custom-functions-web-reqs.md
+      displayName: Excel, Custom Functions
     - name: Custom functions without a shared runtime
       items: 
-        - name: Authentication for custom functions without a shared runtime
+        - name: Authentication
           href: excel/custom-functions-authentication.md
           displayName: Excel, Custom Functions
         - name: JavaScript-only runtime for custom functions
@@ -617,13 +625,7 @@ items:
         - name: Debugging
           href: excel/custom-functions-debugging.md
           displayName: Excel, Custom Functions
-    - name: Volatile functions
-      href: excel/custom-functions-volatile.md
-      displayName: Excel, Custom Functions
-    - name: Web requests
-      href: excel/custom-functions-web-reqs.md
-      displayName: Excel, Custom Functions
-    - name: Troubleshooting
+    - name: Troubleshoot custom functions
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
 
@@ -750,8 +752,6 @@ items:
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
       href: outlook/web-services.md
-    - name: Get or set item data
-      href: outlook/item-data.md
     - name: Get or set categories
       href: outlook/categories.md
     - name: Get or set internet headers
@@ -764,7 +764,7 @@ items:
       items:
       - name: Overview
         href: outlook/read-scenario.md
-      - name: Get attachments
+      - name: Get attachments from server
         href: outlook/get-attachments-of-an-outlook-item.md
     - name: Compose scenario
       items:
@@ -772,8 +772,6 @@ items:
         href: outlook/compose-scenario.md
       - name: Add and remove attachments
         href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
-      - name: Get and set item data
-        href: outlook/get-and-set-item-data-in-a-compose-form.md
       - name: Get and set recipients
         href: outlook/get-set-or-add-recipients.md
       - name: Insert data in the body
@@ -811,7 +809,7 @@ items:
       - name: "Scenario: Implement single sign-on"
         href: outlook/implement-sso-in-outlook-add-in.md
       - name: Legacy token deprecation FAQ 
-        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.yml
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
     - name: Testing and tips
       items:
       - name: Overview

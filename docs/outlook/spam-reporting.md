@@ -299,10 +299,8 @@ When your add-in is used to report a message, it generates a `SpamReporting` eve
       // TODO - Signal that the spam-reporting event has completed processing.
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onSpamReport", onSpamReport);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onSpamReport", onSpamReport);
     ```
 
 1. Save your changes.
@@ -340,10 +338,8 @@ The following is an example of a spam-reporting event handler that calls the `ge
       });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onSpamReport", onSpamReport);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onSpamReport", onSpamReport);
     ```
 
 1. Save your changes.
@@ -396,10 +392,8 @@ Once the event handler has completed processing the message, it must call the [e
       });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onSpamReport", onSpamReport);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart
+    Office.actions.associate("onSpamReport", onSpamReport);
     ```
 
     > [!NOTE]

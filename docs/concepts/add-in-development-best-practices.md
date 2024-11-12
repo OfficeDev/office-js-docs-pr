@@ -2,7 +2,7 @@
 title: Best practices for developing Office Add-ins
 description: Apply the best practices when developing Office Add-ins.
 ms.topic: best-practice
-ms.date: 07/18/2024
+ms.date: 10/10/2024
 ms.localizationpriority: medium
 ---
 
@@ -121,6 +121,8 @@ For patterns that you can apply as you develop your first-run experience, see [U
 - Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
 ## Publish and market your add-in
+
+- Create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. If you plan to publish your add-in to AppSource, get this process going as soon as possible.
 
 - Create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings).
 
