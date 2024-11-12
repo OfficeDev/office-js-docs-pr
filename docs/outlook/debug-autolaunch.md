@@ -59,7 +59,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
    This sets the debugger port to `9223`.
 
 1. Start Outlook or restart it if it's already open.
-1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event or reporting spam messages. The Debug Event-based handler dialog should appear. Do *not* interact with the dialog yet.
+1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event or reporting spam messages. The **Debug Event-based handler** dialog should appear. Do *not* interact with the dialog yet.
 
     ![The Debug Event-based handler dialog in Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
 
@@ -143,6 +143,10 @@ To stop debugging the rest of the current Outlook on Windows session, in the **D
 
 To prevent the **Debug Event-based handler** dialog from popping up and stop debugging for subsequent Outlook sessions, delete the associated registry key, `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`, or set its value to `0`.
 
+## Stop the local server
+
+[!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 # [Mac](#tab/mac)
 
 Event-based add-ins that run in Outlook on Mac use the browser runtime. Because of this, you can debug your add-in using Safari Web Inspector.
@@ -159,4 +163,4 @@ Event-based add-ins that run in Outlook on Mac use the browser runtime. Because 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [Implement an integrated spam-reporting add-in](spam-reporting.md)
 - [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
-- [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows)
+- [Debug your add-in with runtime logging](../testing/runtime-logging.md)

@@ -27,10 +27,6 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 ## Explore the project
 
 The add-in project that you've created with the Yeoman generator contains sample code for a basic task pane add-in. If you'd like to explore the key components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
@@ -60,6 +56,8 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     ![Excel with the add-in task pane open, and the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
+
 ## Next steps
 
 Congratulations, you've successfully created an Excel task pane add-in using React! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the Excel add-in tutorial.
@@ -67,7 +65,7 @@ Congratulations, you've successfully created an Excel task pane add-in using Rea
 > [!div class="nextstepaction"]
 > [Excel add-in tutorial](../tutorials/excel-tutorial.md)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## See also
 

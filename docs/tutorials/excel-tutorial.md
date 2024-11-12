@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 12/11/2023
+ms.date: 10/03/2024
 ms.service: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -41,10 +41,6 @@ In this tutorial, you'll create an Excel task pane add-in that:
 ![The Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
-
-[!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## Create a table
 
@@ -202,6 +198,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 1. In the task pane, choose the **Create Table** button.
 
     ![Excel displaying an add-in task pane with a Create Table button, and a table in the worksheet populated with Date, Merchant, Category, and Amount data.](../images/excel-tutorial-create-table-2.png)
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
 ## Filter and sort a table
 
@@ -728,9 +726,9 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
             <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-            <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+            <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
 
-            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
             <script type="text/javascript" src="popup.js"></script>
 
         </head>

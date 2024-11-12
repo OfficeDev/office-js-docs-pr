@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 06/25/2024
+ms.date: 09/17/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -22,11 +22,11 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 | Event canonical name and add-in only manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
 | ----- | ----- | ----- | ----- |
 | `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0)</li><li>iOS (Version 4.2352.0)</li></ul> |
-| `OnMessageRecipientsChanged` | Not available | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
+| `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
 
 ## Set up your environment
 
-To run the feature, you must have a supported version of Outlook on Android or on iOS (see [Supported events and clients](#supported-events-and-clients)) and a Microsoft 365 subscription. Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+To run the feature, you must have a supported version of Outlook on Android or on iOS (see [Supported events and clients](#supported-events-and-clients)) and a Microsoft 365 subscription. Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) in which you create an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 

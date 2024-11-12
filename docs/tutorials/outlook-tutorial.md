@@ -130,10 +130,6 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 1. Navigate to the root directory of the project.
 
     ```command&nbsp;line
@@ -216,6 +212,8 @@ Before going any further, let's test the basic add-in that the generator created
     If everything's been set up correctly, the task pane opens and renders the add-in's welcome page.
 
     ![The Show Taskpane button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Define buttons
 
@@ -526,7 +524,7 @@ Let's start by creating the UI for the dialog.
       <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-      <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+      <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
     
       <!-- Template styles -->
       <link href="dialog.css" rel="stylesheet" type="text/css" />
@@ -1215,7 +1213,7 @@ This add-in's **Insert gist** button opens a task pane and displays the user's g
         <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     
        <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-        <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+        <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
     
         <!-- Template styles -->
         <link href="taskpane.css" rel="stylesheet" type="text/css" />
@@ -1578,6 +1576,6 @@ In this tutorial, you've created an Outlook add-in that can be used in message c
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Outlook add-in design guidelines](../outlook/outlook-addin-design.md)
 - [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)

@@ -201,8 +201,6 @@ To learn more about Script Lab, see [Explore Office JavaScript API using Script 
 
 :::image type="content" source="../images/outlook-recurrence-script-lab.png" alt-text="The recurrence sample snippet in Script Lab.":::
 
-[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
-
 ## See also
 
 - [RecurrenceChanged event](/javascript/api/office/office.eventtype)

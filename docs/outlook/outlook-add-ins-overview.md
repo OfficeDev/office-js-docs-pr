@@ -58,7 +58,7 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 - In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an [archive mailbox](/office365/servicedescriptions/exchange-online-archiving-service-description/archive-client-and-compliance-&-security-feature-details?tabs=Archive-features#archive-mailbox), or in a public folder.
 
   > [!IMPORTANT]
-  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). To learn more, see [Enable shared folders and shared mailbox scenarios](delegate-access.md).
+  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). To learn more, see [Implement shared folders and shared mailbox scenarios](delegate-access.md).
 
 - Using a custom form.
 
@@ -77,7 +77,7 @@ Outlook add-ins activate on IRM-protected mail items when the item is accessed f
     >[!NOTE]
     > Digital signing relies on protection mechanisms, such as IRM. Starting in classic Outlook on Windows Version 1711 (Build 8711.1000) associated with a Microsoft 365 subscription, add-ins activate on digitally-signed messages.
 
-- Outlook on Mac starting in Version 16.77.827.0
+- Outlook on Mac starting in Version 16.77 (23082700)
 
 However, add-ins won't activate on IRM-protected items when:
 
@@ -92,7 +92,7 @@ Outlook add-ins are supported in Outlook on the web, Outlook on Windows ([new](h
 
 To get started building Outlook add-ins, try the following:
 
-- [Quick start](../quickstarts/outlook-quickstart.md) - Build a simple task pane.
+- [Quick start](../quickstarts/outlook-quickstart-yo.md) - Build a simple task pane.
 - [Tutorial](../tutorials/outlook-tutorial.md) - Learn how to create an add-in that inserts GitHub gists into a new message.
 
 ## See also

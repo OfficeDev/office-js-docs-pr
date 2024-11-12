@@ -43,5 +43,5 @@ Read add-ins can be any combination of the following types.
 
 ## See also
 
-- [Build your first Outlook add-in](../quickstarts/outlook-quickstart.md)
+- [Build your first Outlook add-in](../quickstarts/outlook-quickstart-yo.md)
 - [Outlook add-in APIs](apis.md)
