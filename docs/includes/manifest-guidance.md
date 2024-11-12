@@ -2,7 +2,7 @@
 > If you'll be testing your add-in across multiple environments (for example, in development, staging, demo, etc.), we recommend that you maintain a different manifest file for each environment. In each manifest file, you can:
 > 
 > - Specify the URLs that correspond to the environment.
-> - Customize metadata values so that end users will be able to identify a sideloaded add-in's corresponding environment. For example:
+> - Customize metadata values so that end users are able to identify a sideloaded add-in's corresponding environment. For example:
 >
 >    - In the unified manifest for Microsoft 365, customize the "name" property of the add-in and the "label" properties for various UI controls to indicate the environment.
 >    - In the add-in only manifest, customize the `DisplayName` element and and labels within the `Resources` element to indicate the environment. 
