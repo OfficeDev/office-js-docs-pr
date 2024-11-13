@@ -2,7 +2,7 @@
 title: Publish your Office Add-in to Microsoft AppSource
 description: Learn how to publish your Office Add-in to Microsoft AppSource and install the add-in with a Windows app or COM/VSTO add-in.
 ms.topic: concept-article
-ms.date: 10/16/2024
+ms.date: 11/16/2024
 CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft AppSource so that customers can deploy and use my new add-in.
 ---
 
