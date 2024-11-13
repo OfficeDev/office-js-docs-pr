@@ -14,7 +14,6 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for November 13th, 2024 call
 The agenda for the November Office Add-ins community call:
-* Update on legacy Exchange online token deprecation.​
 * New Excel APIs and capabilities.
 * New Word APIs.
 
