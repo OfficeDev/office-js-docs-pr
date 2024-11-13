@@ -74,18 +74,18 @@ We recommend that you join the [developer certification program](/microsoft-365-
 - [Get Started in Partner Center for Microsoft 365, Teams, SaaS, and SharePoint apps](/microsoft-365-app-certification/docs/userguide)
 - [Microsoft 365 App Compliance Program](https://developer.microsoft.com/microsoft-365/app-compliance-program)
 - [Microsoft 365 App Compliance Program overview](/microsoft-365-app-certification/overview)
-- [Microsoft 365 Certification sample evidence guide overview](/microsoft-365-app-certification/docs/seg2_overview).
+- [Microsoft 365 Certification sample evidence guide overview](/microsoft-365-app-certification/docs/seg2_overview)
 
 #### Update your installation executable (required)
 
 The following are the steps for updating your installation executable.
 
-1. [Check that user's Office version supports the add-ins (recommended)](#check-that-users-office-version-supports-the-add-ins-recommended)
+1. [Check that user's Office version supports the add-ins (recommended)](#check-that-users-office-version-supports-web-add-ins-recommended)
 1. [Check for AppSource disablement (recommended)](#check-for-appsource-disablement-recommended)
 1. [Create a registry key for the add-in (required)](#create-a-registry-key-for-the-add-in-required)
 1. [Include privacy terms in your terms & conditions](#include-privacy-terms-in-your-terms--conditions)
 
-##### Check that user's Office version supports the add-in (recommended)
+##### Check that user's Office version supports web add-ins (recommended)
 
 We recommend that your installation check whether the user has the Office application (Excel, PowerPoint, or Word) installed and whether the Office application is a build that supports web add-ins. If it is an old version that doesn't support web add-ins, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they install or update to the latest version of Microsoft 365 so they can take advantage of your web add-in. They would need to rerun the installation after installing or upgrading. 
 
@@ -173,7 +173,7 @@ namespace SampleProject
 
 ##### Check for AppSource disablement (recommended)
 
-We recommend that your installation check whether the AppSource store is disabled in the user's Office application. Microsoft 365 Administrators sometimes disable the store. If the store is disabled, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they contact their administrator about your web add-in. They would need to rerun the installation after installing or upgrading. 
+We recommend that your installation check whether the AppSource store is disabled in the user's Office application. Microsoft 365 Administrators sometimes disable the store. If the store is disabled, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they contact their administrator about your web add-in. They would need to rerun the installation after the store is enabled. 
 
 The following is an example of how to check for disablement of the store. 
 
