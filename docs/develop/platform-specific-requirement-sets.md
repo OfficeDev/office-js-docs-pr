@@ -42,7 +42,7 @@ The following sections describe where you can specify your minimum requirement s
 
 ### Manifest
 
-When you note a requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest, you're indicating the minimum set of APIs that your add-in needs. Combined with supported hosts and other information, this determines whether or not your add-in activates in an Office client.
+When you note a requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest, you're indicating the minimum set of APIs that your add-in needs. Combined with supported Office host applications and other information, this determines whether or not your add-in activates in an Office client.
 
 When you declare a platform-specific requirement set, your add-in activates only when it's run in Office on that platform. For example, if you have the WordApiDesktop 1.1 requirement set in your manifest, your add-in will only activate in Word on Windows and on Mac.
 
@@ -86,7 +86,7 @@ The following are exceptions to the approach described.
 
 ### Online-only requirement sets
 
-An online-only requirement set is a superset of the latest numbered requirement set. For each Office application with an online-only requirement set, `1.1` is the only version. For Word, it's `WordApiOnline 1.1`. It's invalid to specify an online-only requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
+An online-only requirement set is a superset of the latest numbered requirement set. For each Office application with an online-only requirement set, `1.1` is the only version. It's invalid to specify an online-only requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
 
 To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, you should add code similar to the following:
 
@@ -104,9 +104,11 @@ if (Office.context.requirements.isSetSupported("WordApiOnline", "1.1")) {
 
 When APIs in an online-only requirement set are supported cross-platform, they're added to the next released requirement set. After the new requirement set is made generally available, those APIs are *removed* from the online-only requirement set.
 
+Follow the guidance in the earlier [Code](#code) section to adjust your add-in implementation accordingly.
+
 ### Desktop-only HiddenDocument requirement sets in Word
 
-It's important to note that while the HiddenDocument requirement sets in Word are desktop-only, it's invalid to specify an online-only requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
+It's important to note that while the HiddenDocument requirement sets in Word are desktop-only, it's invalid to specify a HiddenDocument requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
 
 To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, you should code similar to the following.
 
