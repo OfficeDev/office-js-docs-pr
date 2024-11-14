@@ -38,7 +38,7 @@ When APIs in a platform-specific requirement set are supported cross-platform, t
 
 ## How to use a platform-specific requirement set
 
-The following sections describe where you can specify your minimum requirement set.
+The following sections describe where you can specify your minimum requirement set. For more information about these options, see [Specify which Office versions and platforms can host your add-in](specify-office-hosts-and-api-requirements.md).
 
 ### Manifest
 
@@ -63,7 +63,14 @@ Whenever platform-specific APIs become available cross-platform, enable your cus
 - Remove the runtime check. But note that customers on older Office clients, especially on Windows, may hit errors if their client doesn't support the new APIs yet.
 - Update the runtime code to check for the cross-platform requirement set.
 
-Another option is to do a runtime check for a particular API. This means that the encapsulated code should run on any supported platforms. If the API was first released in a platform-specific requirement set then promoted to a cross-platform one, you shouldn't need to update your code unless you made assumptions about the supported platforms.
+A variation is to do a runtime check for a particular API. This means that the encapsulated code should run on any platforms that support that API. If the API was first released in a platform-specific requirement set then promoted to a cross-platform one, you shouldn't need to update your code unless you made assumptions about the supported platforms. The following code is an example.
+
+```javascript
+if (Office.context.document.setSelectedDataAsync)
+{
+    // Run code that uses document.setSelectedDataAsync.
+}
+```
 
 ## Notify customers on AppSource
 
