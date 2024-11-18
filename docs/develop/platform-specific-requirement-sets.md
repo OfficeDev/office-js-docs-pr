@@ -110,7 +110,7 @@ Follow the guidance in the earlier [Code](#code) section to adjust your add-in i
 
 It's important to note that while the HiddenDocument requirement sets in Word are desktop-only, it's invalid to specify a HiddenDocument requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
 
-To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, you should code similar to the following:
+To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, you should add code similar to the following:
 
 ```javascript
 if (Office.context.requirements.isSetSupported("WordApiHiddenDocument", "1.5")) {
