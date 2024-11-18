@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 11/07/2024
+ms.date: 11/19/2024
 ms.localizationpriority: medium
 ---
 
