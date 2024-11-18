@@ -10,6 +10,69 @@ ms.localizationpriority: high
 
 In this article, you'll walk through the process of building a Word task pane add-in.
 
+You can create an Office Add-in by using the Office Add-ins Development Kit or the Yeoman generator in Visual Studio Code. Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally.
+
+# [Office Add-ins Development Kit](#tab/devkit)
+## Prerequisites
+
+- Download and install [Visual Studio Code](https://code.visualstudio.com/).
+- Node.js (the latest LTS version). Visit the [Node.js site](https://nodejs.org/) to download and install the right version for your operating system. To verify if you've already installed these tools, run the commands `node -v` and `npm -v` in your terminal.
+- Office connected to a Microsoft 365 subscription. You might qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program), see [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-) for details. Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try?rtc=1) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/buy/compare-all-microsoft-365-products).
+
+## Create the add-in project
+
+Click the following button to create an add-in project using the Office Add-ins Development Kit for Visual Studio Code. A page that contains the project decription will open in Visual Studio Code.
+
+<button type="button">[Create an add-in in Visual Studio Code](vscode://msoffice.microsoft-office-add-in-debugger/open-specific-sample?sample-id=Word-HelloWorld-TaskPane-JS)</button>
+
+<img src="../images/office-add-ins-development-kit-samplepage-wordquickstart.png" alt="Screenshot shows the sample page in Visual Studio Code"/>
+
+In the prompted page, select **Create** to create the add-in project. In the **Workspace folder** dialog that opens, select the folder where you want to create the project. 
+
+Office Add-ins Development Kit will create the project. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
+
+> [!NOTE]
+> You will receive prompts to install the Office Add-ins Development Kit extension if you haven't. You can also [install the Office Add-ins Development Kit manually](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/development-kit-overview?tabs=vscode).
+
+## Explore the project
+
+The add-in project that you've created with the Office Add-ins Development Kit contains sample code for a basic task pane add-in. If you'd like to explore the components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
+
+1. The ./manifest.xml or manifest.json file in the root directory of the project defines the settings and capabilities of the add-in.
+1. The ./src/taskpane/taskpane.html file contains the HTML markup for the task pane.
+1. The ./src/taskpane/taskpane.css file contains the CSS that's applied to content in the task pane.
+1. The ./src/taskpane/taskpane.js file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
+
+## Try it out
+
+1. Open the extension by selecting the Office Add-ins Development Kit icon in the **Activity Bar**.
+1. Select **Preview Your Office Add-in (F5)**
+1. In the Quick Pick menu, select the option **{Office Host} Desktop (Edge Chromium)**. This will launch the add-in and debug the code.
+The development kit checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in. Please note that the first time you run a project, it may make take a few minutes to install the dependencies. You will need to install the certificate when prompted.
+
+## Stop testing your Office Add-in
+
+Once you are finished testing and debugging the add-in, close the add-in by following these steps.
+
+1. Open the extension by selecting the Office Add-ins Development Kit icon in the **Activity Bar**.
+1. Select **Stop Previewing Your Office Add-in**. This closes the web server and removes the add-in from the registry and cache.
+1. Close the Office application window at your convenience.
+
+## Troubleshooting
+
+If you have problems running the add-in, take these steps.
+
+- Close any open instances of Office.
+- Close the previous web server started for the add-in with the **Stop Previewing Your Office Add-in** Office Add-ins Development Kit extension option.
+
+The article [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md) contains solutions to common problems. If you're still having issues, [create a GitHub issue](https://aka.ms/officedevkitnewissue) and we'll help you.  
+
+For information on running the add-in on Office on the web, see [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md).
+
+For information on debugging on older versions of Office, see [Debug add-ins using developer tools in Microsoft Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md).
+
+
+# [Yeoman generator](#tab/yeoman)
 ## Prerequisites
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
