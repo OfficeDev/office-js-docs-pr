@@ -12,7 +12,7 @@ The Office Add-ins platform allows you to build solutions that extend Office app
 
 Each application that supports Office Add-ins has its usual set of available platforms. For a comprehensive listing, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets). For the purpose of this discussion, we'll focus on Excel, Outlook, PowerPoint, and Word.
 
-Cross-platform requirement sets are at least available on Windows, Mac, and in a browser. Depending on the features being made available, a requirement set may also be supported on iPad or mobile platforms.
+Cross-platform requirement sets are available on Windows, Mac, and in a browser. Depending on the features being made available, a requirement set may also be supported on iPad or mobile platforms.
 
 However, platform-specific requirement sets provide support for a subset of the usual platforms. For example, online-only requirement sets provide APIs that are only available when the add-in runs in a web browser. Similarly, desktop-only requirement sets provide APIs that may only be available when the add-in runs in Windows and Mac. See the specific requirement set page for actual platform support.
 
@@ -30,7 +30,7 @@ We're providing platform-specific requirement sets for a few reasons.
 1. **Platform-specific add-ins.** Developers who have add-ins focused on a particular platform don't need to wait for those APIs to be implemented in other platforms. These developers are able to incorporate those APIs into their solutions and ship to their customers much sooner.
 1. **Tailored experiences.** Customers can use an Office application differently depending on the platform for several reasons, like feature availability or comfort level, for example. Let's say that on the Windows version, a customer completes one set of tasks but on an iPad, they complete a different set of tasks. You can have your add-in provide a tailored experience based on your users' usual scenarios per platform.
 
-To help you decide if platform-specific requirement sets can work for you, the following are some considerations.
+To help you decide if platform-specific requirement sets can work for you, consider the following.
 
 ## API promotion to cross-platform requirement set
 
@@ -76,7 +76,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 If your add-in is in AppSource or the Office store, be sure to notify customers about any platform-specific behavior.
 
-**Details + support** > **Products supported** on your add-in's AppSource page should automatically show the appropriate supported platforms based on what requirements you declared in the manifest.
+**Details + support** > **Products supported** on your add-in's AppSource page should automatically show the appropriate supported platforms based on the requirements you declared in the manifest.
 
 However, if your add-in is supported cross-platform but you also implemented platform-specific behaviors, you should point out those feature differences in the **Overview** section on your add-in's AppSource page.
 
@@ -88,7 +88,7 @@ The following are exceptions to the approach described.
 
 An online-only requirement set is a superset of the latest numbered requirement set. For each Office application with an online-only requirement set, `1.1` is the only version. It's invalid to specify an online-only requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
 
-To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, you should add code similar to the following:
+To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, add code similar to the following:
 
 ```javascript
 if (Office.context.requirements.isSetSupported("ExcelApiOnline", "1.1")) {
@@ -110,7 +110,7 @@ Follow the guidance in the earlier [Code](#code) section to adjust your add-in i
 
 It's important to note that while the HiddenDocument requirement sets in Word are desktop-only, it's invalid to specify a HiddenDocument requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
 
-To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, you should add code similar to the following:
+To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, add code similar to the following:
 
 ```javascript
 if (Office.context.requirements.isSetSupported("WordApiHiddenDocument", "1.5")) {
