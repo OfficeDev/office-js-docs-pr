@@ -131,6 +131,9 @@ conceptualContent:
     # Card 5
     - title: Publish
       links:
+        - url: /partner-center/marketplace-offers/open-a-developer-account
+          itemType: overview
+          text: Create a Partner Center account for AppSource
         - url: /partner-center/marketplace-offers/checklist
           itemType: overview
           text: Validate your Office Add-in
