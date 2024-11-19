@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 07/13/2024
+ms.date: 11/16/2024
 ms.localizationpriority: high
 ---
 
@@ -13,9 +13,9 @@ You can use one of several methods to deploy your Office Add-in for testing or d
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.) |
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows after you have published the add-in to a server other than localhost. (Not for production add-ins, for testing on iPad, Mac, or the web, or for add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).)|
-|[AppSource][AppSource]|To distribute your add-in publicly to users.|
+|[AppSource](#appsource)|To distribute your add-in publicly to users.|
 |[Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|In a cloud deployment, to distribute your add-in to users in your organization by using the Microsoft 365 admin center. This is done through [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins). |
-|[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization. Doesn't support add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).|
+|[SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md)|In an on-premises environment, to distribute your add-in to users in your organization. Doesn't support add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) or any feature that requires a **\<VersionOverrides\>** element in the add-in only manifest.|
 |[Exchange server](#outlook-add-in-exchange-server-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
@@ -43,6 +43,10 @@ The following sections provide additional information about the deployment metho
 
 For information about how end users acquire, insert, and run add-ins, see [Start using your Office Add-in](https://support.microsoft.com/office/82e665c4-6700-4b56-a3f3-ef5441996862).
 
+### AppSource
+
+You can make your add-in available through [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office), Microsoft's online app store which is accessible through a browser and through the UI of Office applications. Distribution through AppSource gives you the option of including installation of your add-in with the installation of your Windows app or a COM or VSTO add-in. For more information, see [Publish to your Office Add-in to AppSource](publish-office-add-ins-to-appsource.md).
+
 ### Integrated Apps via the Microsoft 365 admin center
 
 The Microsoft 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups in their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use Integrated Apps to deploy internal add-ins as well as add-ins provided by ISVs. Integrated Apps also shows admins add-ins and other apps bundled together by same ISV, giving them exposure to the entire experience across the Microsoft 365 platform.
@@ -56,7 +60,7 @@ For more information on the Integrated Apps deployment process, see [Test and de
 
 ### SharePoint app catalog deployment
 
-A SharePoint app catalog is a special site collection that you can create to host Word, Excel, and PowerPoint add-ins. Because SharePoint catalogs don't support new add-in features implemented in the `VersionOverrides` node of the manifest, including add-in commands, we recommend that you use Centralized Deployment via the admin center if possible. Add-in commands deployed via a SharePoint catalog open in a task pane by default.
+A SharePoint app catalog is a special site collection that you can create to host the manifests (add-in only manifest type) of a Word, Excel, or PowerPoint add-in. Because SharePoint catalogs don't support new add-in features implemented in the `VersionOverrides` node of the manifest, including add-in commands, we recommend that you use Centralized Deployment via the admin center if possible. Add-in commands deployed via a SharePoint catalog open in a task pane by default.
 
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
@@ -87,7 +91,7 @@ It's important to note that some versions of Outlook clients and Exchange server
 ## See also
 
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
-- [Submit to AppSource][AppSource]
+- [Publish to your Office Add-in to AppSource](publish-office-add-ins-to-appsource.md)
 - [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [Create effective AppSource listings](/partner-center/marketplace-offers/create-effective-office-store-listings)
@@ -95,4 +99,3 @@ It's important to note that some versions of Outlook clients and Exchange server
 - [What is the Microsoft commercial marketplace?](/azure/marketplace/overview)
 - [Microsoft Dev Center app publishing page](https://developer.microsoft.com/microsoft-teams/app-publishing)
 
-[AppSource]: /partner-center/marketplace-offers/submit-to-appsource-via-partner-center
