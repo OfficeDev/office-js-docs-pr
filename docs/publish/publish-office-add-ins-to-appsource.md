@@ -8,7 +8,7 @@ CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft 
 
 # Publish your Office Add-in to Microsoft AppSource
 
-Publish your Office Add-in to Microsoft AppSource to make it widely available to customers and businesses. Microsoft AppSource is an online store that contains thousands of business applications and services built by industry-leading software providers. When you publish your add-in to Microsoft AppSource, you also make it available in the in-product experience within Office.
+Publish your Office Add-in to [Microsoft AppSource](https://appsource.microsoft.com/) to make it widely available to customers and businesses. Microsoft AppSource is an online store that contains thousands of business applications and services built by industry-leading software providers. When you publish your add-in to Microsoft AppSource, you also make it available in the in-product experience within Office.
 
 ## The publishing process
 
@@ -83,11 +83,11 @@ The following are the steps for updating your installation executable.
 1. [Check that user's Office version supports the add-ins (recommended)](#check-that-users-office-version-supports-web-add-ins-recommended)
 1. [Check for AppSource disablement (recommended)](#check-for-appsource-disablement-recommended)
 1. [Create a registry key for the add-in (required)](#create-a-registry-key-for-the-add-in-required)
-1. [Include privacy terms in your terms & conditions](#include-privacy-terms-in-your-terms--conditions)
+1. [Include privacy terms in your terms & conditions (required for certified developers)](#include-privacy-terms-in-your-terms--conditions-required-for-certified-developers)
 
 ##### Check that user's Office version supports web add-ins (recommended)
 
-We recommend that your installation check whether the user has the Office application (Excel, PowerPoint, or Word) installed and whether the Office application is a build that supports web add-ins. If it is an old version that doesn't support web add-ins, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they install or update to the latest version of Microsoft 365 so they can take advantage of your web add-in. They would need to rerun the installation after installing or upgrading. 
+We recommend that your installation check whether the user has the Office application (Excel, PowerPoint, or Word) installed and whether the Office application is a build that supports including a web add-in in a Windows application installation. If it is an old version that doesn't support web add-ins, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they install or update to the latest version of Microsoft 365 so they can take advantage of your web add-in. They would need to rerun the installation after installing or upgrading. 
 
 The exact code needed depends on the installation framework and the programming language that you are using. The following is an example of how to check using C#. 
 
@@ -173,7 +173,7 @@ namespace SampleProject
 
 ##### Check for AppSource disablement (recommended)
 
-We recommend that your installation check whether the AppSource store is disabled in the user's Office application. Microsoft 365 Administrators sometimes disable the store. If the store is disabled, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they contact their administrator about your web add-in. They would need to rerun the installation after the store is enabled. 
+We recommend that your installation check whether the [AppSource](https://appsource.microsoft.com/) store is disabled in the user's Office application. Microsoft 365 Administrators sometimes disable the store. If the store is disabled, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they contact their administrator about your web add-in. They would need to rerun the installation after the store is enabled. 
 
 The following is an example of how to check for disablement of the store. 
 
@@ -334,7 +334,7 @@ namespace SampleProject
 }
 ```
 
-##### Include privacy terms in your terms & conditions 
+##### Include privacy terms in your terms & conditions (required for certified developers)
 
 Skip this section if you are not a member of the certification program, but *it is required if you are*.
 
