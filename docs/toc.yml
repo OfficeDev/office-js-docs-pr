@@ -95,6 +95,8 @@ items:
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
       - name: Specify Office applications and API requirements
         href: develop/specify-office-hosts-and-api-requirements.md
+      - name: Understand and use platform-specific requirement sets
+        href: develop/platform-specific-requirement-sets.md
       - name: Load sequence of an Office Add-in
         href: develop/loading-the-dom-and-runtime-environment.md
       - name: Initialize your add-in

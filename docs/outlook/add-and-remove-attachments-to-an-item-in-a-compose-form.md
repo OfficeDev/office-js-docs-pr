@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 10/17/2024
+ms.date: 11/19/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,10 @@ The Office JavaScript API provides several APIs to manage an item's attachments 
 Attach a file or Outlook item to a compose form by using the method that's appropriate for the type of attachment.
 
 - [addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file.
+
+    > [!NOTE]
+    > The `addFileAttachmentAsync` method was introduced in [requirement set 1.1](/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1) for Outlook on Windows (classic) and on Mac. Support for `addFileAttachmentAsync` in Outlook on the web and new Outlook on Windows was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8).
+
 - [addFileAttachmentFromBase64Async](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file using its Base64-encoded string.
 - [addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach an Outlook item.
 
