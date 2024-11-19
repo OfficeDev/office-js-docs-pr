@@ -2,7 +2,7 @@
 title: Understanding platform-specific requirement sets
 description: Understand and learn how to use platform-specific requirement sets.
 ms.topic: how-to
-ms.date: 11/18/2024
+ms.date: 11/19/2024
 ms.localizationpriority: medium
 ---
 
