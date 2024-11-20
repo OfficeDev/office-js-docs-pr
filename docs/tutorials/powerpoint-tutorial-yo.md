@@ -24,7 +24,7 @@ In this tutorial, you'll create a PowerPoint task pane add-in that:
 > [!TIP]
 > If you've already completed the [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Insert an image](#insert-an-image) section to start this tutorial.
 >
-> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial-yo).
+> If you want a completed version of this tutorial, visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial-yo).
 
 ### Prerequisites
 
