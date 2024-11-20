@@ -1,7 +1,7 @@
 ---
 title: Accessibility guidelines for Office Add-ins
 description: Learn how to make your Office Add-in accessible to all users.
-ms.date: 05/18/2023
+ms.date: 11/20/2024
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -37,6 +37,10 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 - Provide a way for users to adjust or mute all audio sources.
 - Provide a way for users to turn on captions or audio description with audio sources.
 - Provide alternatives to sound as a means to alert users, such as visual cues or vibrations.
+
+## Use accessibility verification tools
+
+Use accessibility verification and testing tools like [Accessibility Insights](https://accessibilityinsights.io/) on your add-in to catch and resolve issues before you ship. You should also periodically run the tools to keep up with changes to the international accessibility guidelines.
 
 ## See also
 
