@@ -19,7 +19,8 @@ You can use runtime logging to debug your add-in's manifest as well as several i
 
 Enabling runtime logging from the command line is the fastest way to use this logging tool.
 
-[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)] See the section [Runtime logging on Mac](#runtime-logging-on-mac) for Mac-specific instructions.
+[!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
+> See the section [Runtime logging on Mac](#runtime-logging-on-mac) for Mac-specific instructions.
 
 - To enable runtime logging:
 
