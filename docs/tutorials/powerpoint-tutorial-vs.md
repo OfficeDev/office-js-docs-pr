@@ -7,7 +7,7 @@ ms.service: powerpoint
 ms.localizationpriority: high
 ---
 
-# Tutorial: Create a PowerPoint task pane add-in using Visual Studio
+# Tutorial: Create a PowerPoint task pane add-in with Visual Studio
 
 In this tutorial, you'll create a PowerPoint task pane add-in that:
 
