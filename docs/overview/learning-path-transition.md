@@ -41,7 +41,7 @@ You've got the big picture now, so dive in with one of our quick starts. For pur
 
 ## Step 3: Code
 
-You can't learn to drive by reading the owner's manual, so start coding with this [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md?tabs=visualstudio). You'll be using the Office JavaScript library and some XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later step.
+You can't learn to drive by reading the owner's manual, so start coding with this [PowerPoint tutorial](../tutorials/powerpoint-tutorial-vs.md). You'll be using the Office JavaScript library and some XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later step.
 
 ## Step 4: Understand the JavaScript library
 

@@ -396,27 +396,31 @@
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-get-slide-metadata.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-insert-image.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-insert-text.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-navigate-slides.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/excel-tutorial-create-chart.md",
