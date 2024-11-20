@@ -20,7 +20,7 @@ In this tutorial, you'll create a PowerPoint task pane add-in that:
 > - Navigates between slides
 
 > [!TIP]
-> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial).
+> If you want a completed version of this tutorial, visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial).
 
 ## Prerequisites
 
