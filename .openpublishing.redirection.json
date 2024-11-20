@@ -420,7 +420,8 @@
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo",
+            "redirect_document_id": true
         },
         {
             "source_path": "docs/tutorials/excel-tutorial-create-chart.md",
