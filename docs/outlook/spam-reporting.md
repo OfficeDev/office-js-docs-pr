@@ -466,7 +466,10 @@ The following is a sample post-processing dialog shown to the user once the add-
 
 ## Suppress the preprocessing dialog
 
-Depending on your scenario, you may not need a user to provide additional information about a message they're reporting. If the preprocessing dialog of your spam-reporting add-in only provides information to the user, you can choose to include a "Don't show me this message again" option in the dialog.
+> [!NOTE]
+> The "Don't show me this message again" option is currently in preview in classic Outlook on Windows starting in Version 2411 (Build 18227.20034).
+
+Depending on your scenario, you might not need a user to provide additional information about a message they're reporting. If the preprocessing dialog of your spam-reporting add-in only provides information to the user, you can choose to include a "Don't show me this message again" option in the dialog.
 
 :::image type="content" source="../images/spam-reporting-suppress-dialog.png" alt-text="The 'Don't show me this message again' option in the preprocessing dialog.":::
 
@@ -490,7 +493,7 @@ Note the following behaviors when implementing this option in your add-in.
 
 - The "Don't show me this message again" option appears in the preprocessing dialog only if there are no user input options configured, such as reporting options or a text box. If your manifest also specifies user input options, they will be shown in the dialog instead.
 - The option to suppress the preprocessing dialog is applied on a per-machine and per-platform basis.
-- After suppressing the preprocessing dialog, if a user reports a message and has the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) turned on, a progress notification is shown on the message while it's being processed.If the Reading Pane is turned off, no progress notification is shown.
+- After suppressing the preprocessing dialog, if a user reports a message and has the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) turned on, a progress notification is shown on the message while it's being processed. If the Reading Pane is turned off, no progress notification is shown.
 
     :::image type="content" source="../images/spam-reporting-progress-notification.png" alt-text="The progress notification shown after reporting a message while the Reading Pane is turned on.":::
 
@@ -506,19 +509,24 @@ To reenable the preprocessing dialog in classic Outlook on Windows after selecti
 1. Locate your spam-reporting add-in using its ID specified in the manifest.
 1. Delete the entry of your add-in from the registry.
 
+The preprocessing dialog will appear the next time a message is reported.
+
 ## Open a task pane after reporting a message
+
+> [!NOTE]
+> The option to implement a task pane from the `event.completed` method is currently in preview in classic Outlook on Windows starting in Version 2411 (Build 18227.20034).
 
 Instead of a post-processing dialog, you can implement a task pane to open after a user reports a message. For example, you can use the task pane to show additional information based on the user's input in the preprocessing dialog. Similar to the post-processing dialog, the task pane is implemented through the add-in's `event.completed` call.
 
 > [!NOTE]
-> If both the post-processing dialog and task pane capabilities are configured in the `event.completed` call, the task pane is shown.
+> If both the post-processing dialog and task pane capabilities are configured in the `event.completed` call, the task pane is shown instead of the dialog.
 
 To configure a task pane to open after a message is reported, you must specify the ID of the task pane in the [commandId](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-spamreportingeventcompletedoptions-commandid-member) option of the `event.completed` call. The ID must match the value specified in the `id` attribute of the [Control](/javascript/api/manifest/control) element that represents the task pane in the manifest.
 
 If you need to pass information to the task pane, specify any JSON data in the [contextData](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-spamreportingeventcompletedoptions-contextdata-member) option of the `event.completed` call. To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getinitializationcontextasync-member(1)) in the JavaScript implementation of your task pane.
 
 > [!IMPORTANT]
-> To ensure that the task pane of the spam-reporting opens and receives context data after a message is reported, you must also set the `moveItemTo` option of the `event.completed` to `Office.MailboxEnums.MoveSpamItemTo.NoMove`.
+> To ensure that the task pane of the spam-reporting opens and receives context data after a message is reported, you must set the `moveItemTo` option of the `event.completed` call to `Office.MailboxEnums.MoveSpamItemTo.NoMove`.
 
 The following code is an example.
 
@@ -527,7 +535,6 @@ The following code is an example.
     event.completed({
       commandId: "msgReadOpenPaneButton",
       contextData: JSON.stringify({ a: "aValue", b: "bValue" }),
-      onErrorDeleteItem: true,
       moveItemTo: Office.MailboxEnums.MoveSpamItemTo.NoMove
     });
 ```
@@ -565,7 +572,7 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 
 ## Troubleshoot your add-in
 
-As you develop your spam-reporting add-in, you may need to troubleshoot issues, such as your add-in not loading. For guidance on how to troubleshoot a spam-reporting add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
+As you develop your spam-reporting add-in, you might need to troubleshoot issues, such as your add-in not loading. For guidance on how to troubleshoot a spam-reporting add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## See also
 
