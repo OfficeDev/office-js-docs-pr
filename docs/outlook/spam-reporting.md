@@ -468,7 +468,7 @@ The following is a sample post-processing dialog shown to the user once the add-
 
 Depending on your scenario, you may not need a user to provide additional information about a message they're reporting. If the preprocessing dialog of your spam-reporting add-in only provides information to the user, you can choose to include a "Don't show me this message again" option in the dialog.
 
-//TODO - Screenshot
+:::image type="content" source="../images/spam-reporting-suppress-dialog.png" alt-text="The 'Don't show me this message again' option in the preprocessing dialog.":::
 
 To implement this in your add-in, you must specify the [NeverShowAgainOption](/javascript/api/manifest/preprocessingdialog?view=common-js-preview&preserve-view=true#child-elements) element in your manifest and set it to `true`. The following code is an example.
 
@@ -490,12 +490,12 @@ Note the following behaviors when implementing this option in your add-in.
 
 - The "Don't show me this message again" option appears in the preprocessing dialog only if there are no user input options configured, such as reporting options or a text box. If your manifest also specifies user input options, they will be shown in the dialog instead.
 - The option to suppress the preprocessing dialog is applied on a per-machine and per-platform basis.
-- After suppressing the preprocessing dialog, if a user reports a message and has the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) turned on, a progress notification is shown on the message while it's being processed.If the Reading Pane is turned off, no progress notification is shown. Because of this, it's good practice to configure a post-processing dialog to appear after a reported message is processed.
+- After suppressing the preprocessing dialog, if a user reports a message and has the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) turned on, a progress notification is shown on the message while it's being processed.If the Reading Pane is turned off, no progress notification is shown.
 
-    //TODO - Include screenshot
+    :::image type="content" source="../images/spam-reporting-progress-notification.png" alt-text="The progress notification shown after reporting a message while the Reading Pane is turned on.":::
 
     > [!NOTE]
-    > If you implement the "Don't show me this message again" option without configuring a post-processing dialog, a dialog with the following generic message is shown to the user after processing: "Thank you for reporting this message."
+    > If you implement the "Don't show me this message again" option without configuring a post-processing dialog, a dialog with the following generic message is shown to the user after processing: "Thank you for reporting this message". It's good practice to configure a post-processing dialog to appear after a reported message is processed.
 
 ### Reenable the preprocessing dialog
 
