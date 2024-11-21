@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 04/12/2024
+ms.date: 10/31/2024
 ms.localizationpriority: medium
 ---
 
@@ -80,12 +80,13 @@ The on-send feature currently has the following limitations.
 - **Manifest** &ndash; Only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **Send Later** (Mac only) &ndash; If there are on-send add-ins, the **Send Later** feature will be unavailable.
+- **Attachment preview mode** &ndash; In Outlook on the web and new Outlook on Windows, an on-send add-in isn't supported when a user replies or forwards a message while viewing its attachment in [Preview mode](https://support.microsoft.com/office/e36b3369-5141-4367-b276-85547e1da18d). For an add-in to handle an event, the user must reply or forward the message in regular compose mode.
 
-Also, it's not recommended that you call `item.close()` in the on-send event handler as closing the item should happen automatically after the event is completed.
+Also, it isn't recommended to call `item.close()` in the on-send event handler as closing the item should happen automatically after the event is completed.
 
 ### Mailbox type/mode limitations
 
-On-send functionality is only supported for user mailboxes in Outlook on the web, Windows (new and classic), and Mac. In addition to situations where add-ins don't activate as noted in the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page, the functionality is not currently supported for offline mode where that mode is available.
+On-send functionality is only supported for user mailboxes in Outlook on the web, Windows (new and classic), and Mac. In addition to situations where add-ins don't activate as noted in the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page, the functionality isn't currently supported for offline mode where that mode is available.
 
 In cases where Outlook add-ins don't activate, the on-send add-in won't run and the message will be sent.
 

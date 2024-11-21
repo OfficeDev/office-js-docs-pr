@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 07/17/2024
+ms.date: 10/31/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -75,6 +75,8 @@ In all supported Outlook clients, the user must remain on the current mail item 
 
 In addition to item switching, an event-based add-in also ceases operation when the user sends the message or appointment they're composing.
 
+In Outlook on the web and new Outlook on Windows, an event-based add-in isn't supported when a user replies or forwards a message while viewing its attachment in [Preview mode](https://support.microsoft.com/office/e36b3369-5141-4367-b276-85547e1da18d). For an add-in to handle an event, the user must reply or forward the message in regular compose mode.
+
 ### Event-based add-ins in classic Outlook on Windows
 
 When developing an event-based add-in to run in the classic Outlook on Windows client, be mindful of the following:
@@ -94,7 +96,7 @@ Some Office.js APIs that change or alter the UI aren't allowed from event-based 
 | API | Methods |
 | --- | --- |
 | `Office.devicePermission` | <ul><li>`requestPermissionsAsync`</li></ul> |
-| `Office.context.auth`\* | <ul><li>`getAccessToken`</li></ul><li>`getAccessTokenAsync`</li></ul> |
+| `Office.context.auth`\* | <ul><li>`getAccessToken`</li><<li>`getAccessTokenAsync`</li></ul> |
 | `Office.context.mailbox` | <ul><li>`displayAppointmentForm`</li><li>`displayMessageForm`</li><li>`displayNewAppointmentForm`</li><li>`displayNewMessageForm`</li></ul> |
 | `Office.context.mailbox.item` | <ul><li>`close`</li></ul> |
 | `Office.context.ui` | <ul><li>`displayDialogAsync`</li><li>`messageParent`</li></ul>|
