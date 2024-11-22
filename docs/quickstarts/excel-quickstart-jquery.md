@@ -27,7 +27,7 @@ Click the following button to create an add-in project using the Office Add-ins 
 
 In the prompted page, select **Create** to create the add-in project. In the **Workspace folder** dialog that opens, select the folder where you want to create the project. 
 
-Office Add-ins Development Kit will create the project. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
+The Office Add-ins Development Kit will create the project. It will then open the project in a *second* Visual Studio Code window. Close the original Visual Studio Code window.
 
 > [!NOTE]
 > You will receive prompts to install the Office Add-ins Development Kit extension if you haven't. You can also [install the Office Add-ins Development Kit manually](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/development-kit-overview?tabs=vscode).
