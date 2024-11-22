@@ -1,7 +1,7 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 11/21/2024
+ms.date: 11/22/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -133,7 +133,7 @@ The following code shows how to implement this authentication pattern in your ow
     ```
 
     > [!IMPORTANT]
-    > The request must include scopes other than just `offline_access`, `openid`, `profile`, or `email`. You can use any combination of the previous scopes, but you must include at least one additional scope. If not the token request can fail.
+    > The token request must include scopes other than just `offline_access`, `openid`, `profile`, or `email`. You can use any combination of the previous scopes, but you must include at least one additional scope. If not, the token request can fail.
 
 1. Replace `TODO 1` with the following code. This code calls `acquireTokenSilent` to get the access token.
 
