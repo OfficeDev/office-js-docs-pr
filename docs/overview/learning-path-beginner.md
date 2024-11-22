@@ -59,7 +59,7 @@ Congratulations on finishing the beginner's learning path for Office Add-ins! He
 
   - [OneNote quick start](../quickstarts/onenote-quickstart.md)
   - [Outlook tutorial](/outlook/add-ins/addin-tutorial)
-  - [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md)
+  - [PowerPoint tutorial](../tutorials/powerpoint-tutorial-yo.md)
   - [Project quick start](../quickstarts/project-quickstart.md)
   - [Word tutorial](../tutorials/word-tutorial.md)
 
