@@ -32,40 +32,19 @@ The Office Add-ins Development Kit will create the project. It will then open th
 
 ## Explore the project
 
-The add-in project that you've created with the Office Add-ins Development Kit contains sample code for a basic task pane add-in. If you'd like to explore the components of your add-in project, open the project in your code editor and review the files listed below. When you're ready to try out your add-in, proceed to the next section.
-
-1. The ./manifest.xml or manifest.json file in the root directory of the project defines the settings and capabilities of the add-in.
-1. The ./src/taskpane/taskpane.html file contains the HTML markup for the task pane.
-1. The ./src/taskpane/taskpane.css file contains the CSS that's applied to content in the task pane.
-1. The ./src/taskpane/taskpane.js file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
+[!include[Devkit_project_components_taskpane](../includes/devkit-project-components-taskpane.md)]
 
 ## Try it out
 
-1. Open the extension by selecting the Office Add-ins Development Kit icon in the **Activity Bar**.
-1. Select **Preview Your Office Add-in (F5)**
-1. In the Quick Pick menu, select the option **{Office Host} Desktop (Edge Chromium)**. This will launch the add-in and debug the code.
-The development kit checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in. Please note that the first time you run a project, it may make take a few minutes to install the dependencies. You will need to install the certificate when prompted.
+[!include[Dev_kit_start_debugging](../includes/dev-kit-start-debugging.md)]
 
 ## Stop testing your Office Add-in
 
-Once you are finished testing and debugging the add-in, close the add-in by following these steps.
-
-1. Open the extension by selecting the Office Add-ins Development Kit icon in the **Activity Bar**.
-1. Select **Stop Previewing Your Office Add-in**. This closes the web server and removes the add-in from the registry and cache.
-1. Close the Office application window at your convenience.
+[!include[Dev_kit_stop_debugging](../includes/dev-kit-stop-debugging.md)]
 
 ## Troubleshooting
 
-If you have problems running the add-in, take these steps.
-
-- Close any open instances of Office.
-- Close the previous web server started for the add-in with the **Stop Previewing Your Office Add-in** Office Add-ins Development Kit extension option.
-
-The article [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md) contains solutions to common problems. If you're still having issues, [create a GitHub issue](https://aka.ms/officedevkitnewissue) and we'll help you.  
-
-For information on running the add-in on Office on the web, see [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md).
-
-For information on debugging on older versions of Office, see [Debug add-ins using developer tools in Microsoft Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md).
+[!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]
 
 
 # [Yeoman generator](#tab/yeoman)
