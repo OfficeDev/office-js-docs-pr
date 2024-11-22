@@ -13,7 +13,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 # [Office Add-ins Development Kit](#tab/devkit)
 ## Prerequisites
 
-[!include[DevKit prerequisites](../includes/devkit-prerequisites.md)]
+[!include[DevKit prerequisites](../includes/dev-kit-prerequisites.md)]
 
 ## Create the add-in project
 
