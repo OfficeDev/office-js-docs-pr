@@ -19,7 +19,8 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 Click the following button to create an add-in project using the Office Add-ins Development Kit for Visual Studio Code. A page that contains the project decription will open in Visual Studio Code.
 
-<button type="button">[Create an add-in in Visual Studio Code](vscode://msoffice.microsoft-office-add-in-debugger/open-specific-sample?sample-id=Excel-HelloWorld-TaskPane-JS)</button>
+> [!div class="nextstepaction"]
+> [Create an add-in in Visual Studio Code](vscode://msoffice.microsoft-office-add-in-debugger/open-specific-sample?sample-id=Excel-HelloWorld-TaskPane-JS)
 
 <img src="../images/office-add-ins-development-kit-samplepage-excelquickstart.png" alt="Screenshot shows the sample page in Visual Studio Code"/>
 
