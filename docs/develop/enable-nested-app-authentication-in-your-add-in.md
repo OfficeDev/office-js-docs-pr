@@ -1,7 +1,7 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 11/05/2024
+ms.date: 11/22/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -22,12 +22,12 @@ NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identi
 | Application | Web        | Windows                                              | Mac        | iOS/iPad           | Android        |
 |-------------|------------|------------------------------------------------------|------------|--------------------|----------------|
 | Excel       | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
-| Outlook     | GA         | GA in Current Channel, Preview in all other channels | GA         | GA (iOS)           | GA             |
+| Outlook     | GA         | GA in Current Channel and Monthly Enterprise Channel, Preview in Semi-Annual Channels | GA         | GA (iOS)           | GA             |
 | PowerPoint  | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
 | Word        | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
 
 > [!IMPORTANT]
-> To use NAA on platforms that are still in preview, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Register your single-page application
 
@@ -59,7 +59,7 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
 
     ```json
     "dependencies": {
-        "@azure/msal-browser": "^3.26.0",
+        "@azure/msal-browser": "^3.27.0",
         ...
     ```
 
@@ -131,6 +131,9 @@ The following code shows how to implement this authentication pattern in your ow
 
     }
     ```
+
+    > [!IMPORTANT]
+    > The token request must include scopes other than just `offline_access`, `openid`, `profile`, or `email`. You can use any combination of the previous scopes, but you must include at least one additional scope. If not, the token request can fail.
 
 1. Replace `TODO 1` with the following code. This code calls `acquireTokenSilent` to get the access token.
 
