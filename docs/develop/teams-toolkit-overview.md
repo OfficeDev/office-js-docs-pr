@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Teams Toolkit
 description: Learn how to create Office Add-in projects using Teams Toolkit.
-ms.date: 09/19/2024
+ms.date: 12/21/2024
 ms.localizationpriority: high
 ---
 
@@ -20,6 +20,9 @@ Add-ins created with Teams Toolkit use the [unified manifest for Microsoft 365](
 
 Install the latest version of Teams Toolkit into Visual Studio Code as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 
+> [!IMPORTANT]
+> You can create an Outlook add-in with the latest released version of Teams Toolkit. To create an add-in for Excel, PowerPoint, or Word, install the prerelease version as described in [Install a prerelease version](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version). The toolkit creates projects that use the [unified manifest for Microsoft 365](json-manifest-overview.md). Support for this manifest in Excel, PowerPoint, and Word is preview only. 
+
 ## Create an Office Add-in project
 
 1. Open Visual Studio Code and select Teams Toolkit icon in the **Activity Bar**.
@@ -29,14 +32,14 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
 1. Select **Create a New App**.
 1. In the **New Project** dropdown menu, select **Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The five options in New Project dropdown menu. The fifth option is called 'Office Add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The options in New Project dropdown menu. The last option is called 'Office Add-in'.":::
 
-1. In the **App Features Using an Office Add-in** dropdown menu, select **Taskpane** or **Content Add-in**. (For simplicity, the remainder of this article assumes you selected **Taskpane**. For more information about content add-ins, see [Content Office Add-ins](../design/content-add-ins.md).)
+1. In the **App Features Using an Office Add-in** dropdown menu, select **Taskpane**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The three options in the App Features Using an Office Add-in dropdown menu. The first option 'Taskpane' is selected.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The option 'Taskpane' is selected.":::
 
-1. In the **Programming Language** dropdown menu, select either **TypeScript** or **JavaScript**.
-1. In the **Framework** dropdown menu, select **Default** or **React**. 
+1. If you're making an Outlook add-in, the toolkit shows a **Programming Language** dropdown menu. Select either **TypeScript** or **JavaScript**. (For Excel, PowerPoint, and Word add-ins, a TypeScript project is always created.)
+1. If you're making an Outlook add-in, the toolkit shows a **Framework** dropdown menu. Select **Default** or **React**. (For Excel, PowerPoint, and Word add-ins, a default project is always created.)
 1. In the **Workspace Folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Teams Toolkit will create the project with basic files and scaffolding. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 
@@ -47,6 +50,9 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
 1. After the installation completes, verify that you can sideload your add-in from Visual Studio Code. The steps to sideload vary depending on the Office application on which you want to test the add-in.
 
 ### Sideload in Excel, PowerPoint, or Word
+
+> [!NOTE]
+> This section only applies if you are developing the add-in on a *Windows* computer. If you work on a Mac, you can test the add-in by having your Microsoft 365 administrator deploy the add-in as an [integrated app](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the Microsoft 365 Admin Center.
 
 1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select one of these options:
  
