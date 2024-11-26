@@ -109,11 +109,11 @@ The easiest way to convert is to use Teams Toolkit.
     :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Teams Toolkit icon.":::
 
 1. Select **Create a New App**.
-1. In the **New Project** dropdown menu, select **Office Add-in**.
+1. The **New Project** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Office Add-in**.
 
     :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The options in New Project dropdown menu. One option is called 'Office Add-in'.":::
 
-1. In the **App Features Using an Office Add-in** dropdown menu, select **Import an Existing Office Add-in**.
+1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Import an Existing Office Add-in**.
 
     :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. One option is called 'Import an Existing Office Add-in'.":::
 

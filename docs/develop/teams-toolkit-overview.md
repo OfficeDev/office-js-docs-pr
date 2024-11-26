@@ -30,11 +30,11 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
     :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Teams Toolkit icon.":::
 
 1. Select **Create a New App**.
-1. In the **New Project** dropdown menu, select **Office Add-in**.
+1. The **New Project** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Office Add-in**.
 
     :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The options in New Project dropdown menu. The last option is called 'Office Add-in'.":::
 
-1. In the **App Features Using an Office Add-in** dropdown menu, select **Taskpane**.
+1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Taskpane**.
 
     :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The option 'Taskpane' is selected.":::
 
