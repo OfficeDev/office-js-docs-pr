@@ -14,7 +14,7 @@ Legacy Exchange Online tokens are deprecated and will begin being turned off acr
 For more information about deprecation of legacy Exchange Online tokens, see [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
 
 > [!WARNING]
-> The commands in this article are for testing purposes only. Don't use these commands on a production tenant. They can turn off some essential Outlook services that can cause breaking issues for users.
+> Only use the commands in this article on a test tenant for testing your Outlook add-ins. Don't use these commands on a production tenant. They can affect some essential Outlook services that can cause issues for users.
 
 ## Turn off legacy Exchange Online tokens in a test tenant
 
