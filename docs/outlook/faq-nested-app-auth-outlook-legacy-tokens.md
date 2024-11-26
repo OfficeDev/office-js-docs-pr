@@ -92,6 +92,18 @@ Once the admin or a user consents, it will be listed in the Microsoft Entra admi
 1. On the **App registrations** page, select **All applications**.
 1. Now you can search for any app registration by name or ID.
 
+### Is there a list of publishers that have updated their add-ins?
+
+Some widely used Outlook add-in publishers have already updated their add-ins as listed below.
+
+| Outlook add-in  | More information  |
+|---------|---------|---------|
+| Salesforce for Outlook   | [SalesForce](https://appsource.microsoft.com/en-us/product/office/wa104379334)        |
+| iEnterprises® - Outlook Connector  | [iEnterprises](https://ienterprises.com/connector/outlook-connector/) |
+| HubStar Connect  | [HubStar](https://www.hubstar.com/solutions/connect/) |
+
+If the publisher updated their manifest, and the add-in is deployed through the Microsoft store, you'll be prompted as an administrator to upgrade and deploy the updates. If the publisher updated their manifest, and the add-in is deployed through central deployment, you'll need to deploy the new manifest as an administrator. In some cases the publisher may have an admin consent URI you need to use to consent to new scopes for the add-in. Reach out to publishers if you need more information about updating an add-in.
+
 ## Outlook add-in migration FAQ
 
 ### Why is Microsoft making Outlook add-ins migrate?
