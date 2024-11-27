@@ -100,10 +100,10 @@ Once the admin or a user consents, it will be listed in the Microsoft Entra admi
 
 Some widely used Outlook add-in publishers have already updated their add-ins as listed below.
 
-- [SalesForce for Outlook](https://appsource.microsoft.com/en-us/product/office/wa104379334)        |
+- [Clickup for Outlook](https://appsource.microsoft.com/en-us/product/office/WA104382026)
 - [iEnterprises® - Outlook Connector](https://ienterprises.com/connector/outlook-connector/) |
 - [HubStar Connect](https://www.hubstar.com/solutions/connect/) |
-- [Clickup for Outlook](https://appsource.microsoft.com/en-us/product/office/WA104382026)
+- [SalesForce for Outlook](https://appsource.microsoft.com/en-us/product/office/wa104379334)        |
 - [Zoho CRM for Email](https://appsource.microsoft.com/en-us/product/office/WA104379468)
 - Zoho Recruit for Email | [](https://appsource.microsoft.com/en-us/product/office/WA200001485)
 - [Zoho Sign for Outlook](https://appsource.microsoft.com/en-us/product/office/WA200002326)
