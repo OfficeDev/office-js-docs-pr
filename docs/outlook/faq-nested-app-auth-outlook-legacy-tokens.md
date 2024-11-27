@@ -40,7 +40,7 @@ The general availability (GA) date for NAA depends on which channel you are usin
 
 ## Microsoft 365 administrator questions
 
-### Can I turn legacy tokens back on?
+### Can I turn Exchange Online legacy tokens back on?
 
 Yes, there are PowerShell commands you can use to turn legacy tokens on or off. Currently the commands are only intended for use in test tenants and testing Outlook add-ins. Don't use them in production tenants or you'll see side effects. We'll update the commands soon so that they can be used in production tenants as well. We'll update this FAQ with additional information once the commands can be used in production tenants.
 
