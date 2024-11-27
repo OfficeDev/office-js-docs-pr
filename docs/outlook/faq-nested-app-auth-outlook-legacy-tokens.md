@@ -100,11 +100,14 @@ Once the admin or a user consents, it will be listed in the Microsoft Entra admi
 
 Some widely used Outlook add-in publishers have already updated their add-ins as listed below.
 
-| Outlook add-in  | More information  |
-|---------|---------|---------|
-| Salesforce for Outlook   | [SalesForce](https://appsource.microsoft.com/en-us/product/office/wa104379334)        |
-| iEnterprises® - Outlook Connector  | [iEnterprises](https://ienterprises.com/connector/outlook-connector/) |
-| HubStar Connect  | [HubStar](https://www.hubstar.com/solutions/connect/) |
+- [SalesForce for Outlook](https://appsource.microsoft.com/en-us/product/office/wa104379334)        |
+- [iEnterprises® - Outlook Connector](https://ienterprises.com/connector/outlook-connector/) |
+- [HubStar Connect](https://www.hubstar.com/solutions/connect/) |
+- [Clickup for Outlook](https://appsource.microsoft.com/en-us/product/office/WA104382026)
+- [Zoho CRM for Email](https://appsource.microsoft.com/en-us/product/office/WA104379468)
+- Zoho Recruit for Email | [](https://appsource.microsoft.com/en-us/product/office/WA200001485)
+- [Zoho Sign for Outlook](https://appsource.microsoft.com/en-us/product/office/WA200002326)
+- [Invoice and Time Tracking - Zoho Invoice](https://appsource.microsoft.com/en-us/product/office/WA104381067)
 
 If the publisher updated their manifest, and the add-in is deployed through the Microsoft store, you'll be prompted as an administrator to upgrade and deploy the updates. If the publisher updated their manifest, and the add-in is deployed through central deployment, you'll need to deploy the new manifest as an administrator. In some cases the publisher may have an admin consent URI you need to use to consent to new scopes for the add-in. Reach out to publishers if you need more information about updating an add-in.
 
