@@ -846,7 +846,7 @@ items:
       href: quickstarts/powerpoint-quickstart-content.md
       displayName: PowerPoint
   - name: PowerPoint add-in tutorial
-    href: tutorials/powerpoint-tutorial.md
+    href: tutorials/powerpoint-tutorial-yo.md
     displayName: PowerPoint
   - name: JavaScript API for PowerPoint
     items:
@@ -982,6 +982,8 @@ items:
     - name: Word
       href: quickstarts/word-quickstart-vs.md
       displayName: Word
+  - name: Work with a PowerPoint presentation
+    href: tutorials/powerpoint-tutorial-vs.md
   - name: Share code from VSTO Add-in to Office Add-in
     href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
   - name: Make your Office Add-in compatible with an existing COM add-in
