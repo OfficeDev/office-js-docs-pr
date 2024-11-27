@@ -810,6 +810,8 @@ items:
         href: outlook/implement-sso-in-outlook-add-in.md
       - name: Legacy token deprecation FAQ 
         href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
+      - name: Turn legacy tokens on or off
+        href: outlook/turn-exchange-tokens-on-off.md  
     - name: Testing and tips
       items:
       - name: Overview
