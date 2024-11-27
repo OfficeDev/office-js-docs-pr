@@ -46,7 +46,7 @@ Yes, there are PowerShell commands you can use to turn legacy tokens on or off. 
 
 For more information on how to turn legacy tokens on or off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 
-In June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy Exchange Online tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the tool is available 
+In June 2025, legacy tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the tool is available 
 
 ### How does the admin consent flow work?
 
@@ -77,7 +77,7 @@ If the add-in is deployed from Microsoft AppSource, most likely you'll be prompt
 
 ### Which add-ins in my organization are impacted?
 
-We published a list of all Outlook add-ins published to the Microsoft store that use legacy Exchange Online tokens as of October 2024. For more information on how to use the list and build a report of Outlook add-ins that are potentially using legacy tokens, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://aka.ms/naafaq). Alsp we're working on report tooling to make tracking add-ins using legacy tokens easier. We hope to have the report tooling available in early 2025.
+We published a list of all Outlook add-ins published to the Microsoft store that use legacy tokens as of October 2024. For more information on how to use the list and build a report of Outlook add-ins that are potentially using legacy tokens, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://aka.ms/naafaq). Also we're working on report tooling to make tracking add-ins using legacy tokens easier. We hope to have the report tooling available in early 2025.
 
 Add-ins may use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs.
 
