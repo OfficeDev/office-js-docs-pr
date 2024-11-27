@@ -16,6 +16,15 @@ For more information about deprecation of legacy Exchange Online tokens, see [Ne
 > [!WARNING]
 > Only use the commands in this article on a test tenant for testing your Outlook add-ins. Don't use these commands on a production tenant. They can affect some essential Outlook services that can cause issues for users.
 
+## Connect to Exchange Online PowerShell
+
+To run the commands you need to connect to Exchange Online PowerShell.
+
+1. Open PowerShell.
+1. Run the command `Import-Module ExchangeOnlineManagement`. For more information about this command, see [O365CentralizedAddInDeployment 3.0.2](https://www.powershellgallery.com/packages/O365CentralizedAddInDeployment/3.0.2).
+1. To be sure you are on the latest version of the module, run the command `Update-Module -Name ExchangeOnlineManagement`.
+1. Run the command `Connect-ExchangeOnline`. Sign in with your Microsoft 365 administrator credentials.
+
 ## Turn off legacy Exchange Online tokens in a test tenant
 
 The `Set-AuthenticationPolicy` command controls the issuance of legacy Exchange Online tokens. When issuance is turned off, add-ins can no longer request user identity tokens or callback tokens. Existing tokens already issued will continue to work until they expire. It can take up to 24 hours before all request from Outlook add-ins for legacy Exchange Online tokens are blocked.
