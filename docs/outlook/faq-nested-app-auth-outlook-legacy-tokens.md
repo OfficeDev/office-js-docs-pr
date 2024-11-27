@@ -105,7 +105,7 @@ Some widely used Outlook add-in publishers have already updated their add-ins as
 - [HubStar Connect](https://www.hubstar.com/solutions/connect/)
 - [SalesForce for Outlook](https://appsource.microsoft.com/product/office/wa104379334)
 - [Zoho CRM for Email](https://appsource.microsoft.com/product/office/WA104379468)
-- Zoho Recruit for Email | [](https://appsource.microsoft.com/product/office/WA200001485)
+- [Zoho Recruit for Email](https://appsource.microsoft.com/product/office/WA200001485)
 - [Zoho Sign for Outlook](https://appsource.microsoft.com/product/office/WA200002326)
 - [Invoice and Time Tracking - Zoho Invoice](https://appsource.microsoft.com/product/office/WA104381067)
 
