@@ -58,7 +58,7 @@ In this tutorial, you will:
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
-The command to test your add-in in Excel on Windows or Mac depends on when the project was created. If the "scripts" section of the project's package.json file has a `npm run start:desktop`, run it; otherwise, run the command `npm run start`. When you run the command, the local web server will start and Excel will open with your add-in loaded.
+The command to test your add-in in Excel on Windows or Mac depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run the command `npm run start`. The local web server will start and Excel will open with your add-in loaded.
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 

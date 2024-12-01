@@ -108,7 +108,7 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 
 1. First, *make sure Outlook desktop is closed.*
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
-1. If the "scripts" section of the project's package.json file has a `npm run start:desktop` command, then run it; otherwise, run `npm run start`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then Outlook desktop opens.
+1. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then Outlook desktop opens.
 1. You can now work with your add-in.
 1. When you're done working with your add-in, make sure to run the command `npm run stop`.
 
@@ -123,7 +123,7 @@ If the project was created with the Office Yeoman Generator and you don't want t
     ```
 
 1. Run `npm install`.
-1. The command to sideload the add-in depends on when the project was created. If the "scripts" section of the project's package.json file has a `npm run start:desktop` command, then run it; otherwise, run `npm run start`. This command puts the unified manifest and the two image files into a zip file and sideloads it to the Office application. It also starts the server in a separate NodeJS window to host the add-in files on localhost.
+1. The command to sideload the add-in depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`. This command puts the unified manifest and the two image files into a zip file and sideloads it to the Office application. It also starts the server in a separate NodeJS window to host the add-in files on localhost.
 
 When you're ready to stop the dev server and uninstall the add-in, run the command `npm run stop`.
 
