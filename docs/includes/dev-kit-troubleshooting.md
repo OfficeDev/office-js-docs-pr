@@ -1,3 +1,5 @@
+## Troubleshooting
+
 If you have problems running the add-in, take these steps.
 
 - Close any open instances of Office.

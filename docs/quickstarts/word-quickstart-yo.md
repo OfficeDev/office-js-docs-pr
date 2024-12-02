@@ -11,7 +11,6 @@ ms.localizationpriority: high
 In this article, you'll walk through the process of building a Word task pane add-in. You'll use either the Office Add-ins Development Kit or the Yeoman generator to create your Office Add-in. Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally. If you'd like to use Visual Studio Code, we recommend the Office Add-ins Development Kit.
 
 # [Office Add-ins Development Kit](#tab/devkit)
-## Prerequisites
 
 [!include[Dev_kit prerequisites](../includes/dev-kit-prerequisites.md)]
 
@@ -39,14 +38,9 @@ The Office Add-ins Development Kit will create the project. It will then open th
 
 [!include[Dev_kit_start_debugging](../includes/dev-kit-start-debugging.md)]
 
-## Stop testing your Office Add-in
-
 [!include[Dev_kit_stop_debugging](../includes/dev-kit-stop-debugging.md)]
 
-## Troubleshooting
-
 [!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]
-
 
 # [Yeoman generator](#tab/yeoman)
 ## Prerequisites

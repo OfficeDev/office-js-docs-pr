@@ -11,8 +11,6 @@ The Office Add-ins Development Kit helps set up your environment, create Office 
 
 [!INCLUDE [Information about the preview status of the dev kit.](../includes/dev-kit-preview-note.md)]
 
-## Prerequisites
-
 [!include[Dev_kit prerequisites](../includes/dev-kit-prerequisites.md)]
 
 ## Install the development kit
@@ -67,10 +65,6 @@ To understand how the add-in will work in an Office application, use the Office 
 
 [!include[Dev_kit_start_debugging](../includes/dev-kit-start-debugging.md)]
 
-## Stop testing your Office Add-in
-
 [!include[Dev_kit_stop_debugging](../includes/dev-kit-stop-debugging.md)]
-
-## Troubleshooting
 
 [!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]

@@ -1,3 +1,5 @@
+## Stop testing your Office Add-in
+
 Once you are finished testing and debugging the add-in, close the add-in by following these steps.
 
 1. Open the extension by selecting the Office Add-ins Development Kit icon in the **Activity Bar**.
