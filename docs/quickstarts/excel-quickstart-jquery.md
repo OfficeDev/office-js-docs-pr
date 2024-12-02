@@ -23,12 +23,12 @@ Click the following button to create an add-in project using the Office Add-ins 
 
 In the prompted page, select **Create** to create the add-in project. In the **Workspace folder** dialog that opens, select the folder where you want to create the project. 
 
-<img src="../images/office-add-ins-development-kit-samplepage-excelquickstart.png" alt="Screenshot shows the sample page in Visual Studio Code"/>
+:::image type="content" source="../images/office-add-ins-development-kit-samplepage-excelquickstart.png" alt-text="The Development Kit sample gallery in Visual Studio Code":::
 
 The Office Add-ins Development Kit will create the project. It will then open the project in a *second* Visual Studio Code window. Close the original Visual Studio Code window.
 
 > [!NOTE]
-> You will receive prompts to install the Office Add-ins Development Kit extension if you haven't. You can also [install the Office Add-ins Development Kit manually](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/development-kit-overview?tabs=vscode).
+> You'll be prompted to install the Office Add-ins Development Kit extension if don't already have it. If you need to install the Office Add-ins Development Kit manually, follow [these steps](../development-kit-overview.md?tabs=vscode).
 
 ## Explore the project
 
@@ -41,8 +41,6 @@ The Office Add-ins Development Kit will create the project. It will then open th
 [!include[Dev_kit_stop_debugging](../includes/dev-kit-stop-debugging.md)]
 
 [!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]
-
-
 # [Yeoman generator](#tab/yeoman)
 ## Prerequisites
 
