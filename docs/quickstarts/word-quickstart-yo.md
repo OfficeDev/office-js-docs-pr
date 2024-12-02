@@ -46,8 +46,6 @@ The Office Add-ins Development Kit will create the project. It will then open th
 ## Troubleshooting
 
 [!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]
-
-
 # [Yeoman generator](#tab/yeoman)
 ## Prerequisites
 
