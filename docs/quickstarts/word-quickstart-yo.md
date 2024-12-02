@@ -30,8 +30,6 @@ The Office Add-ins Development Kit will create the project. It will then open th
 > [!NOTE]
 > You'll be prompted to install the Office Add-ins Development Kit extension if don't already have it. If you need to install the Office Add-ins Development Kit manually, follow [these steps](../development-kit-overview.md?tabs=vscode).
 
-## Explore the project
-
 [!include[Devkit_project_components_taskpane](../includes/devkit-project-components-taskpane.md)]
 
 ## Try it out
