@@ -28,7 +28,7 @@ In the prompted page, select **Create** to create the add-in project. In the **W
 The Office Add-ins Development Kit will create the project. It will then open the project in a *second* Visual Studio Code window. Close the original Visual Studio Code window.
 
 > [!NOTE]
-> You'll be prompted to install the Office Add-ins Development Kit extension if don't already have it. If you need to install the Office Add-ins Development Kit manually, follow [these steps](../development-kit-overview.md?tabs=vscode).
+> You'll be prompted to install the Office Add-ins Development Kit extension if don't already have it. If you need to install the Office Add-ins Development Kit manually, follow [these steps](../develop/development-kit-overview.md?tabs=vscode).
 
 [!include[Devkit_project_components_taskpane](../includes/devkit-project-components-taskpane.md)]
 
