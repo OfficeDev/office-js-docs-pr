@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.
-ms.date: 07/08/2024
+ms.date: 10/24/2024
 ms.localizationpriority: medium
 ---
 
@@ -45,7 +45,7 @@ But there may be exceptions. For example, you want the add-in to open with featu
 
 Another option is to respond to 13001 by falling back to an alternate system of user authentication. This will sign the user into AAD, but not sign the user into Office.
 
-This error is never seen in **Office on the web**. If the user's cookie expires, **Office on the web** returns error 13006.
+This error doesn't typically occur in Office on the web. If the user's cookie expires, Office on the web returns [error 13006](#13006). However, if a user accesses Outlook on the web from Firefox with Enhanced Tracking Protection turned on, they'll encounter error 13001.
 
 ### 13002
 
@@ -64,7 +64,7 @@ Invalid Resource. (This error should only be seen in development.) The add-in ma
 
 ### 13005
 
-Invalid Grant. This usually means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](sso-in-office-add-ins.md#register-your-add-in-with-the-microsoft-identity-platform) and [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md). This also may happen if the user has not granted your service application permissions to their `profile`, or has revoked consent. Your code should fall back to an alternate system of user authentication.
+Invalid Grant. This usually means that Office has not been pre-authorized to the add-in's web service. For more information, see [Create the service application](sso-in-office-add-ins.md#register-your-add-in-with-the-microsoft-identity-platform) and [Register an Office Add-in that uses single sign-on (SSO) with the Microsoft identity platform](register-sso-add-in-aad-v2.md). This also may happen if the user has not granted your service application permissions to their `profile`, or has revoked consent. Your code should fall back to an alternate system of user authentication.
 
 Another possible cause, during development, is that your add-in using Internet Explorer, and you are using a self-signed certificate. (To determine which browser or webview is being used by the add-in, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).)
 
@@ -76,7 +76,7 @@ Client Error. This error is only seen in **Office on the web**. Your code should
 
 The Office application was unable to get an access token to the add-in's web service.
 
-- If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
+- If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register an Office Add-in that uses single sign-on (SSO) with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
 - In production, an account mismatch could cause this error. For example, if the user attempts to sign in with a personal Microsoft account (MSA) when a Work or school account was expected. For these cases, your code should fall back to an alternate system of user authentication. For more information on account types, see [Identity and account types for single- and multi-tenant apps](/security/zero-trust/develop/identity-supported-account-types)
 
 ### 13008
@@ -135,7 +135,7 @@ If the add-in needs Microsoft Graph scopes that can only be consented to by an a
 This kind of error should only be seen in development.
 
 - Your server-side code should send a `403 Forbidden` response to the client which should log the error to the console or record it in a log.
-- Be sure your add-in manifest [Scopes](/javascript/api/manifest/scopes) section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register the add-in with Azure AD v2.0 endpoint](register-sso-add-in-aad-v2.md).
+- Be sure your add-in manifest [Scopes](/javascript/api/manifest/scopes) section specifies all needed permissions. And be sure your registration of the add-in's web service specifies the same permissions. Check for spelling mistakes too. For more information, see [Register an Office Add-in that uses single sign-on (SSO) with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
 
 ### Invalid audience error in the access token for Microsoft Graph
 

@@ -755,8 +755,6 @@ items:
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
       href: outlook/web-services.md
-    - name: Get or set item data
-      href: outlook/item-data.md
     - name: Get or set categories
       href: outlook/categories.md
     - name: Get or set internet headers
@@ -769,7 +767,7 @@ items:
       items:
       - name: Overview
         href: outlook/read-scenario.md
-      - name: Get attachments
+      - name: Get attachments from server
         href: outlook/get-attachments-of-an-outlook-item.md
     - name: Compose scenario
       items:
@@ -777,8 +775,6 @@ items:
         href: outlook/compose-scenario.md
       - name: Add and remove attachments
         href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
-      - name: Get and set item data
-        href: outlook/get-and-set-item-data-in-a-compose-form.md
       - name: Get and set recipients
         href: outlook/get-set-or-add-recipients.md
       - name: Insert data in the body

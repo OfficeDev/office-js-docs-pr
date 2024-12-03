@@ -163,4 +163,4 @@ Event-based add-ins that run in Outlook on Mac use the browser runtime. Because 
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
 - [Implement an integrated spam-reporting add-in](spam-reporting.md)
 - [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
-- [Debug your add-in with runtime logging](../testing/runtime-logging.md#runtime-logging-on-windows)
+- [Debug your add-in with runtime logging](../testing/runtime-logging.md)

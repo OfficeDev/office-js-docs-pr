@@ -86,11 +86,11 @@
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-vue.md",
-            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-yo"
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
         },
         {
             "source_path": "docs/quickstarts/excel-quickstart-vue.md",
-            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-yo"
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-react.md",
@@ -1292,6 +1292,14 @@
         {
             "source_path": "docs/outlook/activation-rules.md",
             "redirect_url": "/javascript/api/manifest/rule"
+        },
+        {
+            "source_path": "docs/outlook/get-and-set-item-data-in-a-compose-form.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/outlook/item-data.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets"
         }
     ]
 }
