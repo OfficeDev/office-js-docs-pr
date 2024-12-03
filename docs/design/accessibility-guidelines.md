@@ -8,13 +8,19 @@ ms.localizationpriority: medium
 
 # Accessibility guidelines
 
-As you design and develop your Office Add-ins, you'll want to ensure that all potential users and customers are able to use your add-in successfully. Apply the following guidelines to ensure that your solution is accessible to all audiences.
+As you design and develop your Office Add-ins, you'll want to ensure that all potential users and customers are able to use your add-in successfully. Engineering and implementing inclusive experiences provide better usability and customer satisfaction, as well as a larger market for your solutions. We recommend you become familiar with the Web Content Accessibility Guidelines (WCAG), international web standards that define what is needed for your add-in to be accessible.
+
+- [Explore the WCAG standards and resources](https://learn.microsoft.com/compliance/regulatory/offering-wcag-2-1)
+- [Explore the WCAG tutorials](https://www.w3.org/WAI/tutorials/)
+
+Apply the following guidelines to ensure that your solution is accessible to all audiences.
 
 ## Design for multiple input methods
 
 - Ensure that users can perform operations by using only the keyboard. Users should be able to move to all actionable elements on the page by using a combination of the Tab and arrow keys.
 - On a mobile device, when users operate a control by touch, the device should provide useful audio feedback.
 - Provide helpful labels for all interactive controls.
+- [Explore more design and UI resources](https://learn.microsoft.com/windows/apps/design/accessibility/accessibility).
 
 ## Make your add-in easy to use
 
@@ -28,6 +34,7 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 
 - Avoid unexpected color changes.
 - Provide meaningful and timely information to describe UI elements, titles and headings, inputs, and errors. Ensure that names of controls adequately describe the intent of the control.
+- Verify you UI elements render correctly in the Windows high-contrast themes.
 - Follow [standard guidelines](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) for color contrast.
 
 ## Account for assistive technologies
@@ -38,12 +45,16 @@ As you design and develop your Office Add-ins, you'll want to ensure that all po
 - Provide a way for users to turn on captions or audio description with audio sources.
 - Provide alternatives to sound as a means to alert users, such as visual cues or vibrations.
 
-## Use accessibility verification tools
+## Test your add-in
 
-Use accessibility verification and testing tools like [Accessibility Insights](https://accessibilityinsights.io/) on your add-in to catch and resolve issues before you ship. You should also periodically run the tools to keep up with changes to the international accessibility guidelines.
+- Always use accessibility verification and testing tools like [Accessibility Insights](https://accessibilityinsights.io/) on your add-in to catch and resolve issues before you ship.
+- Verify the screen reading experience using [Windows Narrator](https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1), [JAWS](https://support.freedomscientific.com/Downloads/JAWS), or [NVDA](https://www.nvaccess.org/download/).
+- Periodically run the tools to keep up with changes to the international accessibility guidelines. For more information, see [Accessibility testing](https://learn.microsoft.com/windows/apps/design/accessibility/accessibility-testing).
 
 ## See also
 
-- [Web Content Accessibility Guidelines (WCAG) 2.0](https://www.w3.org/TR/wcag2ict/#REF-WCAG20)
-- [Guidance on Applying WCAG 2.0 to Non-Web Information and Communications Technologies (WCAG2ICT)](https://www.w3.org/TR/wcag2ict/)
-- [European Standard on accessibility requirements for Information and Communication Technologies (ICT)](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf)
+- [Accessibility in the Store](https://learn.microsoft.com/windows/apps/design/accessibility/accessibility-in-the-store)
+- [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)
+- [Developing for Web Accessibility](https://www.w3.org/WAI/tips/developing/)
+- [Accessibility Fundamentals Learning Path](https://learn.microsoft.com/training/paths/accessibility-fundamental/)
+- [European Accessibility Act (EAA)](https://www.deque.com/blog/european-accessibility-act-eaa-top-20-key-questions-answered/)
