@@ -158,18 +158,34 @@ Within a custom function, you can use [WebSockets](https://developer.mozilla.org
 
 ### WebSockets example
 
-The following code sample establishes a WebSocket connection and then logs each incoming message from the server.
+The following code sample establishes a WebSocket connection and then logs each incoming message from the server to excel reference cell
 
 ```js
-let ws = new WebSocket('wss://bundles.office.com');
+// functions.js file
 
-ws.onmessage(message) {
-    console.log(`Received: ${message}`);
+var ws = null;
+
+createSocketObject(invocationData){
+
+    if(!!ws){
+      ws = new WebSocket('wss://bundles.office.com');
+    }
+
+    ws.onmessage(message) {
+        console.log(`Received: ${message}`);
+        invocationData.setResult(message);    // <--- print data in excel cell reference
+    }
+
+    ws.onerror(error){
+        console.err(`Failed: ${error}`);
+    }
 }
 
-ws.onerror(error){
-    console.err(`Failed: ${error}`);
+function getLivePrice(quote_symbol, invocation) {
+    createSocketObject(invocation);
 }
+
+CustomFunctions.associate('quote', getLivePrice);
 ```
 
 ## Next steps
