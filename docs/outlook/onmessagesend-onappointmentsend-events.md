@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 10/08/2024
+ms.date: 12/03/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -156,7 +156,7 @@ Starting in Version 2402 (Build 17310.10000), if a message is being composed in 
 
 Starting in Version 2402 (Build 17310.10000), if a reply, forward, or existing draft is being composed in the Outlook Reading Pane, and a user navigates away from it after they select **Send**, a dialog with options is shown to the user. The options available depend on the [send mode option](#available-send-mode-options) implemented by the add-in.
 
-If the **prompt user** send mode option is implemented, the following options are shown.
+If the [prompt user](#prompt-user) send mode option is implemented, the following options are shown.
 
 - **Wait**: This option opens the message being composed in a new window, so that the Smart Alerts add-in can continue to process it. If the user navigates away from the newly opened window during processing, the add-in will continue to process the message in the background (to learn more, see [Message composed in a window](#message-composed-in-a-window)). If additional actions are needed before a message can be sent, the appropriate Smart Alerts dialog is shown to the user.
 - **Send Anyway**: This option terminates the add-in operation and sends the message.
@@ -164,7 +164,7 @@ If the **prompt user** send mode option is implemented, the following options ar
 
 :::image type="content" source="../images/outlook-item-switch-prompt-user.png" alt-text="The dialog shown when a user navigates away from a message being processed by a Smart Alerts add-in that implements the prompt user send mode option.":::
 
-If the **soft block** or **block** send mode option is implemented, only the **Wait** and **Save as Draft** options are shown.
+If the [soft block](#soft-block) or [block](#block) send mode option is implemented, only the **Wait** and **Save as Draft** options are shown.
 
 :::image type="content" source="../images/outlook-item-switch-block.png" alt-text="The dialog shown when a user navigates away from a message being processed by a Smart Alerts add-in that implements the soft block or block send mode option.":::
 
