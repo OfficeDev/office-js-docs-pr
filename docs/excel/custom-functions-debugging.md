@@ -97,7 +97,7 @@ There are several build tasks available.
 
 You can use the following tasks to start debugging on desktop or online.
 
-- `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in. If the "start:desktop" script is not present in the "scripts" section of the project's package.json file, then run `npm run start` instead.
+- `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in. If the "start:desktop" script isn't present in the "scripts" section of the project's package.json file, then run `npm run start` instead.
 - `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint): Starts Excel on the web and sideloads your add-in.
 
   [!include[Mac command line note](../includes/mac-command-line.md)]
