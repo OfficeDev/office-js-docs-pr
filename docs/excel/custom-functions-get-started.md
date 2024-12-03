@@ -1,13 +1,13 @@
 ---
-description: Get started with Excel custom functions for Office Add-ins.
-title: Get started with custom functions in Excel
-ms.date: 10/18/2024
+description: Tips and best practices for Excel custom functions in your Office Add-ins.
+title: Best practices for custom functions in Excel
+ms.date: 12/02/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
 ---
 
-# Get started with custom functions in Excel
+# Best practices for custom functions in Excel
 
 This article includes tips, best practices, and Office Add-ins ecosystem information for new custom functions add-in developers.
 
@@ -20,8 +20,6 @@ The following diagram illustrates the interaction between a custom function and 
 The **custom functions add-in** defines the logic for your functions and how they interact with Excel and Office JavaScript APIs. To learn how to create a custom functions add-in, see the [custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
 
 An **external service** is optional. It can give your add-in capabilities like importing data from outside the workbook. The custom functions add-in specifies how external data is incorporated into the workbook. To learn more, see [Receive and handle data with custom functions](custom-functions-web-reqs.md).
-
-To develop a custom functions add-in with high performance, it’s important to ensure that these three components operate in harmony.
 
 ## Optimize custom functions recalculation efficiency
 
@@ -62,7 +60,9 @@ A custom function can accept another custom function as an argument, ensuring th
 
 ### Excel calculation mode
 
-Excel has three calculation modes: Automatic, Automatic Except Tables, and Manual. For a description of these calculation modes, see [Excel Recalculation](/office/client-developer/excel/excel-recalculation). The most frequently used calculation mode for custom functions add-ins is manual calculation mode. Set the calculation mode for your add-in with the [Excel.CalculationMode enum](/javascript/api/excel/excel.calculationmode) based on your scenario. Note that automatic calculation mode may trigger recalculation often and reduce the efficiency of your add-in.
+Excel has three calculation modes: Automatic, Automatic Except Tables, and Manual. Refer to the [Excel Recalculation](/office/client-developer/excel/excel-recalculation) article to determine which calculation mode best fits your custom function design.
+
+Set the calculation mode for your add-in with the [Excel.CalculationMode enum](/javascript/api/excel/excel.calculationmode) based on your scenario. Note that automatic calculation mode may trigger recalculation often and reduce the efficiency of your add-in.
 
 ### Volatile function limitations
 
@@ -84,9 +84,9 @@ Another way to return multiple results is to use multiple functions and return a
 
 [Data types](custom-functions-data-types-concepts.md) are the best way to handle complex data structures in custom functions add-ins. Data types support [Excel errors](custom-functions-errors.md) and [formatted number values](custom-functions-data-types-concepts.md#output-a-formatted-number-value). Data types also allow for designing [entity value cards](excel-data-types-entity-card.md), extending Excel data beyond the 2-dimensional grid.
 
-## Improve the user experience of remote data calls
+## Improve the user experience of calls to external services
 
-Custom functions can fetch data from remote locations beyond the workbook, such as the web or a server. For more information about fetching remote data, see [Receive and handle data with custom functions](custom-functions-web-reqs.md). To maintain efficiency when making remote data calls, consider batching external calls, minimizing roundtrip duration for each call, and including messages in your add-in to communicate delays to your end user.
+Custom functions can fetch data from remote locations beyond the workbook, such as the web or a server. For more information about fetching data from an external service, see [Receive and handle data with custom functions](custom-functions-web-reqs.md). To maintain efficiency when calling external services, consider batching external calls, minimizing roundtrip duration for each call, and including messages in your add-in to communicate delays to your end user.
 
 ### Batch custom function remote calls
 
@@ -101,9 +101,11 @@ Remote service connections can have a large impact on custom function performanc
 
 ### Improve user-perceived performance through add-in UX
 
-If a delay while calling a remote service is inevitable, consider providing messages through the add-in task pane to explain the delay to your end users. This information helps manage their expectations. The following image shows an example.
+While a custom function is calling an external service, the cell with the custom function displays the **#BUSY!** error. If a delay while calling an external service is inevitable, consider providing messages through the add-in task pane to explain the delay to your end users. This information helps manage their expectations. The following image shows an example.
 
 :::image type="content" source="../images/custom-functions-delay-example.png" alt-text="The delay message says 'It may take some time as we are getting the data ready for you'.":::
+
+For more information about how to share data between a custom function and a task pane, see [Share data and events between Excel custom functions and the task pane](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
 
 ## See also
 
