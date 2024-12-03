@@ -34,9 +34,9 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
 
     :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The options in New Project dropdown menu. The last option is called 'Office Add-in'.":::
 
-1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Taskpane**.
+1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Task pane**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The option 'Taskpane' is selected.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The option 'Task pane' is selected.":::
 
 1. If you're making an Outlook add-in, the toolkit shows a **Programming Language** dropdown menu. Select either **TypeScript** or **JavaScript**. (For Excel, PowerPoint, and Word add-ins, a TypeScript project is always created.)
 1. If you're making an Outlook add-in, the toolkit shows a **Framework** dropdown menu. Select **Default** or **React**. (For Excel, PowerPoint, and Word add-ins, a default project is always created.)
