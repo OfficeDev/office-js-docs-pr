@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 11/21/2024
+ms.date: 10/08/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -140,34 +140,33 @@ If the Smart Alerts add-in implements the **prompt user** option, it doesn't pro
 
 When a user navigates away from the message they're sending (for example, to read a message in their inbox), the behavior of a Smart Alerts add-in differs between Outlook clients. Select the tab for the Outlook client on which the add-in is running.
 
-# [Web/Windows](#tab/web)
+# [Web/New Outlook on Windows](#tab/web)
 
-> [!NOTE]
-> In classic Outlook on Windows, the behavior described in this section applies to Version 2402 (Build 17310.10000) and later.
+In Outlook on the web or in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder. The user is then alerted that they must resend the message from the **Drafts** folder and remain on the message until the add-in completes processing it.
+
+:::image type="content" source="../images/outlook-smart-alerts-item-switch-dialog-web.png" alt-text="The dialog shown to the user in Outlook on the web or new Outlook on Windows when they navigate away from a message after selecting Send.":::
+
+# [Windows (classic)](#tab/windows)
+
+#### Message composed in a window
+
+Starting in Version 2402 (Build 17310.10000), if a message is being composed in a separate window, such as a new message, and a user navigates away from it after they select **Send**, the Smart Alerts add-in will continue to process the message in the background. If additional actions are needed before the message can be sent, the appropriate Smart Alerts dialog is shown to the user (see [Available send mode options](#available-send-mode-options)).
 
 #### Message composed in the Reading Pane
 
-If a reply, forward, or existing draft is being composed in the Outlook Reading Pane, and a user navigates away from it after they select **Send**, an item-switch dialog with options is shown to the user. The options available depend on the [send mode option](#available-send-mode-options) implemented by the add-in.
+Starting in Version 2402 (Build 17310.10000), if a reply, forward, or existing draft is being composed in the Outlook Reading Pane, and a user navigates away from it after they select **Send**, a dialog with options is shown to the user. The options available depend on the [send mode option](#available-send-mode-options) implemented by the add-in.
 
-If the [prompt user](#prompt-user) send mode option is implemented, the following options are shown.
+If the **prompt user** send mode option is implemented, the following options are shown.
 
-- **Wait**: This option terminates the Smart Alerts add-in currently running, opens the message being composed in a new window, then runs the add-in again to process the message. If the user navigates away from the newly opened window during processing, the add-in will continue to process the message in the background. If additional actions are needed before a message can be sent, the appropriate Smart Alerts dialog is shown to the user.
+- **Wait**: This option opens the message being composed in a new window, so that the Smart Alerts add-in can continue to process it. If the user navigates away from the newly opened window during processing, the add-in will continue to process the message in the background (to learn more, see [Message composed in a window](#message-composed-in-a-window)). If additional actions are needed before a message can be sent, the appropriate Smart Alerts dialog is shown to the user.
 - **Send Anyway**: This option terminates the add-in operation and sends the message.
-
-    > [!IMPORTANT]
-    > In Outlook on the web and new Outlook on Windows, the **Send Anyway** option may not appear in the item-switch dialog even if the add-in currently running implements the **prompt user** send mode option. This is because the **Send Anyway** option is shown only if all installed Smart Alerts add-ins implement the **prompt user** send mode option. Otherwise, only the **Wait** and **Save as Draft** options are shown. This helps provide a more secure experience since multiple Smart Alerts add-ins can launch in any order (for more information on this behavior, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations)).
-
 - **Save as Draft**: This option terminates the add-in and send operations and saves a draft of the message to the mailbox's **Drafts** folder.
 
 :::image type="content" source="../images/outlook-item-switch-prompt-user.png" alt-text="The dialog shown when a user navigates away from a message being processed by a Smart Alerts add-in that implements the prompt user send mode option.":::
 
-If the [soft block](#soft-block) or [block](#block) send mode option is implemented, only the **Wait** and **Save as Draft** options are shown.
+If the **soft block** or **block** send mode option is implemented, only the **Wait** and **Save as Draft** options are shown.
 
 :::image type="content" source="../images/outlook-item-switch-block.png" alt-text="The dialog shown when a user navigates away from a message being processed by a Smart Alerts add-in that implements the soft block or block send mode option.":::
-
-#### Message composed in a window
-
-If a message is being composed in a separate window, such as a new message, and a user navigates away from it after they select **Send**, the Smart Alerts add-in will continue to process the message in the background. If additional actions are needed before the message can be sent, the appropriate Smart Alerts dialog is shown to the user (see [Available send mode options](#available-send-mode-options)).
 
 # [Mac](#tab/mac)
 
