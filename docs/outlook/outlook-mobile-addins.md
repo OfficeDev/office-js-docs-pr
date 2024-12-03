@@ -77,7 +77,7 @@ Here are examples of scenarios that make sense in Outlook mobile.
 
 To test an add-in on Outlook mobile, first [sideload an add-in](sideload-outlook-add-ins-for-testing.md) using a Microsoft 365 or Outlook.com account in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) or classic), or on Mac. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load in Outlook mobile.
 
-After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets accessibility guidelines for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
+After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets [accessibility guidelines](../design/accessibility-guidelines.md) for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
 
 Troubleshooting on mobile can be hard since you may not have the tools you're used to. However, one option for troubleshooting on iOS is to use Fiddler (check out [this tutorial on using it with an iOS device](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
 
