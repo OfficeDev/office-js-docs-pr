@@ -31,6 +31,9 @@ A custom function can accept another custom function as an argument, ensuring th
 
 #### Option 1: Less nesting
 
+> [!NOTE]
+> This is the recommended approach. It minimizes the number of nested functions and is more efficient than **Option 2**.
+
 ```js
     /**
     * Returns the sum of input numbers.
@@ -47,6 +50,9 @@ A custom function can accept another custom function as an argument, ensuring th
 ```
 
 #### Option 2: More nesting
+
+> [!NOTE]
+> This approach is not recommended. **Option 1** and **Option 2** produce similar outputs, but **Option 1** is more efficient.
 
 ```js
     /**
