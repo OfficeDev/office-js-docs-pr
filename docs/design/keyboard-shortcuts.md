@@ -23,7 +23,7 @@ Keyboard shortcuts are currently only supported in the following platforms and b
 - Office on the web
 
     > [!NOTE]
-    > The keyboard shortcut feature is currently being rolled out to Word on the web. If you test the feature in Word on the web at this time, the shortcuts may not work if they're activated from within the add-in's task pane. We recommend to periodically check [Keyboard Shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)to find out when the feature is fully supported.
+    > The keyboard shortcut feature is currently being rolled out to Word on the web. If you test the feature in Word on the web at this time, the shortcuts may not work if they're activated from within the add-in's task pane. We recommend to periodically check [Keyboard Shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) to find out when the feature is fully supported.
 - Office on Windows
   - **Excel**: Version 2102 (Build 13801.20632) and later
   - **Word**: Version 2408 (Build 17928.20114) and later
