@@ -165,7 +165,7 @@ If you submit an issue, please include the following information.
 - Version of msal-browser.
 - Logs from msal-browser.
 
-## Developer troubleshooting questions
+## Developer questions
 
 ### How do I get more debug information from MSAL and NAA?
 
@@ -197,6 +197,24 @@ const msalConfig = {
   }
 };
 ```
+
+### How do I validate the ID token or authenticate the user?
+
+Using Exchange tokens, you could validate the ID token and use it to authenticate the user to various resources. For more information, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md). However MSAL with Entra ID tokens does not use this approach.
+
+When you request a token through MSAL, it always returns three tokens.
+
+|Token          |Purpose  |Scopes  |
+|---------------|---------|---------|
+|ID token | Provides information about the user to the client (task pane). | `profile` and `openid` |
+|Refresh token  | Refreshes the ID and access tokens when they expire.     | `offline_access`       |
+|Access token   | Authenticates the user for specific scopes to a resource, such as Microsoft Graph. | Any resource scopes, such as `user.read`. |
+
+Because MSAL always returns these tokens, it will request the `profile`, `openid`, and `offline_access` as default scopes even if your token request doesn't include them. However, you must have at least one resource scope, such as `user.read` so that you get an access token. If not the request can fail. There isn't any way to use MSAL to only get an ID token. You always get all three tokens.
+
+Passing the ID token, or any of its claims, such as `oid` over a network call to a service is a security anti-pattern. The token is intended only for the client (task pane) and there is not way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [https://learn.microsoft.com/en-us/entra/identity-platform/id-token-claims-reference](/entra/identity-platform/id-token-claims-reference)
+
+It's very important that you always request an access token to your own services. The access token also includes the same ID claims, so you don't need to pass the ID token. Instead create a custom scope for your service. For more information about app registration settings for your own services, see [Protected web API: App registration](/entra/identity-platform/scenario-protected-web-api-app-registration). When your service receives the access token, it can validate it, and use ID claims from inside the access token.
 
 ## Related content
 
