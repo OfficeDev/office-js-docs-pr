@@ -200,7 +200,7 @@ const msalConfig = {
 
 ### How do I validate the ID token or authenticate the user?
 
-Using Exchange tokens, you could validate the ID token and use it to authenticate the user to various resources. For more information, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md). However MSAL with Entra ID tokens does not use this approach.
+Using Exchange tokens, you could validate the ID token and use it to authorize the user to access your own resources. For more information, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md). However MSAL with Entra ID tokens does not use this approach.
 
 When you request a token through MSAL, it always returns three tokens.
 
