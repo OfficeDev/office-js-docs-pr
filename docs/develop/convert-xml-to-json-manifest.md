@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 04/12/2024
+ms.date: 12/12/2024
 ms.localizationpriority: medium
 ---
 
@@ -164,9 +164,15 @@ Once you have the unified manifest created, there are two ways to create the zip
 1. In the root of the project, open a command prompt or bash shell and run the following commands.
 
     ```command&nbsp;line
-    npm install -g @microsoft/teamsfx-cli
+    npm install -g @microsoft/teamsapp-cli
 
-    teamsfx m365 sideloading --file-path <relative-path-to-zip-file>
+    teamsapp install --file-path <relative-path-to-zip-file>
+    ``` 
+
+1. When you use the Teams Toolkit CLI to start an add-in, *always stop the session with the following command*. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in. Replace the "{GUID of the add-in}" with the GUID in the "id" property of the unified manifest.
+
+    ```command&nbsp;line
+    teamsapp uninstall -manifest-id {GUID of the add-in}
     ``` 
 
 
