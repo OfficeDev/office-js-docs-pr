@@ -94,7 +94,7 @@ Some Office.js APIs that change or alter the UI aren't allowed from event-based 
 | API | Methods |
 | --- | --- |
 | `Office.devicePermission` | <ul><li>`requestPermissionsAsync`</li></ul> |
-| `Office.context.auth`\* | <ul><li>`getAccessToken`</li></ul><li>`getAccessTokenAsync`</li></ul> |
+| `Office.context.auth`\* | <ul><li>`getAccessToken`</li><li>`getAccessTokenAsync`</li></ul> |
 | `Office.context.mailbox` | <ul><li>`displayAppointmentForm`</li><li>`displayMessageForm`</li><li>`displayNewAppointmentForm`</li><li>`displayNewMessageForm`</li></ul> |
 | `Office.context.mailbox.item` | <ul><li>`close`</li></ul> |
 | `Office.context.ui` | <ul><li>`displayDialogAsync`</li><li>`messageParent`</li></ul>|
