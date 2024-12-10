@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 11/26/2024
+ms.date: 12/10/2024
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -104,6 +104,7 @@ Some widely used Outlook add-in publishers have already updated their add-ins as
 - [iEnterprises® - Outlook Connector](https://ienterprises.com/connector/outlook-connector/)
 - [HubStar Connect](https://www.hubstar.com/solutions/connect/)
 - [SalesForce for Outlook](https://appsource.microsoft.com/product/office/wa104379334)
+- [Set-OutlookSignatures Benefactor Circle](https://explicitconsulting.at/open-source/set-outlooksignatures/)
 - [Zoho CRM for Email](https://appsource.microsoft.com/product/office/WA104379468)
 - [Zoho Recruit for Email](https://appsource.microsoft.com/product/office/WA200001485)
 - [Zoho Sign for Outlook](https://appsource.microsoft.com/product/office/WA200002326)
@@ -210,9 +211,9 @@ When you request a token through MSAL, it always returns three tokens.
 |Refresh token  | Refreshes the ID and access tokens when they expire.     | `offline_access`       |
 |Access token   | Authenticates the user for specific scopes to a resource, such as Microsoft Graph. | Any resource scopes, such as `user.read`. |
 
-Because MSAL always returns these tokens, it requests the `profile`, `openid`, and `offline_access` as default scopes even if your token request doesn't include them. However, you must have at least one resource scope, such as `user.read` so that you get an access token. If not, the request can fail. There isn't any way to use MSAL to only get an ID token. You always get all three tokens.
+MSAL always returns these three tokens. It requests the `profile`, `openid`, and `offline_access` as default scopes even if your token request doesn't include them. This ensures the ID and refresh tokesn are requested. However, you must include at least one resource scope, such as `user.read` so that you get an access token. If not, the request can fail.
 
-Passing the ID token, or any of its claims, such as `oid` over a network call to a service is a security anti-pattern. The token is intended only for the client (task pane) and there is no way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [https://learn.microsoft.com/en-us/entra/identity-platform/id-token-claims-reference](/entra/identity-platform/id-token-claims-reference).
+Passing the ID token over a network call to enable or authorize access to a service is a security anti-pattern. The token is intended only for the client (task pane) and there is no way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [https://learn.microsoft.com/en-us/entra/identity-platform/id-token-claims-reference](/entra/identity-platform/id-token-claims-reference).
 
 It's very important that you always request an access token to your own services. The access token also includes the same ID claims, so you don't need to pass the ID token. Instead create a custom scope for your service. For more information about app registration settings for your own services, see [Protected web API: App registration](/entra/identity-platform/scenario-protected-web-api-app-registration). When your service receives the access token, it can validate it, and use ID claims from inside the access token.
 
