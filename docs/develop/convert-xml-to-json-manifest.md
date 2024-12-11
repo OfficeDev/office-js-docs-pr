@@ -173,6 +173,4 @@ Once you have the unified manifest created, there are two ways to create the zip
 
     ```command&nbsp;line
     teamsapp uninstall -manifest-id {GUID of the add-in}
-    ``` 
-
-
+    ```
