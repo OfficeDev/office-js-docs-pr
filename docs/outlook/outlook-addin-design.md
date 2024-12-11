@@ -38,7 +38,7 @@ Try not to take a user out of context to complete an action. A user should easil
 
 We value great branding, and we know it's important to provide users with your unique experience. But we feel the best way to ensure your add-in's success is to build an intuitive experience that subtly incorporates elements of your brand versus displaying persistent or obtrusive brand elements that only distract a user from moving through your system in an unencumbered manner.
 
-A good way to incorporate your brand in a meaningful way is through the use of your brand colors, icons, and voice&mdash;assuming these don't conflict with the preferred platform patterns or accessibility requirements. Strive to keep the focus on content and task completion, not brand attention.
+A good way to incorporate your brand in a meaningful way is through the use of your brand colors, icons, and voice&mdash;assuming these don't conflict with the preferred platform patterns or [accessibility](../design/accessibility-guidelines.md) requirements. Strive to keep the focus on content and task completion, not brand attention.
 
 > [!NOTE]
 > Ads should not be shown within add-ins in Outlook on iOS or on Android.

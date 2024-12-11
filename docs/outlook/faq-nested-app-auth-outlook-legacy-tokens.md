@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 11/07/2024
+ms.date: 12/10/2024
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -19,7 +19,7 @@ Nested app authentication enables single sign-on (SSO) for applications nested i
 
 ### What is the timeline for shutting down legacy Exchange online tokens?
 
-Microsoft begins turning off legacy Exchange online tokens in February 2025. From now until February 2025, existing and new tenants will not be affected.  We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA. See [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on) for more information.
+Microsoft begins turning off legacy Exchange online tokens in February 2025. From now until February 2025, existing and new tenants will not be affected.  We'll provide tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA. See [Can I turn legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on) for more information.
 
 | Date     | Legacy tokens status |
 | -------- | ------------------------------------------------------ |
@@ -34,15 +34,19 @@ The general availability (GA) date for NAA depends on which channel you are usin
 | Date     | NAA General Availability (GA) |
 | -------- | ------------------------------------------------------ |
 | Oct 2024 | NAA is GA in Current Channel. |
-| Nov 2024 | NAA will GA in Monthly Enterprise Channel. |
+| Nov 2024 | NAA is GA in Monthly Enterprise Channel. |
 | Jan 2025 | NAA will GA in Semi-Annual Channel. |
 | Jun 2025 | NAA will GA in Semi-Annual Extended Channel. |
 
 ## Microsoft 365 administrator questions
 
-### Can I turn legacy tokens back on?
+### Can I turn Exchange Online legacy tokens back on?
 
-By mid-November 2024, we'll roll out new tooling via PowerShell for Microsoft 365 administrators to turn legacy Exchange tokens on or off in your tenant. If you find you need to reenable legacy Exchange tokens, you can use the PowerShell cmdlets to do so. The tooling will also report if any add-ins are using legacy tokens over the last 28 days. In June 2025, legacy Exchange Online tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy Exchange Online tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the tool is available in all tenants.
+Yes, there are PowerShell commands you can use to turn legacy tokens on or off. Currently the commands are only intended for use in test tenants and testing Outlook add-ins. Don't use them in production tenants or you'll see side effects. We'll update the commands soon so that they can be used in production tenants as well. We'll update this FAQ with additional information once the commands can be used in production tenants.
+
+For more information on how to turn legacy tokens on or off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+
+In June 2025, legacy tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the tool is available 
 
 ### How does the admin consent flow work?
 
@@ -73,9 +77,9 @@ If the add-in is deployed from Microsoft AppSource, most likely you'll be prompt
 
 ### Which add-ins in my organization are impacted?
 
-We'll provide tooling for administrators that reports the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. We'll provide more information in this FAQ when the tooling is ready. For more information, see [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on).
+We published a list of all Outlook add-ins published to the Microsoft store that use legacy tokens as of October 2024. For more information on how to use the list and build a report of Outlook add-ins that are potentially using legacy tokens, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids). Also we're working on report tooling to make tracking add-ins using legacy tokens easier. We hope to have the report tooling available in early 2025.
 
-Add-ins may use the legacy Exchange tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs.
+Add-ins may use the legacy tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs.
 
 - `makeEwsRequestAsync`
 - `getUserIdentityTokenAsync`
@@ -92,6 +96,22 @@ Once the admin or a user consents, it will be listed in the Microsoft Entra admi
 1. On the **App registrations** page, select **All applications**.
 1. Now you can search for any app registration by name or ID.
 
+### Is there a list of publishers that have updated their add-ins?
+
+Some widely used Outlook add-in publishers have already updated their add-ins as listed below.
+
+- [Clickup for Outlook](https://appsource.microsoft.com/product/office/WA104382026)
+- [iEnterprises® - Outlook Connector](https://ienterprises.com/connector/outlook-connector/)
+- [HubStar Connect](https://www.hubstar.com/solutions/connect/)
+- [SalesForce for Outlook](https://appsource.microsoft.com/product/office/wa104379334)
+- [Set-OutlookSignatures Benefactor Circle](https://explicitconsulting.at/open-source/set-outlooksignatures/)
+- [Zoho CRM for Email](https://appsource.microsoft.com/product/office/WA104379468)
+- [Zoho Recruit for Email](https://appsource.microsoft.com/product/office/WA200001485)
+- [Zoho Sign for Outlook](https://appsource.microsoft.com/product/office/WA200002326)
+- [Invoice and Time Tracking - Zoho Invoice](https://appsource.microsoft.com/product/office/WA104381067)
+
+If the publisher updated their manifest, and the add-in is deployed through the Microsoft store, you'll be prompted as an administrator to upgrade and deploy the updates. If the publisher updated their manifest, and the add-in is deployed through central deployment, you'll need to deploy the new manifest as an administrator. In some cases the publisher may have an admin consent URI you need to use to consent to new scopes for the add-in. Reach out to publishers if you need more information about updating an add-in.
+
 ## Outlook add-in migration FAQ
 
 ### Why is Microsoft making Outlook add-ins migrate?
@@ -103,8 +123,6 @@ Switching to Microsoft Graph using Entra ID tokens is a big improvement in secur
 No. Outlook add-ins don't have to use NAA, although NAA offers the best authentication experience for users and the best security posture for organizations. If add-ins aren't using legacy Exchange tokens, they won't be affected by the deprecation of Exchange tokens. Add-ins using MSAL.js or other SSO methods that rely on Entra ID will continue to work.
 
 ### How do I know if my Outlook add-in relies on legacy tokens?
-
-We'll provide tooling for administrators that reports the app ID of any add-in that used legacy Exchange online tokens in the last 28 days. We'll provide more information when the tooling is ready in this FAQ. See [Can I turn legacy tokens back on?](#can-i-turn-legacy-tokens-back-on) for more information.
 
 To find out whether your add-in uses legacy Exchange user identity tokens and callback tokens, search your code for calls to the following APIs.
 
@@ -148,13 +166,7 @@ If you submit an issue, please include the following information.
 - Version of msal-browser.
 - Logs from msal-browser.
 
-## Developer troubleshooting questions
-
-### NAA is not providing SSO and keeps prompting users to sign in
-
-This can occur when NAA is not available in the Outlook client. If on Windows, check that you are using either the Beta Channel, or Current Channel (Preview). You need to join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join/windows) to switch to these channels.
-A good way to check if NAA is available is to check the requirement set using the following code snippet.
-`Office.context.requirements.isSetSupported("NestedAppAuth")`
+## Developer questions
 
 ### How do I get more debug information from MSAL and NAA?
 
@@ -186,6 +198,24 @@ const msalConfig = {
   }
 };
 ```
+
+### How do I validate the ID token or authenticate the user?
+
+Using Exchange tokens, you can validate the ID token and use it to authorize the user to access your own resources. For more information, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md). However, MSAL with Entra ID tokens does not use this approach.
+
+When you request a token through MSAL, it always returns three tokens.
+
+|Token          |Purpose  |Scopes  |
+|---------------|---------|---------|
+|ID token | Provides information about the user to the client (task pane). | `profile` and `openid` |
+|Refresh token  | Refreshes the ID and access tokens when they expire.     | `offline_access`       |
+|Access token   | Authenticates the user for specific scopes to a resource, such as Microsoft Graph. | Any resource scopes, such as `user.read`. |
+
+MSAL always returns these three tokens. It requests the `profile`, `openid`, and `offline_access` as default scopes even if your token request doesn't include them. This ensures the ID and refresh tokens are requested. However, you must include at least one resource scope, such as `user.read` so that you get an access token. If not, the request can fail.
+
+Passing the ID token over a network call to enable or authorize access to a service is a security anti-pattern. The token is intended only for the client (task pane) and there is no way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [https://learn.microsoft.com/en-us/entra/identity-platform/id-token-claims-reference](/entra/identity-platform/id-token-claims-reference).
+
+It's very important that you always request an access token to your own services. The access token also includes the same ID claims, so you don't need to pass the ID token. Instead create a custom scope for your service. For more information about app registration settings for your own services, see [Protected web API: App registration](/entra/identity-platform/scenario-protected-web-api-app-registration). When your service receives the access token, it can validate it, and use ID claims from inside the access token.
 
 ## Related content
 
