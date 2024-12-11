@@ -211,7 +211,7 @@ When you request a token through MSAL, it always returns three tokens.
 |Refresh token  | Refreshes the ID and access tokens when they expire.     | `offline_access`       |
 |Access token   | Authenticates the user for specific scopes to a resource, such as Microsoft Graph. | Any resource scopes, such as `user.read`. |
 
-MSAL always returns these three tokens. It requests the `profile`, `openid`, and `offline_access` as default scopes even if your token request doesn't include them. This ensures the ID and refresh tokesn are requested. However, you must include at least one resource scope, such as `user.read` so that you get an access token. If not, the request can fail.
+MSAL always returns these three tokens. It requests the `profile`, `openid`, and `offline_access` as default scopes even if your token request doesn't include them. This ensures the ID and refresh tokens are requested. However, you must include at least one resource scope, such as `user.read` so that you get an access token. If not, the request can fail.
 
 Passing the ID token over a network call to enable or authorize access to a service is a security anti-pattern. The token is intended only for the client (task pane) and there is no way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [https://learn.microsoft.com/en-us/entra/identity-platform/id-token-claims-reference](/entra/identity-platform/id-token-claims-reference).
 
