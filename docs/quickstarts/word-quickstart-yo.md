@@ -19,7 +19,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 Click the following button to create an add-in project using the Office Add-ins Development Kit for Visual Studio Code. A page that contains the project decription will open in Visual Studio Code.
 
 > [!div class="nextstepaction"]
-> [Create an add-in in Visual Studio Code](vscode://msoffice.microsoft-office-add-in-debugger/open-specific-sample?sample-id=Excel-HelloWorld-TaskPane-JS)
+> [Create an add-in in Visual Studio Code](vscode://msoffice.microsoft-office-add-in-debugger/open-specific-sample?sample-id=Word-HelloWorld-TaskPane-JS)
 
 In the prompted page, select **Create** to create the add-in project. In the **Workspace folder** dialog that opens, select the folder where you want to create the project. 
 
