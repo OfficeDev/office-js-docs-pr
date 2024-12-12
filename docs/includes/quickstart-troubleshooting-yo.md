@@ -1,0 +1,3 @@
+[!include[The common troubleshooting section for all quick starts](../includes/quickstart-troubleshooting-common.md)]
+
+- The automatic `npm install` step Yo Office performs may fail. If you see errors when trying to run `npm start`, navigate to the newly created project folder in a command prompt and manually run `npm install`. For more information about Yo Office, see [Create Office Add-in projects using the Yeoman Generator](../develop/yeoman-generator-overview.md).

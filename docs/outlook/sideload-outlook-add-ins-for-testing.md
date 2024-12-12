@@ -20,14 +20,14 @@ The process to sideload an add-in that uses the unified app manifest for Microso
 - For add-in projects created using the [Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode), use one of the following options.
   - [Sideload in Visual Studio Code with Teams Toolkit](../develop/convert-xml-to-json-manifest.md#sideload-with-the-teams-toolkit)
   - [Sideload in Visual Studio Code with a system prompt, bash shell, or terminal](../develop/convert-xml-to-json-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal)
-- For add-in projects created using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), in a command prompt, navigate to the root of your project. Then, run `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes before it opens Outlook desktop.
+- For add-in projects created using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), in a command prompt, navigate to the root of your project. Then, if there's a "start:desktop" script, run `npm run start:desktop`; otherwise, run `npm run start`. The project builds and a Node dev-server window opens. This process may take a couple of minutes before it opens Outlook desktop.
 - For NodeJS and npm projects that weren't created with the Yeoman generator, use one of the following options.
   - [Sideload with the Office-Addin-Debugging tool](../develop/convert-xml-to-json-manifest.md#sideload-with-the-office-addin-debugging-tool)
   - [Sideload with the Teams Toolkit CLI (command-line interface)](../develop/convert-xml-to-json-manifest.md#sideload-with-the-teams-toolkit-cli-command-line-interface)
 
-## Sideload an add-in that uses an XML manifest
+## Sideload an add-in that uses an add-in only manifest
 
-An Outlook add-in that uses an XML manifest can be sideloaded automatically through the command line or manually through the **Add-Ins for Outlook** dialog.
+An Outlook add-in that uses an add-in only manifest can be sideloaded automatically through the command line or manually through the **Add-Ins for Outlook** dialog.
 
 ### Sideload automatically
 
@@ -47,7 +47,7 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
 
 ### Sideload manually
 
-Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins that use the XML manifest are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac.
+Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins that use the add-in only manifest are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac.
 
 1. In your preferred browser, go to <https://aka.ms/olksideload>. Outlook on the web opens, then the **Add-Ins for Outlook** dialog appears after a few seconds.
 
@@ -90,9 +90,11 @@ To learn how to access a sideloaded add-in in your Outlook client, see [Use add-
 
 ## Remove a sideloaded add-in
 
-On all versions of Outlook, the key to removing a sideloaded add-in is the **Add-Ins for Outlook** dialog, which lists your installed add-ins. To access the dialog on your Outlook client, use the steps listed for [manual sideloading](#sideload-manually) in the previous section of this article.
+If you ran the `npm start` command and your add-in was automatically sideloaded, then run the command `npm stop` when you're ready to stop the dev server and uninstall your add-in. If you ran `npm run start`, then run the command `npm run stop` instead.
 
-To remove a sideloaded add-in from Outlook, in the **Add-Ins for Outlook** dialog, navigate to the **Custom Addins** section. Choose the ellipsis (`...`) for the add-in, then choose **Remove**.
+Otherwise, on all versions of Outlook, the key to removing a sideloaded add-in is the **Add-Ins for Outlook** dialog, which lists your installed add-ins. To access the dialog on your Outlook client, use the steps listed for [manual sideloading](#sideload-manually) in the previous section of this article.
+
+To manually remove a sideloaded add-in from Outlook, in the **Add-Ins for Outlook** dialog, navigate to the **Custom Addins** section. Choose the ellipsis (`...`) for the add-in, then choose **Remove**.
 
 ## See also
 

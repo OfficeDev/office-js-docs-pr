@@ -1,7 +1,7 @@
 ---
 title: Stage an Office Add-in on Microsoft Azure with Visual Studio
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application using Visual Studio.
-ms.date: 09/19/2024
+ms.date: 09/24/2024
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,10 @@ The simplest Office Add-in is made up of an manifest file and an HTML page. The 
 This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/test-debug-non-local-server.md) for testing in an Office client application using Visual Studio. For information about publishing an Office Add-in that you created using Visual Studio Code to Azure, see [Publish an add-in using Visual Studio Code and Azure](publish-add-in-vs-code.md).
 
 > [!IMPORTANT]
-> The process described in this article doesn't apply to Outlook Add-ins or to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). Add-ins created using Teams Toolkit use the unified manifest. For information about publishing an add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
+> The process described in this article doesn't apply to Outlook Add-ins or to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). 
+> 
+> - For instructions about staging add-ins for Outlook on Azure with Visual Studio, see [Stage an Outlook Add-in on Microsoft Azure with Visual Studio](stage-outlook-add-in-azure.md).
+> - Add-ins created using Teams Toolkit use the unified manifest. For information about publishing an add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
 
 ## Prerequisites
 
@@ -51,7 +54,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 1. Start Word and create a document.
 
     > [!NOTE]
-    > Although this example uses Word, you can use any Office application that supports Office Add-ins such as Excel, Outlook, PowerPoint, or Project.
+    > Although this example uses Word, you can use any Office application that supports Office Add-ins such as Excel, PowerPoint, or Project.
 
 1. Choose **File** > **Options**.
 

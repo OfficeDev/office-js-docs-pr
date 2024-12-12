@@ -16,7 +16,7 @@ In this article, you'll walk through the process of building an Outlook task pan
 > The unified manifest is supported on Outlook for Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Outlook on the web, and Outlook on mobile platforms. We're working to support it in Outlook on Mac and in other Office applications.
 
 > [!TIP]
-> If you want to build an Outlook add-in using the add-in only manifest, see [Build your first Outlook add-in](outlook-quickstart.md).
+> If you want to build an Outlook add-in using the add-in only manifest, see [Build your first Outlook add-in](outlook-quickstart-yo.md).
 
 ## Create the add-in
 
@@ -45,10 +45,6 @@ You can create an Office Add-in with the unified manifest by using the [Yeoman g
      ![The prompts and answers for the Yeoman generator with unified manifest and TypeScript options chosen.](../images/yo-office-outlook-json-manifest-typescript.png)
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
-
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 1. Navigate to the root folder of the web application project.
 
@@ -120,7 +116,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to copy the message's subject to the task pane.
 
-1. End the debugging session with the following command:
+1. End the debugging session with the following command.
 
     ```command&nbsp;line
     npm stop
@@ -246,7 +242,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 
     The phrase "Hello World" will be inserted at the cursor.
 
-1. End the debugging session with the following command:
+1. End the debugging session with the following command.
 
     ```command&nbsp;line
     npm stop

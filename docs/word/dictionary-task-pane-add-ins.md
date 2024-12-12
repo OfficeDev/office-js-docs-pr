@@ -1,7 +1,7 @@
 ---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
-ms.date: 06/13/2023
+ms.date: 10/03/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -57,7 +57,7 @@ Next, create a Word add-in project in Visual Studio.
 
 [!include[Visual Studio instructions to create Word solution](../includes/vs-word-instructions.md)]
 
-To learn more about the projects in a Word add-in solution, see the [quick start](/office/dev/add-ins/quickstarts/word-quickstart?tabs=visualstudio#explore-the-visual-studio-solution).
+To learn more about the projects in a Word add-in solution, see the [quick start](../quickstarts/word-quickstart-vs.md#explore-the-visual-studio-solution).
 
 ## Create a dictionary XML web service
 
@@ -512,7 +512,7 @@ In the add-in's web application project in Visual Studio, you can replace the co
 
     <!--Required library includes.-->
     <script type="text/javascript" src="https://ajax.microsoft.com/ajax/4.0/1/MicrosoftAjax.js"></script>
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
 
     <!--Optional library includes.-->
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.js"></script>

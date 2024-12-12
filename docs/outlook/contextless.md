@@ -17,7 +17,7 @@ With a simple manifest configuration, you can create Outlook add-ins for the Mes
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) in which you create an Outlook add-in with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) in which you create an Outlook add-in with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 To turn on this feature in a preexisting add-in project, see [Configure the manifest](#configure-the-manifest).
 
@@ -210,7 +210,7 @@ To activate your add-in with the Reading Pane turned off or without a message se
 
 1. From a terminal, run the following code in the root directory of your project. This starts the local web server and sideloads your add-in.
 
-    ```command line
+    ```command&nbsp;line
     npm start
     ```
 
@@ -225,6 +225,8 @@ To activate your add-in with the Reading Pane turned off or without a message se
 1. Select **Show Taskpane** from the ribbon.
 
 1. Explore and test the suggestions listed in the task pane.
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Support for the item multi-select and pinnable task pane features
 

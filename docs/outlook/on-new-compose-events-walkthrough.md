@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 04/12/2024
+ms.date: 10/08/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ The following sections teach you how to develop an add-in that handles the `OnNe
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -26,6 +26,23 @@ To configure the manifest, select the tab for the type of manifest you're using.
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
+
+1. Navigate to the "authorization.permissions.resourceSpecific" array. In the array object, replace the value of the "name" property with "MailboxItem.ReadWrite.User". This is needed by the add-in to be able to set the subject of the mail item.
+
+    ```json
+    ...
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "MailboxItem.ReadWrite.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    ...
+    ```
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
 
@@ -224,7 +241,7 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 > [!TIP]
 >
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement event handling
 
@@ -263,11 +280,9 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
         });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
-      Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
     ```
 
 1. Save your changes.
@@ -331,6 +346,8 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 1. In classic Outlook on Windows, create a new message.
 
     ![A message window in classic Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Next steps
 

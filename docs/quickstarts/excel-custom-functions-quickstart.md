@@ -1,7 +1,7 @@
 ---
 title: Custom functions quick start
 description: Developing custom functions in Excel quick start guide.
-ms.date: 12/04/2023
+ms.date: 08/22/2024
 ms.service: excel
 ms.localizationpriority: high
 ---
@@ -52,11 +52,7 @@ To test your add-in in Excel on the web, run the following command. When you run
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
-To test your add-in in Excel on Windows or Mac, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
-
-```command&nbsp;line
-npm run start:desktop
-```
+The command to test your add-in in Excel on Windows or Mac depends on when the project was created. If there's a "start:desktop" script in the "scripts" section of the package.json file, then run `npm run start:desktop`; otherwise, run `npm run start`. The local web server will start and Excel will open with your add-in loaded.
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -85,11 +81,11 @@ Congratulations, you've successfully created a custom function in an Excel add-i
 > [!div class="nextstepaction"]
 > [Excel custom functions add-in tutorial](../tutorials/excel-tutorial-create-custom-functions.md#create-a-custom-function-that-requests-data-from-the-web)
 
-[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting.md)]
+[!include[The common troubleshooting section for all quickstarts](../includes/quickstart-troubleshooting-yo.md)]
 
-You may encounter issues if you run the quick start multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start`.
+- You may encounter issues if you run the quick start multiple times. If the Office cache already has an instance of a function with the same name, your add-in gets an error when it sideloads. You can prevent this by [clearing the Office cache](../testing/clear-cache.md) before running `npm run start` and making sure to run `npm stop` before restarting the add-in.
 
-:::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function with the same name already exists'.":::
+  :::image type="content" source="../images/custom-function-already-exists-error.png" alt-text="An error message in Excel titled 'Error installing functions'. It contains the text 'This add-in wasn't installed because a custom function with the same name already exists'.":::
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: Install the latest version of Office
 description: Information about how to opt in to getting the latest builds of Office.
-ms.date: 05/05/2023
+ms.date: 09/24/2024
 ms.localizationpriority: medium
 ---
 
@@ -11,8 +11,8 @@ New developer features, including those still in preview, are delivered first to
 
 ## Opt in to getting the latest builds of Office
 
-- If you're a Microsoft 365 Family, Personal, or University subscriber, see [Be a Microsoft 365 Insider](https://insider.microsoft365.com).
-- If you're a Microsoft 365 Apps for business customer, see [Microsoft 365 Insider ​for Business](https://insider.microsoft365.com/business).
+- If you're a Microsoft 365 Family, Personal, or University subscriber, see [Be a Microsoft 365 Insider](https://aka.ms/MSFT365InsiderHandbook).
+- If you're a Microsoft 365 Apps for business customer, see [Microsoft 365 Insider ​for Business](/microsoft-365-apps/insider/).
 - If you're running Office on a Mac:
   - Start an Office application.
   - Select **Check for Updates** on the Help menu.
@@ -25,18 +25,8 @@ New developer features, including those still in preview, are delivered first to
 1. Create a new file named **configuration.xml** and add the following XML.
 
     ```xml
-    <!-- Office 365 client configuration file sample. To be used for Office 365 ProPlus apps, 
-     Office 365 Business apps, Project Pro for Office 365 and Visio Pro for Office 365. 
-
-     For detailed information regarding configuration options visit: http://aka.ms/ODT. 
-     To use the configuration file be sure to remove the comments
-
-     The following sample allows you to download and install the 32 bit version of the Office 365 ProPlus apps 
-     and Visio Pro for Office 365 directly from the Office CDN using the First Release Branch
-     settings  -->
-
     <Configuration>
-      <Add OfficeClientEdition="32" Branch="FirstReleaseCurrent">
+      <Add OfficeClientEdition="32" Branch="CurrentPreview">
         <Product ID="O365ProPlusRetail">
           <Language ID="en-us" />
         </Product>
@@ -44,18 +34,12 @@ New developer features, including those still in preview, are delivered first to
 
       <Updates Enabled="TRUE" /> 
       <Display Level="None" AcceptEULA="TRUE" />  
-      <Logging Level="Standard" Path="%temp%" /> 
-
-      <!--  <Updates Enabled="TRUE" Branch="Current" /> -->
-
-      <!--  <Display Level="None" AcceptEULA="TRUE" />  -->
-
-      <!--  <Property Name="AUTOACTIVATE" Value="1" />  -->
-
+     
     </Configuration>
     ```
 
 1. Run the following command as an administrator.
+
     ```command&nbsp;line
     setup.exe /configure configuration.xml
     ```
@@ -63,9 +47,9 @@ New developer features, including those still in preview, are delivered first to
 > [!NOTE]
 > The command might take a long time to run without indicating progress.
 
-When the installation process finishes, you will have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under Office Updates, you'll see the (Office Insiders) label above the version number.
+When the installation process finishes, you'll have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under the About section, you'll see the version and build number, along with Current Channel (Preview). The Microsoft 365 Insider section is displayed or hidden for business customers depending on their company's settings.
 
-![Product information, including the version number, with the Office Insiders label.](../images/office-insiders-label.png)
+![Product information, including the version number, build, and channel.](../images/microsoft-365-insider.png)
 
 ## Minimum Office builds for Office JavaScript API requirement sets
 
