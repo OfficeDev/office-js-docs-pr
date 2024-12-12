@@ -1,7 +1,7 @@
 ---
 title: Build your first Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and the Yo Office tool.
-ms.date: 08/20/2024
+ms.date: 12/12/2024
 ms.service: excel
 ms.localizationpriority: high
 ---
