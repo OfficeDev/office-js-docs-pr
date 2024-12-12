@@ -160,4 +160,3 @@ Once you have the unified manifest created, there are two ways to create the zip
 ## Next steps
 
 Consider whether to maintain both the old and new versions of the add-in. See [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins.md).
-

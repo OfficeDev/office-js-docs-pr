@@ -22,7 +22,7 @@ In this tutorial, you will:
 > - Implement a task pane that inserts content into the body of a message
 
 > [!TIP]
-> If you want a completed version of this tutorial (using the add-in only manifest), head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
+> If you want a completed version of this tutorial (using the add-in only manifest), visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
 
 ## Prerequisites
 
@@ -129,8 +129,6 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
     ---
 
     After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 1. Navigate to the root directory of the project.
 
@@ -526,7 +524,7 @@ Let's start by creating the UI for the dialog.
       <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-      <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+      <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
     
       <!-- Template styles -->
       <link href="dialog.css" rel="stylesheet" type="text/css" />
@@ -1215,7 +1213,7 @@ This add-in's **Insert gist** button opens a task pane and displays the user's g
         <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
     
        <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-        <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+        <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
     
         <!-- Template styles -->
         <link href="taskpane.css" rel="stylesheet" type="text/css" />

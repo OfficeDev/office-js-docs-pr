@@ -18,11 +18,11 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 - A Mac running OS X v10.10 "Yosemite" or later with [Office on Mac](https://www.microsoft.com/microsoft-365/buy/compare-all-microsoft-365-products) installed.
 
-- Word on Mac version 15.18 (160109).
+- Word on Mac Version 15.18 (160109).
 
-- Excel on Mac version 15.19 (160206).
+- Excel on Mac Version 15.19 (160206).
 
-- PowerPoint on Mac version 15.24 (160614).
+- PowerPoint on Mac Version 15.24 (160614).
 
 - The manifest .xml file for the add-in you want to test.
 

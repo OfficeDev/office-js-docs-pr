@@ -17,9 +17,9 @@ Sideload your Outlook add-in for testing without having to first put it in an ad
 
 The process to sideload an add-in that uses the unified app manifest for Microsoft 365 varies depending on the tool you used to create your add-in project. For more information, see [Sideload Office Add-ins that use the unified manifest for Microsoft 365](../testing/sideload-add-in-with-unified-manifest.md).
 
-## Sideload an add-in that uses an XML manifest
+## Sideload an add-in that uses an add-in only manifest
 
-An Outlook add-in that uses an XML manifest can be sideloaded automatically through the command line or manually through the **Add-Ins for Outlook** dialog.
+An Outlook add-in that uses an add-in only manifest can be sideloaded automatically through the command line or manually through the **Add-Ins for Outlook** dialog.
 
 ### Sideload automatically
 
@@ -39,7 +39,7 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
 
 ### Sideload manually
 
-Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins that use the XML manifest are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac.
+Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins that use the add-in only manifest are manually sideloaded through the **Add-Ins for Outlook** dialog. The following steps apply to Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac.
 
 1. In your preferred browser, go to <https://aka.ms/olksideload>. Outlook on the web opens, then the **Add-Ins for Outlook** dialog appears after a few seconds.
 

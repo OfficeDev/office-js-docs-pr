@@ -6,7 +6,7 @@ ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 
-# Custom functions debugging
+# Custom functions debugging in a non-shared runtime
 
 This article discusses debugging only for custom functions that **don't use a [shared runtime](../testing/runtimes.md#shared-runtime)**. To debug custom functions add-ins that use a shared runtime, see [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md).
 
@@ -70,9 +70,7 @@ If you aren't using VS Code, you can use the command line (such as bash, or Powe
 1. From the command line run `npm run watch` to watch for and rebuild when code changes occur.
 1. Open a second command line window (the first one will be blocked while running the watch.)
 
-1. If you want to start your add-in in the desktop version of Excel, run the following command.
-  
-    `npm run start:desktop`
+1. If you want to start your add-in in the desktop version of Excel and the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`.
   
     Or if you prefer to start your add-in in Excel on the web run the following command.
   
@@ -99,7 +97,7 @@ There are several build tasks available.
 
 You can use the following tasks to start debugging on desktop or online.
 
-- `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in.
+- `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in. If the "start:desktop" script isn't present in the "scripts" section of the project's package.json file, then run `npm run start` instead.
 - `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint): Starts Excel on the web and sideloads your add-in.
 
   [!include[Mac command line note](../includes/mac-command-line.md)]

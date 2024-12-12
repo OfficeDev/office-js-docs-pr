@@ -39,8 +39,6 @@ In this tutorial, you will:
 
     The Yeoman generator will create the project files and install supporting Node components.
 
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 1. Navigate to the root folder of the project.
 
     ```command&nbsp;line
@@ -60,11 +58,7 @@ In this tutorial, you will:
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
-To test your add-in in Excel on Windows or Mac, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
-
-```command&nbsp;line
-npm run start:desktop
-```
+The command to test your add-in in Excel on Windows or Mac depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run the command `npm run start`. The local web server will start and Excel will open with your add-in loaded.
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 

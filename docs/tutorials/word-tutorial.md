@@ -22,7 +22,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 > [!TIP]
 > If you've already completed the [Build your first Word task pane add-in](../quickstarts/word-quickstart-yo.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Insert a range of text](#insert-a-range-of-text) section to start this tutorial.
 >
-> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/word-tutorial).
+> If you want a completed version of this tutorial, visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/word-tutorial).
 
 ## Prerequisites
 
@@ -40,8 +40,6 @@ In this tutorial, you'll create a Word task pane add-in that:
 ![The previous prompts and answers given to the Yeoman generator in a command line interface.](../images/yo-office-word.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## Insert a range of text
 
