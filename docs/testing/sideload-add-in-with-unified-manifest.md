@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins that use the unified manifest for Microsoft 365
 description: Test your Office Add-in on Windows by sideloading.
-ms.date: 09/19/2024
+ms.date: 12/13/2024
 ms.localizationpriority: medium
 ---
 
@@ -35,7 +35,7 @@ Use the process described in [Sideload with a system prompt, bash shell, or term
 
 1. First, *make sure the Office desktop application that you want to sideload into is closed.*
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
-1. Run the command `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then the Office host application (Excel, Outlook, PowerPoint, or Word) desktop opens.
+1. The command to sideload the add-in depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then the Office host application (Excel, Outlook, PowerPoint, or Word) desktop opens.
 1. You can now work with your add-in.
 1. When you're done working with your add-in, make sure to run the command `npm run stop`. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
 
@@ -68,14 +68,13 @@ There are two tools you can use to sideload.
 1. In the root of the project, open a command prompt or bash shell and run the following commands.
 
     ```command&nbsp;line
-    npm install -g @microsoft/teamsfx-cli
+    npm install -g @microsoft/teamsapp-cli
+
+    teamsapp install --file-path <relative-path-to-zip-file>
+    ``` 
+
+1. When you use the Teams Toolkit CLI to start an add-in, *always stop the session with the following command*. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in. Replace the "{GUID of the add-in}" with the GUID in the "id" property of the unified manifest.
+
+    ```command&nbsp;line
+    teamsapp uninstall -manifest-id {GUID of the add-in}
     ```
-    ```command&nbsp;line
-    teamsfx m365 sideloading --file-path <relative-path-to-zip-file>
-    ``` 
-
-1. When you finish a session working with the add-in, *always stop the session with the following command*, where `<GUID>` is replaced with the value of the "id" property of the manifest. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
-
-    ```command&nbsp;line
-    teamsfx m365 unacquire --manifest-id <GUID>
-    ``` 
