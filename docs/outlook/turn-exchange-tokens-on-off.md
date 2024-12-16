@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 11/26/2024
+ms.date: 12/12/2024
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -12,9 +12,6 @@ ms.date: 11/26/2024
 Legacy Exchange Online tokens are deprecated and will begin being turned off across Microsoft 365 tenants in February 2025. If you are a developer migrating your Outlook add-in from legacy tokens to Entra ID tokens and nested app authentication, you'll need to test updates to your add-in. You can use the Exchange Online PowerShell cmdlets to turn legacy tokens on or off. Turn off legacy tokens in a test tenant to confirm that your updated Outlook add-in is working correctly.
 
 For more information about deprecation of legacy Exchange Online tokens, see [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
-
-> [!WARNING]
-> Only use the commands in this article on a test tenant for testing your Outlook add-ins. Don't use these commands on a production tenant. They can affect some essential Outlook services that can cause issues for users.
 
 ## Connect to Exchange Online PowerShell
 
@@ -41,9 +38,15 @@ To turn legacy tokens on, run the following command. It can take up to 24 hours 
 
 `Set-AuthenticationPolicy –AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
 
-You’ll only be able to turn on tokens back on until June 2025 when all legacy  tokens in all tenants will be forced off. For more information, see the [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
+You’ll only be able to turn tokens back on until June 2025 when all legacy tokens in all tenants will be forced off. For more information, see the [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
+
+> [!NOTE]
+> It might take up to 24 hours for the change to take effect across your entire organization. Legacy Exchange tokens issued to Outlook add-ins before token blocking was implemented in your organization will remain valid until they expire.
 
 ## See also
 
 - [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ)
 - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md)
+- [Set-AuthenticationPolicy](/powershell/module/exchange/set-authenticationpolicy)
+- [Remove-AuthenticationPolicy](/powershell/module/exchange/remove-authenticationpolicy)
+- [Get-AuthenticationPolicy](/powershell/module/exchange/get-authenticationpolicy)
