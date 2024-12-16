@@ -47,6 +47,6 @@ You’ll only be able to turn tokens back on until June 2025 when all legacy tok
 
 - [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ)
 - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md)
-- [Set-AuthenticationPolicy](/powershell/module/exchange/set-authenticationpolicy?view=exchange-ps)
-- [Remove-AuthenticationPolicy](/powershell/module/exchange/remove-authenticationpolicy?view=exchange-ps)
-- [Get-AuthenticationPolicy](/powershell/module/exchange/get-authenticationpolicy?view=exchange-ps)
+- [Set-AuthenticationPolicy](/powershell/module/exchange/set-authenticationpolicy)
+- [Remove-AuthenticationPolicy](/powershell/module/exchange/remove-authenticationpolicy)
+- [Get-AuthenticationPolicy](/powershell/module/exchange/get-authenticationpolicy)
