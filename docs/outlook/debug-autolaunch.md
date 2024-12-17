@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based or spam-reporting Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
-ms.date: 10/24/2024
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -78,6 +78,10 @@ You can debug your add-in using the Microsoft Edge Inspect tool or Visual Studio
     > It may take some time for your add-in to appear in the **Remote Target** section. You may need to refresh the page for the add-in to appear.
 
 1. In the **Sources** tab, go to **file://** > **Users/[User]/AppData/Microsoft/Office/16.0/Wef/{[Outlook profile GUID]}/[Outlook mail account encoding]/Javascript/[Add-in ID]\_[Add-in Version]_[locale]** > **bundle.js**.
+
+    > [!TIP]
+    > There's no direct method to determine the Outlook profile GUID or mail account encoding used in the **bundle.js** file path. If you're debugging multiple add-ins simultaneously, the easiest way to access an add-in's **bundle.js** file from the DevTools window is to locate the add-in's ID in the file path.
+
 1. In the **bundle.js** file, place breakpoints where you want the debugger to stop.
 1. [Run the debugger](#run-the-debugger).
 
