@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 08/22/2024
+ms.date: 12/12/2024
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -124,7 +124,7 @@ You can create Office add-in projects in Visual Studio Code with either the Team
 
 Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Teams Toolkit as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 
-#### Install the Office Add-ins Development Kit extension (preview)
+#### Install the Office Add-ins Development Kit extension 
 
 The Office Add-ins Development Kit extension for Visual Studio Code lets you create and run new add-ins directly from the IDE. For more information about the extension, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](../develop/development-kit-overview.md).
 
