@@ -19,9 +19,9 @@ To publish updates there are three things to consider.
 
 ## Deploy updates to your add-in code
 
-Once you've updated and tested your add-in code, you'll need to deploy those updates to your web server. Follow your own update process (such as staging and production). Once deployed, all users of your add-in will see the changes and start using the updated add-in code. There is no need for admins or users to take any actions to see the updates.
+Once you've updated and tested your add-in code, you'll need to deploy them to your web server. Follow your own update process (such as staging and production). Once deployed, all users of your add-in will see the changes and start using the updated add-in code. There is no need for admins or users to take any actions to see the updates.
 
-Any Microsoft Graph scopes used by your add-in require consent from either the user or the admin of a tenant. If the admin doesn't consent, then when your add-in requests an access token through MSAL, the user will be prompted to provide consent. In general the best user experience is to avoid prompting users for consent at all. You can have the admin consent for the entire tenant.
+Any Microsoft Graph scopes used by your add-in require consent from either the user or the admin of a tenant. If the admin doesn't consent, the user will be prompted to provide consent when your add-in requests an access token through MSAL. For the best user experience, avoid prompting users for consent at all. Instead, ask your admin to provide consent for the entire tenant.
 
 There are two ways to get admin consent; use an admin consent URI, or use the unified manifest.
 
@@ -48,11 +48,11 @@ https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=c6c1
 ```
 
 > [!IMPORTANT]
-> The redirect page must be added to the list of SPA redirects in your app registration along with the `brk-multihub` redirect or the admin consent URI will fail.
+> The redirect page must be added to the list of single-page application (SPA) redirects in your app registration along with the `brk-multihub` redirect or the admin consent URI will fail.
 
 ## Get admin consent via the unified manifest
 
-You can also get admin consent as an automatic part of the deployment workflow when your add-in is deployed. To do this you add the `webApplicationInfo` property to your unified manifest. Then the admin deploys the updated manifest, either through central deployment, or from an update through Microsoft AppSource. When the admin deploys the updated manifest they are automatically prompted to consent to the scopes required by the add-in. If they don't consent, the updated add-in will not deploy.
+You can also get admin consent as an automatic part of the deployment workflow when your add-in is deployed. To do this, add the `webApplicationInfo` property to your unified manifest. Then the admin deploys the updated manifest, either through central deployment, or from an update through Microsoft AppSource. When the admin deploys the updated manifest, they are automatically prompted to consent to the scopes required by the add-in. If they don't consent, the updated add-in will not deploy.
 
 ### Add Graph scopes to app registration
 
@@ -101,7 +101,7 @@ To get admin consent as part of the deployment workflow, add the `webApplication
 
 If you deployed your add-in through Microsoft AppSource, you'll need to submit your updated unified manifest for approval. For more information, see [Microsoft AppSource submission FAQ](/partner-center/marketplace-offers/appsource-submission-faq).
 
-If you deployed you add-in by providing the manifest to admins for central deployment, you'll need to provide admins with an updated [app package](/microsoftteams/platform/concepts/build-and-test/apps-package) that contains the updated manifest.
+If you deployed your add-in by providing the manifest to admins for central deployment, you'll need to provide admins with an updated [app package](/microsoftteams/platform/concepts/build-and-test/apps-package) that contains the updated manifest.
 
 ## Related content
 
