@@ -491,14 +491,14 @@ To implement this in your add-in, you must specify the [NeverShowAgainOption](/j
 
 Note the following behaviors when implementing this option in your add-in.
 
-- The "Don't show me this message again" option appears in the preprocessing dialog only if there are no user input options configured, such as reporting options or a text box. If your manifest also specifies user input options, they will be shown in the dialog instead.
+- The "Don't show me this message again" option appears in the preprocessing dialog only if there are no user input options configured, such as reporting options or a text box. If your manifest also specifies user input options, they'll be shown in the dialog instead.
 - The option to suppress the preprocessing dialog is applied on a per-machine and per-platform basis.
 - After suppressing the preprocessing dialog, if a user reports a message and has the [Reading Pane](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0) turned on, a progress notification is shown on the message while it's being processed. If the Reading Pane is turned off, no progress notification is shown.
 
     :::image type="content" source="../images/spam-reporting-progress-notification.png" alt-text="The progress notification shown after reporting a message while the Reading Pane is turned on.":::
 
     > [!NOTE]
-    > If you implement the "Don't show me this message again" option without configuring a post-processing dialog, a dialog with the following generic message is shown to the user after processing: "Thank you for reporting this message". It's good practice to configure a post-processing dialog to appear after a reported message is processed.
+    > If you implement the "Don't show me this message again" option without configuring a post-processing dialog, a dialog with the following generic message is shown to the user after processing: "Thank you for reporting this message." It's good practice to configure a post-processing dialog to appear after a reported message is processed.
 
 ### Reenable the preprocessing dialog
 
@@ -526,7 +526,7 @@ To configure a task pane to open after a message is reported, you must specify t
 If you need to pass information to the task pane, specify any JSON data in the [contextData](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-spamreportingeventcompletedoptions-contextdata-member) option of the `event.completed` call. To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getinitializationcontextasync-member(1)) in the JavaScript implementation of your task pane.
 
 > [!IMPORTANT]
-> To ensure that the task pane of the spam-reporting opens and receives context data after a message is reported, you must set the `moveItemTo` option of the `event.completed` call to `Office.MailboxEnums.MoveSpamItemTo.NoMove`.
+> To ensure that the task pane of the spam-reporting add-in opens and receives context data after a message is reported, you must set the `moveItemTo` option of the `event.completed` call to `Office.MailboxEnums.MoveSpamItemTo.NoMove`.
 
 The following code is an example.
 
@@ -539,7 +539,7 @@ The following code is an example.
     });
 ```
 
-If another task pane is open or pinned at the time a message is reported, the task pane is closed and the task pane of the spam-reporting add-in is shown.
+If another task pane is open or pinned at the time a message is reported, the open task pane is closed then the task pane of the spam-reporting add-in is shown.
 
 ## Review feature behavior and limitations
 
