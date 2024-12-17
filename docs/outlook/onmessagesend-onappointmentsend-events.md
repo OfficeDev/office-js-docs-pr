@@ -234,7 +234,7 @@ You can customize the **Don't Send** button in the dialog to open a task pane or
 > [!NOTE]
 > Support to customize the **Don't Send** button was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14).
 
-### Limitations in Outlook on the web and in new Outlook on Windows
+### Limitations in Outlook on the web and new Outlook on Windows
 
 When developing a Smart Alerts add-in for Outlook on the web and new Outlook on Windows, you must be mindful of the following limitations.
 
