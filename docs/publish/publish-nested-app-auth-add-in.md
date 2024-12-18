@@ -4,7 +4,7 @@ description: Learn how to publish updates to an Office Add-in to use Microsoft G
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to 
-ms.date: 12/16/2024
+ms.date: 12/18/2024
 ---
 
 # Publish an add-in that requires admin consent for Microsoft Graph scopes
@@ -38,17 +38,20 @@ https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id={cli
 where:
 
 - `client_id`: The ID of your app registration.
-- `scope`: Each scope (such as Microsoft Graph scopes) that requires admin consent using the space as delimiter.
+- `scope`: Each scope (such as Microsoft Graph scopes) that requires admin consent using the space as delimiter. Because the Microsoft authentication library (MSAL) always requests an ID and refresh token, you should always include the `openid`, `profile`, and `offline_access` scopes. These are requested by default by MSAL even if your add-in does no request them.
 - `redirect_uri`: A redirect page for when consent is completed. The Microsoft identity platform will redirect to this page after an admin consents. The redirect page is sent a success or fail JSON message as specified in [Admin consent on the Microsoft identity platform](/entra/identity-platform/v2-admin-consent). On the page you can indicate the consent status to the admin as well as provide more information or next steps about your add-in.
-
-The following admin URI example shows how to specify the `User.Read` and `Files.Read` scopes and redirect to a page on your web server named `consentRedirect.html`.
-
-```html
-https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=c6c1f32b-5e55-4997-881a-753cc1d563b7&scope=https://graph.microsoft.com/User.Read https://graph.microsoft.com/Files.Read&redirect_uri=https://localhost:3000/consentRedirect.html
-```
 
 > [!IMPORTANT]
 > The redirect page must be added to the list of single-page application (SPA) redirects in your app registration along with the `brk-multihub` redirect or the admin consent URI will fail.
+
+The following admin URI example shows how to specify the `openid`, `profile`, `offline_access`, `user.read` and `files.read` scopes and redirect to a page on your web server named `consentRedirect.html`.
+
+```html
+https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=63e62b68-c5c7-48f9-82bf-8c41d5637b49&scope=offline_access openid profile user.read files.read&redirect_uri=https://localhost:3000/consentRedirect.html
+```
+
+> [!NOTE]
+> In requests to the authorization, token or consent endpoints for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
 
 ## Get admin consent via the unified manifest
 
@@ -86,7 +89,7 @@ When the admin deploys the updated manifest of your add-in, the consent process 
 
     :::image type="content" source="../images/azure-portal-request-api-permissions-add-permissions.png" alt-text="The Request API permissions pane with some permissions selected.":::
 
-### Add the webApplicatoinInfo property
+### Add the webApplicationInfo property
 
 To get admin consent as part of the deployment workflow, add the `webApplicationInfo` property to your unified manifest. Set the `id` property to your app registration ID. Set the `resource` property to the value of your domain. The following example shows the `webApplicationInfo` property for an app registration for contoso.com.
 
@@ -107,5 +110,6 @@ If you deployed your add-in by providing the manifest to admins for central depl
 
 - [Microsoft AppSource submission FAQ](/partner-center/marketplace-offers/appsource-submission-faq)
 - [Admin consent on the Microsoft identity platform](/entra/identity-platform/v2-admin-consent)
+- [Requesting permissions through consent](/entra/identity-platform/consent-types-developer)
 - [webApplicationInfo property](/microsoftteams/platform/resources/schema/manifest-schema)
 - [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://naafaq)
