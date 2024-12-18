@@ -61,7 +61,7 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-report
 
     :::image type="content" source="../images/outlook-event-based-logs.png" alt-text="A sample of Event Viewer's Filter Current Log settings configured to only show Outlook errors with event ID 63 that occurred in the last hour.":::
 
-  - Verify that the **bundle.js** file is downloaded to the following folder in File Explorer. Replace text enclosed in `[]` with your applicable information.
+  - Verify that the **bundle.js** file is downloaded to the following folder in File Explorer. The text enclosed in `[]` represents your applicable Outlook and add-in information.
   
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]

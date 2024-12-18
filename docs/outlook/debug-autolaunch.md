@@ -145,7 +145,7 @@ Configure the debugger in Visual Studio Code. Follow the steps applicable to you
 
 The **bundle.js** file of an add-in contains the JavaScript code of your add-in. It's created when classic Outlook on Windows is opened. When Outlook starts, the **bundle.js** file of each installed add-in is cached in the **Wef** folder of your machine.
 
-1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. Replace text enclosed in `[]` with your applicable Outlook and add-in information.
+1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. The text enclosed in `[]` represents your applicable Outlook and add-in information.
 
     ```text
     %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
