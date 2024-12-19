@@ -23,7 +23,7 @@ Once you've updated and tested your add-in code, you'll need to deploy them to y
 
 Any Microsoft Graph scopes used by your add-in require consent from either the user or the admin of a tenant. If the admin doesn't consent, the user will be prompted to provide consent when your add-in requests an access token through MSAL. For the best user experience, avoid prompting users for consent at all. Instead, ask your admin to provide consent for the entire tenant.
 
-There are two ways to get admin consent; use an admin consent URI, or use the unified manifest.
+There are two ways to get admin consent: use an admin consent URI or use the unified manifest.
 
 ## Get admin consent via admin consent URI
 
@@ -38,7 +38,7 @@ https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id={cli
 where:
 
 - `client_id`: The ID of your app registration.
-- `scope`: Each scope (such as Microsoft Graph scopes) that requires admin consent using the space as delimiter. Because the Microsoft authentication library (MSAL) always requests an ID and refresh token, you should always include the `openid`, `profile`, and `offline_access` scopes. These are requested by default by MSAL even if your add-in does no request them.
+- `scope`: Each scope (such as Microsoft Graph scopes) requires admin consent using the space as delimiter. Because the Microsoft authentication library (MSAL) always requests an ID and refresh token, you should always include the `openid`, `profile`, and `offline_access` scopes. These are requested by default by MSAL even if your add-in does not request them.
 - `redirect_uri`: A redirect page for when consent is completed. The Microsoft identity platform will redirect to this page after an admin consents. The redirect page is sent a success or fail JSON message as specified in [Admin consent on the Microsoft identity platform](/entra/identity-platform/v2-admin-consent). On the page you can indicate the consent status to the admin as well as provide more information or next steps about your add-in.
 
 > [!IMPORTANT]
