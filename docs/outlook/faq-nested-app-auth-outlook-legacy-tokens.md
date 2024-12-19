@@ -102,14 +102,21 @@ Once the admin or a user consents, it will be listed in the Microsoft Entra admi
 
 Some widely used Outlook add-in publishers have already updated their add-ins as listed below.
 
+- [Atlassian Jira Cloud for Outlook](https://marketplace.atlassian.com/apps/1220666/jira-cloud-for-outlook-official?tab=overview&hosting=cloud)
+- [Box for Outlook](https://appsource.microsoft.com/product/office/WA200000015)
 - [Clickup for Outlook](https://appsource.microsoft.com/product/office/WA104382026)
-- [iEnterprises® - Outlook Connector](https://ienterprises.com/connector/outlook-connector/)
+- [iEnterprises® - Outlook Connector](https://ienterprises.com/connector/outlook-connector)
 - [HubStar Connect](https://www.hubstar.com/solutions/connect/)
+- [LawToolBox](https://lawtoolbox.com/lawtoolbox-for-copilot/)
+- [OnePlace Solutions](https://www.oneplacesolutions.com/oneplacemail-sharepoint-app-for-outlook.html)
 - [SalesForce for Outlook](https://appsource.microsoft.com/product/office/wa104379334)
 - [Set-OutlookSignatures Benefactor Circle](https://explicitconsulting.at/open-source/set-outlooksignatures/)
+- [Wrike](https://appsource.microsoft.com/product/office/wa104381120)
 - [Zoho CRM for Email](https://appsource.microsoft.com/product/office/WA104379468)
 - [Zoho Recruit for Email](https://appsource.microsoft.com/product/office/WA200001485)
+- [Zoho Projects for Email](https://appsource.microsoft.com/product/office/WA200006712)
 - [Zoho Sign for Outlook](https://appsource.microsoft.com/product/office/WA200002326)
+- [Zoho WorkDrive for Email](https://appsource.microsoft.com/product/office/WA200006673)
 - [Invoice and Time Tracking - Zoho Invoice](https://appsource.microsoft.com/product/office/WA104381067)
 
 If the publisher updated their manifest, and the add-in is deployed through the Microsoft store, you'll be prompted as an administrator to upgrade and deploy the updates. If the publisher updated their manifest, and the add-in is deployed through central deployment, you'll need to deploy the new manifest as an administrator. In some cases the publisher may have an admin consent URI you need to use to consent to new scopes for the add-in. Reach out to publishers if you need more information about updating an add-in.
