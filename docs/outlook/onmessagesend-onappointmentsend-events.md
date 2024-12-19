@@ -234,14 +234,10 @@ You can customize the **Don't Send** button in the dialog to open a task pane or
 > [!NOTE]
 > Support to customize the **Don't Send** button was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14).
 
-### Limitations in Outlook on the web and new Outlook on Windows
-
-When developing a Smart Alerts add-in for Outlook on the web and new Outlook on Windows, you must be mindful of the following limitations.
+In Outlook on the web and in new Outlook on Windows:
 
 - The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
 - When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
-- When an attendee responds to a meeting invite using the **Accept**, **Decline**, **Tentative**, or **Follow** option, the `OnMessageSend` event doesn't occur. This behavior applies even if the attendee includes a personalized message in their response.
-- When the organizer cancels a meeting and includes a cancellation message, the `OnMessageSend` event doesn't occur.
 
 ### Limitations to formatting the dialog message using Markdown
 
