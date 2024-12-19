@@ -401,6 +401,8 @@ items:
       href: publish/publish-office-add-ins-to-appsource.md
     - name: AppSource validation policies
       href: /legal/marketplace/certification-policies
+    - name: Publish an add-in that requires admin consent
+      href: publish/publish-nested-app-auth-add-in.md
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Guidance for deploying on government clouds
