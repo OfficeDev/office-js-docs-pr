@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 09/12/2024
+ms.date: 12/19/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -25,12 +25,15 @@ The following table identifies which Outlook clients support the integrated spam
 
 | Client | Status |
 | ---- | ---- |
-| **Outlook on the web** | Supported |
-| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Supported |
+| **Outlook on the web** | Supported\* |
+| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Supported\* |
 | **classic Outlook on Windows**<br>Version 2404 (Build 17530.15000) | Supported |
 | **Outlook on Mac**<br>Version 16.81 (23121700) or later | Preview (see [Preview the integrated spam-reporting feature in Outlook on Mac](#preview-the-integrated-spam-reporting-feature-in-outlook-on-mac)) |
 | **Outlook on Android** | Not available |
 | **Outlook on iOS** | Not available |
+
+> [!NOTE]
+> \* In Outlook on the web and new Outlook on Windows, the integrated spam-reporting feature isn't supported in Microsoft 365 consumer accounts.
 
 ## Preview the integrated spam-reporting feature in Outlook on Mac
 
