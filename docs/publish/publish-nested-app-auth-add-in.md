@@ -51,7 +51,7 @@ https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=63e6
 ```
 
 > [!NOTE]
-> In requests to the authorization, token or consent endpoints for the Microsoft identity platform, if the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
+> If the resource identifier is omitted in the scope parameter, the resource is assumed to be Microsoft Graph. For example, `User.Read` is equivalent to `https://graph.microsoft.com/User.Read`.
 
 ## Get admin consent via the unified manifest
 
