@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 12/10/2024
+ms.date: 12/18/2024
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -38,15 +38,17 @@ The general availability (GA) date for NAA depends on which channel you are usin
 | Jan 2025 | NAA will GA in Semi-Annual Channel. |
 | Jun 2025 | NAA will GA in Semi-Annual Extended Channel. |
 
+### Are COM Add-ins affected by the deprecation of legacy Exchange Online tokens?
+
+It's very unlikely any COM add-ins are affected by the deprecation of legacy Exchange Online tokens. Outlook web add-ins are primarily affected because they can use Office.js APIs that rely on Exchange tokens. For more information, see[How do i know if my outlook add in relies on legacy tokens](#how-do-i-know-if-my-outlook-add-in-relies-on-legacy-tokens). The Exchange tokens are used to access Exchange Web Services (EWS) or Outlook REST APIs, both of which are also deprecated. If you suspect a COM add-in might be affected, you can test it by using it on a tenant with Exchange tokens turned off. For more information, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+
 ## Microsoft 365 administrator questions
 
 ### Can I turn Exchange Online legacy tokens back on?
 
-Yes, there are PowerShell commands you can use to turn legacy tokens on or off. Currently the commands are only intended for use in test tenants and testing Outlook add-ins. Don't use them in production tenants or you'll see side effects. We'll update the commands soon so that they can be used in production tenants as well. We'll update this FAQ with additional information once the commands can be used in production tenants.
+Yes, there are PowerShell commands you can use to turn legacy tokens on or off in any tenant. For more information on how to turn legacy tokens on or off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md). If you use the commands to enable legacy Exchange Online tokens, they will not be turned off in February 2025. They will remain on until June 2025, or until you use the tooling to turn them off.
 
-For more information on how to turn legacy tokens on or off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
-
-In June 2025, legacy tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the tool is available 
+In June 2025, legacy tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the tool is available.
 
 ### How does the admin consent flow work?
 
