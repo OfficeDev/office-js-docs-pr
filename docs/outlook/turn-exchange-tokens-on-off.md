@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 12/12/2024
+ms.date: 12/18/2024
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -22,7 +22,7 @@ To run the commands you need to connect to Exchange Online PowerShell.
 1. To be sure you are on the latest version of the module, run the command `Update-Module -Name ExchangeOnlineManagement`.
 1. Run the command `Connect-ExchangeOnline`. Sign in with your Microsoft 365 administrator credentials.
 
-## Turn off legacy Exchange Online tokens in a test tenant
+## Turn off legacy Exchange Online tokens
 
 The `Set-AuthenticationPolicy` command controls the issuance of legacy Exchange Online tokens. When issuance is turned off, add-ins can no longer request user identity tokens or callback tokens. Existing tokens already issued will continue to work until they expire. It can take up to 24 hours before all request from Outlook add-ins for legacy Exchange Online tokens are blocked.
 
@@ -32,7 +32,10 @@ To turn legacy tokens off, run the following command.
 
 The command turns off legacy tokens for the entire tenant. If an Outlook add-in requests a legacy token, it won’t be issued a token.
 
-## Turn on legacy Exchange Online tokens in a test tenant
+> [!NOTE]
+> If you've confirmed that your tenant is not using any add-ins that require legacy Exchange Online tokens, we recommend you turn off legacy Exchange Online tokens as a security best practice. For more information on how to determine if you tenant has add-ins using legacy tokens, see the [Nested app authentication and Outlook legacy tokens deprecation FAQ](faq-nested-app-auth-outlook-legacy-tokens.md).
+
+## Turn on legacy Exchange Online tokens
 
 To turn legacy tokens on, run the following command. It can take up to 24 hours before all requests from Outlook add-ins for legacy tokens are allowed.
 

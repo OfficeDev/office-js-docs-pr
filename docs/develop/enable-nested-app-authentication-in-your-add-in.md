@@ -1,7 +1,7 @@
 ---
 title: Enable SSO in an Office Add-in using nested app authentication
 description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 11/22/2024
+ms.date: 12/18/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -45,7 +45,11 @@ To enable NAA, your app registration must include a specific redirect URI to ind
 
 `brk-multihub://your-add-in-domain`
 
-For example if you were testing your add-in on port 3000 on the localhost server, you would use `brk-multihub://localhost:3000` as the redirect value.
+Your domain must include only the origin and not its subpaths. For example:
+
+✔️ brk-multihub://localhost:3000<br>
+✔️ brk-multihub://www.contoso.com<br>
+❌ brk-multihub://www.contoso.com/go
 
 Trusted broker groups are dynamic by design and can be updated in the future to include additional hosts where your add-in may use NAA flows. Currently the brk-multihub group includes Office Word, Excel, PowerPoint, Outlook, and Teams (for when Office is activated inside).
 
