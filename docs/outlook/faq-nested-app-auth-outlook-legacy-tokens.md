@@ -105,7 +105,7 @@ Some widely used Outlook add-in publishers have already updated their add-ins as
 - [Atlassian Jira Cloud for Outlook](https://marketplace.atlassian.com/apps/1220666/jira-cloud-for-outlook-official?tab=overview&hosting=cloud)
 - [Box for Outlook](https://appsource.microsoft.com/en-us/product/office/WA200000015)
 - [Clickup for Outlook](https://appsource.microsoft.com/product/office/WA104382026)
-- [iEnterprises® - Outlook Connector](https://ienterprises.com/connector/outlook-connector/)
+- [iEnterprises® - Outlook Connector](https://ienterprises.com/connector/outlook-connector)
 - [HubStar Connect](https://www.hubstar.com/solutions/connect/)
 - [LawToolBox](https://lawtoolbox.com/lawtoolbox-for-copilot/)
 - [OnePlaceSolutions](https://www.oneplacesolutions.com/oneplacemail-sharepoint-app-for-outlook.html)
