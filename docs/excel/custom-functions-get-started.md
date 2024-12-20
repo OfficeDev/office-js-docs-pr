@@ -27,12 +27,12 @@ In general, custom functions recalculation follows the established pattern of [r
 
 ### Nesting in custom functions
 
-A custom function can accept another custom function as an argument, ensuring that any dependent values are updated during recalculation. The recalculation of the outer custom function depends on the result of the nested function, leading to increased time consumption with each additional nested function. Minimize the number of nested levels in your custom functions to improve recalculation efficiency. The following code snippets demonstrate two approaches for adding values in the workbook that produce similar outputs. **Option 1** doesn't have nested levels, while **Option 2** does have nested levels, so **Option 1** is more efficient.
+A custom function can accept another custom function as an argument, ensuring that any dependent values are updated during recalculation. The recalculation of the outer custom function depends on the result of the nested function, leading to increased time consumption with each additional nested function. Minimize the number of nested levels in your custom functions to improve recalculation efficiency. The following code snippets demonstrate two approaches for adding values in the workbook that produce similar outputs. **Option 1** uses an array to call values as a single parameter, while **Option 2** calls each value as a separate parameter, so **Option 1** is more efficient.
 
 #### Option 1: Increase efficiency with limited nesting
 
 > [!NOTE]
-> This is the recommended approach. It avoids unnecessary nesting and is more efficient than **Option 2**.
+> This is the recommended approach. It uses an array to call value as a single parameter and avoid unnecessary nesting, so it's more efficient than **Option 2**.
 
 ```js
     /**
@@ -52,7 +52,7 @@ A custom function can accept another custom function as an argument, ensuring th
 #### Option 2: More nesting is inefficient
 
 > [!NOTE]
-> This approach is not recommended. **Option 1** and **Option 2** produce similar outputs, but **Option 1** avoids unnecessary nesting and is more efficient.
+> This approach isn't recommended. **Option 1** and **Option 2** produce similar outputs, but **Option 2** uses more parameters and is less efficient.
 
 ```js
     /**
@@ -72,7 +72,7 @@ Set the calculation mode for your add-in with the [Excel.CalculationMode enum](/
 
 ### Volatile function limitations
 
-Custom functions allow you to create your own volatile functions, similar to the `NOW` and `TODAY` functions in Excel. During recalculation, Excel evaluates cells that contain volatile functions and all of their dependent cells. As a result, using many volatile functions may make recalculation slow. Volatile functions should be used sparingly to optimize your custom functions add-in. For additional information, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
+Custom functions allow you to create your own volatile functions, similar to the `NOW` and `TODAY` functions in Excel. During recalculation, Excel evaluates cells that contain volatile functions and all of their dependent cells. As a result, using many volatile functions may make recalculation slow. Limit the number of volatile functions in your add-in to optimize efficiency. For additional information, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
 ## Design approaches to improve efficiency
 
