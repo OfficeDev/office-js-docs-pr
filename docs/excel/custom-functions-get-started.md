@@ -86,9 +86,9 @@ To return multiple results with one function, use a dynamic array. This is usual
 
 :::image type="content" source="../images/custom-functions-dynamic-array.png" alt-text="The output of a dynamic array.":::
 
-To learn more about dynamic arrays in custom functions, see [Return multiple results from your custom function](custom-functions-dynamic-arrays.md).
+Keep in mind that using dynamic arrays becomes less efficient the larger your dataset is, because each recalculation processes more data. To learn more about dynamic arrays in custom functions, see [Return multiple results from your custom function](custom-functions-dynamic-arrays.md).
 
-Another way to return multiple results is to use multiple functions and return a single result for each function. A benefit of using multiple functions is that your end user can decide precisely which formula they want to update and then only trigger recalculation for that formula.
+Another way to return multiple results is to use multiple functions and return a single result for each function. A benefit of using multiple functions is that your end user can decide precisely which formula they want to update and then only trigger recalculation for that formula. This is particularly helpful when relying on external services that may respond slowly.
 
 :::image type="content" source="../images/custom-functions-not-dynamic-array.png" alt-text="The output of multiple functions instead of a dynamic array.":::
 
