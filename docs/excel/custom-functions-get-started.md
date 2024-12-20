@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 This article includes tips, best practices, and Office Add-ins ecosystem information for new custom functions add-in developers.
 
-The following diagram illustrates the interaction between a custom function and the two main components involved in custom function add-ins, Excel and external services.
+The following diagram illustrates the interaction between a custom function and the two main components involved in custom function add-ins: Excel and external services.
 
 :::image type="content" source="../images/custom-functions-add-in-components.png" alt-text="The custom functions add-in communicates with both Excel and an external service, but Excel and the external service don't communicate directly with each other.":::
 
@@ -68,7 +68,7 @@ A custom function can accept another custom function as an argument, ensuring th
 
 Excel has three calculation modes: Automatic, Automatic Except Tables, and Manual. Refer to the [Excel Recalculation](/office/client-developer/excel/excel-recalculation) article to determine which calculation mode best fits your custom function design.
 
-Set the calculation mode for your add-in with the [Excel.CalculationMode enum](/javascript/api/excel/excel.calculationmode) based on your scenario. Note that automatic calculation mode may trigger recalculation often and reduce the efficiency of your add-in.
+Set the calculation mode for your add-in with the [Excel.CalculationMode enum](/javascript/api/excel/excel.calculationmode) based on your scenario. Note that `automatic` calculation mode may trigger recalculation often and reduce the efficiency of your add-in.
 
 ### Volatile function limitations
 
@@ -111,7 +111,7 @@ Remote service connections can have a large impact on custom function performanc
 - Server-heavy processing should be handled efficiently in the remote server to shorten the end-to-end latency for a custom function. For example, have parallel computing designed on the server. If your service is deployed on Azure, consider optimization using [high-performance computing on Azure](/azure/architecture/topics/high-performance-computing).
 - Reduce the number of service calls by optimizing the add-in flow. For example, only send necessary calls to a remote service.
 
-### Improve user-perceived performance through add-in UX
+### Improve user-perceived performance through add-in user experience (UX)
 
 While a custom function is calling an external service, the cell with the custom function displays the **#BUSY!** error. If a delay while calling an external service is inevitable, consider providing messages through the add-in task pane to explain the delay to your end users. This information helps manage their expectations. The following image shows an example.
 
