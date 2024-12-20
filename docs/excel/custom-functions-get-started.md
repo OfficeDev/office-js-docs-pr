@@ -32,7 +32,7 @@ A custom function can accept another custom function as an argument, ensuring th
 #### Option 1: Increase efficiency with limited nesting
 
 > [!NOTE]
-> This is the recommended approach. It uses an array to call value as a single parameter and avoid unnecessary nesting, so it's more efficient than **Option 2**.
+> This is the recommended approach. It uses an array to call values as a single parameter and avoid unnecessary nesting, so it's more efficient than **Option 2**.
 
 ```js
     /**
@@ -118,6 +118,39 @@ While a custom function is calling an external service, the cell with the custom
 :::image type="content" source="../images/custom-functions-delay-example.png" alt-text="The delay message says 'It may take some time as we are getting the data ready for you'.":::
 
 For more information about how to share data between a custom function and a task pane, see [Share data and events between Excel custom functions and the task pane](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
+
+To display a message in the add-in task pane that notifies users of a delay, make the following changes after ensuring that your add-in uses a shared runtime.
+
+1. In **taskpane.js** add a function that calls the notification.
+
+    ```js
+    export function showNotification(message){
+      const label = document.getElementById("item-subject");
+      label.innerHTML = message;
+    }
+    ```
+
+1. In **function.js**, import the `showNotification` function.
+
+    ```js
+    export function showNotification(message){
+      const label = document.getElementById("item-subject");
+      label.innerHTML = message;
+    }
+    ```
+
+1. In **function.js**, call `showNotification` when running the calculation that may include a delay.
+
+    ```js
+    export async function longCalculation(param) {
+      await Office.addin.showAsTaskpane();
+      showNotification("It may take some time as we prepare the data.");
+      // Perform long operation
+      // ...
+      // ...
+      return answer;
+    }
+    ```
 
 ## See also
 
