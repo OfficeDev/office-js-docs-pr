@@ -1,7 +1,7 @@
 ---
 description: Tips and best practices for Excel custom functions in your Office Add-ins.
 title: Best practices for custom functions in Excel
-ms.date: 12/02/2024
+ms.date: 12/20/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -27,12 +27,12 @@ In general, custom functions recalculation follows the established pattern of [r
 
 ### Nesting in custom functions
 
-A custom function can accept another custom function as an argument, ensuring that any dependent values are updated during recalculation. The recalculation of the outer custom function depends on the result of the nested function, leading to increased time consumption with each additional nested function. Minimize the number of nested levels in your custom functions to improve recalculation efficiency. The following code snippets demonstrate two approaches that produce similar outputs. **Option 1** is more likely to reduce the nested levels for end users when adding values in the workbook compared to **Option 2**.
+A custom function can accept another custom function as an argument, ensuring that any dependent values are updated during recalculation. The recalculation of the outer custom function depends on the result of the nested function, leading to increased time consumption with each additional nested function. Minimize the number of nested levels in your custom functions to improve recalculation efficiency. The following code snippets demonstrate two approaches for adding values in the workbook that produce similar outputs. **Option 1** doesn't have nested levels, while **Option 2** does have nested levels, so **Option 1** is more efficient.
 
-#### Option 1: Less nesting
+#### Option 1: Increase efficiency with limited nesting
 
 > [!NOTE]
-> This is the recommended approach. It minimizes the number of nested functions and is more efficient than **Option 2**.
+> This is the recommended approach. It avoids unnecessary nesting and is more efficient than **Option 2**.
 
 ```js
     /**
@@ -49,10 +49,10 @@ A custom function can accept another custom function as an argument, ensuring th
     }
 ```
 
-#### Option 2: More nesting
+#### Option 2: More nesting is inefficient
 
 > [!NOTE]
-> This approach is not recommended. **Option 1** and **Option 2** produce similar outputs, but **Option 1** is more efficient.
+> This approach is not recommended. **Option 1** and **Option 2** produce similar outputs, but **Option 1** avoids unnecessary nesting and is more efficient.
 
 ```js
     /**
@@ -82,9 +82,15 @@ Custom functions add-ins allow for flexible designs, which means that different 
 
 You can return multiple results from your custom function with multiple functions or with one function.
 
-To return multiple results with one function, use a dynamic array. This is usually the recommended approach because dynamic arrays only require updating a single cell to trigger recalculation for all results. To learn more about dynamic arrays in custom functions, see [Return multiple results from your custom function](custom-functions-dynamic-arrays.md).
+To return multiple results with one function, use a dynamic array. This is usually the recommended approach because dynamic arrays only require updating a single cell to trigger recalculation for all results.
+
+:::image type="content" source="../images/custom-functions-dynamic-array.png" alt-text="The output of a dynamic array.":::
+
+To learn more about dynamic arrays in custom functions, see [Return multiple results from your custom function](custom-functions-dynamic-arrays.md).
 
 Another way to return multiple results is to use multiple functions and return a single result for each function. A benefit of using multiple functions is that your end user can decide precisely which formula they want to update and then only trigger recalculation for that formula.
+
+:::image type="content" source="../images/custom-functions-not-dynamic-array.png" alt-text="The output of multiple functions instead of a dynamic array.":::
 
 ### Complex data structures
 
