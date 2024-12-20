@@ -27,7 +27,7 @@ In general, custom functions recalculation follows the established pattern of [r
 
 ### Nesting in custom functions
 
-A custom function can accept another custom function as an argument, ensuring that any dependent values are updated during recalculation. The recalculation of the outer custom function depends on the result of the nested function, leading to increased time consumption with each additional nested function. Minimize the number of nested levels in your custom functions to improve recalculation efficiency. The following code snippets demonstrate two approaches for adding values in the workbook that produce similar outputs. **Option 1** uses an array to call values as a single parameter, while **Option 2** calls each value as a separate parameter, so **Option 1** is more efficient.
+A custom function can accept another custom function as an argument, making the argument a nested custom function. The recalculation of the outer custom function depends on the result of the nested function, leading to increased time consumption with each additional nested function. Minimize the number of nested levels in your custom functions to improve recalculation efficiency. The following code snippets demonstrate two approaches for adding values in the workbook that produce similar outputs. **Option 1** uses an array to call values as a single parameter, while **Option 2** calls each value as a separate parameter, so **Option 1** is more efficient.
 
 #### Option 1: Increase efficiency with limited nesting
 
