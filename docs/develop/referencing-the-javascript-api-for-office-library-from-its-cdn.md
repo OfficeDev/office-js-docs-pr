@@ -1,7 +1,7 @@
 ---
 title: Referencing the Office JavaScript API library
 description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
-ms.date: 10/03/2024
+ms.date: 01/07/2025
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,7 @@ The [Office JavaScript API](../reference/javascript-api-for-office.md) library p
 ```html
 <head>
     ...
-    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 </head>
 ```
 
@@ -23,7 +23,7 @@ This will download and cache the Office JavaScript API files the first time your
 
 ## API versioning and backward compatibility
 
-In the previous HTML snippet, the `/1.1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the Office JavaScript API maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1.
+In the previous HTML snippet, the `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the Office JavaScript API maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1.
 
 If you plan to publish your Office Add-in from AppSource, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
 

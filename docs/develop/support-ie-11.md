@@ -1,7 +1,7 @@
 ---
 title: Support older Microsoft webviews and Office versions
 description: Learn how to support support older Microsoft webviews and Office versions in your add-in.
-ms.date: 04/04/2024
+ms.date: 01/07/2025
 ms.localizationpriority: medium
 ---
 
@@ -70,7 +70,7 @@ This JavaScript should be as early in the add-in startup process as possible. Th
     <title>Contoso Task Pane Add-in</title>
 
     <!-- Office JavaScript API -->
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 </head>
 
 <body>

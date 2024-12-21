@@ -1,7 +1,7 @@
 ---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
-ms.date: 10/03/2024
+ms.date: 01/07/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -512,7 +512,7 @@ In the add-in's web application project in Visual Studio, you can replace the co
 
     <!--Required library includes.-->
     <script type="text/javascript" src="https://ajax.microsoft.com/ajax/4.0/1/MicrosoftAjax.js"></script>
-    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 
     <!--Optional library includes.-->
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.js"></script>
