@@ -1,7 +1,7 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 09/26/2024
+ms.date: 12/16/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -457,7 +457,6 @@ Registering your online-meeting add-in is optional. It only applies if you want 
 >
 > - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows.
 > - Only online-meeting add-ins published to AppSource can be registered. Line-of-business add-ins aren't supported.
-> - The **Join** button relies on the technology used by entity-based contextual Outlook add-ins. As this technology will be retired by the end of June 2024, an alternative implementation of the **Join** button is currently being developed. During the transition to this implementation, the **Join** button may not be visible when using an online meeting add-in. As a workaround, you must select the meeting link from the body of the meeting invitation to join the meeting directly. For more information on the retirement of entity-based contextual add-ins, see [Retirement of entity-based contextual Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/retirement-of-entity-based-contextual-outlook-add-ins/).
 
 1. Create a [new GitHub issue](https://github.com/OfficeDev/office-js/issues/new).
 1. Set the **Title** of the new issue to "Outlook: Register the online-meeting template for my-service", replacing `my-service` with your service name.
