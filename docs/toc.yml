@@ -580,6 +580,9 @@ items:
       - name: Share custom function data with the task pane
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
+    - name: Best practices
+      href: excel/custom-functions-get-started.md
+      displayName: Excel, Custom Functions
     - name: Naming and localization
       href: excel/custom-functions-naming.md
       displayName: Excel, Custom Functions
