@@ -115,7 +115,7 @@ Remote service connections can have a large impact on custom function performanc
 
 While a custom function is calling an external service, the cell with the custom function displays the **#BUSY!** error. If a delay while calling an external service is inevitable, consider providing messages through the add-in task pane to explain the delay to your end users. This information helps manage their expectations. The following image shows an example.
 
-:::image type="content" source="../images/custom-functions-delay-example.png" alt-text="The delay message says 'It may take some time as we are getting the data ready for you'.":::
+:::image type="content" source="../images/custom-functions-delay-example.png" alt-text="The delay message says 'There may be a delay. We're getting the data ready for you'.":::
 
 For more information about how to share data between a custom function and a task pane, see [Share data and events between Excel custom functions and the task pane](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md).
 
