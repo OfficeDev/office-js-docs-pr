@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Best practices for custom functions in Excel
 
-This article includes tips, best practices, and Office Add-ins ecosystem information for new custom functions add-in developers.
+This article includes tips, best practices, and Office Add-ins ecosystem information for new developers of custom functions add-ins.
 
 The following diagram illustrates the interaction between a custom function and the two main components involved in custom function add-ins: Excel and external services.
 
@@ -64,15 +64,15 @@ A custom function can accept another custom function as an argument, making the 
     }
 ```
 
-### Excel calculation mode
+### Excel calculation modes
 
-Excel has three calculation modes: Automatic, Automatic Except Tables, and Manual. Refer to the [Excel Recalculation](/office/client-developer/excel/excel-recalculation) article to determine which calculation mode best fits your custom function design.
+Excel has three calculation modes: Automatic, Automatic Except Tables, and Manual. To determine which calculation mode best fits your custom function design, refer to the [Calculation Modes, Commands, Selective Recalculation, and Data Table](/office/client-developer/excel/excel-recalculation#calculation-modes-commands-selective-recalculation-and-data-tables#calculation-modes-commands-selective-recalculation-and-data-tables) section in the main [Excel Recalculation](/office/client-developer/excel/excel-recalculation) article.
 
 Set the calculation mode for your add-in with the [Excel.CalculationMode enum](/javascript/api/excel/excel.calculationmode) based on your scenario. Note that `automatic` calculation mode may trigger recalculation often and reduce the efficiency of your add-in.
 
 ### Volatile function limitations
 
-Custom functions allow you to create your own volatile functions, similar to the `NOW` and `TODAY` functions in Excel. During recalculation, Excel evaluates cells that contain volatile functions and all of their dependent cells. As a result, using many volatile functions may make recalculation slow. Limit the number of volatile functions in your add-in to optimize efficiency. For additional information, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
+Custom functions allow you to create your own volatile functions, similar to the `NOW` and `TODAY` functions in Excel. During recalculation, Excel evaluates cells that contain volatile functions and all of their dependent cells. As a result, using many volatile functions may slow recalculation time so limit the number of volatile functions in your add-in to optimize efficiency. For additional information, see [Volatile and Non-Volatile Functions](/office/client-developer/excel/excel-recalculation#volatile-and-non-volatile-functions).
 
 ## Design approaches to improve efficiency
 
@@ -155,5 +155,5 @@ To display a message in the add-in task pane that notifies users of a delay, mak
 ## See also
 
 - [Receive and handle data with custom functions](custom-functions-web-reqs.md)
-- [Batching custom function calls for a remote service](custom-functions-batching.md)
-- [Custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Batch custom function calls for a remote service](custom-functions-batching.md)
+- [Create custom functions in Excel tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
