@@ -1,7 +1,7 @@
 ---
 title: Uninstalling add-ins under development
 description: Learn how to uninstall add-ins you are developing.
-ms.topic: uninstall
+ms.topic: install
 ms.date: 12/28/2024
 ms.localizationpriority: medium
 ---
@@ -108,9 +108,9 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
       :::image type="content" source="../images/addinRegistrationWindowsDeveloperSubkeys.png" alt-text="The Windows registry for the key named Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer expanded to show subkeys." border="false":::
 
-   1. Navigate to **Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\WEF\Developer**, where <SID> is the SID of the SID of the user you were signed in with when you sideloaded the add-in, and repeat the preceding two steps.
+   1. Navigate to **Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\WEF\Developer**, where **\<SID\>** is the SID of the SID of the user you were signed in with when you sideloaded the add-in, and repeat the preceding two steps.
 
-   1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**. In the **Name** column, find all the entries that begin with the add-in's ID (a GUID) and delete them. Then navigate to **Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where **<SID>** is the SID of the SID of the user you were signed in with when you sideloaded the add-in, and repeat the process.
+   1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**. In the **Name** column, find all the entries that begin with the add-in's ID (a GUID) and delete them. Then navigate to **Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where **\<SID\>** is the SID of the SID of the user you were signed in with when you sideloaded the add-in, and repeat the process.
 
       :::image type="content" source="../images/addinRegistrationWindows.png" alt-text="The Windows registry for the key named Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where <SID> is the SID of a user." border="false":::
 
@@ -118,7 +118,7 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
    For non-Outlook add-ins the local registration on a Mac is removed when you clear the cache. See [Remove the add-in artifacts](#remove-the-add-in-artifacts).
 
-   For ghost Outlook add-ins, remove the local registration on a Mac by using he **Add-Ins for Outlook** dialog in Outlook. Follow the guidance at [Remove a sideloaded Outlook add-in](/outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+   For ghost Outlook add-ins, remove the local registration on a Mac by using he **Add-Ins for Outlook** dialog in Outlook. Follow the guidance at [Remove a sideloaded Outlook add-in](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ## See also
 
