@@ -1,12 +1,12 @@
 ---
-title: Uninstalling add-ins under development
-description: Learn how to uninstall add-ins you are developing.
+title: Uninstall add-ins under development
+description: Learn how to prevent and uninstall ghost or orphaned add-ins you are developing.
 ms.topic: troubleshooting-problem-resolution
 ms.date: 12/28/2024
 ms.localizationpriority: medium
 ---
 
-# Uninstalling add-ins under development
+# Uninstall add-ins under development
 
 Incompletely removed add-ins under development can leave artifacts, such as custom ribbon buttons or registry entries, on your development computer. In the case of Outlook add-ins, these artifacts can be added to other computers when you sign into Outlook on them with the same ID as you used to develop the add-in. In this article, we call these ghost add-ins. 
 
@@ -19,7 +19,7 @@ When an add-in is sideloaded, several things happen:
 - A web server, usually on localhost, is started to serve the add-ins files (HTML, CSS, JavaScript, etc.).
 - These same files are cached on your development computer.
 - The add-in is registered with the development computer. The registration is done with Registry entries on a Windows computer or with certain files saved to the file system on a Mac.
-- Most tools for sideloading add-ins, also automatically open the Office application that the add-in targets and populate the application with any custom ribbon buttons or context menu items that are defined in the add-in's manifest.
+- Most tools for sideloading add-ins also automatically open the Office application that the add-in targets and populate the application with any custom ribbon buttons or context menu items that are defined in the add-in's manifest.
 - For an Outlook add-in, the add-in's manifest and certain other values about the add-in are registered with the Exchange service.
 
    > [!IMPORTANT]
@@ -33,7 +33,7 @@ When an add-in is sideloaded, several things happen:
 
 To prevent ghost add-ins, end every testing/debugging/sideloading session by using the uninstall (also called unacquire) facility that is provided by the tool that you used to start the session. Doing this reverses the effects in the bullet list earlier in this article.
 
-The following list identifies how to uninstall with Microsoft tools but doesn't describe the procedures or syntax in detail. *Be sure to use the links to get complete instructions.*
+The following list identifies, for each tool, how to uninstall but doesn't describe the procedures or syntax in detail. *Be sure to use the links to get complete instructions.*
 
 > [!NOTE]
 > Some of these tools don't close the Office application that opened automatically. In that case, close the application manually and then use the tool to end the sideloading session. 
@@ -67,14 +67,19 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
    Set-ExecutionPolicy RemoteSigned
    Connect-ExchangeOnline
    ```
-   If you get the error "ActiveX control '8856f961-340a-11d0-a96b-00c04fd705a2' cannot be instantiated because the current thread is not in a single-threaded apartment", just run the command a second time. This is a well-known bug.
+
+      > [!NOTE]
+      > If the `Connect-ExchangeOnline` command returns the error "ActiveX control '8856f961-340a-11d0-a96b-00c04fd705a2' cannot be instantiated because the current thread is not in a single-threaded apartment", just run the command a second time. This is a well-known bug.
+
+1. Run the following command. Answer "Yes" to all confirmation prompts.
 
    ```powershell
    Get-App | Format-Table -Auto DisplayName,AppId
    ```
 
-   A list of the add-ins installed on Outlook displays. Most of them are built-in Microsoft add-ins, but if you have installed add-ins from other companies, they are listed too. Look for your ghost add-in in the list. If you created it with Yo Office or another Microsoft tool, it probably has the name "Contoso Task Pane Add-in". 
+   A list of the add-ins installed on Outlook displays. Most of them are built-in Microsoft add-ins, but if you have installed add-ins from other companies, they are listed too as are any ghost Outlook add-ins. 
 
+1.  Find your ghost add-in in the list. If you created it with Yo Office or another Microsoft tool, it probably has the name "Contoso Task Pane Add-in". 
 1. Copy the App ID (a GUID) of the add-in. You need it for later steps.
 1. Run the command `Remove-App -Identity {{The GUID OF YOUR ADD-IN HERE}}`; for example, `Remove-App -Identity 26ead0cb-10dd-4ba2-86c6-4db111876652`. This command removes the add-in from Exchange.
 1. Continue with the section [Remove the add-in artifacts](#remove-the-add-in-artifacts).
@@ -93,14 +98,14 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 > [!IMPORTANT]
 > Carry out this procedure on all computers on which you ever had the add-in sideloaded.
 
-1. Delete the local registration of the ghost add-in with the following process.
+1. Delete the local registration of the ghost add-in. The process varies depending on the operating system.
 
    **Windows:**
 
    1. Open the **Registry Editor**.
    1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer**. This key lists the add-ins that are currently sideloaded, or were sideloaded in the past and weren't fully uninstalled. The **Data** value for each entry is the path to the add-in's manifest. The **Name** value varies depending on which version of which tool was used to create and sideload the add-in. If Visual Studio was used, the name is typically is also the path to the manifest. For other tools, the name is typically the add-in's ID. When an Office application launches, it reloads all add-ins listed in this key (that support the Office application), although the reloading may have no practical or discernable effect if the add-in's artifacts have been deleted from the cache, or the manifest no longer exists at the path, or the add-in's files aren't being served by a server.
    
-      Find the entry for the ghost add-in and delete it.
+      Find the entry for the ghost add-in and delete it. If it is an Outlook add-in, then you have the ID from [removing the Exchange registration](#remove-the-exchange-registration-of-a-ghost-outlook-add-in). You can also use the path in the **Data** column to find the manifest to help identify the add-in the entry refers to and read the ID from the manifest. If any manifests listed in the **Data** column no longer exist at the specified path, then delete the entries for those manifests.
 
       :::image type="content" source="../images/addinRegistrationWindowsManifestPath.png" alt-text="The Windows registry for the key named Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer." border="false":::
     
@@ -108,9 +113,9 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
       :::image type="content" source="../images/addinRegistrationWindowsDeveloperSubkeys.png" alt-text="The Windows registry for the key named Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer expanded to show subkeys." border="false":::
 
-   1. Navigate to **Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\WEF\Developer**, where **\<SID\>** is the SID of the SID of the user you were signed in with when you sideloaded the add-in, and repeat the preceding two steps.
+   1. Navigate to **Computer\HKEY_USERS\\<SID>\Software\Microsoft\Office\16.0\WEF\Developer**, where **\<SID\>** is the [SID](/windows-server/identity/ad-ds/manage/understand-security-identifiers) of the user you were signed in with when you sideloaded the add-in, and repeat the preceding two steps.
 
-   1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**. In the **Name** column, find all the entries that begin with the add-in's ID (a GUID) and delete them. Then navigate to **Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where **\<SID\>** is the SID of the SID of the user you were signed in with when you sideloaded the add-in, and repeat the process.
+   1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**. In the **Name** column, find all the entries that begin with the add-in's ID (a GUID) and delete them. Then navigate to **Computer\HKEY_USERS\\<SID>\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where **\<SID\>** is the SID of the user you were signed in with when you sideloaded the add-in, and repeat the process.
 
       :::image type="content" source="../images/addinRegistrationWindows.png" alt-text="The Windows registry for the key named Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where <SID> is the SID of a user." border="false":::
 
@@ -118,10 +123,10 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
    For non-Outlook add-ins the local registration on a Mac is removed when you clear the cache. See [Remove the add-in artifacts](#remove-the-add-in-artifacts).
 
-   For ghost Outlook add-ins, remove the local registration on a Mac by using he **Add-Ins for Outlook** dialog in Outlook. Follow the guidance at [Remove a sideloaded Outlook add-in](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+   For ghost Outlook add-ins, remove the local registration on a Mac by using the **Add-Ins for Outlook** dialog in Outlook. Follow the guidance at [Remove a sideloaded Outlook add-in](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ## See also
 
 - [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md)
 - [Clear the Office cache](clear-cache.md)
-- The PowerShell reference for [Install-Module](/powershell/module/powershellget/install-module?view=powershellget-3.x),[Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4), [Connect-ExchangeOnline](/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps), and [Get-App](/powershell/module/exchange/get-app?view=exchange-ps).
+- The PowerShell reference for [Install-Module](/powershell/module/powershellget/install-module?view=powershellget-3.x), [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4), [Connect-ExchangeOnline](/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps), and [Get-App](/powershell/module/exchange/get-app?view=exchange-ps).
