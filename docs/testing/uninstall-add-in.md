@@ -113,11 +113,11 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
       :::image type="content" source="../images/addinRegistrationWindowsDeveloperSubkeys.png" alt-text="The Windows registry for the key named Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer expanded to show subkeys." border="false":::
 
-   1. Navigate to **Computer\HKEY_USERS\\<SID>\Software\Microsoft\Office\16.0\WEF\Developer**, where **\<SID\>** is the [SID](/windows-server/identity/ad-ds/manage/understand-security-identifiers) of the user you were signed in with when you sideloaded the add-in, and repeat the preceding two steps.
+   1. Navigate to **Computer\HKEY_USERS\\{SID}\Software\Microsoft\Office\16.0\WEF\Developer**, where **{SID}** is the [SID](/windows-server/identity/ad-ds/manage/understand-security-identifiers) of the user you were signed in with when you sideloaded the add-in, and repeat the preceding two steps.
 
-   1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**. In the **Name** column, find all the entries that begin with the add-in's ID (a GUID) and delete them. Then navigate to **Computer\HKEY_USERS\\<SID>\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where **\<SID\>** is the SID of the user you were signed in with when you sideloaded the add-in, and repeat the process.
+   1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**. In the **Name** column, find all the entries that begin with the add-in's ID (a GUID) and delete them. Then navigate to **Computer\HKEY_USERS\\{SID}\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where **{SID}** is the SID of the user you were signed in with when you sideloaded the add-in, and repeat the process.
 
-      :::image type="content" source="../images/addinRegistrationWindows.png" alt-text="The Windows registry for the key named Computer\HKEY_USERS\<SID>\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where <SID> is the SID of a user." border="false":::
+      :::image type="content" source="../images/addinRegistrationWindows.png" alt-text="The Windows registry for the key named Computer\HKEY_USERS\SID\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where SID is the SID of a user." border="false":::
 
    **Mac:** 
 
