@@ -350,6 +350,9 @@ items:
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
+    - name: Uninstall add-in under development
+      href: testing/uninstall-add-in.md
+      displayName: uninstall
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debug a function command with a non-shared runtime
