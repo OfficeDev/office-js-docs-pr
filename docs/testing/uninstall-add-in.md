@@ -125,8 +125,3 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 - [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md)
 - [Clear the Office cache](clear-cache.md)
 - The PowerShell reference for [Install-Module](/powershell/module/powershellget/install-module?view=powershellget-3.x),[Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4), [Connect-ExchangeOnline](/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps), and [Get-App](/powershell/module/exchange/get-app?view=exchange-ps).
-
-
-
-
-
