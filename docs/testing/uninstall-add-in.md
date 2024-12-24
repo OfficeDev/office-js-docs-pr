@@ -1,7 +1,7 @@
 ---
 title: Uninstalling add-ins under development
 description: Learn how to uninstall add-ins you are developing.
-ms.topic: install
+ms.topic: troubleshooting-problem-resolution
 ms.date: 12/28/2024
 ms.localizationpriority: medium
 ---
