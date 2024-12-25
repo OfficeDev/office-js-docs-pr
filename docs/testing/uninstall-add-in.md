@@ -25,7 +25,7 @@ When an add-in is sideloaded, several things happen:
    > [!IMPORTANT]
    > When you sign into Outlook, it downloads from Exchange, and sideloads, all the Outlook add-in manifests that are associated with your ID, *including add-ins that you are developing on a different computer using the same ID*. For example, any custom ribbon buttons defined in the manifest will appear for the add-in. 
    >
-   > If the URLs in the manifest point to a non-localhost server and that server is running and accessible to the non-development computer, then the add-in's files are cached in the local file system and the add-in usually runs normally on the computer. Otherwise, the add-in doesn't function, but visible parts of it, such as custom ribbon buttons appear. They have the labels defined in the manifest. The add-in's button icons also appear if they were ever cached locally on the non-development computer and the cache was never cleared. But the icon files aren't stored with Exchange, so if they were never cached on the non-development computer (or the cache has been cleared), then the buttons have default icons.
+   > If the URLs in the manifest point to a non-localhost server and that server is running and accessible to the non-development computer, then Outlook caches the add-in's files in the local file system and the add-in usually runs normally on the computer. Otherwise, the add-in doesn't function, but visible parts of it, such as custom ribbon buttons appear. They have the labels defined in the manifest. The add-in's button icons also appear if they were ever cached locally on the non-development computer and the cache was never cleared. But the icon files aren't stored with Exchange, so if they were never cached on the non-development computer (or the cache has been cleared), then the buttons have default icons.
    >
    > Until the add-in's registration is removed from Exchange, the add-in will continue to appear. See [Remove a ghost add-in](#remove-a-ghost-add-in) for information about removing the registration in Exchange.
 
@@ -82,6 +82,10 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 1.  Find your ghost add-in in the list. If you created it with Yo Office or another Microsoft tool, it probably has the name "Contoso Task Pane Add-in". 
 1. Copy the App ID (a GUID) of the add-in. You need it for later steps.
 1. Run the command `Remove-App -Identity {{The GUID OF YOUR ADD-IN HERE}}`; for example, `Remove-App -Identity 26ead0cb-10dd-4ba2-86c6-4db111876652`. This command removes the add-in from Exchange.
+
+   > [!WARNING]
+   > The removal of the registration needs to propagate to all Exchange servers. Wait at least three hours before continuing with the next step. 
+
 1. Continue with the section [Remove the add-in artifacts](#remove-the-add-in-artifacts).
 
 ### Remove the add-in artifacts
@@ -124,6 +128,12 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
    For non-Outlook add-ins the local registration on a Mac is removed when you clear the cache. See [Remove the add-in artifacts](#remove-the-add-in-artifacts).
 
    For ghost Outlook add-ins, remove the local registration on a Mac by using the **Add-Ins for Outlook** dialog in Outlook. Follow the guidance at [Remove a sideloaded Outlook add-in](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+
+1. If you are removing an Outlook add-in, continue with the section [Test for removal of Oulook add-ins](#test-for-removal-of-oulook-add-ins).
+
+### Test for removal of Outlook add-ins
+
+Open Outlook with the same identity you used when you created the add-in. If artifacts from the add-in, such as custom ribbon buttons, reappear after a few minutes or if event handlers from the add-in seem to be active; then the removal of the add-in's registration from Exchange hasn't propagated to all Exchange servers. Wait at least three hours and then repeat the procedures in the sections [Remove the add-in artifacts](#remove-the-add-in-artifacts) and [Remove the local registration](#remove-the-local-registration) on the computer where you observed the artifacts.
 
 ## See also
 
