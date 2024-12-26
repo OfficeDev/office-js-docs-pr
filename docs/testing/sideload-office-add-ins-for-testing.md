@@ -7,6 +7,9 @@ ms.localizationpriority: medium
 
 # Sideload Office Add-ins to Office on the web
 
+> [!NOTE]
+> This article primarily applies to **Excel**, **OneNote**, **PowerPoint**, and **Word** add-ins. For information on sideloading **Outlook** add-ins, see the article [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
+
 When you sideload an add-in, you're able to install the add-in without first putting it in an add-in catalog. This is useful when testing and developing your add-in because you can see how your add-in will appear and function.
 
 When you sideload an add-in on the web, the add-in's manifest is stored in the browser's local storage, so if you clear the browser's cache, or switch to a different browser, you have to sideload the add-in again.
