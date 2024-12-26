@@ -76,7 +76,7 @@ Find Office Add-ins from the app catalog using the following steps.
 
 1. Open the application.
 1. Create or open a document.
-1. Select **Home** > **Add-ins**, then select **More Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Settings**.
     _**Insert** > **Office Add-ins** in OneNote._
 1. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
 1. Choose an Office Add-in and then choose **Add**.
@@ -92,7 +92,7 @@ Find Office Add-ins from the app catalog using the following steps.
     Specify just the URL of the parent site collection:
     - `https://<domain>/sites/<AddinCatalogSiteCollection>`
 1. Close and reopen the Office application.
-1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Settings**.
 1. In the Office Add-ins dialog, choose the **MY ORGANIZATION** tab.
 1. Choose an Office Add-in and then choose **Add**.
 

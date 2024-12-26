@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins to Office on the web
 description: Test your Office Add-in in Office on the web by sideloading.
-ms.date: 08/17/2023
+ms.date: 12/26/2024
 ms.localizationpriority: medium
 ---
 
@@ -67,13 +67,11 @@ If you're using Visual Studio to develop your add-in, press **F5** to open an Of
 
 This method doesn't use the command line and can be accomplished using commands only within the host application (such as Excel).
 
-1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**. 
+1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**.
 
-1. Select **Home** > **Add-ins**, then select **More Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Settings**.
 
-1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
-
-    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
+1. On the **Office Add-ins** dialog, select **Upload My Add-in**.
 
 1. **Browse** to the add-in manifest file, and then select **Upload**.
 
