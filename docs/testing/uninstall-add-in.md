@@ -102,7 +102,7 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 ### Remove the local registration
 
 > [!IMPORTANT]
-> Carry out this procedure on all computers on which you ever had the add-in sideloaded.
+> Carry out this procedure on all computers on which you have had the add-in sideloaded.
 
 1. Delete the local registration of the ghost add-in. The process varies depending on the operating system.
 
