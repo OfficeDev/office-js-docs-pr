@@ -132,7 +132,7 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
    ---
 
-1. If you are removing an Outlook add-in, continue with the section [Test for removal of Outlook add-ins](#test-for-removal-of-outlook-add-ins).
+2. If you are removing an Outlook add-in, continue with the section [Test for removal of Outlook add-ins](#test-for-removal-of-outlook-add-ins).
 
 ### Test for removal of Outlook add-ins
 
