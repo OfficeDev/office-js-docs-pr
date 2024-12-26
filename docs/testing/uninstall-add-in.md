@@ -106,7 +106,7 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
 1. Delete the local registration of the ghost add-in. The process varies depending on the operating system.
 
-    #### [Windows](#tab/windows)
+   #### [Windows](#tab/windows)
 
    1. Open the **Registry Editor**.
    1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer**. This key lists the add-ins that are currently sideloaded, or were sideloaded in the past and weren't fully uninstalled. The **Data** value for each entry is the path to the add-in's manifest. The **Name** value varies depending on which version of which tool was used to create and sideload the add-in. If Visual Studio was used, the name is typically is also the path to the manifest. For other tools, the name is typically the add-in's ID. When an Office application launches, it reloads all add-ins listed in this key (that support the Office application). Reloading may have no practical or discernable effect if the add-in's artifacts have been deleted from the cache, or the manifest no longer exists at the path, or the add-in's files aren't being served by a server.
@@ -124,14 +124,15 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
       :::image type="content" source="../images/addinRegistrationWindows.png" alt-text="The Windows registry for the key named Computer\HKEY_USERS\SID\Software\Microsoft\Office\16.0\Common\CustomUIValidationCache**, where SID is the SID of a user." border="false":::
 
-    #### [Mac](#tab/mac)
+   #### [Mac](#tab/mac)
 
    For non-Outlook add-ins, the local registration on a Mac is removed when you clear the cache. See [Remove the add-in artifacts](#remove-the-add-in-artifacts).
 
    For ghost Outlook add-ins, remove the local registration on a Mac by using the **Add-Ins for Outlook** dialog in Outlook. Follow the guidance at [Remove a sideloaded Outlook add-in](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
----
-2. If you are removing an Outlook add-in, continue with the section [Test for removal of Outlook add-ins](#test-for-removal-of-outlook-add-ins).
+   ---
+
+1. If you are removing an Outlook add-in, continue with the section [Test for removal of Outlook add-ins](#test-for-removal-of-outlook-add-ins).
 
 ### Test for removal of Outlook add-ins
 
