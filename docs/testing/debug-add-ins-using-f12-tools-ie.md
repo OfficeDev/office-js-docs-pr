@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Internet Explorer
 description: Debug add-ins using the developer tools in Internet Explorer.
-ms.date: 07/14/2024
+ms.date: 12/26/2024
 ms.localizationpriority: medium
 ---
 
@@ -63,9 +63,9 @@ The following steps are the instructions for debugging your add-in. If you just 
 This example uses Word and a free add-in from AppSource.
 
 1. Open Word and choose a blank document.
-1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Add-ins**.
 1. In the **Office Add-ins** dialog, select the **STORE** tab.
-1. Select the **QR4Office** add-in. It opens in a task pane.
+1. Search for and select the **QR4Office** add-in. It opens in a task pane.
 1. Launch the F12 development tools that corresponds to your version of Office as described in the preceding section.
 1. In the F12 window, select **Home.html**.
 1. In the **Debugger** tab, open the file **Home.js** as described in the preceding section.
