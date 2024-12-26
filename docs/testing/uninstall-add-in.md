@@ -131,8 +131,7 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
    For ghost Outlook add-ins, remove the local registration on a Mac by using the **Add-Ins for Outlook** dialog in Outlook. Follow the guidance at [Remove a sideloaded Outlook add-in](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 ---
-
-1. If you are removing an Outlook add-in, continue with the section [Test for removal of Outlook add-ins](#test-for-removal-of-outlook-add-ins).
+2. If you are removing an Outlook add-in, continue with the section [Test for removal of Outlook add-ins](#test-for-removal-of-outlook-add-ins).
 
 ### Test for removal of Outlook add-ins
 
