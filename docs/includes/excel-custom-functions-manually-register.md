@@ -2,9 +2,9 @@ If the `CONTOSO` namespace isn't available in the autocomplete menu, take the fo
 
 # [Excel on the web](#tab/excel-online)
 
-1. In Excel, select **Home** > **Add-ins**, then select **More Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Settings**.
 
-1. In the **MY ADD-INS** tab, select **Manage My Add-ins** and choose **Upload My Add-in**.
+1. On the **Office Add-ins** dialog, select **Upload My Add-in**.
 
 1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
 

@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 11/14/2024
+ms.date: 01/07/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -198,7 +198,7 @@ Item multi-select relies on the [SelectedItemsChanged](/javascript/api/office/of
     ```
 
     > [!NOTE]
-    > The preview version of the Office JavaScript API is used because this walkthrough implements the `loadItemByIdAsync` and `unloadAsync` methods, which are currently in preview. If your multi-select add-in doesn't implement these methods, use `https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js` instead. For more information, see [Referencing the Office JavaScript API library](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+    > The preview version of the Office JavaScript API is used because this walkthrough implements the `loadItemByIdAsync` and `unloadAsync` methods, which are currently in preview. If your multi-select add-in doesn't implement these methods, use `https://appsforoffice.microsoft.com/lib/1/hosted/office.js` instead. For more information, see [Referencing the Office JavaScript API library](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 1. Save your changes.
 
