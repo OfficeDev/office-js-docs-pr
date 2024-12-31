@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-Why does the Office Add-ins API use asynchronous programming? JavaScript is a single-threaded language. If a script invokes a long-running synchronous process with the Office client, all subsequent scripts are blocked until that process completes. Being asynchronous makes sure that Office Add-ins are responsive and fast.
+Why does the Office Add-ins API use asynchronous programming? JavaScript is a single-threaded language. If a script invokes a long-running synchronous process of the Office client, all subsequent scripts are blocked until that process completes. Being asynchronous makes sure that Office Add-ins are responsive and fast.
 
-The names of all asynchronous methods in the API end with "Async", such as the `Document.getSelectedDataAsync`, `Binding.getDataAsync`, or `Item.loadCustomPropertiesAsync` methods. When an "Async" method is called, it runs immediately. The rest of the script continues while the operation completes on the client-side. The optional callback function you pass to an "Async" method runs as soon as the data or requested operation is ready. This generally occurs promptly, but there can be a slight delay.
+The names of all asynchronous methods in the Common APIs end with "Async", such as the `Document.getSelectedDataAsync`, `Binding.getDataAsync`, or `Item.loadCustomPropertiesAsync` methods. When an "Async" method is called, it runs immediately. The rest of the script continues while the operation completes on the client-side. The optional callback function that you pass to an "Async" method runs as soon as the data or requested operation is ready. This generally occurs promptly, but there can be a slight delay.
 
-The following diagram shows the flow of an "Async" method that reads the data the user selected in a document. When the "Async" call is made, the JavaScript thread is free to perform any additional client-side processing (although none are shown in the diagram). When the "Async" method returns, the callback resumes on the thread. The add-in can then access data, do something with it, and display the result. The pattern is the same across platforms.
+The following diagram shows the flow of an "Async" method that reads the data the user selected in a document. When the "Async" call is made, the JavaScript thread is free to perform any additional client-side processing (although none is shown in the diagram). When the "Async" method returns, the callback resumes on the thread. The add-in can then access data, do something with it, and display the result. The pattern is the same across platforms.
 
 ![Diagram showing the command execution interaction over time with the user, the add-in page, and the web app server that hosts the add-in.](../images/office-addins-asynchronous-programming-flow.png)
 
@@ -52,9 +52,9 @@ function write(message){
 }
 ```
 
-You can also use the parameter of your callback function to access other properties of the `AsyncResult` object. Use the [AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) property to determine if the call succeeded or failed. If your call fails, use the [AsyncResult.error](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) property to access an [Error](/javascript/api/office/office.error) object to help decide what to do.
+You can also use the parameter of your callback function to access other properties of the `AsyncResult` object. Use the [AsyncResult.status](/javascript/api/office/office.asyncresult#office-office-asyncresult-status-member) property to determine if the call succeeded or failed. If your call failed, use the [AsyncResult.error](/javascript/api/office/office.asyncresult#office-office-asyncresult-error-member) property to access an [Error](/javascript/api/office/office.error) object to help decide what to do.
 
-For more information about the `getSelectedDataAsync` method, see [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
+For more information on the `getSelectedDataAsync` method, see [Read and write data to the active selection in a document or spreadsheet](read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
 ### Write a named callback function
 
@@ -124,7 +124,7 @@ This basic nested callback pattern can be used for all asynchronous methods in t
 
 ### Asynchronous programming using the promises pattern to access data in bindings
 
-Instead of passing a callback function and waiting for the function to return before the script continues, the promises programming pattern immediately returns a promise object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins runtime environment completes the request. An *onError* handler is provided to cover situations when the request can't be fulfilled.
+Instead of passing a callback function and waiting for the function to return before the script continues, the promises programming pattern immediately returns a `Promise` object that represents its intended result. However, unlike true synchronous programming, under the covers the fulfillment of the promised result is actually deferred until the Office Add-ins runtime environment completes the request. An *onError* handler is provided to cover situations when the request can't be fulfilled.
 
 The Common APIs provide the [Office.select](/javascript/api/office#Office_select_expression__callback_) function to support the promises pattern when working with existing binding objects. The promise object returned to the `Office.select` function only supports the four methods directly accessible from the [Binding](/javascript/api/office/office.binding) object.
 
