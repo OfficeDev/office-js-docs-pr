@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 03/27/2023
+ms.date: 01/03/2025
 ms.custom: vscode-azure-extension-update-completed
 ms.localizationpriority: medium
 ---
@@ -65,7 +65,7 @@ If your add-in has custom functions, there are a few more steps to enable them o
 
 1. Right-click (or select and hold) the Azure storage account and select **Open in Portal**.
 1. In the Settings group, select **Resource sharing (CORS)**. You can also use the search box to find this.
-1. Create a new CORS rule with the following settings.
+1. Create a new CORS rule for the **Blob service** with the following settings.
 
     |Property        |Value                        |
     |----------------|-----------------------------|
