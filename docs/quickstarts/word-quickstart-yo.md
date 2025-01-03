@@ -88,7 +88,7 @@ After you complete the wizard, the generator creates the project and installs su
 
     - To test your add-in in Word on a browser, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Word document on your OneDrive or a SharePoint library to which you have permissions.
 
-        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+        [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. In Word, if the "My Office Add-in" task pane isn't already open, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
