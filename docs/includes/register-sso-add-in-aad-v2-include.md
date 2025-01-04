@@ -181,7 +181,7 @@ The access token version can change if you chose an account type other than **Ac
 
     The Azure Active Directory application manifest appears.
 
-1. Enter **2** as the value for the `accessTokenAcceptedVersion` property.
+1. Enter **2** as the value for the `requestedAccessTokenVersion` property (in the `api` object).
 
     :::image type="content" source="../images/azure-portal-manifest-token-version.png" alt-text="Value for accepted access token version.":::
 
