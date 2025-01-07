@@ -84,7 +84,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     - To test your add-in in Excel, Word, or PowerPoint on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Word document on your OneDrive or a SharePoint library to which you have permissions.
 
-        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+        [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
     > [!NOTE]
     > If this is the first time that you have sideloaded an Office add-in on your computer (or the first time in over a month), you're prompted first to delete an old certificate and then to install a new one. Agree to both prompts.

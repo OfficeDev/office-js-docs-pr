@@ -66,7 +66,7 @@ The command to test your add-in in Excel on Windows or Mac depends on when the p
 
 To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+[!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 

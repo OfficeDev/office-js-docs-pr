@@ -38,7 +38,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. Open a Command Prompt as an administrator. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL that you copied.
 
-    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+    [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. The first time you use this method to sideload an add-in on the web, you'll see a dialog asking you to enable developer mode. Select the checkbox for **Enable Developer Mode now** and select **OK**.
 
