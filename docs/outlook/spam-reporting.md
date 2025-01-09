@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 12/19/2024
+ms.date: 01/16/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -355,7 +355,7 @@ Once the event handler has completed processing the message, it must call the [e
 
 - Customize a post-processing dialog to show to the user.
 - Perform additional operations on the message, such as deleting it from the inbox.
-- [Open a task pane and pass information to it (preview)](#open-a-task-pane-after-reporting-a-message).
+- [Open a task pane and pass information to it](#open-a-task-pane-after-reporting-a-message).
 
 For a list of properties you can include in a JSON object to pass as a parameter to the `event.completed` method, see [Office.SpamReportingEventCompletedOptions](/javascript/api/outlook/office.spamreportingeventcompletedoptions).
 
@@ -467,13 +467,13 @@ The following is a sample post-processing dialog shown to the user once the add-
 ## Suppress the preprocessing dialog
 
 > [!NOTE]
-> The "Don't show me this message again" option is currently in preview in classic Outlook on Windows starting in Version 2411 (Build 18227.20034).
+> The "Don't show me this message again" option was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support). This option isn't currently supported in a spam-reporting add-in that uses the unified manifest.
 
 Depending on your scenario, you might not need a user to provide additional information about a message they're reporting. If the preprocessing dialog of your spam-reporting add-in only provides information to the user, you can choose to include a "Don't show me this message again" option in the dialog.
 
 :::image type="content" source="../images/spam-reporting-suppress-dialog.png" alt-text="The 'Don't show me this message again' option in the preprocessing dialog.":::
 
-To implement this in your add-in, you must specify the [NeverShowAgainOption](/javascript/api/manifest/preprocessingdialog?view=common-js-preview&preserve-view=true#child-elements) element in your manifest and set it to `true`. The following code is an example.
+To implement this in your add-in, you must specify the [NeverShowAgainOption](/javascript/api/manifest/preprocessingdialog#child-elements) element in your manifest and set it to `true`. The following code is an example.
 
 ```xml
 ...
@@ -514,16 +514,16 @@ The preprocessing dialog will appear the next time a message is reported.
 ## Open a task pane after reporting a message
 
 > [!NOTE]
-> The option to implement a task pane from the `event.completed` method is currently in preview in classic Outlook on Windows starting in Version 2411 (Build 18227.20034).
+> The option to implement a task pane from the `event.completed` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support). This feature isn't currently supported in a spam-reporting add-in that uses the unified manifest.
 
 Instead of a post-processing dialog, you can implement a task pane to open after a user reports a message. For example, you can use the task pane to show additional information based on the user's input in the preprocessing dialog. Similar to the post-processing dialog, the task pane is implemented through the add-in's `event.completed` call.
 
 > [!NOTE]
 > If both the post-processing dialog and task pane capabilities are configured in the `event.completed` call, the task pane is shown instead of the dialog.
 
-To configure a task pane to open after a message is reported, you must specify the ID of the task pane in the [commandId](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-spamreportingeventcompletedoptions-commandid-member) option of the `event.completed` call. The ID must match the value specified in the `id` attribute of the [Control](/javascript/api/manifest/control) element that represents the task pane in the manifest.
+To configure a task pane to open after a message is reported, you must specify the ID of the task pane in the [commandId](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-1.15&preserve-view=true#outlook-office-spamreportingeventcompletedoptions-commandid-member) option of the `event.completed` call. The ID must match the value specified in the `id` attribute of the [Control](/javascript/api/manifest/control) element that represents the task pane in the manifest.
 
-If you need to pass information to the task pane, specify any JSON data in the [contextData](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-spamreportingeventcompletedoptions-contextdata-member) option of the `event.completed` call. To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getinitializationcontextasync-member(1)) in the JavaScript implementation of your task pane.
+If you need to pass information to the task pane, specify any JSON data in the [contextData](/javascript/api/outlook/office.spamreportingeventcompletedoptions?view=outlook-js-1.15&preserve-view=true#outlook-office-spamreportingeventcompletedoptions-contextdata-member) option of the `event.completed` call. To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getinitializationcontextasync-member(1)) in the JavaScript implementation of your task pane.
 
 > [!IMPORTANT]
 > To ensure that the task pane of the spam-reporting add-in opens and receives context data after a message is reported, you must set the `moveItemTo` option of the `event.completed` call to `Office.MailboxEnums.MoveSpamItemTo.NoMove`.
