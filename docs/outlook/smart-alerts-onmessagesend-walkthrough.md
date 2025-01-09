@@ -348,8 +348,6 @@ The button you can customize depends on the Outlook client and version on which 
 >
 > If you only customized the text of the **Don't Send** button in earlier supported versions, your custom text won't appear in the latest versions that support the **Take Action** implementation.
 
-//TODO: Add screenshot with Take Action button.
-
 To modify the text of the dialog button or assign it a task pane or function, you must set additional options in the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method of your event handler.
 
 - The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the applicable button. Custom text must be a maximum of 20 characters.
@@ -693,8 +691,6 @@ To further streamline a user's experience when recommending changes to the mail 
 
         ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
 
-        //TODO - Add screenshot with Take Action implementation.
-
     > [!NOTE]
     > In supported versions of classic Outlook on Windows prior to Version 2410 (Build 18031.15000), if you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
 
@@ -721,8 +717,6 @@ If you implemented the optional step to override the send mode option at runtime
 1. Select **Send Anyway** to send the message as is, or select **Attach a copy** to include a copy before sending the message.
 
     ![Smart Alerts dialog with the Send Anyway option available at runtime.](../images/outlook-smart-alerts-send-mode-override.png)
-
-    //TODO - Update screenshot to include Don't Send option.
 
 > [!IMPORTANT]
 > If a Smart Alerts add-in that implements the override feature can't complete processing an event due to an error or is unavailable when the event occurs, it uses the send mode option specified in the manifest.
