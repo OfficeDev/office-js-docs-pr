@@ -33,7 +33,7 @@ The following table identifies which Outlook clients support the integrated spam
 | **Outlook on iOS** | Not available |
 
 > [!NOTE]
-> \* In Outlook on the web and new Outlook on Windows, the integrated spam-reporting feature isn't supported in Microsoft 365 consumer accounts.
+> \* In Outlook on the web and new Outlook on Windows, the integrated spam-reporting feature isn't supported for Microsoft 365 consumer accounts.
 
 ## Preview the integrated spam-reporting feature in Outlook on Mac
 
