@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 09/27/2024
+ms.date: 01/21/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -46,7 +46,7 @@ The process to define custom keyboard shortcuts for your add-in varies depending
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Implementing keyboard shortcuts with the unified app manifest for Microsoft 365 is in public developer preview. It's currently only available in **Excel**. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Implementing keyboard shortcuts with the unified app manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 If your add-in uses the unified app manifest for Microsoft 365, custom keyboard shortcuts and their actions are defined in the manifest.
 
@@ -268,10 +268,12 @@ The user can select which action the keyboard shortcut will take. After making t
 
 ![The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action.](../images/add-in-reset-shortcuts-action.png)
 
-For the best user experience, we recommend that you minimize conflicts with Excel with these good practices.
+For the best user experience, we recommend that you minimize keyboard shortcut conflicts with these good practices.
 
 - Use only keyboard shortcuts with the following pattern: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
-- If you need more keyboard shortcuts, check the [list of Excel keyboard shortcuts](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f), and avoid using any of them in your add-in.
+- Avoid using established keyboard shortcuts in Excel and Word. For a list, see the following:
+  - [Keyboard shortcuts in Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
+  - [Keyboard shortcuts in Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
 - When the keyboard focus is inside the add-in UI, **Ctrl+Spacebar** and **Ctrl+Shift+F10** won't work as these are essential accessibility shortcuts.
 - On a Windows or Mac computer, if the **Reset Office Add-ins shortcut preferences** command isn't available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
 
