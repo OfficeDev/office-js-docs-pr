@@ -1,7 +1,7 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: Learn how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
-ms.date: 10/03/2024
+ms.date: 01/07/2025
 ms.localizationpriority: medium
 ---
 
@@ -191,7 +191,7 @@ The task pane shows the add-in display name at the top, which is the value of th
     <script src="../Scripts/jquery-1.7.1.js"></script>
 
     <!-- Use the CDN reference to office.js when deploying your add-in. -->
-    <!--<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>-->
+    <!--<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>-->
 
     <!-- Use the local script references for Office.js to enable offline debugging -->
     <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
@@ -669,7 +669,7 @@ The following code is in the `Pages\HelloProjectOData.html` file of the **HelloP
         <script src="../Scripts/jquery-1.7.1.js"></script>
 
         <!-- Use the CDN reference to Office.js when deploying your add-in -->
-        <!--<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>-->
+        <!--<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>-->
 
         <!-- Use the local script references for Office.js to enable offline debugging -->
         <script src="../Scripts/Office/1.0/MicrosoftAjax.js"></script>
@@ -1203,7 +1203,7 @@ If you modify the **HelloProjectOData** add-in for production use, do the follow
 - In the HelloProjectOData.html file, for better performance, change the office.js reference from the local project to the CDN reference:
 
     ```HTML
-    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
 - Rewrite the `retrieveOData` function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the *$skip* operator and *$top* operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form:

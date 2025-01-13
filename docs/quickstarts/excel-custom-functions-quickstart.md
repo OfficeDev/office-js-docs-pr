@@ -46,7 +46,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+[!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
