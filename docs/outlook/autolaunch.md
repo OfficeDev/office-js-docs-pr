@@ -75,7 +75,7 @@ In all supported Outlook clients, the user must remain on the current mail item 
 
 In addition to item switching, an event-based add-in also ceases operation when the user sends the message or appointment they're composing.
 
-### Event-based add-ins in new Outlook on Windows
+### Event-based add-ins in the new Outlook on Windows
 
 In new Outlook on Windows, you must keep the main window of the client open for the add-in to process the mail item. If the main window is minimized, the add-in will pause or stop working.
 
