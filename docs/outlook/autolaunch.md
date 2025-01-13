@@ -77,7 +77,7 @@ In addition to item switching, an event-based add-in also ceases operation when 
 
 ### Event-based add-ins in the new Outlook on Windows
 
-In new Outlook on Windows, you must keep the main window of the client open for the add-in to process the mail item. If the main window is minimized, the add-in will pause or stop working.
+In the new Outlook on Windows, you must keep the main window of the client open for the add-in to process the mail item. If the main window is minimized, the add-in will pause or stop working.
 
 ### Event-based add-ins in classic Outlook on Windows
 
