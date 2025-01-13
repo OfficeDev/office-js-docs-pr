@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 01/09/2025
+ms.date: 01/13/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -74,6 +74,10 @@ If the user has multiple add-ins that subscribe to the same event, the Outlook p
 In all supported Outlook clients, the user must remain on the current mail item where the add-in was activated for it to complete running. Navigating away from the current item (for example, switching to another compose window or tab) terminates the add-in operation. However, an add-in that activates on the `OnMessageSend` event handles item switching differently depending on which Outlook client it's running on. To learn more, see the "User navigates away from current message" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#user-navigates-away-from-current-message).
 
 In addition to item switching, an event-based add-in also ceases operation when the user sends the message or appointment they're composing.
+
+### Event-based add-ins in the new Outlook on Windows
+
+In the new Outlook on Windows, you must keep the main window of the client open for the add-in to process the mail item. If the main window is minimized, the add-in will pause or stop working.
 
 ### Event-based add-ins in classic Outlook on Windows
 
