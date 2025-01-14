@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 12/18/2024
+ms.date: 01/06/2024
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -45,6 +45,9 @@ You’ll only be able to turn tokens back on until June 2025 when all legacy tok
 
 > [!NOTE]
 > It might take up to 24 hours for the change to take effect across your entire organization. Legacy Exchange tokens issued to Outlook add-ins before token blocking was implemented in your organization will remain valid until they expire.
+
+> [!NOTE]
+> If you turn on legacy Exchange Online tokens, then they won't be turned off in February 2025 when Microsoft turns them off for all tenants. For more information, see [Nested app authentication and Outlook legacy tokens deprecation FAQ](faq-nested-app-auth-outlook-legacy-tokens.md).
 
 ## See also
 
