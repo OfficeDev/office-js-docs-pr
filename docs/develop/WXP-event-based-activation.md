@@ -18,13 +18,13 @@ With the feature, you can develop an add-in to automatically activate and comple
 
 | Event name | Description | Supported clients and channels |
 | ----- | ----- | ----- |
-| `OnDocumentOpen` | Occurs on a WXP document opens (includes create a new document and open an existing document).| <ul><li> [To be updated] Word desktop? Word WAC?? Excel? PowerPoint?? </li></ul> |
+| `OnDocumentOpen` | Occurs on a WXP document opens (includes create a new document and open an existing document).| <ul><li> WXP Win32 Desktop, version>= 16.0.18324.20032 </li></ul> |
 
 The following sections walk you through how to develop a Word add-in that automatically changes the document header when a new or existing document opens. This highlights a sample scenario of how you can implement event-based activation in WXP add-ins.
 
 ## Set up your environment
 
-To run the feature, you must have a supported version of Word and a Microsoft 365 subscription. Then, create a Word add-in project. You can create an add-in by following [Word add-in quick start](https://learn.microsoft.com/en-us/office/dev/add-ins/quickstarts/word-quickstart-yo?tabs=devkit) and try to create an Office Add-in Task Pane project or other.
+To run the feature, you must have a supported version of Word and a Microsoft 365 subscription. Then, create a Word add-in project. You can create an add-in by following [Word add-in quick start](../quickstarts/word-quickstart-yo.md) and try to create an Office Add-in Task Pane project or other.
 
 ## Configure the manifest
 
@@ -33,6 +33,8 @@ To run the feature, you must have a supported version of Word and a Microsoft 36
 - In the [Runtimes](/javascript/api/manifest/runtimes) element, override the using runtime with a javascript type and reference a javascript file containing the function you want to execute.
 - Set the `xsi:type` of the [ExtensionPoint](/javascript/api/manifest/extensionpoint) element to [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent). This enables the event-based activation feature in your WXP add-in.
 - In the [LaunchEvent](/javascript/api/manifest/launchevent) element, set the `Type` to `OnDocumentOpen` and specify the JavaScript function name of the event handler in the `FunctionName` attribute.
+
+### Code sample
 
 1. In your code editor, open the quick start project you created.
 1. Open the **manifest.xml** file located at the root of your project.
@@ -118,7 +120,7 @@ To run the feature, you must have a supported version of Word and a Microsoft 36
 </VersionOverrides>
 ```
 
-1. Save your changes.
+4. Save your changes.
 
 ## Implement the event handler
 
@@ -225,27 +227,25 @@ const g = getGlobal();
 Office.actions.associate("changeHeader", changeHeader);
 ```
 
-1. Save your changes. In the manifest, replace the following content to your own url.
+4. Save your changes. In the manifest, replace the following content to your own url.
 ```xml
 <bt:Url id="JsRuntimeWord.Url" DefaultValue="https://raw.githubusercontent.com/yilin4/AddinForDLP/refs/heads/main/src/commands/autoruncommandsWord.js"/>
 ```
 
 ## Add a reference to the event-handling JavaScript file
 
-Ensure that the **autoruncommandsWord.js** file must be a javascript file not a typescript file, and the online url is recommended now.
+Ensure that the **autoruncommandsWord.js** file must be a javascript file not a typescript file, and the online url is recommended.
 
 ## Test and validate your add-in
 
-1. Sideload your add-in in Word on Windows.
-1. Open Word on you Windows and you will see the effect the document has been added headers.
+1. Sideload your add-in in [Word online](https://learn.microsoft.com/office/dev/add-ins/testing/sideload-office-add-ins-for-testing) or Windows desktop.
+1. Open a Word document and you will see the headers are added to the document.
 
 ## Behavior and limitations
 
 As you develop an event-based add-in for WXP, be mindful of the following feature behaviors and limitations.
 - Currently, the feature is only supported in add-in only manifest, please contact product team if you need unified app manifest. 
 - If installing several add-ins with launch events, only one's launch event can be executed.
-
-[More to be added]
 
 ## Additional supported APIs
 
