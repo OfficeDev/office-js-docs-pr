@@ -44,6 +44,8 @@ Office.js replaces the default [Window.history](https://developer.mozilla.org/do
 
 ```
 
+Thank you to [@stepper and the Stack Overflow community](https://stackoverflow.com/questions/42642863/office-js-nullifies-browser-history-functions-breaking-history-usage) for suggesting and verifying this workaround.
+
 ## API versioning and backward compatibility
 
 In the previous HTML snippet, the `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the Office JavaScript API maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1.
