@@ -21,7 +21,7 @@ The following runtime resource limits apply to all add-ins running in Office cli
 
    By default, when a Office client detects that physical memory usage on a device exceeds 80% of the available memory, the client starts monitoring the add-in's memory usage. This is done at the document level for content and task pane add-ins and at the mailbox level for Outlook add-ins. At a default interval of 5 seconds, the client warns the user if physical memory usage for a set of add-ins at the document or mailbox level exceeds 50%. This memory usage limit uses physical rather than virtual memory to ensure performance on devices with limited RAM, such as tablets. Administrators can override this dynamic setting with an explicit limit by using the **MemoryAlertThreshold** Windows registry key as a global setting. They can also adjust the alert interval with the **AlertInterval** key.
 
-- **Crash tolerance** - A default limit of 4 crashes.
+- **Crash tolerance** - A default limit of 4 crashes during the document's session.
 
    Administrators can adjust the threshold for crashes by using the **RestartManagerRetryLimit** registry key.
 
