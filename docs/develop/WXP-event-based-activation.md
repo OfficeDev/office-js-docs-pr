@@ -18,7 +18,7 @@ With the feature, you can develop an add-in to automatically activate and comple
 
 | Event name | Description | Supported clients and channels |
 | ----- | ----- | ----- |
-| `OnDocumentOpen` | Occurs on a WXP document opens (includes create a new document and open an existing document).| <ul><li> Office Win32 Desktop DevMain channel insider ring, version>= 16.0.18324.20032 </li></ul><ul><li> Office online </li></ul>|
+| `OnDocumentOpen` | Occurs on a user opens a document or creates a new document in WXP.| <ul><li> Office Win32 Desktop DevMain channel insider ring, version>= 16.0.18324.20032 </li></ul><ul><li> Office online </li></ul>|
 
 The following sections walk you through how to develop a Word add-in that automatically changes the document header when a new or existing document opens. This highlights a sample scenario of how you can implement event-based activation in WXP add-ins.
 
