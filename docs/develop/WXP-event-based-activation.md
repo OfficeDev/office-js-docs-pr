@@ -18,7 +18,7 @@ With the feature, you can develop an add-in to automatically activate and comple
 
 | Event name | Description | Supported clients and channels |
 | ----- | ----- | ----- |
-| `OnDocumentOpen` | Occurs on a WXP document opens (includes create a new document and open an existing document).| <ul><li> WXP Win32 Desktop DevMain channel insider ring, version>= 16.0.18324.20032 </li></ul> |
+| `OnDocumentOpen` | Occurs on a WXP document opens (includes create a new document and open an existing document).| <ul><li> Office Win32 Desktop DevMain channel insider ring, version>= 16.0.18324.20032 </li></ul><ul><li> Office online </li></ul>|
 
 The following sections walk you through how to develop a Word add-in that automatically changes the document header when a new or existing document opens. This highlights a sample scenario of how you can implement event-based activation in WXP add-ins.
 
@@ -244,9 +244,7 @@ Ensure that the **autoruncommandsWord.js** file must be a javascript file not a 
 ## Behavior and limitations
 
 As you develop an event-based add-in for WXP, be mindful of the following feature behaviors and limitations.
-- Currently, the feature is only supported in add-in only manifest, please contact product team if you need unified app manifest. 
-- If installing several add-ins with launch events, only one's launch event can be executed.
-
-## Additional supported APIs
-
-[Instruction and code samples]
+- Currently, the feature is only supported in add-in only manifest.
+- Office MAC Desktop is not supported yet.
+- If a user installs multiple add-ins with the same ativation event, only one add-in will be activated randomly.
+- APIs that are not supported: [To be added]
