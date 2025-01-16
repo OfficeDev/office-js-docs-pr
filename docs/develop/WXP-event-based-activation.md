@@ -244,7 +244,8 @@ Ensure that the **autoruncommandsWord.js** file must be a javascript file not a 
 ## Behavior and limitations
 
 As you develop an event-based add-in for WXP, be mindful of the following feature behaviors and limitations.
-- Currently, the feature is only supported in add-in only manifest.
+- The feature is in preview for early testing. You can not deploy a add-in with this feature to your customer yet. Please also notice the preview version of feature may be different from the released version.
+- The feature is only supported in add-in only manifest.
 - Office MAC Desktop is not supported yet.
 - If a user installs multiple add-ins with the same ativation event, only one add-in will be activated randomly.
 - APIs that are not supported: [To be added]
