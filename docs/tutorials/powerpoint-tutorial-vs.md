@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial using Visual Studio
 description: "In this tutorial, you'll use Visual Studio to build a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides."
-ms.date: 11/20/2024
+ms.date: 01/16/2025
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
