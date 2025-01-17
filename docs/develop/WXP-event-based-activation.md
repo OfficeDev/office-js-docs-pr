@@ -238,8 +238,8 @@ Ensure that the **autoruncommandsWord.js** file must be a javascript file not a 
 
 ## Test and validate your add-in
 
-1. Sideload your add-in in [Word online](https://learn.microsoft.com/office/dev/add-ins/testing/sideload-office-add-ins-for-testing) or Windows desktop.
-1. Open a Word document and you will see the headers are added to the document.
+1. Sideload your add-in in [Word online](https://learn.microsoft.com/office/dev/add-ins/testing/sideload-office-add-ins-for-testing) or [Windows desktop](https://learn.microsoft.com/office/dev/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins).
+1. Create a new Word document or open an existing one, and you will see the headers are added to the document.
 
 ## Behavior and limitations
 
@@ -248,4 +248,4 @@ As you develop an event-based add-in for WXP, be mindful of the following featur
 - The feature is only supported in add-in only manifest.
 - Office MAC Desktop is not supported yet.
 - If a user installs multiple add-ins with the same ativation event, only one add-in will be activated randomly.
-- APIs that are not supported: [To be added]
+- APIs with UI and Office common APIs are not supported.
