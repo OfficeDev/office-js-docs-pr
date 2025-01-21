@@ -223,7 +223,10 @@ If you've implemented a pattern where your code uses Exchange tokens, but then f
 
 #### Test fallback code for Outlook on Windows "about:blank" bug
 
-If your Outlook add-in supports Outlook 2016 and Outlook 2019 on Windows, test that it handles the WebView2 bug when opening a dialog using `window.open` with `about:blank`. When using WebView2, MSAL v3 will detect that NAA is not available and will automatically fall back to use a dialog to sign in the user. However this will fail because of the `about:blank` bug and the user will see an error. We've provided sample code to work around this an use the Office dialog API to successfully sign in the user. For more information, see [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA), and specifically the **Fallback code** section of the readme.
+Outlook 2016 and 2019 on Windows have a bug when using WebView2. MSAL v3 will detect that NAA is not available and attempt to open a dialog from the task pane to sign in the user. MSAL calls `window.open` with `about:blank`, but Outlook does not handle this correctly and displays an error to the user.
+We provided sample code to work around this by using the Office dialog API to successfully sign in the user. For more information, see [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA), and specifically the **Fallback code** section of the readme.
+
+If your add-in supports Outlook 2016 and 2019 on Windows, be sure to test that this fallback scenario works correctly.
 
 #### Test fallback code for Trident+ webview
 
