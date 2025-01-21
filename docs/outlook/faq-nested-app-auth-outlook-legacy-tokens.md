@@ -208,15 +208,15 @@ const msalConfig = {
 };
 ```
 
-### How do I test my update add-in
+### Test your updated add-in
 
-Once you've updated your add-in to use NAA you should test it on all platforms you support, such as Mac, mobile, web, and Outlook on Windows.
+Once you've updated your add-in to use NAA, you should test it on all platforms you support, such as Mac, mobile, web, and Outlook on Windows.
 
 #### Test when Exchange tokens turned off
 
-Test that your add-in works correctly when Exchange tokens are turned off. To do this, deploy your add-in to a tenant with tokens turned off and test it. To turn tokens off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+To test that your add-in works correctly when Exchange tokens are turned off, deploy your add-in to a tenant with tokens turned off and test it. To turn tokens off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 
-If you've implemented a pattern where your code uses Exchange tokens, but then falls over if they are unavailable, be sure you are checking for the correct errors. When a call to get an Exchange token fails, check the [asyncResult.diagnostics](/javascript/api/office/office.asyncresult). If either of the following errors is returned, switch to NAA.
+If you've implemented a pattern where your code uses Exchange tokens but then falls over if they are unavailable, be sure you are checking for the correct errors. When a call to get an Exchange token fails, check the [asyncResult.diagnostics](/javascript/api/office/office.asyncresult). If either of the following errors is returned, switch to NAA.
 
 - `GenericTokenError: An internal error has occurred.`
 - `InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information.`
