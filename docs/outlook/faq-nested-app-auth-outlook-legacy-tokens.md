@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 12/30/2024
+ms.date: 01/21/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -207,6 +207,34 @@ const msalConfig = {
   }
 };
 ```
+
+### How do I test my update add-in
+
+Once you've updated your add-in to use NAA you should test it on all platforms you support, such as Mac, mobile, web, and Outlook on Windows.
+
+#### Test when Exchange tokens turned off
+
+Test that your add-in works correctly when Exchange tokens are turned off. To do this, deploy your add-in to a tenant with tokens turned off and test it. To turn tokens off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+
+If you've implemented a pattern where your code uses Exchange tokens, but then falls over if they are unavailable, be sure you are checking for the correct errors. When a call to get an Exchange token fails, check the [asyncResult.diagnostics](/javascript/api/office/office.asyncresult). If either of the following errors is returned, switch to NAA.
+
+- `GenericTokenError: An internal error has occurred.`
+- `InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information.`
+
+#### Test fallback code for Outlook on Windows "about:blank" bug
+
+If your Outlook add-in supports Outlook 2016 and Outlook 2019 on Windows, test that it handles the WebView2 bug when opening a dialog using `window.open` with `about:blank`. When using WebView2, MSAL v3 will detect that NAA is not available and will automatically fall back to use a dialog to sign in the user. However this will fail because of the `about:blank` bug and the user will see an error. We've provided sample code to work around this an use the Office dialog API to successfully sign in the user. For more information, see [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA), and specifically the **Fallback code** section of the readme.
+
+#### Test fallback code for Trident+ webview
+
+If your Outlook add-in supports Outlook 2016 or Outlook 2019 on Windows, test that it works correctly when the Trident+ (Internet Explorer 11) webview is used. When the Trident+ webview is used, your code must fall back to MSAL v2 to open a dialog and sign in the user. For more information on how to implement the fallback pattern, see [Outlook add-in with SSO using nested app authentication including Internet Explorer fallback](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE).
+
+#### Testing in Trident+ and WebView2
+
+Outlook 2016 and Outlook 2019 on Windows use the Trident+ or WebView2 based on various OS conditions.
+
+- For more information on when Trident+ or Webview2 is used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+- For more information on how to determine which webview is running, see  [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md#determine-the-webview-the-add-in-is-running-in-at-runtime)
 
 ### How do I validate the ID token or authenticate the user?
 
