@@ -203,7 +203,7 @@ However, you can configure your Office Add-in to share code in the same runtime 
 Configuring a shared runtime enables the following scenarios.
 
 - Your Office Add-in can use additional UI features.
-  - [Enable and Disable Add-in Commands](../design/disable-add-in-commands.md)
+  - [Change the availability of add-in commands](../design/disable-add-in-commands.md)
   - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)
   - [Show or hide the task pane of your Office Add-in](show-hide-add-in.md)
 - The following are available for Excel add-ins only.
@@ -225,7 +225,7 @@ Don't design your add-in to use multiple task panes if you are planning to use a
 - [Call Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md)
 - [Add custom keyboard shortcuts to your Office Add-ins](../design/keyboard-shortcuts.md)
 - [Create custom contextual tabs in Office Add-ins](../design/contextual-tabs.md)
-- [Enable and Disable Add-in Commands](../design/disable-add-in-commands.md)
+- [Change the availability of add-in commands](../design/disable-add-in-commands.md)
 - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)
 - [Show or hide the task pane of your Office Add-in](show-hide-add-in.md)
 - [Tutorial: Share data and events between Excel custom functions and the task pane](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
