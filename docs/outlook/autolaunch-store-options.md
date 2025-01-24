@@ -28,7 +28,7 @@ To specify the flight code for your add-in, share the code in the **Notes for ce
 
 ## Deploy add-in with flight code
 
-After the flight codes are set, you'll receive the URL from the app certification team. You can then share the URL with admins privately.
+After the flight codes are set, you'll receive the URL from the app certification team. You can then share the URL with admins privately. Please note that it may take up to 24 hours after certification of your app for the flight codes to take effect and for AppSource to hide your existing listing from search results.
 
 To deploy the add-in, the admin can use the following steps.
 
