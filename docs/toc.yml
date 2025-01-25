@@ -247,7 +247,7 @@ items:
             href: develop/create-addin-commands-unified-manifest.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
-          - name: Enable and Disable Add-in Commands
+          - name: Change the availability of add-in commands
             href: design/disable-add-in-commands.md
           - name: Integrate built-in Office buttons into custom tabs
             href: design/built-in-button-integration.md
