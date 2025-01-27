@@ -70,7 +70,7 @@ If you created your project manually, install and configure the linter with the 
    npm install eslint-plugin-office-addins --save-dev
    ```
 
-1. In the root of the project, create a text file named **eslint.config.js** (or **.mjs**), if there isn't one already there. Be sure to inherit the recommended configuration for `eslint-plugin-office-addins`. The `plugins` array should include `eslint-plugin-office-addins`. The following is a simple example that includes settings for TypeScript. Your **eslint.config.js** file may have additional properties and configurations.
+1. In the root of the project, create a text file named **eslint.config.js** (or **.mjs**), if there isn't one already there. Be sure to inherit the recommended configuration for `eslint-plugin-office-addins`. The `plugins` object should include a mapping to the `eslint-plugin-office-addins` plugin object. The following is a simple example that includes settings for TypeScript. Your **eslint.config.js** file may have additional properties and configurations.
 
    ```js
     const officeAddins = require("eslint-plugin-office-addins");
