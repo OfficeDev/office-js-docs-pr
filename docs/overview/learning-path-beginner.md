@@ -53,7 +53,7 @@ Get an understanding of the purposes of the add-in manifest and an introduction 
 
 ## Step 7: Create a Partner Center account
 
-Create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. If you plan to publish your add-in to AppSource, get this process going as soon as possible.
+Create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. If you plan to [publish your add-in to AppSource](../publish/publish.md), get this process going as soon as possible.
 
 ## Next Steps
 
