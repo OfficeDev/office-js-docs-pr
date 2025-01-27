@@ -1,7 +1,7 @@
 ---
 title: VSTO add-in developer's guide to Office Web Add-ins
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
-ms.date: 08/22/2024
+ms.date: 01/27/2025
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -60,6 +60,10 @@ Get an understanding of the purposes of the web add-in manifest and an introduct
 ## Step 6 (for VSTO developers only): Reuse your VSTO code
 
 You can reuse some of your VSTO add-in code in an Office web add-in by moving it to your web application's back end on the server and making it available to your JavaScript or TypeScript as a web API. For guidance, see [Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
+
+## Step 7: Create a Partner Center account
+
+Create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. If you plan to publish your add-in to AppSource, get this process going as soon as possible.
 
 ## Next Steps
 
