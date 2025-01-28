@@ -150,10 +150,10 @@ Custom keyboard shortcuts are defined in a JSON file. This file describes your k
 
 Use the following guidelines to create custom key combinations for your add-ins.
 
-- A keyboard shortcut must include at least one modifier key (<kbd>Alt</kbd>/<kbd>Option</kbd>, <kbd>Ctrl</kbd>/<kbd>Command</kbd>, <kbd>Shift</kbd>) and only one other key. These keys must be joined with a `+` character.
-- The <kbd>Command</kbd> modifier key is supported on the macOS platform.
-- On macOS, the <kbd>Alt</kbd> key is mapped to the <kbd>Option</kbd> key. On Windows, the <kbd>Command</kbd> key is mapped to the <kbd>Ctrl</kbd> key.
-- The <kbd>Shift</kbd> key can't be used as the only modifier key. It must be combined with either <kbd>Alt</kbd>/<kbd>Option</kbd> or <kbd>Ctrl</kbd>/<kbd>Command</kbd>.
+- A keyboard shortcut must include at least one modifier key (<kbd>Alt</kbd>/<kbd>Option</kbd>, <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>, <kbd>Shift</kbd>) and only one other key. These keys must be joined with a `+` character.
+- The <kbd>Cmd</kbd> modifier key is supported on the macOS platform.
+- On macOS, the <kbd>Alt</kbd> key is mapped to the <kbd>Option</kbd> key. On Windows, the <kbd>Cmd</kbd> key is mapped to the <kbd>Ctrl</kbd> key.
+- The <kbd>Shift</kbd> key can't be used as the only modifier key. It must be combined with either <kbd>Alt</kbd>/<kbd>Option</kbd> or <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>.
 - Key combinations can include characters "A-Z", "a-z", "0-9", and the punctuation marks "-", "_", and "+". By convention, lowercase letters aren't used in keyboard shortcuts.
 - When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, <kbd>Alt</kbd>+<kbd>a</kbd> and <kbd>Alt</kbd>+<kbd>A</kbd> are the same shortcut, as well as <kbd>Ctrl</kbd>+<kbd>-</kbd> and <kbd>Ctrl</kbd>+<kbd>\_</kbd> ("-" and "_" are linked to the same physical key).
 
