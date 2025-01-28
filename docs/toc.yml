@@ -748,6 +748,8 @@ items:
       href: outlook/extension-module-outlook-add-ins.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
+    - name: Call the Microsoft Graph API
+      href: outlook/microsoft-graph.md
     - name: Call Outlook REST APIs
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
