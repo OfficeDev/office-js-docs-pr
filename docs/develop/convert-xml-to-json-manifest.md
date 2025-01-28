@@ -101,7 +101,7 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 1. First, *make sure Outlook desktop is closed.*
 1. In Visual Studio Code, open the Teams Toolkit.
 1. In the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
-1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press **F5**. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop opens.
+1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop opens.
 1. You can now work with your add-in. Be sure you're working in the **Inbox** of *your Microsoft 365 account identity*.
 
 ##### Sideload with a system prompt, bash shell, or terminal

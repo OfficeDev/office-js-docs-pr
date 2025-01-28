@@ -686,7 +686,7 @@ function errorHandler(jqXHR, textStatus, errorThrown) {
 
 ## Try it out
 
-1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing <kbd>F5</kbd> or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
 1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
 
