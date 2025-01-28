@@ -166,7 +166,7 @@ After confirming that the debugger is attached, return to Outlook. In the **Debu
 You can now hit your breakpoints to debug your event-based activation or spam-reporting code.
 
 > [!IMPORTANT]
-> In classic Outlook on Windows, the JavaScript engine used during debugging may differ from that used when debugging is turned off. Starting in Version 2403 (Build 17425.20000), event-based and spam-reporting add-ins use the [V8 JavaScript engine](https://v8.dev/) to run JavaScript. In earlier versions, these add-ins use the Chakra engine.
+> Starting in Version 2403 (Build 17425.20000), event-based and spam-reporting add-ins use the [V8 JavaScript engine](https://v8.dev/) to run JavaScript, regardless of whether debugging is turned on or off. In earlier versions, the Chakra JavaScript engine is used when debugging is off, but the V8 engine may be used when debugging is turned on.
 
 ## Stop the debugger
 
