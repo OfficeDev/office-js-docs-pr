@@ -78,7 +78,7 @@ myChart.id = "5";
 
 The following are some of the causes of this error. If you discover additional causes, please tell us with the feedback tool at the bottom of the page.
 
-- If you are using Visual Studio, there may be a problem with the sideloading. Close all instances of the Office host and Visual Studio. Restart Visual Studio and try pressing F5 again.
+- If you're using Visual Studio, there may be a problem with the sideloading. Close all instances of the Office host and Visual Studio. Restart Visual Studio and try pressing <kbd>F5</kbd> again.
 - The add-in's manifest has been removed from its deployment location, such as Centralized Deployment, a SharePoint catalog, or a network share.
 - The value of the [ID](/javascript/api/manifest/id) element in the manifest has been changed directly in the deployed copy. If for any reason, you want to change this ID, first remove the add-in from the Office host, then replace the original manifest with the changed manifest. You many need to clear the Office cache to remove all traces of the original. See the [Clear the Office cache](clear-cache.md) article for instructions on clearing the cache for your operating system.
 - The add-in's manifest has a `resid` that is not defined anywhere in the [Resources](/javascript/api/manifest/resources) section of the manifest, or there is a mismatch in the spelling of the `resid` between where it is used and where it is defined in the **\<Resources\>** section.
@@ -109,7 +109,7 @@ If this occurs, you can update the XSD files that Visual Studio uses to the late
 
 1. Open your project in Visual Studio.
 1. In **Solution Explorer**, open the manifest.xml file. The manifest is typically in the first project under your solution.
-1. Select **View** > **Properties Window** (F4).
+1. Select **View** > **Properties Window** (<kbd>F4</kbd>).
 1. Set the cursor selection in the manifest.xml so that the **Properties** window shows the **XML Document** properties.
 1. In the **Properties** window, select the **Schemas** property, then select the ellipsis (...) to open the **XML Schemas** editor. Here you can find the exact folder location of all schema files your project uses.
 

@@ -26,7 +26,7 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 ## Sideload an add-in in Office on Mac
 
-1. Use **Finder** to sideload the manifest file. Open **Finder** and then enter Command+Shift+G to open the **Go to folder** dialog.
+1. Use **Finder** to sideload the manifest file. Open **Finder** and then enter <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd> to open the **Go to folder** dialog.
 
 1. Enter one of the following filepaths, based on the application you want to use for sideloading. If the `wef` folder doesn't exist on your computer, create it.
 
