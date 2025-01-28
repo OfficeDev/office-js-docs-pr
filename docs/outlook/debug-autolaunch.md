@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based or spam-reporting Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
-ms.date: 12/19/2024
+ms.date: 01/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -164,6 +164,9 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
 After confirming that the debugger is attached, return to Outlook. In the **Debug Event-based handler** dialog, choose **OK** .
 
 You can now hit your breakpoints to debug your event-based activation or spam-reporting code.
+
+> [!IMPORTANT]
+> In classic Outlook on Windows, the JavaScript engine used during debugging may differ from that used when debugging is turned off. Starting in Version 2403 (Build 17425.20000), event-based and spam-reporting add-ins use the [V8 JavaScript engine](https://v8.dev/) to run JavaScript. In earlier versions, these add-ins use the Chakra engine.
 
 ## Stop the debugger
 
