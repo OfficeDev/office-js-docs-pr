@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 01/06/2024
+ms.date: 01/24/2025
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -30,7 +30,7 @@ To turn legacy tokens off, run the following command.
 
 `Set-AuthenticationPolicy –BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
 
-The command turns off legacy tokens for the entire tenant. If an Outlook add-in requests a legacy token, it won’t be issued a token.
+The `-Identity` parameter must be set to `LegacyExchangeTokens`. The command turns off legacy tokens for the entire tenant. If an Outlook add-in requests a legacy token, it won’t be issued a token.
 
 > [!NOTE]
 > If you've confirmed that your tenant is not using any add-ins that require legacy Exchange Online tokens, we recommend you turn off legacy Exchange Online tokens as a security best practice. For more information on how to determine if you tenant has add-ins using legacy tokens, see the [Nested app authentication and Outlook legacy tokens deprecation FAQ](faq-nested-app-auth-outlook-legacy-tokens.md).
@@ -41,13 +41,32 @@ To turn legacy tokens on, run the following command. It can take up to 24 hours 
 
 `Set-AuthenticationPolicy –AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
 
-You’ll only be able to turn tokens back on until June 2025 when all legacy tokens in all tenants will be forced off. For more information, see the [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
+The `-Identity` parameter must be set to `LegacyExchangeTokens`. You’ll only be able to turn tokens back on until June 2025 when all legacy tokens in all tenants will be forced off. For more information, see the [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
 
 > [!NOTE]
 > It might take up to 24 hours for the change to take effect across your entire organization. Legacy Exchange tokens issued to Outlook add-ins before token blocking was implemented in your organization will remain valid until they expire.
 
 > [!NOTE]
 > If you turn on legacy Exchange Online tokens, then they won't be turned off in February 2025 when Microsoft turns them off for all tenants. For more information, see [Nested app authentication and Outlook legacy tokens deprecation FAQ](faq-nested-app-auth-outlook-legacy-tokens.md).
+
+## Get the status of legacy Exchange Online tokens
+
+To view the status of legacy Exchange Online tokens, run the following command.
+
+`Get-AuthenticationPolicy -AllowLegacyExchangeTokens`
+
+The command returns whether `AllowLegacyExchangeTokens` is true or false, such as the following example in PowerShell.
+
+```console
+PS C:\> Get-AuthenticationPolicy -AllowLegacyExchangeTokens
+AllowLegacyExchangeTokens: False
+Allowed: []
+Blocked: []
+PS C:\>
+```
+
+> [!NOTE]
+> The previous command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name` don't return the legacy token status.
 
 ## See also
 

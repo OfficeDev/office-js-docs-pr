@@ -317,7 +317,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
 
 ### Test the add-in
 
-1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created PowerPoint add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
@@ -336,7 +336,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
     > 1. Find the **\<compiler\>** node for the .cs `extension`, then remove the `type` attribute and its value.
     > 1. Save the file.
 
-1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing <kbd>Shift</kbd>+<kbd>F5</kbd> or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
     ![The Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
@@ -362,7 +362,7 @@ Complete the following steps to add markup that customizes the task pane UI.
 
 ### Test the add-in
 
-1. Using Visual Studio, test the PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the PowerPoint add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
@@ -374,7 +374,7 @@ Complete the following steps to add markup that customizes the task pane UI.
 
     ![The PowerPoint add-in with Insert Image button.](../images/powerpoint-tutorial-new-task-pane-ui.png)
 
-1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing <kbd>Shift</kbd>+<kbd>F5</kbd> or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
     ![The Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
@@ -414,7 +414,7 @@ Complete the following steps to add code that inserts text into the title slide 
 
 ### Test the add-in
 
-1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button highlighted in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
@@ -430,7 +430,7 @@ Complete the following steps to add code that inserts text into the title slide 
 
     ![The selected PowerPoint title slide with the Insert Text button highlighted in the add-in.](../images/powerpoint-tutorial-insert-text.png)
 
-1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing <kbd>Shift</kbd>+<kbd>F5</kbd> or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
     ![The Stop button highlighted in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
@@ -473,7 +473,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
 ### Test the add-in
 
-1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button in Visual Studio.](../images/powerpoint-tutorial-start.png)
 
@@ -485,7 +485,7 @@ Complete the following steps to add code that retrieves metadata for the selecte
 
     ![The Get Slide Metadata button highlighted in the add-in.](../images/powerpoint-tutorial-get-slide-metadata.png)
 
-1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing <kbd>Shift</kbd>+<kbd>F5</kbd> or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
     ![The Stop button in Visual Studio.](../images/powerpoint-tutorial-stop.png)
 
@@ -592,7 +592,7 @@ Complete the following steps to add code that navigates between the slides of a 
 
 ### Test the add-in
 
-1. Using Visual Studio, test the add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
     ![The Start button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-start.png)
 
@@ -620,7 +620,7 @@ Complete the following steps to add code that navigates between the slides of a 
 
     ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-1. In Visual Studio, stop the add-in by pressing **Shift+F5** or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing <kbd>Shift</kbd>+<kbd>F5*</kbd> or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
     ![The Stop button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-stop.png)
 

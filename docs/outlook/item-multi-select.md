@@ -350,7 +350,7 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
 
 1. In Outlook, ensure the Reading Pane is enabled. To enable the Reading Pane, see [Use and configure the Reading Pane to preview messages](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0).
 
-1. Navigate to your inbox and choose multiple messages by holding **Ctrl** while selecting messages.
+1. Navigate to your inbox and choose multiple messages by holding <kbd>Ctrl</kbd> while selecting messages.
 
 1. Select **Show Taskpane**. The location of the add-in varies depending on your Outlook client. For guidance, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 

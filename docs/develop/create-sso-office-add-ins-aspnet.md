@@ -372,7 +372,7 @@ The server-side code is an ASP.NET Core server that provides REST APIs for the c
 
     :::image type="content" source="../images/select-host.png" alt-text="Choose the desired Office client application: Excel, PowerPoint, or Word.":::
 
-1. Press F5. Or select **Debug > Start Debugging**.
+1. Press <kbd>F5</kbd>. Or select **Debug** > **Start Debugging**.
 1. In the Office application, select the **Show Add-in** in the **SSO ASP.NET** group to open the task pane add-in.
 1. Select **Get OneDrive File Names**. If you're logged into Office with either a Microsoft 365 Education or work account, or a Microsoft account, and SSO is working as expected, the first 10 file and folder names in your OneDrive for Business are displayed on the task pane. If you are not logged in, or you are in a scenario that does not support SSO, or SSO is not working for any reason, you will be prompted to sign in. After you sign in, the file and folder names appear.
 

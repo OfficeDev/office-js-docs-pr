@@ -55,8 +55,8 @@ You can use the browser developer tools to debug custom functions that don't use
 ### Start debugging
 
 1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-1. In developer tools, open your source code script file using **Cmd+P** or **Ctrl+P** (**functions.js** or **functions.ts**).
-1. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code. 
+1. In developer tools, open your source code script file using <kbd>Cmd</kbd>+<kbd>P</kbd> or <kbd>Ctrl</kbd>+<kbd>P</kbd> (**functions.js** or **functions.ts**).
+1. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code.
 
 If you need to change the code you can make edits in VS Code and save the changes. Refresh the browser to see the changes loaded.
 
