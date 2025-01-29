@@ -28,7 +28,7 @@ Before you can specify an equivalent COM add-in, you must first identify its `Pr
 ### Configure the manifest
 
 > [!IMPORTANT]
-> Applies to **Excel**, **Outlook**, **PowerPoint**, and **Word**.
+> Applies to Excel, Outlook, PowerPoint, and Word.
 
 To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then, Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed.
 
