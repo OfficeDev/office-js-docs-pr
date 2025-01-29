@@ -55,6 +55,9 @@ The following example shows the portion of the manifest that specifies a COM add
 
 For Outlook web add-ins, if you're unable to update the add-in's manifest to specify the **\<EquivalentAddins\>** element, you must identify the equivalent COM add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting instead. This setting must be configured on the user's machine. Then, classic Outlook on Windows will use the COM add-in instead of the web add-in if they're both installed.
 
+> [!NOTE]
+> Configuring the Group Policy setting isn't necessary if the add-in's manifest already contains an **\<EquivalentAddins\>** section.
+
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).
 1. Navigate to **User Configuration** > **Administrative Templates**  > **Microsoft Outlook 2016** > **Miscellaneous**.
