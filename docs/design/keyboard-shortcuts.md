@@ -189,7 +189,7 @@ For the best user experience, we recommend that you minimize keyboard shortcut c
 - Avoid using established keyboard shortcuts in Excel and Word. For a list, see the following:
   - [Keyboard shortcuts in Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
   - [Keyboard shortcuts in Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
-- When the keyboard focus is inside the add-in UI, <kbd>Ctrl</kbd>+<kbd>Spacebar</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F10</kbd> won't work as these are essential accessibility shortcuts.
+- When the keyboard focus is inside the add-in UI, <kbd>Ctrl</kbd>+<kbd>Space</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F10</kbd> won't work as these are essential accessibility shortcuts.
 - On a Windows or Mac computer, if the **Reset Office Add-ins shortcut preferences** command isn't available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
 
 ## Localize the description of a keyboard shortcut

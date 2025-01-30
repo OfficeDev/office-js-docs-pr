@@ -620,7 +620,7 @@ Complete the following steps to add code that navigates between the slides of a 
 
     ![The Go to Last Slide button highlighted in the add-in.](../images/powerpoint-tutorial-go-to-last-slide.png)
 
-1. In Visual Studio, stop the add-in by pressing <kbd>Shift</kbd>+<kbd>F5*</kbd> or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
+1. In Visual Studio, stop the add-in by pressing <kbd>Shift</kbd>+<kbd>F5</kbd> or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.
 
     ![The Stop button highlighted on the Visual Studio toolbar.](../images/powerpoint-tutorial-stop.png)
 

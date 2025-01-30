@@ -119,7 +119,7 @@ Configure the debugger in Visual Studio Code. Follow the steps applicable to you
 1. Create a new folder called **Debugging** (perhaps in your **Desktop** folder).
 1. Open Visual Studio Code.
 1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
-1. On the Activity Bar, select **Run and Debug** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D<kbd>).
+1. On the Activity Bar, select **Run and Debug** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>).
 
     ![The Run and Debug icon on the Activity Bar.](../images/vs-code-debug.png)
 
