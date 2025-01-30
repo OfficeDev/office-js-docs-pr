@@ -327,7 +327,7 @@ To turn off RSID attributes in Word for documents you create going forward, do t
 To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML.
 
 1. With your insertion point in the main body of the document, press <kbd>Ctrl</kbd>+<kbd>Home</kbd> to go to the top of the document.
-1. On the keyboard, press <kbd>Spacebar</kbd>, <kbd>Delete</kbd>, <kbd>Spacebar</kbd>. Then, save the document.
+1. On the keyboard, press <kbd>Space</kbd>, <kbd>Delete</kbd>, <kbd>Space</kbd>. Then, save the document.
 
 After removing the majority of the markup from this package, you're left with the minimal markup that needs to be inserted for the sample, as shown in the preceding section.
 
