@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 12/30/2024
+ms.date: 01/31/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -208,6 +208,30 @@ const msalConfig = {
 };
 ```
 
+### Test your updated add-in
+
+Once you've updated your add-in to use NAA, you should test it on all platforms you support, such as Mac, mobile, web, and Outlook on Windows.
+
+#### Test when Exchange tokens turned off
+
+To test that your add-in works correctly when Exchange tokens are turned off, deploy your add-in to a tenant with tokens turned off and test it. To turn tokens off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+
+If you've implemented a pattern where your code uses Exchange tokens but then falls over if they are unavailable, be sure you are checking for the correct errors. When a call to get an Exchange token fails, check the [asyncResult.diagnostics](/javascript/api/office/office.asyncresult). If either of the following errors is returned, switch to NAA.
+
+- `GenericTokenError: An internal error has occurred.`
+- `InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information.`
+
+#### Test fallback code for Trident+ webview
+
+If your Outlook add-in supports Outlook 2016 or Outlook 2019 on Windows, test that it works correctly when the Trident+ (Internet Explorer 11) webview is used. When the Trident+ webview is used, your code must fall back to MSAL v2 to open a dialog and sign in the user. For more information on how to implement the fallback pattern, see [Outlook add-in with SSO using nested app authentication including Internet Explorer fallback](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE).
+
+#### Testing in Trident+ and WebView2
+
+Outlook 2016 and Outlook 2019 on Windows use the Trident+ or WebView2 based on various OS conditions.
+
+- For more information on when Trident+ or Webview2 is used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+- For more information on how to determine which webview is running, see  [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md#determine-the-webview-the-add-in-is-running-in-at-runtime)
+
 ### How do I validate the ID token or authenticate the user?
 
 Using Exchange tokens, you can validate the ID token and use it to authorize the user to access your own resources. For more information, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md). However, MSAL with Entra ID tokens does not use this approach.
@@ -226,7 +250,7 @@ Passing the ID token over a network call to enable or authorize access to a serv
 
 It's very important that you always request an access token to your own services. The access token also includes the same ID claims, so you don't need to pass the ID token. Instead create a custom scope for your service. For more information about app registration settings for your own services, see [Protected web API: App registration](/entra/identity-platform/scenario-protected-web-api-app-registration). When your service receives the access token, it can validate it, and use ID claims from inside the access token.
 
-## How do I determine if the user is an online or on-premise account?
+### How do I determine if the user is an online or on-premise account?
 
 You can determine if the signed-in user has an Exchange Online account or on-premise Exchange account by using the [Office.UserProfile.accountType](/javascript/api/outlook/office.userprofile) property. If the account type property value is **enterprise**, then the mailbox is on an on-premises Exchange server. Note that volume-licensed perpetual Outlook 2016 doesn’t support the **accountType** property. To work around this, call the [ResolveNames](/exchange/client-developer/web-service-reference/resolvenames-operation) operation in Exchange Web Service (EWS) in the Exchange on-premise server to get the recipient types.
 
