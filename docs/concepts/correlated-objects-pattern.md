@@ -2,7 +2,7 @@
 title: Avoid using the context.sync method in loops
 description: Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.
 ms.topic: best-practice
-ms.date: 01/15/2025
+ms.date: 01/31/2025
 ms.localizationpriority: medium
 ---
 
@@ -133,7 +133,9 @@ The preceding example suggests the following procedure for turning a loop that c
 
 Let's consider a more complex scenario where processing the items in the collection requires data that isn't in the items themselves. The scenario envisions a Word add-in that operates on documents created from a template with some boilerplate text. Scattered in the text are one or more instances of the following placeholder strings: "{Coordinator}", "{Deputy}", and "{Manager}". The add-in replaces each placeholder with some person's name. While the UI of the add-in isn't important to this article, the add-in could have a task pane with three text boxes, each labeled with one of the placeholders. The user enters a name in each text box and then presses a **Replace** button. The handler for the button creates an array that maps the names to the placeholders, and then replaces each placeholder with the assigned name.
 
-You don't need to actually produce an add-in with this UI to experiment with the code. You can use the [Script Lab tool](../overview/explore-with-script-lab.md) to prototype the important code. Use the following assignment statement to create the mapping array.
+You can use the [Script Lab tool](../overview/explore-with-script-lab.md) to follow along with the code snippets shown here. In Word, you can load the "Correlated objects pattern" sample or [import this sample code from the GitHub repo](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/refs/heads/main/samples/word/90-scenarios/correlated-objects-pattern.yaml).
+
+The following assignment statement creates the mapping array between placeholder and assigned names.
 
 ```javascript
 const jobMapping = [
@@ -143,14 +145,14 @@ const jobMapping = [
     ];
 ```
 
-The following code shows how you might replace each placeholder with its assigned name if you used `context.sync` inside loops.
+The following code shows how you might replace each placeholder with its assigned name if you used `context.sync` inside loops. This corresponds to the `replacePlaceholdersSlow` function in the sample.
 
 ```javascript
 Word.run(async (context) => {
     // The context.sync calls in the loops will degrade performance.
     for (let i = 0; i < jobMapping.length; i++) {
       let options = Word.SearchOptions.newObject(context);
-      options.matchWildCards = false;
+      options.matchWildcards = false;
       let searchResults = context.document.body.search(jobMapping[i].job, options);
       searchResults.load('items');
 
@@ -165,7 +167,7 @@ Word.run(async (context) => {
 });
 ```
 
-In the preceding code, there's an outer and an inner loop. Each of them contains a `context.sync` call. Based on the first code snippet in this article, you probably see that the `context.sync` in the inner loop can simply be moved after the inner loop. But that would still leave the code with a `context.sync` (two of them actually) in the outer loop. The following code shows how you can remove `context.sync` from the loops. We discuss the code later.
+In the preceding code, there's an outer and an inner loop. Each of them contains a `context.sync` call. Based on the first code snippet in this article, you probably see that the `context.sync` in the inner loop can simply be moved after the inner loop. But that would still leave the code with a `context.sync` (two of them actually) in the outer loop. The following code shows how you can remove `context.sync` from the loops. It corresponds to the `replacePlaceholders` function in the sample. We discuss the code later.
 
 ```javascript
 Word.run(async (context) => {
@@ -173,7 +175,7 @@ Word.run(async (context) => {
     const allSearchResults = [];
     for (let i = 0; i < jobMapping.length; i++) {
       let options = Word.SearchOptions.newObject(context);
-      options.matchWildCards = false;
+      options.matchWildcards = false;
       let searchResults = context.document.body.search(jobMapping[i].job, options);
       searchResults.load('items');
       let correlatedSearchResult = {
