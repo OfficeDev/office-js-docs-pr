@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 12/30/2024
+ms.date: 01/24/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -93,10 +93,12 @@ If you rely on an ISV for your add-in, we recommend you contact them as soon as 
 
 Once the admin or a user consents, it will be listed in the Microsoft Entra admin center. You can find app registrations using the following steps.
 
-1. Go to [https://entra.microsoft.com/#home](https://entra.microsoft.com/#home).
-1. In the left navigation pane, select **Applications** > **App registrations**.
-1. On the **App registrations** page, select **All applications**.
-1. Now you can search for any app registration by name or ID.
+1. Go to [https://entra.microsoft.com/#home](https://entra.microsoft.com/#home) and sign in as admin on your tenant.
+1. In the left navigation pane, select **Applications** > **Enterprise applications**.
+1. On the **Enterprise applications** page, in the **Manage** section, select **All applications**.
+1. Select the Add-in, this wil open an overview page.
+In the overview page, select Permissions.
+There are two views for permissions; Admin consent, and User consent. Select User consent to see any individual consents.
 
 ### Is there a list of publishers that have updated their add-ins?
 
@@ -229,6 +231,22 @@ It's very important that you always request an access token to your own services
 ## How do I determine if the user is an online or on-premise account?
 
 You can determine if the signed-in user has an Exchange Online account or on-premise Exchange account by using the [Office.UserProfile.accountType](/javascript/api/outlook/office.userprofile) property. If the account type property value is **enterprise**, then the mailbox is on an on-premises Exchange server. Note that volume-licensed perpetual Outlook 2016 doesn’t support the **accountType** property. To work around this, call the [ResolveNames](/exchange/client-developer/web-service-reference/resolvenames-operation) operation in Exchange Web Service (EWS) in the Exchange on-premise server to get the recipient types.
+
+## How do I deploy my add-in to Microsoft AppSource
+
+If you are publishing a new add-in to Microsoft AppSource, it will need to go through a certification process. For more information, see [Publish your Office Add-in to Microsoft AppSource](../publish/publish-office-add-ins-to-appsource.md). If you are updating the manifest of an add-in that is already published in Microsoft AppSource, you need to go through the certification process again. You can update the add-in's source code on your web server any time without a need to go through the certification process.
+
+If you're add-in uses SSO through NAA, your add-in must be in compliance with the following publishing guidelines.
+
+- [1000.3 Authentication options](/legal/marketplace/certification-policies#10003-authentication-options)
+- [1120.3 Functionality](/legal/marketplace/certification-policies#11203-functionality)
+
+Be sure to handle admin consent properly. See [Publish an add-in that requires admin consent for Microsoft Graph scopes](../includes/deploy-updates-that-require-admin-consent.md)
+
+Also important details here for new or updated add-ins. See Make your solutions available in Microsoft AppSource and within Office - Marketplace publisher | Microsoft Learn
+If you update your add-in (change the manifest) you need to go through the certification process again.
+You can update your web server code any time without a need for review.
+
 
 ## Related content
 
