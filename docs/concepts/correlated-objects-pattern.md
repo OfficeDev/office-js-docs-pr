@@ -133,7 +133,7 @@ The preceding example suggests the following procedure for turning a loop that c
 
 Let's consider a more complex scenario where processing the items in the collection requires data that isn't in the items themselves. The scenario envisions a Word add-in that operates on documents created from a template with some boilerplate text. Scattered in the text are one or more instances of the following placeholder strings: "{Coordinator}", "{Deputy}", and "{Manager}". The add-in replaces each placeholder with some person's name. While the UI of the add-in isn't important to this article, the add-in could have a task pane with three text boxes, each labeled with one of the placeholders. The user enters a name in each text box and then presses a **Replace** button. The handler for the button creates an array that maps the names to the placeholders, and then replaces each placeholder with the assigned name.
 
-You can use the [Script Lab tool](../overview/explore-with-script-lab.md) to follow along with the code snippets shown here. In Word, you can load the "Correlated objects pattern" sample or [import this sample code from the GitHub repo](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/refs/heads/main/samples/word/90-scenarios/correlated-objects-pattern.yaml).
+You can use the [Script Lab tool](../overview/explore-with-script-lab.md) to follow along with the code snippets shown here. In Word, you can load the "Correlated objects pattern" sample or [import this sample code from the GitHub repo](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/refs/heads/prod/samples/word/90-scenarios/correlated-objects-pattern.yaml).
 
 The following assignment statement creates the mapping array between placeholder and assigned names.
 
