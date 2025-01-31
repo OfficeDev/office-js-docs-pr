@@ -13,7 +13,7 @@ Incompletely removed add-ins can leave artifacts on your computer, such as custo
 Outlook add-ins also might add these artifacts to other computers when you sign into Outlook on them with the same ID as you used to develop the add-in.  
 
    > [!IMPORTANT]
-   > When you sign into Outlook, it downloads from Exchange, and sideloads, all the Outlook add-in manifests that are associated with your ID, *including add-ins that you are developing on a different computer using the same ID*. For example, any custom ribbon buttons defined in the manifest will appear for the add-in. 
+   > When you sign into Outlook, it downloads from Exchange, and sideloads, all the Outlook add-in manifests that are associated with your ID, *including add-ins that you are developing on a different computer using the same ID*. For example, any custom ribbon buttons defined in the manifest will appear for the add-in.
    >
    > If the URLs in the manifest point to a non-localhost server and that server is running and accessible to the non-development computer, then Outlook caches the add-in's files in the local file system and the add-in usually runs normally on the computer. Otherwise, the add-in doesn't function, but visible parts of it, such as custom ribbon buttons appear. They have the labels defined in the manifest. The add-in's button icons also appear if they were ever cached locally on the non-development computer and the cache was never cleared. Icon files aren't stored with Exchange, so if they were never cached on the non-development computer (or the cache has been cleared), then the buttons have default icons.
    >
@@ -45,7 +45,7 @@ The following list identifies, for each tool, how to uninstall but doesn't descr
 - **Office Add-in Development Kit for Visual Studio Code**: With the Office Add-in Development Kit extension open, select **Stop Previewing Your Office Add-in**. For more information, see [Stop testing your add-in](../develop/development-kit-overview.md?tabs=vscode#stop-testing-your-office-add-in).
 - **office-addin-debugging tool**: Use the `office-addin-debugging stop` command at the same command line where you started the session with `office-addin-debugging start`. For more information, see [Sideload with the Office-Addin-Debugging tool](../develop/convert-xml-to-json-manifest.md#sideload-with-the-office-addin-debugging-tool).
 - **Teams Toolkit CLI**: Use the `teamsapp uninstall` command at the same command line where you started the session with `teamsapp install`. For more information, see [Sideload with the Teams Toolkit CLI](../develop/convert-xml-to-json-manifest.md#sideload-with-the-teams-toolkit-cli-command-line-interface).
-- **Visual Studio**: Select **DEBUG** | **Stop debugging** in the menu, or press SHIFT-F5, or click the square red "stop" button on the debugging bar. Alternatively, closing the Office application also stops the session and uninstalls the add-in. For more information, see [First look at the Visual Studio debugger](/visualstudio/debugger/debugger-feature-tour).
+- **Visual Studio**: Select **DEBUG** | **Stop debugging** in the menu, or press <kbd>Shift</kbd>+<kbd>F5</kbd>, or click the square red "stop" button on the debugging bar. Alternatively, closing the Office application also stops the session and uninstalls the add-in. For more information, see [First look at the Visual Studio debugger](/visualstudio/debugger/debugger-feature-tour).
 
 ## Remove a ghost add-in
 
@@ -81,12 +81,12 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
    A list of the add-ins installed on Outlook displays. These will include built-in Microsoft add-ins and add-ins you have installed. Any ghost Outlook add-ins will also be listed.
 
-1. Find the ghost add-in in the list. If it was created with Yo Office or another Microsoft tool, it probably has the name "Contoso Task Pane Add-in". 
+1. Find the ghost add-in in the list. If it was created with Yo Office or another Microsoft tool, it probably has the name "Contoso Task Pane Add-in".
 1. Copy the App ID (a GUID) of the add-in. You need it for later steps.
 1. Run the command `Remove-App -Identity {{The GUID OF YOUR ADD-IN HERE}}` (e.g., `Remove-App -Identity 26ead0cb-10dd-4ba2-86c6-4db111876652`). This command removes the add-in from Exchange.
 
    > [!WARNING]
-   > The removal of the registration needs to propagate to all Exchange servers. Wait at least three hours before continuing with the next step. 
+   > The removal of the registration needs to propagate to all Exchange servers. Wait at least three hours before continuing with the next step.
 
 1. Continue with the section [Remove the add-in artifacts](#remove-the-add-in-artifacts).
 
@@ -110,11 +110,11 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
    1. Open the **Registry Editor**.
    1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer**. This key lists the add-ins that are currently sideloaded, or were sideloaded in the past and weren't fully uninstalled. The **Data** value for each entry is the path to the add-in's manifest. The **Name** value varies depending on which version of which tool was used to create and sideload the add-in. If Visual Studio was used, the name is typically is also the path to the manifest. For other tools, the name is typically the add-in's ID. When an Office application launches, it reloads all add-ins listed in this key (that support the Office application). Reloading may have no practical or discernable effect if the add-in's artifacts have been deleted from the cache, or the manifest no longer exists at the path, or the add-in's files aren't being served by a server.
-   
+
       Find the entry for the ghost add-in and delete it. If it is an Outlook add-in, then you have the ID from [removing the Exchange registration](#remove-the-exchange-registration-of-a-ghost-outlook-add-in). You can also use the path in the **Data** column to find the manifest to help identify the add-in the entry refers to and read the ID from the manifest. If any manifests listed in the **Data** column no longer exist at the specified path, then delete the entries for those manifests.
 
       :::image type="content" source="../images/addinRegistrationWindowsManifestPath.png" alt-text="The Windows registry for the key named Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer." border="false":::
-    
+
    1. Expand the **... Developer** node in the registry tree. Look for a subkey whose name is the same ghost add-in's ID. If it is there, delete it.
 
       :::image type="content" source="../images/addinRegistrationWindowsDeveloperSubkeys.png" alt-text="The Windows registry for the key named Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer expanded to show subkeys." border="false":::

@@ -22,7 +22,7 @@ To determine which browser or webview is being used on your computer, see [Brows
 
 ## Debug a task pane add-in using the F12 tools
 
-Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing F12 in Internet Explorer. F12 is now an independent application used to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
+Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing <kbd>F12</kbd> in Internet Explorer. F12 is now an independent application used to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
 
 > [!NOTE]
 > If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
