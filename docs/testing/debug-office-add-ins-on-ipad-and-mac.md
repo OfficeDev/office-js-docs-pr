@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins on a Mac
 description: Learn how to use a Mac to debug Office Add-ins.
-ms.date: 07/09/2024
+ms.date: 02/04/2025
 ms.localizationpriority: medium
 ---
 
@@ -45,4 +45,4 @@ Then, open the Office application and [sideload your add-in](sideload-an-office-
 
 ## Clearing the Office application's cache on a Mac
 
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+Add-ins are often cached in Office on Mac for performance reasons. For guidance on how to clear the Office cache on Mac, see [Clear the Office cache on Mac](clear-cache.md#clear-the-office-cache-on-mac).
