@@ -29,7 +29,7 @@ Microsoft begins turning off legacy Exchange online tokens starting February 17t
 
 #### What happens on February 17th?
 
-Microsoft will begin deploying a change to all users worldwide in Microsoft 365 tenants that will turn off the issuance of legacy Exchange online tokens. The deployment will take several weeks to deploy to all users. If an Outlook add-in requests a legacy Exchange token, and token issuance is turned off, the add-in will receive an error. Outlook add-ins that still request legacy Exchange Online tokens will be broken by this change. Please note that even after legacy tokens are turned off, already issued legacy tokens will continue to be valid for up to an hour.
+Microsoft will begin deploying a change to all users worldwide in Microsoft 365 tenants that will turn off the issuance of legacy Exchange online tokens. The deployment will take several weeks to deploy to all users. If an Outlook add-in requests a legacy Exchange token, and token issuance is turned off, the add-in will receive an error. Outlook add-ins that still request legacy Exchange Online tokens will be broken by this change. Please note that even after legacy tokens are turned off, legacy tokens previously issued will continue to be valid for up to an hour.
 
 Note that since the change is applied per user, and deployed over several weeks, you could see some users affected while others are not. If you need to opt out of this change, see [Can I turn legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on)
 
@@ -65,7 +65,7 @@ In June 2025, legacy tokens will be turned off and you won't be able to turn the
 
 ### How does the admin consent flow work?
 
-Independent software vendors (ISVs) are updating their add-ins to use Entra ID tokens and Microsoft Graph scopes. When the add-in requests an access token, it must have admin or user consent. If the administrator consents, all users on the tenant can use the add-in for the scopes the add-in requires. Otherwise, each end-user will be prompted for consent, if [user consent is enabled](/microsoft-365/admin/misc/user-consent). Completing admin consent provides a better experience because the users aren't prompted.
+Independent software vendors (ISVs) are updating their add-ins to use Entra ID tokens and Microsoft Graph scopes. When the add-in requests an access token, it must have admin or user consent. If the administrator consents, all users on the tenant can use the add-in for the scopes the add-in requires. Otherwise, each end-user will be prompted for consent, if [user consent is enabled](/microsoft-365/admin/misc/user-consent). For a better experience because the users aren't prompted, complete admin consent.
 
 One option for consent is that the ISV provides you with an admin consent URI.
 
@@ -109,8 +109,8 @@ Once the admin or a user consents, it will be listed in the Microsoft Entra admi
 1. Go to [https://entra.microsoft.com/#home](https://entra.microsoft.com/#home) and sign in as admin on your tenant.
 1. In the left navigation pane, select **Applications** > **Enterprise applications**.
 1. On the **Enterprise applications** page, in the **Manage** section, select **All applications**.
-1. Select the Add-in, this wil open an overview page.
-In the overview page, select Permissions.
+1. Select the Add-in. This will open an overview page.
+In the overview page, select **Permissions**.
 There are two views for permissions; Admin consent, and User consent. Select User consent to see any individual consents.
 
 ### Is there a list of publishers that have updated their add-ins?
@@ -271,7 +271,7 @@ You can determine if the signed-in user has an Exchange Online account or on-pre
 
 ## How do I deploy my add-in to Microsoft AppSource
 
-If you are publishing a new add-in to Microsoft AppSource, it will need to go through a certification process. For more information, see [Publish your Office Add-in to Microsoft AppSource](../publish/publish-office-add-ins-to-appsource.md). If you are updating the manifest of an add-in that is already published in Microsoft AppSource, you need to go through the certification process again. You can update the add-in's source code on your web server any time without a need to go through the certification process.
+If you're publishing a new add-in to Microsoft AppSource, it will need to go through a certification process. For more information, see [Publish your Office Add-in to Microsoft AppSource](../publish/publish-office-add-ins-to-appsource.md). If you're updating the manifest of an add-in that is already published to Microsoft AppSource, you need to go through the certification process again. You can update the add-in's source code on your web server any time without a need to go through the certification process.
 
 If you're add-in uses SSO through NAA, your add-in must be in compliance with the following publishing guidelines.
 
