@@ -124,16 +124,18 @@ To clear the Office cache on Windows 10 when the add-in is running in Microsoft 
 
 ## Clear the Office cache on Mac
 
-You can choose to clear the web or both the web and Wef caches on Mac. Normally, the web cache is cleared by reloading the add-in. If more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
+You can choose to clear the web or both the web and Wef caches on Mac.
 
 ### Clear the web cache
+
+Normally, the web cache is cleared by reloading the add-in. If more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
+
+To clear the web cache in Excel, PowerPoint, and Word, use the personality menu of any task pane add-in.
 
 > [!NOTE]
 >
 > - The personality menu in task panes is only supported in Excel, PowerPoint, and Word. Because it isn't supported in Outlook, you must use the [option to clear both the web and Wef caches instead](#clear-the-web-and-wef-caches).
 > - The personality menu is only shown in macOS Version 10.13.6 or later.
-
-To clear the web cache in Excel, PowerPoint, and Word, use the personality menu of any task pane add-in.
 
 From the add-in's task pane, choose the personality menu. Then, choose **Clear Web Cache**.
 
