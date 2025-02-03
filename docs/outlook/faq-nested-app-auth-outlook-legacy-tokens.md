@@ -280,10 +280,7 @@ If you're add-in uses SSO through NAA, your add-in must be in compliance with th
 
 Be sure to handle admin consent properly. See [Publish an add-in that requires admin consent for Microsoft Graph scopes](../publish/publish-nested-app-auth-add-in.md)
 
-Also important details here for new or updated add-ins. See Make your solutions available in Microsoft AppSource and within Office - Marketplace publisher | Microsoft Learn
-If you update your add-in (change the manifest) you need to go through the certification process again.
-You can update your web server code any time without a need for review.
-
+For additional deployment details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center). If you update your add-in (change the manifest) you need to go through the [certification process again](../publish/publish-nested-app-auth-add-in.md). You can update your web server code any time without a need for review.
 
 ## Related content
 
