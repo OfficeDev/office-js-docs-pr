@@ -278,7 +278,7 @@ If you're add-in uses SSO through NAA, your add-in must be in compliance with th
 - [1000.3 Authentication options](/legal/marketplace/certification-policies#10003-authentication-options)
 - [1120.3 Functionality](/legal/marketplace/certification-policies#11203-functionality)
 
-Be sure to handle admin consent properly. See [Publish an add-in that requires admin consent for Microsoft Graph scopes](../includes/deploy-updates-that-require-admin-consent.md)
+Be sure to handle admin consent properly. See [Publish an add-in that requires admin consent for Microsoft Graph scopes](../publish/publish-nested-app-auth-add-in.md)
 
 Also important details here for new or updated add-ins. See Make your solutions available in Microsoft AppSource and within Office - Marketplace publisher | Microsoft Learn
 If you update your add-in (change the manifest) you need to go through the certification process again.
