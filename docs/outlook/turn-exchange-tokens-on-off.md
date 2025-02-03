@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 01/31/2025
+ms.date: 02/03/2025
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -67,13 +67,13 @@ PS C:\>
 > [!NOTE]
 > The previous command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name` don't return the legacy token status.
 
-This command only shows the legacy token status as set by the administrator. If the administrator has never changed the settings, the command returns `(Not Set)`. If the token status is `(Not Set)` when the February deployment by Microsoft to turn off legacy tokens is implemented, the token status will still be `(Not Set)` even though legacy tokens are off. The following table shows the behavior of legacy Exchange Online tokens based on the token status when the February change is applied.
+This command only shows the legacy token status as set by the administrator. If the administrator has never changed the settings, the command returns `(Not Set)`. If the token status is `(Not Set)` when the February deployment by Microsoft to turn off legacy tokens is implemented, the token status will still be `(Not Set)` even though legacy tokens are off. The following table shows the behavior of legacy Exchange Online tokens based on the token status when the change is applied.
 
-| Legacy token status  | Legacy token status after February change  | Legacy token behavior after February change |
-|----------|-----------|-------------|
-|(Not Set) | (Not Set) | Tokens off  |
-|False     | False     | Tokens off  |
-|True      | True      | Tokens on   |
+| Legacy token admin setting  | Legacy token behavior before February change  | Legacy token behavior after February change | Legacy token behavior after June change |
+|----------|------------|-------------|------------|
+|(Not Set) | Tokens on  | Tokens off  | Tokens off |
+|False     | Tokens off | Tokens off  | Tokens off |
+|True      | Tokens on  | Tokens on   | Tokens off |
 
 ## See also
 
