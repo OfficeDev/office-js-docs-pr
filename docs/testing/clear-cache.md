@@ -1,36 +1,62 @@
 ---
 title: Clear the Office cache
 description: Learn how to clear the Office cache on your computer.
-ms.date: 09/09/2024
+ms.date: 02/04/2025
 ms.localizationpriority: high
 ---
 
 # Clear the Office cache
 
-To remove an add-in that you've previously sideloaded on Windows, Mac, or iOS, you need to clear the Office cache on your computer.
+The Office cache stores resources and data used by Office Add-ins. By accessing stored resources, an add-in's performance is improved as it avoids redownloading these resources when needed.
 
-Additionally, if you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you should clear the Office cache and then re-sideload the add-in using an updated manifest. Doing so allows Office to render the add-in as it's described by the updated manifest.
+You should clear the Office cache in the following scenarios.
+
+- When you want to remove an add-in that you've previously sideloaded on Windows, Mac, or iOS.
+- When you've updated the manifest (for example, to update the file names of icons or text of add-in commands). This ensures that you're using the latest version of the add-in.
+  > [!TIP]
+  > For add-ins that implement a task pane, if you only want the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to clear the cache. Instead, put focus in the add-in's task pane (by selecting anywhere within the task pane). Then, select <kbd>Ctrl</kbd>+<kbd>F5</kbd> to reload the add-in.
+- When you want to resolve issues or errors when running the add-in.
 
 > [!NOTE]
 > To remove a sideloaded add-in from Excel, OneNote, PowerPoint, or Word on the web, see [Sideload Office Add-ins in Office on the web for testing: Remove a sideloaded add-in](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+>
+> To remove a sideloaded add-in from Outlook on the web, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+
+## Types of caches
+
+The Office cache can refer to either the web cache or the Wef cache.
+
+- The **web cache** temporarily stores web-based resources and data used by an individual Office Add-in.
+- The **Wef cache** locally stores resources and data for all installed Office Add-ins.
+
+The following table outlines which Office cache types can be cleared on different platforms. It also provides links to instructions on how to clear a specific cache.
+
+| Platform | Types of caches to clear | Options to clear the cache |
+| ----- | ----- | ----- |
+| Windows | Both the web and Wef caches. There's currently no option to clear one cache without clearing the other. | <ul><li>[Automatically clear the cache](#automatically-clear-the-cache)</li><li>[Manually clear the cache](#manually-clear-the-cache)</li><li>[Use the Microsoft Edge developer tools on Windows 10](#use-the-microsoft-edge-developer-tools-on-windows-10)</li></ul> |
+| Mac | <ul><li>Web</li><li>Both web and Wef caches</li></ul> | <ul><li>**Web**: [Use the personality menu to clear the web cache](#clear-the-web-cache)</li><li>**Web and Wef**: [Clear the web and Wef caches on Mac](#clear-the-web-and-wef-caches)</li></ul> |
+| iOS | <ul><li>Web</li></ul> | <ul><li>[Use JavaScript to clear the cache on iOS](#clear-the-office-cache-on-ios)</li></ul> |
 
 ## Clear the Office cache on Windows
 
-There are three ways to clear the Office cache on a Windows computer: automatically, manually, and using the Microsoft Edge developer tools. The methods are described in the following subsections.
+Depending on your Office host and operating system, you can automatically or manually clear both the web and Wef caches on a Windows computer.
 
-### Automatically
+> [!IMPORTANT]
+> On Windows, the automatic and manual options clear both the web and Wef caches. There's currently no option to clear one cache without clearing the other.
+
+### Automatically clear the cache
+
+> [!NOTE]
+> The automatic option is only supported for Excel, PowerPoint, and Word. Outlook only supports the [manual option](#manually-clear-the-cache-in-outlook).
 
 This method is recommended for add-in development computers. If your Office on Windows version is 2108 or later, the following steps configure the Office cache to be cleared the next time Office is reopened.
 
-> [!NOTE]
-> The automatic method is not supported for Outlook.
+1. From the ribbon of Excel, PowerPoint, or Word, navigate to **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
+1. Select the **Next time Office starts, clear all previously-started web add-ins cache** checkbox.
+1. Select **OK**.
+1. Restart Excel, PowerPoint, or Word.
 
-1. From the ribbon of any Office host except Outlook, navigate to **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**.
-1. Select the checkbox **Next time Office starts, clear all previously-started web add-ins cache**.
-
-### Manually
-
-The manual method for Excel, Word, and PowerPoint is different from Outlook.
+### Manually clear the cache
 
 #### Manually clear the cache in Excel, Word, and PowerPoint
 
@@ -40,7 +66,7 @@ To remove all sideloaded add-ins from Excel, Word, and PowerPoint, delete the co
 %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\
 ```
 
-If the following folder exists, delete its contents too.
+If the following folder exists, delete its contents, too.
 
 ```
 %userprofile%\AppData\Local\Packages\Microsoft.Win32WebViewHost_cw5n1h2txyewy\AC\#!123\INetCache\
@@ -48,7 +74,7 @@ If the following folder exists, delete its contents too.
 
 #### Manually clear the cache in Outlook
 
-To remove a sideloaded add-in from Outlook, use the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to find the add-in in the **Custom add-ins** section of the dialog box that lists your installed add-ins. Choose the ellipsis (`...`) for the add-in and then choose **Remove** to remove that specific add-in.
+Before attempting to clear the cache in Outlook, first try to remove the sideloaded add-in using the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 
 If this add-in removal doesn't work, then delete the contents of the `Wef` folder as noted for Excel, Word, and PowerPoint in [Manually clear the cache in Excel, Word, and PowerPoint](#manually-clear-the-cache-in-excel-word-and-powerpoint).
 
@@ -71,12 +97,9 @@ To clear the cache in [new Outlook on Windows](https://support.microsoft.com/off
 1. In the Microsoft Edge DevTools window, select the **Network** tab.
 1. Select and hold (or right-click) anywhere in the **Requests** table. Then, select **Clear browser cache**.
 
-### Using the Microsoft Edge developer tools
+### Use the Microsoft Edge developer tools on Windows 10
 
-To clear the Office cache on Windows 10 when the add-in is running in Microsoft Edge, you can use the Microsoft Edge DevTools.
-
-> [!TIP]
-> If you only want the sideloaded add-in to reflect recent changes to its HTML or JavaScript source files, you shouldn't need to clear the cache. Instead, just put focus in the add-in's task pane (by clicking anywhere within the task pane) and then press <kbd>Ctrl</kbd>+<kbd>F5</kbd> to reload the add-in.
+To clear the Office cache on Windows 10 when the add-in is running in Microsoft Edge, use the Microsoft Edge DevTools.
 
 > [!NOTE]
 > To clear the Office cache using the following steps, your add-in must have a task pane. If your add-in is a UI-less add-in -- for example, one that uses the [on-send](../outlook/outlook-on-send-addins.md) feature -- you'll need to add a task pane to your add-in that uses the same domain for [SourceLocation](/javascript/api/manifest/sourcelocation), before you can use the following steps to clear the cache.
@@ -101,11 +124,43 @@ To clear the Office cache on Windows 10 when the add-in is running in Microsoft 
 
 ## Clear the Office cache on Mac
 
-[!include[additional cache folders on Mac](../includes/mac-cache-folders.md)]
+You can choose to clear the web or both the web and Wef caches on Mac.
+
+### Clear the web cache
+
+Normally, the web cache is cleared by reloading the add-in. If more than one add-in exists in the same document, the process of automatically clearing the cache on reload might not be reliable.
+
+To clear the web cache in Excel, PowerPoint, and Word, use the personality menu of any task pane add-in.
+
+> [!NOTE]
+>
+> - The personality menu in task panes is only supported in Excel, PowerPoint, and Word. Because it isn't supported in Outlook, you must use the [option to clear both the web and Wef caches instead](#clear-the-web-and-wef-caches).
+> - The personality menu is only shown in macOS Version 10.13.6 or later.
+
+From the add-in's task pane, choose the personality menu. Then, choose **Clear Web Cache**.
+
+![The "Clear web cache" option on the personality menu of an add-in's task pane.](../images/mac-clear-cache-menu.png)
+
+### Clear the web and Wef caches
+
+To clear both the web and Wef caches on Mac, delete the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` and `~/Library/Containers/com.microsoft.{host}/Data/Documents/wef` folders. Replace `{host}` with the Office application, such as `Excel`.
+
+> [!TIP]
+> Use the terminal or Finder to search for the specified folders. To look for these folders via Finder, you must set Finder to show hidden files. Finder displays the folders inside the **Containers** directory by product name, such as **Microsoft Excel** instead of **com.microsoft.Excel**.
+
+Deleting the contents of the `~/Library/Containers/com.microsoft.{host}/Data/Documents/wef` folder removes all sideloaded add-ins from an application.
+
+> [!NOTE]
+> If the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` folder doesn't exist, check for the following folders via terminal or Finder. If found, delete the contents of each folder.
+>
+> - `~/Library/Containers/com.microsoft.{host}/Data/Library/Caches/` where `{host}` is the Office application (e.g., `Excel`)
+> - `~/Library/Containers/com.microsoft.{host}/Data/Library/Application Support/Microsoft/Office/16.0/Wef/` where `{host}` is the Office application (e.g., `Excel`)
+> - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Caches/com.microsoft.Office365ServiceV2/`
+> - `~/Library/Containers/com.microsoft.Office365ServiceV2/Data/Library/Caches/com.microsoft.Office365ServiceV2/`
 
 ## Clear the Office cache on iOS
 
-To clear the Office cache on iOS, call `window.location.reload(true)` from JavaScript in the add-in to force a reload. Alternatively, reinstall Office.
+To clear the web cache on iOS, call `window.location.reload(true)` from JavaScript in the add-in. This forces the add-in to reload. Alternatively, reinstall Office.
 
 ## See also
 
@@ -117,3 +172,4 @@ To clear the Office cache on iOS, call `window.location.reload(true)` from JavaS
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
+- [Uninstall add-ins under development](uninstall-add-in.md)
