@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 02/03/2025
+ms.date: 02/05/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -124,7 +124,6 @@ Some widely used Outlook add-in publishers have already updated their add-ins as
 - [HubStar Connect](https://www.hubstar.com/solutions/connect/)
 - [LawToolBox](https://lawtoolbox.com/lawtoolbox-for-copilot/)
 - [OnePlace Solutions](https://www.oneplacesolutions.com/oneplacemail-sharepoint-app-for-outlook.html)
-- [SalesForce for Outlook](https://appsource.microsoft.com/product/office/wa104379334)
 - [Set-OutlookSignatures Benefactor Circle](https://explicitconsulting.at/open-source/set-outlooksignatures/)
 - [Wrike](https://appsource.microsoft.com/product/office/wa104381120)
 - [Zoho CRM for Email](https://appsource.microsoft.com/product/office/WA104379468)
