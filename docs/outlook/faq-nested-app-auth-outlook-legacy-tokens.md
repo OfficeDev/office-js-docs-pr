@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 02/03/2025
+ms.date: 02/05/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -124,7 +124,6 @@ Some widely used Outlook add-in publishers have already updated their add-ins as
 - [HubStar Connect](https://www.hubstar.com/solutions/connect/)
 - [LawToolBox](https://lawtoolbox.com/lawtoolbox-for-copilot/)
 - [OnePlace Solutions](https://www.oneplacesolutions.com/oneplacemail-sharepoint-app-for-outlook.html)
-- [SalesForce for Outlook](https://appsource.microsoft.com/product/office/wa104379334)
 - [Set-OutlookSignatures Benefactor Circle](https://explicitconsulting.at/open-source/set-outlooksignatures/)
 - [Wrike](https://appsource.microsoft.com/product/office/wa104381120)
 - [Zoho CRM for Email](https://appsource.microsoft.com/product/office/WA104379468)
@@ -280,10 +279,7 @@ If you're add-in uses SSO through NAA, your add-in must be in compliance with th
 
 Be sure to handle admin consent properly. See [Publish an add-in that requires admin consent for Microsoft Graph scopes](../publish/publish-nested-app-auth-add-in.md)
 
-For more important details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
-If you update your add-in (change the manifest) you need to go through the certification process again.
-You can update your web server code any time without a need for review.
-
+For additional deployment details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center). If you update your add-in (change the manifest) you need to go through the [certification process again](../publish/publish-nested-app-auth-add-in.md). You can update your web server code any time without a need for review.
 
 ## Related content
 
