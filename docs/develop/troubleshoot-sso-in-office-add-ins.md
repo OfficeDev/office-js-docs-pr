@@ -79,7 +79,9 @@ The Office application was unable to get an access token to the add-in's web ser
 - If this error occurs during development, be sure that your add-in registration and add-in manifest specify the `profile` permission (and the `openid` permission, if you are using MSAL.NET). For more information, see [Register an Office Add-in that uses single sign-on (SSO) with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
 - In production, an account mismatch could cause this error. For example, if the user attempts to sign in with a personal Microsoft account (MSA) when a Work or school account was expected. For these cases, your code should fall back to an alternate system of user authentication. For more information on account types, see [Identity and account types for single- and multi-tenant apps](/security/zero-trust/develop/identity-supported-account-types).
 - Make sure your application is enabled for users to sign-in for your organization.
-    1. Navigate to the add-in overview. You can get there from the App Registration Overview by selecting the add-in name by **Managed application in local directory**.
+    1. Sign in to the [Microsoft Azure portal](https://portal.azure.com/).
+    2. Go to your add-in's app registration.
+    3. On the **Overview** page,  select **Managed application in local directory**.
         :::image type="content" source="../images/azure-portal-managed-application.png" alt-text="The Managed application in local directory option in the App Registration Overview window.":::
     1. Under **Manage** > **Properties**, ensure the value of **Enabled for users to sign-in?** is **Yes**.
         :::image type="content" source="../images/azure-portal-enable-sign-in.png" alt-text="The option to allow users in the organization to sign-in to an application in the Properties window.":::
