@@ -242,7 +242,7 @@ To handle the situation in classic Outlook on Windows:
 
 # [Session data](#tab/session-data)
 
-If you only need to save and access data while a mail item is being composed, use the [SessionData](/javascript/api/outlook/office.sessiondata#outlook-office-sessiondata-getallasync-member(1)) API. Because data is only saved for the duration of the current compose session, data from a SessionData object can't be accessed from an item that's been saved as a draft, even if the same add-in that was used to set the data is used.
+If you only need to save and access data while a mail item is being composed, use the [SessionData](/javascript/api/outlook/office.sessiondata) API. Because data is only saved for the duration of the current compose session, data from a SessionData object can't be accessed from an item that's been saved as a draft. This behavior applies even if the same add-in is used.
 
 Custom data is saved to the SessionData object as key-value pairs. For each mail item, the data in the SessionData object is limited to 50,000 characters per add-in. That is, if multiple add-ins set custom session data on a single mail item, each add-in can create a SessionData object that contains up to 50,000 characters.
 
