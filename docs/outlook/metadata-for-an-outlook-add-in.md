@@ -136,9 +136,9 @@ To learn how to create and manage a CustomProperties object, get the [Script Lab
 
 To get **CustomProperties** using Microsoft Graph or EWS, you should first determine the name of its MAPI-based extended property. You can then get that property in the same way you would get any MAPI-based extended property.
 
-The use of Microsoft Graph or EWS depends on the type of Exchange environment in which the add-in runs. Select the applicable tab for your environment.
+The use of Microsoft Graph or EWS depends on whether an add-in is running in an [Exchange Online](#exchange-online) or [Exchange on-premises](#exchange-on-premises) environment.
 
-# [Exchange Online](#tab/exchange-online)
+#### Exchange Online
 
 In Exchange Online environments, your add-in can construct a Microsoft Graph request against messages and events to get the ones that already have custom properties. In your request, you should include the **CustomProperties** MAPI-based property and its property set using the details provided in [How custom properties are stored on an item](#how-custom-properties-are-stored-on-an-item).
 
@@ -160,7 +160,7 @@ For other examples that get single-value MAPI-based extended properties, see [Ge
 > [!TIP]
 > To learn how to obtain an access code to Microsoft Graph, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
-# [Exchange on-premises](#tab/exchange-on-prem)
+#### Exchange on-premises
 
 In Exchange on-premises environments, your mail add-in can get the `CustomProperties` MAPI-based extended property using the EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation. Access `GetItem` on the server side by using a callback token, or on the client side by using the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method. In the `GetItem` request, specify the `CustomProperties` MAPI-based property in its property set using the details provided in [How custom properties are stored on an item](#how-custom-properties-are-stored-on-an-item).
 
@@ -216,8 +216,6 @@ Office.context.mailbox.makeEwsRequestAsync(
 ```
 
 You can also get more custom properties if you specify them in the request string as other [ExtendedFieldURI](/exchange/client-developer/web-service-reference/extendedfielduri) elements.
-
----
 
 #### How custom properties are stored on an item
 
