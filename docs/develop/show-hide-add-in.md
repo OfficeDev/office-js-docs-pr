@@ -1,7 +1,7 @@
 ---
 title: Show or hide the task pane of your Office Add-in
 description: Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.
-ms.date: 09/19/2024
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

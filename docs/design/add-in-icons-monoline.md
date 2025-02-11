@@ -1,7 +1,7 @@
 ---
 title: Monoline style icon guidelines for Office Add-ins
 description: Guidelines for using Monoline style icons in Office Add-ins.
-ms.date: 09/19/2024
+ms.date: 02/12/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
