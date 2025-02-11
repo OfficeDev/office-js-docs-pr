@@ -1,7 +1,7 @@
 ---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
-ms.date: 06/13/2023
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
