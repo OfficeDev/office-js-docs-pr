@@ -248,7 +248,7 @@ If an admin hid a user or shared mailbox address from an address list, such as t
 
 ### Sync across shared folder clients
 
-A delegate's updates to the owner's mailbox are usually synced across mailboxes immediately. However, if Microsoft Graph operations were used to set an extended property on an item, such changes could take some time to sync. To avoid a delay, we recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs. To learn more, see the "Custom data per item in a mailbox: custom properties" section of [Get and set metadata in an Outlook add-in](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties).
+A delegate's updates to the owner's mailbox are usually synced across mailboxes immediately. However, if Microsoft Graph operations were used to set an extended property on an item, such changes could take some time to sync. To avoid a delay, we recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs. To learn more, see the "Custom properties" tab of [Get and set metadata in an Outlook add-in](metadata-for-an-outlook-add-in.md?tabs=custom-properties).
 
 ## See also
 

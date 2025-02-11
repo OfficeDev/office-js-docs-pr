@@ -231,8 +231,6 @@ items:
               displayName: first run experience
           - name: Navigation
             href: design/navigation-patterns.md
-      - name: Design toolkits
-        href: design/design-toolkits.md
       - name: Interface elements
         items:
         - name: Overview
