@@ -39,7 +39,7 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
     1. **Close Outlook desktop**.
     1. In Visual Studio Code, open Teams Toolkit.
     1. In the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
-    1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, Outlook desktop will open.
+    1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, Outlook desktop will open.
     1. Open the **Inbox** *of your Microsoft 365 account identity* and open any message. A **Contoso Add-in** tab with two buttons will appear on the **Home** ribbon (or the **Message** ribbon, if you have opened the message in its own window).
     1. Click the **Show Taskpane** button and a task pane opens. Click the **Perform an action** button and a small notification appears near the top of the message.
     1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code.

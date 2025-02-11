@@ -89,7 +89,7 @@ In this article, you'll walk through the process of building a PowerPoint [conte
 
 ## Try it out
 
-1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the content add-in displayed over the slide.
+1. Using Visual Studio, test the newly created PowerPoint add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch PowerPoint with the content add-in displayed over the slide.
 
 1. In PowerPoint, choose the **Get slide details** button in the content add-in to get details about the current slide.
 
