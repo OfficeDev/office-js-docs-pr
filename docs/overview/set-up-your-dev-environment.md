@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 08/22/2024
+ms.date: 12/12/2024
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -124,7 +124,7 @@ You can create Office add-in projects in Visual Studio Code with either the Team
 
 Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Teams Toolkit as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 
-#### Install the Office Add-ins Development Kit extension (preview)
+#### Install the Office Add-ins Development Kit extension 
 
 The Office Add-ins Development Kit extension for Visual Studio Code lets you create and run new add-ins directly from the IDE. For more information about the extension, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](../develop/development-kit-overview.md).
 
@@ -149,15 +149,13 @@ Install the latest version of Visual Studio from [Visual Studio Downloads](https
 
 Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
 
-[!INCLUDE [script-lab-outlook-web](../includes/script-lab-outlook-web.md)]
-
 ## Next steps
 
 Try creating your own add-in or use [Script Lab](explore-with-script-lab.md) to try built-in samples.
 
 ### Create an Office Add-in
 
-You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.yml#get-started-with-office-add-ins). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try a [tutorial](../index.yml#your-developer-journey).
+You can quickly create a basic add-in for Excel, OneNote, Outlook, PowerPoint, Project, or Word by completing a [5-minute quick start](../index.yml). If you've previously completed a quick start and want to create a slightly more complex add-in, you should try a [tutorial](../index.yml).
 
 ### Explore the APIs with Script Lab
 

@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types entity value card
 description: Learn how to use entity value cards with data types in your Excel add-in.
-ms.date: 01/27/2023
+ms.date: 01/22/2025
 ms.localizationpriority: medium
 ---
 

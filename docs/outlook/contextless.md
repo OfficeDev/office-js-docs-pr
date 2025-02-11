@@ -220,7 +220,7 @@ To activate your add-in with the Reading Pane turned off or without a message se
 1. Navigate to your inbox and do one of the following:
 
     - Turn off your Reading Pane. For guidance, see the "Turn on, turn off, or move the Reading Pane" section of [Use and configure the Reading Pane to preview messages](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0).
-    - Deselect a message, if applicable. To deselect a message, hold the **Ctrl** key and select the message.
+    - Deselect a message, if applicable. To deselect a message, hold the <kbd>Ctrl</kbd> key and select the message.
 
 1. Select **Show Taskpane** from the ribbon.
 

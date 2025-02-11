@@ -1,11 +1,14 @@
 ---
 title: Sideload Office Add-ins to Office on the web
 description: Test your Office Add-in in Office on the web by sideloading.
-ms.date: 08/17/2023
+ms.date: 12/26/2024
 ms.localizationpriority: medium
 ---
 
 # Sideload Office Add-ins to Office on the web
+
+> [!NOTE]
+> This article primarily applies to **Excel**, **OneNote**, **PowerPoint**, and **Word** add-ins. For information on sideloading **Outlook** add-ins, see the article [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).
 
 When you sideload an add-in, you're able to install the add-in without first putting it in an add-in catalog. This is useful when testing and developing your add-in because you can see how your add-in will appear and function.
 
@@ -35,7 +38,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 1. Open a Command Prompt as an administrator. In the command line starting at the root directory of your project, run the following command. Replace "{url}" with the URL that you copied.
 
-    [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+    [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. The first time you use this method to sideload an add-in on the web, you'll see a dialog asking you to enable developer mode. Select the checkbox for **Enable Developer Mode now** and select **OK**.
 
@@ -45,7 +48,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 ## Sideload an add-in on the web when using Visual Studio
 
-If you're using Visual Studio to develop your add-in, press **F5** to open an Office document in *desktop* Office, create a blank document, and sideload the add-in. When you want to sideload to *Office on the web*, the process to sideload is similar to manual sideloading to the web. The only difference is that you must update the value of the **SourceURL** element, and possibly other elements, in your manifest to include the full URL where the add-in is deployed.
+If you're using Visual Studio to develop your add-in, press <kbd>F5</kbd> to open an Office document in *desktop* Office, create a blank document, and sideload the add-in. When you want to sideload to *Office on the web*, the process to sideload is similar to manual sideloading to the web. The only difference is that you must update the value of the **SourceURL** element, and possibly other elements, in your manifest to include the full URL where the add-in is deployed.
 
 1. In Visual Studio, choose **View** > **Properties Window**.
 
@@ -67,13 +70,11 @@ If you're using Visual Studio to develop your add-in, press **F5** to open an Of
 
 This method doesn't use the command line and can be accomplished using commands only within the host application (such as Excel).
 
-1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**. 
+1. Open [Office on the web](https://office.com/). Open a document in **Excel**, **OneNote**, **PowerPoint**, or  **Word**.
 
-1. Select **Home** > **Add-ins**, then select **More Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Settings**.
 
-1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
-
-    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
+1. On the **Office Add-ins** dialog, select **Upload My Add-in**.
 
 1. **Browse** to the add-in manifest file, and then select **Upload**.
 

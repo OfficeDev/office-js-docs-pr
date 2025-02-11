@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 04/12/2024
+ms.date: 12/12/2024
 ms.localizationpriority: medium
 ---
 
@@ -101,14 +101,14 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 1. First, *make sure Outlook desktop is closed.*
 1. In Visual Studio Code, open the Teams Toolkit.
 1. In the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
-1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press **F5**. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop opens.
+1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** drop down menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop opens.
 1. You can now work with your add-in. Be sure you're working in the **Inbox** of *your Microsoft 365 account identity*.
 
 ##### Sideload with a system prompt, bash shell, or terminal
 
 1. First, *make sure Outlook desktop is closed.*
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
-1. Run the command `npm run start:desktop`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then Outlook desktop opens.
+1. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then Outlook desktop opens.
 1. You can now work with your add-in.
 1. When you're done working with your add-in, make sure to run the command `npm run stop`.
 
@@ -123,7 +123,7 @@ If the project was created with the Office Yeoman Generator and you don't want t
     ```
 
 1. Run `npm install`.
-1. To sideload the add-in, run `npm run start:desktop`. This command puts the unified manifest and the two image files into a zip file and sideloads it to the Office application. It also starts the server in a separate NodeJS window to host the add-in files on localhost.
+1. The command to sideload the add-in depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`. This command puts the unified manifest and the two image files into a zip file and sideloads it to the Office application. It also starts the server in a separate NodeJS window to host the add-in files on localhost.
 
 When you're ready to stop the dev server and uninstall the add-in, run the command `npm run stop`.
 
@@ -134,7 +134,7 @@ If you don't want to use the Teams Toolkit and your project wasn't created with 
 In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named **MyManifest.xml**, the unified manifest is created at **.\MyManifest\MyManifest.json**. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
 ```command&nbsp;line
-npx office-addin-manifest-converter convert -m <relative-path-to-XML-manifest>
+npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
 ```
 
 Once you have the unified manifest created, there are two ways to create the zip file and sideload it. They are described in the next two subsections.
@@ -164,9 +164,13 @@ Once you have the unified manifest created, there are two ways to create the zip
 1. In the root of the project, open a command prompt or bash shell and run the following commands.
 
     ```command&nbsp;line
-    npm install -g @microsoft/teamsfx-cli
+    npm install -g @microsoft/teamsapp-cli
 
-    teamsfx m365 sideloading --file-path <relative-path-to-zip-file>
+    teamsapp install --file-path <relative-path-to-zip-file>
     ``` 
 
+1. When you use the Teams Toolkit CLI to start an add-in, *always stop the session with the following command*. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in. Replace the "{GUID of the add-in}" with the GUID in the "id" property of the unified manifest.
 
+    ```command&nbsp;line
+    teamsapp uninstall -manifest-id {GUID of the add-in}
+    ```
