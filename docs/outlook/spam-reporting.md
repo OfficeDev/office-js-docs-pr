@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 01/22/2025
+ms.date: 02/13/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -63,7 +63,7 @@ Select the tab for the type of manifest you're using.
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Implementing integrated spam reporting with the unified manifest for Microsoft 365 is in public developer preview. It's currently only available to use in classic Outlook on Windows. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Implementing integrated spam reporting with the unified manifest for Microsoft 365 is only available in Outlook on the web and on Windows (new and classic).
 
 1. In your preferred code editor, open the add-in project you created.
 1. Open the **manifest.json** file.
