@@ -1,21 +1,17 @@
 ---
-title: Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (preview)
+title: Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code
 description: Learn how to create Office Add-in projects using Office Add-ins Development Kit extension.
-ms.date: 08/14/2024
+ms.date: 12/19/2024
 ms.localizationpriority: high
 ---
 
-# Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code (preview)
+# Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code
 
 The Office Add-ins Development Kit helps set up your environment, create Office Add-ins, and debug your code in a streamlined experience.
 
 [!INCLUDE [Information about the preview status of the dev kit.](../includes/dev-kit-preview-note.md)]
 
-## Prerequisites
-
-- Download and install [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).
-- Node.js (the latest LTS version). Visit the [Node.js site](https://nodejs.org/) to download and install the right version for your operating system. To verify if you've already installed these tools, run the commands `node -v` and `npm -v` in your terminal.
-- Office connected to a Microsoft 365 subscription. You might qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program), see [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-) for details. Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try?rtc=1) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/buy/compare-all-microsoft-365-products).
+[!include[Dev_kit prerequisites](../includes/dev-kit-prerequisites.md)]
 
 ## Install the development kit
 
@@ -57,30 +53,18 @@ Samples show a working add-in that solves an end-to-end scenario. Samples are mo
 1. Open Visual Studio Code and select the Office Add-ins Development Kit icon in the **Activity Bar**.
 1. Select **View Samples**.
 1. Select the sample you would like to view.
-1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project.
-1. Give a name to the project (with no spaces) when prompted. Office Add-ins Development Kit will create the project with basic files and scaffolding. It then opens the project in a *second* Visual Studio Code window. You can freely close the original Visual Studio Code window.
+1. Select the **Create** button above the now-open sample readme.
+1. In the **Workspace folder** dialog that opens, select the folder where you want to create the project. The extension copies a version of the sample to that folder. It then opens the project in a *second* Visual Studio Code window. You can freely close the original Visual Studio Code window.
 
 ## Test your add-in
 
 To understand how the add-in will work in an Office application, use the Office Add-ins Development Kit to run and debug your Office add-in in your local development environment.
 
-Select **Preview Your Office Add-in (F5)** to launch the add-in and debug the code. In the Quick Pick menu, select the option **Edge Desktop (Edge Chromium)**.
+> [!NOTE]
+> These steps are the same as the ones listed in Visual Studio Code by the extension when you create a new project.
 
-The development kit checks that the prerequisites are met before debugging starts. Check the terminal for detailed information if there are issues with your environment. After this process, the Office desktop application launches and sideloads the add-in.
+[!include[Dev_kit_start_debugging](../includes/dev-kit-start-debugging.md)]
 
-## Stop testing your Office Add-in
+[!include[Dev_kit_stop_debugging](../includes/dev-kit-stop-debugging.md)]
 
-Once you are finished testing and debugging the add-in, select **Stop Previewing Your Office Add-in**. This closes the web server and removes the add-in from the registry and cache.
-
-## Troubleshooting
-
-If you have problems running the add-in, take these steps.
-
-- Close any open instances of Office.
-- Close the previous web server started for the add-in with the **Stop Previewing Your Office Add-in** Office Add-ins Development Kit extension option.
-
-The article [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md) contains solutions to common problems. If you're still having issues, [create a GitHub issue](https://aka.ms/officedevkitnewissue) and we'll help you.  
-
-For information on running the add-in on Office on the web, see [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md).
-
-For information on debugging on older versions of Office, see [Debug add-ins using developer tools in Microsoft Edge Legacy](../testing/debug-add-ins-using-devtools-edge-legacy.md).
+[!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]

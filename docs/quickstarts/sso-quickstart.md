@@ -43,8 +43,6 @@ In this article, you'll use the Yeoman generator for Office Add-ins to create an
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 ## Explore the project
 
 The add-in project that you've created with the Yeoman generator contains code for an SSO-enabled task pane add-in.

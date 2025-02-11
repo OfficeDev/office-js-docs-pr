@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 04/12/2024
+ms.date: 10/08/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -26,6 +26,23 @@ To configure the manifest, select the tab for the type of manifest you're using.
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
+
+1. Navigate to the "authorization.permissions.resourceSpecific" array. In the array object, replace the value of the "name" property with "MailboxItem.ReadWrite.User". This is needed by the add-in to be able to set the subject of the mail item.
+
+    ```json
+    ...
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "MailboxItem.ReadWrite.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    ...
+    ```
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
 
@@ -263,11 +280,9 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
         });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
-      Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
     ```
 
 1. Save your changes.

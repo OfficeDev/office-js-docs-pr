@@ -1,7 +1,7 @@
 ---
 title: Office versions and requirement sets
 description: Supported Office.js platforms using JavaScript API.
-ms.date: 05/16/2024
+ms.date: 11/12/2024
 ms.localizationpriority: high
 ---
 
@@ -55,6 +55,7 @@ Some requirement sets contain APIs that can be used by several Office applicatio
 - [Identity API requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
 - [Image Coercion requirement sets](/javascript/api/requirement-sets/common/image-coercion-requirement-sets)
 - [Keyboard Shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets)
+- [Nested App Auth requirement sets](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets)
 - [Open Browser Window requirement sets](/javascript/api/requirement-sets/common/open-browser-window-api-requirement-sets)
 - [Ribbon API requirement sets](/javascript/api/requirement-sets/common/ribbon-api-requirement-sets)
 - [Shared Runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets)

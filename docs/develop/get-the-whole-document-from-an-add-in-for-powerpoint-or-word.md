@@ -1,7 +1,7 @@
 ---
 title: Get the whole document from an add-in for PowerPoint or Word
 description: Learn to get the whole document from a PowerPoint or Word add-in.
-ms.date: 04/26/2024
+ms.date: 01/07/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

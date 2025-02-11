@@ -58,7 +58,7 @@
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
-            "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-1.1"
+            "redirect_url": "/javascript/api/powerpoint?view=powerpoint-js-preview"
         },
         {
             "source_path": "docs/reference/visio-api-reference.md",
@@ -86,7 +86,11 @@
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-vue.md",
-            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-vue"
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
+        },
+        {
+            "source_path": "docs/quickstarts/excel-quickstart-vue.md",
+            "redirect_url": "/office/dev/add-ins/quickstarts/excel-quickstart-jquery"
         },
         {
             "source_path": "docs/excel/excel-add-ins-get-started-react.md",
@@ -391,28 +395,37 @@
             "redirect_document_id": true
         },
         {
+            "source_path": "docs/design/design-toolkits.md",
+            "redirect_url": "office/dev/add-ins/design/add-in-design-language"
+        },
+        {
             "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-get-slide-metadata.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-insert-image.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-insert-text.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-navigate-slides.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo",
+            "redirect_document_id": true
         },
         {
             "source_path": "docs/tutorials/excel-tutorial-create-chart.md",
@@ -1284,6 +1297,22 @@
         {
             "source_path": "docs/outlook/use-regular-expressions-to-show-an-outlook-add-in.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/develop/extended-overrides.md",
+            "redirect_url": "/javascript/api/manifest/extendedoverrides"
+        },
+        {
+            "source_path": "docs/outlook/activation-rules.md",
+            "redirect_url": "/javascript/api/manifest/rule"
+        },
+        {
+            "source_path": "docs/outlook/get-and-set-item-data-in-a-compose-form.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/outlook/item-data.md",
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets"
         }
     ]
 }

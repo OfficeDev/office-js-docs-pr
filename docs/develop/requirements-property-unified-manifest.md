@@ -1,7 +1,7 @@
 ---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 09/4/2024
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -64,7 +64,7 @@ The "extensions.alternates" property enables add-in developers to do the followi
 > [!NOTE]
 > Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
 >
-> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then, if the manifest has a valid "alternateIcons" property, an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
+> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
 
 For more information, see [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](/office/dev/add-ins/concepts/duplicate-legacy-metaos-add-ins).
 
@@ -277,3 +277,32 @@ The previous example shown in [extensions.autoRunEvents.requirements](#extension
 ```
 
 Similarly, for the example in [extensions.ribbons.requirements](#extensionsribbonsrequirements), if the action linked to the custom button is the only action configured in a runtime object, then that runtime object should be blocked in the same circumstances in which the ribbon object is blocked.
+
+### extensions.keyboardShortcuts.requirements (developer preview)
+
+The `extensions.keyboardShortcuts` property defines custom keyboard shortcuts or key combinations to run specific actions. To learn how to create custom shortcuts, see [Add custom keyboard shortcuts to your Office Add-ins](../design/keyboard-shortcuts.md).
+
+The "requirements" subproperty can be used to ensure that the custom shortcuts are only available on platforms that support the [SharedRuntime 1.1 API](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). The following example shows how to configure this in your manifest.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "keyboardShortcuts": [
+            {
+                //Insert details of the keyboard shortcut configuration here.
+
+                "requirements" : {
+                    "capabilities": [
+                        {
+                            "name": "SharedRuntime",
+                            "minVersion": "1.1"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
+```

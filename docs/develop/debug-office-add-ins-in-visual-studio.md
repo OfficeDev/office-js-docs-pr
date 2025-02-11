@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins in Visual Studio
 description: Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows.
-ms.date: 03/28/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -69,7 +69,7 @@ This section describes how to start and debug an add-in in desktop Office on Win
 
 ### Start the add-in project
 
-Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button. Visual Studio automatically builds the solution and starts the Office host application.
+Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button. Visual Studio automatically builds the solution and starts the Office host application.
 
 When Visual Studio builds the project, it performs the following tasks:
 
@@ -93,7 +93,7 @@ Next, Visual Studio does the following:
 1. Validates the manifest.  
 
    > [!IMPORTANT]
-   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#add-in-only-manifest-schema-validation-errors-in-visual-studio-projects).
 
 1. Opens the Office application and sideloads your add-in.
 
@@ -141,7 +141,7 @@ This section describes how to start and debug an add-in in desktop Office on the
 
 ### Start the add-in project on the web
 
-Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button. Visual Studio automatically builds the solution and launches the Office application host page of your Microsoft 365 tenancy.
+Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button. Visual Studio automatically builds the solution and launches the Office application host page of your Microsoft 365 tenancy.
 
 > [!NOTE]
 > When you're debugging an add-in on the web, you may get an AADSTS50011 error similar to the following: 
@@ -163,7 +163,7 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar 
 >       ```
 >
 >    1. Run the script in PowerShell.
->    1. Restart the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button.
+>    1. Restart the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button.
 
 When Visual Studio builds the project it performs the following tasks.
 
@@ -182,7 +182,7 @@ Next, Visual Studio does the following:
 1. Validates the manifest.  
 
    > [!IMPORTANT]
-   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#add-in-only-manifest-schema-validation-errors-in-visual-studio-projects).
 
 1. Opens the Office application host page of your Microsoft 365 tenancy in Microsoft Edge.
 
@@ -203,9 +203,9 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 
 #### Use the browser developer tools to debug on the web
 
-1. For an add-in in any host except Outlook, in the Office host application page, press F12 to open the debugging tool.
+1. For an add-in in any host except Outlook, in the Office host application page, press <kbd>F12</kbd> to open the debugging tool.
 
-1. For an Outlook add-in, if the add-in's manifest is configured for a read surface, select an email message or appointment item to open it in its own window. If the add-in is configured for only a compose surface, open a new message, reply to message, or new appointment window. Ensure that the appropriate window has focus and press F12 to pen the debugging tool.
+1. For an Outlook add-in, if the add-in's manifest is configured for a read surface, select an email message or appointment item to open it in its own window. If the add-in is configured for only a compose surface, open a new message, reply to message, or new appointment window. Ensure that the appropriate window has focus and press <kbd>F12</kbd> to pen the debugging tool.
 
 1. After the tool is open, launch the add-in. The exact steps vary depending on the design of your add-in. Typically, you press a button to open a task pane. In Outlook, in the toolbar at the top of the window, select the **More apps** button, and then select your add-in from the callout that opens.
 

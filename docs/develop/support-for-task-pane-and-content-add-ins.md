@@ -1,7 +1,7 @@
 ---
 title: Office JavaScript API support for content and task pane add-ins
 description: Use the Office JavaScript API to create a task pane or content add-in.
-ms.date: 03/21/2023
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -120,19 +120,38 @@ For more details about working with custom data using the methods of the `Settin
 
 ## Permissions model and governance
 
-Your add-in uses the `Permissions` element in its manifest to request permission to access the level of functionality it requires from the Office JavaScript API. For example, if your add-in requires read/write access to the document, its manifest must specify `ReadWriteDocument` as the text value in its `Permissions` element. Because permissions exist to protect a user's privacy and security, as a best practice you should request the minimum level of permissions it needs for its features. The following example shows how to request the **ReadDocument** permission in a task pane's manifest.
+Your add-in uses the app manifest to request permission to access the level of functionality it requires from the Office JavaScript API. The method varies depending on the type of manifest.
 
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
- xsi:type="TaskPaneApp">
-???<!-- Other manifest elements omitted. -->
-  <Permissions>ReadDocument</Permissions>
-???
-</OfficeApp>
+- **Unified manifest for Microsoft 365**: Use the "authorization.permissions.resourceSpecific" property. For example, if your add-in requires read/write access to the document, its manifest must specify `Document.ReadWrite.User` as the value in its "authorization.permissions.resourceSpecific.name" property. The following example requests the **read document** permission, which allows only methods that can read (but not write to) the document.
 
-```
+   ```json
+   "authorization": {
+      "permissions": {
+        "resourceSpecific": [
+          ...
+          {
+            "name": "Document.Read.User",
+            "type": "Delegated"
+          },
+        ]
+      }
+   },
+   ```
+
+   [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
+- **Add-in only manifest**: Use the `Permissions` element in the manifest  For example, if your add-in requires read/write access to the document, its manifest must specify `ReadWriteDocument` as the text value in its `Permissions` element. Because permissions exist to protect a user's privacy and security, as a best practice you should request the minimum level of permissions it needs for its features. The following example shows how to request the **read document** permission in a task pane's manifest.
+
+    ```XML
+    <?xml version="1.0" encoding="utf-8"?>
+    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:type="TaskPaneApp">
+        <!-- Other manifest elements omitted. -->
+        <Permissions>ReadDocument</Permissions>
+        ...
+    </OfficeApp>
+    ```
 
 For more information, see [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 

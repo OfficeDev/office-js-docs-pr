@@ -27,6 +27,6 @@ Apply the following general guidelines for color.
 - Overuse of a single accent color applied to both interactive and non-interactive elements can lead to confusion. For example, avoid using the same color for selected and unselected items in a navigation menu.
 - Avoid unnecessary conflicts with Office branded app colors.
 - Use your own brand colors to build association with your service or company.
-- Ensure that all text is accessible. Be sure that there is a 4.5:1 contrast ratio between foreground text and background.
+- Ensure that all text is [accessible](accessibility-guidelines.md). Be sure that there is a 4.5:1 contrast ratio between foreground text and background.
 - Be aware of color blindness. Use more than just color to indicate interactivity and hierarchy.
 - To learn more about designing add-in command icons with the Office icon color palette, see [icon guidelines](../design/add-in-icons.md).

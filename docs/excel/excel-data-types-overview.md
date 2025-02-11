@@ -1,7 +1,7 @@
 ---
 title: Overview of data types in Excel add-ins
 description: Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entities, arrays within entities, and enhanced errors as data types.
-ms.date: 12/14/2022
+ms.date: 01/22/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -11,9 +11,9 @@ ms.localizationpriority: high
 
 Data types organize complex data structures as objects. This includes formatted number values, web images, and entities as [entity cards](excel-data-types-entity-card.md).
 
-The following screenshot highlights one of the primary features of data types: an entity card. In this case, the entity card shows expanded information about the **Tofu** product from a list of grocery store products.
+The following screenshot highlights one of the primary features of data types: an entity card. In this case, the entity card shows expanded information about the **Chef Anton's Gumbo Mix** product from a list of grocery store products.
 
-:::image type="content" source="../images/excel-data-types-entity-card-tofu.png" alt-text="An entity value data type with the card window displayed.":::
+:::image type="content" source="../images/excel-data-types-entity-card-gumbo.png" alt-text="An entity value data type with the card window displayed.":::
 
 > [!NOTE]
 > To start experimenting with data types right away, install [Script Lab](../overview/explore-with-script-lab.md) in Excel and check out the **Data types** section in our **Samples** library. You can also explore the Script Lab samples in our [OfficeDev/office-js-snippets](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/20-data-types) repository.
