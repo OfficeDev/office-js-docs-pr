@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins on iPad for testing
 description: Test your Office Add-in on iPad by sideloading.
-ms.date: 09/09/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 

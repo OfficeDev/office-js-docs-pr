@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Teams Toolkit
 description: Learn how to create Office Add-in projects using Teams Toolkit.
-ms.date: 12/21/2024
+ms.date: 02/12/2025
 ms.localizationpriority: high
 ---
 
