@@ -2,7 +2,7 @@
 title: Compare the add-in only manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the add-in only manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 08/15/2024
+ms.date: 02/12/2025
 ms.localizationpriority: high
 ---
 
@@ -10,8 +10,7 @@ ms.localizationpriority: high
 
 This article is intended to help readers who are familiar with the add-in only manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
 
-> [!NOTE]
-> The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 ## Schemas and general points
 
@@ -81,7 +80,10 @@ The "extensions" property in the unified manifest primarily represents character
 > [!NOTE]
 > The **\<VersionOverrides\>** section of the add-in only manifest has a "double jump" system for many string resources. Strings, including URLs, are specified and assigned an ID in the **\<Resources\>** child of **\<VersionOverrides\>**. Elements that require a string have a `resid` attribute that matches the ID of a string in the **\<Resources\>** element. The "extensions" property of the unified manifest simplifies things by defining strings directly as property values. There is nothing in the unified manifest that is equivalent to the **\<Resources\>** element.
 
-The following table shows a mapping of some high level child properties of the "extensions" property in the unified manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
+The following table shows a mapping of *some* high-level child properties of the "extensions" property in the unified manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
+
+> [!NOTE]
+> This table contains only some selected representative descendant properties of "extensions". *It isn't an exhaustive list of all child properties of "extensions".* For the full reference of the unified manifest, see [Unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema). For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 |JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|
@@ -89,8 +91,9 @@ The following table shows a mapping of some high level child properties of the "
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. | **\<Hosts\>** |*None* |
 | "ribbons" | The ribbons that the add-in customizes. | **\<Hosts\>**, **ExtensionPoints**, and various **\*FormFactor** elements | The "ribbons" property is an array of anonymous objects that each merge the purposes of the these three elements. See ["ribbons" table](#ribbons-table).|
 | "alternatives" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | **\<EquivalentAddins\>** | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
-| "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, and **\<ExtensionPoint\>** (of type CustomFunctions) |*None* |
-| "autoRunEvents" | Configures an event handler for a specified event. | **\<ExtensionPoint\>** (of type LaunchEvent) |*None* |
+| "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | **\<Runtimes\>**. **\<FunctionFile\>**, and **\<ExtensionPoint\>** (of type CustomFunctions) |*None.* |
+| "autoRunEvents" | Configures an event handler for a specified event. | **\<ExtensionPoint\>** (of type LaunchEvent) |*None.* |
+| "keyboardShortcuts" (developer preview) | Defines custom keyboard shortcuts or key combinations to run specific actions. | **\<ExtendedOverrides\>** | *None.* |
 
 #### "ribbons" table
 

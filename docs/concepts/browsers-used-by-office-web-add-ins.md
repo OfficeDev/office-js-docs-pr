@@ -2,7 +2,7 @@
 title: Browsers and webview controls used by Office Add-ins
 description: Specifies how the operating system and Office version determine what webview is used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 04/24/2024
+ms.date: 10/17/2024
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +33,7 @@ The following sections specify which browser is used for the various platforms a
 
 ## Non-Windows platforms
 
-For these platforms, the platform alone determines the browser that is used.
+For these platforms, the platform alone determines the browser that's used.
 
 |OS|Office version|Browser|
 |:-----|:-----|:-----|
@@ -55,9 +55,9 @@ An add-in running on Windows might use any of three different webviews:
 
 ### Perpetual versions of Office on Windows
 
-For perpetual versions of Office on Windows, the browser that is used is determined by the Office version, whether the license is retail or volume-licensed, and whether the Edge WebView2 (Chromium-based) is installed. The version of Windows doesn't matter, but note that Office Web Add-ins aren't supported on versions earlier than Windows 7 and Office 2021 isn't supported on versions earlier than Windows 10.
+For perpetual versions of Office on Windows, the browser that's used is determined by the Office version, whether the license is retail or volume-licensed, and whether the Edge WebView2 (Chromium-based) is installed. The version of Windows doesn't matter, but note that Office Add-ins aren't supported on versions earlier than Windows 7 and Office 2021 and later aren't supported on versions earlier than Windows 10.
 
-To determine whether Office 2016 or Office 2019 is retail or volume-licensed, use the format of the Office version and build number. (For Office 2021, the distinction between volume-licensed and retail doesn't matter.)
+To determine whether Office 2016 or Office 2019 is retail or volume-licensed, use the format of the Office version and build number. (For Office 2021 and later, the distinction between volume-licensed and retail doesn't matter.)
 
 - **Retail**: For both Office 2016 and 2019, the format is `YYMM (xxxxx.xxxxxx)`, ending with two blocks of five digits; for example, `2206 (Build 15330.20264)`.
 - **Volume-licensed**:
@@ -66,6 +66,7 @@ To determine whether Office 2016 or Office 2019 is retail or volume-licensed, us
 
 | Office version | Retail vs. Volume-licensed | WebView2 installed? | Browser |
 |:-----|:-----|:-----|:-----|
+| Office 2024 | Doesn't matter | Yes<sup>1</sup> | WebView2 (Microsoft Edge<sup>2</sup> Chromium-based) |
 | Office 2021 | Doesn't matter | Yes<sup>1</sup> | WebView2 (Microsoft Edge<sup>2</sup> Chromium-based) |
 | Office 2019 | Retail | Yes<sup>1</sup> | WebView2 (Microsoft Edge<sup>2</sup> Chromium-based) |
 | Office 2019 | Retail | No | EdgeHTML (Microsoft Edge Legacy)<sup>2, 3</sup></br>If Edge isn't installed, Trident+ (Internet Explorer 11) is used. |
@@ -76,28 +77,28 @@ To determine whether Office 2016 or Office 2019 is retail or volume-licensed, us
 
 <sup>1</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with perpetual Office 2021 or later; but it isn't automatically installed with Microsoft Edge. If you have an earlier version of perpetual Office, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
-<sup>2</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the add-in name that is specified in the add-in's manifest.
+<sup>2</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the add-in name that's specified in the add-in's manifest.
 
 <sup>3</sup> If your add-in uses an add-in only manifest and includes the **\<Runtimes\>** element in the manifest or it uses the unified manifest and it includes an "extensions.runtimes.lifetime" property, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses WebView2. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Configure your Outlook add-in for event-based activation](../outlook/autolaunch.md?tabs=jsonmanifest).
 
 ### Microsoft 365 subscription versions of Office on Windows
 
-For subscription Office on Windows, the browser that is used is determined by the operating system, the Office version, and whether the WebView2 control is installed.
+For subscription Office on Windows, the browser that's used is determined by the operating system, the Office version, and whether the WebView2 control is installed.
 
 |OS|Office version| WebView2 installed?|Browser|
 |:-----|:-----|:-----|:-----|
-|Windows 11,<br>Windows 10,<br>Windows 8.1,<br>Windows Server 2022,<br>Windows Server 2019,<br>Windows Server 2016| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| Yes<sup>2</sup>|  WebView2 (Microsoft Edge<sup>3</sup> Chromium-based) |
-|Window 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| No |EdgeHTML (Microsoft Edge Legacy)<sup>3, 4</sup>|
-|Windows 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;*AND*&nbsp;<&nbsp;16.0.13530.20424<sup>1</sup>| Doesn't matter|EdgeHTML (Microsoft Edge Legacy)<sup>3, 4</sup>|
-|Windows 11,<br>Windows 10 ver.&nbsp;>=&nbsp;1903 | Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Trident+ (Internet Explorer 11)|
-|Windows 10 ver.&nbsp;<&nbsp;1903,<br>Windows 8.1| Microsoft 365 | No| Trident+ (Internet Explorer 11)|
-|Windows 7 | Microsoft 365| Doesn't matter | Trident+ (Internet Explorer 11)|
+|<ul><li>Windows 11</li><li>Windows 10</li><li>Windows 8.1</li><li>Windows Server 2022</li><li>Windows Server 2019</li><li>Windows Server 2016</li></ul>| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| Yes<sup>2</sup>|  WebView2 (Microsoft Edge<sup>3</sup> Chromium-based) |
+|<ul><li>Window 11</li><li>Windows 10 ver.&nbsp;>=&nbsp;1903</li></ul>| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.13530.20424<sup>1</sup>| No |EdgeHTML (Microsoft Edge Legacy)<sup>3, 4</sup>|
+|<ul><li>Windows 11</li><li>Windows 10 ver.&nbsp;>=&nbsp;1903</li></ul>| Microsoft 365 ver.&nbsp;>=&nbsp;16.0.11629&nbsp;*AND*&nbsp;<&nbsp;16.0.13530.20424<sup>1</sup>| Doesn't matter|EdgeHTML (Microsoft Edge Legacy)<sup>3, 4</sup>|
+|<ul><li>Windows 11</li><li>Windows 10 ver.&nbsp;>=&nbsp;1903</li></ul>| Microsoft 365 ver.&nbsp;<&nbsp;16.0.11629<sup>1</sup>| Doesn't matter|Trident+ (Internet Explorer 11)|
+|<ul><li>Windows 10 ver.&nbsp;<&nbsp;1903</li><li>Windows 8.1</li></ul>| Microsoft 365 | No| Trident+ (Internet Explorer 11)|
+|<ul><li>Windows 7</li></ul>| Microsoft 365| Doesn't matter | Trident+ (Internet Explorer 11)|
 
 <sup>1</sup> See the [update history page](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19) for more details.
 
 <sup>2</sup> On Windows versions prior to Windows 11, the WebView2 control must be installed so that Office can embed it. It's installed with Microsoft 365, Version 2101 or later, but it isn't automatically installed with Microsoft Edge. If you have an earlier version of Microsoft 365, use the instructions for installing the control at [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/). On Microsoft 365 builds before 16.0.14326.xxxxx, you must also create the registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Win32WebView2** and set its value to `dword:00000001`.
 
-<sup>3</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the add-in name that is specified in the add-in's manifest.
+<sup>3</sup> When you use either EdgeHTML or WebView2, the Windows Narrator (sometimes called a "screen reader") reads the `<title>` tag in the page that opens in the task pane. In Trident+, the Narrator reads the title bar of the task pane, which comes from the add-in name that's specified in the add-in's manifest.
 
 <sup>4</sup> If your add-in uses an add-in only manifest and includes the **\<Runtimes\>** element in the manifest or it uses the unified manifest and it includes an "extensions.runtimes.lifetime" property, then it won't use EdgeHTML. If the conditions for using WebView2 are met, then the add-in uses WebView2. Otherwise, it uses Trident+. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Configure your Outlook add-in for event-based activation](../outlook/autolaunch.md?tabs=jsonmanifest).
 
@@ -120,7 +121,7 @@ Office Add-ins don't support Service Workers when EdgeHTML is used. They're supp
 
 ### Scroll bar doesn't appear in task pane
 
-By default, scroll bars in EdgeHTML and WebView2 are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://reference.codeproject.com/css/-ms-overflow-style) property and it should be set to `scrollbar`.
+By default, scroll bars in EdgeHTML and WebView2 are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://devdoc.net/web/developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style.html) property and it should be set to `scrollbar`.
 
 ### When debugging with the Microsoft Edge DevTools, the add-in crashes or reloads
 
@@ -152,7 +153,7 @@ To determine if a document is WIP-protected, follow these steps.
 1. Open the file.
 1. Select the **File** tab on the ribbon.
 1. Select **Info**.
-1. In the upper section of the **Info** page, just below the file name, a WIP-enabled document will have a briefcase icon followed by **Managed by Work (…)**.
+1. In the upper section of the **Info** page, just below the file name, a WIP-enabled document will have a briefcase icon followed by **Managed by Work (...)**.
 
 > [!NOTE]
 > Support for WebView2 in WIP-enabled documents was added with build 16.0.16626.20132. If you're on an older build, your runtime defaults to **EdgeHTML (Microsoft Edge Legacy)**, regardless of policy.

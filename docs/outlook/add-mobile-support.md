@@ -1,13 +1,13 @@
 ---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 07/18/2024
+ms.date: 01/31/2025
 ms.localizationpriority: medium
 ---
 
 # Add support for add-in commands in Outlook on mobile devices
 
-Using add-in commands in Outlook on mobile devices allows your users to access the same functionality (with some [limitations](#code-considerations)) that they already have in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac. Adding support for Outlook mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
+Implement add-in commands in Outlook on mobile devices to access the same functionality (with some [limitations](#code-considerations)) that you already have in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac. Adding support for Outlook mobile requires updating the add-in manifest and possibly changing your code for mobile scenarios.
 
 ## Update the manifest
 
@@ -20,7 +20,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ```json
     "formFactors": [
         "mobile",
-        <!-- Typically there will be other form factors listed. -->
+        <!-- Typically, there'll be other form factors listed. -->
     ]
     ```
 
@@ -47,7 +47,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
    - Set appropriate "id" and "label" values.
    - Create an object in the "controls" array to represent a button and configure it as follows.
       - Set appropriate "id" and "label" values. To ensure that the button fits correctly in the ribbon, we recommend that you limit the "label" to 16 characters.
-      - Set "buttonType" to "MobileButton".
+      - Set "type" to "mobileButton".
       - Assign a function to the "actionId" property. This should match the "id" of the object in the "extensions.runtimes.actions" array.
       - Be sure you have all nine required icons.
   
@@ -58,7 +58,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
         {
             "builtInTabId": "TabDefault",
             "groups": [
-                <-- non-mobile group objects omitted -->
+                <-- Non-mobile group objects omitted. -->
             ],
             "customMobileRibbonGroups": [
                 {
@@ -68,7 +68,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
                         { 
                             "id": "mobileInsertMeetingButton",
                             "label": "Add meeting",
-                            "buttonType": "MobileButton",
+                            "type": "mobileButton",
                             "actionId": "insertContosoMeeting",
                             "icons": [
                                 {
@@ -127,47 +127,9 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor).
+The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor). The **\<MobileFormFactor\>** element contains all of the information for loading the add-in in mobile clients. This way, you can define completely different UI elements and JavaScript files for the mobile experience.
 
-This element contains all of the information for loading the add-in in mobile clients. This enables you to define completely different UI elements and JavaScript files for the mobile experience.
-
-The following example shows a single task pane button in a **\<MobileFormFactor\>** element.
-
-```xml
-<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
-  ...
-  <MobileFormFactor>
-    <FunctionFile resid="residUILessFunctionFileUrl" />
-    <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-      <Group id="mobileMsgRead">
-        <Label resid="groupLabel" />
-        <Control xsi:type="MobileButton" id="TaskPaneBtn">
-          <Label resid="residTaskPaneButtonName" />
-          <Icon xsi:type="bt:MobileIconList">
-            <bt:Image size="25" scale="1" resid="tp0icon" />
-            <bt:Image size="25" scale="2" resid="tp0icon" />
-            <bt:Image size="25" scale="3" resid="tp0icon" />
-
-            <bt:Image size="32" scale="1" resid="tp0icon" />
-            <bt:Image size="32" scale="2" resid="tp0icon" />
-            <bt:Image size="32" scale="3" resid="tp0icon" />
-
-            <bt:Image size="48" scale="1" resid="tp0icon" />
-            <bt:Image size="48" scale="2" resid="tp0icon" />
-            <bt:Image size="48" scale="3" resid="tp0icon" />
-          </Icon>
-          <Action xsi:type="ShowTaskpane">
-            <SourceLocation resid="residTaskpaneUrl" />
-          </Action>
-        </Control>
-      </Group>
-    </ExtensionPoint>
-  </MobileFormFactor>
-  ...
-</VersionOverrides>
-```
-
-This is very similar to the elements that appear in a [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) element, with some notable differences.
+The following example shows a single task pane button in a **\<MobileFormFactor\>** element. This is very similar to the elements that appear in a [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) element, with some notable differences.
 
 - The [OfficeTab](/javascript/api/manifest/officetab) element isn't used.
 - The [ExtensionPoint](/javascript/api/manifest/extensionpoint) element must have only one child element. If your add-in implements the [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) or [MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) extension point, you must include a [Control](/javascript/api/manifest/control) child element. If your add-in implements the [MobileMessageReadCommandSurface](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) extension point, you must include a [Group](/javascript/api/manifest/group) child element that contains multiple **\<Control\>** elements.
@@ -175,17 +137,56 @@ This is very similar to the elements that appear in a [DesktopFormFactor](/javas
 - The [Supertip](/javascript/api/manifest/supertip) element isn't used.
 - The required icon sizes are different. Mobile add-ins minimally must support 25x25, 32x32 and 48x48 pixel icons. For more information, see [Additional requirements for mobile form factors](/javascript/api/manifest/icon#additional-requirements-for-mobile-form-factors).
 
+```xml
+<VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+        ...
+        <Hosts>
+            <Host xsi:type="MailHost">
+                ...
+                <MobileFormFactor>
+                    <FunctionFile resid="residUILessFunctionFileUrl" />
+                    <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+                        <Group id="mobileMsgRead">
+                            <Label resid="groupLabel" />
+                            <Control xsi:type="MobileButton" id="TaskPaneBtn">
+                                <Label resid="residTaskPaneButtonName" />
+                                <Icon xsi:type="bt:MobileIconList">
+                                    <bt:Image size="25" scale="1" resid="icon_25" />
+                                    <bt:Image size="25" scale="2" resid="icon_25" />
+                                    <bt:Image size="25" scale="3" resid="icon_25" />
+                        
+                                    <bt:Image size="32" scale="1" resid="icon_32" />
+                                    <bt:Image size="32" scale="2" resid="icon_32" />
+                                    <bt:Image size="32" scale="3" resid="icon_32" />
+                        
+                                    <bt:Image size="48" scale="1" resid="icon_48" />
+                                    <bt:Image size="48" scale="2" resid="icon_48" />
+                                    <bt:Image size="48" scale="3" resid="icon_48" />
+                                </Icon>
+                                <Action xsi:type="ShowTaskpane">
+                                    <SourceLocation resid="residTaskpaneUrl" />
+                                </Action>
+                            </Control>
+                        </Group>
+                    </ExtensionPoint>
+                </MobileFormFactor>
+            </Host>
+        </Hosts>
+        ...
+    </VersionOverrides>
+</VersionOverrides>
+```
+
 ---
 
 ## Code considerations
 
 Designing an add-in for mobile introduces some additional considerations.
 
-### Use REST instead of Exchange Web Services
+### Use Microsoft Graph
 
-The [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method isn't supported in Outlook mobile. Add-ins should prefer to get information from the Office.js API when possible. If add-ins require information not exposed by the Office.js API, then they should use the [Outlook REST APIs](use-rest-api.md) to access the user's mailbox.
-
-Mailbox requirement set 1.5 introduced a new version of [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) that can request an access token compatible with the REST APIs, and a new [Office.context.mailbox.restUrl](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties) property that can be used to find the REST API endpoint for the user.
+Add-ins should prefer to get information from the Office.js API when possible. If your add-in requires information not exposed by the Office.js API, use [Microsoft Graph](/graph/overview) to access the user's mailbox.
 
 ### Pinch zoom
 

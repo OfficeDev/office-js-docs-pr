@@ -36,8 +36,6 @@ In this article, you'll walk through the process of building an Outlook task pan
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
-
 1. Navigate to the root folder of the web application project.
 
     ```command&nbsp;line
