@@ -1,7 +1,7 @@
 ---
 title: Usability testing for Office Add-ins
 description: Learn how to test your add-in design with real users.
-ms.date: 09/06/2023
+ms.date: 01/13/2025
 ms.localizationpriority: medium
 ---
 
@@ -114,7 +114,7 @@ On average, it takes about 5 minutes to walk users through how to install an add
 1. Take a moment to look at the Store page to familiarize yourself with the add-in.
 1. Choose **Add** to install the add-in.
 
-You can test a prototype at any level of interaction and visual fidelity. For more complex linking and interactivity, consider a prototyping tool like [InVision](https://www.invisionapp.com). If you just want to test static screens, you can host images online and send participants the corresponding URL, or give them a link to an online PowerPoint presentation.
+You can test a prototype at any level of interaction and visual fidelity. For more complex linking and interactivity, consider a prototyping tool like [Figma](https://www.figma.com/). If you just want to test static screens, you can host images online and send participants the corresponding URL, or give them a link to an online PowerPoint presentation.
 
 ## 7. Run a pilot test
 

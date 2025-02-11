@@ -69,7 +69,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Use [clear and simple language](../design/voice-guidelines.md) in your add-in.
 
-- Account for accessibility - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
+- Account for [accessibility](../design/accessibility-guidelines.md) - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
 
 - Design for all platforms and input methods, including mouse/keyboard and [touch](#optimize-for-touch). Ensure that your UI is responsive to different form factors.
 

@@ -20,7 +20,7 @@ See [PowerPoint add-ins overview](../../powerpoint/powerpoint-add-ins.md) for in
 
 ## Learn about API capabilities
 
-For hands-on experience using the Common API to interact with content in PowerPoint, complete the [PowerPoint add-in tutorial](../../tutorials/powerpoint-tutorial.md).
+For hands-on experience using the Common API to interact with content in PowerPoint, complete the [PowerPoint add-in tutorial](../../tutorials/powerpoint-tutorial-yo.md).
 
 For detailed information about the PowerPoint JavaScript API object model, see the [PowerPoint JavaScript API reference documentation](/javascript/api/powerpoint).
 

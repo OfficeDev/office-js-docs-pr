@@ -38,7 +38,6 @@ Compose add-ins are implemented as [add-in commands](../design/add-in-commands.m
 ## API features available to compose add-ins
 
 - [Add and remove attachments to an item in a compose form in Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
-- [Get and set item data in a compose form in Outlook](get-and-set-item-data-in-a-compose-form.md)
 - [Get, set, or add recipients when composing an appointment or message in Outlook](get-set-or-add-recipients.md)
 - [Get or set the subject when composing an appointment or message in Outlook](get-or-set-the-subject.md)
 - [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md)
