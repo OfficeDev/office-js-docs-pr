@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 11/16/2024
+ms.date: 02/12/2025
 ms.localizationpriority: high
 ---
 
@@ -65,7 +65,9 @@ A SharePoint app catalog is a special site collection that you can create to hos
 If you are deploying add-ins in an on-premises environment, use a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 > [!NOTE]
-> SharePoint catalogs don't support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
+> - SharePoint catalogs don't support Outlook add-ins.
+> - SharePoint catalogs don't support add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
+> - SharePoint catalogs don't support Office on Mac. To deploy Office Add-ins to Mac clients, you must submit them to [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
 
 ### Outlook add-in Exchange server deployment
 

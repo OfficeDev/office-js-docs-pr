@@ -2,7 +2,7 @@
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
-ms.date: 09/05/2024
+ms.date: 02/12/2025
 ms.localizationpriority: high
 ---
 
@@ -27,7 +27,7 @@ Run the command `yo office --projectType taskpane --name "my office add in" --ho
 
 You can use different options for the **--projecttype**, **--name**, and **--js** command-line options. For the full list of options, see [Yeoman generator for Office Add-ins](https://github.com/OfficeDev/generator-office).
 
-The generator will create the project and install supporting Node components. You can also use the steps in this article to update a Visual Studio project to use the shared runtime. However, you may need to update the XML schemas for the manifest. For more information, see [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+The generator will create the project and install supporting Node components. You can also use the steps in this article to update a Visual Studio project to use the shared runtime. However, you may need to update the XML schemas for the manifest. For more information, see [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md#add-in-only-manifest-schema-validation-errors-in-visual-studio-projects).
 
 ## Configure the manifest
 

@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins in Visual Studio
 description: Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows.
-ms.date: 03/28/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -93,7 +93,7 @@ Next, Visual Studio does the following:
 1. Validates the manifest.  
 
    > [!IMPORTANT]
-   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#add-in-only-manifest-schema-validation-errors-in-visual-studio-projects).
 
 1. Opens the Office application and sideloads your add-in.
 
@@ -182,7 +182,7 @@ Next, Visual Studio does the following:
 1. Validates the manifest.  
 
    > [!IMPORTANT]
-   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#add-in-only-manifest-schema-validation-errors-in-visual-studio-projects).
 
 1. Opens the Office application host page of your Microsoft 365 tenancy in Microsoft Edge.
 
