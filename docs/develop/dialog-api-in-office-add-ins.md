@@ -335,7 +335,7 @@ Because you can make multiple `messageChild` calls from the host page, but you h
 > In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), may not be supported. For example, `messageChild` isn't supported in volume-licensed perpetual Outlook 2016 and volume-licensed perpetual Outlook 2019. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
 
 > [!IMPORTANT]
-> The [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets) can't be specified in the **\<Requirements\>** section of an add-in manifest. You'll have to check for support for DialogApi 1.2 at runtime using the `isSetSupported` method as described in [Check for API availability at runtime](specify-api-requirements-runtime.md). Support for manifest requirements is under development.
+> The [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets) can't be specified in the add-in manifest. You'll have to check for support for DialogApi 1.2 at runtime using the `isSetSupported` method as described in [Check for API availability at runtime](specify-api-requirements-runtime.md). Support for manifest requirements is under development.
 
 ### Cross-domain messaging to the dialog runtime
 
@@ -356,7 +356,11 @@ If the message doesn't include sensitive data, you can set the `targetOrigin` to
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-Because the runtime that is hosting the dialog can't access the **\<AppDomains\>** section of the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that is passed to the handler contains the domain that is currently hosted in the parent as its `origin` property. The following is an example of how to use the property.
+The add-in's manifest specifies trusted domains. In the unified manifest for Microsoft 365, this is specified in the "validDomains" property. In the add-in only manifest, this is specified in the **\<AppDomains\>** element. 
+
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
+But the runtime that's hosting the dialog can't access the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that's passed to the handler contains the domain that's currently hosted in the parent as its `origin` property. The following is an example of how to use the property.
 
 ```javascript
 function onMessageFromParent(arg) {

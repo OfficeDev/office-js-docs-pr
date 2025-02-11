@@ -81,10 +81,7 @@ The following is an example.
 
 ## Define the groups and controls that appear on the tab
 
-Unlike custom core tabs, which are defined with XML in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method may be run only once in a session of your add-in. If it's called again, an error is thrown.
-
-> [!NOTE]
-> The structure of the JSON blob's properties and subproperties (and the key names) is roughly parallel to the structure of the [CustomTab](/javascript/api/manifest/customtab) element and its descendant elements in the manifest XML.
+Unlike custom core tabs, which are defined in the manifest, custom contextual tabs are defined at runtime with a JSON blob. Your code parses the blob into a JavaScript object, and then passes the object to the [Office.ribbon.requestCreateControls](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestcreatecontrols-member(1)) method. Custom contextual tabs are only present in documents on which your add-in is currently running. This is different from custom core tabs which are added to the Office application ribbon when the add-in is installed and remain present when another document is opened. Also, the `requestCreateControls` method may be run only once in a session of your add-in. If it's called again, an error is thrown.
 
 We'll construct an example of a contextual tabs JSON blob step-by-step. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). If you're working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
@@ -418,7 +415,7 @@ function myContextChanges() {
 
 ## Open a task pane from contextual tabs
 
-To open your task pane from a button on a custom contextual tab, create an action in the JSON with a `type` of `ShowTaskpane`. Then define a button with the `actionId` property set to the `id` of the action. This opens the default task pane specified by the **\<Runtime\>** element in your manifest.
+To open your task pane from a button on a custom contextual tab, create an action in the JSON with a `type` of `ShowTaskpane`. Then define a button with the `actionId` property set to the `id` of the action. This opens the default task pane specified in your manifest.
 
 ```json
 `{
@@ -568,9 +565,59 @@ Some combinations of platform, Office application, and Office build don't suppor
 
 #### Use noncontextual tabs or controls
 
-There's a manifest element, [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi), that's designed to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs.
+The add-in's manifest provides a way to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs. The strategy is to define a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then you use special manifest markup to enable the custom core tab to be visible all the time on platform and version combinations that don't support custom contextual tabs. The process depends on which type of manifest your add-in uses. 
 
-The simplest strategy for using this element is to define a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. But you add `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` as the first child element of the duplicate [Group](/javascript/api/manifest/group), [Control](/javascript/api/manifest/control), and menu **\<Item\>** elements on the custom core tabs. The effect of doing so is the following:
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
+Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then, add an "overriddenByRibbonApi" property to each of the control objects and menu items and set its value to "true". The effect of doing so is the following:
+
+- If the add-in runs on an application and platform that support custom contextual tabs, then the custom controls and menu items won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
+- If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the controls and menu items do appear on the custom core tab.
+
+The following is an example. Note that "Contoso.MyButton1" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "ribbons": [
+            ...
+            {
+                ...
+                "tabs": [
+                    {
+                        "id": "MyTab",
+                        "groups": [
+                            {
+                                ...
+                                "controls": [
+                                    {
+                                        "id": "Contoso.MyButton1",
+                                        ...
+                                        "overriddenByRibbonApi": true
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+
+When a parent menu control is marked with `"overriddenByRibbonApi": true`, then it isn't visible, and all of its child markup is ignored when custom contextual tabs aren't supported. So, it doesn't matter if any of those child menu items have the "overriddenByRibbonApi" property or what its value is. The implication of this is that if a menu item must be visible in all contexts, then not only should it not be marked with `"overriddenByRibbonApi": true`, but *its ancestor menu control must also not be marked this way*.
+
+> [!IMPORTANT]
+> Don't mark *all* of the child items of a menu with `"overriddenByRibbonApi": true`. This is pointless if the parent element is marked with `"overriddenByRibbonApi": true` for reasons given in the preceding paragraph. Moreover, if you leave out the "overriddenByRibbonApi" property on the parent menu control (or set it to `false`), then the parent will appear regardless of whether custom contextual tabs are supported, but it will be empty when they are supported. So, if all the child elements shouldn't appear when custom contextual tabs are supported, mark the *parent* menu control with `"overriddenByRibbonApi": true`.
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. But add an [OverriddenByRibbonApi](/javascript/api/manifest/overriddenbyribbonapi) element as the first child element of the duplicate [Group](/javascript/api/manifest/group), [Control](/javascript/api/manifest/control), and menu **\<Item\>** elements on the custom core tabs. The effect of doing so is the following:
 
 - If the add-in runs on an application and platform that support custom contextual tabs, then the custom core groups and controls won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
 - If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the elements do appear on the custom core tab.
@@ -606,9 +653,11 @@ When a parent group, or menu is marked with `<OverriddenByRibbonApi>true</Overri
 > [!IMPORTANT]
 > Don't mark *all* of the child elements of a group or menu with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`. This is pointless if the parent element is marked with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>` for reasons given in the preceding paragraph. Moreover, if you leave out the **\<OverriddenByRibbonApi\>** on the parent (or set it to `false`), then the parent will appear regardless of whether custom contextual tabs are supported, but it will be empty when they are supported. So, if all the child elements shouldn't appear when custom contextual tabs are supported, mark the parent with `<OverriddenByRibbonApi>true</OverriddenByRibbonApi>`.
 
+---
+
 #### Use APIs that show or hide a task pane in specified contexts
 
-As an alternative to **\<OverriddenByRibbonApi\>**, your add-in can define a task pane with UI controls that duplicate the functionality of the controls on a custom contextual tab. Then use the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-showastaskpane-member(1)) and [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-hide-member(1)) methods to show the task pane when the contextual tab would have been shown if it was supported. For details on how to use these methods, see [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md).
+As an alternative to using the manifest, your add-in can define a task pane with UI controls that duplicate the functionality of the controls on a custom contextual tab. Then use the [Office.addin.showAsTaskpane](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-showastaskpane-member(1)) and [Office.addin.hide](/javascript/api/office/office.addin?view=common-js&preserve-view=true#office-office-addin-hide-member(1)) methods to show the task pane when the contextual tab would have been shown if it was supported. For details on how to use these methods, see [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md).
 
 ### Handle the HostRestartNeeded error
 
