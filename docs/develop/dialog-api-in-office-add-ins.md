@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 09/19/2024
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -34,7 +34,7 @@ To open a dialog box, your code, typically a page in a task pane, calls the [dis
 
 The resource that is opened in the dialog box is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog box. The following code is a simple example.
 
-```js
+```javascript
 Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html');
 ```
 
@@ -48,8 +48,8 @@ After the first page (or other resource) is loaded, a user can use links or othe
 
 By default, the dialog box will occupy 80% of the height and width of the device screen, but you can set different percentages by passing a configuration object to the method, as shown in the following example.
 
-```js
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', {height: 30, width: 20});
+```javascript
+Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', { height: 30, width: 20 });
 ```
 
 For a sample add-in that does this, see [Build Office Add-ins for Excel](https://github.com/OfficeDev/TrainingContent/tree/master/OfficeAddin/02%20Building%20Add-ins%20for%20Microsoft%20Excel). For more samples that use `displayDialogAsync`, see [Code samples](#code-samples).
@@ -62,8 +62,8 @@ You can open only one dialog box from a host window. An attempt to open another 
 
 The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office on the web, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example.
 
-```js
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', {height: 30, width: 20, displayInIframe: true});
+```javascript
+Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', { height: 30, width: 20, displayInIframe: true });
 ```
 
 The default value is `false`, which is the same as omitting the property entirely. If the add-in isn't running in Office on the web, the `displayInIframe` is ignored.
@@ -80,8 +80,8 @@ Code in the dialog box uses the [messageParent](/javascript/api/office/office.ui
 
 The following example shows how to initialize Office JS and send a message to the host page.
 
-```js
-Office.onReady(function() {
+```javascript
+Office.onReady(() => {
    // Add any initialization code for your dialog here.
 });
 
@@ -93,7 +93,7 @@ function userSignedIn() {
 
 The next example shows how to return a JSON string containing profile information.
 
-```js
+```javascript
 function userProfileSignedIn(profile) {
     const profileMessage = {
         "name": profile.name,
@@ -107,10 +107,10 @@ The `messageParent` function is one of *only* two Office JS APIs that can be cal
 
 The host page must be configured to receive the message. You do this by adding a callback parameter to the original call of `displayDialogAsync`. The callback assigns a handler to the `DialogMessageReceived` event. The following is an example.
 
-```js
+```javascript
 let dialog; // Declare dialog as global for use in later functions.
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', {height: 30, width: 20},
-    function (asyncResult) {
+Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', { height: 30, width: 20 },
+    (asyncResult) => {
         dialog = asyncResult.value;
         dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
     }
@@ -125,7 +125,7 @@ Office passes an [AsyncResult](/javascript/api/office/office.asyncresult) object
 
 The following is a simple example of a handler for the `DialogMessageReceived` event.
 
-```js
+```javascript
 function processMessage(arg) {
     const messageFromDialog = JSON.parse(arg.message);
     showUserName(messageFromDialog.name);
@@ -136,18 +136,18 @@ Office passes the `arg` object to the handler. Its `message` property is the str
 
 When the user interaction with the dialog box is completed, your message handler should close the dialog box, as shown in this example.
 
-```js
+```javascript
 function processMessage(arg) {
     dialog.close();
-    // message processing code goes here;
+    // Add code to process the message here.
 }
 ```
 
 The `dialog` object must be the same one that is returned by the call of `displayDialogAsync`. You need to declare the `dialog` object as a global variable. Or you can scope the `dialog` object to the `displayDialogAsync` call with an anonymous callback function as shown in the following example. In the example, `processMessage` doesn't need to close the dialog since the `close` method is called in the anonymous callback function.
 
-```js
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', {height: 30, width: 20},
-    function (asyncResult) {
+```javascript
+Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', { height: 30, width: 20 },
+    (asyncResult) => {
         const dialog = asyncResult.value;
         dialog.addEventHandler(Office.EventType.DialogMessageReceived, (arg) => {
             dialog.close();
@@ -159,11 +159,11 @@ Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', {h
 
 If the add-in needs to open a different page of the task pane after receiving the message, you can use the `window.location.replace` method (or `window.location.href`) as the last line of the handler. The following is an example.
 
-```js
+```javascript
 function processMessage(arg) {
-    // message processing code goes here;
+    // Add code to process the message here.
     window.location.replace("/newPage.html");
-    // Alternatively ...
+    // Alternatively, use the following:
     // window.location.href = "/newPage.html";
 }
 ```
@@ -174,15 +174,15 @@ For an example of an add-in that does this, see the [Insert Excel charts using M
 
 Because you can send multiple `messageParent` calls from the dialog box, but you have only one handler in the host page for the `DialogMessageReceived` event, the handler must use conditional logic to distinguish different messages. For example, if the dialog box prompts a user to sign in to an identity provider such as Microsoft account or Google, it sends the user's profile as a message. If authentication fails, the dialog box sends error information to the host page, as in the following example.
 
-```js
+```javascript
 if (loginSuccess) {
     const userProfile = getProfile();
-    const messageObject = {messageType: "signinSuccess", profile: userProfile};
+    const messageObject = { messageType: "signinSuccess", profile: userProfile };
     const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 } else {
     const errorDetails = getError();
-    const messageObject = {messageType: "signinFailure", error: errorDetails};
+    const messageObject = { messageType: "signinFailure", error: errorDetails };
     const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
@@ -196,7 +196,7 @@ About the previous example, note:
 
 The handler code in the host page uses the value of the `messageType` property to branch as shown in the following example. Note that the `showUserName` function is the same as in the previous example and `showNotification` function displays the error in the host page's UI.
 
-```js
+```javascript
 function processMessage(arg) {
     const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "signinSuccess") {
@@ -221,13 +221,13 @@ After the dialog opens, either the dialog or the parent runtime may navigate awa
 
 The following is an example of using `messageParent` to send a cross-domain message.
 
-```js
+```javascript
 Office.context.ui.messageParent("Some message", { targetOrigin: "https://resource.contoso.com" });
 ```
 
 If the message doesn't include sensitive data, you can set the `targetOrigin` to "\*" which allows it to be sent to any domain. The following is an example.
 
-```js
+```javascript
 Office.context.ui.messageParent("Some message", { targetOrigin: "*" });
 ```
 
@@ -254,34 +254,39 @@ Your add-in can send messages from the [host page](dialog-api-in-office-add-ins.
 When you call the Office dialog API to open a dialog box, a [Dialog](/javascript/api/office/office.dialog) object is returned. It should be assigned to a variable that has global scope so that you can reference it from other functions. The following is an example.
 
 ```javascript
-let dialog; // Declare as global variable.
+let dialog; // Declare as global variable.
 Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html',
-    function (asyncResult) {
-        dialog = asyncResult.value;
-        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
-    }
+    (asyncResult) => {
+        dialog = asyncResult.value;
+        dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
+    }
 );
 
-function processMessage(arg) {
+function processMessage(arg) {
     dialog.close();
 
-  // message processing code goes here;
+    // Add code to process the message here.
 
 }
 ```
 
 This `Dialog` object has a [messageChild](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) method that sends any string, including stringified data, to the dialog box. This raises a `DialogParentMessageReceived` event in the dialog box. Your code should handle this event, as shown in the next section.
 
-Consider a scenario in which the UI of the dialog is related to the currently active worksheet and that worksheet's position relative to the other worksheets. In the following example, `sheetPropertiesChanged` sends Excel worksheet properties to the dialog box. In this case, the current worksheet is named "My Sheet" and it's the second sheet in the workbook. The data is encapsulated in an object and stringified so that it can be passed to `messageChild`.
+Consider a scenario in which the UI of the dialog is related to the currently active Excel worksheet and that worksheet's position relative to the other worksheets. In the following example, `worksheetPropertiesChanged` sends the properties of the active worksheet to the dialog box. The data is stringified so that it can be passed to `messageChild`.
 
 ```javascript
-function sheetPropertiesChanged() {
-    const messageToDialog = JSON.stringify({
-                               name: "My Sheet",
-                               position: 2
-                           });
+await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();
+    worksheet.load();
+    await context.sync();
+    worksheetPropertiesChanged(worksheet);
+});
 
-    dialog.messageChild(messageToDialog);
+...
+
+function worksheetPropertiesChanged(currentWorksheet) {
+    const messageToDialog = JSON.stringify(currentWorksheet);
+    dialog.messageChild(messageToDialog);
 }
 ```
 
@@ -290,35 +295,35 @@ function sheetPropertiesChanged() {
 In the dialog box's JavaScript, register a handler for the `DialogParentMessageReceived` event with the [UI.addHandlerAsync](/javascript/api/office/office.ui#office-office-ui-addhandlerasync-member(1)) method. This is typically done in the [Office.onReady or Office.initialize function](initialize-add-in.md), as shown in the following. (A more robust example is included later in this article.)
 
 ```javascript
-Office.onReady(function () {
-  Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived,
-    onMessageFromParent);
+Office.onReady(() => {
+    Office.context.ui.addHandlerAsync(Office.EventType.DialogParentMessageReceived,onMessageFromParent);
 });
 ```
 
 Then, define the `onMessageFromParent` handler. The following code continues the example from the preceding section. Note that Office passes an argument to the handler and that the `message` property of the argument object contains the string from the host page. In this example, the message is reconverted to an object and jQuery is used to set the top heading of the dialog to match the new worksheet name.
 
 ```javascript
-function onMessageFromParent(arg) {
-  const messageFromParent = JSON.parse(arg.message);
-  document.querySelector('h1').textContent = messageFromParent.name;
+function onMessageFromParent(arg) {
+    const messageFromParent = JSON.parse(arg.message);
+    document.querySelector('h1').textContent = messageFromParent.name;
 }
 ```
 
 It's best practice to verify that your handler is properly registered. You can do this by passing a callback to the `addHandlerAsync` method. This runs when the attempt to register the handler completes. Use the handler to log or show an error if the handler wasn't successfully registered. The following is an example. Note that `reportError` is a function, not defined here, that logs or displays the error.
 
 ```javascript
-Office.onReady(function () {
-  Office.context.ui.addHandlerAsync(
-    Office.EventType.DialogParentMessageReceived,
-      onMessageFromParent,
-      onRegisterMessageComplete);
+Office.onReady(() => {
+    Office.context.ui.addHandlerAsync(
+        Office.EventType.DialogParentMessageReceived,
+        onMessageFromParent,
+        onRegisterMessageComplete
+    );
 });
 
-function onRegisterMessageComplete(asyncResult) {
-  if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
-    reportError(asyncResult.error.message);
-  }
+function onRegisterMessageComplete(asyncResult) {
+    if (asyncResult.status !== Office.AsyncResultStatus.Succeeded) {
+        reportError(asyncResult.error.message);
+    }
 }
 ```
 
@@ -341,13 +346,13 @@ After the dialog opens, either the dialog or the parent runtime may navigate awa
 
 The following is an example of using `messageChild` to send a cross-domain message.
 
-```js
+```javascript
 dialog.messageChild(messageToDialog, { targetOrigin: "https://resource.contoso.com" });
 ```
 
 If the message doesn't include sensitive data, you can set the `targetOrigin` to "\*" which allows it to be *sent* to any domain. The following is an example.
 
-```js
+```javascript
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
@@ -358,12 +363,13 @@ The add-in's manifest specifies trusted domains. In the unified manifest for Mic
 But the runtime that's hosting the dialog can't access the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that's passed to the handler contains the domain that's currently hosted in the parent as its `origin` property. The following is an example of how to use the property.
 
 ```javascript
-function onMessageFromParent(arg) {
+function onMessageFromParent(arg) {
     if (arg.origin === "https://addin.fabrikam.com") {
-        // process message
+        // Process the message.
     } else {
-        dialog.close();
-        showNotification("Messages from " + arg.origin + " aren't accepted.");
+        // Signal the parent page to close the dialog.
+        const messageObject = { messageType: "untrustedDomain" };
+        Office.context.ui.messageParent(messageObject);
     }
 }
 ```
@@ -385,9 +391,9 @@ For example, your code could use the [Office.onReady or Office.initialize functi
 
 You can implement a button in the dialog box that will close it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button has been clicked. The following is an example.
 
-```js
+```javascript
 function closeButtonClick() {
-    const messageObject = {messageType: "dialogClosed"};
+    const messageObject = { messageType: "dialogClosed" };
     const jsonMessage = JSON.stringify(messageObject);
     Office.context.ui.messageParent(jsonMessage);
 }
@@ -395,7 +401,7 @@ function closeButtonClick() {
 
 The host page handler for `DialogMessageReceived` would call `dialog.close`, as in this example. (See previous examples that show how the `dialog` object is initialized.)
 
-```js
+```javascript
 function processMessage(arg) {
     const messageFromDialog = JSON.parse(arg.message);
     if (messageFromDialog.messageType === "dialogClosed") {

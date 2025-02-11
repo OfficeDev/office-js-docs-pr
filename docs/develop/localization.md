@@ -512,7 +512,7 @@ To test your localized add-in, change the language used for display or editing i
 
 3. Choose **OK** to confirm your selection, and then close Word.
 
-4. Press **F5** in Visual Studio to run the sample add-in, or choose **Debug** > **Start Debugging** from the menu bar.
+4. Press <kbd>F5</kbd> in Visual Studio to run the sample add-in, or choose **Debug** > **Start Debugging** from the menu bar.
 
 5. In Word, choose **Home** > **Show Taskpane**.
 

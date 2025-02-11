@@ -136,7 +136,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ## Try it out
 
-1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS. If you're asked to trust a certificate, do so to allow the add-in to connect to its Office application.
+1. Using Visual Studio, test the newly created Excel add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch Excel with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS. If you're asked to trust a certificate, do so to allow the add-in to connect to its Office application.
 
 1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 

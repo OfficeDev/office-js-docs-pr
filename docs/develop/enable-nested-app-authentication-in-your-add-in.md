@@ -1,14 +1,14 @@
 ---
-title: Enable SSO in an Office Add-in using nested app authentication
-description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 08/07/2024
+title: Enable single sign-on in an Office Add-in with nested app authentication
+description: Learn how to enable SSO in an Office Add-in with nested app authentication.
+ms.date: 12/23/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
-# Enable SSO in an Office Add-in using nested app authentication (preview)
+# Enable single sign-on in an Office Add-in with nested app authentication
 
-You can use the MSAL.js library (version 3.11 and later) with nested app authentication to use SSO from your Office Add-in. Using nested app authentication offers several advantages over the On-Behalf-Of (OBO) flow.
+You can use the MSAL.js library with nested app authentication to use single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
 
 - You only need to use the MSAL.js library and don’t need the `getAccessToken` function in Office.js.
 - You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
@@ -17,19 +17,17 @@ You can use the MSAL.js library (version 3.11 and later) with nested app authent
 
 ## NAA supported accounts and hosts
 
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support Azure Active Directory B2C for business-to-consumer identity management scenarios. The following table explains the current support by platform. Platforms listed as generally available (GA) are ready for production usage in your add-in.
+
+| Application | Web        | Windows                                              | Mac        | iOS/iPad           | Android        |
+|-------------|------------|------------------------------------------------------|------------|--------------------|----------------|
+| Excel       | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
+| Outlook     | GA         | GA in Current Channel and Monthly Enterprise Channel, Preview in Semi-Annual Channels | GA         | GA (iOS)           | GA             |
+| PowerPoint  | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
+| Word        | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
+
 > [!IMPORTANT]
-> Nested app authentication (NAA) is currently in preview. To try this feature, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
-
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support Azure Active Directory B2C for business-to-consumer identity management scenarios. The following table explains the current support in preview. Anything listed as "Coming soon" will be supported by the time that NAA is made generally available.
-
-| Application | Windows                                                                            | Mac | Web          | iOS/iPad   | Android        |
-|-------------|------------------------------------------------------------------------------------|-----|--------------|------------|----------------|
-| Excel       | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
-| Outlook     | Yes* (Current Channel (Preview) for classic Outlook only, new Outlook coming soon) | Yes | Yes          | Yes (iOS)  | Yes            |
-| PowerPoint  | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
-| Word        | Yes (Current Channel (Preview))                                                    | Yes | Coming soon  | Yes (iPad) | Not applicable |
-
-*\* - NAA for event-based activation in Outlook is currently supported in the Beta Channel.*
+> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Register your single-page application
 
@@ -47,7 +45,11 @@ To enable NAA, your app registration must include a specific redirect URI to ind
 
 `brk-multihub://your-add-in-domain`
 
-For example if you were testing your add-in on port 3000 on the localhost server, you would use `brk-multihub://localhost:3000` as the redirect value.
+Your domain must include only the origin and not its subpaths. For example:
+
+✔️ brk-multihub://localhost:3000<br>
+✔️ brk-multihub://www.contoso.com<br>
+❌ brk-multihub://www.contoso.com/go
 
 Trusted broker groups are dynamic by design and can be updated in the future to include additional hosts where your add-in may use NAA flows. Currently the brk-multihub group includes Office Word, Excel, PowerPoint, Outlook, and Teams (for when Office is activated inside).
 
@@ -57,11 +59,11 @@ Configure your add-in to use NAA by calling the `createNestablePublicClientApp
 
 The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office` (**Office Add-in Task Pane** project).
 
-1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser).
+1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser). We recommend using the latest version of the package (at time of the last article update it was 3.26.0).
 
     ```json
     "dependencies": {
-        "@azure/msal-browser": "^3.15.0",
+        "@azure/msal-browser": "^3.27.0",
         ...
     ```
 
@@ -134,6 +136,9 @@ The following code shows how to implement this authentication pattern in your ow
     }
     ```
 
+    > [!IMPORTANT]
+    > The token request must include scopes other than just `offline_access`, `openid`, `profile`, or `email`. You can use any combination of the previous scopes, but you must include at least one additional scope. If not, the token request can fail.
+
 1. Replace `TODO 1` with the following code. This code calls `acquireTokenSilent` to get the access token.
 
     ```JavaScript
@@ -176,7 +181,7 @@ The following code shows how to implement this authentication pattern in your ow
 
 ## Call an API
 
-After acquiring the token, use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the _Authorization_ header.
+After acquiring the token, use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the *Authorization* header.
 
 - Replace `TODO 4` with the following code.
 
@@ -225,8 +230,17 @@ In certain cases, the `acquireTokenSilent` method's attempt to get the token f
 
 ### Have a fallback when NAA isn't supported
 
-While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. In general you'll want to use the MSAL SPA authentication pattern with the [Office JS dialog API](auth-with-office-dialog-api.md). For more information, see the following resources.
+While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. In general you'll want to use the MSAL SPA authentication pattern with the [Office JS dialog API](auth-with-office-dialog-api.md).
 
+Use the following code to check if NAA is supported when your add-in loads.
+
+```javascript
+   Office.context.requirements.isSetSupported("NestedAppAuth", "1.1");
+```
+
+For more information, see the following resources.
+
+- [Outlook sample: How to fall back and support Internet Explorer 11](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE/README.md)
 - [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
 - [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
 - [Microsoft identity samples for various app types and frameworks](/entra/identity-platform/sample-v2-code?tabs=apptype)
@@ -237,35 +251,35 @@ The following table shows which APIs are supported when NAA is enabled in the MS
 
 | Method                        | Supported by NAA      |
 | ----------------------------- | --------------------- |
-| _acquireTokenByCode_          | NO (throws exception) |
-| _acquireTokenPopup_           | YES                   |
-| _acquireTokenRedirect_        | NO (throws exception) |
-| _acquireTokenSilent_          | YES                   |
-| _addEventCallback_            | YES                   |
-| _addPerformanceCallback_      | NO (throws exception) |
-| _disableAccountStorageEvents_ | NO (throws exception) |
-| _enableAccountStorageEvents_  | NO (throws exception) |
-| _getAccountByHomeId_          | YES                   |
-| _getAccountByLocalId_         | YES                   |
-| _getAccountByUsername_        | YES                   |
-| _getActiveAccount_            | YES                   |
-| _getAllAccounts_              | YES                   |
-| _getConfiguration_            | YES                   |
-| _getLogger_                   | YES                   |
-| _getTokenCache_               | NO (throws exception) |
-| _handleRedirectPromise_       | NO                    |
-| _initialize_                  | YES                   |
-| _initializeWrapperLibrary_    | YES                   |
-| _loginPopup_                  | YES                   |
-| _loginRedirect_               | NO (throws exception) |
-| _logout_                      | NO (throws exception) |
-| _logoutPopup_                 | NO (throws exception) |
-| _logoutRedirect_              | NO (throws exception) |
-| _removeEventCallback_         | YES                   |
-| _removePerformanceCallback_   | NO (throws exception) |
-| _setActiveAccount_            | NO                    |
-| _setLogger_                   | YES                   |
-| _ssoSilent_                   | YES                   |
+| `acquireTokenByCode`          | No (throws exception) |
+| `acquireTokenPopup`           | Yes                   |
+| `acquireTokenRedirect`        | No (throws exception) |
+| `acquireTokenSilent`          | Yes                   |
+| `addEventCallback`            | Yes                   |
+| `addPerformanceCallback`      | No (throws exception) |
+| `disableAccountStorageEvents` | No (throws exception) |
+| `enableAccountStorageEvents`  | No (throws exception) |
+| `getAccountByHomeId`          | Yes                   |
+| `getAccountByLocalId`         | Yes                   |
+| `getAccountByUsername`        | Yes                   |
+| `getActiveAccount`            | Yes                   |
+| `getAllAccounts`              | Yes                   |
+| `getConfiguration`            | Yes                   |
+| `getLogger`                   | Yes                   |
+| `getTokenCache`               | No (throws exception) |
+| `handleRedirectPromise`       | No                    |
+| `initialize`                  | Yes                   |
+| `initializeWrapperLibrary`    | Yes                   |
+| `loginPopup`                  | Yes                   |
+| `loginRedirect`               | No (throws exception) |
+| `logout`                      | No (throws exception) |
+| `logoutPopup`                 | No (throws exception) |
+| `logoutRedirect`              | No (throws exception) |
+| `removeEventCallback`         | Yes                   |
+| `removePerformanceCallback`   | No (throws exception) |
+| `setActiveAccount`            | No                    |
+| `setLogger`                   | Yes                   |
+| `ssoSilent`                   | Yes                   |
 
 ## Security reporting
 
@@ -277,3 +291,7 @@ If you find a security issue with our libraries or services, report the issue to
 | ----------- | ------------ |
 | [Office Add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-SSO-NAA)   | Shows how to use MSAL.js nested app authentication (NAA) in an Office Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into the document.        |
 | [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA) | Shows how to use MSAL.js nested app authentication (NAA) in an Outlook Add-in to access Microsoft Graph APIs for the signed-in user. The sample displays the signed-in user's name and email. It also inserts the names of files from the user's Microsoft OneDrive account into a new message body. |
+
+## See also
+
+- [NAA FAQ](https://aka.ms/NAAFAQ)

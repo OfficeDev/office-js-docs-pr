@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about embedding Visio diagrams in SharePoint. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: visio #Required
   ms.topic: landing-page # Required
-  ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
+  ms.date: 10/03/2024 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -40,8 +40,12 @@ landingContent:
           - text: Ask questions
             url: https://stackoverflow.com/questions/tagged/office-js
           - text: Request features
-            url: https://aka.ms/m365dev-suggestions
+            url: https://feedbackportal.microsoft.com/feedback/forum/42d29dfb-3e1c-ec11-b6e7-0022481f8472
           - text: Report issues
             url: https://github.com/officedev/office-js/issues
+          - text: Join Office Add-ins community call
+            url: https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call
           - text: Office Add-ins additional resources
             url: ../resources/resources-links-help.md
+          - text: Download samples
+            url: https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Visio,Samples
