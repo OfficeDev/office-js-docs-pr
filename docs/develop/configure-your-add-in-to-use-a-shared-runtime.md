@@ -2,7 +2,7 @@
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
-ms.date: 09/05/2024
+ms.date: 02/12/2025
 ms.localizationpriority: high
 ---
 

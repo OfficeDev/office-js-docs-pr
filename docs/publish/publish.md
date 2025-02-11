@@ -1,7 +1,7 @@
 ---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 11/16/2024
+ms.date: 02/12/2025
 ms.localizationpriority: high
 ---
 
