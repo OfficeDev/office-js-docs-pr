@@ -2,7 +2,7 @@
 title: Check for API availability at runtime
 description: Learn how to verify at runtime that the Office application supports your add-in's API calls.
 ms.topic: best-practice
-ms.date: 10/30/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 

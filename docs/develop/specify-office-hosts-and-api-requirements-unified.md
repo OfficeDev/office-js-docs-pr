@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements with the unified manifest
 description: Learn how to specify in the unified manifest the Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 10/30/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
