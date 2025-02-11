@@ -56,7 +56,7 @@ In this article, you'll walk through the process of building an Excel [content a
 
 ## Try it out
 
-1. Using Visual Studio, test the newly created Excel add-in by pressing **F5** or choosing the **Start** button to launch Excel with the content add-in displayed in the spreadsheet.
+1. Using Visual Studio, test the newly created Excel add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch Excel with the content add-in displayed in the spreadsheet.
 
 1. Ensure that there's text in the worksheet, then select any range of cells containing text in the worksheet.
 

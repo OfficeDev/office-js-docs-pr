@@ -15,7 +15,7 @@ The paradox of debugging the [Office.initialize](/javascript/api/office#office-o
 Fortunately, there's an exception. You can debug these functions using Office on the web, with the following steps.
 
 1. Sideload and run the add-in in Office on the web. This is usually done by opening an add-in's task pane or running a [function command](../design/add-in-commands.md#types-of-add-in-commands). *The add-in runs in the overall browser process, not a separate process as it would in desktop Office.*
-1. Open the browser's developer tools. This is usually done by pressing F12. The debugger in the tools attaches to the browser process.
+1. Open the browser's developer tools. This is usually done by pressing <kbd>F12</kbd>. The debugger in the tools attaches to the browser process.
 1. Apply breakpoints as needed to the code in the `Office.initialize` or `Office.onReady` function.
 1. *Relaunch the add-in's task pane or the function command* just as you did in step 1. This action does *not* close the browser process or the debugger. The `Office.initialize` or `Office.onReady` function runs again and processing stops on your breakpoints.
 

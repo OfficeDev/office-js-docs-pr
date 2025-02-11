@@ -48,7 +48,7 @@ This process is supported for **Excel**, **OneNote**, **PowerPoint**, and **Word
 
 ## Sideload an add-in on the web when using Visual Studio
 
-If you're using Visual Studio to develop your add-in, press **F5** to open an Office document in *desktop* Office, create a blank document, and sideload the add-in. When you want to sideload to *Office on the web*, the process to sideload is similar to manual sideloading to the web. The only difference is that you must update the value of the **SourceURL** element, and possibly other elements, in your manifest to include the full URL where the add-in is deployed.
+If you're using Visual Studio to develop your add-in, press <kbd>F5</kbd> to open an Office document in *desktop* Office, create a blank document, and sideload the add-in. When you want to sideload to *Office on the web*, the process to sideload is similar to manual sideloading to the web. The only difference is that you must update the value of the **SourceURL** element, and possibly other elements, in your manifest to include the full URL where the add-in is deployed.
 
 1. In Visual Studio, choose **View** > **Properties Window**.
 

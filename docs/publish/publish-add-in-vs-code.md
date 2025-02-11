@@ -29,7 +29,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 > These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They do not apply if you created the add-in using the Teams Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
-1. Select **View** > **Extensions** (Ctrl+Shift+X) to open the Extensions view.
+1. Select **View** > **Extensions** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>) to open the Extensions view.
 1. Search for the **Azure Storage** extension and install it.
 1. Once installed, an Azure icon is added to the **Activity Bar**. Select it to access the extension. If the **Activity Bar** is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
 1. Select **Sign in to Azure** to sign in to your Azure account. If you don't already have an Azure account, create one by selecting **Create an Azure Account**. Follow the provided steps to set up your account.
