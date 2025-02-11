@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 08/27/2024
+ms.date: 01/22/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -25,12 +25,15 @@ The following table identifies which Outlook clients support the integrated spam
 
 | Client | Status |
 | ---- | ---- |
-| **Outlook on the web** | Supported |
-| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Supported |
+| **Outlook on the web** | Supported\* |
+| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Supported\* |
 | **classic Outlook on Windows**<br>Version 2404 (Build 17530.15000) | Supported |
-| **Outlook on Mac**<br>Version 16.81.1217.0 or later | Preview (see [Preview the integrated spam-reporting feature in Outlook on Mac](#preview-the-integrated-spam-reporting-feature-in-outlook-on-mac)) |
+| **Outlook on Mac**<br>Version 16.81 (23121700) or later | Preview (see [Preview the integrated spam-reporting feature in Outlook on Mac](#preview-the-integrated-spam-reporting-feature-in-outlook-on-mac)) |
 | **Outlook on Android** | Not available |
 | **Outlook on iOS** | Not available |
+
+> [!NOTE]
+> \* In Outlook on the web and the new Outlook on Windows, the integrated spam-reporting feature isn't supported for Microsoft 365 consumer accounts.
 
 ## Preview the integrated spam-reporting feature in Outlook on Mac
 
@@ -299,10 +302,8 @@ When your add-in is used to report a message, it generates a `SpamReporting` eve
       // TODO - Signal that the spam-reporting event has completed processing.
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onSpamReport", onSpamReport);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onSpamReport", onSpamReport);
     ```
 
 1. Save your changes.
@@ -340,10 +341,8 @@ The following is an example of a spam-reporting event handler that calls the `ge
       });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onSpamReport", onSpamReport);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onSpamReport", onSpamReport);
     ```
 
 1. Save your changes.
@@ -396,14 +395,12 @@ Once the event handler has completed processing the message, it must call the [e
       });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onSpamReport", onSpamReport);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart
+    Office.actions.associate("onSpamReport", onSpamReport);
     ```
 
     > [!NOTE]
-    > If you're on classic Outlook on Windows Version 2308 (Build 16724.10000) or later, Outlook on Mac, Outlook on the web, or new Outlook on Windows, you must use the `moveItemTo` property in the `event.completed` call to specify the folder to which a reported message is moved once it's processed by your add-in. On earlier Outlook builds on Windows that support the integrated spam-reporting feature, you must use the `postProcessingAction` property.
+    > If you're on classic Outlook on Windows Version 2308 (Build 16724.10000) or later, Outlook on Mac, Outlook on the web, or the new Outlook on Windows, you must use the `moveItemTo` property in the `event.completed` call to specify the folder to which a reported message is moved once it's processed by your add-in. On earlier Outlook builds on Windows that support the integrated spam-reporting feature, you must use the `postProcessingAction` property.
 
 1. Save your changes.
 
@@ -474,14 +471,16 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 
   :::image type="content" source="../images/outlook-spam-timeout-dialog.png" alt-text="The dialog shown when a spam-reporting add-in times out.":::
 
-- A spam-reporting add-in can be used to report a message even if the Reading Pane of the Outlook client is turned off. However, this isn't supported in Outlook on Mac. In Outlook on Mac, the Reading Pane must be turned on to use a spam-reporting add-in.
-- In classic Outlook on Windows, only one message can be reported at a time. If a user attempts to report another message while the previous one is still being processed, a dialog will be shown to them to notify them of this.
+- In classic Outlook on Windows, a spam-reporting add-in can be used to report a message even if the Reading Pane of the Outlook client is turned off. In Outlook on the web, on Mac, and in new Outlook on Windows, the spam-reporting add-in can be used if the Reading Pane is turned on or the message to be reported is open in another window.
+- Only one message can be reported at a time. If you select multiple messages to report, the button of the spam-reporting add-in becomes unavailable.
+- In classic Outlook on Windows, only one reported message can be processed at a time. If a user attempts to report another message while the previous one is still being processed, a dialog will be shown to notify them of this.
 
   :::image type="content" source="../images/outlook-spam-report-error.png" alt-text="The dialog shown when the user attempts to report another message while the previous one is still being processed.":::
 
-  This doesn't apply to Outlook on the web or on Mac, or to new Outlook on Windows. In these Outlook clients, a user can report a message from the Reading Pane and can simultaneously report each message that's open in a separate window.
+  This doesn't apply to Outlook on the web or on Mac, or to the new Outlook on Windows. In these Outlook clients, a user can report a message from the Reading Pane and can simultaneously report each message that's open in a separate window.
 
 - The add-in can still process the reported message even if the user navigates away from the selected message. In Outlook on Mac, this is only supported if a user reports a message while it's open in a separate window. If the user reports a message while viewing it from the Reading Pane and then navigates away from it, the reporting process is terminated.
+- In Outlook on the web and the new Outlook on Windows, if a message is reported while it's open in a separate window, a post-processing dialog isn't shown to the user.
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
 - The integrated spam-reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 - A spam-reporting add-in only implements [function commands](../design/add-in-commands.md#types-of-add-in-commands). A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane in your add-in, you must configure it in your manifest as follows:

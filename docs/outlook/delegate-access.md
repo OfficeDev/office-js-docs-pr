@@ -1,14 +1,14 @@
 ---
-title: Enable shared folders and shared mailbox scenarios in an Outlook add-in
-description: Discusses how to configure add-in support for shared folders (a.k.a. delegate access) and shared mailboxes.
-ms.date: 08/06/2024
+title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
+description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
+ms.date: 10/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Enable shared folders and shared mailbox scenarios in an Outlook add-in
+# Implement shared folders and shared mailbox scenarios in an Outlook add-in
 
-This article describes how to enable shared folders (also known as delegate access) and shared mailbox scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
+This article describes how to implement shared folders (also known as delegate access) and shared mailbox scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
 > [!NOTE]
 > Shared folder support was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). For information about client support for these features, see [Supported clients and platforms](#supported-clients-and-platforms).
@@ -112,43 +112,9 @@ If the calendar owner granted broad access to their calendar (for example, made 
 
 To learn more about where add-ins do and don't activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
 
-## Supported permissions
-
-The following table describes the permissions that the Office JavaScript API supports for delegates and shared mailbox users.
-
-|Permission|Value|Description|
-|---|---:|---|
-|Read|1 (000001)|Can read items.|
-|Write|2 (000010)|Can create items.|
-|DeleteOwn|4 (000100)|Can delete only the items they created.|
-|DeleteAll|8 (001000)|Can delete any items.|
-|EditOwn|16 (010000)|Can edit only the items they created.|
-|EditAll|32 (100000)|Can edit any items.|
-
-> [!NOTE]
-> Currently the API supports getting existing permissions, but not setting permissions.
-
-The [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) object is implemented using a bitmask to indicate the permissions. Each position in the bitmask represents a particular permission and if it's set to `1` then the user has the respective permission. For example, if the second bit from the right is `1`, then the user has **Write** permission. You can see an example of how to check for a specific permission in the [Perform an operation as delegate or shared mailbox user](#perform-an-operation-as-delegate-or-shared-mailbox-user) section later in this article.
-
-## Sync across shared folder clients
-
-A delegate's updates to the owner's mailbox are usually synced across mailboxes immediately.
-
-However, if REST or Exchange Web Services (EWS) operations were used to set an extended property on an item, such changes could take a few hours to sync. We recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs to avoid such a delay. To learn more, see the [custom properties section](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties) of the "Get and set metadata in an Outlook add-in" article.
-
-> [!IMPORTANT]
-> In a delegate scenario, you can't use EWS with the tokens currently provided by office.js API.
-
 ## Configure the manifest
 
-To enable shared folders and shared mailbox scenarios in your add-in, you must enable the required permissions in the manifest.
-
-First, to support REST calls from a delegate, the add-in must request the **read/write mailbox** permission. The markup varies depending on the type of manifest.
-
-- **Add-in only manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
-
-Second, enable support for shared folders. The markup varies depending on the type of manifest.
+To implement shared folders and shared mailbox scenarios in your add-in, you must first configure support for the feature in your manifest. The markup varies depending on the type of manifest your add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -170,7 +136,7 @@ Add an additional object to the "authorization.permissions.resourceSpecific" arr
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true` in the manifest under the parent element `DesktopFormFactor`. At present, other form factors aren't supported.
+Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`. At present, other form factors aren't supported.
 
 ```XML
 ...
@@ -183,11 +149,9 @@ Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) 
           <SupportsSharedFolders>true</SupportsSharedFolders>
           <FunctionFile resid="residDesktopFuncUrl" />
           <ExtensionPoint xsi:type="MessageReadCommandSurface">
-            <!-- configure selected extension point -->
+            <!-- Configure the extension point. -->
           </ExtensionPoint>
-
-          <!-- You can define more than one ExtensionPoint element as needed -->
-
+          ...
         </DesktopFormFactor>
       </Host>
     </Hosts>
@@ -199,81 +163,62 @@ Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) 
 
 ---
 
-## Perform an operation as delegate or shared mailbox user
+## Identify if a folder or mailbox is shared
 
-You can get an item's shared properties in Compose or Read mode by calling the [item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method. This returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that currently provides the user's permissions, the owner's email address, the REST API's base URL, and the target mailbox.
+Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) on a message or appointment in compose or read mode. If the item is in a shared folder or shared mailbox, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
 
-The following example shows how to get the shared properties of a message or appointment, check if the delegate or shared mailbox user has **Write** permission, and make a REST call.
+The following example calls the `getSharedPropertiesAsync` method to identify the owner of the mailbox and the permissions of the delegate or shared mailbox user.
 
-```js
-function performOperation() {
-  Office.context.mailbox.getCallbackTokenAsync({
-      isRest: true
-    },
-    function (asyncResult) {
-      if (asyncResult.status === Office.AsyncResultStatus.Succeeded && asyncResult.value !== "") {
-        Office.context.mailbox.item.getSharedPropertiesAsync({
-            // Pass auth token along.
-            asyncContext: asyncResult.value
-          },
-          function (asyncResult1) {
-            let sharedProperties = asyncResult1.value;
-            let delegatePermissions = sharedProperties.delegatePermissions;
-
-            // Determine if user can do the expected operation.
-            // E.g., do they have Write permission?
-            if ((delegatePermissions & Office.MailboxEnums.DelegatePermissions.Write) != 0) {
-              // Construct REST URL for your operation.
-              // Update <version> placeholder with actual Outlook REST API version e.g. "v2.0".
-              // Update <operation> placeholder with actual operation.
-              let rest_url = sharedProperties.targetRestUrl + "/<version>/users/" + sharedProperties.targetMailbox + "/<operation>";
-  
-              $.ajax({
-                  url: rest_url,
-                  dataType: 'json',
-                  headers:
-                  {
-                    "Authorization": "Bearer " + asyncResult1.asyncContext
-                  }
-                }
-              ).done(
-                function (response) {
-                  console.log("success");
-                }
-              ).fail(
-                function (error) {
-                  console.log("error message");
-                }
-              );
-            }
-          }
-        );
-      }
-    }
-  );
-}
+```javascript
+Office.context.mailbox.item.getSharedPropertiesAsync((result) => {
+  if (result.status === Office.AsyncResultStatus.Failed) {
+    console.error("The current folder or mailbox isn't shared.");
+    return;
+  }
+  const sharedProperties = result.value;
+  console.log(`Owner: ${sharedProperties.owner}`);
+  console.log(`Permissions: ${sharedProperties.delegatePermissions} `);
+});
 ```
+
+### Supported permissions
+
+The following table describes the permissions that `getSharedPropertiesAsync` supports for delegates and shared mailbox users.
+
+|Permission|Value|Description|
+|---|---:|---|
+|Read|1 (000001)|Can read items.|
+|Write|2 (000010)|Can create items.|
+|DeleteOwn|4 (000100)|Can delete only the items they created.|
+|DeleteAll|8 (001000)|Can delete any items.|
+|EditOwn|16 (010000)|Can edit only the items they created.|
+|EditAll|32 (100000)|Can edit any items.|
+
+> [!NOTE]
+> Currently, the API supports getting existing permissions, but not setting permissions.
+
+The [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepermissions) enum returned by the [delegatePermissions](/javascript/api/outlook/office.sharedproperties#outlook-office-sharedproperties-delegatepermissions-member) property is implemented using a bitmask to indicate the permissions. Each position in the bitmask represents a particular permission and if it's set to `1`, then the user has the respective permission. For example, if the second bit from the right is `1`, then the user has **Write** permission.
+
+## Perform an operation as a delegate or shared mailbox user
+
+Once you've identified that the current mail item is in a shared folder or shared mailbox, your add-in can then perform the necessary operations on the item within the shared environment. To run operations on an item in a shared context, you must first configure your add-in's permission in the manifest. Then, use Microsoft Graph to complete the operations.
+
+> [!NOTE]
+> Exchange Web Services (EWS) isn't supported in shared folder and shared mailbox scenarios.
+
+### Configure the add-in's permissions
+
+To use Microsoft Graph services, an add-in must configure the **read/write mailbox** permission in its manifest. The markup varies depending on the type of manifest your add-in uses.
+
+- **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Add-in only manifest**: Set the [Permissions](/javascript/api/manifest/permissions) element to **ReadWriteMailbox**.
+
+### Use Microsoft Graph
+
+To implement your shared folder and shared mailbox scenarios, use Microsoft Graph to access additional mailbox information and resources. For example, you can use Microsoft Graph to [get the contents of an Outlook message that's attached to a message](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post) in a mailbox where a user has delegate access. For guidance on how to use Microsoft Graph, see [Overview of Microsoft Graph](/graph/overview) and [Outlook mail API in Microsoft Graph](/graph/outlook-mail-concept-overview).
 
 > [!TIP]
-> As a delegate, you can use REST to [get the content of an Outlook message attached to an Outlook item or group post](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post).
-
-## Handle calling REST on shared and non-shared items
-
-If you want to call a REST operation on an item, whether or not the item is shared, you can use the `getSharedPropertiesAsync` API to determine if the item is shared. After that, you can construct the REST URL for the operation using the appropriate object.
-
-```js
-if (item.getSharedPropertiesAsync) {
-  // In Windows, Mac, and the web client, this indicates a shared item so use SharedProperties properties to construct the REST URL.
-  // Add-ins don't activate on shared items in mobile so no need to handle.
-
-  // Perform operation for shared item.
-} else {
-  // In general, this isn't a shared item, so construct the REST URL using info from the Call REST APIs article:
-  // https://learn.microsoft.com/office/dev/add-ins/outlook/use-rest-api
-
-  // Perform operation for non-shared item.
-}
-```
+> To access Microsoft Graph APIs from your add-in, use MSAL.js nested app authentication (NAA). To learn more, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 ## Limitations
 
@@ -281,40 +226,33 @@ Depending on your add-in's scenarios, there are a few limitations for you to con
 
 ### Message Compose mode
 
-In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) isn't supported in Outlook on the web or on Windows unless the following conditions are met.
+In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)) isn't supported in Outlook on the web or on Windows (new and classic) unless the following conditions are met.
 
-a. **Delegate access/Shared folders**
+- **Delegate access/Shared folders**
 
-1. The mailbox owner starts a message. This can be a new message, a reply, or a forward.
-1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
-1. The delegate opens the draft from the shared folder then continues composing.
+    1. The mailbox owner starts a message. This can be a new message, a reply, or a forward.
+    1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
+    1. The delegate opens the draft from the shared folder then continues composing.
 
-b. **Shared mailbox (applies to classic Outlook on Windows only)**
+- **Shared mailbox (applies to classic Outlook on Windows only)**
 
-1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
-1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
-1. Another shared mailbox user opens the draft from the shared mailbox then continues composing.
+    1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
+    1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
+    1. Another shared mailbox user opens the draft from the shared mailbox then continues composing.
 
-The message is now in a shared context and add-ins that support these shared scenarios can get the item's shared properties. After the message has been sent, it's usually found in the sender's **Sent Items** folder.
-
-### REST and EWS
-
-Your add-in can use REST. To enable REST access to the owner's mailbox or to the shared mailbox as applicable, the add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
-
-- **Add-in only manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-- **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
-
-EWS isn't supported.
+Once these conditions are met, the message becomes available in a shared context and add-ins that support these shared scenarios can get the item's shared properties. After the message is sent, it's usually found in the **Sent Items** folder of the sender's personal mailbox.
 
 ### User or shared mailbox hidden from an address list
 
-If an admin hid a user or shared mailbox address from an address list like the global address list (GAL), affected mail items opened in the mailbox report `Office.context.mailbox.item` as null. For example, if the user opens a mail item in a shared mailbox that's hidden from the GAL, `Office.context.mailbox.item` representing that mail item is null.
+If an admin hid a user or shared mailbox address from an address list, such as the global address list (GAL), affected mail items opened in the mailbox report `Office.context.mailbox.item` as null. For example, if the user opens a mail item in a shared mailbox that's hidden from the GAL, `Office.context.mailbox.item` representing that mail item is null.
+
+### Sync across shared folder clients
+
+A delegate's updates to the owner's mailbox are usually synced across mailboxes immediately. However, if Microsoft Graph operations were used to set an extended property on an item, such changes could take some time to sync. To avoid a delay, we recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs. To learn more, see the "Custom properties" tab of [Get and set metadata in an Outlook add-in](metadata-for-an-outlook-add-in.md?tabs=custom-properties).
 
 ## See also
 
 - [Allow someone else to manage your mail and calendar](https://support.microsoft.com/office/41c40c04-3bd1-4d22-963a-28eafec25926)
 - [Calendar sharing in Microsoft 365](https://support.microsoft.com/office/b576ecc3-0945-4d75-85f1-5efafb8a37b4)
 - [Add a shared mailbox to Outlook](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook)
-- [How to order manifest elements](../develop/manifest-element-ordering.md)
-- [Mask (computing)](https://en.wikipedia.org/wiki/Mask_(computing))
-- [JavaScript bitwise operators](https://www.w3schools.com/js/js_bitwise.asp)
+- [Overview of Microsoft Graph](/graph/overview)

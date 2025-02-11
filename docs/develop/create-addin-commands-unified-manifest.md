@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the unified manifest for Microsoft 365
 description: Configure the unified manifest for Microsoft 365 to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 07/18/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -10,6 +10,8 @@ ms.localizationpriority: medium
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
 This article describes how to configure the [Unified manifest for Microsoft 365](unified-manifest-overview.md) to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
+
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 > [!TIP]
 > Instructions for creating add-in commands with the add-in only manifest are in [Create add-in commands with the add-in only manifest](create-addin-commands.md).
@@ -33,16 +35,13 @@ The following subsections explain how to include a [task pane command](../design
 
 1. Open the unified manifest and find the "extensions.runtimes" array.
 1. Ensure that there is a runtime object that has an "actions.type" property with the value "openPage". This type of runtime opens a task pane.
-1. Ensure that the "requirements.capabilities" array contains an object that specifies a [Requirement Set](office-versions-and-requirement-sets.md) that supports add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3).  
-
-    > [!NOTE]
-    > When support for the unified manifest is extended to other Office host applications, the minimum requirement set for add-in commands in those other hosts will be [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
+1. Ensure that the "requirements.capabilities" array contains an object that specifies a [Requirement Set](office-versions-and-requirement-sets.md) that supports add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
 1. Ensure that the "id" of the runtime object has a descriptive name such as "TaskPaneRuntime".
 1. Ensure that the "code.page" property of the runtime object is set to the URL of the page that should open in the task pane, such as `"https://localhost:3000/taskpane.html"`.
 1. Ensure that the "actions.view" of the runtime object has a name that describes the content of the page that you set in the preceding step, such as "homepage" or "dashboard".
 1. Ensure that the "actions.id" of the runtime object has a descriptive name such as "ShowTaskPane" that indicates what happens when the user selects the add-in command button or menu item.
-1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object. The "type" and "lifetime" properties are required and in Outlook Add-ins (which is the only host that currently supports the unified manifest) they always have the values shown in this example.
+1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object. The "type" and "lifetime" properties are required and in Outlook Add-ins. They always have the values shown in this example.
 
     ```json
     "runtimes": [
@@ -121,7 +120,7 @@ The following subsections explain how to include a [task pane command](../design
     ```
 
     > [!NOTE]
-    > The only allowed value for the "builtInTabID" property is "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab. When support for the unified manifest is added to other Office host applications, there will be other possible values.
+    > For a list of the possible values of the "builtInTabID" property, see [Find the IDs of built-in Office ribbon tabs](built-in-ui-ids.md).
 
 1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this JSON:
 
@@ -248,7 +247,7 @@ The following subsections explain how to include a [function command](../design/
             <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
             <!-- Office JavaScript Library -->
-            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
             <!-- Function command file -->
             <script src="commands.js" type="text/javascript"></script>
         </head>
@@ -261,10 +260,7 @@ The following subsections explain how to include a [function command](../design/
 
 1. Open the unified manifest and find the "extensions.runtimes" array.
 1. Ensure that there is a runtime object that has a "actions.type" property with the value "executeFunction".
-1. Ensure that the "requirements.capabilities" array contains objects that specify any [Requirement Sets](office-versions-and-requirement-sets.md) that are needed to support the APIs add-in commands. For Outlook, the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). But if your function command calls that API that is part of later **Mailbox** requirement set, such as **Mailbox 1.5**, then you need to specify the later version (e.g., "1.5") as the "minVersion" value.
-
-    > [!NOTE]
-    > When support for the unified manifest is extended to other Office host applications, the minimum requirement set for add-in commands in those other hosts will be [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
+1. Ensure that the "requirements.capabilities" array contains objects that specify any [Requirement Sets](office-versions-and-requirement-sets.md) that are needed to support the APIs add-in commands. For Outlook, the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). But if your function command calls that API that is part of later **Mailbox** requirement set, such as **Mailbox 1.5**, then you need to specify the later version (e.g., "1.5") as the "minVersion" value. For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
 1. Ensure that the "id" of the runtime object has a descriptive name such as "CommandsRuntime".
 1. Ensure that the "code.page" property of the runtime object is set to the URL of the UI-less HTML page that loads your function file, such as `"https://localhost:3000/commands.html"`.
@@ -273,7 +269,7 @@ The following subsections explain how to include a [function command](../design/
     > [!IMPORTANT]
     > The value of "actions.id" must exactly match the first parameter of the call to `Office.actions.associate` in the function file.
 
-1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object. The "type" and "lifetime" properties are required and they always have the values shown in Outlook add-ins, which is the only host that currently supports the unified manifest.
+1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object.
 
     ```json
     "runtimes": [
@@ -343,7 +339,7 @@ The following subsections explain how to include a [function command](../design/
     ```
 
     > [!NOTE]
-    > The only allowed value for the "builtInTabID" property is "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab. When support for the unified manifest is added to other Office host applications, there will be other possible values.
+    > For a list of the possible values of the "builtInTabID" property, see [Find the IDs of built-in Office ribbon tabs](built-in-ui-ids.md).
 
 1. Ensure that the "groups" array has an object to define the custom control group that will hold your add-in command UI controls. The following is an example. Note the following about this JSON:
 
@@ -476,7 +472,7 @@ Carry out the steps of the following sections:
     ```
 
     > [!NOTE]
-    > The only allowed value for the "builtInTabID" property is "TabDefault", which in Outlook is either the **Home**, **Message**, or **Meeting** tab. When support for the unified manifest is added to other Office host applications, there will be other possible values.
+    > For a list of the possible values of the "builtInTabID" property, see [Find the IDs of built-in Office ribbon tabs](built-in-ui-ids.md).
 
 1. Ensure that the "groups" array has an object to define the custom control group that will hold your drop down menu control. The following is an example. Note the following about this JSON:
 

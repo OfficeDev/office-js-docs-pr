@@ -38,7 +38,7 @@ The following table shows supported client-server combinations for the on-send f
 |**Web browser**<br>modern Outlook UI<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
 |**Web browser**<br>classic Outlook UI|Not applicable|Yes|Yes|
 |**Windows (classic)**<br>Version 1910 (Build 12130.20272) or later|Yes|Yes|Yes|
-|Mac:<br>Version 16.47 or later|Yes|Yes|Yes|
+|**Mac**<br>Version 16.47 (21031401) or later|Yes|Yes|Yes|
 
 > [!NOTE]
 > The on-send feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
@@ -372,7 +372,7 @@ Add-ins will run during the send event, which will then either allow or block th
 
 #### Web browser (modern Outlook), Windows, Mac
 
-To enforce on-send, administrators should ensure the policy has been enabled on both mailboxes. To learn how to support delegate access in an add-in, see [Enable shared folders and shared mailbox scenarios](delegate-access.md).
+To enforce on-send, administrators should ensure the policy has been enabled on both mailboxes. To learn how to support delegate access in an add-in, see [Implement shared folders and shared mailbox scenarios](delegate-access.md).
 
 ### User mailbox with on-send add-in feature/policy enabled, add-ins that support on-send are installed and enabled and offline mode is enabled
 

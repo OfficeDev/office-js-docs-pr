@@ -13,7 +13,7 @@ In this article, you'll walk through the process of updating a task pane add-in 
 This tutorial provides instructions and screenshots for Excel but you can use a similar pattern to implement a first-run experience in other Office applications where Office Web Add-ins are supported.
 
 > [!TIP]
-> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/first-run-experience-tutorial).
+> If you want a completed version of this tutorial, visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/first-run-experience-tutorial).
 
 ## Prerequisites
 

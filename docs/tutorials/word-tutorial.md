@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 12/11/2023
+ms.date: 01/16/2025
 ms.service: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 ms.localizationpriority: high
@@ -22,7 +22,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 > [!TIP]
 > If you've already completed the [Build your first Word task pane add-in](../quickstarts/word-quickstart-yo.md) quick start, and want to use that project as a starting point for this tutorial, go directly to the [Insert a range of text](#insert-a-range-of-text) section to start this tutorial.
 >
-> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/word-tutorial).
+> If you want a completed version of this tutorial, visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/word-tutorial).
 
 ## Prerequisites
 
@@ -40,8 +40,6 @@ In this tutorial, you'll create a Word task pane add-in that:
 ![The previous prompts and answers given to the Yeoman generator in a command line interface.](../images/yo-office-word.png)
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-[!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 ## Insert a range of text
 
@@ -143,7 +141,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - To test your add-in in Word on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Word document on your OneDrive or a SharePoint library to which you have permissions.
 
-        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+        [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. In Word, if the "My Office Add-in" task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 

@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 03/27/2023
+ms.date: 02/12/2025
 ms.custom: vscode-azure-extension-update-completed
 ms.localizationpriority: medium
 ---
@@ -13,11 +13,11 @@ This article describes how to publish an Office Add-in that you created using th
 > [!NOTE]
 >
 > - For information about publishing an Office Add-in that you created using Visual Studio, see [Publish your add-in using Visual Studio](package-your-add-in-using-visual-studio.md).
-> - For information about publishing an Office Add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). This article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
+> - The process described in this article doesn't apply to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). Add-ins created using Teams Toolkit use the unified manifest. For information about publishing an add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
 
 ## Publishing an add-in for other users to access
 
-An Office Add-in consists of a web application and a manifest file. The web application defines the add-in's user interface and functionality, while the manifest specifies the location of the web application and defines settings and capabilities of the add-in.
+The simplest Office Add-in is made up of a manifest file and an HTML page. The manifest file describes the add-in's characteristics, such as its name, what Office applications it can run in, and the URL for the add-in's HTML page. The HTML page is contained in a web app that users interact with when they install and run your add-in within an Office application. You can host the web app of an Office Add-in on any web hosting platform, including Azure.
 
 While you're developing, you can run the add-in on your local web server (`localhost`). When you're ready to publish it for other users to access, you'll need to deploy the web application and update the manifest to specify the URL of the deployed application.
 
@@ -26,10 +26,10 @@ When your add-in is working as desired, you can publish it directly through Visu
 ## Using Visual Studio Code to publish
 
 >[!NOTE]
-> These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They do not apply if you created the add-in using the Teams Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
+> These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They don't apply if you created the add-in using the Teams Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
-1. Select **View** > **Extensions** (Ctrl+Shift+X) to open the Extensions view.
+1. Select **View** > **Extensions** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>) to open the Extensions view.
 1. Search for the **Azure Storage** extension and install it.
 1. Once installed, an Azure icon is added to the **Activity Bar**. Select it to access the extension. If the **Activity Bar** is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
 1. Select **Sign in to Azure** to sign in to your Azure account. If you don't already have an Azure account, create one by selecting **Create an Azure Account**. Follow the provided steps to set up your account.
@@ -40,9 +40,9 @@ When your add-in is working as desired, you can publish it directly through Visu
 
     :::image type="content" source="../images/azure-extension-create-storage-account.png" alt-text="Selecting Storage accounts > Create Storage Account in the Azure extension.":::
 
-1. Right-click (or select and hold) your storage account and select **Configure Static Website**. You'll be asked to enter the index document name and the 404 document name. Change the index document name from the default `index.html` to **`taskpane.html`**. You may also change the 404 document name but are not required to.
+1. Right-click (or select and hold) your storage account and select **Configure Static Website**. You'll be asked to enter the index document name and the 404 document name. Change the index document name from the default `index.html` to **`taskpane.html`**. You may also change the 404 document name but aren't required to.
 1. Right-click (or select and hold) your storage account again and this time select **Browse Static Website**. From the browser window that opens, copy the website URL.
-1. Open your project's manifest file (`manifest.xml`) and change all references to your localhost URL (such as `https://localhost:3000`) to the URL you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes to your manifest file.
+1. Open your project's manifest file and change all references to your localhost URL (such as `https://localhost:3000`) to the URL you've copied. This endpoint is the static website URL for your newly created storage account. Save the changes to your manifest file.
 1. Open a command line prompt or terminal window and go to the root directory of your add-in project. Run the following command to prepare all files for production deployment.
 
     ```command&nbsp;line
@@ -65,7 +65,7 @@ If your add-in has custom functions, there are a few more steps to enable them o
 
 1. Right-click (or select and hold) the Azure storage account and select **Open in Portal**.
 1. In the Settings group, select **Resource sharing (CORS)**. You can also use the search box to find this.
-1. Create a new CORS rule with the following settings.
+1. Create a new CORS rule for the **Blob service** with the following settings.
 
     |Property        |Value                        |
     |----------------|-----------------------------|
