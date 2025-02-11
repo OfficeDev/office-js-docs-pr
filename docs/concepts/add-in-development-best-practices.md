@@ -2,7 +2,7 @@
 title: Best practices for developing Office Add-ins
 description: Apply the best practices when developing Office Add-ins.
 ms.topic: best-practice
-ms.date: 07/18/2024
+ms.date: 10/10/2024
 ms.localizationpriority: medium
 ---
 
@@ -69,7 +69,7 @@ For patterns that you can apply as you develop your first-run experience, see [U
 
 - Use [clear and simple language](../design/voice-guidelines.md) in your add-in.
 
-- Account for accessibility - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
+- Account for [accessibility](../design/accessibility-guidelines.md) - make your add-in easy for all users to interact with, and accommodate assistive technologies such as screen readers.
 
 - Design for all platforms and input methods, including mouse/keyboard and [touch](#optimize-for-touch). Ensure that your UI is responsive to different form factors.
 
@@ -121,6 +121,8 @@ For patterns that you can apply as you develop your first-run experience, see [U
 - Minimize data exchanges between the add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
 ## Publish and market your add-in
+
+- Create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. If you plan to publish your add-in to AppSource, get this process going as soon as possible.
 
 - Create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings).
 

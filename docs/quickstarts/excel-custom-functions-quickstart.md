@@ -46,17 +46,13 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
 To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+[!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
-To test your add-in in Excel on Windows or Mac, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
-
-```command&nbsp;line
-npm run start:desktop
-```
+The command to test your add-in in Excel on Windows or Mac depends on when the project was created. If there's a "start:desktop" script in the "scripts" section of the package.json file, then run `npm run start:desktop`; otherwise, run `npm run start`. The local web server will start and Excel will open with your add-in loaded.
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -70,9 +66,9 @@ In your Excel workbook, try out the `ADD` custom function by completing the foll
 
 1. Select a cell and type `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-1. Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
+1. Run the `CONTOSO.ADD` function, using numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing <kbd>Enter</kbd>.
 
-The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press enter.
+The `ADD` custom function computes the sum of the two numbers that you specify as input parameters. Typing `=CONTOSO.ADD(10,200)` should produce the result **210** in the cell after you press <kbd>Enter</kbd>.
 
 [!include[Manually register an add-in](../includes/excel-custom-functions-manually-register.md)]
 

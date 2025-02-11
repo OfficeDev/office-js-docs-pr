@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 10/05/2024
+ms.date: 02/12/2025
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -94,11 +94,23 @@ See also: [add-in commands](#add-in-commands).
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
+## Long-Term Service Channel (LTSC)
+
+**LTSC** refers to the perpetual version of Office available through a volume-licensing agreement between Microsoft and your company.
+
+See also: [perpetual](#perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing).
+
 ## Office application, Office client
 
 **Office client** refers to an Office application. The Office applications, or clients, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [host](#host), [Office desktop application, Office desktop client, desktop client, desktop](#office-desktop-application-office-desktop-client-desktop-client-desktop).
+
+## Office cache
+
+The **Office cache** stores resources and data used by Office Add-ins. This cache prevents an add-in from repeatedly downloding the resources it needs, thereby improving its performance.
+
+See also: [web cache](#web-cache), [Wef cache](#wef-cache).
 
 ## Office desktop application, Office desktop client, desktop client, desktop
 
@@ -180,7 +192,7 @@ See also: [quick start](#quick-start).
 
 Other Microsoft content may use the term **commercial** to represent this concept.
 
-See also: [perpetual](#perpetual).
+See also: [Long-Term Service Channel (LTSC)](#long-term-service-channel-ltsc), [perpetual](#perpetual).
 
 ## web add-in
 
@@ -188,11 +200,23 @@ See also: [perpetual](#perpetual).
 
 See also: [add-in](#add-in).
 
+## web cache
+
+The **web cache** temporarily stores web-based resources and data used by an individual Office Add-in.
+
+See also: [Office cache](#office-cache), [Wef cache](#wef-cache).
+
 ## webview
 
 A **webview** is an element or view that displays web content inside an application. Content add-ins and task panes both contain embedded web browsers and are examples of webviews in Office Add-ins.
 
 See also: [content add-in](#content-add-in), [task pane](#task-pane).
+
+## Wef cache
+
+The **Wef cache** locally stores resources and data for all installed Office Add-ins.
+
+See also: [Office cache](#office-cache), [web cache](#web-cache).
 
 ## XLL
 

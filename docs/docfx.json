@@ -48,7 +48,7 @@
       "feedback_product_url": "https://aka.ms/office-addins-dev-questions",
       "open_source_feedback_contributorGuideUrl": "https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md",
       "open_source_feedback_issueTitle": "",
-      "open_source_feedback_issueUrl": "https://github.com/OfficeDev/office-js-docs-pr/issues/new?template=3-customer-feedback.yml",
+      "open_source_feedback_issueUrl": "https://github.com/OfficeDev/office-js-docs-pr/issues/new?template=3_customer-feedback.yml",
       "open_source_feedback_productName": "Office Add-ins",
       "titleSuffix": "Office Add-ins"
     },

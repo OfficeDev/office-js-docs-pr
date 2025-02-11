@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 12/11/2023
+ms.date: 12/26/2024
 ms.service: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -58,11 +58,7 @@ In this tutorial, you will:
 
 # [Excel on Windows or Mac](#tab/excel-windows)
 
-To test your add-in in Excel on Windows or Mac, run the following command. When you run this command, the local web server will start and Excel will open with your add-in loaded.
-
-```command&nbsp;line
-npm run start:desktop
-```
+The command to test your add-in in Excel on Windows or Mac depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run the command `npm run start`. The local web server will start and Excel will open with your add-in loaded.
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -70,7 +66,7 @@ npm run start:desktop
 
 To test your add-in in Excel on the web, run the following command. When you run this command, the local web server will start. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-[!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+[!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
@@ -84,7 +80,7 @@ Next, try out the `ADD` custom function by completing the following steps.
 
 1. In Excel, go to any cell and enter `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-1. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing enter.
+1. Run the `CONTOSO.ADD` function, with numbers `10` and `200` as input parameters, by typing the value `=CONTOSO.ADD(10,200)` in the cell and pressing <kbd>Enter</kbd>.
 
 The `ADD` custom function computes the sum of the two numbers that you provided and returns the result of **210**.
 
@@ -145,19 +141,19 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
     :::image type="content" source="../images/excel-cf-select-add-in.png" alt-text="The My Add-ins dialog that shows active add-ins, with the My custom function add-in button highlighted.":::
 
-1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Office-Add-in-Samples")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Office-Add-in-Samples repository](https://github.com/OfficeDev/Office-Add-in-Samples).
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Office-Add-in-Samples")** and press <kbd>Enter</kbd>. You should see that the result in cell **B1** is the current number of stars given to the [Office-Add-in-Samples repository](https://github.com/OfficeDev/Office-Add-in-Samples).
 
 # [Excel on the web](#tab/excel-online)
 
-1. In Excel, select **Home** > **Add-ins**, then select **More Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Settings**.
 
-1. In the Office Add-ins dialog, choose **Manage My Add-ins**, then select **Upload My Add-in**.
+1. On the **Office Add-ins** dialog, select **Upload My Add-in**.
 
 1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
 
 1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
 
-1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press Enter. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
+1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press <kbd>Enter</kbd>. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
 
@@ -198,7 +194,7 @@ function clock(invocation) {
 }
 ```
 
-To try out the functions, type the text **=CONTOSO.CLOCK()** in cell **C1** and press enter. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.
+To try out the functions, type the text **=CONTOSO.CLOCK()** in cell **C1** and press <kbd>Enter</kbd>. You should see the current date, which streams an update every second. While this clock is just a timer on a loop, you can use the same idea of setting a timer on more complex functions that make web requests for real-time data.
 
 ## Troubleshooting
 
