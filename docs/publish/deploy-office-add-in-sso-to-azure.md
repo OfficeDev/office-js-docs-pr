@@ -41,14 +41,14 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 # [Deploy to Linux](#tab/linux)
 
 1. Right-click (or select and hold) on App Services and select **Create new Web App**. A Linux container is used by default.
-1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
+1. Type a globally unique name for your web app and press <kbd>Enter</kbd>. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
 1. In Select a runtime stack, select the **Node 16 LTS** runtime stack.
 1. In Select a pricing tier, select **Free (F1)** and wait for the resources to be provisioned in Azure. When prompted to deploy, don't deploy the add-in yet. You'll do that in a later step.
 
 # [Deploy to Windows](#tab/windows)
 
 1. Right-click (or select and hold) on App Services and select **Create new Web App... Advanced**.
-1. Type a globally unique name for your web app and press **Enter**. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
+1. Type a globally unique name for your web app and press <kbd>Enter</kbd>. The name must be unique across all of Azure and use only alphanumeric characters ('A-Z', 'a-z', and '0-9') and hyphens ('-').
 1. Select the resource group you want to use. If you don't have a resource group, select **Create a new resource group**, then enter a name for the resource group, such as *AppServiceQS-rg*.
 1. Select the **Node 16 LTS** runtime stack.
 1. Select **Windows** for the operating system.

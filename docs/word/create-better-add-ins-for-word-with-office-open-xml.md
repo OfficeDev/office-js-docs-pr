@@ -125,7 +125,7 @@ Even a simple Word document package includes parts for document properties, styl
 
 For example, say that you want to insert just a paragraph of text with direct formatting, as shown earlier in Figure 1. When you grab the Office Open XML for the formatted text using  `getSelectedDataAsync`, you see a large amount of markup. That markup includes a package element that represents an entire document, which contains several parts (commonly referred to as document parts or, in the Office Open XML, as package parts), as you see listed in Figure 13. Each part represents a separate file within the package.
 
-You can edit Office Open XML markup in a text editor like Notepad. If you open it in Visual Studio, use **Edit** > **Advanced** > **Format Document** (Ctrl+K, Ctrl+D) to format the package for easier editing. Then you can collapse or expand document parts or sections of them, as shown in Figure 12, to more easily review and edit the content of the Office Open XML package. Each document part begins with a **pkg:part** tag.
+You can edit Office Open XML markup in a text editor like Notepad. If you open it in Visual Studio, use **Edit** > **Advanced** > **Format Document** (<kbd>Ctrl</kbd>+<kbd>K</kbd>, <kbd>Ctrl</kbd>+<kbd>D</kbd>) to format the package for easier editing. Then you can collapse or expand document parts or sections of them, as shown in Figure 12, to more easily review and edit the content of the Office Open XML package. Each document part begins with a **pkg:part** tag.
 
 *Figure 12. Collapse and expand package parts for easier editing in Visual Studio*
 
@@ -326,8 +326,8 @@ To turn off RSID attributes in Word for documents you create going forward, do t
 
 To remove RSID tags from an existing document, try the following shortcut with the document open in Office Open XML.
 
-1. With your insertion point in the main body of the document, press **Ctrl+Home** to go to the top of the document.
-1. On the keyboard, press **Spacebar**, **Delete**, **Spacebar**. Then, save the document.
+1. With your insertion point in the main body of the document, press <kbd>Ctrl</kbd>+<kbd>Home</kbd> to go to the top of the document.
+1. On the keyboard, press <kbd>Space</kbd>, <kbd>Delete</kbd>, <kbd>Space</kbd>. Then, save the document.
 
 After removing the majority of the markup from this package, you're left with the minimal markup that needs to be inserted for the sample, as shown in the preceding section.
 
@@ -699,7 +699,7 @@ You've already seen how to identify and edit the content in your markup. If the 
 
 Remember that you can use all .rels parts in the package as a map to quickly check for document parts that you can remove.
 
-1. Open the flattened XML file in Visual Studio and press Ctrl+K, Ctrl+D to format the file. Then use the collapse/expand buttons on the left to collapse the parts you know you need to remove. You might also want to collapse long parts you need, but know you won't need to edit (such as the base64 binary data for an image file), making the markup faster and easier to visually scan.
+1. Open the flattened XML file in Visual Studio and press <kbd>Ctrl</kbd>+<kbd>K</kbd>, <kbd>Ctrl</kbd>+<kbd>D</kbd> to format the file. Then use the collapse/expand buttons on the left to collapse the parts you know you need to remove. You might also want to collapse long parts you need, but know you won't need to edit (such as the base64 binary data for an image file), making the markup faster and easier to visually scan.
 
 1. There are several parts of the document package that you can almost always remove when you are preparing Office Open XML markup for use in your add-in. You might want to start by removing these (and their associated relationship definitions), which will greatly reduce the package right away. These include the theme1, fontTable, settings, webSettings, thumbnail, both the core and add-in properties files, and any `taskpane` or `webExtension` parts.
 

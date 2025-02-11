@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 09/27/2024
+ms.date: 12/05/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,6 +21,9 @@ There are three steps to add keyboard shortcuts to an add-in.
 Keyboard shortcuts are currently only supported in the following platforms and build of **Excel** and **Word**.
 
 - Office on the web
+
+    > [!NOTE]
+    > The keyboard shortcut feature is currently being rolled out to Word on the web. If you test the feature in Word on the web at this time, the shortcuts may not work if they're activated from within the add-in's task pane. We recommend to periodically check [Keyboard Shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) to find out when the feature is fully supported.
 - Office on Windows
   - **Excel**: Version 2102 (Build 13801.20632) and later
   - **Word**: Version 2408 (Build 17928.20114) and later
@@ -147,26 +150,26 @@ Custom keyboard shortcuts are defined in a JSON file. This file describes your k
 
 Use the following guidelines to create custom key combinations for your add-ins.
 
-- A keyboard shortcut must include at least one modifier key (Alt/Option, Ctrl/Command, Shift) and only one other key. These keys must be joined with a `+` character.
-- The Command modifier key is supported on the macOS platform.
-- On macOS, the Alt key is mapped to the Option key. On Windows, the Command key is mapped to the Ctrl key.
-- The Shift key can't be used as the only modifier key. It must be combined with either Alt/Option or Ctrl/Command.
+- A keyboard shortcut must include at least one modifier key (<kbd>Alt</kbd>/<kbd>Option</kbd>, <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>, <kbd>Shift</kbd>) and only one other key. These keys must be joined with a `+` character.
+- The <kbd>Cmd</kbd> modifier key is supported on the macOS platform.
+- On macOS, the <kbd>Alt</kbd> key is mapped to the <kbd>Option</kbd> key. On Windows, the <kbd>Cmd</kbd> key is mapped to the <kbd>Ctrl</kbd> key.
+- The <kbd>Shift</kbd> key can't be used as the only modifier key. It must be combined with either <kbd>Alt</kbd>/<kbd>Option</kbd> or <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>.
 - Key combinations can include characters "A-Z", "a-z", "0-9", and the punctuation marks "-", "_", and "+". By convention, lowercase letters aren't used in keyboard shortcuts.
-- When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, Alt+a and Alt+A are the same shortcut, as well as Ctrl+- and Ctrl+\_ ("-" and "_" are linked to the same physical key).
+- When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, <kbd>Alt</kbd>+<kbd>a</kbd> and <kbd>Alt</kbd>+<kbd>A</kbd> are the same shortcut, as well as <kbd>Ctrl</kbd>+<kbd>-</kbd> and <kbd>Ctrl</kbd>+<kbd>\_</kbd> ("-" and "_" are linked to the same physical key).
 
 > [!NOTE]
-> Custom keyboard shortcuts must be pressed simultaneously. KeyTips, also known as sequential key shortcuts (for example, Alt+H, H), aren't supported in Office Add-ins.
+> Custom keyboard shortcuts must be pressed simultaneously. KeyTips, also known as sequential key shortcuts (for example, <kbd>Alt</kbd>+<kbd>H</kbd>, <kbd>H</kbd>), aren't supported in Office Add-ins.
 
 ### Browser shortcuts that cannot be overridden
 
 When using custom keyboard shortcuts on the web, some keyboard shortcuts that are used by the browser can't be overridden by add-ins. The following list is a work in progress. If you discover other combinations that can't be overridden, please let us know by using the feedback tool at the bottom of this page.
 
-- Ctrl+N
-- Ctrl+Shift+N
-- Ctrl+T
-- Ctrl+Shift+T
-- Ctrl+W
-- Ctrl+PgUp/PgDn
+- <kbd>Ctrl</kbd>+<kbd>N</kbd>
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd>
+- <kbd>Ctrl</kbd>+<kbd>T</kbd>
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>
+- <kbd>Ctrl</kbd>+<kbd>W</kbd>
+- <kbd>Ctrl</kbd>+<kbd>PgUp</kbd>/<kbd>PgDn</kbd>
 
 ### Avoid key combinations in use by other add-ins
 
@@ -182,11 +185,11 @@ The user can select which action the keyboard shortcut will take. After making t
 
 For the best user experience, we recommend that you minimize keyboard shortcut conflicts with these good practices.
 
-- Use only keyboard shortcuts with the following pattern: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
+- Use only keyboard shortcuts with the following pattern: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+*x*, where *x* is some other key.
 - Avoid using established keyboard shortcuts in Excel and Word. For a list, see the following:
   - [Keyboard shortcuts in Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
   - [Keyboard shortcuts in Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
-- When the keyboard focus is inside the add-in UI, **Ctrl+Spacebar** and **Ctrl+Shift+F10** won't work as these are essential accessibility shortcuts.
+- When the keyboard focus is inside the add-in UI, <kbd>Ctrl</kbd>+<kbd>Space</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F10</kbd> won't work as these are essential accessibility shortcuts.
 - On a Windows or Mac computer, if the **Reset Office Add-ins shortcut preferences** command isn't available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
 
 ## Localize the description of a keyboard shortcut

@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 03/27/2023
+ms.date: 01/03/2025
 ms.custom: vscode-azure-extension-update-completed
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 > These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They do not apply if you created the add-in using the Teams Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
-1. Select **View** > **Extensions** (Ctrl+Shift+X) to open the Extensions view.
+1. Select **View** > **Extensions** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>) to open the Extensions view.
 1. Search for the **Azure Storage** extension and install it.
 1. Once installed, an Azure icon is added to the **Activity Bar**. Select it to access the extension. If the **Activity Bar** is hidden, open it by selecting **View** > **Appearance** > **Activity Bar**.
 1. Select **Sign in to Azure** to sign in to your Azure account. If you don't already have an Azure account, create one by selecting **Create an Azure Account**. Follow the provided steps to set up your account.
@@ -65,7 +65,7 @@ If your add-in has custom functions, there are a few more steps to enable them o
 
 1. Right-click (or select and hold) the Azure storage account and select **Open in Portal**.
 1. In the Settings group, select **Resource sharing (CORS)**. You can also use the search box to find this.
-1. Create a new CORS rule with the following settings.
+1. Create a new CORS rule for the **Blob service** with the following settings.
 
     |Property        |Value                        |
     |----------------|-----------------------------|

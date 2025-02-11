@@ -1,7 +1,7 @@
 ---
 title: Beginner's guide to Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
-ms.date: 08/22/2024
+ms.date: 01/27/2025
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -51,6 +51,10 @@ Then return to Script Lab and use it like a playground: make your own code chang
 
 Get an understanding of the purposes of the add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
 
+## Step 7: Create a Partner Center account
+
+If you plan to [publish your add-in to AppSource](../publish/publish.md), create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. Get this process going as soon as possible to avoid release delays.
+
 ## Next Steps
 
 Congratulations on finishing the beginner's learning path for Office Add-ins! Here are some suggestions for further exploration of our documentation:
@@ -59,7 +63,7 @@ Congratulations on finishing the beginner's learning path for Office Add-ins! He
 
   - [OneNote quick start](../quickstarts/onenote-quickstart.md)
   - [Outlook tutorial](/outlook/add-ins/addin-tutorial)
-  - [PowerPoint tutorial](../tutorials/powerpoint-tutorial.md)
+  - [PowerPoint tutorial](../tutorials/powerpoint-tutorial-yo.md)
   - [Project quick start](../quickstarts/project-quickstart.md)
   - [Word tutorial](../tutorials/word-tutorial.md)
 

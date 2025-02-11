@@ -1,7 +1,7 @@
 ---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 10/08/2024
+ms.date: 10/29/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -218,7 +218,7 @@ To use Microsoft Graph services, an add-in must configure the **read/write mailb
 To implement your shared folder and shared mailbox scenarios, use Microsoft Graph to access additional mailbox information and resources. For example, you can use Microsoft Graph to [get the contents of an Outlook message that's attached to a message](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post) in a mailbox where a user has delegate access. For guidance on how to use Microsoft Graph, see [Overview of Microsoft Graph](/graph/overview) and [Outlook mail API in Microsoft Graph](/graph/outlook-mail-concept-overview).
 
 > [!TIP]
-> To access Microsoft Graph APIs from your add-in, use MSAL.js nested app authentication (NAA) (currently in preview). To learn more, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+> To access Microsoft Graph APIs from your add-in, use MSAL.js nested app authentication (NAA). To learn more, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 ## Limitations
 
@@ -248,7 +248,7 @@ If an admin hid a user or shared mailbox address from an address list, such as t
 
 ### Sync across shared folder clients
 
-A delegate's updates to the owner's mailbox are usually synced across mailboxes immediately. However, if Microsoft Graph operations were used to set an extended property on an item, such changes could take some time to sync. To avoid a delay, we recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs. To learn more, see the "Custom data per item in a mailbox: custom properties" section of [Get and set metadata in an Outlook add-in](metadata-for-an-outlook-add-in.md#custom-data-per-item-in-a-mailbox-custom-properties).
+A delegate's updates to the owner's mailbox are usually synced across mailboxes immediately. However, if Microsoft Graph operations were used to set an extended property on an item, such changes could take some time to sync. To avoid a delay, we recommend you instead use the [CustomProperties](/javascript/api/outlook/office.customproperties) object and related APIs. To learn more, see the "Custom properties" tab of [Get and set metadata in an Outlook add-in](metadata-for-an-outlook-add-in.md?tabs=custom-properties).
 
 ## See also
 
