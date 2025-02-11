@@ -1,7 +1,7 @@
 ---
 title: Requesting permissions for API use in add-ins
 description: Learn about different permission levels to declare in the manifest of an add-in to specify the level of JavaScript API access.
-ms.date: 09/06/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 

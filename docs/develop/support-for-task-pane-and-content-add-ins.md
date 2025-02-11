@@ -1,7 +1,7 @@
 ---
 title: Office JavaScript API support for content and task pane add-ins
 description: Use the Office JavaScript API to create a task pane or content add-in.
-ms.date: 09/06/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
