@@ -55,7 +55,7 @@ In the following screenshot, the used range is the table with values in each cel
 
 ### Select the cell at the edge of the current used range
 
-The following code sample shows how use the `Range.getRangeEdge` method to select the cell at the furthest edge of the current used range, in the direction up. This action matches the result of using the Ctrl+Up arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the `Range.getRangeEdge` method to select the cell at the furthest edge of the current used range, in the direction up. This action matches the result of using the <kbd>Ctrl</kbd>+<kbd>Up arrow key</kbd> keyboard shortcut while a range is selected.
 
 ```js
 await Excel.run(async (context) => {
@@ -94,7 +94,7 @@ The following screenshot shows the same table as the preceding screenshot, with 
 
 ### Select all cells from current range to furthest edge of used range
 
-The following code sample shows how use the `Range.getExtendedRange` method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the Ctrl+Shift+Down arrow key keyboard shortcut while a range is selected.
+The following code sample shows how use the `Range.getExtendedRange` method to to select all the cells from the currently selected range to the furthest edge of the used range, in the direction down. This action matches the result of using the <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Down arrow key</kbd> keyboard shortcut while a range is selected.
 
 ```js
 await Excel.run(async (context) => {

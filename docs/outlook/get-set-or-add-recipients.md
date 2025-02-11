@@ -46,7 +46,7 @@ Note that because the `getAsync` method is asynchronous, if there are subsequent
 > - A semicolon appears after the recipient's name or email address.
 > - The recipient's name or email address is underlined or enclosed in a box.
 >
-> To resolve an email address once it's added to a mail item, the sender must use the **Tab** key or select a suggested contact or email address from the auto-complete list.
+> To resolve an email address once it's added to a mail item, the sender must use the <kbd>Tab</kbd> key or select a suggested contact or email address from the auto-complete list.
 >
 > In Outlook on the web and on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), if a user creates a new message by selecting a contact's email address link from a contact or profile card, they must first resolve the email address so that it can be included in the results of the `getAsync` call.
 

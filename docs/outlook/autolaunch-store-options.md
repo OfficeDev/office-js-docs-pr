@@ -30,6 +30,9 @@ To specify the flight code for your add-in, share the code in the **Notes for ce
 
 After the flight codes are set, you'll receive the URL from the app certification team. You can then share the URL with admins privately.
 
+> [!NOTE]
+> Once your add-in is certified, it may take up to 24 hours for the flight codes to take effect and for AppSource to hide your existing listing from the search results.
+
 To deploy the add-in, the admin can use the following steps.
 
 - Sign in to admin.microsoft.com or AppSource.com with your Microsoft 365 admin account. If the add-in has single sign-on (SSO) enabled, global admin credentials are needed.

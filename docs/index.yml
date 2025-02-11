@@ -12,7 +12,7 @@ metadata:
   ms.topic: hub-page # Required
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
-  ms.date: 11/19/2024 #Required; mm/dd/yyyy format.
+  ms.date: 01/16/2025 #Required; mm/dd/yyyy format.
 
 # highlightedContent section
 # Maximum of 8 items
@@ -54,9 +54,9 @@ productDirectory:
       - url: excel/pnp-open-in-excel.md
         text: Create an Excel spreadsheet with your add-in from a web page
       - url: outlook/smart-alerts-onmessagesend-walkthrough.md
-        text: Automatically check for an attachment before a message is sent
+        text: Automatically check for an attachment before a message is sent in Outlook
       - url: outlook/spam-reporting.md
-        text: Implement an integrated spam-reporting add-in
+        text: Implement an integrated spam-reporting Outlook add-in
       - url: word/import-template.md
         text: Import a Word document template with a Word add-in
   

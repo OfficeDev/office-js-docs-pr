@@ -231,8 +231,6 @@ items:
               displayName: first run experience
           - name: Navigation
             href: design/navigation-patterns.md
-      - name: Design toolkits
-        href: design/design-toolkits.md
       - name: Interface elements
         items:
         - name: Overview
@@ -350,6 +348,9 @@ items:
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
+    - name: Uninstall add-in under development
+      href: testing/uninstall-add-in.md
+      displayName: uninstall
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debug a function command with a non-shared runtime
@@ -401,6 +402,8 @@ items:
       href: publish/publish-office-add-ins-to-appsource.md
     - name: AppSource validation policies
       href: /legal/marketplace/certification-policies
+    - name: Publish an add-in that requires admin consent
+      href: publish/publish-nested-app-auth-add-in.md
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Guidance for deploying on government clouds
@@ -578,6 +581,9 @@ items:
       - name: Share custom function data with the task pane
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
+    - name: Best practices
+      href: excel/custom-functions-get-started.md
+      displayName: Excel, Custom Functions
     - name: Naming and localization
       href: excel/custom-functions-naming.md
       displayName: Excel, Custom Functions

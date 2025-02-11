@@ -78,7 +78,7 @@ myChart.id = "5";
 
 The following are some of the causes of this error. If you discover additional causes, please tell us with the feedback tool at the bottom of the page.
 
-- If you are using Visual Studio, there may be a problem with the sideloading. Close all instances of the Office host and Visual Studio. Restart Visual Studio and try pressing F5 again.
+- If you're using Visual Studio, there may be a problem with the sideloading. Close all instances of the Office host and Visual Studio. Restart Visual Studio and try pressing <kbd>F5</kbd> again.
 - The add-in's manifest has been removed from its deployment location, such as Centralized Deployment, a SharePoint catalog, or a network share.
 - If the add-in only manifest is being used, one of the following may apply.
 
@@ -112,7 +112,7 @@ If this occurs, you can update the XSD files that Visual Studio uses to the late
 
 1. Open your project in Visual Studio.
 1. In **Solution Explorer**, open the manifest.xml file. The manifest is typically in the first project under your solution.
-1. Select **View** > **Properties Window** (F4).
+1. Select **View** > **Properties Window** (<kbd>F4</kbd>).
 1. Set the cursor selection in the manifest.xml so that the **Properties** window shows the **XML Document** properties.
 1. In the **Properties** window, select the **Schemas** property, then select the ellipsis (...) to open the **XML Schemas** editor. Here you can find the exact folder location of all schema files your project uses.
 
