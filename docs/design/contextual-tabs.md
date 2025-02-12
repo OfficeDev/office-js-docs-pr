@@ -58,7 +58,72 @@ Adding custom contextual tabs requires your add-in to use the [shared runtime](.
 
 ## Specify the icons for your contextual tab
 
-Before you can customize your contextual tab, you must first specify any icons that will appear on it with an [Image](/javascript/api/manifest/image) element in the [Resources](/javascript/api/manifest/resources) section of your add-in's manifest. Each icon must have at least three sizes: 16x16 px, 32x32 px, and 80x80 px.
+Before you can customize your contextual tab, you must first specify any icons that will appear on it in your add-in's manifest. Each icon must have at least three sizes: 16x16 px, 32x32 px, and 80x80 px. Select the tab for the type of manifest your add-in uses.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+In the "extensions.ribbons.tabs.groups.icons" array, specify the icons for the group of contextual tab controls that will be displayed on the host's ribbon. For icons that will be used by the tab's buttons and menus, specify these in the "icons" property of the "extensions.ribbons.tabs.groups.controls" object.
+
+Because the contextual tab will only be shown when a certain event occurs, you must also set the "extensions.ribbons.tabs.groups.controls.overriddenByRibbonApi" property to `true`.
+
+The following is an example.
+
+```json
+"ribbons": [
+    {
+        ...
+        "tabs": [
+            "groups": [
+                {
+                    "id": "contextualTab",
+                    ...
+                    "icons": [
+                        {
+                            "size": 16,
+                            "url": "https://cdn.contoso.com/addins/datainsertion/Images/Group16x16.png"
+                        },
+                        {
+                            "size": 32,
+                            "url": "https://cdn.contoso.com/addins/datainsertion/Images/Group32x32.png"
+                        },
+                        {
+                            "size": 80,
+                            "url": "https://cdn.contoso.com/addins/datainsertion/Images/Group80x80.png"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "id": "contextualButton",
+                            ...
+                            "icons": [
+                                {
+                                    "size": 16,
+                                    "url": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+                                },
+                                {
+                                    "size": 32,
+                                    "url": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+                                },
+                                {
+                                    "size": 80,
+                                    "url": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+                                }
+                            ],
+                            ...
+                            "overriddenByRibbonApi": true
+                        },
+                        ...
+                    ]
+                }
+            ]
+        ]
+    }
+],
+```
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+Use the [Image](/javascript/api/manifest/image) element in the [Resources](/javascript/api/manifest/resources) section of your add-in's manifest to specify the icons for your contextual tab.
 
 The following is an example.
 
@@ -75,6 +140,8 @@ The following is an example.
     ...
 </Resources>
 ```
+
+---
 
 > [!IMPORTANT]
 > When you move your add-in from development to production, remember to update the URLs in your manifest as needed (such as changing the domain from `localhost` to `contoso.com`).
