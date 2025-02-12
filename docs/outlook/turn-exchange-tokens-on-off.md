@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 02/03/2025
+ms.date: 02/07/2025
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -18,7 +18,7 @@ For more information about deprecation of legacy Exchange Online tokens, see [Ne
 To run the commands you need to connect to Exchange Online PowerShell.
 
 1. Open PowerShell.
-1. Run the command `Import-Module ExchangeOnlineManagement`. For more information about this command, see [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell).
+1. Run the command `Import-Module -Name ExchangeOnlineManagement`. For more information about this command, see [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell).
 1. To be sure you are on the latest version of the module, run the command `Update-Module -Name ExchangeOnlineManagement`.
 1. Run the command `Connect-ExchangeOnline`. Sign in with your Microsoft 365 administrator credentials.
 
