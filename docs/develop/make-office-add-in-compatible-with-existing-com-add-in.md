@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 01/30/2025
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -30,7 +30,28 @@ Before you can specify an equivalent COM add-in, you must first identify its `Pr
 > [!IMPORTANT]
 > Applies to Excel, Outlook, PowerPoint, and Word.
 
-To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then, Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed.
+To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then, Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed. The configuration depends on the type of manifest that is being used.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the "alternates.prefer.comAddin.progId" property identifies the COM add-in.
+
+```json
+"extensions" [
+  ...
+  "alternates" [
+    {
+      "prefer": {
+        "comAddin": {
+          "progId": "ContosoCOMAddin"
+        }
+      }
+    }
+  ]
+]
+```
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the `ProgId` element identifies the COM add-in and the [EquivalentAddins](/javascript/api/manifest/equivalentaddins) element must be positioned immediately before the closing `VersionOverrides` tag.
 
@@ -45,6 +66,8 @@ The following example shows the portion of the manifest that specifies a COM add
   </EquivalentAddins>
 </VersionOverrides>
 ```
+
+---
 
 > [!TIP]
 >

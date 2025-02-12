@@ -1,7 +1,7 @@
 ---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
-ms.date: 01/07/2025
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -218,6 +218,8 @@ To get started with development, you can do the following.
 A dictionary add-in consists of three main component files:
 
 - An XML-formatted add-in only manifest file that describes the add-in.
+  > [!IMPORTANT]
+  > The JSON-formatted [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) doesn't currently support dictionary add-ins.
 - An HTML file that provides the add-in's UI.
 - A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.
 
