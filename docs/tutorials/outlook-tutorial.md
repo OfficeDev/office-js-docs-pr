@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 04/12/2024
+ms.date: 01/07/2025
 ms.service: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -22,7 +22,7 @@ In this tutorial, you will:
 > - Implement a task pane that inserts content into the body of a message
 
 > [!TIP]
-> If you want a completed version of this tutorial (using the add-in only manifest), head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
+> If you want a completed version of this tutorial (using the add-in only manifest), visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
 
 ## Prerequisites
 
@@ -521,7 +521,7 @@ Let's start by creating the UI for the dialog.
       <title>Settings</title>
     
       <!-- Office JavaScript API -->
-      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
       <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
@@ -976,7 +976,7 @@ A function that's invoked by a UI-less button must be defined in the file that's
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     
         <!-- Office JavaScript API -->
-        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     
         <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
@@ -1210,7 +1210,7 @@ This add-in's **Insert gist** button opens a task pane and displays the user's g
         <title>Contoso Task Pane Add-in</title>
     
         <!-- Office JavaScript API -->
-        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     
        <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
         <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>

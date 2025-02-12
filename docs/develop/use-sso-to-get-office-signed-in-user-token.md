@@ -326,7 +326,7 @@ The final step is to get the ID token by calling `getAccessToken`.
 
 # [Visual Studio 2019](#tab/vs2019)
 
-Choose **Debug** > **Start Debugging**, or press **F5**.
+Choose **Debug** > **Start Debugging**, or press <kbd>F5</kbd>.
 
 # [Yo Office](#tab/yooffice)
 
@@ -347,7 +347,7 @@ The add-in will display the name, email, and ID of the account you signed in wit
 
 # [Visual Studio 2019](#tab/vs2019)
 
-Choose **Stop Debugging**, or press **Shift+F5**.
+Choose **Stop Debugging**, or press <kbd>Shift</kbd>+<kbd>F5</kbd>.
 
 # [Yo Office](#tab/yooffice)
 
