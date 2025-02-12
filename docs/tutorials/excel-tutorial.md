@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 01/07/2025
+ms.date: 02/12/2025
 ms.service: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -474,6 +474,19 @@ When a table is long enough that a user must scroll to see some rows, the header
 In this step of the tutorial, you'll add a button to the ribbon that toggles worksheet protection on and off.
 
 ### Configure the manifest to add a second ribbon button
+
+There are two manifest options for Office Add-ins: the unified manifest for Microsoft 365, and the add-in only manifest.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+> [!NOTE]
+> The unified manifest for Microsoft 365 is currently in public developer preview for Excel and shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. Use the add-in only manifest for production Excel add-ins.
+
+1. Open the manifest file **./manifest.json**.
+
+1. (More steps TBD)
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. Open the manifest file **./manifest.xml**.
 
