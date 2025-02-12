@@ -30,8 +30,6 @@ items:
       href: quickstarts/project-quickstart.md
     - name: Word add-in
       href: quickstarts/word-quickstart-yo.md
-    - name: Single sign-on (SSO)
-      href: quickstarts/sso-quickstart.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
@@ -101,6 +99,8 @@ items:
           href: develop/specify-office-hosts-and-api-requirements-unified.md
         - name: Specify Office applications and API requirements with the add-in only manifest
           href: develop/specify-office-hosts-and-api-requirements.md
+        - name: Understand and use platform-specific requirment sets
+          href: develop/platform-specific-requirement-sets.md
         - name: Check for API availability at runtime
           href: develop/specify-api-requirements-runtime.md
       - name: Load sequence of an Office Add-in
@@ -241,8 +241,6 @@ items:
               displayName: first run experience
           - name: Navigation
             href: design/navigation-patterns.md
-      - name: Design toolkits
-        href: design/design-toolkits.md
       - name: Interface elements
         items:
         - name: Overview
@@ -362,6 +360,9 @@ items:
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
+    - name: Uninstall add-in under development
+      href: testing/uninstall-add-in.md
+      displayName: uninstall
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debug a function command with a non-shared runtime
@@ -413,6 +414,8 @@ items:
       href: publish/publish-office-add-ins-to-appsource.md
     - name: AppSource validation policies
       href: /legal/marketplace/certification-policies
+    - name: Publish an add-in that requires admin consent
+      href: publish/publish-nested-app-auth-add-in.md
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Guidance for deploying on government clouds
@@ -590,6 +593,9 @@ items:
       - name: Share custom function data with the task pane
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
+    - name: Best practices
+      href: excel/custom-functions-get-started.md
+      displayName: Excel, Custom Functions
     - name: Naming and localization
       href: excel/custom-functions-naming.md
       displayName: Excel, Custom Functions
@@ -764,8 +770,6 @@ items:
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
       href: outlook/web-services.md
-    - name: Get or set item data
-      href: outlook/item-data.md
     - name: Get or set categories
       href: outlook/categories.md
     - name: Get or set internet headers
@@ -778,7 +782,7 @@ items:
       items:
       - name: Overview
         href: outlook/read-scenario.md
-      - name: Get attachments
+      - name: Get attachments from server
         href: outlook/get-attachments-of-an-outlook-item.md
     - name: Compose scenario
       items:
@@ -786,8 +790,6 @@ items:
         href: outlook/compose-scenario.md
       - name: Add and remove attachments
         href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
-      - name: Get and set item data
-        href: outlook/get-and-set-item-data-in-a-compose-form.md
       - name: Get and set recipients
         href: outlook/get-set-or-add-recipients.md
       - name: Insert data in the body
@@ -826,6 +828,8 @@ items:
         href: outlook/implement-sso-in-outlook-add-in.md
       - name: Legacy token deprecation FAQ 
         href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
+      - name: Turn legacy tokens on or off
+        href: outlook/turn-exchange-tokens-on-off.md  
     - name: Testing and tips
       items:
       - name: Overview
@@ -862,7 +866,7 @@ items:
       href: quickstarts/powerpoint-quickstart-content.md
       displayName: PowerPoint
   - name: PowerPoint add-in tutorial
-    href: tutorials/powerpoint-tutorial.md
+    href: tutorials/powerpoint-tutorial-yo.md
     displayName: PowerPoint
   - name: JavaScript API for PowerPoint
     items:
@@ -998,6 +1002,8 @@ items:
     - name: Word
       href: quickstarts/word-quickstart-vs.md
       displayName: Word
+  - name: Work with a PowerPoint presentation
+    href: tutorials/powerpoint-tutorial-vs.md
   - name: Share code from VSTO Add-in to Office Add-in
     href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
   - name: Make your Office Add-in compatible with an existing COM add-in
