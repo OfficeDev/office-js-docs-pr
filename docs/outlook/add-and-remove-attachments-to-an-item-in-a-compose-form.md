@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 01/28/2025
+ms.date: 02/13/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
