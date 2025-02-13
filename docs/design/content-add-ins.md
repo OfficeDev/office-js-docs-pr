@@ -74,7 +74,7 @@ The following is an example of a "contentRuntimes" property.
 ]
 ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 - For the **\<[OfficeApp](/javascript/api/manifest/officeapp)\>** element, set the `xsi:type` attribute to `"ContentApp"`.
 - In the **\<[DefaultSettings](/javascript/api/manifest/defaultsettings)\>** element, add the **\<[RequestedHeight](/javascript/api/manifest/requestedheight)\>** and  **\<[RequestedWidth](/javascript/api/manifest/requestedwidth)\>** elements.
