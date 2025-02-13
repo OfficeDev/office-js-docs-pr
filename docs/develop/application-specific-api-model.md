@@ -1,7 +1,7 @@
 ---
 title: Using the application-specific API model
 description: Learn about the promise-based API model for Excel, OneNote, PowerPoint, Visio, and Word add-ins.
-ms.date: 10/20/2023
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -288,9 +288,11 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Application undo stack
+## Undo support
 
-When an application-specific API is processed, the undo stack of the application is cleared. This means that you can't undo changes made prior to any action done by an add-in (unless that add-in only uses Common APIs or doesn't interact with the file). The same is true for changes made by the add-in.
+Undo is partially supported by the application-specific Office JavaScript APIs. This means that users may be able to revert changes made by add-ins through the undo command. If an undo for a particular API is not supported, the application's undo stack is cleared. This means that you won't be able to undo the effects of that API or anything prior to calling that API.
+
+API support for undo is continuing to expand but is currently incomplete. We advise against designing your add-in in such a way that it relies on undo support.
 
 ## See also
 
