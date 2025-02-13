@@ -39,9 +39,6 @@ The user experience for custom contextual tabs follows the pattern of built-in O
 - If more than one add-in has a contextual tab that's visible in a specific context, then they appear in the order in which the add-ins were launched.
 - Custom *contextual* tabs, unlike custom core tabs, aren't added permanently to the Office application's ribbon. They're present only in Office documents on which your add-in is running.
 
-> [!WARNING]
-> Currently, the use of custom contextual tabs may prevent the user from undoing their previous Excel actions. This is a known issue (see [this GitHub thread](https://github.com/OfficeDev/office-js/issues/4814)) and under active investigation.
-
 ## Major steps for including a contextual tab in an add-in
 
 The following are the major steps for including a custom contextual tab in an add-in.
