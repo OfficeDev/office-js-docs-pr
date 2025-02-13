@@ -290,7 +290,7 @@ await Excel.run(async (context) => {
 
 ## Undo support
 
-Undo is partially supported by the application-specific Office JavaScript APIs. This means that users may be able to revert changes made by add-ins through the undo command. If an undo for a particular API is not supported, the application's undo stack is cleared. This means that you won't be able to undo the effects of that API or anything prior to calling that API.
+Undo is partially supported by the application-specific Office JavaScript APIs. This means that users may be able to revert changes made by add-ins through the undo command. If a particular API doesn't support undo, the application's undo stack is cleared. This means that you won't be able to undo the effects of that API or anything prior to calling that API.
 
 API support for undo is continuing to expand but is currently incomplete. We advise against designing your add-in in such a way that it relies on undo support.
 
