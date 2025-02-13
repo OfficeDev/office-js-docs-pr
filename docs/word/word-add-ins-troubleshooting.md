@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 10/16/2024
+ms.date: 02/13/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -69,6 +69,12 @@ Formatting properties such as [color](/javascript/api/word/word.font#word-word-f
 
 - If all text in the range has the same font color, `range.font.color` specifies that color.
 - If multiple font colors are present within the range, `range.font.color` is `null`.
+
+## My add-in can no longer find the correct Word window
+
+Microsoft Word, like other Windows applications, uses a hierarchy of windows to display documents and UI to users. These windows can be identified by window handles or class names. As of (TODO: date), one of the windows in Word's hierarchy was removed.
+
+It's possible that your Word add-in has a rigid dependency on Word's previous window hierarchy and so no longer works correctly. We recommend that developers not rely on a particular window hierarchical structure. Instead, search for a window's class name. To find the top-level Word window, search for the "OpusApp" class name. To find the window displaying an open Word document, search for the "_WwG" class name.
 
 ## See also
 
