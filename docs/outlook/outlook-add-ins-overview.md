@@ -25,6 +25,8 @@ Outlook add-ins are different from COM or VSTO add-ins, which are older integrat
 
 The Outlook items that support add-ins include email messages, meeting requests, responses and cancellations, and appointments. Each Outlook add-in defines the context in which it is available, including the types of items and if the user is reading or composing an item.
 
+[!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availabilty.md)]
+
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## Extension points
