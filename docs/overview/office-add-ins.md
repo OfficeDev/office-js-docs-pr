@@ -98,8 +98,7 @@ Users can run Outlook add-ins when they view, reply, or create emails, meeting r
 - Perform a task when a specific event occurs, such as when a user creates a new message.
 
 > [!NOTE]
-> [!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availabilty.md)]
-> [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
+> [!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availability.md)]
 
 For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md).
 

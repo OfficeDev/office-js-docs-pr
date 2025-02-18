@@ -21,7 +21,7 @@ The best designed add-ins are simple to use, focused, and provide real value to 
 Your add-in will be an extension of our experience and it's important to make sure the scenarios you enable feel like a natural fit inside Outlook. Think carefully about which of your common use cases will benefit the most from having hooks to them from within our email and calendaring experiences.
 
 > [!NOTE]
-> [!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availabilty.md)]
+> [!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availability.md)]
 
 An add-in shouldn't attempt to do everything your app does. The focus should be on the most frequently used, and appropriate, actions in the context of Outlook content. Think about your call to action and make it clear what the user should do when your task pane opens.
 
