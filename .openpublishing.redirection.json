@@ -396,7 +396,7 @@
         },
         {
             "source_path": "docs/design/design-toolkits.md",
-            "redirect_url": "office/dev/add-ins/design/add-in-design-language"
+            "redirect_url": "/office/dev/add-ins/design/add-in-design-language"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
