@@ -74,7 +74,7 @@ Formatting properties such as [color](/javascript/api/word/word.font#word-word-f
 
 Microsoft Word, like other Windows applications, uses a hierarchy of windows to display documents and UI to users. These windows can be identified by window handles or class names. As of February 2025, one of the windows in Word's hierarchy was removed.
 
-It's possible that your Word add-in has a rigid dependency on Word's previous window hierarchy and so crashes or no longer works correctly. For an example issue, see [Possibly Microsoft 365 Office Apps updates crashing my Word Addin](/answers/questions/2120289/(urgent)-possibly-microsoft-365-office-apps-update). We recommend that developers not rely on a particular window hierarchical structure. Instead, the current guidance is to search for a window's class name. To find the top-level Word window, search for the "OpusApp" class name. To find the window displaying an open Word document, search for the "_WwG" class name.
+It's possible that your Word add-in has a rigid dependency on Word's previous window hierarchy and so crashes or no longer works correctly. For an example issue, see [Possibly Microsoft 365 Office Apps updates crashing my Word Addin](https://aka.ms/word-wwf-crash-issue). We recommend that developers not rely on a particular window hierarchical structure. Instead, the current guidance is to search for a window's class name. To find the top-level Word window, search for the "OpusApp" class name. To find the window displaying an open Word document, search for the "_WwG" class name.
 
 The following shows an example of the previous Word window hierarchy.
 
