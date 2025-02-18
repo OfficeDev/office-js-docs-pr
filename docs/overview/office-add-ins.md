@@ -99,6 +99,7 @@ Users can run Outlook add-ins when they view, reply, or create emails, meeting r
 
 > [!NOTE]
 > [!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availabilty.md)]
+> [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 
 For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md).
 
