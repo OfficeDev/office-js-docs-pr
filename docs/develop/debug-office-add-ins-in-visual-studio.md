@@ -123,7 +123,7 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 
 1. Follow the steps in the earlier section [Start the add-in project](#start-the-add-in-project).
 
-1. Launch the add-in in the Office application if it isn't already open. For example, if it's a task pane add-in, it'll have added a button (for example, a **Show Taskpane** button) to the **Home** ribbon or or to a custom ribbon tab that is installed with the add-in. Select the button on the ribbon.
+1. Launch the add-in in the Office application if it isn't already open. For example, if it's a task pane add-in, it'll have added a button (for example, a **Show Taskpane** button) to the **Home** ribbon or to a custom ribbon tab that's installed with the add-in. Select the button on the ribbon.
 
 1. Open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Attach a debugger**. This action opens the debugging tools for the webview control that Office is using to run add-ins on your Windows computer. You can set breakpoints and step through code as described in one of the following articles:
 
@@ -185,7 +185,7 @@ Next, Visual Studio does the following:
 1. Opens the Office application host page of your Microsoft 365 tenancy in Microsoft Edge.
 
 > [!TIP]
-> If for any reason, Visual Studio doesn't fully sideload the add-in and none of the fixes described above works, you can manually sideload it. Follow the steps in [Sideload an add-in to Microsoft 365](../testing/sideload-office-add-ins-for-testing.md#sideload-an-add-in-to-microsoft-365). When you are instructed to browse to the manifest, navigate to the XML file in the folder `_ProjectName_\bin\Debug\OfficeAppManifests` directory.
+> If for any reason, Visual Studio doesn't fully sideload the add-in and none of the fixes earlier works, you can manually sideload it. Follow the steps in [Sideload an add-in to Microsoft 365](../testing/sideload-office-add-ins-for-testing.md#sideload-an-add-in-to-microsoft-365). When you're instructed to browse to the manifest, navigate to the XML file in the folder `_ProjectName_\bin\Debug\OfficeAppManifests` directory.
 
 ### Debug the add-in on the web
 
