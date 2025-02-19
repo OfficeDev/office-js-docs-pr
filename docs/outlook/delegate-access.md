@@ -50,7 +50,7 @@ The mailbox owner must first provide access to a delegate.
 
   - An administrator can configure access through the Exchange admin center. To learn more, see [Manage permissions for recipients](/exchange/recipients/mailbox-permissions).
 
-Once access is provided, the delegate must then follow the instructions outlined in the "Add another person’s mailbox to your folder list in Outlook Web App" section of the article [Access another person's mailbox](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
+Once access is provided, the delegate must then follow the instructions outlined in [Access another person's mailbox](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
 
 #### Shared mailboxes
 
