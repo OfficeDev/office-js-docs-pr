@@ -1,7 +1,7 @@
 ---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 10/29/2024
+ms.date: 02/20/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -19,14 +19,16 @@ The following table shows supported client-server combinations for this feature,
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
 |---|:---:|:---:|:---:|
-|**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
-|**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|
+|**Web browser (modern Outlook UI)**|Supported<sup>1</sup>|Not applicable|Not applicable|
+|**Web browser (classic Outlook UI)**|Not applicable|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|
 |[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
-|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
+|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported<sup>2</sup>|Supported<sup>2</sup>|
 |**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
 
 > [!NOTE]
-> \* Support for this feature in an on-premises Exchange environment is available starting in classic Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
+> <sup>1</sup>In Outlook on the web, if you open a shared mailbox in a separate browser tab or window using the **Open another mailbox** option, you may encounter issues when accessing add-ins from the mailbox. We recommend opening the mailbox in the same panel as your primary mailbox instead. This ensures that add-ins work as expected in your shared mailbox. If you prefer to open the shared mailbox using the **Open another mailbox** option, we recommend deploying the add-in to both your primary user and shared mailboxes.
+>
+> <sup>2</sup>Support for this feature in an on-premises Exchange environment is available starting in classic Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 ## Supported setups
 
