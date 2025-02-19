@@ -138,12 +138,9 @@ If the publisher updated their manifest, and the add-in is deployed through the 
 
 ### Some add-ins are breaking. Can I tell if this is because Exchange tokens were turned off?
 
-Beginning February 17 2025, we're rolling out changes to gradually turn off legacy Exchange Online tokens for users. We'll start with a very small set of users, and continue rolling out the change until mid-March 2025 when Exchange tokens are turned off for all users.
+Beginning February 17 2025, Microsoft is rolling out a change to gradually turn off legacy Exchange Online tokens for all users. The change won't turn off Exchange tokens in your tenant if you already [turned legacy Exchange Online tokens on](turn-exchange-tokens-on-off.md).
 
-> [!NOTE]
-> The changes don't affect Exchange token status in your tenant if you already [turned legacy Exchange Online tokens on](turn-exchange-tokens-on-off.md)
-
-If your tenant is using an add-in that still relies on Exchange tokens, it will break or lose functionality. Because the changes are rolled out per user, it's possible for one user to see issues with an add-in, but the add-in works for other users. If you notice that an add-in has issues, and suspect it may be affected by Exchange tokens turned off, please take the following actions.
+If your tenant uses an add-in that still relies on Exchange tokens, the add-in will break or lose functionality. Because the change is rolled out per user, it's possible for one, or a few users to see an add-in affected when Exchange tokens are off. But the add-in can continue working for other users who have Exchange tokens on. If you notice that an add-in has issues, and suspect it may be affected by Exchange tokens turned off, please take the following actions.
 
 #### Check the list of known add-ins
 
@@ -151,7 +148,7 @@ We posted a list of add-ins that were known to be using legacy Exchange tokens a
 
 #### Check if tokens are off by using Script Lab
 
-You can check if legacy Exchange Online tokens are off for a user by using our Script Lab add-in.
+You can check if legacy Exchange Online tokens are off for a user by using the Script Lab add-in.
 
 1. Install [Script Lab for Outlook](https://appsource.microsoft.com/en-us/product/office/WA200001603).
 1. Sign in to Outlook with the user account/mailbox that is affected. Exchange tokens can be off for one user, but not another until the rollout is complete.
@@ -173,11 +170,11 @@ You can check if legacy Exchange Online tokens are off for a user by using our S
 
 1. After the code runs, select **Get token**.
 
-If legacy Exchange Online tokens are on, you will see a token displayed in the console as a Base64 string.
+If legacy Exchange Online tokens are on, you'll see a token displayed in the console as a Base64 string.
 
 ![Screen shot of a token shown in the console window.](../images/script-lab-successful-exchange-token.png)
 
-If legacy Exchange Online tokens are off, you will see an error displayed in the console as shown below.
+If legacy Exchange Online tokens are off, you'll see an error displayed in the console as shown below.
 
 ![Screen shot of an error in the console window.](../images/script-lab-error-exchange-token.png)
 
