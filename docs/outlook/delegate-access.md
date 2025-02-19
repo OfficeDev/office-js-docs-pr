@@ -18,7 +18,7 @@ This article describes how to implement shared folders (also known as delegate a
 The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations aren't supported.
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
-|---|:---:|:---:|:---:|
+|---|---|---|---|
 |**Web browser (modern Outlook UI)**|Supported<sup>1</sup>|Not applicable|Not applicable|
 |**Web browser (classic Outlook UI)**|Not applicable|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|
 |[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
