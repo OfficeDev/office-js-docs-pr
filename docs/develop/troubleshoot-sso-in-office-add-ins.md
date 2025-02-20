@@ -83,7 +83,7 @@ The Office application was unable to get an access token to the add-in's web ser
     2. Go to your add-in's app registration.
     3. On the **Overview** page,  select **Managed application in local directory**.
         :::image type="content" source="../images/azure-portal-managed-application.png" alt-text="The Managed application in local directory option in the App Registration Overview window.":::
-    1. Under **Manage** > **Properties**, ensure the value of **Enabled for users to sign-in?** is **Yes**.
+    1. Select **Manage** > **Properties**, and ensure that the value of **Enabled for users to sign-in?** is **Yes**.
         :::image type="content" source="../images/azure-portal-enable-sign-in.png" alt-text="The option to allow users in the organization to sign-in to an application in the Properties window.":::
 
 ### 13008
