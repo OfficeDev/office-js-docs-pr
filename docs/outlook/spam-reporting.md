@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 01/22/2025
+ms.date: 02/19/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -102,6 +102,7 @@ Select the tab for the type of manifest you're using.
 
 1. Add the following object to the "extensions.ribbons" array. Note the following about this markup.
     - The "contexts" array contains the "spamReportingOverride" string. This prevents the add-in button from appearing at the end of the ribbon or in the overflow section.
+    - The "tabs" array must be specified in an "extensions.ribbons" object. However, because the button of a spam-reporting add-in is displayed in a specific spot on the ribbon, only an empty array is specified.
     - The "fixedControls" array contains an object that configures the look and functionality of the add-in button on the ribbon. The name of the event handler specified in the "actionId" property must match the value used in the "id" property of the object in the "actions" array. While the "enabled" property must be specified in the array, its value doesn't affect the functionality of a spam-reporting add-in.
     - The "spamPreProcessingDialog" object specifies the information and options that are shown in the preprocessing dialog. While you must specify a "title" and "description" for the dialog, you can optionally configure the following properties.
         - The "spamReportingOptions" object. It provides a multiple-selection list of up to five choices. This helps a user identify the type of message they're reporting.
@@ -113,6 +114,7 @@ Select the tab for the type of manifest you're using.
         "contexts": [
             "spamReportingOverride"
         ],
+        "tabs": [],
         "fixedControls": [
             {
                 "id": "spamReportingButton",
