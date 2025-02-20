@@ -236,7 +236,7 @@ In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/offi
     1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
     1. The delegate opens the draft from the shared folder then continues composing.
 
-- **Shared mailbox (applies to classic Outlook on Windows only)**
+- **Shared mailbox**
 
     1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
     1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
