@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 07/25/2024
+ms.date: 02/19/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -96,6 +96,9 @@ Users can run Outlook add-ins when they view, reply, or create emails, meeting r
 - Extend the Office app ribbon.
 - Display contextually next to an Outlook item when you're viewing or composing it.
 - Perform a task when a specific event occurs, such as when a user creates a new message.
+
+> [!NOTE]
+> [!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availability.md)]
 
 For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md).
 
