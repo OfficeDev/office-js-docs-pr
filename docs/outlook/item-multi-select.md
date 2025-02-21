@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 02/20/2025
+ms.date: 02/25/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,7 +24,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> The item multi-select feature isn't currently supported with a unified manifest for Microsoft 365 in Outlook on the web. Use the add-in only manifest instead.
+> Implementing the item multi-select feature with a unified manifest for Microsoft 365 is currently only supported in classic Outlook on Windows. For other supported platforms, use the add-in only manifest instead.
 
 1. In your preferred code editor, open the Outlook quick start project you created.
 
