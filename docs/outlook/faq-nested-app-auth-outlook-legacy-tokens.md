@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 02/05/2025
+ms.date: 02/20/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -134,6 +134,50 @@ Some widely used Outlook add-in publishers have already updated their add-ins as
 - [Invoice and Time Tracking - Zoho Invoice](https://appsource.microsoft.com/product/office/WA104381067)
 
 If the publisher updated their manifest, and the add-in is deployed through the Microsoft store, you'll be prompted as an administrator to upgrade and deploy the updates. If the publisher updated their manifest, and the add-in is deployed through central deployment, you'll need to deploy the new manifest as an administrator. In some cases the publisher may have an admin consent URI you need to use to consent to new scopes for the add-in. Reach out to publishers if you need more information about updating an add-in.
+
+### Some add-ins are breaking. Can I tell if this is because Exchange tokens were turned off?
+
+Beginning February 17, 2025, Microsoft is rolling out an update to gradually turn off legacy Exchange Online tokens for all users. The update won't turn off Exchange tokens in your tenant if you already [turned legacy Exchange Online tokens on](turn-exchange-tokens-on-off.md).
+
+If your tenant uses an add-in that still relies on Exchange tokens, the add-in will break or lose functionality. The update is rolled out **per user**. This means that one or more users may have an add-in affected when Exchange tokens are off, but other users would still have a working add-in. If you notice that an add-in has issues and suspect it may be affected by Exchange tokens turned off, please take the following actions.
+
+#### Check the list of known add-ins
+
+We posted a list of add-ins that were known to be using legacy Exchange tokens as of October 2024. If an add-in is on this list, you should reach out to the publisher to see if there are updates available. For more information, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids)
+
+#### Check if tokens are off by using Script Lab
+
+Check if legacy Exchange Online tokens are off for a user by using the Script Lab add-in.
+
+1. Install [Script Lab for Outlook](https://appsource.microsoft.com/en-us/product/office/WA200001603).
+1. Sign in to Outlook with the user account/mailbox that is affected. Exchange tokens can be off for one user, but not another until the rollout is complete.
+1. From an existing or new email, open Script Lab from the **Apps** menu, and choose **Code** from the Script Lab menu.
+
+    ![Screen shot of the Script Lab menu.](../images/script-lab-menu.png)
+
+1. In the Script Lab task pane, select the backstage icon (it has three lines).
+
+    ![Screen shot of the backstage icon.](../images/script-lab-select-backstage-icon.png)
+
+1. Select **Samples** and then search for the **Get a user identity token** sample. Select this sample to open it in the code editor.
+
+    ![Screen shot of the Script Lab menu and search box to find the get a user identity token sample.](../images/script-lab-select-user-identity-token-snippet.png)
+
+1. After the code for the sample is loaded, select **Run** > **Run in this pane**.
+
+    ![Screen shot of the Run menu option in Script Lab.](../images/script-lab-run-code.png)
+
+1. After the code runs, select **Get token**.
+
+If legacy Exchange Online tokens are on, you'll see a token displayed in the console as a Base64-encoded string.
+
+![Screen shot of a token shown in the console window.](../images/script-lab-successful-exchange-token.png)
+
+If legacy Exchange Online tokens are off, you'll see an error displayed in the console as shown below.
+
+![Screen shot of an error in the console window.](../images/script-lab-error-exchange-token.png)
+
+If an add-in is affected by Exchange tokens turned off, you can turn them back on. For more information, see [Can I turn Exchange Online legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on).
 
 ## Outlook add-in migration FAQ
 
