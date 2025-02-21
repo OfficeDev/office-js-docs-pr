@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 02/18/2025
+ms.date: 02/20/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -56,7 +56,6 @@ Semi-Annual Extended Channel won't support NAA until June 2025. This means even 
 It's very unlikely any COM add-ins are affected by the deprecation of legacy Exchange Online tokens. Outlook web add-ins are primarily affected because they can use Office.js APIs that rely on Exchange tokens. For more information, see [How do i know if my outlook add in relies on legacy tokens](#how-do-i-know-if-my-outlook-add-in-relies-on-legacy-tokens). The Exchange tokens are used to access Exchange Web Services (EWS) or Outlook REST APIs, both of which are also deprecated. If you suspect a COM add-in might be affected, you can test it by using it on a tenant with Exchange tokens turned off. For more information, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 
 ## Microsoft 365 administrator questions
-
 
 ### Can I turn Exchange Online legacy tokens back on?
 
@@ -138,9 +137,9 @@ If the publisher updated their manifest, and the add-in is deployed through the 
 
 ### Some add-ins are breaking. Can I tell if this is because Exchange tokens were turned off?
 
-Beginning February 17 2025, Microsoft is rolling out a change to gradually turn off legacy Exchange Online tokens for all users. The change won't turn off Exchange tokens in your tenant if you already [turned legacy Exchange Online tokens on](turn-exchange-tokens-on-off.md).
+Beginning February 17, 2025, Microsoft is rolling out an update to gradually turn off legacy Exchange Online tokens for all users. The update won't turn off Exchange tokens in your tenant if you already [turned legacy Exchange Online tokens on](turn-exchange-tokens-on-off.md).
 
-If your tenant uses an add-in that still relies on Exchange tokens, the add-in will break or lose functionality. Because the change is rolled out per user, it's possible for one, or a few users to see an add-in affected when Exchange tokens are off. But the add-in can continue working for other users who have Exchange tokens on. If you notice that an add-in has issues, and suspect it may be affected by Exchange tokens turned off, please take the following actions.
+If your tenant uses an add-in that still relies on Exchange tokens, the add-in will break or lose functionality. The update is rolled out **per user**. This means that one or more users may have an add-in affected when Exchange tokens are off, but other users would still have a working add-in. If you notice that an add-in has issues and suspect it may be affected by Exchange tokens turned off, please take the following actions.
 
 #### Check the list of known add-ins
 
@@ -148,7 +147,7 @@ We posted a list of add-ins that were known to be using legacy Exchange tokens a
 
 #### Check if tokens are off by using Script Lab
 
-You can check if legacy Exchange Online tokens are off for a user by using the Script Lab add-in.
+Check if legacy Exchange Online tokens are off for a user by using the Script Lab add-in.
 
 1. Install [Script Lab for Outlook](https://appsource.microsoft.com/en-us/product/office/WA200001603).
 1. Sign in to Outlook with the user account/mailbox that is affected. Exchange tokens can be off for one user, but not another until the rollout is complete.
@@ -160,17 +159,17 @@ You can check if legacy Exchange Online tokens are off for a user by using the S
 
     ![Screen shot of the backstage icon.](../images/script-lab-select-backstage-icon.png)
 
-1. Select **Samples** and then search for the **get a user identity token** sample. Select this sample to open it in the code editor.
+1. Select **Samples** and then search for the **Get a user identity token** sample. Select this sample to open it in the code editor.
 
     ![Screen shot of the Script Lab menu and search box to find the get a user identity token sample.](../images/script-lab-select-user-identity-token-snippet.png)
 
-1. After the code for the sample is loaded, select **Run** > **Run in this pane**
+1. After the code for the sample is loaded, select **Run** > **Run in this pane**.
 
     ![Screen shot of the Run menu option in Script Lab.](../images/script-lab-run-code.png)
 
 1. After the code runs, select **Get token**.
 
-If legacy Exchange Online tokens are on, you'll see a token displayed in the console as a Base64 string.
+If legacy Exchange Online tokens are on, you'll see a token displayed in the console as a Base64-encoded string.
 
 ![Screen shot of a token shown in the console window.](../images/script-lab-successful-exchange-token.png)
 
@@ -178,7 +177,7 @@ If legacy Exchange Online tokens are off, you'll see an error displayed in the c
 
 ![Screen shot of an error in the console window.](../images/script-lab-error-exchange-token.png)
 
-If an add-in is affected by Exchange tokens turned off, you can turn them back on. For more information, see [Can I turn Exchange Online legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on)
+If an add-in is affected by Exchange tokens turned off, you can turn them back on. For more information, see [Can I turn Exchange Online legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on).
 
 ## Outlook add-in migration FAQ
 
