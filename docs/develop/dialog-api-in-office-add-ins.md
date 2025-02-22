@@ -17,7 +17,7 @@ Use the [Office dialog API](/javascript/api/office/office.ui) to open dialog box
 
 > [!TIP]
 >
-> - It isn't recommended to use a dialog box to interact with a document. Use a task pane instead. For guidance, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md).
+> - We recommend that you don't use a dialog box to interact with a document. Use a task pane instead. For guidance, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md).
 >
 > - Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example of a tabbed task pane, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
 >
