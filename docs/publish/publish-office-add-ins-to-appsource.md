@@ -27,7 +27,7 @@ When your add-in is available in AppSource, there are two further steps you can 
 
 ### Provide an installation link
 
-After you publish to Microsoft AppSource, you can create an installation link to help customers discover and install your add-in. The installation link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in. When users select the link, the Office application opens with a new document and your add-in installed without the need to search for it in Microsoft AppSource and install it manually.
+After you publish to Microsoft AppSource, you can create an installation link to help customers discover and install your add-in. The installation link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in. When users select the link, the Office application opens with a new document and your add-in is installed without the need for users to search for it in Microsoft AppSource and install it manually.
 
 > [!NOTE]
 > Installation links can only be created for Excel, PowerPoint, and Word add-ins.
@@ -38,7 +38,7 @@ There are two styles of links depending on whether you want the Office applicati
 - [Open in Office on Windows or Mac](#open-in-office-on-windows-or-mac)
 
 > [!NOTE]
-> The style of link determines only the platform that opens, not the platforms where it is installed. The add-in is installed on every platform that supports all of the requirement sets that are specified in its manifest. See [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
+> The style of link determines only the platform that opens, not the platforms where the add-in is installed. The add-in is installed on every platform that supports all of the requirement sets that are specified in its manifest. See [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
 
 #### Open in Office on the web
 
@@ -65,13 +65,13 @@ The following parameter values are used for the Script Lab installation link.
 
 - **linkid:** The value `2261819` specifies the Excel endpoint. Script Lab supports Word, Excel, and PowerPoint, so this value can be changed to support different endpoints.
 - **templateid:** The value `WA104380862` is the Microsoft AppSource ID for Script Lab.
-- **templatetitle:** The value `Script%20Lab,%20a%20Microsoft%20Garage%20project` which is the URL-encoded value of the title.
+- **templatetitle:** The value `Script%20Lab,%20a%20Microsoft%20Garage%20project` is the URL-encoded value of the title.
 
 #### Open in Office on Windows or Mac
 
 To create the link, use the following URL template as a reference.
 
-`{{appName}}:https://api.addins.store.office.com/addinstemplate/{{language}}/{{correlation}}/{{addinId}}/none/{{addinName}}.{{fileFormat}}?omexsrctype=1`
+`{{appName}}:https://api.addins.store.office.com/addinstemplate/{{language}}/{{correlationID}}/{{addinId}}/none/{{addinName}}.{{fileFormat}}?omexsrctype=1`
 
 Change the placeholders in the URL as follows.
 
@@ -81,8 +81,8 @@ Change the placeholders in the URL as follows.
     - For Excel: `ms-excel`
     - For PowerPoint: `ms-powerpoint`
 
-- **language:** This is the language of add-in. For example: `de-DE`, `ja-JP`, or `zh-CN`.
-- **correlation:** A GUID for diagnostic purposes. For example, "7bf846ec-905a-5edd-b162-83498f9a8674". Use a GUID generation tool. The diagnostic purpose is defeated if multiple users have the same GUID, so we recommend you to generate it at runtime and make it different per click.
+- **language:** This is the language of the add-in. For example: `de-DE`, `ja-JP`, or `zh-CN`.
+- **correlationID:** A GUID for diagnostic purposes. For example, "7bf846ec-905a-5edd-b162-83498f9a8674". Use a GUID generation tool. The diagnostic purpose is defeated if multiple users have the same GUID, so we recommend you to generate it at runtime and make it different per click.
 - **addInId:** The ID of your add-in as listed in AppSource. *This parameter is case sensitive. Use upper case letters.*
 - **addInName:** The full name of your add-in. This must be URL-encoded.
 - **fileFormat:** Specifies the format of the file that is created.
@@ -91,7 +91,7 @@ Change the placeholders in the URL as follows.
     - For Excel: `xlsx`
     - For PowerPoint: `pptx`
 
-For example, the following is an installation link for Script Lab in Word on Windows.
+For example, the following is an installation link for Script Lab in Word on Windows with en-US as the language.
 
 `ms-word:https://api.addins.store.office.com/addinstemplate/en-US/228a829b-69d7-45f4-a338-c6aba330ec7e/WA104380862/none/Script%20Lab,%20a%20Microsoft%20Garage%20project.docx?omexsrctype=1`
 
