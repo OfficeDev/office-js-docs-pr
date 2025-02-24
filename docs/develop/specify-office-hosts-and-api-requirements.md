@@ -33,7 +33,7 @@ This article helps you understand which options you should choose to ensure that
 
 ## Use the latest Office JavaScript API library
 
-Your add-in should load the most current version of the Office JavaScript API library from the content delivery network (CDN). To do this, be sure you have the following `<script>` tag in the first HTML file your add-in opens. Using `/1.1/` in the CDN URL ensures that you reference the most recent version of Office.js.
+Your add-in should load the most current version of the Office JavaScript API library from the content delivery network (CDN). To do this, be sure you have the following `<script>` tag in the first HTML file your add-in opens. Using `/1/` in the CDN URL ensures that you reference the most recent version of Office.js.
 
 ```HTML
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>

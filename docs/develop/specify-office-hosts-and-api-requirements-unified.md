@@ -35,16 +35,15 @@ This article helps you understand how to ensure that your add-in works as expect
 
 ## Use the latest Office JavaScript API library
 
-Your add-in should load the most current version of the Office JavaScript API library from the content delivery network (CDN). To do this, be sure you have the following `<script>` tag in the first HTML file your add-in opens. Using `/1.1/` in the CDN URL ensures that you reference the most recent version of Office.js.
+Your add-in should load the most current version of the Office JavaScript API library from the content delivery network (CDN). To do this, be sure you have the following `<script>` tag in the first HTML file your add-in opens. Using `/1/` in the CDN URL ensures that you reference the most recent version of Office.js.
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 ```
 
 ## Specify which Office applications can host your add-in
 
-To specify the Office applications on which your add-in can be installed, use the "extensions.requirements.scopes" array. Specify any subset of "mail", "workbook", "document", and "presentation". The following table shows which Office application and platform combinations correspond to these values. It also shows what kind of add-in can be installed for each scope. 
-
+To specify the Office applications on which your add-in can be installed, use the "extensions.requirements.scopes" array. Specify any subset of "mail", "workbook", "document", and "presentation". The following table shows which Office application and platform combinations correspond to these values. It also shows what kind of add-in can be installed for each scope.
 
 | Name          | Office client applications                     | Available add-in types |
 |:--------------|:-----------------------------------------------|:-----------------------|
@@ -95,7 +94,7 @@ Requirement set support varies by Office application, the version of the Office 
 Use the "requirements.capabilities" property to specify the minimum requirement sets that must be supported by the Office application to install your add-in. If the Office application or platform doesn't support the requirement sets or API members specified in the "requirements.capabilities" property, the add-in won't run in that application or platform, and won't display in **My Add-ins**.
 
 > [!TIP]
-> All APIs in the application-specific models are in requirement sets, but some of those in the Common API model aren't. If your add-in requires an API that isn't in any requirement set, you can implement a runtime check for the availability of the API and display a message to the add-in's users if it isn't supported. For more information, see [Check for API availability at runtime](specify-api-requirements-runtime.md). 
+> All APIs in the application-specific models are in requirement sets, but some of those in the Common API model aren't. If your add-in requires an API that isn't in any requirement set, you can implement a runtime check for the availability of the API and display a message to the add-in's users if it isn't supported. For more information, see [Check for API availability at runtime](specify-api-requirements-runtime.md).
 
 The following code example shows how to configure an add-in that is installable in all Office application and platform combinations that support the following:
 
