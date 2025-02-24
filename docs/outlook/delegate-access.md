@@ -18,15 +18,17 @@ This article describes how to implement shared folders (also known as delegate a
 The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations aren't supported.
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
-|---|:---:|:---:|:---:|
-|**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
-|**Web browser (classic Outlook UI)**|Not applicable|Not applicable|Not applicable|
+|---|---|---|---|
+|**Web browser (modern Outlook UI)**|Supported<sup>1</sup>|Not applicable|Not applicable|
+|**Web browser (classic Outlook UI)**|Not applicable|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|
 |[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
-|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
+|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported<sup>2</sup>|Supported<sup>2</sup>|
 |**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
 
 > [!NOTE]
-> \* Support for this feature in an on-premises Exchange environment is available starting in classic Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
+> <sup>1</sup>In Outlook on the web, if you open a shared mailbox in a separate browser tab or window using the **Open another mailbox** option, you may encounter issues when accessing add-ins from the mailbox. We recommend opening the mailbox in the same panel as your primary mailbox instead. This ensures that add-ins work as expected in your shared mailbox. If you prefer to open the shared mailbox using the **Open another mailbox** option, we recommend deploying the add-in to both your primary user and shared mailboxes.
+>
+> <sup>2</sup>Support for this feature in an on-premises Exchange environment is available starting in classic Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 ## Supported setups
 
@@ -48,7 +50,7 @@ The mailbox owner must first provide access to a delegate.
 
   - An administrator can configure access through the Exchange admin center. To learn more, see [Manage permissions for recipients](/exchange/recipients/mailbox-permissions).
 
-Once access is provided, the delegate must then follow the instructions outlined in the "Add another person’s mailbox to your folder list in Outlook Web App" section of the article [Access another person's mailbox](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
+Once access is provided, the delegate must then follow the instructions outlined in [Access another person's mailbox](https://support.microsoft.com/office/a909ad30-e413-40b5-a487-0ea70b763081).
 
 #### Shared mailboxes
 
@@ -237,7 +239,7 @@ In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/offi
     1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
     1. The delegate opens the draft from the shared folder then continues composing.
 
-- **Shared mailbox (applies to classic Outlook on Windows only)**
+- **Shared mailbox**
 
     1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
     1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
