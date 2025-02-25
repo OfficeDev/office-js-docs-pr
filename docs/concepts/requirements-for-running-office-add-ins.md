@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
-ms.date: 04/24/2024
+ms.date: 02/05/2025
 ms.localizationpriority: medium
 ---
 
@@ -74,7 +74,7 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 |Outlook on the web (modern)<sup>1</sup>|<ul><li>iPad 2 or later</li><li>Android tablets</li></ul>|<ul><li>iOS 5 or later</li><li>Android 4.4 KitKat or later</li></ul>|On Microsoft 365, Exchange Online|<ul><li>Microsoft Edge</li><li>Chrome</li><li>Firefox</li><li>Safari</li></ul>|
 |Outlook on the web (classic)|<ul><li>iPhone 4 or later</li><li>iPad 2 or later</li><li>iPod Touch 4 or later</li></ul>|<ul><li>iOS 5 or later</li></ul>|On on-premises Exchange Server 2016 or later<sup>2</sup>|<ul><li>Safari</li></ul>|
 |Outlook on Android|<ul><li>Android tablets</li><li>Android smartphones</li></ul>|<ul><li>Android 4.4 KitKat or later</li></ul>|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for Android.<sup>3</sup>|
-|Outlook on iOS|<ul><li>iPad tablets</li><li>iPhone smartphones|<ul><li>iOS 11 or later</li></ul>|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>3</sup>|
+|Outlook on iOS|<ul><li>iPad tablets</li><li>iPhone smartphones|<ul><li>iOS 11 or later</li><li>iPadOS 13 or later</li></ul>|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>3</sup>|
 
 > [!NOTE]
 > <sup>1</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.

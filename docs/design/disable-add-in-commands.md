@@ -1,7 +1,7 @@
 ---
-title: Change the availability of add-in commands
-description: Learn how to change the availability of custom ribbon buttons and context menu items in your Office Web Add-in.
-ms.date: 01/23/2025
+title: Enable and Disable Add-in Commands
+description: Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.
+ms.date: 02/25/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -44,11 +44,56 @@ To change the availability of a ribbon or context menu control or item, the mani
 ### Deactivate ribbon controls at launch
 
 > [!NOTE]
-> The **\<Enabled\>** element is only supported for controls on the ribbon. It isn't supported for custom controls added to a context menu.
+> Only the controls on the ribbon can be deactivated when the Office application starts. You can't deactivate custom controls added to a context menu at launch.
 
-By default, a custom button or menu item on the ribbon is available for use when the Office application launches. To deactivate it when Office starts, in your add-in's manifest, specify the [Enabled](/javascript/api/manifest/enabled) element immediately *below* (not inside) the [Action](/javascript/api/manifest/action) element of the control item. Then, set its value to `false`.
+By default, a custom button or menu item on the ribbon is available for use when the Office application launches. To deactivate it when Office starts, you must specify this in the manifest. The process depends on which type of manifest your add-in uses.
 
-The following shows a basic structure of a manifest that configures the **\<Enabled\>** element.
+- [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365)
+- [Add-in only manifest](#add-in-only-manifest)
+
+#### Unified manifest for Microsoft 365
+
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
+Just add an "enabled" property with the value `false` to the control or menu item object. The following shows the basic structure.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "ribbons": [
+            ...
+            {
+                ...
+                "tabs": [
+                    {
+                        "id": "MyTab",
+                        "groups": [
+                            {
+                                ...
+                                "controls": [
+                                    {
+                                        "id": "Contoso.MyButton1",
+                                        ...
+                                        "enabled": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+
+#### Add-in only manifest
+
+Just add an [Enabled](/javascript/api/manifest/enabled) element immediately *below* (not inside) the [Action](/javascript/api/manifest/action) element of the control item. Then, set its value to `false`.
+
+The following shows the basic structure of a manifest that configures the **\<Enabled\>** element.
 
 ```xml
 <OfficeApp ...>
