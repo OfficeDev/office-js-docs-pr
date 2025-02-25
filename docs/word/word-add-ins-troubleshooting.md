@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 10/16/2024
+ms.date: 02/25/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -69,6 +69,22 @@ Formatting properties such as [color](/javascript/api/word/word.font#word-word-f
 
 - If all text in the range has the same font color, `range.font.color` specifies that color.
 - If multiple font colors are present within the range, `range.font.color` is `null`.
+
+## My add-in can no longer find the correct Word window
+
+Microsoft Word, like other Windows applications, uses a hierarchy of windows to display documents and UI to users. These windows can be identified by window handles or class names. As of Office Version 2502 (Build 18526.20118), one of the windows in Word's hierarchy was removed.
+
+It's possible that your Word add-in has a rigid dependency on Word's previous window hierarchy and so crashes or no longer works correctly. For an example issue, see [Possibly Microsoft 365 Office Apps updates crashing my Word Addin](https://aka.ms/word-wwf-crash-issue). We recommend that developers not rely on a particular window hierarchical structure. Instead, the current guidance is to search for a window's class name. To find the top-level Word window, search for the "OpusApp" class name. To find the window displaying an open Word document, search for the "_WwG" class name.
+
+The following shows an example of the previous Word window hierarchy.
+
+:::image type="content" source="../images/word-window-hierarchy-before.png" alt-text="Previous Word window hierarchy.":::
+
+The following shows an example of the new window hierarchy. Note that the intermediate window with the "_WwF" class name is no longer present.
+
+:::image type="content" source="../images/word-window-hierarchy-after.png" alt-text="New Word window hierarchy.":::
+
+You can use a debugging tool like [Spy++](/visualstudio/debugger/using-spy-increment) to inspect an application's window hierarchy. However, keep in mind that the hierarchy could further change in the future.
 
 ## See also
 
