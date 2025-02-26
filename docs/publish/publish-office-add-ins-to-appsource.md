@@ -83,7 +83,7 @@ Change the placeholders in the URL as follows.
 
 - **language:** This is the language of the add-in. For example: `de-DE`, `ja-JP`, or `zh-CN`.
 - **correlationID:** A GUID for diagnostic purposes. For example, "7bf846ec-905a-5edd-b162-83498f9a8674". Use a GUID generation tool. The diagnostic purpose is defeated if multiple users have the same GUID, so we recommend you to generate it at runtime and make it different per click.
-- **addInId:** The ID of your add-in as listed in AppSource. *This parameter is case sensitive. Use upper case letters.*
+- **addInId:** The ID of your add-in as listed in AppSource. *This parameter is case-sensitive. Use uppercase letters.*
 - **addInName:** The full name of your add-in. This must be URL-encoded.
 - **fileFormat:** Specifies the format of the file that is created.
 
