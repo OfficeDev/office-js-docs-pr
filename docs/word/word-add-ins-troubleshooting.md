@@ -16,11 +16,27 @@ If noncontiguous selections are made, the Word API only operates on the last con
 
 To learn more generally about making noncontiguous selections, see [How to select items that are not next to each other](https://support.microsoft.com/topic/8b9c1be9-cca3-935a-7cbf-94403aa48d2e).
 
+## Annotations don't work
+
+If the annotation APIs aren't working, it may be because you're not using a Microsoft 365 subscription. If you're using a one-time purchase license, this could be why these APIs aren't working for you.
+
+The annotation APIs rely on a service that requires a Microsoft 365 subscription. Therefore, verify that you're running the add-in in Word connected to a Microsoft 365 subscription license before debugging further.
+
+For more about this problem, see [GitHub issue 4953](https://github.com/OfficeDev/office-js/issues/4953).
+
 ## Body.insertFileFromBase64 doesn't insert header or footer
 
 It's by design that the [Body.insertFileFromBase64](/javascript/api/word/word.body#word-word-body-insertfilefrombase64-member(1)) method excludes any header or footer that was in the source file.
 
 To include any headers or footers from the source file, use [Document.insertFileFromBase64](/javascript/api/word/word.document#word-word-document-insertfilefrombase64-member(1)) instead.
+
+## Can't use Mixed to set a property
+
+Several enums in Word offer "Mixed" as a valid value. However, the value can primarily be returned when a get a property or make a get* API call. This is because "Mixed" means that several options are applied to the current selection. If you try to set the option to "Mixed", then it isn't clear which actual value should be applied to the selection.
+
+For example, let's say you're working with the borders around a section of text. Each [border](/javascript/api/word/word.border#word-word-border-width-member) can be set to a different [width](/javascript/api/word/word.borderwidth). If the top border is "Pt025" (that is, 0.25 points), the bottom border is "None", and the left and right borders are "Pt050" (that is, 0.50 points), then when you get the width of the borders, "Mixed" is returned. If you want to change the width of the borders, call the set API on each border using an enum value other than `mixed`.
+
+This behavior also applies for enum values like "Unknown".
 
 ## Get a GeneralException when working with styles
 
@@ -85,6 +101,12 @@ The following shows an example of the new window hierarchy. Note that the interm
 :::image type="content" source="../images/word-window-hierarchy-after.png" alt-text="New Word window hierarchy.":::
 
 You can use a debugging tool like [Spy++](/visualstudio/debugger/using-spy-increment) to inspect an application's window hierarchy. However, keep in mind that the hierarchy could further change in the future.
+
+## Native JavaScript APIs don't work with Word.Table
+
+The [Word.Table](/javascript/api/word/word.table) object is different from an [HTML table object](https://developer.mozilla.org/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics). The native JavaScript APIs used to interact with an HTML table can't be used to manage a Word.Table object. Instead, you must use the [Table APIs](/javascript/api/word/word.table) available in the Word Object Model to interact with Word.Table and related objects.
+
+Similarly, don't use Word JavaScript APIs to interact with HTML table objects.
 
 ## See also
 
