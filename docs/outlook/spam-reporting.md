@@ -64,7 +64,10 @@ Select the tab for the type of manifest you're using.
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Implementing integrated spam reporting with the unified manifest for Microsoft 365 is in public developer preview. It's currently only available to use in classic Outlook on Windows. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+>
+> - Implementing integrated spam reporting with the unified manifest for Microsoft 365 is in public developer preview. It's currently only available to use in classic Outlook on Windows. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+>
+> - Features in preview, such as the ["Don't show me this message again" dialog option](#suppress-the-preprocessing-dialog-preview) and the [option to open a task pane from the `event.completed` method](#open-a-task-pane-after-reporting-a-message-preview), aren't currently supported in a spam-reporting add-in with a unified manifest for Microsoft 365. To test these features, use the add-in only manifest.
 
 1. In your preferred code editor, open the add-in project you created.
 1. Open the **manifest.json** file.
