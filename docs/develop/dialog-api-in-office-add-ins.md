@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 10/29/2024
+ms.date: 02/25/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,10 +12,16 @@ Use the [Office dialog API](/javascript/api/office/office.ui) to open dialog box
 
 - Sign in a user with a resource such as Google, Facebook, or Microsoft identity. For more information, see [Authenticate with the Office dialog API](auth-with-office-dialog-api.md).
 - Provide more screen space, or even a full screen, for some tasks in your add-in.
-- Host a video that would be too small if confined to a task pane.
+- [Host a video that would be too small if confined to a task pane](dialog-video.md).
+- Show an error, progress, or input screen.
 
 > [!TIP]
-> Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example of a tabbed task pane, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
+>
+> - We recommend that you don't use a dialog box to interact with a document. Use a task pane instead. For guidance, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md).
+>
+> - Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example of a tabbed task pane, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
+>
+> To learn more about best practices for implementing a dialog, see [Best practices and rules for the Office dialog API](dialog-best-practices.md).
 
 The following image shows an example of a dialog box.
 
@@ -32,10 +38,10 @@ The Office JavaScript APIs include a [Dialog](/javascript/api/office/office.dial
 
 To open a dialog box, your code, typically a page in a task pane, calls the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method and passes to it the URL of the resource that you want to open. The page on which this method is called is known as the "host page". For example, if you call this method in script on index.html in a task pane, then index.html is the host page of the dialog box that the method opens.
 
-The resource that is opened in the dialog box is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, 'page' or 'website' refers to the resource in the dialog box. The following code is a simple example.
+The resource that is opened in the dialog box is usually a page, but it can be a controller method in an MVC application, a route, a web service method, or any other resource. In this article, "page" or "website" refers to the resource in the dialog box. The following code is a simple example.
 
 ```javascript
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html');
+Office.context.ui.displayDialogAsync("https://www.contoso.com/myDialog.html");
 ```
 
 - The URL uses the HTTP**S** protocol. This is mandatory for all pages loaded in a dialog box, not just the first page loaded.
@@ -49,7 +55,7 @@ After the first page (or other resource) is loaded, a user can use links or othe
 By default, the dialog box will occupy 80% of the height and width of the device screen, but you can set different percentages by passing a configuration object to the method, as shown in the following example.
 
 ```javascript
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', { height: 30, width: 20 });
+Office.context.ui.displayDialogAsync("https://www.contoso.com/myDialog.html", { height: 30, width: 20 });
 ```
 
 For a sample add-in that does this, see [Build Office Add-ins for Excel](https://github.com/OfficeDev/TrainingContent/tree/master/OfficeAddin/02%20Building%20Add-ins%20for%20Microsoft%20Excel). For more samples that use `displayDialogAsync`, see [Code samples](#code-samples).
@@ -58,12 +64,15 @@ Set both values to 100% to get what is effectively a full screen experience. The
 
 You can open only one dialog box from a host window. An attempt to open another dialog box generates an error. For example, if a user opens a dialog box from a task pane, they can't open a second dialog box from a different page in the task pane. However, when a dialog box is opened from an [add-in command](../design/add-in-commands.md), the command opens a new (but unseen) HTML file each time it is selected. This creates a new (unseen) host window, so each such window can launch its own dialog box. For more information, see [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).
 
+> [!NOTE]
+> In Outlook on the web and new Outlook on Windows, don't set the [window.name](https://developer.mozilla.org/docs/Web/API/Window/name) property when configuring a dialog in your add-in. The `window.name` property is used by these Outlook clients to maintain functionality across page redirects.
+
 ### Take advantage of a performance option in Office on the web
 
 The `displayInIframe` property is an additional property in the configuration object that you can pass to `displayDialogAsync`. When this property is set to `true`, and the add-in is running in a document opened in Office on the web, the dialog box will open as a floating iframe rather than an independent window, which makes it open faster. The following is an example.
 
 ```javascript
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', { height: 30, width: 20, displayInIframe: true });
+Office.context.ui.displayDialogAsync("https://www.contoso.com/myDialog.html", { height: 30, width: 20, displayInIframe: true });
 ```
 
 The default value is `false`, which is the same as omitting the property entirely. If the add-in isn't running in Office on the web, the `displayInIframe` is ignored.
@@ -109,7 +118,7 @@ The host page must be configured to receive the message. You do this by adding a
 
 ```javascript
 let dialog; // Declare dialog as global for use in later functions.
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', { height: 30, width: 20 },
+Office.context.ui.displayDialogAsync("https://www.contoso.com/myDialog.html", { height: 30, width: 20 },
     (asyncResult) => {
         dialog = asyncResult.value;
         dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
@@ -146,7 +155,7 @@ function processMessage(arg) {
 The `dialog` object must be the same one that is returned by the call of `displayDialogAsync`. You need to declare the `dialog` object as a global variable. Or you can scope the `dialog` object to the `displayDialogAsync` call with an anonymous callback function as shown in the following example. In the example, `processMessage` doesn't need to close the dialog since the `close` method is called in the anonymous callback function.
 
 ```javascript
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html', { height: 30, width: 20 },
+Office.context.ui.displayDialogAsync("https://www.contoso.com/myDialog.html", { height: 30, width: 20 },
     (asyncResult) => {
         const dialog = asyncResult.value;
         dialog.addEventHandler(Office.EventType.DialogMessageReceived, (arg) => {
@@ -255,7 +264,7 @@ When you call the Office dialog API to open a dialog box, a [Dialog](/javascript
 
 ```javascript
 let dialog; // Declare as global variable.
-Office.context.ui.displayDialogAsync('https://www.contoso.com/myDialog.html',
+Office.context.ui.displayDialogAsync("https://www.contoso.com/myDialog.html",
     (asyncResult) => {
         dialog = asyncResult.value;
         dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
@@ -335,7 +344,7 @@ Because you can make multiple `messageChild` calls from the host page, but you h
 > In some situations, the `messageChild` API, which is a part of the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), may not be supported. For example, `messageChild` isn't supported in volume-licensed perpetual Outlook 2016 and volume-licensed perpetual Outlook 2019. Some alternative ways for parent-to-dialog-box messaging are described in [Alternative ways of passing messages to a dialog box from its host page](parent-to-dialog.md).
 
 > [!IMPORTANT]
-> The [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets) can't be specified in the **\<Requirements\>** section of an add-in manifest. You will have to check for support for DialogApi 1.2 at runtime using the `isSetSupported` method as described in [Runtime checks for method and requirement set support](../develop/specify-office-hosts-and-api-requirements.md#runtime-checks-for-method-and-requirement-set-support). Support for manifest requirements is under development.
+> The [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets) can't be specified in the add-in manifest. You'll have to check for support for DialogApi 1.2 at runtime using the `isSetSupported` method as described in [Check for API availability at runtime](specify-api-requirements-runtime.md). Support for manifest requirements is under development.
 
 ### Cross-domain messaging to the dialog runtime
 
@@ -356,7 +365,11 @@ If the message doesn't include sensitive data, you can set the `targetOrigin` to
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-Because the runtime that is hosting the dialog can't access the **\<AppDomains\>** section of the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that is passed to the handler contains the domain that is currently hosted in the parent as its `origin` property. The following is an example of how to use the property.
+The add-in's manifest specifies trusted domains. In the unified manifest for Microsoft 365, this is specified in the "validDomains" property. In the add-in only manifest, this is specified in the **\<AppDomains\>** element.
+
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
+But the runtime that's hosting the dialog can't access the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that's passed to the handler contains the domain that's currently hosted in the parent as its `origin` property. The following is an example of how to use the property.
 
 ```javascript
 function onMessageFromParent(arg) {

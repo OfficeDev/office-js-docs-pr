@@ -145,7 +145,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ## Try it out
 
-1. Using Visual Studio, test the newly created Outlook add-in by pressing **F5** or choosing the **Start** button. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Outlook add-in by pressing <kbd>F5</kbd> or choosing the **Start** button. The add-in will be hosted locally on IIS.
 
 1. In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account), then choose **Connect**. When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.
 

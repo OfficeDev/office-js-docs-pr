@@ -1,7 +1,7 @@
 ---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 10/03/2024
+ms.date: 02/12/2025
 ms.service: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -23,7 +23,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 > [!TIP]
 > If you've already completed the [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md) quick start using the Yeoman generator, and want to use that project as a starting point for this tutorial, go directly to the [Create a table](#create-a-table) section to start this tutorial.
 >
-> If you want a completed version of this tutorial, head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/excel-tutorial).
+> If you want a completed version of this tutorial, visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/excel-tutorial).
 
 ## Prerequisites
 
@@ -39,6 +39,11 @@ In this tutorial, you'll create an Excel task pane add-in that:
 - **Which Office client application would you like to support?** `Excel`
 
 ![The Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
+
+Next, select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
+
+> [!NOTE]
+> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
 
@@ -189,7 +194,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     - To test your add-in in Excel on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+        [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
@@ -475,6 +480,117 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 
 ### Configure the manifest to add a second ribbon button
 
+The steps vary depending on the type of manifest.
+
+# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
+
+> [!NOTE]
+> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+
+#### Configure the runtime for the ribbon button
+
+1. Open the manifest file **./manifest.json**.
+
+1. Find the **"extensions.runtimes"** array and add the following commands runtime object.
+
+    ```json
+    "runtimes": [
+        {
+            "id": "CommandsRuntime",
+            "type": "general",
+            "code": {
+                "page": "https://localhost:3000/commands.html"
+            },
+            "lifetime": "short",
+            "actions": [
+                {
+                    "id": <!--TODO1: Set the action ID -->,
+                    "type": "executeFunction",
+                }
+            ]
+        }       
+    ]
+    ```
+
+1. Find `TODO1` and replace it with **"toggleProtection"**. This matches the `id` for the JavaScript function you create in a later step.
+
+    > [!TIP]
+    > The value of **"actions.id"** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
+
+1. Ensure that the **"requirements.capabilities"** array contains an object that specifies the **"AddinCommands"** requirement set with a **"minVersion"** of **"1.1"**.
+
+    ```json
+    "requirements": {
+        "capabilities": [
+            {
+                "name": "AddinCommands",
+                "minVersion": "1.1"
+            }
+        ]
+    },
+    ```
+
+#### Configure the UI for the ribbon button
+
+1. After the **"extensions.runtimes"** array, add the following **"ribbons"** array.
+
+    ```json
+    "ribbons": [
+        {
+            "contexts": [
+                "default"
+            ],
+            "tabs": [
+                {
+                    "builtInTabID": <!--TODO1: Set the tab ID -->,
+                    "groups": [
+                        {
+                            "id": "worksheetProtectionGroup",
+                            "label": "Contoso Add-in",
+                            "controls": [    
+                                {
+                                    "id": "toggleProtectionButton",
+                                    "type": "button",
+                                    "label": <!--TODO2: Label the button -->,
+                                    "icons": [
+                                        {
+                                            "size": 16,
+                                            "url": "https://localhost:3000/assets/icon-16.png"
+                                        },
+                                        {
+                                            "size": 32,
+                                            "url": "https://localhost:3000/assets/icon-32.png"
+                                        },
+                                        {
+                                            "size": 80,
+                                            "url": "https://localhost:3000/assets/icon-80.png"
+                                        }
+                                    ],
+                                    "supertip": {
+                                        "title": "Toggle worksheet protection",
+                                        "description": "Enables or disables worksheet protection."
+                                    },
+                                    "actionId": <!--TODO3: Set the action ID -->
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+    ```
+
+1. Find `TODO1` and replace it with **"TabHome"**. This ensures that the new button displays in the Home tab in Excel. For other available tab IDs, see [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).
+
+1. Find `TODO2` and replace it with **"Toggle worksheet protection"**. This is the label for your button in the Excel ribbon.
+
+1. Find `TODO3` and replace it with **"toggleProtection"**. This value must match the **"runtimes.actions.id"** value.
+
+1. Save the file.
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
 1. Open the manifest file **./manifest.xml**.
 
 1. Locate the **\<Control\>** element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing **\</Control\>** tag and the closing **\</Group\>** tag, add the following markup.
@@ -568,6 +684,8 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
     ```
 
 1. Save the file.
+
+---
 
 ### Create the function that protects the sheet
 
@@ -689,7 +807,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
     - To test your add-in in Excel on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of an Excel document on your OneDrive or a SharePoint library to which you have permissions.
 
-        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+        [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot.
 
@@ -728,7 +846,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
             <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
             <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
 
-            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
             <script type="text/javascript" src="popup.js"></script>
 
         </head>

@@ -1,0 +1,1 @@
+Add-ins that interact with the user's calendar, meetings, or appointments are available only if the user opens the calendar in Outlook, not Teams.
