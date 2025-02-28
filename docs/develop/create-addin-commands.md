@@ -261,7 +261,7 @@ The following example shows how to define a menu item with two submenu items. Th
 
 The following code shows a function that's invoked by a button or menu item control whose **\<Action\>** element's **xsi:type** is set to **ExecuteFunction**. Note the following about the code.
 
-- The [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) call tells Office which function to run when a button or menu item is selected. The value passed to its **actionId** parameter must match the value specified in the **\<FunctionName\>** element of the manifest. You must have an `Office.actions.associate` call for every function command defined in the manifest.
+- The [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) call tells Office which function to run when a button or menu item is selected. The value passed to its **actionId** parameter must match the value specified in the [**\<FunctionName\>** element](/javascript/api/manifest/action#functionname) of the manifest. You must have an `Office.actions.associate` call for every function command defined in the manifest.
 - The [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) call signals that you've successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
 
 ```js
