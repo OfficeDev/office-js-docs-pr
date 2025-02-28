@@ -64,7 +64,7 @@ Blocked: []
 PS C:\>
 ```
 
-An update is being deployed that enables a report from the last seven days of which add-ins requested an Exchange token, and whether the request was allowed or blocked. If your tenant has this update, you'll see a list of requests displayed in the **Allowed** or **Blocked** list. If an add-in was granted the token request, it appears in the **Allowed** list along with the date of the request. If the token request was denied, it appears in the **Blocked** list. It's possible for the same add-in to appear in both lists. This happens if the add-in was allowed to get tokens, but then tokens were turned off. The following example shows an add-in was blocked when it requested a token on February 25th.
+We are deploying an update that enables a report of which add-ins requested an Exchange token in the last seven days, and whether the request was allowed or blocked. If your tenant has this update, you'll see a list of requests displayed in the **Allowed** or **Blocked** list. If an add-in was granted the token request, it appears in the **Allowed** list along with the date of the request. If the token request was denied, it appears in the **Blocked** list. It's possible for the same add-in to appear in both lists. This happens if the add-in was allowed to get tokens, but then tokens were turned off. The following example shows an add-in was blocked when it requested a token on February 25th.
 
 ```console
 PS C:\> Get-AuthenticationPolicy -AllowLegacyExchangeTokens
@@ -87,7 +87,7 @@ DisplayName            AppVersion MarketplaceAssetID ProviderName
 Script Lab for Outlook 4.0.0.0    WA200001603        Microsoft
 ```
 
-The previous Script Lab example used the **Get a user identity token** sample that uses the `getUserIdentityTokenAsync` function to make the request.
+The previous Script Lab example uses the **Get a user identity token** sample and the `getUserIdentityTokenAsync` function to make the request.
 
 > [!NOTE]
 > The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.
