@@ -48,7 +48,7 @@ Important notes about this command.
 - You’ll only be able to turn tokens back on until June 2025 when all legacy tokens in all tenants will be forced off. For more information, see the [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
 - Although the `-Identity` parameter is required, it doesn't affect any specific authentication policy. The command always applies to the entire organization regardless of what value you use. We show the value as `LegacyExchangeTokens` in the examples to keep the intent clear.
 
-## Get the status of legacy Exchange Online tokens and add-ins using them
+## Get the status of legacy Exchange Online tokens and add-ins that use them
 
 To view the status of legacy Exchange Online tokens, run the following command.
 
@@ -90,7 +90,7 @@ Script Lab for Outlook 4.0.0.0    WA200001603        Microsoft
 The previous Script Lab example used the **Get a user identity token** sample that uses the `getUserIdentityTokenAsync` function to make the request.
 
 > [!NOTE]
-> The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name` don't return the legacy token status.
+> The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.
 
 The `Get-AuthenticationPolicy` command only shows the legacy token status as set by the administrator. If the administrator has never changed the settings, the command returns `(Not Set)`. If the token status is `(Not Set)` when the February deployment by Microsoft to turn off legacy tokens is implemented, the token status will still be `(Not Set)` even though legacy tokens are off. The following table shows the behavior of legacy Exchange Online tokens based on the token status when the change is applied.
 
