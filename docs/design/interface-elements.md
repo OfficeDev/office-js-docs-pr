@@ -1,7 +1,7 @@
 ---
 title: Office UI elements for Office Add-ins
 description: Get an overview of the different kinds of UI elements in an Office Add-in.
-ms.date: 08/18/2023
+ms.date: 03/11/2025
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -22,7 +22,7 @@ Use [add-in commands](add-in-commands.md) to add entry points to your add-in to 
 |Command type|Description|
 |:-----------|:----------|
 |Ribbon buttons, menus, and tabs|Use to add custom buttons, menus (dropdowns), or tabs to the default ribbon in Office. Use buttons and menus to trigger an action in Office. Use tabs to group and organize buttons and menus.|
-|Context menus| Use to extend the default context menu. Context menus are displayed when, for example, users right-click text in an Office document or a table in Excel.|
+|Context menus| Use to extend the default context menu. Context menus are displayed when, for example, users right-click (or select and hold) text in an Office document or an object in Excel.|
 
 ## HTML containers
 
