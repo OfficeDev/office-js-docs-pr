@@ -36,7 +36,7 @@ To see Smart Alerts in action, try out the [walkthrough](smart-alerts-onmessages
 - [Customize the text of a dialog button](smart-alerts-onmessagesend-walkthrough.md#customize-the-text-and-functionality-of-a-button-in-the-dialog-optional).
 - [Open a task pane or run a function from the dialog](smart-alerts-onmessagesend-walkthrough.md#customize-the-text-and-functionality-of-a-button-in-the-dialog-optional).
 - [Override the send mode option at runtime](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional).
-- [Programmatically send the mail item once it meets your add-in's conditions](smart-alerts-onmessagesend-walkthrough.md#programmatically-send-the-item-from-the-task-pane-optional-preview).
+- [Programmatically send the mail item once it meets your add-in's conditions](smart-alerts-onmessagesend-walkthrough.md#programmatically-send-the-item-from-the-task-pane-optional).
 
 ## Smart Alerts feature behavior and scenarios
 
