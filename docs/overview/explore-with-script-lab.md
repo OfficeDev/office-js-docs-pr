@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 09/05/2024
+ms.date: 02/20/2025
 ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -67,6 +67,14 @@ Script Lab for Outlook is available on the following clients.
 
 > [!IMPORTANT]
 > \* Script Lab no longer works with combinations of platform and Office version that use the Trident (Internet Explorer) webview to host add-ins. This includes perpetual versions of Office through Office 2019. For more information, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+
+## Limitations
+
+Script Lab is designed for you to play with small code samples. Generally, a snippet should be at most a few hundred lines and a few thousand characters.
+
+Your snippet can use hard-coded data. A small amount of data (say, a few hundred characters) is OK to hard code in Script Lab. However, for larger pieces of data, we recommend that you store those externally then load them at runtime with a command like `fetch`.
+
+Keep your snippets and hard-coded data small since storing several large snippets could exceed Script Lab's storage and cause issues when loading Script Lab.
 
 ## Next steps
 

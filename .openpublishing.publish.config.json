@@ -27,6 +27,7 @@
         "excel-js-1.15",
         "excel-js-1.16",
         "excel-js-1.17",
+        "excel-js-1.18",
         "excel-js-online",
         "onenote-js-1.1",
         "outlook-js-preview",
@@ -67,6 +68,7 @@
         "word-js-1.4-hidden-document",
         "word-js-1.5-hidden-document",
         "word-js-desktop-1.1",
+        "word-js-desktop-1.2",
         "word-js-online"
       ],
       "open_to_public_contributors": true,

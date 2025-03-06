@@ -37,9 +37,9 @@ These instructions assume you have experience using the command line, understand
 
 1. Open VS Code and open your project in it.
 
-1. Choose **View** > **Run** or enter **Ctrl+Shift+D** to switch to debug view.
+1. Choose **View** > **Run** or enter <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> to switch to debug view.
 
-1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Outlook Desktop (Edge Chromium)**. Select **F5** or choose **Run** > **Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
+1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Outlook Desktop (Edge Chromium)**. Select <kbd>F5</kbd> or choose **Run** > **Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
    > [!TIP]
    > If you aren't using a project created with Yo Office, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
@@ -74,7 +74,7 @@ These instructions assume you have experience using the command line, understand
    > Breakpoints in calls of `Office.initialize` or `Office.onReady` are ignored. For details about these functions, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 > [!IMPORTANT]
-> The best way to stop a debugging session is to select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there'll be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
+> The best way to stop a debugging session is to select <kbd>Shift</kbd>+<kbd>F5</kbd> or choose **Run** > **Stop Debugging** from the menu. This action should close the Node server window and attempt to close the host application, but there'll be a prompt on the host application asking you whether to save the document or not. Make an appropriate choice and let the host application close. Avoid manually closing the Node window or host application. Doing so can cause bugs especially when you are stopping and starting debugging sessions repeatedly.
 >
 > If debugging stops working---for example, if breakpoints are being ignored---stop debugging. Then, if necessary, close all host application windows and the Node window. Finally, close Visual Studio Code and reopen it.
 
@@ -161,7 +161,7 @@ You can now debug your project using the VS Code debugger (F5).
 ### Appendix
 
 1. In the error dialog box, select the **Cancel** button.
-1. If debugging doesn't stop automatically, select **Shift+F5** or choose **Run** > **Stop Debugging** from the menu.
+1. If debugging doesn't stop automatically, select <kbd>Shift</kbd>+<kbd>F5</kbd> or choose **Run** > **Stop Debugging** from the menu.
 1. Close the Node window where the local server is running, if it doesn't close automatically.
 1. Close the Office application if it doesn't close automatically.
 1. Open the `\.vscode\launch.json` file in the project.

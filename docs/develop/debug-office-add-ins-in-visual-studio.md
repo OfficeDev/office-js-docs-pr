@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins in Visual Studio
 description: Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows.
-ms.date: 03/28/2024
+ms.date: 02/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ This article describes how to debug client-side code in Office Add-ins that are 
 
 ## Review the build and debug properties
 
-Before you start debugging, review the properties of each project to confirm that Visual Studio will open the desired Office application and that other build and debug properties are set appropriately.
+Before you start debugging, review the properties of each project in the solution to confirm that Visual Studio will open the desired Office application and that other build and debug properties are set appropriately.
 
 ### Add-in project properties
 
@@ -69,7 +69,7 @@ This section describes how to start and debug an add-in in desktop Office on Win
 
 ### Start the add-in project
 
-Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button. Visual Studio automatically builds the solution and starts the Office host application.
+Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button. Visual Studio automatically builds the solution and starts the Office host application.
 
 When Visual Studio builds the project, it performs the following tasks:
 
@@ -84,6 +84,9 @@ When Visual Studio builds the project, it performs the following tasks:
 > [!NOTE]
 > If Office uses the Edge Legacy webview control (EdgeHTML) to run add-ins on your Windows computer, Visual Studio may prompt you to add a local network loopback exemption. This is required for the webview control to be able to access the website deployed to the local IIS web server. You can also change this setting anytime in Visual Studio under **Tools** > **Options** > **Office Tools (Web)** > **Web Add-In Debugging**. To find out what webview control is used on your Windows computer, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
+> [!TIP]
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
+
 Next, Visual Studio does the following:
 
 1. Modifies the [SourceLocation](/javascript/api/manifest/sourcelocation) element of the add-in only manifest file (that was copied to the `_ProjectName_\bin\Debug\OfficeAppManifests` directory) by replacing the `~remoteAppUrl` token with the fully qualified address of the start page (for example, `https://localhost:44302/Home.html`).
@@ -93,13 +96,16 @@ Next, Visual Studio does the following:
 1. Validates the manifest.  
 
    > [!IMPORTANT]
-   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#add-in-only-manifest-schema-validation-errors-in-visual-studio-projects).
 
 1. Opens the Office application and sideloads your add-in.
 
 ### Debug the add-in
 
-The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger to debug on the desktop](#use-the-built-in-visual-studio-debugger-to-debug-on-the-desktop). For any other webview control, see [Use the browser developer tools to debug on the desktop](#use-the-browser-developer-tools-to-debug-on-the-desktop).
+The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. If your computer is using WebView2, see [Use the built-in Visual Studio debugger to debug on the desktop](#use-the-built-in-visual-studio-debugger-to-debug-on-the-desktop). For any other webview control, see [Use the browser developer tools to debug on the desktop](#use-the-browser-developer-tools-to-debug-on-the-desktop). To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+
+> [!TIP]
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
 #### Use the built-in Visual Studio debugger to debug on the desktop
 
@@ -117,15 +123,7 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 
 1. Follow the steps in the earlier section [Start the add-in project](#start-the-add-in-project).
 
-1. Launch the add-in in the Office application if it isn't already open. For example, if it's a task pane add-in, it'll have added a button to the **Home** ribbon (for example, a **Show Taskpane** button). Select the button on the ribbon.
-
-   > [!NOTE]
-   > If your add-in isn't sideloaded by Visual Studio, you can sideload it manually. Follow the instructions to [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing) for your platform.
-   >
-   > In the list of available add-ins, find the **Developer Add-ins** section and select the your add-in to register it.
-
-   > [!TIP]
-   > The task pane may appear blank when it first opens. If so, it should render correctly when you launch the debugging tools in a later step.
+1. Launch the add-in in the Office application if it isn't already open. For example, if it's a task pane add-in, it'll have added a button (for example, a **Show Taskpane** button) to the **Home** ribbon or to a custom ribbon tab that's installed with the add-in. Select the button on the ribbon.
 
 1. Open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Attach a debugger**. This action opens the debugging tools for the webview control that Office is using to run add-ins on your Windows computer. You can set breakpoints and step through code as described in one of the following articles:
 
@@ -141,7 +139,7 @@ This section describes how to start and debug an add-in in desktop Office on the
 
 ### Start the add-in project on the web
 
-Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button. Visual Studio automatically builds the solution and launches the Office application host page of your Microsoft 365 tenancy.
+Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button. Visual Studio automatically builds the solution and launches the Office application host page of your Microsoft 365 tenancy.
 
 > [!NOTE]
 > When you're debugging an add-in on the web, you may get an AADSTS50011 error similar to the following: 
@@ -163,7 +161,7 @@ Start the project by choosing **Debug** > **Start Debugging** from the menu bar 
 >       ```
 >
 >    1. Run the script in PowerShell.
->    1. Restart the project by choosing **Debug** > **Start Debugging** from the menu bar or press the F5 button.
+>    1. Restart the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button.
 
 When Visual Studio builds the project it performs the following tasks.
 
@@ -182,13 +180,19 @@ Next, Visual Studio does the following:
 1. Validates the manifest.  
 
    > [!IMPORTANT]
-   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#manifest-schema-validation-errors-in-visual-studio-projects).
+   > If you get validation errors for the manifest, it may be that Visual Studio's manifest schema files haven't been updated to support the latest features. Your first troubleshooting step should be to replace one or more of these files with the latest versions. For detailed instructions, see [Manifest schema validation errors in Visual Studio projects](../testing/troubleshoot-development-errors.md#add-in-only-manifest-schema-validation-errors-in-visual-studio-projects).
 
 1. Opens the Office application host page of your Microsoft 365 tenancy in Microsoft Edge.
 
+> [!TIP]
+> If for any reason, Visual Studio doesn't fully sideload the add-in and none of the fixes earlier works, you can manually sideload it. Follow the steps in [Sideload an add-in to Microsoft 365](../testing/sideload-office-add-ins-for-testing.md#sideload-an-add-in-to-microsoft-365). When you're instructed to browse to the manifest, navigate to the XML file in the folder `_ProjectName_\bin\Debug\OfficeAppManifests` directory.
+
 ### Debug the add-in on the web
 
-The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your computer is using WebView2, see [Use the built-in Visual Studio debugger to debug on the web](#use-the-built-in-visual-studio-debugger-to-debug-on-the-web). For any other webview control, see [Use the browser developer tools to debug on the web](#use-the-browser-developer-tools-to-debug-on-the-web).
+The best method for debugging an add-in in Visual Studio 2022 depends on whether the add-in is running in WebView2, which is the webview control that is associated with Microsoft Edge (Chromium), or an older webview control. If your computer is using WebView2, see [Use the built-in Visual Studio debugger to debug on the web](#use-the-built-in-visual-studio-debugger-to-debug-on-the-web). For any other webview control, see [Use the browser developer tools to debug on the web](#use-the-browser-developer-tools-to-debug-on-the-web). To determine which webview control is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). 
+
+> [!TIP]
+> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
 #### Use the built-in Visual Studio debugger to debug on the web
 
@@ -203,9 +207,9 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
 
 #### Use the browser developer tools to debug on the web
 
-1. For an add-in in any host except Outlook, in the Office host application page, press F12 to open the debugging tool.
+1. For an add-in in any host except Outlook, in the Office host application page, press <kbd>F12</kbd> to open the debugging tool.
 
-1. For an Outlook add-in, if the add-in's manifest is configured for a read surface, select an email message or appointment item to open it in its own window. If the add-in is configured for only a compose surface, open a new message, reply to message, or new appointment window. Ensure that the appropriate window has focus and press F12 to pen the debugging tool.
+1. For an Outlook add-in, if the add-in's manifest is configured for a read surface, select an email message or appointment item to open it in its own window. If the add-in is configured for only a compose surface, open a new message, reply to message, or new appointment window. Ensure that the appropriate window has focus and press <kbd>F12</kbd> to pen the debugging tool.
 
 1. After the tool is open, launch the add-in. The exact steps vary depending on the design of your add-in. Typically, you press a button to open a task pane. In Outlook, in the toolbar at the top of the window, select the **More apps** button, and then select your add-in from the callout that opens.
 
@@ -219,7 +223,7 @@ The best method for debugging an add-in in Visual Studio 2022 depends on whether
    > [!TIP]
    > To debug code that runs in the `Office.initialize` function or an `Office.onReady` function that runs when the add-in opens, set your breakpoints, and then close and reopen the add-in. For more information about these functions, see [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
-1. To make changes to your code, first stop the debugging session in Visual Studio and close the Outlook pages. Make your changes, and start a new debugging session.
+1. To make changes to your code, first stop the debugging session in Visual Studio and close the Office on the web page. Make your changes, and start a new debugging session.
 
 ## Use an existing document to debug the add-in
 

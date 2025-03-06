@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 11/14/2024
+ms.date: 02/25/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -22,6 +22,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
 ## Configure the manifest
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+> [!NOTE]
+> Implementing the item multi-select feature with a unified manifest for Microsoft 365 is currently only supported in classic Outlook on Windows. For other supported platforms, use the add-in only manifest instead.
 
 1. In your preferred code editor, open the Outlook quick start project you created.
 
@@ -198,7 +201,7 @@ Item multi-select relies on the [SelectedItemsChanged](/javascript/api/office/of
     ```
 
     > [!NOTE]
-    > The preview version of the Office JavaScript API is used because this walkthrough implements the `loadItemByIdAsync` and `unloadAsync` methods, which are currently in preview. If your multi-select add-in doesn't implement these methods, use `https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js` instead. For more information, see [Referencing the Office JavaScript API library](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+    > The preview version of the Office JavaScript API is used because this walkthrough implements the `loadItemByIdAsync` and `unloadAsync` methods, which are currently in preview. If your multi-select add-in doesn't implement these methods, use `https://appsforoffice.microsoft.com/lib/1/hosted/office.js` instead. For more information, see [Referencing the Office JavaScript API library](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 1. Save your changes.
 
@@ -350,7 +353,7 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
 
 1. In Outlook, ensure the Reading Pane is enabled. To enable the Reading Pane, see [Use and configure the Reading Pane to preview messages](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0).
 
-1. Navigate to your inbox and choose multiple messages by holding **Ctrl** while selecting messages.
+1. Navigate to your inbox and choose multiple messages by holding <kbd>Ctrl</kbd> while selecting messages.
 
 1. Select **Show Taskpane**. The location of the add-in varies depending on your Outlook client. For guidance, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 

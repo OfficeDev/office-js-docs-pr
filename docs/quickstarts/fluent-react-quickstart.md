@@ -1,7 +1,7 @@
 ---
 title: Fluent UI React in Office Add-ins
 description: Learn how to create an Office Add-in that uses Fluent UI React.
-ms.date: 12/13/2023
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: medium
@@ -49,7 +49,10 @@ After you complete the wizard, the generator creates the project and installs su
 
 The add-in project that you've created with the Yeoman generator contains sample code for a basic task pane add-in. If you'd like to explore the components of your add-in project, open the project in your code editor and review the following files. The file name extensions depend on which language you choose. TypeScript extensions are in parentheses. When you're ready to try out your add-in, proceed to the next section.
 
-- The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in. To learn more about the **manifest.xml** file, see [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md).
+- The **./manifest.xml** or **./manifest.json** file in the root directory of the project defines the settings and capabilities of the add-in. To learn more about the **manifest.xml** file, see [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md). To learn more about the **manifest.json** file, see [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md).
+
+   [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane and loads the Office JavaScript Library. It also tests whether the webview control supports Fluent UI React v9 and displays a special message if it doesn't.
 - The **./src/taskpane/index.jsx (tsx)** file is the React root component. It loads React and Fluent UI React, ensures that the Office JavaScript library has been loaded, and applies the Fluent-defined theme.
 - The **./src/taskpane/office-document.js (ts)** file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
@@ -84,7 +87,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     - To test your add-in in Excel, Word, or PowerPoint on the web, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a Word document on your OneDrive or a SharePoint library to which you have permissions.
 
-        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+        [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
     > [!NOTE]
     > If this is the first time that you have sideloaded an Office add-in on your computer (or the first time in over a month), you're prompted first to delete an old certificate and then to install a new one. Agree to both prompts.

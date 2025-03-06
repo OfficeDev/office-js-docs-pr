@@ -1,7 +1,7 @@
 ---
 title: Custom functions debugging in a non-shared runtime
 description: Learn how to debug your Excel custom functions that don't use a shared runtime.
-ms.date: 01/26/2023
+ms.date: 01/03/2024
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -43,11 +43,8 @@ You can use the browser developer tools to debug custom functions that don't use
 
 1. Open [Office on the web](https://office.live.com/).
 1. Open a new Excel workbook.
-1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
-1. On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
-  
-    ![The Office Add-ins dialog with a drop-down in the upper right reading "Manage my add-ins" and a drop-down below it with the option "Upload My Add-in".](../images/office-add-ins-my-account.png)
-
+1. Select **Home** > **Add-ins**, then select **More Settings**.
+1. On the **Office Add-ins** dialog, select **Upload My Add-in**.
 1. **Browse** to the add-in manifest file, and then select **Upload**.
   
     ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
@@ -58,8 +55,8 @@ You can use the browser developer tools to debug custom functions that don't use
 ### Start debugging
 
 1. Open developer tools in the browser. For Chrome and most browsers F12 will open the developer tools.
-1. In developer tools, open your source code script file using **Cmd+P** or **Ctrl+P** (**functions.js** or **functions.ts**).
-1. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code. 
+1. In developer tools, open your source code script file using <kbd>Cmd</kbd>+<kbd>P</kbd> or <kbd>Ctrl</kbd>+<kbd>P</kbd> (**functions.js** or **functions.ts**).
+1. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code.
 
 If you need to change the code you can make edits in VS Code and save the changes. Refresh the browser to see the changes loaded.
 
@@ -74,7 +71,7 @@ If you aren't using VS Code, you can use the command line (such as bash, or Powe
   
     Or if you prefer to start your add-in in Excel on the web run the following command.
   
-    `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint)
+    `npm run start -- web --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint)
   
     [!include[Mac command line note](../includes/mac-command-line.md)]
   
@@ -98,7 +95,7 @@ There are several build tasks available.
 You can use the following tasks to start debugging on desktop or online.
 
 - `npm run start:desktop`: Starts Excel on desktop and sideloads your add-in. If the "start:desktop" script isn't present in the "scripts" section of the project's package.json file, then run `npm run start` instead.
-- `npm run start:web -- --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint): Starts Excel on the web and sideloads your add-in.
+- `npm run start -- web --document {url}` (where `{url}` is the URL of an Excel file on OneDrive or SharePoint): Starts Excel on the web and sideloads your add-in.
 
   [!include[Mac command line note](../includes/mac-command-line.md)]
 
