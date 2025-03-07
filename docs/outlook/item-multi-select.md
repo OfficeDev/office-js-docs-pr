@@ -258,7 +258,7 @@ Now that you've registered an event handler, your add-in can now get properties 
 The following example implements the `getSelectedItemsAsync` and `loadItemByIdAsync` methods to get the subject line and sender's email address from each selected message.
 
 > [!NOTE]
-> The `loadItemByIdAsync` method is currently in preview in classic Outlook on Windows. To preview this API, install Version 2405 (Build 17606.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option.
+> The `loadItemByIdAsync` method is currently in preview in classic Outlook on Windows. To preview this API, install Version 2405 (Build 17606.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option.
 
 1. In **taskpane.js**, replace the existing `run` function with the following code.
 

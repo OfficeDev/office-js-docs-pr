@@ -244,7 +244,7 @@ In Outlook on the web and in new Outlook on Windows:
 > [!NOTE]
 > Support for Markdown in a Smart Alerts dialog is currently in preview in Outlook on the web and on Windows (new and classic). Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the Feedback section at the end of this page).
 >
-> To test this feature in classic Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/windows) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
+> To test this feature in classic Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
 
 You can use Markdown to format the message of a Smart Alerts dialog. However, only the following elements are supported.
 

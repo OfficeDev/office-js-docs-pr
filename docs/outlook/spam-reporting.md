@@ -37,7 +37,7 @@ The following table identifies which Outlook clients support the integrated spam
 
 ## Preview the integrated spam-reporting feature in Outlook on Mac
 
-To preview the integrated spam-reporting feature in Outlook on Mac, you must install Version 16.81.1217.0 or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Mac) and select the **Beta Channel** option to access Office beta builds.
+To preview the integrated spam-reporting feature in Outlook on Mac, you must install Version 16.81.1217.0 or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-macos/4206727) and select the **Beta Channel** option to access Office beta builds.
 
 ## Set up your environment
 
