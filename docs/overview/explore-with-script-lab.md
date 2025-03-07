@@ -43,7 +43,7 @@ In addition to JavaScript or TypeScript code that calls the Office JS API, each 
 
 #### Preview APIs
 
-To call preview APIs within a snippet, you need to update the snippet's libraries to use the beta content delivery network (CDN) (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) and the preview type definitions `@types/office-js-preview`. Additionally, some preview APIs are only accessible if you've signed up for the [Microsoft 365 Insider program](https://insider.microsoft365.com) and are running an Insider build of Office.
+To call preview APIs within a snippet, you need to update the snippet's libraries to use the beta content delivery network (CDN) (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) and the preview type definitions `@types/office-js-preview`. Additionally, some preview APIs are only accessible if you've signed up for the [Microsoft 365 Insider program](https://aka.ms/MSFT365InsiderProgram) and are running an Insider build of Office.
 
 ### Save and share snippets
 
