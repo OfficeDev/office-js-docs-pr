@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 02/06/2025
+ms.date: 03/11/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -288,38 +288,43 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     // The OnNewMessageCompose event handler that adds a signature to a new message.
     function onNewMessageComposeHandler(event) {
         const item = Office.context.mailbox.item;
-    
-        // Check if a default Outlook signature is already configured.
-        item.isClientSignatureEnabledAsync({ asyncContext: event }, (result) => {
-            if (result.status === Office.AsyncResultStatus.Failed) {
-                console.log(result.error.message);
-                return;
-            }
-    
-            // Add a signature if there's no default Outlook signature configured.
-            if (result.value === false) {
-                item.body.setSignatureAsync(
-                    "<i>This is a sample signature.</i>",
-                    { asyncContext: result.asyncContext, coercionType: Office.CoercionType.Html },
-                    addSignatureCallback
-                );
-            }
-        });
+        const platform = Office.context.platform;
+        const signature = "<i>This is a sample signature.</i>";
+
+        // On supported platforms, check if a default Outlook signature is already configured.
+        if (platform != Office.PlatformType.Android && platform != Office.PlatformType.iOS) {
+            item.isClientSignatureEnabledAsync({ asyncContext: { event: event, signature: signature } }, (result) => {
+                if (result.status === Office.AsyncResultStatus.Failed) {
+                    console.log(result.error.message);
+                    return;
+                }
+
+                // Add a signature if there's no default Outlook signature configured.
+                const signatureEnabled = result.value;
+                if (signatureEnabled === false) {
+                    const event = result.asyncContext.event;
+                    const signature = result.asyncContext.signature;
+                    setSignature(signature, event);
+                }
+            });
+        } else {
+            setSignature(signature, event);
+        }
     }
-    
+
     // The OnMessageFromChanged event handler that updates the signature when the email address in the From field is changed.
     function onMessageFromChangedHandler(event) {
         const item = Office.context.mailbox.item;
         const signatureIcon =
         "iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAMAAAC7faEHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAzUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKMFRskAAAAQdFJOUwAQIDBAUGBwgI+fr7/P3+8jGoKKAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABT0lEQVQ4T7XT2ZalIAwF0DAJhMH+/6+tJOQqot6X6joPiouNBo3w9/Hd6+hrYnUt6vhLcjEAJevVW0zJxABSlcunhERpjY+UKoNN5+ZgDGu2onNz0OngjP2FM1VdyBW1LtvGeYrBLs7U5I1PTXZt+zifcS3Icw2GcS3vxRY3Vn/iqx31hUyTnV515kdTfbaNhZLI30AceqDiIo4tyKEmJpKdP5M4um+nUwfDWxAXdzqMNKQ14jLdL5ntXzxcRF440mhS6yu882Kxa30RZcUIjTCJg7lscsR4VsMjfX9Q0Vuv/Wd3YosD1J4LuSRtaL7bzXGN1wx2cytUdncDuhA3fu6HPTiCvpQUIjZ3sCcHVbvLtbNTHlysx2w9/s27m9gEb+7CTri6hR1wcTf2gVf3wBRe3CMbcHYvTODkXhnD0+178K/pZ9+n/C1ru/2HAPwAo7YM1X4+tLMAAAAASUVORK5CYII=";
-    
+
         // Get the currently selected From account.
         item.from.getAsync({ asyncContext: event }, (result) => {
             if (result.status === Office.AsyncResultStatus.Failed) {
                 console.log(result.error.message);
                 return;
             }
-    
+
             // Create a signature based on the currently selected From account.
             const name = result.value.displayName;
             const options = { asyncContext: { event: result.asyncContext, name: name }, isInline: true };
@@ -331,26 +336,30 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
         
                 // Add the created signature to the mail item.
                 const signature = "<img src='cid:signatureIcon.png'>" + result.asyncContext.name;
-                item.body.setSignatureAsync(
-                    signature,
-                    { asyncContext: result.asyncContext.event, coercionType: Office.CoercionType.Html },
-                    addSignatureCallback
-                );
+                const event = result.asyncContext.event;
+                setSignature(signature, event);
             });
         });
     }
-    
-    // Callback function to add a signature to the mail item.
-    function addSignatureCallback(result) {
-        if (result.status === Office.AsyncResultStatus.Failed) {
-            console.log(result.error.message);
-            return;
-        }
-    
-        console.log("Successfully added signature.");
-        result.asyncContext.completed();
+
+    // Sets the custom signature and adds it to the mail item.
+    function setSignature(signature, event) {
+        item.body.setSignatureAsync(
+            signature,
+            { asyncContext: event, coercionType: Office.CoercionType.Html },
+            (result) => {
+                if (result.status === Office.AsyncResultStatus.Failed) {
+                    console.log(result.error.message);
+                    return;
+                }
+
+                console.log("Successfully added signature.");
+                const event = result.asyncContext;
+                event.completed();
+            }
+        );
     }
-    
+
     // IMPORTANT: To ensure your add-in is supported in Outlook, remember to
     // map the event handler name specified in the manifest's LaunchEvent element (with the add-in only manifest)
     // or the "autoRunEvents.events.actionId" property (with the unified manifest for Microsoft 365)
