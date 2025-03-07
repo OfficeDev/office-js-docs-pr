@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 01/09/2025
+ms.date: 03/11/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -30,8 +30,8 @@ The following tables list client-server combinations that support the `OnMessage
 |**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
 |**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
 |**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
-|**iOS**|Not applicable|Not applicable|Not applicable|
-|**Android**|Not applicable|Not applicable|Not applicable|
+|**iOS**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|
+|**Android**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|
 
 # [OnAppointmentFromChanged event](#tab/appointment)
 
@@ -288,38 +288,43 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     // The OnNewMessageCompose event handler that adds a signature to a new message.
     function onNewMessageComposeHandler(event) {
         const item = Office.context.mailbox.item;
-    
-        // Check if a default Outlook signature is already configured.
-        item.isClientSignatureEnabledAsync({ asyncContext: event }, (result) => {
-            if (result.status === Office.AsyncResultStatus.Failed) {
-                console.log(result.error.message);
-                return;
-            }
-    
-            // Add a signature if there's no default Outlook signature configured.
-            if (result.value === false) {
-                item.body.setSignatureAsync(
-                    "<i>This is a sample signature.</i>",
-                    { asyncContext: result.asyncContext, coercionType: Office.CoercionType.Html },
-                    addSignatureCallback
-                );
-            }
-        });
+        const platform = Office.context.platform;
+        const signature = "<i>This is a sample signature.</i>";
+
+        // On supported platforms, check if a default Outlook signature is already configured.
+        if (platform != Office.PlatformType.Android && platform != Office.PlatformType.iOS) {
+            item.isClientSignatureEnabledAsync({ asyncContext: { event: event, signature: signature } }, (result) => {
+                if (result.status === Office.AsyncResultStatus.Failed) {
+                    console.log(result.error.message);
+                    return;
+                }
+
+                // Add a signature if there's no default Outlook signature configured.
+                const signatureEnabled = result.value;
+                if (signatureEnabled === false) {
+                    const event = result.asyncContext.event;
+                    const signature = result.asyncContext.signature;
+                    setSignature(signature, event);
+                }
+            });
+        } else {
+            setSignature(signature, event);
+        }
     }
-    
+
     // The OnMessageFromChanged event handler that updates the signature when the email address in the From field is changed.
     function onMessageFromChangedHandler(event) {
         const item = Office.context.mailbox.item;
         const signatureIcon =
         "iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAMAAAC7faEHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAzUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKMFRskAAAAQdFJOUwAQIDBAUGBwgI+fr7/P3+8jGoKKAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABT0lEQVQ4T7XT2ZalIAwF0DAJhMH+/6+tJOQqot6X6joPiouNBo3w9/Hd6+hrYnUt6vhLcjEAJevVW0zJxABSlcunhERpjY+UKoNN5+ZgDGu2onNz0OngjP2FM1VdyBW1LtvGeYrBLs7U5I1PTXZt+zifcS3Icw2GcS3vxRY3Vn/iqx31hUyTnV515kdTfbaNhZLI30AceqDiIo4tyKEmJpKdP5M4um+nUwfDWxAXdzqMNKQ14jLdL5ntXzxcRF440mhS6yu882Kxa30RZcUIjTCJg7lscsR4VsMjfX9Q0Vuv/Wd3YosD1J4LuSRtaL7bzXGN1wx2cytUdncDuhA3fu6HPTiCvpQUIjZ3sCcHVbvLtbNTHlysx2w9/s27m9gEb+7CTri6hR1wcTf2gVf3wBRe3CMbcHYvTODkXhnD0+178K/pZ9+n/C1ru/2HAPwAo7YM1X4+tLMAAAAASUVORK5CYII=";
-    
+
         // Get the currently selected From account.
         item.from.getAsync({ asyncContext: event }, (result) => {
             if (result.status === Office.AsyncResultStatus.Failed) {
                 console.log(result.error.message);
                 return;
             }
-    
+
             // Create a signature based on the currently selected From account.
             const name = result.value.displayName;
             const options = { asyncContext: { event: result.asyncContext, name: name }, isInline: true };
@@ -331,26 +336,30 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
         
                 // Add the created signature to the mail item.
                 const signature = "<img src='cid:signatureIcon.png'>" + result.asyncContext.name;
-                item.body.setSignatureAsync(
-                    signature,
-                    { asyncContext: result.asyncContext.event, coercionType: Office.CoercionType.Html },
-                    addSignatureCallback
-                );
+                const event = result.asyncContext.event;
+                setSignature(signature, event);
             });
         });
     }
-    
-    // Callback function to add a signature to the mail item.
-    function addSignatureCallback(result) {
-        if (result.status === Office.AsyncResultStatus.Failed) {
-            console.log(result.error.message);
-            return;
-        }
-    
-        console.log("Successfully added signature.");
-        result.asyncContext.completed();
+
+    // Sets the custom signature and adds it to the mail item.
+    function setSignature(signature, event) {
+        item.body.setSignatureAsync(
+            signature,
+            { asyncContext: event, coercionType: Office.CoercionType.Html },
+            (result) => {
+                if (result.status === Office.AsyncResultStatus.Failed) {
+                    console.log(result.error.message);
+                    return;
+                }
+
+                console.log("Successfully added signature.");
+                const event = result.asyncContext;
+                event.completed();
+            }
+        );
     }
-    
+
     // IMPORTANT: To ensure your add-in is supported in Outlook, remember to
     // map the event handler name specified in the manifest's LaunchEvent element (with the add-in only manifest)
     // or the "autoRunEvents.events.actionId" property (with the unified manifest for Microsoft 365)
@@ -437,12 +446,13 @@ Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are sup
 In addition to these characteristics, the following aspects also apply when an add-in activates on these events.
 
 - The `OnMessageFromChanged` event is only supported in message compose mode, while the `OnAppointmentFromChanged` event is only supported in appointment compose mode.
-- In Outlook on Windows (new and classic) and on the web, only the `OnMessageFromChanged` event is supported.
-- The `OnMessageFromChanged` and `OnAppointmentFromChanged` events only support Exchange accounts. In messages being composed, the Exchange account is selected from the **From** field dropdown list or manually entered in the field. In appointments being composed, the Exchange account is selected from the organizer field dropdown list. If a user switches to a non-Exchange account in the **From** or organizer field, the Outlook client automatically clears out the signature set by the previously selected account.
-- Delegate and shared mailbox scenarios are supported.
+- In Outlook on the web, on Windows (new and classic), and on mobile devices, only the `OnMessageFromChanged` event is supported.
+- The `OnMessageFromChanged` and `OnAppointmentFromChanged` events only support Exchange accounts. If a user switches to a non-Exchange account in the **From** or organizer field, the Outlook client automatically clears out the signature set by the previously selected account.
+- Depending on your Outlook client, in messages being composed, the Exchange account is selected from the **From** field dropdown list or manually entered in the field. Outlook on mobile devices only supports selecting an account from the **From** field dropdown list. In appointments being composed, the Exchange account is selected from the organizer field dropdown list.
+- In Outlook on the web, on Windows (new and classic), and on Mac, the `OnMessageFromChanged` and `OnAppointmentFromChanged` events support delegate and shared mailbox scenarios. These scenarios aren't supported in Outlook on mobile devices.
 - The `OnAppointmentFromChanged` event isn't supported in [Microsoft 365 group calendars](https://support.microsoft.com/office/0cf1ad68-1034-4306-b367-d75e9818376a#Outlook=Web). If a user switches from their Exchange account to a Microsoft 365 group calendar account in the organizer field, the Outlook client automatically clears out the signature set by the Exchange account.
 - When switching to another Exchange account in the **From** or organizer field, the add-ins for the previously selected account, if any, are terminated, and the add-ins associated with the newly selected account are loaded before the `OnMessageFromChanged` or `OnAppointmentFromChanged` event is initiated.
-- Email account aliases are supported. When an alias for the current account is selected in the **From** or organizer field, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs without reloading the account's add-ins.
+- In Outlook on the web, on Windows (new and classic), and on Mac, email account aliases are supported. When an alias for the current account is selected in the **From** or organizer field, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs without reloading the account's add-ins. Email account aliases aren't supported in Outlook on mobile devices.
 - When the **From** or organizer field dropdown list is opened by mistake or the same account that appears in the **From** or organizer field is reselected, the `OnMessageFromChanged` or `OnAppointmentFromChanged` event occurs, but the account's add-ins aren't terminated or reloaded.
 
 ## See also
