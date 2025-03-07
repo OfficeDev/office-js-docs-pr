@@ -2,7 +2,7 @@
 title: Publish your Office Add-in to Microsoft AppSource
 description: Learn how to publish your Office Add-in to Microsoft AppSource and install the add-in with a Windows app or COM/VSTO add-in.
 ms.topic: concept-article
-ms.date: 11/16/2024
+ms.date: 02/24/2025
 CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft AppSource so that customers can deploy and use my new add-in.
 ---
 
@@ -27,15 +27,26 @@ When your add-in is available in AppSource, there are two further steps you can 
 
 ### Provide an installation link
 
-After you publish to Microsoft AppSource, you can create an installation link to help customers discover and install your add-in. The installation link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in.
+After you publish to Microsoft AppSource, you can create an installation link to help customers discover and install your add-in. The installation link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in. When users select the link, the Office application opens with a new document and your add-in is installed without the need for users to search for it in Microsoft AppSource and install it manually.
 
-The link opens a new Word, Excel, or PowerPoint document in the browser for the signed-in user. Your add-in is automatically loaded in the new document so you can guide users to try your add-in without the need to search for it in Microsoft AppSource and install it manually.
+> [!NOTE]
+> Installation links can only be created for Excel, PowerPoint, and Word add-ins.
+
+There are two styles of links depending on whether you want the Office application to open in Office on the web or on desktop Office.
+
+- [Open in Office on the web](#open-in-office-on-the-web)
+- [Open in Office on Windows or Mac](#open-in-office-on-windows-or-mac)
+
+> [!NOTE]
+> The style of link determines only the platform that opens, not the platforms where the add-in is installed. The add-in is installed on every platform that supports all of the requirement sets that are specified in its manifest. See [Office versions and requirement sets](../develop/office-versions-and-requirement-sets.md).
+
+#### Open in Office on the web
 
 To create the link, use the following URL template as a reference.
 
 `https://go.microsoft.com/fwlink/?linkid={{linkId}}&templateid={{addInId}}&templatetitle={{addInName}}`
 
-Change the three parameters in the previous URL to support your add-in as follows.
+Change the placeholders in the URL as follows.
 
 - **linkId**: Specifies which web endpoint to use when opening the new document.
 
@@ -43,20 +54,46 @@ Change the three parameters in the previous URL to support your add-in as follow
   - For Excel on the web: `2261819`
   - For PowerPoint on the web: `2261820`
 
-  **Note:** Outlook is not supported at this time.
+- **addInId**: The ID of your add-in as listed in AppSource.
+- **addInName**: The full title of your add-in. This must be URL-encoded.
 
-- **templateid**:  The ID of your add-in as listed in Microsoft AppSource.
-- **templatetitle**:  The full title of your add-in. This must be HTML encoded.
-
-For example, if you want to provide an installation link for [Script Lab](https://appsource.microsoft.com/product/office/wa104380862), use the following link.
+For example, the following is an installation link for [Script Lab](https://appsource.microsoft.com/product/office/wa104380862).
 
 [https://go.microsoft.com/fwlink/?linkid=2261819&templateid=WA104380862&templatetitle=Script%20Lab,%20a%20Microsoft%20Garage%20project](https://go.microsoft.com/fwlink/?linkid=2261819&templateid=WA104380862&templatetitle=Script%20Lab,%20a%20Microsoft%20Garage%20project)
 
 The following parameter values are used for the Script Lab installation link.
 
-- **linkid:**  The value `2261819` specifies the Excel endpoint. Script Lab supports Word, Excel, and PowerPoint, so this value can be changed to support different endpoints.
+- **linkid:** The value `2261819` specifies the Excel endpoint. Script Lab supports Word, Excel, and PowerPoint, so this value can be changed to support different endpoints.
 - **templateid:** The value `WA104380862` is the Microsoft AppSource ID for Script Lab.
-- **templatetitle:** The value `Script%20Lab,%20a%20Microsoft%20Garage%20project` which is the HTML encoded value of the title.
+- **templatetitle:** The value `Script%20Lab,%20a%20Microsoft%20Garage%20project` is the URL-encoded value of the title.
+
+#### Open in Office on Windows or Mac
+
+To create the link, use the following URL template as a reference.
+
+`{{appName}}:https://api.addins.store.office.com/addinstemplate/{{language}}/{{correlationID}}/{{addinId}}/none/{{addinName}}.{{fileFormat}}?omexsrctype=1`
+
+Change the placeholders in the URL as follows.
+
+- **appName:** This parameter specifies which Office application is opened when users click the link.
+
+    - For Word: `ms-word`
+    - For Excel: `ms-excel`
+    - For PowerPoint: `ms-powerpoint`
+
+- **language:** This is the language of the add-in. For example: `de-DE`, `ja-JP`, or `zh-CN`.
+- **correlationID:** A GUID for diagnostic purposes. For example, "7bf846ec-905a-5edd-b162-83498f9a8674". Use a GUID generation tool. The diagnostic purpose is defeated if multiple users have the same GUID, so we recommend you to generate it at runtime and make it different per click.
+- **addInId:** The ID of your add-in as listed in AppSource. *This parameter is case-sensitive. Use uppercase letters.*
+- **addInName:** The full name of your add-in. This must be URL-encoded.
+- **fileFormat:** Specifies the format of the file that is created.
+
+    - For Word: `docx`
+    - For Excel: `xlsx`
+    - For PowerPoint: `pptx`
+
+For example, the following is an installation link for Script Lab in Word on Windows with en-US as the language.
+
+`ms-word:https://api.addins.store.office.com/addinstemplate/en-US/228a829b-69d7-45f4-a338-c6aba330ec7e/WA104380862/none/Script%20Lab,%20a%20Microsoft%20Garage%20project.docx?omexsrctype=1`
 
 ### Include the add-in in the installation of a Windows app or COM/VSTO add-in
 
@@ -69,7 +106,7 @@ The following are the basic steps:
 
 #### Join the certification program (recommended)
 
-We recommend that you join the [developer certification program](/microsoft-365-app-certification/docs/certification). Among other things, this will enable your installation program to run smoother. For more information, see the following articles:
+We recommend that you join the [developer certification program](/microsoft-365-app-certification/docs/certification). Among other things, this enables your installation program to run smoother. For more information, see the following articles:
 
 - [Get Started in Partner Center for Microsoft 365, Teams, SaaS, and SharePoint apps](/microsoft-365-app-certification/docs/userguide)
 - [Microsoft 365 App Compliance Program](https://developer.microsoft.com/microsoft-365/app-compliance-program)
@@ -336,7 +373,7 @@ namespace SampleProject
 
 ##### Include privacy terms in your terms & conditions (required for certified developers)
 
-Skip this section if you are not a member of the certification program, but *it is required if you are*.
+Skip this section if you aren't a member of the certification program, but *it is required if you are*.
 
 Include in the installation program code to add an entry like the following example to the Windows Registry.
 
@@ -369,12 +406,12 @@ To implement this, just make two small changes in the code sample in the previou
 
 #### The user's installation experience
 
-When an end user runs your installation executable, their experience with the web add-in installation will depend on two factors.
+When an end user runs your installation executable, their experience with the web add-in installation depends on two factors.
 
 - Whether you're a [certified Microsoft 365 developer](/microsoft-365-app-certification/docs/certification).
 - The security settings made by the user's Microsoft 365 administrator.
 
-If you're certified and the administrator has enabled automatic approval for all apps from certified developers, then the web add-in is installed without the need for any special action by the user after the installation executable is started. If you're not certified or the administrator hasn't granted automatic approval for all apps from certified developers, then the user will be prompted to approve inclusion of the web add-in as part of the overall installation. After installation, the web add-in is available to the user in Office on the web as well as Office on Windows.
+If you're certified and the administrator has enabled automatic approval for all apps from certified developers, then the web add-in is installed without the need for any special action by the user after the installation executable is started. If you're not certified or the administrator hasn't granted automatic approval for all apps from certified developers, then the user is prompted to approve inclusion of the web add-in as part of the overall installation. After installation, the web add-in is available to the user in Office on the web as well as Office on Windows.
 
 If you're combining the installation of a web add-in with a COM/VSTO add-in, you need to think about the relationship between the two. For more information, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 

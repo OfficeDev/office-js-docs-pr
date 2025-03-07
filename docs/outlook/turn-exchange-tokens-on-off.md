@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 02/03/2025
+ms.date: 02/27/2025
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -18,7 +18,7 @@ For more information about deprecation of legacy Exchange Online tokens, see [Ne
 To run the commands you need to connect to Exchange Online PowerShell.
 
 1. Open PowerShell.
-1. Run the command `Import-Module ExchangeOnlineManagement`. For more information about this command, see [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell).
+1. Run the command `Import-Module -Name ExchangeOnlineManagement`. For more information about this command, see [Exchange Online PowerShell](/powershell/exchange/exchange-online-powershell).
 1. To be sure you are on the latest version of the module, run the command `Update-Module -Name ExchangeOnlineManagement`.
 1. Run the command `Connect-ExchangeOnline`. Sign in with your Microsoft 365 administrator credentials.
 
@@ -48,7 +48,7 @@ Important notes about this command.
 - You’ll only be able to turn tokens back on until June 2025 when all legacy tokens in all tenants will be forced off. For more information, see the [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
 - Although the `-Identity` parameter is required, it doesn't affect any specific authentication policy. The command always applies to the entire organization regardless of what value you use. We show the value as `LegacyExchangeTokens` in the examples to keep the intent clear.
 
-## Get the status of legacy Exchange Online tokens
+## Get the status of legacy Exchange Online tokens and add-ins that use them
 
 To view the status of legacy Exchange Online tokens, run the following command.
 
@@ -64,10 +64,35 @@ Blocked: []
 PS C:\>
 ```
 
-> [!NOTE]
-> The previous command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name` don't return the legacy token status.
+We are deploying an update that enables a report of which add-ins requested an Exchange token in the last seven days, and whether the request was allowed or blocked. If your tenant has this update, you'll see a list of requests displayed in the **Allowed** or **Blocked** list. If an add-in was granted the token request, it appears in the **Allowed** list along with the date of the request. If the token request was denied, it appears in the **Blocked** list. It's possible for the same add-in to appear in both lists. This happens if the add-in was allowed to get tokens, but then tokens were turned off. The following example shows an add-in was blocked when it requested a token on February 25th.
 
-This command only shows the legacy token status as set by the administrator. If the administrator has never changed the settings, the command returns `(Not Set)`. If the token status is `(Not Set)` when the February deployment by Microsoft to turn off legacy tokens is implemented, the token status will still be `(Not Set)` even though legacy tokens are off. The following table shows the behavior of legacy Exchange Online tokens based on the token status when the change is applied.
+```console
+PS C:\> Get-AuthenticationPolicy -AllowLegacyExchangeTokens
+AllowLegacyExchangeTokens: False
+Allowed: []
+Blocked:
+[
+        { "49d3b812-abda-45b9-b478-9bc464ce5b9c" : "2025-02-25" }
+]
+PS C:\>
+```
+
+To identify any add-ins that were allowed or blocked Exchange tokens, use the `Get-App` command as shown in the following example.
+
+```console
+PS C:\> Get-App -Identity 49d3b812-abda-45b9-b478-9bc464ce5b9c | Select-Object -Property DisplayName, AppVersion, MarketplaceAssetID, ProviderName
+
+DisplayName            AppVersion MarketplaceAssetID ProviderName
+-----------            ---------- ------------------ ------------
+Script Lab for Outlook 4.0.0.0    WA200001603        Microsoft
+```
+
+The previous Script Lab example uses the **Get a user identity token** sample and the `getUserIdentityTokenAsync` function to make the request.
+
+> [!NOTE]
+> The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.
+
+The `Get-AuthenticationPolicy` command only shows the legacy token status as set by the administrator. If the administrator has never changed the settings, the command returns `(Not Set)`. If the token status is `(Not Set)` when the February deployment by Microsoft to turn off legacy tokens is implemented, the token status will still be `(Not Set)` even though legacy tokens are off. The following table shows the behavior of legacy Exchange Online tokens based on the token status when the change is applied.
 
 | Legacy token admin setting  | Legacy token behavior before February change  | Legacy token behavior after February change | Legacy token behavior after June change |
 |----------|------------|-------------|------------|

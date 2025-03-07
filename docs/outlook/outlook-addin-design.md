@@ -1,7 +1,7 @@
 ---
 title: Outlook add-in design
 description: Guidelines to help you design and build a compelling add-in, which brings the best of your app right into Outlook on the web, on Windows, on Mac, on Android, and on iOS.
-ms.date: 08/12/2021
+ms.date: 02/19/2025
 ms.topic: best-practice
 ms.localizationpriority: high
 ---
@@ -19,6 +19,9 @@ The following high-level guidelines will help you design and build a compelling 
 The best designed add-ins are simple to use, focused, and provide real value to users. Because your add-in will run inside of Outlook, there is additional emphasis placed on this principle. Outlook is a productivity app&mdash;it's where people go to get things done.
 
 Your add-in will be an extension of our experience and it's important to make sure the scenarios you enable feel like a natural fit inside Outlook. Think carefully about which of your common use cases will benefit the most from having hooks to them from within our email and calendaring experiences.
+
+> [!NOTE]
+> [!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availability.md)]
 
 An add-in shouldn't attempt to do everything your app does. The focus should be on the most frequently used, and appropriate, actions in the context of Outlook content. Think about your call to action and make it clear what the user should do when your task pane opens.
 

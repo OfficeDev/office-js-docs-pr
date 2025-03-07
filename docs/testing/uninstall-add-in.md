@@ -2,7 +2,7 @@
 title: Uninstall add-ins under development
 description: Learn how to prevent incomplete uninstallation of add-ins you are developing and how to remove incompletely uninstalled add-ins under development.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 12/28/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -41,10 +41,10 @@ The following list identifies, for each tool, how to uninstall but doesn't descr
 > Some of these tools don't close the Office application that opened automatically. In that case, close the application manually immediately after ending the session. 
 
 - **Yeoman generator for Office Add-ins (Yo Office)**: Use the `npm stop` script at the same command line where you started the session with `npm start`. For more information, see the various articles in the **Get started** and **Quick starts** sections and [Remove a sideloaded add-in](sideload-office-add-ins-for-testing.md).
-- **Teams Toolkit for Visual Studio Code**: Select **Run** | **Stop Debugging** in Visual Studio Code. For more information, see the last step of [Create an Outlook Add-in project](../develop/teams-toolkit-overview.md#create-an-outlook-add-in-project) which also applies to non-Outlook add-ins.
+- **Teams Toolkit for Visual Studio Code**: Select **Run** | **Stop Debugging** in Visual Studio Code. For more information, see the last step of [Create an Outlook Add-in project](../tutorials\outlook-tutorial.md#create-an-outlook-add-in-project) which also applies to non-Outlook add-ins.
 - **Office Add-in Development Kit for Visual Studio Code**: With the Office Add-in Development Kit extension open, select **Stop Previewing Your Office Add-in**. For more information, see [Stop testing your add-in](../develop/development-kit-overview.md?tabs=vscode#stop-testing-your-office-add-in).
-- **office-addin-debugging tool**: Use the `office-addin-debugging stop` command at the same command line where you started the session with `office-addin-debugging start`. For more information, see [Sideload with the Office-Addin-Debugging tool](../develop/convert-xml-to-json-manifest.md#sideload-with-the-office-addin-debugging-tool).
-- **Teams Toolkit CLI**: Use the `teamsapp uninstall` command at the same command line where you started the session with `teamsapp install`. For more information, see [Sideload with the Teams Toolkit CLI](../develop/convert-xml-to-json-manifest.md#sideload-with-the-teams-toolkit-cli-command-line-interface).
+- **office-addin-debugging tool**: Use the `office-addin-debugging stop` command at the same command line where you started the session with `office-addin-debugging start`. For more information, see [Sideload with the Office-Addin-Debugging tool](../testing\sideload-add-in-with-unified-manifest.md#sideload-with-the-office-addin-debugging-tool).
+- **Teams Toolkit CLI**: Use the `teamsapp uninstall` command at the same command line where you started the session with `teamsapp install`. For more information, see [Sideload with the Teams Toolkit CLI](../testing\sideload-add-in-with-unified-manifest.md#sideload-with-the-teams-toolkit-cli-command-line-interface).
 - **Visual Studio**: Select **DEBUG** | **Stop debugging** in the menu, or press <kbd>Shift</kbd>+<kbd>F5</kbd>, or click the square red "stop" button on the debugging bar. Alternatively, closing the Office application also stops the session and uninstalls the add-in. For more information, see [First look at the Visual Studio debugger](/visualstudio/debugger/debugger-feature-tour).
 
 ## Remove a ghost add-in

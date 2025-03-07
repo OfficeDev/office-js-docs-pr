@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 02/04/2025
+ms.date: 02/12/2025
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -157,6 +157,12 @@ A **ribbon** is a command bar that organizes an application's features into a se
 A **runtime** is the host environment (including a JavaScript engine and usually also an HTML rendering engine) that the add-in runs in. In Office on Windows and Office on Mac, the runtime is an embedded browser control (or webview) such as Internet Explorer, Edge Legacy, Edge WebView2, or Safari. Different parts of an add-in run in separate runtimes. For example, add-in commands, custom functions, and task pane code typically use separate runtimes unless you configure a [shared runtime](../testing/runtimes.md#shared-runtime). See [Runtimes in Office Add-ins](../testing/runtimes.md) and [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) for more information.
 
 See also: [custom functions runtime](#custom-functions-runtime), [shared runtime](#shared-runtime), [webview](#webview).
+
+## setless API
+
+An API in the Office JavaScript Library that is not included in any requirement set.
+
+See also [requirement set](#requirement-set).
 
 ## shared runtime
 

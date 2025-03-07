@@ -396,7 +396,7 @@
         },
         {
             "source_path": "docs/design/design-toolkits.md",
-            "redirect_url": "office/dev/add-ins/design/add-in-design-language"
+            "redirect_url": "/office/dev/add-ins/design/add-in-design-language"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
@@ -1297,6 +1297,10 @@
         {
             "source_path": "docs/outlook/use-regular-expressions-to-show-an-outlook-add-in.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/develop/extended-overrides.md",
+            "redirect_url": "/javascript/api/manifest/extendedoverrides"
         },
         {
             "source_path": "docs/outlook/activation-rules.md",

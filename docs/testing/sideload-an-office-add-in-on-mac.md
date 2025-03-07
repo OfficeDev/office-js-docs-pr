@@ -1,13 +1,15 @@
 ---
 title: Sideload Office Add-ins on Mac for testing
 description: Test your Office Add-in on Mac by sideloading.
-ms.date: 02/09/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
 # Sideload Office Add-ins on Mac for testing
 
 To see how your add-in will run on Office on Mac, you can sideload your add-in's manifest. This action won't enable you to set breakpoints and debug your add-in's code while it's running, but you can see how it behaves and verify that the UI is usable and rendering appropriately.
+
+[!INCLUDE [Unified manifest note about platform sideloading restrictions](../includes/unified-manifest-sideload-restrictions-note.md)]
 
 > [!NOTE]
 > To sideload an Outlook add-in, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md).

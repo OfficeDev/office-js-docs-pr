@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 09/26/2024
+ms.date: 02/12/2025
 ms.localizationpriority: high
 ---
 
@@ -21,10 +21,7 @@ One important improvement is the ability to create a single unit of distribution
 
 We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins with a unified manifest for Microsoft 365.
 
-> [!NOTE]
->
-> - The unified manifest currently only supports Outlook add-ins and only in Office linked to a Microsoft 365 subscription and installed on Windows, on a mobile device, or in Outlook on the web. We're working on extending support to Excel, PowerPoint, and Word, as well as to Outlook on Mac, and to perpetual versions of Office.
-> - The unified manifest requires Office Version 2304 (Build 16320.00000) or later.
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 > [!TIP]
 > Ready to get started with the unified manifest? Begin with [Build an Outlook add-in with the unified manifest for Microsoft 365](../quickstarts/outlook-quickstart-json-manifest.md).
@@ -59,7 +56,7 @@ We're working hard to complete reference documentation for the "extensions" prop
 > This table contains only some selected representative descendant properties of "extensions". *It isn't an exhaustive list of all child properties of "extensions".* For the full reference of the unified manifest, see [Unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema). For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 |JSON property|Purpose|
-|:-----|:-----|:-----|:-----|
+|:-----|:-----|
 | "requirements.capabilities" | Identifies the [requirement sets](office-versions-and-requirement-sets.md#office-requirement-sets-availability) that the add-in needs to be installable. |
 | "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. For example, "mail" means the add-in can be installed in Outlook. |
 | "ribbons" | The ribbons that the add-in customizes. |
@@ -70,6 +67,7 @@ We're working hard to complete reference documentation for the "extensions" prop
 | "alternates" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. |
 | "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). |
 | "autoRunEvents" | Configures an event handler for a specified event. |
+| "keyboardShortcuts" (developer preview) | Defines custom keyboard shortcuts or key combinations to run specific actions. |
 
 ## Specify safe domains
 

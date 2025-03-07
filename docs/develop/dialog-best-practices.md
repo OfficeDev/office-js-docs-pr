@@ -1,32 +1,37 @@
 ---
-title: Best practices and rules for the Office dialog API
-description: Provides rules and best practices for the Office dialog API, such as best practices for a single-page application (SPA).
-ms.date: 05/16/2024
+title: Best practices and rules for the Office Dialog API
+description: Provides rules, limitations, and best practices for the Office Dialog API, such as best practices for a single-page application (SPA).
+ms.date: 02/25/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
-# Best practices and rules for the Office dialog API
+# Best practices and rules for the Office Dialog API
 
-This article provides rules, gotchas, and best practices for the Office dialog API, including best practices for designing the UI of a dialog and using the API within a single-page application (SPA).
+This article provides rules, limitations, and best practices for the Office Dialog API, including best practices for designing the UI of a dialog and using the API within a single-page application (SPA).
 
 > [!NOTE]
-> To familiarize yourself with the basics of using the Office dialog API, see [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
+> To familiarize yourself with the basics of using the Office Dialog API, see [Use the Office Dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 >
 > See also [Handling errors and events with the Office dialog box](dialog-handle-errors-events.md).
 
-## Rules and gotchas
+## Rules and limitations
 
-- The dialog box can only navigate to HTTPS URLs, not HTTP.
+- A dialog box can only navigate to HTTPS URLs, not HTTP.
 - The URL passed to the [displayDialogAsync](/javascript/api/office/office.ui) method must be in the exact same domain as the add-in itself. It can't be a subdomain. However, the page that is passed to it can redirect to a page in another domain.
-- A host page can have only one dialog box open at a time. The host page could be either a task pane or the [function file](/javascript/api/manifest/functionfile) of a [function command](../design/add-in-commands.md#types-of-add-in-commands).
+- A host page can have only one dialog box open at a time. The host page could be either a task pane or the [function file](/javascript/api/manifest/functionfile) of a [function command](../design/add-in-commands.md#types-of-add-in-commands). Multiple dialogs can be open at the same time from custom ribbon buttons or menu items.
 - Only two Office APIs can be called in the dialog box,
   - [Office.context.ui.messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1))
   - `Office.context.requirements.isSetSupported` (For more information, see [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md).)
 - The [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function should usually be called from a page in the exact same domain as the add-in itself, but this isn't mandatory. For more information, see [Cross-domain messaging to the host runtime](dialog-api-in-office-add-ins.md#cross-domain-messaging-to-the-host-runtime).
+- When a dialog box opens, it's centered on the screen on top of the Office application.
+- A dialog box can be moved and resized by the user.
+- A dialog box appears in the order in which it was created.
 
   > [!TIP]
   > In Office on the web and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), if the domain of your dialog is different from that of your add-in and it enforces the [Cross-Origin-Opener-Policy: same-origin](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) response header, your add-in will be blocked from accessing messages from the dialog and your users will be shown [error 12006](dialog-handle-errors-events.md#errors-and-events-in-the-dialog-box). To prevent this, you must set the header to `Cross-Origin-Opener-Policy: unsafe-none` or configure your add-in and dialog to be in the same domain.
+
+- In Outlook on the web and new Outlook on Windows, don't set the [window.name](https://developer.mozilla.org/docs/Web/API/Window/name) property when configuring a dialog in your add-in. The `window.name` property is used by these Outlook clients to maintain functionality across page redirects.
 
 ## Best practices
 
@@ -74,29 +79,33 @@ The `close` method doesn't accept a callback parameter, and it doesn't return a 
 
 ```javascript
 function openFirstDialog() {
-  Office.context.ui.displayDialogAsync("https://MyDomain/firstDialog.html", { width: 50, height: 50},
-     (result) => {
-      if(result.status === Office.AsyncResultStatus.Succeeded) {
+  Office.context.ui.displayDialogAsync(
+    "https://MyDomain/firstDialog.html",
+    { width: 50, height: 50 },
+    (result) => {
+      if (result.status === Office.AsyncResultStatus.Succeeded) {
         const dialog = result.value;
         dialog.close();
         openSecondDialog();
       }
       else {
-         // Handle errors
+         // Handle errors.
       }
     }
   );
 }
  
 function openSecondDialog() {
-  Office.context.ui.displayDialogAsync("https://MyDomain/secondDialog.html", { width: 50, height: 50},
+  Office.context.ui.displayDialogAsync(
+    "https://MyDomain/secondDialog.html",
+    { width: 50, height: 50 },
     (result) => {
-      if(result.status === Office.AsyncResultStatus.Failed) {
+      if (result.status === Office.AsyncResultStatus.Failed) {
         if (result.error.code === 12007) {
-          openSecondDialog(); // Recursive call
+          openSecondDialog(); // Recursive call.
         }
         else {
-         // Handle other errors
+         // Handle other errors.
         }
       }
     }
@@ -108,33 +117,39 @@ Alternatively, you could force the code to pause before it tries to open the sec
 
 ```javascript
 function openFirstDialog() {
-  Office.context.ui.displayDialogAsync("https://MyDomain/firstDialog.html", { width: 50, height: 50},
-     (result) => {
-      if(result.status === Office.AsyncResultStatus.Succeeded) {
+  Office.context.ui.displayDialogAsync(
+    "https://MyDomain/firstDialog.html",
+    { width: 50, height: 50 },
+    (result) => {
+      if (result.status === Office.AsyncResultStatus.Succeeded) {
         const dialog = result.value;
         dialog.close();
         setTimeout(() => { 
-          Office.context.ui.displayDialogAsync("https://MyDomain/secondDialog.html", { width: 50, height: 50},
-             (result) => { /* callback body */ }
+          Office.context.ui.displayDialogAsync(
+            "https://MyDomain/secondDialog.html",
+            { width: 50, height: 50 },
+            (result) => {
+              // Callback body.
+            }
           );
         }, 1000);
       }
       else {
-         // Handle errors
+         // Handle errors.
       }
     }
   );
 }
 ```
 
-### Best practices for using the Office dialog API in an SPA
+### Best practices for using the Office Dialog API in an SPA
 
 If your add-in uses client-side routing, as single-page applications (SPAs) typically do, you have the option to pass the URL of a route to the [displayDialogAsync](/javascript/api/office/office.ui) method instead of the URL of a separate HTML page. *We recommend against doing so for the reasons given below.*
 
 > [!NOTE]
 > This article isn't relevant to *server-side* routing, such as in an Express-based web application.
 
-#### Problems with SPAs and the Office dialog API
+#### Problems with SPAs and the Office Dialog API
 
 The Office dialog box is in a new window with its own instance of the JavaScript engine, and hence it's own complete execution context. If you pass a route, your base page and all its initialization and bootstrapping code run again in this new context, and any variables are set to their initial values in the dialog box. So this technique downloads and launches a second instance of your application in the  box window, which partially defeats the purpose of an SPA. In addition, code that changes variables in the dialog box window doesn't change the task pane version of the same variables. Similarly, the dialog box window has its own session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property), which isn't accessible from code in the task pane. The dialog box and the host page on which `displayDialogAsync` was called look like two different clients to your server. (For a reminder of what a host page is, see [Open a dialog box from a host page](dialog-api-in-office-add-ins.md#open-a-dialog-box-from-a-host-page).)
 
@@ -145,4 +160,9 @@ So, if you passed a route to the `displayDialogAsync` method, you wouldn't reall
 Instead of passing a client-side route to the `displayDialogAsync` method, we recommend that you do one of the following:
 
 - If the code that you want to run in the dialog box is sufficiently complex, create two different SPAs explicitly; that is, have two SPAs in different folders of the same domain. One SPA runs in the dialog box and the other in the dialog box's host page where `displayDialogAsync` was called.
-- In most scenarios, only simple logic is needed in the dialog box. In such cases, your project will be greatly simplified by hosting a single HTML page, with embedded or referenced JavaScript, in the domain of your SPA. Pass the URL of the page to the `displayDialogAsync` method. While this means that you are deviating from the literal idea of a single-page app; you don't really have a single instance of an SPA when you are using the Office dialog API.
+- In most scenarios, only simple logic is needed in the dialog box. In such cases, your project will be greatly simplified by hosting a single HTML page, with embedded or referenced JavaScript, in the domain of your SPA. Pass the URL of the page to the `displayDialogAsync` method. While this means that you are deviating from the literal idea of a single-page app; you don't really have a single instance of an SPA when you are using the Office Dialog API.
+
+## See also
+
+- [Use the Office Dialog API in Office Add-ins](dialog-api-in-office-add-ins.md)
+- [Handle errors and events in the Office dialog box](dialog-handle-errors-events.md)
