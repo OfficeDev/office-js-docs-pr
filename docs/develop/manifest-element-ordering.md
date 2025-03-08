@@ -137,8 +137,8 @@ The following sections show the manifest elements in the order in which they mus
     <DefaultSettings>
         <SourceLocation>
             <Override>
-    <RequestedWidth>
-    <RequestedHeight>
+        <RequestedWidth>
+        <RequestedHeight>
     <Permissions>
     <AllowSnapshot>
     <VersionOverrides>*

@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 10/08/2024
+ms.date: 01/09/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -37,7 +37,7 @@ The following tables list client-server combinations that support the `OnMessage
 
 |Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
 |-----|-----|-----|-----|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Not applicable|Not applicable|Not applicable|
 |**Windows (classic)**|Not applicable|Not applicable|Not applicable|
 |**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
@@ -437,7 +437,7 @@ Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are sup
 In addition to these characteristics, the following aspects also apply when an add-in activates on these events.
 
 - The `OnMessageFromChanged` event is only supported in message compose mode, while the `OnAppointmentFromChanged` event is only supported in appointment compose mode.
-- In classic Outlook on Windows, only the `OnMessageFromChanged` event is supported.
+- In Outlook on Windows (new and classic) and on the web, only the `OnMessageFromChanged` event is supported.
 - The `OnMessageFromChanged` and `OnAppointmentFromChanged` events only support Exchange accounts. In messages being composed, the Exchange account is selected from the **From** field dropdown list or manually entered in the field. In appointments being composed, the Exchange account is selected from the organizer field dropdown list. If a user switches to a non-Exchange account in the **From** or organizer field, the Outlook client automatically clears out the signature set by the previously selected account.
 - Delegate and shared mailbox scenarios are supported.
 - The `OnAppointmentFromChanged` event isn't supported in [Microsoft 365 group calendars](https://support.microsoft.com/office/0cf1ad68-1034-4306-b367-d75e9818376a#Outlook=Web). If a user switches from their Exchange account to a Microsoft 365 group calendar account in the organizer field, the Outlook client automatically clears out the signature set by the Exchange account.

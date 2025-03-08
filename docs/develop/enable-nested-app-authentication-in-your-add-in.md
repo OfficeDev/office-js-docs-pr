@@ -1,14 +1,14 @@
 ---
-title: Enable SSO in an Office Add-in using nested app authentication
-description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 12/18/2024
+title: Enable single sign-on in an Office Add-in with nested app authentication
+description: Learn how to enable SSO in an Office Add-in with nested app authentication.
+ms.date: 12/23/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
-# Enable SSO in an Office Add-in using nested app authentication
+# Enable single sign-on in an Office Add-in with nested app authentication
 
-You can use the MSAL.js library with nested app authentication to use SSO from your Office Add-in. Using nested app authentication offers several advantages over the On-Behalf-Of (OBO) flow.
+You can use the MSAL.js library with nested app authentication to use single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
 
 - You only need to use the MSAL.js library and don’t need the `getAccessToken` function in Office.js.
 - You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
@@ -27,7 +27,7 @@ NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identi
 | Word        | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
 
 > [!IMPORTANT]
-> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the [Microsoft 365 Insider Program](https://aka.ms/MSFT365InsiderProgram) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Register your single-page application
 

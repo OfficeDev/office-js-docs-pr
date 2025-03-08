@@ -1,7 +1,7 @@
 ---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 07/03/2024
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -50,6 +50,9 @@ You can have more than one capability object. The following example shows how to
 
 The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application.
 
+> [!TIP]
+> Don't include a capability, formFactor, or scope requirement in a descendant object of "extensions" that's *less* restrictive than the corresponding capability, formFactor, or scope requirement in the ancestor "extensions.requirements" property, if there is one. Since the add-in can't be installed on clients that don't meet the ancestor requirement, no feature filtering would occur anyway. For example, if an "extensions.requirements.capabilities" property requires **Mailbox 1.10**, there's no point in requiring **Mailbox 1.9** in any descendant objects.
+
 ### extensions.alternates.requirements
 
 The "extensions.alternates" property enables add-in developers to do the following:
@@ -61,7 +64,7 @@ The "extensions.alternates" property enables add-in developers to do the followi
 > [!NOTE]
 > Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
 >
-> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then, if the manifest has a valid "alternateIcons" property, an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
+> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
 
 For more information, see [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](/office/dev/add-ins/concepts/duplicate-legacy-metaos-add-ins).
 
@@ -167,6 +170,50 @@ For example, suppose you want to show context menus only in Excel versions that 
 ]
 ```
 
+### extensions.getStartedMessages.requirements
+
+The objects in the `extensions.getStartedMessages` array provide information about an Office Add-in that appears in various places in Office, such as the callout that appears in Office when an Office Add-in is installed. There can be up to three objects in the array. If there's more than one, use the `extensions.getStartedMessages.requirements` property to ensure that no more than one of these objects is used in any given Office client. If `extensions.getStartedMessages` is omitted or all of the objects in the array are filtered out, the callout uses the values from the "name.short" and "description.short" manifest properties instead.
+
+For example, suppose an Excel add-in simplifies the process of adding conditional formatting to ranges. Some of the APIs that the add-in uses were introduced with the **ExcelApi 1.17** requirement set, but the add-in still provides useful functionality that only requires the **ExcelApi 1.6** requirement set. The `extensions.getStartedMessages` array can be configured to provide one description of the add-in for Excel clients that support the requirement sets from **1.6** to **1.16**, but a different description for clients that support **1.17** and later. The following is an example. Note that in this example, if the add-in is configured to be installable on Excel clients that don't support requirement set **1.6**, then on those clients neither of these getStartedMessage objects would be used. Instead, Office would use the "name.short" and "description.short" properties.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "getStartedMessages": [
+            {
+                "title": "Contoso Excel Formatting",
+                "description": "Use conditional formatting with our add-in.",
+                "learnMoreUrl": "https://contoso.com/simple-conditional-formatting-details.html",
+                "requirements": {
+                    "capabilities": [
+                        {
+                            "name": "ExcelApi",
+                            "minVersion": "1.6",
+                            "maxVersion": "1.16"
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Contoso Advanced Excel Formatting",
+                "description": "Use conditional formatting and dynamic formatting changes with our add-in.",
+                "learnMoreUrl": "https://contoso.com/advanced-conditional-formatting-details.html",
+                "requirements": {
+                    "capabilities": [
+                        {
+                            "name": "ExcelApi",
+                            "minVersion": "1.17"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
+```
+
 ### extensions.ribbons.requirements
 
 The "extensions.ribbons" property is used to customize the Office application ribbon when the add-in is installed. The "requirements" subproperty can be used to prevent the customizations in some versions of Office.
@@ -230,3 +277,32 @@ The previous example shown in [extensions.autoRunEvents.requirements](#extension
 ```
 
 Similarly, for the example in [extensions.ribbons.requirements](#extensionsribbonsrequirements), if the action linked to the custom button is the only action configured in a runtime object, then that runtime object should be blocked in the same circumstances in which the ribbon object is blocked.
+
+### extensions.keyboardShortcuts.requirements (developer preview)
+
+The `extensions.keyboardShortcuts` property defines custom keyboard shortcuts or key combinations to run specific actions. To learn how to create custom shortcuts, see [Add custom keyboard shortcuts to your Office Add-ins](../design/keyboard-shortcuts.md).
+
+The "requirements" subproperty can be used to ensure that the custom shortcuts are only available on platforms that support the [SharedRuntime 1.1 API](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets). The following example shows how to configure this in your manifest.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "keyboardShortcuts": [
+            {
+                //Insert details of the keyboard shortcut configuration here.
+
+                "requirements" : {
+                    "capabilities": [
+                        {
+                            "name": "SharedRuntime",
+                            "minVersion": "1.1"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+]
+```

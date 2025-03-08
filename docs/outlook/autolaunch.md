@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 07/17/2024
+ms.date: 01/13/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -35,7 +35,7 @@ The following table lists events that are currently available and the supported 
 |`OnMessageCompose`|messageComposeOpened|On composing a new message (includes reply, reply all, and forward) or editing a draft.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
 |`OnAppointmentOrganizer`|appointmentOrganizerOpened|On creating a new appointment or editing an existing one.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
 |`OnMessageFromChanged`|messageFromChanged|On changing the mail account in the **From** field of a message being composed. To learn more, see [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md).|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
-|`OnAppointmentFromChanged`|appointmentFromChanged|On changing the mail account in the organizer field of an appointment being composed. To learn more, see [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md).|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<br><ul><li>Web browser</li><li>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li><li>New Mac UI</li></ul>|
+|`OnAppointmentFromChanged`|appointmentFromChanged|On changing the mail account in the organizer field of an appointment being composed. To learn more, see [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md).|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<br><ul><li>New Mac UI</li></ul>|
 |`OnSensitivityLabelChanged`|sensitivityLabelChanged|On changing the sensitivity label while composing a message or appointment. To learn how to manage the sensitivity label of a mail item, see [Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md).<br><br>Event-specific data object: [SensitivityLabelChangedEventArgs](/javascript/api/outlook/office.sensitivitylabelchangedeventargs?view=outlook-js-preview&preserve-view=true)|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
 |`OnMessageReadWithCustomAttachment`|Not available|On opening a message that contains a specific attachment type in read mode.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<sup>3</sup><br><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
 |`OnMessageReadWithCustomHeader`|Not available|On opening a message that contains a specific internet header name in read mode.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<sup>3</sup><br><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
@@ -45,7 +45,7 @@ The following table lists events that are currently available and the supported 
 >
 > <sup>2</sup> Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, support is now enabled for additional APIs and features introduced in later requirement sets, such as the `OnNewMessageCompose` event. To learn more, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 >
-> <sup>3</sup> To preview the `OnMessageReadWithCustomAttachment` and `OnMessageReadWithCustomHeader` events, you must install classic Outlook on Windows Version 2312 (Build 17110.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option to access Office beta builds.
+> <sup>3</sup> To preview the `OnMessageReadWithCustomAttachment` and `OnMessageReadWithCustomHeader` events, you must install classic Outlook on Windows Version 2312 (Build 17110.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option to access Office beta builds.
 
 ## Troubleshoot your add-in
 
@@ -74,6 +74,10 @@ If the user has multiple add-ins that subscribe to the same event, the Outlook p
 In all supported Outlook clients, the user must remain on the current mail item where the add-in was activated for it to complete running. Navigating away from the current item (for example, switching to another compose window or tab) terminates the add-in operation. However, an add-in that activates on the `OnMessageSend` event handles item switching differently depending on which Outlook client it's running on. To learn more, see the "User navigates away from current message" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#user-navigates-away-from-current-message).
 
 In addition to item switching, an event-based add-in also ceases operation when the user sends the message or appointment they're composing.
+
+### Event-based add-ins in the new Outlook on Windows
+
+In the new Outlook on Windows, you must keep the main window of the client open for the add-in to process the mail item. If the main window is minimized, the add-in will pause or stop working.
 
 ### Event-based add-ins in classic Outlook on Windows
 

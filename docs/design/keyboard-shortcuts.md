@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 12/05/2024
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,9 +12,9 @@ Keyboard shortcuts, also known as key combinations, make it possible for your ad
 
 There are three steps to add keyboard shortcuts to an add-in.
 
-1. [Configure the add-in's manifest](#configure-the-manifest).
-1. [Create or edit the shortcuts JSON file](#create-or-edit-the-shortcuts-json-file) to define actions and their keyboard shortcuts.
-1. [Map custom actions to their functions](#map-custom-actions-to-their-functions) using the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) API.
+1. [Configure the add-in's manifest to use a shared runtime](#define-custom-keyboard-shortcuts).
+1. [Define custom keyboard shortcuts](#define-custom-keyboard-shortcuts) and the actions they'll run.
+1. [Map custom actions to their functions](#map-custom-actions-to-their-functions) using the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API.
 
 ## Prerequisites
 
@@ -39,31 +39,102 @@ Additionally, keyboard shortcuts only work on platforms that support the followi
 > [!TIP]
 > To start with a working version of an add-in with keyboard shortcuts already configured, clone and run the [Use keyboard shortcuts for Office Add-in actions](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keyboard-shortcuts) sample. When you're ready to add keyboard shortcuts to your own add-in, continue with this article.
 
-## Configure the manifest
+## Define custom keyboard shortcuts
 
-There are two small changes to make to the manifest. One is to enable the add-in to use a shared runtime and the other is to point to a JSON-formatted file where you defined the keyboard shortcuts.
+The process to define custom keyboard shortcuts for your add-in varies depending on the type of manifest your add-in uses. Select the tab for the type of manifest you're using.
 
-### Configure the add-in to use a shared runtime
+> [!TIP]
+> To learn more about manifests for Office Add-ins, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
-Adding custom keyboard shortcuts requires your add-in to use the [shared runtime](../testing/runtimes.md#shared-runtime). For more information, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+# [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
-### Link the mapping file to the manifest
+> [!NOTE]
+> Implementing keyboard shortcuts with the unified app manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
-Immediately *below* (not inside) the **\<VersionOverrides\>** element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of a JSON file in your project that you'll create in a later step.
+If your add-in uses the unified app manifest for Microsoft 365, custom keyboard shortcuts and their actions are defined in the manifest.
 
-```xml
-    ...
-    </VersionOverrides>  
-    <ExtendedOverrides Url="https://contoso.com/addin/shortcuts.json"></ExtendedOverrides>
-</OfficeApp>
-```
+1. In your add-in project, open the **manifest.json** file.
+1. Add the following object to the "extensions.runtimes" array. Note the following about this markup.
+    - The "actions" objects specify the functions your add-in can run. In the following example, an add-in will be able to show and hide a task pane. You'll create these functions in a later section. Currently, custom keyboard shortcuts can only run actions that are of type "executeFunction".
+    - While the "actions.displayName" property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
 
-## Create or edit the shortcuts JSON file
+    ```json
+    "runtimes": [
+        {
+            "id": "TaskPaneRuntime",
+            "type": "general",
+            "code": {
+                "page": "https://localhost:3000/taskpane.html"
+            },
+            "lifetime": "long",
+            "actions": [
+                {
+                    "id": "ShowTaskpane",
+                    "type": "executeFunction",
+                    "displayName": "Show task pane (Contoso Add-in)"
+                },
+                {
+                    "id": "HideTaskpane",
+                    "type": "executeFunction",
+                    "displayName": "Hide task pane (Contoso Add-in)"
+                }
+            ],
+        }
+    ]
+    ```
 
-Custom keyboard shortcuts are defined in a JSON file. This file describes your keyboard shortcuts and the actions that they'll invoke. The complete schema for the JSON file is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+1. Add the following to the "extensions" array. Note the following about the markup.
+    - The SharedRuntime 1.1 requirement set is specified in the "requirements.capabilities" object to support custom keyboard shortcuts.
+    - Each "shortcuts" object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
+    - A default key combination must be specified. It's used on all supported platforms if there isn't a specific combination configured for a particular platform.
+    - The value of the "actionId" property must match the value specified in the "id" property of the applicable "extensions.runtimes.actions" object.
 
-1. In your add-in project, create a JSON file. Be sure the path of the file matches the location you specified for the `Url` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element.
+    ```json
+    "keyboardShortcuts": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "SharedRuntime",
+                        "minVersion": "1.1"
+                    }
+                ]
+            },
+            "shortcuts": [
+                {
+                    "key": {
+                        "default": "Ctrl+Alt+Up",
+                        "mac": "Command+Shift+Up",
+                        "web": "Ctrl+Alt+1",
+                        "windows": "Ctrl+Alt+Up"
+                    },
+                    "actionId": "ShowTaskpane"
+                },
+                {
+                    "key": {
+                        "default": "Ctrl+Alt+Down",
+                        "mac": "Command+Shift+Down",
+                        "web": "Ctrl+Alt+2",
+                        "windows": "Ctrl+Alt+Up"
+                    },
+                    "actionId": "HideTaskpane"
+                }
+            ]
+        }
+    ]
+    ```
 
+# [Add-in only manifest](#tab/xmlmanifest)
+
+### Configure the manifest to use a shared runtime
+
+To customize keyboard shortcuts for your add-in, you must first configure the add-in manifest to use a [shared runtime](../testing/runtimes.md#shared-runtime). For guidance on how to configure your add-in to use a shared runtime, see [Configure an add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+
+### Create or edit the shortcuts JSON file
+
+If your add-in uses an add-in only manifest, custom keyboard shortcuts are defined in a JSON file. This file describes your keyboard shortcuts and the actions that they'll invoke. The complete schema for the JSON file is at [extended-manifest.schema.json](https://developer.microsoft.com/json-schemas/office-js/extended-manifest.schema.json).
+
+1. In your add-in project, create a JSON file.
 1. Add the following markup to the file. Note the following about the code.
     - The "actions" array contains objects that define the actions to be invoked. The "actions.id" and "actions.name" properties are required.
     - The "actions.id" property uniquely identifies the action to invoke using a keyboard shortcut.
@@ -114,22 +185,37 @@ Custom keyboard shortcuts are defined in a JSON file. This file describes your k
     }
     ```
 
+### Link the mapping file to the manifest
+
+1. In your add-in project, open the **manifest.xml** file.
+1. Immediately *below* (not inside) the **\<VersionOverrides\>** element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of the JSON file you created in a previous step.
+
+```xml
+    ...
+    </VersionOverrides>
+    <ExtendedOverrides Url="https://contoso.com/addin/shortcuts.json"></ExtendedOverrides>
+</OfficeApp>
+```
+
+---
+
 ## Map custom actions to their functions
 
 1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
-1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) API to map each action that you specified in the JSON file to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
-
-    - The first parameter is one of the actions from the JSON file.
-    - The second parameter is the function that runs when a user presses the key combination that's mapped to the action in the JSON file.
+1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action you specified in an earlier step to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
+    - The first parameter is the name of an action that you mapped to a keyboard shortcut. The location of the name of the action depends on the type of manifest your add-in uses.
+        - **Unified app manifest for Microsoft 365**: The value of the "extensions.keyboardShortcuts.shortcuts.actionId" property in the **manifest.json** file.
+        - **Add-in only manifest**: The value of the "actions.id" property in the shortcuts JSON file.
+    - The second parameter is the function that runs when a user presses the key combination that's mapped to an action.
 
     ```javascript
-    Office.actions.associate("ShowTaskpane", () => {
-        return Office.addin.showAsTaskpane()
-            .then(() => {
+    Office.actions.associate("ShowTaskpane", () => {
+        return Office.addin.showAsTaskpane()
+            .then(() => {
                 return;
             })
-            .catch((error) => {
-                return error.code;
+            .catch((error) => {
+                return error.code;
             });
     });
     ```
@@ -150,32 +236,34 @@ Custom keyboard shortcuts are defined in a JSON file. This file describes your k
 
 Use the following guidelines to create custom key combinations for your add-ins.
 
-- A keyboard shortcut must include at least one modifier key (Alt/Option, Ctrl/Command, Shift) and only one other key. These keys must be joined with a `+` character.
-- The Command modifier key is supported on the macOS platform.
-- On macOS, the Alt key is mapped to the Option key. On Windows, the Command key is mapped to the Ctrl key.
-- The Shift key can't be used as the only modifier key. It must be combined with either Alt/Option or Ctrl/Command.
+- A keyboard shortcut must include at least one modifier key (<kbd>Alt</kbd>/<kbd>Option</kbd>, <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>, <kbd>Shift</kbd>) and only one other key. These keys must be joined with a `+` character.
+- The <kbd>Cmd</kbd> modifier key is supported on the macOS platform.
+- On macOS, the <kbd>Alt</kbd> key is mapped to the <kbd>Option</kbd> key. On Windows, the <kbd>Cmd</kbd> key is mapped to the <kbd>Ctrl</kbd> key.
+- The <kbd>Shift</kbd> key can't be used as the only modifier key. It must be combined with either <kbd>Alt</kbd>/<kbd>Option</kbd> or <kbd>Ctrl</kbd>/<kbd>Cmd</kbd>.
 - Key combinations can include characters "A-Z", "a-z", "0-9", and the punctuation marks "-", "_", and "+". By convention, lowercase letters aren't used in keyboard shortcuts.
-- When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, Alt+a and Alt+A are the same shortcut, as well as Ctrl+- and Ctrl+\_ ("-" and "_" are linked to the same physical key).
+- When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, <kbd>Alt</kbd>+<kbd>a</kbd> and <kbd>Alt</kbd>+<kbd>A</kbd> are the same shortcut, as well as <kbd>Ctrl</kbd>+<kbd>-</kbd> and <kbd>Ctrl</kbd>+<kbd>\_</kbd> ("-" and "_" are linked to the same physical key).
 
 > [!NOTE]
-> Custom keyboard shortcuts must be pressed simultaneously. KeyTips, also known as sequential key shortcuts (for example, Alt+H, H), aren't supported in Office Add-ins.
+> Custom keyboard shortcuts must be pressed simultaneously. KeyTips, also known as sequential key shortcuts (for example, <kbd>Alt</kbd>+<kbd>H</kbd>, <kbd>H</kbd>), aren't supported in Office Add-ins.
 
-### Browser shortcuts that cannot be overridden
+### Browser shortcuts that can't be overridden
 
 When using custom keyboard shortcuts on the web, some keyboard shortcuts that are used by the browser can't be overridden by add-ins. The following list is a work in progress. If you discover other combinations that can't be overridden, please let us know by using the feedback tool at the bottom of this page.
 
-- Ctrl+N
-- Ctrl+Shift+N
-- Ctrl+T
-- Ctrl+Shift+T
-- Ctrl+W
-- Ctrl+PgUp/PgDn
+- <kbd>Ctrl</kbd>+<kbd>N</kbd>
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd>
+- <kbd>Ctrl</kbd>+<kbd>T</kbd>
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>
+- <kbd>Ctrl</kbd>+<kbd>W</kbd>
+- <kbd>Ctrl</kbd>+<kbd>PgUp</kbd>/<kbd>PgDn</kbd>
 
 ### Avoid key combinations in use by other add-ins
 
 There are many keyboard shortcuts that are already in use by Microsoft 365. Avoid registering keyboard shortcuts for your add-in that are already in use. However, there may be some instances where it's necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
-In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut. Note that the text for the add-in option that's displayed in this dialog comes from the "actions.name" property in the shortcuts JSON file.
+In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut. Note that the source of the text for the add-in option that's displayed in this dialog varies depending on the type of manifest your add-in uses.
+    - **Unified app manifest for Microsoft 365**: The value of the "extensions.runtimes.actions.displayName" property in the **manifest.json** file.
+    - **Add-in only manifest**: The value of the "actions.name" property in the shortcuts JSON file.
 
 ![A conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
 
@@ -185,11 +273,11 @@ The user can select which action the keyboard shortcut will take. After making t
 
 For the best user experience, we recommend that you minimize keyboard shortcut conflicts with these good practices.
 
-- Use only keyboard shortcuts with the following pattern: **Ctrl+Shift+Alt+*x***, where *x* is some other key.
+- Use only keyboard shortcuts with the following pattern: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+*x*, where *x* is some other key.
 - Avoid using established keyboard shortcuts in Excel and Word. For a list, see the following:
   - [Keyboard shortcuts in Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
   - [Keyboard shortcuts in Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
-- When the keyboard focus is inside the add-in UI, **Ctrl+Spacebar** and **Ctrl+Shift+F10** won't work as these are essential accessibility shortcuts.
+- When the keyboard focus is inside the add-in UI, <kbd>Ctrl</kbd>+<kbd>Space</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F10</kbd> won't work as these are essential accessibility shortcuts.
 - On a Windows or Mac computer, if the **Reset Office Add-ins shortcut preferences** command isn't available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
 
 ## Localize the description of a keyboard shortcut
@@ -199,7 +287,108 @@ You may need to localize your custom keyboard shortcuts in the following scenari
 - Your add-in supports multiple locales.
 - Your add-in supports different alphabets, writing systems, or keyboard layouts.
 
-For information about how to localize the keyboard shortcuts JSON, see [Localize extended overrides](../develop/localization.md#localize-extended-overrides).
+Guidance on how to localize your keyboard shortcuts varies depending on the type of manifest your add-in uses.
+
+# [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
+
+To learn how to localize your custom keyboard shortcuts with the unified app manifest for Microsoft 365, see [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization).
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+Use the `ResourceUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Microsoft 365 to a file of localized resources. The following is an example.
+
+```xml
+    ...
+    </VersionOverrides>  
+    <ExtendedOverrides Url="https://contoso.com/addin/extended-overrides.json" 
+                       ResourceUrl="https://contoso.com/addin/my-resources.json">
+    </ExtendedOverrides>
+</OfficeApp>
+```
+
+The extended overrides file then uses tokens instead of strings. The tokens name strings in the resource file. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note about this markup:
+
+- The example isn't quite valid. (We add a required additional property to it in a later step.)
+- The tokens must have the format **${resource.*name-of-resource*}**.
+
+```json
+{
+    "actions": [
+        {
+            "id": "ShowTaskpane",
+            "type": "ExecuteFunction",
+            "name": "${resource.ShowTaskpane_action_name}"
+        }
+    ],
+    "shortcuts": [
+        {
+            "action": "ShowTaskpane",
+            "key": {
+                "default": "${resource.ShowTaskpane_default_shortcut}"
+            }
+        }
+    ] 
+}
+```
+
+The resource file, which is also JSON-formatted, has a top-level `resources` property that's divided into subproperties by locale. For each locale, a string is assigned to each token that was used in the extended overrides file. The following is an example which has strings for `en-us` and `fr-fr`. In this example, the keyboard shortcut is the same in both locales, but that won't always be the case, especially when you are localizing for locales that have a different alphabet or writing system, and hence a different keyboard.
+
+```json
+{
+    "resources":{ 
+        "en-us": { 
+            "ShowTaskpane_default_shortcut": { 
+                "value": "CTRL+SHIFT+A", 
+            }, 
+            "ShowTaskpane_action_name": {
+                "value": "Show task pane for add-in",
+            }, 
+        },
+        "fr-fr": { 
+            "ShowTaskpane_default_shortcut": { 
+                "value": "CTRL+SHIFT+A", 
+            }, 
+            "ShowTaskpane_action_name": {
+                "value": "Afficher le volet de tâche pour add-in",
+              } 
+        }
+    }
+}
+```
+
+There is no `default` property in the file that's a peer to the `en-us` and `fr-fr` sections. This is because the default strings, which are used when the locale of the Microsoft 365 host application doesn't match any of the *ll-cc* properties in the resources file, *must be defined in the extended overrides file itself*. Defining the default strings directly in the extended overrides file ensures that Microsoft 365 doesn't download the resource file when the locale of the Microsoft 365 application matches the default locale of the add-in (as specified in the manifest). The following is a corrected version of the preceding example of an extended overrides file that uses resource tokens.
+
+```json
+{
+    "actions": [
+        {
+            "id": "ShowTaskpane",
+            "type": "ExecuteFunction",
+            "name": "${resource.ShowTaskpane_action_name}"
+        }
+    ],
+    "shortcuts": [
+        {
+            "action": "ShowTaskpane",
+            "key": {
+                "default": "${resource.ShowTaskpane_default_shortcut}"
+            }
+        }
+    ],
+    "resources": { 
+        "default": { 
+            "ShowTaskpane_default_shortcut": { 
+                "value": "CTRL+SHIFT+A", 
+            }, 
+            "ShowTaskpane_action_name": {
+                "value": "Show task pane for add-in",
+            } 
+        }
+    }
+}
+```
+
+---
 
 ## Turn on shortcut customization for specific users
 
@@ -233,19 +422,20 @@ To find out what shortcuts are already in use for the user, call the [Office.act
 
 - If there was a conflict with the shortcut and the user has chosen to use a different action (either native or another add-in) for that keyboard combination, the value returned will be `null` since the shortcut has been overridden and there's no keyboard combination the user can currently use to invoke that add-in action.
 - If the shortcut has been customized using the [Office.actions.replaceShortcuts](/javascript/api/office/office.actions#office-office-actions-replaceshortcuts-member) method, the value returned will be the customized keyboard combination.
-- If the shortcut hasn't been overridden or customized, it will return the value from the add-in's extended manifest JSON.
+- If the shortcut hasn't been overridden or customized, the value returned varies depending on the type of manifest the add-in uses.
+  - **Unified app manifest for Microsoft 365**: The shortcut specified in the **manifest.json** file of the add-in.
+  - **Add-in only manifest**: The shortcut specified in the shortcuts JSON file of the add-in.
 
 The following is an example.
 
 ```javascript
 Office.actions.getShortcuts()
-    .then(function (userShortcuts) {
+    .then((userShortcuts) => {
        for (const action in userShortcuts) {
            let shortcut = userShortcuts[action];
            console.log(action + ": " + shortcut);
        }
     });
-
 ```
 
 As described in [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins), it's a good practice to avoid conflicts in shortcuts. To discover if one or more key combinations are already in use, pass them as an array of strings to the [Office.actions.areShortcutsInUse](/javascript/api/office/office.actions#office-office-actions-areshortcutsinuse-member) method. The method returns a report containing key combinations that are already in use in the form of an array of objects of type `{shortcut: string, inUse: boolean}`. The `shortcut` property is a key combination, such as "Ctrl+Shift+1". If the combination is already registered to another action, the `inUse` property is set to `true`. For example, `[{shortcut: "Ctrl+Shift+1", inUse: true}, {shortcut: "Ctrl+Shift+2", inUse: false}]`. The following code snippet is an example.

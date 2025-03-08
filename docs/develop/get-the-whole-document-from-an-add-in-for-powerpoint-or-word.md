@@ -1,7 +1,7 @@
 ---
 title: Get the whole document from an add-in for PowerPoint or Word
 description: Learn to get the whole document from a PowerPoint or Word add-in.
-ms.date: 10/03/2024
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -22,7 +22,7 @@ This article assumes that you are using a text editor to create the task pane ad
 
   - A CSS file (**Program.css**) to contain the styles and formatting for the add-in.
 
-- An add-in only manifest file (**GetDoc_App.xml**) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
+- A manifest file (**GetDoc_App.xml** or **GetDoc_App.json**) for the add-in, available on a shared network folder or add-in catalog. The manifest file must point to the location of the HTML file mentioned previously.
 
 Alternatively, you can create an add-in for your Office application using one of the following options. You won't have to create new files as the equivalent of each required file will be available for you to update. For example, the Yeoman generator options include **./src/taskpane/taskpane.html**, **./src/taskpane/taskpane.js**, **./src/taskpane/taskpane.css**, and **./manifest.xml**.
 
@@ -41,33 +41,114 @@ Before you begin creating this add-in for PowerPoint or Word, you should be fami
 
 The manifest file for an Office Add-in provides important information about the add-in: what applications can host it, the location of the HTML file, the add-in title and description, and many other characteristics.
 
-1. In a text editor, add the following code to the manifest file.
+In a text editor, add the following code to the manifest file. If you're using a Visual Studio project, select the "Add-in only manifest" option.
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8" ?>
-    <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:type="TaskPaneApp">
-        <Id>[Replace_With_Your_GUID]</Id>
-        <Version>1.0</Version>
-        <ProviderName>[Provider Name]</ProviderName>
-        <DefaultLocale>EN-US</DefaultLocale>
-        <DisplayName DefaultValue="Get Doc add-in" />
-        <Description DefaultValue="My get PowerPoint or Word document add-in." />
-        <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
-        <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
-        <Hosts>
-            <Host Name="Document" />
-            <Host Name="Presentation" />
-        </Hosts>
-        <DefaultSettings>
-            <SourceLocation DefaultValue="[Network location of app]/GetDoc_App.html" />
-        </DefaultSettings>
-        <Permissions>ReadWriteDocument</Permissions>
-    </OfficeApp>
-    ```
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. Save the file as **GetDoc_App.xml** using UTF-8 encoding to a network location or to an add-in catalog.
+> [!NOTE]
+> The unified manifest is generally available for production Outlook add-ins. It's available only for preview in Excel, PowerPoint, and Word add-ins.
+
+```json
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json#",
+    "manifestVersion": "devPreview",
+    "version": "1.0.0.0",
+    "id": "[Replace_With_Your_GUID]",
+    "localizationInfo": {
+        "defaultLanguageTag": "en-us"
+    },
+    "developer": {
+        "name": "[Provider Name e.g., Contoso]",
+        "websiteUrl": "[Insert the URL for the app e.g., https://www.contoso.com]",
+        "privacyUrl": "[Insert the URL of a page that provides privacy information for the app e.g., https://www.contoso.com/privacy]",
+        "termsOfUseUrl": "[Insert the URL of a page that provides terms of use for the app e.g., https://www.contoso.com/servicesagreement]"
+    },
+    "name": {
+        "short": "Get Doc add-in",
+        "full": "Get Doc add-in"
+    },
+    "description": {
+        "short": "My get PowerPoint or Word document add-in.",
+        "full": "My get PowerPoint or Word document add-in."
+    },
+    "icons": {
+        "outline": "_layouts/images/general/office_logo.jpg",
+        "color": "_layouts/images/general/office_logo.jpg"
+    },
+    "accentColor": "#230201",
+    "validDomains": [
+        "https://www.contoso.com"
+    ],
+    "showLoadingIndicator": false,
+    "isFullScreen": false,
+    "defaultBlockUntilAdminAction": false,
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "Document.ReadWrite.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    "extensions": [
+        {
+            "requirements": {
+                "scopes": [
+                    "document",
+                    "presentation"
+                ]
+            },
+            "alternates": [
+                {
+                    "alternateIcons": {
+                        "icon": {
+                            "size": 32,
+                            "url": "http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"
+                        },
+                        "highResolutionIcon": {
+                            "size": 64,
+                            "url": "http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:type="TaskPaneApp">
+    <Id>[Replace_With_Your_GUID]</Id>
+    <Version>1.0</Version>
+    <ProviderName>[Provider Name]</ProviderName>
+    <DefaultLocale>EN-US</DefaultLocale>
+    <DisplayName DefaultValue="Get Doc add-in" />
+    <Description DefaultValue="My get PowerPoint or Word document add-in." />
+    <IconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+    <HighResolutionIconUrl DefaultValue="http://officeimg.vo.msecnd.net/_layouts/images/general/office_logo.jpg" />
+    <SupportUrl DefaultValue="[Insert the URL of a page that provides support information for the app]" />
+    <Hosts>
+        <Host Name="Document" />
+        <Host Name="Presentation" />
+    </Hosts>
+    <DefaultSettings>
+        <SourceLocation DefaultValue="[Network location of app]/GetDoc_App.html" />
+    </DefaultSettings>
+    <Permissions>ReadWriteDocument</Permissions>
+</OfficeApp>
+```
+
+Save the file as **GetDoc_App.xml** using UTF-8 encoding to a network location or to an add-in catalog.
+
+---
 
 ## Create the user interface for the add-in
 
@@ -88,7 +169,7 @@ Use the following procedure to create a simple user interface for the add-in tha
             <title>Publish presentation</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
             <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
-            <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
             <script src="GetDoc_App.js"></script>
         </head>
         <body>
@@ -116,7 +197,7 @@ Use the following procedure to create a simple user interface for the add-in tha
             <title>Publish document</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
             <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
-            <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
             <script src="GetDoc_App.js"></script>
         </head>
         <body>

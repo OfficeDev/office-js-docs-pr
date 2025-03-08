@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 08/24/2024
+ms.date: 02/18/2025
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -89,7 +89,7 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
 ## Next steps
 
-Congratulations, you've successfully created your first Outlook task pane add-in! Next, learn more about the capabilities of an Outlook add-in and build a more complex add-in by following along with the [Outlook add-in tutorial](../tutorials/outlook-tutorial.md).
+Congratulations, you've successfully created your first Outlook task pane add-in! Next, explore more capabilities of an Outlook add-in by following along with the [Outlook add-in tutorial](../tutorials/outlook-tutorial.md). In the tutorial, you'll build a more complex add-in that incorporates a task pane, which you've learned about in the quick start. Additionally, you'll create a button that invokes a UI-less function.
 
 [!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 

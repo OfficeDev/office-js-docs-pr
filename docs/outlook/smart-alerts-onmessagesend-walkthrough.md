@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 01/09/2025
+ms.date: 03/11/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -540,7 +540,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
           }
 
           let body = attachResult.asyncContext;
-          body = body.replace("<p class=MsoNormal>", `<p class=MsoNormal><img src="cid:sample.png">`);
+          body += '<img src="cid:sample.png" />';
           mailItem.body.setAsync(body, { coercionType: Office.CoercionType.Html }, (setResult) => {
             if (setResult.status === Office.AsyncResultStatus.Failed) {
               console.log(setResult.error.message);

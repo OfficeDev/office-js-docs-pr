@@ -94,9 +94,15 @@ items:
       - name: Reference Office.js
         href: develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md
       - name: Specify Office applications and API requirements
-        href: develop/specify-office-hosts-and-api-requirements.md
-      - name: Understand and use platform-specific requirement sets
-        href: develop/platform-specific-requirement-sets.md
+        items: 
+        - name: Specify Office applications and API requirements with the unified manifest
+          href: develop/specify-office-hosts-and-api-requirements-unified.md
+        - name: Specify Office applications and API requirements with the add-in only manifest
+          href: develop/specify-office-hosts-and-api-requirements.md
+        - name: Understand and use platform-specific requirment sets
+          href: develop/platform-specific-requirement-sets.md
+        - name: Check for API availability at runtime
+          href: develop/specify-api-requirements-runtime.md
       - name: Load sequence of an Office Add-in
         href: develop/loading-the-dom-and-runtime-environment.md
       - name: Initialize your add-in
@@ -116,21 +122,25 @@ items:
       items:
       - name: Overview
         href: develop/add-in-manifests.md
-      - name: Office Add-ins with the add-in only manifest
-        href: develop/xml-manifest-overview.md
-      - name: Office Add-ins with the unified manifest for Microsoft 365
-        href: develop/unified-manifest-overview.md
-      - name: Compare the add-in only manifest with the unified manifest for Microsoft 365
-        href: develop/json-manifest-overview.md
-      - name: Convert an add-in to use the unified manifest for Microsoft 365
-        href: develop/convert-xml-to-json-manifest.md
-      - name: Add-in only manifest reference
-        href: reference/manifest-reference.md
-      - name: Extended overrides
-        href: develop/extended-overrides.md
-      - name: Find the proper order of manifest elements
-        href: develop/manifest-element-ordering.md
-        displayName: manifest
+      - name: Unified manifest for Microsoft 365
+        items: 
+        - name: Office Add-ins with the unified manifest for Microsoft 365
+          href: develop/unified-manifest-overview.md
+        - name: Compare the add-in only manifest with the unified manifest for Microsoft 365
+          href: develop/json-manifest-overview.md
+        - name: Convert an add-in to use the unified manifest for Microsoft 365
+          href: develop/convert-xml-to-json-manifest.md
+      - name: Add-in only manifest
+        items:
+        - name: Office Add-ins with the add-in only manifest
+          href: develop/xml-manifest-overview.md
+        - name: Add-in only manifest reference
+          href: reference/manifest-reference.md
+        - name: Find the proper order of manifest elements
+          href: develop/manifest-element-ordering.md
+        - name: Update API and manifest version
+          href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
+          displayName: manifest
     - name: Privacy, security, and storage
       items:
       - name: Overview of add-in privacy and security
@@ -231,8 +241,6 @@ items:
               displayName: first run experience
           - name: Navigation
             href: design/navigation-patterns.md
-      - name: Design toolkits
-        href: design/design-toolkits.md
       - name: Interface elements
         items:
         - name: Overview
@@ -247,7 +255,7 @@ items:
             href: develop/create-addin-commands-unified-manifest.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
-          - name: Enable and Disable Add-in Commands
+          - name: Change the availability of add-in commands
             href: design/disable-add-in-commands.md
           - name: Integrate built-in Office buttons into custom tabs
             href: design/built-in-button-integration.md
@@ -313,6 +321,8 @@ items:
       displayName: debug
     - name: Windows
       items:
+      - name: Sideload Office Add-ins that use the unified manifest for Microsoft 365
+        href: testing/sideload-add-in-with-unified-manifest.md
       - name: Sideload Office Add-ins on Windows from a network share
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
@@ -350,6 +360,9 @@ items:
     - name: Clear the Office cache
       href: testing/clear-cache.md
       displayName: uninstall, sideload
+    - name: Uninstall add-in under development
+      href: testing/uninstall-add-in.md
+      displayName: uninstall
     - name: Debug with runtime logging
       href: testing/runtime-logging.md
     - name: Debug a function command with a non-shared runtime
@@ -580,6 +593,9 @@ items:
       - name: Share custom function data with the task pane
         href: tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md
         displayName: Excel, Custom Functions
+    - name: Best practices
+      href: excel/custom-functions-get-started.md
+      displayName: Excel, Custom Functions
     - name: Naming and localization
       href: excel/custom-functions-naming.md
       displayName: Excel, Custom Functions

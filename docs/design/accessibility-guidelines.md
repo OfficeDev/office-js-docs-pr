@@ -17,7 +17,7 @@ Apply the following guidelines to ensure that your solution is accessible to all
 
 ## Design for multiple input methods
 
-- Ensure that users can perform operations by using only the keyboard. Users should be able to move to all actionable elements on the page by using a combination of the Tab and arrow keys.
+- Ensure that users can perform operations by using only the keyboard. Users should be able to move to all actionable elements on the page by using a combination of the <kbd>Tab</kbd> and arrow keys.
 - On a mobile device, when users operate a control by touch, the device should provide useful audio feedback.
 - Provide helpful labels for all interactive controls.
 - [Explore more design and UI resources.](/windows/apps/design/accessibility/accessibility)
