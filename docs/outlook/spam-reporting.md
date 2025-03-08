@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 02/27/2025
+ms.date: 03/11/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -65,18 +65,18 @@ Select the tab for the type of manifest you're using.
 
 > [!NOTE]
 >
-> - Implementing integrated spam reporting with the unified manifest for Microsoft 365 is in public developer preview. It's currently only available to use in classic Outlook on Windows. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> - Implementing integrated spam reporting with the unified manifest for Microsoft 365 is currently only available in classic Outlook on Windows. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema/?view=m365-app-1.20&preserve-view=true).
 >
 > - Features in preview, such as the ["Don't show me this message again" dialog option](#suppress-the-preprocessing-dialog-preview) and the [option to open a task pane from the `event.completed` method](#open-a-task-pane-after-reporting-a-message-preview), aren't currently supported in a spam-reporting add-in with a unified manifest for Microsoft 365. To test these features, use the add-in only manifest.
 
 1. In your preferred code editor, open the add-in project you created.
 1. Open the **manifest.json** file.
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup.
-   - The "minVersion" of the Mailbox requirement set is configured to "1.14". This is the lowest version of the requirement set that supports the integrated spam-reporting feature.
-   - The "id" of the runtime is set to a unique descriptive name, "spam_reporting_runtime".
-   - The "code" property has a child "page" property that's set to an HTML file and a child "script" property that's set to a JavaScript file. You'll create or edit these files in later steps.
-   - The "lifetime" property is set to "short". This means that the runtime starts when the `SpamReporting` event occurs and shuts down when the event handler completes.
-   - The "actions" object specifies the event handler function that runs in the runtime. You'll create this function in a later step.
+1. Add the following object to the ["extensions.runtimes"](/microsoft-365/extensibility/schema/extension-runtimes-array) array. Note the following about this markup.
+   - The ["minVersion"](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) of the Mailbox requirement set is configured to "1.14". This is the lowest version of the requirement set that supports the integrated spam-reporting feature.
+   - The ["id"](/microsoft-365/extensibility/schema/extension-runtimes-array#id) of the runtime is set to a unique descriptive name, "spam_reporting_runtime".
+   - The ["code"](/microsoft-365/extensibility/schema/extension-runtimes-array#code) property has a child "page" property that's set to an HTML file and a child "script" property that's set to a JavaScript file. You'll create or edit these files in later steps.
+   - The ["lifetime"](/microsoft-365/extensibility/schema/extension-runtimes-array#lifetime) property is set to "short". This means that the runtime starts when the `SpamReporting` event occurs and shuts down when the event handler completes.
+   - The ["actions"](/microsoft-365/extensibility/schema/extension-runtimes-array#actions) object specifies the event handler function that runs in the runtime. You'll create this function in a later step.
 
     ```json
     {
@@ -104,14 +104,14 @@ Select the tab for the type of manifest you're using.
     },
     ```
 
-1. Add the following object to the "extensions.ribbons" array. Note the following about this markup.
-    - The "contexts" array contains the "spamReportingOverride" string. This prevents the add-in button from appearing at the end of the ribbon or in the overflow section.
-    - The "tabs" array must be specified in an "extensions.ribbons" object. However, because the button of a spam-reporting add-in is displayed in a specific spot on the ribbon, only an empty array is specified.
-    - The "fixedControls" array contains an object that configures the look and functionality of the add-in button on the ribbon. The name of the event handler specified in the "actionId" property must match the value used in the "id" property of the object in the "actions" array. While the "enabled" property must be specified in the array, its value doesn't affect the functionality of a spam-reporting add-in.
-    - The "spamPreProcessingDialog" object specifies the information and options that are shown in the preprocessing dialog. While you must specify a "title" and "description" for the dialog, you can optionally configure the following properties.
-        - The "spamReportingOptions" object. It provides a multiple-selection list of up to five choices. This helps a user identify the type of message they're reporting.
-        - The "spamFreeTextSectionTitle" property. It provides a text box for the user to add more information about the message they're reporting.
-        - The "spamMoreInfo" object. It includes a link in the dialog to provide informational resources to the user.
+1. Add the following object to the ["extensions.ribbons"](/microsoft-365/extensibility/schema/extension-ribbons-array) array. Note the following about this markup.
+    - The ["contexts"](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array contains the "spamReportingOverride" string. This prevents the add-in button from appearing at the end of the ribbon or in the overflow section.
+    - The ["tabs"](/microsoft-365/extensibility/schema/extension-ribbons-array#tabs) array must be specified in an "extensions.ribbons" object. However, because the button of a spam-reporting add-in is displayed in a specific spot on the ribbon, only an empty array is specified.
+    - The ["fixedControls"](/microsoft-365/extensibility/schema/extension-ribbons-array?view=m365-app-1.20&preserve-view=true#fixedcontrols) array contains an object that configures the look and functionality of the add-in button on the ribbon. The name of the event handler specified in the ["actionId"](/microsoft-365/extensibility/schema/extension-ribbons-array-fixed-control-item?view=m365-app-1.20&preserve-view=true#actionid) property must match the value used in the "id" property of the object in the "actions" array. While the ["enabled"](/microsoft-365/extensibility/schema/extension-ribbons-array-fixed-control-item?view=m365-app-1.20&preserve-view=true#enabled) property must be specified in the array, its value doesn't affect the functionality of a spam-reporting add-in.
+    - The ["spamPreProcessingDialog"](/microsoft-365/extensibility/schema/extension-ribbons-array?view=m365-app-1.20&preserve-view=true#spampreprocessingdialog) object specifies the information and options that are shown in the preprocessing dialog. While you must specify a ["title"](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog?view=m365-app-1.20&preserve-view=true#title) and ["description"](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog?view=m365-app-1.20&preserve-view=true#description) for the dialog, you can optionally configure the following properties.
+        - The ["spamReportingOptions"](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog-spam-reporting-options?view=m365-app-1.20&preserve-view=true) object. It provides a multiple-selection list of up to five choices. This helps a user identify the type of message they're reporting.
+        - The ["spamFreeTextSectionTitle"](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog?view=m365-app-1.20&preserve-view=true#spamfreetextsectiontitle) property. It provides a text box for the user to add more information about the message they're reporting.
+        - The ["spamMoreInfo"](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog-spam-more-info?view=m365-app-1.20&preserve-view=true) object. It includes a link in the dialog to provide informational resources to the user.
 
     ```json
     {
