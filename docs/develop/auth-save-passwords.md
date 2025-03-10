@@ -2,12 +2,12 @@
 title: Automatically save passwords in Microsoft Edge WebView2
 description: Learn how to enable WebView2 to save passwords when users sign in using your add-in.
 ms.localizationpriority: medium
-ms.date: 03-10-2025
+ms.date: 03/10/2025
 ---
 
 # Enable automatic password saving in Microsoft Edge WebView2
 
-Most browsers can automatically save passwords on behalf of the user when they sign in. This helps users avoid memorizing complex passwords with repeated sign-in prompts. When your add-in is loaded in Microsoft Office on Windows, Microsoft Edge Webview2 hosts your add-in. WebView2 also supports automatic password saving. To enable automatic password saving, add HTML input controls for the user name ans password similar to the following HTML.
+If you use a password form to sign in the user, most browsers can automatically save passwords on behalf of the user when they sign in. This helps users avoid memorizing complex passwords with repeated sign-in prompts. When your add-in is loaded in Microsoft Office on Windows, Microsoft Edge Webview2 hosts your add-in. WebView2 also supports automatic password saving. To enable automatic password saving, add HTML input controls for the user name ans password similar to the following HTML.
 
 ```html
 <div>
