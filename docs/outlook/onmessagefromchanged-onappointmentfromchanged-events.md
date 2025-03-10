@@ -234,6 +234,18 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
                <SourceLocation resid="WebViewRuntime.Url"/>
              </ExtensionPoint>
            </DesktopFormFactor>
+           <!-- Defines the add-in for Outlook mobile. -->
+           <MobileFormFactor>
+             <!-- Configures event-based activation. -->
+             <ExtensionPoint xsi:type="LaunchEvent">
+               <LaunchEvents>
+                 <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
+                 <LaunchEvent Type="OnMessageFromChanged" FunctionName="onMessageFromChangedHandler"/>
+               </LaunchEvents>
+               <!-- Identifies the runtime to be used (also referenced by the <Runtime> element). -->
+               <SourceLocation resid="WebViewRuntime.Url"/>
+             </ExtensionPoint>
+           </MobileFormFactor>
          </Host>
        </Hosts>
        <Resources>
@@ -287,13 +299,12 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
     // The OnNewMessageCompose event handler that adds a signature to a new message.
     function onNewMessageComposeHandler(event) {
-        const item = Office.context.mailbox.item;
         const platform = Office.context.platform;
         const signature = "<i>This is a sample signature.</i>";
 
         // On supported platforms, check if a default Outlook signature is already configured.
-        if (platform != Office.PlatformType.Android && platform != Office.PlatformType.iOS) {
-            item.isClientSignatureEnabledAsync({ asyncContext: { event: event, signature: signature } }, (result) => {
+        if (platform !== Office.PlatformType.Android && platform !== Office.PlatformType.iOS) {
+            Office.context.mailbox.item.isClientSignatureEnabledAsync({ asyncContext: { event: event, signature: signature } }, (result) => {
                 if (result.status === Office.AsyncResultStatus.Failed) {
                     console.log(result.error.message);
                     return;
@@ -344,7 +355,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
     // Sets the custom signature and adds it to the mail item.
     function setSignature(signature, event) {
-        item.body.setSignatureAsync(
+        Office.context.mailbox.item.body.setSignatureAsync(
             signature,
             { asyncContext: event, coercionType: Office.CoercionType.Html },
             (result) => {
@@ -419,7 +430,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
     [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
-1. In your preferred Outlook client, create a new message. If you don't have a default Outlook signature configured, the add-in adds one to the newly created message.
+1. In your preferred Outlook client, create a new message. If you don't have a default Outlook signature configured, the add-in adds one to the newly created message. In Outlook on mobile devices, the add-in adds a sample signature even if you have a default signature configured.
 
    :::image type="content" source="../images/OnMessageFromChanged_create_signature.png" alt-text="A sample signature added to a newly composed message when a default Outlook signature isn't configured on the account.":::
 
