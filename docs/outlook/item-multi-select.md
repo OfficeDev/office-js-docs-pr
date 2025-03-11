@@ -244,6 +244,7 @@ Now that you've registered an event handler, your add-in can now get properties 
 - Call the [loadItemByIdAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.15&preserve-view=true#outlook-office-mailbox-loaditembyidasync-member(1)) method to get properties that aren't provided by `getSelectedItemsAsync` or to run operations on the selected messages. The `loadItemByIdAsync` method loads one selected message at a time using the message's Exchange Web Services (EWS) ID. To get the EWS IDs of the selected messages, we recommend calling `getSelectedItemsAsync`. After processing a selected message using `loadItemByIdAsync`, you must call the [unloadAsync](/javascript/api/outlook/office.loadedmessageread?view=outlook-js-1.15&preserve-view=true#outlook-office-loadedmessageread-unloadasync-member(1)) method before calling `loadItemByIdAsync` on another selected message.
 
     > [!TIP]
+    >
     > - The `loadItemByIdAsync` and `unloadAsync` methods were introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
     > - Before you use the `loadItemByIdAsync` method, determine if you can already access the properties you need using `getSelectedItemsAsync`. If you can, you don't need to call `loadItemByIdAsync`.
 
