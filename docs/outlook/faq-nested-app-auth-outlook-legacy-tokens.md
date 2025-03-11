@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 02/27/2025
+ms.date: 03/11/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -92,9 +92,7 @@ If the add-in is deployed from Microsoft AppSource, most likely you'll be prompt
 
 ### Which add-ins in my organization are impacted?
 
-You can get a list of all add-ins that requested legacy Exchange Online tokens in the last seven days by using the `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command. For more information, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
-
-Additionally, we published a list of all Outlook add-ins published to the Microsoft store that use legacy tokens as of October 2024. For more information on how to use the list and build a report of Outlook add-ins that are potentially using legacy tokens, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids).
+We published a list of all Outlook add-ins published to the Microsoft store that use legacy tokens as of October 2024. For more information on how to use the list and build a report of Outlook add-ins that are potentially using legacy tokens, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids).
 
 Add-ins may use the legacy tokens to get resources from Exchange through the EWS or Outlook REST APIs. Sometimes an add-in requires Exchange resources for some use cases and not others, making it difficult to figure out whether the add-in requires an update. We recommend reaching out to add-in developers and owners to ask them if their add-in code references the following APIs.
 
@@ -103,6 +101,9 @@ Add-ins may use the legacy tokens to get resources from Exchange through the EWS
 - `getCallbackTokenAsync`
 
 If you rely on an ISV for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off of legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, they should review this FAQ and the article [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md). Any questions should be raised on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
+
+> [!NOTE]
+> We've been working to provide a command update to [Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell) that reports any add-ins using legacy Exchange Online tokens. Unfortunately, we've had difficulties rolling out this update due to the complexities of capturing specific token usage in the Microsoft 365 ecosystem. We continue to work on this update and will provide new information in this FAQ when it is available.
 
 ### Where do I find which add-ins have consent?
 
