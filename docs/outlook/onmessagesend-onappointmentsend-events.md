@@ -32,11 +32,11 @@ The following table lists supported client-server combinations for the Smart Ale
 
 To see Smart Alerts in action, try out the [walkthrough](smart-alerts-onmessagesend-walkthrough.md). You'll create an add-in that checks whether a document or picture is attached to a message before it's sent. In addition to implementing a basic Smart Alerts add-in, you'll also learn about the following functionalities to further enhance the user experience of your add-in.
 
-- [Customize the Smart Alerts dialog message using Markdown](smart-alerts-onmessagesend-walkthrough.md#implement-event-handling).
-- [Customize the text of a dialog button](smart-alerts-onmessagesend-walkthrough.md#customize-the-text-and-functionality-of-a-button-in-the-dialog-optional).
-- [Open a task pane or run a function from the dialog](smart-alerts-onmessagesend-walkthrough.md#customize-the-text-and-functionality-of-a-button-in-the-dialog-optional).
-- [Override the send mode option at runtime](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional).
-- [Programmatically send the mail item once it meets your add-in's conditions](smart-alerts-onmessagesend-walkthrough.md#programmatically-send-the-item-from-the-task-pane-optional).
+- [Customize the Smart Alerts dialog message using Markdown](smart-alerts-onmessagesend-walkthrough.md#implement-event-handling)
+- [Customize the text of a dialog button](smart-alerts-onmessagesend-walkthrough.md#customize-the-text-and-functionality-of-a-button-in-the-dialog-optional)
+- [Open a task pane or run a function from the dialog](smart-alerts-onmessagesend-walkthrough.md#customize-the-text-and-functionality-of-a-button-in-the-dialog-optional)
+- [Override the send mode option at runtime](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional)
+- [Programmatically send the mail item once it meets your add-in's conditions](smart-alerts-onmessagesend-walkthrough.md#programmatically-send-the-item-from-the-task-pane-optional)
 
 ## Smart Alerts feature behavior and scenarios
 
