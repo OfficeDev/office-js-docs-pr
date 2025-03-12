@@ -28,6 +28,9 @@ The following table lists supported client-server combinations for the Smart Ale
 |**Android**|Not applicable|Not applicable|Not applicable|
 |**iOS**|Not applicable|Not applicable|Not applicable|
 
+> [!IMPORTANT]
+> Enhancements to the Smart Alerts feature were introduced in later requirement sets. Because of this, the minimum supported Outlook version and build may vary. The requirement sets and versions needed for a feature are mentioned in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) and applicable sections of this article.
+
 ## Try out Smart Alerts in an event-based add-in
 
 To see Smart Alerts in action, try out the [walkthrough](smart-alerts-onmessagesend-walkthrough.md). You'll create an add-in that checks whether a document or picture is attached to a message before it's sent. In addition to implementing a basic Smart Alerts add-in, you'll also learn about the following functionalities to further enhance the user experience of your add-in.
@@ -243,11 +246,9 @@ In Outlook on the web and in new Outlook on Windows:
 ### Limitations to formatting the dialog message using Markdown
 
 > [!NOTE]
-> Support for Markdown in a Smart Alerts dialog is currently in preview in Outlook on the web and on Windows (new and classic). Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the Feedback section at the end of this page).
->
-> To test this feature in classic Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
+> Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
-You can use Markdown to format the message of a Smart Alerts dialog. However, only the following elements are supported.
+You can use Markdown to format the message of a Smart Alerts dialog through the `errorMessageMarkdown` option of the `event.completed` call. However, only the following elements are supported.
 
 - Bold, italic, or bold and italic text. Both the [asterisk (*) and underscore (_) formats](https://www.markdownguide.org/basic-syntax/#emphasis) are supported.
 

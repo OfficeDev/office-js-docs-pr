@@ -31,7 +31,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
 
-   - The "minVersion" of the Mailbox requirement set is set to "1.12" because the [supported events table](autolaunch.md#supported-events) specifies that this is the lowest version of the requirement set that supports the `OnMessageSend` event.
+   - Although the `OnMessageSend` event was introduced in requirement set 1.12, the "minVersion" is set to "1.15". This supports the use of Smart Alerts enhancements that were introduced in later requirement sets.
    - The "id" of the runtime is set to the descriptive name "autorun_runtime".
    - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
        - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
@@ -86,7 +86,7 @@ To configure the manifest, select the tab for the type of manifest you are using
               "capabilities": [
                   {
                       "name": "Mailbox",
-                      "minVersion": "1.12"
+                      "minVersion": "1.15"
                   }
               ],
               "scopes": [
@@ -117,7 +117,7 @@ To configure the manifest, select the tab for the type of manifest you are using
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
         <Requirements>
-          <bt:Sets DefaultMinVersion="1.12">
+          <bt:Sets DefaultMinVersion="1.15">
             <bt:Set Name="Mailbox" />
           </bt:Sets>
         </Requirements>
@@ -225,11 +225,6 @@ You have to implement handling for your selected event.
 
 In this scenario, you'll add handling for sending a message. Your add-in will check for certain keywords in the message. If any of those keywords are found, it will then check for any attachments. If there are no attachments, your add-in will recommend to the user to add the possibly missing attachment.
 
-> [!NOTE]
-> The event handler in this walkthrough implements the [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property. This property is currently in preview in Outlook on the web and on Windows (new and classic). Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the Feedback section at the end of this page).
->
-> To test this feature in classic Outlook on Windows, you must install Version 2403 (Build 17330.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option in your Outlook client to access Office beta builds.
-
 1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
 1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
@@ -327,6 +322,7 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 >
 > - In classic Outlook on Windows, imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
 > - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
+> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 ## Customize the text and functionality of a button in the dialog (optional)
 
