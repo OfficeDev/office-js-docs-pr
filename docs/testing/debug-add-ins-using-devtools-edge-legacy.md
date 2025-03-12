@@ -19,7 +19,7 @@ To determine which browser or webview you're using, see [Browsers and webview co
 
 ## Debug a task pane add-in using Microsoft Edge DevTools Preview
 
-1. Install the [Microsoft Edge DevTools Preview](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?activetab=pivot%3Aoverviewtab). (The word "Preview" is in the name for historical reasons. There isn't a more recent version.)
+1. Install the [Microsoft Edge DevTools Preview](https://apps.microsoft.com/detail/9mzbfrmz0mnj). (The word "Preview" is in the name for historical reasons. There isn't a more recent version.)
 
    > [!NOTE]
    > If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the Microsoft Edge DevTools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
