@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 02/12/2025
+ms.date: 03/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,9 +21,6 @@ There are three steps to add keyboard shortcuts to an add-in.
 Keyboard shortcuts are currently only supported in the following platforms and build of **Excel** and **Word**.
 
 - Office on the web
-
-    > [!NOTE]
-    > The keyboard shortcut feature is currently being rolled out to Word on the web. If you test the feature in Word on the web at this time, the shortcuts may not work if they're activated from within the add-in's task pane. We recommend to periodically check [Keyboard Shortcuts requirement sets](/javascript/api/requirement-sets/common/keyboard-shortcuts-requirement-sets) to find out when the feature is fully supported.
 - Office on Windows
   - **Excel**: Version 2102 (Build 13801.20632) and later
   - **Word**: Version 2408 (Build 17928.20114) and later
@@ -49,14 +46,14 @@ The process to define custom keyboard shortcuts for your add-in varies depending
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Implementing keyboard shortcuts with the unified app manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Implementing keyboard shortcuts with the unified app manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema/?view=m365-app-prev&preserve-view=true).
 
 If your add-in uses the unified app manifest for Microsoft 365, custom keyboard shortcuts and their actions are defined in the manifest.
 
 1. In your add-in project, open the **manifest.json** file.
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup.
-    - The "actions" objects specify the functions your add-in can run. In the following example, an add-in will be able to show and hide a task pane. You'll create these functions in a later section. Currently, custom keyboard shortcuts can only run actions that are of type "executeFunction".
-    - While the "actions.displayName" property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
+1. Add the following object to the ["extensions.runtimes"](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup.
+    - The ["actions"](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&preserve-view=true) objects specify the functions your add-in can run. In the following example, an add-in will be able to show and hide a task pane. You'll create these functions in a later section. Currently, custom keyboard shortcuts can only run actions that are of type "executeFunction".
+    - While the ["actions.displayName"](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&preserve-view=true#displayname) property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
 
     ```json
     "runtimes": [
@@ -84,7 +81,7 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
     ```
 
 1. Add the following to the "extensions" array. Note the following about the markup.
-    - The SharedRuntime 1.1 requirement set is specified in the "requirements.capabilities" object to support custom keyboard shortcuts.
+    - The SharedRuntime 1.1 requirement set is specified in the ["requirements.capabilities"](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&preserve-view=true) object to support custom keyboard shortcuts.
     - Each "shortcuts" object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
     - A default key combination must be specified. It's used on all supported platforms if there isn't a specific combination configured for a particular platform.
     - The value of the "actionId" property must match the value specified in the "id" property of the applicable "extensions.runtimes.actions" object.
