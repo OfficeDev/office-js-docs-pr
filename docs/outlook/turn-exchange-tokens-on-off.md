@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 02/27/2025
+ms.date: 03/11/2025
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -64,30 +64,7 @@ Blocked: []
 PS C:\>
 ```
 
-We are deploying an update that enables a report of which add-ins requested an Exchange token in the last seven days, and whether the request was allowed or blocked. If your tenant has this update, you'll see a list of requests displayed in the **Allowed** or **Blocked** list. If an add-in was granted the token request, it appears in the **Allowed** list along with the date of the request. If the token request was denied, it appears in the **Blocked** list. It's possible for the same add-in to appear in both lists. This happens if the add-in was allowed to get tokens, but then tokens were turned off. The following example shows an add-in was blocked when it requested a token on February 25th.
-
-```console
-PS C:\> Get-AuthenticationPolicy -AllowLegacyExchangeTokens
-AllowLegacyExchangeTokens: False
-Allowed: []
-Blocked:
-[
-        { "49d3b812-abda-45b9-b478-9bc464ce5b9c" : "2025-02-25" }
-]
-PS C:\>
-```
-
-To identify any add-ins that were allowed or blocked Exchange tokens, use the `Get-App` command as shown in the following example.
-
-```console
-PS C:\> Get-App -Identity 49d3b812-abda-45b9-b478-9bc464ce5b9c | Select-Object -Property DisplayName, AppVersion, MarketplaceAssetID, ProviderName
-
-DisplayName            AppVersion MarketplaceAssetID ProviderName
------------            ---------- ------------------ ------------
-Script Lab for Outlook 4.0.0.0    WA200001603        Microsoft
-```
-
-The previous Script Lab example uses the **Get a user identity token** sample and the `getUserIdentityTokenAsync` function to make the request.
+We've been working to enable this command to report any add-ins using legacy Exchange Online tokens in the **Allowed** and **Blocked** lists. Unfortunately, we've had difficulties rolling out this update due to the complexities of capturing specific token usage in the Microsoft 365 ecosystem. We continue to work on this update and will provide new information in this article when it is available.
 
 > [!NOTE]
 > The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.
