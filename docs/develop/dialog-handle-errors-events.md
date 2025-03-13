@@ -1,7 +1,7 @@
 ---
 title: Handling errors and events in the Office dialog box 
 description: Learn how to trap and handle errors when opening and using the Office dialog box.
-ms.date: 05/10/2024
+ms.date: 03/11/2025
 ms.topic: error-reference
 ms.localizationpriority: medium
 ---
@@ -11,13 +11,13 @@ ms.localizationpriority: medium
 This article describes how to trap and handle errors when opening the dialog box and errors that happen inside the dialog box.
 
 > [!NOTE]
-> This article presupposes that you are familiar with the basics of using the Office dialog API as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
+> This article presupposes that you're familiar with the basics of using the Office dialog API as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md).
 >
 > See also [Best practices and rules for the Office dialog API](dialog-best-practices.md).
 
 Your code should handle two categories of events.
 
-- Errors returned by the call of `displayDialogAsync` because the dialog box cannot be created.
+- Errors returned by the call of `displayDialogAsync` because the dialog box can't be created.
 - Errors, and other events, in the dialog box.
 
 ## Errors from displayDialogAsync
@@ -26,7 +26,7 @@ In addition to general platform and system errors, four errors are specific to c
 
 |Code number|Meaning|
 |:-----|:-----|
-|12004|The domain of the URL passed to `displayDialogAsync` isn't trusted. The domain must be the same domain as the host page (including protocol and port number).|
+|12004|The domain of the URL passed to `displayDialogAsync` isn't trusted. The domain must be the same domain as the host page (including protocol and port number).<br><br>In Outlook on the web and the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), this error occurs when an add-in is hosted on a localhost server and its manifest doesn't specify an [AppDomain](/javascript/api/manifest/appdomain) element for localhost.|
 |12005|The URL passed to `displayDialogAsync` uses the HTTP protocol. HTTPS is required. (In some versions of Office, the error message text returned with 12005 is the same one returned for 12004.)|
 |<span id="12007">12007</span><!-- The span is needed because office-js-helpers has an error message that links to this table row. -->|A dialog box is already opened from this host window. A host window, such as a task pane, can only have one dialog box open at a time.|
 |12009|The user chose to ignore the dialog box. This error can occur in Office on the web, where users may choose not to allow an add-in to present a dialog box. For more information, see [Handling pop-up blockers with Office on the web](dialog-best-practices.md#handle-pop-up-blockers-with-office-on-the-web).|
@@ -53,7 +53,7 @@ Three errors and events in the dialog box will raise a `DialogEventReceived` eve
 
 |Code number|Meaning|
 |:-----|:-----|
-|12002|One of the following:<ul><li>No page exists at the URL that was passed to `displayDialogAsync`.</li><li>The page that was passed to `displayDialogAsync` loaded, but the dialog box was then redirected to a page that it cannot find or load, or it has been directed to a URL with invalid syntax.</li></ul>|
+|12002|One of the following:<ul><li>No page exists at the URL that was passed to `displayDialogAsync`.</li><li>The page that was passed to `displayDialogAsync` loaded, but the dialog box was then redirected to a page that it can't find or load, or it has been directed to a URL with invalid syntax.</li></ul>|
 |12003|The dialog box was directed to a URL with the HTTP protocol. HTTPS is required.|
 |12006|One of the following:<ul><li>The dialog box was closed, usually because the user chose the **Close** button **X**.</li><li>The dialog returned a [Cross-Origin-Opener-Policy: same-origin](https://developer.mozilla.org/docs/Web/HTTP/Headers/Cross-Origin-Opener-Policy) response header. To prevent this, you must set the header to `Cross-Origin-Opener-Policy: unsafe-none` or configure your add-in and dialog to be in the same domain as the host page.</li></ul>|
 
@@ -75,7 +75,7 @@ For an example of a handler for the `DialogEventReceived` event that creates cus
 function processDialogEvent(arg) {
     switch (arg.error) {
         case 12002:
-            showNotification("The dialog box has been directed to a page that it cannot find or load, or the URL syntax is invalid.");
+            showNotification("The dialog box has been directed to a page that it can't find or load, or the URL syntax is invalid.");
             break;
         case 12003:
             showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");            break;

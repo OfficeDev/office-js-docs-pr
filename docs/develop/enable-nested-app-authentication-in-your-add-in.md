@@ -27,7 +27,7 @@ NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identi
 | Word        | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
 
 > [!IMPORTANT]
-> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the [Microsoft 365 Insider Program](https://aka.ms/MSFT365InsiderProgram) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Register your single-page application
 
