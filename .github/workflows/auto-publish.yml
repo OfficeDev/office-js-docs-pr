@@ -2,8 +2,8 @@ name: auto-publish
 run-name: Automatically publish documentation
 on:
   schedule:
-    - cron: '00 22 * * TUE'
-    - cron: '00 22 * * THU'
+    # Run at 2:00 AM UTC on Wednesday and Friday
+    - cron: '0 2 * * WED,FRI'
 jobs:
   auto-publish:
     runs-on: ubuntu-latest
