@@ -491,6 +491,9 @@ items:
         - name: Entity value cards
           href: excel/excel-data-types-entity-card.md
           displayName: Excel
+        - name: Property values on basic types
+          href: excel/add-properties-to-basic-cell-values.md
+          displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
