@@ -38,7 +38,7 @@ async function rangeInsertAddinField() {
 // Gets the first Addin field in the document and sets its data.
 async function getFirstAddinFieldAndSetData() {
   await Word.run(async (context) => {
-    var myFieldTypes = new Array();
+    let myFieldTypes = new Array();
     myFieldTypes[0] = Word.FieldType.addin;
     const addinFields = context.document.body.fields.getByTypes(myFieldTypes);
     let fields = addinFields.load("items");
@@ -54,15 +54,14 @@ async function getFirstAddinFieldAndSetData() {
       firstAddinField.load("code,result,data");
       await context.sync();
 
-      console.log("The data of the Addin field before being set:");
-      console.log(firstAddinField.data);
-      const data = $("#input-reference").val();
+      console.log("The data of the Addin field before being set:", firstAddinField.data);
+      //const data = $("#input-reference").val(); // Get data from UI.
+      const data = "Insert your data here";
       firstAddinField.data = data;
       firstAddinField.load("data");
       await context.sync();
 
-      console.log("The data of the Addin field after being set:");
-      console.log(firstAddinField.data);
+      console.log("The data of the Addin field after being set:", firstAddinField.data);
     }
   });
 }
