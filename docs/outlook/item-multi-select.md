@@ -273,7 +273,9 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
     async function getItemInfo(selectedItems) {
       for (const item of selectedItems) {
         addToList(item.subject);
-        await getSenderEmailAddress(item);
+        if (Office.context.requirements.isSetSupported("Mailbox", "1.15")) {
+          await getSenderEmailAddress(item);
+        }
       }
     }
 
