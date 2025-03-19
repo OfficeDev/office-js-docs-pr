@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 03/11/2025
+ms.date: 03/19/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -257,7 +257,7 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
       // Clear the list of previously selected messages, if any.
       clearList(list);
 
-      // Get the subject line and sender's email address of each selected message and log it to a list in the task pane.
+      // Get the subject line and sender's email address of each selected message and log them to a list in the task pane.
       Office.context.mailbox.getSelectedItemsAsync((asyncResult) => {
         if (asyncResult.status === Office.AsyncResultStatus.Failed) {
           console.log(asyncResult.error.message);
@@ -273,9 +273,7 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
     async function getItemInfo(selectedItems) {
       for (const item of selectedItems) {
         addToList(item.subject);
-        if (Office.context.diagnostics.platform === Office.PlatformType.PC) {
-          await getSenderEmailAddress(item);
-        }
+        await getSenderEmailAddress(item);
       }
     }
 
