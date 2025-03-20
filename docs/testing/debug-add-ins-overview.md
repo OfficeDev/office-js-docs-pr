@@ -2,7 +2,7 @@
 title: Debug Office Add-ins
 description: Find the Office Add-in debugging guidance for your development environment.
 ms.topic: overview
-ms.date: 12/21/2023
+ms.date: 03/20/2025
 ms.localizationpriority: high
 ---
 
@@ -79,6 +79,15 @@ There is no desktop version of Office for Linux, so you'll need to [sideload the
 ## Debug add-ins in staging or production
 
 To debug an add-in that is already in staging or production, attach a debugger from the UI of the add-in. For instructions, see [Attach a debugger from the task pane](attach-debugger-from-task-pane.md).
+
+## Versions of office.js for debugging
+
+There are debug versions of the Office JavaScript libraries. These versions are more human readable and easier to step through with a debugger. Use them when the Office JavaScript APIs aren't working as expected. Avoid using them when you publish and deploy your add-in.
+
+The debug versions are found at the following CDN locations:
+
+- Office JavaScript API library: `https://appsforoffice.microsoft.com/lib/1/hosted/office.debug.js`
+- Office JavaScript API (preview) library: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.debug.js`
 
 ## See also
 
