@@ -84,7 +84,7 @@ To debug an add-in that is already in staging or production, attach a debugger f
 
 There are debug versions of the Office JavaScript libraries. These versions are more human readable and easier to step through with a debugger. Use them when the Office JavaScript APIs aren't working as expected. Avoid using them when you publish and deploy your add-in.
 
-The debug versions are found at the following CDN locations:
+The debug versions are found at the following CDN locations.
 
 - Office JavaScript API library: `https://appsforoffice.microsoft.com/lib/1/hosted/office.debug.js`
 - Office JavaScript API (preview) library: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.debug.js`
