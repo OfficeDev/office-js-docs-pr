@@ -110,7 +110,7 @@ async function rangeInsertDateField() {
 
 ## Hyperlink field
 
-The Hyperlink field inserts the address of either a location in the same document or an external location (for example, a webpage). When the user selects it, they're navigated to the specified location. You can toggle between displaying the hyperlink address or the field code by setting the `showCodes` field property to `false` or `true` respectively.
+The Hyperlink field inserts the address of either a location in the same document or an external location such as a webpage. When the user selects it, they're navigated to the specified location. You can toggle between displaying the hyperlink address or the field code by setting the `showCodes` field property to `false` or `true` respectively.
 
 The following code sample shows how to insert a Hyperlink field before the cursor location or your selection in the Word document.
 
@@ -146,7 +146,7 @@ async function rangeInsertHyperlinkField() {
 
 The TOC field inserts a table of contents, which lists certain areas of a document, like headings. You can toggle between displaying the table of contents or the field code by setting the `showCodes` field property to `false` or `true` respectively.
 
-The following code sample shows how to insert a TOC field at the cursor location or that replaces your selection in the Word document.
+The following code sample shows how to insert a TOC field at the cursor location or replace your current selection in the Word document.
 
 ```javascript
 /**
