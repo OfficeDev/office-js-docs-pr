@@ -86,13 +86,13 @@ Keep your snippets and hard-coded data small since storing several large snippet
 
 Once you've prototyped your code in Script Lab, turn it into a real add-in with the steps in [Create a standalone Office Add-in from your Script Lab code](create-an-office-add-in-from-script-lab.md).
 
-### Issues
+## Issues
 
 If you find an issue or have feedback for us, let us know!
 
 - Issue in this article? See the "Office Add-ins feedback" section at the end of this article.
 - Problem with a Script Lab code sample? Open a new issue in the [office-js-snippets GitHub repository](https://github.com/OfficeDev/office-js-snippets/issues).
-- Feedback or issue re: the Script Lab tool? Open a new issue in the [office-js GitHub repository](https://aka.ms/script-lab-issues).
+- Feedback or issue with the Script Lab tool? Open a new issue in the [office-js GitHub repository](https://aka.ms/script-lab-issues).
 
 ## See also
 
