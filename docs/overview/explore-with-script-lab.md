@@ -84,7 +84,7 @@ Keep your snippets and hard-coded data small since storing several large snippet
 > [!div class="nextstepaction"]
 > [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 
-Once you've prototyped your code in Script Lab, turn it into a real add-in with the steps in [Create a standalone Office Add-in from your Script Lab code](./create-an-office-add-in-from-script-lab.md).
+Once you've prototyped your code in Script Lab, turn it into a real add-in with the steps in [Create a standalone Office Add-in from your Script Lab code](create-an-office-add-in-from-script-lab.md).
 
 ### Issues
 
