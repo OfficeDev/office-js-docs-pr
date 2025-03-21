@@ -91,8 +91,8 @@ Once you've prototyped your code in Script Lab, turn it into a real add-in with 
 If you find an issue or have feedback for us, let us know!
 
 - Issue in this article? See the "Office Add-ins feedback" section at the end of this article.
-- Problem with a Script Lab code sample? Open a new GitHub issue in the [office-js-snippets repo](https://github.com/OfficeDev/office-js-snippets/issues).
-- Feedback or issue re: the Script Lab tool? Open a new GitHub issue in the [office-js repo](https://aka.ms/script-lab-issues).
+- Problem with a Script Lab code sample? Open a new issue in the [office-js-snippets GitHub repo](https://github.com/OfficeDev/office-js-snippets/issues).
+- Feedback or issue re: the Script Lab tool? Open a new issue in the [office-js gitHub repo](https://aka.ms/script-lab-issues).
 
 ## See also
 
