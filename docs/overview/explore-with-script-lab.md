@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 02/20/2025
+ms.date: 03/21/2025
 ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -85,6 +85,14 @@ Keep your snippets and hard-coded data small since storing several large snippet
 > [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 
 Once you've prototyped your code in Script Lab, turn it into a real add-in with the steps in [Create a standalone Office Add-in from your Script Lab code](./create-an-office-add-in-from-script-lab.md).
+
+### Issues
+
+If you find an issue or have feedback for us, let us know!
+
+- Issue in this article? See the "Office Add-ins feedback" section at the end of this article.
+- Problem with a Script Lab code sample? Open a new GitHub issue in the [office-js-snippets repo](https://github.com/OfficeDev/office-js-snippets/issues).
+- Feedback or issue re: the Script Lab tool? Open a new GitHub issue in the [office-js repo](https://aka.ms/script-lab-issues).
 
 ## See also
 
