@@ -1,7 +1,7 @@
 ---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 02/25/2025
+ms.date: 03/27/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -19,20 +19,20 @@ The following table shows supported client-server combinations for this feature,
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
 |---|---|---|---|
-|**Web browser (modern Outlook UI)**|Supported<sup>1</sup>|Not applicable|Not applicable|
+|**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
 |**Web browser (classic Outlook UI)**|Not applicable|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|
 |[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
-|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported<sup>2</sup>|Supported<sup>2</sup>|
+|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
 |**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
+|**Android**|Not applicable|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|
 
 > [!NOTE]
-> <sup>1</sup>In Outlook on the web, if you open a shared mailbox in a separate browser tab or window using the **Open another mailbox** option, you may encounter issues when accessing add-ins from the mailbox. We recommend opening the mailbox in the same panel as your primary mailbox instead. This ensures that add-ins work as expected in your shared mailbox. If you prefer to open the shared mailbox using the **Open another mailbox** option, we recommend deploying the add-in to both your primary user and shared mailboxes.
->
-> <sup>2</sup>Support for this feature in an on-premises Exchange environment is available starting in classic Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
+> \* Support for this feature in an on-premises Exchange environment is available starting in classic Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
 
 ## Supported setups
 
-The following sections describe supported configurations for shared mailboxes and shared folders. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
+The following sections describe configurations for shared mailboxes and shared folders that support the use of add-ins. The feature APIs may not work as expected in other configurations. Select the platform you'd like to learn how to configure.
 
 ### [Web (modern) and new Outlook on Windows](#tab/web)
 
@@ -58,11 +58,6 @@ A shared mailbox allows a group of users to easily monitor and send messages and
 
 In Outlook on the web, a shared mailbox can be opened in the same panel as a user's primary mailbox or in a separate browser tab or window. For guidance, see [Open and use a shared mailbox in Outlook on the web](https://support.microsoft.com/office/98b5a90d-4e38-415d-a030-f09a4cd28207).
 
-> [!NOTE]
-> In Outlook on the web, if you open a shared mailbox in a separate browser tab or window using the **Open another mailbox** option, you may encounter issues when accessing add-ins from the mailbox. We recommend opening the mailbox in the same panel as your primary mailbox instead. This ensures that add-ins work as expected in your shared mailbox.
->
-> If you prefer to open the shared mailbox using the **Open another mailbox** option, we recommend deploying the add-in to both your primary user and shared mailboxes.
-
 In new Outlook on Windows, a shared mailbox is added to the **Shared with me** section of the folder pane. For guidance, see [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 ### [Windows (classic)](#tab/windows)
@@ -83,36 +78,50 @@ Once access is provided, the delegate must then follow the instructions outlined
 
 Exchange server admins can create and manage shared mailboxes for sets of users to access. [Exchange Online](/exchange/collaboration-exo/shared-mailboxes) and [on-premises Exchange environments](/exchange/collaboration/shared-mailboxes/create-shared-mailboxes) are supported.
 
-An Exchange Server feature known as "automapping" is on by default which means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook app after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
+An Exchange Server feature known as "automapping" is on by default. This means that subsequently the [shared mailbox should automatically appear](/microsoft-365/admin/email/create-a-shared-mailbox?view=o365-worldwide&preserve-view=true#add-the-shared-mailbox-to-outlook) in a user's Outlook client after Outlook has been closed and reopened. However, if an admin turned off automapping, the user must follow the manual steps outlined in the "Add a shared mailbox to Outlook" section of the article [Open and use a shared mailbox in Outlook](https://support.microsoft.com/office/d94a8e9e-21f1-4240-808b-de9c9c088afd).
 
 > [!WARNING]
 > Do **NOT** sign into the shared mailbox with a password. The feature APIs won't work in that case.
 
 ### [Mac](#tab/unix)
 
+#### Shared folders
+
+The mailbox owner must first provide access to a delegate. For guidance, see [Add and manage delegates in Outlook for Mac](https://support.microsoft.com/office/49ba7631-1984-453e-8a8f-c78fd43475e4).
+
+Once access is provided, the delegate must then follow the instructions outline in [Become a delegate or stop being a delegate in Outlook for Mac](https://support.microsoft.com/office/818da19c-b03c-4a69-926a-76a7c84c3579).
+
 #### Shared mailboxes
 
 A shared mailbox allows a group of users to easily monitor and send messages and meeting invites using a shared email address. For guidance on how to access a shared mailbox that you have permissions to in Outlook on Mac, see the "Open a shared or delegated mailbox" section of [Open a shared Mail, Calendar, or People folder in Outlook for Mac](https://support.microsoft.com/office/6ecc39c5-5577-4a1d-b18c-bbdc92972cb2).
 
-Users with permissions to a shared mailbox can activate add-ins configured for shared mailbox scenarios in message and appointment read and compose modes.
-
-#### Shared folders
-
-If the **Inbox** folder is shared with a delegate, add-ins are available to the delegate in message read mode.
-
-If the **Drafts** folder is also shared with the delegate, add-ins are available in compose mode.
-
-#### Local shared calendar (new model)
-
-If the calendar owner explicitly shared their calendar with a delegate (the entire mailbox may not be shared), add-ins are available to the delegate in appointment read and compose modes.
-
-#### Remote shared calendar (previous model)
-
-If the calendar owner granted broad access to their calendar (for example, made it editable to a particular DL or the entire organization), users may then have indirect or implicit permission and add-ins are available to those users in appointment read and compose modes.
-
 ---
 
 To learn more about where add-ins do and don't activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
+
+## Add-in support in shared folder and shared mailbox scenarios
+
+### Add-ins in shared folder scenarios
+
+The following table outlines the availability of add-ins in shared folder scenarios.
+
+| Scenario | Add-in availability |
+| ----- | ----- |
+| **Inbox** folder is shared with a delegate | Add-ins are available to the delegate in message read mode. |
+| **Drafts** folder is shared with a delegate | Add-ins are available to the delegate in message compose mode. |
+| Calendar is explicitly shared with a delegate (the entire mailbox may not be shared) | Add-ins are available to the delegate in appointment read and compose modes. |
+| Calendar is shared with a group of users with different access (for example, made it editable to a particular distribution list or the entire organization) | Add-ins are available to users with indirect or implicit permissions in appointment read and compose modes. |
+
+### Add-ins in shared mailbox scenarios
+
+The following table outlines the availability of add-ins in shared mailbox scenarios.
+
+| Scenario | Add-in availability |
+| ----- | ----- |
+| Add-in installed by the user | Users can't install add-ins in a shared mailbox. Add-ins installed by a user are added to the user's primary mailbox.<br><br>In Outlook on the web, if a shared mailbox is opened in a separate browser tab or window using the **Open another mailbox** option, the in-app Microsoft 365 and Copilot store doesn't appear on the ribbon. |
+| Add-in installed by an administrator | While an administrator can deploy an add-in to a shared mailbox in the Microsoft 365 admin center, the add-in won't appear in the shared mailbox. As a workaround, an administrator can deploy an add-in to a user's primary mailbox. The user can then use the add-in in a shared mailbox as long as the add-in meets certain requirements (see the following scenarios for add-in availability in read and compose modes). |
+| Add-in used in read mode | An add-in's manifest must be configured to make an add-in available in shared scenarios. The setting differs depending on the type of manifest your add-in uses.<ul><li>**Unified manifest for Microsoft 365**: In the ["authorization.permissions.resourceSpecific"](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, set the ["name"](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific#name) property to "Mailbox.SharedFolder" and the ["type"](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific#type) property to "Delegated".</li><li>**Add-in only manifest**: Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`.</li></ul>The add-in can be installed in the user's primary mailbox by the user or administrator.<br><br>In Outlook on the web, if a shared mailbox is opened in a separate browser tab or window using the **Open another mailbox** option, default add-ins are also available for use even if their manifest doesn't configure the shared folder setting. |
+| Add-in used in compose mode | An add-in installed in the user's primary mailbox by the user or administrator may need additional configuration depending on the Outlook client or how the shared mailbox is accessed.<ul><li>**Outlook on the web (mailbox opened in the same window) and on Windows (new and classic)**: An add-in doesn't need to configure the shared folder setting in the manifest for it to be available for use in a shared mailbox.</li><li>**Outlook on the web (mailbox opened in a separate tab or window) and on Mac**: An add-in's manifest must be configured to make it available in shared scenarios. See the previous "Add-in used in read mode" row.</li></ul> |
 
 ## Configure the manifest
 
@@ -123,7 +132,7 @@ To implement shared folder and shared mailbox scenarios in your add-in, you must
 > [!NOTE]
 > Implementing shared folder and shared mailbox scenarios with a unified manifest for Microsoft 365 is currently only supported in classic Outlook on Windows. For other supported platforms, use the add-in only manifest instead.
 
-Add an additional object to the "authorization.permissions.resourceSpecific" array and set its "name" property to "Mailbox.SharedFolder".
+Add an additional object to the ["authorization.permissions.resourceSpecific"](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array. Set its ["name"](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific#name) property to "Mailbox.SharedFolder" and its ["type"](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific#type) property to "Delegated".
 
 ```json
 "authorization": {
@@ -209,7 +218,10 @@ The [DelegatePermissions](/javascript/api/outlook/office.mailboxenums.delegatepe
 Once you've identified that the current mail item is in a shared folder or shared mailbox, your add-in can then perform the necessary operations on the item within the shared environment. To run operations on an item in a shared context, you must first configure your add-in's permission in the manifest. Then, use Microsoft Graph to complete the operations.
 
 > [!NOTE]
-> Exchange Web Services (EWS) isn't supported in shared folder and shared mailbox scenarios.
+>
+> - Exchange Web Services (EWS) isn't supported in shared folder and shared mailbox scenarios.
+>
+> - In delegate or shared scenarios, a delegate can get the [categories from the Outlook master list](/javascript/api/outlook/office.mastercategories) but can't add or remove categories from the list.
 
 ### Configure the add-in's permissions
 
