@@ -640,7 +640,7 @@ Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the
 - If the add-in runs on an application and platform that support custom contextual tabs, then the marked custom groups, controls, and menu items won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
 - If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the groups, controls, and menu items do appear on the custom core tab.
 
-The following is an example. Note that "Contoso.MyButton1" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
+The following is an example. Note that "Contoso.MyButton1" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent group (with "ContosoButton2") and the custom core tab will appear regardless of whether custom contextual tabs are supported.
 
 ```json
 "extensions": [
@@ -662,6 +662,10 @@ The following is an example. Note that "Contoso.MyButton1" will appear on the cu
                                         "id": "Contoso.MyButton1",
                                         ...
                                         "overriddenByRibbonApi": true
+                                    },
+                                    {
+                                        "id": "Contoso.MyButton2",
+                                        ...
                                     }
                                 ]
                             }
@@ -674,7 +678,7 @@ The following is an example. Note that "Contoso.MyButton1" will appear on the cu
 ]
 ```
 
-The following is an example. Note that "MyControlGropu" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent custom core tab will appear regardless of whether custom contextual tabs are supported.
+The following is another example. Note that "MyControlGroup" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent custom core tab (with unmarked groups) will appear regardless of whether custom contextual tabs are supported.
 
 ```json
 "extensions": [
@@ -699,7 +703,8 @@ The following is an example. Note that "MyControlGropu" will appear on the custo
                                         ...
                                     }
                                 ]
-                            }
+                            },
+                            ... other groups configured here
                         ]
                     }
                 ]
