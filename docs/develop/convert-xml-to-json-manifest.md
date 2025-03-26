@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 02/12/2025
+ms.date: 03/26/2025
 ms.localizationpriority: medium
 ---
 
@@ -37,7 +37,7 @@ The following sections describe conditions that must be met before you convert t
 
 ### Uninstall the existing version of the add-in
 
-To avoid conflicts with UI control names and other problems, be sure the existing add-in isn't installed on the computer where you do the conversion.
+To avoid conflicts with UI control names and other problems, be sure the existing add-in isn't installed on the computer where you do the conversion. If experience any difficulties uninstalling the add-in, see [Remove a ghost add-in](../testing/uninstall-add-in.md#remove-a-ghost-add-in).
 
 ### Ensure that you have two special image files
 
@@ -63,6 +63,10 @@ The following markup is an example.
 
   <!-- Other markup omitted -->
 ```
+
+### Reduce the number of add-in commands as needed
+
+An add-in that uses the unified manifest may not have more than 20 [add-in commands](..s/design/add-in-commands.md). If the total number of  [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20. 
 
 ### Update the add-in ID, version, domain, and function names in the manifest
 
