@@ -32,7 +32,7 @@ Use the process described in [Sideload with a system prompt, bash shell, or term
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
 
    > [!NOTE]
-   > If the preceding step seems to have no effect, uninstall the add-in by opening a **TERMINAL** in Visual Studio Code, and then complete the uninstall step &#8212; *last* step &#8212; of the section [Sideload with a system prompt, bash shell, or terminal](#sideload-with-a-system-prompt-bash-shell-or-terminal).
+   > If the preceding step seems to have no effect, uninstall the add-in by opening a **TERMINAL** in Visual Studio Code, and then complete the uninstall step &#8212; the *last* step &#8212; of the section [Sideload with a system prompt, bash shell, or terminal](#sideload-with-a-system-prompt-bash-shell-or-terminal).
 
 ## Sideload with a system prompt, bash shell, or terminal
 
