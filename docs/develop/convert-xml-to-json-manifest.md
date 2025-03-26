@@ -66,7 +66,7 @@ The following markup is an example.
 
 ### Reduce the number of add-in commands as needed
 
-An add-in that uses the unified manifest may not have more than 20 [add-in commands](..s/design/add-in-commands.md). If the total number of  [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20. 
+An add-in that uses the unified manifest may not have more than 20 [add-in commands](../design/add-in-commands.md). If the total number of  [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20. 
 
 ### Update the add-in ID, version, domain, and function names in the manifest
 
