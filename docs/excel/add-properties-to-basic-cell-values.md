@@ -22,7 +22,7 @@ Cell value properties can also be used in formulas.
 
 ## Create a cell value with properties
 
-To create a cell value and add properties to it, use **valuesAsJson** to assign properties. The following objects offer the **valuesAsJson** property.
+To create a cell value and add properties to it, use `valuesAsJson` to assign properties. The following objects offer the `valuesAsJson` property.
 
 - [NamedItem](/javascript/api/excel/excel.nameditem) (as **valueAsJson**)
 - [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
@@ -31,7 +31,7 @@ To create a cell value and add properties to it, use **valuesAsJson** to assign 
 - [TableColumn](/javascript/api/excel/excel.tablecolumn)
 - [TableRow](/javascript/api/excel/excel.tablerow)
 
-The following code sample shows how to create a new number in cell **A1**. It adds the **Food**, **Drinks**, and additional properties describing a bill in a restaurant. It assigns a JSON description of the properties to **Range.valuesAsJson**.
+The following code sample shows how to create a new number in cell **A1**. It adds the **Food**, **Drinks**, and additional properties describing a bill in a restaurant. It assigns a JSON description of the properties to `Range.valuesAsJson`.
 
 ```javascript
 async function createNumberProperties() {
@@ -75,11 +75,11 @@ async function createNumberProperties() {
 ```
 
 > [!NOTE]
-> Some cell values change based on a user's locale. The **valuesAsJsonLocal** property offers localization support and is available on all the same objects as **valuesAsJson**.
+> Some cell values change based on a user's locale. The `valuesAsJsonLocal` property offers localization support and is available on all the same objects as `valuesAsJson`.
 
 ## Add properties to an existing value
 
-To add properties to an existing value, first get the value from the cell using **valuesAsJson** , then add a properties JSON object to it. The following example shows how to get the number value from cell **A1** and assign a property named **Precision** to it. Note that you should check the type of the value to ensure it is a **string**, **double**, or **Boolean** basic type.
+To add properties to an existing value, first get the value from the cell using `valuesAsJson` , then add a properties JSON object to it. The following example shows how to get the number value from cell **A1** and assign a property named **Precision** to it. Note that you should check the type of the value to ensure it is a **string**, **double**, or **Boolean** basic type.
 
 ```javascript
 async function addPropertyToNumber() {
