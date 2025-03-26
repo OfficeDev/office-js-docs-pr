@@ -12,13 +12,13 @@ Add properties to basic cell values in Excel to associate additional information
 
 :::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screen shot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
 
-If the user chooses to show the data type card, they will see the values for the fields.
+If the user chooses to show the data type card, they'll see the values for the fields.
 
 :::image type="content" source="../images/data-type-basic-data-type-card.png" alt-text="Data type card showing values for drinks, food, tax, and tip properties":::
 
 Cell value properties can also be used in formulas.
 
-:::image type="content" source="../images/data-type-basic-dot-syntax.png" alt-text="Show user typing "a1." and Excel showing a menu with drinks, food, tax, and tip options.":::
+:::image type="content" source="../images/data-type-basic-dot-syntax.png" alt-text="Show user typing 'a1.' and Excel showing a menu with drinks, food, tax, and tip options.":::
 
 ## Create a cell value with properties
 
@@ -149,9 +149,9 @@ The number formatting is considered the default format. If the user, or other co
 
 ## Card layout
 
-Cell values with properties have a default data type card that the user can view. You can provide a custom card layout to use instead of the default card layout to provide a better user experience for viewing the properties. To do this, add the **layouts** property to the JSON description.
+Cell values with properties have a default data type card that the user can view. You can provide a custom card layout to use instead of the default card layout to improve the user experience when viewing properties. To do this, add the **layouts** property to the JSON description.
 
-The **layouts** property contains two direct subproperties, **compact** and **card**. The **card** property specifies the appearance of a card when the data type card is open. The compact property is optional, and defines the icon for a value. The icon is shown in the cell value if it is provided. It can also be shown in the card if it is referenced as a sub property. See the [EntityCompactLayoutIcons](/javascript/api/excel/excel.entitycompactlayouticons) enum for a full list of available icons.
+The **layouts** property contains two direct subproperties, **compact** and **card**. The **card** property specifies the appearance of a card when the data type card is open. The compact property is optional and defines the icon for a value. The icon is shown in the cell value if it's provided. It can also be shown in the card if it's referenced as a subproperty. See the [EntityCompactLayoutIcons](/javascript/api/excel/excel.entitycompactlayouticons) enum for a full list of available icons.
 
 Within the **card** property, use the **BasicCardLayout** object to define the components of the card like **title**, **subTitle**, and **sections**.
 The following code sample shows how to create a string value of **scissors** with properties displayed in a custom card layout.
@@ -296,13 +296,13 @@ async function createNumberWithNestedEntity() {
 }
 ```
 
-The following image shows the number value and the data type card for the nested Laptop entity.
+The following image shows the number value and the data type card for the nested laptop entity.
 
 :::image type="content" source="../images/data-type-basic-nested-entities.png" alt-text="Cell value in Excel showing battery charge at 70% and the data type card showing the nested laptop entity with charging and power consuption property values.":::
 
 ## Attribution
 
-You can add attribution for information that comes from 3rd parties to indicate the source and any license information. Use **Excel.CellValueAttributionAttributes** to add attribution to a cell value. The following code example shows how to add attribution for usage of information about Mars from Wikipedia.
+Add attribution for information that comes from third parties to indicate the source and any license information. Use **[Excel.CellValueAttributionAttributes](https://learn.microsoft.com/javascript/api/excel/excel.cellvalueattributionattributes)** to add attribution to a cell value. The following code example shows how to add attribution for usage of information about the planet Mars from Wikipedia.
 
 ```javascript
 async function createPlanet() {
@@ -390,7 +390,7 @@ The following image shows how the provider information appears as the logo in th
 
 ## Compatibility
 
-If a user is using an older version of Excel that does not support the data types feature, they will see a warning of **Unavailable Data Type**. The value will still show in the cell and function as expected with formulas and other Excel features. If the value is a formatted number, calculations use the **basicValue** in place of the formatted number.
+On previous versions of Excel that do not support the data types feature, users will see a warning of **Unavailable Data Type**. The value will still show in the cell and function as expected with formulas and other Excel features. If the value is a formatted number, calculations use the **basicValue** in place of the formatted number.
 On Excel versions older than Office 2016, the value will be shown in the cell with no error and will be indistinguishable from a basic value.
 
 ## Related content
