@@ -37,7 +37,7 @@ The following sections describe conditions that must be met before you convert t
 
 ### Uninstall the existing version of the add-in
 
-To avoid conflicts with UI control names and other problems, be sure the existing add-in isn't installed on the computer where you do the conversion. If experience any difficulties uninstalling the add-in, see [Remove a ghost add-in](../testing/uninstall-add-in.md#remove-a-ghost-add-in).
+To avoid conflicts with UI control names and other problems, be sure the existing add-in isn't installed on the computer where you do the conversion. If you experience any difficulties uninstalling the add-in, see [Remove a ghost add-in](../testing/uninstall-add-in.md#remove-a-ghost-add-in).
 
 ### Ensure that you have two special image files
 
