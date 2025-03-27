@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 ---
 
 # Authenticate a user with a single-sign-on token in an Outlook add-in
-[!INCLUDE legacy-exchange-token-deprecation]
+[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 Single sign-on (SSO) provides a seamless way for your add-in to authenticate users (and optionally to obtain access tokens to call the [Microsoft Graph API](/graph/overview)).
 
