@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 03/11/2025
+ms.date: 03/31/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -137,7 +137,40 @@ If the **soft block** or **block** option is  used, the user can't send the item
 
 ![Dialog that alerts the user that the add-in process has timed out. The user must attempt to send the item again to activate the add-in before they can send the message or appointment.](../images/outlook-soft-hard-block-timeout.png)
 
-### Outlook client in Work Offline mode
+### Intermittent or no internet connection
+
+#### No connection when Outlook launches
+
+When Outlook launches while offline, Outlook is unable to determine which add-ins are installed. Because of this, Smart Alerts add-ins can't activate when the `OnMessageSend` or `OnAppointmentSend` events occur. In this scenario, to ensure that all mail items are checked for compliance before they're sent, configure the **Block send when web add-ins can't load** Group Policy setting. This setting applies to Outlook on Windows (new and classic) (//TODO - Determine applicable platforms). When the setting is turned on, mail items are moved to the **Drafts** folder when the **Send** button is selected. This way, when Outlook is able to load add-ins, any installed Smart Alerts add-ins can run checks on the items before they're sent.
+
+To turn on the setting, perform the following:
+
+1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).
+1. Open the **Local Group Policy Editor** (**gpedit.msc**).
+1. Navigate to //TODO - Determine policy location.
+1. Open the **Block send when web add-ins can't load** setting.
+1. In the dialog that appears, select **Enabled**.
+1. Select **OK** or **Apply** to save your change.
+
+#### Intermittent connection
+
+> [!NOTE]
+> In classic Outlook on Windows and on Mac, the behavior of a Smart Alerts add-in is different while in [Work Offline mode](https://support.microsoft.com/office/f3a1251c-6dd5-4208-aef9-7c8c9522d633). For more information, see [Outlook client in Work Offline mode](#outlook-client-in-work-offline-mode).
+
+If Outlook was able to load any Smart Alerts add-ins that are installed, but loses connection when an `OnMessageSend` or `OnAppointmentSend` event occurs, the behavior differs depending on the send mode option implemented by the add-in.
+
+If the **prompt user** or **soft block** option is used, the following behavior applies.
+
+- **Send Anyway** option is selected: The mail item is moved to the **Outbox** folder. When a connection is reestablished, the item is automatically sent.
+- **Don't Send** option is selected: The mail item is saved to the **Drafts** folder. This prevents the item from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
+
+//TODO - Add screenshot if a non-customizable message is shown.
+
+If the **block** option is used, the mail item is saved to the **Drafts** folder and a dialog is shown to the user notifying them to reconnect. This prevents the item from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
+
+//TODO - Add screenshot of reconnection dialog.
+
+#### Outlook client in Work Offline mode
 
 In Outlook on Windows (classic client starting in Version 2310 (Build 16913.10000)) and on Mac (starting in Version 16.80 (23121017)), a Smart Alerts add-in that implements the **soft block** or **block** option can only process a mail item while the Outlook client is online. If [Work Offline mode](https://support.microsoft.com/office/f3a1251c-6dd5-4208-aef9-7c8c9522d633) is turned on in the Outlook client when a mail item is sent, the item isn't saved to the **Outbox** folder and the user is alerted that they must deactivate Work Offline mode before they can attempt to send their item.
 
