@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 02/25/2025
+ms.date: 03/26/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -107,6 +107,26 @@ You can use a debugging tool like [Spy++](/visualstudio/debugger/using-spy-incre
 The [Word.Table](/javascript/api/word/word.table) object is different from an [HTML table object](https://developer.mozilla.org/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics). The native JavaScript APIs used to interact with an HTML table can't be used to manage a Word.Table object. Instead, you must use the [Table APIs](/javascript/api/word/word.table) available in the Word Object Model to interact with Word.Table and related objects.
 
 Similarly, don't use Word JavaScript APIs to interact with HTML table objects.
+
+## Shape APIs can't find shapes
+
+You have shapes in your document but for some reason, when you used the API to get shapes e.g., `context.document.body.shapes`, the result is that 0 shapes were found.
+
+One possibility is that the Word template is outdated. If you created a new document from the default template yet you see "Compatibility Mode" in the Word window's title bar, consider updating your default template.
+
+:::image type="content" source="../images/word-compatibility-mode.png" alt-text="Compatibility Mode displayed in Word window's title bar.":::
+
+To change the default template, see [Change the Normal template (Normal.dotm)](https://support.microsoft.com/office/06de294b-d216-47f6-ab77-ccb5166f98ea).
+
+1. Use the instructions to find the location of the Normal template on your machine.
+1. Ensure that Word is closed.
+1. Rename `Normal.dotm` in **File Explorer** or similar application. Or you can move `Normal.dotm` to another location.
+
+   > [!IMPORTANT]
+   > Because you renamed or moved `Normal.dotm`, Word automatically creates a new version the next time you open Word. Any customizations in your original `Normal.dotm` won't transfer to the new version so you'll need to add your customizations to the new template.
+
+1. Open Word and create a new document using the default template. You should no longer see "Compatibility Mode".
+1. Retry running your code using the Shape API.
 
 ## See also
 
