@@ -2,7 +2,7 @@
 title: Work with tables using the PowerPoint JavaScript API
 description: Learn how to create tables and control formatting using the PowerPoint JavaScript API.
 ms.topic: how-to
-ms.date: 03/26/2025
+ms.date: 03/31/2025
 ms.localizationpriority: medium
 ---
 
@@ -326,7 +326,7 @@ A merged area is two or more cells combined so that they share a single value an
 
 To specify a merged area, provide the upper left location where the area starts (row, column) and the length of the area in rows and columns. The following diagram shows an example of these values for a merged area that is 3 rows by 2 columns in size. Note that merged areas can’t overlap with each other.
 
-Use the `TableAddOptions.mergedCells` property to specify one or more merged areas. The following code sample shows how to create a table with two merged areas. About the code sample, note the following.
+Use the `TableAddOptions.mergedAreas` property to specify one or more merged areas. The following code sample shows how to create a table with two merged areas. About the code sample, note the following.
 
 The values property must only specify the value for the upper left corner of the merged area. All other cell values in the merged area must specify empty strings ("").
 
@@ -365,8 +365,8 @@ const options: PowerPoint.TableAddOptions = {
             },
         }
     },
-    mergedCells: [{ row: 0, column: 1, rowCount: 1, columnCount: 2 },
-    { row: 1, column: 2, rowCount: 2, columnCount: 1 }
+    mergedAreas: [{ rowIndex: 0, columnIndex: 1, rowCount: 1, columnCount: 2 },
+    { rowIndex: 1, columnIndex: 2, rowCount: 2, columnCount: 1 }
     ],
     specificCellProperties // Array values are empty objects at this point.
 };
@@ -406,11 +406,10 @@ await PowerPoint.run(async (context) => {
 
 You can also get the following read-only properties from the table.
 
-- **mergedCells**
 - **rowCount**
 - **columnCount**
 
-The following example shows how to get the table properties and log them to the console.
+The following sample shows how to get the table properties and log them to the console. The sample also shows how to get the merged areas in the table.
 
 ```javascript
 await PowerPoint.run(async (context) => {
@@ -421,10 +420,14 @@ await PowerPoint.run(async (context) => {
     // Find the first shape of type table.
     const shape = shapes.items.find((shape) => shape.type === PowerPoint.ShapeType.table)
     const table = shape.getTable();
-    table.load("mergedCells, rowCount, columnCount");
+    // Load row and column counts.
+    table.load("rowCount, columnCount");
+    // Load the merged areas.
+    const mergedAreas = table.getMergedAreas();
+    mergedAreas.load("items");
     await context.sync();
-    // Log the table property values
-    console.log(table.mergedCells);
+    // Log the table properties.
+    console.log(mergedAreas);
     console.log(table.rowCount);
     console.log(table.columnCount);
 });
