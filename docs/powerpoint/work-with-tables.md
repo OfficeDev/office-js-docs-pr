@@ -15,13 +15,13 @@ This article provides code samples that show how to create tables and control fo
 To create an empty table, call the `Shapes.addTable()` method and specify how many rows and columns the table needs. The following code sample shows how to create a table with 3 rows and 4 columns.
 
 ```javascript
-  await PowerPoint.run(async (context) => {
+await PowerPoint.run(async (context) => {
     const shapes = context.presentation.getSelectedSlides().getItemAt(0).shapes;
-    
+
     // Add a table (which is a type of Shape).
     const shape = shapes.addTable(3, 4);
-    await context.sync();  
-  });
+    await context.sync();
+});
 ```
 
 The previous sample does not specify any options, so the table will default to formatting provided by PowerPoint. The following image shows an example of an empty table created with default formatting in PowerPoint.
@@ -38,25 +38,25 @@ You can populate the table with string values when you create it. To do this pro
 
 ```javascript
 async function run() {
-  const options: PowerPoint.TableAddOptions = {
-    values: [
-      ["1", "2", "", "4"], // Cell 3 is blank
-      ["5", "6", "7", "8"],
-      ["9", "10", "11", "12"]
-    ],
-  };
-  
-  await insertTableOnCurrentSlide(3, 4, options);
+    const options: PowerPoint.TableAddOptions = {
+        values: [
+            ["1", "2", "", "4"], // Cell 3 is blank
+            ["5", "6", "7", "8"],
+            ["9", "10", "11", "12"]
+        ],
+    };
+
+    await insertTableOnCurrentSlide(3, 4, options);
 }
 
 async function insertTableOnCurrentSlide(rowCount: number, columnCount: number, options: PowerPoint.TableAddOptions) {
-  await PowerPoint.run(async (context) => {
-    const shapes = context.presentation.getSelectedSlides().getItemAt(0).shapes;
-    
-    // Add a table (which is a type of Shape).
-    const shape = shapes.addTable(rowCount, columnCount, options);
-    await context.sync();
-  });
+    await PowerPoint.run(async (context) => {
+        const shapes = context.presentation.getSelectedSlides().getItemAt(0).shapes;
+
+        // Add a table (which is a type of Shape).
+        const shape = shapes.addTable(rowCount, columnCount, options);
+        await context.sync();
+    });
 }
 ```
 
@@ -75,21 +75,20 @@ Uniform cell formatting applies to the entire table. For example, if you set the
 Specify uniform cell formatting for the entire table using the `TableAddOptions.uniformCellProperties` property. The following code sample shows how to set all table cells to have a fill color of dark slate blue, with a bold white font.
 
 ```javascript
-  const rowCount = 3;
-  const columnCount = 4;
-  const options: PowerPoint.TableAddOptions = {
-    values: [
-      ["1", "2", "", "4"],
-      ["5", "6", "7", "8"],
-      ["9", "10", "11", "12"]
-    ],
-    uniformCellProperties: {
-      fill: { color: "darkslateblue" },
-      font: { bold: true, color: "white" }
-    }
-  };
-  await insertTableOnCurrentSlide(rowCount, columnCount, options);
-
+const rowCount = 3;
+const columnCount = 4;
+const options: PowerPoint.TableAddOptions = {
+    values: [
+        ["1", "2", "", "4"],
+        ["5", "6", "7", "8"],
+        ["9", "10", "11", "12"]
+    ],
+    uniformCellProperties: {
+        fill: { color: "darkslateblue" },
+        font: { bold: true, color: "white" }
+    }
+};
+await insertTableOnCurrentSlide(rowCount, columnCount, options);
 ```
 
 The previous sample creates a table as shown in the following image.
@@ -103,27 +102,28 @@ Specific cell formatting applies to individual cells and overrides the uniform c
 The `specificCellProperties` must be a 2D array that matches the 2D size of the table exactly. The sample first creates the entire empty 2D array of objects. Then it sets the specific cell format at row 1, column 1, after the options object is created.
 
 ```javascript
-  const rowCount = 3;
-  const columnCount = 4;
-  // Compact syntax to create a 2D array filled with empty and distinct objects.
-  const specificCellProperties = Array(rowCount).fill("").map(_=> Array(columnCount).fill("").map(_ => ({})));
-  const options: PowerPoint.TableAddOptions = {
-    values: [
-      ["1", "2", "", "4"],
-      ["5", "6", "7", "8"],
-      ["9", "10", "11", "12"]
-    ],
-    uniformCellProperties: {
-      fill: { color: "darkslateblue" },
-      font: { bold: true, color: "white" }
-    },
-    specificCellProperties // Array values are empty objects at this point.
-  };
-  // Set fill color for specific cell at row 1, column 1.
-  options.specificCellProperties[1][1] = {
-    fill: { color: "black" }
-  };
-  await insertTableOnCurrentSlide(rowCount, columnCount, options);
+const rowCount = 3;
+const columnCount = 4;
+// Compact syntax to create a 2D array filled with empty and distinct objects.
+const specificCellProperties = Array(rowCount).fill("").map(_ => Array(columnCount).fill("").map(_ => ({})));
+const options: PowerPoint.TableAddOptions = {
+    values: [
+        ["1", "2", "", "4"],
+        ["5", "6", "7", "8"],
+        ["9", "10", "11", "12"]
+    ],
+    uniformCellProperties: {
+        fill: { color: "darkslateblue" },
+        font: { bold: true, color: "white" }
+    },
+    specificCellProperties // Array values are empty objects at this point.
+};
+// Set fill color for specific cell at row 1, column 1.
+options.specificCellProperties[1][1] = {
+    fill: { color: "black" }
+};
+await insertTableOnCurrentSlide(rowCount, columnCount, options);
+
 ```
 
 The previous sample creates a table with a specific format applied to the cell in row 1, column 1 as shown in the following image.
@@ -134,24 +134,25 @@ The previous sample uses the `font` property which is of type `TableCellFontProp
 
 ```javascript
 options.specificCellProperties[1][1] = {
-    font: {
-      color: "orange",
-      name: "Arial",
-      size: 50,
-      allCaps: true,
-      italic: true,
-    }
-  };
+    font: {
+        color: "orange",
+        name: "Arial",
+        size: 50,
+        allCaps: true,
+        italic: true,
+    }
+};
 ```
 
 You can also specify a `fill` property which is of type `TableCellFillProperties`. The `fill` property can specify a color and the transparency percentage. The following code sample shows how to create a fill for all table cells using the color "light red" and a 50% transparency.
 
 ```javascript
-   uniformCellProperties: {
-      fill: { color: "lightred",
-        transparency: 0.5
-       },
-    }
+uniformCellProperties: {
+    fill: {
+        color: "lightred",
+            transparency: 0.5
+    },
+}
 ```
 
 ## Borders
@@ -159,51 +160,52 @@ You can also specify a `fill` property which is of type `TableCellFillProperties
 Use the `TableCellProperties.borders` object to define borders for cells in the table. The following code sample shows how to set the borders of a cell in row 1 by column 1 to a red border with weight 3.
 
 ```javascript
-  const columnCount = 3;
-  const rowCount = 3;
-  // Compact syntax to create a 2D array filled with empty and distinct objects.
-  const specificCellProperties = Array(rowCount).fill(undefined).map(_=> Array(columnCount).fill(undefined).map(_ => ({})));
-  const options: PowerPoint.TableAddOptions = {
-    values: [
-      ["1", "2", "3"],
-      ["4", "5", "6"],
-      ["7", "8", "9"]
-    ],
-    uniformCellProperties: {
-      fill: { color: "lightcyan",
-        transparency: 0.5
-       },
-    },
-    specificCellProperties
-  };
-  options.specificCellProperties[1][1] = {
-    font: {
-      color: "red",
-      name: "Arial",
-      size: 50,
-      allCaps: true,
-      italic: true,
-    },
-    borders: {
-      bottom: {
-        color: "red",
-        weight: 3
-      },
-      left: {
-        color: "red",
-        weight: 3
-      },
-      right: {
-        color: "red",
-        weight: 3
-      },
-      top: {
-        color: "red",
-        weight: 3
-      },
-    }
-  };
-  await insertTableOnCurrentSlide(rowCount, columnCount, options);
+const columnCount = 3;
+const rowCount = 3;
+// Compact syntax to create a 2D array filled with empty and distinct objects.
+const specificCellProperties = Array(rowCount).fill(undefined).map(_ => Array(columnCount).fill(undefined).map(_ => ({})));
+const options: PowerPoint.TableAddOptions = {
+    values: [
+        ["1", "2", "3"],
+        ["4", "5", "6"],
+        ["7", "8", "9"]
+    ],
+    uniformCellProperties: {
+        fill: {
+            color: "lightcyan",
+            transparency: 0.5
+        },
+    },
+    specificCellProperties
+};
+options.specificCellProperties[1][1] = {
+    font: {
+        color: "red",
+        name: "Arial",
+        size: 50,
+        allCaps: true,
+        italic: true,
+    },
+    borders: {
+        bottom: {
+            color: "red",
+            weight: 3
+        },
+        left: {
+            color: "red",
+            weight: 3
+        },
+        right: {
+            color: "red",
+            weight: 3
+        },
+        top: {
+            color: "red",
+            weight: 3
+        },
+    }
+};
+await insertTableOnCurrentSlide(rowCount, columnCount, options);
 ```
 
 ## Horizontal and vertical alignment
@@ -211,52 +213,52 @@ Use the `TableCellProperties.borders` object to define borders for cells in the 
 Use the `TableCellProperties.horizontalAlignment` property to control text alignment in a cell. The following example shows how to set horizontal alignment to left, right, and center for three cells in a table. For a list of all alignment options, see the `ParagraphHorizontalAlignment` enum.
 
 ```javascript
-  const rowCount = 3;
-  const columnCount = 3;
-  // Compact syntax to create a 2D array filled with empty and distinct objects.
-  const specificCellProperties = Array(rowCount).fill("").map(_=> Array(columnCount).fill("").map(_ => ({})));
-  const options: PowerPoint.TableAddOptions = {
-    values: [
-      ["Left aligned, top", "\n\n", ""],
-      ["Centered", "\n\n", ""],
-      ["Right aligned, bottom", "\n\n", ""]
-    ],
-    uniformCellProperties: {
-      fill: { color: "lightblue" },
-borders: {
-      bottom: {
-        color: "black",
-        weight: 3
-      },
-      left: {
-        color: "black",
-        weight: 3
-      },
-      right: {
-        color: "black",
-        weight: 3
-      },
-      top: {
-        color: "black",
-        weight: 3
-      },
-    }
-    },
-    specificCellProperties // Array values are empty objects at this point.
-  };
-  options.specificCellProperties[0][0] = {
-    horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.left,
-    verticalAlignment: 0 //PowerPoint.TextVerticalAlignment.top
-  };
-  options.specificCellProperties[1][0] = {
-    horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
-    verticalAlignment: 1 //PowerPoint.TextVerticalAlignment.middle
-  };
-  options.specificCellProperties[2][0] = {
-    horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.right,
-    verticalAlignment: 2 //PowerPoint.TextVerticalAlignment.bottom
-  };
-  await insertTableOnCurrentSlide(3, 3, options);
+const rowCount = 3;
+const columnCount = 3;
+// Compact syntax to create a 2D array filled with empty and distinct objects.
+const specificCellProperties = Array(rowCount).fill("").map(_ => Array(columnCount).fill("").map(_ => ({})));
+const options: PowerPoint.TableAddOptions = {
+    values: [
+        ["Left aligned, top", "\n\n", ""],
+        ["Centered", "\n\n", ""],
+        ["Right aligned, bottom", "\n\n", ""]
+    ],
+    uniformCellProperties: {
+        fill: { color: "lightblue" },
+        borders: {
+            bottom: {
+                color: "black",
+                weight: 3
+            },
+            left: {
+                color: "black",
+                weight: 3
+            },
+            right: {
+                color: "black",
+                weight: 3
+            },
+            top: {
+                color: "black",
+                weight: 3
+            },
+        }
+    },
+    specificCellProperties // Array values are empty objects at this point.
+};
+options.specificCellProperties[0][0] = {
+    horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.left,
+    verticalAlignment: 0 //PowerPoint.TextVerticalAlignment.top
+};
+options.specificCellProperties[1][0] = {
+    horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
+    verticalAlignment: 1 //PowerPoint.TextVerticalAlignment.middle
+};
+options.specificCellProperties[2][0] = {
+    horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.right,
+    verticalAlignment: 2 //PowerPoint.TextVerticalAlignment.bottom
+};
+await insertTableOnCurrentSlide(3, 3, options);
 ```
 
 The previous sample creates a table with left/top, centered, and right/bottom text alignment as shown in the following image.
@@ -272,46 +274,46 @@ The height or width that you set may not be honored by PowerPoint if it needs to
  The following code example shows how to set row height and column width for a new table. Note that the rows and columns properties must be set to an array of objects equal to their count.
 
 ```javascript
-  const columnCount = 3;
-  const rowCount = 3;
-  const options: PowerPoint.TableAddOptions = {
-    values: [
-      ["Width 72pt", "Width 244pt", "Width 100pt"],
-      ["","",""],
-      ["", "^\n\nHeight 200 pt\n\nv", ""]
-    ],
-    // Initialize columns with an array of empty objects for each column.
-    columns: Array(columnCount).fill("").map(_ => ({})),
-    rows: Array(columnCount).fill("").map(_ => ({})),
-    uniformCellProperties: {
-      fill: { color: "lightcyan" },
-      horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
-      verticalAlignment: 1, //PowerPoint.TextVerticalAlignment.middle
-borders: {
-      bottom: {
-        color: "black",
-        weight: 3
-      },
-      left: {
-        color: "black",
-        weight: 3
-      },
-      right: {
-        color: "black",
-        weight: 3
-      },
-      top: {
-        color: "black",
-        weight: 3
-      },
-    }
-    }
-  };
-  options.columns[0].columnWidth = 72;
-  options.columns[1].columnWidth = 244;
-  options.columns[2].columnWidth = 100;
-  options.rows[2].rowHeight = 200;
-  await insertTableOnCurrentSlide(rowCount, columnCount, options);
+const columnCount = 3;
+const rowCount = 3;
+const options: PowerPoint.TableAddOptions = {
+    values: [
+        ["Width 72pt", "Width 244pt", "Width 100pt"],
+        ["", "", ""],
+        ["", "^\n\nHeight 200 pt\n\nv", ""]
+    ],
+    // Initialize columns with an array of empty objects for each column.
+    columns: Array(columnCount).fill("").map(_ => ({})),
+    rows: Array(columnCount).fill("").map(_ => ({})),
+    uniformCellProperties: {
+        fill: { color: "lightcyan" },
+        horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
+        verticalAlignment: 1, //PowerPoint.TextVerticalAlignment.middle
+        borders: {
+            bottom: {
+                color: "black",
+                weight: 3
+            },
+            left: {
+                color: "black",
+                weight: 3
+            },
+            right: {
+                color: "black",
+                weight: 3
+            },
+            top: {
+                color: "black",
+                weight: 3
+            },
+        }
+    }
+};
+options.columns[0].columnWidth = 72;
+options.columns[1].columnWidth = 244;
+options.columns[2].columnWidth = 100;
+options.rows[2].rowHeight = 200;
+await insertTableOnCurrentSlide(rowCount, columnCount, options);
 ```
 
 The previous sample creates a table with three custom column widths, and one custom row height, as shown in the following image.
@@ -331,48 +333,48 @@ The values property must only specify the value for the upper left corner of the
 Each merged area must specify the upper left corner location (row, column) and the length in cells of the merged area in terms of row count and column count.  
 
 ```javascript
-  const rowCount = 3;
-  const columnCount = 4;
-  // Compact syntax to create a 2D array filled with empty and distinct objects.
-  const specificCellProperties = Array(rowCount).fill("").map(_=> Array(columnCount).fill("").map(_ => ({})));
-  const options: PowerPoint.TableAddOptions = {
-    values: [
-      ["1", "This is a merged cell", "", "4"],
-      ["5", "6", "This is also a merged cell", "8"],
-      ["9", "10", "", "12"]
-    ],
-    uniformCellProperties: {
-      fill: { color: "darkslateblue" },
-      font: { bold: true, color: "white" },
-borders: {
-      bottom: {
-        color: "black",
-        weight: 3
-      },
-      left: {
-        color: "black",
-        weight: 3
-      },
-      right: {
-        color: "black",
-        weight: 3
-      },
-      top: {
-        color: "black",
-        weight: 3
-      },
-    }
-    },
-    mergedCells: [{ row: 0, column: 1, rowCount: 1, columnCount: 2 },
-      { row: 1, column: 2, rowCount: 2, columnCount: 1 }
-    ],
-    specificCellProperties // Array values are empty objects at this point.
-  };
-  // Set fill color for specific cell at row 1, column 1.
-  options.specificCellProperties[1][1] = {
-    fill: { color: "black" }
-  };
-  await insertTableOnCurrentSlide(rowCount, columnCount, options);
+const rowCount = 3;
+const columnCount = 4;
+// Compact syntax to create a 2D array filled with empty and distinct objects.
+const specificCellProperties = Array(rowCount).fill("").map(_ => Array(columnCount).fill("").map(_ => ({})));
+const options: PowerPoint.TableAddOptions = {
+    values: [
+        ["1", "This is a merged cell", "", "4"],
+        ["5", "6", "This is also a merged cell", "8"],
+        ["9", "10", "", "12"]
+    ],
+    uniformCellProperties: {
+        fill: { color: "darkslateblue" },
+        font: { bold: true, color: "white" },
+        borders: {
+            bottom: {
+                color: "black",
+                weight: 3
+            },
+            left: {
+                color: "black",
+                weight: 3
+            },
+            right: {
+                color: "black",
+                weight: 3
+            },
+            top: {
+                color: "black",
+                weight: 3
+            },
+        }
+    },
+    mergedCells: [{ row: 0, column: 1, rowCount: 1, columnCount: 2 },
+    { row: 1, column: 2, rowCount: 2, columnCount: 1 }
+    ],
+    specificCellProperties // Array values are empty objects at this point.
+};
+// Set fill color for specific cell at row 1, column 1.
+options.specificCellProperties[1][1] = {
+    fill: { color: "black" }
+};
+await insertTableOnCurrentSlide(rowCount, columnCount, options);
 ```
 
 The previous sample creates a table with two merged areas as shown in the following image.
@@ -384,22 +386,22 @@ The previous sample creates a table with two merged areas as shown in the follow
 After a table is created you can get or set string values in the cells. Note that this is the only part of a table you can change. You can’t change borders, fonts, widths, or other cell properties. If you need to update a table, delete it and recreate it. The following code sample shows how to find an existing table and set a new value for a cell in the table.
 
 ```javascript
-  await PowerPoint.run(async (context) => {
-    // Load shapes.
-    const shapes = context.presentation.getSelectedSlides().getItemAt(0).shapes;
-    shapes.load("items");
-    await context.sync();
-    // Find the first shape of type table.
-    const shape = shapes.items.find((shape) => shape.type === PowerPoint.ShapeType.table)
-    const table = shape.getTable();
-    table.load("values");
-    await context.sync();
-    // Set the value of the specified table cell.
-    let values = table.values;
-    values[1][1] = "A new value";
-    table.values = values;
-    await context.sync();
-  });
+await PowerPoint.run(async (context) => {
+    // Load shapes.
+    const shapes = context.presentation.getSelectedSlides().getItemAt(0).shapes;
+    shapes.load("items");
+    await context.sync();
+    // Find the first shape of type table.
+    const shape = shapes.items.find((shape) => shape.type === PowerPoint.ShapeType.table)
+    const table = shape.getTable();
+    table.load("values");
+    await context.sync();
+    // Set the value of the specified table cell.
+    let values = table.values;
+    values[1][1] = "A new value";
+    table.values = values;
+    await context.sync();
+});
 ```
 
 You can also get the following read-only properties from the table.
@@ -411,19 +413,19 @@ You can also get the following read-only properties from the table.
 The following example shows how to get the table properties and log them to the console.
 
 ```javascript
-  await PowerPoint.run(async (context) => {
-    // Load shapes.
-    const shapes = context.presentation.getSelectedSlides().getItemAt(0).shapes;
-    shapes.load("items");
-    await context.sync();
-    // Find the first shape of type table.
-    const shape = shapes.items.find((shape) => shape.type === PowerPoint.ShapeType.table)
-    const table = shape.getTable();
-    table.load("mergedCells, rowCount, columnCount");
-    await context.sync();
-    // Log the table property values
-    console.log(table.mergedCells);
-    console.log(table.rowCount);
-    console.log(table.columnCount);
-  });
+await PowerPoint.run(async (context) => {
+    // Load shapes.
+    const shapes = context.presentation.getSelectedSlides().getItemAt(0).shapes;
+    shapes.load("items");
+    await context.sync();
+    // Find the first shape of type table.
+    const shape = shapes.items.find((shape) => shape.type === PowerPoint.ShapeType.table)
+    const table = shape.getTable();
+    table.load("mergedCells, rowCount, columnCount");
+    await context.sync();
+    // Log the table property values
+    console.log(table.mergedCells);
+    console.log(table.rowCount);
+    console.log(table.columnCount);
+});
 ```
