@@ -215,10 +215,10 @@ If your add-in is for Exchange on-premises only (for example, Exchange 2019), it
 
 ### What will happen to my Outlook add-ins if I don't migrate to NAA?
 
-If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off, Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources. When your add-in calls an API that request an Exchange token, such as `getUserIdentityTokenAsync`, it will get a generic error similar to the following with error codes such as 9017 or 9018.
+If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off, Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources. When your add-in calls an API that request an Exchange token, such as `getUserIdentityTokenAsync`, it will get a generic error similar to the following with error codes such as 9018 or 9017.
 
-- `GenericTokenError: An internal error has occurred.`
-- `InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information.`
+- "GenericTokenError: An internal error has occurred."
+- "InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information."
 
 If your add-in only works on-premises or if your add-in is on a deprecation path, you may not need to update. However, most add-ins that access Exchange resources through EWS or Outlook REST must migrate to continue functioning as expected.
 
