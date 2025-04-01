@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 10/14/2022
+ms.date:03/31/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -37,8 +37,10 @@ The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.ce
 - [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
 - [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
-- [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
+- [ExternalCodeServiceObjectCellValue](/javascript/api/excel/excel.externalcodeserviceobjectcellvalue?view=excel-js-preview)
+- [FunctionCellValue](/javascript/api/excel/excel.functioncellvalue)
 - [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
+- [LocalImageCellValue](/javascript/api/excel/excel.localimagecellvalue)
 - [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue)
 - [StringCellValue](/javascript/api/excel/excel.stringcellvalue)
 - [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
@@ -58,20 +60,22 @@ The following sections show JSON code samples for the formatted number value, en
 
 ## Formatted number values
 
-The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
+The [DoubleCellCellValue](/javascript/api/excel/excel.doublecellcellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
 
 The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If the minimum compatibility requirements for the data types feature aren't met, calculations use the `basicValue` in place of the formatted number.
 
 ```TypeScript
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
-const myDate: Excel.FormattedNumberCellValue = {
-    type: Excel.CellValueType.formattedNumber,
+const myDate: Excel.DoubleCellValue = {
+    type: Excel.CellValueType.double,
     basicValue: 32889.0,
     basicType: Excel.RangeValueType.double, // A read-only property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
+
+The number formatting is considered the default format. If the user, or other code, applies formatting to a cell containing a formatted number, the applied format will override the number’s format.
 
 Begin experimenting with formatted number values by opening [Script Lab](../overview/explore-with-script-lab.md) and checking out the [Data types: Formatted numbers](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml) snippet in our **Samples** library.
 

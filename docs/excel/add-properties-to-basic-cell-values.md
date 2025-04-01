@@ -22,16 +22,7 @@ Cell value properties can also be used in formulas.
 
 ## Create a cell value with properties
 
-To create a cell value and add properties to it, use `valuesAsJson` to assign properties. The following objects offer the `valuesAsJson` property.
-
-- [NamedItem](/javascript/api/excel/excel.nameditem) (as **valueAsJson**)
-- [NamedItemArrayValues](/javascript/api/excel/excel.nameditemarrayvalues)
-- [Range](/javascript/api/excel/excel.range)
-- [RangeView](/javascript/api/excel/excel.rangeview)
-- [TableColumn](/javascript/api/excel/excel.tablecolumn)
-- [TableRow](/javascript/api/excel/excel.tablerow)
-
-The following code sample shows how to create a new number in cell **A1**. It adds the **Food**, **Drinks**, and additional properties describing a bill in a restaurant. It assigns a JSON description of the properties to `Range.valuesAsJson`.
+To create a cell value and add properties to it, use `valuesAsJson` to assign properties. The following code sample shows how to create a new number in cell **A1**. It adds the **Food**, **Drinks**, and additional properties describing a bill in a restaurant. It assigns a JSON description of the properties to `Range.valuesAsJson`.
 
 ```javascript
 async function createNumberProperties() {
