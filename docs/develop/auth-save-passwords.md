@@ -7,7 +7,7 @@ ms.date: 03/10/2025
 
 # Enable automatic password saving in Microsoft Edge WebView2
 
-If you use a password form to sign in the user, most browsers can automatically save passwords on behalf of the user when they sign in. This helps users avoid memorizing complex passwords with repeated sign-in prompts. When your add-in is loaded in Microsoft Office on Windows, Microsoft Edge Webview2 hosts your add-in. WebView2 also supports automatic password saving. To enable automatic password saving, add HTML input controls for the user name ans password similar to the following HTML.
+Most browsers can automatically save passwords on behalf of the user when they sign in. This helps users manage passwords in a secure environment. Microsoft Edge WebView2 also supports automatic password saving. When your add-in is loaded in Microsoft Office on Windows, Webview2 hosts your add-in. To enable automatic password saving, add HTML input controls for the username and password, as shown in the following HTML.
 
 ```html
 <div>
@@ -21,7 +21,7 @@ If you use a password form to sign in the user, most browsers can automatically 
 </div>
 ```
 
-In the button click event handler for the sign-in button, call the authentication library of your choice to sign in the user. Once the sign-in is complete, redirect to a new web page. When WebView2 see the redirect, and the user name and password, it prompts the user to offer to automatically save the user name and password. The following code shows how to handle the sign-in button click event.
+In the button click event handler for the sign-in button, call the authentication library of your choice to sign in the user. Once the sign-in is complete, redirect to a new web page. When WebView2 sees the redirect, and the username and password, it prompts the user to offer to automatically save the credentials. The following code shows how to handle the sign-in button click event.
 
 ```javascript
 async function btnSignIn() {
@@ -30,7 +30,7 @@ async function btnSignIn() {
   const pwd = document.getElementById("password").value
 
   try {
-    //Sign in the user. This is a placeholder for the actual sign-in logic.
+    // Sign in the user. This is a placeholder for the actual sign-in logic.
     await signInUser(username, pwd);
 
     // Redirect to a success page to trigger the password autosave.
@@ -45,7 +45,7 @@ async function btnSignIn() {
 
 ## How the user manages passwords
 
-When the user enters a new password in your add-in, and your add-in redirects to a new web page, WebView2 asks the user if they want their username and password saved. The next time your add-in prompts for credentials, WebView2 will finish filling in the user's account info.
+When the user enters a new password in your add-in, and your add-in redirects to a new web page, WebView2 asks the user if they want their username and password saved. The next time your add-in prompts for credentials, WebView2 automatically enters the user's account info.
 
 :::image type="content" source="../images/edge-webview2-automatic-save-passwords.png" alt-text="The dialog from WebView2 prompting the user if they want to save their user name and password.":::
 
