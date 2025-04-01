@@ -181,7 +181,7 @@ If legacy Exchange Online tokens are off, you'll see an error displayed in the c
 
 ![Screen shot of an error in the console window.](../images/script-lab-error-exchange-token.png)
 
-The actual error and code can vary, but often you will see error code 9018 or 9017 along with the following error descriptions.
+The actual error and code can vary, but often you will see error code 9017 or 9018 along with the following error descriptions.
 
 - `GenericTokenError: An internal error has occurred.`
 - `InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information.`
@@ -215,7 +215,7 @@ If your add-in is for Exchange on-premises only (for example, Exchange 2019), it
 
 ### What will happen to my Outlook add-ins if I don't migrate to NAA?
 
-If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off, Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources. When your add-in calls an API that request an Exchange token, such as `getUserIdentityTokenAsync`, it will get a generic error similar to the following with error codes such as 9018 or 9017.
+If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off, Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources. When your add-in calls an API that requests an Exchange token, such as `getUserIdentityTokenAsync`, it gets a generic error similar to the following with error codes such as 9018 or 9017.
 
 - "GenericTokenError: An internal error has occurred."
 - "InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information."
@@ -316,13 +316,13 @@ MSAL always returns these three tokens. It requests the `profile`, `openid`, and
 
 ### Should I validate the ID token from MSAL?
 
-No. This is a legacy authentication pattern that was used with Exchange tokens to authorize access to your own resources. Passing the ID token over a network call to enable or authorize access to a service is a security anti-pattern. The ID token is intended only for the client (task pane) and there is no way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [https://learn.microsoft.com/en-us/entra/identity-platform/id-token-claims-reference](/entra/identity-platform/id-token-claims-reference).
+No. This is a legacy authentication pattern that was used with Exchange tokens to authorize access to your own resources. Passing the ID token over a network call to enable or authorize access to a service is a security anti-pattern. The ID token is intended only for the client (task pane) and there is no way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [ID token claims reference](/entra/identity-platform/id-token-claims-reference).
 
 It's very important that you always request an access token to your own services. The access token also includes the same ID claims, so you don't need to pass the ID token. Instead create a custom scope for your service. For more information about app registration settings for your own services, see [Protected web API: App registration](/entra/identity-platform/scenario-protected-web-api-app-registration). When your service receives the access token, it can validate it, and use ID claims from inside the access token.
 
 ### Why is the ID token not refreshed?
 
-There is a known issue where MSAL sometimes doesn't refresh the ID token after it expires. This shouldn't cause any issues in your add-in since the ID token is only intended for use in your task pane to get basic user identity such as name and email. There's no reason to validate the ID token or check the expiration claim. If you need to authenticate the user to your own resources, use the access token which also contains user identity information. The ID token must never be passed outside of your client code that received it.
+There is a known issue where MSAL sometimes doesn't refresh the ID token after it expires. This shouldn't cause any issues in your add-in since the ID token is only intended for use in your task pane to get basic user identity information, such as name and email. There's no reason to validate the ID token or check the expiration claim. If you need to authenticate the user to your own resources, use the access token which also contains user identity information. The ID token must never be passed outside of your client code that received it.
 
 ### How do I determine if the user is an online or on-premise account?
 
