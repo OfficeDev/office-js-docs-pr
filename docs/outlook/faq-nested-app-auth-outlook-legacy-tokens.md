@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 03/11/2025
+ms.date: 03/13/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -181,6 +181,11 @@ If legacy Exchange Online tokens are off, you'll see an error displayed in the c
 
 ![Screen shot of an error in the console window.](../images/script-lab-error-exchange-token.png)
 
+The actual error and code can vary, but often you will see error code 9017 or 9018 along with the following error descriptions.
+
+- `GenericTokenError: An internal error has occurred.`
+- `InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information.`
+
 If an add-in is affected by Exchange tokens turned off, you can turn them back on. For more information, see [Can I turn Exchange Online legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on).
 
 ## Outlook add-in migration FAQ
@@ -210,7 +215,10 @@ If your add-in is for Exchange on-premises only (for example, Exchange 2019), it
 
 ### What will happen to my Outlook add-ins if I don't migrate to NAA?
 
-If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off, Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources.
+If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off, Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources. When your add-in calls an API that requests an Exchange token, such as `getUserIdentityTokenAsync`, it gets a generic error similar to the following with error codes such as 9017 or 9018.
+
+- "GenericTokenError: An internal error has occurred."
+- "InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information."
 
 If your add-in only works on-premises or if your add-in is on a deprecation path, you may not need to update. However, most add-ins that access Exchange resources through EWS or Outlook REST must migrate to continue functioning as expected.
 
@@ -294,29 +302,33 @@ Outlook 2016 and Outlook 2019 on Windows use the Trident+ or WebView2 based on v
 - For more information on when Trident+ or Webview2 is used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 - For more information on how to determine which webview is running, see  [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md#determine-the-webview-the-add-in-is-running-in-at-runtime)
 
-### How do I validate the ID token or authenticate the user?
-
-Using Exchange tokens, you can validate the ID token and use it to authorize the user to access your own resources. For more information, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md). However, MSAL with Entra ID tokens does not use this approach.
+### What tokens does MSAL return and are there minimum scopes to request?
 
 When you request a token through MSAL, it always returns three tokens.
 
-|Token          |Purpose  |Scopes  |
-|---------------|---------|---------|
-|ID token | Provides information about the user to the client (task pane). | `profile` and `openid` |
-|Refresh token  | Refreshes the ID and access tokens when they expire.     | `offline_access`       |
-|Access token   | Authenticates the user for specific scopes to a resource, such as Microsoft Graph. | Any resource scopes, such as `user.read`. |
+|Token          |Purpose  |Scopes  | `AuthencationResult` property |
+|---------------|---------|---------|----------------------------|
+|ID token | Provides information about the user to the client (task pane). | `profile` and `openid` | `authResult.idToken` |
+|Refresh token  | Refreshes the ID and access tokens when they expire.     | `offline_access`       | Not available. |
+|Access token   | Authenticates the user for specific scopes to a resource, such as Microsoft Graph. | Any resource scopes, such as `user.read`. | `authResult.accessToken` |
 
 MSAL always returns these three tokens. It requests the `profile`, `openid`, and `offline_access` as default scopes even if your token request doesn't include them. This ensures the ID and refresh tokens are requested. However, you must include at least one resource scope, such as `user.read` so that you get an access token. If not, the request can fail.
 
-Passing the ID token over a network call to enable or authorize access to a service is a security anti-pattern. The token is intended only for the client (task pane) and there is no way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [https://learn.microsoft.com/en-us/entra/identity-platform/id-token-claims-reference](/entra/identity-platform/id-token-claims-reference).
+### Should I validate the ID token from MSAL?
+
+No. This is a legacy authentication pattern that was used with Exchange tokens to authorize access to your own resources. Passing the ID token over a network call to enable or authorize access to a service is a security anti-pattern. The ID token is intended only for the client (task pane) and there is no way for the service to reliably use the token to be sure the user has authorized access. For more information about ID token claims, see [ID token claims reference](/entra/identity-platform/id-token-claims-reference).
 
 It's very important that you always request an access token to your own services. The access token also includes the same ID claims, so you don't need to pass the ID token. Instead create a custom scope for your service. For more information about app registration settings for your own services, see [Protected web API: App registration](/entra/identity-platform/scenario-protected-web-api-app-registration). When your service receives the access token, it can validate it, and use ID claims from inside the access token.
+
+### Why is the ID token not refreshed?
+
+There is a known issue where MSAL sometimes doesn't refresh the ID token after it expires. This shouldn't cause any issues in your add-in since the ID token is only intended for use in your task pane to get basic user identity information, such as name and email. There's no reason to validate the ID token or check the expiration claim. If you need to authenticate the user to your own resources, use the access token which also contains user identity information. The ID token must never be passed outside of your client code that received it.
 
 ### How do I determine if the user is an online or on-premise account?
 
 You can determine if the signed-in user has an Exchange Online account or on-premise Exchange account by using the [Office.UserProfile.accountType](/javascript/api/outlook/office.userprofile) property. If the account type property value is **enterprise**, then the mailbox is on an on-premises Exchange server. Note that volume-licensed perpetual Outlook 2016 doesn’t support the **accountType** property. To work around this, call the [ResolveNames](/exchange/client-developer/web-service-reference/resolvenames-operation) operation in Exchange Web Service (EWS) in the Exchange on-premise server to get the recipient types.
 
-## How do I deploy my add-in to Microsoft AppSource
+### How do I deploy my add-in to Microsoft AppSource
 
 If you're publishing a new add-in to Microsoft AppSource, it will need to go through a certification process. For more information, see [Publish your Office Add-in to Microsoft AppSource](../publish/publish-office-add-ins-to-appsource.md). If you're updating the manifest of an add-in that is already published to Microsoft AppSource, you need to go through the certification process again. You can update the add-in's source code on your web server any time without a need to go through the certification process.
 
