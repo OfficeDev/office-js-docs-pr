@@ -891,7 +891,7 @@ items:
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
-    - name: Work with Tables
+    - name: Work with tables
       href: powerpoint/work-with-tables.md
       displayName: PowerPoint
     - name: Work with shapes
