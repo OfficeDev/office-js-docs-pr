@@ -2,7 +2,7 @@
 title: Bind to shapes in a PowerPoint presentation
 description: Learn how to bind shapes and access them from your add-in to keep them up to date.
 ms.topic: how-to
-ms.date: 03/31/2025
+ms.date: 04/02/2025
 ms.localizationpriority: medium
 ---
 
