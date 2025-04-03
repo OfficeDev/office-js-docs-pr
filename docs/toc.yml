@@ -893,13 +893,13 @@ items:
       displayName: PowerPoint
     - name: Work with tables
       href: powerpoint/work-with-tables.md
-      displayName: PowerPoint
+      displayName: PowerPoint, preview
     - name: Work with shapes
       href: powerpoint/shapes.md
       displayName: PowerPoint
     - name: Bind shapes to a data source
       href: powerpoint/bind-shapes-in-presentation.md
-      displayName: PowerPoint
+      displayName: PowerPoint, preview
 - name: Project
   items:
   - name: Project add-ins documentation
