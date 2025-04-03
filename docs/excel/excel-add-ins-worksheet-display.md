@@ -9,7 +9,46 @@ ms.localizationpriority: medium
 
 Excel is often used for reporting scenarios where you want to share worksheet data with others. Your Office Add-in can reduce visual clutter and help focus attention by controlling the appearance of the worksheet. The Office JavaScript API supports changing several visual aspects of the worksheet.
 
-## Turn data type icons on or off
+## Page layout and print settings
+
+Add-ins have access to page layout settings at a worksheet level. These control how the sheet is printed. A `Worksheet` object has three layout-related properties: `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
+
+`Worksheet.horizontalPageBreaks` and `Worksheet.verticalPageBreaks` are [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection). These are collections of [PageBreaks](/javascript/api/excel/excel.pagebreak), which specify ranges where manual page breaks are inserted. The following code sample adds a horizontal page break above row **21**.
+
+```js
+await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
+    await context.sync();
+});
+```
+
+`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependent any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
+
+The following code sample centers the page (both vertically and horizontally), sets a title row that will be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
+
+```js
+await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+
+    // Center the page in both directions.
+    sheet.pageLayout.centerHorizontally = true;
+    sheet.pageLayout.centerVertically = true;
+
+    // Set the first row as the title row for every page.
+    sheet.pageLayout.setPrintTitleRows("$1:$1");
+
+    // Limit the area to be printed to the range "A1:D100".
+    sheet.pageLayout.setPrintArea("A1:D100");
+
+    await context.sync();
+});
+```
+
+## Turn data type icons on or off (preview)
+
+> [!NOTE]
+> [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Data types can have an icon next to the value in the cell. When you have large tables with many data types, this can appear cluttered.
 
@@ -30,7 +69,10 @@ await Excel.run(async (context) => {
 > [!NOTE]
 > If a linked data type displays a **?** icon, this can’t be toggled on or off. Excel needs the user to disambiguate the cell value to find the correct data type. For more information, see [Excel data types: Stocks and geography](https://support.microsoft.com/office/61a33056-9935-484f-8ac8-f1a89e210877).
 
-## Show or hide the worksheet gridlines
+## Show or hide the worksheet gridlines (preview)
+
+> [!NOTE]
+> [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Gridlines are the faint lines that appear between cells on a worksheet. These can be distracting if you use shapes, icons, or have specific line and border formats on data.
 
@@ -48,7 +90,10 @@ await Excel.run(async (context) => {
 });  
 ```
 
-## Toggle headings
+## Toggle headings (preview)
+
+> [!NOTE]
+> [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
 Headings are the Excel row numbers that appear on the left side of the worksheet (1, 2, 3) and the column letters that appear at the top of the worksheet (A, B, C). The user may not want these in their report.
 
@@ -62,42 +107,6 @@ await Excel.run(async (context) => {
     sheet.showHeadings = false;
     await context.sync();
 });  
-```
-
-## Page layout and print settings
-
-Add-ins have access to page layout settings at a worksheet level. These control how the sheet is printed. A `Worksheet` object has three layout-related properties: `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
-
-`Worksheet.horizontalPageBreaks` and `Worksheet.verticalPageBreaks` are [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection). These are collections of [PageBreaks](/javascript/api/excel/excel.pagebreak), which specify ranges where manual page breaks are inserted. The following code sample adds a horizontal page break above row **21**.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getActiveWorksheet();
-    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
-    await context.sync();
-});
-```
-
-`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependent any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
-
-The following code sample centers the page (both vertically and horizontally), sets a title row that will be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getActiveWorksheet();
-
-    // Center the page in both directions.
-    sheet.pageLayout.centerHorizontally = true;
-    sheet.pageLayout.centerVertically = true;
-
-    // Set the first row as the title row for every page.
-    sheet.pageLayout.setPrintTitleRows("$1:$1");
-
-    // Limit the area to be printed to the range "A1:D100".
-    sheet.pageLayout.setPrintArea("A1:D100");
-
-    await context.sync();
-});
 ```
 
 ## See also
