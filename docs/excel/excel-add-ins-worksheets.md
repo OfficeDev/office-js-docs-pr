@@ -1,7 +1,7 @@
 ---
 title: Work with worksheets using the Excel JavaScript API
 description: Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.
-ms.date: 04/25/2022
+ms.date: 04/03/2025
 ms.localizationpriority: medium
 ---
 
@@ -524,42 +524,6 @@ async function checkProtection(event) {
         console.log("    Source of change event: " + source);    
     });
 }
-```
-
-## Page layout and print settings
-
-Add-ins have access to page layout settings at a worksheet level. These control how the sheet is printed. A `Worksheet` object has three layout-related properties: `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
-
-`Worksheet.horizontalPageBreaks` and `Worksheet.verticalPageBreaks` are [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection). These are collections of [PageBreaks](/javascript/api/excel/excel.pagebreak), which specify ranges where manual page breaks are inserted. The following code sample adds a horizontal page break above row **21**.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getActiveWorksheet();
-    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
-    await context.sync();
-});
-```
-
-`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependent any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
-
-The following code sample centers the page (both vertically and horizontally), sets a title row that will be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getActiveWorksheet();
-
-    // Center the page in both directions.
-    sheet.pageLayout.centerHorizontally = true;
-    sheet.pageLayout.centerVertically = true;
-
-    // Set the first row as the title row for every page.
-    sheet.pageLayout.setPrintTitleRows("$1:$1");
-
-    // Limit the area to be printed to the range "A1:D100".
-    sheet.pageLayout.setPrintArea("A1:D100");
-
-    await context.sync();
-});
 ```
 
 ## See also
