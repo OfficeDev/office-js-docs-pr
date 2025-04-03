@@ -23,8 +23,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependent any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
-
+`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependent on any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
 The following code sample centers the page (both vertically and horizontally), sets a title row that will be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
 
 ```js
@@ -60,9 +59,9 @@ The following code sample shows how to turn off data type icons on a worksheet.
 
 ```js
 await Excel.run(async (context) => { 
-    const sheet = context.workbook.worksheets.getActiveWorksheet(); 
-    sheet.showDataTypeIcons = false; 
-    await context.sync(); 
+    const sheet = context.workbook.worksheets.getActiveWorksheet(); 
+    sheet.showDataTypeIcons = false; 
+    await context.sync(); 
 });  
 ```
 
