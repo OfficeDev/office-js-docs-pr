@@ -145,7 +145,7 @@ Event-based add-ins, including Smart Alerts add-ins, require an internet connect
 
 When Outlook launches without internet connectivity, it's unable to determine which add-ins are installed. Because of this, Smart Alerts add-ins can't activate when the `OnMessageSend` or `OnAppointmentSend` events occur. In this scenario, to ensure that all mail items are checked for compliance before they're sent, administrators can configure policies in their organization. The policy to be set varies depending on the Outlook client.
 
-# [Web/Windows (new)][#tab/web-new-windows]
+# [Web/Windows (new)][#tab/web]
 
 For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell.
 
