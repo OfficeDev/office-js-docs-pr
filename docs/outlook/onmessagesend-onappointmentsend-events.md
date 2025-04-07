@@ -145,7 +145,7 @@ Event-based add-ins, including Smart Alerts add-ins, require an internet connect
 
 When Outlook launches without internet connectivity, it's unable to determine which add-ins are installed. Because of this, Smart Alerts add-ins can't activate when the `OnMessageSend` or `OnAppointmentSend` events occur. In this scenario, to ensure that all mail items are checked for compliance before they're sent, administrators can configure policies in their organization. The policy to be set varies depending on the Outlook client.
 
-# [Web/Windows (new)][#tab/web]
+# [Web/Windows (new)](#tab/web-new-windows)
 
 For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell.
 
@@ -171,7 +171,7 @@ For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsE
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'} | Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
-# [Windows (classic)][#tab/windows]
+# [Windows (classic)](#tab/windows)
 
 Configure the **Block send when web add-ins can't load** Group Policy setting. When the setting is turned on, mail items are moved to the **Drafts** folder when the **Send** button is selected. This way, when Outlook is able to load add-ins, any installed Smart Alerts add-ins can run checks on the items before they're sent.
 
@@ -184,7 +184,7 @@ To turn on the setting, perform the following:
 1. In the dialog that appears, select **Enabled**.
 1. Select **OK** or **Apply** to save your change.
 
-# [Mac][#tab/mac]
+# [Mac](#tab/mac)
 
 For Outlook on Mac, the **OnSendAddinsWaitForLoad** mailbox key must be configured on each user's machine. This key ensures that add-ins are loaded from Exchange and are available to run checks on outgoing items. As the **OnSendAddinsWaitForLoad** key is CFPreference-compatible, it can be set by any enterprise management software for Mac, such as Jamf Pro. The following table provides details about the key.
 
@@ -229,7 +229,7 @@ If the Smart Alerts add-in implements the **prompt user** option, it doesn't pro
 
 When a user navigates away from the message they're sending (for example, to read a message in their inbox), the behavior of a Smart Alerts add-in differs between Outlook clients. Select the tab for the Outlook client on which the add-in is running.
 
-# [Web/New Outlook on Windows](#tab/web)
+# [Web/Windows (new)](#tab/web-new-windows)
 
 In Outlook on the web or in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), a user must remain on the message being sent until the Smart Alerts add-in completes processing it. Otherwise, once the user navigates away from the item, the add-in terminates the Smart Alerts operation and saves a draft to the mailbox's **Drafts** folder. The user is then alerted that they must resend the message from the **Drafts** folder and remain on the message until the add-in completes processing it.
 
