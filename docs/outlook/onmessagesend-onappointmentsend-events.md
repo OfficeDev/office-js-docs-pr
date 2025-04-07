@@ -139,18 +139,65 @@ If the **soft block** or **block** option is  used, the user can't send the item
 
 ### Intermittent or no internet connection
 
-#### No connection when Outlook launches
+Event-based add-ins, including Smart Alerts add-ins, require an internet connection to launch. This section describes how an add-in behaves when Outlook is launched without connectivity, when Outlook experiences intermittent connectivity, and when the Work Offline mode, if applicable to the Outlook client, is turned on.
 
-When Outlook launches while offline, Outlook is unable to determine which add-ins are installed. Because of this, Smart Alerts add-ins can't activate when the `OnMessageSend` or `OnAppointmentSend` events occur. In this scenario, to ensure that all mail items are checked for compliance before they're sent, configure the **Block send when web add-ins can't load** Group Policy setting. This setting applies to Outlook on Windows (new and classic) (//TODO - Determine applicable platforms). When the setting is turned on, mail items are moved to the **Drafts** folder when the **Send** button is selected. This way, when Outlook is able to load add-ins, any installed Smart Alerts add-ins can run checks on the items before they're sent.
+#### Offline when Outlook launches
+
+When Outlook launches without internet connectivity, it's unable to determine which add-ins are installed. Because of this, Smart Alerts add-ins can't activate when the `OnMessageSend` or `OnAppointmentSend` events occur. In this scenario, to ensure that all mail items are checked for compliance before they're sent, administrators can configure policies in their organization. The policy to be set varies depending on the Outlook client.
+
+# [Web/Windows (new)][#tab/web-new-windows]
+
+For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell.
+
+1. [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
+1. Create a new mailbox policy.
+
+   ```powershell
+    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+   ```
+
+    > [!NOTE]
+    > Administrators can also use an existing policy.
+
+1. Set the **OnSendAddinsEnabled** flag to `true`.
+
+   ```powershell
+    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+   ```
+
+1. Assign the policy to user mailboxes.
+
+   ```powershell
+    Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'} | Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
+   ```
+
+# [Windows (classic)][#tab/windows]
+
+Configure the **Block send when web add-ins can't load** Group Policy setting. When the setting is turned on, mail items are moved to the **Drafts** folder when the **Send** button is selected. This way, when Outlook is able to load add-ins, any installed Smart Alerts add-ins can run checks on the items before they're sent.
 
 To turn on the setting, perform the following:
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).
 1. Open the **Local Group Policy Editor** (**gpedit.msc**).
-1. Navigate to //TODO - Determine policy location.
+1. Navigate to **User Configuration** > **Administrative Templates** > **Microsoft Outlook 2016** > **Security** > **Trust Center**.
 1. Open the **Block send when web add-ins can't load** setting.
 1. In the dialog that appears, select **Enabled**.
 1. Select **OK** or **Apply** to save your change.
+
+# [Mac][#tab/mac]
+
+For Outlook on Mac, the **OnSendAddinsWaitForLoad** mailbox key must be configured on each user's machine. This key ensures that add-ins are loaded from Exchange and are available to run checks on outgoing items. As the **OnSendAddinsWaitForLoad** key is CFPreference-compatible, it can be set by any enterprise management software for Mac, such as Jamf Pro. The following table provides details about the key.
+
+|Field|Value|
+|:---|:---|
+|**Domain**|com.microsoft.outlook|
+|**Key**|OnSendAddinsWaitForLoad|
+|**DataType**|Boolean|
+|**Possible values**|**false** (default): The currently downloaded manifests of the Smart Alerts add-ins (not necessarily the latest versions) run on outgoing mail items.<br><br>**true**: After the latest manifests of the Smart Alerts add-ins are downloaded from Exchange, the add-ins run on outgoing mail items. Otherwise, the item is blocked from being sent and the **Send** button becomes unavailable.|
+|**Availability**|16.27|
+|**Comments**|This key creates a policy to ensure that outgoing mail items are checked for compliance before they're sent.|
+
+---
 
 #### Intermittent connection
 
