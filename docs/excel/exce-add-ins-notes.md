@@ -13,6 +13,9 @@ Notes are tied to an individual cell. Anyone viewing the workbook with sufficien
 
 Notes in a workbook are tracked by the `Workbook.notes` property. This includes notes created by users and also notes created by your add-in. The `Workbook.notes` property is a [NoteCollection](/javascript/api/excel/excel.notecollection) object that contains a collection of [Note](/javascript/api/excel/excel.note) objects. Notes are also accessible at the [Worksheet](/javascript/api/excel/excel.worksheet) level.
 
+> [!TIP]
+> To learn about adding and editing comments with the Excel JavaScript API, see [Work with comments using the Excel JavaScript API](excel-add-ins-comments.md).
+
 ## Add a note
 
 Use the `NoteCollection.add` method to add notes to a workbook. This method takes two parameters:
