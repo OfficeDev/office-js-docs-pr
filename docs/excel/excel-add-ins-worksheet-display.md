@@ -11,20 +11,20 @@ Excel is often used for reporting scenarios where you want to share worksheet da
 
 ## Page layout and print settings
 
-Add-ins have access to page layout settings at a worksheet level. These control how the sheet is printed. A `Worksheet` object has three layout-related properties: `horizontalPageBreaks`, `verticalPageBreaks`, `pageLayout`.
+Add-ins have access to page layout settings at a worksheet level. These control how the sheet is printed. A `Worksheet` object has three layout-related properties: `horizontalPageBreaks`, `verticalPageBreaks`, and `pageLayout`.
 
-`Worksheet.horizontalPageBreaks` and `Worksheet.verticalPageBreaks` are [PageBreakCollections](/javascript/api/excel/excel.pagebreakcollection). These are collections of [PageBreaks](/javascript/api/excel/excel.pagebreak), which specify ranges where manual page breaks are inserted. The following code sample adds a horizontal page break above row **21**.
+`Worksheet.horizontalPageBreaks` and `Worksheet.verticalPageBreaks` are [PageBreakCollection](/javascript/api/excel/excel.pagebreakcollection) objects. These are collections of [PageBreak](/javascript/api/excel/excel.pagebreak) objects, which specify ranges where manual page breaks are inserted. The following code sample adds a horizontal page break before row **21**.
 
 ```js
 await Excel.run(async (context) => {
     const sheet = context.workbook.worksheets.getActiveWorksheet();
-    sheet.horizontalPageBreaks.add("A21:E21"); // The page break is added above this range.
+    sheet.horizontalPageBreaks.add("A21:E21"); // The page break precedes this range.
     await context.sync();
 });
 ```
 
-`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that are not dependent on any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
-The following code sample centers the page (both vertically and horizontally), sets a title row that will be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
+`Worksheet.pageLayout` is a [PageLayout](/javascript/api/excel/excel.pagelayout) object. This object contains layout and print settings that aren't dependent on any printer-specific implementation. These settings include margins, orientation, page numbering, title rows, and print area.
+The following code sample centers the page (both vertically and horizontally), sets a title row to be printed at the top of every page, and sets the printed area to a subsection of the worksheet.
 
 ```js
 await Excel.run(async (context) => {
@@ -49,11 +49,11 @@ await Excel.run(async (context) => {
 > [!NOTE]
 > [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-Data types can have an icon next to the value in the cell. When you have large tables with many data types, this can appear cluttered.
+Data types can display an icon next to the value in the cell. When you have large tables with many data types, the icons may add visual clutter.
 
 :::image type="content" source="../images/data-types-icon-table.png" alt-text="An Excel table with three data types showing the same icon next to each data type.":::
 
-Use the [Worksheet.showDataTypeIcons](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showdatatypeicons-member) property to toggle data type icons on or off. For more information about data types, see [Overview of data types in Excel add-ins](excel-data-types-overview.md). The `showDataTypeIcons` property performs the same action as the user toggling data icons by using the **View** > **Data Type Icons** checkbox. The visibility settings for data type icons are saved with the worksheet and are also seen by anyone co-authoring at the time they are changed.
+Use the [Worksheet.showDataTypeIcons](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showdatatypeicons-member) property to toggle data type icons on or off. For more information about data types and their icons, see [Overview of data types in Excel add-ins](excel-data-types-overview.md). The `showDataTypeIcons` property performs the same action as the user toggling data type icons by using the **View** > **Data Type Icons** checkbox. The visibility settings for data type icons are saved with the worksheet and are seen by anyone co-authoring at the time they are changed.
 
 The following code sample shows how to turn off data type icons on a worksheet.
 
@@ -77,7 +77,7 @@ Gridlines are the faint lines that appear between cells on a worksheet. These ca
 
 :::image type="content" source="../images/excel-gridlines.png" alt-text="An infographic where the gridlines are distracting.":::
 
-Turn the gridlines on or off with the [Worksheet.showGridlines](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showgridlines-member) property. This is the same as using the **View** > **Gridlines** checkbox. The visibility settings for gridlines are saved with the worksheet and are also seen by anyone co-authoring at the time they are changed.
+Turn the gridlines on or off with the [Worksheet.showGridlines](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showgridlines-member) property. This is the same as using the **View** > **Gridlines** checkbox in the Excel UI. The visibility settings for gridlines are saved with the worksheet and are seen by anyone co-authoring at the time they are changed.
 
 The following example shows how to turn off gridlines on a worksheet.
 
@@ -98,7 +98,7 @@ Headings are the Excel row numbers that appear on the left side of the worksheet
 
 :::image type="content" source="../images/excel-heading-label.png" alt-text="A spreadsheet section highlighting the column heading A and the row heading 2.":::
 
-Turn the headings on or off with the [Worksheet.showHeadings](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showheadings-member) property. This is the same as using the **View** > **Headings** checkbox. The following example shows how to turn headings off on a worksheet.
+Turn the headings on or off with the [Worksheet.showHeadings](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showheadings-member) property. This is the same as using the **View** > **Headings** checkbox in the Excel UI. The following example shows how to turn headings off on a worksheet.
 
 ```js
 await Excel.run(async (context) => {
