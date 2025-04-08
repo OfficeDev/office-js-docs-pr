@@ -55,7 +55,7 @@ await Excel.run(async (context) => {
 
 ## Edit the content of a note
 
-To edit the content of a note, use the [Note.content](javascript/api/excel/excel.note#excel-excel-note-content-member) property. The following sample shows how to change the content of the first note in the `NoteCollection`.
+To edit the content of a note, use the [Note.content](/javascript/api/excel/excel.note#excel-excel-note-content-member) property. The following sample shows how to change the content of the first note in the `NoteCollection`.
 
 ```js
 await Excel.run(async (context) => {
@@ -73,7 +73,7 @@ await Excel.run(async (context) => {
 
 ## Change the size of a note
 
-By default, notes are automatically sized to fit the content. To programmatically make notes larger or smaller, use the [Note.height](/javascript/api/excel/excel.note#excel-excel-note-height-member) and [Note.width](javascript/api/excel/excel.note#excel-excel-note-width-member) properties.
+By default, notes are automatically sized to fit the content. To programmatically make notes larger or smaller, use the [Note.height](/javascript/api/excel/excel.note#excel-excel-note-height-member) and [Note.width](/javascript/api/excel/excel.note#excel-excel-note-width-member) properties.
 
 The following sample shows how to change the size of the first note in the `NoteCollection` to 400x200 points.
 
