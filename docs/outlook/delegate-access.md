@@ -97,33 +97,6 @@ A shared mailbox allows a group of users to easily monitor and send messages and
 
 ---
 
-To learn more about where add-ins do and don't activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
-
-## Add-in support in shared folder and shared mailbox scenarios
-
-### Add-ins in shared folder scenarios
-
-The following table outlines the availability of add-ins in shared folder scenarios.
-
-| Scenario | Add-in availability |
-| ----- | ----- |
-| **Inbox** folder is shared with a delegate | Add-ins are available to the delegate in message read mode. |
-| **Drafts** folder is shared with a delegate | Add-ins are available to the delegate in message compose mode. |
-| Calendar is explicitly shared with a delegate (the entire mailbox may not be shared) | Add-ins are available to the delegate in appointment read and compose modes. |
-| Calendar is shared with a group of users with different access (for example, made it editable to a particular distribution list or the entire organization) | Add-ins are available to users with indirect or implicit permissions in appointment read and compose modes. |
-
-### Add-ins in shared mailbox scenarios
-
-The following table outlines the availability of add-ins in shared mailbox scenarios across various Outlook clients. Note that the behavior in Outlook on the web may differ depending on whether the shared mailbox is opened in the same panel as the user's primary mailbox or in a separate tab or window using the **Open another mailbox** option.
-
-| Scenario | Web (same tab or window), Windows (new and classic), and Mac | Web (separate tab or window) |
-| ----- | ----- | ----- |
-| Add-in installed by the user | Users can't install add-ins in a shared mailbox. Add-ins installed by a user are added to the user's primary mailbox. | Users can't install add-ins in a shared mailbox. The in-app Microsoft 365 and Copilot store and add-ins installed in a user's primary mailbox don't appear on the ribbon of the mailbox. |
-| Add-in installed by an administrator | Administrators shouldn't deploy add-ins to a shared mailbox. They should instead deploy an add-in to the user's primary mailbox. The user can then use the add-in in a shared mailbox as long as the add-in meets certain requirements (see the following scenarios for add-in availability in read and compose modes). | The same limitation and recommendation on other platforms apply (see previous column). |
-| Default add-ins in Outlook | Default Outlook add-ins are available for use in a shared mailbox. Default Outlook add-ins can include My Templates, Unsubscribe, and Action Items. Note that some default add-ins may not appear in your organization.<br><br>When using the My Templates add-in, the templates created are saved to the creator's primary mailbox. Although the creator can use these templates in both their primary and shared mailboxes, others users who have access to the shared mailbox can't access these templates. For more information, see [Create an email message template](https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1) and [Can I create email templates in Outlook for Mac?](https://support.microsoft.com/office/6339b60e-2e5a-4aed-a9e6-2e7b5d7eb5a0). | Similar to other platforms, default add-ins are also available in a shared mailbox accessed using the **Open another mailbox** option in Outlook on the web.<br><br>When using the My Templates add-in, the templates created are saved to the shared mailbox. These templates can be edited or used by anyone with access to the shared mailbox as long as they open the mailbox using the **Open another mailbox** option. The shared templates can't be accessed by anyone, including the template creator, from other platforms. This includes Outlook on the web if the shared mailbox is opened in the same tab as the user's primary mailbox. Conversely, templates created on other platforms can't be accessed from a shared mailbox opened using the **Open another mailbox** option. For more information, see [Create an email message template](https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1) and [Can I create email templates in Outlook for Mac?](https://support.microsoft.com/office/6339b60e-2e5a-4aed-a9e6-2e7b5d7eb5a0). |
-| Add-in used in read mode | An add-in's manifest must be configured to make an add-in available in shared scenarios. The setting differs depending on the type of manifest your add-in uses.<ul><li>**Unified manifest for Microsoft 365**: In the ["authorization.permissions.resourceSpecific"](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, set the ["name"](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific#name) property to "Mailbox.SharedFolder" and the ["type"](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific#type) property to "Delegated".</li><li>**Add-in only manifest**: Set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`.</li></ul>The add-in can be installed in the user's primary mailbox by the user or administrator. | The same manifest configuration and behavior on other platforms apply (see previous column). |
-| Add-in used in compose mode | An add-in installed in the user's primary mailbox by the user or administrator may need additional configuration depending on the Outlook client or how the shared mailbox is accessed.<ul><li>**Outlook on the web (mailbox opened in the same window) and on Windows (new and classic)**: An add-in doesn't need to configure the shared folder setting in the manifest for it to be available for use in a shared mailbox.</li><li>**Outlook on Mac**: An add-in's manifest must be configured to make it available in shared scenarios. See the previous "Add-in used in read mode" row.</li></ul> | An add-in's manifest must be configured to make it available in shared scenarios. See the previous "Add-in used in read mode" row. |
-
 ## Configure the manifest
 
 To implement shared folder and shared mailbox scenarios in your add-in, you must first configure support for the feature in your manifest. The markup varies depending on the type of manifest your add-in uses.
@@ -237,6 +210,37 @@ To implement your shared folder and shared mailbox scenarios, use Microsoft Grap
 
 > [!TIP]
 > To access Microsoft Graph APIs from your add-in, use MSAL.js nested app authentication (NAA). To learn more, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+
+## Add-in support in shared folder and shared mailbox scenarios
+
+The availability of add-ins in a shared folder or shared mailbox varies depending on the scenario and Outlook client.
+
+> [!TIP]
+> To learn more about where add-ins do and don't activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
+
+### Add-ins in shared folder scenarios
+
+The following table outlines the availability of add-ins in shared folder scenarios.
+
+| Scenario | Add-in availability |
+| ----- | ----- |
+| **Inbox** folder is shared with a delegate | Add-ins are available to the delegate in message read mode. |
+| **Drafts** folder is shared with a delegate | Add-ins are available to the delegate in message compose mode. |
+| Calendar is explicitly shared with a delegate (the entire mailbox may not be shared) | Add-ins are available to the delegate in appointment read and compose modes. |
+| Calendar is shared with a group of users with different access (for example, made it editable to a particular distribution list or the entire organization) | Add-ins are available to users with indirect or implicit permissions in appointment read and compose modes. |
+
+### Add-ins in shared mailbox scenarios
+
+The following table outlines the availability of add-ins in shared mailbox scenarios across various Outlook clients. Note that the behavior in Outlook on the web may differ depending on whether the shared mailbox is opened in the same panel as the user's primary mailbox or in a separate tab or window using the **Open another mailbox** option.
+
+| Scenario | Web (same tab or window), Windows (new and classic), and Mac | Web (separate tab or window) |
+| ----- | ----- | ----- |
+| Add-in installed by the user | Users can't install add-ins in a shared mailbox. Add-ins installed by a user are added to the user's primary mailbox. | Users can't install add-ins in a shared mailbox. The in-app Microsoft 365 and Copilot store doesn't appear on the ribbon of the mailbox. |
+| Add-in installed by an administrator | Administrators shouldn't deploy add-ins to a shared mailbox. They should instead deploy an add-in to the user's primary mailbox. The user can then use the add-in in a shared mailbox as long as the add-in meets certain requirements (see the following scenarios for add-in availability in read and compose modes). | The same limitation and recommendation on other platforms apply (see previous column). |
+| Default add-ins in Outlook | Default Outlook add-ins are available for use in a shared mailbox. Default Outlook add-ins can include My Templates, Unsubscribe, and Action Items. Note that some default add-ins may not appear in your organization. | Similar to other platforms, default add-ins are also available in a shared mailbox accessed using the **Open another mailbox** option in Outlook on the web. |
+| Templates created using the My Templates add-in | Templates created are saved to the creator's primary mailbox. Although the creator can use these templates in both their primary and shared mailboxes, others users who have access to the shared mailbox can't access these templates. For more information, see [Create an email message template](https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1) and [Can I create email templates in Outlook for Mac?](https://support.microsoft.com/office/6339b60e-2e5a-4aed-a9e6-2e7b5d7eb5a0). | Templates created are saved to the shared mailbox. These templates can be edited or used by anyone with access to the shared mailbox as long as they open the mailbox using the **Open another mailbox** option. The shared templates can't be accessed by anyone, including the template creator, from other platforms. This includes Outlook on the web if the shared mailbox is opened in the same tab as the user's primary mailbox. Conversely, templates created on other platforms can't be accessed from a shared mailbox opened using the **Open another mailbox** option. For more information, see [Create an email message template](https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1) and [Can I create email templates in Outlook for Mac?](https://support.microsoft.com/office/6339b60e-2e5a-4aed-a9e6-2e7b5d7eb5a0). |
+| Add-in used in read mode | An add-in's manifest must be configured to support shared mailbox scenarios. For more information, see [Configure the manifest](#configure-the-manifest). The add-in must be installed in the user's primary mailbox by the user or administrator. | The same manifest configuration and behavior on other platforms apply (see previous column). |
+| Add-in used in compose mode | In Outlook on the web (mailbox opened in the same window) and on Windows (new and classic), all add-ins installed in the user's primary mailbox are available for use. An add-in's manifest doesn't need additional configuration to support shared mailbox scenarios.<br><br>However, in Outlook on Mac, an add-in's manifest must be configured to support shared mailbox scenarios. For more information, see [Configure the manifest](#configure-the-manifest). | An add-in's manifest must be configured to support shared mailbox scenarios. For more information, see [Configure the manifest](#configure-the-manifest). The add-in must be installed in the user's primary mailbox by the user or administrator. |
 
 ## Limitations
 
