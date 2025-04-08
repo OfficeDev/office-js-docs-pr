@@ -2,7 +2,7 @@
 title: Uninstall add-ins under development
 description: Learn how to prevent incomplete uninstallation of add-ins you are developing and how to remove incompletely uninstalled add-ins under development.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 02/12/2025
+ms.date: 03/28/2025
 ms.localizationpriority: medium
 ---
 
@@ -50,6 +50,16 @@ The following list identifies, for each tool, how to uninstall but doesn't descr
 ## Remove a ghost add-in
 
 To remove a ghost add-in, you need to remove the artifacts that were created when it was last sideloaded, remove it's local registration, and for Outlook add-ins remove it's registration in Exchange.
+
+> [!TIP]
+> There is a fast way to remove a ghost add-in on Windows computers if the add-in was installed with the Teams Toolkit CLI. Try this first, and if it works, you can skip the remainder of this section.
+>
+> 1. Obtain the add-in's title ID from the Registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId**. (The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Teams Toolkit CLI.)
+> 1. Run the following command in a command prompt, bash shell, or terminal. Replace "{title ID}" with the title ID of the add-in including the "U_" prefix; for example, `U_90d141c6-cf4f-40ee-b714-9df9ea593f39`.
+>
+>    ```command&nbsp;line
+>    teamsapp uninstall --mode title-id --title-id {title ID} --interactive false
+>    ```
 
 The process for removing the add-in varies depending on whether the add-in is for Outlook or some other Office application. 
 
