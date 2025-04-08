@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Teams Toolkit
 description: Learn how to create Office Add-in projects using Teams Toolkit.
-ms.date: 02/12/2025
+ms.date: 04/10/2025
 ms.localizationpriority: high
 ---
 
@@ -38,8 +38,6 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
 
     :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The option 'Task pane' is selected.":::
 
-1. If you're making an Outlook add-in, the toolkit shows a **Programming Language** dropdown menu. Select either **TypeScript** or **JavaScript**. (For Excel, PowerPoint, and Word add-ins, a TypeScript project is always created.)
-1. If you're making an Outlook add-in, the toolkit shows a **Framework** dropdown menu. Select **Default** or **React**. (For Excel, PowerPoint, and Word add-ins, a default project is always created.)
 1. In the **Workspace Folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Teams Toolkit will create the project with basic files and scaffolding. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 
@@ -73,6 +71,9 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code.
 
 ### Sideload in Outlook
+
+> [!NOTE]
+> Sideloading an add-in that uses the unified manifest is not yet supported for [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). If your development computer is Windows, be sure that your Outlook client is classic Outlook for Windows.
 
 1. Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in [Add an email account to Outlook](https://support.microsoft.com/office/e9da47c4-9b89-4b49-b945-a204aeea6726).
 1. **Close Outlook desktop**.
