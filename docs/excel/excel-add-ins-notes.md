@@ -110,5 +110,5 @@ await Excel.run(async (context) => {
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with workbooks using the Excel JavaScript API](excel-add-ins-workbooks.md)
-- [Work with Events using the Excel JavaScript API](excel-add-ins-events.md)
+- [Work with comments using the Excel JavaScript API](excel-add-ins-comments.md)
 - [Insert comments and notes in Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)
