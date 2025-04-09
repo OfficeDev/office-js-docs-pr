@@ -7,7 +7,13 @@ ms.localizationpriority: medium
 
 # Add checkboxes using the Excel JavaScript API
 
+Boolean values in ranges and cells, like **TRUE** or **FALSE**, can be replaced with checkboxes using the Excel JavaScript API.
+
+The following screenshot shows an example usage of checkboxes in a table. The table lists a variety of items, and the checkboxes indicate whether or not the items are types of fruit.
+
 ## Add checkboxes
+
+To add checkboxes to a range, use the [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) property and set the `CellControlType` value to `checkbox`. Only boolean values, like **TRUE** or **FALSE**, will display as checkboxes in your range.
 
 ```js
 await Excel.run(async (context) => {
@@ -27,6 +33,8 @@ await Excel.run(async (context) => {
 
 ## Change the value of a checkbox
 
+To check or uncheck a checkbox, change the boolean value of that checkbox.
+
 ```js
 await Excel.run(async (context) => {
     // Change the value of the checkbox in B3.
@@ -39,6 +47,8 @@ await Excel.run(async (context) => {
 ```
 
 ## Remove checkboxes
+
+To remove checkboxes from a range and return the values to simple booleans, use the [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) property and set the `CellControlType` value to `empty`.
 
 ```js
 await Excel.run(async (context) => {
