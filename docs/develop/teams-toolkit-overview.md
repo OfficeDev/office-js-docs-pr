@@ -70,10 +70,13 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
 
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code.
 
+   > [!NOTE]
+   > If the preceding step seems to have no effect, uninstall the add-in by opening a **TERMINAL** in Visual Studio Code, and then running the command `npm run stop`. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
+
 ### Sideload in Outlook
 
 > [!NOTE]
-> Sideloading an add-in that uses the unified manifest is not yet supported for [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). If your development computer is Windows, be sure that your Outlook client is classic Outlook for Windows.
+> If your development computer is Windows, be sure that your Outlook client is classic Outlook for Windows, not [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). There is currently a bug that prevents add-ins created with the Teams Toolkit from properly sideloading in new Outlook for Windows or in Outlook on the web.
 
 1. Ensure that your account in your Microsoft 365 developer tenancy is also an email account in desktop Outlook. If it isn't, follow the guidance in [Add an email account to Outlook](https://support.microsoft.com/office/e9da47c4-9b89-4b49-b945-a204aeea6726).
 1. **Close Outlook desktop**.
@@ -92,6 +95,9 @@ Install the latest version of Teams Toolkit into Visual Studio Code as described
 
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code.
 
-## Developing your project
+   > [!NOTE]
+   > If the preceding step seems to have no effect, uninstall the add-in by opening a **TERMINAL** in Visual Studio Code, and then running the command `npm run stop`. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
+
+## Develop your project
 
 Now you can change and develop the project. In places where the guidance in the Office Add-ins documentation branches depending on what type of manifest is being used, be sure to follow the guidance for the unified manifest.
