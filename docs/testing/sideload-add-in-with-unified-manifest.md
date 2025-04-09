@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins that use the unified manifest for Microsoft 365
 description: Test your Office Add-in on Windows by sideloading.
-ms.date: 03/27/2025
+ms.date: 03/28/2025
 ms.localizationpriority: medium
 ---
 
@@ -86,7 +86,13 @@ There are two tools you can use to sideload.
     >
     > :::image type="content" source="../images/teams-cli-install.png" alt-text="The command 'teamsapp install --file-path manifests/contoso/contoso.zip' and the system response including the user's account name, the title id GUID and the app id GUID.":::
     >
-    > You'll need this title ID to end the sideloading and debugging session, so save it. We recommend that you put it in a text file in the root of the project and name the file **TitleID.txt**.
+    > You'll need this title ID to end the sideloading and debugging session. It is recorded on Windows computers in the following Registry key: 
+    >
+    > **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId** 
+    >
+    > The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Teams Toolkit CLI.
+    >
+    > Only the most recent add-in installed with the CLI is recorded. If you sideload an add-in with the CLI before you have uninstalled an earlier add-in you installed with the CLI, then there is no record of the earlier add-in's title ID in the Registry. So, we recommend that you also save it in a text file in the root of the project and name the file **TitleID.txt** on both Mac and Windows computers.
 
 1. When you use the Teams Toolkit CLI to start an add-in, *always stop the session with the following command*. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in. Replace "{title ID}" with the title ID of the add-in including the "U_" prefix; for example, `U_90d141c6-cf4f-40ee-b714-9df9ea593f39`.
 
