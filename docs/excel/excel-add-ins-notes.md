@@ -97,7 +97,6 @@ To delete a note, use the [Note.delete](/javascript/api/excel/excel.note#excel-e
 ```js
 await Excel.run(async (context) => {
     // This function deletes the note from cell A2.
-    await Excel.run(async (context) => {
     const sheet = context.workbook.worksheets.getItem("Notes");
     const note = sheet.notes.getItem("A2");
 
