@@ -9,9 +9,7 @@ ms.localizationpriority: medium
 
 This article describes how to add, change, and remove notes in a workbook with the Excel JavaScript API. You can learn more about notes from the [Insert comments and notes in Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article. For information about the differences between notes and comments, see [The difference between threaded comments and notes](https://support.microsoft.com/office/the-difference-between-threaded-comments-and-notes-75a51eec-4092-42ab-abf8-7669077b7be3).
 
-Notes are tied to an individual cell. Anyone viewing the workbook with sufficient permissions can view a note.
-
-Notes in a workbook are tracked by the `Workbook.notes` property. This includes notes created by users and also notes created by your add-in. The `Workbook.notes` property is a [NoteCollection](/javascript/api/excel/excel.notecollection) object that contains a collection of [Note](/javascript/api/excel/excel.note) objects. Notes are also accessible at the [Worksheet](/javascript/api/excel/excel.worksheet) level.
+Notes are tied to an individual cell. Anyone viewing the workbook with sufficient permissions can view a note. Notes in a workbook are tracked by the `Workbook.notes` property. This includes notes created by users and also notes created by your add-in. The `Workbook.notes` property is a [NoteCollection](/javascript/api/excel/excel.notecollection) object that contains a collection of [Note](/javascript/api/excel/excel.note) objects. Notes are also accessible at the [Worksheet](/javascript/api/excel/excel.worksheet) level.
 
 > [!TIP]
 > To learn about adding and editing comments with the Excel JavaScript API, see [Work with comments using the Excel JavaScript API](excel-add-ins-comments.md).
@@ -75,7 +73,7 @@ await Excel.run(async (context) => {
 
 By default, notes are automatically sized to fit the content. To programmatically make notes larger or smaller, use the [Note.height](/javascript/api/excel/excel.note#excel-excel-note-height-member) and [Note.width](/javascript/api/excel/excel.note#excel-excel-note-width-member) properties.
 
-The following sample shows how to change the size of the first note in the `NoteCollection` to 400x200 points.
+The following sample shows how to set the size of the first note in the `NoteCollection`.
 
 ```js
 await Excel.run(async (context) => {
