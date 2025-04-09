@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 03/11/2025
+ms.date: 04/15/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -260,7 +260,6 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
                     }
     
                     // Show a notification when the signature is added to the message.
-                    // Important: Only the InformationalMessage type is supported in Outlook mobile at this time.
                     const notification = {
                         type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
                         message: "Company signature added.",
