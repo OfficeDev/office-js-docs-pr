@@ -71,7 +71,7 @@ The following parameter values are used for the Script Lab installation link.
 
 To create the link, use the following URL template as a reference.
 
-`{{appName}}:https://api.addins.store.office.com/addinstemplate/{{language}}/{{correlationID}}/{{addinId}}/none/{{addinName}}.{{fileFormat}}?omexsrctype=1`
+`{{appName}}:https://api.addins.store.office.com/addinstemplate/{{language}}/{{correlationID}}/{{addinId}}/none/{{addinName}}.{{fileFormat}}?omexsrctype=1&isexternallink=1`
 
 Change the placeholders in the URL as follows.
 
@@ -93,7 +93,7 @@ Change the placeholders in the URL as follows.
 
 For example, the following is an installation link for Script Lab in Word on Windows with en-US as the language.
 
-`ms-word:https://api.addins.store.office.com/addinstemplate/en-US/228a829b-69d7-45f4-a338-c6aba330ec7e/WA104380862/none/Script%20Lab,%20a%20Microsoft%20Garage%20project.docx?omexsrctype=1`
+`ms-word:https://api.addins.store.office.com/addinstemplate/en-US/228a829b-69d7-45f4-a338-c6aba330ec7e/WA104380862/none/Script%20Lab,%20a%20Microsoft%20Garage%20project.docx?omexsrctype=1&isexternallink=1`
 
 ### Include the add-in in the installation of a Windows app or COM/VSTO add-in
 
