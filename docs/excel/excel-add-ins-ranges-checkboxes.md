@@ -11,19 +11,21 @@ Boolean values in ranges and cells, like **TRUE** or **FALSE**, can be replaced 
 
 The following screenshot shows an example usage of checkboxes in a table. The table lists a variety of items, and the checkboxes indicate whether or not the items are types of fruit.
 
+![A table with checkboxes in the second column.](../images/excel-range-checkbox-table.png)
+
 ## Add checkboxes
 
-To add checkboxes to a range, use the [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) property and set the `CellControlType` value to `checkbox`. Only boolean values, like **TRUE** or **FALSE**, will display as checkboxes in your range.
+To add checkboxes to a range, use the [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) property to access the [`CellControl`](/javascript/api/excel/excel.cellcontrol) type, and set the `CellControlType` enum value to `checkbox`. Only Boolean values, like **TRUE** or **FALSE**, will display as checkboxes in your range. The following code sample shows how to add checkboxes to the **Analysis** column of a table named **FruitTable**.
 
 ```js
 await Excel.run(async (context) => {
-    // Add checkboxes to the table.
+    // This code sample shows how to add checkboxes to a table.
     const sheet = context.workbook.worksheets.getActiveWorksheet();
 
-    // Get the second column in the table, without the header.
+    // Get the "Analysis" column in the table, without the header.
     const range = sheet.tables.getItem("FruitTable").columns.getItem("Analysis").getDataBodyRange();
 
-    // Change the boolean values to checkboxes.
+    // Change the Boolean values in the range to checkboxes.
     range.control = {
       type: Excel.CellControlType.checkbox
     };
@@ -33,11 +35,11 @@ await Excel.run(async (context) => {
 
 ## Change the value of a checkbox
 
-To check or uncheck a checkbox, change the boolean value of that checkbox.
+To check or uncheck a checkbox, change the Boolean value in that cell. Use `Range.values` to change the value of a cell. The following code sample shows how to set the value of a cell to **TRUE**. Note that if the cell doesn't already display a checkbox, then the code sample simply changes the Boolean value of the cell.
 
 ```js
 await Excel.run(async (context) => {
-    // Change the value of the checkbox in B3.
+    // This code sample shows how to change the value of cell B3.
     const sheet = context.workbook.worksheets.getActiveWorksheet();
     const range = sheet.getRange("B3");
 
@@ -48,17 +50,17 @@ await Excel.run(async (context) => {
 
 ## Remove checkboxes
 
-To remove checkboxes from a range and return the values to simple booleans, use the [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) property and set the `CellControlType` value to `empty`.
+To remove checkboxes from a range and return the values to simple Booleans, use the [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) property to access the [`CellControl`](/javascript/api/excel/excel.cellcontrol) type, and set the `CellControlType` enum value to `empty`. The following code sample shows how to remove checkboxes from the **Analysis** column of a table named **FruitTable**.
 
 ```js
 await Excel.run(async (context) => {
-    // Remove checkboxes from the table.
+    // This code sample shows how to remove checkboxes from a table.
     const sheet = context.workbook.worksheets.getActiveWorksheet();
 
-    // Get the second column in the table, without the header.
+    // Get the "Analysis" column in the table, without the header.
     const range = sheet.tables.getItem("FruitTable").columns.getItem("Analysis").getDataBodyRange();
 
-    // Change the checkboxes back to boolean values.
+    // Change the checkboxes to Boolean values.
     range.control = {
       type: Excel.CellControlType.empty
     };
@@ -67,7 +69,7 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> To remove all content from a range, use the `Range.clearOrResetContents` method.
+> To remove all content from a range, use the [`Range.clearOrResetContents`](/javascript/api/excel/excel.range#excel-excel-range-clearorresetcontents-member(1)) method.
 
 ## See also
 
