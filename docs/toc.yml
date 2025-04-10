@@ -186,7 +186,7 @@ items:
       - name: Access Microsoft Graph
         href: develop/authorize-to-microsoft-graph-without-sso.md
       - name: Automatically save passwords in WebView2
-        href: develop/auto-save-passwords.md
+        href: develop/auth-save-passwords.md
     - name: UI and UX
       items:
       - name: Overview
