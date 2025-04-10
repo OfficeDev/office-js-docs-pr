@@ -13,7 +13,10 @@ To use checkboxes, make sure that your range contains Boolean values, like **TRU
 
 The following screenshot shows an example of checkboxes in a table. The table lists a variety of items, and the checkboxes indicate whether or not the items are types of fruit.
 
-![A table with checkboxes in the second column.](../images/excel-range-checkbox-table.png)
+:::image type="content" source="../images/excel-range-checkbox-table.png" alt-text="A table with checkboxes in the second column.":::
+
+> [!NOTE]
+> To experiment with the code snippets in this article in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Checkboxes](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/42-range/range-cell-control.yaml) in our **Samples** library.
 
 ## Add checkboxes
 
