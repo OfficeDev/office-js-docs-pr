@@ -25,9 +25,9 @@ In the button click event handler for the sign-in button, call the authenticatio
 
 ```javascript
 async function btnSignIn() {
-  // Get the user name and password credentials entered by the user.
-  const username = document.getElementById("username").value
-  const pwd = document.getElementById("password").value
+  // Get the username and password credentials entered by the user.
+  const username = document.getElementById("username").value;
+  const pwd = document.getElementById("password").value;
 
   try {
     // Sign in the user. This is a placeholder for the actual sign-in logic.
@@ -45,11 +45,11 @@ async function btnSignIn() {
 
 ## How the user manages passwords
 
-When the user enters a new password in your add-in, and your add-in redirects to a new web page, WebView2 asks the user if they want their username and password saved. The next time your add-in prompts for credentials, WebView2 automatically enters the user's account info.
+When the user enters a new password in your add-in, and your add-in redirects to a new web page, WebView2 asks the user if they want to save their username and password. The next time your add-in prompts for credentials, WebView2 automatically enters the user's account information.
 
-:::image type="content" source="../images/edge-webview2-automatic-save-passwords.png" alt-text="The dialog from WebView2 prompting the user if they want to save their user name and password.":::
+:::image type="content" source="../images/edge-webview2-automatic-save-passwords.png" alt-text="The dialog from WebView2 prompting the user if they want to save their username and password.":::
 
-If the user wants to remove saved passwords, they can do so by deleting The WebView2 local cache folder at `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\webview2\`. If your add-in relies on automatically saving passwords, you should document this folder location so users can remove their passwords.
+Users remove saved passwords by deleting The WebView2 local cache folder at `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\webview2\`. If your add-in relies on automatically saving passwords, you should document this folder location so users can remove their passwords.
 
 ## Related content
 
