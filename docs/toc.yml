@@ -525,6 +525,9 @@ items:
       - name: Set range format 
         href: excel/excel-add-ins-ranges-set-format.md
         displayName: Excel
+      - name: Add checkboxes 
+        href: excel/excel-add-ins-ranges-checkboxes.md
+        displayName: Excel
       - name: Conditional formatting of ranges
         href: excel/excel-add-ins-conditional-formatting.md
         displayName: Excel
