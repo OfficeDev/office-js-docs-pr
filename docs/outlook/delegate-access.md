@@ -156,13 +156,7 @@ Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolde
 Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) on a message or appointment in compose or read mode. If the item is in a shared folder or shared mailbox, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
 
 > [!NOTE]
-> In Message Compose mode on Outlook on the web and on Windows (new or classic), certain conditions must be met to support the `Office.context.mailbox.item.getSharedPropertiesAsync` method in the following scenarios.
->
-> - When a user has access to a shared folder from their mailbox.
->
-> - When a user adds a shared mailbox to the same panel as their primary mailbox.
->
-> For more information, see [Message Compose mode](#message-compose-mode).
+> In Outlook on the web and on Windows (new and classic), when a shared folder or shared mailbox is opened in the same panel as the user's primary mailbox, the `getSharedPropertiesAsync` method requires certain conditions to be met in Message Compose mode. For more information, see the "Message Compose mode" section in [Limitations](#message-compose-mode).
 
 The following example calls the `getSharedPropertiesAsync` method to identify the owner of the mailbox and the permissions of the delegate or shared mailbox user.
 
