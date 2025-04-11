@@ -155,6 +155,15 @@ Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolde
 
 Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) on a message or appointment in compose or read mode. If the item is in a shared folder or shared mailbox, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
 
+> [!NOTE]
+> In Message Compose mode on Outlook on the web and on Windows (new or classic), certain conditions must be met to support the `Office.context.mailbox.item.getSharedPropertiesAsync` method in the following scenarios.
+>
+> - When a user has access to a shared folder from their mailbox.
+>
+> - When a user adds a shared mailbox to the same panel as their primary mailbox.
+>
+> For more information, see [Message Compose mode](#message-compose-mode).
+
 The following example calls the `getSharedPropertiesAsync` method to identify the owner of the mailbox and the permissions of the delegate or shared mailbox user.
 
 ```javascript
@@ -256,11 +265,14 @@ In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/offi
     1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
     1. The delegate opens the draft from the shared folder then continues composing.
 
-- **Shared mailbox**
+- **Shared mailbox opened in the same panel as the user's primary mailbox**
 
     1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
     1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
     1. Another shared mailbox user opens the draft from the shared mailbox then continues composing.
+
+  > [!NOTE]
+  > In Outlook on the web, the `getSharedPropertiesAsync` method is supported in a shared mailbox that's opened in a separate tab or window using the **Open another mailbox** option. There are no specific conditions to meet for the method to work.
 
 Once these conditions are met, the message becomes available in a shared context and add-ins that support these shared scenarios can get the item's shared properties. After the message is sent, it's usually found in the **Sent Items** folder of the sender's personal mailbox.
 
