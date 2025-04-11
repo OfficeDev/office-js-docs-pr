@@ -4,12 +4,12 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 03/13/2025
+ms.date: 04/11/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
 
-Exchange [user identity tokens](authentication.md#exchange-user-identity-token) and [callback tokens](authentication.md#callback-tokens) are deprecated and will be turned off starting February 17th, 2025. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
+Exchange [user identity tokens](authentication.md#exchange-user-identity-token) and [callback tokens](authentication.md#callback-tokens) are deprecated and will be completely turned off by June 2025. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
 
 ## General FAQ
 
@@ -19,19 +19,13 @@ Nested app authentication enables single sign-on (SSO) for applications nested i
 
 ### What is the timeline for shutting down legacy Exchange online tokens?
 
-Microsoft begins turning off legacy Exchange online tokens starting February 17th 2025. From now until February 17th 2025, existing and new tenants will not be affected.  We've provided tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA. See [Can I turn legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on) for more information.
+Legacy Exchange online tokens have already been turned off for most tenants. We've provided tooling for administrators to reenable Exchange tokens for tenants and add-ins if those add-ins aren't yet migrated to NAA. For more information, see [Can I turn legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on).
 
 | Date     | Legacy tokens status |
 | -------- | ------------------------------------------------------ |
-| Feb 17th, 2025 | Legacy tokens turned off for all tenants. Admins can reenable legacy tokens via PowerShell. |
+| Now | Legacy tokens turned off for most tenants. Admins can reenable legacy tokens via PowerShell. |
 | Jun 2025 | Legacy tokens turned off for all tenants. Admins can no longer reenable legacy tokens via PowerShell and must contact Microsoft for any exception. |
 | Oct 2025 | Legacy tokens turned off for all tenants. Exceptions are no longer allowed. |
-
-#### What happens on February 17th?
-
-Microsoft will begin deploying a change to all users worldwide in Microsoft 365 tenants that will turn off the issuance of legacy Exchange online tokens. The deployment will take several weeks to deploy to all users. If an Outlook add-in requests a legacy Exchange token, and token issuance is turned off, the add-in will receive an error. Outlook add-ins that still request legacy Exchange Online tokens will be broken by this change. Please note that even after legacy tokens are turned off, legacy tokens previously issued will continue to be valid for up to an hour.
-
-Note that since the change is applied per user, and deployed over several weeks, you could see some users affected while others are not. If you need to opt out of this change, see [Can I turn legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on)
 
 ### When is NAA generally available for my channel?
 
@@ -44,12 +38,12 @@ The general availability (GA) date for NAA depends on which channel you are usin
 | Jan 2025 | NAA is GA in Semi-Annual Channel build 16.0.17928.20392. |
 | Jun 2025 | NAA will GA in Semi-Annual Extended Channel. |
 
-### How do I handled legacy tokens turned off in Semi-Annual Extended Channel, which doesn't support NAA yet?
+### How do I handle legacy tokens turned off in Semi-Annual Extended Channel, which doesn't support NAA yet?
 
 Semi-Annual Extended Channel won't support NAA until June 2025. This means even if add-ins are updated to support NAA, and no longer use legacy Exchange Online tokens, they won't function on this channel. If you are using Semi-Annual Extended Channel as an administrator, we recommend the following.
 
 - Check if your tenant is using any add-ins that require legacy Exchange Online tokens. For more information, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids).
-- If you have deployed add-ins that require legacy Exchange Online tokens, and the add-ins are necessary for your organization, we recommend you turn on tokens now so that they are not turned off after February 17th, 2025. To turn tokens on, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+- If you have deployed add-ins that require legacy Exchange Online tokens, and the add-ins are necessary for your organization, we recommend you turn on tokens now so that they continue to function. To turn tokens on, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 
 ### Are COM Add-ins affected by the deprecation of legacy Exchange Online tokens?
 
@@ -57,9 +51,76 @@ It's very unlikely any COM add-ins are affected by the deprecation of legacy Exc
 
 ## Microsoft 365 administrator questions
 
+### How do I perform a scream test?
+
+Legacy Exchange Online tokens will be turned off across all tenants in June 2025. We recommend that administrators perform a scream test as soon as possible to determine if there are any add-ins that could be broken by this change. This will give you time to reach out to publishers of any affected add-ins to address breaking issues before the June deadline.
+
+Before performing the scream test you may want to let your users know in advance, such as through email, that there will be a test to turn off legacy tokens and that it may affect some Outlook add-ins. You should consider providing users the following information.
+
+- The expected time period of the test.
+- If there are known Outlook add-ins that will break, such as add-ins deployed from Microsoft AppSource that you’ve already identified.
+- That in general, Outlook add-ins shouldn’t break. However, if they do see issues, ask users to report the name, and description of the add-in, along with any error information observed.
+
+Use the following steps to perform the test.
+
+1. Run the following command to turn off legacy Exchange Online tokens on your tenant.
+    
+    `Set-AuthenticationPolicy –BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
+    
+1. For details on how to use this command, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+1. Wait a suitable amount of time for users to report any issues with add-ins. It takes approximately 24 hours for the command to turn off legacy Exchange Online tokens for all users. It may take another day or two for users to report any issues with Outlook add-ins.
+1. Identify any affected Outlook add-ins. If users submit issues identifying breaking issues, be sure to get the name and description of the Outlook add-in affected. Also capture the error, or behavior so this information can be passed along to the publisher.
+1. If any business-critical add-ins are broken, turn tokens back on using the following command.  
+    
+    `Set-AuthenticationPolicy –AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
+    
+    It takes approximately 24 hours for tokens to turn back on for all users on the tenant. For details on how to use this command, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+    
+1. If there are no reports of breaking issues, we recommend you leave legacy Exchange Online tokens off as a security best practice.
+
+#### How to contact publishers
+
+For any Outlook add-ins that break or have issues when tokens are off, you’ll need to reach out to the publishers to learn more about their plans to update. In some cases, the add-in may be developed by your own organization. You’ll need to reach out to the appropriate development team in your organization.
+
+#### Commands to identify the publisher
+
+There are some Exchange Online PowerShell commands you can use to track down additional information about Outlook add-ins.
+
+To find a list of add-ins installed on a user’s computer, the user can run the following command.
+
+`Get-App | Select-Object -Property ProviderName, DisplayName, AppId`
+
+The following screenshot shows an example of running the `Get-App` command.
+
+:::image type="content" source="../images/get-app-cmdlet-providername.png" alt-text="Screenshot of running the Get-App command in PowerShell with results for Microsoft Polls and Microsoft Send to OneNote.":::
+
+The **ProviderName** will help you identify who published the add-in so that you can contact them. The **AppId** can be used to get additional details about the add-in.
+
+> [!NOTE]
+> The `Get-App` command doesn’t show a complete list of all add-ins installed on the user’s computer. For example, sideloaded add-ins will not appear in this list. You may need to follow up with users in some cases to track down where the add-in came from.
+
+To find information about an add-in by AppId use the following command.
+
+`Get-App -Identity {identity} | Select-Object -Property ProviderName, DisplayName`
+
+The following screenshot shows an example of using the ID of Bing Maps to get more information.
+
+:::image type="content" source="../images/get-app-cmdlet-bing-maps.png" alt-text="Screenshot of running the Get-App command in PowerShell to get the ProviderName and DisplayName for Bing Maps.":::
+
+You may also find additional information in the add-in's manifest file. The manifest contains URL endpoints which can also help you identify and contact the publisher. Use the following command to get the manifest.
+
+`Get-App -Identity {identity} | Select-Object -Property ManifestXml`
+
+The following screenshot shows an example of using the ID to get the XML manifest for Bing Maps.
+
+:::image type="content" source="../images/get-app-cmdlet-bing-maps-manifestxml.png" alt-text="Screenshot of running the Get-App command in PowerShell to get the ManifestXml of Bing Maps":::
+
+> [!NOTE]
+> Outlook add-ins you deployed from Microsoft AppSource can be identified using a list that we published. No testing is necessary. For more information, see [Which add-ins in my organization are impacted?](#which-add-ins-in-my-organization-are-impacted).
+
 ### Can I turn Exchange Online legacy tokens back on?
 
-Yes, there are PowerShell commands you can use to turn legacy tokens on or off in any tenant. For more information on how to turn legacy tokens on or off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md). If you use the commands to enable legacy Exchange Online tokens, they will not be turned off in February 2025. They will remain on until June 2025, or until you use the tooling to turn them off.
+Yes, there are PowerShell commands you can use to turn legacy tokens on or off in any tenant. For more information on how to turn legacy tokens on or off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 
 In June 2025, legacy tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants. We'll update this FAQ with additional information once the exception process is ready.
 
@@ -102,9 +163,6 @@ Add-ins may use the legacy tokens to get resources from Exchange through the EWS
 
 If you rely on an ISV for your add-in, we recommend you contact them as soon as possible to confirm they have a plan and a timeline for moving off of legacy Exchange tokens. ISV developers should reach out directly to their Microsoft contacts with questions to ensure they're ready for the end of Exchange legacy tokens. If you rely on a developer within your organization, they should review this FAQ and the article [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md). Any questions should be raised on the [OfficeDev/office-js GitHub issues site](https://github.com/OfficeDev/office-js/issues).
 
-> [!NOTE]
-> We've been working to provide a command update to [Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell) that reports any add-ins using legacy Exchange Online tokens. Unfortunately, we've had difficulties rolling out this update due to the complexities of capturing specific token usage in the Microsoft 365 ecosystem. We continue to work on this update and will provide new information in this FAQ when it is available.
-
 ### Where do I find which add-ins have consent?
 
 Once the admin or a user consents, it will be listed in the Microsoft Entra admin center. You can find app registrations using the following steps.
@@ -141,9 +199,7 @@ If the publisher updated their manifest, and the add-in is deployed through the 
 
 ### Some add-ins are breaking. Can I tell if this is because Exchange tokens were turned off?
 
-Beginning February 17, 2025, Microsoft is rolling out an update to gradually turn off legacy Exchange Online tokens for all users. The update won't turn off Exchange tokens in your tenant if you already [turned legacy Exchange Online tokens on](turn-exchange-tokens-on-off.md).
-
-If your tenant uses an add-in that still relies on Exchange tokens, the add-in will break or lose functionality. The update is rolled out **per user**. This means that one or more users may have an add-in affected when Exchange tokens are off, but other users would still have a working add-in. If you notice that an add-in has issues and suspect it may be affected by Exchange tokens turned off, please take the following actions.
+If you notice that an add-in has issues and suspect it may be affected by Exchange tokens turned off,  please take the following actions.
 
 #### Check the list of known add-ins
 
