@@ -11,7 +11,7 @@ ms.localizationpriority: high
 The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. These projects are Node.js-based. When you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS), [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
 > [!NOTE]
-> Office add-ins can also be created with the [Teams Toolkit](teams-toolkit-overview.md) or the [Office Add-in's Development Kit]((development-kit-overview.md)). 
+> Office add-ins can also be created with the [Teams Toolkit](teams-toolkit-overview.md) or the [Office Add-in's Development Kit](development-kit-overview.md). 
 
 The projects that the tool creates have the following characteristics.
 
@@ -115,4 +115,4 @@ For detailed reference about the command line parameters, see the readme for the
 
 ## Troubleshooting
 
-If you encounter problems using the tool, your first step should be to reinstall it to be sure that you have the latest version. (See [Install the generator](#install-the-generator) for details.) If doing so doesn't fix the problem, search the [issues of the GitHub repo for the tool](https://github.com/OfficeDev/generator-office/issues) to see if anyone else has encountered the same problem and found a solution. If no one has, [create a new issue](https://github.com/OfficeDev/generator-office/issues/new?assignees=&labels=needs+triage&template=bug_report.md&title=).
+If you encounter problems using the tool, your first step should be to reinstall it to be sure that you have the latest version. (See [Prerequisites](#prerequisites) for details.) If doing so doesn't fix the problem, search the [issues of the GitHub repo for the tool](https://github.com/OfficeDev/generator-office/issues) to see if anyone else has encountered the same problem and found a solution. If no one has, [create a new issue](https://github.com/OfficeDev/generator-office/issues/new?assignees=&labels=needs+triage&template=bug_report.md&title=).
