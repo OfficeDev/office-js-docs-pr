@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins that use the unified manifest for Microsoft 365
 description: Test your Office Add-in on Windows by sideloading.
-ms.date: 02/26/2025
+ms.date: 03/28/2025
 ms.localizationpriority: medium
 ---
 
@@ -31,11 +31,15 @@ Use the process described in [Sideload with a system prompt, bash shell, or term
 1. Press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then the desktop version of the Office application that you selected opens. You can now work with your add-in. For an Outlook add-in, be sure you're working in the **Inbox** of *your Microsoft 365 account identity*.
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
 
+   > [!NOTE]
+   > If the preceding step seems to have no effect, uninstall the add-in by opening a **TERMINAL** in Visual Studio Code, and then complete the uninstall step &#8212; the *last* step &#8212; of the section [Sideload with a system prompt, bash shell, or terminal](#sideload-with-a-system-prompt-bash-shell-or-terminal).
+
 ## Sideload with a system prompt, bash shell, or terminal
 
 1. First, *make sure the Office desktop application that you want to sideload into is closed.*
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
 1. The command to sideload the add-in depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then the Office host application (Excel, Outlook, PowerPoint, or Word) desktop opens.
+1. For an Excel, PowerPoint, or Word add-in, there is an additional step: select the **Add-ins** button on the **Home** ribbon. On the flyout that opens, select the add-in. This completes the installation.
 1. You can now work with your add-in.
 1. When you're done working with your add-in, make sure to run the command `npm run stop`. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
 
@@ -82,7 +86,13 @@ There are two tools you can use to sideload.
     >
     > :::image type="content" source="../images/teams-cli-install.png" alt-text="The command 'teamsapp install --file-path manifests/contoso/contoso.zip' and the system response including the user's account name, the title id GUID and the app id GUID.":::
     >
-    > You'll need this title ID to end the sideloading and debugging session, so save it. We recommend that you put it in a text file in the root of the project and name the file **TitleID.txt**.
+    > You'll need this title ID to end the sideloading and debugging session. It is recorded on Windows computers in the following Registry key: 
+    >
+    > **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId** 
+    >
+    > The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Teams Toolkit CLI.
+    >
+    > Only the most recent add-in installed with the CLI is recorded. If you sideload an add-in with the CLI before you have uninstalled an earlier add-in you installed with the CLI, then there is no record of the earlier add-in's title ID in the Registry. So, we recommend that you also save it in a text file in the root of the project and name the file **TitleID.txt** on both Mac and Windows computers.
 
 1. When you use the Teams Toolkit CLI to start an add-in, *always stop the session with the following command*. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in. Replace "{title ID}" with the title ID of the add-in including the "U_" prefix; for example, `U_90d141c6-cf4f-40ee-b714-9df9ea593f39`.
 

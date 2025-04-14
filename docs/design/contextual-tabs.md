@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: Learn how to add custom contextual tabs to your Office Add-in.
-ms.date: 03/11/2025
+ms.date: 03/26/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -635,12 +635,12 @@ The add-in's manifest provides a way to create a fallback experience in an add-i
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
-Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then, add an "overriddenByRibbonApi" property to each of the control objects and menu items and set its value to "true". The effect of doing so is the following:
+Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then, mark any control groups, or individual controls, or menu items that shouldn't be visible on platforms that support contextual tabs. You mark a group, control, or menu item object by adding an "overriddenByRibbonApi" property to it and setting its value to "true". The effect of doing so is the following:
 
-- If the add-in runs on an application and platform that support custom contextual tabs, then the custom controls and menu items won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
-- If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the controls and menu items do appear on the custom core tab.
+- If the add-in runs on an application and platform that support custom contextual tabs, then the marked custom groups, controls, and menu items won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
+- If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the groups, controls, and menu items do appear on the custom core tab.
 
-The following is an example. Note that "Contoso.MyButton1" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent group and custom core tab will appear regardless of whether custom contextual tabs are supported.
+The following is an example. Note that "Contoso.MyButton1" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent group (with "ContosoButton2") and the custom core tab will appear regardless of whether custom contextual tabs are supported.
 
 ```json
 "extensions": [
@@ -662,6 +662,10 @@ The following is an example. Note that "Contoso.MyButton1" will appear on the cu
                                         "id": "Contoso.MyButton1",
                                         ...
                                         "overriddenByRibbonApi": true
+                                    },
+                                    {
+                                        "id": "Contoso.MyButton2",
+                                        ...
                                     }
                                 ]
                             }
@@ -674,10 +678,48 @@ The following is an example. Note that "Contoso.MyButton1" will appear on the cu
 ]
 ```
 
-When a parent menu control is marked with `"overriddenByRibbonApi": true`, then it isn't visible, and all of its child markup is ignored when custom contextual tabs aren't supported. So, it doesn't matter if any of those child menu items have the "overriddenByRibbonApi" property or what its value is. The implication of this is that if a menu item must be visible in all contexts, then not only should it not be marked with `"overriddenByRibbonApi": true`, but *its ancestor menu control must also not be marked this way*.
+The following is another example. Note that "MyControlGroup" will appear on the custom core tab only when custom contextual tabs aren't supported. However, the parent custom core tab (with unmarked groups) will appear regardless of whether custom contextual tabs are supported.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "ribbons": [
+            ...
+            {
+                ...
+                "tabs": [
+                    {
+                        "id": "MyTab",
+                        "groups": [
+                            {
+                                "id": "MyControlGroup",
+                                "overriddenByRibbonApi": true
+                                ...
+                                "controls": [
+                                    {
+                                        "id": "Contoso.MyButton1",
+                                        ...
+                                    }
+                                ]
+                            },
+                            ... other groups configured here
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+
+When a parent menu control is marked with `"overriddenByRibbonApi": true`, then it isn't visible, and all of its child markup is ignored when custom contextual tabs aren't supported. So, it doesn't matter if any of those child menu items have the "overriddenByRibbonApi" property or what its value is. The implication of this is that if a menu item must be visible in all contexts, then not only should it not be marked with `"overriddenByRibbonApi": true`, but *its ancestor menu control must also not be marked this way*. A similar point applies to ribbon controls. If a control must be visible in all contexts, then not only should it not be marked with `"overriddenByRibbonApi": true`, but its parent group must also not be marked this way.
 
 > [!IMPORTANT]
 > Don't mark *all* of the child items of a menu with `"overriddenByRibbonApi": true`. This is pointless if the parent element is marked with `"overriddenByRibbonApi": true` for reasons given in the preceding paragraph. Moreover, if you leave out the "overriddenByRibbonApi" property on the parent menu control (or set it to `false`), then the parent will appear regardless of whether custom contextual tabs are supported, but it will be empty when they are supported. So, if all the child elements shouldn't appear when custom contextual tabs are supported, mark the *parent* menu control with `"overriddenByRibbonApi": true`.
+>
+> A parallel point applies to groups and controls, don't mark all of the controls in a group with `"overriddenByRibbonApi": true`. This is pointless if the parent group is marked with `"overriddenByRibbonApi": true`. Moreover, if you leave out the "overriddenByRibbonApi" property on the parent group (or set it to `false`), then the group will appear regardless of whether custom contextual tabs are supported, but it will have no controls in it when they are supported. So, if all the controls shouldn't appear when custom contextual tabs are supported, mark the parent group with `"overriddenByRibbonApi": true`.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 

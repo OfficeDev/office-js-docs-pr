@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 02/12/2025
+ms.date: 03/26/2025
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 To add Teams capabilities to an add-in that uses the add-in only manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
 > [!NOTE]
-> 
+>
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
 > - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Yeoman generator for Office Add-ins (Yo Office)](yeoman-generator-overview.md), it already uses the unified manifest.
 
@@ -26,7 +26,7 @@ There are three basic tasks to converting an add-in project from the add-in only
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 > [!NOTE]
-> 
+>
 > - Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
 > - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
@@ -37,16 +37,16 @@ The following sections describe conditions that must be met before you convert t
 
 ### Uninstall the existing version of the add-in
 
-To avoid conflicts with UI control names and other problems, be sure the existing add-in isn't installed on the computer where you do the conversion.
+To avoid conflicts with UI control names and other problems, be sure the existing add-in isn't installed on the computer where you do the conversion. If you experience any difficulties uninstalling the add-in, see [Remove a ghost add-in](../testing/uninstall-add-in.md#remove-a-ghost-add-in).
 
 ### Ensure that you have two special image files
 
-If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be the full URLs of image files. The images must be a specified size as shown in the following table. 
+If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be the full URLs of image files. The images must be a specified size as shown in the following table.
 
 |Office application|\<IconUrl\>|\<HighResolutionIconUrl\>|
 |:---------------|:---------------|:---------------|
 |Outlook|64x64 pixels|128x128 pixels|
-|All other Office</br>applications|32x32 pixels|64x64 pixels| 
+|All other Office</br>applications|32x32 pixels|64x64 pixels|
 
 The following markup is an example.
 
@@ -64,6 +64,10 @@ The following markup is an example.
   <!-- Other markup omitted -->
 ```
 
+### Reduce the number of add-in commands as needed
+
+An add-in that uses the unified manifest may not have more than 20 [add-in commands](../design/add-in-commands.md). If the total number of  [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20. 
+
 ### Update the add-in ID, version, domain, and function names in the manifest
 
 1. Change the value of the `<ID>` element to a new random GUID.
@@ -72,7 +76,7 @@ The following markup is an example.
 
 1. Be sure that the domain segment of the add-in's URLs in the manifest are pointing to `https://localhost:3000`.
 
-1. If your manifest has any **\<FunctionName\>** elements, make sure their values have fewer than 65 characters. 
+1. If your manifest has any **\<FunctionName\>** elements, make sure their values have fewer than 65 characters.
 
    > [!IMPORTANT]
    > The value of this element must exactly match the name of an action that's mapped to a function in a JavaScript or TypeScript file with the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) function. If you change it in the manifest, be sure to change it in the `actionId` parameter passed to `associate()` too.
@@ -81,13 +85,13 @@ The following markup is an example.
 
 1. Validate the modified add-in only manifest. See [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).
 
-1. Verify that the add-in can be sideloaded and run. See [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing). 
+1. Verify that the add-in can be sideloaded and run. See [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
 Resolve any problems before you attempt to convert the project.
 
 ## Conversion tools and options
 
-There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project, and on the tool you used to create the project. 
+There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project, and on the tool you used to create the project.
 
 - [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
 - [Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")](#convert-projects-created-with-the-yeoman-generator-for-office-add-ins-aka-yo-office)
@@ -115,7 +119,7 @@ The easiest way to convert is to use Teams Toolkit.
 
 1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Import an Existing Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. One option is called 'Import an Existing Office Add-in'.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-import-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The 'Import an Existing Office Add-in' option is selected.":::
 
 1. In the **Existing add-in project folder** dropdown menu, browse to the root folder of the add-in project.
 1. In the **Select import project manifest file** dropdown menu, browse to the add-in only manifest file, typically named **manifest.xml**.
@@ -129,7 +133,7 @@ You can sideload the add-in using the Teams Toolkit or in a command prompt, bash
 - [Sideload with Teams toolkit](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-the-teams-toolkit)
 - [Sideload with a system prompt, bash shell, or terminal](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal)
 
-> [!NOTE] 
+> [!NOTE]
 > Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 
 ### Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")
