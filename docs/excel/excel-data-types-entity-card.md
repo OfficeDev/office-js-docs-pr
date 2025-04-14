@@ -170,7 +170,7 @@ Entity properties have an optional `propertyMetadata` field that uses the [`Cell
 
 ## Attribution
 
-Add attribution for information that comes from third parties to indicate the source and any license information. Use [Excel.CellValueAttributionAttributes](https://learn.microsoft.com/javascript/api/excel/excel.cellvalueattributionattributes) to add attribution to a cell value. The following code example shows how to add attribution for usage of information about the planet Mars from Wikipedia.
+Add attribution for information that comes from third parties to indicate the source and any license information. Use [Excel.CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes) to add attribution to a cell value. The following code example shows how to add attribution for usage of information about the planet Mars from Wikipedia.
 
 ```javascript
 async function createPlanet() {

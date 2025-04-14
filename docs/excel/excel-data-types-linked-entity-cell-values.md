@@ -29,7 +29,7 @@ Linked entity cell values provide the user with data linked from an external dat
 
 Like regular entity values, linked entity cell values can be referenced in formulas.
 
-:::image type="content" source="../images/excel-geography-seattle-dot-syntax.png" alt-text="Screen shot of using dot notation in a formula using "=D6." To display fields for Seattle Geography data type.":::
+:::image type="content" source="../images/excel-geography-seattle-dot-syntax.png" alt-text="Screen shot of using dot notation in a formula using \"=D6." To display fields for Seattle Geography data type.":::
 
 ## Definitions
 

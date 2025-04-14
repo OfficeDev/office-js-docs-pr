@@ -60,7 +60,7 @@ The following sections show JSON code samples for the formatted number value, en
 
 ## Formatted number values
 
-The [DoubleCellCellValue](/javascript/api/excel/excel.doublecellcellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
+The [DoubleCellCellValue](/javascript/api/excel/excel.doublecellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
 
 The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If the minimum compatibility requirements for the data types feature aren't met, calculations use the `basicValue` in place of the formatted number.
 
