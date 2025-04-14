@@ -2,7 +2,7 @@
 title: Add properties to basic cell values
 description: Add properties to basic cell values.
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 03/17/2025
+ms.date: 04/14/2025
 ms.localizationpriority: medium
 ---
 
@@ -142,90 +142,7 @@ The number formatting is considered the default format. If the user, or other co
 
 Cell values with properties have a default data type card that the user can view. You can provide a custom card layout to use instead of the default card layout to improve the user experience when viewing properties. To do this, add the **layouts** property to the JSON description.
 
-The **layouts** property contains two direct subproperties, **compact** and **card**. The **card** property specifies the appearance of a card when the data type card is open. The compact property is optional and defines the icon for a value. The icon is shown in the cell value if it's provided. It can also be shown in the card if it's referenced as a subproperty. See the [EntityCompactLayoutIcons](/javascript/api/excel/excel.entitycompactlayouticons) enum for a full list of available icons.
-
-Within the **card** property, use the **BasicCardLayout** object to define the components of the card like **title**, **subTitle**, and **sections**.
-The following code sample shows how to create a string value of **scissors** with properties displayed in a custom card layout.
-
-```javascript
-
-const scissors = {
-  type: Excel.CellValueType.string,
-  basicType: Excel.RangeValueType.string,
-  basicValue: "Scissors",
-  properties: {
-    "Product Name": {
-      type: Excel.CellValueType.string,
-      basicType: Excel.RangeValueType.string,
-      basicValue: "Scissors"
-    },
-    "Product ID": {
-      type: Excel.CellValueType.string,
-      basicType: Excel.RangeValueType.string,
-      basicValue: "563"
-    },
-    "Quantity Per Unit": {
-      type: Excel.CellValueType.double,
-      basicType: Excel.RangeValueType.double,
-      basicValue: 3
-    },
-    "Unit Price": {
-      type: Excel.CellValueType.double,
-      basicType: Excel.RangeValueType.double,
-      basicValue: 6.95,
-      numberFormat: "$0.00"
-    },
-    Discontinued: {
-      type: Excel.CellValueType.boolean,
-      basicType: Excel.RangeValueType.boolean,
-      basicValue: false
-    }
-  },
-  layouts: {
-    compact: {
-      icon: Excel.EntityCompactLayoutIcons.shoppingBag
-    },
-    card: {
-      title: {
-        property: "Product Name"
-      },
-      sections: [
-        {
-          layout: "List",
-          properties: ["Product ID"]
-        },
-        {
-          layout: "List",
-          title: "Quantity and price",
-          collapsible: true,
-          collapsed: false, // This section will not be collapsed when the card is opened.
-          properties: ["Quantity Per Unit", "Unit Price"]
-        },
-        {
-          layout: "List",
-          title: "Additional information",
-          collapsible: true,
-          collapsed: true, // This section will be collapsed when the card is opened.
-          properties: ["Discontinued"]
-        }
-      ]
-    }
-  }
-};
-
-async function createStringWithCardLayout() {
-  await Excel.run(async (context) => {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const range = sheet.getRange("A1");
-    range.valuesAsJson = scissors;
-    await context.sync();
-  });
-}
-```
-
-The following image shows how the string and its properties appear to the user as a custom card layout.
-
-:::image type="content" source="../images/data-type-basic-card-layout.png" alt-text="Data card layout image for scissors showing Quantity and price section, and Additional information section which is collapsed.":::
+For more information, see [Use cards with cell value data types](excel-data-types-entity-card.md).
 
 ## Nested data types
 
@@ -290,94 +207,6 @@ async function createNumberWithNestedEntity() {
 The following image shows the number value and the data type card for the nested laptop entity.
 
 :::image type="content" source="../images/data-type-basic-nested-entities.png" alt-text="Cell value in Excel showing battery charge at 70% and the data type card showing the nested laptop entity with charging and power consuption property values.":::
-
-## Attribution
-
-Add attribution for information that comes from third parties to indicate the source and any license information. Use **[Excel.CellValueAttributionAttributes](https://learn.microsoft.com/javascript/api/excel/excel.cellvalueattributionattributes)** to add attribution to a cell value. The following code example shows how to add attribution for usage of information about the planet Mars from Wikipedia.
-
-```javascript
-async function createPlanet() {
-  await Excel.run(async (context) => {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const range = sheet.getRange("A1");
-    const attributionObject: Excel.CellValueAttributionAttributes = {
-      licenseAddress: "https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_is_free_content",
-      licenseText: "Free usage information",
-      sourceAddress: "https://en.wikipedia.org/wiki/Mars",
-      sourceText: "Wikipedia"
-    };
-
-    range.valuesAsJson = [
-      [
-        {
-          type: Excel.CellValueType.double,
-          basicType: Excel.RangeValueType.double,
-          basicValue: 6779, //kilometers (radius)
-          properties: {
-            Name: {
-              type: Excel.CellValueType.string,
-              basicType: Excel.RangeValueType.string,
-              basicValue: "Mars",
-              propertyMetadata: {
-                sublabel: "Planetary Body",
-                attribution: [attributionObject]
-              }
-            }
-          }
-        }
-      ]
-    ];
-    await context.sync();
-  });
-}
-
-```
-
-The following image shows how the attribution is displayed in the data type card for the user.
-
-:::image type="content" source="../images/data-type-basic-card-attribution.png" alt-text="Data type card showing attribution for Wikipedia.":::
-
-## Provider information
-
-You can add information about your add-in, or service, that is the source for the information in the data type card. Use **Excel.CellValueProviderAttributes** to add your provider information. The following code sample shows how to add provider information for Contoso generic search as the source of search data for the cell value.
-
-```javascript
-async function createSearchEntry() {
-  await Excel.run(async (context) => {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const range = sheet.getRange("A1");
-
-    range.valuesAsJson = [
-      [
-        {
-          type: Excel.CellValueType.string,
-          basicType: Excel.RangeValueType.string,
-          basicValue: "cell function - Microsoft support",
-          properties: {
-            "Search Keywords": {
-              type: Excel.CellValueType.string,
-              basicType: Excel.RangeValueType.string,
-              basicValue: "Cell Values"
-            }
-          },
-          provider: {
-            description: "Contoso generic search",
-            //Ignacio javier igjav, Public domain, via Wikimedia Commons
-            logoSourceAddress: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Lupa.png",
-            logoTargetAddress: "https://contoso.com"
-          }
-        }
-      ]
-    ];
-
-    await context.sync();
-  });
-}
-```
-
-The following image shows how the provider information appears as the logo in the data type card for the user.
-
-:::image type="content" source="../images/data-type-basic-provider-information.png" alt-text="Data type card showing the search logo for Contoso generic search.":::
 
 ## Compatibility
 
