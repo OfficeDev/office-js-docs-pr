@@ -11,7 +11,7 @@ ms.localizationpriority: high
 The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. These projects are Node.js-based. When you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS), [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
 > [!NOTE]
-> Office add-ins can also be created with the [Teams Toolkit](teams-toolkit-overview.md) or the [Office Add-in's Development Kit](development-kit-overview.md). 
+> Office add-ins can also be created with the [Teams Toolkit](teams-toolkit-overview.md) or the [Office Add-in Development Kit](development-kit-overview.md). 
 
 The projects that the tool creates have the following characteristics.
 
@@ -47,7 +47,7 @@ A lot needs to load, so it may take 40 seconds before the tool starts. The tool 
 The first question asks you to choose between several types of projects. The options are:
 
 - **Office Add-in Task Pane project**
-- **Excel, PowerPoint, adn/or Word Task Pane with unified manifest for Microsoft 365 (preview)**
+- **Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)**
 - **Office Add-in Task Pane project using React framework**
 - **Excel Custom Functions using a Shared Runtime**
 - **Excel Custom Functions using a JavaScript-only Runtime**
@@ -59,7 +59,7 @@ The first question asks you to choose between several types of projects. The opt
 
 > [!NOTE]
 > - The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
-> - The **Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)** option creates a project for Excel, PowerPoint, Word, or all three, that uses the unified manifest for Microsoft 365. For more information about the option, see [Word, PowerPoint, or Excel with unified manifest](#word-powerpoint-or-excel-with-unified-manifest-option).
+> - The **Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)** option creates a project for Excel, PowerPoint, Word, or all three, that uses the unified manifest for Microsoft 365. For more information about the option, see [Word, PowerPoint, or Excel with unified manifest option](#word-powerpoint-or-excel-with-unified-manifest-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
 
