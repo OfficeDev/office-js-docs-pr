@@ -2,16 +2,16 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 04/12/2024
+ms.date: 04/16/2024
 ms.localizationpriority: high
 ---
 
 # Create Office Add-in projects using the Yeoman Generator
 
-The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. We recommend that you use this tool to create add-in projects except when you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS). In either of the latter two situations, [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
+The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. These projects are Node.js-based. When you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS), [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
 > [!NOTE]
-> Office add-ins can also be created with the Teams Toolkit (Prerelease version). For more information about how to do this and the limitations, see [Create Office Add-in projects using the Teams Toolkit (preview)](teams-toolkit-overview.md).
+> Office add-ins can also be created with the [Teams Toolkit](teams-toolkit-overview.md) or the [Office Add-in's Development Kit]((development-kit-overview.md)). 
 
 The projects that the tool creates have the following characteristics.
 
@@ -27,7 +27,7 @@ The projects that the tool creates have the following characteristics.
 > [!TIP]
 > If you want to deviate from these choices significantly, such as using a different task runner or a different server, we recommend that when you run the tool you choose the [Manifest-only option](#manifest-only-option).
 
-## Install the generator
+## Prerequisites
 
 >[!NOTE]
 > If you aren't familiar with Node.js or npm, you should start by [setting up your development environment](../overview/set-up-your-dev-environment.md).
@@ -42,21 +42,24 @@ Start the tool with the following command in a system prompt (not a bash window)
 yo office 
 ```
 
-A lot needs to load, so it may take 20 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. If given a list, select one and then select Enter.
+A lot needs to load, so it may take 40 seconds before the tool starts. The tool asks you a series of questions. For some, you just type an answer to the prompt. For others, you're given a list of possible answers. If given a list, use the up and down arrow keys to select one and then select <kbd>Enter</kbd>.
 
 The first question asks you to choose between several types of projects. The options are:
 
 - **Office Add-in Task Pane project**
+- **Excel, PowerPoint, adn/or Word Task Pane with unified manifest for Microsoft 365 (preview)**
 - **Office Add-in Task Pane project using React framework**
 - **Excel Custom Functions using a Shared Runtime**
 - **Excel Custom Functions using a JavaScript-only Runtime**
 - **Office Add-in Task Pane project supporting single sign-on**
+- **Office Add-in Task Pane project supporting Nested App Auth single sign-on (preview)**
 - **Office Add-in project containing the manifest only**
 
 ![The prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
 
 > [!NOTE]
-> The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
+> - The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
+> - The **Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)** option creates a project for Excel, PowerPoint, Word, or all three, that uses the unified manifest for Microsoft 365. For more information about the option, see [Word, PowerPoint, or Excel with unified manifest](#word-powerpoint-or-excel-with-unified-manifest-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
 
@@ -74,7 +77,7 @@ If you choose **Outlook** as the Office application, you get an additional quest
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
-After you've answered this question, the generator creates the project and installs the dependencies. You may see **WARN** messages in the npm output on screen. You can ignore these. You may also see messages that vulnerabilities were found. You can ignore these for now, but you'll eventually need to fix them before your add-in is released to production. For more information about fixing vulnerabilities, open your browser and search for "npm vulnerability".
+After you've answered all questions, the generator creates the project and installs the dependencies. You may see **WARN** messages in the npm output on screen. You can ignore these. You may also see messages that vulnerabilities were found. You can ignore these for now, but you'll eventually need to fix them before your add-in is released to production. For more information about fixing vulnerabilities, open your browser and search for "npm vulnerability".
 
 If the creation is successful, you'll see a **Congratulations!** message in the command window, followed by some suggested next steps. (If you're using the generator as part of a quick start or tutorial, ignore the next steps in the command window and continue with the instructions in the article.)
 
@@ -88,7 +91,7 @@ If the creation is successful, you'll see a **Congratulations!** message in the 
 > When you're ready to install the dependencies, navigate to the root folder of the project in a command prompt and enter `npm install`.
 
 > [!WARNING]
-> If you choose **Office Add-in Task Pane project supporting single sign-on** and **TypeScript**, and you are using a Node.js version greater than 18.16.0, then a bug in Node.js causes the project file **\<root\>\src\middle-tier\ssoauth-helper.ts** to be corrupted. To fix it, copy the contents of the file from the repo, [ssoauth-helper.ts](https://github.com/OfficeDev/Office-Addin-Taskpane-SSO/blob/master/src/middle-tier/ssoauth-helper.ts), over the contents of the file in the generated project.
+> If you choose **Office Add-in Task Pane project supporting single sign-on** and **TypeScript**, and you are using a Node.js version greater than 18.16.0, then a bug in Node.js may cause the project file **\<root\>\src\middle-tier\ssoauth-helper.ts** to be corrupted. To fix it, copy the contents of the file from the repo, [ssoauth-helper.ts](https://github.com/OfficeDev/Office-Addin-Taskpane-SSO/blob/master/src/middle-tier/ssoauth-helper.ts), over the contents of the file in the generated project.
 
 ## Manifest-only option
 
@@ -96,6 +99,10 @@ This option creates only a manifest for an add-in. The resulting project doesn't
 
 - You want to use different tools from the ones a Yeoman generator project installs and configures by default. For example, you want to use a different bundler, transpiler, task runner, or development server.
 - You want to use a web application development framework, other than React, such as Vue.
+
+## Word, PowerPoint, or Excel with unified manifest option
+
+The unified manifest for Microsoft 365 is in preview for Excel, PowerPoint, and Word add-ins. It should not be used for production add-ins, but you can select this option in Yo Office to create an add-in for one (or all three) of those Office applications. You'll be asked to choose which Office application. You can also choose **All** to create an add-in that is installable on all three Office applications. The project that is created uses TypeScript.
 
 ## Use command line parameters
 
