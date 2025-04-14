@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 04/11/2025
+ms.date: 04/14/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -54,6 +54,9 @@ It's very unlikely any COM add-ins are affected by the deprecation of legacy Exc
 ### How do I perform a scream test?
 
 Legacy Exchange Online tokens will be turned off across all tenants in June 2025. We recommend that administrators perform a scream test as soon as possible to determine if there are any add-ins that could be broken by this change. This will give you time to reach out to publishers of any affected add-ins to address breaking issues before the June deadline.
+
+> [!NOTE]
+> You only need to perform the scream test if you turned legacy Exchange Online tokens on by using the `Set-AuthenticationPolicy` command. If you haven't run this command, then Exchange Online tokens should already be off by default.
 
 Before performing the scream test you may want to let your users know in advance, such as through email, that there will be a test to turn off legacy tokens and that it may affect some Outlook add-ins. You should consider providing users the following information.
 
