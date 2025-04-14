@@ -37,7 +37,7 @@ The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.ce
 - [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
 - [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
-- [ExternalCodeServiceObjectCellValue](/javascript/api/excel/excel.externalcodeserviceobjectcellvalue?view=excel-js-preview)
+- [ExternalCodeServiceObjectCellValue](/javascript/api/excel/excel.externalcodeserviceobjectcellvalue)
 - [FunctionCellValue](/javascript/api/excel/excel.functioncellvalue)
 - [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
 - [LocalImageCellValue](/javascript/api/excel/excel.localimagecellvalue)
