@@ -66,18 +66,17 @@ Before performing the scream test you may want to let your users know in advance
 
 Use the following steps to perform the test.
 
-1. Run the following command to turn off legacy Exchange Online tokens on your tenant.
+1. Run the following command to turn off legacy Exchange Online tokens on your tenant. For details on how to use this command, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
     
     `Set-AuthenticationPolicy –BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
     
-1. For details on how to use this command, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 1. Wait a suitable amount of time for users to report any issues with add-ins. It takes approximately 24 hours for the command to turn off legacy Exchange Online tokens for all users. It may take another day or two for users to report any issues with Outlook add-ins.
 1. Identify any affected Outlook add-ins. If users submit issues identifying breaking issues, be sure to get the name and description of the Outlook add-in affected. Also capture the error, or behavior so this information can be passed along to the publisher.
-1. If any business-critical add-ins are broken, turn tokens back on using the following command.  
+1. If any business-critical add-ins are broken, turn tokens back on using the following command. For details on how to use this command, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
     
     `Set-AuthenticationPolicy –AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
     
-    It takes approximately 24 hours for tokens to turn back on for all users on the tenant. For details on how to use this command, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+    It takes approximately 24 hours for tokens to turn back on for all users on the tenant.
     
 1. If there are no reports of breaking issues, we recommend you leave legacy Exchange Online tokens off as a security best practice.
 
@@ -102,7 +101,7 @@ The **ProviderName** will help you identify who published the add-in so that you
 > [!NOTE]
 > The `Get-App` command doesn’t show a complete list of all add-ins installed on the user’s computer. For example, sideloaded add-ins will not appear in this list. You may need to follow up with users in some cases to track down where the add-in came from.
 
-To find information about an add-in by AppId use the following command.
+To find information about an add-in by `AppId` use the following command.
 
 `Get-App -Identity {identity} | Select-Object -Property ProviderName, DisplayName`
 
