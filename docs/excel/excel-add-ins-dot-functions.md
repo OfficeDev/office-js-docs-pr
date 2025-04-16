@@ -11,15 +11,15 @@ Add lambda methods to cell values to provide the user access to dynamic calculat
 
 The following screenshot shows an example of adding a `ConvertWeight` method to a product entity value representing pancake mix.
 
-:::image type="content" source="docs/images/excel-add-in-dot-function.png" alt-text='Screenshot of Excel formula showing =A1.ConvertWeight("ounces")':::
+:::image type="content" source="/images/excel-add-in-dot-function.png" alt-text="Screenshot of Excel formula showing =A1.ConvertWeight( ounces )":::
 
 You can also add lambda methods to the `DoubleCellValue`, `BooleanCellValue`, and `StringCellValue` types. The following screenshot shows an example of adding a `ConvertToRomanNumeral` method to a double value type.
 
-:::image type="content" source="docs/images/excel-add-in-dot-function-roman-numeral.png" alt-text="Screenshot of Excel formula showing =A1.ConvertToRomanNumeral()":::
+:::image type="content" source="/images/excel-add-in-dot-function-roman-numeral.png" alt-text="Screenshot of Excel formula showing =A1.ConvertToRomanNumeral()":::
 
 Lambda methods don’t appear on the data type card for the user.
 
-:::image type="content" source="docs/images/excel-add-in-dot-function-data-card.png" alt-text="Screenshot of data card for Pancake mix data type, but no lamdba methods are listed.":::
+:::image type="content" source="/images/excel-add-in-dot-function-data-card.png" alt-text="Screenshot of data card for Pancake mix data type, but no lamdba methods are listed.":::
 
 ## Add a lambda method to an entity value
 
@@ -248,7 +248,7 @@ We recommend to use the `@excludeFromAutoComplete` tag in the comments descripti
 > [!NOTE]
 > If the function is manually entered correctly in the grid, the function will still execute. Also, a function can’t have both `@excludeFromAutoComplete` and `@linkedEntityDataProvider` tags.
 
-For the full list of properties In addition to the properties specified by [Manually create JSON metadata for custom functions](docs/excel/custom-functions-json.md) the `excludeFromAutoComplete` property is available for lambda methods.
+For the full list of properties In addition to the properties specified by [Manually create JSON metadata for custom functions](custom-functions-json.md) the `excludeFromAutoComplete` property is available for lambda methods.
 
 The `@excludeFromAutoComplete` tag is processed during build to generate a **functions.json** file by the **Custom-Functions-Metadata** package. This package is automatically added to the build process if you start with yo office and choose a custom function template. If you are not using this package you will need to add the `excludeFromAutoComplete` property manually to the **functions.json** file. 
 
@@ -281,7 +281,7 @@ The following example shows how to manually describe the `APPLYSALESTAX` with JS
         },
 ```
 
-For more information, see [Manually create JSON metadata for custom functions](docs/excel/custom-functions-json.md).
+For more information, see [Manually create JSON metadata for custom functions](custom-functions-json.md).
 
 ## Optimize calls
 
@@ -460,12 +460,12 @@ Lambda methods on entity values are similar in design to the [LAMDA function](ht
 
 ## Support details
 
-Lambda methods are supported in all custom function types, such as [volatile](docs/excel/custom-functions-volatile.md), and [streaming](docs/excel/custom-functions-web-reqs.md) custom functions. Also all custom function return types are supported ([matrix, scalar, and error](docs/excel/custom-functions-json-autogeneration.md))
+Lambda methods are supported in all custom function types, such as [volatile](custom-functions-volatile.md), and [streaming](custom-functions-web-reqs.md) custom functions. Also all custom function return types are supported ([matrix, scalar, and error](custom-functions-json-autogeneration.md))
 A linked entity can’t have a custom function that combines both a lambda method and a data provider. Be sure when developing linked entities to keep these types of custom functions separate.
 
 ## See also
 
-- [Create custom functions in Excel](docs/excel/custom-functions-overview.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
 - [Excel.CellValue](/javascript/api/excel/excel.cellvalue)
 - [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
 - [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
