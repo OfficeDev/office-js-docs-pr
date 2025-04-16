@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 03/26/2025
+ms.date: 04/18/2025
 ms.localizationpriority: medium
 ---
 
@@ -66,7 +66,7 @@ The following markup is an example.
 
 ### Reduce the number of add-in commands as needed
 
-An add-in that uses the unified manifest may not have more than 20 [add-in commands](../design/add-in-commands.md). If the total number of  [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20. 
+An add-in that uses the unified manifest may not have more than 20 [add-in commands](../design/add-in-commands.md). If the total number of  [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20.
 
 ### Update the add-in ID, version, domain, and function names in the manifest
 
@@ -80,6 +80,15 @@ An add-in that uses the unified manifest may not have more than 20 [add-in comma
 
    > [!IMPORTANT]
    > The value of this element must exactly match the name of an action that's mapped to a function in a JavaScript or TypeScript file with the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) function. If you change it in the manifest, be sure to change it in the `actionId` parameter passed to `associate()` too.
+
+### Shorten the add-in's name and description as needed
+
+Review and change, as needed, the `<DisplayName>` and `<Description>` values in light of the following effects of the conversion.
+
+- The first 30 characters of `<DisplayName>` will become the value of "name.short" in the unified manifest.
+- The first 100 characters of `<DisplayName>` will become the value of "name.long" in the unified manifest.
+- The first 250 characters of `<Description>` will become the value of "description.short" in the unified manifest.
+- The first 4000 characters of `<Description>` will become the value of "description.long" in the unified manifest.
 
 ### Verify that the modified add-in only manifest works
 
