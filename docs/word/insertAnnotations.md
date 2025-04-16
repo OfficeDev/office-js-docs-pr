@@ -1,6 +1,6 @@
 ---
 title: insertAnnotations method (Word JavaScript API)
-description: Adds ephemeral critique annotations (e.g., grammar underlines) to Word paragraphs using Office.js without modifying document content.
+description: Adds ephemeral critique annotations (such as grammar underlines) to a paragraph in Word using Office.js.
 ms.date: 4/16/2025
 ms.topic: reference
 ---
@@ -8,13 +8,13 @@ ms.topic: reference
 # insertAnnotations (Word)
 
 > [!NOTE]
-> This API is not officially documented as of now, but it has been observed in production use by third-party add-ins. This page is a community contribution based on active experimentation, testing.
+> This API is now supported as part of `AnnotationSet`, but this page provides developer-focused usage guidance, behavior notes, and real-world context for effective use in Word add-ins.
 
 ## Summary
 
-The `insertAnnotations` method adds non-destructive, in-line critique annotations (such as grammar suggestions) to a Word paragraph. These annotations appear as underlines in the Word UI but do not modify the actual document content and are not saved in the `.docx` file.
+The `insertAnnotations` method allows developers to apply non-destructive critique annotations (such as grammar-style underlines) to a Word paragraph. These annotations are applied in-memory, do not modify the document's content, and disappear once the document is closed.
 
-Annotations are ephemeral — they disappear when the document is closed and do not appear in exported document XML.
+This behavior is particularly useful for real-time grammar checkers and assistive tools where ephemeral, contextual UI is needed.
 
 ## Syntax
 
@@ -24,7 +24,13 @@ paragraph.insertAnnotations({
     {
       start: number,
       length: number,
-      colorScheme: "Red" | "Green" | "Blue" | "Orange" | string
+      colorScheme: Word.CritiqueColorScheme.red,
+      popupOptions: {
+        titleResourceId: string,
+        subtitleResourceId: string,
+        brandingTextResourceId: string,
+        suggestions: string[]
+      }
     }
   ]
 });
@@ -32,76 +38,55 @@ paragraph.insertAnnotations({
 
 ## Parameters
 
-| Parameter    | Type    | Description |
-|--------------|---------|-------------|
-| `start`      | number  | The 0-based index (within the paragraph) where the annotation starts. |
-| `length`     | number  | The number of characters to annotate. |
-| `colorScheme`| string  | The underline color. Known working values include: `"Red"`, `"Green"`, `"Blue"`, `"Orange"`. |
-
-> [!TIP]
-> Although not officially documented, the `colorScheme` property supports a wider range of named colors. Tested values include `"Red"`, `"Green"`, `"Blue"`, and `"Orange"`. Other standard color names may also work.
-
-## Requirements
-
-- Word API requirement set: `WordApi 1.5` (or higher)
-- Supported on: Word Desktop (latest builds), Word Online
-- Must be called on a valid `Paragraph` object
+| Parameter | Type     | Description |
+|-----------|----------|-------------|
+| `start`   | number   | The start index (within the paragraph text) for the critique |
+| `length`  | number   | Number of characters the annotation should cover |
+| `colorScheme` | enum or string | The color used for the underline (e.g. `Word.CritiqueColorScheme.red`) |
+| `popupOptions` | object | Contains metadata for the annotation tooltip |
 
 ## Returns
 
-None. The method applies the annotation directly.
+- A list of annotation IDs (via `ClientResult<string[]>`)
 
 ## Example
 
 ```javascript
 await Word.run(async (context) => {
   const paragraph = context.document.getSelection().paragraphs.getFirst();
-  paragraph.load("text");
-  await context.sync();
 
-  // Add a red underline to the first 5 characters
-  paragraph.insertAnnotations({
+  const popupOptions = {
+    brandingTextResourceId: "Demo.Branding",
+    titleResourceId: "Demo.Title",
+    subtitleResourceId: "Demo.Subtitle",
+    suggestions: ["suggestion 1", "suggestion 2"]
+  };
+
+  const annotationSet = {
     critiques: [
       {
         start: 0,
-        length: 5,
-        colorScheme: "Red"
+        length: 4,
+        colorScheme: Word.CritiqueColorScheme.red,
+        popupOptions
       }
     ]
-  });
+  };
 
+  paragraph.insertAnnotations(annotationSet);
   await context.sync();
-});
-```
-
-## Test Multiple Colors
-
-```javascript
-const colors = ['Red', 'Green', 'Blue', 'Orange'];
-colors.forEach(async (color) => {
-  await Word.run(async (context) => {
-    const paragraph = context.document.getSelection().paragraphs.getFirst();
-    paragraph.insertAnnotations({
-      critiques: [{
-        start: 0,
-        length: 5,
-        colorScheme: color
-      }]
-    });
-    await context.sync();
-  });
 });
 ```
 
 ## Notes
 
-- The annotation behaves like native Word grammar underlines.
-- Hover and click behavior may vary slightly depending on Word version.
-- Use in combination with `getAnnotationById()` for tracking or jumping to issues.
-- Annotations are not persisted to the document file and will be lost when the document is closed unless re-added.
+- These annotations are **not persisted** in the `.docx` file
+- They are **ephemeral** and will disappear when the document is reloaded
+- They are intended for **transient UI**, such as grammar checkers
+- You can retrieve and manage them via `getAnnotationById()`
 
 ## Related
 
-- `getAnnotationById(id)`
-- `critiqueAnnotation.range`
-- [`context.document.annotations`](https://learn.microsoft.com/javascript/api/word/word.document?view=word-js-preview&preserve-view=true#annotations)
+- [`AnnotationSet`](https://learn.microsoft.com/javascript/api/word/word.annotationset)
+- [`getAnnotationById()`](https://learn.microsoft.com/javascript/api/word/word.document?view=word-js-preview#word-document-getannotationbyidid)
+- [`setAnnotation()`](https://learn.microsoft.com/javascript/api/word/word.range?view=word-js-preview#setannotationoptions-)
