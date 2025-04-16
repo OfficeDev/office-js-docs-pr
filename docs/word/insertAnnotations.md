@@ -1,7 +1,7 @@
 ---
 title: insertAnnotations method (Word JavaScript API)
 description: Adds ephemeral critique annotations (e.g., grammar underlines) to Word paragraphs using Office.js without modifying document content.
-ms.date: 2024-04-14
+ms.date: 4/16/2025
 ms.topic: reference
 ---
 
@@ -104,4 +104,4 @@ colors.forEach(async (color) => {
 
 - `getAnnotationById(id)`
 - `critiqueAnnotation.range`
-- [`context.document.annotations`](../api/word/word.document.md#annotations)
+- [`context.document.annotations`](https://learn.microsoft.com/javascript/api/word/word.document?view=word-js-preview&preserve-view=true#annotations)
