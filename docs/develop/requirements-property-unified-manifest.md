@@ -1,7 +1,7 @@
 ---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 02/12/2025
+ms.date: 04/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -53,6 +53,13 @@ The "requirements" properties in descendant objects of "extensions" are used to 
 > [!TIP]
 > Don't include a capability, formFactor, or scope requirement in a descendant object of "extensions" that's *less* restrictive than the corresponding capability, formFactor, or scope requirement in the ancestor "extensions.requirements" property, if there is one. Since the add-in can't be installed on clients that don't meet the ancestor requirement, no feature filtering would occur anyway. For example, if an "extensions.requirements.capabilities" property requires **Mailbox 1.10**, there's no point in requiring **Mailbox 1.9** in any descendant objects.
 
+> [!NOTE]
+> Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
+>
+> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
+>
+> Feature filtering is less fine-grained in the add-in only manifest. As a result, on platforms that don't directly support the unified manifest, adding a "requirements" subproperty to *any* child of "extensions", is effectively the same as adding that same "requirements" subproperty to *all* the children of "extensions" except "alternates". So, on these platforms *none* of the features that are configured in these child properties of "extensions" will be available on platform and version combinations that don't meet the specified requirements, except the "alternates" feature if it is present.
+
 ### extensions.alternates.requirements
 
 The "extensions.alternates" property enables add-in developers to do the following:
@@ -60,11 +67,6 @@ The "extensions.alternates" property enables add-in developers to do the followi
 - Maintain a version of an add-in that was built on an older extensibility platform (such as COM or VSTO add-ins) or using the add-in only manifest, in addition to the version that uses the unified manifest.
 - Either hide or give preference to the version that uses the older technology.
 - Specify icons that are needed to make the unified manifest version of the add-in installable on Office versions that don't directly support the unified manifest.
-
-> [!NOTE]
-> Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
->
-> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
 
 For more information, see [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](/office/dev/add-ins/concepts/duplicate-legacy-metaos-add-ins).
 
