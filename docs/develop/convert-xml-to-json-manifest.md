@@ -85,11 +85,11 @@ An add-in that uses the unified manifest may not have more than 20 [add-in comma
 
 Review and change, as needed, the manifest values in light of the following effects of the conversion.
 
-- The first 30 characters of `<DisplayName>` will become the value of "name.short" in the unified manifest.
-- The first 100 characters of `<DisplayName>` will become the value of "name.long" in the unified manifest.
-- The first 250 characters of `<Description>` will become the value of "description.short" in the unified manifest.
-- The first 4000 characters of `<Description>` will become the value of "description.long" in the unified manifest.
-- The first 32 characters of the `<ProviderName>` will become the value "developer.name" in the unified manifest.
+- The first 30 characters of `<DisplayName>` becomes the value of "name.short" in the unified manifest.
+- The first 100 characters of `<DisplayName>` becomes the value of "name.long" in the unified manifest.
+- The first 250 characters of `<Description>` becomes the value of "description.short" in the unified manifest.
+- The first 4000 characters of `<Description>` becomes the value of "description.long" in the unified manifest.
+- The first 32 characters of the `<ProviderName>` becomes the value "developer.name" in the unified manifest.
 
 ### Verify that the modified add-in only manifest works
 
