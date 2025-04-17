@@ -40,7 +40,7 @@ await Excel.run(async (context) => {
 
 ## Change the value of a checkbox
 
-To check or uncheck a checkbox with the Excel JavaScript API, change the Boolean value in that cell. Use `Range.values` to change the value of a cell. The following code sample shows how to set the value of a cell to **TRUE**. Note that if the cell doesn't already display a checkbox, then the code sample simply changes the Boolean value of the cell.
+To select or clear a checkbox with the Excel JavaScript API, change the Boolean value in that cell. Use `Range.values` to change the value of a cell. The following code sample shows how to set the value of a cell to **TRUE**. Note that if the cell doesn't already display a checkbox, then the code sample simply changes the Boolean value of the cell.
 
 ```js
 await Excel.run(async (context) => {
