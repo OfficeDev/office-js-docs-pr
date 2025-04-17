@@ -139,6 +139,10 @@ For example, suppose an Outlook add-in is configured to autolaunch in response t
 ]
 ```
 
+### extensions.contentRuntimes.requirements
+
+The "extensions.contentRuntimes" property can't be combined with any other child property of "extensions" (except "extensions.requirements"). This means that the content is the *only* feature of the add-in, so it makes no sense to filter out the feature's availability on some platforms and Office version combinations while allowing it to be installable on those same combinations. Accordingly, don't use the "requirements" property in "contentRuntimes". To control the installability of the content add-in, use the "extensions.requirements" property of the parent "extensions". 
+
 ### extensions.contextMenus.requirements
 
 The "extensions.contextMenus" property configures the add-in's context menus. A context menu is a shortcut menu that appears when you right-click (or select and hold) in the Office UI. The "requirements" subproperty can be used to allow context menus only when certain requirements are met.
