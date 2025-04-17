@@ -141,7 +141,7 @@ For example, suppose an Outlook add-in is configured to autolaunch in response t
 
 ### extensions.contentRuntimes.requirements
 
-The "extensions.contentRuntimes" property can't be combined with any other child property of "extensions" (except "extensions.requirements"). This means that the content is the *only* feature of the add-in, so it makes no sense to filter out the feature's availability on some combinations of platform and Office version while allowing it to be installable on those same combinations. Accordingly, don't use the "requirements" property in "contentRuntimes". To control the installability of the content add-in, use the "extensions.requirements" property of the parent "extensions".
+The "extensions.contentRuntimes" property can't be combined with any other child property of "extensions" (except "extensions.requirements"). This means that the content is the *only* feature of the add-in, so it makes no sense to filter out the feature's availability on some combinations of platform and Office version while allowing add-in to be installable on those same combinations. Accordingly, don't use the "requirements" property in "contentRuntimes". To control the installability of the content add-in, use the "extensions.requirements" property of the parent "extensions".
 
 ### extensions.contextMenus.requirements
 
