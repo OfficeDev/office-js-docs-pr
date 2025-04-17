@@ -58,7 +58,7 @@ To edit the content of a note, use the [Note.content](/javascript/api/excel/exce
 ```js
 await Excel.run(async (context) => {
     // This function changes the content in the first note.
-    const sheet = context.workbook.worksheets.getItem("Notes");
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
     const note = sheet.notes.getItemAt(0);
 
     note.content = "Changing the content of the first note.";
