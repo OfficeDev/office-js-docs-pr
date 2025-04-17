@@ -36,12 +36,12 @@ await Excel.run(async (context) => {
 
 ## Change note visibility
 
-By default, the content of notes is hidden unless a user hovers over the cell with the note or sets the workbook to display notes. To programmatically display a note, use the [Note.visible](/javascript/api/excel/excel.note#excel-excel-note-visible-member) property. The following code sample shows how to change the visibility of a note.
+By default, the content of notes is hidden unless a user hovers over the cell with the note or sets the workbook to display notes. To display a note, use the [Note.visible](/javascript/api/excel/excel.note#excel-excel-note-visible-member) property. The following code sample shows how to change the visibility of a note.
 
 ```js
 await Excel.run(async (context) => {
     // This function sets the note on cell A1 to visible.
-    const sheet = context.workbook.worksheets.getItem("Notes");
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
     const firstNote = sheet.notes.getItem("A1");
 
     firstNote.load();
@@ -71,14 +71,14 @@ await Excel.run(async (context) => {
 
 ## Change the size of a note
 
-By default, notes are automatically sized to fit the content. To programmatically make notes larger or smaller, use the [Note.height](/javascript/api/excel/excel.note#excel-excel-note-height-member) and [Note.width](/javascript/api/excel/excel.note#excel-excel-note-width-member) properties.
+By default, notes are automatically sized to fit the content. To make notes larger or smaller, use the [Note.height](/javascript/api/excel/excel.note#excel-excel-note-height-member) and [Note.width](/javascript/api/excel/excel.note#excel-excel-note-width-member) properties.
 
 The following sample shows how to set the size of the first note in the `NoteCollection`.
 
 ```js
 await Excel.run(async (context) => {
     // This function changes the height and width of the first note.
-    const sheet = context.workbook.worksheets.getItem("Notes");
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
     const note = sheet.notes.getItemAt(0);
 
     note.width = 400;
@@ -95,7 +95,7 @@ To delete a note, use the [Note.delete](/javascript/api/excel/excel.note#excel-e
 ```js
 await Excel.run(async (context) => {
     // This function deletes the note from cell A2.
-    const sheet = context.workbook.worksheets.getItem("Notes");
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
     const note = sheet.notes.getItem("A2");
 
     note.delete();
