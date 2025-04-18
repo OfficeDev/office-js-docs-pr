@@ -619,6 +619,9 @@ items:
     - name: Data types
       href: excel/custom-functions-data-types-concepts.md
       displayName: Excel, Custom Functions
+    - name: Work with formula value preview
+      href: excel/custom-functions-formula-value-preview.md
+      displayName: Excel, Custom Functions
     - name: Batch custom function remote calls
       href: excel/custom-functions-batching.md
       displayName: Excel, Custom Functions
