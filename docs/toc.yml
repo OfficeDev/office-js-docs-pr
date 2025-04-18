@@ -582,6 +582,9 @@ items:
     - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
       displayName: Excel
+    - name: Worksheet display
+      href: excel/excel-add-ins-worksheet-display.md
+      displayName: Excel
     - name: Troubleshoot Excel add-ins
       href: excel/excel-add-ins-troubleshooting.md
       displayName: Excel      
