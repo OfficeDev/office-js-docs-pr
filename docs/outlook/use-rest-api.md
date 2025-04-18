@@ -1,7 +1,7 @@
 ---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
-ms.date: 01/30/2025
+ms.date: 04/22/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -18,6 +18,8 @@ The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/previ
 > Although add-ins are able to use the REST service until October 2025, we highly encourage you to migrate your add-ins to use [Microsoft Graph](microsoft-graph.md).
 
 ## Get an access token
+
+[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 The Outlook REST APIs require a bearer token in the `Authorization` header. Typically apps use OAuth2 flows to retrieve a token. However, add-ins can retrieve a token without implementing OAuth2 by using the new [Office.context.mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method introduced in the Mailbox requirement set 1.5.
 

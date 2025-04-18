@@ -1,7 +1,7 @@
 ---
 title: Use the Microsoft Graph REST API from an Outlook add-in
 description: Learn how to use the Outlook mail REST API from an Outlook add-in with Microsoft Graph.
-ms.date: 01/30/2025
+ms.date: 04/22/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -12,12 +12,7 @@ The Outlook JavaScript API (Office.js) retrieves the properties of messages and 
 
 ## Get started
 
-Before you can make calls to the Microsoft Graph API, you must first perform the following:
-
-1. [Register your add-in in the Azure portal](/graph/auth-register-app-v2).
-1. [Request an access token from the Microsoft identity platform](/graph/auth-v2-user).
-
-For Office Add-ins, [nested app authentication (NAA)](../develop/enable-nested-app-authentication-in-your-add-in.md) is the recommended solution to request a token.
+To make calls to the Microsoft Graph API in Office Add-ins, implement the [nested app authentication (NAA)](../develop/enable-nested-app-authentication-in-your-add-in.md) solution to request a token.
 
 [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
