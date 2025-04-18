@@ -17,7 +17,7 @@ By default, custom functions (for example `=getHousePrice(A1)`) can be previewed
 - Your custom function accesses one or more scarce resources such as databases.
 - Your custom function takes significant time to calculate the result, and it wouldn’t be useful for a user during preview purposes.
 
-You can change the behavior of your custom function to return a mock value instead. To do this use the `invocation.isInValuePreview` property. The following code sample shows an example custom function named `getHousePrice` that looks up house prices through a monetized API. If `isInValuePreview` is `true`, the custom function returns a mock number to be used and avoids incurring any cost. If `isInValuePreview` is `false`, the custom function calls the API and returns the actual house price value for use in the Excel spreadsheet.
+You can change the behavior of your custom function to return a mock value instead. To do this use the `invocation.isInValuePreview` read-only property. The following code sample shows an example custom function named `getHousePrice` that looks up house prices through a monetized API. If `isInValuePreview` is `true`, the custom function returns a mock number to be used and avoids incurring any cost. If `isInValuePreview` is `false`, the custom function calls the API and returns the actual house price value for use in the Excel spreadsheet.
 
 ```javascript
 /**
@@ -43,4 +43,4 @@ export function getHousePrice(address: string, invocation: CustomFunctions.Invoc
 
 ## See also
 
-- [Create custom functions in Excel](docs/excel/custom-functions-overview.md)
+- [Create custom functions in Excel](/excel/custom-functions-overview.md)
