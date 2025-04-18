@@ -449,7 +449,7 @@ As the user enters the function in Excel, autocomplete shows the properties of t
 
 ## Error handling
 
-If your lambda method is using an Excel formula that does not call a custom function, any errors will be handled by Excel. The errors returned are the same as if you typed the formula into a cell and ran calculation.
+If your lambda method is using an Excel formula that doesn't call a custom function, any errors will be handled by Excel. The errors returned are the same as if you typed the formula into a cell and ran calculation.
 If your lambda method calls a custom function from the formula in the `body` property, your custom function should throw an error if one occurs.
 
 ## Differences from the LAMDA function in Excel
