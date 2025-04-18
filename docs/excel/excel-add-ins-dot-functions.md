@@ -1,13 +1,13 @@
 ---
 title: Add lambda methods to cell values
 description: Add lambda methods to cell values to support dot syntax in Excel formulas.
-ms.date: 04/16/2022
+ms.date: 04/16/2025
 ms.localizationpriority: medium
 ---
 
 # Add lambda methods to cell values
 
-Add lambda methods to cell values to provide the user access to dynamic calculations based on the cell value. You can add lambda methods to the `EntityCellValue` and `LinkedEntityCellValue` types. For example, you can add a method to a product entity value that converts its weight to different units.
+Add lambda methods to cell values to provide the user access to dynamic calculations based on the cell value. You can add lambda methods to the `EntityCellValue` and `LinkedEntityCellValue` types. For example, add a method to a product entity value that converts its weight to different units.
 
 The following screenshot shows an example of adding a `ConvertWeight` method to a product entity value representing pancake mix.
 
@@ -23,7 +23,7 @@ Lambda methods don’t appear on the data type card for the user.
 
 ## Add a lambda method to an entity value
 
-To add a lambda method to an entity value, describe it in JSON using the `LambdaCellValue` type. The following example shows how to define a simple method that returns the value 27.
+To add a lambda method to an entity value, describe it in JSON using the `LambdaCellValue` type. The following code sample shows how to define a simple method that returns the value 27.
 
 ```javascript
 const lambdaReturn27 = {
@@ -45,11 +45,11 @@ The properties are described as follows.
 |**type** | Must be Lambda. The type is of Excel.CellValueType.lambda.|
 |**body**     |The name of the custom function to call with arguments.|
 |**callingObjectAsFirstArgument** | Whether the method is passed the calling object as the first argument. The calling object is the entity value the method is operating on. If not specified, this property defaults to true.|
-|**shortDescription** | Short description of the method displayed to the user. Note: At this time, this property is not used by Excel. You can omit it.       |
-|**longDescription** | Long description of the method displayed to the user. Note: At this time, this property is not used by Excel. You can omit it.       |
-| **example** | Shows the user and example of how to call the method. Note: At this time, this property is not used by Excel. You can omit it.       |
+|**shortDescription** | Short description of the method displayed to the user. Note: At this time, this property is not used by Excel. Optional. |
+|**longDescription** | Long description of the method displayed to the user. Note: At this time, this property is not used by Excel. Optional. |
+| **example** | Shows the user an example of how to call the method. Note: At this time, this property is not used by Excel. Optional.  |
 
-When you create the entity value, add the lambda method to the properties list. The following sample shows how to create a simple entity value named `Math`, and add a lambda method to it. `Get27` is the method name that will appear to the user. For example `A1.Get27()`.
+When you create the entity value, add the lambda method to the properties list. The following code sample shows how to create a simple entity value named `Math`, and add a lambda method to it. `Get27` is the method name that will appear to the user. For example `A1.Get27()`.
 
 ```javascript
 function MakeMathEntity(value: number){
@@ -83,7 +83,7 @@ async function addEntityToCell(){
 }
 ```
 
-Finally the lambda method needs the custom function to call to implement. Previously the custom function was called as `Contoso.Get27()` in the body property of the lambda method. The following code show how to implement the custom function.
+Finally, the lambda method needs the custom function to call to implement. Previously the custom function was called as `Contoso.Get27()` in the body property of the lambda method. The following code shows how to implement the custom function.
 
 ```javascript
 
@@ -98,13 +98,13 @@ function get27() {
 }
 ```
 
-In the previous code sample, the `@excludeFromAutocomplete` attribute ensures the custom method does not appear to the user in the Excel UI when searching for or typing in methods. However, note that a user can still call the custom function separately from an entity value if they enter it directly into a cell.
+In the previous code sample, the `@excludeFromAutocomplete` attribute ensures the custom method doesn't appear to the user in the Excel UI when entering it in a search box. However, note that a user can still call the custom function separately from an entity value if they enter it directly into a cell.
 
 When the code runs it will create a `Math` entity value as shown in the following screenshot. The method appears in formula autocomplete when the user references the entity value from a formula.
 
 ## Add arguments
 
-You can also accept arguments to lambda methods. To do this you need to describe the arguments in the JSON for the lambda method (`LambdaCellValue`). The following example shows how to add an argument named `x` to a method named `AddValue`. The method adds one to the `x` value by calling a custom function named `AddValue`.
+You can also accept arguments to lambda methods. To do this you need to describe the arguments in the JSON for the lambda method (`LambdaCellValue`). The following code shows how to add an argument named `x` to a method named `AddValue`. The method adds one to the `x` value by calling a custom function named `AddValue`.
 
 ```javascript
 const lambdaOneArgument = {
@@ -124,7 +124,7 @@ const lambdaOneArgument = {
 
 ## Reference the entity value as a calling object
 
-A common scenario is that your methods need to reference properties on the entity value itself to perform calculations. For example, it probably is more useful if the AddValue method adds the argument value to the entity value itself. You can specify that the entity value be passed in as the first argument by setting `callingObjectAsFirstArgument` to `true`. The following JSON shows how to add the calling object.
+A common scenario is that your methods need to reference properties on the entity value itself to perform calculations. For example, it's more useful if the AddValue method adds the argument value to the entity value itself. Specify that the entity value be passed in as the first argument by setting `callingObjectAsFirstArgument` to `true`. The following JSON shows how to add the calling object.
 
 ```javascript
 const lambdaOneArgument = {
@@ -166,15 +166,15 @@ function addValue(math, x): number[][] {
 
 Note the following about the previous code sample.
 
-- The `@excludeFromAutocomplete` attribute ensures the custom method does not appear to the user in the Excel UI when searching for or typing in methods. However, note that a user can still call the custom function separately from an entity value if they enter it directly into a cell.
-- The calling object is always passed as the first argument and must by of type `any`. In this case it is named `math`. It is used to get the value property from the `math` object.
+- The `@excludeFromAutocomplete` attribute ensures the custom method doesn't appear to the user in the Excel UI when entering it in a search box. However, note that a user can still call the custom function separately from an entity value if they enter it directly into a cell.
+- The calling object is always passed as the first argument and must by of type `any`. In this case, it's named `math` and is used to get the value property from the `math` object.
 - It returns a double array of numbers.
 
 When the user interacts with the lambda method in Excel, they don’t see the calling object as an argument.
 
 ## Example: Calculate product sales tax
 
-The following example shows how to implement a custom function that calculates the sales tax for the unit price of a product.
+The following code shows how to implement a custom function that calculates the sales tax for the unit price of a product.
 
 ```javascript
 /**
@@ -213,7 +213,7 @@ const lambdaCalculateSalesTax = {
 };
 ```
 
-The following example shows how to add the lambda method to the `product` entity value.
+The following code shows how to add the lambda method to the `product` entity value.
 
 ```javascript
 function makeProductEntity(productID: number, productName: string, price: number) {
@@ -243,14 +243,14 @@ function makeProductEntity(productID: number, productName: string, price: number
 
 ## Exclude custom functions from the Excel UI
 
-We recommend to use the `@excludeFromAutoComplete` tag in the comments description of custom functions used by lambda methods. It indicates that the function will be excluded from the autocomplete drop-down list and Formula Builder. This helps prevent the user from accidentally using a custom function separately from its entity value.
+We recommend you use the `@excludeFromAutoComplete` tag in the comments description of custom functions used by lambda methods. It indicates that the function will be excluded from the autocomplete drop-down list and Formula Builder. This helps prevent the user from accidentally using a custom function separately from its entity value.
 
 > [!NOTE]
 > If the function is manually entered correctly in the grid, the function will still execute. Also, a function can’t have both `@excludeFromAutoComplete` and `@linkedEntityDataProvider` tags.
 
-For the full list of properties In addition to the properties specified by [Manually create JSON metadata for custom functions](custom-functions-json.md) the `excludeFromAutoComplete` property is available for lambda methods.
+For the full list of properties in addition to the properties specified by [Manually create JSON metadata for custom functions](custom-functions-json.md) the `excludeFromAutoComplete` property is available for lambda methods.
 
-The `@excludeFromAutoComplete` tag is processed during build to generate a **functions.json** file by the **Custom-Functions-Metadata** package. This package is automatically added to the build process if you start with yo office and choose a custom function template. If you are not using this package you will need to add the `excludeFromAutoComplete` property manually to the **functions.json** file. 
+The `@excludeFromAutoComplete` tag is processed during build to generate a **functions.json** file by the **Custom-Functions-Metadata** package. This package is automatically added to the build process if you start with yo office and choose a custom function template. If you aren't using this package, you'll need to add the `excludeFromAutoComplete` property manually to the **functions.json** file. 
 
 The following example shows how to manually describe the `APPLYSALESTAX` with JSON in the **functions.json** file. The `excludeFromAutoComplete` property is set to `true`.
 
@@ -325,7 +325,7 @@ function applySalesTax(unitPrice, taxRate): number[][] {
 
 ## Add a function to a basic value type
 
-You can add functions to the basic value types of `Boolean`, `double`, and `string`. The process is the same as for entity values. Describe the function with JSON as a lambda method. The following example shows how to create a double basic value with a function `AddValue()` that adds a value `x` to the basic value.
+You can add functions to the basic value types of `Boolean`, `double`, and `string`. The process is the same as for entity values. Describe the function with JSON as a lambda method. The following code sample shows how to create a double basic value with a function `AddValue()` that adds a value `x` to the basic value.
 
 ```javascript
 const lambdaAddValue = {
@@ -416,7 +416,7 @@ const lambdaRandomRangeWithOptionalArguments = {
 };
 ```
 
-The following code sample shows the custom function named `generateRandomRange` that is called by the lambda function. It returns a dynamic array of random values matching the number of `rows` and `columns` specified. The `min` and `max` arguments are optional, and if not specified will default to `1` and `10`.
+The following code sample shows the custom function named `generateRandomRange` called by the lambda function. It returns a dynamic array of random values matching the number of `rows` and `columns` specified. The `min` and `max` arguments are optional, and if not specified will default to `1` and `10`.
 
 ```javascript
 /**
