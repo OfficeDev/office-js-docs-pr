@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Use the Microsoft Graph REST API from an Outlook add-in
 
-With the Outlook JavaScript API, you can retrieve the properties of messages and appointments and run operations on these items in your add-in. However, there may be instances where the data you need isn't exposed through the API. For example, your add-in may need to implement single sign-on or identify messages in a user's mailbox that originated from the same sender. To get the information you need, use the [Outlook mail REST API](/graph/api/resources/mail-api-overview) through [Microsoft Graph](/graph/overview).
+The Outlook JavaScript API (Office.js) retrieves the properties of messages and appointments and run operations on these items in your add-in. However, there may be instances where the data you need isn't available through the API. For example, your add-in may need to implement single sign-on or identify messages in a user's mailbox that originated from the same sender. To get the information you need, use the [Outlook mail REST API](/graph/api/resources/mail-api-overview) through [Microsoft Graph](/graph/overview).
 
 ## Get started
 
