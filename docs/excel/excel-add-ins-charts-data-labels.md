@@ -101,7 +101,7 @@ The following code sample shows how to set the shape type, height and width, and
 ```javascript
  await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();
-    const chart = worksheet.charts.getItem("PartsChart");
+    const chart = worksheet.charts.getItem("PartChart");
     const series = chart.series.getItemAt(5);
 
     // Set geometric shape of data labels to cubes.
@@ -135,7 +135,7 @@ You can also change the formatting of text in a data label. The following code s
 ```javascript
 await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();
-    const chart = worksheet.charts.getItem("PartsChart");
+    const chart = worksheet.charts.getItem("PartChart");
     const series = chart.series.getItemAt(5);
 
     // Get the "Spokes" data label.
