@@ -36,7 +36,7 @@ await Excel.run(async (context) => {
 
 ## Change note visibility
 
-By default, the content of notes is hidden unless a user hovers over the cell with the note or sets the workbook to display notes. To display a note, use the [Note.visible](/javascript/api/excel/excel.note#excel-excel-note-visible-member) property. The following code sample shows how to change the visibility of a note.
+By default, the content of a note is hidden unless a user hovers over the cell with the note or sets the workbook to display notes. To display a note, use the [Note.visible](/javascript/api/excel/excel.note#excel-excel-note-visible-member) property. The following code sample shows how to change the visibility of a note.
 
 ```js
 await Excel.run(async (context) => {
