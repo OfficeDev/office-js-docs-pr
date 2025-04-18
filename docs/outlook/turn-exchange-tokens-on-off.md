@@ -65,7 +65,7 @@ PS C:\>
 ```
 
 > [!NOTE]
-> The **Allowed** and **Blocked** lists are not used. If you see any IDs listed, the IDs are old data that is no longer applicable.
+> The **Allowed** and **Blocked** lists aren't used. If you see any IDs listed, the IDs are old data that is no longer applicable.
 
 > [!NOTE]
 > The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.
