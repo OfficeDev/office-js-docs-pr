@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 04/18/2025
+ms.date: 04/22/2025
 ms.localizationpriority: medium
 ---
 
@@ -127,9 +127,9 @@ The easiest way to convert is to use Teams Toolkit.
 
     :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The options in New Project dropdown menu. One option is called 'Office Add-in'.":::
 
-1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Import an Existing Office Add-in**.
+1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Upgrade an Existing Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-import-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The 'Import an Existing Office Add-in' option is selected.":::
+    :::image type="content" source="../images/teams-toolkit-create-office-import-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The 'Upgrade an Existing Office Add-in' option is selected.":::
 
 1. In the **Existing add-in project folder** dropdown menu, browse to the root folder of the add-in project.
 1. In the **Select import project manifest file** dropdown menu, browse to the add-in only manifest file, typically named **manifest.xml**.
