@@ -43,4 +43,4 @@ export function getHousePrice(address: string, invocation: CustomFunctions.Invoc
 
 ## See also
 
-- [Create custom functions in Excel](/excel/custom-functions-overview.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
