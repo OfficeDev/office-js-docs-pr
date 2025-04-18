@@ -7,13 +7,13 @@ ms.localizationpriority: medium
 
 # Add lambda methods to cell values
 
-Add lambda methods to cell values to provide the user access to dynamic calculations based on the cell value. You can add lambda methods to the `EntityCellValue` and `LinkedEntityCellValue` types. For example, add a method to a product entity value that converts its weight to different units.
+Add lambda methods to cell values to provide the user access to dynamic calculations based on the cell value. The `EntityCellValue` and `LinkedEntityCellValue` types support lambda methods. For example, add a method to a product entity value that converts its weight to different units.
 
 The following screenshot shows an example of adding a `ConvertWeight` method to a product entity value representing pancake mix.
 
 :::image type="content" source="/images/excel-add-in-dot-function.png" alt-text="Screenshot of Excel formula showing =A1.ConvertWeight( ounces )":::
 
-You can also add lambda methods to the `DoubleCellValue`, `BooleanCellValue`, and `StringCellValue` types. The following screenshot shows an example of adding a `ConvertToRomanNumeral` method to a double value type.
+The `DoubleCellValue`, `BooleanCellValue`, and `StringCellValue` types also support lambda methods. The following screenshot shows an example of adding a `ConvertToRomanNumeral` method to a double value type.
 
 :::image type="content" source="/images/excel-add-in-dot-function-roman-numeral.png" alt-text="Screenshot of Excel formula showing =A1.ConvertToRomanNumeral()":::
 
@@ -52,7 +52,7 @@ The properties are described as follows.
 When you create the entity value, add the lambda method to the properties list. The following code sample shows how to create a simple entity value named `Math`, and add a lambda method to it. `Get27` is the method name that will appear to the user. For example `A1.Get27()`.
 
 ```javascript
-function MakeMathEntity(value: number){
+function makeMathEntity(value: number){
   const entity: Excel.EntityCellValue = {
     type: Excel.CellValueType.entity,
     text: "Math value",
@@ -104,7 +104,7 @@ When the code runs it will create a `Math` entity value as shown in the followin
 
 ## Add arguments
 
-You can also accept arguments to lambda methods. To do this you need to describe the arguments in the JSON for the lambda method (`LambdaCellValue`). The following code shows how to add an argument named `x` to a method named `AddValue`. The method adds one to the `x` value by calling a custom function named `AddValue`.
+Lambda methods can accept arguments. To do this describe the arguments in the JSON for the lambda method (`LambdaCellValue`). The following code shows how to add an argument named `x` to a method named `AddValue`. The method adds one to the `x` value by calling a custom function named `AddValue`.
 
 ```javascript
 const lambdaOneArgument = {
@@ -285,7 +285,7 @@ For more information, see [Manually create JSON metadata for custom functions](c
 
 ## Optimize calls
 
-You can improve the performance of lambda methods by only passing the properties of the calling object that you use. To do this, explicitly specify which properties to use when calling your custom function from the `body` of the lambda method. The following code sample shows how to only pass the unit price of the product in the call to `applySalesTax`.
+Improve the performance of lambda methods by only passing the properties of the calling object that you use. To do this, explicitly specify which properties to use when calling your custom function from the `body` of the lambda method. The following code sample shows how to only pass the unit price of the product in the call to `applySalesTax`.
 
 ```javascript
 const lambdaCalculateSalesTax = {
@@ -385,7 +385,7 @@ function AddValue(callingObject: any, x: number): number {
 
 ## Optional arguments
 
-You can specify optional arguments in the JSON using the `LambdaCellValue` type. All optional arguments must be at the end of the function.
+The `LambdaCellValue` type supports optional arguments in the JSON. All optional arguments must be at the end of the function.
 
 The following code sample shows a lambda function named `generateRandomRange` that generates a range of random values. It accepts arguments to specify the number of `rows` and `columns`, and the `min` and `max` of the random values. The `min` and `max` arguments are specified as optional by setting the `optional` property to true.
 
