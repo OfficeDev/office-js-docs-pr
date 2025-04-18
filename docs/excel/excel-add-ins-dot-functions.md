@@ -460,7 +460,7 @@ Lambda methods on entity values are similar in design to the [LAMDA function](ht
 
 ## Support details
 
-Lambda methods are supported in all custom function types, such as [volatile](custom-functions-volatile.md), and [streaming](custom-functions-web-reqs.md) custom functions. Also all custom function return types are supported ([matrix, scalar, and error](custom-functions-json-autogeneration.md))
+Lambda methods are supported in all custom function types, such as [volatile](custom-functions-volatile.md), and [streaming](custom-functions-web-reqs.md) custom functions. Also, all custom function return types are supported ([matrix, scalar, and error](custom-functions-json-autogeneration.md))
 A linked entity can’t have a custom function that combines both a lambda method and a data provider. Be sure when developing linked entities to keep these types of custom functions separate.
 
 ## See also
