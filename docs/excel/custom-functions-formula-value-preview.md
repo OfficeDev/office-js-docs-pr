@@ -5,11 +5,11 @@ ms.date: 04/16/2025
 ms.localizationpriority: medium
 ---
 
-# Work with formula value preview mode in your custom functions
+# Work with formula value preview mode in your custom functions (preview)
 
 You can control how your custom function calculates results when participating in formula value preview mode. Formula value preview mode is a feature that allows end users to select portions of a formula while editing the cell to preview the values. This feature helps users evaluate the formula as they edit it. The following image shows an example of the user editing a formula and selecting the text `A1+A2`. The formula preview mode shows the value `7` above.
 
-:::image type="content" source="docs/images/excel-formula-value-preview.png" alt-text="Screenshot of Excel formula editor with A1+A2 selected and a preview value of 7 displayed above the formula editor.":::
+:::image type="content" source="../images/excel-formula-value-preview.png" alt-text="Screenshot of Excel formula editor with A1+A2 selected and a preview value of 7 displayed above the formula editor.":::
 
 By default, custom functions (for example `=getHousePrice(A1)`) can be previewed by the user. However, the following list shows some scenarios in which you may want to control how your custom function participates in formula value preview mode.
 
