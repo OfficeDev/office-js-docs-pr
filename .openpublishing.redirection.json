@@ -54,7 +54,7 @@
         },
         {
             "source_path": "docs/reference/outlook-api-reference-latest.md",
-            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.14"
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.15"
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
@@ -395,28 +395,37 @@
             "redirect_document_id": true
         },
         {
+            "source_path": "docs/design/design-toolkits.md",
+            "redirect_url": "/office/dev/add-ins/design/add-in-design-language"
+        },
+        {
             "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-get-slide-metadata.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-insert-image.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-insert-text.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-navigate-slides.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-setup.md",
-            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial"
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo"
+        },
+        {
+            "source_path": "docs/tutorials/powerpoint-tutorial.md",
+            "redirect_url": "/office/dev/add-ins/tutorials/powerpoint-tutorial-yo",
+            "redirect_document_id": true
         },
         {
             "source_path": "docs/tutorials/excel-tutorial-create-chart.md",
@@ -1288,6 +1297,10 @@
         {
             "source_path": "docs/outlook/use-regular-expressions-to-show-an-outlook-add-in.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/develop/extended-overrides.md",
+            "redirect_url": "/javascript/api/manifest/extendedoverrides"
         },
         {
             "source_path": "docs/outlook/activation-rules.md",

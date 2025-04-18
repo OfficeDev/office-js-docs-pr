@@ -1,14 +1,14 @@
 ---
-title: Enable SSO in an Office Add-in using nested app authentication
-description: Learn how to enable SSO in an Office Add-in using nested app authentication.
-ms.date: 10/31/2024
+title: Enable single sign-on in an Office Add-in with nested app authentication
+description: Learn how to enable SSO in an Office Add-in with nested app authentication.
+ms.date: 12/23/2024
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
-# Enable SSO in an Office Add-in using nested app authentication (preview)
+# Enable single sign-on in an Office Add-in with nested app authentication
 
-You can use the MSAL.js library with nested app authentication to use SSO from your Office Add-in. Using nested app authentication offers several advantages over the On-Behalf-Of (OBO) flow.
+You can use the MSAL.js library with nested app authentication to use single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
 
 - You only need to use the MSAL.js library and don’t need the `getAccessToken` function in Office.js.
 - You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
@@ -22,12 +22,12 @@ NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identi
 | Application | Web        | Windows                                              | Mac        | iOS/iPad           | Android        |
 |-------------|------------|------------------------------------------------------|------------|--------------------|----------------|
 | Excel       | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
-| Outlook     | GA         | GA in Current Channel, Preview in all other channels | GA         | GA (iOS)           | GA             |
+| Outlook     | GA         | GA in Current Channel and Monthly Enterprise Channel, Preview in Semi-Annual Channels | GA         | GA (iOS)           | GA             |
 | PowerPoint  | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
 | Word        | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
 
 > [!IMPORTANT]
-> To use NAA on platforms that are still in preview, join the Microsoft 365 Insider Program (https://insider.microsoft365.com/join) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the [Microsoft 365 Insider Program](https://aka.ms/MSFT365InsiderProgram) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
 
 ## Register your single-page application
 
@@ -45,7 +45,11 @@ To enable NAA, your app registration must include a specific redirect URI to ind
 
 `brk-multihub://your-add-in-domain`
 
-For example if you were testing your add-in on port 3000 on the localhost server, you would use `brk-multihub://localhost:3000` as the redirect value.
+Your domain must include only the origin and not its subpaths. For example:
+
+✔️ brk-multihub://localhost:3000<br>
+✔️ brk-multihub://www.contoso.com<br>
+❌ brk-multihub://www.contoso.com/go
 
 Trusted broker groups are dynamic by design and can be updated in the future to include additional hosts where your add-in may use NAA flows. Currently the brk-multihub group includes Office Word, Excel, PowerPoint, Outlook, and Teams (for when Office is activated inside).
 
@@ -59,7 +63,7 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
 
     ```json
     "dependencies": {
-        "@azure/msal-browser": "^3.26.0",
+        "@azure/msal-browser": "^3.27.0",
         ...
     ```
 
@@ -131,6 +135,9 @@ The following code shows how to implement this authentication pattern in your ow
 
     }
     ```
+
+    > [!IMPORTANT]
+    > The token request must include scopes other than just `offline_access`, `openid`, `profile`, or `email`. You can use any combination of the previous scopes, but you must include at least one additional scope. If not, the token request can fail.
 
 1. Replace `TODO 1` with the following code. This code calls `acquireTokenSilent` to get the access token.
 

@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 10/17/2024
+ms.date: 03/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,10 @@ The Office JavaScript API provides several APIs to manage an item's attachments 
 Attach a file or Outlook item to a compose form by using the method that's appropriate for the type of attachment.
 
 - [addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file.
+
+    > [!NOTE]
+    > The `addFileAttachmentAsync` method was introduced in [requirement set 1.1](/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1) for Outlook on Windows (classic) and on Mac. Support for `addFileAttachmentAsync` in Outlook on the web and new Outlook on Windows was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8).
+
 - [addFileAttachmentFromBase64Async](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file using its Base64-encoded string.
 - [addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach an Outlook item.
 
@@ -43,7 +47,10 @@ To check for the outcome of an asynchronous method call in the callback function
 You can attach a file to a message or appointment in a compose form by using the `addFileAttachmentAsync` method and specifying the URI of the file. You can also use the `addFileAttachmentFromBase64Async` method, specifying the Base64-encoded string as input. If the file is protected, you can include an appropriate identity or authentication token as a URI query string parameter. Exchange will make a call to the URI to get the attachment, and the web service which protects the file will need to use the token as a means of authentication.
 
 > [!NOTE]
-> The URI of the file to be attached must support caching in production. The server hosting the image shouldn't return a `Cache-Control` header that specifies `no-cache`, `no-store`, or similar options in the HTTP response. However, when you're developing the add-in and making changes to files, caching can prevent you from seeing your changes. We recommend using `Cache-Control` headers during development.
+>
+> - The URI of the file to be attached must support caching in production. The server hosting the image shouldn't return a `Cache-Control` header that specifies `no-cache`, `no-store`, or similar options in the HTTP response. However, when you're developing the add-in and making changes to files, caching can prevent you from seeing your changes. We recommend using `Cache-Control` headers during development.
+>
+> - The `addFileAttachmentAsync` method doesn't support bitmap (BMP) images if they're added as inline attachments.
 
 The following JavaScript example is a compose add-in that attaches a file, **picture.png**, from a web server to the message or appointment being composed. The callback function takes `asyncResult` as a parameter, checks for the result status, and gets the attachment ID if the method succeeds.
 
@@ -72,39 +79,32 @@ Office.context.mailbox.item.addFileAttachmentAsync(
 );
 ```
 
-To add inline a Base64-encoded image to the body of a message or appointment being composed, you must first get the current item body using the `Office.context.mailbox.item.body.getAsync` method before inserting the image using the `addFileAttachmentFromBase64Async` method. Otherwise, the image won't render in the body once it's inserted. For guidance, see the following JavaScript example, which adds an inline Base64 image to the beginning of an item body.
+To add an inline Base64-encoded image to the body of a message or appointment being composed, use the [Body API](/javascript/api/outlook/office.body) methods, such as [prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1)), [setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1)), or [setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(1)).
+
+> [!TIP]
+> Before inserting the image inline using `Office.context.mailbox.item.body.setAsync`, you must first call `Office.context.mailbox.item.body.getAsync` to get the current body of the mail item. Otherwise, the image won't render in the body once it's inserted. For guidance, see the [Add inline Base64-encoded image to message or appointment body (Compose)](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/refs/heads/main/samples/outlook/20-item-body/add-inline-base64-image.yaml) sample in [Script Lab](../overview/explore-with-script-lab.md).
+
+The following is an example of a Base64-encoded image prepended to the body of a mail item.
 
 ```javascript
-const mailItem = Office.context.mailbox.item;
 const base64String =
   "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN0S+bUAAAAMdFJOUwAQIDBAUI+fr7/P7yEupu8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVGhD7dfLdoMwDEVR6Cspzf9/b20QYOthS5Zn0Z2kVdY6O2WULrFYLBaLxd5ur4mDZD14b8ogWS/dtxV+dmx9ysA2QUj9TQRWv5D7HyKwuIW9n0vc8tkpHP0W4BOg3wQ8wtlvA+PC1e8Ao8Ld7wFjQtHvAiNC2e8DdqHqKwCrUPc1gE1AfRVgEXBfB+gF0lcCWoH2tYBOYPpqQCNwfT3QF9i+AegJfN8CtAWhbwJagtS3AbIg9o2AJMh9M5C+SVGBvx6zAfmT0r+Bv8JMwP4kyFPir+cswF5KL3WLv14zAFBCLf56Tw9cparFX4upgaJUtPhrOS1QlY5W+vWTXrGgBFB/b72ev3/0igUdQPppP/nfowfKUUEFcP207y/yxKmgAYQ+PywoAFOfCH3A2MdCFzD3kdADBvq10AGG+pXQBgb7pdAEhvuF0AIc/VtoAK7+JciAs38KIuDugyAC/v4hiMCE/i7IwLRBsh68N2WQjMVisVgs9i5bln8LGScNcCrONQAAAABJRU5ErkJggg==";
 
-// Get the current body of the message or appointment.
-mailItem.body.getAsync(Office.CoercionType.Html, (bodyResult) => {
-    if (bodyResult.status === Office.AsyncResultStatus.Failed) {
-        console.error(bodyResult.error.message);
-        return;
+// Add the Base64-encoded image to the beginning of the body.
+Office.context.mailbox.item.addFileAttachmentFromBase64Async(base64String, "sample.png", { isInline: true }, (attachmentResult) => {
+    if (attachmentResult.status === Office.AsyncResultStatus.Failed) {
+      console.log(`Failed to attach file: ${attachmentResult.error.message}`);
+      return;
     }
 
-    // Insert the Base64-encoded image at the beginning of the body.
-    const options = { isInline: true, asyncContext: bodyResult.value };
-    mailItem.addFileAttachmentFromBase64Async(base64String, "sample.png", options, (attachResult) => {
-        if (attachResult.status === Office.AsyncResultStatus.Failed) {
-            console.error(attachResult.error.message);
-            return;
-        }
+    Office.context.mailbox.item.body.prependAsync('<img src="cid:sample.png" />', { coercionType: Office.CoercionType.Html }, (prependResult) => {
+      if (prependResult.status === Office.AsyncResultStatus.Failed) {
+        console.log(`Failed to prepend image to body: ${attachmentResult.error.message}`);
+        return;
+      }
 
-        let body = attachResult.asyncContext;
-        body = body.replace("<p class=MsoNormal>", `<p class=MsoNormal><img src="cid:sample.png">`);
-        mailItem.body.setAsync(body, { coercionType: Office.CoercionType.Html }, (setResult) => {
-            if (setResult.status === Office.AsyncResultStatus.Failed) {
-                console.error(setResult.error.message);
-                return;
-            }
-
-            console.log("Inline Base64 image added to the body.");
-        });
-    });
+      console.log("Inline Base64-encoded image added to the beginning of the body.");
+    })
 });
 ```
 
@@ -153,6 +153,9 @@ The following APIs to get attachments in compose mode are available from [requir
 - [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
 
 Use the [getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method to get the attachments of the message or appointment being composed.
+
+> [!NOTE]
+> In Outlook on the web and the new Outlook on Windows, users can select the **Upload and share** option to upload an attachment to OneDrive and include a link to the file in the mail item. However, since only a link is included, `getAttachmentsAsync` doesn't return this type of attachment.
 
 To get an attachment's content, use the [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method. The supported formats are listed in the [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) enum.
 

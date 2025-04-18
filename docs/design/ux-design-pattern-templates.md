@@ -40,6 +40,6 @@ Browse each grouping to get an idea of how you can design your add-in using best
 
 ## See also
 
-- [Design tool kits](design-toolkits.md)
+- [Office Add-in design language](add-in-design-language.md)
 - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
 - [Fluent UI React in Office Add-ins](../quickstarts/fluent-react-quickstart.md)

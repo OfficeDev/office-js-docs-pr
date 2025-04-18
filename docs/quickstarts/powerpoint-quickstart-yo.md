@@ -58,7 +58,7 @@ After you complete the wizard, the generator creates the project and installs su
 
     - To test your add-in in PowerPoint on a browser, run the following command in the root directory of your project. When you run this command, the local web server starts. Replace "{url}" with the URL of a PowerPoint document on your OneDrive or a SharePoint library to which you have permissions.
 
-        [!INCLUDE [npm start:web command syntax](../includes/start-web-sideload-instructions.md)]
+        [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
 1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
@@ -72,8 +72,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 ## Next steps
 
-Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial.md).
-
+Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial-yo.md).
 
 [!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 

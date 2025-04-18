@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 07/18/2024
+ms.date: 04/22/2025
 ms.localizationpriority: medium
 ---
 
@@ -15,15 +15,19 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 
 |API|Minimum requirement set|Supported Outlook modes|Supported Outlook on mobile clients|
 |---|---|---|---|
-|[Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))|Mailbox 1.8|Message Compose|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
-|[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))|Mailbox 1.10|Message Compose|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
-|[Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))|Mailbox 1.10|Message Compose|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
-|[Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))|Mailbox 1.7|Message Compose|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
-|[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))|Mailbox 1.10|Message Compose|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
-|[Office.context.mailbox.item.internetHeaders.getAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-getasync-member(1))|Mailbox 1.8|Message Compose|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
-|[Office.context.mailbox.item.internetHeaders.removeAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-removeasync-member(1))|Mailbox 1.8|Message Compose|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
-|[Office.context.mailbox.item.internetHeaders.setAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-setasync-member(1))|Mailbox 1.8|Message Compose|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
-|[Office.context.mailbox.item.sessionData](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sessiondata-member)|Mailbox 1.11|Message Compose|<ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul>|
+|[Office.context.mailbox.getIsIdentityManaged](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getisidentitymanaged-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
+|[Office.context.mailbox.getIsOpenFromLocationAllowed](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getisopenfromlocationallowed-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
+|[Office.context.mailbox.getIsSaveToLocationAllowed](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getissavetolocationallowed-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
+|[Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
+|[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))|Mailbox 1.10|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
+|[Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))|Mailbox 1.10|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
+|[Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))|Mailbox 1.7|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
+|[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))|Mailbox 1.10|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
+|[Office.context.mailbox.item.internetHeaders.getAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-getasync-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
+|[Office.context.mailbox.item.internetHeaders.removeAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-removeasync-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
+|[Office.context.mailbox.item.internetHeaders.setAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-setasync-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
+|[Office.context.mailbox.item.sessionData](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sessiondata-member)|Mailbox 1.11|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul>|
+|[Office.AddinCommands.EventCompletedOptions](/javascript/api/office/office.addincommands.eventcompletedoptions)|Mailbox 1.8|<ul><li>Compose</li></ul>|<ul><li>Android</li><li>iOS</li></ul>|
 
 ## Unsupported APIs
 
@@ -31,7 +35,7 @@ Although Outlook mobile supports up to requirement set 1.5, there are some APIs 
 
 |API|Minimum requirement set|Unsupported Outlook modes|
 |---|---|---|
-|[Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#office-office-context-officetheme-member)|Mailbox preview|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
+|[Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#office-office-context-officetheme-member)|Mailbox 1.14|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-ewsurl-member)|Mailbox 1.1|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.convertToEwsId](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttoewsid-member(1))|Mailbox 1.3|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.convertToRestId](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttorestid-member(1))|Mailbox 1.3|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
@@ -41,11 +45,13 @@ Although Outlook mobile supports up to requirement set 1.5, there are some APIs 
 |[Office.context.mailbox.getCallbackTokenAsync(options, callback)](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getcallbacktokenasync-member(1))|Mailbox 1.5|<ul><li>Message Compose</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.getCallbackTokenAsync(callback, userContext)](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getcallbacktokenasync-member(2))|Mailbox 1.1 (Read mode support)<br><br>Mailbox 1.3 (Compose mode support)|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1))|Mailbox 1.1|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
+|[Office.context.mailbox.item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1 (classic Windows, Mac)<br><br>Mailbox 1.8 (Web, new Windows)|<ul><li>Message Compose</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.item.dateTimeModified](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
 |[Office.context.mailbox.item.displayReplyAllForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
 |[Office.context.mailbox.item.displayReplyForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
 |[Office.context.mailbox.item.getRegexMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
 |[Office.context.mailbox.item.getRegexMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
+|[Office.context.mailbox.item.notificationMessages](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.3|<ul><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))<br><br>[Office.context.mailbox.item.cc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))<br><br>[Office.context.mailbox.item.to.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))|Mailbox 1.1|<ul><li>Message Compose</li></ul>|
 |[Office.context.mailbox.item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))<br><br>[Office.context.mailbox.item.cc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))<br><br>[Office.context.mailbox.item.to.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))|Mailbox 1.1|<ul><li>Message Compose</li></ul>|
 |[Office.context.mailbox.item.body.getTypeAsync](/javascript/api/outlook/office.body#outlook-office-body-gettypeasync-member(1))|Mailbox 1.1|<ul><li>Message Compose</li></ul>|

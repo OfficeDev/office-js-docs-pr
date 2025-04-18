@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 08/22/2024
+ms.date: 01/27/2025
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -70,17 +70,25 @@ If you created your project manually, install and configure the linter with the 
    npm install eslint-plugin-office-addins --save-dev
    ```
 
-1. In the root of the project, create a text file named **.eslintrc.json**, if there isn't one already there. Be sure it has properties named `plugins` and `extends`, both of type array. The `plugins` array should include `"office-addins"` and the `extends` array should include `"plugin:office-addins/recommended"`. The following is a simple example. Your **.eslintrc.json** file may have additional properties and additional members of the two arrays.
+1. In the root of the project, create a text file named **eslint.config.js** (or **.mjs**), if there isn't one already there. Be sure to inherit the recommended configuration for `eslint-plugin-office-addins`. The `plugins` object should include a mapping to the `eslint-plugin-office-addins` plugin object. The following is a simple example that includes settings for TypeScript. Your **eslint.config.js** file may have additional properties and configurations.
 
-   ```json
-   {
-     "plugins": [
-       "office-addins"
-     ],
-     "extends": [
-       "plugin:office-addins/recommended"
-     ]
-   }
+   ```js
+    const officeAddins = require("eslint-plugin-office-addins");
+    const tsParser = require("@typescript-eslint/parser");
+    const tsEsLint = require("typescript-eslint");
+    
+    export default [
+      ...tsEsLint.configs.recommended,
+      ...officeAddins.configs.recommended,
+      {
+        plugins: {
+          "office-addins": officeAddins,
+        },
+        languageOptions: {
+          parser: tsParser,
+        },
+      },
+    ];
    ```
 
 1. In the root of the project, open the **package.json** file and be sure that the `scripts` array has the following member.
@@ -124,7 +132,7 @@ You can create Office add-in projects in Visual Studio Code with either the Team
 
 Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Teams Toolkit as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 
-#### Install the Office Add-ins Development Kit extension (preview)
+#### Install the Office Add-ins Development Kit extension 
 
 The Office Add-ins Development Kit extension for Visual Studio Code lets you create and run new add-ins directly from the IDE. For more information about the extension, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](../develop/development-kit-overview.md).
 
