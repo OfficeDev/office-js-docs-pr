@@ -5,11 +5,11 @@ ms.date: 04/14/2025
 ms.localizationpriority: medium
 ---
 
-# Work with data lables in charts using the Excel JavaScript API
+# Work with data labels in charts using the Excel JavaScript API
 
-Add data labels to Excel charts to provide a better visualization experience about important aspects of the chart.
+Add data labels to Excel charts to provide a better visualization experience about important aspects of the chart. To learn more about data labels, see [Add or remove data labels in a chart](https://support.microsoft.com/office/add-or-remove-data-labels-in-a-chart-884bf2f1-2e29-454e-8b42-f467c9f4eb2d).
 
-The following code sample sets up the sample data and chart used in this article.
+The following code sample sets up the sample data and **Bicycle Part Production** chart used in this article.
 
 ```javascript
 async function setup() {
@@ -46,7 +46,7 @@ async function createChart(context: Excel.RequestContext) {
   chart.axes.categoryAxis.setCategoryNames(worksheet.getRange("B1:E1"));
   chart.name = "PartChart";
 
-  // place chart below sample data
+  // Place the chart below sample data.
   chart.top = 125;
   chart.left = 5;
   chart.height = 300;
@@ -59,11 +59,13 @@ async function createChart(context: Excel.RequestContext) {
 }
 ```
 
+This image shows how the chart should display after running the sample code.
+
 :::image type="content" source="../images/excel-data-labels-starter-chart.png" alt-text="Screenshot of basic line chart with no data labels, showing six different bicycle parts being produced over four quarters.":::
 
 ## Add data labels
 
-To add data labels to a chart, get the series of data points you want to change, and set the [hasDataLabels](/javascript/api/excel/excel.chartseries)`hasDataLabels` property to `true`.
+To add data labels to a chart, get the series of data points you want to change, and set the `hasDataLabels` property to `true`.
 
 ```javascript
 async function addDataLabels() {
@@ -121,8 +123,10 @@ The following code sample shows how to set the shape type, height and width, and
     series.points.getItemAt(2).dataLabel.text = "Spokes Qtr3: 4589 ↓";
 
     await context.sync();
-  });
+});
 ```
+
+In the following screenshot, the chart now includes *count* data labels for the **Spokes** data, with custom text at the third data point.
 
 :::image type="content" source="../images/excel-data-labels-chart-formats.png" alt-text="Screenshot of chart with data labels set to cubes, new size, and custom text in one of the data labels.":::
 
@@ -152,13 +156,14 @@ await Excel.run(async (context) => {
     label.top = label.top - 15;
 
     await context.sync();
+ });
 ```
 
 :::image type="content" source="../images/excel-data-labels-chart-substring.png" alt-text="Screenshot of chart showing data label with Spokes set to green, 4589 set to red, and Qtr3 bold and italicized.":::
 
 ## Format leader lines
 
-Leader lines connect data labels to their respective data points and make it easier to see what they refer to in the chart. You can turn leader lines on using the [showLeaderLines](/javascript/api/excel/excel.chartseries) property. You can set the format of leader lines with the [leaderLines.format](/javascript/api/excel/excel.chartleaderlines) property.
+Leader lines connect data labels to their respective data points and make it easier to see what they refer to in the chart. Turn leader lines on using the [showLeaderLines](/javascript/api/excel/excel.chartseries) property. You can set the format of leader lines with the [leaderLines.format](/javascript/api/excel/excel.chartleaderlines) property.
 
 ```javascript
 await Excel.run(async (context) => {
@@ -174,14 +179,14 @@ await Excel.run(async (context) => {
     series.dataLabels.leaderLines.format.line.lineStyle = Excel.ChartLineStyle.dot;
     series.dataLabels.leaderLines.format.line.color = "orange";
     series.dataLabels.leaderLines.format.line.weight = 2;
-  });
+});
 ```
 
 :::image type="content" source="../images/excel-data-labels-chart-leaderlines.png" alt-text="Screenshot of chart with orange dotted leader lines connecting data labels to their data points.":::
 
 ## Create callouts
 
-A callout is a data label that connects to the data point using a bubble shaped pointer. A callout has an anchor which can be moved from the data point to other locations on the chart.
+A callout is a data label that connects to the data point using a bubble-shaped pointer. A callout has an anchor which can be moved from the data point to other locations on the chart.
 
 The following code sample shows how to change data labels in a series to use [Excel.GeometricShapeType.wedgeRectCallout](/javascript/api/excel/excel.geometricshapetype). Note that leader lines are turned off to avoid showing two indicators to the same data label.
 
@@ -195,7 +200,7 @@ The following code sample shows how to change data labels in a series to use [Ex
     series.dataLabels.geometricShapeType = Excel.GeometricShapeType.wedgeRectCallout;
     series.showLeaderLines = false;
     await context.sync();
-  });
+});
 ```
 
 :::image type="content" source="../images/excel-data-labels-chart-callout.png" alt-text="Screenshot of chart with data labels formatted as callouts.":::
@@ -219,8 +224,10 @@ await Excel.run(async (context) => {
 
     anchor.top = anchor.top - 10;
     anchor.left = 40;
-  });
+});
 ```
+
+This screenshot demonstrates how the anchor of the third data label is adjusted by the preceding code sample.
 
 :::image type="content" source="../images/excel-data-labels-chart-anchor-change.png" alt-text="Screenshot of chart with anchor of Spokes data label moved up and left of the original data point location.":::
 
