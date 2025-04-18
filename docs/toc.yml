@@ -499,6 +499,9 @@ items:
     - name: Events
       href: excel/excel-add-ins-events.md
       displayName: Excel
+    - name: Notes
+      href: excel/excel-add-ins-notes.md
+      displayName: Excel
     - name: Performance optimization
       href: excel/performance.md
       displayName: Excel
