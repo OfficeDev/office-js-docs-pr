@@ -180,6 +180,7 @@ There are two views for permissions; Admin consent, and User consent. Select Use
 
 Some widely used Outlook add-in publishers have already updated their add-ins as listed below.
 
+- [Appfluence Priority Matrix for Outlook](https://appsource.microsoft.com/en-us/product/office/wa104381735)
 - [Atlassian Jira Cloud for Outlook](https://marketplace.atlassian.com/apps/1220666/jira-cloud-for-outlook-official?tab=overview&hosting=cloud)
 - [Box for Outlook](https://appsource.microsoft.com/product/office/WA200000015)
 - [Clickup for Outlook](https://appsource.microsoft.com/product/office/WA104382026)
