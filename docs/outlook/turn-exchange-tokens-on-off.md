@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 04/11/2025
+ms.date: 04/17/2025
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -64,8 +64,8 @@ Blocked: []
 PS C:\>
 ```
 
-
-The **Allowed** and **Blocked** lists are not used.
+> [!NOTE]
+> The **Allowed** and **Blocked** lists aren't used. If you see any IDs listed, the IDs are old data that is no longer applicable.
 
 > [!NOTE]
 > The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.

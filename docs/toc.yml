@@ -499,6 +499,9 @@ items:
     - name: Events
       href: excel/excel-add-ins-events.md
       displayName: Excel
+    - name: Notes
+      href: excel/excel-add-ins-notes.md
+      displayName: Excel
     - name: Performance optimization
       href: excel/performance.md
       displayName: Excel
@@ -524,6 +527,9 @@ items:
         displayName: Excel
       - name: Set range format 
         href: excel/excel-add-ins-ranges-set-format.md
+        displayName: Excel
+      - name: Add checkboxes 
+        href: excel/excel-add-ins-ranges-checkboxes.md
         displayName: Excel
       - name: Conditional formatting of ranges
         href: excel/excel-add-ins-conditional-formatting.md
@@ -576,6 +582,9 @@ items:
     - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
       displayName: Excel
+    - name: Worksheet display
+      href: excel/excel-add-ins-worksheet-display.md
+      displayName: Excel
     - name: Troubleshoot Excel add-ins
       href: excel/excel-add-ins-troubleshooting.md
       displayName: Excel      
@@ -618,6 +627,9 @@ items:
       displayName: Excel, Custom Functions
     - name: Data types
       href: excel/custom-functions-data-types-concepts.md
+      displayName: Excel, Custom Functions
+    - name: Work with formula value preview
+      href: excel/custom-functions-formula-value-preview.md
       displayName: Excel, Custom Functions
     - name: Batch custom function remote calls
       href: excel/custom-functions-batching.md
@@ -768,6 +780,8 @@ items:
       href: outlook/extension-module-outlook-add-ins.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
+    - name: Call the Microsoft Graph API
+      href: outlook/microsoft-graph.md
     - name: Call Outlook REST APIs
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
