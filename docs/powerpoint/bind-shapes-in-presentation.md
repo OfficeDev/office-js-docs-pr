@@ -6,7 +6,7 @@ ms.date: 04/02/2025
 ms.localizationpriority: medium
 ---
 
-# Bind to shapes in a PowerPoint presentation (preview)
+# Bind to shapes in a PowerPoint presentation
 
 Your PowerPoint add-in can bind to shapes to consistently access them through an identifier. The add-in establishes a binding by calling `BindingCollection.add` and assigning a unique identifier. Use the identifier at any time to reference the shape and access its properties. Creating bindings provides the following value to your add-in.
 

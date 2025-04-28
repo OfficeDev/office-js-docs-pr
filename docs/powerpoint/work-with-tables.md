@@ -6,7 +6,7 @@ ms.date: 04/02/2025
 ms.localizationpriority: medium
 ---
 
-# Work with tables using the PowerPoint JavaScript API (preview)
+# Work with tables using the PowerPoint JavaScript API
 
 This article provides code samples that show how to create tables and control formatting by using the PowerPoint JavaScript API.  
 
