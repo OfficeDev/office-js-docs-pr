@@ -112,7 +112,7 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
                         "default": "Ctrl+Alt+Down",
                         "mac": "Command+Shift+Down",
                         "web": "Ctrl+Alt+2",
-                        "windows": "Ctrl+Alt+Up"
+                        "windows": "Ctrl+Alt+Down"
                     },
                     "actionId": "HideTaskpane"
                 }
