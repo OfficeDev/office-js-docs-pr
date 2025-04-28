@@ -13,6 +13,7 @@ metadata:
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
   ms.date: 01/16/2025 #Required; mm/dd/yyyy format.
+  ms.custom: required-for-compliance # Indicates that this page is linked to in a legal document. 
 
 # highlightedContent section
 # Maximum of 8 items
