@@ -6,7 +6,7 @@ ms.date: 04/14/2025
 ms.localizationpriority: medium
 ---
 
-# Add properties to basic cell values
+# Add properties to basic cell values (preview)
 
 Add properties to basic cell values in Excel to associate additional information with the values. Similar to entity values, you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
 

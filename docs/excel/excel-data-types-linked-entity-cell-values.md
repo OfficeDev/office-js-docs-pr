@@ -6,7 +6,7 @@ ms.date: 03/31/2025
 ms.localizationpriority: medium
 ---
 
-# Create linked entity cell values
+# Create linked entity cell values (preview)
 
 Linked entity cell values integrate data types from external data sources and can display the data as an entity card, like [regular entity values](excel-data-types-entity-card.md). They enable you to scale your data types to represent large data sets without downloading all the data into the workbook. The [Stocks and Geography data domains](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI provide linked entity cell values. This article explains how to create your own data provider in an Excel add-in to provide custom values for end users.
 
@@ -121,7 +121,7 @@ Office.onReady(async () => {
       dataProvider: "Contoso",
       id: "categories",
       name: "Categories",
-      loadFunctionId: "CONTOSOLAODSERVICEID",
+      loadFunctionId: "CONTOSOLOADSERVICEID",
       periodicRefreshInterval: 300,
       supportedRefreshModes: [
         Excel.LinkedEntityDataDomainRefreshMode.periodic,
