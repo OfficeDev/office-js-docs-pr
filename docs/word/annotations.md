@@ -8,16 +8,16 @@ ms.topic: how-to
 
 # Use annotations in your Word add-in
 
-**Includes community contributions from:** Abdulhadi Jarad
+**Includes community contributions from:** [Abdulhadi Jarad](https://github.com/abdulhadi-jarad)
 
-You can use annotations to provide feedback about grammar or other aspects of content in a Word document. The user may see colorful underlining that indicates there's an issue or other information. If the user hovers over the affected content, a popup dialog is displayed that should show the user what the issue is and possible actions they can take.
+You can use annotations to provide feedback about grammar or other aspects of content in a Word document. The user may see colorful underlining that indicates there's an issue or other information. If the user hovers over the affected content, a popup dialog is displayed that shows them what the issue is and possible actions they can take.
 
 APIs for working with annotations were introduced in the [PowerPointApi 1.7 requirement set](/javascript/api/requirement-sets/word/word-api-1-7-requirement-set) and expanded in the [PowerPointApi 1.8 requirement set](/javascript/api/requirement-sets/word/word-api-1-8-requirement-set) as part of supporting writing assistance scenarios like checking spelling and grammar or providing suggestions to improve writing.
 
 In this article, we show how your add-in can insert feedback and critiques using annotations in a document and allow the user to react to them.
 
 > [!IMPORTANT]
-> These annotations aren't persisted in the document. This means that when the document is reopened, the annotations would need to be regenerated. However, the effects of accepting suggested changes should persist as long as the user saves those changes.
+> These annotations aren't persisted in the document. This means that when the document is reopened, the annotations need to be regenerated. However, if the user accepts suggested changes, the changes will persist as long as the user saves them before closing the document.
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ The following are the key annotation APIs.
 
 - [Paragraph.insertAnnotations](/javascript/api/word/word.paragraph#word-word-paragraph-insertannotations-member(1))
 - [Paragraph.getAnnotations](/javascript/api/word/word.paragraph#word-word-paragraph-getannotations-member(1))
-- Objects like:
+- Objects:
   - [Annotation](/javascript/api/word/word.annotation): Represents an annotation.
   - [AnnotationCollection](/javascript/api/word/word.annotationcollection): Represents the collection of annotations.
   - [AnnotationSet](/javascript/api/word/word.annotationset): Represents the set of annotations produced by your add-in in this session.
@@ -46,11 +46,11 @@ The following are the key annotation APIs.
 
 The following sections show how to work with annotation APIs. These examples are based on the [Manage annotations](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/50-document/manage-annotations.yaml) code sample.
 
-In your add-in, your code should manage annotations more dynamically according to feedback or critique results from your service run against the user's content in the document.
+Your add-in code should use the feedback or critique results from your service run against the user's content in the document to manage annotations more dynamically.
 
 ## Register annotation events
 
-The following code shows how to register event handlers. To learn more about working with events in Word, see [Work with events using the Word JavaScript API](word-add-ins-events.md). See the following sections for example annotation event handlers.
+The following code shows how to register event handlers. To learn more about working with events in Word, see [Work with events using the Word JavaScript API](word-add-ins-events.md). For examples of annotation event handlers, see the following sections.
 
 ```typescript
 let eventContexts = [];
@@ -249,7 +249,7 @@ async function getAnnotations() {
 
 ## Accept an annotation
 
-the following code shows how to accept the first annotation found in the selected paragraph.
+The following code shows how to accept the first annotation found in the selected paragraph.
 
 ```typescript
 async function acceptFirst() {
@@ -336,7 +336,7 @@ async function deleteAnnotations() {
 
 ## Deregister annotation events
 
-the following code shows how to deregister the event handlers using their event contexts you tracked in the `eventContext` variable.
+The following code shows how to deregister the event handlers using their event contexts you tracked in the `eventContext` variable.
 
 ```typescript
 async function deregisterEventHandlers() {
