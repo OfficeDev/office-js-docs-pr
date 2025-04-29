@@ -80,6 +80,7 @@ The following code runs when the registered `onAnnotationClicked` event occurs.
 
 ```typescript
 async function onClickedHandler(args: Word.AnnotationClickedEventArgs) {
+  // Runs when the registered Document.onAnnotationClicked event occurs.
   await Word.run(async (context) => {
     const annotation: Word.Annotation = context.document.getAnnotationById(args.id);
     annotation.load("critiqueAnnotation");
@@ -97,6 +98,7 @@ The following code runs when the registered `onAnnotationHovered` event occurs.
 
 ```typescript
 async function onHoveredHandler(args: Word.AnnotationHoveredEventArgs) {
+  // Runs when the registered Document.onAnnotationHovered event occurs.
   await Word.run(async (context) => {
     const annotation: Word.Annotation = context.document.getAnnotationById(args.id);
     annotation.load("critiqueAnnotation");
@@ -114,6 +116,7 @@ The following code runs when the registered `onAnnotationInserted` event occurs.
 
 ```typescript
 async function onInsertedHandler(args: Word.AnnotationInsertedEventArgs) {
+  // Runs when the registered Document.onAnnotationInserted event occurs.
   await Word.run(async (context) => {
     const annotations = [];
     for (let i = 0; i < args.ids.length; i++) {
@@ -137,6 +140,7 @@ The following code runs when the registered `onAnnotationRemoved` event occurs.
 
 ```typescript
 async function onRemovedHandler(args: Word.AnnotationRemovedEventArgs) {
+  // Runs when the registered Document.onAnnotationRemoved event occurs.
   await Word.run(async (context) => {
     for (let id of args.ids) {
       console.log(`AnnotationRemoved: ID ${id}`);
@@ -151,6 +155,7 @@ The following code runs when the registered `onAnnotationPopupAction` event occu
 
 ```typescript
 async function onPopupActionHandler(args: Word.AnnotationPopupActionEventArgs) {
+  // Runs when the registered Document.onAnnotationPopupAction event occurs.
   await Word.run(async (context) => {
     let message = `AnnotationPopupAction: ID ${args.id} = `;
     if (args.action === "Accept") {
