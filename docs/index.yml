@@ -10,6 +10,7 @@ metadata:
   services: service 
   ms.service: microsoft-365
   ms.topic: hub-page # Required
+  ms.localizationpriority: high
   author: o365devx #Required; your GitHub user alias, with correct capitalization.
   ms.author: o365devx #Required; microsoft alias of author; optional team alias.
   ms.date: 01/16/2025 #Required; mm/dd/yyyy format.

@@ -983,6 +983,9 @@ items:
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
+    - name: Use annotations
+      href: word/annotations.md
+      displayName: Word
     - name: Use fields
       href: word/fields-guidance.md
       displayName: Word
