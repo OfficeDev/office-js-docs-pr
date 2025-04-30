@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Bind to shapes in a PowerPoint presentation
 
-Your PowerPoint add-in can bind to shapes to consistently access them through an identifier. The add-in establishes a binding by calling `BindingCollection.add` and assigning a unique identifier. Use the identifier at any time to reference the shape and access its properties. Creating bindings provides the following value to your add-in.
+Your PowerPoint add-in can bind to shapes to consistently access them through an identifier. The add-in establishes a binding by calling [BindingCollection.add](/javascript/api/powerpoint/powerpoint.bindingcollection#powerpoint-powerpoint-bindingcollection-add-member(1)) and assigning a unique identifier. Use the identifier at any time to reference the shape and access its properties. Creating bindings provides the following value to your add-in.
 
 - Establishes a relationship between the add-in and the shape in the document. Bindings are persisted in the document and can be accessed at a later time.
 - Enables access to shape properties to read or update, without requiring the user to select any shapes.
@@ -31,7 +31,7 @@ In a general implementation, there are two components to consider for binding a 
 
 ## Create a bound shape in PowerPoint
 
-Use the `PowerPoint.BindingsCollection.add()` method for the presentation to create a binding which refers to a particular shape.
+Use the `PowerPoint.BindingCollection.add()` method for the presentation to create a binding which refers to a particular shape.
 
 :::image type="content" source="../images/powerpoint-steps-to-bind-shape.png" alt-text="Add-in creates a Base64-encoded image from data source, then creates the shape from the image and adds a unique ID.":::
 
@@ -58,7 +58,7 @@ await PowerPoint.run(async (context) => {
 });
 ```
 
-Call `BindingsCollection.add` to add the binding to the bindings collection in PowerPoint. The following sample shows how to add a new binding for a shape to the bindings collection.
+Call `BindingCollection.add` to add the binding to the bindings collection in PowerPoint. The following sample shows how to add a new binding for a shape to the bindings collection.
 
 ```javascript
 // Create a binding ID to track the shape for later updates. 
@@ -154,7 +154,7 @@ async function getShapeFromBindingID(id) {
 
 ## See also
 
-When maintaining freshness on shapes, you may also want to check the zOrder. See the [zOrderPosition](/javascript/api/powerpoint/powerpoint.shape?view=powerpoint-js-preview&preserve-view=true) property for more information.
+When maintaining freshness on shapes, you may also want to check the zOrder. See the [zOrderPosition](/javascript/api/powerpoint/powerpoint.shape) property for more information.
 
 - [Work with shapes using the PowerPoint JavaScript API](shapes.md)
 - [Bind to regions in a document or spreadsheet](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)
