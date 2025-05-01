@@ -1,5 +1,5 @@
 ---
-ms.date: 06/09/2022
+ms.date: 04/30/2025
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.topic: troubleshooting
@@ -37,6 +37,22 @@ Generally, these errors correspond to the errors you might already be familiar w
 ## Clear the Office cache
 
 Information about custom functions is cached by Office. Sometimes while developing and repeatedly reloading an add-in with custom functions your changes may not appear. You can fix this by clearing the Office cache. For more information, see [Clear the Office cache](../testing/clear-cache.md).
+
+### Clear the custom functions cache when your add-in runs
+
+There may be times when you need to clear the custom functions cache for an add-in deployed to your end users, so that add-in updates and custom functions setting changes are incorporated at the same time. Without triggering a custom functions cache clear, custom functions setting changes may take up to 24 hours to reach your end uses. 
+
+To ensure that the custom functions cache is cleared by your add-in, add the following code sample to your **function.js** file.
+
+```javascript
+function setForceRefreshOn() {  
+    Office.context.document.settings.set(  
+        'Office.ForceRefreshCustomFunctionsCache',
+        true  
+    );  
+    Office.context.document.settings.saveAsync();  
+}
+```
 
 ## Common problems and solutions
 
