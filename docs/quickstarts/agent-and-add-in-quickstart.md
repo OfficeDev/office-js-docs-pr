@@ -13,19 +13,18 @@ In this article, you'll walk through the process of building a simple Excel Copi
 ## Knowledge prerequisites
 
 - A basic understanding of declarative agents in Microsoft 365 Copilot. If you aren't familiar with them already, we recommend the following actions.
-    - Read [Declarative agents for Microsoft 365 Copilot overview](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-declarative-agent).
-    - Complete the tutorial that begins at [Create declarative agents using Teams Toolkit](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/build-declarative-agents).
+    - Read [Declarative agents for Microsoft 365 Copilot overview](/microsoft-365-copilot/extensibility/overview-declarative-agent).
+    - Complete the tutorial that begins at [Create declarative agents using Teams Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
 
 ## Software prerequisites
 
-- All the prerequisites listed at [Create declarative agents using Teams Toolkit](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/build-declarative-agents).
-- All the prerequisites listed at [Tutorial: Create an Excel task pane add-in - Prerequisites](https://learn.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial#prerequisites).
+- All the prerequisites listed at [Create declarative agents using Teams Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
 
 ## Start with an Office add-in
 
 Begin by installing the prerelease version of Teams Toolkit. See [Install Teams Toolkit - Prerelease](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version).
 
-1. Create an Office Add-in in Teams Toolkit by following the instructions in [Create Office Add-in projects with Teams Toolkit](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/teams-toolkit-overview). *Stop after the project is created. Do not carry out the steps in the sideloading section.*
+1. Create an Office Add-in in Teams Toolkit by following the instructions in [Create Office Add-in projects with Teams Toolkit](../develop/teams-toolkit-overview.md). *Stop after the project is created. Do not carry out the steps in the sideloading section.*
 
    > [!NOTE]
    > When prompted to name the add-in, use "Excel Add-in + Agent".
@@ -89,7 +88,7 @@ Add the agent with the following steps:
     1. Change the "extensions.ribbons.tabs.groups.controls.id" value to "OpenTaskpane".
 
 1. Create a file in the **appPackage** folder named "declarativeAgent.json".
-1. Paste the following content into the file. You create the "Excel-API-local-plugin.json" file in a later step. For more information about these properties, see [Declarative agent manifest object](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object).
+1. Paste the following content into the file. You create the "Excel-API-local-plugin.json" file in a later step. For more information about these properties, see [Declarative agent manifest object](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object).
 
    ```json
    {
@@ -112,7 +111,7 @@ Add the agent with the following steps:
    ```
 
 1. Create a file in the **appPackage** folder named "Excel-API-local-plugin.json".
-1. Paste the following content into the file. For more information about these properties, see [API plugin manifest schema 2.2 for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). 
+1. Paste the following content into the file. For more information about these properties, see [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). 
 
    > [!NOTE]
    > - The "runtimes.spec.local_endpoint" property is new. It tells the Copilot agent to look for functions in an add-in in Office instead of at a REST service URL.
@@ -320,7 +319,7 @@ Live reloading and hot reloading for a combined add-in and agent aren't supporte
 1. Close Excel.
 1. If the web server is running in the Visual Studio Code **TERMINAL**, give the terminal focus and press Ctrl-C. Choose "Y" in response to the prompt to end the process. Then go to the next step. If the web server is running in a separate window skip this step and go to the next step.
 1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run stop`.
-1. Clear the Office cache following the instructions at [Manually clear the cache](https://learn.microsoft.com/en-us/office/dev/add-ins/testing/clear-cache#manually-clear-the-cache).
+1. Clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).
 1. Open Teams and select **Apps** from the app bar, then select **Manage your apps** at the bottom of the **Apps** pane.
 1. Find "Excel Add-in + Agent" in the list of apps, and select the arrow head to the left of the name to expand its row.
 1. Select the trash can icon near the right end of the row, and then select **Remove** in the prompt.

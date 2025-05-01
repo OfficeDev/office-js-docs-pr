@@ -11,15 +11,15 @@ ms.localizationpriority: medium
 > [!NOTE]
 > This article assumes you are familiar with Copilot declarative agents. If you're not, start with the following:
 >
-> - [Declarative agents for Microsoft 365 Copilot overview](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-declarative-agent).
-> - [Agents are apps for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agents-are-apps).
+> - [Declarative agents for Microsoft 365 Copilot overview](/microsoft-365-copilot/extensibility/overview-declarative-agent).
+> - [Agents are apps for Microsoft 365](/microsoft-365-copilot/extensibility/agents-are-apps).
 
 Including a Microsoft 365 Copilot agent in an Office Add-in provides two benefits:
 
 - Copilot becomes a natural language interface for the add-in's functionality.
 - The agent can pass parameters to the JavaScript it invokes, which isn't possible when a [function command](add-in-commands.md#types-of-add-in-commands) is invoked from a button or menu item.
 
-You can also think of an Office Add-in as a skill in a Copilot agent. Because Office add-ins use the [Office JavaScript Library](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/understanding-the-javascript-api-for-office) to perform read and write operations on Office documents, these operations become actions in the Copilot agent.
+You can also think of an Office Add-in as a skill in a Copilot agent. Because Office add-ins use the [Office JavaScript Library](../develop/understanding-the-javascript-api-for-office.md) to perform read and write operations on Office documents, these operations become actions in the Copilot agent.
 
 ## Scenarios
 
@@ -51,8 +51,8 @@ An add-in can be configured to be *only* a skill in a Copilot agent. It doesn't 
 >
 > - Currently, only Excel, PowerPoint, and Word add-ins can be configured as a skill in Copilot. We're working to support Outlook.
 > - Copilot agents are not currently supported in Office on Mac.
-> - An add-in must use the [unified manifest for Microsoft 365](https://learn.microsoft.com/en-us/office/dev/add-ins/develop/unified-manifest-overview) to be configured as a skill in Copilot.
-> - A [content add-in](https://learn.microsoft.com/en-us/office/dev/add-ins/design/content-add-ins) cannot be a skill in Copilot.
+> - An add-in must use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview) to be configured as a skill in Copilot.
+> - A [content add-in](content-add-ins.md) cannot be a skill in Copilot.
 
 ## Major tasks
 
@@ -110,7 +110,7 @@ Second, create a declarative agent object that identifies the file containing th
 }
 ```
 
-The reference documentation for the manifest JSON is at [Public developer preview app manifest](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/?view=m365-app-prev).
+The reference documentation for the manifest JSON is at [Public developer preview app manifest](/microsoft-365/extensibility/schema/?view=m365-app-prev).
 
 ### Declarative agent configuration
 
@@ -139,7 +139,7 @@ The agent configuration file includes instructions for the agent and specifies o
 }
 ```
 
-The reference documentation for declarative agents is at [Declarative agent schema 1.3 for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3).
+The reference documentation for declarative agents is at [Declarative agent schema 1.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3).
 
 ### Copilot API plugin configuration
 
@@ -204,15 +204,15 @@ The API plugin configuration file specifies the "functions" of the plugin in the
 }
 ```
 
-The reference documentation for API plugins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for the "runtimes.spec.local_endpoint" property.
+The reference documentation for API plugins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for the "runtimes.spec.local_endpoint" property.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the ["runtimes.spec.url"](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2#openapi-specification-object) property, but for local functions on the client, not REST APIs.|
+| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the ["runtimes.spec.url"](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2#openapi-specification-object) property, but for local functions on the client, not REST APIs.|
 
 ## Create the JavaScript functions
 
-The JavaScript functions that will be invoked by the Copilot agent are created exactly as [function commands](../develop/create-addin-commands-unified-manifest#add-a-function-command) are created. The following is an example. Note the following about this code.
+The JavaScript functions that will be invoked by the Copilot agent are created exactly as [function commands](../develop/create-addin-commands-unified-manifest.md#add-a-function-command) are created. The following is an example. Note the following about this code.
 
 - Unlike a function command, a function associated with a Copilot action can take parameters.
 - The first parameter of the `associate` method must match both the "extensions.runtimes.actions.id" property in the add-in manifest and the "functions.name" property in the API plugins JSON.
