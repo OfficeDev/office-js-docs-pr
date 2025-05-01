@@ -51,7 +51,7 @@ An add-in can be configured to be *only* a skill in a Copilot agent. It doesn't 
 >
 > - Currently, only Excel, PowerPoint, and Word add-ins can be configured as a skill in Copilot. We're working to support Outlook.
 > - Copilot agents are not currently supported in Office on Mac.
-> - An add-in must use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview) to be configured as a skill in Copilot.
+> - An add-in must use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) to be configured as a skill in Copilot.
 > - A [content add-in](content-add-ins.md) cannot be a skill in Copilot.
 
 ## Major tasks

@@ -22,7 +22,7 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 ## Start with an Office add-in
 
-Begin by installing the prerelease version of Teams Toolkit. See [Install Teams Toolkit - Prerelease](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version).
+Begin by installing the prerelease version of Teams Toolkit. See [Install Teams Toolkit - Prerelease](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version).
 
 1. Create an Office Add-in in Teams Toolkit by following the instructions in [Create Office Add-in projects with Teams Toolkit](../develop/teams-toolkit-overview.md). *Stop after the project is created. Do not carry out the steps in the sideloading section.*
 
@@ -50,7 +50,7 @@ Begin by installing the prerelease version of Teams Toolkit. See [Install Teams 
    > [!NOTE]
    > If this is the first time that you have sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
 
-   1. Select the **Add-ins** button on the **Home** ribbon, and then in the flyout that opens, select your add-in. If you converted an existing Excel add-in, exercise its functions to verify that it works. The remaining steps in this section assume that you created a new add-in as instructed above in [Create an Office Add-in](#create-an-office-add-in).
+   1. Select the **Add-ins** button on the **Home** ribbon, and then in the flyout that opens, select your add-in. If you converted an existing Excel add-in, exercise its functions to verify that it works. The remaining steps in this section assume that you created a new add-in as instructed above in [Start with an Office Add-in](#start-with-an-office-add-in).
 
    1. A **Contoso Add-in** group with a **Show Taskpane** button will appear on the **Home** ribbon. Use the button to open the add-in's task pane.
 
