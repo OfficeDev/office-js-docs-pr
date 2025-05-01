@@ -265,6 +265,14 @@ items:
             href: design/custom-tab-placement.md
         - name: Content add-ins
           href: design/content-add-ins.md
+        - name: Copilot agents
+          items:
+          - name: Combine Copilot Agents with Office Add-ins
+            href: design/agent-and-add-in-overview.md
+          - name: Make an Excel add-in into a Copilot skill
+            href: quickstarts/agent-and-add-in-quickstart.md
+          - name: Add a Copilot agent to an add-in
+            href: develop/agent-and-add-in.md
         - name: Dialog boxes
           items:
           - name: Use the Office dialog API in your Office Add-ins
