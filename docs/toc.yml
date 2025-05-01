@@ -475,6 +475,9 @@ items:
     - name: Charts
       href: excel/excel-add-ins-charts.md
       displayName: Excel
+    - name: Data labels in charts
+      href: excel/excel-add-ins-charts-data-labels.md
+      displayName: Excel
     - name: Coauthoring in Excel add-ins
       href: excel/co-authoring-in-excel-add-ins.md
       displayName: Excel

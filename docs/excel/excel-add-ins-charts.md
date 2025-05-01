@@ -1,7 +1,7 @@
 ---
 title: Work with charts using the Excel JavaScript API
 description: Code samples demonstrating chart tasks using the Excel JavaScript API.
-ms.date: 02/15/2022
+ms.date: 04/14/2025
 ms.localizationpriority: medium
 ---
 
@@ -255,3 +255,4 @@ These parameters determine the size of the image. Images are always proportional
 ## See also
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with data labels in charts using the Excel JavaScript API](excel-add-ins-charts-data-labels.md)
