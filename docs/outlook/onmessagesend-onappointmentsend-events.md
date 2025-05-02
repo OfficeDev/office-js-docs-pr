@@ -50,7 +50,7 @@ The following sections include guidance on the send mode options and the behavio
 When you configure your add-in to respond to the `OnMessageSend` or `OnAppointmentSend` event, you must include the send mode property in the manifest. Its markup varies depending on the type of manifest your add-in uses.
 
 - **Add-in only manifest**: Set the **SendMode** property of the [LaunchEvent](/javascript/api/manifest/launchevent) element.
-- **Unified manifest for Microsoft 365**: Set the "sendMode" option of the event object in the "autoRunEvents" array.
+- **Unified manifest for Microsoft 365**: Set the `"sendMode"` option of the event object in the [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array.
 
 If the conditions implemented by your add-in aren't met or your add-in is unavailable when the event occurs, a dialog is shown to the user to alert them that additional actions may be needed before the mail item can be sent. The send mode property determines the options available to the user in the dialog.
 
@@ -340,8 +340,8 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
 |**Supported Outlook clients**|<ul><li>Windows (new and classic)</li><li>Web browser (modern UI)</li><li>Mac (new UI)</li></ul>|<ul><li>Windows (classic)</li><li>Web browser (modern and classic UI)</li><li>Mac (new and classic UI)</li></ul>|
-|**Supported events**|**Add-in only manifest**<ul><li>`OnMessageSend`</li><li>`OnAppointmentSend`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>"messageSending"</li><li>"appointmentSending"</li></ul>|**Add-in only manifest**<ul><li>`ItemSend`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>Not supported</li></ul>|
-|**Manifest extension property**|**Add-in only manifest**<ul><li>`LaunchEvent`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>"autoRunEvents"</li></ul>|**Add-in only manifest**<ul><li>`Events`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>Not supported</li></ul>|
+|**Supported events**|**Add-in only manifest**<ul><li>`OnMessageSend`</li><li>`OnAppointmentSend`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>`"messageSending"`</li><li>`"appointmentSending"`</li></ul>|**Add-in only manifest**<ul><li>`ItemSend`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>Not supported</li></ul>|
+|**Manifest extension property**|**Add-in only manifest**<ul><li>`LaunchEvent`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>`"autoRunEvents"`</li></ul>|**Add-in only manifest**<ul><li>`Events`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>Not supported</li></ul>|
 |**Supported send mode options**|<ul><li>prompt user</li><li>soft block</li><li>block</li></ul><br>To learn more about each option, see [Available send mode options](#available-send-mode-options).|Block|
 |**Maximum number of supported events in an add-in**|One `OnMessageSend` and one `OnAppointmentSend` event.|One `ItemSend` event.|
 |**Add-in deployment**|Add-in can be published to AppSource if its send mode property is set to the **soft block** or **prompt user** option. Otherwise, the add-in must be deployed by an organization's administrator.|Add-in can't be published to AppSource. It must be deployed by an organization's administrator.|

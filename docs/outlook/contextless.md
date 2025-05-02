@@ -31,12 +31,12 @@ The steps to configure the manifest vary depending on which type of manifest you
 
 1. Open the **manifest.json** file located at the root of the project.
 
-1. In the first object in the "extensions.runtimes" array, do the following:
+1. In the first object in the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, do the following:
 
-    1. Change the "requirements.capabilities.minVersion" to "1.13".
-    1. Add a "supportsNoItemContext" property to the object in the "actions" array and set its value to `true`.
-    1. Add a "multiselect" property to the same object and set it to `true`.
-    1. Change the "pinnable" property in the same object to `true`.
+    1. Change the [`"requirements.capabilities.minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) to `"1.13"`.
+    1. Add a `"supportsNoItemContext"` property to the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array and set its value to `true`.
+    1. Add a `"multiselect"` property to the same object and set it to `true`.
+    1. Change the `"pinnable"` property in the same object to `true`.
 
     When you are done, it should look like the following.
 
@@ -71,9 +71,9 @@ The steps to configure the manifest vary depending on which type of manifest you
     ]
     ```
 
-1. Delete the second object in the "extensions.runtimes" array, whose "id" is "CommandsRuntime".
+1. Delete the second object in the `"extensions.runtimes"` array, whose `"id"` is `"CommandsRuntime"`.
 
-1. The "extensions.ribbons.tabs.groups.controls" array has two objects. Delete the second one, whose "id" is "ActionButton".
+1. The [`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item#controls) array has two objects. Delete the second one, whose `"id"` is `"ActionButton"`.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 

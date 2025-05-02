@@ -28,7 +28,7 @@ We've taken an important first step toward these goals by making it possible for
 
 ## Key properties of the unified manifest
 
-The main reference documentation for the version of the unified app manifest is at [Unified manifest reference](/microsoftteams/platform/resources/schema/manifest-schema). (For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).) In this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office Add-in. This is followed by some basic documentation for the "extensions" property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
+The main reference documentation for the version of the unified app manifest is at [Unified manifest reference](/microsoftteams/platform/resources/schema/manifest-schema). (For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).) In this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office Add-in. This is followed by some basic documentation for the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
 
 ### Base properties
 
@@ -37,43 +37,43 @@ Each of the base properties listed in the following table has more extensive doc
 |JSON property|Purpose|
 |:-----|:-----|
 |"$schema"| Identifies the manifest schema. |
-|"manifestVersion"| Version of the manifest schema. |  
-|"id"| GUID of the Teams app/add-in. |
-|"version"| Version of the Teams app/add-in. The format must be `n.n.n` where each `n` can be no more than five digits.|
-|"name"| Public short and long names of the Teams app/add-in. The short name appears at the top of an add-in's task pane. |
-|"description"| Public short and long descriptions of the Teams app/add-in. |
-|"developer"| Information about the developer of the Teams app/add-in. |
-|"localizationInfo"| Configures the default locale and other supported locales. |
-|"validDomains" | See [Specify safe domains](#specify-safe-domains). |
-|"webApplicationInfo"| Identifies the Teams app/add-in's web app as it is known in Azure Active Directory. |
-|"authorization"| Identifies any Microsoft Graph permissions that the add-in needs. |
+|[`"manifestVersion"`](/microsoft-365/extensibility/schema/root#manifestversion)| Version of the manifest schema. |  
+|`"id"`| GUID of the Teams app/add-in. |
+|[`"version"`](/microsoft-365/extensibility/schema/root#version)| Version of the Teams app/add-in. The format must be `n.n.n` where each `n` can be no more than five digits.|
+|[`"name"`](/microsoft-365/extensibility/schema/root#name)| Public short and long names of the Teams app/add-in. The short name appears at the top of an add-in's task pane. |
+|[`"description"`](/microsoft-365/extensibility/schema/root#description)| Public short and long descriptions of the Teams app/add-in. |
+|[`"developer"`](/microsoft-365/extensibility/schema/root#developer)| Information about the developer of the Teams app/add-in. |
+|[`"localizationInfo"`](/microsoft-365/extensibility/schema/root#localizationinfo)| Configures the default locale and other supported locales. |
+|[`"validDomains"`](/microsoft-365/extensibility/schema/root#validdomains) | See [Specify safe domains](#specify-safe-domains). |
+|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the Teams app/add-in's web app as it is known in Azure Active Directory. |
+|[`"authorization"`](/microsoft-365/extensibility/schema/root#authorization)| Identifies any Microsoft Graph permissions that the add-in needs. |
 
-### "extensions" property
+### `"extensions"` property
 
-We're working hard to complete reference documentation for the "extensions" property and its descendant properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the add-in only manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '"extensions" property' section of [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
+We're working hard to complete reference documentation for the `"extensions"` property and its descendant properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the add-in only manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '`"extensions"` property' section of [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
 
 > [!NOTE]
-> This table contains only some selected representative descendant properties of "extensions". *It isn't an exhaustive list of all child properties of "extensions".* For the full reference of the unified manifest, see [Unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema). For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> This table contains only some selected representative descendant properties of `"extensions"`. *It isn't an exhaustive list of all child properties of `"extensions"`.* For the full reference of the unified manifest, see [Unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema). For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
 
 |JSON property|Purpose|
 |:-----|:-----|
-| "requirements.capabilities" | Identifies the [requirement sets](office-versions-and-requirement-sets.md#office-requirement-sets-availability) that the add-in needs to be installable. |
-| "requirements.scopes" | Identifies the Office applications in which the add-in can be installed. For example, "mail" means the add-in can be installed in Outlook. |
-| "ribbons" | The ribbons that the add-in customizes. |
-| "ribbons.contexts" | Specifies the command surfaces that the add-in customizes. For example, "mailRead" or "mailCompose". |
-| "ribbons.fixedControls" (developer preview) | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. |
-| "ribbons.spamPreProcessingDialog" (developer preview) | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. |
-| "ribbons.tabs" | Configures custom ribbon tabs. |
-| "alternates" | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. |
-| "runtimes"  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). |
-| "autoRunEvents" | Configures an event handler for a specified event. |
-| "keyboardShortcuts" (developer preview) | Defines custom keyboard shortcuts or key combinations to run specific actions. |
+| [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) | Identifies the [requirement sets](office-versions-and-requirement-sets.md#office-requirement-sets-availability) that the add-in needs to be installable. |
+| [`"requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes) | Identifies the Office applications in which the add-in can be installed. For example, `"mail"` means the add-in can be installed in Outlook. |
+| [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) | The ribbons that the add-in customizes. |
+| `"ribbons.contexts"` | Specifies the command surfaces that the add-in customizes. For example, `"mailRead"` or `"mailCompose"`. |
+| `"ribbons.fixedControls"` (developer preview) | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. |
+| `"ribbons.spamPreProcessingDialog"` (developer preview) | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. |
+| `"ribbons.tabs"` | Configures custom ribbon tabs. |
+| [`"alternates"`](/microsoft-365/extensibility/schema/element-extensions#alternates) | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. |
+| [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes)  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). |
+| [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) | Configures an event handler for a specified event. |
+| [`"keyboardShortcuts"`](/microsoft-365/extensibility/schema/element-extensions#keyboardshortcuts) (developer preview) | Defines custom keyboard shortcuts or key combinations to run specific actions. |
 
 ## Specify safe domains
 
-There is a "validDomains" array in the manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page, that URL opens in a new browser window outside the add-in pane of the Office application.
+There is a `"validDomains"` array in the manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page, that URL opens in a new browser window outside the add-in pane of the Office application.
 
-To override this behavior in desktop platforms, add each domain you want to open in the add-in window to the list of domains specified in the "validDomains" array. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in Office on desktop, that URL opens in a new browser window (outside the add-in task pane).
+To override this behavior in desktop platforms, add each domain you want to open in the add-in window to the list of domains specified in the `"validDomains"` array. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in Office on desktop, that URL opens in a new browser window (outside the add-in task pane).
 
 ## Sample unified manifest
 

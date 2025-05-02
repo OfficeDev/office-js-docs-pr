@@ -51,9 +51,9 @@ The process to define custom keyboard shortcuts for your add-in varies depending
 If your add-in uses the unified app manifest for Microsoft 365, custom keyboard shortcuts and their actions are defined in the manifest.
 
 1. In your add-in project, open the **manifest.json** file.
-1. Add the following object to the ["extensions.runtimes"](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup.
-    - The ["actions"](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&preserve-view=true) objects specify the functions your add-in can run. In the following example, an add-in will be able to show and hide a task pane. You'll create these functions in a later section. Currently, custom keyboard shortcuts can only run actions that are of type "executeFunction".
-    - While the ["actions.displayName"](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&preserve-view=true#displayname) property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup.
+    - The [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&preserve-view=true) objects specify the functions your add-in can run. In the following example, an add-in will be able to show and hide a task pane. You'll create these functions in a later section. Currently, custom keyboard shortcuts can only run actions that are of type `"executeFunction"`.
+    - While the [`"actions.displayName"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&preserve-view=true#displayname) property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
 
     ```json
     "runtimes": [
@@ -80,11 +80,11 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
     ]
     ```
 
-1. Add the following to the "extensions" array. Note the following about the markup.
-    - The SharedRuntime 1.1 requirement set is specified in the ["requirements.capabilities"](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&preserve-view=true) object to support custom keyboard shortcuts.
-    - Each "shortcuts" object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
+1. Add the following to the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array. Note the following about the markup.
+    - The SharedRuntime 1.1 requirement set is specified in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&preserve-view=true) object to support custom keyboard shortcuts.
+    - Each [`"shortcuts"`](/microsoft-365/extensibility/schema/extension-shortcut) object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
     - A default key combination must be specified. It's used on all supported platforms if there isn't a specific combination configured for a particular platform.
-    - The value of the "actionId" property must match the value specified in the "id" property of the applicable "extensions.runtimes.actions" object.
+    - The value of the `"actionId"` property must match the value specified in the `"id"` property of the applicable `"extensions.runtimes.actions"` object.
 
     ```json
     "keyboardShortcuts": [
@@ -133,14 +133,14 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
 
 1. In your add-in project, create a JSON file.
 1. Add the following markup to the file. Note the following about the code.
-    - The "actions" array contains objects that define the actions to be invoked. The "actions.id" and "actions.name" properties are required.
-    - The "actions.id" property uniquely identifies the action to invoke using a keyboard shortcut.
-    - The "actions.name" property must describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
-    - The "type" property is optional. Currently, only the "ExecuteFunction" type is supported.
-    - The specified actions will be mapped to functions that you create in a later step. In the example, you'll later map "ShowTaskpane" to a function that calls the `Office.addin.showAsTaskpane` method and "HideTaskpane" to a function that calls the `Office.addin.hide` method.
-    - The "shortcuts" array contains objects that map key combinations to actions. The "shortcuts.action", "shortcuts.key", and "shortcuts.key.default" properties are required.
-    - The value of the "shortcuts.action" property must match the "actions.id" property of the applicable action object.
-    - It's possible to customize shortcuts to be platform-specific. In the example, the "shortcuts" object customizes shortcuts for each of the following platforms: "windows", "mac", and "web". You must define a default shortcut key for each shortcut. This is used as a fallback key if a key combination isn't specified for a particular platform.
+    - The `"actions"` array contains objects that define the actions to be invoked. The [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) and `"actions.name"` properties are required.
+    - The `"actions.id"` property uniquely identifies the action to invoke using a keyboard shortcut.
+    - The `"actions.name"` property must describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
+    - The `"type"` property is optional. Currently, only the `"ExecuteFunction"` type is supported.
+    - The specified actions will be mapped to functions that you create in a later step. In the example, you'll later map `"ShowTaskpane"` to a function that calls the `Office.addin.showAsTaskpane` method and `"HideTaskpane"` to a function that calls the `Office.addin.hide` method.
+    - The `"shortcuts"` array contains objects that map key combinations to actions. The `"shortcuts.action"`, `"shortcuts.key"`, and `"shortcuts.key.default"` properties are required.
+    - The value of the `"shortcuts.action"` property must match the `"actions.id"` property of the applicable action object.
+    - It's possible to customize shortcuts to be platform-specific. In the example, the `"shortcuts"` object customizes shortcuts for each of the following platforms: `"windows"`, `"mac"`, and `"web"`. You must define a default shortcut key for each shortcut. This is used as a fallback key if a key combination isn't specified for a particular platform.
 
     > [!TIP]
     > For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
@@ -201,8 +201,8 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
 1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action you specified in an earlier step to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
     - The first parameter is the name of an action that you mapped to a keyboard shortcut. The location of the name of the action depends on the type of manifest your add-in uses.
-        - **Unified app manifest for Microsoft 365**: The value of the "extensions.keyboardShortcuts.shortcuts.actionId" property in the **manifest.json** file.
-        - **Add-in only manifest**: The value of the "actions.id" property in the shortcuts JSON file.
+        - **Unified app manifest for Microsoft 365**: The value of the `"extensions.keyboardShortcuts.shortcuts.actionId"` property in the **manifest.json** file.
+        - **Add-in only manifest**: The value of the `"actions.id"` property in the shortcuts JSON file.
     - The second parameter is the function that runs when a user presses the key combination that's mapped to an action.
 
     ```javascript
@@ -259,8 +259,8 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 There are many keyboard shortcuts that are already in use by Microsoft 365. Avoid registering keyboard shortcuts for your add-in that are already in use. However, there may be some instances where it's necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
 In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut. Note that the source of the text for the add-in option that's displayed in this dialog varies depending on the type of manifest your add-in uses.
-    - **Unified app manifest for Microsoft 365**: The value of the "extensions.runtimes.actions.displayName" property in the **manifest.json** file.
-    - **Add-in only manifest**: The value of the "actions.name" property in the shortcuts JSON file.
+    - **Unified app manifest for Microsoft 365**: The value of the `"extensions.runtimes.actions.displayName"` property in the **manifest.json** file.
+    - **Add-in only manifest**: The value of the `"actions.name"` property in the shortcuts JSON file.
 
 ![A conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
 
@@ -314,7 +314,7 @@ The extended overrides file then uses tokens instead of strings. The tokens name
         {
             "id": "ShowTaskpane",
             "type": "ExecuteFunction",
-            "name": "${resource.ShowTaskpane_action_name}"
+            `"name"`: "${resource.ShowTaskpane_action_name}"
         }
     ],
     "shortcuts": [
