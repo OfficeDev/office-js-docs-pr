@@ -32,7 +32,7 @@ The main reference documentation for the version of the unified app manifest is 
 
 ### Base properties
 
-Each of the base properties listed in the following table has more extensive documentation at [Microsoft 365 app manifest schema](//microsoft-365/extensibility/schema/root). Base properties not included in this table have no meaning for Office Add-ins.
+Each of the base properties listed in the following table has more extensive documentation at [Microsoft 365 app manifest schema](/microsoft-365/extensibility/schema/root). Base properties not included in this table have no meaning for Office Add-ins.
 
 |JSON property|Purpose|
 |:-----|:-----|
