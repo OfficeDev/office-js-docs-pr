@@ -31,7 +31,7 @@ Follow these steps to configure a new or existing project to use a shared runtim
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Implementing a shared runtime with the unified manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Implementing a shared runtime with the unified manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 1. Open your add-in project in Visual Studio Code.
 1. Open the **manifest.json** file.
