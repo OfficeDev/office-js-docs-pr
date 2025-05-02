@@ -37,7 +37,7 @@ The following shows how to configure your unified manifest to enable the prepend
 
     - The `"minVersion"` of the Mailbox requirement set is set to `"1.13"`, so the add-in can't be installed on platforms and Office versions where this feature isn't supported.
     - The `"id"` of the runtime is set to the descriptive name, `"function_command_runtime"`.
-    - The [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code?view=m365-app-prev&tabs=syntax#page) property is set to the URL of the UI-less HTML file that will load the function command.
+    - The [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property is set to the URL of the UI-less HTML file that will load the function command.
     - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when the function command button is selected and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
     - There are actions specified to run the `"prependHeaderOnSend"` and `"appendDisclaimerOnSend"` functions. You'll create these functions in a later step.
 
@@ -75,10 +75,10 @@ The following shows how to configure your unified manifest to enable the prepend
     }
     ```
 
-1. Add the following object to the [`"extensions.ribbons"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#ribbons-property) array. Note the following about this code.
+1. Add the following object to the [`"extensions.ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons-property) array. Note the following about this code.
 
     - The `"mailCompose"` value is added to the `"contexts"` array to surface the prepend-on-send and append-on-send buttons in a compose window.
-    - The `"controls"` objects create and configure the buttons for the prepend-on-send and append-on-send functions. The `"actionId"` property of each object must reflect the same value specified in the applicable [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#id) property of the `"extensions.runtimes"` object.
+    - The `"controls"` objects create and configure the buttons for the prepend-on-send and append-on-send functions. The `"actionId"` property of each object must reflect the same value specified in the applicable [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) property of the `"extensions.runtimes"` object.
 
     ```json
     {
@@ -163,7 +163,7 @@ The following shows how to configure your unified manifest to enable the prepend
     }
     ```
 
-1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) array, add the following object. Be sure it's separated from other objects in the array with a comma.
+1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, add the following object. Be sure it's separated from other objects in the array with a comma.
 
     ```json
     {

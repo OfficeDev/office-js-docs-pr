@@ -34,7 +34,7 @@ To enable compatibility between your Office Add-in and COM add-in, identify the 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the [`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin?view=m365-app-prev&tabs=syntax#progid) property identifies the COM add-in.
+The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the [`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin#progid) property identifies the COM add-in.
 
 ```json
 "extensions" [

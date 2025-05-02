@@ -30,7 +30,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
 
 1. Open the **manifest.json** file located at the root of the project.
 
-1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) array, change the value of the `"name"` property to `"Mailbox.ReadWrite.User"`. It should look like the following when you're done.
+1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, change the value of the `"name"` property to `"Mailbox.ReadWrite.User"`. It should look like the following when you're done.
 
     ```json
     "authorization": {
@@ -47,8 +47,8 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
 
 1. In first object of the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, make the following changes.
 
-    1. Change the [`"requirements.capabilities.minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&tabs=syntax#minversion) property to `"1.15"`. Although the item multi-select feature was introduced in requirement set 1.13, this sample uses enhancements from later requirement sets.
-    1. In the same [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax) object, add the `"supportsNoItemContext"` property and set it to `true`.
+    1. Change the [`"requirements.capabilities.minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) property to `"1.15"`. Although the item multi-select feature was introduced in requirement set 1.13, this sample uses enhancements from later requirement sets.
+    1. In the same [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) object, add the `"supportsNoItemContext"` property and set it to `true`.
     1. In the same "actions" object, add the `"multiselect"` property and set it to `true`.
 
     Your code should look like the following after you've made the changes.

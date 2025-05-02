@@ -231,7 +231,7 @@ Take the following steps:
 
 1. Open the **manifest.json** file.
 
-1. In the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, there are two runtime objects. For the second one, with the `"id"` of `"CommandsRuntime"`, change the [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#id) to `"insertDefaultGist"`. This is the name of a function that you create in a later step. When you're done, the runtime object should look like the following:
+1. In the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, there are two runtime objects. For the second one, with the `"id"` of `"CommandsRuntime"`, change the [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) to `"insertDefaultGist"`. This is the name of a function that you create in a later step. When you're done, the runtime object should look like the following:
 
     ```json
     {
@@ -252,7 +252,7 @@ Take the following steps:
     }
     ```
 
-1. Change the item in the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array?view=m365-app-prev&tabs=syntax#contexts) array to `"mailCompose"`. This means the buttons will appear only in a new message or reply window.
+1. Change the item in the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array to `"mailCompose"`. This means the buttons will appear only in a new message or reply window.
 
     ```json
     "contexts": [
@@ -260,7 +260,7 @@ Take the following steps:
     ],
     ```
 
-1. The [`"extensions.ribbons.tabs.groups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item?view=m365-app-prev&tabs=syntax#groups) array has a group object in it. Make the following changes to this object.
+1. The [`"extensions.ribbons.tabs.groups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#groups) array has a group object in it. Make the following changes to this object.
 
     1. Change the `"id"` property to `"msgComposeCmdGroup"`.
     1. Change the `"label"` property to "Git the gist".
@@ -280,7 +280,7 @@ Take the following steps:
     1. Change the `"supertip.description"` to "Inserts the content of the gist you mark as default into the current message."
     1. Change the `"actionId"` to `"insertDefaultGist"`. This matches the `"action.id"` of the `"CommandsRuntime"` that you set in an earlier step.
 
-    When you're done, the [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#ribbons) property should look like the following:
+    When you're done, the [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) property should look like the following:
 
     ```json
     "ribbons": [

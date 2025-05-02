@@ -130,7 +130,7 @@ Office icons are designed to render well in high contrast modes. Foreground elem
 
 ### Unified manifest reference
 
-- [`"extensions.ribbons"` array](/microsoft-365/extensibility/schema/extension-ribbons-array?view=m365-app-prev&tabs=syntax)
+- [`"extensions.ribbons"` array](/microsoft-365/extensibility/schema/extension-ribbons-array)
 
 ### Add-in only manifest reference
 

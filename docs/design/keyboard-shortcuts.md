@@ -80,9 +80,9 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
     ]
     ```
 
-1. Add the following to the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array. Note the following about the markup.
+1. Add the following to the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array. Note the following about the markup.
     - The SharedRuntime 1.1 requirement set is specified in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&preserve-view=true) object to support custom keyboard shortcuts.
-    - Each [`"shortcuts"`](/microsoft-365/extensibility/schema/extension-shortcut?view=m365-app-prev&tabs=syntax) object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
+    - Each [`"shortcuts"`](/microsoft-365/extensibility/schema/extension-shortcut) object represents a single action that's invoked by a keyboard shortcut. It specifies the supported key combinations for various platforms, such as Office on the web, on Windows, and on Mac. For guidance on how to create custom key combinations, see [Guidelines for custom key combinations](#guidelines-for-custom-key-combinations).
     - A default key combination must be specified. It's used on all supported platforms if there isn't a specific combination configured for a particular platform.
     - The value of the `"actionId"` property must match the value specified in the `"id"` property of the applicable `"extensions.runtimes.actions"` object.
 
@@ -133,7 +133,7 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
 
 1. In your add-in project, create a JSON file.
 1. Add the following markup to the file. Note the following about the code.
-    - The `"actions"` array contains objects that define the actions to be invoked. The [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#id) and `"actions.name"` properties are required.
+    - The `"actions"` array contains objects that define the actions to be invoked. The [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) and `"actions.name"` properties are required.
     - The `"actions.id"` property uniquely identifies the action to invoke using a keyboard shortcut.
     - The `"actions.name"` property must describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
     - The `"type"` property is optional. Currently, only the `"ExecuteFunction"` type is supported.

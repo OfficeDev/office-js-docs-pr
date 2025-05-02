@@ -27,7 +27,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
 
 1. Open the **manifest.json** file.
 
-1. Navigate to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) array. In the array object, replace the value of the `"name"` property with `"MailboxItem.ReadWrite.User"`. This is needed by the add-in to be able to set the subject of the mail item.
+1. Navigate to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array. In the array object, replace the value of the `"name"` property with `"MailboxItem.ReadWrite.User"`. This is needed by the add-in to be able to set the subject of the mail item.
 
     ```json
     ...
@@ -54,7 +54,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
    - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There are two types of [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax) that can run in the runtime. You'll create functions to correspond to these actions in a later step.
+   - There are two types of [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) that can run in the runtime. You'll create functions to correspond to these actions in a later step.
 
     ```json
      {
@@ -88,7 +88,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
     }
     ```
 
-1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
     "autoRunEvents": [

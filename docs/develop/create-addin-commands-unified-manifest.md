@@ -34,13 +34,13 @@ The following subsections explain how to include a [task pane command](../design
 ### Configure the runtime for the task pane command
 
 1. Open the unified manifest and find the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array.
-1. Ensure that there is a runtime object that has an [`"actions.type"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#type) property with the value `"openPage"`. This type of runtime opens a task pane.
-1. Ensure that the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&tabs=syntax) array contains an object that specifies a [Requirement Set](office-versions-and-requirement-sets.md) that supports add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
+1. Ensure that there is a runtime object that has an [`"actions.type"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#type) property with the value `"openPage"`. This type of runtime opens a task pane.
+1. Ensure that the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) array contains an object that specifies a [Requirement Set](office-versions-and-requirement-sets.md) that supports add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
 1. Ensure that the `"id"` of the runtime object has a descriptive name such as `"TaskPaneRuntime"`.
-1. Ensure that the [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code?view=m365-app-prev&tabs=syntax#page) property of the runtime object is set to the URL of the page that should open in the task pane, such as `"https://localhost:3000/taskpane.html"`.
-1. Ensure that the [`"actions.view"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#view) of the runtime object has a name that describes the content of the page that you set in the preceding step, such as `"homepage"` or `"dashboard"`.
-1. Ensure that the [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#id) of the runtime object has a descriptive name such as `"ShowTaskPane"` that indicates what happens when the user selects the add-in command button or menu item.
+1. Ensure that the [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property of the runtime object is set to the URL of the page that should open in the task pane, such as `"https://localhost:3000/taskpane.html"`.
+1. Ensure that the [`"actions.view"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#view) of the runtime object has a name that describes the content of the page that you set in the preceding step, such as `"homepage"` or `"dashboard"`.
+1. Ensure that the [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) of the runtime object has a descriptive name such as `"ShowTaskPane"` that indicates what happens when the user selects the add-in command button or menu item.
 1. Set the other properties and subproperties of the runtime object as shown in the following completed example of a runtime object. The `"type"` and `"lifetime"` properties are required and in Outlook Add-ins. They always have the values shown in this example.
 
     ```json
@@ -73,7 +73,7 @@ The following subsections explain how to include a [task pane command](../design
 
 ### Configure the UI for the task pane command
 
-1. Ensure that the extension object for which you configured a runtime has a [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#ribbons) array property as a peer to the [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#runtimes) array. There is typically only one extension object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array.
+1. Ensure that the extension object for which you configured a runtime has a [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) array property as a peer to the [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes) array. There is typically only one extension object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 1. Ensure that the array has an object with array properties named `"contexts"` and `"tabs"`, as shown in the following example.
 
     ```json
@@ -161,7 +161,7 @@ The following subsections explain how to include a [task pane command](../design
     - The `"id"`, `"label"`, and `"icons"` properties have the same purpose and the same restrictions as the corresponding properties of a group object, except that they apply to a specific button or menu within the group.
     - The `"type"` property is set to `"button"` which means that the control will be a ribbon button. You can also configure a task pane command to be run from a menu item. See [Menu and menu items](#menu-and-menu-items).
     - The `"supertip.title"` (maximum length: 64 characters) and `"supertip.description"` (maximum length: 128 characters) appear when the cursor is hovering over the button or menu.
-    - The `"actionId"` must be an exact match for the [`"runtimes.actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#id) that you set in [Configure the runtime for the task pane command](#configure-the-runtime-for-the-task-pane-command).
+    - The `"actionId"` must be an exact match for the [`"runtimes.actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) that you set in [Configure the runtime for the task pane command](#configure-the-runtime-for-the-task-pane-command).
 
     ```json
     {
@@ -263,7 +263,7 @@ The following subsections explain how to include a [function command](../design/
 1. Ensure that the `"requirements.capabilities"` array contains objects that specify any [Requirement Sets](office-versions-and-requirement-sets.md) that are needed to support the APIs add-in commands. For Outlook, the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). But if your function command calls that API that is part of later **Mailbox** requirement set, such as **Mailbox 1.5**, then you need to specify the later version (e.g., "1.5") as the `"minVersion"` value. For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
 1. Ensure that the `"id"` of the runtime object has a descriptive name such as "CommandsRuntime".
-1. Ensure that the [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code?view=m365-app-prev&tabs=syntax#page) property of the runtime object is set to the URL of the UI-less HTML page that loads your function file, such as `"https://localhost:3000/commands.html"`.
+1. Ensure that the [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property of the runtime object is set to the URL of the UI-less HTML page that loads your function file, such as `"https://localhost:3000/commands.html"`.
 1. Ensure that the `"actions.id"` of the runtime object has a descriptive name such as "SetNotification" that indicates what happens when the user selects the add-in command button or menu item.
 
     > [!IMPORTANT]

@@ -40,7 +40,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 1. Configure the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
 
-1. In the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array?view=m365-app-prev&tabs=syntax#contexts) array, add `mailRead` as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array, add `mailRead` as an item. When you're finished, the array should look like the following.
 
     ```json
     "contexts": [
@@ -48,7 +48,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ],
     ```
 
-1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element?view=m365-app-prev&tabs=syntax#formfactors) array, add `"mobile"` as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, add `"mobile"` as an item. When you're finished, the array should look like the following.
 
     ```json
     "formFactors": [
@@ -57,7 +57,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ]
     ```
 
-1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
     "autoRunEvents": [

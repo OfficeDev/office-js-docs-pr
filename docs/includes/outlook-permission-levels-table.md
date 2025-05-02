@@ -8,7 +8,7 @@
 Permissions are declared in the manifest. The markup varies depending on the type of manifest.
 
 - **Add-in only manifest**:  Use the **\<Permissions\>** element.
-- **Unified manifest for Microsoft 365**: Use the `"name"` property of an object in the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) array.
+- **Unified manifest for Microsoft 365**: Use the `"name"` property of an object in the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array.
 
 > [!NOTE]
 >

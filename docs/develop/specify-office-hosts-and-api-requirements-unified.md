@@ -43,7 +43,7 @@ Your add-in should load the most current version of the Office JavaScript API li
 
 ## Specify which Office applications can host your add-in
 
-To specify the Office applications on which your add-in can be installed, use the [`"extensions.requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element?view=m365-app-prev&tabs=syntax#scopes) array. Specify any subset of `"mail"`, `"workbook"`, `"document"`, and `"presentation"`. The following table shows which Office application and platform combinations correspond to these values. It also shows what kind of add-in can be installed for each scope.
+To specify the Office applications on which your add-in can be installed, use the [`"extensions.requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes) array. Specify any subset of `"mail"`, `"workbook"`, `"document"`, and `"presentation"`. The following table shows which Office application and platform combinations correspond to these values. It also shows what kind of add-in can be installed for each scope.
 
 | Name          | Office client applications                     | Available add-in types |
 |:--------------|:-----------------------------------------------|:-----------------------|
@@ -76,7 +76,7 @@ For example, the following JSON specifies that the add-in can install on any rel
 You can't explicitly specify the Office versions and builds or the platforms on which your add-in should be installable, and you wouldn't want to because you would have to revise your manifest whenever support for the add-in features that your add-in uses is extended to a new version or platform. Instead, specify in the manifest the APIs that your add-in needs. Office prevents the add-in from being installed on combinations of Office version and platform that don't support the APIs and ensures that the add-in won't appear in **My Add-ins**.
 
 > [!IMPORTANT]
-> Only use the `"requirements"` property that is a direct child of [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) to specify the API members that your add-in must have to be of any significant value at all. If your add-in uses an API for some features, but has other useful features that don't require the API, you should design the add-in so that it's installable on platform and Office version combinations that don't support the API but provides a diminished experience on those combinations. For this purpose, use `"requirements"` properties that aren't direct children of `"extensions"`. For more information, see [Design for alternate experiences](#design-for-alternate-experiences).
+> Only use the `"requirements"` property that is a direct child of [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) to specify the API members that your add-in must have to be of any significant value at all. If your add-in uses an API for some features, but has other useful features that don't require the API, you should design the add-in so that it's installable on platform and Office version combinations that don't support the API but provides a diminished experience on those combinations. For this purpose, use `"requirements"` properties that aren't direct children of `"extensions"`. For more information, see [Design for alternate experiences](#design-for-alternate-experiences).
 
 ### Requirement sets
 
@@ -91,7 +91,7 @@ Requirement set support varies by Office application, the version of the Office 
 
 ### extensions.requirements.capabilities property
 
-Use the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&tabs=syntax) property to specify the minimum requirement sets that must be supported by the Office application to install your add-in. If the Office application or platform doesn't support the requirement sets or API members specified in the `"requirements.capabilities"` property, the add-in won't run in that application or platform, and won't display in **My Add-ins**.
+Use the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) property to specify the minimum requirement sets that must be supported by the Office application to install your add-in. If the Office application or platform doesn't support the requirement sets or API members specified in the `"requirements.capabilities"` property, the add-in won't run in that application or platform, and won't display in **My Add-ins**.
 
 > [!TIP]
 > All APIs in the application-specific models are in requirement sets, but some of those in the Common API model aren't. If your add-in requires an API that isn't in any requirement set, you can implement a runtime check for the availability of the API and display a message to the add-in's users if it isn't supported. For more information, see [Check for API availability at runtime](specify-api-requirements-runtime.md).

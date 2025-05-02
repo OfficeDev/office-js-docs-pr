@@ -67,7 +67,7 @@ To configure the manifest, select the tab for the type of manifest you are using
     }
     ```
 
-1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -77,7 +77,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Add the following object to the `"autoRunEvents"` array. Note the following about this code:
 
-   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in `"actionId"` must match the name used in the `"id"` property of the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax) array in an earlier step.
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in `"actionId"` must match the name used in the `"id"` property of the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array in an earlier step.
    - The `"sendMode"` option is set to `"softBlock"`. This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
 
     ```json

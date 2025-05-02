@@ -33,8 +33,8 @@ The steps to configure the manifest vary depending on which type of manifest you
 
 1. In the first object in the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, do the following:
 
-    1. Change the [`"requirements.capabilities.minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&tabs=syntax#minversion) to `"1.13"`.
-    1. Add a `"supportsNoItemContext"` property to the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax) array and set its value to `true`.
+    1. Change the [`"requirements.capabilities.minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) to `"1.13"`.
+    1. Add a `"supportsNoItemContext"` property to the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array and set its value to `true`.
     1. Add a `"multiselect"` property to the same object and set it to `true`.
     1. Change the `"pinnable"` property in the same object to `true`.
 
@@ -73,7 +73,7 @@ The steps to configure the manifest vary depending on which type of manifest you
 
 1. Delete the second object in the `"extensions.runtimes"` array, whose `"id"` is `"CommandsRuntime"`.
 
-1. The [`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item?view=m365-app-prev&tabs=syntax#controls) array has two objects. Delete the second one, whose `"id"` is `"ActionButton"`.
+1. The [`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item#controls) array has two objects. Delete the second one, whose `"id"` is `"ActionButton"`.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 

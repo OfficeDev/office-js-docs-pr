@@ -73,7 +73,7 @@ Your manifest must provide Office with certain information about how the add-in 
 
 # [Unified manifest](#tab/jsonmanifest)
 
-There should be a [`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#webApplicationInfo-property) property in the root of the manifest. It has a required child `"id"` property which must be set to the application ID (a GUID) of the add-in in the Microsoft identity platform. For SSO, it must also have a child `"resource"` property that is set to the URI of the add-in. This is the same **Application ID URI** (including the `api:` protocol) that you set when you registered the add-in with the Microsoft identity platform. The URI must end with the client ID specified in the `"webApplicationInfo.id"` property. The following is an example:
+There should be a [`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property) property in the root of the manifest. It has a required child `"id"` property which must be set to the application ID (a GUID) of the add-in in the Microsoft identity platform. For SSO, it must also have a child `"resource"` property that is set to the URI of the add-in. This is the same **Application ID URI** (including the `api:` protocol) that you set when you registered the add-in with the Microsoft identity platform. The URI must end with the client ID specified in the `"webApplicationInfo.id"` property. The following is an example:
 
 ```json
 "webApplicationInfo": {

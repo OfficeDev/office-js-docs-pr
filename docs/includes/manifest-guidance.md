@@ -4,7 +4,7 @@
 > - Specify the URLs that correspond to the environment.
 > - Customize metadata values so that end users are able to identify a sideloaded add-in's corresponding environment. For example:
 >
->    - In the unified manifest for Microsoft 365, customize the [`"name"`](/microsoft-365/extensibility/schema/root-name?view=m365-app-prev&tabs=syntax) property of the add-in and the `"label"` properties for various UI controls to indicate the environment.
+>    - In the unified manifest for Microsoft 365, customize the [`"name"`](/microsoft-365/extensibility/schema/root-name) property of the add-in and the `"label"` properties for various UI controls to indicate the environment.
 >    - In the add-in only manifest, customize the `DisplayName` element and and labels within the `Resources` element to indicate the environment.
 >
 > - Customize the custom functions `namespace` to indicate the environment, if your add-in defines custom functions.

@@ -50,13 +50,13 @@ There are minor differences in the manifests between content add-ins and add-ins
 
 Configure the manifest with the following steps.
 
-1. Add a [`"contentRuntimes"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#contentruntimes) child array to the extension object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array.
-1. Remove the [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#runtimes) property if it is present. The `"runtimes"` array is for task pane or mail add-ins. These cannot be combined with a content add-in.
+1. Add a [`"contentRuntimes"`](/microsoft-365/extensibility/schema/element-extensions#contentruntimes) child array to the extension object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
+1. Remove the [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes) property if it is present. The `"runtimes"` array is for task pane or mail add-ins. These cannot be combined with a content add-in.
 1. Add an anonymous content runtime object in the `"contentRuntimes"` array.
-1. Set the [`"id"`](/microsoft-365/extensibility/schema/extension-content-runtime-array?view=m365-app-prev&tabs=syntax#id) property of the object to a descriptive name.
-1. Set the [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code?view=m365-app-prev&tabs=syntax#page) object to the full URL of the custom content that you want to embed in the document.
-1. Optionally, set the [`"requestedWidth"`](/microsoft-365/extensibility/schema/extension-content-runtime-array?view=m365-app-prev&tabs=syntax#requestedwidth) and [`"requestedHeight"`](/microsoft-365/extensibility/schema/extension-content-runtime-array?view=m365-app-prev&tabs=syntax#requestedheight) properties to a size between 32 and 1000 pixels. If these properties aren't used, the Office application determines the size.
-1. Optionally, set the [`"disableSnapshot"`](/microsoft-365/extensibility/schema/extension-content-runtime-array?view=m365-app-prev&tabs=syntax#disablesnapshot) property to `true` to prevent Office from saving a snapshot of the content component with the document.
+1. Set the [`"id"`](/microsoft-365/extensibility/schema/extension-content-runtime-array#id) property of the object to a descriptive name.
+1. Set the [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) object to the full URL of the custom content that you want to embed in the document.
+1. Optionally, set the [`"requestedWidth"`](/microsoft-365/extensibility/schema/extension-content-runtime-array#requestedwidth) and [`"requestedHeight"`](/microsoft-365/extensibility/schema/extension-content-runtime-array#requestedheight) properties to a size between 32 and 1000 pixels. If these properties aren't used, the Office application determines the size.
+1. Optionally, set the [`"disableSnapshot"`](/microsoft-365/extensibility/schema/extension-content-runtime-array#disablesnapshot) property to `true` to prevent Office from saving a snapshot of the content component with the document.
 
 The following is an example of a `"contentRuntimes"` property.
 

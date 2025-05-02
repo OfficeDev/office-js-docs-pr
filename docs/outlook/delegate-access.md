@@ -123,7 +123,7 @@ To implement shared folder and shared mailbox scenarios in your add-in, you must
 > [!NOTE]
 > Implementing shared folder and shared mailbox scenarios with a unified manifest for Microsoft 365 is currently only supported in classic Outlook on Windows. For other supported platforms, use the add-in only manifest instead.
 
-Add an additional object to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) array and set its `"name"` property to `"Mailbox.SharedFolder"`.
+Add an additional object to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array and set its `"name"` property to `"Mailbox.SharedFolder"`.
 
 ```json
 "authorization": {

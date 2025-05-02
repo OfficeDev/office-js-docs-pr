@@ -120,7 +120,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
     }
     ```
 
-1. Add an [`"autoRunEvents"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array. The `"autoRunEvents"` array contains an object with the following key properties.
+1. Add an [`"autoRunEvents"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array. The `"autoRunEvents"` array contains an object with the following key properties.
 
     - The [`"events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) property assigns handlers to the `OnMessageFromChanged` and `OnNewMessageCompose` events. For information on event names used in the unified manifest, see the "Supported events" table in [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
     - The function name provided in [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) must match the `"id"` property of its corresponding object in the `"actions"` array configured earlier.

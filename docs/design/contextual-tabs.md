@@ -59,9 +59,9 @@ Before you can customize your contextual tab, you must first specify any icons t
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-In the [`"extensions.ribbons.tabs.groups.icons"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item?view=m365-app-prev&tabs=syntax#icons) array, specify the icons for the group of contextual tab controls that will be displayed on the host's ribbon. For icons that will be used by the tab's buttons and menus, specify these in the `"icons"` property of the [`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item?view=m365-app-prev&tabs=syntax#controls) object.
+In the [`"extensions.ribbons.tabs.groups.icons"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item#icons) array, specify the icons for the group of contextual tab controls that will be displayed on the host's ribbon. For icons that will be used by the tab's buttons and menus, specify these in the `"icons"` property of the [`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item#controls) object.
 
-Because the contextual tab will only be shown when a certain event occurs, you must also set the [`"extensions.ribbons.tabs.groups.controls.overriddenByRibbonApi"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item?view=m365-app-prev&tabs=syntax#overriddenbyribbonapi) property to `true`.
+Because the contextual tab will only be shown when a certain event occurs, you must also set the [`"extensions.ribbons.tabs.groups.controls.overriddenByRibbonApi"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#overriddenbyribbonapi) property to `true`.
 
 The following is an example.
 
