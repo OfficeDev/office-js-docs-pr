@@ -383,7 +383,7 @@ The previous sample creates a table with two merged areas as shown in the follow
 
 ## Get and set table cell values
 
-After a table is created you can get or set string values in the cells. Note that this is the only part of a table you can change. You can't change borders, fonts, widths, or other cell properties. If you need to update a table, delete it and recreate it. The following code sample shows how to find an existing table and set a new value for a cell in the table.
+After a table is created, you can get or set string values in the cells. Note that this is the only part of a table you can change. You can't change borders, fonts, widths, or other cell properties. If you need to update a table, delete it and recreate it. The following code sample shows how to find an existing table and set a new value for a cell in the table.
 
 ```javascript
 await PowerPoint.run(async (context) => {
