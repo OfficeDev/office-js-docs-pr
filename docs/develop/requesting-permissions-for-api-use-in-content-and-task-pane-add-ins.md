@@ -21,7 +21,7 @@ A five-level JavaScript API access-permissions model provides the basis for priv
 
 These permissions specify the subset of the API that the add-in [runtime](../testing/runtimes.md) allows your add-in to use when a user inserts, and then activates (trusts) your add-in. To declare the permission level your add-in requires, specify one of the permission values in the manifest. The markup varies depending on the type of manifest.
 
-- **Unified manifest for Microsoft 365**: Use the [`"authorization.permissions.resourceSpecific"`}(/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) property. The following example requests the **write document** permission, which allows only methods that can write to (but not read) the document.
+- **Unified manifest for Microsoft 365**: Use the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) property. The following example requests the **write document** permission, which allows only methods that can write to (but not read) the document.
 
    ```json
    "authorization": {
