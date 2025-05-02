@@ -491,7 +491,7 @@ The steps vary depending on the type of manifest.
 
 1. Open the manifest file **./manifest.json**.
 
-1. Find the **"extensions.runtimes"** array and add the following commands runtime object.
+1. Find the **[`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true)** array and add the following commands runtime object.
 
     ```json
     "runtimes": [
@@ -512,12 +512,12 @@ The steps vary depending on the type of manifest.
     ]
     ```
 
-1. Find `TODO1` and replace it with **"toggleProtection"**. This matches the `id` for the JavaScript function you create in a later step.
+1. Find `TODO1` and replace it with **`"toggleProtection"`**. This matches the `id` for the JavaScript function you create in a later step.
 
     > [!TIP]
-    > The value of **"actions.id"** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
+    > The value of **[`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#id)** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
 
-1. Ensure that the **"requirements.capabilities"** array contains an object that specifies the **"AddinCommands"** requirement set with a **"minVersion"** of **"1.1"**.
+1. Ensure that the **[`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities?view=m365-app-prev&tabs=syntax)** array contains an object that specifies the **`"AddinCommands"`** requirement set with a **`"minVersion"`** of **`"1.1"`**.
 
     ```json
     "requirements": {
@@ -532,7 +532,7 @@ The steps vary depending on the type of manifest.
 
 #### Configure the UI for the ribbon button
 
-1. After the **"extensions.runtimes"** array, add the following **"ribbons"** array.
+1. After the **`"extensions.runtimes"`** array, add the following **[`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#ribbons)** array.
 
     ```json
     "ribbons": [
@@ -585,7 +585,7 @@ The steps vary depending on the type of manifest.
 
 1. Find `TODO2` and replace it with **"Toggle worksheet protection"**. This is the label for your button in the Excel ribbon.
 
-1. Find `TODO3` and replace it with **"toggleProtection"**. This value must match the **"runtimes.actions.id"** value.
+1. Find `TODO3` and replace it with **`"toggleProtection"`**. This value must match the **[`"runtimes.actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax#id)** value.
 
 1. Save the file.
 

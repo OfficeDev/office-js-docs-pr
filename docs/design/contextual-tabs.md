@@ -59,9 +59,9 @@ Before you can customize your contextual tab, you must first specify any icons t
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-In the "extensions.ribbons.tabs.groups.icons" array, specify the icons for the group of contextual tab controls that will be displayed on the host's ribbon. For icons that will be used by the tab's buttons and menus, specify these in the "icons" property of the "extensions.ribbons.tabs.groups.controls" object.
+In the [`"extensions.ribbons.tabs.groups.icons"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item?view=m365-app-prev&tabs=syntax#icons) array, specify the icons for the group of contextual tab controls that will be displayed on the host's ribbon. For icons that will be used by the tab's buttons and menus, specify these in the `"icons"` property of the [`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item?view=m365-app-prev&tabs=syntax#controls) object.
 
-Because the contextual tab will only be shown when a certain event occurs, you must also set the "extensions.ribbons.tabs.groups.controls.overriddenByRibbonApi" property to `true`.
+Because the contextual tab will only be shown when a certain event occurs, you must also set the [`"extensions.ribbons.tabs.groups.controls.overriddenByRibbonApi"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item?view=m365-app-prev&tabs=syntax#overriddenbyribbonapi) property to `true`.
 
 The following is an example.
 
@@ -165,7 +165,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 1. This simple example of a contextual tab will have only a single button and, thus, only a single action. Add the following as the only member of the `actions` array. About this markup, note:
 
     - The `id` and `type` properties are mandatory.
-    - The value of `type` can be either "ExecuteFunction" or "ShowTaskpane".
+    - The value of `type` can be either `"ExecuteFunction"` or `"ShowTaskpane"`.
     - The `functionName` property is only used when the value of `type` is `ExecuteFunction`. It's the name of a function defined in the FunctionFile. For more information about the FunctionFile, see [Basic concepts for add-in commands](add-in-commands.md).
     - In a later step, you'll map this action to a button on the contextual tab.
 
@@ -247,7 +247,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 1. In our simple ongoing example, the group has only a single button. Add the following object as the only member of the `controls` array. About this markup, note:
 
     - All the properties, except `enabled`, are required.
-    - `type` specifies the type of control. The values can be "Button", "Menu", or "MobileButton".
+    - `type` specifies the type of control. The values can be `"Button"`, `"Menu"`, or `"MobileButton"`.
     - `id` can be up to 125 characters.
     - `actionId` must be the ID of an action defined in the `actions` array. (See step 1 of this section.)
     - `label` is a user-friendly string to serve as the label of the button.
@@ -629,13 +629,13 @@ Some combinations of platform, Office application, and Office build don't suppor
 
 #### Use noncontextual tabs or controls
 
-The add-in's manifest provides a way to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs. The strategy is to define a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then you use special manifest markup to enable the custom core tab to be visible all the time on platform and version combinations that don't support custom contextual tabs. The process depends on which type of manifest your add-in uses. 
+The add-in's manifest provides a way to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs. The strategy is to define a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then you use special manifest markup to enable the custom core tab to be visible all the time on platform and version combinations that don't support custom contextual tabs. The process depends on which type of manifest your add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
-Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then, mark any control groups, or individual controls, or menu items that shouldn't be visible on platforms that support contextual tabs. You mark a group, control, or menu item object by adding an "overriddenByRibbonApi" property to it and setting its value to "true". The effect of doing so is the following:
+Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then, mark any control groups, or individual controls, or menu items that shouldn't be visible on platforms that support contextual tabs. You mark a group, control, or menu item object by adding an `"overriddenByRibbonApi"` property to it and setting its value to `true`. The effect of doing so is the following:
 
 - If the add-in runs on an application and platform that support custom contextual tabs, then the marked custom groups, controls, and menu items won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.
 - If the add-in runs on an application or platform that *doesn't* support `requestCreateControls`, then the groups, controls, and menu items do appear on the custom core tab.
@@ -714,12 +714,12 @@ The following is another example. Note that "MyControlGroup" will appear on the 
 ]
 ```
 
-When a parent menu control is marked with `"overriddenByRibbonApi": true`, then it isn't visible, and all of its child markup is ignored when custom contextual tabs aren't supported. So, it doesn't matter if any of those child menu items have the "overriddenByRibbonApi" property or what its value is. The implication of this is that if a menu item must be visible in all contexts, then not only should it not be marked with `"overriddenByRibbonApi": true`, but *its ancestor menu control must also not be marked this way*. A similar point applies to ribbon controls. If a control must be visible in all contexts, then not only should it not be marked with `"overriddenByRibbonApi": true`, but its parent group must also not be marked this way.
+When a parent menu control is marked with `"overriddenByRibbonApi": true`, then it isn't visible, and all of its child markup is ignored when custom contextual tabs aren't supported. So, it doesn't matter if any of those child menu items have the `"overriddenByRibbonApi"` property or what its value is. The implication of this is that if a menu item must be visible in all contexts, then not only should it not be marked with `"overriddenByRibbonApi": true`, but *its ancestor menu control must also not be marked this way*. A similar point applies to ribbon controls. If a control must be visible in all contexts, then not only should it not be marked with `"overriddenByRibbonApi": true`, but its parent group must also not be marked this way.
 
 > [!IMPORTANT]
-> Don't mark *all* of the child items of a menu with `"overriddenByRibbonApi": true`. This is pointless if the parent element is marked with `"overriddenByRibbonApi": true` for reasons given in the preceding paragraph. Moreover, if you leave out the "overriddenByRibbonApi" property on the parent menu control (or set it to `false`), then the parent will appear regardless of whether custom contextual tabs are supported, but it will be empty when they are supported. So, if all the child elements shouldn't appear when custom contextual tabs are supported, mark the *parent* menu control with `"overriddenByRibbonApi": true`.
+> Don't mark *all* of the child items of a menu with `"overriddenByRibbonApi": true`. This is pointless if the parent element is marked with `"overriddenByRibbonApi": true` for reasons given in the preceding paragraph. Moreover, if you leave out the `"overriddenByRibbonApi"` property on the parent menu control (or set it to `false`), then the parent will appear regardless of whether custom contextual tabs are supported, but it will be empty when they are supported. So, if all the child elements shouldn't appear when custom contextual tabs are supported, mark the *parent* menu control with `"overriddenByRibbonApi": true`.
 >
-> A parallel point applies to groups and controls, don't mark all of the controls in a group with `"overriddenByRibbonApi": true`. This is pointless if the parent group is marked with `"overriddenByRibbonApi": true`. Moreover, if you leave out the "overriddenByRibbonApi" property on the parent group (or set it to `false`), then the group will appear regardless of whether custom contextual tabs are supported, but it will have no controls in it when they are supported. So, if all the controls shouldn't appear when custom contextual tabs are supported, mark the parent group with `"overriddenByRibbonApi": true`.
+> A parallel point applies to groups and controls, don't mark all of the controls in a group with `"overriddenByRibbonApi": true`. This is pointless if the parent group is marked with `"overriddenByRibbonApi": true`. Moreover, if you leave out the `"overriddenByRibbonApi"` property on the parent group (or set it to `false`), then the group will appear regardless of whether custom contextual tabs are supported, but it will have no controls in it when they are supported. So, if all the controls shouldn't appear when custom contextual tabs are supported, mark the parent group with `"overriddenByRibbonApi": true`.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 

@@ -27,7 +27,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
 
 1. Open the **manifest.json** file.
 
-1. Navigate to the "authorization.permissions.resourceSpecific" array. In the array object, replace the value of the "name" property with "MailboxItem.ReadWrite.User". This is needed by the add-in to be able to set the subject of the mail item.
+1. Navigate to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) array. In the array object, replace the value of the `"name"` property with `"MailboxItem.ReadWrite.User"`. This is needed by the add-in to be able to set the subject of the mail item.
 
     ```json
     ...
@@ -44,17 +44,17 @@ To configure the manifest, select the tab for the type of manifest you're using.
     ...
     ```
 
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup:
 
-   - The "minVersion" of the Mailbox requirement set is configured to "1.10" as this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events.
-   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
+   - The `"minVersion"` of the Mailbox requirement set is configured to `"1.10"` as this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events.
+   - The `"id"` of the runtime is set to the descriptive name `"autorun_runtime"`.
+   - The `"code"` property has a child `"page"` property that is set to an HTML file and a child `"script"` property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
        - Office on Windows executes the event handlers in a JavaScript-only runtime, which loads a JavaScript file directly.
        - Office on Mac and on the web, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short", which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There are two types of "actions" that can run in the runtime. You'll create functions to correspond to these actions in a later step.
+   - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There are two types of [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax) that can run in the runtime. You'll create functions to correspond to these actions in a later step.
 
     ```json
      {
@@ -88,7 +88,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
     }
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -96,7 +96,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
     ]
     ```
 
-1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the "id" properties of the objects in the "actions" array in an earlier step.
+1. Add the following object to the `"autoRunEvents"` array. The `"events"` property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the `"id"` properties of the objects in the `"actions"` array in an earlier step.
 
     ```json
       {

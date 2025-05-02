@@ -69,22 +69,21 @@ For more details about this process, see [Register an Office Add-in that uses SS
 
 ### Configure the add-in
 
-Your manifest must provide Office with certain information about how the add-in is registered in Microsoft Entra ID. The configuration depends on which type of manifest the add-in uses. 
+Your manifest must provide Office with certain information about how the add-in is registered in Microsoft Entra ID. The configuration depends on which type of manifest the add-in uses.
 
 # [Unified manifest](#tab/jsonmanifest)
 
-There should be a "webApplicationInfo" property in the root of the manifest. It has a required child "id" property which must be set to the application ID (a GUID) of the add-in in the Microsoft identity platform. For SSO, it must also have a child "resource" property that is set to the URI of the add-in. This is the same **Application ID URI** (including the `api:` protocol) that you set when you registered the add-in with the Microsoft identity platform. The URI must end with the client ID specified in the "webApplicationInfo.id" property. The following is an example:
+There should be a [`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#webApplicationInfo-property) property in the root of the manifest. It has a required child `"id"` property which must be set to the application ID (a GUID) of the add-in in the Microsoft identity platform. For SSO, it must also have a child `"resource"` property that is set to the URI of the add-in. This is the same **Application ID URI** (including the `api:` protocol) that you set when you registered the add-in with the Microsoft identity platform. The URI must end with the client ID specified in the `"webApplicationInfo.id"` property. The following is an example:
 
 ```json
 "webApplicationInfo": {
-	"id": "a661fed9-f33d-4e95-b6cf-624a34a2f51d",
-	"resource": "api://addin.contoso.com/a661fed9-f33d-4e95-b6cf-624a34a2f51d"
+    "id": "a661fed9-f33d-4e95-b6cf-624a34a2f51d",
+    "resource": "api://addin.contoso.com/a661fed9-f33d-4e95-b6cf-624a34a2f51d"
 },
 ```
 
 > [!NOTE]
 > Experienced add-in developers should note that, there is no unified manifest property corresponding to the **\<Scopes\>** element in the add-in only manifest. Microsoft Graph and other API permissions are requested at runtime in your code.
-
 
 # [Add-in only manifest](#tab/xmlmanifest)
 

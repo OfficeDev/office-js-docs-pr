@@ -47,7 +47,7 @@ The techniques for localizing with the manifest differ depending on whether you'
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
-When using the unified app manifest for Microsoft 365, localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the "localizationInfo" object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box.
+When using the unified app manifest for Microsoft 365, localize the public-facing strings in the manifest as described in [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization#localize-strings-in-your-app-manifest). The following is an example for an Outlook add-in. First is the [`"localizationInfo"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#localizationinfo) object in the manifest. Below that is the fr-fr.json file with the translated strings. The add-in has a task pane (with a French version of the home page), localized French icons, and a custom ribbon button that opens a video player in a dialog box.
 
 ```json
 "localizationInfo": {

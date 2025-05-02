@@ -21,7 +21,7 @@ Only categories in the master list on your mailbox are available for you to appl
 > For the add-in to manage the categories master list, it must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 >
 > - **Add-in only manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-> - **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+> - **Unified manifest for Microsoft 365**: Set the `"name"` property of an object in the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) array to `"Mailbox.ReadWrite.User"`.
 
 ### Add master categories
 

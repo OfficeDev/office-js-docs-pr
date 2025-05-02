@@ -55,7 +55,7 @@ By default, a custom button or menu item on the ribbon is available for use when
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
-Just add an "enabled" property with the value `false` to the control or menu item object. The following shows the basic structure.
+Just add an [`"enabled"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item?view=m365-app-prev&tabs=syntax#enabled) property with the value `false` to the control or menu item object. The following shows the basic structure.
 
 ```json
 "extensions": [

@@ -123,7 +123,7 @@ To implement shared folder and shared mailbox scenarios in your add-in, you must
 > [!NOTE]
 > Implementing shared folder and shared mailbox scenarios with a unified manifest for Microsoft 365 is currently only supported in classic Outlook on Windows. For other supported platforms, use the add-in only manifest instead.
 
-Add an additional object to the "authorization.permissions.resourceSpecific" array and set its "name" property to "Mailbox.SharedFolder".
+Add an additional object to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions?view=m365-app-prev&tabs=syntax#resourcespecific) array and set its `"name"` property to `"Mailbox.SharedFolder"`.
 
 ```json
 "authorization": {
@@ -215,7 +215,7 @@ Once you've identified that the current mail item is in a shared folder or share
 
 To use Microsoft Graph services, an add-in must configure the **read/write mailbox** permission in its manifest. The markup varies depending on the type of manifest your add-in uses.
 
-- **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+- **Unified manifest for Microsoft 365**: Set the `"name"` property of an object in the `"authorization.permissions.resourceSpecific"` array to `"Mailbox.ReadWrite.User"`.
 - **Add-in only manifest**: Set the [Permissions](/javascript/api/manifest/permissions) element to **ReadWriteMailbox**.
 
 ### Use Microsoft Graph

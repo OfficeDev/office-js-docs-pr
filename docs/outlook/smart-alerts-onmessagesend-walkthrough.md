@@ -29,15 +29,15 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Open the **manifest.json** file.
 
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup:
 
-   - Although the `OnMessageSend` event was introduced in requirement set 1.12, the "minVersion" is set to "1.15". This supports the use of Smart Alerts enhancements that were introduced in later requirement sets.
-   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
+   - Although the `OnMessageSend` event was introduced in requirement set 1.12, the `"minVersion"` is set to `"1.15"`. This supports the use of Smart Alerts enhancements that were introduced in later requirement sets.
+   - The `"id"` of the runtime is set to the descriptive name `"autorun_runtime"`.
+   - The `"code"` property has a child `"page"` property that is set to an HTML file and a child `"script"` property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
        - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
        - Outlook on the web, on Mac, and on [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short", which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
    - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
 
     ```json
@@ -67,7 +67,7 @@ To configure the manifest, select the tab for the type of manifest you are using
     }
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -75,10 +75,10 @@ To configure the manifest, select the tab for the type of manifest you are using
     ]
     ```
 
-1. Add the following object to the "autoRunEvents" array. Note the following about this code:
+1. Add the following object to the `"autoRunEvents"` array. Note the following about this code:
 
-   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
-   - The "sendMode" option is set to "softBlock". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in `"actionId"` must match the name used in the `"id"` property of the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&tabs=syntax) array in an earlier step.
+   - The `"sendMode"` option is set to `"softBlock"`. This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
 
     ```json
       {

@@ -38,9 +38,9 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. Configure the "extensions.runtimes" property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
+1. Configure the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
 
-1. In the "extensions.ribbons.contexts" array, add `mailRead` as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array?view=m365-app-prev&tabs=syntax#contexts) array, add `mailRead` as an item. When you're finished, the array should look like the following.
 
     ```json
     "contexts": [
@@ -48,7 +48,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ],
     ```
 
-1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element?view=m365-app-prev&tabs=syntax#formfactors) array, add `"mobile"` as an item. When you're finished, the array should look like the following.
 
     ```json
     "formFactors": [
@@ -57,7 +57,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ]
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions?view=m365-app-prev&tabs=syntax#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&tabs=syntax#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -65,12 +65,12 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ]
     ```
 
-1. Add an object like the following to the "autoRunEvents" array. Note the following about this code:
+1. Add an object like the following to the `"autoRunEvents"` array. Note the following about this code:
 
-   - The "events" property maps handlers to events.
-   - The "events.type" must be one of the types listed at [Supported events and clients](#supported-events-and-clients).
-   - The value of the "events.actionId" is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
-   - You can have more than one object in the "events" array.
+   - The `"events"` property maps handlers to events.
+   - The `"events.type"` must be one of the types listed at [Supported events and clients](#supported-events-and-clients).
+   - The value of the `"events.actionId"` is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
+   - You can have more than one object in the `"events"` array.
 
     ```json
       {
