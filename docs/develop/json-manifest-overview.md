@@ -83,7 +83,7 @@ The `"extensions"` property in the unified manifest primarily represents charact
 The following table shows a mapping of *some* high-level child properties of the `"extensions"` property in the unified manifest to XML elements in the current manifest. Dot notation is used to reference child properties.
 
 > [!NOTE]
-> This table contains only some selected representative descendant properties of `"extensions"`. *It isn't an exhaustive list of all child properties of `"extensions"`.* For the full reference of the unified manifest, see [Unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema). For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> This table contains only some selected representative descendant properties of `"extensions"`. *It isn't an exhaustive list of all child properties of `"extensions"`.* For the full reference of the unified manifest, see [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 |JSON property|Purpose|XML elements|Comments|
 |:-----|:-----|:-----|:-----|

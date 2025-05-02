@@ -28,11 +28,11 @@ We've taken an important first step toward these goals by making it possible for
 
 ## Key properties of the unified manifest
 
-The main reference documentation for the version of the unified app manifest is at [Unified manifest reference](/microsoftteams/platform/resources/schema/manifest-schema). (For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).) In this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office Add-in. This is followed by some basic documentation for the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
+The main reference documentation for the version of the unified app manifest is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema). In this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office Add-in. This is followed by some basic documentation for the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
 
 ### Base properties
 
-Each of the base properties listed in the following table has more extensive documentation at [Manifest schema](/microsoftteams/platform/resources/schema/manifest-schema). Base properties not included in this table have no meaning for Office Add-ins.
+Each of the base properties listed in the following table has more extensive documentation at [Microsoft 365 app manifest schema](//microsoft-365/extensibility/schema/root). Base properties not included in this table have no meaning for Office Add-ins.
 
 |JSON property|Purpose|
 |:-----|:-----|
@@ -53,7 +53,7 @@ Each of the base properties listed in the following table has more extensive doc
 We're working hard to complete reference documentation for the `"extensions"` property and its descendant properties. In the meantime, the following provides some basic documentation. Most, but not all, of the properties have an equivalent element (or attribute) in the add-in only manifest for add-ins. For the most part, the description, and restrictions, that apply to the XML element or attribute also apply to its JSON property equivalent in the unified manifest. The tables in the '`"extensions"` property' section of [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md#extensions-property) can help you determine the XML equivalent of a JSON property.
 
 > [!NOTE]
-> This table contains only some selected representative descendant properties of `"extensions"`. *It isn't an exhaustive list of all child properties of `"extensions"`.* For the full reference of the unified manifest, see [Unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema). For the manifest reference that includes all the latest preview features, see [Public developer preview for the unified manifest for Microsoft 365](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> This table contains only some selected representative descendant properties of `"extensions"`. *It isn't an exhaustive list of all child properties of `"extensions"`.* For the full reference of the unified manifest, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 |JSON property|Purpose|
 |:-----|:-----|
@@ -463,4 +463,4 @@ The following is an example of a unified app manifest for an add-in. It doesn't 
 ## See also
 
 - [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md)
-- [Manifest schema](/microsoftteams/platform/resources/schema/manifest-schema)
+- [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema)

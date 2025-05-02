@@ -62,7 +62,7 @@ When you update your add-in, there are two pieces to consider: the web applicati
 Whenever you make a change to the manifest, you must raise the version number of the manifest.
 
 - If the add-in uses the add-in only manifest, see [Version element](/javascript/api/manifest/version).
-- If the add-in uses the unified manifest, see [version property](/microsoftteams/platform/resources/schema/manifest-schema#version).
+- If the add-in uses the unified manifest, see [version property](/microsoft-365/extensibility/schema/root#version).
 
 If your add-in is deployed by one or more admins to their organizations, some manifest changes require the admin to consent to the updates. Users are blocked from the add-in until consent is granted. The following manifest changes require the admin to consent again.
 
