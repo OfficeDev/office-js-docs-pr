@@ -59,7 +59,7 @@ Use the following steps.
     > - The asset ID of the add-in in your unified manifest must match with an existing add-in that has been published by your seller account on Partner Center. If the asset ID of the add-in that you have linked in your unified manifest doesn't match an existing offer published by your seller account, the unified manifest submission will fail. You'll need to update the manifest to use the correct add-in asset ID and re-submit the unified manifest.
     > - An existing add-in can only be hidden by a single unified manifest. At this time, you may not use multiple unified manifests to hide the same add-in. If you try to hide an already linked add-in using a different unified manifest, the submission will fail. You'll need to remove the linking and re-submit the unified manifest.
 
-1. If the old add-in isn't distributed through AppSource, then give the `"hide"` object a [`"customOfficeAddin"`](/extensibility/schema/extension-alternate-versions-array-hide-custom-office-addin?view=m365-app-prev&tabs=syntax) property.
+1. If the old add-in isn't distributed through AppSource, then give the `"hide"` object a [`"customOfficeAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-custom-office-addin?view=m365-app-prev&tabs=syntax) property.
 1. Give the `"customOfficeAddin"` object an `"officeAddinId"` property with the GUID of the old add-in as its value. The following is an example.
 
     ```json
