@@ -383,7 +383,7 @@ The previous sample creates a table with two merged areas as shown in the follow
 
 ## Get and set table cell values
 
-After a table is created, you can't change values, borders, fonts, widths, or other cell properties. If you need to update a table, delete it and recreate it. The following code sample shows how to find an existing table and set a new value for a cell in the table.
+After a table is created you can get or set string values in the cells. Note that this is the only part of a table you can change. You can't change borders, fonts, widths, or other cell properties. If you need to update a table, delete it and recreate it. The following code sample shows how to find an existing table and set a new value for a cell in the table.
 
 ```javascript
 await PowerPoint.run(async (context) => {
@@ -396,21 +396,9 @@ await PowerPoint.run(async (context) => {
     const table = shape.getTable();
     table.load();
     await context.sync();
-    // Delete the original table.
-    shape.delete();
     // Set the value of the specified table cell.
-    let values = table.values;
-    values[1][1] = "A new value";
-    // Create a new table with updated values.
-    const newShape = shapes.addTable(
-      table.rowCount,
-      table.columnCount,
-      {
-        values: values
-        // Map other properties from the original table.
-      }
-    );
-    await context.sync();
+    const cell = table.getCellOrNullObject(1, 1);
+    cell.text = "A new value";
 });
 ```
 
