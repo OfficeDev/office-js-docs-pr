@@ -410,7 +410,6 @@ await PowerPoint.run(async (context) => {
         // Map other properties from the original table.
       }
     );
-    table.values = values;
     await context.sync();
 });
 ```
