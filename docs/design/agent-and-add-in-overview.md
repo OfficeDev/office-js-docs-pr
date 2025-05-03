@@ -69,9 +69,9 @@ Configuration of an add-in to be a Copilot skill requires three JSON-formatted f
 
 There are two parts of the manifest that you configure. First, create an action object that identifies the JavaScript function that is invoked by the action. The following is an example (with some extraneous markup omitted). Note the following about this code.
 
-- The "page" property specifies the URL of the web page that contains an embedded script tag that, in turn, specifies the URL of the JavaScript file where the function is defined. That same file contains an invocation of the [Office.actions.associate](/javascript/api/office/office.actions?view=common-js-preview#office-office-actions-associate-member(1)) method to map the function to an action ID.
-- The [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&branch=main&tabs=syntax#id) property in the manifest is the same action ID that is passed to the call of `associate`.
-- The [`"actions.type"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&branch=main&tabs=syntax#type) property is set to "executeDataFunction", which is the type that can accept parameters and can be invoked by Copilot.
+- The "page" property specifies the URL of the web page that contains an embedded script tag that, in turn, specifies the URL of the JavaScript file where the function is defined. That same file contains an invocation of the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) method to map the function to an action ID.
+- The [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) property in the manifest is the same action ID that is passed to the call of `associate`.
+- The [`"actions.type"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#type) property is set to "executeDataFunction", which is the type that can accept parameters and can be invoked by Copilot.
 
 ```json
 "extensions": [
@@ -110,7 +110,7 @@ Second, create a declarative agent object that identifies the file containing th
 }
 ```
 
-The reference documentation for the manifest JSON is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema/?view=m365-app-prev).
+The reference documentation for the manifest JSON is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema/).
 
 ### Declarative agent configuration
 
@@ -235,7 +235,7 @@ Office.onReady((info) => {
 });
 ```
 
-After your functions are created, create a UI-less HTML file that contains a `<script>` tag that loads the JavaScript file with the functions. The URL of this HTML file must match the value of the [`"extensions.runtimes.code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code?view=m365-app-prev&branch=main&tabs=syntax#page) property in the manifest. See [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365) earlier in this article.
+After your functions are created, create a UI-less HTML file that contains a `<script>` tag that loads the JavaScript file with the functions. The URL of this HTML file must match the value of the [`"extensions.runtimes.code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property in the manifest. See [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365) earlier in this article.
 
 ## Next steps
 

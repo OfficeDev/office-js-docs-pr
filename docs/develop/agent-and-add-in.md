@@ -107,17 +107,17 @@ There are three major parts to configuring the manifest for the Copilot agent as
 
 Ensure that the manifest references the preview version of the manifest schema with the following steps.
 
-1. At the top of the manifest, ensure that the [`"$schema"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&branch=main&tabs=syntax#schema-4) property is the following.
+1. At the top of the manifest, ensure that the [`"$schema"`](/microsoft-365/extensibility/schema/root#schema-4) property is the following.
 
    ```json
    "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
    ```
 
-1. Ensure that the [`"manifestVersion"`](/microsoft-365/extensibility/schema/root?view=m365-app-prev&branch=main&tabs=syntax#manifestversion) property is set to "devPreview".
+1. Ensure that the [`"manifestVersion"`](/microsoft-365/extensibility/schema/root#manifestversion) property is set to "devPreview".
 
 #### Configure the runtime
 
-1. In the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev) array, ensure that there's a runtime object that is oriented to running UI-less JavaScript functions. It's critical that the object have a [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code?view=m365-app-prev&branch=main&tabs=syntax#page) property that specifies the absolute URL to the UI-less HTML file that you created (or edited) earlier in [Update the function file](#update-the-function-file).
+1. In the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array) array, ensure that there's a runtime object that is oriented to running UI-less JavaScript functions. It's critical that the object have a [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property that specifies the absolute URL to the UI-less HTML file that you created (or edited) earlier in [Update the function file](#update-the-function-file).
 1. In the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array of that same runtime object, add an object whose `"type"` property is set to "executeDataFunction" and whose `"id"` property is an exact match for the first parameter of the call to `Office.actions.associate` in a function that you created in [Update the function file](#update-the-function-file).
 1. Repeat the preceding step for each function you created to implement an agent action.
 
@@ -144,9 +144,9 @@ The runtime object should look similar to the following. There may be other prop
 
 #### Declare the agent
 
-1. If there isn't one already, add a ["copilotAgents"](/microsoft-365/extensibility/schema/root-copilot-agents?view=m365-app-prev) object to the root of the manifest and ensure that it has a child ["declarativeAgents"](/microsoft-365/extensibility/schema/declarative-agent-ref?view=m365-app-prev) array.
-1. Add an object to the `"declarativeAgents"` array and specify a unique and descriptive [`"id"`](/microsoft-365/extensibility/schema/declarative-agent-ref?view=m365-app-prev#id) for it.
-1. Assign the object's [`"file"`](/microsoft-365/extensibility/schema/declarative-agent-ref?view=m365-app-prev#file) property the relative URL of the declarative agent configuration file. You create that file in a later step.
+1. If there isn't one already, add a ["copilotAgents"](/microsoft-365/extensibility/schema/root-copilot-agents) object to the root of the manifest and ensure that it has a child ["declarativeAgents"](/microsoft-365/extensibility/schema/declarative-agent-ref) array.
+1. Add an object to the `"declarativeAgents"` array and specify a unique and descriptive [`"id"`](/microsoft-365/extensibility/schema/declarative-agent-ref#id) for it.
+1. Assign the object's [`"file"`](/microsoft-365/extensibility/schema/declarative-agent-ref#file) property the relative URL of the declarative agent configuration file. You create that file in a later step.
 
    The following is an example.
 
@@ -275,9 +275,9 @@ The runtime object should look similar to the following. There may be other prop
 Using any zip utility, create a zip file that contains the following files.
 
 - The manifest
-- The icon files referenced in the manifest's [`"icons.color"`](/microsoft-365/extensibility/schema/root-icons?view=m365-app-prev&branch=main&tabs=syntax#color) and [`"icons.outline"`](/microsoft-365/extensibility/schema/root-icons?view=m365-app-prev&branch=main&tabs=syntax#outline)
+- The icon files referenced in the manifest's [`"icons.color"`](/microsoft-365/extensibility/schema/root-icons#color) and [`"icons.outline"`](/microsoft-365/extensibility/schema/root-icons#outline)
 - The two files you created in [Create the agent and API plugin configuration](#create-the-agent-and-api-plugin-configuration)
-- Any files referenced in the [`"localizationInfo.additionalLanguages"`](/microsoft-365/extensibility/schema/root-localization-info?view=m365-app-prev&branch=main&tabs=syntax#additionallanguages) property
+- Any files referenced in the [`"localizationInfo.additionalLanguages"`](/microsoft-365/extensibility/schema/root-localization-info#additionallanguages) property
 
 > [!IMPORTANT]
 > Most of these files have URLs in the manifest that are relative to the location of the manifest, so the folder structure of the zip file must maintain this structure. For example, if the `"icons.color"` value is "/assets/icon-32.png", then there must be an **/assets** folder in the zip file with the **icon-32.png** file in it.
