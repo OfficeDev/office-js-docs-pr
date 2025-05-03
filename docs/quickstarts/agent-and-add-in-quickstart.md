@@ -1,12 +1,13 @@
 ---
-title: Make an Excel add-in into a Copilot skill
+title: Build your first add-in as a Copilot skill
 description: Learn how to build a simple Copilot agent that has an Excel add-in as a skill.
 ms.date: 05/19/2025
-ms.service: excel
+ms.topic: how-to
+ms.service: microsoft-365
 ms.localizationpriority: high
 ---
 
-# Build a Copilot agent with an Excel skill
+# Build your first add-in as a Copilot skill
 
 In this article, you'll walk through the process of building a simple Excel Copilot agent that can perform some simple actions on the content of an Excel workbook. The app also includes an Excel task pane add-in.
 
@@ -14,17 +15,17 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 - A basic understanding of declarative agents in Microsoft 365 Copilot. If you aren't familiar with them already, we recommend the following actions.
     - Read [Declarative agents for Microsoft 365 Copilot overview](/microsoft-365-copilot/extensibility/overview-declarative-agent).
-    - Complete the tutorial that begins at [Create declarative agents using Teams Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
+    - Complete the tutorial that begins at [Create declarative agents using Microsoft 365 Agent Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
 
 ## Software prerequisites
 
-- All the prerequisites listed at [Create declarative agents using Teams Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
+- All the prerequisites listed at [Create declarative agents using Microsoft 365 Agent Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
 
 ## Start with an Office add-in
 
-Begin by installing the prerelease version of Teams Toolkit. See [Install Teams Toolkit - Prerelease](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version).
+Begin by installing the prerelease version of [Microsoft 365 Agent Toolkit](teams-toolkit-overview.md). See [Install Microsoft 365 Agent Toolkit - Prerelease](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version).
 
-1. Create an Office Add-in in Teams Toolkit by following the instructions in [Create Office Add-in projects with Teams Toolkit](../develop/teams-toolkit-overview.md). *Stop after the project is created. Do not carry out the steps in the sideloading section.*
+1. Create an Office Add-in in Microsoft 365 Agent Toolkit by following the instructions in [Create Office Add-in projects with Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md). *Stop after the project is created. Don't carry out the steps in the sideloading section.*
 
    > [!NOTE]
    > When prompted to name the add-in, use "Excel Add-in + Agent".
@@ -33,12 +34,12 @@ Begin by installing the prerelease version of Teams Toolkit. See [Install Teams 
 1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm install`.
 1. The project is initially configured to support several Office applications. Remove non-Excel artifacts with the following steps:
 
-   1. Open the manifest.json file in the appPackage folder of the project.
-   1. The "authorization.permissions.resourceSpecific" array has two objects in it. Remove the object that mentions a Mailbox permission.
-   1. In the extensions.requirements.scopes" array, remove all items except "workbook".
-   1. The "extensions.runtimes" array has three objects. Remove first one, which is for Mailbox.
-   1. The "extensions.ribbons" array has two objects. Remove first one, which is for Mailbox.
-   1. In the remaining ribbon object, navigate to the "tabs.groups.controls" array. There are two control objects in the array. Remove the second one, which has name "ActionButton".
+   1. Open the manifest.json file in the **appPackage** folder of the project.
+   1. The `"authorization.permissions.resourceSpecific"` array has two objects in it. Remove the object that mentions a Mailbox permission.
+   1. In the `"extensions.requirements.scopes"` array, remove all items except "workbook".
+   1. The `"extensions.runtimes"` array has three objects. Remove the first one, which is for Mailbox.
+   1. The `"extensions.ribbons"` array has two objects. Remove first one, which is for Mailbox.
+   1. In the remaining ribbon object, navigate to the `"tabs.groups.controls"` array. There are two control objects in the array. Remove the second one, which has name "ActionButton".
 
 ### Sideload and test the add-in
 
@@ -50,8 +51,7 @@ Begin by installing the prerelease version of Teams Toolkit. See [Install Teams 
    > [!NOTE]
    > If this is the first time that you have sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
 
-   1. Select the **Add-ins** button on the **Home** ribbon, and then in the flyout that opens, select your add-in. If you converted an existing Excel add-in, exercise its functions to verify that it works. The remaining steps in this section assume that you created a new add-in as instructed above in [Start with an Office Add-in](#start-with-an-office-add-in).
-
+   1. Select the **Add-ins** button on the **Home** ribbon, and then in the flyout that opens, select your add-in.
    1. A **Contoso Add-in** group with a **Show Taskpane** button will appear on the **Home** ribbon. Use the button to open the add-in's task pane.
 
    > [!NOTE]
@@ -69,7 +69,7 @@ Add the agent with the following steps:
 
 1. In the manifest file, make the following changes:
 
-   1. Add the following object to the root. By convention, it is put just below the "validDomains" property. You create the "declarativeCopilot.json" file in a later step.
+   1. Add the following object to the root. By convention, it's put just below the "validDomains" property. You create the "declarativeCopilot.json" file in a later step.
 
       ```json
       "copilotAgents": {
@@ -82,13 +82,13 @@ Add the agent with the following steps:
       },
       ```
 
-    1. In the second "extensions.runtimes" object, change the "actions.id" property to "fillcolor". This is the ID of a function that you add in a later step.
-    1. In the same action object, change the "actions.type" property to "executeDataFunction".
-    1. Change the "extensions.ribbons.tabs.groups.id" value to "BaseGroup".
-    1. Change the "extensions.ribbons.tabs.groups.controls.id" value to "OpenTaskpane".
+    1. In the second `"extensions.runtimes"` object, change the `"actions.id"` property to "fillcolor". This is the ID of a function that you add in a later step.
+    1. In the same action object, change the `"actions.type"` property to "executeDataFunction".
+    1. Change the `"extensions.ribbons.tabs.groups.id"` value to "BaseGroup".
+    1. Change the `"extensions.ribbons.tabs.groups.controls.id"` value to "OpenTaskpane".
 
 1. Create a file in the **appPackage** folder named "declarativeAgent.json".
-1. Paste the following content into the file. You create the "Excel-API-local-plugin.json" file in a later step. For more information about these properties, see [Declarative agent manifest object](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object).
+1. Paste the following content into the file. You create the "Excel-API-local-plugin.json" file in a later step.
 
    ```json
    {
@@ -111,18 +111,19 @@ Add the agent with the following steps:
    ```
 
 1. Create a file in the **appPackage** folder named "Excel-API-local-plugin.json".
-1. Paste the following content into the file. For more information about these properties, see [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). 
+1. Paste the following content into the file.
 
    > [!NOTE]
-   > - The "runtimes.spec.local_endpoint" property is new. It tells the Copilot agent to look for functions in an add-in in Office instead of at a REST service URL.
-   > - Any string in the "runtimes.run_for_functions" array must be an exact match for a "extensions.runtimes.actions.id" property in the manifest.
+   > - The `"runtimes.spec.local_endpoint"` property is new. It tells the Copilot agent to look for functions in an add-in in Office instead of at a REST service URL.
+   > - Any value of `"functions.name"` must be an exact match for a `"extensions.runtimes.actions.id"` property in the manifest.
 
    ```json
    {
+        "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
         "schema_version": "v2.2",
         "name_for_human": "Excel Add-in + Agent",
         "description_for_human": "Add-in Actions in Agents",
-        "namespace": "add-in_function",
+        "namespace": "addin_function",
         "functions": [
             {
                 "name": "fillcolor",
@@ -172,7 +173,7 @@ Add the agent with the following steps:
     }
    ```
 
-1. Open the \src\commands.ts file and replace its contents with the following:
+1. Open the **\src\commands\commands.ts** file and replace its contents with the following:
 
    ```javascript
    async function fillColor(cell, color) {
@@ -282,7 +283,7 @@ Add the agent with the following steps:
    ```
 
 1. Replace the value of `projectId` in the last line of content you pasted in the preceding step with a new randomly generated GUID.
-1. Open the \env\.env.dev file and add the following lines to the end of the file, right after the line "ADDIN_ENDPOINT=".
+1. Open the **\env\.env.dev** file and add the following lines to the end of the file, right after the line "ADDIN_ENDPOINT=".
 
    ```
    TEAMS_APP_ID=
@@ -294,20 +295,20 @@ Add the agent with the following steps:
 ## Test the add-in and agent
 
 1. Close all Office applications.
-1. Open Teams Toolkit.
-1. In the **Lifecycle** pane, select **Provision**. Among other things, provisioning will do the following:
+1. Open Microsoft 365 Agent Toolkit.
+1. In the **Lifecycle** pane, select **Provision**. Among other things, provisioning does the following:
 
    - Set values for the four lines you added to the .env.dev file.
-   - Create a /build folder inside the /appPackage folder with the package zip file. The file contains the manifest and JSON files for the agent and plugin.
+   - Create a **/build** folder inside the **/appPackage** folder with the package zip file. The file contains the manifest and JSON files for the agent and plugin.
 
 1. Open Teams and select **Apps** from the app bar, then select **Manage your apps** at the bottom of the **Apps** pane.
 1. Select **Upload an app** in the **Apps** dialog, and then in the dialog that opens, select **Upload a custom app**.
-1. In the **Open** dialog, select the package zip file in the project's /appPackage/build folder.
+1. In the **Open** dialog, select the package zip file in the project's **/appPackage/build** folder.
 1. Select **Add** in the dialog that opens.
 1. When you are prompted that the app was added, *don't* open it in Teams. Instead close Teams.
 1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run dev-server` to start the server on localhost.
 1. Open Excel. In a few moments, the **Show Task pane** button appears on the **Home** ribbon in the **Contoso Add-in** group.
-1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. **Excel Add-in + Agent** should be be in the list of agents. If it is not, wait a few minutes and reload Copilot.
+1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. **Excel Add-in + Agent** should be be in the list of agents. If it isn't, wait a few minutes and reload Copilot.
 1. When the agent is listed, select it and the  **Excel Add-in + Agent** pane opens.
 1. Select the **Change cell color** conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The cell's color is changed.
 1. Try entering other combinations of cell and color in the conversation box, such as "Set cell G5 to the color of the sky".
@@ -325,3 +326,13 @@ Live reloading and hot reloading for a combined add-in and agent aren't supporte
 1. Select the trash can icon near the right end of the row, and then select **Remove** in the prompt.
 
 Make your changes and then repeat the steps in [Test the add-in and agent](#test-the-add-in-and-agent).
+
+## Next steps
+
+- [Add a Copilot agent to an existing add-in](../develop/agent-and-add-in.md)
+
+## See also
+
+- [Combine Copilot Agents with Office Add-ins](../design/agent-and-add-in-overview.md)
+- [Declarative agent manifest object](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object)
+- [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2)

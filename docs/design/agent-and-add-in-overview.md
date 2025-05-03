@@ -35,7 +35,7 @@ The following are some selected ways in which adding a Copilot agent enhances th
 - **Trusted insertion of data:** If you ask a typical AI engine a question, it will combine information it finds and compose an answer; a process can introduce inaccuracies. But a Copilot agent based on an add-in can insert data *unchanged* from a trusted source. Some examples:
 
    - Consider an add-in that enables the insertion of legal research into Word where it can then be edited. A user asks the agent "In what circumstances can a lease of residential space in Indiana be broken unilaterally by the lessor?" The add-in then fetches content, unchanged, from precedents and statutes.
-   - Consider an add-in that manages the inventory of a digital assets. In the Copilot agent chat, a user asks "Insert a table of our color photos with the name of each, the number of times it was downloaded, and it's size in megabytes, sorted in order from most downloaded." The add-in then fetches this data, unchanged, from the system of record and inserts the table into an Excel spreadsheet.
+   - Consider an add-in that manages the inventory of a digital assets. In the Copilot agent chat, a user requests "Insert a table of our color photos with the name of each, the number of times it was downloaded, and it's size in megabytes, sorted in order from most downloaded." The add-in then fetches this data, unchanged, from the system of record and inserts the table into an Excel spreadsheet.
 
 ## The relation of Copilot agents to the Add-in framework
 
@@ -43,14 +43,14 @@ A Copilot agent is a natural language interface for an add-in.
 
 An add-in can be configured to be *only* a skill in a Copilot agent. It doesn't have to include a task pane, custom ribbon buttons, or custom menus; but it can have any of these in addition to being a Copilot skill. The best approach depends on the user scenarios that the add-in should enable.
 
-- If the add-in should provide simple, fast actions that do not need parameters passed to them, use custom ribbon buttons or menus, called [add-in commands](add-in-commands.md).
-- If the add-in needs a dashboard experience, needs configuration of settings by the user, needs to display metadata about the content of the Office document, or needs a page-like experience for any other reason, include a task pane in the add-in.
-- If the add-in needs to provide complex actions that require parameters passed at runtime or needs a natural language interface, configure it to be a skill in a Copilot agent.
+- If the add-in should provide simple, fast actions that don't need parameters passed to them, include custom ribbon buttons or menus, called [add-in commands](add-in-commands.md), in the add-in.
+- If the add-in needs a dashboard experience, needs the user to configure settings, needs to display metadata about the content of the Office document, or needs a page-like experience for any other reason, include a task pane in the add-in.
+- If the add-in needs to provide complex actions that require parameters passed at runtime or needs a natural language interface, include a Copilot agent.
 
 > [!NOTE]
 >
 > - Currently, only Excel, PowerPoint, and Word add-ins can be configured as a skill in Copilot. We're working to support Outlook.
-> - Copilot agents are not currently supported in Office on Mac.
+> - Copilot agents aren't currently supported in Office on Mac.
 > - An add-in must use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) to be configured as a skill in Copilot.
 > - A [content add-in](content-add-ins.md) cannot be a skill in Copilot.
 
@@ -58,7 +58,7 @@ An add-in can be configured to be *only* a skill in a Copilot agent. It doesn't 
 
 There are two major tasks to configuring an add-in as a Copilot skill, and they are analogous to the two tasks for configuring [function commands](add-in-commands.md#types-of-add-in-commands) for an add-in.
 
-- Create JavaScript functions that implement the add-in's actions.
+- Create JavaScript functions that implement the agent's actions.
 - Use JSON to specify for Office and the JavaScript runtimes the names of these functions.
 
 ## JSON configuration
@@ -67,11 +67,11 @@ Configuration of an add-in to be a Copilot skill requires three JSON-formatted f
 
 ### Unified manifest for Microsoft 365
 
-There are two parts of the manifest that you configure. First, create an action object that identifies the JavaScript function that is invoked by the action. The following is an example (with some extraneous markup omitted). NOte the following about this code.
+There are two parts of the manifest that you configure. First, create an action object that identifies the JavaScript function that is invoked by the action. The following is an example (with some extraneous markup omitted). Note the following about this code.
 
-- The "page" property specifies the URL of the web page that contains an embedded script tag that specifies the URL of the JavaScript file where the function is defined. That same file contains an invocation of the [Office.actions.associate](/javascript/api/office/office.actions?view=common-js-preview#office-office-actions-associate-member(1)) method to map the function to an action ID.
-- The "actions.id" property in the manifest is the same action ID that is passed to the call of `associate`.
-- The "actions.type" property is set to "executeDataFunction", which is the type that can accept parameters and can be invoked by Copilot.
+- The "page" property specifies the URL of the web page that contains an embedded script tag that, in turn, specifies the URL of the JavaScript file where the function is defined. That same file contains an invocation of the [Office.actions.associate](/javascript/api/office/office.actions?view=common-js-preview#office-office-actions-associate-member(1)) method to map the function to an action ID.
+- The [`"actions.id"`](/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&branch=main&tabs=syntax#id) property in the manifest is the same action ID that is passed to the call of `associate`.
+- The [`"actions.type"`](/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&branch=main&tabs=syntax#type) property is set to "executeDataFunction", which is the type that can accept parameters and can be invoked by Copilot.
 
 ```json
 "extensions": [
@@ -110,14 +110,14 @@ Second, create a declarative agent object that identifies the file containing th
 }
 ```
 
-The reference documentation for the manifest JSON is at [Public developer preview app manifest](/microsoft-365/extensibility/schema/?view=m365-app-prev).
+The reference documentation for the manifest JSON is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema/?view=m365-app-prev).
 
 ### Declarative agent configuration
 
 The agent configuration file includes instructions for the agent and specifies one or more API plugin configuration files that will contain the detailed configuration of the agent's actions. The following is an example. Note the following about this JSON.
 
 - The conversation starter appears in the chat canvas of Copilot.
-- The "actions.id" property in this file is the collective ID of all the functions in the file specified in "actions.file". It doesn't have to match the "actions.id" in the manifest.
+- The `"actions.id"` property in this file is the collective ID of all the functions in the file specified in `"actions.file"`. It doesn't have to match the `"actions.id"` in the manifest.
 
 ```json
 {
@@ -145,13 +145,14 @@ The reference documentation for declarative agents is at [Declarative agent sche
 
 The API plugin configuration file specifies the "functions" of the plugin in the sense of agent actions, not JavaScript functions, including the instructions for the action. It also configures the JavaScript runtime for Copilot. The following is an example. About this JSON, note the following:
 
-- The "functions.name" must match the "extensions.runtimes.actions.id" property in the add-in manifest.
-- The "reasoning.description" and "reasoning.instructions" refer to a JavaScript function, not a REST API.
-- The "runtimes.run_for_functions" array must include either the same string as "functions.name" or a wildcard string that matches it.
-- The "runtimes.spec.local_endpoint" property is new and is not yet in the main reference documentation for the API plugins schema. See below for more about it. In this case, it specifies that the JavaScript function that is associated with the "fillcolor" string is available in an Office add-in, rather than in some REST endpoint.
+- The `"functions.name"` must match the `"extensions.runtimes.actions.id"` property in the add-in manifest.
+- The `"reasoning.description"` and `"reasoning.instructions"` refer to a JavaScript function, not a REST API.
+- The `"runtimes.run_for_functions"` array must include either the same string as `"functions.name"` or a wildcard string that matches it.
+- The `"runtimes.spec.local_endpoint"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. In this case, it specifies that the JavaScript function that is associated with the "fillcolor" string is available in an Office add-in, rather than in some REST endpoint.
 
 ```json
 {
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
     "schema_version": "v2.2",
     "name_for_human": "Excel Add-in + Agent",
     "description_for_human": "Add-in Actions in Agents",
@@ -204,18 +205,18 @@ The API plugin configuration file specifies the "functions" of the plugin in the
 }
 ```
 
-The reference documentation for API plugins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for the "runtimes.spec.local_endpoint" property.
+The reference documentation for API plugins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for the `"runtimes.spec.local_endpoint"` property.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the ["runtimes.spec.url"](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2#openapi-specification-object) property, but for local functions on the client, not REST APIs.|
+| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the [`"runtimes.spec.url"`](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2#openapi-specification-object) property, but for local functions on the client, not REST APIs.|
 
 ## Create the JavaScript functions
 
 The JavaScript functions that will be invoked by the Copilot agent are created exactly as [function commands](../develop/create-addin-commands-unified-manifest.md#add-a-function-command) are created. The following is an example. Note the following about this code.
 
 - Unlike a function command, a function associated with a Copilot action can take parameters.
-- The first parameter of the `associate` method must match both the "extensions.runtimes.actions.id" property in the add-in manifest and the "functions.name" property in the API plugins JSON.
+- The first parameter of the `associate` method must match both the `"extensions.runtimes.actions.id"` property in the add-in manifest and the "functions.name" property in the API plugins JSON.
 
 ```javascript
 async function fillColor(cell, color) {
@@ -234,4 +235,9 @@ Office.onReady((info) => {
 });
 ```
 
-After your functions are created, create a UI-less HTML file that contains a `<script>` tag that loads the JavaScript file with the functions. The URL of this HTML file must match the value of the "extensions.runtimes.code.page" property in the manifest. See [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365) earlier in this article.
+After your functions are created, create a UI-less HTML file that contains a `<script>` tag that loads the JavaScript file with the functions. The URL of this HTML file must match the value of the [`"extensions.runtimes.code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code?view=m365-app-prev&branch=main&tabs=syntax#page) property in the manifest. See [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365) earlier in this article.
+
+## Next steps
+
+- [Build your first add-in as a Copilot skill](../quickstarts/agent-and-add-in-quickstart.md)
+- [Add a Copilot agent to an add-in](../develop/agent-and-add-in.md)

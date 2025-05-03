@@ -269,7 +269,7 @@ items:
           items:
           - name: Combine Copilot Agents with Office Add-ins
             href: design/agent-and-add-in-overview.md
-          - name: Make an Excel add-in into a Copilot skill
+          - name: Build your first add-in as a Copilot skill
             href: quickstarts/agent-and-add-in-quickstart.md
           - name: Add a Copilot agent to an add-in
             href: develop/agent-and-add-in.md
