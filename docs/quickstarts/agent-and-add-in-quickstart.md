@@ -23,7 +23,7 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 ## Start with an Office add-in
 
-Begin by installing the prerelease version of [Microsoft 365 Agent Toolkit](teams-toolkit-overview.md). See [Install Microsoft 365 Agent Toolkit - Prerelease](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version).
+Begin by installing the prerelease version of [Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md). See [Install Microsoft 365 Agent Toolkit - Prerelease](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version).
 
 1. Create an Office Add-in in Microsoft 365 Agent Toolkit by following the instructions in [Create Office Add-in projects with Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md). *Stop after the project is created. Don't carry out the steps in the sideloading section.*
 

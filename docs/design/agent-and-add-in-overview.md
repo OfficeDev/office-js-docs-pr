@@ -70,8 +70,8 @@ Configuration of an add-in to be a Copilot skill requires three JSON-formatted f
 There are two parts of the manifest that you configure. First, create an action object that identifies the JavaScript function that is invoked by the action. The following is an example (with some extraneous markup omitted). Note the following about this code.
 
 - The "page" property specifies the URL of the web page that contains an embedded script tag that, in turn, specifies the URL of the JavaScript file where the function is defined. That same file contains an invocation of the [Office.actions.associate](/javascript/api/office/office.actions?view=common-js-preview#office-office-actions-associate-member(1)) method to map the function to an action ID.
-- The [`"actions.id"`](/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&branch=main&tabs=syntax#id) property in the manifest is the same action ID that is passed to the call of `associate`.
-- The [`"actions.type"`](/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&branch=main&tabs=syntax#type) property is set to "executeDataFunction", which is the type that can accept parameters and can be invoked by Copilot.
+- The [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&branch=main&tabs=syntax#id) property in the manifest is the same action ID that is passed to the call of `associate`.
+- The [`"actions.type"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&branch=main&tabs=syntax#type) property is set to "executeDataFunction", which is the type that can accept parameters and can be invoked by Copilot.
 
 ```json
 "extensions": [

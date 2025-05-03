@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 Adding a Copilot agent to an Office Add-in provides two benefits:
 
 - Copilot becomes a natural language interface for the add-in's functionality.
-- The agent can pass parameters to the JavaScript it invokes, which isn't possible when a [function command](add-in-commands.md#types-of-add-in-commands) is invoked from a button or menu item.
+- The agent can pass parameters to the JavaScript it invokes, which isn't possible when a [function command](../design/add-in-commands.md#types-of-add-in-commands) is invoked from a button or menu item.
 
 > [!NOTE]
 > This article assumes that you're familiar with the overview [Combine Copilot Agents with Office Add-ins](../design/agent-and-add-in-overview.md) and the Copilot documentation that it refers to. We also recommend that you complete the quick start [ Build your first add-in as a Copilot skill](../quickstarts/agent-and-add-in-quickstart.md).
@@ -33,7 +33,7 @@ The following are the main tasks for adding a Copilot agent to your add-in. Deta
 
 ### Create the functions for the agent's actions
 
-If your add-in includes one or more [function commands](add-in-commands.md#types-of-add-in-commands), then your project already has a JavaScript or TypeScript file that defines the functions for these commands (usually called **commands.js** or **commands.ts**) and a UI-less HTML file (usually called **commands.html**) that has a `<script>` tag to load the function file. We recommend that you use this same function file to define the functions for your agent's actions. Skip to the section [Update the function file](#update-the-function-file).
+If your add-in includes one or more [function commands](../design/add-in-commands.md#types-of-add-in-commands), then your project already has a JavaScript or TypeScript file that defines the functions for these commands (usually called **commands.js** or **commands.ts**) and a UI-less HTML file (usually called **commands.html**) that has a `<script>` tag to load the function file. We recommend that you use this same function file to define the functions for your agent's actions. Skip to the section [Update the function file](#update-the-function-file).
 
 #### Create the source files
 
@@ -270,7 +270,7 @@ The runtime object should look similar to the following. There may be other prop
 ### Create the app package
 
 > [!IMPORTANT]
-> To test the agent, as described later in this article in [Sideload and test the agent](#sideload-and-test-the-agent), the domain segment of any absolute URLs in the manifest must be a localhost domain; for example, `localhost:3000`. You can change these segments to a production domain later.
+> To test the agent, as described later in this article in [Test the agent](#test-the-agent), the domain segment of any absolute URLs in the manifest must be a localhost domain; for example, `localhost:3000`. You can change these segments to a production domain later.
 
 Using any zip utility, create a zip file that contains the following files.
 
