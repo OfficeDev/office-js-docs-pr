@@ -295,7 +295,7 @@ Add the agent with the following steps:
    - To test in Office on Windows, open Excel. In a few moments, the **Show Task pane** button appears on the **Home** ribbon in the Contoso Add-in group. (If it doesn't appear on the ribbon, select the **Add-ins** button on the ribbon, and then select the **Excel Add-in + Agent** app in the flyout that opens.)
    - To test in Office on the web, in a browser, navigate to `https://excel.cloud.microsoft.com/`, and then create a new workbook.
  
-1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. **Excel Add-in + Agent** should be be in the list of agents. (You may need to select **See more** to ensure that all agents are listed.) If the agent isn't, try the following actions.
+1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. **Excel Add-in + Agent** should be in the list of agents. (You may need to select **See more** to ensure that all agents are listed.) If the agent isn't, try the following actions.
 
    - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl-r</kbd>.
    - Wait a few minutes and reload Copilot.
@@ -304,7 +304,7 @@ Add the agent with the following steps:
 1. Select the **Change cell color** conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The cell's color should change.
 
    > [!TIP]
-   > If Copilot reports an error, repeat your prompt but add the following sentence to the prompt: "If you get an error, report the complete text of the error to me." 
+   > If Copilot reports an error, repeat your prompt but add the following sentence to the prompt: "If you get an error, report the complete text of the error to me."
 
 1. Try entering other combinations of cell and color in the conversation box, such as "Set cell G5 to the color of the sky".
 
@@ -312,11 +312,14 @@ Add the agent with the following steps:
 
 Live reloading and hot reloading for a combined add-in and agent aren't supported in the preview period. To make changes, first shut down the server and uninstall the extension with these steps.
 
-1. If the web server is running in the Visual Studio Code **TERMINAL**, give the terminal focus and press Ctrl-C. Choose "Y" in response to the prompt to end the process. Then go to the next step. If the web server is running in a separate window skip this step and go to the next step.
-1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run stop`.
+1. Shutting down the server depends on what window it is running in.
+
+   - If the web server is running in the same command prompt or Visual Studio Code **TERMINAL** where you ran `npm run dev-server`, give the window focus and press Ctrl-C. Choose "Y" in response to the prompt to end the process. 
+   - If the web server is running in a separate window, then in a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run stop`.
+
 1. Clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).
 1. Open Teams and select **Apps** from the app bar, then select **Manage your apps** at the bottom of the **Apps** pane.
-1. Find "Excel Add-in + Agent" in the list of apps, and select the arrow head to the left of the name to expand its row.
+1. Find **Excel Add-in + Agent** in the list of apps, and select the arrow head to the left of the name to expand its row.
 1. Select the trash can icon near the right end of the row, and then select **Remove** in the prompt.
 
 Make your changes and then repeat the steps in [Test the add-in and agent](#test-the-add-in-and-agent).

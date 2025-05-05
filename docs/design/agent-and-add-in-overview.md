@@ -156,7 +156,7 @@ The API plugin configuration file specifies the "functions" of the plugin in the
     "schema_version": "v2.2",
     "name_for_human": "Excel Add-in + Agent",
     "description_for_human": "Add-in Actions in Agents",
-    "namespace": "addin_function",
+    "namespace": "addinfunction",
     "functions": [
         {
             "name": "fillcolor",

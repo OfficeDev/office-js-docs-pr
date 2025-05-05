@@ -189,7 +189,7 @@ The runtime object should look similar to the following. There may be other prop
     }
    ```
 
-1. Replace the property values with new values that are appropriate for your add-in. For more information about these properties, see [Declarative agent manifest object](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object).
+1. *Replace the property values with new values that are appropriate for your add-in.* For more information about these properties, see [Declarative agent manifest object](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object).
 
    > [!NOTE]
    > You create the file that you specify in the "actions.file" property in the next step. In the example above, this is the file **Office-API-local-plugin.json**.
@@ -253,7 +253,7 @@ The runtime object should look similar to the following. There may be other prop
     }
    ```
 
-1. With some exceptions noted later, replace the property values with new values that are appropriate for your add-in. For more information about these properties, see [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2).
+1. *With some exceptions noted later, replace the property values with new values that are appropriate for your add-in.* For more information about these properties, see [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2).
 
    As you work, keep the following points in mind.
 
