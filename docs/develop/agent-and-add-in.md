@@ -93,7 +93,7 @@ async function fillColorFromUserData(message) {
         .getRange(cell).format.fill.color = color;
     await context.sync();
     });
-    return result;
+    return "Cell color changed.";
 }
 
 Office.actions.associate("FillColor", fillColorFromUserData);
@@ -203,7 +203,7 @@ The runtime object should look similar to the following. There may be other prop
         "schema_version": "v2.2",
         "name_for_human": "Excel Add-in + Agent",
         "description_for_human": "Add-in Actions in Agents",
-        "namespace": "addin_function",
+        "namespace": "addinfunction",
         "functions": [
             {
                 "name": "FillColor",
