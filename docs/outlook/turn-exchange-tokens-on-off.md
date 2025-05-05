@@ -28,7 +28,7 @@ The `Set-AuthenticationPolicy` command controls the issuance of legacy Exchange 
 
 To turn legacy tokens off, run the following command.
 
-`Set-AuthenticationPolicy –BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
+`Set-AuthenticationPolicy -BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
 
 The command turns off legacy tokens for the entire tenant. If an Outlook add-in requests a legacy token, it won’t be issued a token.
 
@@ -39,7 +39,7 @@ The command turns off legacy tokens for the entire tenant. If an Outlook add-in 
 
 To turn legacy tokens on, run the following command. It can take up to 24 hours before all requests from Outlook add-ins for legacy tokens are allowed.
 
-`Set-AuthenticationPolicy –AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
+`Set-AuthenticationPolicy -AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
 
 Important notes about this command.
 
