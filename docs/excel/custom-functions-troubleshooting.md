@@ -40,7 +40,7 @@ Information about custom functions is cached by Office. Sometimes while developi
 
 ### Clear the custom functions cache when your add-in runs
 
-There may be times when you need to clear the custom functions cache for an add-in deployed to your end users, so that add-in updates and custom functions setting changes are incorporated at the same time. Without triggering a custom functions cache clear, custom functions setting changes may take up to 24 hours to reach your end uses.
+There may be times when you need to clear the custom functions cache for an add-in deployed to your end users, so that add-in updates and custom functions setting changes are incorporated at the same time. Without triggering a custom functions cache clear, custom functions setting changes may take up to 24 hours to reach your end users.
 
 To ensure that the custom functions cache is cleared by your add-in, add the following code sample to your **functions.js** file.
 
