@@ -118,11 +118,11 @@ To explore entity data types, start by going to [Script Lab](../overview/explore
 
 ### Linked entity cell values
 
-Linked entity cell values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, integrated data types from external data sources and can display the data as an entity card. They enable you to scale your data types to represent large data sets without downloading all the data into the workbook. The [Stocks and Geography data domains](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI provide linked entity cell values.
+Linked entity cell values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, are integrated data types from external data sources and can display the data as an entity card. They enable you to scale your data types to represent large data sets without downloading all the data into the workbook. The [Stocks and Geography data domains](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI provide linked entity cell values.
 
 Linked entity cell values are linked to an external data source. They provide the following advantages over regular entity values:  
 
-- Linked entity cell values can nest, and nested linked entity cell values are not retrieved until referenced,  either by the user, or by the worksheet. This helps reduce file size and improve workbook performance.  
+- Linked entity cell values can nest, and nested linked entity cell values aren't retrieved until referenced, either by the user or by the worksheet. This helps reduce file size and improve workbook performance.  
 - Excel uses a cache to allow different cells to reference the same linked entity cell value seamlessly. This also improves workbook performance.
 
 For more information, see [Create linked entity cell values](excel-data-types-linked-entity-cell-values.md).
