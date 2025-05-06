@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Add properties to basic cell values in Excel to associate additional information with the values. Similar to entity values, you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
 
-:::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screen shot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
+:::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screenshot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
 
 If the user chooses to show the data type card, they'll see the values for the fields.
 
