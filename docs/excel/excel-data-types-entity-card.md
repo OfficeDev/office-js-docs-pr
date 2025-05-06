@@ -189,7 +189,7 @@ async function createPlanet() {
         {
           type: Excel.CellValueType.double,
           basicType: Excel.RangeValueType.double,
-          basicValue: 6779, //kilometers (radius)
+          basicValue: 6779, // kilometers (radius)
           properties: {
             Name: {
               type: Excel.CellValueType.string,

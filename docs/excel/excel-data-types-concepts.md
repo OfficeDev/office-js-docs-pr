@@ -60,7 +60,7 @@ The following sections show JSON code samples for the formatted number value, en
 
 ## Formatted number values
 
-The [DoubleCellCellValue](/javascript/api/excel/excel.doublecellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
+The [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
 
 The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If the minimum compatibility requirements for the data types feature aren't met, calculations use the `basicValue` in place of the formatted number.
 
@@ -75,15 +75,15 @@ const myDate: Excel.DoubleCellValue = {
 };
 ```
 
-The number formatting is considered the default format. If the user, or other code, applies formatting to a cell containing a formatted number, the applied format will override the number’s format.
+The number formatting is considered the default format. If the user, or other code, applies formatting to a cell containing a formatted number, the applied format overrides the number’s format.
 
 Begin experimenting with formatted number values by opening [Script Lab](../overview/explore-with-script-lab.md) and checking out the [Data types: Formatted numbers](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml) snippet in our **Samples** library.
 
 ## Basic cell values
 
-Add properties to basic cell values in Excel to associate additional information with the values. Similar to entity values, you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
+Add properties to basic cell values in Excel to associate additional information with the values. Similar to entity values, you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
 
-:::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screen shot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
+:::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screenshot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
 
 For more information, see [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md).
 

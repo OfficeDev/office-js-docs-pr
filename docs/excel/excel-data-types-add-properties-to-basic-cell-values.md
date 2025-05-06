@@ -8,13 +8,13 @@ ms.localizationpriority: medium
 
 # Add properties to basic cell values (preview)
 
-Add properties to basic cell values in Excel to associate additional information with the values. Similar to entity values, you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
+Add properties to basic cell values in Excel to associate additional information with the values. Similar to entity values, you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
 
 :::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screen shot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
 
 If the user chooses to show the data type card, they'll see the values for the fields.
 
-:::image type="content" source="../images/data-type-basic-data-type-card.png" alt-text="Data type card showing values for drinks, food, tax, and tip properties":::
+:::image type="content" source="../images/data-type-basic-data-type-card.png" alt-text="Data type card showing values for drinks, food, tax, and tip properties.":::
 
 Cell value properties can also be used in formulas.
 
@@ -70,7 +70,7 @@ async function createNumberProperties() {
 
 ## Add properties to an existing value
 
-To add properties to an existing value, first get the value from the cell using `valuesAsJson` , then add a properties JSON object to it. The following example shows how to get the number value from cell **A1** and assign a property named **Precision** to it. Note that you should check the type of the value to ensure it is a **string**, **double**, or **Boolean** basic type.
+To add properties to an existing value, first get the value from the cell using `valuesAsJson`, then add a properties JSON object to it. The following example shows how to get the number value from cell **A1** and assign a property named **Precision** to it. Note that you should check the type of the value to ensure it's a **string**, **double**, or **Boolean** basic type.
 
 ```javascript
 async function addPropertyToNumber() {
@@ -100,9 +100,9 @@ async function addPropertyToNumber() {
 
 Adding properties to **string**, **Boolean**, and **double** basic types is similar to adding properties to entity values. However there are differences.
 
-- Basic types have a non-error fallback so that calculations can operate on them. For example, consider the formula **=SUM(A1:A3)** where **A1** is **1** (a double with properties), **A2** is **2**, and **A3** is **3**. The sum will return the correct result of **6**. The formula would not work if **A1** was an entity value.
-- When the value of a basic type is used in a calculation, the properties are discarded. In the previous example of **=SUM(A1:A3)** where A1 is a double with properties, the result of **6** will not have any properties.
-- If no icon is specified for a basic type, the cell does not show any icon. If an entity value does not specify an icon, it will still show a default icon in the cell value.
+- Basic types have a non-error fallback so that calculations can operate on them. For example, consider the formula **=SUM(A1:A3)** where **A1** is **1** (a double with properties), **A2** is **2**, and **A3** is **3**. The sum returns the correct result of **6**. The formula wouldn't work if **A1** was an entity value.
+- When the value of a basic type is used in a calculation, the properties are discarded. In the previous example of **=SUM(A1:A3)** where A1 is a double with properties, the result of **6** does not have any properties.
+- If no icon is specified for a basic type, the cell doesn't show any icon. But if an entity value doesn't specify an icon, it shows a default icon in the cell value.
 
 ## Formatted number values
 
@@ -136,7 +136,7 @@ async function createCurrencyValue() {
 }
 ```
 
-The number formatting is considered the default format. If the user, or other code, applies formatting to a cell containing a formatted number, the applied format will override the number’s format.
+The number formatting is considered the default format. If the user, or other code, applies formatting to a cell containing a formatted number, the applied format overrides the number’s format.
 
 ## Card layout
 
@@ -206,12 +206,13 @@ async function createNumberWithNestedEntity() {
 
 The following image shows the number value and the data type card for the nested laptop entity.
 
-:::image type="content" source="../images/data-type-basic-nested-entities.png" alt-text="Cell value in Excel showing battery charge at 70% and the data type card showing the nested laptop entity with charging and power consuption property values.":::
+:::image type="content" source="../images/data-type-basic-nested-entities.png" alt-text="Cell value in Excel showing battery charge at 70%, and the data type card showing the nested laptop entity with charging and power consumption property values.":::
 
 ## Compatibility
 
-On previous versions of Excel that do not support the data types feature, users will see a warning of **Unavailable Data Type**. The value will still show in the cell and function as expected with formulas and other Excel features. If the value is a formatted number, calculations use the **basicValue** in place of the formatted number.
-On Excel versions older than Office 2016, the value will be shown in the cell with no error and will be indistinguishable from a basic value.
+On previous versions of Excel that don't support the data types feature, users see a warning of **Unavailable Data Type**. The value still displays in the cell and functions as expected with formulas and other Excel features. If the value is a formatted number, calculations use the `basicValue` in place of the formatted number.
+
+On Excel versions older than Office 2016, the value is shown in the cell with no error and is indistinguishable from a basic value.
 
 ## Related content
 
