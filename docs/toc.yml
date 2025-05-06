@@ -475,6 +475,9 @@ items:
     - name: Charts
       href: excel/excel-add-ins-charts.md
       displayName: Excel
+    - name: Data labels in charts
+      href: excel/excel-add-ins-charts-data-labels.md
+      displayName: Excel
     - name: Coauthoring in Excel add-ins
       href: excel/co-authoring-in-excel-add-ins.md
       displayName: Excel
@@ -909,13 +912,13 @@ items:
       displayName: PowerPoint
     - name: Work with tables
       href: powerpoint/work-with-tables.md
-      displayName: PowerPoint, preview
+      displayName: PowerPoint
     - name: Work with shapes
       href: powerpoint/shapes.md
       displayName: PowerPoint
     - name: Bind shapes to a data source
       href: powerpoint/bind-shapes-in-presentation.md
-      displayName: PowerPoint, preview
+      displayName: PowerPoint
 - name: Project
   items:
   - name: Project add-ins documentation
@@ -982,6 +985,9 @@ items:
       displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
+      displayName: Word
+    - name: Use annotations
+      href: word/annotations.md
       displayName: Word
     - name: Use fields
       href: word/fields-guidance.md

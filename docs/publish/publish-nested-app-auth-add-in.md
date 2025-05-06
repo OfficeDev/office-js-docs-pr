@@ -111,5 +111,5 @@ If you deployed your add-in by providing the manifest to admins for central depl
 - [Microsoft AppSource submission FAQ](/partner-center/marketplace-offers/appsource-submission-faq)
 - [Admin consent on the Microsoft identity platform](/entra/identity-platform/v2-admin-consent)
 - [Requesting permissions through consent](/entra/identity-platform/consent-types-developer)
-- [webApplicationInfo property](/microsoftteams/platform/resources/schema/manifest-schema)
+- [webApplicationInfo property](/microsoft-365/extensibility/schema/root#webapplicationinfo)
 - [Nested app authentication and Outlook legacy tokens deprecation FAQ](../outlook/faq-nested-app-auth-outlook-legacy-tokens.md)

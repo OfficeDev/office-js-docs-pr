@@ -33,13 +33,13 @@ The following shows how to configure your unified manifest to enable the prepend
 
 1. Open the **manifest.json** file.
 
-1. Add the following object to the "extensions.runtimes" array. Note the following about this code.
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this code.
 
-    - The "minVersion" of the Mailbox requirement set is set to "1.13", so the add-in can't be installed on platforms and Office versions where this feature isn't supported.
-    - The "id" of the runtime is set to the descriptive name, "function_command_runtime".
-    - The "code.page" property is set to the URL of the UI-less HTML file that will load the function command.
-    - The "lifetime" property is set to "short", which means that the runtime starts up when the function command button is selected and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-    - There are actions specified to run the "prependHeaderOnSend" and "appendDisclaimerOnSend" functions. You'll create these functions in a later step.
+    - The `"minVersion"` of the Mailbox requirement set is set to `"1.13"`, so the add-in can't be installed on platforms and Office versions where this feature isn't supported.
+    - The `"id"` of the runtime is set to the descriptive name, `"function_command_runtime"`.
+    - The [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property is set to the URL of the UI-less HTML file that will load the function command.
+    - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when the function command button is selected and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+    - There are actions specified to run the `"prependHeaderOnSend"` and `"appendDisclaimerOnSend"` functions. You'll create these functions in a later step.
 
     ```json
     {
@@ -75,10 +75,10 @@ The following shows how to configure your unified manifest to enable the prepend
     }
     ```
 
-1. Add the following object to the "extensions.ribbons" array. Note the following about this code.
+1. Add the following object to the [`"extensions.ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons-property) array. Note the following about this code.
 
-    - The "mailCompose" value is added to the "contexts" array to surface the prepend-on-send and append-on-send buttons in a compose window.
-    - The "controls" objects create and configure the buttons for the prepend-on-send and append-on-send functions. The "actionId" property of each object must reflect the same value specified in the applicable "actions.id" property of the "extensions.runtimes" object.
+    - The `"mailCompose"` value is added to the `"contexts"` array to surface the prepend-on-send and append-on-send buttons in a compose window.
+    - The `"controls"` objects create and configure the buttons for the prepend-on-send and append-on-send functions. The `"actionId"` property of each object must reflect the same value specified in the applicable [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) property of the `"extensions.runtimes"` object.
 
     ```json
     {
@@ -163,7 +163,7 @@ The following shows how to configure your unified manifest to enable the prepend
     }
     ```
 
-1. In the "authorization.permissions.resourceSpecific" array, add the following object. Be sure it's separated from other objects in the array with a comma.
+1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, add the following object. Be sure it's separated from other objects in the array with a comma.
 
     ```json
     {
@@ -396,7 +396,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest to its JavaScript counterpart. The location of the function name in the manifest varies depending on the type of manifest your add-in uses.
 
 - **Add-in only manifest**: The function name specified in the **\<FunctionName\>** element.
-- **Unified manifest for Microsoft 365**: The function name specified in the "id" property of the objects in the "extensions.runtimes.actions" array.
+- **Unified manifest for Microsoft 365**: The function name specified in the `"id"` property of the objects in the `"extensions.runtimes.actions"` array.
 
     ```javascript
     Office.actions.associate("prependHeaderOnSend", prependHeaderOnSend);

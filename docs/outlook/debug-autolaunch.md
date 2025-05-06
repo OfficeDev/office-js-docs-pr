@@ -35,7 +35,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 1. Get your add-in's ID from the manifest.
 
     - **Add-in only manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
-    - **Unified manifest for Microsoft 365**: Use the value of the "id" property of the root anonymous `{ ... }` object.
+    - **Unified manifest for Microsoft 365**: Use the value of the `"id"` property of the root anonymous `{ ... }` object.
 
 1. In the registry, mark your add-in for debugging.
 

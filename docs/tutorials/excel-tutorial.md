@@ -43,7 +43,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 Next, select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
 
 > [!NOTE]
-> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
 
@@ -485,13 +485,13 @@ The steps vary depending on the type of manifest.
 # [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
 
 > [!NOTE]
-> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 #### Configure the runtime for the ribbon button
 
 1. Open the manifest file **./manifest.json**.
 
-1. Find the **"extensions.runtimes"** array and add the following commands runtime object.
+1. Find the **[`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true)** array and add the following commands runtime object.
 
     ```json
     "runtimes": [
@@ -512,12 +512,12 @@ The steps vary depending on the type of manifest.
     ]
     ```
 
-1. Find `TODO1` and replace it with **"toggleProtection"**. This matches the `id` for the JavaScript function you create in a later step.
+1. Find `TODO1` and replace it with **`"toggleProtection"`**. This matches the `id` for the JavaScript function you create in a later step.
 
     > [!TIP]
-    > The value of **"actions.id"** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
+    > The value of **[`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id)** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
 
-1. Ensure that the **"requirements.capabilities"** array contains an object that specifies the **"AddinCommands"** requirement set with a **"minVersion"** of **"1.1"**.
+1. Ensure that the **[`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities)** array contains an object that specifies the **`"AddinCommands"`** requirement set with a **`"minVersion"`** of **`"1.1"`**.
 
     ```json
     "requirements": {
@@ -532,7 +532,7 @@ The steps vary depending on the type of manifest.
 
 #### Configure the UI for the ribbon button
 
-1. After the **"extensions.runtimes"** array, add the following **"ribbons"** array.
+1. After the **`"extensions.runtimes"`** array, add the following **[`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons)** array.
 
     ```json
     "ribbons": [
@@ -585,7 +585,7 @@ The steps vary depending on the type of manifest.
 
 1. Find `TODO2` and replace it with **"Toggle worksheet protection"**. This is the label for your button in the Excel ribbon.
 
-1. Find `TODO3` and replace it with **"toggleProtection"**. This value must match the **"runtimes.actions.id"** value.
+1. Find `TODO3` and replace it with **`"toggleProtection"`**. This value must match the **[`"runtimes.actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id)** value.
 
 1. Save the file.
 

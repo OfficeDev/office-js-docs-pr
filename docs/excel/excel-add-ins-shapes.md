@@ -1,7 +1,7 @@
 ---
 title: Work with shapes using the Excel JavaScript API
 description: Learn how Excel defines shapes as any object that sits on the drawing layer of Excel.
-ms.date: 02/17/2022
+ms.date: 04/14/2025
 ms.localizationpriority: medium
 ---
 
@@ -133,6 +133,27 @@ await Excel.run(async (context) => {
 
     await context.sync();
 });
+```
+
+## Get the active shape
+
+Get the active shape by using either of the following methods.
+
+- [Workbook.getActiveShape](/javascript/api/excel/excel.workbook)
+- [Workbook.getActiveShapeOrNullObject](/javascript/api/excel/excel.workbook)
+
+The following code sample shows how to get the active shape in a workbook and increase its height by 10%.
+
+```javascript
+ await Excel.run(async (context) => {
+    const shape = context.workbook.getActiveShapeOrNullObject();
+    if (shape !== null) {
+      shape.load("height");
+      await context.sync();
+      shape.height = shape.height + shape.height * 0.1;
+      await context.sync();
+    }
+  });
 ```
 
 ## Text in shapes

@@ -68,13 +68,13 @@ Use the following steps to perform the test.
 
 1. Run the following command to turn off legacy Exchange Online tokens on your tenant. For details on how to use this command, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
     
-    `Set-AuthenticationPolicy –BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
+    `Set-AuthenticationPolicy -BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
     
 1. Wait a suitable amount of time for users to report any issues with add-ins. It takes approximately 24 hours for the command to turn off legacy Exchange Online tokens for all users. It may take another day or two for users to report any issues with Outlook add-ins.
 1. Identify any affected Outlook add-ins. If users submit issues identifying breaking issues, be sure to get the name and description of the Outlook add-in affected. Also capture the error, or behavior so this information can be passed along to the publisher.
 1. If any business-critical add-ins are broken, turn tokens back on using the following command. For details on how to use this command, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
     
-    `Set-AuthenticationPolicy –AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
+    `Set-AuthenticationPolicy -AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
     
     It takes approximately 24 hours for tokens to turn back on for all users on the tenant.
     
@@ -180,6 +180,7 @@ There are two views for permissions; Admin consent, and User consent. Select Use
 
 Some widely used Outlook add-in publishers have already updated their add-ins as listed below.
 
+- [Appfluence Priority Matrix for Outlook](https://appsource.microsoft.com/product/office/wa104381735)
 - [Atlassian Jira Cloud for Outlook](https://marketplace.atlassian.com/apps/1220666/jira-cloud-for-outlook-official?tab=overview&hosting=cloud)
 - [Box for Outlook](https://appsource.microsoft.com/product/office/WA200000015)
 - [Clickup for Outlook](https://appsource.microsoft.com/product/office/WA104382026)

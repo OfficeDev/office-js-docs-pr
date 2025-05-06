@@ -25,10 +25,9 @@ Open the tab for the type of manifest your add-in uses for the details of the ma
 
 ## Insert a built-in control group into a custom tab
 
-To insert a built-in Office control group into a custom tab, add a group object with a "builtInGroupId" property *instead of an "id" property* to the "groups" array of your custom tab object. Set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in group object should have no other properties.*
+To insert a built-in Office control group into a custom tab, add a group object with a [`"builtInGroupId"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#builtintabid) property *instead of an [`"id"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#id) property* to the [`"groups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#groups) array of your custom tab object. Set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in group object should have no other properties.*
 
 The following example adds the Office Paragraph control group to a custom tab.
-
 
 ```json
 "extensions": [
@@ -60,7 +59,7 @@ The following example adds the Office Paragraph control group to a custom tab.
 
 ## Insert a built-in control into a custom group
 
-To insert a built-in Office control into a custom group, add a control object with a "builtInControlId" property *instead of an "id" property* to the "controls" array of your custom group object. Set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in control object should have no other properties.*
+To insert a built-in Office control into a custom group, add a control object with a `"builtInControlId"` property *instead of an `"id"` property* to the [`"controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item#controls) array of your custom group object. Set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in control object should have no other properties.*
 
 The following example adds the Office Superscript control to a custom group.
 

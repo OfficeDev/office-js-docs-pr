@@ -22,7 +22,7 @@ Use the process described in [Sideload with a system prompt, bash shell, or term
 1. In Visual Studio Code, open Teams Toolkit.
 1. Required for Outlook only: in the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
 1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select one of these options as appropriate for your add-in.
- 
+
     - **Excel Desktop (Edge Chromium)**
     - **Outlook Desktop (Edge Chromium)**
     - **PowerPoint Desktop (Edge Chromium)**
@@ -38,7 +38,7 @@ Use the process described in [Sideload with a system prompt, bash shell, or term
 
 1. First, *make sure the Office desktop application that you want to sideload into is closed.*
 1. Open a system prompt, bash shell, or the Visual Studio Code **TERMINAL**, and navigate to the root of the project.
-1. The command to sideload the add-in depends on when the project was created. If the "scripts" section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then the Office host application (Excel, Outlook, PowerPoint, or Word) desktop opens.
+1. The command to sideload the add-in depends on when the project was created. If the `"scripts"` section of the project's package.json file has a "start:desktop" script, then run `npm run start:desktop`; otherwise, run `npm run start`. The project builds and a Node dev-server window opens. This process may take a couple of minutes then the Office host application (Excel, Outlook, PowerPoint, or Word) desktop opens.
 1. For an Excel, PowerPoint, or Word add-in, there is an additional step: select the **Add-ins** button on the **Home** ribbon. On the flyout that opens, select the add-in. This completes the installation.
 1. You can now work with your add-in.
 1. When you're done working with your add-in, make sure to run the command `npm run stop`. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
@@ -49,7 +49,7 @@ There are two tools you can use to sideload.
 
 ### Sideload with the Office-Addin-Debugging tool
 
-1. To sideload the add-in, run the following command. This command puts the unified manifest and the two icon image files that are referenced in the manifest's "icons" property into a zip file and sideloads it to the Office application. It also starts a server in a separate NodeJS window to host the add-in files on localhost. For more details about this command, see [Office-Addin-Debugging](https://www.npmjs.com/package/office-addin-debugging).
+1. To sideload the add-in, run the following command. This command puts the unified manifest and the two icon image files that are referenced in the manifest's `"icons"` property into a zip file and sideloads it to the Office application. It also starts a server in a separate NodeJS window to host the add-in files on localhost. For more details about this command, see [Office-Addin-Debugging](https://www.npmjs.com/package/office-addin-debugging).
 
     ```command&nbsp;line
     npx office-addin-debugging start <relative-path-to-unified-manifest> desktop
@@ -65,9 +65,9 @@ There are two tools you can use to sideload.
 
 1. Manually create a zip package using the following steps.
 
-    1. Open the unified manifest and scroll to the "icons" property. Note the relative path of the two image files.
-    1. Use any zip utility to create a zip file that contains the unified manifest and the two image files. *The image files must have the same relative path in the zip file as they do in the project.* For example, if the relative path is "assets/icon-64.png" and "assets/icon-128.png", then you must include the "assets" folder with the two files in the zip package. 
-    1. If the folder contains other files, such as image files used in the Office ribbon, remove these from the zip package. It should have only the two image files specified in the "icons" property (in addition to the manifest in the root of the zip package). 
+    1. Open the unified manifest and scroll to the `"icons"` property. Note the relative path of the two image files.
+    1. Use any zip utility to create a zip file that contains the unified manifest and the two image files. *The image files must have the same relative path in the zip file as they do in the project.* For example, if the relative path is "assets/icon-64.png" and "assets/icon-128.png", then you must include the `"assets"` folder with the two files in the zip package.
+    1. If the folder contains other files, such as image files used in the Office ribbon, remove these from the zip package. It should have only the two image files specified in the `"icons"` property (in addition to the manifest in the root of the zip package).
 
 1. In the root of the project, open a command prompt or bash shell and run the following command to install the Teams Toolkit CLI.
 
@@ -86,9 +86,9 @@ There are two tools you can use to sideload.
     >
     > :::image type="content" source="../images/teams-cli-install.png" alt-text="The command 'teamsapp install --file-path manifests/contoso/contoso.zip' and the system response including the user's account name, the title id GUID and the app id GUID.":::
     >
-    > You'll need this title ID to end the sideloading and debugging session. It is recorded on Windows computers in the following Registry key: 
+    > You'll need this title ID to end the sideloading and debugging session. It is recorded on Windows computers in the following Registry key:
     >
-    > **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId** 
+    > **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId**
     >
     > The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Teams Toolkit CLI.
     >

@@ -15,7 +15,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you are finished, the array should look like the following.
+1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, add `"mobile"` as an item. When you are finished, the array should look like the following.
 
     ```json
     "formFactors": [
@@ -24,7 +24,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ]
     ```
 
-1. If your add-in uses Appointment Attendee mode, such as an add-in that integrates a provider of a note-taking or customer relationship management (CRM) application, add "logEventMeetingDetailsAttendee" to the "extensions.ribbons.contexts" array. The following is an example.
+1. If your add-in uses Appointment Attendee mode, such as an add-in that integrates a provider of a note-taking or customer relationship management (CRM) application, add `"logEventMeetingDetailsAttendee"` to the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array. The following is an example.
 
     ```json
     "contexts": [
@@ -33,7 +33,7 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ],
     ```
 
-1. If your add-in uses an integrated online meeting provider, add "onlineMeetingDetailsOrganizer" to the "extensions.ribbons.contexts" array. The following is an example.
+1. If your add-in uses an integrated online meeting provider, add `"onlineMeetingDetailsOrganizer"` to the `"extensions.ribbons.contexts"` array. The following is an example.
 
     ```json
     "contexts": [
@@ -42,13 +42,13 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
     ],
     ```
 
-1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "TabDefault". Add a child "customMobileRibbonGroups" array to it (as a peer of the existing "groups" property). Inside this array, create an object and do the following:
+1. In the [`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array#tabs) array, find the tab with the `"builtInTabId"` of `"TabDefault"`. Add a child `"customMobileRibbonGroups"` array to it (as a peer of the existing `"groups"` property). Inside this array, create an object and do the following:
 
-   - Set appropriate "id" and "label" values.
-   - Create an object in the "controls" array to represent a button and configure it as follows.
-      - Set appropriate "id" and "label" values. To ensure that the button fits correctly in the ribbon, we recommend that you limit the "label" to 16 characters.
-      - Set "type" to "mobileButton".
-      - Assign a function to the "actionId" property. This should match the "id" of the object in the "extensions.runtimes.actions" array.
+   - Set appropriate `"id"` and `"label"` values.
+   - Create an object in the `"controls"` array to represent a button and configure it as follows.
+      - Set appropriate `"id"` and `"label"` values. To ensure that the button fits correctly in the ribbon, we recommend that you limit the `"label"` to 16 characters.
+      - Set `"type"` to `"mobileButton"`.
+      - Assign a function to the `"actionId"` property. This should match the `"id"` of the object in the `"extensions.runtimes.actions"` array.
       - Be sure you have all nine required icons.
   
    The following is an example.

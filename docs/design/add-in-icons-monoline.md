@@ -207,7 +207,7 @@ The final icons should be saved as .png image files. Use PNG format with a trans
 
 ### Unified manifest reference
 
-- ["extensions.ribbons" array](/microsoftteams/platform/resources/schema/manifest-schema#extensionsribbons)
+- ["extensions.ribbons" array](/microsoft-365/extensibility/schema/extension-ribbons-array)
 
 ### Add-in only manifest reference
 

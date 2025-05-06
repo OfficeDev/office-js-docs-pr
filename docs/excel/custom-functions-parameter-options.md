@@ -220,7 +220,7 @@ In Typescript, indicate that the parameter is multi-dimensional. For example,  `
 
 In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.
 
-For hand-authored JSON, ensure your parameter is specified as `"repeating": true` in your JSON file, as well as check that your parameters are marked as `"dimensionality": matrix`.
+For hand-authored JSON, ensure your parameter is specified as ``"repeating"`: true` in your JSON file, as well as check that your parameters are marked as ``"dimensionality"`: matrix`.
 
 ## Invocation parameter
 

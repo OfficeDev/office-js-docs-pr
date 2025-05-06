@@ -27,30 +27,30 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
   - You'll need to agree to our developer addendum for add-ins on iOS, and you must submit your Apple Developer ID for verification.
 
 - In general, only Message Read mode is supported. This has implications for how you configure the manifest.
-  - **Unified manifest for Microsoft 365**: "mailRead" is the only item you should declare in the "extensions.ribbons.contexts" array.
+  - **Unified manifest for Microsoft 365**: `"mailRead"` is the only item you should declare in the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array.
   - **Add-in only manifest**: `MobileMessageReadCommandSurface` is the only [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) you should declare in the mobile section of your manifest.
   
   However, there are some exceptions.
   1. Appointment Organizer mode is supported for online meeting provider integrated add-ins.
-     - **Unified manifest for Microsoft 365**: "onlineMeetingDetailsOrganizer" is permitted in the "extensions.ribbons.contexts" array.
+     - **Unified manifest for Microsoft 365**: `"onlineMeetingDetailsOrganizer"` is permitted in the `"extensions.ribbons.contexts"` array.
      - **Add-in only manifest**: The [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is permitted.
   
      For more information on this scenario, see [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md).
 
   1. Appointment Attendee mode is supported for integrated add-ins created by providers of note-taking and customer relationship management (CRM) applications.
-     - **Unified manifest for Microsoft 365**: "logEventMeetingDetailsAttendee" is permitted in the "extensions.ribbons.contexts" array.
+     - **Unified manifest for Microsoft 365**: `"logEventMeetingDetailsAttendee"` is permitted in the `"extensions.ribbons.contexts"` array.
      - **Add-in only manifest**: The [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) is permitted.
 
      For more information on this scenario, see [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md).
 
   1. Event-based activation is supported.
-     - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the "extensions.ribbons.contexts" array. But note that event-based add-ins do require an "extensions.autoRunEvents" property in the manifest.
+     - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the `"extensions.ribbons.contexts"` array. But note that event-based add-ins do require an `"extensions.autoRunEvents"` property in the manifest.
      - **Add-in only manifest**: The [LaunchEvent extension point](/javascript/api/manifest/extensionpoint#launchevent) *must be declared*.
   
      For more information, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 - Your manifest needs to declare mobile support including special mobile controls and icon sizes.
-  - **Unified manifest for Microsoft 365**: Include the string "mobile" in the "extensions.ribbons.requirements.formFactors" array, and include a "customMobileRibbonGroups" array in the tab object of the "extensions.ribbons.tabs" array. The object in this array must include a "controls.type" of "mobileButton" and a "controls.icons" array.
+  - **Unified manifest for Microsoft 365**: Include the string `"mobile"` in the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, and include a `"customMobileRibbonGroups"` array in the tab object of the [`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array#tabs) array. The object in this array must include a `"controls.type"` of `"mobileButton"` and a `"controls.icons"` array.
   - **Add-in only manifest**: Include a **\<MobileFormFactor\>**, and include the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon).
   
   To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).

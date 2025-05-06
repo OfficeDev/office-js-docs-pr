@@ -64,7 +64,7 @@ To remove a ghost add-in, you need to remove the artifacts that were created whe
 The process for removing the add-in varies depending on whether the add-in is for Outlook or some other Office application. 
 
 > [!NOTE]
-> In the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), an add-in can be configured to support Outlook and one or more other Office applications; that is, there is more than one member of the "extensions.requirements.scopes" array in the manifest and one of the members is "mail" (or the "extensions.requirements.scopes" property isn't present). Treat an add-in that is configured in this way as an Outlook add-in.
+> In the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), an add-in can be configured to support Outlook and one or more other Office applications; that is, there is more than one member of the [`"extensions.requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes) array in the manifest and one of the members is `"mail"` (or the `"extensions.requirements.scopes"` property isn't present). Treat an add-in that is configured in this way as an Outlook add-in.
 
 If the ghost add-in is not an Outlook add-in, skip to the section [Remove the add-in artifacts](#remove-the-add-in-artifacts).
 

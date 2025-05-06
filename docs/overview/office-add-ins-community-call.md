@@ -12,8 +12,8 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 > [!IMPORTANT]
 > We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite that starts at 8:00 AM Pacific Time, please remove it and download the latest one at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for April 9th, 2025 call
-The agenda for the April Office Add-ins community call will be posted the week before the call
+## Agenda for May 14th, 2025 call
+The agenda for the May 14th Office Add-ins community call will be posted the week before the call.
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
