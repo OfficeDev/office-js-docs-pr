@@ -78,11 +78,12 @@ It is possible that sideloading problems are the result of a file and folder str
 
 ### Post importation: Adjust the project structure and settings as needed
 
-The importation process creates some folders and files that Visual Studio Code or Teams Toolkit need, but it doesn't reorganize your source files; such as HTML, JavaScript, and CSS files. It also doesn't change the content of any files in the project, including tool configuration. We recommend that you change your project to match the pattern of projects that are created in Teams Toolkit. As you work, keep the following points in mind.
+The importation process creates some folders and files that Visual Studio Code or Teams Toolkit need, but it doesn't reorganize your source files; such as HTML, JavaScript, and CSS files. It also doesn't change the content of any files in the project, including tool configuration files. We recommend that you change your project to match the pattern of projects that are created in Teams Toolkit. As you work, keep the following points in mind.
 
-- HTML files in toolkit projects don't have inline `<script>` elements. They only use `<script>` elements with a `src` attribute that loads an external file.
+- HTML files in the toolkit projects don't have inline `<script>` elements. They only use `<script>` elements with a `src` attribute that loads an external file.
 - Source files in a new toolkit project are in a folder named **\src**. Within this folder, the source files are further divided into subfolders based on the runtimes in which they normally are run. The following is a typical structure.
 
+   ```command&nbsp;line
    \src
       \commands
          commands.html
@@ -91,6 +92,7 @@ The importation process creates some folders and files that Visual Studio Code o
          taskpane.css
          taskpane.html
          taskpane.js
+   ```
 
 - Teams Toolkit projects have a folder named **\appPackage**. The manifest and any other files that should be in the app package zip file are in this folder.
 
@@ -104,7 +106,7 @@ The importation process creates some folders and files that Visual Studio Code o
 As an alternative to using the toolkit's importation feature, you can create a brand new add-in project in the toolkit and move files from the existing project into it and make changes to other files. The following are the tasks that you need to carry out.
 
 1. If the existing project uses the add-in only manifest, convert it. See [Convert an add-in to use the unified manifest for Microsoft 365](convert-xml-to-json-manifest.md).
-1. Create a new add-in project in Teams Toolkit. For each choice the toolkit asks you to make, make the choice that best matches your existing add-in. See [Create Office Add-in projects with Teams Toolkit](teams-toolkit-overview.md).
+1. Create a new add-in project in Teams Toolkit. For each choice the toolkit asks you to make, such as the choice between JavaScript and TypeScript, make the choice that best matches your existing add-in. See [Create Office Add-in projects with Teams Toolkit](teams-toolkit-overview.md).
 1. Replace the manifest in the new project's **\appPackage** folder with your converted manifest.
 
    > [!NOTE]
@@ -115,7 +117,7 @@ As an alternative to using the toolkit's importation feature, you can create a b
 1. Inspect the configuration files in the new project to ensure that they are compatible with the organization of the project.
 
    > [!TIP]
-   > When the old project and the new both have a configuration file with the same name (such as **babel.config.json**), use a file comparison ("diff) tool to find the differences. For each difference, determine which file is correct for the new project and change the file in the new project as needed.
+   > When the old project and the new both have a configuration file with the same name (such as **babel.config.json**), use a file comparison ("diff") tool to find the differences. For each difference, determine which file is correct for the new project and change the file in the new project as needed.
 
 1. The **webpack.config.js** is likely to need editing. It isn't possible to give universal rules for that file, but the following principles apply in most cases.
 
