@@ -214,8 +214,7 @@ To activate your add-in with the Reading Pane turned off or without a message se
     npm start
     ```
 
-    > [!TIP]
-    > If your add-in doesn't automatically sideload, follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload it in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. Navigate to your inbox and do one of the following:
 
