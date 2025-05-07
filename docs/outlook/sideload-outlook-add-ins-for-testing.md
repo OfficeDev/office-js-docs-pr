@@ -35,7 +35,7 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
     >
     > - When you first use Yeoman generator to develop an Office Add-in, your default browser opens a window where you'll be prompted to sign in to your Microsoft 365 account. If a sign-in window doesn't appear and you encounter a sideloading or login timeout error, run `teamsapp auth login m365` before running `npm start` again.
 
-1. You'll see a dialog appear, stating there is an attempt to sideload the add-in, listing the name and the location of the manifest file. Select **OK**, which will register the manifest.
+1. A dialog appears stating an attempt to sideload the add-in. It lists the name and location of the manifest file. Select **OK** to register the manifest.
 
     > [!IMPORTANT]
     > If the manifest contains an error or the path to the manifest is invalid, you'll receive an error message.
@@ -46,7 +46,7 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
 
 Though we strongly recommend sideloading automatically through the command line as covered in the previous section, you can also manually sideload an Outlook add-in. Add-ins that use the add-in only manifest are manually sideloaded through the **Add-Ins for Outlook** dialog.
 
-The following steps apply to Outlook on the web, on Windows (new and classic), and on Mac (starting in Version 16.85 (24051214)).
+The following steps apply to Outlook on the web, on Windows (new and classic), and on Mac.
 
 1. In your preferred browser, go to <https://aka.ms/olksideload>. Outlook on the web opens, then the **Add-Ins for Outlook** dialog appears after a few seconds.
 
