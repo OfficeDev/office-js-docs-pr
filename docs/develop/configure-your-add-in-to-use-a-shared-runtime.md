@@ -31,14 +31,14 @@ Follow these steps to configure a new or existing project to use a shared runtim
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Implementing a shared runtime with the unified manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Public developer preview app manifest schema](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview).
+> Implementing a shared runtime with the unified manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 1. Open your add-in project in Visual Studio Code.
 1. Open the **manifest.json** file.
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup.
-    - The [SharedRuntime 1.1 requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets#sharedruntime-api-11) is specified in the "requirements.capabilities" object. This configures your add-in to run in a shared runtime on supported clients. For a list of clients that support the SharedRuntime 1.1 requirement set, see [Shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
-    - The "id" of the runtime is set to the descriptive name "SharedRuntime".
-    - The "lifetime" property is set to "long", so that your add-in can take advantage of features, such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions. If you set the property to "short" in this example, your add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup.
+    - The [SharedRuntime 1.1 requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets#sharedruntime-api-11) is specified in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) object. This configures your add-in to run in a shared runtime on supported clients. For a list of clients that support the SharedRuntime 1.1 requirement set, see [Shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
+    - The `"id"` of the runtime is set to the descriptive name `"SharedRuntime"`.
+    - The `"lifetime"` property is set to `"long"`, so that your add-in can take advantage of features, such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions. If you set the property to `"short"` in this example, your add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
 
     ```json
     "runtimes": [
