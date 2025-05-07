@@ -20,7 +20,7 @@ In this article, you'll walk through the process of building a simple Excel Copi
 ## Software prerequisites
 
 - All the prerequisites listed at [Create declarative agents using Microsoft 365 Agent Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
-- The *prerelease* version of [Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md). See [Install Microsoft 365 Agent Toolkit - Prerelease](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version).
+- The [Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md). 
 
 ## Start with an Office add-in
 

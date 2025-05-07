@@ -199,8 +199,8 @@ The runtime object should look similar to the following. There may be other prop
 
    ```json
    {
-        "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
-        "schema_version": "v2.2",
+        "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.3/schema.json",
+        "schema_version": "v2.3",
         "name_for_human": "Excel Add-in + Agent",
         "description_for_human": "Add-in Actions in Agents",
         "namespace": "addinfunction",
@@ -316,7 +316,11 @@ In a command prompt or Visual Studio Code **TERMINAL** in the root of the projec
 #### Run the agent
 
 1. Open the Office application (Excel, PowerPoint, or Word) that your combined agent and add-in targets. Wait until the add-in has loaded. This may take as much as two minutes. Depending on your version of Office, ribbon buttons and other artifacts may appear automatically. In recent versions, you need to manually activate the add-in: Select the **Add-ins** button on the **Home** ribbon, and then in the flyout that opens, select your add-in. It will have the name from the name from the [`"name.short"`](/microsoft-365/extensibility/schema/root-name) property in the manifest.
-1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. Your agent should be be in the list of agents. It has have the name specified in the `"name"` property of the declarative agent configuration file (which may not be the same as the name from the `"name.short"` property in the manifest); for example, **Excel Add-in + Agent**. If your agent isn't listed, wait a few minutes and reload Copilot.
+1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. Your agent should be be in the list of agents. It must have the name specified in the `"name"` property of the declarative agent configuration file (which may not be the same as the name from the `"name.short"` property in the manifest); for example, **Excel Add-in + Agent**. You may need to select **See more** to ensure that all agents are listed. If the agent isn't listed, try the following actions.
+
+   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl-r</kbd>.
+   - Wait a few minutes and reload Copilot.
+   
 1. When the agent is listed, select it and the pane for the agent opens. The conversation starters you configured in the `"conversation_starters"` property of declarative agent configuration file will be displayed.
 1. Select a conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The agent action occurs.
 1. Try entering requests the conversation box that are different from the conversation starters, but that your agent should be able to do.
