@@ -75,8 +75,12 @@ Add the agent with the following steps:
       },
       ```
 
-    1. There are multiple objects in the `"extensions.runtimes"` array. Find the one whose `"id"` is "CommandRuntime" and change its `"actions.id"` property to "fillcolor". This is the ID of a function that you add in a later step.
-    1. In the same action object, change the `"actions.type"` property to "executeDataFunction".
+    1. There are multiple objects in the `"extensions.runtimes"` array. Find the one whose `"id"` is "CommandRuntime" and copy it as an additional runtime object in the array.
+    1. Make the following changes to this additional runtime object. 
+    
+       1. Change the `"id"` from "CommandRuntime" to "CopilotAgentActionsRuntime".
+       1. Change its `"actions.id"` property to "fillcolor". This is the ID of a function that you add in a later step.
+       1. Change the `"actions.type"` property to "executeDataFunction".
 
 1. Create a file in the **appPackage** folder named **declarativeCopilot.json**.
 1. Paste the following content into the file. (You create the **Excel-API-local-plugin.json** file that is mentioned in this JSON in a later step.)
@@ -106,7 +110,7 @@ Add the agent with the following steps:
 
    ```json
    {
-        "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+        "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.3/schema.json",
         "schema_version": "v2.2",
         "name_for_human": "Excel Add-in + Agent",
         "description_for_human": "Add-in Actions in Agents",
@@ -159,7 +163,7 @@ Add the agent with the following steps:
     }
    ```
 
-1. Open the **\src\commands\commands.ts** file and replace its contents with the following:
+1. Open the **\src\commands\commands.ts** file and add the following code the end of it.
 
    ```javascript
    async function fillcolor(cell, color) {
@@ -280,16 +284,11 @@ Add the agent with the following steps:
    - Set values for the four lines you added to the .env.dev file.
    - Create a **/build** folder inside the **/appPackage** folder with the package zip file. The file contains the manifest and JSON files for the agent and plugin.
 
-1. Open Teams and select **Apps** from the app bar, then select **Manage your apps** at the bottom of the **Apps** pane.
-1. Select **Upload an app** in the **Apps** dialog, and then in the dialog that opens, select **Upload** under **Upload a custom app**.
-1. In the **Open** dialog, navigate to the project's **/appPackage/build** folder and select the package zip file.
-1. Select **Add** in the dialog that opens.
-1. Click **Open** in the next dialog that opens. 
-
-   > [!NOTE]
-   > Because the app has no Teams features, the dialog will close and nothing else will appear to happen.
-
 1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run dev-server` to start the server on localhost. Wait until you see a line in the server window that the app compiled successfully. This means the server is running and serving the files.
+    
+    > [!NOTE]
+    > If this is the first time inover a month you have run a local server for an Office Add-in on your computer, you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
+
 1. The first step in testing depends on the platform.
 
    - To test in Office on Windows, open Excel. In a few moments, the **Show Task pane** button appears on the **Home** ribbon in the Contoso Add-in group. (If it doesn't appear on the ribbon, select the **Add-ins** button on the ribbon, and then select the **Excel Add-in + Agent** app in the flyout that opens.)
