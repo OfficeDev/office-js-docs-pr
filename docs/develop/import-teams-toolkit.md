@@ -74,7 +74,7 @@ Sideload the add-in using the instructions at [Sideload with Teams toolkit](../t
 
 If you encounter problems, as a troubleshooting step, try [sideloading with a system prompt, bash shell, or terminal](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal). If you can, then the problem is isolated to the toolkit.
 
-It is possible that sideloading problems are the result of a file and folder structure, or configuration settings, that are different from what Teams Toolkit normally expects. See the section [Post importation: Adjust the project structure and settings as needed](#post-importation-adjust-the-project-structure-and-settings-as-needed).
+It's possible that sideloading problems are the result of a file and folder structure, or configuration settings, that are different from what Teams Toolkit normally expects. See the section [Post importation: Adjust the project structure and settings as needed](#post-importation-adjust-the-project-structure-and-settings-as-needed).
 
 ### Post importation: Adjust the project structure and settings as needed
 
@@ -83,7 +83,7 @@ The importation process creates some folders and files that Visual Studio Code o
 - HTML files in the toolkit projects don't have inline `<script>` elements. They only use `<script>` elements with a `src` attribute that loads an external file.
 - Source files in a new toolkit project are in a folder named **\src**. Within this folder, the source files are further divided into subfolders based on the runtimes in which they normally are run. The following is a typical structure.
 
-   ```command&nbsp;line
+   ```console
    \src
       \commands
          commands.html
