@@ -155,7 +155,7 @@ await PowerPoint.run(async (context) => {
 
     const shapes = slide.shapes;
     const shapeGroups = shapes.items.filter((item) => item.type === PowerPoint.ShapeType.group);
-    if (shapeGroups.length == 0) {
+    if (shapeGroups.length === 0) {
         console.warn("No shape groups on the current slide, so nothing to ungroup.");
         return;
     }
