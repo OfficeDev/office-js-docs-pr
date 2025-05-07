@@ -217,6 +217,6 @@ On previous versions of Excel that don't support the data types feature, users s
 
 On Excel versions older than Office 2016, the value is shown in the cell with no error and is indistinguishable from a basic value.
 
-## Related content
+## See also
 
 - [Excel JavaScript API data types core concepts](excel-data-types-concepts.md)

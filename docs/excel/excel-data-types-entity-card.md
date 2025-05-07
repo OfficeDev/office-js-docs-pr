@@ -1,5 +1,5 @@
 ---
-title: Use cards for cell values using the Excel JavaScript API
+title: Use cards for cell values with the Excel JavaScript API
 description: Learn how to create cards for cell value data types in your Excel add-in.
 ms.date: 04/14/2025
 ms.localizationpriority: medium
@@ -239,7 +239,7 @@ async function createSearchEntry() {
           },
           provider: {
             description: "Contoso generic search",
-            //Ignacio javier igjav, Public domain, via Wikimedia Commons
+            // Image credit: Ignacio javier igjav, Public domain, via Wikimedia Commons
             logoSourceAddress: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Lupa.png",
             logoTargetAddress: "https://contoso.com"
           }
