@@ -62,14 +62,14 @@ Add the agent with the following steps:
 
 1. In the manifest file, make the following changes:
 
-   1. Add the following object to the root. By convention, it's put just below the "validDomains" property. You create the "declarativeCopilot.json" file in a later step.
+   1. Add the following object to the root. By convention, it's put just below the "validDomains" property. You create the "declarativeAgent.json" file in a later step.
 
       ```json
       "copilotAgents": {
         "declarativeAgents": [
           {
             "id": "ContosoCopilotAgent",
-            "file": "declarativeCopilot.json"
+            "file": "declarativeAgent.json"
           }
         ]
       },
@@ -82,7 +82,7 @@ Add the agent with the following steps:
        1. Change its `"actions.id"` property to "fillcolor". This is the ID of a function that you add in a later step.
        1. Change the `"actions.type"` property to "executeDataFunction".
 
-1. Create a file in the **appPackage** folder named **declarativeCopilot.json**.
+1. Create a file in the **appPackage** folder named **declarativeAgent.json**.
 1. Paste the following content into the file. (You create the **Excel-API-local-plugin.json** file that is mentioned in this JSON in a later step.)
 
    ```json
@@ -111,7 +111,7 @@ Add the agent with the following steps:
    ```json
    {
         "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.3/schema.json",
-        "schema_version": "v2.2",
+        "schema_version": "v2.3",
         "name_for_human": "Excel Add-in + Agent",
         "description_for_human": "Add-in Actions in Agents",
         "namespace": "addinfunction",

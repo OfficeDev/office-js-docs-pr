@@ -104,7 +104,7 @@ Second, create a declarative agent object that identifies the file containing th
     "declarativeAgents": [
         {
         "id": "ContosoCopilotAgent",
-        "file": "declarativeCopilot.json"
+        "file": "declarativeAgent.json"
         }
     ]
 }
@@ -152,8 +152,8 @@ The API plugin configuration file specifies the "functions" of the plugin in the
 
 ```json
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
-    "schema_version": "v2.2",
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.3/schema.json",
+    "schema_version": "v2.3",
     "name_for_human": "Excel Add-in + Agent",
     "description_for_human": "Add-in Actions in Agents",
     "namespace": "addinfunction",

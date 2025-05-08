@@ -155,7 +155,7 @@ The runtime object should look similar to the following. There may be other prop
        "declarativeAgents": [
            {
                "id": "ContosoCopilotAgent",
-               "file": "ContosoCopilotAgent.json"
+               "file": "declarativeAgent.json"
            }
        ]
    },
@@ -166,7 +166,7 @@ The runtime object should look similar to the following. There may be other prop
 
 ### Create the agent and API plugin configuration
 
-1. Create a file in the same folder where your manifest is give it a descriptive name, such as **ContosoCopilotAgent.json**.
+1. Create a file in the same folder where your manifest is give it the name used in the `"copilot.declarativeAgents.file"` property, such as **declarativeAgent.json**.
 1. Paste the following content into the file.
 
    ```json
