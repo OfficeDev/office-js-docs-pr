@@ -295,6 +295,8 @@ items:
         href: develop/yeoman-generator-overview.md
       - name: Create add-ins with the Teams Toolkit
         href: develop/teams-toolkit-overview.md
+      - name: Import an add-in project to Teams Toolkit
+        href: develop/import-teams-toolkit.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
       - name: Create and Develop add-ins with Visual Studio

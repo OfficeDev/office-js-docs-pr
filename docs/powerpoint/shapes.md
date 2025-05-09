@@ -110,23 +110,25 @@ In PowerPoint, you can group several shapes and treat them like a single shape. 
 
 To group shapes with the JavaScript API, use [ShapeCollection.addGroup](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addgroup-member(1)).
 
-The following example code shows how to group existing shapes of type [GeometricShape](/javascript/api/powerpoint/powerpoint.shapetype) found on the current slide.
+The following code sample shows how to group existing shapes of type [GeometricShape](/javascript/api/powerpoint/powerpoint.shapetype) found on the current slide.
 
 ```typescript
 // Groups the geometric shapes on the current slide.
 await PowerPoint.run(async (context) => {
     // Get the shapes on the current slide.
     context.presentation.load("slides");
-    const slide: PowerPoint.Slide = context.presentation.getSelectedSlides().getItemAt(0);
-    slide.load("shapes");
+    const slide = context.presentation.getSelectedSlides().getItemAt(0);
+    slide.load("shapes/items/type,shapes/items/id");
     await context.sync();
 
-    const shapes: PowerPoint.ShapeCollection = slide.shapes;
-    shapes.load("items/type,items/id");
-    await context.sync();
+    const shapes = slide.shapes;
+    const shapesToGroup = shapes.items.filter((item) => item.type === PowerPoint.ShapeType.geometricShape);
+    if (shapesToGroup.length === 0) {
+        console.warn("No shapes on the current slide, so nothing to group.");
+        return;
+    }
 
     // Group the geometric shapes.
-    const shapesToGroup = shapes.items.filter((item) => item.type === PowerPoint.ShapeType.geometricShape);
     console.log(`Number of shapes to group: ${shapesToGroup.length}`);
     const group = shapes.addGroup(shapesToGroup);
     group.load("id");
@@ -140,28 +142,25 @@ await PowerPoint.run(async (context) => {
 
 To ungroup shapes with the JavaScript API, get the [group](/javascript/api/powerpoint/powerpoint.shape#powerpoint-powerpoint-shape-group-member) property from the group's `Shape` object then call [ShapeGroup.ungroup](/javascript/api/powerpoint/powerpoint.shapegroup#powerpoint-powerpoint-shapegroup-ungroup-member(1)).
 
-The following code shows how to ungroup the first shape group found on the current slide.
+The following code sample shows how to ungroup the first shape group found on the current slide.
 
-```typescript
+```js
 // Ungroups the first shape group on the current slide.
 await PowerPoint.run(async (context) => {
     // Get the shapes on the current slide.
     context.presentation.load("slides");
-    const slide: PowerPoint.Slide = context.presentation.getSelectedSlides().getItemAt(0);
-    slide.load("shapes");
+    const slide = context.presentation.getSelectedSlides().getItemAt(0);
+    slide.load("shapes/items/type,shapes/items/id");
     await context.sync();
 
-    const shapes: PowerPoint.ShapeCollection = slide.shapes;
-    shapes.load("items/type,items/id");
-    await context.sync();
-
-    // Ungroup the first grouped shapes.
+    const shapes = slide.shapes;
     const shapeGroups = shapes.items.filter((item) => item.type === PowerPoint.ShapeType.group);
-    if (shapeGroups.length == 0) {
-        console.warn("No shape groups on the current slide so nothing to ungroup.");
+    if (shapeGroups.length === 0) {
+        console.warn("No shape groups on the current slide, so nothing to ungroup.");
         return;
     }
 
+    // Ungroup the first grouped shapes.
     const firstGroupId = shapeGroups[0].id;
     const shapeGroupToUngroup = shapes.getItem(firstGroupId);
     shapeGroupToUngroup.group.ungroup();
