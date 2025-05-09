@@ -158,8 +158,7 @@ Note the following about the previous code sample.
 - The `@excludeFromAutocomplete` tag ensures the custom method doesn't appear to the user in the Excel UI when entering it in a search box. However, note that a user can still call the custom function separately from an entity value if they enter it directly into a cell.
 - The calling object is always passed as the first argument and must by of type `any`. In this case, it's named `math` and is used to get the value property from the `math` object.
 - It returns a double array of numbers.
-
-When the user interacts with the reference method in Excel, they don’t see the calling object as an argument.
+- When the user interacts with the reference method in Excel, they don’t see the calling object as an argument.
 
 ## Example: Calculate product sales tax
 
@@ -227,8 +226,6 @@ Use the `@excludeFromAutoComplete` tag in the comments description of custom fun
 
 > [!NOTE]
 > If the function is manually entered correctly in the grid, the function will still execute. Also, a function can’t have both `@excludeFromAutoComplete` and `@linkedEntityLoadService` tags.
-
-For the full list of properties in addition to the properties specified by [Manually create JSON metadata for custom functions](custom-functions-json.md) the `excludeFromAutoComplete` property is available for reference methods.
 
 The `@excludeFromAutoComplete` tag is processed during build to generate a **functions.json** file by the **Custom-Functions-Metadata** package. This package is automatically added to the build process if you start with yo office and choose a custom function template. If you aren't using this package, you'll need to add the `excludeFromAutoComplete` property manually to the **functions.json** file.
 
@@ -374,28 +371,27 @@ When the user enters the function in Excel, autocomplete shows the properties of
 
 :::image type="content" source="../images/excel-data-types-reference-method-optional-parameters.png" alt-text="Screenshot of entering concatProductNames method in Excel passing A1 and A2 which contain a bicycle and unicycle product entity value.":::
 
-## Repeating parameters
+## Multiple parameters
 
-Add repeating parameters to a function by using an array. The following code sample shows how to create a reference function that concatenates zero or more product names passed in a products array.
+Reference methods support multiple parameters similar to how the Excel `SUM` function supports multiple parameters. The following code sample shows how to create a reference function that concatenates zero or more product names passed in a products array. The function is shown to the user as `concatProductNames([products], ...)`.
 
 ```typescript
 /** 
  * @customfunction 
  * @excludeFromAutocomplete 
  * @description Concatenate the names of given products, joined by " | " 
- * @param {any[]} products - The products to concatenate. 
+ * @param {any[]} products - The products to concatenate.
  * @returns A string of concatenated product names. 
  */ 
 function concatProductNames(products: any[]): string { 
   return products.map((product) => product.properties["Product Name"].basicValue).join(" | "); 
-} 
-
+}
 ```
 
 The following code sample shows how to create an entity with the `concatProductNames` reference method.
 
 ```typescript
-const referenceCustomFunctionRepeating: Excel.JavaScriptCustomFunctionReferenceCellValue = { 
+const referenceCustomFunctionMultiple: Excel.JavaScriptCustomFunctionReferenceCellValue = { 
   type: Excel.CellValueType.function,
   functionType: Excel.FunctionCellValueType.javaScriptReference,
   namespace: "CONTOSO", 
@@ -410,18 +406,18 @@ function makeProductEntity(productID: number, productName: string, price: number
       "Product ID": {...},
       "Product Name": {...},
       "Unit Price": {...},
-      concatProductNames: referenceCustomFunctionRepeating,
+      concatProductNames: referenceCustomFunctionMultiple,
     },
   };
   return entity;
 }
 ```
 
-The following image shows an example of entering repeating parameters using the `concatProductNames` reference method.
+The following image shows an example of entering multiple parameters using the `concatProductNames` reference method.
 
 :::image type="content" source="../images/excel-data-types-reference-method-repeating-parameters.png" alt-text="Screenshot of entering concatProductNames method in Excel passing A1 and A2 which contain a bicycle and unicycle product entity value.":::
 
-### Repeating parameters with ranges
+### Multiple parameters with ranges
 
 To support passing ranges to your reference method such as **B1:B3**, use a multidimensional array. The following code sample shows how to create a reference function that sums zero or more parameters which can include ranges.
 
@@ -473,7 +469,7 @@ function makeProductEntity(productID: number, productName: string, price: number
 }
 ```
 
-The following image shows an example of entering repeating parameters with a range parameter using the `sumAll` reference method.
+The following image shows an example of entering multiple parameters including a range parameter using the `sumAll` reference method.
 
 :::image type="content" source="../images/excel-data-types-reference-method-optional-ranges.png" alt-text="Screenshot of entering sumAll method in Excel passing an optional range of B1:B2.":::
 
