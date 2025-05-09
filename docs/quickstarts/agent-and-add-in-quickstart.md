@@ -186,7 +186,7 @@ Add the agent with the following steps.
 
 ## Update project configuration files for a combined add-in and Copilot agent
 
-1. Open the teamsapp.yaml file in the root of project and replace its contents with the following:
+1. There is a file called either **teamsapp.yaml** or **m365agents.yaml** in the root of project. Replace its contents with the following:
 
    ```yaml
    # yaml-language-server: $schema=https://aka.ms/teams-toolkit/v1.7/yaml.schema.json
