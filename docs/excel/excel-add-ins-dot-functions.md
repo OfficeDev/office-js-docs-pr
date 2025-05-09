@@ -11,15 +11,15 @@ Add reference methods to cell values to provide the user access to dynamic calcu
 
 The following screenshot shows an example of adding a `ConvertWeight` method to a product entity value representing pancake mix.
 
-:::image type="content" source="/images/excel-add-in-dot-function.png" alt-text="Screenshot of Excel formula showing =A1.ConvertWeight( ounces )":::
+:::image type="content" source="../images/excel-add-in-dot-function.png" alt-text="Screenshot of Excel formula showing =A1.ConvertWeight( ounces )":::
 
 The `DoubleCellValue`, `BooleanCellValue`, and `StringCellValue` types also support reference methods. The following screenshot shows an example of adding a `ConvertToRomanNumeral` method to a double value type.
 
-:::image type="content" source="/images/excel-add-in-dot-function-roman-numeral.png" alt-text="Screenshot of Excel formula showing =A1.ConvertToRomanNumeral()":::
+:::image type="content" source="../images/excel-add-in-dot-function-roman-numeral.png" alt-text="Screenshot of Excel formula showing =A1.ConvertToRomanNumeral()":::
 
 Reference methods don’t appear on the data type card for the user.
 
-:::image type="content" source="/images/excel-add-in-dot-function-data-card.png" alt-text="Screenshot of data card for Pancake mix data type, but no reference methods are listed.":::
+:::image type="content" source="../images/excel-add-in-dot-function-data-card.png" alt-text="Screenshot of data card for Pancake mix data type, but no reference methods are listed.":::
 
 ## Add a reference method to an entity value
 
