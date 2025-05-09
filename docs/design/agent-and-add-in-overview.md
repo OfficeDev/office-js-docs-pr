@@ -197,7 +197,7 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
         {
             "type": "LocalPlugin",
             "spec": {
-                "local_endpoint": "ms-office-addin"
+                "local_endpoint": "Microsoft.Office.Addin"
             },
             "run_for_functions": ["fillcolor"]
         }
@@ -209,7 +209,7 @@ The reference documentation for API plug-ins is at [API plugin manifest schema 2
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the [`"runtimes.spec.url"`](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2#openapi-specification-object) property, but for local functions on the client, not REST APIs.|
+| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the [`"runtimes.spec.url"`](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2#openapi-specification-object) property, but for local functions on the client, not REST APIs. Currently, the only allowed value is "Microsoft.Office.Addin".|
 
 ## Create the JavaScript functions
 
