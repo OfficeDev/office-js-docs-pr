@@ -2,7 +2,7 @@
 title: Convert an Office Add-in project in Visual Studio to TypeScript
 description: Learn how to convert an Office Add-in project in Visual Studio to use TypeScript.
 ms.topic: how-to
-ms.date: 10/22/2024
+ms.date: 05/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -101,9 +101,6 @@ You can use the Office Add-in template in Visual Studio to create an add-in that
 Change your JavaScript files (**.js**) to TypeScript files (**.ts**). Then, make the necessary changes for them to compile. This section walks through the default files in a new project.
 
 1. Find the **Home.js** file and rename it to **Home.ts**.
-
-    > [!WARNING]
-    > There's currently an issue in the template's **Home.js** file: the reference on line 95 to `textvalue` should be changed to `textValue`.
 
 1. Find the **./Functions/FunctionFile.js** file and rename it to **FunctionFile.ts**.
 
