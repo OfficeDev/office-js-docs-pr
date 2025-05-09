@@ -369,7 +369,7 @@ function generateRandomRange(rows, columns, min, max) {
 
 When the user enters the function in Excel, autocomplete shows the properties of the function, and indicates optional arguments by surrounding them in brackets []. The following image shows an example of entering optional parameters using the `generateRandomRange` reference method.
 
-:::image type="content" source="../images/excel-data-types-reference-method-optional-parameters.png" alt-text="Screenshot of entering concatProductNames method in Excel passing A1 and A2 which contain a bicycle and unicycle product entity value.":::
+:::image type="content" source="../images/excel-data-types-reference-method-optional-parameters.png" alt-text="Screenshot of entering generateRandomRange method in Excel.":::
 
 ## Multiple parameters
 
