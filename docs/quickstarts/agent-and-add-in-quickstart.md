@@ -22,7 +22,7 @@ In this article, you'll walk through the process of building a simple Excel Copi
 - All the prerequisites listed at [Create declarative agents using Microsoft 365 Agent Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
 - The [Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md). 
 
-## Start with an Office add-in
+## Start with an Office Add-in
 
 Create a basic Excel add-in with the following steps. 
 
@@ -39,7 +39,7 @@ Create a basic Excel add-in with the following steps.
 1. Test that the add-in works by carrying out the following steps.
 
    1. Select **View | Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select **Excel Desktop (Edge Chromium)**.
-   1. Press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, Excel opens.
+   1. Press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, Excel opens.
 
    > [!NOTE]
    > If this is the first time that you have sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
@@ -48,7 +48,7 @@ Create a basic Excel add-in with the following steps.
    1. A **Contoso Add-in** group with a **Show Taskpane** button will appear on the **Home** ribbon. Use the button to open the add-in's task pane.
 
    > [!NOTE]
-   > If a **WebView Stop On Load** prompt appears. Select **OK**.
+   > If a **WebView Stop On Load** prompt appears, select **OK**.
 
    1. When the task pane has opened, select **Run**. A cell in the worksheet changes to yellow.
    1. Stop debugging and uninstall the add-in by shutting down Excel and running `npm run stop` in a command prompt or Visual Studio Code **TERMINAL** in the root of the project.
@@ -58,9 +58,9 @@ Create a basic Excel add-in with the following steps.
 
 ## Add a Copilot declarative agent
 
-Add the agent with the following steps:
+Add the agent with the following steps.
 
-1. In the manifest file, make the following changes:
+1. In the manifest file, make the following changes.
 
    1. Add the following object to the root. By convention, it's put just below the "validDomains" property. You create the "declarativeAgent.json" file in a later step.
 
@@ -186,7 +186,7 @@ Add the agent with the following steps:
 
 ## Update project configuration files for a combined add-in and Copilot agent
 
-1. Open the teamsapp.yaml file in the root of project and replace its contents with the following.
+1. Open the teamsapp.yaml file in the root of project and replace its contents with the following:
 
    ```yaml
    # yaml-language-server: $schema=https://aka.ms/teams-toolkit/v1.7/yaml.schema.json
@@ -282,7 +282,7 @@ Add the agent with the following steps:
 1. In the **Lifecycle** pane, select **Provision**. Among other things, provisioning does the following:
 
    - Set values for the four lines you added to the .env.dev file.
-   - Create a **/build** folder inside the **/appPackage** folder with the package zip file. The file contains the manifest and JSON files for the agent and plugin.
+   - Create a **/build** folder inside the **/appPackage** folder with the package zip file. The file contains the manifest and JSON files for the agent and plug-in.
 
 1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run dev-server` to start the server on localhost. Wait until you see a line in the server window that the app compiled successfully. This means the server is running and serving the files.
     
@@ -296,10 +296,10 @@ Add the agent with the following steps:
  
 1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. **Excel Add-in + Agent** should be in the list of agents. (You may need to select **See more** to ensure that all agents are listed.) If the agent isn't, try the following actions.
 
-   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl-r</kbd>.
+   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
    - Wait a few minutes and reload Copilot.
 
-1. When the agent is listed, select it. The  **Excel Add-in + Agent** pane opens.
+1. When the agent is listed, select it. The **Excel Add-in + Agent** pane opens.
 1. Select the **Change cell color** conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The cell's color should change.
 
    > [!TIP]
@@ -311,9 +311,9 @@ Add the agent with the following steps:
 
 Live reloading and hot reloading for a combined add-in and agent aren't supported in the preview period. To make changes, first shut down the server and uninstall the extension with these steps.
 
-1. Shutting down the server depends on what window it is running in.
+1. Shutting down the server depends on what window it's running in.
 
-   - If the web server is running in the same command prompt or Visual Studio Code **TERMINAL** where you ran `npm run dev-server`, give the window focus and press Ctrl-C. Choose "Y" in response to the prompt to end the process. 
+   - If the web server is running in the same command prompt or Visual Studio Code **TERMINAL** where you ran `npm run dev-server`, give the window focus and press <kbd>Ctrl</kbd>+<kbd>C</kbd>. Choose "Y" in response to the prompt to end the process. 
    - If the web server is running in a separate window, then in a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run stop`.
 
 1. Clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).

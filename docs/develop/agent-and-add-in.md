@@ -15,7 +15,7 @@ Adding a Copilot agent to an Office Add-in provides two benefits:
 - The agent can pass parameters to the JavaScript it invokes, which isn't possible when a [function command](../design/add-in-commands.md#types-of-add-in-commands) is invoked from a button or menu item.
 
 > [!NOTE]
-> This article assumes that you're familiar with the overview [Combine Copilot Agents with Office Add-ins](../design/agent-and-add-in-overview.md) and the Copilot documentation that it refers to. We also recommend that you complete the quick start [ Build your first add-in as a Copilot skill](../quickstarts/agent-and-add-in-quickstart.md).
+> This article assumes that you're familiar with the overview [Combine Copilot Agents with Office Add-ins](../design/agent-and-add-in-overview.md) and the Copilot documentation that it refers to. We also recommend that you complete the quick start [Build your first add-in as a Copilot skill](../quickstarts/agent-and-add-in-quickstart.md).
 
 > [!IMPORTANT]
 > This feature requires the [unified manifest for Microsoft 365](unified-manifest-overview.md). If your add-in uses the add-in only manifest, you must first [convert it to use the unified manifest](convert-xml-to-json-manifest.md) before you can add a Copilot agent to it. Before you continue with this article, you should know how to package the manifest and other files into an app package zip file and sideload it to an Office application for testing.
@@ -47,7 +47,7 @@ If your project doesn't already have such files, then create them with the follo
    - The Office JavaScript Library and the **commands.js** file that you created in the preceding step is explicitly loaded.
 
        > [!NOTE]
-       > It's common in Office Add-in development to use tools like [webpack](https://webpack.js.org/) and its plugins to automatically inject `<script>` tags into HTML files at build time. If you use such a tool, you shouldn't include any `<script>` tags in your source file that are going to be inserted by the tool.
+       > It's common in Office Add-in development to use tools like [webpack](https://webpack.js.org/) and its plug-ins to automatically inject `<script>` tags into HTML files at build time. If you use such a tool, you shouldn't include any `<script>` tags in your source file that are going to be inserted by the tool.
 
    ```html
    <!DOCTYPE html>
@@ -75,23 +75,23 @@ Open the function file (usually, the **\src\commands\commands.js** (or .ts)) and
 - Like all code that calls APIs in the Office JavaScript Library, the file must [initialize the library](initialize-add-in.md), usually by calling `Office.onReady`.
 - Functions that are invoked by agents take a `message` parameter that specifies the values that Office will use when it calls functions from the Office JavaScript Library. This object can be parsed with the `JSON.parse` method. The values of the object are specified by users in natural language.
 - Unlike the functions that are invoked with add-in commands, these functions don't have an `Office.AddinCommands.Event` parameter, and they don't call the `Office.AddinCommands.Event.completed` method. Instead, functions that are invoked by agents return a result object from the JavaScript runtime back to the Copilot runtime.
-- Functions invoked from Copilot have less time to complete than functions invoked from a function command. The former have five minutes to complete or Office shuts down the JavaScript runtime. But have Copilot-invoked function have only two minutes to return a result or the runtime is shut down.
+- Functions invoked from Copilot have less time to complete than functions invoked from a function command. The latter have five minutes to complete or Office shuts down the JavaScript runtime. But Copilot-invoked functions have only two minutes to return a result or the runtime is shut down.
 - For each function, there must be a call of [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) to tell Office which function in the file should be run when the agent action is invoked. The `associate` function maps the function name to an action ID that you configure in the manifest in a later step. If you define multiple functions in the same file, your code must call `associate` for each one.
 
 The following is an example.
 
 ```javascript
 Office.onReady(function() {
-// Add any initialization code here.
+    // Add any initialization code here.
 });
 
 async function fillColorFromUserData(message) {
     const {Cell: cell, Color: color} = JSON.parse(message);
     await Excel.run(async (context) => {
-    context.workbook.worksheets
+      context.workbook.worksheets
         .getActiveWorksheet()
         .getRange(cell).format.fill.color = color;
-    await context.sync();
+      await context.sync();
     });
     return "Cell color changed.";
 }
@@ -107,7 +107,7 @@ There are three major parts to configuring the manifest for the Copilot agent as
 
 Ensure that the manifest references the preview version of the manifest schema with the following steps.
 
-1. At the top of the manifest, ensure that the [`"$schema"`](/microsoft-365/extensibility/schema/root#schema-4) property is the following.
+1. At the top of the manifest, ensure that the [`"$schema"`](/microsoft-365/extensibility/schema/root#schema-4) property is the following:
 
    ```json
    "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
@@ -164,9 +164,9 @@ The runtime object should look similar to the following. There may be other prop
 > [!TIP]
 > To maximize compatibility with Microsoft tools for add-in development, we recommend that you create a folder named **appPackage** in the root of the project and move the manifest into it.
 
-### Create the agent and API plugin configuration
+### Create the agent and API plug-in configuration
 
-1. Create a file in the same folder where your manifest is give it the name used in the `"copilot.declarativeAgents.file"` property, such as **declarativeAgent.json**.
+1. Create a file in the same folder where your manifest is and give it the name used in the `"copilot.declarativeAgents.file"` property, such as **declarativeAgent.json**.
 1. Paste the following content into the file.
 
    ```json
@@ -213,8 +213,7 @@ The runtime object should look similar to the following. There may be other prop
                     "properties": {
                         "Cell": {
                             "type": "string",
-                            "description": "A cell location in the format of A1, B2,
-                            etc.",
+                            "description": "A cell location in the format of A1, B2, etc.",
                             "default" : "B2"
                         },
                         "Color": {
@@ -258,14 +257,14 @@ The runtime object should look similar to the following. There may be other prop
    As you work, keep the following points in mind.
 
    - Do *not* change the `"namespace"`, `"runtimes.type"`, or `"runtimes.spec.local_endpoint"` values.
-   - The `"functions.name"` must be an exact match for both of the following.
+   - The `"functions.name"` must be an exact match for both of the following:
 
-      - An `"extensions.runtimes.actions.id"` property in the manifest (for an action of type "executeDataFunction")
-      - The first parameter of the call to `Office.actions.associate` in a function that you created in [Update the function file](#update-the-function-file)
+      - An `"extensions.runtimes.actions.id"` property in the manifest (for an action of type "executeDataFunction").
+      - The first parameter of the call to `Office.actions.associate` in a function that you created in [Update the function file](#update-the-function-file).
 
    - The `"runtimes.run_for_functions"` array must include either the same string as `"functions.name"` or a wildcard string that matches it.
    - The `"reasoning.description"` and `"reasoning.instructions"` refer to a JavaScript function, not a REST API.
-   - The `"runtimes.spec.local_endpoint"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. It tells the Copilot agent to look for functions in an Office add-in instead of at a REST service URL.
+   - The `"runtimes.spec.local_endpoint"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. It tells the Copilot agent to look for functions in an Office Add-in instead of at a REST service URL.
 
 ### Create the app package
 
@@ -318,7 +317,7 @@ In a command prompt or Visual Studio Code **TERMINAL** in the root of the projec
 1. Open the Office application (Excel, PowerPoint, or Word) that your combined agent and add-in targets. Wait until the add-in has loaded. This may take as much as two minutes. Depending on your version of Office, ribbon buttons and other artifacts may appear automatically. In recent versions, you need to manually activate the add-in: Select the **Add-ins** button on the **Home** ribbon, and then in the flyout that opens, select your add-in. It will have the name from the name from the [`"name.short"`](/microsoft-365/extensibility/schema/root-name) property in the manifest.
 1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. Your agent should be be in the list of agents. It must have the name specified in the `"name"` property of the declarative agent configuration file (which may not be the same as the name from the `"name.short"` property in the manifest); for example, **Excel Add-in + Agent**. You may need to select **See more** to ensure that all agents are listed. If the agent isn't listed, try the following actions.
 
-   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl-r</kbd>.
+   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
    - Wait a few minutes and reload Copilot.
    
 1. When the agent is listed, select it and the pane for the agent opens. The conversation starters you configured in the `"conversation_starters"` property of declarative agent configuration file will be displayed.
@@ -330,7 +329,7 @@ In a command prompt or Visual Studio Code **TERMINAL** in the root of the projec
 Live reloading and hot reloading for a combined add-in and agent aren't supported in the preview period. To make changes, first shut down the server and uninstall the agent and add-in with these steps.
 
 1. Close the Office application.
-1. If the web server is running in the Visual Studio Code **TERMINAL**, give the terminal focus and press Ctrl-C. Choose "Y" in response to the prompt to end the process. Then go to the next step. If the web server is running in a separate window skip this step and go to the next step.
+1. If the web server is running in the Visual Studio Code **TERMINAL**, give the terminal focus and press <kbd>Ctrl</kbd>+<kbd>C</kbd>. Choose "Y" in response to the prompt to end the process. Then go to the next step. If the web server is running in a separate window, skip this step and go to the next step.
 1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run stop`.
 1. Clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).
 1. Open Teams and select **Apps** from the app bar, then select **Manage your apps** at the bottom of the **Apps** pane.

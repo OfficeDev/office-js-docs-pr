@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # Combine Copilot Agents with Office Add-ins (preview)
 
 > [!NOTE]
-> This article assumes you are familiar with Copilot declarative agents. If you're not, start with the following:
+> This article assumes you're familiar with Copilot declarative agents. If you're not, start with the following:
 >
 > - [Declarative agents for Microsoft 365 Copilot overview](/microsoft-365-copilot/extensibility/overview-declarative-agent).
 > - [Agents are apps for Microsoft 365](/microsoft-365-copilot/extensibility/agents-are-apps).
@@ -19,23 +19,23 @@ Including a Microsoft 365 Copilot agent in an Office Add-in provides two benefit
 - Copilot becomes a natural language interface for the add-in's functionality.
 - The agent can pass parameters to the JavaScript it invokes, which isn't possible when a [function command](add-in-commands.md#types-of-add-in-commands) is invoked from a button or menu item.
 
-You can also think of an Office Add-in as a skill in a Copilot agent. Because Office add-ins use the [Office JavaScript Library](../develop/understanding-the-javascript-api-for-office.md) to perform read and write operations on Office documents, these operations become actions in the Copilot agent.
+You can also think of an Office Add-in as a skill in a Copilot agent. Because Office Add-ins use the [Office JavaScript Library](../develop/understanding-the-javascript-api-for-office.md) to perform read and write operations on Office documents, these operations become actions in the Copilot agent.
 
 ## Scenarios
 
 The following are some selected ways in which adding a Copilot agent enhances the value of an add-in to users.
 
-- **Learning how to use the add-in:** When a user needs to perform multiple steps or tasks with the add-in to achieve a goal, the chat interface of Copilot can ease the process of getting started with the add-in. For example, consider a legal firm that needs to have a list of questions that must be answered about each lease that it prepares. Creating this list of questions can be time-consuming and labor-intensive. But a Copilot agent that uses the Office JavaScript Library can be asked to produce a first draft list of questions and insert them into a Word document.
+- **Learning how to use the add-in**: When a user needs to perform multiple steps or tasks with the add-in to achieve a goal, the chat interface of Copilot can ease the process of getting started with the add-in. For example, consider a legal firm that needs to have a list of questions that must be answered about each lease that it prepares. Creating this list of questions can be time-consuming and labor-intensive. But a Copilot agent that uses the Office JavaScript Library can be asked to produce a first draft list of questions and insert them into a Word document.
 
-- **Content analysis:** An agent can be used to analyze the content of a document or spreadsheet and take action depending on what it finds. The following are examples.
+- **Content analysis**: An agent can be used to analyze the content of a document or spreadsheet and take action depending on what it finds. The following are examples.
 
    - An agent analyzes a Request for Proposal and then fetches the answers to questions in the RFP from a backend system. The user simply instructs the agent to "Fill in the answers you know to the questions."
    - An agent analyzes a document, or a table in a spreadsheet, for content that implies certain actions must be taken, either in the document itself or elsewhere in the customer's business systems. The user might say "Review the document for any items I missed on the audit list."
 
-- **Trusted insertion of data:** If you ask a typical AI engine a question, it will combine information it finds and compose an answer; a process can introduce inaccuracies. But a Copilot agent based on an add-in can insert data *unchanged* from a trusted source. Some examples:
+- **Trusted insertion of data**: If you ask a typical AI engine a question, it will combine information it finds and compose an answer; a process that can introduce inaccuracies. But a Copilot agent based on an add-in can insert data *unchanged* from a trusted source. Some examples:
 
-   - Consider an add-in that enables the insertion of legal research into Word where it can then be edited. A user asks the agent "In what circumstances can a lease of residential space in Indiana be broken unilaterally by the lessor?" The add-in then fetches content, unchanged, from precedents and statutes.
-   - Consider an add-in that manages the inventory of a digital assets. In the Copilot agent chat, a user requests "Insert a table of our color photos with the name of each, the number of times it was downloaded, and it's size in megabytes, sorted in order from most downloaded." The add-in then fetches this data, unchanged, from the system of record and inserts the table into an Excel spreadsheet.
+   - Consider an add-in that enables the insertion of legal research into Word where it can then be edited. A user asks the agent: "In what circumstances can a lease of residential space in Indiana be broken unilaterally by the lessor?" The add-in then fetches content, unchanged, from precedents and statutes.
+   - Consider an add-in that manages the inventory of a digital assets. In the Copilot agent chat, a user requests: "Insert a table of our color photos with the name of each, the number of times it was downloaded, and it's size in megabytes, sorted in order from most downloaded." The add-in then fetches this data, unchanged, from the system of record and inserts the table into an Excel spreadsheet.
 
 ## The relation of Copilot agents to the Add-in framework
 
@@ -114,7 +114,7 @@ The reference documentation for the manifest JSON is at [Microsoft 365 app manif
 
 ### Declarative agent configuration
 
-The agent configuration file includes instructions for the agent and specifies one or more API plugin configuration files that will contain the detailed configuration of the agent's actions. The following is an example. Note the following about this JSON.
+The agent configuration file includes instructions for the agent and specifies one or more API plug-in configuration files that will contain the detailed configuration of the agent's actions. The following is an example. Note the following about this JSON.
 
 - The conversation starter appears in the chat canvas of Copilot.
 - The `"actions.id"` property in this file is the collective ID of all the functions in the file specified in `"actions.file"`. It doesn't have to match the `"actions.id"` in the manifest.
@@ -141,14 +141,14 @@ The agent configuration file includes instructions for the agent and specifies o
 
 The reference documentation for declarative agents is at [Declarative agent schema 1.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3).
 
-### Copilot API plugin configuration
+### Copilot API plug-in configuration
 
-The API plugin configuration file specifies the "functions" of the plugin in the sense of agent actions, not JavaScript functions, including the instructions for the action. It also configures the JavaScript runtime for Copilot. The following is an example. About this JSON, note the following:
+The API plug-in configuration file specifies the "functions" of the plug-in in the sense of agent actions, not JavaScript functions, including the instructions for the action. It also configures the JavaScript runtime for Copilot. The following is an example. About this JSON, note the following:
 
 - The `"functions.name"` must match the `"extensions.runtimes.actions.id"` property in the add-in manifest.
 - The `"reasoning.description"` and `"reasoning.instructions"` refer to a JavaScript function, not a REST API.
 - The `"runtimes.run_for_functions"` array must include either the same string as `"functions.name"` or a wildcard string that matches it.
-- The `"runtimes.spec.local_endpoint"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. In this case, it specifies that the JavaScript function that is associated with the "fillcolor" string is available in an Office add-in, rather than in some REST endpoint.
+- The `"runtimes.spec.local_endpoint"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. In this case, it specifies that the JavaScript function that is associated with the "fillcolor" string is available in an Office Add-in, rather than in some REST endpoint.
 
 ```json
 {
@@ -171,7 +171,7 @@ The API plugin configuration file specifies the "functions" of the plugin in the
                     },
                     "Color": {
                         "type": "string",
-                        "description": "A color in hex format, e.g. #30d5c8",
+                        "description": "A color in hex format, e.g., #30d5c8",
                         "default" : "#30d5c8"
                     }
                 },
@@ -205,7 +205,7 @@ The API plugin configuration file specifies the "functions" of the plugin in the
 }
 ```
 
-The reference documentation for API plugins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for the `"runtimes.spec.local_endpoint"` property.
+The reference documentation for API plug-ins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for the `"runtimes.spec.local_endpoint"` property.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
@@ -216,7 +216,7 @@ The reference documentation for API plugins is at [API plugin manifest schema 2.
 The JavaScript functions that will be invoked by the Copilot agent are created exactly as [function commands](../develop/create-addin-commands-unified-manifest.md#add-a-function-command) are created. The following is an example. Note the following about this code.
 
 - Unlike a function command, a function associated with a Copilot action can take parameters.
-- The first parameter of the `associate` method must match both the `"extensions.runtimes.actions.id"` property in the add-in manifest and the "functions.name" property in the API plugins JSON.
+- The first parameter of the `associate` method must match both the `"extensions.runtimes.actions.id"` property in the add-in manifest and the `"functions.name"` property in the API plug-in's JSON.
 
 ```javascript
 async function fillColor(cell, color) {
