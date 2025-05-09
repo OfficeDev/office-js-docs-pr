@@ -25,17 +25,17 @@ You can also think of an Office Add-in as a skill in a Copilot agent. Because Of
 
 The following are some selected ways in which adding a Copilot agent enhances the value of an add-in to users.
 
-- **Learning how to use the add-in**: When a user needs to perform multiple steps or tasks with the add-in to achieve a goal, the chat interface of Copilot can ease the process of getting started with the add-in. For example, consider a legal firm that needs to have a list of questions that must be answered about each lease that it prepares. Creating this list of questions can be time-consuming and labor-intensive. But a Copilot agent that uses the Office JavaScript Library can be asked to produce a first draft list of questions and insert them into a Word document.
+- **Learning how to use the add-in**: When a user needs to perform multiple steps or tasks with the add-in to achieve a goal, the chat interface of Copilot can ease the process of getting started with the add-in. For example, consider a legal firm that needs to have a list of questions that must be answered about each lease that it prepares. Creating this list of questions can be time-consuming and labor-intensive. But a Copilot agent that uses the Office JavaScript Library can be prompted to produce a first draft list of questions and insert them into a Word document.
 
 - **Content analysis**: An agent can be used to analyze the content of a document or spreadsheet and take action depending on what it finds. The following are examples.
 
-   - An agent analyzes a Request for Proposal and then fetches the answers to questions in the RFP from a backend system. The user simply instructs the agent to "Fill in the answers you know to the questions."
+   - An agent analyzes a Request for Proposal and then fetches the answers to questions in the RFP from a backend system. The user simply prompts the agent to "Fill in the answers you know to the questions."
    - An agent analyzes a document, or a table in a spreadsheet, for content that implies certain actions must be taken, either in the document itself or elsewhere in the customer's business systems. The user might say "Review the document for any items I missed on the audit list."
 
-- **Trusted insertion of data**: If you ask a typical AI engine a question, it will combine information it finds and compose an answer; a process that can introduce inaccuracies. But a Copilot agent based on an add-in can insert data *unchanged* from a trusted source. Some examples:
+- **Trusted insertion of data**: If you prompt a typical AI engine with a question, it will combine information it finds and compose an answer; a process that can introduce inaccuracies. But a Copilot agent based on an add-in can insert data *unchanged* from a trusted source. Some examples:
 
-   - Consider an add-in that enables the insertion of legal research into Word where it can then be edited. A user asks the agent: "In what circumstances can a lease of residential space in Indiana be broken unilaterally by the lessor?" The add-in then fetches content, unchanged, from precedents and statutes.
-   - Consider an add-in that manages the inventory of a digital assets. In the Copilot agent chat, a user requests: "Insert a table of our color photos with the name of each, the number of times it was downloaded, and it's size in megabytes, sorted in order from most downloaded." The add-in then fetches this data, unchanged, from the system of record and inserts the table into an Excel spreadsheet.
+   - Consider an add-in that enables the insertion of legal research into Word where it can then be edited. A user promnpts the agent: "In what circumstances can a lease of residential space in Indiana be broken unilaterally by the lessor?" The add-in then fetches content, unchanged, from precedents and statutes.
+   - Consider an add-in that manages the inventory of a digital assets. In the Copilot agent chat, a user prompts: "Insert a table of our color photos with the name of each, the number of times it was downloaded, and it's size in megabytes, sorted in order from most downloaded." The add-in then fetches this data, unchanged, from the system of record and inserts the table into an Excel spreadsheet.
 
 ## The relation of Copilot agents to the Add-in framework
 

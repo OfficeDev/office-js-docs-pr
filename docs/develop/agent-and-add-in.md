@@ -322,7 +322,7 @@ In a command prompt or Visual Studio Code **TERMINAL** in the root of the projec
    
 1. When the agent is listed, select it and the pane for the agent opens. The conversation starters you configured in the `"conversation_starters"` property of declarative agent configuration file will be displayed.
 1. Select a conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The agent action occurs.
-1. Try entering requests the conversation box that are different from the conversation starters, but that your agent should be able to do.
+1. Try entering prompts the conversation box that are different from the conversation starters, but that your agent should be able to do.
 
 ### Make changes in the app
 
