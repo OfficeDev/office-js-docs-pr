@@ -498,6 +498,9 @@ items:
         - name: Entity value cards
           href: excel/excel-data-types-entity-card.md
           displayName: Excel
+        - name: Add lambda methods for dot function notation
+          href: excel/excel-add-ins-dot-functions.md
+          displayName: Excel  
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
