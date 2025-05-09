@@ -6,7 +6,7 @@ ms.date: 03/31/2025
 ms.localizationpriority: medium
 ---
 
-# Create linked entity cell values (preview)
+# Create linked entity cell values
 
 Linked entity cell values integrate data types from external data sources and can display the data as an entity card, like [regular entity values](excel-data-types-entity-card.md). They enable you to scale your data types to represent large data sets without downloading all the data into the workbook. The [Stocks and Geography data domains](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI provide linked entity cell values. This article explains how to create your own data provider in an Excel add-in to provide custom values for end users.
 
@@ -19,17 +19,17 @@ This article expands on information described in the following articles. We reco
 
 - [Excel data types: Stocks and geography](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877)
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
-- [Excel JavaScript API data types entity value card](excel-data-types-entity-card.md).
+- [Excel JavaScript API data types entity value card](excel-data-types-entity-card.md)
 
 ## Key concepts
 
 Linked entity cell values provide the user with data linked from an external data source. The user can view them as an entity value card.
 
-:::image type="content" source="../images/excel-geography-linked-data-type-seattle.png" alt-text="Screen shot of an entity value data card for the Seattle Geography linked data type in the worksheet.":::
+:::image type="content" source="../images/excel-geography-linked-data-type-seattle.png" alt-text="Screenshot of an entity value data card for the Seattle Geography linked data type in the worksheet.":::
 
 Like regular entity values, linked entity cell values can be referenced in formulas.
 
-:::image type="content" source="../images/excel-geography-seattle-dot-syntax.png" alt-text="Screen shot of using dot notation in a formula using =D6. To display fields for Seattle Geography data type.":::
+:::image type="content" source="../images/excel-geography-seattle-dot-syntax.png" alt-text="Screenshot of using dot notation in a formula using =A1. To display fields for Seattle Geography data type.":::
 
 ## Definitions
 
@@ -79,7 +79,7 @@ An example of a linked entity data domain is the **Geography** data domain in Ex
 
 A linked entity cell value is an instance created from a data domain. An example is a value for Seattle, from the [Geography data domain](https://support.microsoft.com/en-us/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877). It displays an entity value card like regular entity cell values.
 
-:::image type="content" source="../images/excel-geography-linked-data-type-seattle.png" alt-text="Screen shot of an entity value data card for the Seattle Geography linked data type in the worksheet.":::
+:::image type="content" source="../images/excel-geography-linked-data-type-seattle.png" alt-text="Screenshot of an entity value data card for the Seattle Geography linked data type in the worksheet.":::
 
 Since linked entity cell values are linked to the data domain, they can be refreshed. Also, nested linked entity cell values are not retrieved unless the user requests them (such as viewing the entity card). And nested entity cell values aren’t saved with the worksheet unless they are referenced from the worksheet (such as a formula). This reduces file size and improves performance.
 
@@ -647,14 +647,14 @@ Similarities:
 
 ## Behavior in Excel 2019 and earlier
 
-If someone opens a worksheet with linked entity cell values on an older version of Excel that doesn’t support linked entity cell values, Excel will show the cell values as errors. This is the designed behavior. This is also why you set the `basicType` to `Error` and the `basicValue` to `#VALUE!` every time you insert or update a linked entity cell value. This is the error that Excel will fall back to on older versions.
+If someone opens a worksheet with linked entity cell values on an older version of Excel that doesn’t support linked entity cell values, Excel shows the cell values as errors. This is the designed behavior. This is also why you set the `basicType` to `Error` and the `basicValue` to `#VALUE!` every time you insert or update a linked entity cell value. This is the error that Excel uses as a fallback on older versions.
 
 ## Best practices
 
 - Don't use exclamation marks in the `entityID` or `domainId` values.
-- Register linked entity data domains in the initialization code `Office.OnReady`, so that the user will have immediate functionality such as refreshing the linked entity cell values.
-- After publishing your add-in, don’t change the linked entity data domain ids. Consistent ids across logically the same objects will help with performance.
-- Always provide the `text` property when creating a new linked entity cell value. This value is displayed while Excel calls your data provider function to get the remaining property values. Otherwise the user will see a blank cell until the data is retrieved.
+- Register linked entity data domains in the initialization code `Office.OnReady` so that the user has immediate functionality such as the ability to refresh the linked entity cell values.
+- After publishing your add-in, don’t change the linked entity data domain IDs. Consistent IDs across the same logical objects helps with performance.
+- Always provide the `text` property when creating a new linked entity cell value. This value is displayed while Excel calls your data provider function to get the remaining property values. Otherwise the user sees a blank cell until the data is retrieved.
 
 ## See also
 
