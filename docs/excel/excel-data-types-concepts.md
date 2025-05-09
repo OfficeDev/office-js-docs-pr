@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API data types core concepts
 description: Learn the core concepts for using Excel data types in your Office Add-in.
-ms.date: 10/14/2022
+ms.date: 04/14/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -37,8 +37,10 @@ The `valuesAsJson` property returns a [CellValue](/javascript/api/excel/excel.ce
 - [EmptyCellValue](/javascript/api/excel/excel.emptycellvalue)
 - [EntityCellValue](/javascript/api/excel/excel.entitycellvalue)
 - [ErrorCellValue](/javascript/api/excel/excel.errorcellvalue)
-- [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue)
+- [ExternalCodeServiceObjectCellValue](/javascript/api/excel/excel.externalcodeserviceobjectcellvalue)
+- [FunctionCellValue](/javascript/api/excel/excel.functioncellvalue)
 - [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
+- [LocalImageCellValue](/javascript/api/excel/excel.localimagecellvalue)
 - [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue)
 - [StringCellValue](/javascript/api/excel/excel.stringcellvalue)
 - [ValueTypeNotAvailableCellValue](/javascript/api/excel/excel.valuetypenotavailablecellvalue)
@@ -58,22 +60,32 @@ The following sections show JSON code samples for the formatted number value, en
 
 ## Formatted number values
 
-The [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
+The [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue) object enables Excel add-ins to define a `numberFormat` property for a value. Once assigned, this number format travels through calculations with the value and can be returned by functions.
 
 The following JSON code sample shows the complete schema of a formatted number value. The `myDate` formatted number value in the code sample displays as **1/16/1990** in the Excel UI. If the minimum compatibility requirements for the data types feature aren't met, calculations use the `basicValue` in place of the formatted number.
 
 ```TypeScript
 // This is an example of the complete JSON of a formatted number value.
 // In this case, the number is formatted as a date.
-const myDate: Excel.FormattedNumberCellValue = {
-    type: Excel.CellValueType.formattedNumber,
+const myDate: Excel.DoubleCellValue = {
+    type: Excel.CellValueType.double,
     basicValue: 32889.0,
     basicType: Excel.RangeValueType.double, // A read-only property. Used as a fallback in incompatible scenarios.
     numberFormat: "m/d/yyyy"
 };
 ```
 
+The number formatting is considered the default format. If the user, or other code, applies formatting to a cell containing a formatted number, the applied format overrides the number’s format.
+
 Begin experimenting with formatted number values by opening [Script Lab](../overview/explore-with-script-lab.md) and checking out the [Data types: Formatted numbers](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-formatted-number.yaml) snippet in our **Samples** library.
+
+## Basic cell values
+
+Add properties to basic cell values in Excel to associate additional information with the values. Similar to entity values, you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
+
+:::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screenshot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
+
+For more information, see [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md).
 
 ## Entity values
 
@@ -102,13 +114,18 @@ const myEntity: Excel.EntityCellValue = {
 };
 ```
 
-Entity values also offer a `layouts` property that creates a card for the entity. The card displays as a modal window in the Excel UI and can display additional information contained within the entity value, beyond what's visible in the cell. To learn more, see [Use cards with entity value data types](excel-data-types-entity-card.md).
-
 To explore entity data types, start by going to [Script Lab](../overview/explore-with-script-lab.md) in Excel and opening the [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) snippet in our **Samples** library. The [Data types: Entity values with references](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-references.yaml) and [Data types: Entity value attribution properties](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) snippets offer a deeper look at entity features.
 
-### Linked entities
+### Linked entity cell values
 
-Linked entity values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, are a type of entity value. These objects integrate data provided by an external service and can display this data as an [entity card](excel-data-types-entity-card.md), like regular entity values. The [Stocks and Geography data types](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI are linked entity values.
+Linked entity cell values, or [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) objects, are integrated data types from external data sources and can display the data as an entity card. They enable you to scale your data types to represent large data sets without downloading all the data into the workbook. The [Stocks and Geography data domains](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available via the Excel UI provide linked entity cell values.
+
+Linked entity cell values are linked to an external data source. They provide the following advantages over regular entity values:  
+
+- Linked entity cell values can nest, and nested linked entity cell values aren't retrieved until referenced, either by the user or by the worksheet. This helps reduce file size and improve workbook performance.  
+- Excel uses a cache to allow different cells to reference the same linked entity cell value seamlessly. This also improves workbook performance.
+
+For more information, see [Create linked entity cell values](excel-data-types-linked-entity-cell-values.md).
 
 ## Web image values
 
@@ -164,6 +181,8 @@ Use the [Create and explore data types in Excel](https://github.com/OfficeDev/Of
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
+- [Create linked entity cell values](excel-data-types-linked-entity-cell-values.md)
+- [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md)
 - [Use cards with entity value data types](excel-data-types-entity-card.md)
 - [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
 - [Custom functions and data types](custom-functions-data-types-concepts.md)
