@@ -35,10 +35,10 @@ Like regular entity values, linked entity cell values can be referenced in formu
 
 The following definitions are fundamental to understanding how to implement your own linked entity cell values.
 
-- **Data provider** - The data provider is recognized by Excel as the source of data for one or more registered linked entity data domains.
-- **Linked entity data domain** – A linked entity data domain describes an entity such as one you might find in a database. Some examples are employees, organizations, or cars.
+- **Linked entity data domain** – A linked entity data domain describes the overall category that an entity belongs to. Some examples are employees, organizations, or cars.
 - **Linked entity cell value** – An instance created from a data domain. An example is an employee value for Joe. It can be displayed as an entity value card.
-- **Linked entity load service function** – A TypeScript or JavaScript custom function you implement in your add-in. It handles requests from Excel to get linked entity cell values for the workbook.
+- **Data provider** - The data provider is recognized by Excel as the source of data for one or more registered linked entity data domains.
+- **Linked entity load service function** – Every linked entity data domain defines a load service function to act as the source of data for that domain. The linked entity load service function handles requests from Excel to get linked entity cell values for the workbook. You implement it as a TypeScript or JavaScript custom function.
 
 ## How your add-in provides linked entity cell values
 
@@ -164,8 +164,8 @@ export async function insertProduct() {
     const productLinkedEntity: Excel.LinkedEntityCellValue = {
       type: Excel.CellValueType.linkedEntity,
       id: {
-        entityId: "P1",
-        domainId: "products",
+        entityId: "P1", // Don't use exclamation marks in this value.
+        domainId: "products", // Don't use exclamation marks in this value.
         serviceId: 268436224,
         culture: "en-US",
       },
@@ -176,6 +176,9 @@ export async function insertProduct() {
   });
 }
 ```
+
+> [!NOTE]
+> Don't use exclamation marks in the `entityID` or `domainId` values.
 
 The following code sample shows how to insert a linked entity cell value by using a custom function. A user could get a linked entity cell value by entering `=CONTOSO.GETPRODUCTBYID("productid")` into any cell. The notes for the previous code sample also apply to this one.
 
@@ -554,10 +557,10 @@ const suppliers = [
 When you register a data domain, the user can refresh it manually at any time (such as choosing **Refresh All** from the **Data** tab.). There are three refresh modes you can specify for your data domain.
 
 - `manual`: The data is refreshed only when the user chooses to refresh. This is the default mode. Manual refresh can always be performed by the user, even when the refresh mode is set to `onLoad` or `periodic`.
-- `onLoad`: The data is refreshed when the add-in is loaded. After the add-in loads, data is only refreshed manually by the user. If you want to refresh data when the workbook is opened, configure your add-in to load on document open. For more information, see [Run code in your Office Add-in when the document opens](../develop/run-code-on-document-open.md).
-- `periodic`:  The data is refreshed when the workbook is opened, and then continuously updated after a specified interval of time. For example you could specify that the data domain refreshes every 300 seconds (which is the minimum value).
+- `onLoad`: The data is refreshed when the data domain is registered (typically when the add-in is loaded). Afterwards, data is only refreshed manually by the user. If you want to refresh data when the workbook is opened, configure your add-in to load on document open. For more information, see [Run code in your Office Add-in when the document opens](../develop/run-code-on-document-open.md).
+- `periodic`:  The data is refreshed when the data domain is registered (typically when the add-in is loaded). Afterwards, the data is continuously updated after a specified interval of time. For example you could specify that the data domain refreshes every 300 seconds (which is the minimum value). The number of seconds is always rounded up to the nearest number of minutes since the refresh interval is only performed in minutes.
 
-The following code example shows how to configure a data domain to refresh on load, and then continue to refresh every 300 seconds.
+The following code example shows how to configure a data domain to refresh on load, and then continue to refresh every 5 minutes.
 
 ```typescript
 const productsDomain: Excel.LinkedEntityDataDomainCreateOptions = {
@@ -568,7 +571,7 @@ const productsDomain: Excel.LinkedEntityDataDomainCreateOptions = {
   // cell values of this data domain.
   loadFunctionId: loadFunctionId,
   // periodicRefreshInterval is only required when supportedRefreshModes contains "Periodic".
-  periodicRefreshInterval: 300,
+  periodicRefreshInterval: 300, // equivalent to 5 minutes.
   // Manual refresh mode is always supported, even if unspecified.
   supportedRefreshModes: [
     Excel.LinkedEntityDataDomainRefreshMode.periodic,
@@ -635,7 +638,7 @@ The linked entity load service function uses the custom function architecture, r
 Differences:
 
 - They will not appear to end users for usage in formulas.
-- They do not support the JSDoc tags `@streaming` or `@volatile`.
+- They do not support the JSDoc tags `@streaming` or `@volatile`. The user will see a **#CALC!** error if these tags are used.
 
 Similarities:
 
@@ -648,10 +651,10 @@ If someone opens a worksheet with linked entity cell values on an older version 
 
 ## Best practices
 
+- Don't use exclamation marks in the `entityID` or `domainId` values.
 - Register linked entity data domains in the initialization code `Office.OnReady`, so that the user will have immediate functionality such as refreshing the linked entity cell values.
 - After publishing your add-in, don’t change the linked entity data domain ids. Consistent ids across logically the same objects will help with performance.
 - Always provide the `text` property when creating a new linked entity cell value. This value is displayed while Excel calls your data provider function to get the remaining property values. Otherwise the user will see a blank cell until the data is retrieved.
-- Don't use exclamation marks in product names.
 
 ## See also
 
