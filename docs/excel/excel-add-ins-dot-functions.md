@@ -23,7 +23,7 @@ Reference methods don’t appear on the data type card for the user.
 
 ## Add a reference method to an entity value
 
-To add a reference method to an entity value, describe it in JSON using the `Excel.JavaScriptCustomFunctionReferenceCellValue` type. The following code sample shows how to define a simple method that returns the value 27.
+To add a reference method to an entity value, describe it in the JSON using the `Excel.JavaScriptCustomFunctionReferenceCellValue` type. The following code sample shows how to define a simple method that returns the value 27.
 
 ```typescript
 const referenceCustomFunctionGet27: Excel.JavaScriptCustomFunctionReferenceCellValue = { 
@@ -34,7 +34,7 @@ const referenceCustomFunctionGet27: Excel.JavaScriptCustomFunctionReferenceCellV
 } 
 ```
 
-The properties are described as follows.
+The properties are described in the following table.
 
 |Property  |Description  |
 |---------|---------|
@@ -63,10 +63,10 @@ function makeMathEntity(value: number){
 }
 ```
 
-The following code shows how to create an instance of the `Math` entity and add it to the selected cell.
+The following code sample shows how to create an instance of the `Math` entity and add it to the selected cell.
 
 ```typescript
-// Add entity to selected cell
+// Add entity to selected cell.
 async function addEntityToCell(){
   const entity: Excel.EntityCellValue = makeMathEntity(10);
   await Excel.run( async (context) => {
@@ -93,7 +93,7 @@ function get27() {
 
 In the previous code sample, the `@excludeFromAutocomplete` tag ensures the custom function doesn't appear to the user in the Excel UI when entering it in a search box. However, note that a user can still call the custom function separately from an entity value if they enter it directly into a cell.
 
-When the code runs it creates a `Math` entity value as shown in the following screenshot. The method appears in formula autocomplete when the user references the entity value from a formula.
+When the code runs, it creates a `Math` entity value as shown in the following screenshot. The method appears in formula autocomplete when the user references the entity value from a formula.
 
 :::image type="content" source="../images/excel-data-types-reference-method-autocomplete.png" alt-text="Screenshot of entering A1. in Excel and formula autocomplete displaying the Get27 reference method.":::
 
@@ -134,7 +134,7 @@ function addValue(math, x): number[][] {
 }
 ```
 
-Note that the argument name can be whatever you decide, as long as it conforms to the Excel syntax rules as specified in [Names in formulas](https://support.microsoft.com/office/names-in-formulas-fc2935f9-115d-4bef-a370-3aa8bb4c91f1). Since we know this is a math entity we name the calling object argument `math`. The argument name can be used in the body calculation. In the previous code sample it retrieves the `math.[value]` property to perform the calculation.
+Note that the argument name can be whatever you decide, as long as it conforms to the Excel syntax rules as specified in [Names in formulas](https://support.microsoft.com/office/names-in-formulas-fc2935f9-115d-4bef-a370-3aa8bb4c91f1). Since we know this is a math entity, we name the calling object argument `math`. The argument name can be used in the body calculation. In the previous code sample, it retrieves the `math.[value]` property to perform the calculation.
 
 The following code sample shows the implementation of the `Contoso.AddValue` function.
 
@@ -223,7 +223,7 @@ function makeProductEntity(productID: number, productName: string, price: number
 
 ## Exclude custom functions from the Excel UI
 
-We recommend you use the `@excludeFromAutoComplete` tag in the comments description of custom functions used by reference methods. It indicates that the function will be excluded from the autocomplete drop-down list and Formula Builder. This helps prevent the user from accidentally using a custom function separately from its entity value.
+Use the `@excludeFromAutoComplete` tag in the comments description of custom functions used by reference methods to indicate that the function will be excluded from the autocomplete drop-down list and Formula Builder. This helps prevent the user from accidentally using a custom function separately from its entity value.
 
 > [!NOTE]
 > If the function is manually entered correctly in the grid, the function will still execute. Also, a function can’t have both `@excludeFromAutoComplete` and `@linkedEntityLoadService` tags.
@@ -232,7 +232,7 @@ For the full list of properties in addition to the properties specified by [Manu
 
 The `@excludeFromAutoComplete` tag is processed during build to generate a **functions.json** file by the **Custom-Functions-Metadata** package. This package is automatically added to the build process if you start with yo office and choose a custom function template. If you aren't using this package, you'll need to add the `excludeFromAutoComplete` property manually to the **functions.json** file.
 
-The following example shows how to manually describe the `APPLYSALESTAX` with JSON in the **functions.json** file. The `excludeFromAutoComplete` property is set to `true`.
+The following code sample shows how to manually describe the `APPLYSALESTAX` with JSON in the **functions.json** file. The `excludeFromAutoComplete` property is set to `true`.
 
 ```typescript
 {
@@ -266,7 +266,7 @@ For more information, see [Manually create JSON metadata for custom functions](c
 
 ## Add a function to a basic value type
 
-You can add functions to the basic value types of `Boolean`, `double`, and `string`. The process is the same as for entity values. Describe the function with JSON as a reference method. The following code sample shows how to create a double basic value with a function `AddValue()` that adds a value `x` to the basic value.
+To add functions to the basic value types of `Boolean`, `double`, and `string`, the process is the same as for entity values. Describe the function with JSON as a reference method. The following code sample shows how to create a double basic value with a function `AddValue()` that adds a value `x` to the basic value.
 
 ```typescript
 /**
@@ -370,7 +370,7 @@ function generateRandomRange(rows, columns, min, max) {
 }
 ```
 
-As the user enters the function in Excel, autocomplete shows the properties of the function, and indicates optional arguments by surrounding them in brackets []. The following image shows an example of entering optional parameters using the `generateRandomRange` reference method.
+When the user enters the function in Excel, autocomplete shows the properties of the function, and indicates optional arguments by surrounding them in brackets []. The following image shows an example of entering optional parameters using the `generateRandomRange` reference method.
 
 :::image type="content" source="../images/excel-data-types-reference-method-optional-parameters.png" alt-text="Screenshot of entering concatProductNames method in Excel passing A1 and A2 which contain a bicycle and unicycle product entity value.":::
 
@@ -423,7 +423,7 @@ The following image shows an example of entering repeating parameters using the 
 
 ### Repeating parameters with ranges
 
-To support passing ranges to your reference method, such as **B1:B3** use a multidimensional array. The following code sample shows how to create a reference function that sums zero or more parameters which can include ranges.
+To support passing ranges to your reference method such as **B1:B3**, use a multidimensional array. The following code sample shows how to create a reference function that sums zero or more parameters which can include ranges.
 
 ```typescript
 /** 
@@ -479,7 +479,7 @@ The following image shows an example of entering repeating parameters with a ran
 
 ## Support details
 
-reference methods are supported in all custom function types, such as [volatile](custom-functions-volatile.md), and [streaming](custom-functions-web-reqs.md) custom functions. Also, all custom function return types are supported ([matrix, scalar, and error](custom-functions-json-autogeneration.md))
+Reference methods are supported in all custom function types, such as [volatile](custom-functions-volatile.md), and [streaming](custom-functions-web-reqs.md) custom functions. Also, all custom function return types are supported ([matrix, scalar, and error](custom-functions-json-autogeneration.md))
 A linked entity can’t have a custom function that combines both a reference method and a data provider. Be sure when developing linked entities to keep these types of custom functions separate.
 
 ## See also
