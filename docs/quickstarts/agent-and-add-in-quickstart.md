@@ -129,7 +129,7 @@ Add the agent with the following steps.
                         },
                         "Color": {
                             "type": "string",
-                            "description": "A color in hex format, e.g. #30d5c8",
+                            "description": "A color in hex format, e.g., #30d5c8",
                             "default" : "#30d5c8"
                         }
                     },
