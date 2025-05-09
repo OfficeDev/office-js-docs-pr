@@ -26,7 +26,7 @@ The following are the main tasks for adding a Copilot agent to your add-in. Deta
 
 - [Create the functions for the agent's actions](#create-the-functions-for-the-agents-actions) that will implement the Copilot agent's actions.
 - [Update the manifest](#update-the-manifest)
-- [Create the agent and API plugin configuration](#create-the-agent-and-api-plug-in-configuration)
+- [Create the agent and API plug-in configuration](#create-the-agent-and-api-plug-in-configuration)
 - [Create the app package](#create-the-app-package)
 - [Test the agent](#test-the-agent)
 - [Make changes in the app](#make-changes-in-the-app)
@@ -218,7 +218,7 @@ The runtime object should look similar to the following. There may be other prop
                         },
                         "Color": {
                             "type": "string",
-                            "description": "A color in hex format, e.g. #30d5c8",
+                            "description": "A color in hex format, e.g., #30d5c8",
                             "default" : "#30d5c8"
                         }
                     },
@@ -275,7 +275,7 @@ Using any zip utility, create a zip file that contains the following files.
 
 - The manifest
 - The icon files referenced in the manifest's [`"icons.color"`](/microsoft-365/extensibility/schema/root-icons#color) and [`"icons.outline"`](/microsoft-365/extensibility/schema/root-icons#outline)
-- The two files you created in [Create the agent and API plugin configuration](#create-the-agent-and-api-plug-in-configuration)
+- The two files you created in [Create the agent and API plug-in configuration](#create-the-agent-and-api-plug-in-configuration)
 - Any files referenced in the [`"localizationInfo.additionalLanguages"`](/microsoft-365/extensibility/schema/root-localization-info#additionallanguages) property
 
 > [!IMPORTANT]
