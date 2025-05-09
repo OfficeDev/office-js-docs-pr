@@ -34,7 +34,7 @@ The following are some selected ways in which adding a Copilot agent enhances th
 
 - **Trusted insertion of data**: If you prompt a typical AI engine with a question, it will combine information it finds and compose an answer; a process that can introduce inaccuracies. But a Copilot agent based on an add-in can insert data *unchanged* from a trusted source. Some examples:
 
-   - Consider an add-in that enables the insertion of legal research into Word where it can then be edited. A user promnpts the agent: "In what circumstances can a lease of residential space in Indiana be broken unilaterally by the lessor?" The add-in then fetches content, unchanged, from precedents and statutes.
+   - Consider an add-in that enables the insertion of legal research into Word where it can then be edited. A user prompts the agent: "In what circumstances can a lease of residential space in Indiana be broken unilaterally by the lessor?" The add-in then fetches content, unchanged, from precedents and statutes.
    - Consider an add-in that manages the inventory of a digital assets. In the Copilot agent chat, a user prompts: "Insert a table of our color photos with the name of each, the number of times it was downloaded, and it's size in megabytes, sorted in order from most downloaded." The add-in then fetches this data, unchanged, from the system of record and inserts the table into an Excel spreadsheet.
 
 ## The relation of Copilot agents to the Add-in framework
