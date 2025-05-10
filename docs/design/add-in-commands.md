@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 03/11/2025
+ms.date: 05/19/2025
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -30,6 +30,12 @@ There are two types of add-in commands, based on the kind of action that the com
      > Because of the 5-minute timeout, the dialog should be designed so that users complete their interaction and close it within 5 minutes. Your add-in should use a task pane for longer interactions.
 
   - If the add-in is configured to use a [shared runtime](../testing/runtimes.md#shared-runtime), the function can also call the [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method.
+
+   > [!TIP]
+   > Function commands aren't the only way to run arbitrary JavaScript in an add-in. An add-in can also include:
+   >
+   > - Custom handlers for certain events, such as a user opening an new message pane in Outlook.
+   > - Custom [Copilot agents](agent-and-add-in-overview.md) that take actions in response to natural language requests from the add-in's users.
 
 ## Location of add-in commands
 
