@@ -7,7 +7,7 @@ ms.localizationpriority: high
 
 # Create Office Add-in projects with Microsoft 365 Agents Toolkit
 
-A primary tool for developing Microsoft 365 apps and agents is Agents Toolkit. You can create Office Add-ins with Agents Toolkit.
+A primary tool for developing Microsoft 365 apps and agents, including Office Add-ins, is Microsoft 365 Agents Toolkit.
 
 Add-ins created with Agents Toolkit use the [unified manifest for Microsoft 365](unified-manifest-overview.md).
 
@@ -25,7 +25,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 
 ## Create an Office Add-in project
 
-1. Open Visual Studio Code and select Agents Toolkit icon in the **Activity Bar**.
+1. Open Visual Studio Code and select the Agents Toolkit icon in the **Activity Bar**.
 
     :::image type="content" source="../images/atk-toolkit-icon.png" alt-text="Agents Toolkit icon.":::
 
