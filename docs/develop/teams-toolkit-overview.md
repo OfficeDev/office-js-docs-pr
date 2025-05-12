@@ -27,7 +27,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 
 1. Open Visual Studio Code and select Agents Toolkit icon in the **Activity Bar**.
 
-    :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Agents Toolkit icon.":::
+    :::image type="content" source="../images/atk-toolkit-icon.png" alt-text="Agents Toolkit icon.":::
 
 1. Select **Create a New App**.
 1. The **New Project** dropdown menu opens. The options listed will vary depending on your version of Agents Toolkit. Select **Office Add-in**.
