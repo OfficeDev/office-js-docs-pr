@@ -1,6 +1,11 @@
 {
     "redirections": [
 	    {
+            "source_path": "docs/develop/teams-toolkit-overview.md",
+            "redirect_url": "/office/dev/add-ins/develop/agents-toolkit-overview"
+        },	
+
+	    {
             "source_path": "docs/develop/grant-admin-consent-to-an-add-in.md",
             "redirect_url": "/entra/identity-platform/quickstart-configure-app-access-web-apis#more-on-api-permissions-and-admin-consent"
         },	

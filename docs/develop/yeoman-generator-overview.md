@@ -11,7 +11,7 @@ ms.localizationpriority: high
 The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. These projects are Node.js-based. When you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS), [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
 > [!NOTE]
-> Office add-ins can also be created with the [Microsoft 365 Agents Toolkit](teams-toolkit-overview.md) or the [Office Add-in Development Kit](development-kit-overview.md). 
+> Office add-ins can also be created with the [Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or the [Office Add-in Development Kit](development-kit-overview.md). 
 
 The projects that the tool creates have the following characteristics.
 

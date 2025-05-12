@@ -106,7 +106,7 @@ The importation process creates some folders and files that Visual Studio Code o
 As an alternative to using the toolkit's importation feature, you can create a brand new add-in project in the toolkit and move files from the existing project into it and make changes to other files. The following are the tasks that you need to carry out.
 
 1. If the existing project uses the add-in only manifest, convert it. See [Convert an add-in to use the unified manifest for Microsoft 365](convert-xml-to-json-manifest.md).
-1. Create a new add-in project in Agents Toolkit. For each choice the toolkit asks you to make, such as the choice between JavaScript and TypeScript, make the choice that best matches your existing add-in. See [Create Office Add-in projects with Microsoft 365 Agents Toolkit](teams-toolkit-overview.md).
+1. Create a new add-in project in Agents Toolkit. For each choice the toolkit asks you to make, such as the choice between JavaScript and TypeScript, make the choice that best matches your existing add-in. See [Create Office Add-in projects with Microsoft 365 Agents Toolkit](agents-toolkit-overview.md).
 1. Replace the manifest in the new project's **\appPackage** folder with your converted manifest.
 
    > [!NOTE]

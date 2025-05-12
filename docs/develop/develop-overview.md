@@ -37,7 +37,7 @@ Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and
 
 ### Agents Toolkit
 
-The Agents Toolkit can be used to create almost any kind of Microsoft 365 extension. For details about creating an add-in, see [Create Office Add-in projects with Microsoft 365 Agents Toolkit](teams-toolkit-overview.md).
+The Agents Toolkit can be used to create almost any kind of Microsoft 365 extension. For details about creating an add-in, see [Create Office Add-in projects with Microsoft 365 Agents Toolkit](agents-toolkit-overview.md).
 
 ### Office Add-ins Development Kit (preview)
 

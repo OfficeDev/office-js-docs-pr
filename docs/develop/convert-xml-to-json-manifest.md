@@ -24,7 +24,7 @@ There are three basic tasks to converting an add-in project from the add-in only
 >
 > - Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
-> - If you [created the project with Teams Toolkit or Microsoft 365 Agents Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
+> - If you [created the project with Teams Toolkit or Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
 ## Ensure that your manifest is ready to convert
 

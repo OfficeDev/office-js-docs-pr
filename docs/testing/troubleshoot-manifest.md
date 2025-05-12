@@ -14,7 +14,7 @@ You should validate your add-in's manifest file to ensure that it's correct and 
 
 ## Validate your manifest with the validate command
 
-If you used [Microsoft 365 Agents Toolkit](../develop/teams-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate your project's manifest file with the following command in the root directory of your project.
+If you used [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate your project's manifest file with the following command in the root directory of your project.
 
 ```command&nbsp;line
 npm run validate
@@ -30,7 +30,7 @@ npx office-addin-manifest validate -p MANIFEST_FILE
 
 ## Validate your manifest with office-addin-manifest
 
-If you didn't use [Microsoft 365 Agents Toolkit](../develop/teams-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
+If you didn't use [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Install [Node.js](https://nodejs.org/download/).
 
