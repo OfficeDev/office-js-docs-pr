@@ -12,7 +12,7 @@ ms.topic: how-to
 
 You can use annotations to provide feedback about grammar or other aspects of content in a Word document. The user may see colorful underlining that indicates there's an issue or other information. If the user hovers over the affected content, a popup dialog is displayed that shows them what the issue is and possible actions they can take.
 
-APIs for working with annotations were introduced in the [PowerPointApi 1.7 requirement set](/javascript/api/requirement-sets/word/word-api-1-7-requirement-set) and expanded in the [PowerPointApi 1.8 requirement set](/javascript/api/requirement-sets/word/word-api-1-8-requirement-set) as part of supporting writing assistance scenarios like checking spelling and grammar or providing suggestions to improve writing.
+APIs for working with annotations were introduced in the [WordApi 1.7 requirement set](/javascript/api/requirement-sets/word/word-api-1-7-requirement-set) and expanded in the [WordApi 1.8 requirement set](/javascript/api/requirement-sets/word/word-api-1-8-requirement-set) as part of supporting writing assistance scenarios like checking spelling and grammar or providing suggestions to improve writing.
 
 In this article, we show how your add-in can insert feedback and critiques using annotations in a document and allow the user to react to them.
 
