@@ -2,16 +2,13 @@
 title: Add properties to basic cell values
 description: Add properties to basic cell values.
 ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 04/14/2025
+ms.date: 05/12/2025
 ms.localizationpriority: medium
 ---
 
-# Add properties to basic cell values (preview)
+# Add properties to basic cell values
 
-> [!NOTE]
-> The features described in this article are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
-
-Add properties to basic cell values in Excel to associate additional information with the values. Similar to [entity values](excel-data-types-linked-entity-cell-values.md), you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
+Add properties to basic cell values in Excel to associate additional information with the values. Similar to [entity values](excel-data-types-linked-entity-cell-values.md), you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 14.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
 
 :::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screenshot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
 
@@ -27,7 +24,7 @@ Cell value properties can also be used in formulas.
 
 To create a cell value and add properties to it, use `Range.valuesAsJson` to assign properties. The following code sample shows how to create a new number in cell **A1**. It adds the **Food**, **Drinks**, and additional properties describing a bill in a restaurant. It assigns a JSON description of the properties to `valuesAsJson`.
 
-```javascript
+```typescript
 async function createNumberProperties() {
   await Excel.run(async (context) => {
     const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -37,7 +34,7 @@ async function createNumberProperties() {
         {
           type: Excel.CellValueType.double,
           basicType: Excel.RangeValueType.double,
-          basicValue: 104.67,
+          basicValue: 14.67,
           properties: {
             Food: {
               type: Excel.CellValueType.string,
@@ -75,7 +72,7 @@ async function createNumberProperties() {
 
 To add properties to an existing value, first get the value from the cell using `valuesAsJson`, then add a properties JSON object to it. The following example shows how to get the number value from cell **A1** and assign a property named **Precision** to it. Note that you should check the type of the value to ensure it's a **string**, **double**, or **Boolean** basic type.
 
-```javascript
+```typescript
 async function addPropertyToNumber() {
   await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -111,7 +108,7 @@ Adding properties to **string**, **Boolean**, and **double** basic types is simi
 
 You can apply number formatting to values of type `CellValueType.double`. Use the `numberFormat` property in the JSON schema to specify a number format. The following code sample shows the complete schema of a number value formatted as currency. The formatted number value in the code sample displays as **$24.00** in the Excel UI.
 
-```javascript
+```typescript
 // This is an example of the complete JSON of a formatted number value with a property.
 // In this case, the number is formatted as currency.
 async function createCurrencyValue() {
@@ -151,7 +148,7 @@ For more information, see [Use cards with cell value data types](excel-data-type
 
 You can nest data types in a cell value, such as additional entity values, as well as **strings**, **doubles**, and **Booleans**. The following code sample shows how to create a cell value that represents the charge status on a computer battery. It contains a nested entity value that describes the computer properties for power consumption and charging status. The computer entity value also contains a nested string value that describes the computer’s power plan.
 
-```javascript
+```typescript
 async function createNumberWithNestedEntity() {
   await Excel.run(async (context) => {
     const sheet = context.workbook.worksheets.getActiveWorksheet();
