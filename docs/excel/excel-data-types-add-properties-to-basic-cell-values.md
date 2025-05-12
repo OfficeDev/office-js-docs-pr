@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > The features described in this article are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)]
 
-Add properties to basic cell values in Excel to associate additional information with the values. Similar to entity values, you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
+Add properties to basic cell values in Excel to associate additional information with the values. Similar to [entity values](excel-data-types-linked-entity-cell-values.md), you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 104.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
 
 :::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screenshot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
 
@@ -25,7 +25,7 @@ Cell value properties can also be used in formulas.
 
 ## Create a cell value with properties
 
-To create a cell value and add properties to it, use `valuesAsJson` to assign properties. The following code sample shows how to create a new number in cell **A1**. It adds the **Food**, **Drinks**, and additional properties describing a bill in a restaurant. It assigns a JSON description of the properties to `Range.valuesAsJson`.
+To create a cell value and add properties to it, use `Range.valuesAsJson` to assign properties. The following code sample shows how to create a new number in cell **A1**. It adds the **Food**, **Drinks**, and additional properties describing a bill in a restaurant. It assigns a JSON description of the properties to `valuesAsJson`.
 
 ```javascript
 async function createNumberProperties() {
@@ -109,7 +109,7 @@ Adding properties to **string**, **Boolean**, and **double** basic types is simi
 
 ## Formatted number values
 
-You can apply number formatting to values of type **CellValueType.double**. Use the **numberFormat** property in the JSON schema to specify a number format. The following code sample shows the complete schema of a number value formatted as currency. The formatted number value in the code sample displays as **$24.00** in the Excel UI.
+You can apply number formatting to values of type `CellValueType.double`. Use the `numberFormat` property in the JSON schema to specify a number format. The following code sample shows the complete schema of a number value formatted as currency. The formatted number value in the code sample displays as **$24.00** in the Excel UI.
 
 ```javascript
 // This is an example of the complete JSON of a formatted number value with a property.
