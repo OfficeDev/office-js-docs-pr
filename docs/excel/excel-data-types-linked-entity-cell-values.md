@@ -605,7 +605,7 @@ async function onLinkedEntityDomainRefreshed(eventArgs: Excel.LinkedEntityDataDo
 
 When Excel calls your add-in to get data for a linked entity cell value, it's possible an error can occur. If Excel is unable to connect to your add-in at all, such as when the add-in isn't loaded, Excel displays the `#CONNECT!` error to the user.
 
-If your linked entity load service function encounters an error, it should throw an error. The error will cause Excel to show `#CONNECT!` to the user.
+If your linked entity load service function encounters an error, it should throw the `notAvailableError` error. This causes Excel to show `#CONNECT!` to the user.
 
 The following code shows how to handle an error in a linked entity load service function.
 
