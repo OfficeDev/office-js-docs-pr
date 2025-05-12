@@ -70,7 +70,7 @@ There are four tasks to using the importation feature.
 > [!NOTE]
 > Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 
-Sideload the add-in using the instructions at [Sideload with Agents Toolkit](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-the-teams-toolkit).
+Sideload the add-in using the instructions at [Sideload with Microsoft 365 Agents Toolkit](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-microsoft-365-agents-toolkit).
 
 If you encounter problems, as a troubleshooting step, try [sideloading with a system prompt, bash shell, or terminal](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal). If you can, then the problem is isolated to the toolkit.
 

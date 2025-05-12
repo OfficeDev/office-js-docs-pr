@@ -16,7 +16,7 @@ The process of sideloading an add-in that uses the [Unified manifest for Microso
 
 Use the process described in [Sideload with a system prompt, bash shell, or terminal](#sideload-with-a-system-prompt-bash-shell-or-terminal).
 
-## Sideload with the Microsoft 365 Agents Toolkit
+## Sideload with Microsoft 365 Agents Toolkit
 
 1. First, *make sure Office desktop application that you want to sideload into is closed.*
 1. In Visual Studio Code, open Agents Toolkit.
@@ -61,7 +61,7 @@ There are two tools you can use to sideload.
     npx office-addin-debugging stop <relative-path-to-unified-manifest>
     ``` 
 
-### Sideload with the Agents Toolkit CLI (command-line interface) 
+### Sideload with Microsoft 365 Agents Toolkit CLI (command-line interface) 
 
 1. Manually create a zip package using the following steps.
 
