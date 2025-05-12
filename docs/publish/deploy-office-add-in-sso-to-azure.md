@@ -71,13 +71,13 @@ App Service supports various versions of Node.js on both Linux and Windows. Sele
 
 ## Update package.json
 
-1. Open the package.json file. Then replace the `start` command in the `"scripts"` section with the following entry.
+1. Open the package.json file. Then replace the `start` command in the ``"scripts"`` section with the following entry.
 
     ```json
     "start": "node middletier.js",
     ```
 
-1. Find the `"prestart"` entry in the '"scripts"' section and delete it. This section is not needed for this deployment.
+1. Find the `"prestart"` entry in the `"scripts"` section and delete it. This section is not needed for this deployment.
 1. Save the file.
 
 ## Update webpack.config.js

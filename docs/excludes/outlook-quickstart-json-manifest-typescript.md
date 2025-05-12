@@ -157,7 +157,7 @@ Add a custom button to the ribbon that inserts text into a message body.
 
 1. To write to a message, the add-in's permissions need to be raised. Scroll to the property `authorization.permissions.resourceSpecific[0].name` and change the value to `MailboxItem.ReadWrite.User`.
 
-1. When an add-in command runs code instead of opening a task pane, it must run the code in a runtime that is separate from the embedded webview where the task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `extension.runtimes` and add the following object to the `runtimes` array. Be sure to put a comma after the object that is already in the array. Note the following about this markup.
+1. When an add-in command runs code instead of opening a task pane, it must run the code in a runtime that is separate from the embedded webview where the task pane code runs. So the manifest must specify an additional runtime. Scroll to the property `"extension.runtimes"` and add the following object to the [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes) array. Be sure to put a comma after the object that is already in the array. Note the following about this markup.
 
     - The value of the `actions[0].id` property must be exactly the same as the name of the function that you added to the **commands.ts** file, in this case `insertHelloWorld`. In a later step, you'll refer to the item by this ID.
 
@@ -180,9 +180,9 @@ Add a custom button to the ribbon that inserts text into a message body.
     }
     ```
 
-1. The **Show Taskpane** button appears when the user is reading an email, but the button for adding text should only appear when the user is composing a new email (or replying to one). So the manifest must specify a new ribbon object. Scroll to the property `extension.ribbons` and add the following object to the `ribbons` array. Be sure to put a comma after the object that is already in the array. Note the following about this JSON:
+1. The **Show Taskpane** button appears when the user is reading an email, but the button for adding text should only appear when the user is composing a new email (or replying to one). So the manifest must specify a new ribbon object. Scroll to the property `"extension.ribbons"` and add the following object to the [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) array. Be sure to put a comma after the object that is already in the array. Note the following about this JSON:
 
-    - The only value in the `contexts` array is "mailCompose", so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** and **Perform an action** buttons appear. Compare this value with the `contexts` array in the existing ribbon object, whose value is `["mailRead"]`.
+    - The only value in the `contexts` array is `"mailCompose"`, so the button will appear when in a compose (or reply) window but not in a message read window where the **Show Taskpane** and **Perform an action** buttons appear. Compare this value with the `contexts` array in the existing ribbon object, whose value is `[`"mailRead"`]`.
     - The value of the `tabs[0].groups[0].controls[0].actionId` must be exactly the same as the value of `actions[0].id` property in the runtime object you created in an earlier step.
 
     ```json

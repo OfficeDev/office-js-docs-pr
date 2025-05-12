@@ -98,7 +98,7 @@ As you test your Outlook web add-in in the new Outlook on Windows, share feedbac
 
 ## See also
 
-- [Overview of the new Outlook for Windows](/microsoft-365-apps/outlook/overview-new-outlook)
+- [Overview of the new Outlook for Windows](/microsoft-365-apps/outlook/overview-new-outlook-windows)
 - [Blog post: Add-ins in the new Outlook for Windows](https://techcommunity.microsoft.com/t5/outlook-blog/add-ins-in-the-new-outlook-for-windows/ba-p/3954388)
 - [Podcast: Update on development with new Outlook for Windows](https://www.m365devpodcast.com/update-on-development-with-new-outlook-for-windows/)
 - [Outlook add-ins overview](outlook-add-ins-overview.md)

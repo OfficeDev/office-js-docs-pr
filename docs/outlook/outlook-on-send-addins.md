@@ -115,7 +115,7 @@ Add-ins for Outlook on the web (modern) and new Outlook on Windows that use the 
 To install a new add-in, run the following Exchange Online PowerShell cmdlets.
 
 ```powershell
-$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte –ReadCount 0
+$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte -ReadCount 0
 ```
 
 ```powershell
@@ -143,7 +143,7 @@ For all users, to disallow editing while on-send add-ins are processing:
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -168,7 +168,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -186,7 +186,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 To turn off on-send compliance enforcement for a user, assign a mailbox policy that doesn't have the flag enabled by running the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox -OWAMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]
@@ -195,7 +195,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 To turn off on-send compliance enforcement for all users that have a specific Outlook on the web or new Outlook on Windows mailbox policy assigned, run the following cmdlets.
 
 ```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$false
 ```
 
 # [Web browser (classic)](#tab/classic)
@@ -205,7 +205,7 @@ Add-ins for Outlook on the web (classic) that use the on-send feature will run f
 To install a new add-in, run the following Exchange Online PowerShell cmdlets.
 
 ```powershell
-$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte –ReadCount 0
+$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte -ReadCount 0
 ```
 
 ```powershell
@@ -233,7 +233,7 @@ To enable on-send add-ins for all users:
 1. Enable the on-send feature.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -258,7 +258,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 1. Enable the on-send feature.
 
    ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -276,7 +276,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 To disable the on-send feature for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox -OWAMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]
@@ -285,7 +285,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 To disable the on-send feature for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.
 
 ```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$false
 ```
 
 # [Windows (classic)](#tab/windows)

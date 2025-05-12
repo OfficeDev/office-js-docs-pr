@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 04/11/2025
+ms.date: 04/17/2025
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -28,7 +28,7 @@ The `Set-AuthenticationPolicy` command controls the issuance of legacy Exchange 
 
 To turn legacy tokens off, run the following command.
 
-`Set-AuthenticationPolicy –BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
+`Set-AuthenticationPolicy -BlockLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
 
 The command turns off legacy tokens for the entire tenant. If an Outlook add-in requests a legacy token, it won’t be issued a token.
 
@@ -39,7 +39,7 @@ The command turns off legacy tokens for the entire tenant. If an Outlook add-in 
 
 To turn legacy tokens on, run the following command. It can take up to 24 hours before all requests from Outlook add-ins for legacy tokens are allowed.
 
-`Set-AuthenticationPolicy –AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
+`Set-AuthenticationPolicy -AllowLegacyExchangeTokens -Identity "LegacyExchangeTokens"`
 
 Important notes about this command.
 
@@ -64,8 +64,8 @@ Blocked: []
 PS C:\>
 ```
 
-
-The **Allowed** and **Blocked** lists are not used.
+> [!NOTE]
+> The **Allowed** and **Blocked** lists aren't used. If you see any IDs listed, the IDs are old data that is no longer applicable.
 
 > [!NOTE]
 > The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.
