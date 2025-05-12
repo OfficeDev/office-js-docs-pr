@@ -27,7 +27,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 1. Open the **manifest.json** file.
 
-1. Find the *first* object in the "authorization.permissions.resourceSpecific" array and set its "name" property to "MailboxItem.ReadWrite.User". It should look like this when you're done.
+1. Find the *first* object in the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array and set its `"name"` property to `"MailboxItem.ReadWrite.User"`. It should look like this when you're done.
 
     ```json
     {
@@ -36,7 +36,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     }
     ```
 
-1. In the "validDomains" array, change the URL to `"https://contoso.com"`, which is the URL of the fictional online meeting provider. The array should look like this when you're done.
+1. In the [`"validDomains"`](/microsoft-365/extensibility/schema/root#validdomains) array, change the URL to `"https://contoso.com"`, which is the URL of the fictional online meeting provider. The array should look like this when you're done.
 
     ```json
     "validDomains": [
@@ -44,13 +44,13 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ],
     ```
 
-1. Add the following object to the "extensions.runtimes" array. Note the following about this code.
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this code.
 
-   - The "minVersion" of the Mailbox requirement set is set to "1.3" so the runtime won't launch on platforms and Office versions where this feature isn't supported.
-   - The "id" of the runtime is set to the descriptive name "online_meeting_runtime".
-   - The "code.page" property is set to the URL of UI-less HTML file that will load the function command.
-   - The "lifetime" property is set to "short" which means that the runtime starts up when the function command button is selected and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There's an action to run a function named "insertContosoMeeting". You'll create this function in a later step.
+   - The `"minVersion"` of the Mailbox requirement set is set to `"1.3"` so the runtime won't launch on platforms and Office versions where this feature isn't supported.
+   - The `"id"` of the runtime is set to the descriptive name `"online_meeting_runtime"`.
+   - The [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property is set to the URL of UI-less HTML file that will load the function command.
+   - The `"lifetime"` property is set to `"short"` which means that the runtime starts up when the function command button is selected and shuts down when the function completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There's an action to run a function named `"insertContosoMeeting"`. You'll create this function in a later step.
 
     ```json
     {
@@ -81,13 +81,13 @@ The steps for configuring the manifest depend on which type of manifest you sele
     }
     ```
 
-1. Replace the "extensions.ribbons" array with the following. Note the following about this markup.
+1. Replace the [`"extensions.ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons-property) array with the following. Note the following about this markup.
 
-   - The "minVersion" of the Mailbox requirement set is set to "1.3" so the the ribbon customizations won't appear on platforms and Office versions where this feature is not supported.
-   - The "contexts" array specifies that the ribbon is available only in the meeting details organizer window.
+   - The `"minVersion"` of the Mailbox requirement set is set to `"1.3"` so the the ribbon customizations won't appear on platforms and Office versions where this feature is not supported.
+   - The `"contexts"` array specifies that the ribbon is available only in the meeting details organizer window.
    - There will be a custom control group on the default ribbon tab (of the meeting details organizer window) labelled **Contoso meeting**.
    - The group will have a button labelled **Add meeting**.
-   - The button's "actionId" has been set to "insertContosoMeeting", which matches the "id" of the action you created in the previous step.
+   - The button's `"actionId"` has been set to `"insertContosoMeeting"`, which matches the `"id"` of the action you created in the previous step.
 
     ```json
     "ribbons": [
@@ -158,7 +158,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 1. Open the **manifest.json** file.
 
-1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, add `"mobile"` as an item. When you're finished, the array should look like the following.
 
 ```json
 "formFactors": [
@@ -167,7 +167,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 ]
 ```
 
-1. In the "extensions.ribbons.contexts" array, add `onlineMeetingDetailsOrganizer` as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array, add `onlineMeetingDetailsOrganizer` as an item. When you're finished, the array should look like the following.
 
 ```json
 "contexts": [
@@ -176,7 +176,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 ],
 ```
 
-1. In the "extensions.ribbons.tabs" array, find the tab with the "builtInTabId" of "TabDefault". Add a child "customMobileRibbonGroups" array to it (as a peer of the existing "groups" property). When you're finished, the "tabs" array should look like the following:
+1. In the [`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array#tabs) array, find the tab with the `"builtInTabId"` of `"TabDefault"`. Add a child `"customMobileRibbonGroups"` array to it (as a peer of the existing `"groups"` property). When you're finished, the `"tabs"` array should look like the following:
 
 ```json
 "tabs": [

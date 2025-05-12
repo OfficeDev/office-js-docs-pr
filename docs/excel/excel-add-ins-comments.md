@@ -1,7 +1,7 @@
 ---
 title: Work with comments using the Excel JavaScript API
 description: Information on using the APIs to add, remove, and edit comments and comment threads.
-ms.date: 02/15/2022
+ms.date: 04/07/2025
 ms.localizationpriority: medium
 ---
 
@@ -14,6 +14,9 @@ In the Excel JavaScript API, a comment includes both the single initial comment 
 ![An Excel comment, labelled "Comment" with two replies, labelled "Comment.replies[0]" and "Comment.replies[1].](../images/excel-comments.png)
 
 Comments within a workbook are tracked by the `Workbook.comments` property. This includes comments created by users and also comments created by your add-in. The `Workbook.comments` property is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object that contains a collection of [Comment](/javascript/api/excel/excel.comment) objects. Comments are also accessible at the [Worksheet](/javascript/api/excel/excel.worksheet) level. The samples in this article work with comments at the workbook level, but they can be easily modified to use the `Worksheet.comments` property.
+
+> [!TIP]
+> To learn about adding and editing notes with the Excel JavaScript API, see [Work with notes using the Excel JavaScript API](excel-add-ins-notes.md).
 
 ## Add comments
 
