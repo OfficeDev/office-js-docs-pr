@@ -192,9 +192,9 @@ The runtime object should look similar to the following. There may be other prop
 1. *Replace the property values with new values that are appropriate for your add-in.* For more information about these properties, see [Declarative agent manifest object](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object).
 
    > [!NOTE]
-   > You create the file that you specify in the "actions.file" property in the next step. In the example above, this is the file **Office-API-local-plugin.json**.
+   > You create the file that you specify in the `"actions.file"` property in the next step. In the example above, this is the file **Office-API-local-plugin.json**.
 
-1. Create another file in the folder with your manifest and give it the name you assigned to the "actions.file" property in the preceding step"; for example, **Office-API-local-plugin.json**.
+1. Create another file in the folder with your manifest and give it the name you assigned to the `"actions.file"` property in the preceding step; for example, **Office-API-local-plugin.json**.
 1. Paste the following content into the file.
 
    ```json
@@ -292,7 +292,7 @@ The three major steps to test the agent &mdash; sideloading, starting a server, 
 
 Sideloading is done through Teams even when there's no Teams feature in the app. The steps are as follows.
 
-1. Close all Office applications, and then Clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).
+1. Close all Office applications, and then clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).
 1. Open Teams and select **Apps** from the app bar, then select **Manage your apps** at the bottom of the **Apps** pane.
 1. Select **Upload an app** in the **Apps** dialog, and then in the dialog that opens, select **Upload a custom app**.
 1. In the **Open** dialog, navigate to, and select, the package zip file.
@@ -315,10 +315,12 @@ In a command prompt or Visual Studio Code **TERMINAL** in the root of the projec
 #### Run the agent
 
 1. Open the Office application (Excel, PowerPoint, or Word) that your combined agent and add-in targets. Wait until the add-in has loaded. This may take as much as two minutes. Depending on your version of Office, ribbon buttons and other artifacts may appear automatically. In recent versions, you need to manually activate the add-in: Select the **Add-ins** button on the **Home** ribbon, and then in the flyout that opens, select your add-in. It will have the name from the name from the [`"name.short"`](/microsoft-365/extensibility/schema/root-name) property in the manifest.
-1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. Your agent should be be in the list of agents. It must have the name specified in the `"name"` property of the declarative agent configuration file (which may not be the same as the name from the `"name.short"` property in the manifest); for example, **Excel Add-in + Agent**. You may need to select **See more** to ensure that all agents are listed. If the agent isn't listed, try the following actions.
+1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. Your agent should be be in the list of agents. It has the name specified in the `"name"` property of the declarative agent configuration file (which may not be the same as the name from the `"name.short"` property in the manifest); for example, **Excel Agent**. You may need to select **See more** to ensure that all agents are listed. If the agent isn't listed, try one or both of the following actions.
 
-   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
    - Wait a few minutes and reload Copilot.
+   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
+
+   :::image type="content" source="../images/copilot-agent-list.png" alt-text="A screenshot of the agent list in the Copilot pane in an Office application":::
    
 1. When the agent is listed, select it and the pane for the agent opens. The conversation starters you configured in the `"conversation_starters"` property of declarative agent configuration file will be displayed.
 1. Select a conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The agent action occurs.

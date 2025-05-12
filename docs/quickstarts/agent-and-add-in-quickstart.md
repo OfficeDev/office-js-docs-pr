@@ -294,10 +294,11 @@ Add the agent with the following steps.
    - To test in Office on Windows, open Excel. In a few moments, the **Show Task pane** button appears on the **Home** ribbon in the Contoso Add-in group. (If it doesn't appear on the ribbon, select the **Add-ins** button on the ribbon, and then select the **Excel Add-in + Agent** app in the flyout that opens.)
    - To test in Office on the web, in a browser, navigate to `https://excel.cloud.microsoft.com/`, and then create a new workbook.
  
-1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. **Excel Add-in + Agent** should be in the list of agents. (You may need to select **See more** to ensure that all agents are listed.) If the agent isn't, try the following actions.
+1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. **Excel Add-in + Agent** should be in the list of agents. (You may need to select **See more** to ensure that all agents are listed.) If the agent isn't, try one or both of the following actions.
 
-   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
    - Wait a few minutes and reload Copilot.
+   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
+
 
 1. When the agent is listed, select it. The **Excel Add-in + Agent** pane opens.
 1. Select the **Change cell color** conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The cell's color should change.
