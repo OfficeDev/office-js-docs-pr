@@ -17,7 +17,7 @@ Linked entity cell values are linked to an external data source. They provide th
 
 This article expands on information described in the following articles. We recommend reading the following articles before learning how to build your own linked entity cell values.
 
-- [Excel data types: Stocks and geography](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877)
+- [Excel data types: Stocks and geography](https://support.microsoft.com/office/61a33056-9935-484f-8ac8-f1a89e210877)
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
 - [Excel JavaScript API data types entity value card](excel-data-types-entity-card.md)
 
@@ -36,17 +36,17 @@ Like regular entity values, linked entity cell values can be referenced in formu
 The following definitions are fundamental to understanding how to implement your own linked entity cell values.
 
 - **Linked entity data domain** – A linked entity data domain describes the overall category that an entity belongs to. Some examples are employees, organizations, or cars.
-- **Linked entity cell value** – An instance created from a data domain. An example is an employee value for Joe. It can be displayed as an entity value card.
+- **Linked entity cell value** – An instance created from a data domain. An example is an employee value for someone named Joe. It can be displayed as an entity value card.
 - **Data provider** - The data provider is recognized by Excel as the source of data for one or more registered linked entity data domains.
 - **Linked entity load service function** – Every linked entity data domain defines a load service function to act as the source of data for that domain. The linked entity load service function handles requests from Excel to get linked entity cell values for the workbook. You implement it as a TypeScript or JavaScript custom function.
 
 ## How your add-in provides linked entity cell values
 
-The following diagram shows the steps that occur when your add-in is loaded and then inserts a new linked entity cell value into a cell.
+This diagram shows the steps that occur when your add-in is loaded and then inserts a new linked entity cell value into a cell. The following description explains what happens at each step of the process.
 
-:::image type="content" source="../images/excel-data-types-linked-entity-workflow.png" alt-text="Diagram showing five steps for add-in to register data domains and handle requests from Excel to get properties from a linked entity cell value.":::
+:::image type="content" source="../images/excel-data-types-linked-entity-workflow.png" alt-text="Diagram showing the five steps for an add-in to register data domains and handle requests from Excel to get properties from a linked entity cell value.":::
 
-1. Excel loads your add-in, and your add-in registers all of the linked entity data domains that it supports. Each registration includes the id of a linked entity load service function which is called later by Excel to request property values for the linked entity cell value from the linked entity data domain. In this example, one data domain named Products is registered.
+1. Excel loads your add-in, and your add-in registers all of the linked entity data domains that it supports. Each registration includes the ID of a linked entity load service function. This ID is called later by Excel to request property values for the linked entity cell value from the linked entity data domain. In this example, one data domain named **Products** is registered.
 1. Excel tracks each registered linked entity data domain in a linked entity data domain collection. This enables Excel to call your linked entity load service function when data is needed for a linked entity cell value.
 1. Your add-in inserts a new linked entity cell value into the worksheet. In this example a new linked entity cell value is created for the product **Chai**. This would typically occur from the user choosing a button on your add-in that results in creating one or more linked entity cell values. When you create new linked entity cell values, they only contain an initial text string that is displayed in the cell. Excel calls your linked entity load service function to get the remaining property values. Your add-in can also create linked entity cell values from custom functions.
 1. Excel calls the linked entity load service function that you registered in step 1. This occurs every time you create a new linked entity cell value, or if a data refresh occurs. Excel calls your linked entity load service function to get all of the property values.
@@ -55,11 +55,11 @@ The following diagram shows the steps that occur when your add-in is loaded and 
 > [!NOTE]
 > If Excel needs multiple linked entity cell values, the linked entity IDs are passed as a batch to your linked entity load service function. The linked entity load service then returns a batch result of all values.
 
-The following sections provide additional details about the previous definitions.
+The following sections provide additional details about the terms defined earlier in this article.
 
 ### Data provider
 
-Your add-in is the data provider and is recognized by Excel as the source of data for one or more registered data domains. Your add-in exposes one or more data provider functions that return data for linked entity cell values. The data provider is identified by a text string ([LinkedEntityDataDomainCreateOptions.dataprovider](/javascript/api/excel/excel.linkedentitydatadomaincreateoptions)) such as **Contoso** or the name of your add-in. The name must be unique within your add-in.
+Your add-in is the data provider and is recognized by Excel as the source of data for one or more registered data domains. Your add-in exposes one or more data provider functions that return data for linked entity cell values. The [data provider](/javascript/api/excel/excel.linkedentitydatadomaincreateoptions) is identified by a text string such as **Contoso** or the name of your add-in. The name must be unique within your add-in.
 
 ### Linked entity data domains
 
@@ -68,7 +68,7 @@ The data provider (your add-in) registers one or more data domains. A data domai
 A data domain describes to Excel the following attributes:
 
 - The name of the data provider it is associated with.
-- A domain id to uniquely identify it, such as **products**.
+- A domain ID to uniquely identify it, such as **products**.
 - A display name for the user, such as **Products**.
 - A linked entity load service function to call when Excel needs a linked entity cell value.
 - A specified refresh mode and interval describing how often it refreshes.
@@ -77,7 +77,7 @@ An example of a linked entity data domain is the **Geography** data domain in Ex
 
 ### Linked entity cell value
 
-A linked entity cell value is an instance created from a data domain. An example is a value for Seattle, from the [Geography data domain](https://support.microsoft.com/en-us/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877). It displays an entity value card like regular entity cell values.
+A linked entity cell value is an instance created from a data domain. An example is a value for Seattle, from the [Geography data domain](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877). It displays an entity value card like regular entity cell values.
 
 :::image type="content" source="../images/excel-geography-linked-data-type-seattle.png" alt-text="Screenshot of an entity value data card for the Seattle Geography linked data type in the worksheet.":::
 
@@ -85,7 +85,7 @@ Since linked entity cell values are linked to the data domain, they can be refre
 
 ### Linked entity load service function
 
-Each data domain requires a function that Excel can call when it needs linked entity cell values. Your add-in provides the service as a JavaScript or TypeScript function tagged with **@linkedEntityLoadService**. It's recommended to create just one load service function for best performance. Excel will send all requests for linked entity cell values as a batch to the load service function.
+Each data domain requires a function that Excel can call when it needs linked entity cell values. Your add-in provides the service as a JavaScript or TypeScript function tagged with **@linkedEntityLoadService**. It's recommended to create just one load service function for best performance. Excel sends all requests for linked entity cell values as a batch to the load service function.
 
 ## Create a data provider with data domains
 
@@ -105,8 +105,7 @@ Office.onReady(async () => {
       dataProvider: "Contoso",
       id: "products",
       name: "Products",
-      // Id of the custom function that will be called on demand by Excel to resolve/refresh linked entity
-      // cell values of this data domain.
+      // ID of the custom function that is called on demand by Excel to resolve or refresh linked entity cell values of this data domain.
       loadFunctionId: "CONTOSOLOADSERVICE",
       // periodicRefreshInterval is only required when supportedRefreshModes contains "Periodic".
       periodicRefreshInterval: 300,
@@ -149,7 +148,7 @@ Office.onReady(async () => {
 
 There are two ways to insert a linked entity cell value into a cell on a worksheet.
 
-- Create a command button on the ribbon or a button in your task pane. When the user selects the button your code inserts a linked entity cell value.
+- Create a command button on the ribbon or a button in your task pane. When the user selects the button, your code inserts a linked entity cell value.
 - Create a custom function that returns a linked entity cell value.
 
 The following code example shows how to insert a new linked entity cell value into the selected cell. This code can be called from a command button on the ribbon, or a button in the task pane. Notes about the following code:
@@ -186,7 +185,7 @@ The following code sample shows how to insert a linked entity cell value by usin
 /**
  * Custom function that shows how to insert a `LinkedEntityCellValue`.
  * @customfunction
- * @param {string} productID Unique id of the product.
+ * @param {string} productID Unique ID of the product.
  * @return {any} `LinkedEntityCellValue` for the requested product, if found.
  */
 function getProductById(productID: string): any {
@@ -286,11 +285,11 @@ function contosoLoadService(request: any): any {
 The following code sample shows the helper function to create a product linked entity cell value. This function is called by the previous code `contosoLoadService` to create a linked entity for a specific product ID. Notes on the following code:
 
 - It uses the same settings as the previous `insertProduct` example for the `type`, `id`, and `text` properties.
-- It includes additional properties specific to the **Products** data domain, such as `Product name` and `Unit price`.
-- It creates a deferred nested linked entity for the product's category. The properties for the category are not requested until they are needed.
+- It includes additional properties specific to the **Products** data domain, such as `Product Name` and `Unit Price`.
+- It creates a deferred nested linked entity for the category of the product. The properties for the category are not requested until they are needed.
 
 ```typescript
-/** Helper function to create linked entity from product properties. */
+/** Helper function to create a linked entity from product properties. */
 function makeProductLinkedEntity(productID: string): any {
   // Search the product data in the data source for a matching product ID.
   const product = getProduct(productID);
@@ -413,7 +412,7 @@ function makeProductLinkedEntity(productID: string): any {
 The following code sample shows the helper function to create a category linked entity cell value. This function is called by the previous code `contosoLoadService` to create a linked entity for a specific category ID.
 
 ```typescript
-/** Helper function to create linked entity from category properties. */
+/** Helper function to create a linked entity from category properties. */
 function makeCategoryLinkedEntity(categoryID: string): any {
   // Search the sample JSON category data for a matching category ID.
   const category = getCategory(categoryID);
@@ -436,7 +435,7 @@ function makeCategoryLinkedEntity(categoryID: string): any {
         type: "String",
         basicValue: category.categoryID,
         propertyMetadata: {
-          // Exclude the category ID property from the card view and auto complete.
+          // Exclude the category ID property from the card view and auto-complete.
           excludeFrom: {
             cardView: true,
             autoComplete: true
@@ -554,7 +553,7 @@ const suppliers = [
 
 ## Data refresh options
 
-When you register a data domain, the user can refresh it manually at any time (such as choosing **Refresh All** from the **Data** tab.). There are three refresh modes you can specify for your data domain.
+When you register a data domain, the user can refresh it manually at any time, such as by choosing **Refresh All** from the **Data** tab. There are three refresh modes you can specify for your data domain.
 
 - `manual`: The data is refreshed only when the user chooses to refresh. This is the default mode. Manual refresh can always be performed by the user, even when the refresh mode is set to `onLoad` or `periodic`.
 - `onLoad`: The data is refreshed when the data domain is registered (typically when the add-in is loaded). Afterwards, data is only refreshed manually by the user. If you want to refresh data when the workbook is opened, configure your add-in to load on document open. For more information, see [Run code in your Office Add-in when the document opens](../develop/run-code-on-document-open.md).
@@ -567,8 +566,7 @@ const productsDomain: Excel.LinkedEntityDataDomainCreateOptions = {
   dataProvider: domainDataProvider,
   id: "products",
   name: "Products",
-  // Id of the custom function that will be called on demand by Excel to resolve/refresh linked entity
-  // cell values of this data domain.
+  // ID of the custom function that is called on demand by Excel to resolve or refresh linked entity cell values of this data domain.
   loadFunctionId: loadFunctionId,
   // periodicRefreshInterval is only required when supportedRefreshModes contains "Periodic".
   periodicRefreshInterval: 300, // equivalent to 5 minutes.
@@ -603,9 +601,9 @@ async function onLinkedEntityDomainRefreshed (eventArgs: Excel.LinkedEntityDataD
 }
 ```
 
-## Error handling in linked entity load service
+## Error handling with the linked entity load service
 
-When Excel calls your add-in to get data for a linked entity cell value, it's possible an error can occur. If Excel is unable to connect to your add-in at all (such as when it is not loaded) it will display `#CONNECT!` to the user.
+When Excel calls your add-in to get data for a linked entity cell value, it's possible an error can occur. If Excel is unable to connect to your add-in at all, such as when the add-in isn't loaded, Excel displays the `#CONNECT!` error to the user.
 
 If your linked entity load service function encounters an error, it should throw an error. The error will cause Excel to show `#CONNECT!` to the user.
 
@@ -615,11 +613,11 @@ The following code shows how to handle an error in a linked entity load service 
 async function contosoLoadService(request: any): Promise<any> {
     const notAvailableError = new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
     try {
-      // Create an return a new linked entity cell value.
+      // Create and return a new linked entity cell value.
         let linkedEntityResult = ...
       ...
         if (!linkedEntityResult) {
-        // Throw an error to signify to Excel that resolution/refresh of the requested linkedEntityId failed.
+        // Throw an error to signify to Excel that resolution or refresh of the requested linkedEntityId failed.
         throw notAvailableError;
       }
       ...
@@ -632,9 +630,9 @@ async function contosoLoadService(request: any): Promise<any> {
 
 ## Debugging the linked entity load service
 
-Most add-in functionality for linked entity data types can be debugged using the guidance in [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md). However, the linked entity load service function can be implemented in a shared runtime, or a JavaScript-only runtime (also know as a custom function runtime.) If you choose to implement the function in a JavaScript-only runtime, use the debugging guidance in JavaScript-only runtime for [Custom functions debugging in a non-shared runtime](custom-functions-debugging.md).
+Most add-in functionality for linked entity data types can be debugged using the guidance in [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md). However, the linked entity load service function can be implemented in a shared runtime or a JavaScript-only runtime (also know as a custom functions runtime.) If you choose to implement the function in a JavaScript-only runtime, use the [Custom functions debugging in a non-shared runtime](custom-functions-debugging.md) guidance.
 
-The linked entity load service function uses the custom function architecture, regardless of which runtime you use. However, there are significant differences from regular custom functions.
+The linked entity load service function uses the custom functions architecture, regardless of which runtime you use. However, there are significant differences from regular custom functions.
 Differences:
 
 - They will not appear to end users for usage in formulas.
