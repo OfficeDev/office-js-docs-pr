@@ -2,7 +2,7 @@
 title: Create linked entity cell values
 description: Create linked entity cell values to represent large data sets in Excel.
 ms.topic: how-to
-ms.date: 03/31/2025
+ms.date: 05/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -100,47 +100,47 @@ The following code shows how to register the **Products**, **Categories**, and *
 
 ```typescript
 Office.onReady(async () => {
-  await Excel.run(async (context) => {
-    const productsDomain: Excel.LinkedEntityDataDomainCreateOptions = {
-      dataProvider: "Contoso",
-      id: "products",
-      name: "Products",
-      // ID of the custom function that is called on demand by Excel to resolve or refresh linked entity cell values of this data domain.
-      loadFunctionId: "CONTOSOLOADSERVICE",
-      // periodicRefreshInterval is only required when supportedRefreshModes contains "Periodic".
-      periodicRefreshInterval: 300,
-      // Manual refresh mode is always supported, even if unspecified.
-      supportedRefreshModes: [
-        Excel.LinkedEntityDataDomainRefreshMode.periodic,
-        Excel.LinkedEntityDataDomainRefreshMode.onLoad
-      ]
-    };
-   
-    const categoriesDomain: Excel.LinkedEntityDataDomainCreateOptions = {
-      dataProvider: "Contoso",
-      id: "categories",
-      name: "Categories",
-      loadFunctionId: "CONTOSOLOADSERVICE",
-      periodicRefreshInterval: 300,
-      supportedRefreshModes: [
-        Excel.LinkedEntityDataDomainRefreshMode.periodic,
-        Excel.LinkedEntityDataDomainRefreshMode.onLoad
-      ]
-    };
+    await Excel.run(async (context) => {
+        const productsDomain: Excel.LinkedEntityDataDomainCreateOptions = {
+            dataProvider: "Contoso",
+            id: "products",
+            name: "Products",
+            // ID of the custom function that is called on demand by Excel to resolve or refresh linked entity cell values of this data domain.
+            loadFunctionId: "CONTOSOLOADSERVICE",
+            // periodicRefreshInterval is only required when supportedRefreshModes contains "Periodic".
+            periodicRefreshInterval: 300,
+            // Manual refresh mode is always supported, even if unspecified.
+            supportedRefreshModes: [
+                Excel.LinkedEntityDataDomainRefreshMode.periodic,
+                Excel.LinkedEntityDataDomainRefreshMode.onLoad
+            ]
+        };
 
-    const suppliersDomain: Excel.LinkedEntityDataDomainCreateOptions = {
-      dataProvider: "Contoso",
-      id: "suppliers",
-      name: "Suppliers",
-      loadFunctionId: "CONTOSOLOADSERVICE"
-    };
-    // Register the data domains by adding them to the collection.
-    context.workbook.linkedEntityDataDomains.add(productsDomain);
-    context.workbook.linkedEntityDataDomains.add(categoriesDomain);
-    context.workbook.linkedEntityDataDomains.add(suppliersDomain);
-  
-    await context.sync();
-  });
+        const categoriesDomain: Excel.LinkedEntityDataDomainCreateOptions = {
+            dataProvider: "Contoso",
+            id: "categories",
+            name: "Categories",
+            loadFunctionId: "CONTOSOLOADSERVICE",
+            periodicRefreshInterval: 300,
+            supportedRefreshModes: [
+                Excel.LinkedEntityDataDomainRefreshMode.periodic,
+                Excel.LinkedEntityDataDomainRefreshMode.onLoad
+            ]
+        };
+
+        const suppliersDomain: Excel.LinkedEntityDataDomainCreateOptions = {
+            dataProvider: "Contoso",
+            id: "suppliers",
+            name: "Suppliers",
+            loadFunctionId: "CONTOSOLOADSERVICE"
+        };
+        // Register the data domains by adding them to the collection.
+        context.workbook.linkedEntityDataDomains.add(productsDomain);
+        context.workbook.linkedEntityDataDomains.add(categoriesDomain);
+        context.workbook.linkedEntityDataDomains.add(suppliersDomain);
+
+        await context.sync();
+    });
 });
 ```
 
@@ -158,21 +158,21 @@ The following code example shows how to insert a new linked entity cell value in
 - The `text` property is displayed to the user in the cell while the linked entity data value is updated. This prevents the user seeing a blank cell while the update is completed.
 
 ```typescript
-export async function insertProduct() {
-  await Excel.run(async (context) => {
-    const productLinkedEntity: Excel.LinkedEntityCellValue = {
-      type: Excel.CellValueType.linkedEntity,
-      id: {
-        entityId: "P1", // Don't use exclamation marks in this value.
-        domainId: "products", // Don't use exclamation marks in this value.
-        serviceId: 268436224,
-        culture: "en-US",
-      },
-      text: "Chai",
-    };
-    context.workbook.getActiveCell().valuesAsJson = [[productLinkedEntity]];
-    await context.sync();
-  });
+async function insertProduct() {
+    await Excel.run(async (context) => {
+        const productLinkedEntity: Excel.LinkedEntityCellValue = {
+            type: Excel.CellValueType.linkedEntity,
+            id: {
+                entityId: "P1", // Don't use exclamation marks in this value.
+                domainId: "products", // Don't use exclamation marks in this value.
+                serviceId: 268436224,
+                culture: "en-US",
+            },
+            text: "Chai",
+        };
+        context.workbook.getActiveCell().valuesAsJson = [[productLinkedEntity]];
+        await context.sync();
+    });
 }
 ```
 
@@ -189,22 +189,22 @@ The following code sample shows how to insert a linked entity cell value by usin
  * @return {any} `LinkedEntityCellValue` for the requested product, if found.
  */
 function getProductById(productID: string): any {
-  const product = getProduct(productID);
-  if (product === null) {
-      throw new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable, "Invalid productID");
-  }
-  const productLinkedEntity: Excel.LinkedEntityCellValue = {
-      type: Excel.CellValueType.linkedEntity,
-      id: {
-          entityId: product.productID,
-          domainId: "products",
-          serviceId: 268436224,
-          culture: "en-US",
-      },
-      text: product.productName
-  };
+    const product = getProduct(productID);
+    if (product === null) {
+        throw new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable, "Invalid productID");
+    }
+    const productLinkedEntity: Excel.LinkedEntityCellValue = {
+        type: Excel.CellValueType.linkedEntity,
+        id: {
+            entityId: product.productID,
+            domainId: "products",
+            serviceId: 268436224,
+            culture: "en-US",
+        },
+        text: product.productName
+    };
 
-  return productLinkedEntity;
+    return productLinkedEntity;
 }
 ```
 
@@ -236,49 +236,49 @@ const defaultCulture = "en-US";
  * @return {any} Resolved/Refreshed `LinkedEntityCellValue` objects that were requested in the passed-in request.
  */
 function contosoLoadService(request: any): any {
-  const notAvailableError = new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
-  console.log(`Fetching linked entities from request: ${request} ...`);
+    const notAvailableError = new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
+    console.log(`Fetching linked entities from request: ${request} ...`);
 
-  try {
-    // Parse the request that was passed-in by Excel.
-    const parsedRequest: Excel.LinkedEntityLoadServiceRequest = JSON.parse(request);
-    // Initialize result to populate and return to Excel.
-    const result: Excel.LinkedEntityLoadServiceResult = { entities: [] };
+    try {
+        // Parse the request that was passed-in by Excel.
+        const parsedRequest: Excel.LinkedEntityLoadServiceRequest = JSON.parse(request);
+        // Initialize result to populate and return to Excel.
+        const result: Excel.LinkedEntityLoadServiceResult = { entities: [] };
 
-    // Identify the domainId of the request and call the corresponding function to create
-    // linked entity cell values for that linked entity data domain.
-    for (const { entityId } of parsedRequest.entities) {
-      var linkedEntityResult = null;
-      switch (parsedRequest.domainId) {
-        case productsDomainId: {
-          linkedEntityResult = makeProductLinkedEntity(entityId);
-          break;
-        }
-        case categoriesDomainId: {
-          linkedEntityResult = makeCategoryLinkedEntity(entityId);
-          break;
-        }
-        case suppliersDomainId: {
-          linkedEntityResult = makeSupplierLinkedEntity(entityId);
-          break;
-        }
-        default:
-          throw notAvailableError;
-      }
+        // Identify the domainId of the request and call the corresponding function to create
+        // linked entity cell values for that linked entity data domain.
+        for (const { entityId } of parsedRequest.entities) {
+            var linkedEntityResult = null;
+            switch (parsedRequest.domainId) {
+                case productsDomainId: {
+                    linkedEntityResult = makeProductLinkedEntity(entityId);
+                    break;
+                }
+                case categoriesDomainId: {
+                    linkedEntityResult = makeCategoryLinkedEntity(entityId);
+                    break;
+                }
+                case suppliersDomainId: {
+                    linkedEntityResult = makeSupplierLinkedEntity(entityId);
+                    break;
+                }
+                default:
+                    throw notAvailableError;
+            }
 
-      if (!linkedEntityResult) {
-        // Throw an error to signify to Excel that resolution/refresh of the requested linkedEntityId failed.
+            if (!linkedEntityResult) {
+                // Throw an error to signify to Excel that resolution/refresh of the requested linkedEntityId failed.
+                throw notAvailableError;
+            }
+
+            result.entities.push(linkedEntityResult);
+        }
+
+        return result;
+    } catch (error) {
+        console.error(error);
         throw notAvailableError;
-      }
-
-      result.entities.push(linkedEntityResult);
     }
-
-    return result;
-  } catch (error) {
-    console.error(error);
-    throw notAvailableError;
-  }
 }
 ```
 
@@ -291,121 +291,121 @@ The following code sample shows the helper function to create a product linked e
 ```typescript
 /** Helper function to create a linked entity from product properties. */
 function makeProductLinkedEntity(productID: string): any {
-  // Search the product data in the data source for a matching product ID.
-  const product = getProduct(productID);
-  if (product === null) {
-    // Return null if no matching product is found.
-    return null;
-  }
-
-  const productLinkedEntity: Excel.LinkedEntityCellValue = {
-    type: "LinkedEntity",
-    text: product.productName,
-    id: {
-      entityId: product.productID,
-      domainId: productsDomainId,
-      serviceId: addinDomainServiceId,
-      culture: defaultCulture
-    },
-    properties: {
-      "Product ID": {
-        type: "String",
-        basicValue: product.productID
-      },
-      "Product Name": {
-        type: "String",
-        basicValue: product.productName
-      },
-      "Quantity Per Unit": {
-        type: "String",
-        basicValue: product.quantityPerUnit
-      },
-      // Add Unit Price as a formatted number.
-      "Unit Price": {
-        type: "FormattedNumber",
-        basicValue: product.unitPrice,
-        numberFormat: "$* #,##0.00"
-      },
-      Discontinued: {
-        type: "Boolean",
-        basicValue: product.discontinued
-      }
-    },
-    layouts: {
-      compact: {
-        icon: "ShoppingBag"
-      },
-      card: {
-        title: { property: "Product Name" },
-        sections: [
-          {
-            layout: "List",
-            properties: ["Product ID"]
-          },
-          {
-            layout: "List",
-            title: "Quantity and price",
-            collapsible: true,
-            collapsed: false,
-            properties: ["Quantity Per Unit", "Unit Price"]
-          },
-          {
-            layout: "List",
-            title: "Additional information",
-            collapsed: true,
-            properties: ["Discontinued"]
-          }
-        ]
-      }
+    // Search the product data in the data source for a matching product ID.
+    const product = getProduct(productID);
+    if (product === null) {
+        // Return null if no matching product is found.
+        return null;
     }
-  };
 
-  // Add image property to the linked entity and then add it to the card layout.
-  if (product.productImage) {
-    productLinkedEntity.properties["Image"] = {
-      type: "WebImage",
-      address: product.productImage
+    const productLinkedEntity: Excel.LinkedEntityCellValue = {
+        type: "LinkedEntity",
+        text: product.productName,
+        id: {
+            entityId: product.productID,
+            domainId: productsDomainId,
+            serviceId: addinDomainServiceId,
+            culture: defaultCulture
+        },
+        properties: {
+            "Product ID": {
+                type: "String",
+                basicValue: product.productID
+            },
+            "Product Name": {
+                type: "String",
+                basicValue: product.productName
+            },
+            "Quantity Per Unit": {
+                type: "String",
+                basicValue: product.quantityPerUnit
+            },
+            // Add Unit Price as a formatted number.
+            "Unit Price": {
+                type: "FormattedNumber",
+                basicValue: product.unitPrice,
+                numberFormat: "$* #,##0.00"
+            },
+            Discontinued: {
+                type: "Boolean",
+                basicValue: product.discontinued
+            }
+        },
+        layouts: {
+            compact: {
+                icon: "ShoppingBag"
+            },
+            card: {
+                title: { property: "Product Name" },
+                sections: [
+                    {
+                        layout: "List",
+                        properties: ["Product ID"]
+                    },
+                    {
+                        layout: "List",
+                        title: "Quantity and price",
+                        collapsible: true,
+                        collapsed: false,
+                        properties: ["Quantity Per Unit", "Unit Price"]
+                    },
+                    {
+                        layout: "List",
+                        title: "Additional information",
+                        collapsed: true,
+                        properties: ["Discontinued"]
+                    }
+                ]
+            }
+        }
     };
-    productLinkedEntity.layouts.card.mainImage = { property: "Image" };
-  }
 
-  // Add a deferred nested linked entity for the product category.
-  const category = getCategory(product.categoryID.toString());
-  if (category) {
-    productLinkedEntity.properties["Category"] = {
-      type: "LinkedEntity",
-      text: category.categoryName,
-      id: {
-        entityId: category.categoryID.toString(),
-        domainId: categoriesDomainId,
-        serviceId: addinDomainServiceId,
-        culture: defaultCulture
-      }
-    };
+    // Add image property to the linked entity and then add it to the card layout.
+    if (product.productImage) {
+        productLinkedEntity.properties["Image"] = {
+            type: "WebImage",
+            address: product.productImage
+        };
+        productLinkedEntity.layouts.card.mainImage = { property: "Image" };
+    }
 
-    // Add nested product category to the card layout.
-    productLinkedEntity.layouts.card.sections[0].properties.push("Category");
-  }
+    // Add a deferred nested linked entity for the product category.
+    const category = getCategory(product.categoryID.toString());
+    if (category) {
+        productLinkedEntity.properties["Category"] = {
+            type: "LinkedEntity",
+            text: category.categoryName,
+            id: {
+                entityId: category.categoryID.toString(),
+                domainId: categoriesDomainId,
+                serviceId: addinDomainServiceId,
+                culture: defaultCulture
+            }
+        };
 
-   // Add a deferred nested linked entity for the supplier.
-   const supplier = getSupplier(product.supplierID.toString());
-   if (supplier) {
-     productLinkedEntity.properties["Supplier"] = {
-       type: "LinkedEntity",
-       text: supplier.companyName,
-       id: {
-         entityId: supplier.supplierID.toString(),
-         domainId: suppliersDomainId,
-         serviceId: addinDomainServiceId,
-         culture: defaultCulture
-       }
-     };
+        // Add nested product category to the card layout.
+        productLinkedEntity.layouts.card.sections[0].properties.push("Category");
+    }
 
-     // Add nested product supplier to the card layout.
-     productLinkedEntity.layouts.card.sections[2].properties.push("Supplier");
-   }
+    // Add a deferred nested linked entity for the supplier.
+    const supplier = getSupplier(product.supplierID.toString());
+    if (supplier) {
+        productLinkedEntity.properties["Supplier"] = {
+            type: "LinkedEntity",
+            text: supplier.companyName,
+            id: {
+                entityId: supplier.supplierID.toString(),
+                domainId: suppliersDomainId,
+                serviceId: addinDomainServiceId,
+                culture: defaultCulture
+            }
+        };
 
-  return productLinkedEntity;
+        // Add nested product supplier to the card layout.
+        productLinkedEntity.layouts.card.sections[2].properties.push("Supplier");
+    }
+
+    return productLinkedEntity;
 }
 ```
 
@@ -414,51 +414,51 @@ The following code sample shows the helper function to create a category linked 
 ```typescript
 /** Helper function to create a linked entity from category properties. */
 function makeCategoryLinkedEntity(categoryID: string): any {
-  // Search the sample JSON category data for a matching category ID.
-  const category = getCategory(categoryID);
-  if (category === null) {
-    // Return null if no matching category is found.
-    return null;
-  }
-
-  const categoryLinkedEntity: Excel.LinkedEntityCellValue = {
-    type: "LinkedEntity",
-    text: category.categoryName,
-    id: {
-      entityId: category.categoryID,
-      domainId: categoriesDomainId,
-      serviceId: addinDomainServiceId,
-      culture: defaultCulture
-    },
-    properties: {
-      "Category ID": {
-        type: "String",
-        basicValue: category.categoryID,
-        propertyMetadata: {
-          // Exclude the category ID property from the card view and auto-complete.
-          excludeFrom: {
-            cardView: true,
-            autoComplete: true
-          }
-        }
-      },
-      "Category Name": {
-        type: "String",
-        basicValue: category.categoryName
-      },
-      Description: {
-        type: "String",
-        basicValue: category.description
-      }
-    },
-    layouts: {
-      compact: {
-        icon: "Branch"
-      }
+    // Search the sample JSON category data for a matching category ID.
+    const category = getCategory(categoryID);
+    if (category === null) {
+        // Return null if no matching category is found.
+        return null;
     }
-  };
 
-  return categoryLinkedEntity;
+    const categoryLinkedEntity: Excel.LinkedEntityCellValue = {
+        type: "LinkedEntity",
+        text: category.categoryName,
+        id: {
+            entityId: category.categoryID,
+            domainId: categoriesDomainId,
+            serviceId: addinDomainServiceId,
+            culture: defaultCulture
+        },
+        properties: {
+            "Category ID": {
+                type: "String",
+                basicValue: category.categoryID,
+                propertyMetadata: {
+                    // Exclude the category ID property from the card view and auto-complete.
+                    excludeFrom: {
+                        cardView: true,
+                        autoComplete: true
+                    }
+                }
+            },
+            "Category Name": {
+                type: "String",
+                basicValue: category.categoryName
+            },
+            Description: {
+                type: "String",
+                basicValue: category.description
+            }
+        },
+        layouts: {
+            compact: {
+                icon: "Branch"
+            }
+        }
+    };
+
+    return categoryLinkedEntity;
 }
 ```
 
@@ -467,52 +467,52 @@ The following code sample shows the helper function to create a supplier linked 
 ```typescript
 /** Helper function to create linked entity from supplier properties. */
 function makeSupplierLinkedEntity(supplierID: string): any {
-  // Search the sample JSON category data for a matching supplier ID.
-  const supplier = getSupplier(supplierID);
-  if (supplier === null) {
-    // Return null if no matching supplier is found.
-    return null;
-  }
-
-  const supplierLinkedEntity: Excel.LinkedEntityCellValue = {
-    type: "LinkedEntity",
-    text: supplier.companyName,
-    id: {
-      entityId: supplier.supplierID,
-      domainId: suppliersDomainId,
-      serviceId: addinDomainServiceId,
-      culture: defaultCulture
-    },
-    properties: {
-      "Supplier ID": {
-        type: "String",
-        basicValue: supplier.supplierID
-      },
-      "Company Name": {
-        type: "String",
-        basicValue: supplier.companyName
-      },
-      "Contact Name": {
-        type: "String",
-        basicValue: supplier.contactName
-      },
-      "Contact Title": {
-        type: "String",
-        basicValue: supplier.contactTitle
-      }
-    },
-    cardLayout: {
-      title: { property: "Company Name" },
-      sections: [
-        {
-          layout: "List",
-          properties: ["Supplier ID", "Company Name", "Contact Name", "Contact Title"]
-        }
-      ]
+    // Search the sample JSON category data for a matching supplier ID.
+    const supplier = getSupplier(supplierID);
+    if (supplier === null) {
+        // Return null if no matching supplier is found.
+        return null;
     }
-  };
 
-  return supplierLinkedEntity;
+    const supplierLinkedEntity: Excel.LinkedEntityCellValue = {
+        type: "LinkedEntity",
+        text: supplier.companyName,
+        id: {
+            entityId: supplier.supplierID,
+            domainId: suppliersDomainId,
+            serviceId: addinDomainServiceId,
+            culture: defaultCulture
+        },
+        properties: {
+            "Supplier ID": {
+                type: "String",
+                basicValue: supplier.supplierID
+            },
+            "Company Name": {
+                type: "String",
+                basicValue: supplier.companyName
+            },
+            "Contact Name": {
+                type: "String",
+                basicValue: supplier.contactName
+            },
+            "Contact Title": {
+                type: "String",
+                basicValue: supplier.contactTitle
+            }
+        },
+        cardLayout: {
+            title: { property: "Company Name" },
+            sections: [
+                {
+                    layout: "List",
+                    properties: ["Supplier ID", "Company Name", "Contact Name", "Contact Title"]
+                }
+            ]
+        }
+    };
+
+    return supplierLinkedEntity;
 }
 ```
 
@@ -521,60 +521,60 @@ The following code sample contains sample data you can use with the previous cod
 ```typescript
 /// Sample product data.
 const products = [
-  {
-    productID: "P1",
-    productName: "Chai",
-    supplierID: "S1",
-    categoryID: "C1",
-    quantityPerUnit: "10 boxes x 20 bags",
-    unitPrice: 18,
-    discontinued: false,
-    productImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Masala_Chai.JPG/320px-Masala_Chai.JPG"
-  }
+    {
+        productID: "P1",
+        productName: "Chai",
+        supplierID: "S1",
+        categoryID: "C1",
+        quantityPerUnit: "10 boxes x 20 bags",
+        unitPrice: 18,
+        discontinued: false,
+        productImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Masala_Chai.JPG/320px-Masala_Chai.JPG"
+    }
 ];
 
 /// Sample product category data.
 const categories = [
-  {
-    categoryID: "C1",
-    categoryName: "Beverages",
-    description: "Soft drinks, coffees, teas, beers, and ales"
-  }];
+    {
+        categoryID: "C1",
+        categoryName: "Beverages",
+        description: "Soft drinks, coffees, teas, beers, and ales"
+    }];
 
 /// Sample product supplier data.
 const suppliers = [
-  {
-    supplierID: "S1",
-    companyName: "Exotic Liquids",
-    contactName: "Ema Vargova",
-    contactTitle: "Purchasing Manager"
-  }];
+    {
+        supplierID: "S1",
+        companyName: "Exotic Liquids",
+        contactName: "Ema Vargova",
+        contactTitle: "Purchasing Manager"
+    }];
 ```
 
 ## Data refresh options
 
 When you register a data domain, the user can refresh it manually at any time, such as by choosing **Refresh All** from the **Data** tab. There are three refresh modes you can specify for your data domain.
 
-- `manual`: The data is refreshed only when the user chooses to refresh. This is the default mode. Manual refresh can always be performed by the user, even when the refresh mode is set to `onLoad` or `periodic`.
-- `onLoad`: The data is refreshed when the data domain is registered (typically when the add-in is loaded). Afterwards, data is only refreshed manually by the user. If you want to refresh data when the workbook is opened, configure your add-in to load on document open. For more information, see [Run code in your Office Add-in when the document opens](../develop/run-code-on-document-open.md).
-- `periodic`:  The data is refreshed when the data domain is registered (typically when the add-in is loaded). Afterwards, the data is continuously updated after a specified interval of time. For example you could specify that the data domain refreshes every 300 seconds (which is the minimum value). The number of seconds is always rounded up to the nearest number of minutes since the refresh interval is only performed in minutes.
+- `manual`- The data is refreshed only when the user chooses to refresh. This is the default mode. Manual refresh can always be performed by the user, even when the refresh mode is set to `onLoad` or `periodic`.
+- `onLoad`- The data is refreshed when the data domain is registered (typically when the add-in is loaded). Afterwards, data is only refreshed manually by the user. If you want to refresh data when the workbook is opened, configure your add-in to load on document open. For more information, see [Run code in your Office Add-in when the document opens](../develop/run-code-on-document-open.md).
+- `periodic`-  The data is refreshed when the data domain is registered (typically when the add-in is loaded). Afterwards, the data is continuously updated after a specified interval of time. For example you could specify that the data domain refreshes every 300 seconds (which is the minimum value). The number of seconds is always rounded up to the nearest number of minutes since the refresh interval is only performed in minutes.
 
 The following code example shows how to configure a data domain to refresh on load, and then continue to refresh every 5 minutes.
 
 ```typescript
 const productsDomain: Excel.LinkedEntityDataDomainCreateOptions = {
-  dataProvider: domainDataProvider,
-  id: "products",
-  name: "Products",
-  // ID of the custom function that is called on demand by Excel to resolve or refresh linked entity cell values of this data domain.
-  loadFunctionId: loadFunctionId,
-  // periodicRefreshInterval is only required when supportedRefreshModes contains "Periodic".
-  periodicRefreshInterval: 300, // equivalent to 5 minutes.
-  // Manual refresh mode is always supported, even if unspecified.
-  supportedRefreshModes: [
-    Excel.LinkedEntityDataDomainRefreshMode.periodic,
-    Excel.LinkedEntityDataDomainRefreshMode.onLoad
-  ]
+    dataProvider: domainDataProvider,
+    id: "products",
+    name: "Products",
+    // ID of the custom function that is called on demand by Excel to resolve or refresh linked entity cell values of this data domain.
+    loadFunctionId: loadFunctionId,
+    // periodicRefreshInterval is only required when supportedRefreshModes contains "Periodic".
+    periodicRefreshInterval: 300, // equivalent to 5 minutes.
+    // Manual refresh mode is always supported, even if unspecified.
+    supportedRefreshModes: [
+        Excel.LinkedEntityDataDomainRefreshMode.periodic,
+        Excel.LinkedEntityDataDomainRefreshMode.onLoad
+    ]
 };
 ```
 
@@ -586,18 +586,18 @@ You can also programmatically request a refresh on a linked entity data domain b
 The refresh methods request a refresh which occurs asynchronously. To determine the results of the refresh, listen for the `onRefreshCompleted` event. The following code sample shows an example of listening for the `onRefreshCompleted` event.
 
 ```typescript
- await Excel.run(async (context) => {
+await Excel.run(async (context) => {
     const dataDomains = context.workbook.linkedEntityDataDomains;
     dataDomains.onRefreshCompleted.add(onLinkedEntityDomainRefreshed);
 
     await context.sync();
 });
 
-async function onLinkedEntityDomainRefreshed (eventArgs: Excel.LinkedEntityDataDomainRefreshCompletedEventArgs): Promise<any> {
-  console.log("Linked entity domain refreshed: " + eventArgs.id);
-  console.log("Refresh status: " + eventArgs.refreshed);
-  console.log("Refresh error: " + eventArgs.errors);
-  return null;
+async function onLinkedEntityDomainRefreshed(eventArgs: Excel.LinkedEntityDataDomainRefreshCompletedEventArgs): Promise<any> {
+    console.log("Linked entity domain refreshed: " + eventArgs.id);
+    console.log("Refresh status: " + eventArgs.refreshed);
+    console.log("Refresh error: " + eventArgs.errors);
+    return null;
 }
 ```
 
@@ -613,13 +613,13 @@ The following code shows how to handle an error in a linked entity load service 
 async function contosoLoadService(request: any): Promise<any> {
     const notAvailableError = new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
     try {
-      // Create and return a new linked entity cell value.
+        // Create and return a new linked entity cell value.
         let linkedEntityResult = ...
       ...
         if (!linkedEntityResult) {
-        // Throw an error to signify to Excel that resolution or refresh of the requested linkedEntityId failed.
-        throw notAvailableError;
-      }
+            // Throw an error to signify to Excel that resolution or refresh of the requested linkedEntityId failed.
+            throw notAvailableError;
+        }
       ...
     } catch (error) {
         console.error(error);

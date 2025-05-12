@@ -1,7 +1,7 @@
 ---
 title: Use cards for cell values with the Excel JavaScript API
 description: Learn how to create cards for cell value data types in your Excel add-in.
-ms.date: 04/14/2025
+ms.date: 05/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -158,14 +158,14 @@ Entity properties have an optional `propertyMetadata` field that uses the [`Cell
 // This code snippet is an excerpt from the `properties` field of the 
 // preceding `EntityCellValue` snippet. "Unit Price" is a property of 
 // an entity value.
-        "Unit Price": {
-            type: Excel.CellValueType.double,
-            basicValue: product.unitPrice,
-            numberFormat: "$* #,##0.00",
-            propertyMetadata: {
-              sublabel: "USD"
-            }
-        },
+    "Unit Price": {
+        type: Excel.CellValueType.double,
+        basicValue: product.unitPrice,
+        numberFormat: "$* #,##0.00",
+        propertyMetadata: {
+          sublabel: "USD"
+        }
+    },
 ```
 
 ## Attribution
@@ -174,40 +174,39 @@ Add attribution for information that comes from third parties to indicate the so
 
 ```javascript
 async function createPlanet() {
-  await Excel.run(async (context) => {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const range = sheet.getRange("A1");
-    const attributionObject: Excel.CellValueAttributionAttributes = {
-      licenseAddress: "https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_is_free_content",
-      licenseText: "Free usage information",
-      sourceAddress: "https://en.wikipedia.org/wiki/Mars",
-      sourceText: "Wikipedia"
-    };
+    await Excel.run(async (context) => {
+        const sheet = context.workbook.worksheets.getActiveWorksheet();
+        const range = sheet.getRange("A1");
+        const attributionObject: Excel.CellValueAttributionAttributes = {
+            licenseAddress: "https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_is_free_content",
+            licenseText: "Free usage information",
+            sourceAddress: "https://en.wikipedia.org/wiki/Mars",
+            sourceText: "Wikipedia"
+        };
 
-    range.valuesAsJson = [
-      [
-        {
-          type: Excel.CellValueType.double,
-          basicType: Excel.RangeValueType.double,
-          basicValue: 6779, // kilometers (radius)
-          properties: {
-            Name: {
-              type: Excel.CellValueType.string,
-              basicType: Excel.RangeValueType.string,
-              basicValue: "Mars",
-              propertyMetadata: {
-                sublabel: "Planetary Body",
-                attribution: [attributionObject]
-              }
-            }
-          }
-        }
-      ]
-    ];
-    await context.sync();
-  });
+        range.valuesAsJson = [
+            [
+                {
+                    type: Excel.CellValueType.double,
+                    basicType: Excel.RangeValueType.double,
+                    basicValue: 6779, // kilometers (radius)
+                    properties: {
+                        Name: {
+                            type: Excel.CellValueType.string,
+                            basicType: Excel.RangeValueType.string,
+                            basicValue: "Mars",
+                            propertyMetadata: {
+                                sublabel: "Planetary Body",
+                                attribution: [attributionObject]
+                            }
+                        }
+                    }
+                }
+            ]
+        ];
+        await context.sync();
+    });
 }
-
 ```
 
 The following image shows how the attribution is displayed in the data type card for the user.
@@ -220,35 +219,35 @@ You can add information about your add-in, or service, that is the source for th
 
 ```javascript
 async function createSearchEntry() {
-  await Excel.run(async (context) => {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const range = sheet.getRange("A1");
+    await Excel.run(async (context) => {
+        const sheet = context.workbook.worksheets.getActiveWorksheet();
+        const range = sheet.getRange("A1");
 
-    range.valuesAsJson = [
-      [
-        {
-          type: Excel.CellValueType.string,
-          basicType: Excel.RangeValueType.string,
-          basicValue: "cell function - Microsoft support",
-          properties: {
-            "Search Keywords": {
-              type: Excel.CellValueType.string,
-              basicType: Excel.RangeValueType.string,
-              basicValue: "Cell Values"
-            }
-          },
-          provider: {
-            description: "Contoso generic search",
-            // Image credit: Ignacio javier igjav, Public domain, via Wikimedia Commons
-            logoSourceAddress: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Lupa.png",
-            logoTargetAddress: "https://contoso.com"
-          }
-        }
-      ]
-    ];
+        range.valuesAsJson = [
+            [
+                {
+                    type: Excel.CellValueType.string,
+                    basicType: Excel.RangeValueType.string,
+                    basicValue: "cell function - Microsoft support",
+                    properties: {
+                        "Search Keywords": {
+                            type: Excel.CellValueType.string,
+                            basicType: Excel.RangeValueType.string,
+                            basicValue: "Cell Values"
+                        }
+                    },
+                    provider: {
+                        description: "Contoso generic search",
+                        // Image credit: Ignacio javier igjav, Public domain, via Wikimedia Commons
+                        logoSourceAddress: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Lupa.png",
+                        logoTargetAddress: "https://contoso.com"
+                    }
+                }
+            ]
+        ];
 
-    await context.sync();
-  });
+        await context.sync();
+    });
 }
 ```
 

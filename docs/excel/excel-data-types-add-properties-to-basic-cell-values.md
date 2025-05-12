@@ -74,25 +74,25 @@ To add properties to an existing value, first get the value from the cell using 
 
 ```typescript
 async function addPropertyToNumber() {
-  await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getActiveWorksheet();
-    let range = sheet.getRange("A1");
-    range.load("valuesAsJson");
-    await context.sync();
-    let cellValue = range.valuesAsJson[0][0] as any;
+    await Excel.run(async (context) => {
+        let sheet = context.workbook.worksheets.getActiveWorksheet();
+        let range = sheet.getRange("A1");
+        range.load("valuesAsJson");
+        await context.sync();
+        let cellValue = range.valuesAsJson[0][0] as any;
 
-    // Only apply this property to a double.
-    if (cellValue.basicType === "Double") {
-      cellValue.properties = {
-        Precision: {
-          type: Excel.CellValueType.double,
-          basicValue: 4
+        // Only apply this property to a double.
+        if (cellValue.basicType === "Double") {
+            cellValue.properties = {
+                Precision: {
+                    type: Excel.CellValueType.double,
+                    basicValue: 4
+                }
+            };
+            range.valuesAsJson = [[cellValue]];
+            await context.sync();
         }
-      };
-      range.valuesAsJson = [[cellValue]];
-      await context.sync();
-    }
-  });
+    });
 }
 ```
 
@@ -112,27 +112,27 @@ You can apply number formatting to values of type `CellValueType.double`. Use th
 // This is an example of the complete JSON of a formatted number value with a property.
 // In this case, the number is formatted as currency.
 async function createCurrencyValue() {
-  await Excel.run(async (context) => {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const range = sheet.getRange("A1");
-    range.valuesAsJson = [
-      [
-        {
-          type: Excel.CellValueType.double,
-          basicType: Excel.RangeValueType.double,
-          basicValue: 24,
-          numberFormat: "$0.00",
-          properties: {
-            Name: {
-              type: Excel.CellValueType.string,
-              basicValue: "dollar"
-            }
-          }
-        }
-      ]
-    ];
-    await context.sync();
-  });
+    await Excel.run(async (context) => {
+        const sheet = context.workbook.worksheets.getActiveWorksheet();
+        const range = sheet.getRange("A1");
+        range.valuesAsJson = [
+            [
+                {
+                    type: Excel.CellValueType.double,
+                    basicType: Excel.RangeValueType.double,
+                    basicValue: 24,
+                    numberFormat: "$0.00",
+                    properties: {
+                        Name: {
+                            type: Excel.CellValueType.string,
+                            basicValue: "dollar"
+                        }
+                    }
+                }
+            ]
+        ];
+        await context.sync();
+    });
 }
 ```
 
@@ -150,57 +150,57 @@ You can nest data types in a cell value, such as additional entity values, as we
 
 ```typescript
 async function createNumberWithNestedEntity() {
-  await Excel.run(async (context) => {
-    const sheet = context.workbook.worksheets.getActiveWorksheet();
-    const range = sheet.getRange("A1");
-    range.valuesAsJson = [
-      [
-        {
-          type: Excel.CellValueType.double,
-          basicType: Excel.RangeValueType.double,
-          layouts: {
-            compact: {
-              icon: "Battery10"
-            }
-          },
-          basicValue: 0.7,
-          numberFormat: "00%",
-          properties: {
-            Computer: {
-              type: Excel.CellValueType.entity,
-              text: "Laptop",
-              properties: {
-                "Power Consumption": {
-                  type: Excel.CellValueType.double,
-                  basicType: Excel.RangeValueType.double,
-                  basicValue: 0.25,
-                  numberFormat: "00%",
-                  layouts: {
-                    compact: {
-                      icon: "Power"
+    await Excel.run(async (context) => {
+        const sheet = context.workbook.worksheets.getActiveWorksheet();
+        const range = sheet.getRange("A1");
+        range.valuesAsJson = [
+            [
+                {
+                    type: Excel.CellValueType.double,
+                    basicType: Excel.RangeValueType.double,
+                    layouts: {
+                        compact: {
+                            icon: "Battery10"
+                        }
+                    },
+                    basicValue: 0.7,
+                    numberFormat: "00%",
+                    properties: {
+                        Computer: {
+                            type: Excel.CellValueType.entity,
+                            text: "Laptop",
+                            properties: {
+                                "Power Consumption": {
+                                    type: Excel.CellValueType.double,
+                                    basicType: Excel.RangeValueType.double,
+                                    basicValue: 0.25,
+                                    numberFormat: "00%",
+                                    layouts: {
+                                        compact: {
+                                            icon: "Power"
+                                        }
+                                    },
+                                    properties: {
+                                        plan: {
+                                            type: Excel.CellValueType.string,
+                                            basicType: Excel.RangeValueType.string,
+                                            basicValue: "Balanced"
+                                        }
+                                    }
+                                },
+                                Charging: {
+                                    type: Excel.CellValueType.boolean,
+                                    basicType: Excel.RangeValueType.boolean,
+                                    basicValue: true
+                                }
+                            }
+                        }
                     }
-                  },
-                  properties: {
-                    plan: {
-                      type: Excel.CellValueType.string,
-                      basicType: Excel.RangeValueType.string,
-                      basicValue: "Balanced"
-                    }
-                  }
-                },
-                Charging: {
-                  type: Excel.CellValueType.boolean,
-                  basicType: Excel.RangeValueType.boolean,
-                  basicValue: true
                 }
-              }
-            }
-          }
-        }
-      ]
-    ];
-    await context.sync();
-  });
+            ]
+        ];
+        await context.sync();
+    });
 }
 ```
 
