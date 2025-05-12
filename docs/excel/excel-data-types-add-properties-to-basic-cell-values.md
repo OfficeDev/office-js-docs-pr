@@ -100,7 +100,7 @@ async function addPropertyToNumber() {
 
 Adding properties to **string**, **Boolean**, and **double** basic types is similar to adding properties to entity values. However there are differences.
 
-- Basic types have a non-error fallback so that calculations can operate on them. For example, consider the formula **=SUM(A1:A3)** where **A1** is **1** (a double with properties), **A2** is **2**, and **A3** is **3**. The sum returns the correct result of **6**. The formula wouldn't work if **A1** was an entity value.
+- Basic types have a non-error fallback so that calculations can operate on them. For example, consider the formula **=SUM(A1:A3)** where **A1** is **1**, **A2** is **2**, and **A3** is **3**. **A1** is a double with properties, while **A2** and **A3** don't have properties. The sum returns the correct result of **6**. The formula wouldn't work if **A1** was an entity value.
 - When the value of a basic type is used in a calculation, the properties are excluded in the result. In the previous example of **=SUM(A1:A3)** where A1 is a double with properties, the result of **6** does not have any properties.
 - If no icon is specified for a basic type, the cell doesn't show any icon. But if an entity value doesn't specify an icon, it shows a default icon in the cell value.
 
