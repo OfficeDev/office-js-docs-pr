@@ -495,12 +495,18 @@ items:
         - name: Concepts
           href: excel/excel-data-types-concepts.md
           displayName: Excel
-        - name: Entity value cards
+        - name: Property values on basic types
+          href: excel/excel-data-types-add-properties-to-basic-cell-values.md
+          displayName: Excel
+        - name: Cards for cell value types
           href: excel/excel-data-types-entity-card.md
           displayName: Excel
-        - name: Add lambda methods for dot function notation
+        - name: Linked Entity values
+          href: excel/excel-data-types-linked-entity-cell-values.md
+          displayName: Excel
+        - name: Add reference methods for dot function notation
           href: excel/excel-add-ins-dot-functions.md
-          displayName: Excel  
+          displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
