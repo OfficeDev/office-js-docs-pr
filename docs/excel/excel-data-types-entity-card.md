@@ -172,7 +172,7 @@ Entity properties have an optional `propertyMetadata` field that uses the [`Cell
 
 Add attribution for information that comes from third parties to indicate the source and any license information. Use [Excel.CellValueAttributionAttributes](/javascript/api/excel/excel.cellvalueattributionattributes) to add attribution to a cell value. The following code example shows how to add attribution for usage of information about the planet Mars from Wikipedia.
 
-```javascript
+```typescript
 async function createPlanet() {
     await Excel.run(async (context) => {
         const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -217,7 +217,7 @@ The following image shows how the attribution is displayed in the data type card
 
 You can add information about your add-in, or service, that is the source for the information in the data type card. Use [Excel.CellValueProviderAttributes](/javascript/api/excel/excel.cellvalueproviderattributes) to add your provider information. The following code sample shows how to add provider information for Contoso generic search as the source of search data for the cell value.
 
-```javascript
+```typescript
 async function createSearchEntry() {
     await Excel.run(async (context) => {
         const sheet = context.workbook.worksheets.getActiveWorksheet();
