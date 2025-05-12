@@ -26,7 +26,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 ## Using Visual Studio Code to publish
 
 >[!NOTE]
-> These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They don't apply if you created the add-in using the Agents Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
+> These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They don't apply if you created the add-in using Agents Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
 1. Select **View** > **Extensions** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>) to open the Extensions view.
