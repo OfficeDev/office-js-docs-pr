@@ -633,12 +633,13 @@ async function contosoLoadService(request: any): Promise<any> {
 Most add-in functionality for linked entity data types can be debugged using the guidance in [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md). However, the linked entity load service function can be implemented in a shared runtime or a JavaScript-only runtime (also know as a custom functions runtime.) If you choose to implement the function in a JavaScript-only runtime, use the [Custom functions debugging in a non-shared runtime](custom-functions-debugging.md) guidance.
 
 The linked entity load service function uses the custom functions architecture, regardless of which runtime you use. However, there are significant differences from regular custom functions.
-Differences:
 
-- They will not appear to end users for usage in formulas.
-- They do not support the JSDoc tags `@streaming` or `@volatile`. The user will see a **#CALC!** error if these tags are used.
+Linked entity load service functions have the following differences from custom functions:
 
-Similarities:
+- They don't appear to end users for usage in formulas.
+- They don't support the JSDoc tags `@streaming` or `@volatile`. The user will see a **#CALC!** error if these tags are used.
+
+Linked entity load service functions have the following similarities with custom functions:
 
 - They use [Custom functions naming and localization](custom-functions-naming.md).
 - They use the same error handling approach.
