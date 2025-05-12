@@ -49,12 +49,12 @@ There are four tasks to using the importation feature.
 
 1. Open Visual Studio Code and select the Agents Toolkit icon on the **Activity Bar**.
 
-    :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Agents Toolkit icon.":::
+    :::image type="content" source="../images/atk-toolkit-icon.png" alt-text="Agents Toolkit icon.":::
 
 1. Select **Create a New App**.
 1. The **New Project** dropdown menu opens. The options listed vary depending on your version of Agents Toolkit. Select **Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The options in New Project dropdown menu. One option is called 'Office Add-in'.":::
+    :::image type="content" source="../images/atk-toolkit-new-project-list.png" alt-text="The options in New Project dropdown menu. One option is called 'Office Add-in'.":::
 
 1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed vary depending on your version of Agents Toolkit. Select **Upgrade an Existing Office Add-in**.
 

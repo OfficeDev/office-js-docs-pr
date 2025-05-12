@@ -32,7 +32,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 1. Select **Create a New App**.
 1. The **New Project** dropdown menu opens. The options listed will vary depending on your version of Agents Toolkit. Select **Office Add-in**.
 
-    :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The options in New Project dropdown menu. The last option is called 'Office Add-in'.":::
+    :::image type="content" source="../images/atk-toolkit-new-project-list.png" alt-text="The options in New Project dropdown menu. One option is called 'Office Add-in'.":::
 
 1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Agents Toolkit. Select **Task pane**.
 

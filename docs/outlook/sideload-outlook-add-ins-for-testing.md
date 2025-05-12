@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 05/06/2025
+ms.date: 05/19/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -31,7 +31,7 @@ If you created your Outlook add-in using the [Yeoman generator for Office Add-in
 1. Open a command prompt and navigate to the root directory of your Yeoman generated add-in project. Run the command `npm start`.
 
     > [!TIP]
-    > When you first use Yeoman generator to develop an Office Add-in, your default browser opens a window where you'll be prompted to sign in to your Microsoft 365 account. If a sign-in window doesn't appear and you encounter a sideloading or login timeout error, run `teamsapp auth login m365` before running `npm start` again.
+    > When you first use Yeoman generator to develop an Office Add-in, your default browser opens a window where you'll be prompted to sign in to your Microsoft 365 account. If a sign-in window doesn't appear and you encounter a sideloading or login timeout error, run `atk auth login m365` before running `npm start` again.
 
 1. Your Outlook add-in will automatically sideload to Outlook on your desktop computer. You'll see a dialog appear, stating there is an attempt to sideload the add-in, listing the name and the location of the manifest file. Select **OK**, which will register the manifest.
 
