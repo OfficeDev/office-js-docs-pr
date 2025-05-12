@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins that use the unified manifest for Microsoft 365
 description: Test your Office Add-in on Windows by sideloading.
-ms.date: 03/28/2025
+ms.date: 05/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -16,10 +16,10 @@ The process of sideloading an add-in that uses the [Unified manifest for Microso
 
 Use the process described in [Sideload with a system prompt, bash shell, or terminal](#sideload-with-a-system-prompt-bash-shell-or-terminal).
 
-## Sideload with the Teams Toolkit
+## Sideload with the Microsoft 365 Agents Toolkit
 
 1. First, *make sure Office desktop application that you want to sideload into is closed.*
-1. In Visual Studio Code, open Teams Toolkit.
+1. In Visual Studio Code, open Agents Toolkit.
 1. Required for Outlook only: in the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
 1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select one of these options as appropriate for your add-in.
 
@@ -61,7 +61,7 @@ There are two tools you can use to sideload.
     npx office-addin-debugging stop <relative-path-to-unified-manifest>
     ``` 
 
-### Sideload with the Teams Toolkit CLI (command-line interface) 
+### Sideload with the Agents Toolkit CLI (command-line interface) 
 
 1. Manually create a zip package using the following steps.
 
@@ -69,7 +69,7 @@ There are two tools you can use to sideload.
     1. Use any zip utility to create a zip file that contains the unified manifest and the two image files. *The image files must have the same relative path in the zip file as they do in the project.* For example, if the relative path is "assets/icon-64.png" and "assets/icon-128.png", then you must include the `"assets"` folder with the two files in the zip package.
     1. If the folder contains other files, such as image files used in the Office ribbon, remove these from the zip package. It should have only the two image files specified in the `"icons"` property (in addition to the manifest in the root of the zip package).
 
-1. In the root of the project, open a command prompt or bash shell and run the following command to install the Teams Toolkit CLI.
+1. In the root of the project, open a command prompt or bash shell and run the following command to install the Agents Toolkit CLI.
 
     ```command&nbsp;line
     npm install -g @microsoft/teamsapp-cli
@@ -90,11 +90,11 @@ There are two tools you can use to sideload.
     >
     > **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId**
     >
-    > The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Teams Toolkit CLI.
+    > The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Agents Toolkit CLI.
     >
     > Only the most recent add-in installed with the CLI is recorded. If you sideload an add-in with the CLI before you have uninstalled an earlier add-in you installed with the CLI, then there is no record of the earlier add-in's title ID in the Registry. So, we recommend that you also save it in a text file in the root of the project and name the file **TitleID.txt** on both Mac and Windows computers.
 
-1. When you use the Teams Toolkit CLI to start an add-in, *always stop the session with the following command*. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in. Replace "{title ID}" with the title ID of the add-in including the "U_" prefix; for example, `U_90d141c6-cf4f-40ee-b714-9df9ea593f39`.
+1. When you use the Agents Toolkit CLI to start an add-in, *always stop the session with the following command*. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in. Replace "{title ID}" with the title ID of the add-in including the "U_" prefix; for example, `U_90d141c6-cf4f-40ee-b714-9df9ea593f39`.
 
     ```command&nbsp;line
     teamsapp uninstall --mode title-id --title-id {title ID} --interactive false

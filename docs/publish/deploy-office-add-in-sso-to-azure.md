@@ -1,7 +1,7 @@
 ---
 title: Deploy a single sign-on (SSO) Office Add-in to Microsoft Azure App Service | Microsoft Docs
 description: Learn how to deploy an Office Add-in that uses single sign-on (SSO) to Microsoft Azure App Service from Visual Studio Code.
-ms.date: 04/12/2024
+ms.date: 05/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ Office Add-ins that use SSO require server-side code. To support server-side cod
 The steps in this article work for an Office Add-in created by the [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) using the `Office Add-in Task Pane project supporting single sign-on (localhost)` project type. Be sure you have configured the add-in project so that it runs on localhost successfully. For more information, see the [Single sign-on (SSO) quick start](../quickstarts/sso-quickstart.md).
 
 > [!NOTE]
-> For information about deploying an Office Add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). Add-ins created with the Teams Toolkit use the unified manifest for Microsoft 365. For more information about publication of add-ins and sideloading, see [Deploy and publish Office Add-ins](publish.md).
+> For information about deploying an Office Add-in that you created using Agents Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). Add-ins created with the Agents Toolkit use the unified manifest for Microsoft 365. For more information about publication of add-ins and sideloading, see [Deploy and publish Office Add-ins](publish.md).
 
 The steps in this article also require:
 

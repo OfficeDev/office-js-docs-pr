@@ -1,7 +1,7 @@
 ---
 title: Validate an Office Add-in's manifest
 description: Learn how to validate the manifest of an Office Add-in.
-ms.date: 04/12/2024
+ms.date: 05/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ You should validate your add-in's manifest file to ensure that it's correct and 
 
 ## Validate your manifest with the validate command
 
-If you used the [Teams Toolkit](../develop/teams-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate your project's manifest file with the following command in the root directory of your project.
+If you used [Microsoft 365 Agents Toolkit](../develop/teams-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate your project's manifest file with the following command in the root directory of your project.
 
 ```command&nbsp;line
 npm run validate
@@ -30,7 +30,7 @@ npx office-addin-manifest validate -p MANIFEST_FILE
 
 ## Validate your manifest with office-addin-manifest
 
-If you didn't use the [Teams Toolkit](../develop/teams-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
+If you didn't use [Microsoft 365 Agents Toolkit](../develop/teams-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate the manifest by using [office-addin-manifest](https://www.npmjs.com/package/office-addin-manifest).
 
 1. Install [Node.js](https://nodejs.org/download/).
 
@@ -53,9 +53,9 @@ If you didn't use the [Teams Toolkit](../develop/teams-toolkit-overview.md) or [
     > npx office-addin-manifest validate MANIFEST_FILE
     > ```
 
-## Validate the manifest in the UI of Teams Toolkit
+## Validate the manifest in the UI of Agents Toolkit
 
-If you're working in Teams Toolkit and using the unified manifest, you can use the toolkit's validation options. For instructions, see [Validate application](/microsoftteams/platform/toolkit/teamsfx-preview-and-customize-app-manifest#validate-application).
+If you're working in Agents Toolkit and using the unified manifest, you can use the toolkit's validation options. For instructions, see [Validate application](/microsoftteams/platform/toolkit/teamsfx-preview-and-customize-app-manifest#validate-application).
 
 ## See also
 

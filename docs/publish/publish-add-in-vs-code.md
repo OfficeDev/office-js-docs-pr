@@ -1,7 +1,7 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
 description: How to publish an add-in using Visual Studio Code and Azure Active Directory
-ms.date: 02/12/2025
+ms.date: 05/19/2025
 ms.custom: vscode-azure-extension-update-completed
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ This article describes how to publish an Office Add-in that you created using th
 > [!NOTE]
 >
 > - For information about publishing an Office Add-in that you created using Visual Studio, see [Publish your add-in using Visual Studio](package-your-add-in-using-visual-studio.md).
-> - The process described in this article doesn't apply to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). Add-ins created using Teams Toolkit use the unified manifest. For information about publishing an add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
+> - The process described in this article doesn't apply to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). Add-ins created using Microsoft 365 Agents Toolkit use the unified manifest. For information about publishing an add-in that you created using Agents Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Agents Toolkit.
 
 ## Publishing an add-in for other users to access
 
@@ -26,7 +26,7 @@ When your add-in is working as desired, you can publish it directly through Visu
 ## Using Visual Studio Code to publish
 
 >[!NOTE]
-> These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They don't apply if you created the add-in using the Teams Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
+> These steps only work for projects created with the Yeoman generator, and that use the add-in only manifest. They don't apply if you created the add-in using the Agents Toolkit or created it with the Yeoman generator and it uses the unified manifest for Microsoft 365.
 
 1. Open your project from its root folder in Visual Studio Code (VS Code).
 1. Select **View** > **Extensions** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>) to open the Extensions view.
