@@ -1,35 +1,10 @@
 ---
 title: Privacy and security for Office Add-ins
 description: 'Learn about the privacy and security aspects of the Office Add-ins platform.'
-ms.date: 03/19/2021
-ms.localizationpriority: medium
+ms.date: 2025-05-13
+ms.localizationpriority: extra-large
 ---
-
-# Privacy and security for Office Add-ins
-
-## Understanding the add-in runtime
-
-Office Add-ins are secured by an add-in runtime environment, a multiple-tier permissions model, and performance governors. This framework protects the user's experience in the following ways.
-
-- Access to the Office client application's UI frame is managed.
-
-- Only indirect access to the Office client application's UI thread is allowed.
-
-- Modal interactions aren't allowed - for example, calls to JavaScript `alert`, `confirm`, and `prompt` functions aren't allowed because they're modal.
-
-Further, the runtime framework provides the following benefits to ensure that an Office Add-in can't damage the user's environment.
-
-- Isolates the process the add-in runs in.
-
-- Doesn't require .dll or .exe replacement or ActiveX components.
-
-- Makes add-ins easy to install and uninstall.
-
-Also, the use of memory, CPU, and network resources by Office Add-ins is governable to ensure that good performance and reliability are maintained.
-
-The following sections briefly describe how the runtime architecture supports running add-ins in Office clients on Windows-based devices, on Mac OS X devices, and in web browsers.
-
-### Clients on Windows and OS X devices
+### Clients on Windows and OS devices
 
 In supported clients for desktop and tablet devices, such as Excel on Windows, and Outlook on Windows and Mac, Office Add-ins are supported by integrating an in-process component, the Office Add-ins runtime, which manages the add-in lifecycle and enables interoperability between the add-in and the client application. The add-in webpage itself is hosted out-of-process. As shown in figure 1, on a Windows desktop or tablet device, [the add-in webpage is hosted inside an Internet Explorer or Microsoft Edge control](browsers-used-by-office-web-add-ins.md) which, in turn, is hosted inside an add-in runtime process that provides security and performance isolation.
 
