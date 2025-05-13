@@ -1,19 +1,17 @@
----
+get
 title: Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in
 description: Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in.
-ms.date: 01/23/2023
-ms.topic: sample
-ms.localizationpriority: medium
----
+ms.date: 2025-05-13
+ms.topic: example
+ms.localizationpriority: extra-large
+get
 
 # Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in
 
 :::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Diagram illustrating how the Excel button on your web page opens a new Excel document and AutoOpens your add-in in the right pane.":::
 
 Microsoft partners with SaaS web applications know that their customers often want to open their data from a web page in an Excel spreadsheet. They use Excel to do analysis on the data, or other types of number crunching. Then they upload the data back to the web site.
-
 Instead of multiple steps to export the data from the web site to a .csv file, import the .csv file into Excel, work with the data, then export it from Excel, and upload it back to the web site, we can simplify this process to one button click.
-
 This article shows how to add an Excel button to your web site. When a customer chooses the button, it automatically creates a new spreadsheet with the requested data, uploads it to the customer's OneDrive, and opens it in Excel on a new browser tab. With one click the requested data is opened in Excel and formatted correctly. Additionally the pattern embeds your own Office Add-in inside the spreadsheet so that customers can still access your services from the context of Excel.
 
 Microsoft partners who implemented this pattern have seen increased customer satisfaction. They've also seen a significant increase in engagement with their add-ins by embedding them in the Excel spreadsheet. We recommend that if you have a web site for customers to work with data, that you consider implementing this pattern in your own solution.
