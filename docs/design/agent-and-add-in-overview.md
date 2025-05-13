@@ -121,6 +121,8 @@ The agent configuration file includes instructions for the agent and specifies o
 
 ```json
 {
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+    "version": "v1.3",
     "name": "Excel Add-in + Agent",
     "description": "Agent for working with Excel cells.",
     "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
@@ -147,8 +149,10 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
 
 - The `"functions.name"` must match the `"extensions.runtimes.actions.id"` property in the add-in manifest.
 - The `"reasoning.description"` and `"reasoning.instructions"` refer to a JavaScript function, not a REST API.
+- The `"responding.instructions"` property only provides guidance to Copilot about how to respond. It doesn't put any limits or structural requirements on the response.
 - The `"runtimes.run_for_functions"` array must include either the same string as `"functions.name"` or a wildcard string that matches it.
 - The `"runtimes.spec.local_endpoint"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. In this case, it specifies that the JavaScript function that is associated with the "fillcolor" string is available in an Office Add-in, rather than in some REST endpoint.
+-The `"runtimes.spec.allowed_host"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. In this case, it specifies that the agent should only be visible in Excel.
 
 ```json
 {
@@ -197,7 +201,8 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
         {
             "type": "LocalPlugin",
             "spec": {
-                "local_endpoint": "Microsoft.Office.Addin"
+                "local_endpoint": "Microsoft.Office.Addin",
+                "allowed_host": ["workbook"]
             },
             "run_for_functions": ["fillcolor"]
         }
@@ -205,11 +210,12 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
 }
 ```
 
-The reference documentation for API plug-ins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for the `"runtimes.spec.local_endpoint"` property.
+The reference documentation for API plug-ins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for two new properties of the `"runtimes.spec"` property.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
 | `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the [`"runtimes.spec.url"`](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2#openapi-specification-object) property, but for local functions on the client, not REST APIs. Currently, the only allowed value is "Microsoft.Office.Addin".|
+| `allowed_host` | String | Optional. Specifies which Office application Copilots can host the agent. Possible values are "document", "mail", "presentation", and "workbook".|
 
 ## Create the JavaScript functions
 
@@ -236,6 +242,19 @@ Office.onReady((info) => {
 ```
 
 After your functions are created, create a UI-less HTML file that contains a `<script>` tag that loads the JavaScript file with the functions. The URL of this HTML file must match the value of the [`"extensions.runtimes.code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property in the manifest. See [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365) earlier in this article.
+
+## Troubleshooting combined agents and add-ins
+
+The following are some common problems and suggested solutions.
+
+- The agent action fails with a message indicating that the action wasn't found in the add-in. The following are some possible causes.
+
+   - The `"functions.name"` property value in the plug-in's JSON doesn't *exactly match* any `"extensions.runtimes.actions.id"` property in the add-in manifest.
+   - There is a matching `"actions.id"` in the manifest, but the sibling `"actions.type"` value for the same action object isn't "executeDataFunction".
+
+- The agent action fails with a message indicating the action handler registration wasn't found. The following is a possible cause.
+
+   - The add-in's JavaScript doesn't have a call of `Office.actions.associate` with the first parameter *exactly matching* the `"functions.name"` property value in the plug-in's JSON.
 
 ## Next steps
 

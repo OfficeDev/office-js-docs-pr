@@ -87,6 +87,8 @@ Add the agent with the following steps.
 
    ```json
    {
+        "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+        "version": "v1.3",
         "name": "Excel Add-in + Agent",
         "description": "Agent for working with Excel cells.",
         "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
@@ -155,7 +157,8 @@ Add the agent with the following steps.
             {
                 "type": "LocalPlugin",
                 "spec": {
-                    "local_endpoint": "Microsoft.Office.Addin"
+                    "local_endpoint": "Microsoft.Office.Addin",
+                    "allowed_host": ["workbook"]
                 },
                 "run_for_functions": ["fillcolor"]
             }
@@ -323,6 +326,10 @@ Live reloading and hot reloading for a combined add-in and agent aren't supporte
 1. Select the trash can icon near the right end of the row, and then select **Remove** in the prompt.
 
 Make your changes and then repeat the steps in [Test the add-in and agent](#test-the-add-in-and-agent).
+
+## Troubleshooting
+
+See [Troubleshooting combined add-ins and agents](../design/agent-and-add-in-overview.md#troubleshooting-combined-agents-and-add-ins).
 
 ## Next steps
 

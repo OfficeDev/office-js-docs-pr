@@ -171,6 +171,8 @@ The runtime object should look similar to the following. There may be other prop
 
    ```json
    {
+        "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
+        "version": "v1.3",
         "name": "Excel Add-in + Agent",
         "description": "Agent for working with Excel cells.",
         "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
@@ -244,7 +246,8 @@ The runtime object should look similar to the following. There may be other prop
             {
                 "type": "LocalPlugin",
                 "spec": {
-                    "local_endpoint": "Microsoft.Office.Addin"
+                    "local_endpoint": "Microsoft.Office.Addin",
+                    "allowed_host": ["workbook"]
                 },
                 "run_for_functions": ["FillColor"]
             }
@@ -341,3 +344,6 @@ Live reloading and hot reloading for a combined add-in and agent aren't supporte
 
 Make your changes and then repeat the steps in [Test the agent](#test-the-agent).
 
+## Troubleshooting
+
+See [Troubleshooting combined add-ins and agents](../design/agent-and-add-in-overview.md#troubleshooting-combined-agents-and-add-ins).
