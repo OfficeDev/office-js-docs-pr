@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 > - It offers [send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options) when you want to provide your users with optional recommendations instead of mandatory conditions, so that they won't be unnecessarily blocked from sending messages. For example, with the **soft block** option, users can still send messages even if the add-in is unavailable during an outage. This option isn't supported by the on-send feature.
 > - It allows your add-in to be published to AppSource if the send mode property is set to the **prompt user** or **soft block** option. To learn more about publishing an event-based add-in, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
 >
-> The on-send feature should only be used to support older Outlook versions that don't support the Smart Alerts feature. However, for improved security, we encourage users to upgrade to the latest version of Outlook.
+> The on-send feature should only be used to support older Outlook versions that don't support the Smart Alerts feature. For improved security, we encourage users to upgrade to the latest version of Outlook.
 >
 > For more information on the differences between Smart Alerts and the on-send feature, see [Differences between Smart Alerts and the on-send feature](onmessagesend-onappointmentsend-events.md#differences-between-smart-alerts-and-the-on-send-feature). [Try out Smart Alerts by completing the walkthrough](smart-alerts-onmessagesend-walkthrough.md).
 
