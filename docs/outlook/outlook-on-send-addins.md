@@ -79,7 +79,7 @@ The on-send feature currently has the following limitations.
   > [!IMPORTANT]
   > When running `npm run validate` to [validate your add-in's manifest](../testing/troubleshoot-manifest.md), you'll receive the error, "Mailbox add-in containing ItemSend event is invalid. Mailbox add-in manifest contains ItemSend event in VersionOverrides which is not allowed." This message appears because add-ins that use the `ItemSend` event, which is required for this version of the on-send feature, can't be published to AppSource. You'll still be able to sideload and run your add-in, provided that no other validation errors are found.
 
-- **Manifest** &ndash; Only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
+- **Manifest** &ndash; The on-send feature is only supported in add-ins that use the [add-in only manifest](../develop/add-in-manifests.md). It isn't supported in add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). In the add-in only manifest, only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **Send Later** (Mac only) &ndash; If there are on-send add-ins, the **Send Later** feature will be unavailable.
 
