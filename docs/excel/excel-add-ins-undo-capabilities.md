@@ -39,7 +39,40 @@ The following code sample shows how to merge multiple actions with `mergeUndoGro
 
 Most Excel JavaScript APIs support undo actions. See the following table for a list of APIs that don't support undo behavior.
 
-> [!TIP] If you call an unsupported API in your add-in, the user’s undo stack is cleared starting from that API call, and a user cannot undo actions past that point.
+> [!TIP]
+> If you call an unsupported API in your add-in, the user’s undo stack is cleared starting from that API call, and a user cannot undo actions past that point.
+
+| API | Supported in Excel on the web | Supported in Excel on Windows and Excel on Mac | Notes |
+|:----------|:--------------|:------|
+| `AllowEditRange.address` | No | No | *None* |
+| `AllowEditRange.delete` | No | No | *None* |
+| `AllowEditRange.pauseProtection` | No | No | *None* |
+| `AllowEditRange.setPassword` | No | No | *None* |
+| `AllowEditRange.title` | No | No | *None* |
+| `AllowEditRangeCollection.add` | No | No | *None* |
+| `AllowEditRangeCollection.pauseProtection` | No | No | *None* |
+| `Chart.categoryLabelLevel` | No | No | *None* |
+| `Chart.seriesNameLevel` | No | No | *None* |
+| `DataConnectionCollection.refreshAll` | No | No | *None* |
+| `LinkedWorkbook.refresh` | No | No | *None* |
+| `LinkedWorkbookCollection.refreshAll` | No | No | *None* |
+| `Workbook.close` | No | No | *None* |
+| `Workbook.insertWorksheetsFromBase64` | No | No | *None* |
+| `Workbook.save` | No | No | *None* |
+| `WorkbookProtection.protect` | No | No | *None* |
+| `WorkbookProtection.unprotect` | No | No | *None* |
+| `Worksheet.copy` | No | No | *None* |
+| `Worksheet.delete` | No | No | *None* |
+| `Worksheet.name` | Yes | No | *None* |
+| `Worksheet.position` | Yes | No | *None* |
+| `Worksheet.visibility​` | Yes | No | *None* |
+| `WorksheetCollection.addFromBase64` | No | No | *None* |
+| `WorksheetProtection.pauseProtection` | No | No | *None* |
+| `WorksheetProtection.protect` | No | No | *None* |
+| `WorksheetProtection.resumeProtection` | No | No | *None* |
+| `WorksheetProtection.setPassword` | No | No | *None* |
+| `WorksheetProtection.unprotect` | No | No | *None* |
+| `WorksheetProtection.updateOptions` | No | No | *None* |
 
 ## Check for undo support
 
