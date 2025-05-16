@@ -9,6 +9,9 @@ ms.localizationpriority: medium
 
 Excel add-ins support undo behavior. This preserves both actions performed by Excel JavaScript APIs and actions performed by the user in Excel. These actions are saved in the *undo stack* for an individual user, allowing the user to step back through their actions when desired.
 
+> [!NOTE]
+> Undo support is enabled by default starting with ExcelApi 1.19. For ExcelApi 1.19 availability details, see [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel/excel-api-requirement-sets).
+
 ## Undo grouping
 
 The Excel JavaScript API also supports undo grouping. This allows you to group multiple API calls into a single undoable action for your add-in user. For example, if your add-in needs to make several different updates across multiple worksheets in response to a single user command, you can wrap all those updates in a single group. This is done with the `mergeUndoGroup` property provided to the `Excel.run` function.
@@ -21,18 +24,18 @@ The following code sample shows how to merge multiple actions with `mergeUndoGro
 > Ensure that all grouped API calls support undo to avoid errors. See [Unsupported APIs](#unsupported-apis) and [Check for undo support](#check-for-undo-support) for more information.
 
 ```js
-    await Excel.run({ mergeUndoGroup: true }, async (context) => { 
-        const sheet = context.workbook.worksheets.getActiveWorksheet(); 
-        let range = sheet.getRange("A1"); 
-        range.values = [["123"]]; 
-        
-        await context.sync(); 
-        
-        range = sheet.getRange("B2"); 
-        range.values = [["456"]];
- 
-        await context.sync(); 
-    }); 
+await Excel.run({ mergeUndoGroup: true }, async (context) => { 
+    const sheet = context.workbook.worksheets.getActiveWorksheet(); 
+    let range = sheet.getRange("A1"); 
+    range.values = [["123"]]; 
+    
+    await context.sync(); 
+    
+    range = sheet.getRange("B2"); 
+    range.values = [["456"]];
+
+    await context.sync(); 
+}); 
 ```
 
 ## Unsupported APIs
@@ -140,11 +143,11 @@ Most Excel JavaScript APIs do support undo actions. However, see the following t
 Use the`isSetSupported` method of the [Office.RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) interface to check for undo support and provide a fallback experience if undo support isn't available. See the following code sample for more information about how to use `isSetSupported`.
 
 ```js
-    if (Office.context.requirements.isSetSupported("ExcelUndoApiAll", "1.0")) { 
-       // Undo is supported. 
-    } else { 
-       // Undo is not supported.
-    } 
+if (Office.context.requirements.isSetSupported("ExcelUndoApiAll", "1.0")) { 
+    // Undo is supported. 
+} else { 
+    // Undo is not supported.
+} 
 ```
 
 ## See also
