@@ -7,13 +7,13 @@ ms.localizationpriority: medium
 
 # Undo support with the Excel JavaScript API
 
-Excel add-ins support undo behavior, preserving both actions performed by Excel JavaScript APIs and actions performed by the user in Excel. These actions are preserved in the *undo stack* for an individual user, allowing the user to step back through their actions when desired.
+Excel add-ins support undo behavior. This preserves both actions performed by Excel JavaScript APIs and actions performed by the user in Excel. These actions are saved in the *undo stack* for an individual user, allowing the user to step back through their actions when desired.
 
 ## Undo grouping
 
-The Excel JavaScript API also supports undo grouping, which allows you to group multiple API calls into a single undoable action for your add-in user. For example, if your add-in needs to make several different updates across multiple worksheets in response to a single user command, you can wrap all those updates in a single group.
+The Excel JavaScript API also supports undo grouping. This allows you to group multiple API calls into a single undoable action for your add-in user. For example, if your add-in needs to make several different updates across multiple worksheets in response to a single user command, you can wrap all those updates in a single group. This is done with the `mergeUndoGroup` property provided to the `Excel.run` function.
 
-If an API within the group doesn't offer undo support, the `UndoNotSupported` error is thrown to let you know that the operation can’t be grouped.
+If an API within the group doesn't offer undo support, the `UndoNotSupported` error is thrown to let you know that the operation can’t be grouped. Your add-in should gracefully handle this error and present a reasonable message to the user.
 
 The following code sample shows how to merge multiple actions with `mergeUndoGroup` set to `true`.
 
