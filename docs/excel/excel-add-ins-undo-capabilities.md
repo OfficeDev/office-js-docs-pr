@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Excel add-ins support undo behavior. This preserves both actions performed by Excel JavaScript APIs and actions performed by the user in Excel. These actions are saved in the *undo stack* for an individual user, allowing the user to step back through their actions when desired.
 
 > [!NOTE]
-> Undo support is enabled by default starting with ExcelApi 1.19. For ExcelApi 1.19 availability details, see [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel/excel-api-requirement-sets).
+> Undo support is available and automatically enabled starting with ExcelApi 1.19. For ExcelApi 1.19 availability details, see [Excel JavaScript API requirement sets](/javascript/api/requirement-sets/excel/excel-api-requirement-sets).
 
 ## Undo grouping
 
