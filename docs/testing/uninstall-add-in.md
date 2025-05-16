@@ -38,7 +38,7 @@ To prevent ghost add-ins, end every testing, debugging, and sideloading session 
 The following list identifies, for each tool, how to uninstall but doesn't describe the procedures or syntax in detail. *Be sure to use the links to get complete instructions.*
 
 > [!NOTE]
-> Some of these tools don't close the Office application that opened automatically. In that case, close the application manually immediately after ending the session. 
+> Some of these tools don't close the Office application that opened automatically. In that case, close the application manually immediately after ending the session.
 
 - **Yeoman generator for Office Add-ins (Yo Office)**: Use the `npm stop` script at the same command line where you started the session with `npm start`. For more information, see the various articles in the **Get started** and **Quick starts** sections and [Remove a sideloaded add-in](sideload-office-add-ins-for-testing.md).
 - **Microsoft 365 Agents Toolkit for Visual Studio Code**: Select **Run** | **Stop Debugging** in Visual Studio Code. For more information, see the last step of [Create an Outlook Add-in project](../tutorials\outlook-tutorial.md#create-an-outlook-add-in-project) which also applies to non-Outlook add-ins.
@@ -49,10 +49,10 @@ The following list identifies, for each tool, how to uninstall but doesn't descr
 
 ## Remove a ghost add-in
 
-To remove a ghost add-in, you need to remove the artifacts that were created when it was last sideloaded, remove it's local registration, and for Outlook add-ins remove it's registration in Exchange.
+To remove a ghost add-in, you need to remove the artifacts that were created when it was last sideloaded, remove its local registration, and for Outlook add-ins remove its registration in Exchange.
 
 > [!TIP]
-> There is a fast way to remove a ghost add-in on Windows computers if the add-in was installed with the Agents Toolkit CLI. Try this first, and if it works, you can skip the remainder of this section.
+> There's a fast way to remove a ghost add-in on Windows computers if the add-in was installed with the Teams Toolkit CLI. Try this first, and if it works, you can skip the remainder of this section.
 >
 > 1. Obtain the add-in's title ID from the Registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId**. (The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Agents Toolkit CLI.)
 > 1. Run the following command in a command prompt, bash shell, or terminal. Replace "{title ID}" with the title ID of the add-in including the "U_" prefix; for example, `U_90d141c6-cf4f-40ee-b714-9df9ea593f39`.
@@ -61,10 +61,10 @@ To remove a ghost add-in, you need to remove the artifacts that were created whe
 >    atk uninstall --mode title-id --title-id {title ID} --interactive false
 >    ```
 
-The process for removing the add-in varies depending on whether the add-in is for Outlook or some other Office application. 
+The process for removing the add-in varies depending on whether the add-in is for Outlook or some other Office application.
 
 > [!NOTE]
-> In the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), an add-in can be configured to support Outlook and one or more other Office applications; that is, there is more than one member of the [`"extensions.requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes) array in the manifest and one of the members is `"mail"` (or the `"extensions.requirements.scopes"` property isn't present). Treat an add-in that is configured in this way as an Outlook add-in.
+> In the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), an add-in can be configured to support Outlook and one or more other Office applications; that is, there's more than one member of the [`"extensions.requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes) array in the manifest and one of the members is `"mail"` (or the `"extensions.requirements.scopes"` property isn't present). Treat an add-in that is configured in this way as an Outlook add-in.
 
 If the ghost add-in is not an Outlook add-in, skip to the section [Remove the add-in artifacts](#remove-the-add-in-artifacts).
 
@@ -105,7 +105,7 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 > [!IMPORTANT]
 > Carry out this procedure on all devices on which you have had the add-in sideloaded.
 
-1. Log out from all Office applications and then close them all, including Outlook. 
+1. Log out from all Office applications and then close them all, including Outlook.
 1. [Clear the Office cache](clear-cache.md). If the ghost add-in supports Outlook, use [Clear the cache in Outlook manually](clear-cache.md#manually-clear-the-cache-in-outlook).
 1. Continue with the section [Remove the local registration](#remove-the-local-registration).
 

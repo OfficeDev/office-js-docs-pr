@@ -84,7 +84,7 @@ Review and change, as needed, manifest values in light of the following effects 
 - The first 100 characters of `<DisplayName>` becomes the value of [`"name.full"`](/microsoft-365/extensibility/schema/root-name#full) in the unified manifest.
 - The first 250 characters of `<Description>` becomes the value of [`"description.short"`](/microsoft-365/extensibility/schema/root-description#short) in the unified manifest.
 - The first 4000 characters of `<Description>` becomes the value of [`"description.full"`](/microsoft-365/extensibility/schema/root-description#full) in the unified manifest.
-- The first 32 characters of the `<ProviderName>` becomes the value [`"developer.name"`](/microsoft-365/extensibility/schema/root-developer#name) in the unified manifest.
+- The first 32 characters of the `<ProviderName>` becomes the value of [`"developer.name"`](/microsoft-365/extensibility/schema/root-developer#name) in the unified manifest.
 
 ### Verify that the modified add-in only manifest works
 
