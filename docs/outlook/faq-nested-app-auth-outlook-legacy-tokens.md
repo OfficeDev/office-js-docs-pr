@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 04/14/2025
+ms.date: 05/13/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -354,12 +354,18 @@ If you've implemented a pattern where your code uses Exchange tokens but then fa
 
 If your Outlook add-in supports Outlook 2016 or Outlook 2019 on Windows, test that it works correctly when the Trident+ (Internet Explorer 11) webview is used. When the Trident+ webview is used, your code must fall back to MSAL v2 to open a dialog and sign in the user. For more information on how to implement the fallback pattern, see [Outlook add-in with SSO using nested app authentication including Internet Explorer fallback](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE).
 
+> [!NOTE]
+> Support for Outlook 2016 and Outlook 2019 ends October 2025. For more information, see [End of support for Office 2016 and Office 2019](https://support.microsoft.com/office/818c68bc-d5e5-47e5-b52f-ddf636cf8e16).
+
 #### Testing in Trident+ and WebView2
 
 Outlook 2016 and Outlook 2019 on Windows use the Trident+ or WebView2 based on various OS conditions.
 
 - For more information on when Trident+ or Webview2 is used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 - For more information on how to determine which webview is running, see  [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md#determine-the-webview-the-add-in-is-running-in-at-runtime)
+
+> [!NOTE]
+> Support for Outlook 2016 and Outlook 2019 ends October 2025. For more information, see [End of support for Office 2016 and Office 2019](https://support.microsoft.com/office/818c68bc-d5e5-47e5-b52f-ddf636cf8e16).
 
 ### What tokens does MSAL return and are there minimum scopes to request?
 
@@ -379,6 +385,11 @@ No. This is a legacy authentication pattern that was used with Exchange tokens t
 
 It's very important that you always request an access token to your own services. The access token also includes the same ID claims, so you don't need to pass the ID token. Instead create a custom scope for your service. For more information about app registration settings for your own services, see [Protected web API: App registration](/entra/identity-platform/scenario-protected-web-api-app-registration). When your service receives the access token, it can validate it, and use ID claims from inside the access token.
 
+### app required policy not supported
+
+For more information see 
+https://learn.microsoft.com/en-us/intune/intune-service/apps/app-protection-policies#target-app-protection-policies-based-on-device-management-state
+
 ### Why is the ID token not refreshed?
 
 There is a known issue where MSAL sometimes doesn't refresh the ID token after it expires. This shouldn't cause any issues in your add-in since the ID token is only intended for use in your task pane to get basic user identity information, such as name and email. There's no reason to validate the ID token or check the expiration claim. If you need to authenticate the user to your own resources, use the access token which also contains user identity information. The ID token must never be passed outside of your client code that received it.
@@ -386,6 +397,9 @@ There is a known issue where MSAL sometimes doesn't refresh the ID token after i
 ### How do I determine if the user is an online or on-premise account?
 
 You can determine if the signed-in user has an Exchange Online account or on-premise Exchange account by using the [Office.UserProfile.accountType](/javascript/api/outlook/office.userprofile) property. If the account type property value is **enterprise**, then the mailbox is on an on-premises Exchange server. Note that volume-licensed perpetual Outlook 2016 doesn’t support the **accountType** property. To work around this, call the [ResolveNames](/exchange/client-developer/web-service-reference/resolvenames-operation) operation in Exchange Web Service (EWS) in the Exchange on-premise server to get the recipient types.
+
+> [!NOTE]
+> Support for Outlook 2016 and Outlook 2019 ends October 2025. For more information, see [End of support for Office 2016 and Office 2019](https://support.microsoft.com/office/818c68bc-d5e5-47e5-b52f-ddf636cf8e16).
 
 ### How do I deploy my add-in to Microsoft AppSource
 
