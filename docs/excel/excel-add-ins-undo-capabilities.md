@@ -76,9 +76,9 @@ Most Excel JavaScript APIs do support undo actions. However, see the following t
 | `PivotTableStyle.name` | No | Yes | *None* |
 | `PivotTableStyleCollection.add` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
 | `PivotTableStyleCollection.setDefault` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
-| `Query.delete` | No | Yes | API supports undo in Excel on Windows and Mac but doesn't support re-do. |
-| `Query.refresh` | No | Yes | API supports undo Excel on Windows and Mac but doesn't support re-do. |
-| `QueryCollection.refreshAll` | No | Yes | API supports undo Excel on Windows and Mac but doesn't support re-do. |
+| `Query.delete` | No | Yes | API supports undo in Excel on Windows and Mac but doesn't support redo. |
+| `Query.refresh` | No | Yes | API supports undo Excel on Windows and Mac but doesn't support redo. |
+| `QueryCollection.refreshAll` | No | Yes | API supports undo Excel on Windows and Mac but doesn't support redo. |
 | `Slicer.name` | No | Yes | *None* |
 | `Slicer.nameInFormula` | No | Yes | *None* |
 | `SlicerStyle.delete` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
