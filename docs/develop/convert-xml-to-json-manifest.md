@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 05/08/2025
+ms.date: 05/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -24,7 +24,7 @@ There are three basic tasks to converting an add-in project from the add-in only
 >
 > - Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
-> - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
+> - If you [created the project with Teams Toolkit or Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
 ## Ensure that your manifest is ready to convert
 
@@ -102,7 +102,7 @@ There are several ways to carry out the remaining tasks, depending on the IDE an
 - [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-the-yeoman-generator-for-office-add-ins-yo-office)
 
 > [!NOTE]
-> Conversion of the manifest is one of the effects of importing the add-in project into Teams Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Teams Toolkit](import-teams-toolkit.md) 
+> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md) 
 
 ### Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")
 

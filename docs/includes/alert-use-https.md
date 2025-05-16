@@ -6,4 +6,4 @@
 >
 >    :::image type="content" source="../images/office-loopback-exemption.png" alt-text="The prompt in the command line to allow Microsoft Edge WebView a loopback exemption.":::
 >
-> - When you first use Yeoman generator to develop an Office Add-in, your default browser opens a window where you'll be prompted to sign in to your Microsoft 365 account. If a sign-in window doesn't appear and you encounter a sideloading or login timeout error, run `teamsapp auth login m365`.
+> - When you first use Yeoman generator to develop an Office Add-in, your default browser opens a window where you'll be prompted to sign in to your Microsoft 365 account. If a sign-in window doesn't appear and you encounter a sideloading or login timeout error, run `atk auth login m365`.
