@@ -37,7 +37,7 @@ The following code sample shows how to merge multiple actions with `mergeUndoGro
 
 ## Unsupported APIs
 
-Most Excel JavaScript APIs support undo actions. See the following table for a list of APIs that don't support undo behavior.
+**Most** Excel JavaScript APIs do support undo actions. However, see the following table for a list of APIs that do not support undo behavior.
 
 > [!TIP]
 > If you call an unsupported API in your add-in, the user’s undo stack is cleared starting from that API call, and a user cannot undo actions past that point.
@@ -53,9 +53,27 @@ Most Excel JavaScript APIs support undo actions. See the following table for a l
 | `AllowEditRangeCollection.pauseProtection` | No | No | *None* |
 | `Chart.categoryLabelLevel` | No | No | *None* |
 | `Chart.seriesNameLevel` | No | No | *None* |
+| `ChartPivotOptions.showAxisFieldButtons` | No | Yes | *None* |
+| `ChartPivotOptions.showLegendFieldButtons` | No | Yes | *None* |
+| `ChartPivotOptions.showReportFilterFieldButtons` | No | Yes | *None* |
+| `ChartPivotOptions.showValueFieldButtons` | No | Yes | *None* |
+| `ChartTrendlineLabel.formula` | No | Yes | *None* |
 | `DataConnectionCollection.refreshAll` | No | No | *None* |
+| `DocumentProperties.author​` | No | Yes | *None* |
+| `DocumentProperties.category` | No | Yes | *None* |
+| `DocumentProperties.comments` | No | Yes | *None* |
+| `DocumentProperties.company` | No | Yes | *None* |
+| `DocumentProperties.keywords` | No | Yes | *None* |
+| `DocumentProperties.manager` | No | Yes | *None* |
+| `DocumentProperties.revisionNumber` | No | Yes | *None* |
+| `DocumentProperties.subject` | No | Yes | *None* |
+| `DocumentProperties.title` | No | Yes | *None* |
 | `LinkedWorkbook.refresh` | No | No | *None* |
 | `LinkedWorkbookCollection.refreshAll` | No | No | *None* |
+| `NamedItem.comment` | No | Yes | *None* |
+| `Query.delete` | No | Yes | API supports undo but doesn't support re-do. |
+| `Query.refresh` | No | Yes | API supports undo but doesn't support re-do. |
+| `QueryCollection.refreshAll` | No | Yes | API supports undo but doesn't support re-do. |
 | `Workbook.close` | No | No | *None* |
 | `Workbook.insertWorksheetsFromBase64` | No | No | *None* |
 | `Workbook.save` | No | No | *None* |
@@ -64,6 +82,7 @@ Most Excel JavaScript APIs support undo actions. See the following table for a l
 | `Worksheet.copy` | No | No | *None* |
 | `Worksheet.delete` | No | No | *None* |
 | `Worksheet.name` | Yes | No | *None* |
+| `Worksheet.standardWidth` | No | Yes | *None* |
 | `Worksheet.position` | Yes | No | *None* |
 | `Worksheet.visibility​` | Yes | No | *None* |
 | `WorksheetCollection.addFromBase64` | No | No | *None* |
