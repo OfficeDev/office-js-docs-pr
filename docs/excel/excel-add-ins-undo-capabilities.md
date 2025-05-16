@@ -37,7 +37,7 @@ The following code sample shows how to merge multiple actions with `mergeUndoGro
 
 ## Unsupported APIs
 
-**Most** Excel JavaScript APIs do support undo actions. However, see the following table for a list of APIs that do not support undo behavior.
+Most Excel JavaScript APIs do support undo actions. However, see the following table for a list of APIs that do not support undo behavior.
 
 > [!TIP]
 > If you call an unsupported API in your add-in, the user’s undo stack is cleared starting from that API call, and a user cannot undo actions past that point.
@@ -71,9 +71,51 @@ The following code sample shows how to merge multiple actions with `mergeUndoGro
 | `LinkedWorkbook.refresh` | No | No | *None* |
 | `LinkedWorkbookCollection.refreshAll` | No | No | *None* |
 | `NamedItem.comment` | No | Yes | *None* |
-| `Query.delete` | No | Yes | API supports undo but doesn't support re-do. |
-| `Query.refresh` | No | Yes | API supports undo but doesn't support re-do. |
-| `QueryCollection.refreshAll` | No | Yes | API supports undo but doesn't support re-do. |
+| `PivotTableStyle.delete` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `PivotTableStyle.duplicate` | No | Yes | *None* |
+| `PivotTableStyle.name` | No | Yes | *None* |
+| `PivotTableStyleCollection.add` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `PivotTableStyleCollection.setDefault` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `Query.delete` | No | Yes | API supports undo in Excel on Windows and Mac but doesn't support re-do. |
+| `Query.refresh` | No | Yes | API supports undo Excel on Windows and Mac but doesn't support re-do. |
+| `QueryCollection.refreshAll` | No | Yes | API supports undo Excel on Windows and Mac but doesn't support re-do. |
+| `Slicer.name` | No | Yes | *None* |
+| `Slicer.nameInFormula` | No | Yes | *None* |
+| `SlicerStyle.delete` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `SlicerStyle.duplicate` | No | Yes | *None* |
+| `SlicerStyle.name` | No | Yes | *None* |
+| `SlicerStyleCollection.add` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `SlicerStyleCollection.setDefault` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `Style.addIndent` | No | Yes | *None* |
+| `Style.autoIndent` | No | Yes | *None* |
+| `Style.formulaHidden` | No | Yes | *None* |
+| `Style.horizontalAlignment` | No | Yes | *None* |
+| `Style.includeAlignment` | No | Yes | *None* |
+| `Style.includeBorder` | No | Yes | *None* |
+| `Style.includeFont` | No | Yes | *None* |
+| `Style.includeNumber` | No | Yes | *None* |
+| `Style.includePatterns` | No | Yes | *None* |
+| `Style.includeProtection` | No | Yes | *None* |
+| `Style.indentLevel` | No | Yes | *None* |
+| `Style.locked` | No | Yes | *None* |
+| `Style.numberFormat` | No | Yes | *None* |
+| `Style.numberFormatLocal` | No | Yes | *None* |
+| `Style.orientation` | No | Yes | *None* |
+| `Style.readingOrder` | No | Yes | *None* |
+| `Style.shrinkToFit` | No | Yes | *None* |
+| `Style.textOrientation` | No | Yes | *None* |
+| `Style.verticalAlignment` | No | Yes | *None* |
+| `Style.wrapText` | No | Yes | *None* |
+| `TableStyle.delete` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `TableStyle.duplicate` | No | Yes | *None* |
+| `TableStyle.name` | No | Yes | *None* |
+| `TableStyleCollection.add` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `TableStyleCollection.setDefault` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `TimelineStyle.delete` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `TimelineStyle.duplicate` | No | Yes | *None* |
+| `TimelineStyle.name` | No | Yes | *None* |
+| `TimelineStyleCollection.add` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
+| `TimelineStyleCollection.setDefault` | No | Yes | API does **not** support co-authoring undo in Excel on Windows and Mac. |
 | `Workbook.close` | No | No | *None* |
 | `Workbook.insertWorksheetsFromBase64` | No | No | *None* |
 | `Workbook.save` | No | No | *None* |
