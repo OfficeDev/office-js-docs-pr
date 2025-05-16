@@ -1,7 +1,7 @@
 ---
 title: Single sign-on (SSO) quick start
 description: Use the Yeoman generator to build a Node.js Office Add-in that uses single sign-on.
-ms.date: 12/11/2023
+ms.date: 05/16/2025
 ms.service: microsoft-365
 ms.localizationpriority: high
 ---
@@ -124,7 +124,7 @@ Complete the following steps to try out an Outlook add-in.
     npm start
     ```
 
-1. Follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md) to sideload the add-in in Outlook. Make sure that you're signed in to Outlook with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed.
+1. Outlook will start and sideload the add-in. Make sure that you're signed in to Outlook with a user that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed.
 
 1. In Outlook, compose a new message.
 
