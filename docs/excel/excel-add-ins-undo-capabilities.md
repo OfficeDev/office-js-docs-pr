@@ -137,7 +137,7 @@ Most Excel JavaScript APIs do support undo actions. However, see the following t
 
 ## Check for undo support
 
-Use the`isSetSupported` method of the [OfficeRuntime.ApiInformation](/javascript/api/office-runtime/officeruntime.apiinformation) interface to check for undo support and provide a fallback experience if undo support isn't available. See the following code sample for more information about how to use `isSetSupported`.
+Use the`isSetSupported` method of the [Office.RequirementSetSupport](/javascript/api/office/office.requirementsetsupport) interface to check for undo support and provide a fallback experience if undo support isn't available. See the following code sample for more information about how to use `isSetSupported`.
 
 ```js
     if (Office.context.requirements.isSetSupported("ExcelUndoApiAll", "1.0")) { 
