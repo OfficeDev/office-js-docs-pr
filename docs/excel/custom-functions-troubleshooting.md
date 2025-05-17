@@ -42,9 +42,13 @@ Information about custom functions is cached by Office. Sometimes while developi
 
 There may be times when you need to clear the custom functions cache for an add-in deployed to your end users, so that add-in updates and custom functions setting changes are incorporated at the same time. Without triggering a custom functions cache clear, changes to the **functions.json** and **functions.js** files may take up to 24 hours to reach your end users, while changes to **taskpane.html** reach end users more quickly.
 
-To ensure that the custom functions cache is cleared by your add-in, add the following code to your **functions.js** file.
+> [!NOTE]
+> Once this setting is turned on for a document, it takes effect the next time the document is opened with the add-in. It doesn't apply immediately after the function is called.
+
+To ensure that the custom functions cache is cleared by your add-in, add the following code to your **functions.js** file, and then call the `setForceRefreshOn` method in your `Office.onReady` call or other add-in initialization logic.
 
 ```javascript
+// To enable custom functions cache clearing, add this method to your functions.js file, and then call the `setForceRefreshOn` method in your `Office.onReady` call.
 function setForceRefreshOn() {  
     Office.context.document.settings.set(  
         'Office.ForceRefreshCustomFunctionsCache',
@@ -56,6 +60,19 @@ function setForceRefreshOn() {
 
 > [!TIP]
 > Frequently refreshing the custom functions cache can impact performance, so clearing the custom functions cache with `setForceRefreshOn` should only be used during add-in development or to resolve bugs. Once a custom functions add-in is stabilized, stop forcing cache refreshes.
+
+To disable the custom functions cache clear in your add-in, set `Office.ForceRefreshCustomFunctionsCache` to `false` and call the method in your `Office.onReady` call. The following code sample shows an example with a `setForceRefreshOff` method.
+
+```javascript
+// To disable custom functions cache clearing, add this method to your functions.js file, and then call the `setForceRefreshOff` method in your `Office.onReady` call.
+function setForceRefreshOff() {  
+    Office.context.document.settings.set(  
+        'Office.ForceRefreshCustomFunctionsCache',
+        false  
+    );  
+    Office.context.document.settings.saveAsync();  
+}
+```
 
 ## Common problems and solutions
 
