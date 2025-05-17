@@ -1,5 +1,5 @@
 ---
-ms.date: 04/30/2025
+ms.date: 05/16/2025
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.topic: troubleshooting
@@ -48,7 +48,8 @@ There may be times when you need to clear the custom functions cache for an add-
 To ensure that the custom functions cache is cleared by your add-in, add the following code to your **functions.js** file, and then call the `setForceRefreshOn` method in your `Office.onReady` call or other add-in initialization logic.
 
 ```javascript
-// To enable custom functions cache clearing, add this method to your functions.js file, and then call the `setForceRefreshOn` method in your `Office.onReady` call.
+// To enable custom functions cache clearing, add this method to your functions.js 
+// file, and then call the `setForceRefreshOn` method in your `Office.onReady` call.
 function setForceRefreshOn() {  
     Office.context.document.settings.set(  
         'Office.ForceRefreshCustomFunctionsCache',
@@ -64,7 +65,8 @@ function setForceRefreshOn() {
 To disable the custom functions cache clear in your add-in, set `Office.ForceRefreshCustomFunctionsCache` to `false` and call the method in your `Office.onReady` call. The following code sample shows an example with a `setForceRefreshOff` method.
 
 ```javascript
-// To disable custom functions cache clearing, add this method to your functions.js file, and then call the `setForceRefreshOff` method in your `Office.onReady` call.
+// To disable custom functions cache clearing, add this method to your functions.js 
+// file, and then call the `setForceRefreshOff` method in your `Office.onReady` call.
 function setForceRefreshOff() {  
     Office.context.document.settings.set(  
         'Office.ForceRefreshCustomFunctionsCache',
