@@ -210,11 +210,11 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
 }
 ```
 
-The reference documentation for API plug-ins is at [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2). The following is the documentation for two new properties of the `"runtimes.spec"` property.
+The reference documentation for API plug-ins is at [API plugin manifest schema 2.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.3). The following is the documentation for two new properties of the `"runtimes.spec"` property.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the [`"runtimes.spec.url"`](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2#openapi-specification-object) property, but for local functions on the client, not REST APIs. Currently, the only allowed value is "Microsoft.Office.Addin".|
+| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the [`"runtimes.spec.url"`](/microsoft-365-copilot/extensibility/api-plugin-manifest-3#openapi-specification-object) property, but for local functions on the client, not REST APIs. Currently, the only allowed value is "Microsoft.Office.Addin".|
 | `allowed_host` | String | Optional. Specifies which Office application Copilots can host the agent. Possible values are "document", "mail", "presentation", and "workbook".|
 
 ## Create the JavaScript functions

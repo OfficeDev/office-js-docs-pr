@@ -255,7 +255,7 @@ The runtime object should look similar to the following. There may be other prop
     }
    ```
 
-1. *With some exceptions noted later, replace the property values with new values that are appropriate for your add-in.* For more information about these properties, see [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2).
+1. *With some exceptions noted later, replace the property values with new values that are appropriate for your add-in.* For more information about these properties, see [API plugin manifest schema 2.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.3).
 
    As you work, keep the following points in mind.
 
