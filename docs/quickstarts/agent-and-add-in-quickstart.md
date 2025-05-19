@@ -339,4 +339,4 @@ See [Troubleshooting combined add-ins and agents](../design/agent-and-add-in-ove
 
 - [Combine Copilot Agents with Office Add-ins](../design/agent-and-add-in-overview.md)
 - [Declarative agent manifest object](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object)
-- [API plugin manifest schema 2.2 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.2)
+- [API plugin manifest schema 2.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.3)
