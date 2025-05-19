@@ -53,7 +53,7 @@ It's very unlikely any COM add-ins are affected by the deprecation of legacy Exc
 
 ### Which add-ins in my organization are impacted?
 
-Use the `Get-AuthenticationPolicy` command to get a list of all Outlook add-ins using legacy Exchange Online tokens on your tenant. For more information, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md). Once you have the list of add-ins, you’ll need to reach out to the publishers to learn more about their plans to update. In some cases, the add-in may be developed by your own organization. You’ll need to reach out to the appropriate development team in your organization.
+Use the `Get-AuthenticationPolicy` command to get a list of all Outlook add-ins that use legacy Exchange Online tokens on your tenant. For more information, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md). Once you have the list of add-ins, you’ll need to reach out to the publishers to learn more about their plans to update. In some cases, the add-in may be developed by your own organization. You’ll need to reach out to the appropriate development team in your organization.
 
 ### What commands can I use to identify the publisher?
 
@@ -93,7 +93,7 @@ The following screenshot shows an example of using the ID to get the XML manifes
 
 ### How do I identify add-ins published to Microsoft AppSource
 
-We published a list of all Outlook add-ins published to the Microsoft AppSource that use legacy tokens as of April 2025. For more information on how to use the list and build a report of Outlook add-ins that are potentially using legacy tokens, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids).
+We posted a list of all Outlook add-ins published to the Microsoft AppSource that use legacy tokens as of April 2025. For more information on how to use the list and build a report of Outlook add-ins that potentially use legacy tokens, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids).
 
 ### How would ISVs know their add-in is using legacy tokens?
 
@@ -107,7 +107,7 @@ If you rely on an ISV for your add-in, we recommend you contact them as soon as 
 
 ### What do I do for add-ins I can't identify?
 
-It's possible after running `Get-AuthenticationPolicy` there could be some custom add-ins that you can't identify the owner. For those add-ins you may need to perform a scream test. We recommend that administrators perform a scream test before June 2025 to determine if there are any remaining add-ins that could be broken when legacy tokens are turned off in June. This will give you time to reach out to publishers of any affected add-ins to address breaking issues before the June deadline.
+It's possible after running `Get-AuthenticationPolicy` there could be some custom add-ins that you can't identify the owner. For those add-ins you may need to perform a scream test. We recommend that administrators perform a scream test before June 2025 to determine if there are any remaining add-ins that will break when legacy tokens are turned off in June. This will give you time to reach out to publishers of any affected add-ins to address breaking issues before the June deadline.
 
 > [!NOTE]
 > You only need to perform the scream test if you turned legacy Exchange Online tokens on by using the `Set-AuthenticationPolicy` command. If you haven't run this command, then Exchange Online tokens should already be off by default.
