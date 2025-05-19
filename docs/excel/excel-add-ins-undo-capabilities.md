@@ -21,7 +21,7 @@ If an API within the group doesn't offer undo support, the `UndoNotSupported` er
 The following code sample shows how to merge multiple actions with `mergeUndoGroup` set to `true`.
 
 > [!IMPORTANT]
-> Ensure that all grouped API calls support undo to avoid errors. See [Unsupported APIs](#unsupported-apis) and [Check for undo support](#check-for-undo-support) for more information.
+> Ensure that all grouped API calls support undo to avoid errors. See [Unsupported APIs](#unsupported-apis) for more information.
 
 ```js
 await Excel.run({ mergeUndoGroup: true }, async (context) => { 
