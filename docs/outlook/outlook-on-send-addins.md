@@ -393,6 +393,17 @@ The on-send add-ins will run during send if the Exchange server is online and re
 > [!NOTE]
 > On Mac in any offline state, the **Send** button (or the **Send Update** button for existing meetings) is disabled and a notification displayed that their organization doesn't allow send when the user is offline.
 
+## Add-in availability when offline in new Outlook on Windows
+
+When a user turns on the [offline setting](https://support.microsoft.com/office/2460e4a8-16c7-47fc-b204-b1549275aac9) in the new Outlook on Windows, they can continue to access their emails and calendar if they lose internet connection. While some functionalities remain available, Outlook add-ins and the Microsoft 365 and Copilot store aren't available when offline. The following table describes the behavior of on-send add-ins when a machine is offline or has an intermittent connection.
+
+| Scenario | On-send add-in behavior |
+| ----- | ----- |
+| No internet connection when Outlook is launched | Because Outlook can't determine which add-ins are installed while offline, on-send add-ins can't activate when the `ItemSend` event occurs. To ensure that mail items are still checked for compliance before they're sent, administrators can configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. When configured, outgoing items are saved to the **Drafts** folder instead of the **Outbox** folder to prevent them from being automatically sent when the machine reconnects to the internet. For more information, see [Install Outlook add-ins that use on-send](#install-outlook-add-ins-that-use-on-send). |
+| A connection is established after launching Outlook while offline | Outlook will be able to identify which on-send add-ins are installed. When a user selects **Send** on a mail item that was blocked by the **OnSendAddinsEnabled** mailbox policy, the on-send add-in runs to check for compliance. |
+| Machine loses connection while Outlook is in use | If a user loses connection as they select **Send**, the following dialog is displayed and the mail item is saved to the **Drafts** folder to prevent it from being automatically sent when the machine reconnects to the internet. //TODO - Add screenshot of dialog. |
+| A connection is reestablished | Installed on-send add-ins resume handling the `ItemSend` event when it occurs. Mail items that were moved to the **Outbox** folder are sent. When items in the **Drafts** folder are sent, on-send add-ins are activated to ensure that the mail items are compliant. |
+
 ### User can edit item while on-send add-ins are working on it
 
 While on-send add-ins are processing an item, the user can edit the item by adding, for example, inappropriate text or attachments. If you want to prevent the user from editing the item while your add-in is processing on send, you can implement a workaround using a dialog. This workaround can be used in Outlook on the web (classic), Windows (classic), and Mac.
