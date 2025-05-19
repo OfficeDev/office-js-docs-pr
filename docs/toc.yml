@@ -265,6 +265,17 @@ items:
             href: design/custom-tab-placement.md
         - name: Content add-ins
           href: design/content-add-ins.md
+        - name: Copilot agents
+          items:
+          - name: Combine Copilot Agents with Office Add-ins
+            href: design/agent-and-add-in-overview.md
+            displayName: preview
+          - name: Build your first add-in as a Copilot skill
+            href: quickstarts/agent-and-add-in-quickstart.md
+            displayName: preview
+          - name: Add a Copilot agent to an add-in
+            href: develop/agent-and-add-in.md
+            displayName: preview
         - name: Dialog boxes
           items:
           - name: Use the Office dialog API in your Office Add-ins
@@ -293,9 +304,9 @@ items:
         href: develop/development-kit-overview.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
-      - name: Create add-ins with the Teams Toolkit
+      - name: Create add-ins with the Microsoft 365 Agents Toolkit
         href: develop/teams-toolkit-overview.md
-      - name: Import an add-in project to Teams Toolkit
+      - name: Import an add-in project to Microsoft 365 Agents Toolkit
         href: develop/import-teams-toolkit.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md

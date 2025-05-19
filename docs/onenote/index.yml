@@ -1,15 +1,15 @@
 ### YamlMime:Landing
 
 title: OneNote add-ins documentation # < 60 chars
-summary: With OneNote add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in OneNote on the web. Learn how to build, test, debug, and publish OneNote add-ins. # < 160 chars
+summary: OneNote add-ins let you use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that runs in OneNote on the web. Learn how to build, test, debug, and publish OneNote add-ins. # < 160 chars
 
 metadata:
   title: OneNote add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Resources for learning about OneNote add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: onenote #Required
   ms.topic: landing-page # Required
-  ms.date: 07/22/2024 #Required; mm/dd/yyyy format.
-  ms.localizationpriority: high
+  ms.date: 05/16/2025 #Required; mm/dd/yyyy format.
+  ms.localizationpriority: medium
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 

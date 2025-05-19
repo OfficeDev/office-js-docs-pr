@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the unified manifest for Microsoft 365
 description: Configure the unified manifest for Microsoft 365 to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 02/12/2025
+ms.date: 05/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -20,7 +20,7 @@ This article describes how to configure the [Unified manifest for Microsoft 365]
 
 ## Starting point and major steps
 
-Both of the tools that create add-in projects with a unified manifest &#8212; the [Office Yeoman generator](yeoman-generator-overview.md) and [Teams Toolkit](teams-toolkit-overview.md) &#8212; create projects with one or more add-in commands. The only time you won't already have an add-in command is if you are updating an add-in which previously didn't have one.
+Both of the tools that create add-in projects with a unified manifest &#8212; the [Office Yeoman generator](yeoman-generator-overview.md) and [Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) &#8212; create projects with one or more add-in commands. The only time you won't already have an add-in command is if you are updating an add-in which previously didn't have one.
 
 ## Two decisions
 
