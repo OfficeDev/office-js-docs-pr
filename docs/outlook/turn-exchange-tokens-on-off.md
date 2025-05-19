@@ -66,7 +66,7 @@ PS C:\>
 
 The **Allowed** and **Blocked** sections list the IDs of any add-ins that made recent requests. If an add-in ID is listed in the **Allowed** list, it was granted an Exchange token. If an add-in ID is listed in the **Blocked** list, it was denied an access token because access tokens are turned off.
 
-If you have IDs listed in **Allowed** or **Blocked** do additional research to identify the publisher and reach out to them to ensure they are migrating their add-in away from legacy Exchange Online tokens. For more information on identifying publishers, see [Commands to identify the publisher in the FAQ](faq-nested-app-auth-outlook-legacy-tokens#commands-to-identify-the-publisher.md).
+If you have IDs listed in **Allowed** or **Blocked** do additional research to identify the publisher and reach out to them to ensure they are migrating their add-in away from legacy Exchange Online tokens. For more information on identifying publishers, see [Commands to identify the publisher in the FAQ](faq-nested-app-auth-outlook-legacy-tokens.md#what-commands-can-i-use-to-identify-the-publisher).
 
 > [!NOTE]
 > The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.
