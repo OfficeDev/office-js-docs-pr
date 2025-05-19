@@ -46,7 +46,7 @@ Most Excel JavaScript APIs do support undo actions. However, see the following t
 > If you call an unsupported API in your add-in, the user’s undo stack is cleared starting from that API call, and a user cannot undo actions past that point.
 
 | API | Supported in Excel on the web | Supported in Excel on Windows and Excel on Mac | Notes |
-|:----------|:--------------|:------|
+|:----------|:--------------|:------|:------:|
 | `AllowEditRange.address` | No | No | *None* |
 | `AllowEditRange.delete` | No | No | *None* |
 | `AllowEditRange.pauseProtection` | No | No | *None* |
