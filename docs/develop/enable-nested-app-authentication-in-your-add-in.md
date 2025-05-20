@@ -151,6 +151,9 @@ The following code shows how to implement this authentication pattern in your ow
       console.log(`Unable to acquire token silently: ${error}`);
     }
     ```
+    > [!IMPORTANT]
+    > MSAL will return both an ID token and an access token when you request a token. The access token is the correct one to use in almost all scenarios. For more information see the [NAA FAQ](/office/dev/add-ins/outlook/faq-nested-app-auth-outlook-legacy-tokens#what-tokens-does-msal-return-and-are-there-minimum-scopes-to-request)
+
 
 1. Replace `TODO 2` with the following code. This code checks if the access token is acquired. If not it attempts to interactively get the access token by calling `acquireTokenPopup`.
 
