@@ -1,5 +1,5 @@
 ---
-ms.date: 05/16/2025
+ms.date: 05/20/2025
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.topic: troubleshooting
@@ -46,6 +46,9 @@ There may be times when you need to clear the custom functions cache for an add-
 > Once this setting is turned on for a document, it takes effect the next time the document is opened with the add-in. It doesn't apply immediately after the function is called.
 
 To ensure that the custom functions cache is cleared by your add-in, add the following code to your **functions.js** file, and then call the `setForceRefreshOn` method in your `Office.onReady` call or other add-in initialization logic.
+
+> [!IMPORTANT]
+> This process for clearing the custom functions cache is only supported for custom functions add-ins that use a [shared runtime](../testing/runtimes.md#shared-runtime).
 
 ```javascript
 // To enable custom functions cache clearing, add this method to your functions.js 
