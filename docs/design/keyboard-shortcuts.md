@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 03/12/2025
+ms.date: 05/22/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -56,28 +56,26 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
     - While the [`"actions.displayName"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&preserve-view=true#displayname) property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
 
     ```json
-    "runtimes": [
-        {
-            "id": "TaskPaneRuntime",
-            "type": "general",
-            "code": {
-                "page": "https://localhost:3000/taskpane.html"
+    {
+        "id": "TaskPaneRuntime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/taskpane.html"
+        },
+        "lifetime": "long",
+        "actions": [
+            {
+                "id": "ShowTaskpane",
+                "type": "executeFunction",
+                "displayName": "Show task pane"
             },
-            "lifetime": "long",
-            "actions": [
-                {
-                    "id": "ShowTaskpane",
-                    "type": "executeFunction",
-                    "displayName": "Show task pane (Contoso Add-in)"
-                },
-                {
-                    "id": "HideTaskpane",
-                    "type": "executeFunction",
-                    "displayName": "Hide task pane (Contoso Add-in)"
-                }
-            ],
-        }
-    ]
+            {
+                "id": "HideTaskpane",
+                "type": "executeFunction",
+                "displayName": "Hide task pane"
+            }
+        ]
+    }
     ```
 
 1. Add the following to the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array. Note the following about the markup.
@@ -198,7 +196,8 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
 
 ## Map custom actions to their functions
 
-1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
+1. In your project, open the JavaScript file loaded by the HTML page specified in your manifest.
+
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action you specified in an earlier step to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
     - The first parameter is the name of an action that you mapped to a keyboard shortcut. The location of the name of the action depends on the type of manifest your add-in uses.
         - **Unified app manifest for Microsoft 365**: The value of the `"extensions.keyboardShortcuts.shortcuts.actionId"` property in the **manifest.json** file.
