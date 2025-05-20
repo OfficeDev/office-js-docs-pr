@@ -2,7 +2,7 @@
 title: Debug Office Add-ins
 description: Find the Office Add-in debugging guidance for your development environment.
 ms.topic: overview
-ms.date: 12/21/2023
+ms.date: 03/20/2025
 ms.localizationpriority: high
 ---
 
@@ -38,7 +38,7 @@ There are some special cases in which the debugging process differs from normal 
   - Outlook add-ins on a Windows development computer: [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)
   - Other Office application add-ins or Outlook on a Mac development computer: [Debug a function command with a non-shared runtime](debug-function-command.md).
 - **Debugging an event-based or spam-reporting Outlook add-in**: [Debug event-based and spam-reporting add-ins](../outlook/debug-autolaunch.md).
-- **Debugging an add-in in the new Outlook on Windows desktop client (preview)**: See the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
+- **Debugging an add-in in the new Outlook on Windows desktop client (preview)**: See the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](../outlook/one-outlook.md#debug-your-add-in).
 - **Debugging a Blazor-based add-in**: Debug the add-in the same way you would debug a Blazor web application. See [Debug ASP.NET Core Blazor WebAssembly](/aspnet/core/blazor/debug/).
 
 ## General guidance
@@ -79,6 +79,15 @@ There is no desktop version of Office for Linux, so you'll need to [sideload the
 ## Debug add-ins in staging or production
 
 To debug an add-in that is already in staging or production, attach a debugger from the UI of the add-in. For instructions, see [Attach a debugger from the task pane](attach-debugger-from-task-pane.md).
+
+## Versions of office.js for debugging
+
+There are debug versions of the Office JavaScript libraries. These versions are more human readable and easier to step through with a debugger. Use them when the Office JavaScript APIs aren't working as expected. Avoid using them when you publish and deploy your add-in.
+
+The debug versions are found at the following CDN locations.
+
+- Office JavaScript API library: `https://appsforoffice.microsoft.com/lib/1/hosted/office.debug.js`
+- Office JavaScript API (preview) library: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.debug.js`
 
 ## See also
 

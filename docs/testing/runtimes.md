@@ -2,7 +2,7 @@
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 05/06/2024
+ms.date: 08/07/2024
 ms.localizationpriority: medium
 ---
 
@@ -23,16 +23,16 @@ The following table shows the possible features of an add-in, according to each 
 
 | Type of runtime | Add-in feature |
 |:-----|:-----|
-| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in Outlook on Windows)</br></br>[Outlook integrated spam reporting feature](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Windows)|
-| browser | [task pane](../design/task-pane-add-ins.md)</br></br>[dialog](../develop/dialog-api-in-office-add-ins.md)</br></br>[function command](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [custom functions](../excel/custom-functions-overview.md)</br>(when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(when the add-in is running in Outlook on Mac or Outlook on the web or in the [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627))</br></br>[Outlook integrated spam reporting feature](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Mac or on the web or in the [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627))|
+| JavaScript-only | Excel [custom functions](../excel/custom-functions-overview.md)</br>(except when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(only when the add-in is running in classic Outlook on Windows)</br></br>[Outlook integrated spam reporting feature](../outlook/spam-reporting.md)</br>(only when the add-in is running in classic Outlook on Windows)|
+| browser | [task pane](../design/task-pane-add-ins.md)</br></br>[dialog](../develop/dialog-api-in-office-add-ins.md)</br></br>[function command](../design/add-in-commands.md#types-of-add-in-commands)</br></br>Excel [custom functions](../excel/custom-functions-overview.md)</br>(when the runtime is [shared](#shared-runtime) or the add-in is running in Office on the web)</br></br>[Outlook event-based task](../outlook/autolaunch.md)</br>(when the add-in is running in Outlook on Mac or Outlook on the web or in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627))</br></br>[Outlook integrated spam reporting feature](../outlook/spam-reporting.md)</br>(only when the add-in is running in Outlook on Mac or on the web or in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627))|
 
 The following table shows the same information organized by which type of runtime is used for the various possible features of an add-in.
 
 | Add-in feature | Type of runtime on Windows | Type of runtime on Mac | Type of runtime on the web |
 |:-----|:-----|:-----|:-----|
 |Excel custom functions | JavaScript-only</br>(but *browser* when the runtime is shared)|browser| browser |
-|Outlook event-based tasks | JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows (preview)) | browser | browser |
-|Outlook integrated spam reporting feature (preview)| JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows (preview)) | browser | browser |
+|Outlook event-based tasks | JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows) | browser | browser |
+|Outlook integrated spam reporting feature (preview)| JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows) | browser | browser |
 |task pane | browser | browser | browser |
 |dialog | browser | browser | browser |
 |function command | browser | browser | browser |
@@ -95,7 +95,7 @@ For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime)
     > [!NOTE]
     > LocalStorage isn't accessible in a JavaScript-only runtime and, thus, it isn't available in Excel custom functions. It also can't be used to share data with an Outlook event-based tasks (since those tasks use a JavaScript-only runtime on some platforms).
     >
-    > Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is being tested to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site. To work around this, in your browser, go to **chrome://flags** or **edge://flags**, then set the **Experimental third-party storage partitioning (#third-party-storage-partitioning)** flag to **Disabled**.
+    > Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site.
 
     > [!TIP]
     > Data in `Window.localStorage` persists between sessions of the add-in and is shared by add-ins with the same origin. Both of these characteristics are often undesirable for an add-in.
@@ -121,7 +121,7 @@ For more information, see [Persist add-in state and settings](../develop/persist
 
 The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
 
-This type of runtime is used in event-based and spam-reporting add-ins in Outlook on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
+This type of runtime is used in event-based and spam-reporting add-ins in classic Outlook on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
 
 - When used for an Excel custom function, the runtime starts up when either the worksheet recalculates or the custom function calculates. It doesn't shut down until the workbook is closed.  
 - When used in an Outlook event-based or spam-reporting add-in, the runtime starts up when the event occurs. It ends when the first of the following occurs.

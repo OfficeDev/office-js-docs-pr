@@ -1,7 +1,7 @@
 ---
 title: Module extension Outlook add-ins
 description: Create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
-ms.date: 04/12/2024
+ms.date: 02/27/2025
 ms.localizationpriority: medium
 ---
 
@@ -10,14 +10,14 @@ ms.localizationpriority: medium
 Module extension add-ins appear in the Outlook navigation bar, right alongside mail, tasks, and calendars. A module extension isn't limited to using mail and appointment information. You can create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
 
 > [!TIP]
-> Instead of module extensions, create [personal tab apps that open in Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab) to provide a more modern and convenient solution. With personal tab apps, your users will have access to business critical data and productivity tools not just in Outlook, but across Microsoft 365 applications, including Microsoft Teams, and various platforms.
+> Module extensions are only supported in classic Outlook on Windows. To provide a more modern solution that's available on various platforms, create [personal tab apps that open in Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab) instead. With personal tab apps, your users will have access to business critical data and productivity tools not just in Outlook, but across Microsoft 365 applications, including Microsoft Teams, and various platforms.
 
 ## Supported clients and manifests
 
 To create and run module extension add-ins, you must:
 
-- Develop the add-in using an XML manifest. The [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) doesn't support module extensions.
-- Run the add-in in Outlook 2016 or later on Windows.
+- Develop the add-in using an add-in only manifest. The [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) doesn't support module extensions.
+- Run the add-in in classic Outlook on Windows (Outlook 2016 or later).
 
 ## Open a module extension
 
@@ -26,7 +26,7 @@ To open a module extension, navigate to the Outlook navigation bar, select **Mor
 ![Available modules and module extension add-ins in the More Apps flyout.](../images/outlook-updated-navigation-bar.png)
 
 > [!TIP]
-> In older versions of Outlook on Windows, the navigation bar appears at the bottom of the window. Access to a module extension varies depending on the layout of the navigation bar and the number of available module extensions.
+> In older versions of classic Outlook on Windows, the navigation bar appears at the bottom of the window. Access to a module extension varies depending on the layout of the navigation bar and the number of available module extensions.
 >
 > - If the user has compact navigation selected, the navigation bar has an icon that shows an extension is loaded.
 >
@@ -75,7 +75,6 @@ The following is a section of a manifest file that defines a module extension.
               <CustomTab id="idTab">
                 <Group id="idGroup">
                   <Label resid="residGroupLabel"/>
-                  <!-- Adds the module extension to the Outlook navigation bar. -->
                   <Control xsi:type="Button" id="group.changeToAssociate">
                     <Label resid="residChangeToAssociateLabel"/>
                     <Supertip>
@@ -135,6 +134,6 @@ The following is a section of a manifest file that defines a module extension.
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Add-in commands](../design/add-in-commands.md)
 - [Office Add-ins sample: Compute billable hours with a module extension add-in in Outlook](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension)

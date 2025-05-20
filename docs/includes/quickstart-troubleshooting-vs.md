@@ -1,0 +1,3 @@
+[!include[The common troubleshooting section for all quick starts](../includes/quickstart-troubleshooting-common.md)]
+
+- If your add-in shows an error (for example, "This add-in could not be started. Close this dialog to ignore the problem or click "Restart" to try again.") when you press <kbd>F5</kbd> or choose **Debug** > **Start Debugging** in Visual Studio, see [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md) for other debugging options.

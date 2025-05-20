@@ -1,15 +1,15 @@
 ---
-title: Create add-in commands with the XML manifest
-description: Configure an XML manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 02/29/2024
+title: Create add-in commands with the add-in only manifest
+description: Configure an add-in only manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or menus, and perform actions.
+ms.date: 02/28/2025
 ms.localizationpriority: medium
 ---
 
-# Create add-in commands with the XML manifest
+# Create add-in commands with the add-in only manifest
 
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
-This article describes how to edit your XML manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
+This article describes how to edit your add-in only manifest to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
 
 > [!TIP]
 > For instructions on how to create add-in commands with the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md).
@@ -37,15 +37,15 @@ The following example shows the **\<VersionOverrides\>** element and its child e
 ...
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Requirements>
-      <!-- add information about requirement sets -->
+      <!-- Add information about requirement sets. -->
     </Requirements>
     <Hosts>
       <Host xsi:type="Workbook">
-        <!-- add information about form factors -->
+        <!-- Add information about form factors. -->
       </Host>
     </Hosts>
     <Resources> 
-      <!-- add information about resources -->
+      <!-- Add information about resources. -->
     </Resources>
   </VersionOverrides>
 ...
@@ -69,7 +69,7 @@ The following example shows the **\<Hosts\>**, **\<Host\>**, and **\<DesktopForm
       <Host xsi:type="Workbook">
         <DesktopFormFactor>
 
-              <!-- information about FunctionFile and ExtensionPoint -->
+              <!-- Information about FunctionFile and ExtensionPoint. -->
 
         </DesktopFormFactor>
       </Host>
@@ -82,10 +82,10 @@ The following example shows the **\<Hosts\>**, **\<Host\>**, and **\<DesktopForm
 
 ### Step 3: Add the FunctionFile element
 
-The [**\<FunctionFile\>** element](/javascript/api/manifest/functionfile) specifies a file that contains JavaScript code to run when an add-in command uses the **ExecuteFunction** action. The **\<FunctionFile\>** element's **resid** attribute is set to a HTML file that includes all the JavaScript files your add-in commands require. You can't link directly to a JavaScript file. You can only link to an HTML file. The file name is specified as a [**\<Url\>** element](/javascript/api/manifest/url) in the [**\<Resources\>** element](/javascript/api/manifest/resources).
+The [**\<FunctionFile\>** element](/javascript/api/manifest/functionfile) specifies a file that contains JavaScript or TypeScript code to run when an add-in command uses the **ExecuteFunction** action. The **\<FunctionFile\>** element's **resid** attribute is set to a HTML file that includes all the JavaScript or TypeScript files your add-in commands require. You can't link directly to a JavaScript or TypeScript file. You can only link to an HTML file. The file name is specified as a [**\<Url\>** element](/javascript/api/manifest/url) in the [**\<Resources\>** element](/javascript/api/manifest/resources).
 
 > [!NOTE]
-> The Yo Office projects use [webpack](https://webpack.js.org/concepts/) to avoid manually adding the JavaScript to the HTML.
+> The Yo Office projects use [webpack](https://webpack.js.org/concepts/) to avoid manually adding the JavaScript or TypeScript to the HTML.
 
 The following is an example of the **\<FunctionFile\>** element.
   
@@ -93,10 +93,10 @@ The following is an example of the **\<FunctionFile\>** element.
 <DesktopFormFactor>
     <FunctionFile resid="Commands.Url" />
     <ExtensionPoint xsi:type="PrimaryCommandSurface">
-      <!-- information about this extension point -->
+      <!-- Information about this extension point. -->
     </ExtensionPoint>
 
-    <!-- You can define more than one ExtensionPoint element as needed -->
+    <!-- You can define more than one ExtensionPoint element as needed. -->
 </DesktopFormFactor>
 ```
 
@@ -119,7 +119,7 @@ The following examples show how to use the **\<ExtensionPoint\>** element with *
 ```xml
 <ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso Tab">
-  <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element -->
+  <!-- If you want to use a default tab that comes with Office, remove the above CustomTab element, and then uncomment the following OfficeTab element. -->
   <!-- <OfficeTab id="TabData"> -->
     <Label resid="residLabel4" />
     <Group id="Group1Id12">
@@ -129,41 +129,40 @@ The following examples show how to use the **\<ExtensionPoint\>** element with *
         <bt:Image size="32" resid="icon1_32x32" />
         <bt:Image size="80" resid="icon1_32x32" />
       </Icon>
-      <Tooltip resid="residToolTip" />
       <Control xsi:type="Button" id="Button1Id1">
 
-        <!-- information about the control -->
+        <!-- Information about the control. -->
       </Control>
-      <!-- other controls, as needed -->
+      <!-- Other controls, as needed. -->
     </Group>
   </CustomTab>
 </ExtensionPoint>
 <ExtensionPoint xsi:type="ContextMenu">
   <OfficeMenu id="ContextMenuCell">
     <Control xsi:type="Menu" id="ContextMenu2">
-            <!-- information about the control -->
+            <!-- Information about the control. -->
     </Control>
-    <!-- other controls, as needed -->
+    <!-- Other controls, as needed. -->
   </OfficeMenu>
 </ExtensionPoint>
 ```
 
 ### Step 5: Add Control elements
 
-The [**\<Control\>** element](/javascript/api/manifest/control) defines the usable surface of command (button, menu, etc) and the action associated with it.
+The [**\<Control\>** element](/javascript/api/manifest/control) defines the usable surface of command, such as a button or menu, and the action associated with it.
 
 #### Button controls
 
-A [button control](/javascript/api/manifest/control-button) performs a single action when the user selects it. It can either execute a JavaScript function or show a task pane. The following example shows how to define two buttons. The first button runs a JavaScript function without showing a UI, and the second button shows a task pane. In the **\<Control\>** element:
+A [button control](/javascript/api/manifest/control-button) performs a single action when the user selects it. It can either run a JavaScript or TypeScript function or show a task pane. The following example shows how to define two buttons. The first button runs a JavaScript function without showing a UI, and the second button shows a task pane. In the **\<Control\>** element:
 
 - The **type** attribute is required, and must be set to **Button**.
 - The **id** attribute of the **\<Control\>** element is a string with a maximum of 125 characters.
+- The **xsi:type** attribute of the child [**\<Action\>** element](/javascript/api/manifest/action) must be set to **ExecuteFunction** to run a function or **ShowTaskpane** to display a task pane.
 
 ```xml
 <!-- Define a control that calls a JavaScript function. -->
 <Control xsi:type="Button" id="Button1Id1">
   <Label resid="residLabel" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
@@ -181,7 +180,6 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
 <!-- Define a control that shows a task pane. -->
 <Control xsi:type="Button" id="Button2Id1">
   <Label resid="residLabel2" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
@@ -197,38 +195,6 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
 </Control>
 ```
 
-The following code shows an example function used by **\<FunctionName\>**. Note the call to [`event.completed`](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)). This signals that you've successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
-
-```js
-// Initialize the Office Add-in.
-Office.onReady(() => {
-  // If needed, Office.js is ready to be called
-});
-
-// The command function.
-async function highlightSelection(event) {
-
-    // Implement your custom code here. The following code is a simple Excel example.  
-    try {
-          await Excel.run(async (context) => {
-              const range = context.workbook.getSelectedRange();
-              range.format.fill.color = "yellow";
-              await context.sync();
-          });
-      } catch (error) {
-          // Note: In a production add-in, notify the user through your add-in's UI.
-          console.error(error);
-      }
-
-    // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-    event.completed();
-}
-
-// You must register the function with the following line.
-Office.actions.associate("highlightSelection", highlightSelection);
-
-```
-
 #### Menu controls
 
 A [menu control](/javascript/api/manifest/control-menu) can be used with either **PrimaryCommandSurface** or **ContextMenu**, and defines:
@@ -236,7 +202,7 @@ A [menu control](/javascript/api/manifest/control-menu) can be used with either 
 - A root-level menu item.
 - A list of submenu items.
 
-When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either execute a JavaScript function or show a task pane. Only one level of submenus is supported at this time.
+When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either run a JavaScript or TypeScript function or show a task pane. Only one level of submenus is supported at this time.
 
 The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function. In the **\<Control\>** element:
 
@@ -246,7 +212,6 @@ The following example shows how to define a menu item with two submenu items. Th
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">
   <Label resid="residLabel3" />
-  <Tooltip resid="residToolTip" />
   <Supertip>
     <Title resid="residLabel" />
     <Description resid="residToolTip" />
@@ -290,6 +255,43 @@ The following example shows how to define a menu item with two submenu items. Th
     </Item>
   </Items>
 </Control>
+```
+
+#### Sample code for function commands
+
+The following code shows a function that's invoked by a button or menu item control whose **\<Action\>** element's **xsi:type** is set to **ExecuteFunction**. Note the following about the code.
+
+- The [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) call tells Office which function to run when a button or menu item is selected. The value passed to its **actionId** parameter must match the value specified in the [**\<FunctionName\>** element](/javascript/api/manifest/action#functionname) of the manifest. You must have an `Office.actions.associate` call for every function command defined in the manifest.
+- The [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) call signals that you've successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
+
+```js
+// Initialize the Office Add-in.
+Office.onReady(() => {
+  // If needed, Office.js is ready to be called.
+});
+
+// The command function.
+async function highlightSelection(event) {
+
+    // Implement your custom code here. The following code is a simple Excel example.
+    try {
+          await Excel.run(async (context) => {
+              const range = context.workbook.getSelectedRange();
+              range.format.fill.color = "yellow";
+              await context.sync();
+          });
+      } catch (error) {
+          // Note: In a production add-in, notify the user through your add-in's UI.
+          console.error(error);
+      }
+
+    // Calling event.completed is required. The event.completed call lets the platform know that processing has completed.
+    event.completed();
+}
+
+// This maps the function to the action ID specified in the manifest.
+Office.actions.associate("highlightSelection", highlightSelection);
+
 ```
 
 ### Step 6: Add the Resources element
@@ -338,7 +340,7 @@ Add-in commands are available in the following Outlook versions.
 
 - Outlook on the web for Microsoft 365 and Outlook.com
 - Outlook on the web for Exchange 2016 or later
-- [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+- [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 - Outlook 2016 or later on Windows
 - Outlook on Mac
 - Outlook on Android
@@ -346,7 +348,7 @@ Add-in commands are available in the following Outlook versions.
 
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
-If your add-in uses an XML manifest, then add-in commands are only available for add-ins that do not use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](../outlook/activation-rules.md) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
+If your add-in uses an add-in only manifest, then add-in commands are only available for add-ins that don't use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](/javascript/api/manifest/rule) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
 
 ## See also
 

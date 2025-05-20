@@ -24,7 +24,7 @@ Some examples:
 - `RangeAreas.cellCount` gets the total number of cells in all the ranges in the `RangeAreas`.
 - `RangeAreas.calculate` recalculates the cells of all the ranges in the `RangeAreas`.
 - `RangeAreas.getEntireColumn` and `RangeAreas.getEntireRow` return another `RangeAreas` object that represents all of the columns (or rows) in all the ranges in the `RangeAreas`. For example, if the `RangeAreas` represents "A1:C4" and "F14:L15", then `RangeAreas.getEntireColumn` returns a `RangeAreas` object that represents "A:C" and "F:L".
-- `RangeAreas.copyFrom` can take either a `Range` or a `RangeAreas` parameter representing the source range(s) of the copy operation.
+- `RangeAreas.copyFrom` can take either a `Range` or a `RangeAreas` parameter representing the source ranges of the copy operation.
 
 ### Complete list of Range members that are also available on RangeAreas
 

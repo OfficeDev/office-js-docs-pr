@@ -1,7 +1,7 @@
 ---
 title: Monoline style icon guidelines for Office Add-ins
 description: Guidelines for using Monoline style icons in Office Add-ins.
-ms.date: 08/18/2023
+ms.date: 02/12/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -57,7 +57,7 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
 
 > [!IMPORTANT]
-> For an image that is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
+> For an image that is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
 
 ### Layout
 
@@ -93,7 +93,7 @@ Modifiers are almost always placed in the bottom right corner of the icon canvas
 
 Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should butt up to the edge of the canvas, extending outside of the padding to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
 
-|**16px**|**20px**|**24px**|**32px**|**40px**|**48px**|**64px**|**80px**|**96px**|
+|16px|20px|24px|32px|40px|48px|64px|80px|96px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
 |![16 px icon with 0px padding.](../images/monolineicon7.png)|![20 px icon with 1px padding.](../images/monolineicon8.png)|![24 px icon with 1px padding.](../images/monolineicon9.png)|![32 px icon with 2px padding.](../images/monolineicon10.png)|![40 px icon with 2px padding.](../images/monolineicon11.png)|![48 px icon with 3px padding.](../images/monolineicon12.png)|![64 px icon with 4px padding.](../images/monolineicon13.png)|![80 px icon with 5px padding.](../images/monolineicon14.png)|![96 px icon with 6px padding.](../images/monolineicon15.png)|
 
@@ -205,7 +205,13 @@ The final icons should be saved as .png image files. Use PNG format with a trans
 
 ## See also
 
+### Unified manifest reference
+
+- ["extensions.ribbons" array](/microsoft-365/extensibility/schema/extension-ribbons-array)
+
+### Add-in only manifest reference
+
 - [Icon manifest element](/javascript/api/manifest/icon)
 - [IconUrl manifest element](/javascript/api/manifest/iconurl)
 - [HighResolutionIconUrl manifest element](/javascript/api/manifest/highresolutioniconurl)
-- [Create an icon for your add-in](/office/dev/store/create-effective-office-store-listings#create-an-icon-for-your-add-in)
+- [Create an icon for your add-in](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in)

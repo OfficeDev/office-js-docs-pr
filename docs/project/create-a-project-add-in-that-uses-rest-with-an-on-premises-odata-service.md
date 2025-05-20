@@ -1,7 +1,7 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: Learn how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
-ms.date: 02/21/2024
+ms.date: 01/07/2025
 ms.localizationpriority: medium
 ---
 
@@ -15,7 +15,7 @@ The code in this article is based on a sample developed by Saurabh Sanghvi and A
 
 The following are the prerequisites for creating a Project task pane add-in that reads the **ProjectData** service of a Project Web App instance in an on-premises installation of Project Server.
 
-- Project Professional is required to connect with Project Web App. The development computer must have Project Professional installed to enable **F5** debugging with Visual Studio.
+- Project Professional is required to connect with Project Web App. The development computer must have Project Professional installed to enable <kbd>F5</kbd> debugging with Visual Studio.
 
     > [!NOTE]
     > Project Standard can also host task pane add-ins, but cannot sign in to Project Web App.
@@ -30,7 +30,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 1. To enable your browser to directly show the XML data from a REST query, turn off the feed reading view. For information about how to do this in Internet Explorer, see Procedure 1, step 4 in [Query OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
 
-1. Query the **ProjectData** service by using your browser with the following URL: **http://ServerName /ProjectServerName /_api/ProjectData**. For example, if the Project Web App instance is  `http://MyServer/pwa`, the browser shows the following results.
+1. Query the **ProjectData** service by using your browser with the following URL: `http://ServerName /ProjectServerName /_api/ProjectData`. For example, if the Project Web App instance is  `http://MyServer/pwa`, the browser shows the following results.
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -56,7 +56,7 @@ The following are the prerequisites for creating a Project task pane add-in that
 
 Office Developer Tools for Visual Studio includes a template for task pane add-ins for Project. If you create a solution named **HelloProjectOData**, the solution contains the following two Visual Studio projects:
 
-- The add-in project takes the name of the solution. It includes the XML manifest file for the add-in and targets the .NET Framework 4.5. Procedure 3 shows the steps to modify the manifest for the **HelloProjectOData** add-in.
+- The add-in project takes the name of the solution. It includes the add-in only manifest file for the add-in and targets the .NET Framework 4.5. Procedure 3 shows the steps to modify the manifest for the **HelloProjectOData** add-in.
 
 - The web project is named **HelloProjectODataWeb**. It includes the webpages, JavaScript files, CSS files, images, references, and configuration files for the web content in the task pane. The web project targets the .NET Framework 4. Procedure 4 and Procedure 5 show how to modify the files in the web project to create the functionality of the **HelloProjectOData** add-in.
 
@@ -116,7 +116,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
-1. In the HelloProjectOData.xml manifest, add an **\<IconUrl\>** element below the **\<Description\>** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml manifest file now contains the following (your **\<Id\>** value will be different):
+1. In the HelloProjectOData.xml, add an **\<IconUrl\>** element below the **\<Description\>** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml file now contains the following (your **\<Id\>** value will be different):
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -143,17 +143,17 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
 ## Create the HTML content for the HelloProjectOData add-in
 
-The **HelloProjectOData** add-in is a sample that includes debugging and error output; it is not intended for production use. Before you start coding the HTML content, design the UI and user experience for the add-in, and outline the JavaScript functions that interact with the HTML code. For more information, see [Design guidelines for Office Add-ins](../design/add-in-design.md).
+The **HelloProjectOData** add-in is a sample that includes debugging and error output; it isn't intended for production use. Before you start coding the HTML content, design the UI and user experience for the add-in, and outline the JavaScript functions that interact with the HTML code. For more information, see [Design guidelines for Office Add-ins](../design/add-in-design.md).
 
 The task pane shows the add-in display name at the top, which is the value of the **\<DisplayName\>** element in the manifest. The **body** element in the HelloProjectOData.html file contains the other UI elements, as follows:
 
 - A subtitle indicates the general functionality or type of operation, for example, **ODATA REST QUERY**.
 
-- The **Get ProjectData Endpoint** button calls the `setOdataUrl` function to get the endpoint of the **ProjectData** service, and display it in a text box. If Project is not connected with Project Web App, the add-in calls an error handler to display a pop-up error message.
+- The **Get ProjectData Endpoint** button calls the `setOdataUrl` function to get the endpoint of the **ProjectData** service, and display it in a text box. If Project isn't connected with Project Web App, the add-in calls an error handler to display a pop-up error message.
 
 - The **Compare All Projects** button is disabled until the add-in gets a valid OData endpoint. When you select the button, it calls the `retrieveOData` function, which uses a REST query to get project cost and work data from the **ProjectData** service.
 
-- A table displays the average values for project cost, actual cost, work, and percent complete. The table also compares the current active project values with the average. If the current value is greater than the average for all projects, the value is displayed as red. If the current value is less than the average, the value is displayed as green. If the current value is not available, the table displays a blue **NA**.
+- A table displays the average values for project cost, actual cost, work, and percent complete. The table also compares the current active project values with the average. If the current value is greater than the average for all projects, the value is displayed as red. If the current value is less than the average, the value is displayed as green. If the current value isn't available, the table displays a blue **NA**.
 
     The `retrieveOData` function calls the `parseODataResult` function, which calculates and displays values for the table.
 
@@ -297,10 +297,10 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
     });
     ```
 
-1. Add `setOdataUrl` and related functions. The `setOdataUrl` function calls `getProjectGuid` and `getDocumentUrl` to initialize the global variables. In the [getProjectFieldAsync method](/javascript/api/office/office.document), the anonymous function for the  *callback* parameter enables the **Compare All Projects** button by using the `removeAttr` method in the jQuery library, and then displays the URL of the **ProjectData** service. If Project is not connected with Project Web App, the function throws an error, which displays a pop-up error message. The SurfaceErrors.js file includes the `throwError` function.
+1. Add `setOdataUrl` and related functions. The `setOdataUrl` function calls `getProjectGuid` and `getDocumentUrl` to initialize the global variables. In the [getProjectFieldAsync method](/javascript/api/office/office.document), the anonymous function for the  *callback* parameter enables the **Compare All Projects** button by using the `removeAttr` method in the jQuery library, and then displays the URL of the **ProjectData** service. If Project isn't connected with Project Web App, the function throws an error, which displays a pop-up error message. The SurfaceErrors.js file includes the `throwError` function.
 
    > [!NOTE]
-   > If you run Visual Studio on the Project Server computer, to use **F5** debugging, uncomment the code after the line that initializes the `_pwa` global variable. To enable using the jQuery `ajax` method when debugging on the Project Server computer, you must set the `localhost` value for the PWA URL.If you run Visual Studio on a remote computer, the `localhost` URL is not required. Before you deploy the add-in, comment out that code.
+   > If you run Visual Studio on the Project Server computer, to use **F5** debugging, uncomment the code after the line that initializes the `_pwa` global variable. To enable using the jQuery `ajax` method when debugging on the Project Server computer, you must set the `localhost` value for the PWA URL.If you run Visual Studio on a remote computer, the `localhost` URL isn't required. Before you deploy the add-in, comment out that code.
 
     ```js
     function setOdataUrl() {
@@ -421,7 +421,7 @@ The remainder of the HelloProjectOData.js file includes two functions: the `retr
 
 1. Add the `parseODataResult` function, which deserializes and processes the JSON response from the OData service. The `parseODataResult` function calculates average values of the cost and work data to an accuracy of one or two decimal places, formats values with the correct color and adds a unit ( **$**, **hrs**, or **%**), and then displays the values in specified table cells.
 
-   If the GUID of the active project matches the `ProjectId` value, the `myProjectIndex` variable is set to the project index. If `myProjectIndex` indicates the active project is published on Project Server, the `parseODataResult` method formats and displays cost and work data for that project. If the active project is not published, values for the active project are displayed as a blue **NA**.
+   If the GUID of the active project matches the `ProjectId` value, the `myProjectIndex` variable is set to the project index. If `myProjectIndex` indicates the active project is published on Project Server, the `parseODataResult` method formats and displays cost and work data for that project. If the active project isn't published, values for the active project are displayed as a blue **NA**.
 
     ```js
     // Calculate the average values of actual cost, cost, work, and percent complete
@@ -554,7 +554,7 @@ Basic tests should include the following:
 
 1. Run Project Professional, connect with Project Web App, and then create a test project. Assign tasks to local resources or to enterprise resources, set various values of percent complete on some tasks, and then publish the project. Quit Project, which enables Visual Studio to start Project for debugging the add-in.
 
-1. In Visual Studio, press **F5**. Log on to Project Web App, and then open the project that you created in the previous step. You can open the project in read-only mode or in edit mode.
+1. In Visual Studio, press <kbd>F5</kbd>. Log on to Project Web App, and then open the project that you created in the previous step. You can open the project in read-only mode or in edit mode.
 
 1. On the **PROJECT** tab of the ribbon, in the **Office Add-ins** drop-down list, select **Hello ProjectData** (see Figure 5). The **Compare All Projects** button should be disabled.
 
@@ -620,13 +620,13 @@ Basic tests should include the following:
     ]}}
     ```
 
-1. Stop debugging (press **Shift + F5**), and then press **F5** again to run a new instance of Project. In the **Login** dialog box, choose the local **Computer** profile, not Project Web App. Create or open a local project .mpp file, open the **Hello ProjectData** task pane, and then select **Get ProjectData Endpoint**. The add-in should show a **No connection!** error (see Figure 7), and the **Compare All Projects** button should remain disabled.
+1. Stop debugging (press <kbd>Shift</kbd>+<kbd>F5</kbd>), and then press <kbd>F5</kbd> again to run a new instance of Project. In the **Login** dialog box, choose the local **Computer** profile, not Project Web App. Create or open a local project .mpp file, open the **Hello ProjectData** task pane, and then select **Get ProjectData Endpoint**. The add-in should show a **No connection!** error (see Figure 7), and the **Compare All Projects** button should remain disabled.
 
    *Figure 7. Use the add-in without a Project web app connection*
 
    ![Use the app without a Project Web App connection.](../images/pj15-hello-project-data-no-connection.png)
 
-1. Stop debugging, and then press **F5** again. Log on to Project Web App, and then create a project that contains cost and work data. You can save the project, but don't publish it.
+1. Stop debugging, and then press <kbd>F5</kbd> again. Log on to Project Web App, and then create a project that contains cost and work data. You can save the project, but don't publish it.
 
    In the **Hello ProjectData** task pane, when you select **Compare All Projects**, you should see a blue **NA** for fields in the **Current** column (see Figure 8).
 
@@ -765,7 +765,7 @@ Office.initialize = function (reason) {
 
 // Set the global variables, enable the Compare All Projects button,
 // and display the URL of the ProjectData service.
-// Display an error if Project is not connected with Project Web App.
+// Display an error if Project isn't connected with Project Web App.
 function setOdataUrl() {
     Office.context.document.getProjectFieldAsync(
         Office.ProjectProjectFields.ProjectServerUrl,
@@ -966,7 +966,7 @@ function parseODataResult(oDataResult, currentProjectGuid) {
             document.getElementById("CurrentProjectPercentComplete").style.color = "green"
         }
     }
-    else {    // The current project is not published.
+    else {    // The current project isn't published.
         document.getElementById("CurrentProjectCost").innerHTML = "NA";
         document.getElementById("CurrentProjectCost").style.color = "blue"
 
@@ -1206,7 +1206,7 @@ If you modify the **HelloProjectOData** add-in for production use, do the follow
     <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     ```
 
-- Rewrite the `retrieveOData` function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the _$skip_ operator and _$top_ operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form:
+- Rewrite the `retrieveOData` function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query, and use the *$skip* operator and *$top* operator in the REST query for project data. Run multiple queries in a loop, and then average the data from each query. Each query for project data would be of the form:
 
   `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`
 

@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 03/04/2024
+ms.date: 05/19/2025
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -12,7 +12,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 > [!NOTE]
 >
-> - SharePoint catalogs don't support add-in commands. You can deploy add-in commands via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [AppSource](/office/dev/store/submit-to-appsource-via-partner-center), or use [sideloading](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to deploy your add-in command for testing.
+> - SharePoint catalogs don't support add-in commands. You can deploy add-in commands via [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), or use [sideloading](../testing/test-debug-non-local-server.md) to deploy your add-in command for testing.
 > - Content add-ins don't currently support add-in commands.
 
 ## Types of add-in commands
@@ -21,8 +21,21 @@ There are two types of add-in commands, based on the kind of action that the com
 
 - **Task pane commands**: The button or menu item opens the add-in's [task pane](task-pane-add-ins.md). You add this kind of add-in command with markup in the manifest. The "code behind" the command is provided by Office.
 - **Function commands**: The button or menu item runs any arbitrary JavaScript. The code almost always calls APIs in the Office JavaScript Library, but it doesn't have to. This type of add-in typically displays no UI other than the button or menu item itself. Note the following about function commands:
-  - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) method to show a dialog, which is a good way to display an error, show progress, or prompt for input from the user. If the add-in is configured to use a [shared runtime](../testing/runtimes.md#shared-runtime), the function can also call the [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method.
+
   - The runtime in which the function command runs is a full [browser-based runtime](../testing/runtimes.md#browser-runtime). It can render HTML and call out to the Internet to send or get data.
+  - The runtime closes when either the function completes or 5 minutes have passed, whichever is earlier.
+  - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) method to show a dialog. This is a good way to display an error, show progress, or prompt the user for input.
+
+     > [!NOTE]
+     > Because of the 5-minute timeout, the dialog should be designed so that users complete their interaction and close it within 5 minutes. Your add-in should use a task pane for longer interactions.
+
+  - If the add-in is configured to use a [shared runtime](../testing/runtimes.md#shared-runtime), the function can also call the [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method.
+
+   > [!TIP]
+   > Function commands aren't the only way to run arbitrary JavaScript in an add-in. An add-in can also include:
+   >
+   > - Custom handlers for certain events, such as a user opening an new message pane in Outlook.
+   > - Custom [Copilot agents](agent-and-add-in-overview.md) that take actions in response to natural language requests from the add-in's users.
 
 ## Location of add-in commands
 
@@ -62,12 +75,12 @@ The following command capabilities are currently supported.
 - Simple buttons - trigger specific actions.
 - Menus - simple menu dropdown with buttons that trigger actions.
 
-### Default Enabled or Disabled Status
+### Default availability state
 
-You can specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting.
+You can specify whether the command is available when your add-in launches, and programmatically change the setting.
 
 > [!NOTE]
-> This feature isn't supported in all Office applications or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
+> This feature isn't supported in all Office applications or scenarios. For more information, see [Change the availability of add-in commands](disable-add-in-commands.md).
 
 ### Position on the ribbon (preview)
 
@@ -95,8 +108,8 @@ You can specify that a tab is only visible on the ribbon in certain contexts, su
 Add-in commands are currently supported on the following platforms, except for limitations specified in the subsections of [Command capabilities](#command-capabilities) earlier.
 
 - Office on the web
-- Office on Windows (build 16.0.6769+, connected to a Microsoft 365 subscription)
-- Office on Mac (build 15.33+, connected to a Microsoft 365 subscription)
+- Office on Windows (Version 1604 (Build 6769.2000) or later, connected to a Microsoft 365 subscription)
+- Office on Mac (Version 15.33 (17040900) or later, connected to a Microsoft 365 subscription)
 - Perpetual Office 2019 or later on Windows or on Mac
 
 > [!NOTE]
@@ -132,6 +145,6 @@ Apply the following best practices when you develop add-in commands.
 
 The best way to get started using add-in commands is to take a look at the [Office Add-in commands samples](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) on GitHub.
 
-For more information about specifying add-in commands in an XML manifest, see [Create add-in commands with the XML manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.
+For more information about specifying add-in commands in an add-in only manifest, see [Create add-in commands with the add-in only manifest](../develop/create-addin-commands.md) and the [VersionOverrides](/javascript/api/manifest/versionoverrides) reference content.
 
 For more information about specifying add-in commands in the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](../develop/create-addin-commands-unified-manifest.md).

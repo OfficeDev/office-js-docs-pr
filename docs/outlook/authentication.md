@@ -1,7 +1,7 @@
 ---
 title: Authentication options in Outlook add-ins
 description: Outlook add-ins provide a number of different methods to authenticate, depending on your specific scenario.
-ms.date: 04/12/2024
+ms.date: 10/29/2024
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -25,7 +25,7 @@ Consider using SSO access tokens if your add-in:
   - Microsoft services that are exposed as part of Microsoft Graph
   - A non-Microsoft service that you control
 
-The SSO authentication method uses the [OAuth2 On-Behalf-Of flow provided by Azure Active Directory](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of). It requires that the add-in register in the [Application Registration Portal](https://apps.dev.microsoft.com/) and specify any required Microsoft Graph scopes in the add-in manifest, if the XML manifest is being used. If the add-in is using the [unified manifest for Microsoft 365](../develop/json-manifest-overview.md), there is some manifest configuration, but Microsoft Graph scopes aren't specified. Instead, the needed scopes are specified at runtime in a call to fetch a token to Microsoft Graph.
+The SSO authentication method uses the [OAuth2 On-Behalf-Of flow provided by Azure Active Directory](/azure/active-directory/develop/active-directory-v2-protocols-oauth-on-behalf-of). It requires that the add-in register in the [Application Registration Portal](https://apps.dev.microsoft.com/) and specify any required Microsoft Graph scopes in the add-in manifest, if the add-in only manifest is being used. If the add-in is using the [unified manifest for Microsoft 365](../develop/json-manifest-overview.md), there is some manifest configuration, but Microsoft Graph scopes aren't specified. Instead, the needed scopes are specified at runtime in a call to fetch a token to Microsoft Graph.
 
 Using this method, your add-in can obtain an access token scoped to your server back-end API. The add-in uses this as a bearer token in the `Authorization` header to authenticate a call back to your API. At that point your server can:
 
@@ -38,12 +38,9 @@ For details on using the SSO token in an Outlook add-in, see [Authenticate a use
 
 For a sample add-in that uses the SSO token, see [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 
-## Single sign-on access token using nested app authentication (preview)
+## Single sign-on access token using nested app authentication
 
-Nested App Authentication (NAA) enables Single Sign-On (SSO) for Office Add-ins running in the context of native Office applications. Compared with the on-behalf-of flow used with Office.js and getAccessToken(), NAA provides greater flexibility in app architecture, enabling the creation of rich, client-driven applications. NAA makes handling SSO simpler for your add-in code. NAA enables you to make Microsoft Graph calls from your add-in client code as an SPA without the need for a middle-tier server. There’s no need to use Office.js APIs as NAA is provided by the MSAL.js library.
-
-> [!IMPORTANT]
-> Nested app authentication is currently in preview. To try this feature, join the [Microsoft 365 Insider Program](https://insider.microsoft365.com/join) and choose the Beta Channel. Don't use NAA in production add-ins. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
+Nested App Authentication (NAA) enables Single Sign-On (SSO) for Office Add-ins running in the context of native Office applications. Compared with the on-behalf-of flow used with Office.js and `getAccessToken()`, NAA provides greater flexibility in app architecture, enabling the creation of rich, client-driven applications. NAA makes handling SSO simpler for your add-in code. NAA enables you to make Microsoft Graph calls from your add-in client code as an SPA without the need for a middle-tier server. There’s no need to use Office.js APIs as NAA is provided by the MSAL.js library.
 
 To enable your Outlook add-in to use NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md). NAA works the same across all Office Add-ins.
 
@@ -76,3 +73,9 @@ Callback tokens provide access to the user's mailbox from your server back-end, 
 - Needs access to the user's mailbox from your server back-end.
 
 Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) methods. The level of access is controlled by the permissions specified in the add-in manifest.
+
+## See also
+
+- [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets)
+- [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md)
+- [Nested app authentication and Outlook legacy tokens deprecation FAQ](faq-nested-app-auth-outlook-legacy-tokens.md)

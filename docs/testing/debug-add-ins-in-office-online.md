@@ -12,7 +12,7 @@ This article describes how to use Office on the web to debug your add-ins. Use t
 - To debug add-ins on a computer that isn't running Windows or the Office desktop client&mdash;for example, if you're developing on a Mac or Linux.
 - As an alternative debugging process if you can't, or don't wish to, debug in an IDE, such as Visual Studio or Visual Studio Code.
 
-This article assumes that you have an add-in project that needs to be debugged. If you just want to practice debugging on the web, create a new project using one of the quick starts for specific Office applications, such as this [quick start for Word](../quickstarts/word-quickstart.md).
+This article assumes that you have an add-in project that needs to be debugged. If you just want to practice debugging on the web, create a new project using one of the quick starts for specific Office applications, such as this [quick start for Word](../quickstarts/word-quickstart-yo.md).
 
 ## Debug your add-in
 
@@ -20,7 +20,7 @@ To debug your add-in by using Office on the web:
 
 1. Run the project on localhost and sideload it to a document in Office on the web. For detailed sideloading instructions, see [Manually sideload Office Add-ins on the web](sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).
 
-1. Open the browser's developer tools. This is usually done by pressing F12. Open the debugger tool and use it to set breakpoints and watch variables. For detailed help in using your browser's tool, see one of the following:
+1. Open the browser's developer tools. This is usually done by pressing <kbd>F12</kbd>. Open the debugger tool and use it to set breakpoints and watch variables. For detailed help in using your browser's tool, see one of the following:
 
     - [Firefox](https://firefox-source-docs.mozilla.org/devtools-user/index.html)
     - [Safari](https://support.apple.com/guide/safari/use-the-developer-tools-in-the-develop-menu-sfri20948/mac)
@@ -29,7 +29,7 @@ To debug your add-in by using Office on the web:
 
     > [!NOTE]
     > - Office on the web won't open in Internet Explorer.
-    > - The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows (preview)](../outlook/one-outlook.md#debug-your-add-in).
+    > - The new Outlook on Window desktop client (preview) doesn't support the context menu or the keyboard shortcut to access the Microsoft Edge developer tools. Instead, you must run `olk.exe --devtools` from a command prompt. For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](../outlook/one-outlook.md#debug-your-add-in).
 
 ## Potential issues
 

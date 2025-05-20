@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 04/12/2024
+ms.date: 01/07/2025
 ms.service: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -22,7 +22,7 @@ In this tutorial, you will:
 > - Implement a task pane that inserts content into the body of a message
 
 > [!TIP]
-> If you want a completed version of this tutorial (using the XML manifest), head over to the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
+> If you want a completed version of this tutorial (using the add-in only manifest), visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial).
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ In this tutorial, you will:
 
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor.
 
-- Outlook on the web, [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), or Outlook 2016 or later on Windows (connected to a Microsoft 365 account).
+- Outlook on the web, [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), or Outlook 2016 or later on Windows (connected to a Microsoft 365 account).
 
 - A [GitHub](https://www.github.com) account.
 
@@ -94,9 +94,9 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
 1. [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-1. The steps to create the project vary slightly depending on the type of manifest. 
+1. The steps to create the project vary slightly depending on the type of manifest.
 
-    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)] 
+    [!INCLUDE [Unified manifest value proposition and feedback request](../includes/unified-manifest-value-prop-feedback.md)]
 
     # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -112,7 +112,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
       ![The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.](../images/yo-office-outlook-json-manifest-javascript-gist.png)
 
-    # [XML Manifest](#tab/xmlmanifest)
+    # [Add-in only manifest](#tab/xmlmanifest)
 
     - **Choose a project type** - `Office Add-in Task Pane project`
 
@@ -122,17 +122,13 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which Office client application would you like to support?** - `Outlook`
 
-    - **Which manifest would you like to use?** - `XML manifest`
+    - **Which manifest would you like to use?** - `Add-in only manifest`
 
     ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-xml-manifest-javascript-gist.png)
 
     ---
 
     After you complete the wizard, the generator creates the project and installs supporting Node components.
-
-    [!include[Node.js version 20 warning](../includes/node-20-warning-note.md)]
-
-    [!include[Yeoman generator next steps](../includes/yo-office-next-steps.md)]
 
 1. Navigate to the root directory of the project.
 
@@ -166,7 +162,7 @@ Make the following updates in the manifest file to specify some basic informatio
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. Locate the "description" property, replace the default "short" and "long" values with descriptions of the add-in, and save the file.
+1. Locate the `"description"` property, replace the default `"short"` and `"long"` values with descriptions of the add-in, and save the file.
 
     ```json
     "description": {
@@ -177,7 +173,7 @@ Make the following updates in the manifest file to specify some basic informatio
 
 1. Save the file.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. Locate the **\<ProviderName\>** element and replace the default value with your company name.
 
@@ -217,6 +213,8 @@ Before going any further, let's test the basic add-in that the generator created
 
     ![The Show Taskpane button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
 
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
+
 ## Define buttons
 
 Now that you've verified the base add-in works, you can customize it to add more functionality. By default, the manifest only defines buttons for the read message window. Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:
@@ -233,7 +231,7 @@ Take the following steps:
 
 1. Open the **manifest.json** file.
 
-1. In the "extensions.runtimes" array, there are two runtime objects. For the second one, with the "id" of "CommandsRuntime", change the "actions.id" to "insertDefaultGist". This is the name of a function that you create in a later step. When you're done, the runtime object should look like the following:
+1. In the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, there are two runtime objects. For the second one, with the `"id"` of `"CommandsRuntime"`, change the [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) to `"insertDefaultGist"`. This is the name of a function that you create in a later step. When you're done, the runtime object should look like the following:
 
     ```json
     {
@@ -254,7 +252,7 @@ Take the following steps:
     }
     ```
 
-1. Change the item in the "extensions.ribbons.contexts" array to "mailCompose". This means the buttons will appear only in a new message or reply window.
+1. Change the item in the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array to `"mailCompose"`. This means the buttons will appear only in a new message or reply window.
 
     ```json
     "contexts": [
@@ -262,27 +260,27 @@ Take the following steps:
     ],
     ```
 
-1. The "extensions.ribbons.tabs.groups" array has a group object in it. Make the following changes to this object.
+1. The [`"extensions.ribbons.tabs.groups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#groups) array has a group object in it. Make the following changes to this object.
 
-    1. Change the "id" property to "msgComposeCmdGroup".
-    1. Change the "label" property to "Git the gist".
+    1. Change the `"id"` property to `"msgComposeCmdGroup"`.
+    1. Change the `"label"` property to "Git the gist".
 
-1. That same group object has a "controls" array with two control objects. We need to make changes to the JSON for each of them. In the first one, take these steps.
+1. That same group object has a `"controls"` array with two control objects. We need to make changes to the JSON for each of them. In the first one, take these steps.
 
-    1. Change the "id" to "msgComposeInsertGist".
-    1. Change the "label" to "Insert gist".
-    1. Change the "supertip.title" to "Insert gist".
-    1. Change the "supertip.description" to "Displays a list of your gists and allows you to insert their contents into the current message."
+    1. Change the `"id"` to `"msgComposeInsertGist"`.
+    1. Change the `"label"` to "Insert gist".
+    1. Change the `"supertip.title"` to "Insert gist".
+    1. Change the `"supertip.description"` to "Displays a list of your gists and allows you to insert their contents into the current message."
 
 1. In the second control object, take these steps.
 
-    1. Change the "id" to "msgComposeInsertDefaultGist".
-    1. Change the "label" to "Insert default gist".
-    1. Change the "supertip.title" to "Insert default gist".
-    1. Change the "supertip.description" to "Inserts the content of the gist you mark as default into the current message."
-    1. Change the "actionId" to "insertDefaultGist". This matches the "action.id" of the "CommandsRuntime" that you set in an earlier step.
+    1. Change the `"id"` to `"msgComposeInsertDefaultGist"`.
+    1. Change the `"label"` to "Insert default gist".
+    1. Change the `"supertip.title"` to "Insert default gist".
+    1. Change the `"supertip.description"` to "Inserts the content of the gist you mark as default into the current message."
+    1. Change the `"actionId"` to `"insertDefaultGist"`. This matches the `"action.id"` of the `"CommandsRuntime"` that you set in an earlier step.
 
-    When you're done, the "ribbons" property should look like the following:
+    When you're done, the [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) property should look like the following:
 
     ```json
     "ribbons": [
@@ -371,7 +369,7 @@ Take the following steps:
 
 1. Save your changes to the manifest.
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 ### Remove the MessageReadCommandSurface extension point
 
@@ -495,7 +493,7 @@ After you've reinstalled the add-in, you can verify that it installed successful
 
     ![The ribbon overflow menu in classic Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
 
-- If you're running this add-in in Outlook on the web or new Outlook on Windows (preview), select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Insert gist** and **Insert default gist** options.
+- If you're running this add-in in Outlook on the web or new Outlook on Windows, select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Insert gist** and **Insert default gist** options.
 
     ![The message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.](../images/add-in-buttons-in-owa.png)
 
@@ -523,10 +521,10 @@ Let's start by creating the UI for the dialog.
       <title>Settings</title>
     
       <!-- Office JavaScript API -->
-      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-      <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+      <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
     
       <!-- Template styles -->
       <link href="dialog.css" rel="stylesheet" type="text/css" />
@@ -779,7 +777,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
     },
     ```
 
-    After you've done this, the `new CopyWebpackPlugin` object will look like the following. Note the slight difference if the add-in uses the XML manifest.
+    After you've done this, the `new CopyWebpackPlugin` object will look like the following. Note the slight difference if the add-in uses the add-in only manifest.
 
     ```js
     new CopyWebpackPlugin({
@@ -797,7 +795,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
         to: "assets/[name][ext][query]",
       },
       {
-        from: "manifest*.json", // The file extension is "xml" if the XML manifest is being used.
+        from: "manifest*.json", // The file extension is "xml" if the add-in only manifest is being used.
         to: "[name]" + "[ext]",
         transform(content) {
           if (dev) {
@@ -820,7 +818,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
     })
     ```
 
-    After you've done this, the new `plugins` array will look ike the following. Note the slight difference if the add-in uses the XML manifest.
+    After you've done this, the new `plugins` array will look ike the following. Note the slight difference if the add-in uses the add-in only manifest.
 
     ```js
     plugins: [
@@ -844,7 +842,7 @@ Finally, open the **webpack.config.js** file found in the root directory of the 
             to: "assets/[name][ext][query]",
           },
           {
-            from: "manifest*.json", // The file extension is "xml" if the XML manifest is being used.
+            from: "manifest*.json", // The file extension is "xml" if the add-in only manifest is being used.
             to: "[name]." + buildType + "[ext]",
             transform(content) {
               if (dev) {
@@ -978,7 +976,7 @@ A function that's invoked by a UI-less button must be defined in the file that's
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     
         <!-- Office JavaScript API -->
-        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     
         <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.js"></script>
         <script type="text/javascript" src="../../node_modules/showdown/dist/showdown.min.js"></script>
@@ -1212,10 +1210,10 @@ This add-in's **Insert gist** button opens a task pane and displays the user's g
         <title>Contoso Task Pane Add-in</title>
     
         <!-- Office JavaScript API -->
-        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+        <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     
        <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
-        <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css"/>
+        <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
     
         <!-- Template styles -->
         <link href="taskpane.css" rel="stylesheet" type="text/css" />
@@ -1578,6 +1576,6 @@ In this tutorial, you've created an Outlook add-in that can be used in message c
 
 ## See also
 
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Outlook add-in design guidelines](../outlook/outlook-addin-design.md)
 - [Debug function commands in Outlook add-ins](../outlook/debug-ui-less.md)

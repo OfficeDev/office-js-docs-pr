@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 11/30/2023
+ms.date: 02/12/2025
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -82,11 +82,23 @@ An add-in that contains a custom function, but no UI such as a task pane. The cu
 
 See also: [custom function](#custom-function), [custom functions runtime](#custom-functions-runtime).
 
+## function command
+
+Function commands are buttons or menu items that run JavaScript functions. Unlike task pane commands, function commands don't display any user interface other than the command button or menu item itself.
+
+See also: [add-in commands](#add-in-commands).
+
 ## host
 
 **\<Host\>** typically refers to an Office application. The Office applications, or hosts, that support Office Add-ins are Excel, OneNote, Outlook, PowerPoint, Project, and Word.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
+
+## Long-Term Service Channel (LTSC)
+
+**LTSC** refers to the perpetual version of Office available through a volume-licensing agreement between Microsoft and your company.
+
+See also: [perpetual](#perpetual), [volume-licensed, volume-licensed perpetual, volume licensing](#volume-licensed-volume-licensed-perpetual-volume-licensing).
 
 ## Office application, Office client
 
@@ -94,9 +106,15 @@ See also: [application](#application), [client](#client), [Office application, O
 
 See also: [application](#application), [client](#client), [host](#host), [Office desktop application, Office desktop client, desktop client, desktop](#office-desktop-application-office-desktop-client-desktop-client-desktop).
 
+## Office cache
+
+The **Office cache** stores resources and data used by Office Add-ins. This cache prevents an add-in from repeatedly downloding the resources it needs, thereby improving its performance.
+
+See also: [web cache](#web-cache), [Wef cache](#wef-cache).
+
 ## Office desktop application, Office desktop client, desktop client, desktop
 
-**Office desktop client** refers to an Office application that runs natively on Windows or on Mac. The Office desktop clients that support Office Add-ins are Excel on Windows and on Mac, Outlook on Windows and on Mac, PowerPoint on Windows and on Mac, Project on Windows, and Word on Windows and on Mac.
+**Office desktop client** refers to an Office application that runs natively on Windows or on Mac. The Office desktop clients that support Office Add-ins are Excel on Windows and on Mac, Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic) and on Mac, PowerPoint on Windows and on Mac, Project on Windows, and Word on Windows and on Mac.
 
 See also: [application](#application), [client](#client), [Office application, Office client](#office-application-office-client).
 
@@ -140,6 +158,12 @@ A **runtime** is the host environment (including a JavaScript engine and usually
 
 See also: [custom functions runtime](#custom-functions-runtime), [shared runtime](#shared-runtime), [webview](#webview).
 
+## setless API
+
+An API in the Office JavaScript Library that is not included in any requirement set.
+
+See also [requirement set](#requirement-set).
+
 ## shared runtime
 
 A **shared runtime**, enables code in your task pane, function commands, and custom functions, to run in the same runtime and continue running even when the task pane is closed. Code in dialogs generally runs in a separate runtime even when the add-in is configured to use a shared runtime. See [shared runtime](../testing/runtimes.md#shared-runtime) and [Tips for using the shared runtime in your Office Add-in](https://devblogs.microsoft.com/microsoft365dev/tips-for-using-the-shared-javascript-runtime-in-your-office-add-in%e2%80%af/) to learn more.
@@ -168,7 +192,7 @@ See also: [quick start](#quick-start).
 
 Other Microsoft content may use the term **commercial** to represent this concept.
 
-See also: [perpetual](#perpetual).
+See also: [Long-Term Service Channel (LTSC)](#long-term-service-channel-ltsc), [perpetual](#perpetual).
 
 ## web add-in
 
@@ -176,11 +200,23 @@ See also: [perpetual](#perpetual).
 
 See also: [add-in](#add-in).
 
+## web cache
+
+The **web cache** temporarily stores web-based resources and data used by an individual Office Add-in.
+
+See also: [Office cache](#office-cache), [Wef cache](#wef-cache).
+
 ## webview
 
 A **webview** is an element or view that displays web content inside an application. Content add-ins and task panes both contain embedded web browsers and are examples of webviews in Office Add-ins.
 
 See also: [content add-in](#content-add-in), [task pane](#task-pane).
+
+## Wef cache
+
+The **Wef cache** locally stores resources and data for all installed Office Add-ins.
+
+See also: [Office cache](#office-cache), [web cache](#web-cache).
 
 ## XLL
 

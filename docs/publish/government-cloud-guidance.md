@@ -2,7 +2,7 @@
 title: Guidance for deploying Office Add-ins on government clouds
 description: Learn how to deploy your Office Add-in to secure, government cloud environments
 ms.topic: best-practice
-ms.date: 10/10/2023
+ms.date: 1/28/2025
 ms.localizationpriority: medium
 ---
 
@@ -24,22 +24,25 @@ For all government cloud (i.e. Sovereign Cloud) environments, the public Microso
 
 [Centralized deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) of add-ins outside of the store is still supported.
 
-## US Government Community Cloud (GCC)
+In addition to requirements applicable to all Sovereign Clouds, each Sovereign Cloud environment has its own considerations that may affect Office Add-ins targeting the environment. These requirements and recommendations are described in the following sections.
 
-In addition to requirements applicable to all Sovereign Clouds, each Sovereign Cloud environment has its own considerations that may affect Office Add-ins targeting the environment. GCC is the least restrictive of the government cloud environments and some of the resources required by the add-in are available from their usual production endpoints in this environment. One such resource is the Office JavaScript API library. Solution partners can continue to reference the public Office.js resource as they do with their public production solution.
+### US Government Community Cloud (GCC)
 
-## GCC High (GCCH), US Department of Defense (DOD), or other sovereign managed clouds
+GCC is the least restrictive of the government cloud environments. Solution partners are permitted to reference the public Office JavaScript API library (office.js) resource as they do with their public production solution. However, we recommend that partners reference the library from the following URL.
 
-These government clouds remain internet-connected, but the set of public endpoints made available is severely restricted. One such restricted endpoint is the public endpoint for loading the Office JavaScript API library. The public CDN location for Office.js will not be accessible from within these environments. However, there will be an internal, per-cloud Microsoft Office CDN provisioned with the same resource. This means the endpoint URL to access Office.js will be different and your Office Add-in may need some level of customization to run. Given the additional restrictions, it's likely that any solution provided to customers will require hosting provider services within the environment as well, necessitating additional customizations. You'll need to determine the best way to provide your solution to customers, such that it conforms to the additional restrictions imposed on services running within the boundaries of these environments. The Office JavaScript Library CDN URLs are as follows:
+- **GCC**: `https://appsforoffice.gcc.cdn.office.net/appsforoffice/lib/1/hosted/office.js`
 
-- **GCC High**: https://appsforoffice.gcch.cdn.office.net/appsforoffice/lib/1/hosted/office.js
-- **DOD**: https://appsforoffice.dod.cdn.office.net/appsforoffice/lib/1/hosted/office.js
+### GCC High (GCCH), US Department of Defense (DOD), or other sovereign managed clouds
 
+These government clouds remain internet-connected, but the set of public endpoints made available is severely restricted. One such restricted endpoint is the public endpoint for loading the Office JavaScript API library. The public CDN location for Office.js won't be accessible from within these environments. However, there'll an internal, per-cloud Microsoft Office CDN provisioned with the same resource. This means the endpoint URL to access Office.js will be different and your Office Add-in may need some level of customization to run. Given the additional restrictions, it's likely that any solution provided to customers will require hosting provider services within the environment as well, necessitating additional customizations. You'll need to determine the best way to provide your solution to customers, such that it conforms to the additional restrictions imposed on services running within the boundaries of these environments. The Office JavaScript Library CDN URLs are as follows:
 
-## Airgapped Sovereign Clouds
+- **GCC High**: `https://appsforoffice.gcch.cdn.office.net/appsforoffice/lib/1/hosted/office.js`
+- **DOD**: `https://appsforoffice.dod.cdn.office.net/appsforoffice/lib/1/hosted/office.js`
+
+### Airgapped Sovereign Clouds
 
 These government clouds are essentially disconnected from the public internet entirely. Any resource that would normally be accessed from public resources must instead be custom-provisioned inside these cloud environments. In the GCCH and DOD clouds mentioned previously, most (if not all) solution providers will need to provision their services and resources inside the cloud. There is an option to make firewall exceptions that allows access to public services and resources. However, this bypass is not possible in airgapped clouds. As with the GCCH and DOD clouds, there will be a Microsoft Office CDN provisioned inside each cloud environment that hosts required resources such as the Office.js library. You'll need to work closely with customer tenant administrators to determine the best way to provide your services and resources in a way that conforms to the strict access requirements for airgapped Sovereign Clouds.
 
-## Office 365 operated by 21Vianet
+### Office 365 operated by 21Vianet
 
 [!INCLUDE [Information about the China-specific CDN](../includes/21Vianet-CDN.md)]

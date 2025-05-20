@@ -1,7 +1,7 @@
 ---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 04/12/2024
+ms.date: 10/01/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -16,9 +16,9 @@ However, by default, if a user has an add-in task pane open for a message in the
 > Although the pinnable task pane feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
 >
 > - Modern Outlook on the web
-> - [New Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
+> - [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)
 > - Classic Outlook 2016 or later on Windows (Build 7668.2000 or later for users in the Current or Microsoft 365 Insider Channels, Build 7900.xxxx or later for users in Deferred channels)
-> - Outlook on Mac (Version 16.13.503 or later)
+> - Outlook on Mac (Version 16.13 (18050300) or later)
 
 > [!IMPORTANT]
 > Pinnable task panes aren't available for the following:
@@ -26,13 +26,17 @@ However, by default, if a user has an add-in task pane open for a message in the
 > - Appointments/Meetings
 > - Outlook.com
 
+## Supported Outlook modes
+
+Pinnable task panes are supported in both the Message Compose and Message Read modes in Outlook. However, pinning isn't supported across different modes. This is because an add-in could have different UIs for buttons and task panes in each mode. For example, if a user pins the task pane of an add-in while reading a message, then creates a new message, they won't see the add-in's task pane from the message they're composing. To view the task pane, the user must activate the add-in from the message they're composing. If the user then pins the task pane, the task pane remains pinned the next time the user composes another message.
+
 ## Support task pane pinning
 
 The first step is to add pinning support, which is done in the add-in manifest. The markup varies depending on the type of manifest your add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-Add a "pinnable" property, set to `true`, to the object in the "actions" array that defines the button or menu item that opens the task pane. The following is an example.
+Add a `"pinnable"` property, set to `true`, to the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array that defines the button or menu item that opens the task pane. The following is an example.
 
 ```json
 "actions": [
@@ -46,7 +50,7 @@ Add a "pinnable" property, set to `true`, to the object in the "actions" array t
 ]
 ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) element to the **\<Action\>** element that describes the task pane button. The following is an example.
 
@@ -95,7 +99,7 @@ function itemChanged(eventArgs) {
 ```
 
 > [!IMPORTANT]
-> The implementation of event handlers for an ItemChanged event should check whether or not the Office.content.mailbox.item is null.
+> The implementation of event handlers for an `ItemChanged` event should check whether or not the Office.content.mailbox.item is null.
 >
 > ```js
 > // Example implementation.
@@ -121,13 +125,13 @@ Office.onReady(() => {
 
 ## Task pane pinning in multi-select
 
-In Outlook on the web and new Outlook on Windows (preview), when the task pane of an add-in that implements the [item multi-select](item-multi-select.md) feature is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
+In Outlook on the web and new Outlook on Windows, when the task pane of an add-in that implements the [item multi-select](item-multi-select.md) feature is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
 
 Conversely, in classic Outlook on Windows and Outlook on Mac, the task pane of a multi-select add-in isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Deploy to users
 
-If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com), and it's configured with a pinnable task pane, your add-in content must not be static and must clearly display data related to the message that is open or selected in the mailbox. This ensures that your add-in will pass [AppSource validation](/legal/marketplace/certification-policies).
+If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com) and it's configured with a pinnable task pane, the pinned content of the add-in must not be static. That is, the pinned content must change depending on the message or appointment that's currently open or selected in the mailbox. This ensures that your add-in will pass [AppSource validation](/legal/marketplace/certification-policies).
 
 ## See also
 

@@ -23,7 +23,7 @@ The plugin is [CustomFunctionsMetadataPlugin](https://github.com/OfficeDev/Offic
 
 1. Open a Command Prompt or bash shell and, in the root of the project, run `npm install custom-functions-metadata-plugin`.
 1. Open the webpack.config.js file and add the following line at the top: `const CustomFunctionsMetadataPlugin = require("custom-functions-metadata-plugin");`.
-1. Scroll down to the `plugins` array and add the following to the top of the array. Change the `input` path and filename as needed to match your project, but the `output` value must be "functions.json". If you're using TypeScript, use the \*.ts source file name, *not* the transpiled \*.js file.
+1. Scroll down to the `plugins` array and add the following to the top of the array. Change the `input` path and filename as needed to match your project, but the `output` value must be `"functions.json"`. If you're using TypeScript, use the \*.ts source file name, *not* the transpiled \*.js file.
 
    ```js
    new CustomFunctionsMetadataPlugin({

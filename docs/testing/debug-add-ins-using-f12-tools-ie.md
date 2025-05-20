@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Internet Explorer
 description: Debug add-ins using the developer tools in Internet Explorer.
-ms.date: 05/20/2023
+ms.date: 12/26/2024
 ms.localizationpriority: medium
 ---
 
@@ -22,14 +22,14 @@ To determine which browser or webview is being used on your computer, see [Brows
 
 ## Debug a task pane add-in using the F12 tools
 
-Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing F12 in Internet Explorer. F12 is now an independent application used to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
+Windows 10 and 11 include a web development tool called "F12" because it was originally launched by pressing <kbd>F12</kbd> in Internet Explorer. F12 is now an independent application used to debug your add-in when it is running in the Internet Explorer webview control, Trident. The application is not available in earlier versions of Windows.
 
 > [!NOTE]
 > If your add-in has an [add-in command](../design/add-in-commands.md) that executes a function, the function runs in a hidden browser runtime process that the F12 tools cannot detect or attach to, so the technique described in this article cannot be used to debug code in the function.
 
 The following steps are the instructions for debugging your add-in. If you just want to test the F12 tools themselves, see [Example add-in to test the F12 tools](#example-add-in-to-test-the-f12-tools).
 
-1. [Sideload](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) and run the add-in.
+1. [Sideload](test-debug-non-local-server.md) and run the add-in.
 1. Launch the F12 development tools that corresponds to your version of Office.
 
    - For the 32-bit version of Office, use C:\Windows\System32\F12\IEChooser.exe
@@ -63,9 +63,9 @@ The following steps are the instructions for debugging your add-in. If you just 
 This example uses Word and a free add-in from AppSource.
 
 1. Open Word and choose a blank document.
-1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
+1. Select **Home** > **Add-ins**, then select **More Add-ins**.
 1. In the **Office Add-ins** dialog, select the **STORE** tab.
-1. Select the **QR4Office** add-in. It opens in a task pane.
+1. Search for and select the **QR4Office** add-in. It opens in a task pane.
 1. Launch the F12 development tools that corresponds to your version of Office as described in the preceding section.
 1. In the F12 window, select **Home.html**.
 1. In the **Debugger** tab, open the file **Home.js** as described in the preceding section.

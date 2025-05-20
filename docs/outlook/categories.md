@@ -20,8 +20,8 @@ Only categories in the master list on your mailbox are available for you to appl
 > [!IMPORTANT]
 > For the add-in to manage the categories master list, it must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 >
-> - **XML manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
-> - **Unified manifest for Microsoft 365**: Set the "name" property of an object in the "authorization.permissions.resourceSpecific" array to "Mailbox.ReadWrite.User".
+> - **Add-in only manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+> - **Unified manifest for Microsoft 365**: Set the `"name"` property of an object in the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array to `"Mailbox.ReadWrite.User"`.
 
 ### Add master categories
 
@@ -85,7 +85,7 @@ You can use the API to add, get, and remove categories for a message or appointm
 > [!IMPORTANT]
 > Only categories in the master list on your mailbox are available for you to apply to a message or appointment. See the earlier section [Manage categories in the master list](#manage-categories-in-the-master-list) for more information.
 >
-> In Outlook on the web or [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you can't use the API to manage categories on a message in Compose mode.
+> In Outlook on the web or [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you can't use the API to manage categories on a message in Compose mode.
 
 ### Add categories to an item
 

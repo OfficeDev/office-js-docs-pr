@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 04/12/2024
+ms.date: 01/07/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -20,14 +20,14 @@ Logging notes to an external application from an Outlook mobile add-in is suppor
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) to create an add-in project with the Yeoman generator for Office Add-ins.
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to create an add-in project with the Yeoman generator for Office Add-ins.
 
 ## Configure the manifest
 
 To configure your add-in's manifest, select the type of manifest you're using.
 
 - [Unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365)
-- [XML manifest](#xml-manifest)
+- [Add-in only manifest](#add-in-only-manifest)
 
 ### Unified manifest for Microsoft 365
 
@@ -37,7 +37,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 1. Open the **manifest.json** file located at the root of your project.
 
-1. In the "authorization.permissions.resourceSpecific" array, find the *first* object and set its "name" property to "MailboxItem.ReadWrite.User". It should look like the following when you're done.
+1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, find the *first* object and set its `"name"` property to `"MailboxItem.ReadWrite.User"`. It should look like the following when you're done.
 
     ```json
     {
@@ -46,7 +46,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
     }
     ```
 
-1. In the "validDomains" array, ensure that the URL to `https://www.contoso.com` is included. The array should look like the following when you're done.
+1. In the [`"validDomains"`](/microsoft-365/extensibility/schema/root#validdomains) array, ensure that the URL to `https://www.contoso.com` is included. The array should look like the following when you're done.
 
     ```json
     "validDomains": [
@@ -54,9 +54,9 @@ To configure your add-in's manifest, select the type of manifest you're using.
     ],
     ```
 
-1. In the "extensions.runtimes" array, delete the object whose "id" is set to "TaskPaneRuntime".
+1. In the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, delete the object whose `"id"` is set to `"TaskPaneRuntime"`.
 
-1. In the same array, navigate to the remaining object, whose "id" is set to "CommandsRuntime", and replace it with the following object.
+1. In the same array, navigate to the remaining object, whose `"id"` is set to `"CommandsRuntime"`, and replace it with the following object.
 
     ```json
     {
@@ -84,12 +84,12 @@ To configure your add-in's manifest, select the type of manifest you're using.
     }
     ```
 
-1. In the "ribbons" array, replace the existing object with the following code. Note the following about these changes.
+1. In the [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) array, replace the existing object with the following code. Note the following about these changes.
 
-    - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso CRM** button to appear in Outlook on mobile devices and on desktop clients.
-    - The "logEventMeetingDetailsAttendee" value in the "contexts" array configures the add-in button to appear in the Appointment Attendee surface, so that users can log their appointment notes.
-    - The object in the "ribbons.tabs.groups.controls" array configures the add-in button that calls the note-logging function in Outlook desktop clients. The "actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
-    - The object in the "ribbons.tabs.customMobileRibbonGroups" array configures the add-in button that calls the note-logging function in Outlook on mobile devices. All nine of the objects specified in the "customMobileRibbonGroups.controls.icons" array are required for a mobile button. Additionally, the "customMobileRibbonGroups.controls.actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
+    - The `"desktop"` and `"mobile"` values in the [`"ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array configure the **Log to Contoso** button to appear in Outlook on mobile devices and on desktop clients.
+    - The `"logEventMeetingDetailsAttendee"` value in the `"contexts"` array configures the add-in button to appear in the Appointment Attendee surface, so that users can log their appointment notes.
+    - The object in the `"ribbons.tabs.groups.controls"` array configures the add-in button that calls the note-logging function in Outlook desktop clients. The `"actionId"` property must match the [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) of the object in the `"extensions.runtimes"` array.
+    - The object in the [`"ribbons.tabs.customMobileRibbonGroups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#custommobileribbongroups) array configures the add-in button that calls the note-logging function in Outlook on mobile devices. All nine of the objects specified in the `"customMobileRibbonGroups.controls.icons"` array are required for a mobile button. Additionally, the `"customMobileRibbonGroups.controls.actionId"` property must match the `"actions.id"` of the object in the `"extensions.runtimes"` array.
 
     ```json
     {
@@ -127,7 +127,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "desktopLogToCRM",
                                 "type": "button",
-                                "label": "Log to Contoso CRM",
+                                "label": "Log to Contoso",
                                 "icons": [
                                     {
                                         "size": 16,
@@ -158,8 +158,8 @@ To configure your add-in's manifest, select the type of manifest you're using.
                         "controls": [
                             {
                                 "id": "mobileLogToCRM",
-                                "label": "Log to Contoso CRM",
-                                "buttonType": "MobileButton",
+                                "label": "Log to Contoso",
+                                "type": "mobileButton",
                                 "icons": [
                                     {
                                         "scale": 1,
@@ -225,7 +225,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 1. Open the **manifest.json** file located at the root of your project.
 
-1. In the "authorization.permissions.resourceSpecific" array, find the *first* object and set its "name" property to "MailboxItem.ReadWrite.User". It should look like the following when you're done.
+1. In the `"authorization.permissions.resourceSpecific"` array, find the *first* object and set its `"name"` property to `"MailboxItem.ReadWrite.User"`. It should look like the following when you're done.
 
     ```json
     {
@@ -234,7 +234,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
     }
     ```
 
-1. In the "validDomains" array, ensure that the URL to `https://www.contoso.com` is included. The array should look like the following when you're done.
+1. In the `"validDomains"` array, ensure that the URL to `https://www.contoso.com` is included. The array should look like the following when you're done.
 
     ```json
     "validDomains": [
@@ -242,14 +242,14 @@ To configure your add-in's manifest, select the type of manifest you're using.
     ],
     ```
 
-1. In the "extensions.runtimes" array, delete the object whose "id" is set to "CommandsRuntime".
+1. In the `"extensions.runtimes"` array, delete the object whose `"id"` is set to `"CommandsRuntime"`.
 
-1. In the "ribbons" array, replace the existing object with the following code. Note the following about these changes.
+1. In the `"ribbons"` array, replace the existing object with the following code. Note the following about these changes.
 
-    - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso CRM** button to appear in Outlook on mobile devices and on desktop clients.
-    - The "logEventMeetingDetailsAttendee" value in the "contexts" array configures the add-in button to appear in the Appointment Attendee surface, so that users can open a task pane to view and log their appointment notes.
-    - The object in the "ribbons.tabs.groups.controls" array configures the add-in button to open a task pane in Outlook desktop clients. The "actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
-    - The object in the "ribbons.tabs.customMobileRibbonGroups" array configures the add-in button to open a task pane in Outlook on mobile devices. All nine of the objects specified in the "customMobileRibbonGroups.controls.icons" array are required for a mobile button. Additionally, the "customMobileRibbonGroups.controls.actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
+    - The `"desktop"` and `"mobile"` values in the `"ribbons.requirements.formFactors"` array configure the **Log to Contoso** button to appear in Outlook on mobile devices and on desktop clients.
+    - The `"logEventMeetingDetailsAttendee"` value in the `"contexts"` array configures the add-in button to appear in the Appointment Attendee surface, so that users can open a task pane to view and log their appointment notes.
+    - The object in the `"ribbons.tabs.groups.controls"` array configures the add-in button to open a task pane in Outlook desktop clients. The `"actionId"` property must match the `"actions.id"` of the object in the `"extensions.runtimes"` array.
+    - The object in the `"ribbons.tabs.customMobileRibbonGroups"` array configures the add-in button to open a task pane in Outlook on mobile devices. All nine of the objects specified in the `"customMobileRibbonGroups.controls.icons"` array are required for a mobile button. Additionally, the `"customMobileRibbonGroups.controls.actionId"` property must match the `"actions.id"` of the object in the `"extensions.runtimes"` array.
 
     ```json
     {
@@ -287,7 +287,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
                             {
                                 "id": "desktopOpenTaskpane",
                                 "type": "button",
-                                "label": "Log to Contoso CRM",
+                                "label": "Log to Contoso",
                                 "icons": [
                                     {
                                         "size": 16,
@@ -318,8 +318,8 @@ To configure your add-in's manifest, select the type of manifest you're using.
                         "controls": [
                             {
                                 "id": "mobileTaskpaneButton",
-                                "label": "Log to Contoso CRM",
-                                "buttonType": "MobileButton",
+                                "label": "Log to Contoso",
+                                "type": "mobileButton",
                                 "icons": [
                                     {
                                         "scale": 1,
@@ -381,7 +381,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 ---
 
-### XML manifest
+### Add-in only manifest
 
 To enable users to log appointment notes with your add-in, you must configure the [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) in the manifest under the parent element `MobileFormFactor`. Other form factors aren't supported.
 
@@ -467,7 +467,7 @@ To enable users to log appointment notes with your add-in, you must configure th
           </bt:Urls>
           <bt:ShortStrings>
             <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
-            <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
+            <bt:String id="residLabel" DefaultValue="Log to Contoso"/>
           </bt:ShortStrings>
           <bt:LongStrings>
             <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
@@ -562,7 +562,7 @@ To enable users to log appointment notes with your add-in, you must configure th
             </bt:Urls>
             <bt:ShortStrings>
               <bt:String id="residDescription" DefaultValue="Log appointment notes and other details to Contoso CRM."/>
-              <bt:String id="residLabel" DefaultValue="Log to Contoso CRM"/>
+              <bt:String id="residLabel" DefaultValue="Log to Contoso"/>
             </bt:ShortStrings>
             <bt:LongStrings>
               <bt:String id="residTooltip" DefaultValue="Log notes to Contoso CRM for this appointment."/>
@@ -577,7 +577,7 @@ To enable users to log appointment notes with your add-in, you must configure th
 ---
 
 > [!TIP]
-> To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
+> To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md) and [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
 ## Capture appointment notes
 
@@ -620,7 +620,7 @@ In this section, learn how your add-in can extract appointment details when the 
 
 1. Open the **./src/commands/commands.html** file of your add-in project.
 
-1. Locate `<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>`, then add the following code after it. This adds a reference to the **commands.js** file.
+1. Locate `<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>`, then add the following code after it. This adds a reference to the **commands.js** file.
 
     ```html
     <script type="text/javascript" src="commands.js"></script>
@@ -659,7 +659,7 @@ In this section, learn how to display the logged appointment notes and other det
 
 1. Open the **./src/taskpane/taskpane.html** file of your add-in project.
 
-1. Locate `<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>`, then add the following code after it. This references the **taskpane.js** file.
+1. Locate `<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>`, then add the following code after it. This references the **taskpane.js** file.
 
     ```html
     <script type="text/javascript" src="taskpane.js"></script>
@@ -858,7 +858,7 @@ If you'd like your users to undo logging or delete the logged appointment notes 
 ## Test and validate
 
 1. Follow the usual guidance to [test and validate your add-in](testing-and-tips.md).
-1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, on Windows (classic or [new (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)), or on Mac, restart Outlook on your Android or iOS mobile device.
+1. After you [sideload](sideload-outlook-add-ins-for-testing.md) the add-in in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) or classic), or on Mac, restart Outlook on your Android or iOS mobile device.
 1. Open an appointment as an attendee, then verify that under the **Meeting Insights** card, there's a new card with your add-in's name alongside the **Log** button.
 
 ### UI: Log the appointment notes

@@ -1,0 +1,1 @@
+Add-ins that interact with the user's calendar, meetings, or appointments are available only if the user opens the calendar in Outlook, not Teams. However, you can create a Teams meeting app and surface it in Outlook. For more information, see [Extend a Teams meeting app to Outlook](/microsoftteams/platform/m365-apps/extend-m365-meeting-app).

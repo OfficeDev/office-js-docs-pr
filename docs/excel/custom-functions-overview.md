@@ -1,7 +1,7 @@
 ---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
-ms.date: 03/20/2023
+ms.date: 11/11/2024
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -64,9 +64,14 @@ function add(first, second){
 }
 ```
 
+> [!TIP]
+> In Excel on the web, custom function descriptions and parameter descriptions display inline. This gives users additional information when writing custom functions. Learn how to configure the inline descriptions by exploring any of the [custom functions Script Lab samples](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/16-custom-functions) in Excel on the web. See the following screenshot for an example.
+>
+> ![A custom function with inline descriptions displayed in Excel on the web.](../images/custom-functions-inline-description.png)
+
 ### Manifest file
 
-The XML manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) creates) does several things.
+The add-in only manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) creates) does several things.
 
 - Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
 - Uses **\<ExtensionPoint\>** and **\<Resources\>** elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.

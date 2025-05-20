@@ -2,7 +2,7 @@
 title: Office Add-ins manifest
 description: Get an overview of the Office Add-in manifest and its uses.
 ms.topic: overview
-ms.date: 04/12/2024
+ms.date: 02/12/2025
 ms.localizationpriority: high
 ---
 
@@ -10,18 +10,18 @@ ms.localizationpriority: high
 
 Every Office add-in has a manifest. There are two types of manifests:
 
-- **XML manifest**: This is the only type of manifest that's currently supported for non-Outlook add-ins. As the name indicates, it's XML format. This type of manifest can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform.
-- **unified manifest for Microsoft 365**: This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that's installable as a unit.
+- **Add-in only manifest**: This type of manifest can be used for production add-ins in Excel, OneNote, Outlook, PowerPoint, Project, and Word. It can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform. Its format is XML.
+- **Unified manifest for Microsoft 365**: This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that's installable as a unit. You can use this type of manifest for production Outlook add-ins. It's available for preview in Excel, PowerPoint, and Word add-ins.
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
-The remainder of this article is applicable to both types of manifest. 
+The remainder of this article is applicable to both types of manifest.
 
 > [!TIP]
 >
-> - For an overview that is specific to the XML manifest, see [Office Add-ins XML manifest](xml-manifest-overview.md).
+> - For an overview that is specific to the add-in only manifest, see [Office Add-ins with an add-in only manifest](xml-manifest-overview.md).
 > - For an overview that's specific to the unified manifest, see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
-> - If you have some familiarity with the XML manifest, the article [Compare the XML manifest with the unified manifest for Microsoft 365](json-manifest-overview.md) explains the unified manifest by comparing it with the XML manifest.
+> - If you have some familiarity with the add-in only manifest, the article [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md) explains the unified manifest by comparing it with the add-in only manifest.
 
 The manifest file of an Office Add-in describes how your add-in should be activated when an end user installs and uses it with Office documents and applications.
 
@@ -53,7 +53,7 @@ Add-ins submitted to AppSource must also include a support URL in the manifest. 
 
 ## Specify domains you want to open in the add-in window
 
-When running in Office on the web or [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
+When running in Office on the web or [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the manifest file), that URL opens in a new browser window outside the add-in pane of the Office application.
 
 To override this (desktop Office) behavior, specify each domain you want to open in the add-in window in the manifest. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then, in desktop Office, that URL opens in a new browser window (outside the add-in pane).
 

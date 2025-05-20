@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 04/12/2024
+ms.date: 10/08/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ The following sections teach you how to develop an add-in that handles the `OnNe
 
 ## Set up your environment
 
-Complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator) which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -27,17 +27,34 @@ To configure the manifest, select the tab for the type of manifest you're using.
 
 1. Open the **manifest.json** file.
 
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
+1. Navigate to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array. In the array object, replace the value of the `"name"` property with `"MailboxItem.ReadWrite.User"`. This is needed by the add-in to be able to set the subject of the mail item.
 
-   - The "minVersion" of the Mailbox requirement set is configured to "1.10" as this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events.
-   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
+    ```json
+    ...
+    "authorization": {
+        "permissions": {
+            "resourceSpecific": [
+                {
+                    "name": "MailboxItem.ReadWrite.User",
+                    "type": "Delegated"
+                }
+            ]
+        }
+    },
+    ...
+    ```
+
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup:
+
+   - The `"minVersion"` of the Mailbox requirement set is configured to `"1.10"` as this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events.
+   - The `"id"` of the runtime is set to the descriptive name `"autorun_runtime"`.
+   - The `"code"` property has a child `"page"` property that is set to an HTML file and a child `"script"` property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
        - Office on Windows executes the event handlers in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Office on Mac and on the web, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+       - Office on Mac and on the web, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short", which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There are two types of "actions" that can run in the runtime. You'll create functions to correspond to these actions in a later step.
+   - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There are two types of [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) that can run in the runtime. You'll create functions to correspond to these actions in a later step.
 
     ```json
      {
@@ -71,7 +88,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
     }
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -79,7 +96,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
     ]
     ```
 
-1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the "id" properties of the objects in the "actions" array in an earlier step.
+1. Add the following object to the `"autoRunEvents"` array. The `"events"` property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the `"id"` properties of the objects in the `"actions"` array in an earlier step.
 
     ```json
       {
@@ -107,11 +124,11 @@ To configure the manifest, select the tab for the type of manifest you're using.
       }
     ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To enable event-based activation of your add-in, you must configure the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest.
 
-In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI, and [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
+In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 1. In your code editor, open the quick start project.
 
@@ -132,9 +149,9 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
         <!-- Event-based activation happens in a lightweight runtime.-->
         <Runtimes>
           <!-- HTML file including reference to or inline JavaScript event handlers.
-               This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows (preview). -->
+               This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows. -->
           <Runtime resid="WebViewRuntime.Url">
-            <!-- JavaScript file containing event handlers. This is used by Outlook on Windows. -->
+            <!-- JavaScript file containing event handlers. This is used by classic Outlook on Windows. -->
             <Override type="javascript" resid="JSRuntime.Url"/>
           </Runtime>
         </Runtimes>
@@ -202,7 +219,7 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html" />
         <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html" />
-        <!-- Entry needed for Outlook on Windows. -->
+        <!-- Entry needed for classic Outlook on Windows. -->
         <bt:Url id="JSRuntime.Url" DefaultValue="https://localhost:3000/launchevent.js" />
       </bt:Urls>
       <bt:ShortStrings>
@@ -224,7 +241,7 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
 > [!TIP]
 >
 > - To learn about runtimes in add-ins, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement event handling
 
@@ -263,17 +280,15 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
         });
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
-      Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
+    Office.actions.associate("onNewAppointmentComposeHandler", onNewAppointmentComposeHandler);
     ```
 
 1. Save your changes.
 
 > [!NOTE]
-> There are some limitations you must be aware of when developing an event-based add-in for Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+> There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
 
 ## Update the commands HTML file
 
@@ -320,7 +335,7 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
 
     [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
-1. In Outlook on the web or in new Outlook on Windows (preview), create a new message.
+1. In Outlook on the web or in new Outlook on Windows, create a new message.
 
     ![A message window in Outlook on the web with the subject set on compose.](../images/outlook-web-autolaunch-1.png)
 
@@ -328,9 +343,11 @@ In event-based add-ins, Outlook on Windows uses a JavaScript file, while Outlook
 
     ![A message window in Outlook on the new Mac UI with the subject set on compose.](../images/outlook-mac-autolaunch.png)
 
-1. In Outlook on Windows, create a new message.
+1. In classic Outlook on Windows, create a new message.
 
-    ![A message window in Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
+    ![A message window in classic Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Next steps
 

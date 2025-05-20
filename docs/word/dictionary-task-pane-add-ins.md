@@ -1,7 +1,7 @@
 ---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
-ms.date: 06/13/2023
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -57,7 +57,7 @@ Next, create a Word add-in project in Visual Studio.
 
 [!include[Visual Studio instructions to create Word solution](../includes/vs-word-instructions.md)]
 
-To learn more about the projects in a Word add-in solution, see the [quick start](/office/dev/add-ins/quickstarts/word-quickstart?tabs=visualstudio#explore-the-visual-studio-solution).
+To learn more about the projects in a Word add-in solution, see the [quick start](../quickstarts/word-quickstart-vs.md#explore-the-visual-studio-solution).
 
 ## Create a dictionary XML web service
 
@@ -217,7 +217,9 @@ To get started with development, you can do the following.
 
 A dictionary add-in consists of three main component files:
 
-- An XML manifest file that describes the add-in.
+- An XML-formatted add-in only manifest file that describes the add-in.
+  > [!IMPORTANT]
+  > The JSON-formatted [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) doesn't currently support dictionary add-ins.
 - An HTML file that provides the add-in's UI.
 - A JavaScript file that provides logic to get the user's selection from the document, sends the selection as a query to the web service, and then displays returned results in the add-in's UI.
 
@@ -293,7 +295,7 @@ The following is an example manifest file for a dictionary add-in.
 </OfficeApp>
 ```
 
-The **\<Dictionary\>** element and its child elements specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins XML manifest](../develop/xml-manifest-overview.md).
+The **\<Dictionary\>** element and its child elements specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md).
 
 ### Dictionary element
 
@@ -450,7 +452,7 @@ For this element, you can specify values for additional locales.
 
 ### Update your dictionary add-in's manifest file
 
-1. Open the XML manifest file in the add-in project.
+1. Open the manifest file in the add-in project.
 1. Update the value of the **\<ProviderName\>** element with your name.
 1. Replace the value of the **\<DisplayName\>** element's **\<DefaultValue\>** attribute with an appropriate name, for example, "Microsoft Office Demo Dictionary".
 1. Replace the value of the **\<Description\>** element's **\<DefaultValue\>** attribute with an appropriate description, for example, "The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It doesn't return real definitions.".
@@ -686,7 +688,7 @@ function errorHandler(jqXHR, textStatus, errorThrown) {
 
 ## Try it out
 
-1. Using Visual Studio, test the newly created Word add-in by pressing **F5** or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created Word add-in by pressing <kbd>F5</kbd> or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
 1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button to open the add-in task pane. (If you're using the volume-licensed perpetual version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
 

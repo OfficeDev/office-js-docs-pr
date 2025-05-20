@@ -1,7 +1,7 @@
 ---
 title: Understanding Outlook add-in permissions
 description: Outlook add-ins specify the required permission level in their manifest, which include restricted, read item, read/write item, or read/write mailbox. 
-ms.date: 01/16/2024
+ms.date: 10/17/2024
 ms.localizationpriority: medium
 ---
 
@@ -15,25 +15,18 @@ The four levels of permissions are cumulative: the **read/write mailbox** permis
 
 You can see the permissions requested by a mail add-in before installing it from [AppSource](https://appsource.microsoft.com). You can also see the required permissions of installed add-ins in the Exchange Admin Center.
 
+> [!TIP]
+> To make sure that your Outlook add-in specifies the correct permission level, verify the minimum permission level required by each API implemented by your add-in. For information on minimum permission levels, see [Outlook API reference](/javascript/api/outlook).
+
 ## restricted permission
 
 The **restricted** permission is the most basic level of permission. Outlook assigns this permission to a mail add-in by default if the add-in doesn't request a specific permission in its manifest.
 
 ### Can do
 
-[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
-
-- [Get only specific entities](match-strings-in-an-item-as-well-known-entities.md) (phone number, address, URL) from the item's subject or body.
-
-- Specify an [ItemIs activation rule](activation-rules.md#itemis-rule) that requires the current item in a read or compose form to be a specific item type, or [ItemHasKnownEntity rule](match-strings-in-an-item-as-well-known-entities.md) that matches any of a smaller subset of supported well-known entities (phone number, address, URL) in the selected item.
-
-  [!include[Rule features not supported by the unified manifest for Microsoft 365](../includes/rules-not-supported-json-note.md)]
-
-- Access any properties and methods that do **not** pertain to specific information about the user or item (see the next section for the list of members that do).
+Access any properties and methods that do **not** pertain to specific information about the user or item (see the next section for the list of members that do).
 
 ### Can't do
-
-- Use an [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rule on the contact, email address, meeting suggestion, or task suggestion entity.
 
 - Use the [ItemHasAttachment](/javascript/api/manifest/rule#itemhasattachment-rule) or [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule.
 
@@ -70,19 +63,15 @@ The **read item** permission is the next level of permission in the permissions 
 
 ### Can do
 
-- [Read all the properties](item-data.md) of the current item in a read or [compose form](get-and-set-item-data-in-a-compose-form.md), for example, [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) in a compose form.
+- Read all the properties of the current item in a read or compose form. For example, [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) in a compose form.
 
-- [Get a callback token to get item attachments](get-attachments-of-an-outlook-item.md) or the full item with Exchange Web Services (EWS) or [Outlook REST APIs](use-rest-api.md).
+- In Exchange on-premises environments, get a callback token to get the full mail item with Exchange Web Services (EWS).
 
     [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 - [Write custom properties](/javascript/api/outlook/office.customproperties) set by the add-in on that item.
 
-- [Get all existing well-known entities](match-strings-in-an-item-as-well-known-entities.md), not just a subset, from the item's subject or body.
-
-    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
-
-- Use all the [well-known entities](activation-rules.md#itemhasknownentity-rule) in [ItemHasKnownEntity](/javascript/api/manifest/rule#itemhasknownentity-rule) rules, or [regular expressions](activation-rules.md#itemhasregularexpressionmatch-rule) in [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rules.
+- Use regular expressions in a [contextual add-in](contextual-outlook-add-ins.md).
 
 ### Can't do
 
@@ -119,7 +108,7 @@ Specify **read/write item** permission in the manifest to request this permissio
 
 ### Can do
 
-- [Read and write all item-level properties](item-data.md) of the item that is being viewed or composed in Outlook.
+- Read and write all item-level properties of the item that is being viewed or composed in Outlook.
 
 - [Add or remove attachments](add-and-remove-attachments-to-an-item-in-a-compose-form.md) of that item.
 
@@ -137,13 +126,13 @@ Specify **read/write item** permission in the manifest to request this permissio
 
 The **read/write mailbox** permission is the highest level of permission.
 
-In addition to what the **read/write item** permission supports, the token provided by **mailbox.getCallbackTokenAsync** provides access to use Exchange Web Services (EWS) operations or Outlook REST APIs to do the following:
+In Exchange on-premises environments, the token provided by **mailbox.getCallbackTokenAsync** provides access to use Exchange Web Services (EWS) operations or Outlook REST APIs to do the following:
 
 - Read and write all properties of any item in the user's mailbox.
 - Create, read, and write to any folder or item in that mailbox.
-- Send an item from that mailbox
+- Send an item from that mailbox.
 
-Through **mailbox.makeEWSRequestAsync**, you can access the following EWS operations.
+Through **mailbox.makeEwsRequestAsync**, you can access the following EWS operations.
 
 - [CopyItem](/exchange/client-developer/web-service-reference/copyitem-operation)
 - [CreateFolder](/exchange/client-developer/web-service-reference/createfolder-operation)
@@ -167,4 +156,3 @@ Attempting to use an unsupported operation will result in an error response.
 ## See also
 
 - [Privacy, permissions, and security for Outlook add-ins](../concepts/privacy-and-security.md)
-- [Match strings in an Outlook item as well-known entities](match-strings-in-an-item-as-well-known-entities.md)

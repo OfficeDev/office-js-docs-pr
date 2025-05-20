@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 05/20/2024
+ms.date: 03/11/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -19,7 +19,7 @@ The following sections walk you through how to develop an event-based add-in tha
 
 Before you start the walkthrough, verify that your Outlook client supports the Smart Alerts feature. For guidance, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms).
 
-Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart.md?tabs=yeomangenerator), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+Then, complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), which creates an add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Configure the manifest
 
@@ -29,15 +29,15 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Open the **manifest.json** file.
 
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup:
 
-   - The "minVersion" of the Mailbox requirement set is set to "1.12" because the [supported events table](autolaunch.md#supported-events) specifies that this is the lowest version of the requirement set that supports the `OnMessageSend` event.
-   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
+   - Although the `OnMessageSend` event was introduced in requirement set 1.12, the `"minVersion"` is set to `"1.15"`. This supports the use of Smart Alerts enhancements that were introduced in later requirement sets.
+   - The `"id"` of the runtime is set to the descriptive name `"autorun_runtime"`.
+   - The `"code"` property has a child `"page"` property that is set to an HTML file and a child `"script"` property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
        - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Outlook on the web, on Mac, and on [new Outlook on Windows (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+       - Outlook on the web, on Mac, and on [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short", which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
    - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
 
     ```json
@@ -67,7 +67,7 @@ To configure the manifest, select the tab for the type of manifest you are using
     }
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -75,10 +75,10 @@ To configure the manifest, select the tab for the type of manifest you are using
     ]
     ```
 
-1. Add the following object to the "autoRunEvents" array. Note the following about this code:
+1. Add the following object to the `"autoRunEvents"` array. Note the following about this code:
 
-   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, "messageSending", as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in "actionId" must match the name used in the "id" property of the object in the "actions" array in an earlier step.
-   - The "sendMode" option is set to "softBlock". This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in `"actionId"` must match the name used in the `"id"` property of the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array in an earlier step.
+   - The `"sendMode"` option is set to `"softBlock"`. This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
 
     ```json
       {
@@ -86,7 +86,7 @@ To configure the manifest, select the tab for the type of manifest you are using
               "capabilities": [
                   {
                       "name": "Mailbox",
-                      "minVersion": "1.12"
+                      "minVersion": "1.15"
                   }
               ],
               "scopes": [
@@ -105,7 +105,7 @@ To configure the manifest, select the tab for the type of manifest you are using
       }
     ```
 
-# [XML Manifest](#tab/xmlmanifest)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 1. In your code editor, open the quick start project.
 
@@ -117,7 +117,7 @@ To configure the manifest, select the tab for the type of manifest you are using
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
         <Requirements>
-          <bt:Sets DefaultMinVersion="1.12">
+          <bt:Sets DefaultMinVersion="1.15">
             <bt:Set Name="Mailbox" />
           </bt:Sets>
         </Requirements>
@@ -126,7 +126,7 @@ To configure the manifest, select the tab for the type of manifest you are using
             <!-- Event-based activation happens in a lightweight runtime.-->
             <Runtimes>
               <!-- HTML file including reference to or inline JavaScript event handlers.
-                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows (preview). -->
+                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows. -->
               <Runtime resid="WebViewRuntime.Url">
                 <!-- JavaScript file containing event handlers. This is used by classic Outlook on Windows. -->
                 <Override type="javascript" resid="JSRuntime.Url"/>
@@ -217,13 +217,13 @@ To configure the manifest, select the tab for the type of manifest you are using
 > [!TIP]
 >
 > - For a list of send mode options available with the `OnMessageSend` and `OnAppointmentSend` events, see [Available send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options).
-> - To learn more about manifests for Outlook add-ins, see [Office add-in manifests](../develop/add-in-manifests.md).
+> - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement event handling
 
 You have to implement handling for your selected event.
 
-In this scenario, you'll add handling for sending a message. Your add-in will check for certain keywords in the message. If any of those keywords are found, it will then check if there are any attachments. If there are no attachments, your add-in will recommend to the user to add the possibly missing attachment.
+In this scenario, you'll add handling for sending a message. Your add-in will check for certain keywords in the message. If any of those keywords are found, it will then check for any attachments. If there are no attachments, your add-in will recommend to the user to add the possibly missing attachment.
 
 1. From the same quick start project, create a new folder named **launchevent** under the **./src** directory.
 
@@ -296,48 +296,70 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
         event.completed({
           allowEvent: false,
-          errorMessage: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending."
+          errorMessage: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook)."
         });
       } else {
         event.completed({
           allowEvent: false,
-          errorMessage: "Looks like you're forgetting to include an attachment."
+          errorMessage: "Looks like you're forgetting to include an attachment.",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: "Looks like you're forgetting to include an attachment.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook)."
         });
       }
     }
 
-    // IMPORTANT: To ensure your add-in is supported in the Outlook client on Windows, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-    if (Office.context.platform === Office.PlatformType.PC || Office.context.platform == null) {
-      Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
-    }
+    // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
+    Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
 
 > [!IMPORTANT]
-> When developing your Smart Alerts add-in to run in Outlook on Windows, keep the following in mind.
 >
-> - Imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
-> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs in Outlook on Windows, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
+> - In classic Outlook on Windows, imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
+> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
+> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
-## Customize the Don't Send button (optional)
+## Customize the text and functionality of a button in the dialog (optional)
 
 > [!NOTE]
 >
-> - Support to customize the **Don't Send** button was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> Support to customize a button in the Smart Alerts dialog was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
-If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. The [send mode option](onmessagesend-onappointmentsend-events.md#available-send-mode-options) specified in the manifest determines the options that appear to the user in the dialog. The **Don't Send** option appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog. To provide the user with further guidance on how to meet the conditions of your add-in, customize the text of this button and program it to open a task pane where you can provide additional information and functionality.
+If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. To provide the user with further guidance on how to meet the conditions of your add-in, you can customize the text of a button in the dialog and program it to open a task pane or run a function.
 
-### Modify the Don't Send button text and functionality
+The button you can customize depends on the Outlook client and version on which the add-in is running.
 
-To modify the text of the **Don't Send** button or assign it a task pane command, you must set additional options in the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method of your event handler.
+| Client | Customizable dialog button | Specifications |
+| --- | --- | --- |
+| **Windows (classic)**<br>[Supported Mailbox 1.14 versions](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#version-support-for-requirement-sets-in-classic-outlook-on-windows) prior to Version 2412 (Build 18324.20000)<br><br>**Mac (preview)** | **Don't Send** | The text and functionality of the **Don't Send** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Don't Send** button appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog.<br><br>![Smart Alerts dialog with the Don't Send button.](../images/outlook-smart-alerts-dont-send.png) |
+| **Web browser**<br><br>**Windows (new)**<br><br>**Windows (classic)**<br>Version 2412 (Build 18324.20000) or later | **Take Action** | The text and functionality of the **Take Action** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Take Action** button only appears in the Smart Alerts dialog when you configure a task pane or function to run from the dialog. When the **Take Action** button is present, the **Don't Send** button is used to cancel the mail item being sent. The text and functionality of the **Don't Send** button can't be customized.<br><br>![Smart Alerts dialog with the Take Action button.](../images/outlook-smart-alerts-take-action.png) |
 
-- The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the **Don't Send** button. Custom text must be a maximum of 20 characters.
-- The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane that opens when the **Don't Send** button is selected. The value must match the task pane ID in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
-  - **XML manifest**: The `id` attribute of the **\<Control\>** element representing the task pane.
-  - **Unified manifest for Microsoft 365**: The "id" property of the task pane command in the "controls" array.
-- The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the **Don't Send** button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data is ignored.
+> [!NOTE]
+> In classic Outlook on Windows, if you customized the text and functionality of the **Don't Send** button in your Smart Alerts add-in prior to Version 2412 (Build 18324.20000), no additional action is needed to implement the **Take Action** button in the latest supported versions. The default or customized **Take Action** button will automatically appear the next time a user receives a Smart Alerts dialog. Although no implementation changes are needed, we recommend notifying users of this updated experience.
+>
+> If you only customized the text of the **Don't Send** button in earlier supported versions, your custom text won't appear in the latest versions that support the **Take Action** implementation.
+
+To modify the text of the dialog button or assign it a task pane or function, you must set additional options in the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method of your event handler.
+
+- The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the applicable button. Custom text must be a maximum of 20 characters.
+- The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane or function that runs when the applicable button is selected. The value must match the task pane or function command ID in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
+  - **Add-in only manifest**: The `id` attribute of the **\<Control\>** element representing the task pane or function command.
+  - **Unified manifest for Microsoft 365**: The "id" property of the task pane or function command in the "controls" array.
+
+  In supported Outlook clients and versions, when the `commandId` option is specified, the **Take Action** button appears in the Smart Alerts dialog.
+- The [contextData](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-contextdata-member) option specifies any JSON data you want to pass to the add-in when the applicable button is selected. If you include this option, you must also set the `commandId` option. Otherwise, the JSON data is ignored.
 
   > [!TIP]
-  > To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) in the JavaScript implementation of your task pane.
+  > When you configure a button in the Smart Alerts dialog to run a function, a button for the implemented add-in command is also added to the ribbon or action bar of the Outlook client. Use the `contextData` option to distinguish when a user runs the function from the Smart Alerts dialog.
+  >
+  > To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) in the JavaScript implementation of your task pane or function command.
+
+In this sample, the dialog button is modified to open a task pane.
 
 1. Navigate to the **./src/launchevent** folder, then open **launchevent.js**.
 1. Replace the **getAttachmentsCallback** function with the following code.
@@ -356,6 +378,10 @@ To modify the text of the **Don't Send** button or assign it a task pane command
         event.completed({
           allowEvent: false,
           errorMessage: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
@@ -363,6 +389,10 @@ To modify the text of the **Don't Send** button or assign it a task pane command
         event.completed({
           allowEvent: false,
           errorMessage: "Looks like you're forgetting to include an attachment.",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: "Looks like you're forgetting to include an attachment.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
@@ -376,7 +406,7 @@ To modify the text of the **Don't Send** button or assign it a task pane command
 
 > [!NOTE]
 >
-> - Support to customize the **Don't Send** button was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> Support to override the send mode option at runtime was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 There may be instances when you want your add-in to implement different send mode options. For example, you may want your add-in to enforce the **block** option on mail items that don't meet the information protection policies of your organization, but only have it apply the **prompt user** option to provide a recommendation if a user adds the incorrect recipient.
 
@@ -399,6 +429,10 @@ To override the send mode option at runtime, you must set the [sendModeOverride]
         event.completed({
           allowEvent: false,
           errorMessage: "Looks like the body of your message includes an image or an inline file. Would you like to attach a copy of it to the message?",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: "Looks like the body of your message includes an image or an inline file. Would you like to attach a copy of it to the message?\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
           cancelLabel: "Attach a copy",
           commandId: "msgComposeOpenPaneButton",
           sendModeOverride: Office.MailboxEnums.SendModeOverride.PromptUser
@@ -407,6 +441,10 @@ To override the send mode option at runtime, you must set the [sendModeOverride]
         event.completed({
           allowEvent: false,
           errorMessage: "Looks like you're forgetting to include an attachment.",
+          // TIP: In addition to the formatted message, it's recommended to also set a
+          // plain text message in the errorMessage property for compatibility on
+          // older versions of Outlook clients.
+          errorMessageMarkdown: "Looks like you're forgetting to include an attachment.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
           cancelLabel: "Add an attachment",
           commandId: "msgComposeOpenPaneButton"
         });
@@ -418,7 +456,12 @@ To override the send mode option at runtime, you must set the [sendModeOverride]
 
 ## Configure the task pane (optional)
 
-If you implemented the optional steps to customize the **Don't Send** button or override the send mode option in this walkthrough, you also need to configure the task pane. Although the task pane is needed in this implementation, it isn't a requirement to customize the text of the **Don't Send** button or override the send mode option.
+If you implemented the optional steps to customize a dialog button or override the send mode option in this walkthrough, you also need to configure the task pane.
+
+> [!NOTE]
+> In Outlook on the web, new Outlook on Windows, supported versions of classic Outlook on Windows prior to Version 2412 (Build 18324.20000), and Outlook on Mac, you can customize the text of the **Don't Send** button without implementing a task pane or function command. Although the task pane is needed in this sample, it isn't a requirement to be able to customize the button text or override the send mode option in these clients.
+>
+> In classic Outlook on Windows starting in Version 2412 (Build 18324.20000), you must implement a task pane or function command to customize the **Take Action** button. This is because the **Take Action** button only appears in the Smart Alerts dialog when a task pane or function command is implemented in the add-in.
 
 1. Navigate to the **./src/taskpane** folder, then open **taskpane.html**.
 1. Select the entire **\<body\>** node (including its open and close tags) and replace it with the following code.
@@ -480,7 +523,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
     export async function addAttachment() {
       const attachmentUrl = document.querySelector("#attachment-url").value;
       Office.context.mailbox.item.addFileAttachmentAsync(attachmentUrl, getFileName(attachmentUrl), (asyncResult) => {
-        console.log(asyncResult);
+        console.log("Added attachment.");
       });
     }
 
@@ -500,14 +543,14 @@ If you implemented the optional steps to customize the **Don't Send** button or 
       const base64String =
         "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnUExURQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN0S+bUAAAAMdFJOUwAQIDBAUI+fr7/P7yEupu8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVGhD7dfLdoMwDEVR6Cspzf9/b20QYOthS5Zn0Z2kVdY6O2WULrFYLBaLxd5ur4mDZD14b8ogWS/dtxV+dmx9ysA2QUj9TQRWv5D7HyKwuIW9n0vc8tkpHP0W4BOg3wQ8wtlvA+PC1e8Ao8Ld7wFjQtHvAiNC2e8DdqHqKwCrUPc1gE1AfRVgEXBfB+gF0lcCWoH2tYBOYPpqQCNwfT3QF9i+AegJfN8CtAWhbwJagtS3AbIg9o2AJMh9M5C+SVGBvx6zAfmT0r+Bv8JMwP4kyFPir+cswF5KL3WLv14zAFBCLf56Tw9cparFX4upgaJUtPhrOS1QlY5W+vWTXrGgBFB/b72ev3/0igUdQPppP/nfowfKUUEFcP207y/yxKmgAYQ+PywoAFOfCH3A2MdCFzD3kdADBvq10AGG+pXQBgb7pdAEhvuF0AIc/VtoAK7+JciAs38KIuDugyAC/v4hiMCE/i7IwLRBsh68N2WQjMVisVgs9i5bln8LGScNcCrONQAAAABJRU5ErkJggg==";
 
-      // Gets the current body of the message.
+      // Get the current body of the message.
       mailItem.body.getAsync(Office.CoercionType.Html, (bodyResult) => {
         if (bodyResult.status === Office.AsyncResultStatus.Failed) {
           console.log(bodyResult.error.message);
           return;
         }
 
-        // Inserts the Base64-encoded image to the beginning of the body.
+        // Insert the Base64-encoded image to the beginning of the body.
         const options = { isInline: true, asyncContext: bodyResult.value };
         mailItem.addFileAttachmentFromBase64Async(base64String, "sample.png", options, (attachResult) => {
           if (attachResult.status === Office.AsyncResultStatus.Failed) {
@@ -516,7 +559,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
           }
 
           let body = attachResult.asyncContext;
-          body = body.replace("<p class=MsoNormal>", `<p class=MsoNormal><img src="cid:sample.png">`);
+          body += '<img src="cid:sample.png" />';
           mailItem.body.setAsync(body, { coercionType: Office.CoercionType.Html }, (setResult) => {
             if (setResult.status === Office.AsyncResultStatus.Failed) {
               console.log(setResult.error.message);
@@ -532,6 +575,54 @@ If you implemented the optional steps to customize the **Don't Send** button or 
 
 1. Save your changes.
 
+### Programmatically send the item from the task pane (optional)
+
+> [!NOTE]
+> The `sendAsync` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its supported clients and platforms.
+
+To further streamline a user's experience when recommending changes to the mail items they're sending, call the [sendAsync](/javascript/api/requirement-sets/outlook/requirement-set-1.15/office.context.mailbox.item?view=outlook-js-1.15&preserve-view=true#methods) method in your task pane or function command code.
+
+1. In **taskpane.js**, replace the `addAttachment` function with the following code.
+
+    ```javascript
+    // Adds the specified URL as an attachment to the message.
+    // Then, programmatically sends the message.
+    export async function addAttachment() {
+      const attachmentUrl = document.querySelector("#attachment-url").value;
+      Office.context.mailbox.item.addFileAttachmentAsync(attachmentUrl, getFileName(attachmentUrl), (asyncResult) => {
+        console.log("Added attachment");
+
+        // Programmatically send the item.
+        Office.context.mailbox.item.sendAsync((sendResult) => {
+            if (sendResult.status === Office.AsyncResultStatus.Failed) {
+                console.log(`Unable to send the message: ${sendResult.error.message}`);
+                return;
+            }
+
+            // Don't run additional operations here. Process them before the sendAsync call instead.
+        });
+
+        // Don't run additional operations after the sendAsync call. Process them before the sendAsync call instead.
+      });
+    }
+    ````
+
+    > [!TIP]
+    > - Any code implemented to run when `asyncResult.status` is `Office.AsyncResultStatus.Success` or after the `sendAsync` method isn't guaranteed to be processed. This is because the item may have already been sent and the add-in has completed processing. We recommend processing other operations before calling `sendAsync`.
+    > - The `sendAsync` implementation varies between a task pane and function command implementation. For guidance, see the [sendAsync](/javascript/api/requirement-sets/outlook/requirement-set-1.15/office.context.mailbox.item?view=outlook-js-1.15&preserve-view=true#methods) reference documentation.
+
+1. Save your changes.
+1. In **taskpane.html**, update the label of the `add-attachment` button.
+
+    ```html
+    <span id="add-attachment" class="ms-Button-label">Add and send</span>
+    ```
+
+    > [!TIP]
+    > It's good practice to indicate to the user when your add-in programmatically sends the mail item they're composing. Depending on your implementation, you can indicate this in the label of a button or add a note to the task pane.
+
+1. Save your changes.
+
 ## Update the commands HTML file
 
 1. In the **./src/commands** folder, open **commands.html**.
@@ -543,7 +634,7 @@ If you implemented the optional steps to customize the **Don't Send** button or 
    ```
 
   > [!IMPORTANT]
-  > The **Don't Send** button customization and send mode option override features are currently in preview in Outlook on Mac. If you're testing these features in your add-in project, you must include a reference to the preview version of the Office JavaScript API in your **commands.html** file.
+  > The dialog button customization and send mode option override features are currently in preview in Outlook on Mac. If you're testing these features in your add-in project, you must include a reference to the preview version of the Office JavaScript API in your **commands.html** file.
   >
   > ```html
   > <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
@@ -586,24 +677,34 @@ If you implemented the optional steps to customize the **Don't Send** button or 
     [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
-1. Send the message. A dialog appears requesting you to add an attachment. Select **Don't Send** or **Add an attachment**. The option available to you depends on whether you implemented the optional step to customize the **Don't Send** button.
+1. Send the message. A dialog appears requesting you to add an attachment. Select **Don't Send**, **Take Action**, or **Add an attachment**. The options available to you depend on your Outlook client and whether you implemented the optional step to customize the dialog button.
 
     - Default **Don't Send** button.
 
         ![Dialog requesting the user to add an attachment to the message.](../images/outlook-win-smart-alerts.png)
 
-    - Customized **Add an attachment** button.
+    - Default **Take Action** button.
+
+        ![Dialog with a Take Action button that opens a task pane.](../images/outlook-win-smart-alerts-take-action.png)
+
+    - Customized **Add an attachment** button. Applies to Outlook on the web, new Outlook on Windows, and classic Outlook on Windows (starting in Version 2412 (Build 18324.20000)).
+
+        ![Dialog with a customized Take Action button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-take-action.png)
+
+    - Customized **Add an attachment** button. Applies to classic Outlook on Windows prior to Version 2412 (Build 18324.20000).
 
         ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
 
-    > [!TIP]
-    > If you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
+    > [!NOTE]
+    > In supported versions of classic Outlook on Windows prior to Version 2410 (Build 18031.15000), if you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
 
-1. Add an attachment to your message. If you implemented the optional step to customize the **Don't Send** button, use the task pane to add an attachment.
+1. Add an attachment to your message. If you implemented the optional step to customize a dialog button, use the task pane to add an attachment.
 
     ![Task pane with an option to add an attachment.](../images/outlook-smart-alerts-task-pane.png)
 
-1. Send the message. There should be no alert this time.
+1. Send the message. If you implemented the optional step to programmatically send the message from the task pane, the message will send when you select **Add and send**. There should be no alert this time.
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ### Try out overriding the send mode option at runtime (optional)
 
@@ -613,13 +714,19 @@ If you implemented the optional step to override the send mode option at runtime
 
     [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
-1. In Outlook on Windows, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
+1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
 1. From the ribbon, select **Contoso Add-in** > **Show Taskpane**.
 1. In the task pane, select **Add an inline image**. An image is added to the body of your message.
 1. Send the message. A dialog appears recommending to attach a copy of the image to the message.
 1. Select **Send Anyway** to send the message as is, or select **Attach a copy** to include a copy before sending the message.
 
-    ![Smart Alerts dialog with the Send Anyway option available at runtime.](../images/outlook-smart-alerts-send-mode-override.png)
+    - Applies to Outlook on the web, new Outlook on Windows, and classic Outlook on Windows (starting in Version 2412 (Build 18324.20000)).
+
+        ![Customized Smart Alerts dialog with the Send Anyway option available at runtime.](../images/outlook-smart-alerts-custom-button-and-override.png)
+
+    - Applies to classic Outlook on Windows prior to Version 2412 (Build 18324.20000).
+
+        ![Smart Alerts dialog with the Send Anyway option available at runtime in classic Outlook on Windows prior to Version 2412 (Build 18324.20000).](../images/outlook-smart-alerts-send-mode-override.png)
 
 > [!IMPORTANT]
 > If a Smart Alerts add-in that implements the override feature can't complete processing an event due to an error or is unavailable when the event occurs, it uses the send mode option specified in the manifest.
@@ -628,7 +735,7 @@ If you implemented the optional step to override the send mode option at runtime
 
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
 - [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Office add-in manifests](../develop/add-in-manifests.md)
+- [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)

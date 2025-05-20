@@ -326,7 +326,7 @@ The final step is to get the ID token by calling `getAccessToken`.
 
 # [Visual Studio 2019](#tab/vs2019)
 
-Choose **Debug** > **Start Debugging**, or press **F5**.
+Choose **Debug** > **Start Debugging**, or press <kbd>F5</kbd>.
 
 # [Yo Office](#tab/yooffice)
 
@@ -342,6 +342,18 @@ The add-in will display the name, email, and ID of the account you signed in wit
 
 > [!NOTE]
 > If you encounter any errors, review the registration steps in this article for the app registration. Missing a detail when setting up the app registration is a common cause of issues working with SSO. If you still can't get the add-in to run successfully, see [Troubleshoot error messages for single sign-on (SSO)](troubleshoot-sso-in-office-add-ins.md).
+
+## Stop the add-in
+
+# [Visual Studio 2019](#tab/vs2019)
+
+Choose **Stop Debugging**, or press <kbd>Shift</kbd>+<kbd>F5</kbd>.
+
+# [Yo Office](#tab/yooffice)
+
+Run `npm stop` from the command line.
+
+---
 
 ## See also
 

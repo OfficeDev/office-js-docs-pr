@@ -1,7 +1,7 @@
 ---
 title: Integrate built-in Office buttons into custom control groups and tabs
 description: Learn how to include built-in Office buttons in your custom command groups and tabs on the Office ribbon.
-ms.date: 02/15/2024
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,9 +15,88 @@ You can insert built-in Office buttons into your custom control groups on the Of
 > This article assumes that you're familiar with the article [Basic concepts for add-in commands](add-in-commands.md). Please review it if you haven't done so recently.
 
 > [!IMPORTANT]
->
-> - The add-in feature and markup described in this article is *only available in PowerPoint on the web, on Windows, and on Mac*.
-> - The markup described in this article only works on platforms that support requirement set **AddinCommands 1.3**. See the later section [Behavior on unsupported platforms](#behavior-on-unsupported-platforms).
+> The add-in feature described in this article is only available in **PowerPoint** on the web, on Windows, and on Mac.
+
+Open the tab for the type of manifest your add-in uses for the details of the manifest markup.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+
+## Insert a built-in control group into a custom tab
+
+To insert a built-in Office control group into a custom tab, add a group object with a [`"builtInGroupId"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#builtintabid) property *instead of an [`"id"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#id) property* to the [`"groups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#groups) array of your custom tab object. Set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in group object should have no other properties.*
+
+The following example adds the Office Paragraph control group to a custom tab.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "ribbons": [
+            ...
+            {
+                ...
+                "tabs": [
+                    {
+                        "id": "MyTab",
+                        ...
+                        "groups": [
+                            ... // Optionally, other groups in the tab
+                            {
+                                "builtInGroupId": "Paragraph"
+                            },
+                            ... // Optionally, other groups in the tab
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+
+## Insert a built-in control into a custom group
+
+To insert a built-in Office control into a custom group, add a control object with a `"builtInControlId"` property *instead of an `"id"` property* to the [`"controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item#controls) array of your custom group object. Set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in control object should have no other properties.*
+
+The following example adds the Office Superscript control to a custom group.
+
+```json
+"extensions": [
+    ...
+    {
+        ...
+        "ribbons": [
+            ...
+            {
+                ...
+                "tabs": [
+                    {
+                        ...
+                        "groups": [
+                            {
+                                "id": "MyGroup",
+                                ...
+                                "controls": [
+                                    ... // Optionally, other controls in the group
+                                    {
+                                        "builtInControlId": "Superscript"
+                                    },
+                                    ... // Optionally, other controls in the group
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+```
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 ## Insert a built-in control group into a custom tab
 
@@ -64,6 +143,8 @@ The following markup example adds the Office Superscript control to a custom gro
 </ExtensionPoint>
 ```
 
+---
+
 > [!NOTE]
 > Users can customize the ribbon in the Office application. Any user customizations will override your manifest settings. For example, a user can remove a button from any group and remove any group from a tab.
 
@@ -73,4 +154,4 @@ The IDs for supported controls and control groups are in files in the repo [Offi
 
 ## Behavior on unsupported platforms
 
-If your add-in is installed on a platform that doesn't support [requirement set AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), then the markup described in this article is ignored and the built-in Office controls/groups won't appear in your custom groups/tabs. To prevent your add-in from being installed on platforms that don't support the markup, add a reference to the requirement set in the **\<Requirements\>** section of the manifest. For instructions, see [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Alternatively, design your add-in to have an experience when **AddinCommands 1.3** isn't supported, as described in [Design for alternate experiences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). For example, if your add-in contains instructions that assume the built-in buttons are in your custom groups, you could design a version that assumes that the built-in buttons are only in their usual places.
+If your add-in is installed on a platform that doesn't support [requirement set AddinCommands 1.3](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), then the markup described in this article is ignored and the built-in Office controls/groups won't appear in your custom groups/tabs. To prevent your add-in from being installed on platforms that don't support the markup, you must specify **AddinCommands 1.3** in the manifest as a requirement for installation. For instructions, see [Specify which Office versions and platforms can host your add-in](../develop/specify-office-hosts-and-api-requirements.md#specify-which-office-versions-and-platforms-can-host-your-add-in). Alternatively, design your add-in to have an experience when **AddinCommands 1.3** isn't supported, as described in [Design for alternate experiences](../develop/specify-office-hosts-and-api-requirements.md#design-for-alternate-experiences). For example, if your add-in contains instructions that assume the built-in buttons are in your custom groups, you could design a version that assumes that the built-in buttons are only in their usual places.

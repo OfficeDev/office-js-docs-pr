@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> The Office Add-ins Development Kit extension only supports creating add-ins that use the [add-in only manifest](../develop/xml-manifest-overview.md). It also only creates Excel, PowerPoint, and Word add-ins at this time. Support for Outlook is under development, as are additional samples and other improvements. We welcome any feedback you have on the tool. Issues and features requests should be submitted through [GitHub issues on the extension's repo](https://aka.ms/officedevkitnewissue).
