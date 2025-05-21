@@ -800,6 +800,8 @@ items:
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
       href: outlook/web-services.md
+    - name: Manage notifications
+      href: outlook/notifications.md
     - name: Get or set categories
       href: outlook/categories.md
     - name: Get or set internet headers
