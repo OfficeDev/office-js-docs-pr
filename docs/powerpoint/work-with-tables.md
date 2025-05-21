@@ -144,14 +144,14 @@ options.specificCellProperties[1][1] = {
 };
 ```
 
-You can also specify a [fill](/javascript/api/powerpoint/powerpoint.tablecellproperties#powerpoint-powerpoint-tablecellproperties-fill-member) property which is of type [FillProperties](/javascript/api/powerpoint/powerpoint.fillproperties). The `fill` property can specify a color and the transparency percentage. The following code sample shows how to create a fill for all table cells using the color "light red" and a 50% transparency.
+You can also specify a [fill](/javascript/api/powerpoint/powerpoint.tablecellproperties#powerpoint-powerpoint-tablecellproperties-fill-member) property which is of type [FillProperties](/javascript/api/powerpoint/powerpoint.fillproperties). The `fill` property can specify a color and the transparency percentage. The following code sample shows how to create a fill for all table cells using the color "dark red" and a 50% transparency.
 
 ```javascript
 uniformCellProperties: {
     fill: {
-        color: "lightred",
-            transparency: 0.5
-    },
+        color: "darkred",
+        transparency: 0.5
+    }
 }
 ```
 
@@ -248,15 +248,15 @@ const options: PowerPoint.TableAddOptions = {
 };
 options.specificCellProperties[0][0] = {
     horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.left,
-    verticalAlignment: 0 //PowerPoint.TextVerticalAlignment.top
+    verticalAlignment: PowerPoint.TextVerticalAlignment.top
 };
 options.specificCellProperties[1][0] = {
     horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
-    verticalAlignment: 1 //PowerPoint.TextVerticalAlignment.middle
+    verticalAlignment: PowerPoint.TextVerticalAlignment.middle
 };
 options.specificCellProperties[2][0] = {
     horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.right,
-    verticalAlignment: 2 //PowerPoint.TextVerticalAlignment.bottom
+    verticalAlignment: PowerPoint.TextVerticalAlignment.bottom
 };
 await insertTableOnCurrentSlide(3, 3, options);
 ```
@@ -288,7 +288,7 @@ const options: PowerPoint.TableAddOptions = {
     uniformCellProperties: {
         fill: { color: "lightcyan" },
         horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
-        verticalAlignment: 1, //PowerPoint.TextVerticalAlignment.middle
+        verticalAlignment: PowerPoint.TextVerticalAlignment.middle,
         borders: {
             bottom: {
                 color: "black",
