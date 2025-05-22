@@ -79,7 +79,7 @@ Blocked:
 ]
 ```
 
-The report only shows a single entry per add-in. If multiple calls from many users are made from a single add-in for Exchange tokens, those calls appear in the report as one request. The date updates every seven days. In the previous example, the report shows Script lab being granted tokens on May 16. The date won't change unless Script lab continues to make token requests on May 23rd at which point the report will update the date.
+The report only shows a single entry per add-in. If multiple calls from many users are made from a single add-in for Exchange tokens, those calls appear in the report as one request. The date updates every seven days. In the previous example, the report shows Script lab being granted tokens on May 16. The date won't change unless Script Lab continues to make token requests on May 23rd at which point the report will update the date.
 
 To confirm an add-in is no longer requesting Exchange tokens, run the command after seven days and check that the date doesn't change.
 
