@@ -4,7 +4,7 @@ description: Turn legacy Exchange Online tokens on or off
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to
-ms.date: 05/19/2025
+ms.date: 05/22/2025
 ---
 
 # Turn legacy Exchange Online tokens on or off
@@ -64,9 +64,26 @@ Blocked: []
 PS C:\>
 ```
 
-The **Allowed** and **Blocked** sections list the IDs of any add-ins that made recent requests. If an add-in ID is listed in the **Allowed** list, it was granted an Exchange token. If an add-in ID is listed in the **Blocked** list, it was denied an access token because access tokens are turned off.
+The **Allowed** and **Blocked** sections list the IDs of any add-ins that made recent requests. If an add-in ID is listed in the **Allowed** list, it was granted an Exchange token. If an add-in ID is listed in the **Blocked** list, it was denied an access token because access tokens are turned off. The following example shows the Script Lab ID being granted a token on May 16, and also blocked from a token on February 25th. Tokens were turned off for the tenant in February, and turned on in May, so Script Lab appears in both sections.
 
-If you have IDs listed in **Allowed** or **Blocked** do additional research to identify the publisher and reach out to them to ensure they are migrating their add-in away from legacy Exchange Online tokens. For more information on identifying publishers, see [Commands to identify the publisher in the FAQ](faq-nested-app-auth-outlook-legacy-tokens.md#what-commands-can-i-use-to-identify-the-publisher).
+```console
+PS C:\> Get-AuthenticationPolicy -AllowLegacyExchangeTokens
+AllowLegacyExchangeTokens: True
+Allowed:
+[
+        { "49d3b812-abda-45b9-b478-9bc464ce5b9c" : "2025-05-16" }
+]
+Blocked:
+[
+        { "49d3b812-abda-45b9-b478-9bc464ce5b9c" : "2025-02-25" }
+]
+```
+
+The report only shows a single entry per add-in. If multiple calls from many users are made from a single add-in for Exchange tokens, those calls appear in the report as one request. The date updates every seven days. In the previous example, the report shows Script lab being granted tokens on May 16. The date won't change unless Script Lab continues to make token requests on May 23rd at which point the report will update the date.
+
+To confirm an add-in is no longer requesting Exchange tokens, run the command after seven days and check that the date doesn't change.
+
+If you have IDs listed in **Allowed** or **Blocked** that are requesting legacy tokens, identify the publisher and reach out to them to ensure they are migrating their add-in away from legacy tokens. For more information on identifying publishers, see [Commands to identify the publisher in the FAQ](faq-nested-app-auth-outlook-legacy-tokens.md#what-commands-can-i-use-to-identify-the-publisher).
 
 > [!NOTE]
 > The `Get-AuthenticationPolicy -AllowLegacyExchangeTokens` command is the only way to view legacy token status. Other commands, such as `Get-AuthenticationPolicy | Format-Table -Auto Name`, don't return the legacy token status.
