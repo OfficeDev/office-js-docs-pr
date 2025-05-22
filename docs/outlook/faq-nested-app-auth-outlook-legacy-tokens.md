@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 05/19/2025
+ms.date: 05/22/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -24,7 +24,7 @@ Legacy Exchange online tokens have already been turned off for most tenants. We'
 | Date     | Legacy tokens status |
 | -------- | ------------------------------------------------------ |
 | Now | Legacy tokens turned off for most tenants. Admins can reenable legacy tokens via PowerShell. |
-| Jun 2025 | Legacy tokens turned off for all tenants. Admins can no longer reenable legacy tokens via PowerShell and must contact Microsoft for any exception. |
+| Jun 2025 | Legacy tokens turned off for all tenants. Admins can no longer reenable legacy tokens via PowerShell. Admins can request an exception through Microsoft Support at [https://aka.ms/LegacyTokensByOctober](https://aka.ms/LegacyTokensByOctober) (this link requires you to sign in to your tenant). |
 | Oct 2025 | Legacy tokens turned off for all tenants. Exceptions are no longer allowed. |
 
 ### When is NAA generally available for my channel?
@@ -138,7 +138,7 @@ Use the following steps to perform the test.
 
 Yes, there are PowerShell commands you can use to turn legacy tokens on or off in any tenant. For more information on how to turn legacy tokens on or off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 
-In June 2025, legacy tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants.
+In June 2025, legacy tokens will be turned off and you won't be able to turn them back on. Admins can request an exception through Microsoft Support at [https://aka.ms/LegacyTokensByOctober](https://aka.ms/LegacyTokensByOctober) (this link requires you to sign in to your tenant). In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants.
 
 ### How does the admin consent flow work?
 
