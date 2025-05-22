@@ -158,7 +158,7 @@ The following sections describes each notification type, including its [properti
         **Description**
     :::column-end:::
     :::column span="3":::
-        Provides information or feedback to the user. For example, use the `InformationalMessage` type to notify the user that their file upload completed successfully. :::image type="content" source="../images/outlook-informational-notification.png" alt-text="An informational notification.":::
+         Provides information or feedback to the user with an option to perform an action. For example, use the `InsightMessage` type to recommend adding catering services to a meeting with external recipients. :::image type="content" source="../images/outlook-insight-notification.png" alt-text="An insight message notification.":::
     :::column-end:::
 :::row-end:::
 :::row:::
