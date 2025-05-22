@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect. Exchange user identity tokens are JSON Web Tokens (JWT). The steps required to validate a JWT are described in [RFC 7519 JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt).
 
-We suggest that you use a four-step process to validate the identity token and obtain the user's unique identifier. First, extract the JSON Web Token (JWT) from a base64 URL-encoded string. Second, make sure that the token is well-formed, that it is for your Outlook add-in, that it has not expired, and that you can extract a valid URL for the authentication metadata document. Next, retrieve the authentication metadata document from the Exchange server and validate the signature attached to the identity token. Finally, compute a unique identifier for the user by concatenating the user's Exchange ID with the URL of the authentication metadata document.
+We suggest that you use a four-step process to validate the identity token and obtain the user's unique identifier. First, extract the JSON Web Token (JWT) from a Base64 URL-encoded string. Second, make sure that the token is well-formed, that it is for your Outlook add-in, that it has not expired, and that you can extract a valid URL for the authentication metadata document. Next, retrieve the authentication metadata document from the Exchange server and validate the signature attached to the identity token. Finally, compute a unique identifier for the user by concatenating the user's Exchange ID with the URL of the authentication metadata document.
 
 ## Extract the JSON Web Token
 
@@ -22,7 +22,7 @@ The token returned from [getUserIdentityTokenAsync](/javascript/api/requirement-
 {header}.{payload}.{signature}
 ```
 
-The header and payload should be base64-decoded to obtain a JSON representation of each part. The signature should be base64-decoded to obtain a byte array containing the binary signature.
+The header and payload should be Base64-decoded to obtain a JSON representation of each part. The signature should be Base64-decoded to obtain a byte array containing the binary signature.
 
 For more information about the contents of the token, see [Inside the Exchange identity token](inside-the-identity-token.md).
 
@@ -98,7 +98,7 @@ The authentication metadata document uses the following format.
 }
 ```
 
-The available signing keys are in the `keys` array. Select the correct key by ensuring that the `x5t` value in the `keyinfo` property matches the `x5t` value in the header of the token. The public key is inside the `value` property in the `keyvalue` property, stored as a base64-encoded byte array.
+The available signing keys are in the `keys` array. Select the correct key by ensuring that the `x5t` value in the `keyinfo` property matches the `x5t` value in the header of the token. The public key is inside the `value` property in the `keyvalue` property, stored as a Base64-encoded byte array.
 
 After you have the correct public key, verify the signature. The signed data is the first two parts of the encoded token, separated by a period:
 
