@@ -125,7 +125,7 @@ The following sections describes each notification type, including its [properti
         **Properties**
     :::column-end:::
     :::column span="3":::
-        - Must specify an icon. Although an icon is required, the custom icon is only currently displayed in classic Outlook on Windows. On other platforms, an information icon is shown.
+        - Must specify an icon. Although an icon is required, the custom icon is currently displayed only in classic Outlook on Windows. On other platforms, an information icon is shown.
         - Includes a **Dismiss** action to close the notification.
         - Can be customized to persist even after a user switches to another mail item. The notification remains until the add-in removes it or the user selects **Dismiss**.
     :::column-end:::
@@ -166,7 +166,7 @@ The following sections describes each notification type, including its [properti
         **Properties**
     :::column-end:::
     :::column span="3":::
-        - Must specify an icon. Although an icon is required, the custom icon is only currently displayed in classic Outlook on Windows. On other platforms, an information icon is shown.
+        - Must specify an icon. Although an icon is required, the custom icon is currently displayed only in classic Outlook on Windows. On other platforms, an information icon is shown.
         - Includes an option to perform one [action](/javascript/api/outlook/office.notificationmessageaction). Currently, opening the add-in's task pane is the only supported action.
         - Includes a **Dismiss** action to close the notification.
         - Doesn't persist when a user switches to another mail item.
@@ -237,9 +237,7 @@ When creating and managing notifications for your add-in, be mindful of the foll
 
 ### Maximum number of notifications per mail item
 
-In Outlook on the web, on Windows (new and classic), and on Mac, you can add a maximum of five notifications per message. This doesn't apply to the `InsightMessage` type. For more information, see [InsightMessage limitations](#insightmessage-limitations).
-
-In Outlook on mobile devices, only one notification can be added to a message. Setting an additional notification replaces the existing one.
+In Outlook on the web, on Windows (new and classic), and on Mac, you can add a maximum of five notifications per message. In Outlook on mobile devices, only one notification can be added to a message. Setting an additional notification replaces the existing one.
 
 ### InsightMessage limitations
 
@@ -247,19 +245,19 @@ Only one `InsightMessage` notification is allowed per add-in on a mail item. In 
 
 ### Notification icons and unified manifest for Microsoft 365
 
-If your add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), you can't currently customize the icon of an `InformationalMessage` or `InsightMessage` notification. The notification will use the first image specified in the ["icons"](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item) array of the first [extensions.ribbons.tabs.groups.controls](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item) object of the manifest. Although this is the case, you must still specify a string in the [icon](/javascript/api/outlook/office.notificationmessagedetails#outlook-office-notificationmessagedetails-icon-member) property of your [NotificationMessageDetails](/javascript/api/outlook/office.notificationmessagedetails) object (for example, "icon-16").
+If your add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), you can't currently customize the icon of an `InformationalMessage` or `InsightMessage` notification. The notification will use the first image specified in the ["icons"](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#icons) array of the first [extensions.ribbons.tabs.groups.controls](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item) object of the manifest. Although this is the case, you must still specify a string in the [icon](/javascript/api/outlook/office.notificationmessagedetails#outlook-office-notificationmessagedetails-icon-member) property of your [NotificationMessageDetails](/javascript/api/outlook/office.notificationmessagedetails) object (for example, "icon-16").
 
 ### Notification icons in Outlook on mobile devices
 
 In compose mode, while the style of each notification type varies on other Outlook clients, notifications in Outlook on Android and on iOS all use the same style. The notification message always uses an information icon.
 
-### Notifications for multiple selected items
+### Notifications for multiple selected messages
 
-When managing notifications for multiple selected mail items, only the `getAllAsync` method is supported. To learn more, see [Activate your Outlook add-in on multiple messages](item-multi-select.md).
+When managing notifications for multiple selected messages, only the `getAllAsync` method is supported. To learn more, see [Activate your Outlook add-in on multiple messages](item-multi-select.md).
 
 ### Best practices for ProgressIndicator notifications
 
-When implementing a `ProgressIndicator` notification in your add-in, replace it with another notification type once the applicable operation or action completes. This is a best practice to ensure that your users always get the latest status of an operation.
+When implementing a `ProgressIndicator` notification in your add-in, once the applicable operation or action completes, replace the progress notification with another notification type. This is a best practice to ensure that your users always get the latest status of an operation.
 
 ## Try the code example in Script Lab
 
