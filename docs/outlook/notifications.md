@@ -1,7 +1,7 @@
 ---
 title: Create notifications for your Outlook add-in
 description: Learn about the types of notification messages you can create for your Outlook add-in.
-ms.date: 05/20/2025
+ms.date: 05/27/2025
 ms.localizationpriority: medium
 ---
 
@@ -61,14 +61,50 @@ notificationMessages.removeAsync(notificationKey, (result) => {
 
 ## Types of notifications
 
-A notification consists of a unique identifier, an icon, and a message. Depending on the type, it could also include a **Dismiss** action or a custom action. There are different [types of notifications](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) you can display to the user to fit your particular scenario. The following table describes each notification type, including its [properties](/javascript/api/outlook/office.notificationmessagedetails) and supported platforms.
+A notification consists of a unique identifier, an icon, and a message. Depending on the type, it could also include a **Dismiss** action or a custom action. There are different [types of notifications](/javascript/api/outlook/office.mailboxenums.itemnotificationmessagetype) you can display to the user to fit your particular scenario.
 
-| Notification type | Description | Properties | Minimum requirement set | Supported platforms |
-| ----- | ----- | ----- | ----- | ----- |
-| `ErrorMessage` | Alerts the user about an error or failed operation. For example, use the `ErrorMessage` type to notify the user that their personalized signature wasn't successfully added to a message. :::image type="content" source="../images/outlook-error-notification.png" alt-text="An error message notification."::: | <ul><li>Displays an error icon. This icon can't be customized.</li><li>Includes a **Dismiss** action to close the notification. If a user doesn't dismiss the error notification, it remains visible until the user sees it once before switching to another mail item.</li></ul> | [1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3) | <ul><li>Web</li><li>Windows (new and classic)</li><li>Mac</li><li>Android</li><li>iOS</li></ul> |
-| `InformationalMessage` | Provides information or feedback to the user. For example, use the `InformationalMessage` type to notify the user that their file upload completed successfully. :::image type="content" source="../images/outlook-informational-notification.png" alt-text="An informational notification."::: | <ul><li>Must specify an icon. Although an icon is required, the custom icon is only currently displayed in classic Outlook on Windows. On other platforms, an information icon is shown.</li><li>Includes a **Dismiss** action to close the notification.</li><li>Can customize to persist even after a user switches to another mail item. The notification remains until the add-in removes it or the user selects **Dismiss**.</li></ul> | [1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3) | <ul><li>Web</li><li>Windows (new and classic)</li><li>Mac</li><li>Android</li><li>iOS</li></ul> |
-| `InsightMessage` | Provides information or feedback to the user with an option to perform an action. For example, use the `InsightMessage` type to recommend adding catering services to a meeting with external recipients. :::image type="content" source="../images/outlook-insight-notification.png" alt-text="An insight message notification."::: | <ul><li>Must specify an icon. Although an icon is required, the custom icon is only currently displayed in classic Outlook on Windows. On other platforms, an information icon is shown.</li><li>Includes an option to perform one [action](/javascript/api/outlook/office.notificationmessageaction). Currently, opening the add-in's task pane is the only supported action.</li><li>Includes a **Dismiss** action to close the notification.</li><li>Doesn't persist when a user switches to another mail item.</li></ul> | [1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) | <ul><li>Web</li><li>Windows (new and classic)</li><li>Mac</li></ul> |
-| `ProgressIndicator` | Indicates the progress of an add-in operation. For example, use the `ProgressIndicator` to inform the user that their file is in the process of being attached to the mail item. :::image type="content" source="../images/outlook-progress-notification.png" alt-text="A progress indicator notification."::: | <ul><li>In classic Outlook on Windows, displays a progress icon. On other platforms, displays an information icon. This icon can't be customized.</li><li>Doesn't persist when a user switches to another mail item.</li></ul> | [1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3) | <ul><li>Web</li><li>Windows (new and classic)</li><li>Mac</li><li>Android</li><li>iOS</li></ul> |
+- [ErrorMessage](#errormessage)
+- [InformationalMessage](#informationalmessage)
+- [InsightMessage](#insightmessage)
+- [ProgressIndicator](#progressindicator)
+
+The following sections describes each notification type, including its [properties](/javascript/api/outlook/office.notificationmessagedetails) and supported platforms.
+
+### ErrorMessage
+
+| | |
+| --- | --- |
+| **Description** | Alerts the user about an error or failed operation. For example, use the `ErrorMessage` type to notify the user that their personalized signature wasn't successfully added to a message. :::image type="content" source="../images/outlook-error-notification.png" alt-text="An error message notification."::: |
+| **Properties** | <ul><li>Displays an error icon. This icon can't be customized.</li><li>Includes a **Dismiss** action to close the notification. If a user doesn't dismiss the error notification, it remains visible until the user sees it once before switching to another mail item.</li></ul> |
+| **Minimum requirement set** | [1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3) |
+| **Supported platforms** | <ul><li>Web</li><li>Windows (new and classic)</li><li>Mac</li><li>Android</li><li>iOS</li></ul> |
+
+### InformationalMessage
+
+| | |
+| --- | --- |
+| **Description** | Provides information or feedback to the user. For example, use the `InformationalMessage` type to notify the user that their file upload completed successfully. :::image type="content" source="../images/outlook-informational-notification.png" alt-text="An informational notification."::: |
+| **Properties** | <ul><li>Must specify an icon. Although an icon is required, the custom icon is only currently displayed in classic Outlook on Windows. On other platforms, an information icon is shown.</li><li>Includes a **Dismiss** action to close the notification.</li><li>Can customize to persist even after a user switches to another mail item. The notification remains until the add-in removes it or the user selects **Dismiss**.</li></ul> |
+| **Minimum requirement set** | [1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3) |
+| **Supported platforms** | <ul><li>Web</li><li>Windows (new and classic)</li><li>Mac</li><li>Android</li><li>iOS</li></ul> |
+
+### InsightMessage
+
+| | |
+| --- | --- |
+| **Description** |  Provides information or feedback to the user with an option to perform an action. For example, use the `InsightMessage` type to recommend adding catering services to a meeting with external recipients. :::image type="content" source="../images/outlook-insight-notification.png" alt-text="An insight message notification."::: |
+| **Properties** | <ul><li>Must specify an icon. Although an icon is required, the custom icon is only currently displayed in classic Outlook on Windows. On other platforms, an information icon is shown.</li><li>Includes an option to perform one [action](/javascript/api/outlook/office.notificationmessageaction). Currently, opening the add-in's task pane is the only supported action.</li><li>Includes a **Dismiss** action to close the notification.</li><li>Doesn't persist when a user switches to another mail item.</li></ul> |
+| **Minimum requirement set** | [1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10) |
+| **Supported platforms** | <ul><li>Web</li><li>Windows (new and classic)</li><li>Mac</li></ul> |
+
+### ProgressIndicator
+
+| | |
+| --- | --- |
+| **Description** | Indicates the progress of an add-in operation. For example, use the `ProgressIndicator` to inform the user that their file is in the process of being attached to the mail item. :::image type="content" source="../images/outlook-progress-notification.png" alt-text="A progress indicator notification."::: |
+| **Properties** | <ul><li>In classic Outlook on Windows, displays a progress icon. On other platforms, displays an information icon. This icon can't be customized.</li><li>Doesn't persist when a user switches to another mail item.</li></ul> |
+| **Minimum requirement set** | [1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3) |
+| **Supported platforms** | <ul><li>Web</li><li>Windows (new and classic)</li><li>Mac</li><li>Android</li><li>iOS</li></ul> |
 
 ## Feature behaviors
 
