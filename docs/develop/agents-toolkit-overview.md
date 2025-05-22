@@ -58,7 +58,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
     - **PowerPoint Desktop (Edge Chromium)**
     - **Word Desktop (Edge Chromium)**
 
-1. Press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, the desktop version of the Office application you selected opens.
+1. Press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, the desktop version of the Office application you selected opens.
 
     > [!NOTE]
     > If this is the first time that you have sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
@@ -82,7 +82,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 1. **Close Outlook desktop**.
 1. In Visual Studio Code, open Agents Toolkit.
 1. In the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
-1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop will open.
+1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop will open.
 
     > [!NOTE]
     > If this is the first time that you have sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
