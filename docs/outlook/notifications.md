@@ -166,7 +166,7 @@ The following sections describes each notification type, including its [properti
         **Properties**
     :::column-end:::
     :::column span="3":::
-        - Must specify an icon. Although an icon is required, the custom icon is currently displayed only in classic Outlook on Windows. On other platforms, an information icon is shown.
+        - Must specify an icon. Although an icon is required, the custom icon is displayed only in classic Outlook on Windows. On other platforms, an information icon is shown.
         - Includes an option to perform one [action](/javascript/api/outlook/office.notificationmessageaction). Currently, opening the add-in's task pane is the only supported action.
         - Includes a **Dismiss** action to close the notification.
         - Doesn't persist when a user switches to another mail item.
@@ -245,7 +245,7 @@ Only one `InsightMessage` notification is allowed per add-in on a mail item. In 
 
 ### Notification icons and unified manifest for Microsoft 365
 
-If your add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), you can't currently customize the icon of an `InformationalMessage` or `InsightMessage` notification. The notification will use the first image specified in the ["icons"](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#icons) array of the first [extensions.ribbons.tabs.groups.controls](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item) object of the manifest. Although this is the case, you must still specify a string in the [icon](/javascript/api/outlook/office.notificationmessagedetails#outlook-office-notificationmessagedetails-icon-member) property of your [NotificationMessageDetails](/javascript/api/outlook/office.notificationmessagedetails) object (for example, "icon-16").
+If your add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), you can't customize the icon of an `InformationalMessage` or `InsightMessage` notification. The notification uses the first image specified in the ["icons"](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#icons) array of the first [extensions.ribbons.tabs.groups.controls](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item) object of the manifest. Although this is the case, you must still specify a string in the [icon](/javascript/api/outlook/office.notificationmessagedetails#outlook-office-notificationmessagedetails-icon-member) property of your [NotificationMessageDetails](/javascript/api/outlook/office.notificationmessagedetails) object (for example, "icon-16").
 
 ### Notification icons in Outlook on mobile devices
 
