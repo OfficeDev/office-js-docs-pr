@@ -13,12 +13,12 @@ The slide insertion APIs are primarily used in presentation template scenarios: 
 
 There are two steps to inserting slides from one presentation into another.
 
-1. Convert the source presentation file (.pptx) into a base64-formatted string.
-1. Use the `insertSlidesFromBase64` method to insert one or more slides from the base64 file into the current presentation.
+1. Convert the source presentation file (.pptx) into a Base64-formatted string.
+1. Use the `insertSlidesFromBase64` method to insert one or more slides from the Base64 file into the current presentation.
 
-## Convert the source presentation to base64
+## Convert the source presentation to Base64
 
-There are many ways to convert a file to base64. Which programming language and library you use, and whether to convert on the server-side of your add-in or the client-side is determined by your scenario. Most commonly, you'll do the conversion in JavaScript on the client-side by using a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) object. The following example shows this practice.
+There are many ways to convert a file to Base64. Which programming language and library you use, and whether to convert on the server-side of your add-in or the client-side is determined by your scenario. Most commonly, you'll do the conversion in JavaScript on the client-side by using a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) object. The following example shows this practice.
 
 1. Begin by getting a reference to the source PowerPoint file. In this example, we will use an `<input>` control of type `file` to prompt the user to choose a file. Add the following markup to the add-in page.
 
@@ -46,9 +46,9 @@ There are many ways to convert a file to base64. Which programming language and 
 
 3. Add the following code. Note the following about this code.
 
-    - The `reader.readAsDataURL` method converts the file to base64 and stores it in the `reader.result` property. When the method completes, it triggers the `onload` event handler.
+    - The `reader.readAsDataURL` method converts the file to Base64 and stores it in the `reader.result` property. When the method completes, it triggers the `onload` event handler.
     - The `onload` event handler trims metadata off of the encoded file and stores the encoded string in a global variable.
-    - The base64-encoded string is stored globally because it will be read by another function that you create in a later step.
+    - The Base64-encoded string is stored globally because it will be read by another function that you create in a later step.
 
     ```javascript
     let chosenFileBase64;
@@ -70,7 +70,7 @@ There are many ways to convert a file to base64. Which programming language and 
 
 ## Insert slides with insertSlidesFromBase64
 
-Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a base64-encoded version of a PowerPoint presentation file.
+Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a Base64-encoded version of a PowerPoint presentation file.
 
 ```javascript
 async function insertAllSlides() {

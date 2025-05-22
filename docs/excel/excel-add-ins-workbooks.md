@@ -43,9 +43,9 @@ Your add-in can create a new workbook, separate from the Excel instance in which
 Excel.createWorkbook();
 ```
 
-The `createWorkbook` method can also create a copy of an existing workbook. The method accepts a base64-encoded string representation of an .xlsx file as an optional parameter. The resulting workbook will be a copy of that file, assuming the string argument is a valid .xlsx file.
+The `createWorkbook` method can also create a copy of an existing workbook. The method accepts a Base64-encoded string representation of an .xlsx file as an optional parameter. The resulting workbook will be a copy of that file, assuming the string argument is a valid .xlsx file.
 
-You can get your add-in's current workbook as a base64-encoded string by using [file slicing](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required base64-encoded string, as demonstrated in the following example.
+You can get your add-in's current workbook as a Base64-encoded string by using [file slicing](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)). The [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) class can be used to convert a file into the required Base64-encoded string, as demonstrated in the following example.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -54,7 +54,7 @@ let reader = new FileReader();
 
 reader.onload = (function (event) {
     Excel.run(function (context) {
-        // Remove the metadata before the base64-encoded string.
+        // Remove the metadata before the Base64-encoded string.
         let startIndex = reader.result.toString().indexOf("base64,");
         let externalWorkbook = reader.result.toString().substr(startIndex + 7);
 
@@ -63,13 +63,13 @@ reader.onload = (function (event) {
     });
 });
 
-// Read the file as a data URL so we can parse the base64-encoded string.
+// Read the file as a data URL so we can parse the Base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 
 ### Insert a copy of an existing workbook into the current one
 
-The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A [Workbook](/javascript/api/excel/excel.workbook) has the `insertWorksheetsFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as a base64-encoded string, just like the `Excel.createWorkbook` call.
+The previous example shows a new workbook being created from an existing workbook. You can also copy some or all of an existing workbook into the one currently associated with your add-in. A [Workbook](/javascript/api/excel/excel.workbook) has the `insertWorksheetsFromBase64` method to insert copies of the target workbook's worksheets into itself. The other workbook's file is passed as a Base64-encoded string, just like the `Excel.createWorkbook` call.
 
 ```TypeScript
 insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOptions): OfficeExtension.ClientResult<string[]>;
@@ -78,7 +78,7 @@ insertWorksheetsFromBase64(base64File: string, options?: Excel.InsertWorksheetOp
 > [!IMPORTANT]
 > The `insertWorksheetsFromBase64` method is supported for Excel on the web, on Windows, and on Mac. It's not supported for iOS. Additionally, in Excel on the web, this method doesn't support source worksheets with PivotTable, Chart, Comment, or Slicer elements. If those objects are present, the `insertWorksheetsFromBase64` method returns the `UnsupportedFeature` error in Excel on the web.
 
-The following code sample shows how to insert worksheets from another workbook into the current workbook. This code sample first processes a workbook file with a [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) object and extracts a base64-encoded string, and then it inserts this base64-encoded string into the current workbook. The new worksheets are inserted after the worksheet named **Sheet1**. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) property. This means that all the worksheets from the target workbook are inserted into the current workbook.
+The following code sample shows how to insert worksheets from another workbook into the current workbook. This code sample first processes a workbook file with a [`FileReader`](https://developer.mozilla.org/docs/Web/API/FileReader) object and extracts a Base64-encoded string, and then it inserts this Base64-encoded string into the current workbook. The new worksheets are inserted after the worksheet named **Sheet1**. Note that `[]` is passed as the parameter for the [InsertWorksheetOptions.sheetNamesToInsert](/javascript/api/excel/excel.insertworksheetoptions#excel-excel-insertworksheetoptions-sheetnamestoinsert-member) property. This means that all the worksheets from the target workbook are inserted into the current workbook.
 
 ```js
 // Retrieve the external workbook file and set up a `FileReader` object. 
@@ -87,7 +87,7 @@ let reader = new FileReader();
 
 reader.onload = (event) => {
     Excel.run((context) => {
-        // Remove the metadata before the base64-encoded string.
+        // Remove the metadata before the Base64-encoded string.
         let startIndex = reader.result.toString().indexOf("base64,");
         let externalWorkbook = reader.result.toString().substr(startIndex + 7);
             
@@ -107,7 +107,7 @@ reader.onload = (event) => {
     });
 };
 
-// Read the file as a data URL so we can parse the base64-encoded string.
+// Read the file as a data URL so we can parse the Base64-encoded string.
 reader.readAsDataURL(myFile.files[0]);
 ```
 

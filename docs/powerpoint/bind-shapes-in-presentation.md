@@ -53,7 +53,7 @@ await PowerPoint.run(async (context) => {
 
     // Fill shape with a Base64-encoded image. 
     // Note: The image is typically created from a data source request. 
-    const productsImage = "...base64 image data...";
+    const productsImage = "...Base64 image data...";
     myShape.fill.setImage(productsImage);
 });
 ```
