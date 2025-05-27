@@ -227,7 +227,7 @@ The following screenshot shows the data table that the preceding code sample cre
 
 ## Export a chart as an image
 
-Charts can be rendered as images outside of Excel. `Chart.getImage` returns the chart as a base64-encoded string representing the chart as a JPEG image. The following code shows how to get the image string and log it to the console.
+Charts can be rendered as images outside of Excel. `Chart.getImage` returns the chart as a Base64-encoded string representing the chart as a JPEG image. The following code shows how to get the image string and log it to the console.
 
 ```js
 await Excel.run(async (context) => {
@@ -236,7 +236,7 @@ await Excel.run(async (context) => {
     await context.sync();
     
     console.log(imageAsString.value);
-    // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+    // Instead of logging, your add-in may use the Base64-encoded string to save the image as a file or insert it in HTML.
 });
 ```
 
