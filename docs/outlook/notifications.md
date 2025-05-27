@@ -14,7 +14,7 @@ Implement notification messages for your Outlook add-in to keep your users infor
 
 ## Supported Outlook surfaces and modes
 
-Notification messages are supported on messages and appointments in both read and compose modes. They are displayed above the body of the mail item.
+Notification messages are supported on messages and appointments in both read and compose modes. They're displayed above the body of the mail item.
 
 :::image type="content" source="../images/outlook-notification.png" alt-text="An insight notification displayed in an appointment in compose mode.":::
 
@@ -68,7 +68,7 @@ A notification consists of a unique identifier, an icon, and a message. Dependin
 - [InsightMessage](#insightmessage)
 - [ProgressIndicator](#progressindicator)
 
-The following sections describes each notification type, including its [properties](/javascript/api/outlook/office.notificationmessagedetails) and supported platforms.
+The following sections describe each notification type, including its [properties](/javascript/api/outlook/office.notificationmessagedetails) and supported platforms.
 
 ### ErrorMessage
 
@@ -269,7 +269,7 @@ When implementing a `ProgressIndicator` notification in your add-in, once the ap
 
 ## Try the code example in Script Lab
 
-Learn how you can use notifications in your add-in by trying out the [Work with notification messages](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/refs/heads/main/samples/outlook/35-notifications/add-getall-remove.yaml) sample in [Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603). For more information on Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+Learn how you can use notifications in your add-in by trying out the [Work with notification messages](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/outlook/35-notifications/add-getall-remove.yaml) sample in [Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603). For more information on Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
 ## See also
 
