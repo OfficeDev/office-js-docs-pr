@@ -87,7 +87,7 @@ When developing an event-based add-in to run in the classic Outlook on Windows c
 - Add-ins don't run code included in `Office.onReady()` and `Office.initialize`. We recommend adding any startup logic, such as checking the user's Outlook version, to your event handlers instead.
 - Only the JavaScript file referenced in the manifest is supported for event-based activation. You must bundle your event-handling JavaScript code into this single file. The location of the referenced JavaScript file in the manifest varies depending on the type of manifest your add-in uses.
   - **Add-in only manifest**: **\<Override\>** child element of the **\<Runtime\>** node
-  - **Unified manifest for Microsoft 365**: "script" property of the "code" object
+  - **Unified manifest for Microsoft 365**: `"script"` property of the `"code"` object
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 
