@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 03/31/2025
+ms.date: 05/29/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -153,7 +153,7 @@ For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsE
 1. Create a new mailbox policy.
 
    ```powershell
-    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+    New-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
     > [!NOTE]
@@ -162,7 +162,7 @@ For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsE
 1. Set the **OnSendAddinsEnabled** flag to `true`.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to user mailboxes.

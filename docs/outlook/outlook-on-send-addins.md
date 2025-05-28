@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 04/12/2024
+ms.date: 05/29/2025
 ms.localizationpriority: medium
 ---
 
@@ -134,7 +134,7 @@ For all users, to disallow editing while on-send add-ins are processing:
 1. Create a new mailbox policy.
 
    ```powershell
-    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+    New-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
     > [!NOTE]
@@ -143,7 +143,7 @@ For all users, to disallow editing while on-send add-ins are processing:
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -159,7 +159,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 1. Create a new mailbox policy for the group.
 
    ```powershell
-    New-OWAMailboxPolicy FinanceOWAPolicy
+    New-OwaMailboxPolicy FinanceOWAPolicy
    ```
 
    > [!NOTE]
@@ -168,7 +168,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy FinanceOWAPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -186,7 +186,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 To turn off on-send compliance enforcement for a user, assign a mailbox policy that doesn't have the flag enabled by running the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox –OwaMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]
@@ -195,7 +195,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 To turn off on-send compliance enforcement for all users that have a specific Outlook on the web or new Outlook on Windows mailbox policy assigned, run the following cmdlets.
 
 ```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$false
 ```
 
 # [Web browser (classic)](#tab/classic)
@@ -224,7 +224,7 @@ To enable on-send add-ins for all users:
 1. Create a new Outlook on the web mailbox policy.
 
    ```powershell
-    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+    New-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
     > [!NOTE]
@@ -233,7 +233,7 @@ To enable on-send add-ins for all users:
 1. Enable the on-send feature.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -249,7 +249,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 1. Create a new Outlook on the web mailbox policy for the group.
 
    ```powershell
-    New-OWAMailboxPolicy FinanceOWAPolicy
+    New-OwaMailboxPolicy FinanceOWAPolicy
    ```
 
    > [!NOTE]
@@ -258,7 +258,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 1. Enable the on-send feature.
 
    ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy FinanceOWAPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -276,7 +276,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 To disable the on-send feature for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox –OwaMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]
@@ -285,7 +285,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 To disable the on-send feature for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.
 
 ```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$false
 ```
 
 # [Windows (classic)](#tab/windows)
