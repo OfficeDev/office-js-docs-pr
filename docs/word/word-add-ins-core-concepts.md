@@ -35,7 +35,7 @@ To understand the Word APIs, you must understand how key components of a documen
 * A range is a contiguous area of content, including text, whitespace, tables, and images. The [Word.Range](/javascript/api/word/word.range) object contains most of the text manipulation methods.
 * A list contains numbered or bulleted paragraphs.
 * The document is contained in a window.
-* A window has panes; a pane surrounds the visible area of the document.
+* A window has panes. A pane surrounds the visible area of the document.
 
 For the full set of objects supported by the Word JavaScript API, see [Word JavaScript API](/javascript/api/word).
 
