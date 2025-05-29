@@ -1,7 +1,7 @@
 ---
 title: Create notifications for your Outlook add-in
 description: Learn about the types of notification messages you can create for your Outlook add-in.
-ms.date: 05/27/2025
+ms.date: 05/29/2025
 ms.localizationpriority: medium
 ---
 
