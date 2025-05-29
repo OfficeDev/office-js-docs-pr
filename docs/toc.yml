@@ -265,6 +265,17 @@ items:
             href: design/custom-tab-placement.md
         - name: Content add-ins
           href: design/content-add-ins.md
+        - name: Copilot agents
+          items:
+          - name: Combine Copilot Agents with Office Add-ins
+            href: design/agent-and-add-in-overview.md
+            displayName: preview
+          - name: Build your first add-in as a Copilot skill
+            href: quickstarts/agent-and-add-in-quickstart.md
+            displayName: preview
+          - name: Add a Copilot agent to an add-in
+            href: develop/agent-and-add-in.md
+            displayName: preview
         - name: Dialog boxes
           items:
           - name: Use the Office dialog API in your Office Add-ins
@@ -293,8 +304,10 @@ items:
         href: develop/development-kit-overview.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
-      - name: Create add-ins with the Teams Toolkit
-        href: develop/teams-toolkit-overview.md
+      - name: Create add-ins with the Microsoft 365 Agents Toolkit
+        href: develop/agents-toolkit-overview.md
+      - name: Import an add-in project to Microsoft 365 Agents Toolkit
+        href: develop/import-teams-toolkit.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
       - name: Create and Develop add-ins with Visual Studio
@@ -475,6 +488,9 @@ items:
     - name: Charts
       href: excel/excel-add-ins-charts.md
       displayName: Excel
+    - name: Data labels in charts
+      href: excel/excel-add-ins-charts-data-labels.md
+      displayName: Excel
     - name: Coauthoring in Excel add-ins
       href: excel/co-authoring-in-excel-add-ins.md
       displayName: Excel
@@ -490,8 +506,17 @@ items:
         - name: Concepts
           href: excel/excel-data-types-concepts.md
           displayName: Excel
-        - name: Entity value cards
+        - name: Property values on basic types
+          href: excel/excel-data-types-add-properties-to-basic-cell-values.md
+          displayName: Excel
+        - name: Cards for cell value types
           href: excel/excel-data-types-entity-card.md
+          displayName: Excel
+        - name: Linked Entity values
+          href: excel/excel-data-types-linked-entity-cell-values.md
+          displayName: Excel
+        - name: Add reference methods for dot function notation
+          href: excel/excel-add-ins-dot-functions.md
           displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
@@ -575,6 +600,9 @@ items:
       displayName: Excel
     - name: Tables
       href: excel/excel-add-ins-tables.md
+      displayName: Excel
+    - name: Undo support
+      href: excel/excel-add-ins-undo-capabilities.md
       displayName: Excel
     - name: Workbooks
       href: excel/excel-add-ins-workbooks.md
@@ -786,6 +814,8 @@ items:
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
       href: outlook/web-services.md
+    - name: Manage notifications
+      href: outlook/notifications.md
     - name: Get or set body
       href: outlook/insert-data-in-the-body.md
     - name: Get or set categories
@@ -907,15 +937,15 @@ items:
     - name: Use document themes in your PowerPoint add-ins
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
-    - name: Work with tables
-      href: powerpoint/work-with-tables.md
-      displayName: PowerPoint, preview
     - name: Work with shapes
       href: powerpoint/shapes.md
       displayName: PowerPoint
     - name: Bind shapes to a data source
       href: powerpoint/bind-shapes-in-presentation.md
-      displayName: PowerPoint, preview
+      displayName: PowerPoint
+    - name: Work with tables
+      href: powerpoint/work-with-tables.md
+      displayName: PowerPoint
 - name: Project
   items:
   - name: Project add-ins documentation
@@ -982,6 +1012,9 @@ items:
       displayName: Word
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
+      displayName: Word
+    - name: Use annotations
+      href: word/annotations.md
       displayName: Word
     - name: Use fields
       href: word/fields-guidance.md

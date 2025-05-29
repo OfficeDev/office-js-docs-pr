@@ -61,7 +61,7 @@ Visual Studio creates a basic Outlook add-in that you'll be able to publish as-i
 
 ## Step 4: Sideload the manifest to Outlook
 
-Follow the guidance at [Sideload an Outlook add-in that uses an add-in only manifest](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-an-add-in-that-uses-an-add-in-only-manifest) to sideload the add-in.
+Follow the guidance at [Sideload an Outlook add-in that uses an add-in only manifest](../outlook/sideload-outlook-add-ins-for-testing.md?tabs=xmlmanifest) to sideload the add-in.
 
 ## See also
 

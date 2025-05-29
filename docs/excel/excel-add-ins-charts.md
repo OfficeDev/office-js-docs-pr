@@ -1,7 +1,7 @@
 ---
 title: Work with charts using the Excel JavaScript API
 description: Code samples demonstrating chart tasks using the Excel JavaScript API.
-ms.date: 02/15/2022
+ms.date: 04/14/2025
 ms.localizationpriority: medium
 ---
 
@@ -227,7 +227,7 @@ The following screenshot shows the data table that the preceding code sample cre
 
 ## Export a chart as an image
 
-Charts can be rendered as images outside of Excel. `Chart.getImage` returns the chart as a base64-encoded string representing the chart as a JPEG image. The following code shows how to get the image string and log it to the console.
+Charts can be rendered as images outside of Excel. `Chart.getImage` returns the chart as a Base64-encoded string representing the chart as a JPEG image. The following code shows how to get the image string and log it to the console.
 
 ```js
 await Excel.run(async (context) => {
@@ -236,7 +236,7 @@ await Excel.run(async (context) => {
     await context.sync();
     
     console.log(imageAsString.value);
-    // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+    // Instead of logging, your add-in may use the Base64-encoded string to save the image as a file or insert it in HTML.
 });
 ```
 
@@ -255,3 +255,4 @@ These parameters determine the size of the image. Images are always proportional
 ## See also
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with data labels in charts using the Excel JavaScript API](excel-add-ins-charts-data-labels.md)

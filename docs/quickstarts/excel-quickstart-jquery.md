@@ -38,7 +38,9 @@ The Office Add-ins Development Kit will create the project. It will then open th
 [!include[Dev_kit_stop_debugging](../includes/dev-kit-stop-debugging.md)]
 
 [!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]
+
 # [Yeoman generator](#tab/yeoman)
+
 ## Prerequisites
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
@@ -82,11 +84,13 @@ After you complete the wizard, the generator creates the project and installs su
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
+[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
+
+---
+
 ## Next steps
 
 Congratulations, you've successfully created an Excel task pane add-in! Next, learn more about the capabilities of an Excel add-in and build a more complex add-in by following along with the [Excel add-in tutorial](../tutorials/excel-tutorial.md).
-
-[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## Code samples
 
