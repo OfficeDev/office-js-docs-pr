@@ -245,7 +245,7 @@ Office.context.mailbox.item.body.setAsync(
   },
   (bodyResult) => {
     if (bodyResult.status === Office.AsyncResultStatus.Failed) {
-      console.log(`Failed to get body: ${bodyResult.error.message}`);
+      console.log(`Failed to set body: ${bodyResult.error.message}`);
       return;
     }
 
