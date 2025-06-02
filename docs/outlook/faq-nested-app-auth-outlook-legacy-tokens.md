@@ -191,7 +191,7 @@ Some widely used Outlook add-in publishers have already updated their add-ins as
 - [SalesForce for Outlook](https://appsource.microsoft.com/product/office/wa104379334)
 - [LawToolBox](https://lawtoolbox.com/lawtoolbox-for-copilot/)
 - [OnePlace Solutions](https://www.oneplacesolutions.com/oneplacemail-sharepoint-app-for-outlook.html)
-- [Set-OutlookSignatures Benefactor Circle](https://explicitconsulting.at/open-source/set-outlooksignatures/)
+- [Set-OutlookSignatures Benefactor Circle](https://set-outlooksignatures.com)
 - [Wrike](https://appsource.microsoft.com/product/office/wa104381120)
 - [Zoho CRM for Email](https://appsource.microsoft.com/product/office/WA104379468)
 - [Zoho Recruit for Email](https://appsource.microsoft.com/product/office/WA200001485)
