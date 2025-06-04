@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 05/29/2025
+ms.date: 06/05/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -211,11 +211,7 @@ If the **prompt user** or **soft block** option is used, the following behavior 
 - **Send Anyway** option is selected: The mail item is moved to the **Outbox** folder. When a connection is reestablished, the item is automatically sent.
 - **Don't Send** option is selected: The mail item is saved to the **Drafts** folder. This prevents the item from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
 
-//TODO - Add screenshot if a non-customizable message is shown.
-
 If the **block** option is used, the mail item is saved to the **Drafts** folder and a dialog is shown to the user notifying them to reconnect. This prevents the item from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
-
-//TODO - Add screenshot of reconnection dialog.
 
 #### Outlook client in Work Offline mode
 
