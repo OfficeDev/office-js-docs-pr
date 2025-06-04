@@ -145,7 +145,7 @@ For all users, to disallow editing while on-send add-ins are processing:
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy -OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -188,7 +188,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 To turn off on-send compliance enforcement for a user, assign a mailbox policy that doesn't have the flag enabled by running the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OwaMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox -OwaMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]

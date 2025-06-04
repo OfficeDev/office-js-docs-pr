@@ -162,7 +162,7 @@ For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsE
 1. Set the **OnSendAddinsEnabled** flag to `true`.
 
    ```powershell
-    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy -OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to user mailboxes.
