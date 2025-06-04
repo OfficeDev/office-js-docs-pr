@@ -193,7 +193,7 @@ For Outlook on Mac, the **OnSendAddinsWaitForLoad** mailbox key must be configur
 |**Domain**|com.microsoft.outlook|
 |**Key**|OnSendAddinsWaitForLoad|
 |**DataType**|Boolean|
-|**Possible values**|**false** (default): The currently downloaded manifests of the Smart Alerts add-ins (not necessarily the latest versions) run on outgoing mail items.<br><br>**true**: After the latest manifests of the Smart Alerts add-ins are downloaded from Exchange, the add-ins run on outgoing mail items. Otherwise, the item is blocked from being sent and the **Send** button becomes unavailable.|
+|**Possible values**|`false` (default): The currently downloaded manifests of the Smart Alerts add-ins (not necessarily the latest versions) run on outgoing mail items.<br><br>`true`: After the latest manifests of the Smart Alerts add-ins are downloaded from Exchange, the add-ins run on outgoing mail items. Otherwise, the item is blocked from being sent and the **Send** button becomes unavailable.|
 |**Availability**|16.27|
 |**Comments**|This key creates a policy to ensure that outgoing mail items are checked for compliance before they're sent.|
 
