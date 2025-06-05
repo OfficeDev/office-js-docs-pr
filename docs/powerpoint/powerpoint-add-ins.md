@@ -13,7 +13,7 @@ You can use PowerPoint add-ins to build engaging solutions for your users' prese
 
 - Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pexels - Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997) add-in, which you can use to add professional photos to your presentation. To create your own task pane add-in, you can start with [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md).
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which you can use to inject an interactive diagram from LucidChart into your deck. To create your own content add-in, you can start with [Build your first PowerPoint content add-in](../quickstarts/powerpoint-quickstart-content.md).
+- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which injects interactive diagrams from LucidChart into your deck. To create your own content add-in, start with [Build your first PowerPoint content add-in](../quickstarts/powerpoint-quickstart-content.md).
 
 ## PowerPoint add-in scenarios
 
@@ -112,7 +112,7 @@ In the following code sample, the  `getFileUrl` function calls the [Document.get
 
 ```js
 function getFileUrl() {
-    // Gets the URL of the current file.
+  // Gets the URL of the current file.
   Office.context.document.getFilePropertiesAsync(function (asyncResult) {
     const fileUrl = asyncResult.value.url;
     if (fileUrl === "") {
