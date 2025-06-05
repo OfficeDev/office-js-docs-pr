@@ -1,7 +1,7 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 05/22/2025
+ms.date: 06/05/2025
 ms.localizationpriority: medium
 ---
 
@@ -136,7 +136,7 @@ For all users, to disallow editing while on-send add-ins are processing:
 1. Create a new mailbox policy.
 
    ```powershell
-    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+    New-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
     > [!NOTE]
@@ -145,7 +145,7 @@ For all users, to disallow editing while on-send add-ins are processing:
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy -OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -161,7 +161,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 1. Create a new mailbox policy for the group.
 
    ```powershell
-    New-OWAMailboxPolicy FinanceOWAPolicy
+    New-OwaMailboxPolicy FinanceOWAPolicy
    ```
 
    > [!NOTE]
@@ -170,7 +170,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy FinanceOWAPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -188,7 +188,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 To turn off on-send compliance enforcement for a user, assign a mailbox policy that doesn't have the flag enabled by running the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox -OWAMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox -OwaMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]
@@ -197,7 +197,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox -OWAMailboxPolicy "ContosoCorpOW
 To turn off on-send compliance enforcement for all users that have a specific Outlook on the web or new Outlook on Windows mailbox policy assigned, run the following cmdlets.
 
 ```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$false
+Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$false
 ```
 
 # [Web browser (classic)](#tab/classic)
@@ -226,7 +226,7 @@ To enable on-send add-ins for all users:
 1. Create a new Outlook on the web mailbox policy.
 
    ```powershell
-    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+    New-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
     > [!NOTE]
@@ -235,7 +235,7 @@ To enable on-send add-ins for all users:
 1. Enable the on-send feature.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -251,7 +251,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 1. Create a new Outlook on the web mailbox policy for the group.
 
    ```powershell
-    New-OWAMailboxPolicy FinanceOWAPolicy
+    New-OwaMailboxPolicy FinanceOWAPolicy
    ```
 
    > [!NOTE]
@@ -260,7 +260,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 1. Enable the on-send feature.
 
    ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy FinanceOWAPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -278,7 +278,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 To disable the on-send feature for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox -OWAMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox –OwaMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]
@@ -287,7 +287,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox -OWAMailboxPolicy "ContosoCorpOW
 To disable the on-send feature for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.
 
 ```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy -OnSendAddinsEnabled:$false
+Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$false
 ```
 
 # [Windows (classic)](#tab/windows)
@@ -394,6 +394,17 @@ The on-send add-ins will run during send if the Exchange server is online and re
 
 > [!NOTE]
 > On Mac in any offline state, the **Send** button (or the **Send Update** button for existing meetings) is disabled and a notification displayed that their organization doesn't allow send when the user is offline.
+
+## Add-in availability when offline in new Outlook on Windows
+
+When a user turns on the [offline setting](https://support.microsoft.com/office/2460e4a8-16c7-47fc-b204-b1549275aac9) in the new Outlook on Windows, they can continue to access their emails and calendar if they lose internet connection. While some functionalities remain available, Outlook add-ins and the Microsoft 365 and Copilot store aren't available when offline. The following table describes the behavior of on-send add-ins when a machine is offline or has an intermittent connection.
+
+| Scenario | On-send add-in behavior |
+| ----- | ----- |
+| No internet connection when Outlook is launched | Because Outlook can't determine which add-ins are installed while offline, on-send add-ins can't activate when the `ItemSend` event occurs. To ensure that mail items are still checked for compliance before they're sent, administrators can configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. When configured, outgoing items are saved to the **Drafts** folder instead of the **Outbox** folder to prevent them from being automatically sent when the machine reconnects to the internet. For more information, see [Install Outlook add-ins that use on-send](#install-outlook-add-ins-that-use-on-send). |
+| A connection is established after launching Outlook while offline | Outlook will be able to identify which on-send add-ins are installed. When a user selects **Send** on a mail item that was blocked by the **OnSendAddinsEnabled** mailbox policy, the on-send add-in runs to check for compliance. |
+| Machine loses connection while Outlook is in use | If a user loses connection as they select **Send**, a dialog is shown to notify them that they're offline. The mail item is then saved to the **Drafts** folder to prevent it from being automatically sent when the machine reconnects to the internet. |
+| A connection is reestablished | Installed on-send add-ins resume handling the `ItemSend` event when it occurs. Mail items that were moved to the **Outbox** folder are sent. When items in the **Drafts** folder are sent, on-send add-ins are activated to ensure that the mail items are compliant. |
 
 ### User can edit item while on-send add-ins are working on it
 
