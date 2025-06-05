@@ -18,7 +18,7 @@ The agenda for the June 11th Office Add-ins community call is the following:
 
 - Build Copilot agents in Office with add-in actions.
 - Deprecation of the FormattedNumber Excel API.
-- Behavior of Smart Alerts add-ins when new Outlook on Windows is offline.
+- Add-in availability when new Outlook on Windows is offline.
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
