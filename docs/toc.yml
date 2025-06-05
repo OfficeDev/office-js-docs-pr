@@ -814,6 +814,10 @@ items:
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
       href: outlook/web-services.md
+    - name: Manage notifications
+      href: outlook/notifications.md
+    - name: Get or set body
+      href: outlook/insert-data-in-the-body.md
     - name: Get or set categories
       href: outlook/categories.md
     - name: Get or set internet headers
@@ -836,8 +840,6 @@ items:
         href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
       - name: Get and set recipients
         href: outlook/get-set-or-add-recipients.md
-      - name: Insert data in the body
-        href: outlook/insert-data-in-the-body.md
       - name: Get and set subject
         href: outlook/get-or-set-the-subject.md
       - name: Get and set times
