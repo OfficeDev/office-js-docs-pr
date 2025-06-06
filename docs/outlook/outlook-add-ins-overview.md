@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 02/19/2025
+ms.date: 06/05/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -9,11 +9,12 @@ ms.localizationpriority: high
 
 # Outlook add-ins overview
 
-Outlook add-ins are solutions that extend the functionality of the Outlook client through a web-based platform. Outlook add-ins have three key aspects.
+Outlook add-ins are solutions that extend the functionality of the Outlook client through a web-based platform. Outlook add-ins have the following key aspects.
 
-- The same add-in and business logic works across web (Microsoft 365 and Outlook.com), desktop (Outlook on Windows (classic) and on Mac), and mobile.
-- Outlook add-ins consist of a manifest, which describes how the add-in integrates into Outlook (for example, a button or a task pane), and JavaScript/HTML code, which makes up the UI and business logic of the add-in.
-- Outlook add-ins can be acquired from [AppSource](https://appsource.microsoft.com) or [sideloaded](sideload-outlook-add-ins-for-testing.md) by end-users or administrators.
+- The same add-in and business logic works across web (Microsoft 365 and Outlook.com), desktop (Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic) and on Mac), and mobile.
+- Outlook add-ins consist of a manifest, which describes how the add-in integrates into Outlook (for example, a button, task pane, or event). It also includes JavaScript and HTML code, which make up the UI and business logic of the add-in.
+- Outlook add-ins can be acquired from [AppSource](https://appsource.microsoft.com) or [sideloaded](sideload-outlook-add-ins-for-testing.md) by end users or administrators.
+- Outlook add-ins require a network connection to run.
 
 Outlook add-ins are different from COM or VSTO add-ins, which are older integrations specific to Outlook running on Windows. Unlike COM add-ins, Outlook add-ins don't have any code physically installed on the user's device or Outlook client. For an Outlook add-in, Outlook reads the manifest and hooks up the specified controls in the UI, and then loads the JavaScript and HTML. The web components all run in the context of a browser or webview control in a sandbox.
 
@@ -89,7 +90,7 @@ However, add-ins won't activate on IRM-protected items when:
 
 ## Supported clients
 
-Outlook add-ins are supported in Outlook on the web, Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Outlook on Mac, Outlook on iOS, Outlook on Android, and Outlook.com. Not all of the newest features are supported in all clients at the same time. For details about feature support on clients and servers, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) and articles specific to those features.
+Outlook add-ins are supported in Outlook on the web, Outlook on Windows (new and classic), Outlook on Mac, Outlook on iOS, Outlook on Android, and Outlook.com. Not all of the newest features are supported in all clients at the same time. For details about feature support on clients and servers, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) and articles specific to those features.
 
 ## Get started building Outlook add-ins
 
