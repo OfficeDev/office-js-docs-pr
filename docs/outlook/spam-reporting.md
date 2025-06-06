@@ -17,7 +17,7 @@ The integrated spam-reporting feature eases the task of developing individual ad
 - Enable an organization's security operations center (SOC) or IT administrators to easily perform spam and phishing simulations for educational purposes.
 
 > [!NOTE]
-> Integrated spam reporting was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). For information on client support for this feature, see [Supported clients](#supported-clients).
+> Integrated spam reporting was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Additional functionality was released in later requirement sets. For information on client support for this feature, see [Supported clients](#supported-clients).
 
 ## Supported clients
 
@@ -63,15 +63,12 @@ Select the tab for the type of manifest you're using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-//TODO - confirm note
 > [!NOTE]
->
-> - Implementing integrated spam reporting with the unified manifest for Microsoft 365 is currently only available in classic Outlook on Windows. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
->
-> - The [option to open a task pane from the `event.completed` method](#open-a-task-pane-after-reporting-a-message) isn't currently supported in a spam-reporting add-in with a unified manifest for Microsoft 365. To implement this feature, use the add-in only manifest.
+> Implementing integrated spam reporting with the unified manifest for Microsoft 365 is currently only available in classic Outlook on Windows. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 1. In your preferred code editor, open the add-in project you created.
 1. Open the **manifest.json** file.
+1. Update the [`"$schema"`](/microsoft-365/extensibility/schema/root#schema-5) property to use the latest version. For more information, see [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array) array. Note the following about this markup.
    - The [`"minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) of the Mailbox requirement set is configured to `"1.14"`. This is the lowest version of the requirement set that supports the integrated spam-reporting feature.
    - The [`"id"`](/microsoft-365/extensibility/schema/extension-runtimes-array#id) of the runtime is set to a unique descriptive name, `"spam_reporting_runtime"`.
