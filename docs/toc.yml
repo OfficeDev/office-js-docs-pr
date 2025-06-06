@@ -922,6 +922,9 @@ items:
     - name: API reference
       href: reference/powerpoint-api-reference.md
       displayName: PowerPoint
+    - name: PowerPoint object model
+      href: powerpoint/core-concepts.md
+      displayName: PowerPoint
     - name: Add and delete slides
       href: powerpoint/add-slides.md
       displayName: PowerPoint
