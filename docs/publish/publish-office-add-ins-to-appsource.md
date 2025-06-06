@@ -129,7 +129,7 @@ We recommend that your installation check whether the user has the Office applic
 The exact code needed depends on the installation framework and the programming language that you are using. The following is an example of how to check using C#. 
 
 > [!NOTE]
-> If an administrator of the computer is running the installation program, the installation can be designed to install the add-in for all users of the computer. To implement that design, update the code to do the following.
+> The installation can be designed to install the add-in for all users of the computer, if an administrator of the computer is running the installation program. To implement that design, update the code to do the following.
 >
 > - Check if the user is an administrator of the computer.
 > - If the user is an administrator, the code should do one of the following.
