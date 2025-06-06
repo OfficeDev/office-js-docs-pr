@@ -146,7 +146,7 @@ namespace SampleProject
     internal class IsBuildSupportedSample
     {
         /// <summary>
-        /// This function checks if the build of the Office application supports web add-ins.
+        /// This function checks if the build of the Office application supports web add-ins. 
         /// </summary>
         /// <returns> Returns true if the supported build is installed, and false if an old, unsupported build is installed or if the app is not installed at all.</returns>
         private bool IsBuildSupported()
@@ -155,14 +155,14 @@ namespace SampleProject
             string basePath = @"Software\Microsoft\Office";
             RegistryKey baseKey = Registry.CurrentUser.OpenSubKey(basePath);
             string wxpName = "Word"; // Can be one of "Word", "Powerpoint", or "Excel".
-            bool supportLocalComputer = false // true means Local_computer support, false Current_user support
+            bool supportLocalComputer = false // true means LOCAL_MACHINE support, false CURRENT_USER support
 
 
-            const string buildNumberStr = "BuildNumber";
+            const string buildNumberStr = "BuildNumber"; 
             const int smallBuildNumber = 18227; // This is the minimum build that supports installation of a web add-in in the installation of a Windows app.
             if (supportLocalComputer)
             {
-              smallBuildNumber = 18730;
+              smallBuildNumber = 18730; // This is the minimum build that supports installation of a web add-in, for all users of the computer, in the installation of a Windows app.
             }
             const int supportedBuildMajorNumber = 16; // 16 is the lowest major build of Office applications that supports web add-ins.
 
@@ -419,7 +419,7 @@ namespace SampleProject
 
 Skip this section if you aren't a member of the certification program, but *it is required if you are*.
 
-Include in the installation program a function to add *one* of the following keys and values to the Windows Registry, depending on whether the add-in is being installed for all users of the computer or only for the user that is running the installation program.
+Include in the installation program code to add *one* of the following keys and values to the Windows Registry, depending on whether the add-in is being installed for all users of the computer or only for the user that is running the installation program.
 
 ```
 // Only the current user
