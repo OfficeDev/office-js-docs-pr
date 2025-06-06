@@ -2,7 +2,7 @@
 title: Publish your Office Add-in to Microsoft AppSource
 description: Learn how to publish your Office Add-in to Microsoft AppSource and install the add-in with a Windows app or COM/VSTO add-in.
 ms.topic: concept-article
-ms.date: 02/24/2025
+ms.date: 06/06/2025
 CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft AppSource so that customers can deploy and use my new add-in.
 ---
 
@@ -128,6 +128,15 @@ We recommend that your installation check whether the user has the Office applic
 
 The exact code needed depends on the installation framework and the programming language that you are using. The following is an example of how to check using C#. 
 
+> [!NOTE]
+> If an administrator of the computer is running the installation program, the installation can be designed to install the add-in for all users of the computer. To implement that design, update the code to do the following.
+>
+> - Check if the user is an administrator of the computer.
+> - If the user is an administrator, the code should do one of the following.
+>
+>     - If you want to force the add-in to be installed for all users, the code should set the `supportLocalComputer` variable to `true`.
+>     - If you want to give the administrator a choice between installing the add-in only for his or her self or for all users on the computer, the code should present a dialog to the administrator, return the administrator's choice, and set the `supportLocalComputer` variable accordingly.
+
 ```csharp
 using Microsoft.Win32;
 using System;
@@ -137,7 +146,7 @@ namespace SampleProject
     internal class IsBuildSupportedSample
     {
         /// <summary>
-        /// This function checks if the build of the Office application supports web add-ins. 
+        /// This function checks if the build of the Office application supports web add-ins.
         /// </summary>
         /// <returns> Returns true if the supported build is installed, and false if an old, unsupported build is installed or if the app is not installed at all.</returns>
         private bool IsBuildSupported()
@@ -146,10 +155,15 @@ namespace SampleProject
             string basePath = @"Software\Microsoft\Office";
             RegistryKey baseKey = Registry.CurrentUser.OpenSubKey(basePath);
             string wxpName = "Word"; // Can be one of "Word", "Powerpoint", or "Excel".
+            bool supportLocalComputer = false // true means Local_computer support, false Current_user support
 
 
-            const string buildNumberStr = "BuildNumber"; 
+            const string buildNumberStr = "BuildNumber";
             const int smallBuildNumber = 18227; // This is the minimum build that supports installation of a web add-in in the installation of a Windows app.
+            if (supportLocalComputer)
+            {
+              smallBuildNumber = 18730;
+            }
             const int supportedBuildMajorNumber = 16; // 16 is the lowest major build of Office applications that supports web add-ins.
 
             if (baseKey != null)
@@ -295,10 +309,15 @@ namespace SampleProject
 
 ##### Create a registry key for the add-in (required)
 
-Include in the installation program a function to add an entry like the following example to the Windows Registry.
+Include in the installation program a function to add *one* of the following keys and values to the Windows Registry, depending on whether the add-in is being installed for all users of the computer or only for the user that is running the installation program.
 
 ```
+// Only the current user
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
+"AssetIds"="{{assetId}}"
+
+// All users of the computer
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
 "AssetIds"="{{assetId}}"
 ```
 
@@ -315,37 +334,53 @@ Replace the placeholders as follows:
 The following is an example.
 
 ```
+// Only the current user
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\Word\ContosoAdd-in] 
+"AssetIds"="WA999999999"
+
+// All users of the computer
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\Word\ContosoAdd-in] 
 "AssetIds"="WA999999999"
 ```
 
- The exact code will depend on your installation framework and programming language. The following is an example in C#.
+The exact code will depend on your installation framework and programming language. The following is an example in C#.
 
- ```csharp
+> [!NOTE]
+> To install the add-in for all users, change this code so that `WriteRegisterKeys` takes a bool parameter. The method should set the `supportLocalMachine` variable to the value that is passed: `true` to install for all users, `false` to install for only the current user.
+
+```csharp
 using Microsoft.Win32;
 using System;
 
 namespace SampleProject
 {
-    internal class WriteRegisterKeysSample
-    {
+   internal class WriteRegisterKeysSample
+   {
         /// <summary>
         /// This function writes information to the registry that will tell Office applications to install the web add-in.
         /// </summary>
+
         private void WriteRegisterKeys()
         {
-            RegistryKey hklm = Registry.CurrentUser;
-            string basePath = @"Software\Microsoft\Office";
-            RegistryKey baseKey = Registry.CurrentUser.OpenSubKey(basePath);
-            string wxpName = "Word";  // Can be one of "Word", "Powerpoint", or "Excel".
-            string assetID = "WA999999999"; // Use the AppSource asset ID of your web add-in.
-            string appName = "ContosoAddin"; // Pass your own web add-in name.
-            const int supportedBuildMajorNumber = 16; // Major Office build numbers before 16 do not support web add-ins.
-            const string assetIdStr = "AssetIDs"; // A registry key to indicate that there is a web add-in to install along with the main app.
+            bool supportLocalMachine = false; // false = CurrentUser, true = LocalMachine
+            RegistryKey targetRootKey = supportLocalMachine ? Registry.LocalMachine : Registry.CurrentUser;
 
-            if (baseKey != null)
+            string basePath = @"Software\Microsoft\Office";
+            using (RegistryKey baseKey = targetRootKey.OpenSubKey(basePath))
             {
-                Version maxVersion = new Version(supportedBuildMajorNumber, 0); // Initial value for the max supported build version.
+                if (baseKey == null)
+                {
+                    Console.WriteLine("Base registry path not found.");
+                    return;
+                }
+
+                string wxpName = "Word";  // Can be "Word", "Powerpoint", or "Excel"
+                string assetID = "WA999999999"; // AppSource asset ID of your web add-in
+                string appName = "ContosoAddin"; // Your web add-in name
+                const int supportedBuildMajorNumber = 16;
+                const string assetIdStr = "AssetIDs";
+
+                Version maxVersion = new Version(supportedBuildMajorNumber, 0);
                 foreach (string subKeyName in baseKey.GetSubKeyNames())
                 {
                     if (Version.TryParse(subKeyName, out Version version))
@@ -358,15 +393,24 @@ namespace SampleProject
                 }
 
                 string maxVersionString = maxVersion.ToString();
+                string subKeyPath = supportLocalMachine
+                ? $@"Software\Microsoft\Office\{maxVersionString}\AutoInstallAddins\{wxpName}\{appName}"
+                : $@"Software\Microsoft\Office\{maxVersionString}\Wef\AutoInstallAddins\{wxpName}\{appName}";
 
-                // Create the path under AutoInstalledAddins to write the AssetIDs value.
-                RegistryKey AddInNameKey = hklm.CreateSubKey(String.Format(@"Software\Microsoft\Office\{0}\Wef\AutoInstallAddins\{1}\{2}", maxVersionString, wxpName, appName));
-                if (AddInNameKey != null)
+                using (RegistryKey addInKey = targetRootKey.CreateSubKey(subKeyPath))
                 {
-                    AddInNameKey.SetValue(assetIdStr, assetID);
+                    if (addInKey != null)
+                    {
+                        addInKey.SetValue(assetIdStr, assetID);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed to create or open the registry subkey.");
+                    }
                 }
             }
         }
+
     }
 }
 ```
@@ -375,17 +419,27 @@ namespace SampleProject
 
 Skip this section if you aren't a member of the certification program, but *it is required if you are*.
 
-Include in the installation program code to add an entry like the following example to the Windows Registry.
+Include in the installation program a function to add *one* of the following keys and values to the Windows Registry, depending on whether the add-in is being installed for all users of the computer or only for the user that is running the installation program.
 
 ```
+// Only the current user
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
+"HasPrivacyLink"="1"
+
+// All users of the computer
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
 "HasPrivacyLink"="1"
 ```
 
 Replace the `{{OfficeApplication}}` and `{{add-inName}}` placeholders exactly as in the preceding section. The following is an example.
 
 ```
+// Only the current user
 [HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\Word\ContosoAdd-in] 
+"HasPrivacyLink"="1"
+
+// All users of the computer
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\Word\ContosoAdd-in] 
 "HasPrivacyLink"="1"
 ```
 
