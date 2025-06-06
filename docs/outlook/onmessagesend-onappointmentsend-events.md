@@ -225,7 +225,7 @@ If the Smart Alerts add-in implements the **prompt user** option, it doesn't pro
 
 When a user navigates away from the message they're sending (for example, to read a message in their inbox), the behavior of a Smart Alerts add-in differs between Outlook clients. Select the tab for the Outlook client on which the add-in is running.
 
-# [Web/Windows](#tab/web-windows)
+# [Web / Windows](#tab/web-new-windows+windows)
 
 #### Message composed in a window
 
