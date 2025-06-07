@@ -35,4 +35,3 @@ For the best foundation for these common features and application-specific imple
 - [Office Dev Center](https://developer.microsoft.com/office)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
-- [Browsers and webview controls used by Office Add-ins](browsers-used-by-office-web-add-ins.md)
