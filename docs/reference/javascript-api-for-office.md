@@ -1,13 +1,14 @@
 ---
-layout: LandingPage
-ms.topic: landing-page
 title: Office JavaScript API reference documentation
 description: Learn about the Office JavaScript APIs.
-ms.date: 07/22/2024
+author: lindalu-msft
+ms.author: lindalu
+ms.topic: overview
+ms.date: 06/06/2025
 ms.localizationpriority: high
 ---
 
-# API reference documentation
+# Office JavaScript API reference documentation
 
 An add-in can use the Office JavaScript APIs to interact with objects in Office client applications.
 
@@ -18,109 +19,9 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
 
 ## API reference
 
-<ul class="panelContent cardsF cols cols3">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <a href="/javascript/api/excel"><img src="../images/index/logo-excel.svg" alt="Excel API reference docs" /></a>
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Excel API reference</h3>
-                        <p><a href="/javascript/api/excel">JavaScript APIs for building Excel add-ins.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <a href="/javascript/api/outlook"><img src="../images/index/logo-outlook.svg" alt="Outlook API reference docs" /></a>
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Outlook API reference</h3>
-                        <p><a href="/javascript/api/outlook">JavaScript APIs for building Outlook add-ins.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <a href="/javascript/api/word"><img src="../images/index/logo-word.svg" alt="Word API reference docs" /></a>
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Word API reference</h3>
-                        <p><a href="/javascript/api/word">JavaScript APIs for building Word add-ins.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <a href="/javascript/api/powerpoint"><img src="../images/index/logo-powerpoint.svg" alt="PowerPoint API reference docs" /></a>
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>PowerPoint API reference</h3>
-                        <p><a href="/javascript/api/powerpoint">JavaScript APIs for building PowerPoint add-ins.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <a href="/javascript/api/onenote"><img src="../images/index/logo-onenote.svg" alt="OneNote API reference docs" /></a>
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>OneNote API reference</h3>
-                        <p><a href="/javascript/api/onenote">JavaScript APIs for building OneNote add-ins.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <a href="/javascript/api/office"><img src="../images/index-landing-page/i_code-blocks.svg" alt="reference docs" /></a>
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Common API reference</h3>
-                        <p><a href="/javascript/api/office">JavaScript APIs that can be used by any Office Add-in.</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+|                           |                      |                 |
+| :------------------------ | -------------------- | ----------------|
+| <img src="../images/index/logo-excel.svg" width="100" alt="Excel API reference"> </br>**Excel API reference**</br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel).  | <img src="../images/index/logo-outlook.svg" width="100" alt="Outlook API reference"> </br>**Outlook API reference**</br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook). | <img src="../images/index/logo-word.svg" width="100" alt="Word API reference"> </br>**Word API reference**</br>[JavaScript APIs for building Word add-ins](/javascript/api/word). |
+| <img src="../images/index/logo-powerpoint.svg" width="100" alt="PowerPoint API reference"> </br>**PowerPoint API reference**</br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint).  | <img src="../images/index/logo-onenote.svg" width="100" alt="OneNote API reference"> </br>**OneNote API reference**</br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote). | <img src="../images/index/logo-office.png" width="100" alt="Common API reference"> </br>**Common API reference**</br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office). |
 
-<b>Note</b>: There's currently no application-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins.
+**Note**: There's currently no application-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins.
