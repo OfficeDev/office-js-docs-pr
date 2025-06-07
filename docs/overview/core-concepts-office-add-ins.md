@@ -1,5 +1,6 @@
 ---
 title: Development lifecycle overview
+description: Learn about the planning, developing, testing, and publishing lifecycle events.
 author: lindalu-msft
 ms.author: lindalu
 ms.topic: overview
@@ -13,12 +14,12 @@ All Office Add-ins are built upon the Office Add-ins platform. They share a comm
 
 For any add-in you build, you need to understand the following concepts.
 
-    - Office application and platform availability
-    - Office JavaScript API programming patterns
-    - How to specify an add-in's settings and capabilities in the manifest file
-    - Troubleshooting your add-in
-    - Publishing you add-in
-    
+- Office application and platform availability
+- Office JavaScript API programming patterns
+- How to specify an add-in's settings and capabilities in the manifest file
+- Troubleshooting your add-in
+- Publishing you add-in
+
 For the best foundation for these common features and application-specific implementations, review the documentation listed in the following table.
 
 |               |               |
