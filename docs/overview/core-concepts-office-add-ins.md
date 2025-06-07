@@ -22,8 +22,8 @@ For any add-in you build, you need to understand the following concepts.
 
 For the best foundation for these common features and application-specific implementations, review the documentation listed in the following table.
 
-|               |               |
-| ------------- | ------------- |
+| **Development lifecycle**     |               |
+| ----------------------------- | ------------- |
 | :::image type="icon" source="../images/i_best-practices_small.svg"::: | **Plan**<br>[Learn the best practices and system requirements for Office Add-ins.](../concepts/add-in-development-best-practices.md) |
 | :::image type="icon" source="../images/i_code-blocks_small.svg"::: | **Develop**<br>[Learn the APIs and patterns to develop Office Add-ins.](../develop/develop-overview.md) |
 | :::image type="icon" source="../images/i_recommended-testing_small.svg"::: | **Test and debug**<br>[Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
