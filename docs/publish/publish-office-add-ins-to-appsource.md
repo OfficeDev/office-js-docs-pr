@@ -317,7 +317,7 @@ Include in the installation program a function to add *one* of the following key
 "AssetIds"="{{assetId}}"
 
 // All users of the computer
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
 "AssetIds"="{{assetId}}"
 ```
 
@@ -339,7 +339,7 @@ The following is an example.
 "AssetIds"="WA999999999"
 
 // All users of the computer
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\Word\ContosoAdd-in] 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\AutoInstallAddins\Word\ContosoAdd-in] 
 "AssetIds"="WA999999999"
 ```
 
@@ -427,7 +427,7 @@ Include in the installation program code to add *one* of the following keys and 
 "HasPrivacyLink"="1"
 
 // All users of the computer
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\AutoInstallAddins\{{OfficeApplication}}\{{add-inName}}] 
 "HasPrivacyLink"="1"
 ```
 
@@ -439,7 +439,7 @@ Replace the `{{OfficeApplication}}` and `{{add-inName}}` placeholders exactly as
 "HasPrivacyLink"="1"
 
 // All users of the computer
-[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\Wef\AutoInstallAddins\Word\ContosoAdd-in] 
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Office\16.0\AutoInstallAddins\Word\ContosoAdd-in] 
 "HasPrivacyLink"="1"
 ```
 
