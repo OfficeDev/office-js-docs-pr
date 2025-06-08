@@ -155,7 +155,7 @@ namespace SampleProject
             string basePath = @"Software\Microsoft\Office";
             RegistryKey baseKey = Registry.CurrentUser.OpenSubKey(basePath);
             string wxpName = "Word"; // Can be one of "Word", "Powerpoint", or "Excel".
-            bool supportLocalComputer = false // true means LOCAL_MACHINE support, false CURRENT_USER support
+            bool supportLocalComputer = false; // true means LOCAL_MACHINE support, false CURRENT_USER support
 
 
             const string buildNumberStr = "BuildNumber"; 
