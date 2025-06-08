@@ -154,7 +154,7 @@ If the COM add-in is then disconnected during a subsequent Outlook session, the 
 ## Option to disable the COM add-in instead (preview)
 
 > [!NOTE]
-> The feature described in this section is in preview and should not be used in a production add-in. It is supported only in subscription Office on Windows version YYMM, build xxxxx.xxxxx.
+> The feature described in this section is in preview and should not be used in a production add-in. It is supported only in subscription Office on Windows version YYMM, build xxxxx.xxxxx, and only for Excel, PowerPoint, and Word.
 
 Use manifest markup to specify whether the COM add-in or the Office Add-in should be disabled and hidden on a Windows computer when they conflict, or give the user that is installing the Office Add-in the choice of which to use.
 
@@ -174,19 +174,41 @@ The details to configure this feature depend on which type of manifest is being 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
+The following example shows 
 
+```json
+"extensions" [
+  ...
+  "alternates" [
+    {
+      ???????
+    }
+  ]
+]
+```
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
 To configure which add-in is used (or give the user the choice) there is an optional **\<Effect\>** child of the **\<EquivalentAddins\>** element that has one of the following effects when the Office Add-in is installed, depending on which of three possible values it is set to.
 
-- **Enable**: The Office Add-in is disabled and hidden on the Windows computer. Since this is the default value of **\<Effect\>**, this is also the behavior if the **\<Effect\>** element is not present.
+- **Enable**: The COM add-in is enabled and the Office Add-in is disabled and hidden on the Windows computer. Since this is the default value of **\<Effect\>**, this is also the behavior if the **\<Effect\>** element is not present.
 - **DisableWithNotification**: All of the COM add-ins specified in the child **\<EquivalentAddin\>** elements will be disabled and hidden. A popup dialog notifies the user that this happening.
-- **UserOptionToDisable**: The user is prompted to choose whether to disable and hide COM add-ins specified in the child **\<EquivalentAddin\>** elements or to disable and hide the Office Add-in. 
- 
- 
- 
+- **UserOptionToDisable**: The user is prompted to choose whether to disable and hide COM add-ins specified in the child **\<EquivalentAddin\>** elements or to disable and hide the Office Add-in.
 
+The following is an example. The **\<Effect\>** element must be after all the **\<EquivalentAddin\>** elements.
+
+```xml
+<VersionOverrides>
+  ...
+  <EquivalentAddins>
+    <EquivalentAddin>
+      <ProgId>ContosoCOMAddin</ProgId>
+      <Type>COM</Type>
+    </EquivalentAddin>
+    <Effect>UserOptionToDisable</Effect>
+  </EquivalentAddins>
+</VersionOverrides>
+```
 
 ---
 
