@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 03/11/2025
+ms.date: 06/10/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ The integrated spam-reporting feature eases the task of developing individual ad
 - Enable an organization's security operations center (SOC) or IT administrators to easily perform spam and phishing simulations for educational purposes.
 
 > [!NOTE]
-> Integrated spam reporting was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). For information on client support for this feature, see [Supported clients](#supported-clients).
+> Integrated spam reporting was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Additional functionality was released in later requirement sets. For information on client support for this feature, see [Supported clients](#supported-clients).
 
 ## Supported clients
 
@@ -64,13 +64,11 @@ Select the tab for the type of manifest you're using.
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
->
-> - Implementing integrated spam reporting with the unified manifest for Microsoft 365 is currently only available in classic Outlook on Windows. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema/?view=m365-app-1.20&preserve-view=true).
->
-> - The ["Don't show me this message again" dialog option](#suppress-the-preprocessing-dialog) and the [option to open a task pane from the `event.completed` method](#open-a-task-pane-after-reporting-a-message) aren't currently supported in a spam-reporting add-in with a unified manifest for Microsoft 365. To implement these features, use the add-in only manifest.
+> Implementing integrated spam reporting with the unified manifest for Microsoft 365 is currently only available in classic Outlook on Windows. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 1. In your preferred code editor, open the add-in project you created.
 1. Open the **manifest.json** file.
+1. Update the [`"$schema"`](/microsoft-365/extensibility/schema/root#schema-5) property to use the latest version. For more information, see [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array) array. Note the following about this markup.
    - The [`"minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) of the Mailbox requirement set is configured to `"1.14"`. This is the lowest version of the requirement set that supports the integrated spam-reporting feature.
    - The [`"id"`](/microsoft-365/extensibility/schema/extension-runtimes-array#id) of the runtime is set to a unique descriptive name, `"spam_reporting_runtime"`.
@@ -107,11 +105,12 @@ Select the tab for the type of manifest you're using.
 1. Add the following object to the [`"extensions.ribbons"`](/microsoft-365/extensibility/schema/extension-ribbons-array) array. Note the following about this markup.
     - The [`"contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array contains the `"spamReportingOverride"` string. This prevents the add-in button from appearing at the end of the ribbon or in the overflow section.
     - The [`"tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array#tabs) array must be specified in an `"extensions.ribbons"` object. However, because the button of a spam-reporting add-in is displayed in a specific spot on the ribbon, only an empty array is specified.
-    - The [`"fixedControls"`](/microsoft-365/extensibility/schema/extension-ribbons-array?view=m365-app-1.20&preserve-view=true#fixedcontrols) array contains an object that configures the look and functionality of the add-in button on the ribbon. The name of the event handler specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-ribbons-array-fixed-control-item?view=m365-app-1.20&preserve-view=true#actionid) property must match the value used in the `"id"` property of the object in the `"actions"` array. While the [`"enabled"`](/microsoft-365/extensibility/schema/extension-ribbons-array-fixed-control-item?view=m365-app-1.20&preserve-view=true#enabled) property must be specified in the array, its value doesn't affect the functionality of a spam-reporting add-in.
-    - The [`"spamPreProcessingDialog"`](/microsoft-365/extensibility/schema/extension-ribbons-array?view=m365-app-1.20&preserve-view=true#spampreprocessingdialog) object specifies the information and options that are shown in the preprocessing dialog. While you must specify a [`"title"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog?view=m365-app-1.20&preserve-view=true#title) and [`"description"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog?view=m365-app-1.20&preserve-view=true#description) for the dialog, you can optionally configure the following properties.
-        - The [`"spamReportingOptions"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog-spam-reporting-options?view=m365-app-1.20&preserve-view=true) object. It provides a multiple-selection list of up to five choices. This helps a user identify the type of message they're reporting.
-        - The [`"spamFreeTextSectionTitle"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog?view=m365-app-1.20&preserve-view=true#spamfreetextsectiontitle) property. It provides a text box for the user to add more information about the message they're reporting.
-        - The [`"spamMoreInfo"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog-spam-more-info?view=m365-app-1.20&preserve-view=true) object. It includes a link in the dialog to provide informational resources to the user.
+    - The [`"fixedControls"`](/microsoft-365/extensibility/schema/extension-ribbons-array#fixedcontrols) array contains an object that configures the look and functionality of the add-in button on the ribbon. The name of the event handler specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-ribbons-array-fixed-control-item#actionid) property must match the value used in the `"id"` property of the object in the `"actions"` array. While the [`"enabled"`](/microsoft-365/extensibility/schema/extension-ribbons-array-fixed-control-item#enabled) property must be specified in the array, its value doesn't affect the functionality of a spam-reporting add-in.
+    - The [`"spamPreProcessingDialog"`](/microsoft-365/extensibility/schema/extension-ribbons-array#spampreprocessingdialog) object specifies the information and options that are shown in the preprocessing dialog. While you must specify a [`"title"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog#title) and [`"description"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog#description) for the dialog, you can optionally configure the following properties.
+        - The [`"spamNeverShowAgainOption"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog#spamnevershowagainoption) property. It provides the option to suppress the preprocessing dialog for succeeding reports. This functionality is useful in scenarios where you don't need additional information from users. To learn more, see [Suppress the preprocessing dialog](#suppress-the-preprocessing-dialog).
+        - The [`"spamReportingOptions"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog-spam-reporting-options?view=m365-app-1.22&preserve-view=true) object. It provides a list of up to five choices that you can configure as radio buttons or checkboxes. This helps a user identify the type of message they're reporting.
+        - The [`"spamFreeTextSectionTitle"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog#spamfreetextsectiontitle) property. It provides a text box for the user to add more information about the message they're reporting.
+        - The [`"spamMoreInfo"`](/microsoft-365/extensibility/schema/extension-ribbons-spam-pre-processing-dialog-spam-more-info) object. It includes a link in the dialog to provide informational resources to the user.
 
     ```json
     {
@@ -149,13 +148,15 @@ Select the tab for the type of manifest you're using.
         "spamPreProcessingDialog": {
             "title": "Report Spam Message",
             "description": "Thank you for reporting this message.",
+            "spamNeverShowAgainOption": false,
             "spamReportingOptions": {
                 "title": "Why are you reporting this email?",
                 "options": [
                     "Received spam email.",
                     "Received a phishing email.",
                     "I'm not sure this is a legitimate email."
-                ]
+                ],
+                "type": "checkbox"
             },
             "spamFreeTextSectionTitle": "Provide additional information, if any:",
             "spamMoreInfo": {
@@ -178,7 +179,7 @@ Configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1
 - To customize the ribbon button and preprocessing dialog, you must define the [ReportPhishingCustomization](/javascript/api/manifest/reportphishingcustomization) node.
   - To configure the ribbon button, set the `xsi:type` attribute of the [Control](/javascript/api/manifest/control-button) element to `Button`. Then, set the `xsi:type` attribute of the [Action](/javascript/api/manifest/action) child element to `ExecuteFunction` and specify the name of the spam-reporting event handler in its **\<FunctionName\>** child element.
   - To customize the preprocessing dialog, configure the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog) element of your manifest. While the dialog must have a title and description, you can optionally include the following elements.
-    - A multiple-selection list of choices to help a user identify the type of message they're reporting. To learn about other input types and how to configure these options, see [ReportingOptions element](/javascript/api/manifest/reportingoptions).
+    - A list of choices to help a user identify the type of message they're reporting. You can configure these options as radio buttons or checkboxes. To learn more, see [ReportingOptions element](/javascript/api/manifest/reportingoptions).
     - A text box for the user to provide additional information about the message they're reporting. To learn how to implement a text box, see [FreeTextLabel element](/javascript/api/manifest/preprocessingdialog#child-elements).
     - Custom text and URL to provide informational resources to the user. To learn how to personalize these elements, see [MoreInfo element](/javascript/api/manifest/moreinfo).
 
@@ -475,27 +476,52 @@ The following is a sample post-processing dialog shown to the user once the add-
 ## Suppress the preprocessing dialog
 
 > [!NOTE]
-> The "Don't show me this message again" option was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support). This option isn't currently supported in a spam-reporting add-in that uses the unified manifest.
+> The "Don't show me this message again" option was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 Depending on your scenario, you might not need a user to provide additional information about a message they're reporting. If the preprocessing dialog of your spam-reporting add-in only provides information to the user, you can choose to include a "Don't show me this message again" option in the dialog.
 
 :::image type="content" source="../images/spam-reporting-suppress-dialog.png" alt-text="The 'Don't show me this message again' option in the preprocessing dialog.":::
 
-To implement this in your add-in, you must specify the [NeverShowAgainOption](/javascript/api/manifest/preprocessingdialog#child-elements) element in your manifest and set it to `true`. The following code is an example.
+To implement this in your add-in, you must configure its manifest. The element or property to be configured differs depending on the type of manifest your add-in uses.
 
-```xml
-...
-    <PreProcessingDialog>
-      <Title resid="PreProcessingDialog.Label"/>
-      <Description resid="PreProcessingDialog.Text"/>
-      <NeverShowAgainOption>true</NeverShowAgainOption>
-      <MoreInfo>
-        <MoreInfoText resid="MoreInfo.Label"/>
-        <MoreInfoUrl resid="MoreInfo.Url"/>
-      </MoreInfo>
-    </PreProcessingDialog>
-...
-```
+- **Unified manifest for Microsoft 365**: Set the `"extensions.ribbons.spamPreProcessingDialog.spamNeverShowAgainOption"` property to `true`. The following code is an example.
+
+    ```json
+    "extensions": [
+        ...
+        "ribbons": [
+            {
+                ...
+                "spamPreProcessingDialog": {
+                    "title": "Report Spam Message",
+                    "description": "Thank you for reporting this message.",
+                    "spamNeverShowAgainOption": true,
+                    "spamMoreInfo": {
+                        "text": "Reporting unsolicited messages",
+                        "url": "https://www.contoso.com/spamreporting"
+                    }
+                }
+            }
+        ],
+        ...
+    ]
+    ```
+
+- **Add-in only manifest**: In the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog) element, set the [NeverShowAgainOption](/javascript/api/manifest/preprocessingdialog#child-elements) child element to `true`. The following code is an example.
+
+    ```xml
+    ...
+        <PreProcessingDialog>
+          <Title resid="PreProcessingDialog.Label"/>
+          <Description resid="PreProcessingDialog.Text"/>
+          <NeverShowAgainOption>true</NeverShowAgainOption>
+          <MoreInfo>
+            <MoreInfoText resid="MoreInfo.Label"/>
+            <MoreInfoUrl resid="MoreInfo.Url"/>
+          </MoreInfo>
+        </PreProcessingDialog>
+    ...
+    ```
 
 Note the following behaviors when implementing this option in your add-in.
 
@@ -529,7 +555,10 @@ Instead of a post-processing dialog, you can implement a task pane to open after
 > [!NOTE]
 > If both the post-processing dialog and task pane capabilities are configured in the `event.completed` call, the task pane is shown instead of the dialog.
 
-To configure a task pane to open after a message is reported, you must specify the ID of the task pane in the [commandId](/javascript/api/outlook/office.spamreportingeventcompletedoptions#outlook-office-spamreportingeventcompletedoptions-commandid-member) option of the `event.completed` call. The ID must match the value specified in the `id` attribute of the [Control](/javascript/api/manifest/control) element that represents the task pane in the manifest.
+To configure a task pane to open after a message is reported, you must specify the ID of the task pane in the [commandId](/javascript/api/outlook/office.spamreportingeventcompletedoptions#outlook-office-spamreportingeventcompletedoptions-commandid-member) option of the `event.completed` call. The ID must match the task pane's ID in the manifest. The location of the ID varies depending on the manifest your add-in uses.
+
+- **Unified manifest for Microsoft 365**: The `"id"` property of the [`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#id) object that represents the task pane.
+- **Add-in only manifest**: The `id` attribute of the [Control](/javascript/api/manifest/control) element that represents the task pane.
 
 If you need to pass information to the task pane, specify any JSON data in the [contextData](/javascript/api/outlook/office.spamreportingeventcompletedoptions#outlook-office-spamreportingeventcompletedoptions-contextdata-member) option of the `event.completed` call. To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getinitializationcontextasync-member(1)) in the JavaScript implementation of your task pane.
 
@@ -573,11 +602,11 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - In Outlook on the web and the new Outlook on Windows, if a message is reported while it's open in a separate window, a post-processing dialog isn't shown to the user.
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
 - The integrated spam-reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-- A spam-reporting add-in only implements [function commands](../design/add-in-commands.md#types-of-add-in-commands). A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane in your add-in, you must configure it in your manifest as follows:
+- A spam-reporting add-in only implements [function commands](../design/add-in-commands.md#types-of-add-in-commands). A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane separate from the reporting functionality of your add-in, you must configure it in your manifest as follows:
   - **Add-in only manifest**: Include the [Action element](/javascript/api/manifest/action#xsitype-is-showtaskpane) in the manifest and set its `xsi:type` attribute to `ShowTaskpane`.
   - **Unified manifest for Microsoft 365**: Configure a task pane object in the `"extensions.runtimes"` and `"extensions.ribbons"` arrays. For guidance, see the "Add a task pane command" section of [Create add-in commands with the unified manifest for Microsoft 365](../develop/create-addin-commands-unified-manifest.md#add-a-task-pane-command).
 
-  Note that a separate button to activate the task pane will be added to the ribbon, but it won't appear in the dedicated spam-reporting area of the ribbon.
+  Note that a separate button to activate the task pane will be added to the ribbon, but it won't appear in the dedicated spam-reporting area of the ribbon. If you want to configure a task pane to open after a message is reported, see [Open a task pane after reporting a message](#open-a-task-pane-after-reporting-a-message).
 
 ## Troubleshoot your add-in
 

@@ -504,6 +504,17 @@ The following sections show the manifest elements in the order in which they mus
         <Resource>
         <Scopes>
             <Scope>
+    <EquivalentAddins>
+        <EquivalentAddin>
+            <ProgId>
+            <DisplayName>
+            <FileName>
+            <Type>    
+    <ConnectedServiceControls>
+        <ConnectedServiceControlsScopes>
+            <Scope>
+    <ExtendedPermissions>
+        <ExtendedPermission>
 ```
 
 ## Content add-in element ordering within VersionOverrides
