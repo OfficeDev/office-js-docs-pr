@@ -185,6 +185,9 @@ To disable the COM add-in, instead of the Office Add-in, (or to give the user th
 - **DisableWithNotification**: All of the COM add-ins specified in the child `comAddin` elements of the `disable` property are disabled and hidden. A popup dialog notifies the user that this is happening.
 - **UserOptionToDisable**: The user is prompted to choose whether to disable and hide the COM add-ins specified in the child `comAddin` elements of the `disable` property or to disable and hide the Office Add-in.
 
+> [!NOTE]
+> To force the COM add-in to be enabled and the Office Add-in to be disabled and hidden on the Windows computer, use the `alternates.prefer` property as described in [Configure the manifest](?tabs=xmlmanifest#configure-the-manifest).
+
 In the following is an example, the user will be prompted whether to disable the COM add-in "COM.addin.1" or to disable the Office Add-in.
 
 ```json
@@ -205,11 +208,13 @@ In the following is an example, the user will be prompted whether to disable the
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-To configure which add-in is used (or give the user the choice) there is an optional **\<Effect\>** child of the **\<EquivalentAddins\>** element that has one of the following effects when the Office Add-in is installed, depending on which of three possible values it is set to.
+To configure which add-in is used (or give the user the choice) there is an optional **\<Effect\>** child of the **\<EquivalentAddins\>** element that has one of the following effects when the Office Add-in is installed, depending on which of two possible values it is set to.
 
-- **Enable**: The COM add-in is enabled and the Office Add-in is disabled and hidden on the Windows computer. Since this is the default value of **\<Effect\>**, this is also the behavior if the **\<Effect\>** element is not present.
 - **DisableWithNotification**: All of the COM add-ins specified in the child **\<EquivalentAddin\>** elements will be disabled and hidden. A popup dialog notifies the user that this happening.
 - **UserOptionToDisable**: The user is prompted to choose whether to disable and hide COM add-ins specified in the child **\<EquivalentAddin\>** elements or to disable and hide the Office Add-in.
+
+> [!NOTE]
+> If the **\<Effect\>** element is not present, the COM add-in is enabled and the Office Add-in is disabled and hidden on the Windows computer.
 
 The following is an example. The **\<Effect\>** element must be after all the **\<EquivalentAddin\>** elements.
 
