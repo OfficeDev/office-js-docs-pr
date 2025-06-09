@@ -24,45 +24,45 @@ For the best foundation for these common features and application-specific imple
 
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_best-practices_small.svg":::
+       :::image type="icon" source="../images/i_best-practices_small.svg" width="100" :::
    :::column-end:::
-   :::column span="4":::
+   :::column span="3":::
        **Plan**</br>
        [Learn the best practices and system requirements for Office Add-ins.](../concepts/add-in-development-best-practices.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_code-blocks_small.svg":::
+       :::image type="icon" source="../images/i_code-blocks_small.svg" width="100" :::
    :::column-end:::
-   :::column span="4":::
+   :::column span="3":::
        **Develop**</br>
        [Learn the APIs and patterns to develop Office Add-ins.](../develop/develop-overview.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_recommended-testing_small.svg":::
+       :::image type="icon" source="../images/i_recommended-testing_small.svg" width="100" :::
    :::column-end:::
-   :::column span="4":::
+   :::column span="3":::
        **Test and debug**</br>
        [Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_deploy_small.svg":::
+       :::image type="icon" source="../images/i_deploy_small.svg" width="100" :::
    :::column-end:::
-   :::column span="4":::
+   :::column span="3":::
        **Publish**</br>
        [Learn how to deploy and publish Office Add-ins.](../publish/publish.md)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_reference_small.svg":::
+       :::image type="icon" source="../images/i_reference_small.svg" width="100" :::
    :::column-end:::
-   :::column span="4":::
+   :::column span="3":::
        **Reference**</br>
        [View the reference documentation for the Office JavaScript APIs, the add-ins manifest, error code lists, and more.](../reference/javascript-api-for-office.md)
    :::column-end:::
