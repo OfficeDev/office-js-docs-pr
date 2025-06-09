@@ -249,6 +249,7 @@ If the [prompt user](#prompt-user) send mode option is implemented, the followin
 - **Save as Draft**: This option terminates the add-in and send operations and saves a draft of the message to the mailbox's **Drafts** folder.
 
 **Outlook on the web and new Outlook on Windows**
+
 :::image type="content" source="../images/outlook-item-switch-web-prompt-user.png" alt-text="The dialog shown in Outlook on the web and new Outlook on Windows when a user navigates away from a message being processed by a Smart Alerts add-in that implements the prompt user send mode option.":::
 
 **Classic Outlook on Windows**
@@ -258,6 +259,7 @@ If the [prompt user](#prompt-user) send mode option is implemented, the followin
 If the [soft block](#soft-block) or [block](#block) send mode option is implemented, only the **Wait** and **Save as Draft** options are shown.
 
 **Outlook on the web and new Outlook on Windows**
+
 :::image type="content" source="../images/outlook-item-switch-web-block.png" alt-text="The dialog shown in Outlook on the web and new Outlook on Windows when a user navigates away from a message being processed by a Smart Alerts add-in that implements the soft block or block send mode option.":::
 
 **Classic Outlook on Windows**
