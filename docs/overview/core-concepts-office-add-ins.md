@@ -24,7 +24,7 @@ For the best foundation for these common features and application-specific imple
 
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_best-practices_small.svg" width="100" :::
+       :::image type="content" source="../images/i_best-practices_small.svg" width="100" :::
    :::column-end:::
    :::column span="3":::
        **Plan**</br>
@@ -33,7 +33,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_code-blocks_small.svg" width="100" :::
+       :::image type="content" source="../images/i_code-blocks_small.svg" width="100" :::
    :::column-end:::
    :::column span="3":::
        **Develop**</br>
@@ -42,7 +42,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_recommended-testing_small.svg" width="100" :::
+       :::image type="content" source="../images/i_recommended-testing_small.svg" width="100" :::
    :::column-end:::
    :::column span="3":::
        **Test and debug**</br>
@@ -51,7 +51,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_deploy_small.svg" width="100" :::
+       :::image type="content" source="../images/i_deploy_small.svg" width="100" :::
    :::column-end:::
    :::column span="3":::
        **Publish**</br>
@@ -60,7 +60,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="icon" source="../images/i_reference_small.svg" width="100" :::
+       :::image type="content" source="../images/i_reference_small.svg" width="100" :::
    :::column-end:::
    :::column span="3":::
        **Reference**</br>
