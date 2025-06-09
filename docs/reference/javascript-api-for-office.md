@@ -4,7 +4,7 @@ description: Learn about the Office JavaScript APIs.
 author: lindalu-msft
 ms.author: lindalu
 ms.topic: overview
-ms.date: 06/06/2025
+ms.date: 06/09/2025
 ms.localizationpriority: high
 ---
 
@@ -19,26 +19,34 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
 
 ## API reference
 
+:::image type="content" source="<folderPath>" alt-text="<alt text>":::
+
 :::row:::
    :::column span="":::
-        <img src="../images/index/logo-excel.svg" width="100" alt="Excel API reference"> </br>**Excel API reference**</br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel).
+        :::image type="content" source="../images/index/logo-excel.svg" width="100" alt-text="Excel API reference":::
+        </br>**Excel API reference**</br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel).
    :::column-end:::
    :::column span="":::
-        <img src="../images/index/logo-outlook.svg" width="100" alt="Outlook API reference"> </br>**Outlook API reference**</br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook).
+        :::image type="content" source="../images/index/logo-outlook.svg" width="100" alt-text="Outlook API reference":::
+        </br>**Outlook API reference**</br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook).
    :::column-end:::
    :::column span="":::
-        <img src="../images/index/logo-word.svg" width="100" alt="Word API reference"> </br>**Word API reference**</br>[JavaScript APIs for building Word add-ins](/javascript/api/word).
+        :::image type="content" source="../images/index/logo-word.svg" width="100" alt-text="Word API reference":::
+        </br>**Word API reference**</br>[JavaScript APIs for building Word add-ins](/javascript/api/word).
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
-        <img src="../images/index/logo-powerpoint.svg" width="100" alt="PowerPoint API reference"> </br>**PowerPoint API reference**</br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint).
+        :::image type="content" source="../images/index/logo-powerpoint.svg" width="100" alt-text="PowerPoint API reference":::
+        </br>**PowerPoint API reference**</br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint).
    :::column-end:::
    :::column span="":::
-      <img src="../images/index/logo-onenote.svg" width="100" alt="OneNote API reference"> </br>**OneNote API reference**</br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote).
+        :::image type="content" source="../images/index/logo-onenote.svg" width="100" alt-text="OneNote API reference":::
+        </br>**OneNote API reference**</br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote).
    :::column-end:::
    :::column span="":::
-      <img src="../images/index/logo-office.png" width="100" alt="Common API reference"> </br>**Common API reference**</br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office).
+   :::image type="content" source="../images/index/logo-office.png" width="100" alt-text="Common API reference":::
+        </br>**Common API reference**</br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office).
    :::column-end:::
 :::row-end:::
 
