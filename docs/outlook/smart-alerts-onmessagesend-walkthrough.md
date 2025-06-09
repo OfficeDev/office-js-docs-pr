@@ -46,7 +46,7 @@ To configure the manifest, select the tab for the type of manifest you are using
             "capabilities": [
                 {
                     "name": "Mailbox",
-                    "minVersion": "1.14"
+                    "minVersion": "1.15"
                 }
             ]
         },
