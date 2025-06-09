@@ -19,9 +19,27 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
 
 ## API reference
 
-|                           |                      |                 |
-| :------------------------ | -------------------- | ----------------|
-| <img src="../images/index/logo-excel.svg" width="100" alt="Excel API reference"> </br>**Excel API reference**</br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel).  | <img src="../images/index/logo-outlook.svg" width="100" alt="Outlook API reference"> </br>**Outlook API reference**</br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook). | <img src="../images/index/logo-word.svg" width="100" alt="Word API reference"> </br>**Word API reference**</br>[JavaScript APIs for building Word add-ins](/javascript/api/word). |
-| <img src="../images/index/logo-powerpoint.svg" width="100" alt="PowerPoint API reference"> </br>**PowerPoint API reference**</br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint).  | <img src="../images/index/logo-onenote.svg" width="100" alt="OneNote API reference"> </br>**OneNote API reference**</br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote). | <img src="../images/index/logo-office.png" width="100" alt="Common API reference"> </br>**Common API reference**</br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office). |
+:::row:::
+   :::column span="":::
+        <img src="../images/index/logo-excel.svg" width="100" alt="Excel API reference"> </br>**Excel API reference**</br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel).
+   :::column-end:::
+   :::column span="":::
+        <img src="../images/index/logo-outlook.svg" width="100" alt="Outlook API reference"> </br>**Outlook API reference**</br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook).
+   :::column-end:::
+   :::column span="":::
+        <img src="../images/index/logo-word.svg" width="100" alt="Word API reference"> </br>**Word API reference**</br>[JavaScript APIs for building Word add-ins](/javascript/api/word).
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+        <img src="../images/index/logo-powerpoint.svg" width="100" alt="PowerPoint API reference"> </br>**PowerPoint API reference**</br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint).
+   :::column-end:::
+   :::column span="":::
+      <img src="../images/index/logo-onenote.svg" width="100" alt="OneNote API reference"> </br>**OneNote API reference**</br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote).
+   :::column-end:::
+   :::column span="":::
+      <img src="../images/index/logo-office.png" width="100" alt="Common API reference"> </br>**Common API reference**</br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office).
+   :::column-end:::
+:::row-end:::
 
 **Note**: There's currently no application-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins.
