@@ -23,7 +23,7 @@ For any add-in you build, you need to understand the following concepts.
 For the best foundation for these common features and application-specific implementations, review the documentation listed in the following table.
 
 :::row:::
-   :::column span="2":::
+   :::column span="":::
        :::image type="icon" source="../images/i_best-practices_small.svg":::
    :::column-end:::
    :::column span="":::
@@ -32,7 +32,7 @@ For the best foundation for these common features and application-specific imple
    :::column-end:::
 :::row-end:::
 :::row:::
-   :::column span="2":::
+   :::column span="":::
        :::image type="icon" source="../images/i_code-blocks_small.svg":::
    :::column-end:::
    :::column span="":::
@@ -41,7 +41,7 @@ For the best foundation for these common features and application-specific imple
    :::column-end:::
 :::row-end:::
 :::row:::
-   :::column span="2":::
+   :::column span="":::
        :::image type="icon" source="../images/i_recommended-testing_small.svg":::
    :::column-end:::
    :::column span="":::
@@ -50,7 +50,7 @@ For the best foundation for these common features and application-specific imple
    :::column-end:::
 :::row-end:::
 :::row:::
-   :::column span="2":::
+   :::column span="":::
        :::image type="icon" source="../images/i_deploy_small.svg":::
    :::column-end:::
    :::column span="":::
@@ -58,8 +58,8 @@ For the best foundation for these common features and application-specific imple
        [Learn how to deploy and publish Office Add-ins.](../publish/publish.md)
    :::column-end:::
 :::row-end:::
-v:::row:::
-   :::column span="2":::
+:::row:::
+   :::column span="":::
        :::image type="icon" source="../images/i_reference_small.svg":::
    :::column-end:::
    :::column span="":::
@@ -67,14 +67,6 @@ v:::row:::
        [View the reference documentation for the Office JavaScript APIs, the add-ins manifest, error code lists, and more.](../reference/javascript-api-for-office.md)
    :::column-end:::
 :::row-end:::
-
-| Table               |                |
-| :---------------| :------------- |
-| :::image type="icon" source="../images/i_best-practices_small.svg"::: |**Plan**</br>[Learn the best practices and system requirements for Office Add-ins.](../concepts/add-in-development-best-practices.md) |
-| :::image type="icon" source="../images/i_code-blocks_small.svg"::: |**Develop**</br>[Learn the APIs and patterns to develop Office Add-ins.](../develop/develop-overview.md) |
-| :::image type="icon" source="../images/i_recommended-testing_small.svg"::: |**Test and debug**</br>[Learn how to test and debug Office Add-ins.](../testing/test-debug-office-add-ins.md) |
-| :::image type="icon" source="../images/i_deploy_small.svg"::: |**Publish**</br>[Learn how to deploy and publish Office Add-ins.](../publish/publish.md) |
-| :::image type="icon" source="../images/i_reference_small.svg"::: |**Reference**</br>[View the reference documentation for the Office JavaScript APIs, the add-ins manifest, error code lists, and more.](../reference/javascript-api-for-office.md) |
 
 ## See also
 
