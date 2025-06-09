@@ -186,7 +186,7 @@ To disable the COM add-in, instead of the Office Add-in, (or to give the user th
 - **UserOptionToDisable**: The user is prompted to choose whether to disable and hide the COM add-ins specified in the child `comAddin` elements of the `disable` property or to disable and hide the Office Add-in.
 
 > [!NOTE]
-> To force the COM add-in to be enabled and the Office Add-in to be disabled and hidden on the Windows computer, use the `alternates.prefer` property as described in [Configure the manifest](?tabs=xmlmanifest#configure-the-manifest).
+> To force the COM add-in to be enabled and the Office Add-in to be disabled and hidden on the Windows computer, use the `alternates.prefer` property as described in [Configure the manifest](?tabs=jsonmanifest#configure-the-manifest).
 
 In the following is an example, the user will be prompted whether to disable the COM add-in "COM.addin.1" or to disable the Office Add-in.
 
