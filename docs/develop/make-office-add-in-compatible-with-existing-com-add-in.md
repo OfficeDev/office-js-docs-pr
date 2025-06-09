@@ -154,7 +154,13 @@ If the COM add-in is then disconnected during a subsequent Outlook session, the 
 ## Option to disable the COM add-in instead (preview)
 
 > [!NOTE]
-> The feature described in this section is in preview and should not be used in a production add-in. It is supported only in subscription Office on Windows version YYMM, build xxxxx.xxxxx, and only for Excel, PowerPoint, and Word.
+> The feature described in this section is in preview and should not be used in a production add-in. It has the following limitations.
+>
+> - It is supported only for Excel, PowerPoint, and Word.
+> - The minimum Office version that supports the feature depends on the type of manifest that add-in has.
+>
+>    - **Unified manifest for Microsoft 365**: ??????
+>    - **Add-in only manifest**: Subscription Office on Windows version 2505 (Build 18925.20042).
 
 Use manifest markup to specify whether the COM add-in or the Office Add-in should be disabled and hidden on a Windows computer when they conflict, or give the user that is installing the Office Add-in the choice of which to use.
 
@@ -174,14 +180,24 @@ The details to configure this feature depend on which type of manifest is being 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-The following example shows 
+To disable the COM add-in, instead of the Office Add-in, (or to give the user the choice) use the `alternates.disable` and `alternates.disable.effect` properties. The two possible values of the `effect` property and their effects are as follows:
+
+- **DisableWithNotification**: All of the COM add-ins specified in the child `comAddin` elements of the `disable` property are disabled and hidden. A popup dialog notifies the user that this is happening.
+- **UserOptionToDisable**: The user is prompted to choose whether to disable and hide the COM add-ins specified in the child `comAddin` elements of the `disable` property or to disable and hide the Office Add-in.
+
+In the following is an example, the user will be prompted whether to disable the COM add-in "COM.addin.1" or to disable the Office Add-in.
 
 ```json
 "extensions" [
   ...
   "alternates" [
-    {
-      ???????
+    { 
+      "disable": { 
+        "comAddin": { 
+          "progId": "COM.addin.1" 
+        }, 
+        "effect": "UserOptionToDisable" 
+      } 
     }
   ]
 ]
