@@ -22,29 +22,29 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
 :::row:::
    :::column span="":::
         :::image type="content" source="../images/index/logo-excel.svg" alt-text="Excel API reference":::
-        </br>**Excel API reference**</br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel).
+        </br>**Excel API reference**</br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/index/logo-outlook.svg" alt-text="Outlook API reference":::
-        </br>**Outlook API reference**</br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook).
+        </br>**Outlook API reference**</br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/index/logo-word.svg" alt-text="Word API reference":::
-        </br>**Word API reference**</br>[JavaScript APIs for building Word add-ins](/javascript/api/word).
+        </br>**Word API reference**</br>[JavaScript APIs for building Word add-ins](/javascript/api/word)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
         :::image type="content" source="../images/index/logo-powerpoint.svg" alt-text="PowerPoint API reference":::
-        </br>**PowerPoint API reference**</br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint).
+        </br>**PowerPoint API reference**</br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/index/logo-onenote.svg" alt-text="OneNote API reference":::
-        </br>**OneNote API reference**</br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote).
+        </br>**OneNote API reference**</br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote)
    :::column-end:::
    :::column span="":::
    :::image type="content" source="../images/index/logo-office.png" alt-text="Common API reference":::
-        </br>**Common API reference**</br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office).
+        </br>**Common API reference**</br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
    :::column-end:::
 :::row-end:::
 
