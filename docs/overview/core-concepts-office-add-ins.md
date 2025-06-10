@@ -24,7 +24,7 @@ For the best foundation for these common features and application-specific imple
 
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/office-add-ins-lifecycle-step-1-plan.png":::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-1-plan.png" alt-text="illustration of a route winding through mountains":::
    :::column-end:::
    :::column span="3":::
        **Plan**</br>
@@ -33,7 +33,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/office-add-ins-lifecycle-step-2-develop.png":::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-2-develop.png" alt-text="illustrtion of a plan, a cog, and a wrench":::
    :::column-end:::
    :::column span="3":::
        **Develop**</br>
@@ -42,7 +42,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/office-add-ins-lifecycle-step-3-test-and-debug.png":::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-3-test-and-debug.png" alt-text="illustration of an eye looking through a magnifying glass":::
    :::column-end:::
    :::column span="3":::
        **Test and debug**</br>
@@ -51,7 +51,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/office-add-ins-lifecycle-step-3-test-and-debug.png":::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-4-publish.png" alt-text="illustration of a rocket ship being deployed":::
    :::column-end:::
    :::column span="3":::
        **Publish**</br>
@@ -60,7 +60,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/office-add-ins-lifecycle-step-5-reference.png":::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-5-reference.png" alt-text="illustration of a large reference book":::
    :::column-end:::
    :::column span="3":::
        **Reference**</br>
