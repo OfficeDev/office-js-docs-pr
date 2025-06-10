@@ -1,7 +1,7 @@
 ---
 title: Combine Copilot Agents with Office Add-ins (preview)
 description: Get an overview of why and how to combine a Copilot agent with an Office Add-in.
-ms.date: 05/19/2025
+ms.date: 06/10/2025
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -121,8 +121,8 @@ The agent configuration file includes instructions for the agent and specifies o
 
 ```json
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
-    "version": "v1.3",
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
     "name": "Excel Add-in + Agent",
     "description": "Agent for working with Excel cells.",
     "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
