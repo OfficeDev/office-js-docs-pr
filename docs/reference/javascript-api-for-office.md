@@ -43,7 +43,7 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
         </br>**OneNote API reference**</br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote)
    :::column-end:::
    :::column span="":::
-   :::image type="content" source="../images/index/logo-office.png" alt-text="Common API reference":::
+   :::image type="content" source="../images/m365-app-office.png" alt-text="Common API reference":::
         </br>**Common API reference**</br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
    :::column-end:::
 :::row-end:::
