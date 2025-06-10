@@ -20,11 +20,11 @@ For any add-in you build, you need to understand the following concepts.
 - Troubleshooting your add-in
 - Publishing your add-in
 
-For the best foundation for these common features and application-specific implementations, review the documentation listed in the following table.
+For the best foundation for these common features and application-specific implementations, review the following documentation.
 
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/i_best-practices_small.svg" width="100" :::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-1-plan.png":::
    :::column-end:::
    :::column span="3":::
        **Plan**</br>
@@ -33,7 +33,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/i_code-blocks_small.svg" width="100" :::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-2-develop.png":::
    :::column-end:::
    :::column span="3":::
        **Develop**</br>
@@ -42,7 +42,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/i_recommended-testing_small.svg" width="100" :::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-3-test-and-debug.png":::
    :::column-end:::
    :::column span="3":::
        **Test and debug**</br>
@@ -51,7 +51,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/i_deploy_small.svg" width="100" :::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-3-test-and-debug.png":::
    :::column-end:::
    :::column span="3":::
        **Publish**</br>
@@ -60,7 +60,7 @@ For the best foundation for these common features and application-specific imple
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/i_reference_small.svg" width="100" :::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-5-reference.png":::
    :::column-end:::
    :::column span="3":::
        **Reference**</br>
