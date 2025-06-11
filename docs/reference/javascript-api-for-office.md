@@ -20,7 +20,7 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
 
 :::row:::
    :::column span="":::
-        :::image type="content" source="../images/m365-app-excel.png" alt-text="Excel API reference":::
+        :::image type="content" source="../images/m365-app-excel.png" alt-text="Excel API reference" border="false":::
         <br>**Excel API reference**<br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel)
    :::column-end:::
    :::column span="":::
@@ -28,21 +28,21 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
         <br>**Outlook API reference**<br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook)
    :::column-end:::
    :::column span="":::
-        :::image type="content" source="../images/m365-app-word.png" alt-text="Word API reference":::
+        :::image type="content" source="../images/m365-app-word.png" alt-text="Word API reference" border="false":::
         <br>**Word API reference**<br>[JavaScript APIs for building Word add-ins](/javascript/api/word)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
-        :::image type="content" source="../images/m365-app-powerpoint.png" alt-text="PowerPoint API reference":::
+        :::image type="content" source="../images/m365-app-powerpoint.png" alt-text="PowerPoint API reference" border="false":::
         <br>**PowerPoint API reference**<br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint)
    :::column-end:::
    :::column span="":::
-        :::image type="content" source="../images/m365-app-onenote.png" alt-text="OneNote API reference":::
+        :::image type="content" source="../images/m365-app-onenote.png" alt-text="OneNote API reference" border="false":::
         <br>**OneNote API reference**<br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote)
    :::column-end:::
    :::column span="":::
-   :::image type="content" source="../images/m365-app-office.png" alt-text="Common API reference":::
+   :::image type="content" source="../images/m365-app-office.png" alt-text="Common API reference" border="false":::
         <br>**Common API reference**<br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
    :::column-end:::
 :::row-end:::
