@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 06/05/2025
+ms.date: 06/12/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -12,8 +12,6 @@ The event-based activation feature lets a user use your add-in to complete their
 
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For details about an event's minimum requirement set and the clients and platforms that support it, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
->
-> To learn how to implement an event-based add-in that runs in Outlook on mobile devices, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Supported events
 
@@ -43,9 +41,13 @@ The following table lists events that are currently available and the supported 
 > [!NOTE]
 > <sup>1</sup> Event-based add-ins in classic Outlook on Windows require a minimum of Windows 10 Version 1903 (Build 18362) or Windows Server 2019 Version 1903 to run.
 >
-> <sup>2</sup> Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, support is now enabled for additional APIs and features introduced in later requirement sets, such as the `OnNewMessageCompose` event. To learn more, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
+> <sup>2</sup> For more information, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 >
 > <sup>3</sup> To preview the `OnMessageReadWithCustomAttachment` and `OnMessageReadWithCustomHeader` events, you must install classic Outlook on Windows Version 2312 (Build 17110.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option to access Office beta builds.
+
+## Event-based activation in Outlook on mobile devices
+
+Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, support is now enabled for additional APIs and features introduced in later requirement sets, such as the `OnNewMessageCompose` event. To learn more, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Troubleshoot your add-in
 
@@ -133,18 +135,22 @@ Be aware that you must use additional security measures when using XMLHttpReques
 
 To make CORS requests from your event-based add-in, you must add the add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
 
+## Try out event-based activation
+
+Discover how to streamline workflows and improve user experiences with event-based activation. Try out the samples to see the feature in action.
+
+- [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md)
+- [Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)
+- [Automatically update your signature when switching between mail accounts](onmessagefromchanged-onappointmentfromchanged-events.md)
+- [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
+- [Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
+- [Identify and tag external recipients using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
+- [Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
+- [Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
+
 ## See also
 
 - [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
-- [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md)
-- [Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)
-- [Automatically update your signature when switching between mail accounts](onmessagefromchanged-onappointmentfromchanged-events.md)
-- Office Add-ins code samples:
-  - [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
-  - [Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
-  - [Identify and tag external recipients using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
-  - [Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
-  - [Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)

@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 10/08/2024
+ms.date: 06/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -14,6 +14,8 @@ The following sections teach you how to develop an add-in that handles the `OnNe
 
 > [!NOTE]
 > The `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events were introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). To verify that your Outlook client supports these events, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
+>
+> The `OnNewMessageCompose` event is now supported in Outlook on mobile devices. To learn how to implement this event in your Outlook mobile add-in, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Set up your environment
 
@@ -288,7 +290,14 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 1. Save your changes.
 
 > [!NOTE]
-> There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+>
+> - There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+>
+> - The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
+>
+>   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
+>
+>   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 
 ## Update the commands HTML file
 

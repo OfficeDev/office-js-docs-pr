@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 04/22/2025
+ms.date: 06/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -28,6 +28,16 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 |[Office.context.mailbox.item.internetHeaders.setAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-setasync-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
 |[Office.context.mailbox.item.sessionData](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sessiondata-member)|Mailbox 1.11|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul>|
 |[Office.AddinCommands.EventCompletedOptions](/javascript/api/office/office.addincommands.eventcompletedoptions)|Mailbox 1.8|<ul><li>Compose</li></ul>|<ul><li>Android</li><li>iOS</li></ul>|
+
+## Supported events
+
+The following table lists the events that can be handled by add-ins running in Outlook on mobile devices. For more information about event-based activation, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
+
+|Event canonical name|Supported clients|
+|---|---|
+|`OnNewMessageCompose`|<ul><li>Android (Version 4.2352.0 and later)</li><li>iOS (Version 4.2352.0 and later)</li></ul>|
+|`OnMessageRecipientsChanged`|<ul><li>Android (Version 4.2425.0 and later)</li><li>iOS (Version 4.2425.0 and later)</li></ul>|
+|`OnMessageFromChanged`|<ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul>|
 
 ## Unsupported APIs
 
