@@ -185,10 +185,10 @@ The details to configure this feature depend on which type of manifest is being 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-To disable the COM add-in, instead of the Office Add-in, (or to give the user the choice) use the `alternates.disable` and `alternates.disable.effect` properties. The two possible values of the `effect` property and their effects are as follows:
+To disable the COM add-in, instead of the Office Add-in, (or to give the user the choice) use the `alternates.hide.windowsExtensions` and `alternates.hide.windowsExtensions.effect` properties. The two possible values of the `effect` property and their effects are as follows:
 
-- **DisableWithNotification**: All of the COM add-ins specified in the child `comAddin` elements of the `disable` property are disabled and hidden. A popup dialog notifies the user that this is happening.
-- **UserOptionToDisable**: The user is prompted to choose whether to disable and hide the COM add-ins specified in the child `comAddin` elements of the `disable` property or to disable and hide the Office Add-in.
+- **disableWithNotification**: All of the COM add-ins specified in the child `comAddin.progIds` array of the `windowsExtensions` property are disabled and hidden. A popup dialog notifies the user that this is happening.
+- **userOptionToDisable**: The user is prompted to choose whether to disable and hide the COM add-ins specified in the child `comAddin.progIds` array of the `windowsExtensions` property or to disable and hide the Office Add-in.
 
 > [!NOTE]
 > To force the COM add-in to be enabled and the Office Add-in to be disabled and hidden on the Windows computer, use the `alternates.prefer` property as described in [Configure the manifest](?tabs=jsonmanifest#configure-the-manifest).
@@ -197,17 +197,23 @@ In the following is an example, the user will be prompted whether to disable the
 
 ```json
 "extensions" [
-  ...
-  "alternates" [
-    { 
-      "disable": { 
-        "comAddin": { 
-          "progId": "COM.addin.1" 
-        }, 
-        "effect": "UserOptionToDisable" 
-      } 
-    }
-  ]
+  {   
+    ...
+    "alternates": [
+      {
+        "hide": {
+          "windowsExtensions": {
+            "effect": "userOptionToDisable",
+            "comAddin": {
+              "progIds": [
+                "COM.Addin.1"
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
 ]
 ```
 
