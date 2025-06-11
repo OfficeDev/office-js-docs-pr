@@ -293,7 +293,6 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 >
 > - There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
 > - To ensure your add-in runs as expected when an event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
->
 >   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
 >   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 
