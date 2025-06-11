@@ -3,7 +3,7 @@ title: Office JavaScript API reference documentation
 description: Learn about the Office JavaScript APIs.
 ms.author: lindalu
 ms.topic: overview
-ms.date: 06/09/2025
+ms.date: 06/11/2025
 ms.localizationpriority: high
 ---
 
