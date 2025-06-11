@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 06/12/2025
+ms.date: 06/13/2025
 ms.localizationpriority: medium
 ---
 
