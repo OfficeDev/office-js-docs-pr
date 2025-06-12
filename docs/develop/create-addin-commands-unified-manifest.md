@@ -599,4 +599,4 @@ You've now completed adding a menu to your add-in. [Sideload and test it](../tes
 ## See also
 
 - [Add-in commands](../design/add-in-commands.md)
-- [Unified manifest for Microsoft 365](json-manifest-overview.md).
+- [Unified manifest for Microsoft 365](json-manifest-overview.md)
