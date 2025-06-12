@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: Learn how add-in support in Outlook on Mac compares with other Outlook clients.
-ms.date: 02/29/2024
+ms.date: 06/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -10,8 +10,6 @@ ms.localizationpriority: medium
 You can create and run an Outlook add-in the same way in Outlook on Mac as in the other clients, including Outlook on the web, Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), iOS, and Android, without customizing the JavaScript for each client. The same calls from the add-in to the Office JavaScript API generally work the same way, except for the areas described in the following table.
 
 For more information, see [Deploy and install Outlook add-ins for testing](testing-and-tips.md).
-
-For information about new UI support, see [Add-in support in Outlook on new Mac UI](#add-in-support-in-outlook-on-new-mac-ui).
 
 | Area | Outlook on the web, Windows (new and classic), and mobile devices | Outlook on Mac |
 |:-----|:-----|:-----|
@@ -39,3 +37,11 @@ You can determine which UI version you're on, as follows:
 **New UI**
 
 ![New UI on Mac.](../images/outlook-on-mac-new.png)
+
+## Support for add-ins with the unified manifest for Microsoft 365
+
+Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't directly supported in Outlook on Mac. To run this type of add-in, it must first be published to [AppSource](https://appsource.microsoft.com/). An add-in only manifest is then generated from the unified manifest, which enables the add-in to be installed in Outlook on Mac.
+
+If you're deploying an add-in that uses the unified manifest in the [Microsoft 365 Admin Center](../publish/publish.md) and require it to run in Outlook on Mac, the add-in must be a published AppSource add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can't currently be deployed in the Microsoft 365 Admin Center.
+
+For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
