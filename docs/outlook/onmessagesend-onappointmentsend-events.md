@@ -209,7 +209,7 @@ If Outlook was able to load any Smart Alerts add-ins that are installed, but los
 If the **prompt user** or **soft block** option is used, the following behavior applies.
 
 - **Send Anyway** option is selected: The message is moved to the **Outbox** folder. When a connection is reestablished, the message is automatically sent.
-- **Don't Send** option is selected: The message is saved to the **Drafts** folder. This prevents it from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
+- **Don't Send** option is selected: The message is saved to the **Drafts** folder. This prevents the message from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
 
 If the **block** option is used, the message is saved to the **Drafts** folder and a dialog is shown to the user notifying them to reconnect. This prevents the message from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
 
