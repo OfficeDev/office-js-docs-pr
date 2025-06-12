@@ -29,7 +29,7 @@ To understand the PowerPoint APIs, you must understand how key components of a p
 
 - The presentation contains slides and presentation-level entities such as settings and custom XML parts.
 - A slide contains content like shapes, text, and tables.
-- A layout determines a slide's content is organized and displayed.
+- A layout determines how a slide's content is organized and displayed.
 
 For the full set of objects supported by the PowerPoint JavaScript API, see [PowerPoint JavaScript API](/javascript/api/powerpoint).
 
