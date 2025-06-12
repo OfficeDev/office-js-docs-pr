@@ -752,6 +752,9 @@ items:
       - name: Implement Smart Alerts to handle on-send events
         href: outlook/onmessagesend-onappointmentsend-events.md
         displayName: event-based activation
+      - name: Event-based activation in Outlook on mobile devices
+        href: outlook/mobile-event-based.md
+        displayName: event-based activation, mobile
       - name: Set the subject of a new mail item
         href: outlook/on-new-compose-events-walkthrough.md
         displayName: event-based activation

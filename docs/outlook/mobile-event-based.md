@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 04/22/2025
+ms.date: 06/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,9 +21,9 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 
 | Event canonical name and add-in only manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
 | ----- | ----- | ----- | ----- |
-| `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0)</li><li>iOS (Version 4.2352.0)</li></ul> |
-| `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
-| `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0)</li><li>iOS (Version 4.2502.0)</li></ul>|
+| `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0 and later)</li><li>iOS (Version 4.2352.0 and later)</li></ul> |
+| `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0 and later)</li><li>iOS (Version 4.2425.0 and later)</li></ul> |
+| `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul>|
 
 ## Set up your environment
 
