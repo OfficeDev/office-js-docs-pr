@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 03/11/2025
+ms.date: 06/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -321,7 +321,9 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 > [!IMPORTANT]
 >
 > - In classic Outlook on Windows, imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
-> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
+> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
+>   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
+>   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 > - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 ## Customize the text and functionality of a button in the dialog (optional)
