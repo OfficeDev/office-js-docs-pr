@@ -7,13 +7,13 @@ ms.localizationpriority: medium
 
 # Make your Office Add-in compatible with an existing COM add-in
 
-If you have an existing COM add-in, you can build some or all of that functionality into your Office Add-in, thereby enabling your solution to run on other platforms such as Office on the web or Mac. In some cases, your Office Add-in may not be able to provide all of the functionality that's available in the corresponding COM add-in. In these situations, your COM add-in may provide a better user experience on Windows than the corresponding Office Add-in can provide.
+If you have an existing COM add-in, you can build some or all of that functionality into your Office Web Add-in, thereby enabling your solution to run on other platforms such as Office on the web or Mac. In some cases, your Office Add-in may not be able to provide all of the functionality that's available in the corresponding COM add-in. In these situations, your COM add-in may provide a better user experience on Windows than the corresponding Office Add-in can provide.
 
 [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 
 With the equivalent add-ins feature, you can configure your Office Add-in so that when the equivalent COM add-in is installed on a user's computer, Office on Windows runs the COM add-in instead of the Office Add-in. A COM add-in is called "equivalent" to an Office Add-in when the following conditions apply.
 
-- They are both created by the same developer, typically the entity specified in the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property of the unified manifest or the [ProviderName](/javascript/api/manifest/providername) element in the add-in only manifest.
+- They're both created by the same developer, typically the entity specified in the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property of the unified manifest or the [ProviderName](/javascript/api/manifest/providername) element in the add-in only manifest.
 - They both are designed to be installed on the same Office application or applications, and they address the same workload with mainly overlapping functionality.
 - They have identical, or highly similar, public names, and user interfaces including control names and icons.
 
@@ -21,7 +21,7 @@ If the COM add-in is ever uninstalled, Office will automatically activate the Of
 [!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 > [!TIP]
-> Currently, the COM add-in is always given preference to the Office Add-in. But there is an enhancement to this feature in preview that provides you with a way to reverse this preference or to give the user a choice between the COM add-in and Office Add-in. For more information, see [Option to disable the COM add-in instead (preview)](#option-to-disable-the-com-add-in-instead-preview).
+> Currently, the COM add-in is always given preference to the Office Add-in. But there's an enhancement to this feature in preview that provides you with a way to reverse this preference or to give the user a choice between the COM add-in and Office Add-in. For more information, see [Option to disable the COM add-in instead (preview)](#option-to-disable-the-com-add-in-instead-preview).
 
 ## Specify an equivalent COM add-in
 
@@ -159,17 +159,17 @@ If the COM add-in is then disconnected during a subsequent Outlook session, the 
 ## Option to disable the COM add-in instead (preview)
 
 > [!NOTE]
-> The feature described in this section is in preview and should not be used in a production add-in. It has the following limitations.
+> The feature described in this section is in preview and shouldn't be used in a production add-in. It has the following limitations.
 >
-> - It is supported only for Excel, PowerPoint, and Word.
+> - It's supported only for Excel, PowerPoint, and Word.
 > - The minimum Office version that supports the feature depends on the type of manifest that add-in has.
 >
 >    - **Unified manifest for Microsoft 365**: ??????
->    - **Add-in only manifest**: Subscription Office on Windows version 2505 (Build 18925.20042).
+>    - **Add-in only manifest**: Subscription Office on Windows Version 2505 (Build 18925.20042).
 
 Use manifest markup to specify whether the COM add-in or the Office Add-in should be disabled and hidden on a Windows computer when they conflict, or give the user that is installing the Office Add-in the choice of which to use.
 
-If you configure the manifest to give the user the choice, then the user sees a dialog is similar to the following when they install the Office Add-in. The **Learn more** link in the dialog links to the following help page that provides information to help the user make the decision: [Resolve version conflicts for Office Add-ins](https://support.microsoft.com/en-us/office/resolve-version-conflicts-for-office-add-ins-1632ec51-82ed-4f8e-90b4-a246cbccccde).
+If you configure the manifest to give the user the choice, then the user sees a dialog is similar to the following when they install the Office Add-in. The **Learn more** link in the dialog points to the following help page that provides information to help the user make the decision: [Resolve version conflicts for Office Add-ins](https://support.microsoft.com/office/1632ec51-82ed-4f8e-90b4-a246cbccccde).
 
 :::image type="content" source="../images/com-preference-prompt.png" alt-text="A dialog titled 'Contoso JS Add-in Installer'. The first paragraph says 'Contoso JS Add-in has identified the following older versions of the add-in that may cause conflicts:'. Below this paragraph is a single bulleted paragraph that says 'COM Add-in name: Contoso'. Below this is a paragraph that says 'Do you want to disable the older add-in versions? (If you choose No, you will still get the new version if you open Office on Mac or Office on the web.)'. Below this is a link labelled 'Learn more'. Below this are two buttons labelled Yes and No.":::
 
@@ -177,7 +177,7 @@ If the user chooses **Yes** and Office successfully disables and hides the COM a
 
 :::image type="content" source="../images/com-preference-disable-success.png" alt-text="A dialog titled 'The Older Version Add-in Disabled'. The first paragraph says 'The older version of the add-in has been successfully disabled.' Below this a paragraph says 'To ensure the changes take effect, we recommend restarting this Office application. You can continue without restarting, but some updates may not be applied until the next launch.' Below this is an OK button.":::
 
-If the user chooses **Yes** but Office is can't disable the COM add-in for any reason, then a dialog similar to the following opens that advises the user to manually disable the COM add-in.
+If the user chooses **Yes** but Office can't disable the COM add-in for any reason, then a dialog similar to the following opens that advises the user to manually disable the COM add-in.
 
 :::image type="content" source="../images/com-preference-disable-failure.png" alt-text="A dialog titled 'Please Disable Add-in Manually'. The first paragraph says 'The older version of the add-in could not be fully disabled. To complete the process, please manually disable the COM add-in in the Office application where it was installed.' Below this are instructions labelled 'Here's how'. The instructions read as follows '1. Go to File, Options, Add-ins. 2. In the Manage dropdown at the bottom, choose the add-in type and click Go. 3. In the dialog, uncheck the add-in to disable it. 4. Restart the app to apply changes (optional but recommended). Below this is an OK button.":::
 
@@ -185,7 +185,7 @@ The details to configure this feature depend on which type of manifest is being 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-To disable the COM add-in, instead of the Office Add-in, (or to give the user the choice) use the `alternates.hide.windowsExtensions` and `alternates.hide.windowsExtensions.effect` properties. The two possible values of the `effect` property and their effects are as follows:
+To disable the COM add-in instead of the Office Add-in (or to give the user the choice), use the `alternates.hide.windowsExtensions` and `alternates.hide.windowsExtensions.effect` properties. The two possible values of the `effect` property and their effects are as follows:
 
 - **disableWithNotification**: All of the COM add-ins specified in the child `comAddin.progIds` array of the `windowsExtensions` property are disabled and hidden. A popup dialog notifies the user that this is happening.
 - **userOptionToDisable**: The user is prompted to choose whether to disable and hide the COM add-ins specified in the child `comAddin.progIds` array of the `windowsExtensions` property or to disable and hide the Office Add-in.
@@ -193,7 +193,7 @@ To disable the COM add-in, instead of the Office Add-in, (or to give the user th
 > [!NOTE]
 > To force the COM add-in to be enabled and the Office Add-in to be disabled and hidden on the Windows computer, use the `alternates.prefer` property as described in [Configure the manifest](?tabs=jsonmanifest#configure-the-manifest).
 
-In the following is an example, the user will be prompted whether to disable the COM add-in "COM.addin.1" or to disable the Office Add-in.
+In the following example, the user will be prompted whether to disable the COM add-in "COM.addin.1" or to disable the Office Add-in.
 
 ```json
 "extensions" [
@@ -219,13 +219,13 @@ In the following is an example, the user will be prompted whether to disable the
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-To configure which add-in is used (or give the user the choice) there is an optional **\<Effect\>** child of the **\<EquivalentAddins\>** element that has one of the following effects when the Office Add-in is installed, depending on which of two possible values it is set to.
+To configure which add-in is used (or give the user the choice), there is an optional **\<Effect\>** child of the **\<EquivalentAddins\>** element that has one of the following effects when the Office Add-in is installed, depending on which of two possible values it's set to.
 
 - **DisableWithNotification**: All of the COM add-ins specified in the child **\<EquivalentAddin\>** elements will be disabled and hidden. A popup dialog notifies the user that this happening.
 - **UserOptionToDisable**: The user is prompted to choose whether to disable and hide COM add-ins specified in the child **\<EquivalentAddin\>** elements or to disable and hide the Office Add-in.
 
 > [!NOTE]
-> If the **\<Effect\>** element is not present, the COM add-in is enabled and the Office Add-in is disabled and hidden on the Windows computer.
+> If the **\<Effect\>** element isn't present, the COM add-in is enabled and the Office Add-in is disabled and hidden on the Windows computer.
 
 The following is an example. The **\<Effect\>** element must be after all the **\<EquivalentAddin\>** elements.
 
