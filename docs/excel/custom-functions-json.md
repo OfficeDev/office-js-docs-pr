@@ -193,6 +193,7 @@ The `parameters` property is an array of parameter objects. The following table 
 
 > [!TIP]
 > See the following code snippet for an example of how to format the `cellValueType` parameter in JSON metadata.
+>
 > ```json
 > "parameters": [
 >     {
