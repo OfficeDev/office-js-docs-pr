@@ -1317,6 +1317,10 @@
         {
             "source_path": "docs/outlook/item-data.md",
             "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/outlook/privacy-and-security.md",
+            "redirect_url": "/office/dev/add-ins/concepts/privacy-and-security"
         }
     ]
 }
