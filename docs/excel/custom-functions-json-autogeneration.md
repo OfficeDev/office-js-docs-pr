@@ -1,7 +1,7 @@
 ---
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
-ms.date: 10/18/2024
+ms.date: 06/15/2025
 ms.localizationpriority: medium
 ---
 
@@ -404,7 +404,6 @@ Use the `type` subfield `cellValueType` to specify that a custom function accept
 - `Excel.DoubleCellValue`
 - `Excel.EntityCellValue`
 - `Excel.ErrorCellValue`
-- `Excel.FormattedNumberCellValue`
 - `Excel.LinkedEntityCellValue`
 - `Excel.LocalImageCellValue`
 - `Excel.StringCellValue`

@@ -1,7 +1,7 @@
 ---
 title: Custom functions and data types
 description: Use Excel data types with your custom functions and Office Add-ins.
-ms.date: 10/18/2024
+ms.date: 06/15/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium

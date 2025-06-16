@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
-ms.date: 10/18/2024
+ms.date: 06/15/2025
 ms.localizationpriority: medium
 ---
 
@@ -187,7 +187,7 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `dimensionality`  |  string  |  No  |  Must be either `scalar` (a non-array value) or `matrix` (a 2-dimensional array).  |
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's IntelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be `boolean`, `number`, `string`, or `any`, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to `any`. |
-| `cellValueType` | string | No | A subfield of the `type` property. Specifies the Excel data types accepted by the custom function. Accepts the case-insensitive values `cellvalue`, `booleancellvalue`, `doublecellvalue`, `entitycellvalue`, `errorcellvalue`, `formattednumbercellvalue`, `linkedentitycellvalue`, `localimagecellvalue`, `stringcellvalue`, and `webimagecellvalue`. <br/><br/>The `type` field must have the value `any` to use the `cellValueType` subfield. |
+| `cellValueType` | string | No | A subfield of the `type` property. Specifies the Excel data types accepted by the custom function. Accepts the case-insensitive values `cellvalue`, `booleancellvalue`, `doublecellvalue`, `entitycellvalue`, `errorcellvalue`, `linkedentitycellvalue`, `localimagecellvalue`, `stringcellvalue`, and `webimagecellvalue`. <br/><br/>The `type` field must have the value `any` to use the `cellValueType` subfield. |
 |  `optional`  | boolean | No | If `true`, the parameter is optional. |
 |`repeating`| boolean | No | If `true`, parameters populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
 
