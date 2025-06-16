@@ -1,7 +1,7 @@
 ---
 title: Debug a function command with a non-shared runtime
 description: Learn how to debug function commands.
-ms.date: 06/18/2025
+ms.date: 06/17/2025
 ms.localizationpriority: medium
 ---
 

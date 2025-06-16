@@ -1,7 +1,7 @@
 ---
 title: Debug the initialize and onReady functions
 description: Learn how to debug the Office.initialize and Office.onReady functions.
-ms.date: 06/18/2025
+ms.date: 06/17/2025
 ms.localizationpriority: medium
 ---
 

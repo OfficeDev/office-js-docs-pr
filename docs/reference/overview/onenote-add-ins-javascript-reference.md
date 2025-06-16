@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API overview
 description: Learn more about the OneNote JavaScript API.
-ms.date: 06/18/2025
+ms.date: 06/17/2025
 ms.service: onenote
 ms.localizationpriority: high
 ---
