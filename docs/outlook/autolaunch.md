@@ -1,7 +1,7 @@
 ---
 title: Configure your Outlook add-in for event-based activation
 description: Learn how to configure your Outlook add-in for event-based activation.
-ms.date: 06/12/2025
+ms.date: 06/17/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -86,12 +86,12 @@ In the new Outlook on Windows, you must keep the main window of the client open 
 When developing an event-based add-in to run in the classic Outlook on Windows client, be mindful of the following:
 
 - Imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
-- Add-ins don't run code included in `Office.onReady()` and `Office.initialize`. We recommend adding any startup logic, such as checking the user's Outlook version, to your event handlers instead.
 - Only the JavaScript file referenced in the manifest is supported for event-based activation. You must bundle your event-handling JavaScript code into this single file. The location of the referenced JavaScript file in the manifest varies depending on the type of manifest your add-in uses.
   - **Add-in only manifest**: **\<Override\>** child element of the **\<Runtime\>** node
   - **Unified manifest for Microsoft 365**: `"script"` property of the `"code"` object
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
+- When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
 
 ### Unsupported APIs
 
