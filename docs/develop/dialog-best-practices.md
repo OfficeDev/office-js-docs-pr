@@ -1,7 +1,7 @@
 ---
 title: Best practices and rules for the Office Dialog API
 description: Provides rules, limitations, and best practices for the Office Dialog API, such as best practices for a single-page application (SPA).
-ms.date: 02/25/2025
+ms.date: 06/17/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -66,6 +66,7 @@ When your add-in calls [Office.context.devicePermission.requestPermissions](/jav
 >
 > - Add-ins that run in Office desktop clients or in browsers not based on Chromium automatically show a dialog requesting for a user's permission. The developer doesn't need to implement the device permission API on these platforms.
 > - Add-ins that run in Safari are blocked from accessing a user's device capabilities. The device permission API isn't supported in Safari.
+> - Access to a user's geolocation is only supported in Outlook on the web and new Outlook on Windows.
 
 ### Don't use the \_host\_info value
 
