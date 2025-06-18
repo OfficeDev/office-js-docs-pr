@@ -1,7 +1,7 @@
 ---
 title: PowerPoint JavaScript object model in Office Add-ins
 description: Learn about the key components in the PowerPoint-specific JavaScript object model.
-ms.date: 06/05/2025
+ms.date: 06/18/2025
 ms.topic: concept-article
 ms.localizationpriority: high
 ---
@@ -20,7 +20,7 @@ A PowerPoint add-in interacts with objects in PowerPoint by using the Office Jav
 
 While you'll likely use the PowerPoint JavaScript API to develop the majority of functionality in add-ins that target PowerPoint, you'll also use objects in the Common API. For example:
 
-- [Office.Context](/javascript/api/office/office.context): The `Context` object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of presentation configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether a specified requirement set is supported by the PowerPoint application where the add-in is running.
+- [Office.Context](/javascript/api/office/office.context): The `Office.Context` object represents the runtime environment of the add-in and provides access to key objects of the API. It consists of presentation configuration details such as `contentLanguage` and `officeTheme` and also provides information about the add-in's runtime environment such as `host` and `platform`. Additionally, it provides the `requirements.isSetSupported()` method, which you can use to check whether a specified requirement set is supported by the PowerPoint application where the add-in is running.
 - [Office.Document](/javascript/api/office/office.document): The `Office.Document` object provides the `getFileAsync()` method, which you can use to download the PowerPoint file where the add-in is running. It also provides the `getActiveViewAsync()` method, which you can use to check whether the presentation is in a "read" or "edit" view. "edit" corresponds to any of the views in which you can edit slides: Normal, Slide Sorter, or Outline View. "read" corresponds to either Slide Show or Reading View.
 
 ## PowerPoint-specific object model
