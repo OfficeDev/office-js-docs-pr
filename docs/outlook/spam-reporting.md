@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 06/17/2025
+ms.date: 06/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -55,7 +55,7 @@ To implement the integrated spam-reporting feature in your add-in, you must conf
 
     :::image type="content" source="../images/outlook-spam-ribbon-button.png" alt-text="A sample ribbon button of a spam-reporting add-in.":::
 
-- The preprocessing dialog. When a user selects the add-in button, a dialog appears with **Report** and **Don't Report** options. In this dialog, you can share information about the reporting process or implement input options to get information about a reported message. Input options include checkboxes, radio buttons, and a text box. When a user selects **Report** from the dialog, the [SpamReporting](/javascript/api/office/office.eventtype) event is activated and is then handled by the JavaScript event handler. The following is an example of a preprocessing dialog in Outlook on Windows. Note that the appearance of the dialog may vary depending on the platform the user's Outlook client is running on.
+- The preprocessing dialog. When a user selects the add-in button, a dialog appears with **Report** and **Don't Report** options. In this dialog, you can share information about the reporting process or implement input options to get information about a reported message. Input options include checkboxes, radio buttons, and a text box. When a user selects **Report** from the dialog, the [SpamReporting](/javascript/api/office/office.eventtype) event is activated and is then handled by the JavaScript event handler. The following is an example of a preprocessing dialog in classic Outlook on Windows. Note that the appearance of the dialog may vary depending on the platform the user's Outlook client is running on.
 
     :::image type="content" source="../images/outlook-spam-processing-dialog.png" alt-text="A sample preprocessing dialog of a spam-reporting add-in.":::
 
@@ -418,12 +418,12 @@ For a list of properties you can include in a JSON object to pass as a parameter
 
 1. Save your changes.
 
-The following is a sample post-processing dialog shown to the user once the add-in completes processing a reported message in Outlook on Windows. Note that the appearance of the dialog may vary depending on the platform the user's Outlook client is running on.
+The following is a sample post-processing dialog shown to the user once the add-in completes processing a reported message in classic Outlook on Windows. Note that the appearance of the dialog may vary depending on the platform the user's Outlook client is running on.
 
 :::image type="content" source="../images/outlook-spam-post-processing-dialog.png" alt-text="A sample of a post-processing dialog shown once a reported spam message has been processed by the add-in.":::
 
 > [!TIP]
-> As you develop a spam-reporting add-in that will run in Outlook on Windows, keep the following in mind.
+> As you develop a spam-reporting add-in that will run in classic Outlook on Windows, keep the following in mind.
 >
 > - Imports aren't currently supported in the JavaScript file that contains the code to handle the spam-reporting event.
 > - When the JavaScript function specified in the manifest to handle the `SpamReporting` event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by the event handler, such as checking the user's Outlook version, to the event handler instead.
