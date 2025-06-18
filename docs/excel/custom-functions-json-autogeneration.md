@@ -1,7 +1,7 @@
 ---
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
-ms.date: 06/15/2025
+ms.date: 06/18/2025
 ms.localizationpriority: medium
 ---
 
@@ -97,6 +97,8 @@ The following JSDoc tags are supported in Excel custom functions.
 - [@param](#param) *{type}* *name* *description*
 - [@requiresAddress](#requiresAddress)
 - [@requiresParameterAddresses](#requiresParameterAddresses)
+- [@requiresStreamAddress](#requiresStreamAddress)
+- [@requiresStreamParameterAddresses](#requiresStreamParameterAddresses)
 - [@returns](#returns) *{type}*
 - [@streaming](#streaming)
 - [@volatile](#volatile)
@@ -323,6 +325,30 @@ function getParameterAddresses(firstParameter, secondParameter, thirdParameter, 
   return addresses;
 }
 ```
+
+<a id="requiresStreamAddress"></a>
+
+### @requiresStreamAddress
+
+Indicates that the function should return the address of the cell calling the streaming function.
+
+When the function is called, the `address` property will contain the addresses of the input parameters.
+
+The `address` property of the `invocation` parameter contains the address of the cell that invoked your streaming function.
+
+The function must also have `stream` set to `true`.
+
+<a id="requiresStreamParameterAddresses"></a>
+
+### @requiresStreamParameterAddresses
+
+Indicates that the function should return the pararmeter addresses of the cell calling the streaming function.
+
+When the function is called, the `parameterAddresses` property will contain the addresses of the input parameters.
+
+The `parameterAddresses` property of the `invocation` parameter contains the parameter addresses for your streaming function.
+
+The function must also have `stream` set to `true`.
 
 <a id="returns"></a>
 
