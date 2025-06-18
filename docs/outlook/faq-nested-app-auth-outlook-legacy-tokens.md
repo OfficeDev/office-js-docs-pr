@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 05/22/2025
+ms.date: 06/18/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -24,7 +24,7 @@ Legacy Exchange online tokens have already been turned off for most tenants. We'
 | Date     | Legacy tokens status |
 | -------- | ------------------------------------------------------ |
 | Now | Legacy tokens turned off for most tenants. Admins can reenable legacy tokens via PowerShell. |
-| Jun 2025 | Legacy tokens turned off for all tenants. Admins can no longer reenable legacy tokens via PowerShell. Admins can request an exception through Microsoft Support at [https://aka.ms/LegacyTokensByOctober](https://aka.ms/LegacyTokensByOctober) (this link requires you to sign in to your tenant). |
+| June 16 2025 - July 2025 | Legacy tokens are turned off for all tenants. Admins can no longer reenable legacy tokens via PowerShell. Admins can request an exception through Microsoft Support at [https://aka.ms/LegacyTokensByOctober](https://aka.ms/LegacyTokensByOctober) (this link requires you to sign in to your tenant). The process will take several weeks to complete. |
 | Oct 2025 | Legacy tokens turned off for all tenants. Exceptions are no longer allowed. |
 
 ### When is NAA generally available for my channel?
@@ -418,6 +418,15 @@ If you're add-in uses SSO through NAA, your add-in must be in compliance with th
 Be sure to handle admin consent properly. See [Publish an add-in that requires admin consent for Microsoft Graph scopes](../publish/publish-nested-app-auth-add-in.md)
 
 For additional deployment details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center). If you update your add-in (change the manifest) you need to go through the [certification process again](../publish/publish-nested-app-auth-add-in.md). You can update your web server code any time without a need for review.
+
+### Users get an unexplained error when signing in
+
+When your add-in requests a token, users may see a sign-in popup dialog showing one of the following errors.
+
+- **Something went wrong.** [*error code*]
+- **You can't get there from here**
+
+Check to see if the admin has any conditional access policies applied that enforce specific client restrictions, such as mobile location, or platform type. Also the **approved client app Conditional Access grant** is deprecated and will cause these errors with NAA token requests. An admin must completely remove this policy and switch over to the newer **application protection policy grant** for NAA to work. For more information, see [Migrate approved client app to application protection policy in Conditional Access](/entra/identity/conditional-access/migrate-approved-client-app).
 
 ## Related content
 
