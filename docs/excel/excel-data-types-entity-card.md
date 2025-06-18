@@ -92,6 +92,9 @@ The entity value JSON in the next code snippet shows a `card` layout with nested
 
 Within each card section you can specify elements like `layout`, `title`, and `properties`. The `layout` key uses the [`CardLayoutListSection`](/javascript/api/excel/excel.cardlayoutlistsection) object and accepts the value `"List"`. The `properties` key accepts an array of strings. Note that the `properties` values, such as `"Product ID"`, have corresponding data types in the preceding [Card properties](#card-properties) article section. Sections can also be collapsible and can be defined with boolean values as collapsed or not collapsed when the entity card is opened in the Excel UI.
 
+> [!TIP]
+> The `layout` key also has additional display options available beyond `"List"` within card sections. Use `"Table"` for [Excel.CardLayoutTableSection](/javascript/api/excel/excel.cardlayouttablesection) and `"TwoColumn"` for [Excel.CardLayoutTwoColumnSection](/javascript/api/excel/excel.cardlayouttwocolumnsection). Note that the `"TwoColumn"` layout is only available in preview.
+
 > [!NOTE]
 > To experiment with this code snippet in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) in our **Samples** library.
 

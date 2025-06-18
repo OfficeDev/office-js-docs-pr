@@ -1,14 +1,14 @@
 ---
 title: Debug the initialize and onReady functions
 description: Learn how to debug the Office.initialize and Office.onReady functions.
-ms.date: 08/18/2023
+ms.date: 06/17/2025
 ms.localizationpriority: medium
 ---
 
 # Debug the initialize and onReady functions
 
 > [!NOTE]
-> This article assumes that you are familiar with [Initialize your Office Add-in](../develop/initialize-add-in.md).
+> This article assumes that you're familiar with [Initialize your Office Add-in](../develop/initialize-add-in.md).
 
 The paradox of debugging the [Office.initialize](/javascript/api/office#office-office-initialize-function(1)) and [Office.onReady](/javascript/api/office#office-office-onready-function(1)) functions is that a debugger can only attach to a process that's running, but these functions run immediately as the add-in's runtime process starts up, before a debugger can attach. In most situations, restarting the add-in after a debugger is attached doesn't help because restarting the add-in closes the original runtime process *and the attached debugger* and starts a new process that has no debugger attached.
 

@@ -1,7 +1,7 @@
 ---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 06/10/2025
+ms.date: 06/17/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -426,7 +426,7 @@ The following is a sample post-processing dialog shown to the user once the add-
 > As you develop a spam-reporting add-in that will run in Outlook on Windows, keep the following in mind.
 >
 > - Imports aren't currently supported in the JavaScript file that contains the code to handle the spam-reporting event.
-> - Code included in the `Office.onReady()` and `Office.initialize` functions won't run. You must add any add-in startup logic, such as checking the user's Outlook version, to your event handlers instead.
+> - When the JavaScript function specified in the manifest to handle the `SpamReporting` event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by the event handler, such as checking the user's Outlook version, to the event handler instead.
 
 ## Update the commands HTML file
 

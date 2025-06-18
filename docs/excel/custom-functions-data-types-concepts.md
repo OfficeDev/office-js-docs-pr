@@ -1,7 +1,7 @@
 ---
 title: Custom functions and data types
 description: Use Excel data types with your custom functions and Office Add-ins.
-ms.date: 10/17/2022
+ms.date: 06/15/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -57,7 +57,7 @@ The following code sample shows a custom function that takes an [EntityCellValue
 /**
  * Accept an entity value data type as a function input.
  * @customfunction
- * @param {any} value
+ * @param {Excel.EntityCellValue} value
  * @param {string} attribute
  * @returns {any} The text value of the entity.
  */
