@@ -76,7 +76,7 @@ Outlook add-in deployment requires:
 - Microsoft 365, Exchange Online, or Exchange Server 2016 or later
 - Outlook 2016 or later
 
-To assign and manage add-ins for your tenants and users, use [Exchange PowerShell](/powershell/module/exchange/?view=exchange-ps). For more information, see [Add-ins for Outlook in Exchange Server](/exchange/add-ins-for-outlook-2013-help) and [Add-ins for Outlook in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/add-ins-for-outlook).
+To assign and manage add-ins for your tenants and users, use [Exchange PowerShell](/powershell/module/exchange). For more information, see [Add-ins for Outlook in Exchange Server](/exchange/add-ins-for-outlook-2013-help) and [Add-ins for Outlook in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/add-ins-for-outlook).
 
 It's important to note that some versions of Outlook clients and Exchange servers may only support certain Mailbox requirement sets. For details about supported requirement sets, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 
