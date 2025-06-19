@@ -24,7 +24,7 @@ The following table summarizes the primary publication methods that can be used 
 
 ### Production deployment methods
 
-The following sections provide additional information about the deployment methods that are most commonly used to distribute production Office Add-ins to users within an organization.
+The following sections provide additional information about the deployment methods that are most commonly used to distribute production Office Add-ins to users.
 
 #### AppSource
 
@@ -65,7 +65,7 @@ The following table summarizes publication methods that are available *only when
 
 A SharePoint app catalog is a special SharePoint site collection that you can create to host the manifests (add-in only manifest type) of a Word, Excel, or PowerPoint add-in. If you're deploying add-ins in an on-premises environment and none of the add-in users use a Mac, consider using a SharePoint catalog. For details, see [Publish task pane and content add-ins to a SharePoint catalog](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
-Because SharePoint catalogs don't support new add-in features implemented in the `VersionOverrides` node of the manifest, including add-in commands. For these add-ins, we recommend that you use Centralized Deployment via the admin center if possible.
+Because SharePoint catalogs don't support new add-in features implemented in the `VersionOverrides` node of the manifest, including add-in commands, for these add-ins, we recommend that you use Centralized Deployment via the admin center if possible.
 
 ### Outlook add-in Exchange server deployment
 
