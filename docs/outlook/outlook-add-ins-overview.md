@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 06/19/2025
+ms.date: 06/24/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -102,7 +102,7 @@ While non-Microsoft mailbox accounts, such as Gmail and Yahoo Mail, can be added
 |-----|-----|
 |Web|Not supported.|
 |new Outlook on Windows|Not supported.|
-|classic Outlook on Windows|//TODO|
+|classic Outlook on Windows|Not supported.|
 |Mac|<ul><li>If a non-Microsoft account was added using the IMAP CloudCache option, add-ins are supported.</li><li>If a non-Microsoft account was added using the IMAP Direct option, add-ins aren't supported.</li></ul>|
 |Mobile (Android and iOS)|Not supported.|
 

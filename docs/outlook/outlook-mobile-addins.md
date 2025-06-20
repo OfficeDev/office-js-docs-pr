@@ -1,7 +1,7 @@
 ---
 title: Add-ins for Outlook on mobile devices
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
-ms.date: 10/17/2024
+ms.date: 06/24/2025
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Add-ins now work in Outlook on mobile devices, using the same APIs available for other Outlook endpoints. If you've built an add-in for Outlook already, it's easy to get it working on Outlook mobile.
 
-Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts. However, support is not currently available on Gmail accounts.
+Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts. However, support isn't currently available for non-Microsoft accounts, such as Gmail. For more information, see the "Supported accounts" section of [Outlook add-ins overview](outlook-add-ins-overview.md#supported-accounts).
 
 **An example task pane in Outlook on iOS**
 
