@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 02/12/2025
+ms.date: 06/19/2025
 ms.localizationpriority: high
 ---
 
@@ -74,6 +74,27 @@ We're working hard to complete reference documentation for the `"extensions"` pr
 There is a `"validDomains"` array in the manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page, that URL opens in a new browser window outside the add-in pane of the Office application.
 
 To override this behavior in desktop platforms, add each domain you want to open in the add-in window to the list of domains specified in the `"validDomains"` array. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in Office on desktop, that URL opens in a new browser window (outside the add-in task pane).
+
+## Client and platform support
+
+Add-ins that use the unified manifest can be installed if the Office platform *directly* supports it.
+
+To run an add-in on platforms that don't directly support the unified manifest, you must publish the add-in to [AppSource](https://appsource.microsoft.com/). When the app package that contains the unified manifest is deployed in AppSource, an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest is then used to install the add-in on platforms that don't directly support the unified manifest.
+
+The following tables lists which Office platforms directly support add-ins that use the unified manifest.
+
+| Client/platform | Support for add-ins with the unified manifest|
+| ----- | ----- |
+| Office on the web | Directly supported |
+| Office on Windows (Version 2304 (Build 16320.00000) or later) connected to a Microsoft 365 subscription | Directly supported |
+| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Directly supported |
+| Office on Windows (prior to Version 2304 (Build 16320.00000)) connected to a Microsoft 365 subscription | Not directly supported |
+| Office on Windows (perpetual versions) | Not directly supported |
+| Office on Mac | Not directly supported |
+| Office on mobile | Not directly supported |
+
+> [!NOTE]
+> If you're deploying an add-in in the [Microsoft 365 Admin Center](../publish/publish.md) and require it to run on platforms that don't directly support the unified manifest, the add-in must be a published AppSource add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can't currently be deployed in the Microsoft 365 Admin Center.
 
 ## Sample unified manifest
 
