@@ -324,10 +324,10 @@ To define localized strings for your custom shortcuts, you must specify tokens i
     "resources": { 
         "default": { 
             "ShowTaskpane_default_shortcut": { 
-                "value": "CTRL+SHIFT+A", 
+                "value": "CTRL+SHIFT+A"
             }, 
             "ShowTaskpane_action_name": {
-                "value": "Show task pane for add-in",
+                "value": "Show task pane for add-in"
             } 
         }
     }
@@ -343,18 +343,18 @@ The localization resource file, which is also JSON-formatted, has a top-level `r
     "resources":{ 
         "en-us": { 
             "ShowTaskpane_default_shortcut": {
-                "value": "CTRL+SHIFT+A", 
+                "value": "CTRL+SHIFT+A"
             }, 
             "ShowTaskpane_action_name": {
-                "value": "Show task pane for add-in",
+                "value": "Show task pane for add-in"
             }, 
         },
         "fr-fr": { 
             "ShowTaskpane_default_shortcut": {
-                "value": "CTRL+SHIFT+A", 
+                "value": "CTRL+SHIFT+A"
             }, 
             "ShowTaskpane_action_name": {
-                "value": "Afficher le volet de tâche pour add-in",
+                "value": "Afficher le volet de tâche pour add-in"
               } 
         }
     }
