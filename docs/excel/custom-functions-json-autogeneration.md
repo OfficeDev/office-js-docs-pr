@@ -223,6 +223,9 @@ In the following example, the `helpurl` is `http://www.contoso.com/weatherhelp`.
 
 ### @linkedEntityLoadService
 
+Use `@linkedEntityLoadService` with [linked entity cell values](excel-data-types-linked-entity-cell-values.md). With linked entities, your add-in is a data provider, and you use a custom function with the tag `@linkedEntityLoadService` to register a data domain that loads data for the entities.
+
+A function can’t have both `@excludeFromAutoComplete` and `@linkedEntityLoadService` tags.
 
 <a id="param"></a>
 
