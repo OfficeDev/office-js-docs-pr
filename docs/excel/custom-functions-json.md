@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
-ms.date: 06/18/2025
+ms.date: 06/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -172,6 +172,9 @@ The `options` object enables you to customize some aspects of how and when Excel
 | Property          | Data type | Required                               | Description |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | Boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function can't use both the `stream` and `cancelable` properties. |
+| `capturesCallingObject` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the data type is passed in as the first argument in the custom function. For more information, see [Reference the entity value as a calling object](excel-add-ins-dot-functions.md#reference-the-entity-value-as-a-calling-object). |
+| `excludeFromAutoComplete` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the custom function doesn't appear in the formula AutoComplete menu in Excel. For more information, see [Exclude custom functions from the Excel UI](excel-add-ins-dot-functions.md#exclude-custom-functions-from-the-excel-ui). A function can’t have both `excludeFromAutoComplete` and `linkedEntityLoadService` properties. |
+| `linkedEntityLoadService` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the custom function registers a data domain that loads data for linked entities. A function can’t have both `excludeFromAutoComplete` and `linkedEntityLoadService` properties. For more information, see [Linked entity load service function](excel-data-types-linked-entity-cell-values.md#linked-entity-load-service-function). |
 | `requiresAddress` | Boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked it. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your custom function. A function can't use both the `stream` and `requiresAddress` properties. |
 | `requiresParameterAddresses` | Boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the addresses of the function's input parameters. This property must be used in combination with the `dimensionality` property of the [result](#result) object, and `dimensionality` must be set to `matrix`. See [Detect the address of a parameter](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. |
 | `requiresStreamAddress` | Boolean | No <br/><br/>Default value is `false`. | If `true`, the function can access the address of the cell calling the streaming function. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your streaming function. The function must also have `stream` set to `true`. |
