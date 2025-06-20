@@ -310,15 +310,11 @@ items:
         href: develop/import-teams-toolkit.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
-      - name: Create and Develop add-ins with Visual Studio
+      - name: Create and develop add-ins with Visual Studio
         items:
         - name: Overview
           href: develop/develop-add-ins-visual-studio.md
           displayName: Visual Studio
-        - name: Get JavaScript IntelliSense in Visual Studio
-          href: develop/get-javascript-intellisense-in-visual-studio.md
-        - name: Convert JavaScript projects to TypeScript
-          href: develop/convert-javascript-to-typescript.md
         - name: Quick starts
           items:
           - name: Excel
@@ -346,6 +342,10 @@ items:
         - name: PowerPoint presentation tutorial
           href: tutorials/powerpoint-tutorial-vs.md
           displayName: Visual Studio
+        - name: Get JavaScript IntelliSense in Visual Studio
+          href: develop/get-javascript-intellisense-in-visual-studio.md
+        - name: Convert JavaScript projects to TypeScript
+          href: develop/convert-javascript-to-typescript.md
       - name: Copy Script Lab snippet to Yo Office
         href: overview/create-an-office-add-in-from-script-lab.md
         displayName: 'code samples'
