@@ -41,7 +41,7 @@ When you link your Office Add-ins, Teams apps, SharePoint Framework (SPFx) apps,
 For more information on the Integrated Apps deployment process, see [Test and deploy Microsoft 365 Apps by partners in the Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 > [!NOTE]
-> If your add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) and is distributed with the Microsoft 365 admin center, it won't be installable by users with certain versions of Office. For more information, see [Office Add-ins with the unified app manifest for Microsoft 365 - Client and platform support](../develop/unified-manifest-overview.md#client-and-platfrom-support).
+> If your add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) and is distributed with the Microsoft 365 admin center, it won't be installable by users with certain versions of Office. For more information, see [Office Add-ins with the unified app manifest for Microsoft 365 - Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 > [!IMPORTANT]
 > Customers in sovereign or government clouds don't have access to Integrated Apps. They use Centralized Deployment instead. Centralized Deployment is a similar deployment method, but doesn't expose connected add-ins and apps to the admin. For more information, see [Determine if Centralized Deployment of add-ins works for your organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
