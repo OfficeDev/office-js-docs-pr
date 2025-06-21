@@ -1,16 +1,26 @@
 ---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 04/12/2024
+ms.date: 06/05/2025
 ms.localizationpriority: medium
 ---
 
 # On-send feature for Outlook add-ins
 
-The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send.
+> [!IMPORTANT]
+>
+> We recommend using [Smart Alerts](onmessagesend-onappointmentsend-events.md) instead of the on-send feature to check that certain conditions are met before a mail item is sent. Smart Alerts was released in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) and introduced the `OnMessageSend` and `OnAppointmentSend` events.
+>
+> Smart Alerts provides the following benefits.
+>
+> - It offers [send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options) when you want to provide your users with optional recommendations instead of mandatory conditions, so that they won't be unnecessarily blocked from sending messages. For example, with the **soft block** option, users can still send messages even if the add-in is unavailable during an outage. This option isn't supported by the on-send feature.
+> - It allows your add-in to be published to AppSource if the send mode property is set to the **prompt user** or **soft block** option. To learn more about publishing an event-based add-in, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+>
+> The on-send feature should only be used to support older Outlook versions that don't support the Smart Alerts feature. For improved security, we encourage users to upgrade to the latest version of Outlook.
+>
+> For more information on the differences between Smart Alerts and the on-send feature, see [Differences between Smart Alerts and the on-send feature](onmessagesend-onappointmentsend-events.md#differences-between-smart-alerts-and-the-on-send-feature). [Try out Smart Alerts by completing the walkthrough](smart-alerts-onmessagesend-walkthrough.md).
 
-> [!NOTE]
-> The on-send feature isn't supported in add-ins that use the [Unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). Achieve similar effects by using [event-based activation](autolaunch.md) and implementing a handler for the **OnMessageSend** or **OnAppointmentSend** events, or both. See also the note below about Smart Alerts.
+The on-send feature for Outlook add-ins provides a way to handle a message or meeting item, or block users from certain actions, and allows an add-in to set certain properties on send.
 
 For example, use the on-send feature to:
 
@@ -20,14 +30,6 @@ For example, use the on-send feature to:
 The on-send feature is triggered by the `ItemSend` event type and is UI-less.
 
 For information about limitations related to the on-send feature, see [Limitations](#limitations) later in this article.
-
-> [!NOTE]
-> [Smart Alerts](onmessagesend-onappointmentsend-events.md) is a newer version of the on-send feature. It was released in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) and introduced the `OnMessageSend` and `OnAppointmentSend` events. Similar to the on-send feature, Smart Alerts enables your add-in to check that certain conditions are met before a mail item is sent. Smart Alerts differentiates itself from the on-send feature as follows:
->
-> - It offers [send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options) when you want to provide your users with optional recommendations instead of mandatory conditions.
-> - It allows your add-in to be published to AppSource if the send mode property is set to the **prompt user** or **soft block** option. To learn more about publishing an event-based add-in, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
->
-> For more information on the differences between Smart Alerts and the on-send feature, see [Differences between Smart Alerts and the on-send feature](onmessagesend-onappointmentsend-events.md#differences-between-smart-alerts-and-the-on-send-feature). We invite you to [try out Smart Alerts by completing the walkthrough](smart-alerts-onmessagesend-walkthrough.md).
 
 ## Supported clients and platforms
 
@@ -61,11 +63,11 @@ Validation is done on the client side in Outlook when the send event is triggere
 
 The following screenshot shows an information bar that notifies the sender to add a subject.
 
-![An error message prompting the user to enter a missing subject line.](../images/block-on-send-subject-cc-inforbar.png)
+:::image type="content" source="../images/block-on-send-subject-cc-infobar.png" alt-text="An error message prompting the user to enter a missing subject line.":::
 
 The following screenshot shows an information bar that notifies the sender that blocked words were found.
 
-![An error message telling the user that blocked words were found.](../images/block-on-send-body.png)
+:::image type="content" source="../images/block-on-send-body.png" alt-text="An error message notifying the user that blocked words were found.":::
 
 ## Limitations
 
@@ -77,7 +79,7 @@ The on-send feature currently has the following limitations.
   > [!IMPORTANT]
   > When running `npm run validate` to [validate your add-in's manifest](../testing/troubleshoot-manifest.md), you'll receive the error, "Mailbox add-in containing ItemSend event is invalid. Mailbox add-in manifest contains ItemSend event in VersionOverrides which is not allowed." This message appears because add-ins that use the `ItemSend` event, which is required for this version of the on-send feature, can't be published to AppSource. You'll still be able to sideload and run your add-in, provided that no other validation errors are found.
 
-- **Manifest** &ndash; Only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
+- **Manifest** &ndash; The on-send feature is only supported in add-ins that use the [add-in only manifest](../develop/add-in-manifests.md). It isn't supported in add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). In the add-in only manifest, only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
 - **Send Later** (Mac only) &ndash; If there are on-send add-ins, the **Send Later** feature will be unavailable.
 
@@ -115,7 +117,7 @@ Add-ins for Outlook on the web (modern) and new Outlook on Windows that use the 
 To install a new add-in, run the following Exchange Online PowerShell cmdlets.
 
 ```powershell
-$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte –ReadCount 0
+$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte -ReadCount 0
 ```
 
 ```powershell
@@ -134,7 +136,7 @@ For all users, to disallow editing while on-send add-ins are processing:
 1. Create a new mailbox policy.
 
    ```powershell
-    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+    New-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
     > [!NOTE]
@@ -143,7 +145,7 @@ For all users, to disallow editing while on-send add-ins are processing:
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy -OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -159,7 +161,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 1. Create a new mailbox policy for the group.
 
    ```powershell
-    New-OWAMailboxPolicy FinanceOWAPolicy
+    New-OwaMailboxPolicy FinanceOWAPolicy
    ```
 
    > [!NOTE]
@@ -168,7 +170,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 1. Enforce compliance on send.
 
    ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy FinanceOWAPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -186,7 +188,7 @@ To enforce on-send compliance for a specific group of users, the steps are as fo
 To turn off on-send compliance enforcement for a user, assign a mailbox policy that doesn't have the flag enabled by running the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox -OwaMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]
@@ -195,7 +197,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 To turn off on-send compliance enforcement for all users that have a specific Outlook on the web or new Outlook on Windows mailbox policy assigned, run the following cmdlets.
 
 ```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$false
 ```
 
 # [Web browser (classic)](#tab/classic)
@@ -205,7 +207,7 @@ Add-ins for Outlook on the web (classic) that use the on-send feature will run f
 To install a new add-in, run the following Exchange Online PowerShell cmdlets.
 
 ```powershell
-$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte –ReadCount 0
+$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte -ReadCount 0
 ```
 
 ```powershell
@@ -224,7 +226,7 @@ To enable on-send add-ins for all users:
 1. Create a new Outlook on the web mailbox policy.
 
    ```powershell
-    New-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy
+    New-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
     > [!NOTE]
@@ -233,7 +235,7 @@ To enable on-send add-ins for all users:
 1. Enable the on-send feature.
 
    ```powershell
-    Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -249,7 +251,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 1. Create a new Outlook on the web mailbox policy for the group.
 
    ```powershell
-    New-OWAMailboxPolicy FinanceOWAPolicy
+    New-OwaMailboxPolicy FinanceOWAPolicy
    ```
 
    > [!NOTE]
@@ -258,7 +260,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 1. Enable the on-send feature.
 
    ```powershell
-    Get-OWAMailboxPolicy FinanceOWAPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$true
+    Get-OwaMailboxPolicy FinanceOWAPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$true
    ```
 
 1. Assign the policy to users.
@@ -276,7 +278,7 @@ To enable the on-send feature for a specific group of users the steps are as fol
 To disable the on-send feature for a user or assign an Outlook on the web mailbox policy that does not have the flag enabled, run the following cmdlets. In this example, the mailbox policy is *ContosoCorpOWAPolicy*.
 
 ```powershell
-Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorpOWAPolicy"
+Get-CASMailbox joe@contoso.com | Set-CASMailbox –OwaMailboxPolicy "ContosoCorpOWAPolicy"
 ```
 
 > [!NOTE]
@@ -285,7 +287,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OWAMailboxPolicy "ContosoCorp
 To disable the on-send feature for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.
 
 ```powershell
-Get-OWAMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OWAMailboxPolicy –OnSendAddinsEnabled:$false
+Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSendAddinsEnabled:$false
 ```
 
 # [Windows (classic)](#tab/windows)
@@ -392,6 +394,17 @@ The on-send add-ins will run during send if the Exchange server is online and re
 
 > [!NOTE]
 > On Mac in any offline state, the **Send** button (or the **Send Update** button for existing meetings) is disabled and a notification displayed that their organization doesn't allow send when the user is offline.
+
+## Add-in availability when offline in new Outlook on Windows
+
+When a user turns on the [offline setting](https://support.microsoft.com/office/2460e4a8-16c7-47fc-b204-b1549275aac9) in the new Outlook on Windows, they can continue to access their emails and calendar if they lose internet connection. While some functionalities remain available, Outlook add-ins and the Microsoft 365 and Copilot store aren't available when offline. The following table describes the behavior of on-send add-ins when a machine is offline or has an intermittent connection.
+
+| Scenario | On-send add-in behavior |
+| ----- | ----- |
+| No internet connection when Outlook is launched | Because Outlook can't determine which add-ins are installed while offline, on-send add-ins can't activate when the `ItemSend` event occurs. To ensure that mail items are still checked for compliance before they're sent, administrators can configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. When configured, outgoing items are saved to the **Drafts** folder instead of the **Outbox** folder to prevent them from being automatically sent when the machine reconnects to the internet. For more information, see [Install Outlook add-ins that use on-send](#install-outlook-add-ins-that-use-on-send). |
+| A connection is established after launching Outlook while offline | Outlook will be able to identify which on-send add-ins are installed. When a user selects **Send** on a mail item that was blocked by the **OnSendAddinsEnabled** mailbox policy, the on-send add-in runs to check for compliance. |
+| Machine loses connection while Outlook is in use | If a user loses connection as they select **Send**, a dialog is shown to notify them that they're offline. The mail item is then saved to the **Drafts** folder to prevent it from being automatically sent when the machine reconnects to the internet. |
+| A connection is reestablished | Installed on-send add-ins resume handling the `ItemSend` event when it occurs. Mail items that were moved to the **Outbox** folder are sent. When items in the **Drafts** folder are sent, on-send add-ins are activated to ensure that the mail items are compliant. |
 
 ### User can edit item while on-send add-ins are working on it
 

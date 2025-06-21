@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 03/11/2025
+ms.date: 06/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,9 +21,9 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 
 | Event canonical name and add-in only manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
 | ----- | ----- | ----- | ----- |
-| `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0)</li><li>iOS (Version 4.2352.0)</li></ul> |
-| `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
-| `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0)</li><li>iOS (Version 4.2502.0)</li></ul>|
+| `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0 and later)</li><li>iOS (Version 4.2352.0 and later)</li></ul> |
+| `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0 and later)</li><li>iOS (Version 4.2425.0 and later)</li></ul> |
+| `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul>|
 
 ## Set up your environment
 
@@ -38,9 +38,9 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. Configure the "extensions.runtimes" property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
+1. Configure the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
 
-1. In the "extensions.ribbons.contexts" array, add `mailRead` as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array, add `mailRead` as an item. When you're finished, the array should look like the following.
 
     ```json
     "contexts": [
@@ -48,7 +48,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ],
     ```
 
-1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, add `"mobile"` as an item. When you're finished, the array should look like the following.
 
     ```json
     "formFactors": [
@@ -57,7 +57,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ]
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -65,12 +65,12 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ]
     ```
 
-1. Add an object like the following to the "autoRunEvents" array. Note the following about this code:
+1. Add an object like the following to the `"autoRunEvents"` array. Note the following about this code:
 
-   - The "events" property maps handlers to events.
-   - The "events.type" must be one of the types listed at [Supported events and clients](#supported-events-and-clients).
-   - The value of the "events.actionId" is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
-   - You can have more than one object in the "events" array.
+   - The `"events"` property maps handlers to events.
+   - The `"events.type"` must be one of the types listed at [Supported events and clients](#supported-events-and-clients).
+   - The value of the `"events.actionId"` is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
+   - You can have more than one object in the `"events"` array.
 
     ```json
       {
@@ -260,7 +260,6 @@ To enable your add-in to complete tasks when the `OnNewMessageCompose` event occ
                     }
     
                     // Show a notification when the signature is added to the message.
-                    // Important: Only the InformationalMessage type is supported in Outlook mobile at this time.
                     const notification = {
                         type: Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,
                         message: "Company signature added.",

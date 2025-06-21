@@ -4,6 +4,7 @@ description: Learn how to build a simple Outlook task pane add-in by using the O
 ms.date: 02/18/2025
 ms.service: outlook
 ms.localizationpriority: high
+ms.custom: required-for-compliance # Indicates that this page is linked to in a legal document. 
 ---
 
 # Build your first Outlook add-in

@@ -185,6 +185,8 @@ items:
         href: develop/auth-external-add-ins.md
       - name: Access Microsoft Graph
         href: develop/authorize-to-microsoft-graph-without-sso.md
+      - name: Automatically save passwords in WebView2
+        href: develop/auth-save-passwords.md
     - name: UI and UX
       items:
       - name: Overview
@@ -199,7 +201,7 @@ items:
           href: design/accessibility-guidelines.md
         - name: Data visualization
           href: design/data-visualization-guidelines.md
-        - name: Voice and tone
+        - name: Writing and style
           href: design/voice-guidelines.md
       - name: UX design language and patterns
         items:
@@ -263,6 +265,17 @@ items:
             href: design/custom-tab-placement.md
         - name: Content add-ins
           href: design/content-add-ins.md
+        - name: Copilot agents
+          items:
+          - name: Combine Copilot Agents with Office Add-ins
+            href: design/agent-and-add-in-overview.md
+            displayName: preview
+          - name: Build your first add-in as a Copilot skill
+            href: quickstarts/agent-and-add-in-quickstart.md
+            displayName: preview
+          - name: Add a Copilot agent to an add-in
+            href: develop/agent-and-add-in.md
+            displayName: preview
         - name: Dialog boxes
           items:
           - name: Use the Office dialog API in your Office Add-ins
@@ -291,14 +304,43 @@ items:
         href: develop/development-kit-overview.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
-      - name: Create add-ins with the Teams Toolkit
-        href: develop/teams-toolkit-overview.md
+      - name: Create add-ins with the Microsoft 365 Agents Toolkit
+        href: develop/agents-toolkit-overview.md
+      - name: Import an add-in project to Microsoft 365 Agents Toolkit
+        href: develop/import-teams-toolkit.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
-      - name: Create and Develop add-ins with Visual Studio
+      - name: Create and develop add-ins with Visual Studio
         items:
         - name: Overview
           href: develop/develop-add-ins-visual-studio.md
+          displayName: Visual Studio
+        - name: Quick starts
+          items:
+          - name: Excel
+            items:
+            - name: Task pane
+              href: quickstarts/excel-quickstart-vs.md
+              displayName: Excel, Visual Studio
+            - name: Content
+              href: quickstarts/excel-quickstart-content.md
+              displayName: Excel, Visual Studio
+          - name: Outlook
+            href: quickstarts/outlook-quickstart-vs.md
+            displayName: Outlook, Visual Studio
+          - name: PowerPoint 
+            items:
+            - name: Task pane
+              href: quickstarts/powerpoint-quickstart-vs.md
+              displayName: PowerPoint, Visual Studio
+            - name: Content
+              href: quickstarts/powerpoint-quickstart-content.md
+              displayName: PowerPoint, Visual Studio
+          - name: Word
+            href: quickstarts/word-quickstart-vs.md
+            displayName: Word, Visual Studio
+        - name: PowerPoint presentation tutorial
+          href: tutorials/powerpoint-tutorial-vs.md
           displayName: Visual Studio
         - name: Get JavaScript IntelliSense in Visual Studio
           href: develop/get-javascript-intellisense-in-visual-studio.md
@@ -473,6 +515,9 @@ items:
     - name: Charts
       href: excel/excel-add-ins-charts.md
       displayName: Excel
+    - name: Data labels in charts
+      href: excel/excel-add-ins-charts-data-labels.md
+      displayName: Excel
     - name: Coauthoring in Excel add-ins
       href: excel/co-authoring-in-excel-add-ins.md
       displayName: Excel
@@ -488,14 +533,26 @@ items:
         - name: Concepts
           href: excel/excel-data-types-concepts.md
           displayName: Excel
-        - name: Entity value cards
+        - name: Property values on basic types
+          href: excel/excel-data-types-add-properties-to-basic-cell-values.md
+          displayName: Excel
+        - name: Cards for cell value types
           href: excel/excel-data-types-entity-card.md
+          displayName: Excel
+        - name: Linked Entity values
+          href: excel/excel-data-types-linked-entity-cell-values.md
+          displayName: Excel
+        - name: Add reference methods for dot function notation
+          href: excel/excel-add-ins-dot-functions.md
           displayName: Excel
     - name: Data validation
       href: excel/excel-add-ins-data-validation.md
       displayName: Excel
     - name: Events
       href: excel/excel-add-ins-events.md
+      displayName: Excel
+    - name: Notes
+      href: excel/excel-add-ins-notes.md
       displayName: Excel
     - name: Performance optimization
       href: excel/performance.md
@@ -522,6 +579,9 @@ items:
         displayName: Excel
       - name: Set range format 
         href: excel/excel-add-ins-ranges-set-format.md
+        displayName: Excel
+      - name: Add checkboxes 
+        href: excel/excel-add-ins-ranges-checkboxes.md
         displayName: Excel
       - name: Conditional formatting of ranges
         href: excel/excel-add-ins-conditional-formatting.md
@@ -568,11 +628,17 @@ items:
     - name: Tables
       href: excel/excel-add-ins-tables.md
       displayName: Excel
+    - name: Undo support
+      href: excel/excel-add-ins-undo-capabilities.md
+      displayName: Excel
     - name: Workbooks
       href: excel/excel-add-ins-workbooks.md
       displayName: Excel
     - name: Worksheets
       href: excel/excel-add-ins-worksheets.md
+      displayName: Excel
+    - name: Worksheet display
+      href: excel/excel-add-ins-worksheet-display.md
       displayName: Excel
     - name: Troubleshoot Excel add-ins
       href: excel/excel-add-ins-troubleshooting.md
@@ -616,6 +682,9 @@ items:
       displayName: Excel, Custom Functions
     - name: Data types
       href: excel/custom-functions-data-types-concepts.md
+      displayName: Excel, Custom Functions
+    - name: Work with formula value preview
+      href: excel/custom-functions-formula-value-preview.md
       displayName: Excel, Custom Functions
     - name: Batch custom function remote calls
       href: excel/custom-functions-batching.md
@@ -700,6 +769,8 @@ items:
       displayName: Outlook
     - name: Add-in requirements
       href: outlook/add-in-requirements.md
+    - name: Understanding add-in permissions
+      href: outlook/understanding-outlook-add-in-permissions.md
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
     - name: Event-based activation
@@ -710,6 +781,9 @@ items:
       - name: Implement Smart Alerts to handle on-send events
         href: outlook/onmessagesend-onappointmentsend-events.md
         displayName: event-based activation
+      - name: Event-based activation in Outlook on mobile devices
+        href: outlook/mobile-event-based.md
+        displayName: event-based activation, mobile
       - name: Set the subject of a new mail item
         href: outlook/on-new-compose-events-walkthrough.md
         displayName: event-based activation
@@ -766,10 +840,16 @@ items:
       href: outlook/extension-module-outlook-add-ins.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
+    - name: Call the Microsoft Graph API
+      href: outlook/microsoft-graph.md
     - name: Call Outlook REST APIs
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
       href: outlook/web-services.md
+    - name: Manage notifications
+      href: outlook/notifications.md
+    - name: Get or set body
+      href: outlook/insert-data-in-the-body.md
     - name: Get or set categories
       href: outlook/categories.md
     - name: Get or set internet headers
@@ -792,8 +872,6 @@ items:
         href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
       - name: Get and set recipients
         href: outlook/get-set-or-add-recipients.md
-      - name: Insert data in the body
-        href: outlook/insert-data-in-the-body.md
       - name: Get and set subject
         href: outlook/get-or-set-the-subject.md
       - name: Get and set times
@@ -804,12 +882,6 @@ items:
         href: outlook/sensitivity-label.md
       - name: Manage delivery time of a message
         href: outlook/delay-delivery.md
-    - name: Privacy and security
-      items:
-      - name: Overview
-        href: outlook/privacy-and-security.md
-      - name: Understanding add-in permissions
-        href: outlook/understanding-outlook-add-in-permissions.md
     - name: Authentication
       items:
       - name: Overview
@@ -876,6 +948,9 @@ items:
     - name: API reference
       href: reference/powerpoint-api-reference.md
       displayName: PowerPoint
+    - name: PowerPoint object model
+      href: powerpoint/core-concepts.md
+      displayName: PowerPoint
     - name: Add and delete slides
       href: powerpoint/add-slides.md
       displayName: PowerPoint
@@ -894,7 +969,12 @@ items:
     - name: Work with shapes
       href: powerpoint/shapes.md
       displayName: PowerPoint
-  
+    - name: Bind shapes to a data source
+      href: powerpoint/bind-shapes-in-presentation.md
+      displayName: PowerPoint
+    - name: Work with tables
+      href: powerpoint/work-with-tables.md
+      displayName: PowerPoint
 - name: Project
   items:
   - name: Project add-ins documentation
@@ -962,6 +1042,9 @@ items:
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
+    - name: Use annotations
+      href: word/annotations.md
+      displayName: Word
     - name: Use fields
       href: word/fields-guidance.md
       displayName: Word
@@ -981,32 +1064,6 @@ items:
   items: 
   - name: VSTO add-in developers' guide to Office Add-ins
     href: overview/learning-path-transition.md
-  - name: Quick starts
-    items:
-    - name: Excel
-      items:
-      - name: Task pane
-        href: quickstarts/excel-quickstart-vs.md
-        displayName: Excel
-      - name: Content
-        href: quickstarts/excel-quickstart-content.md
-        displayName: Excel
-    - name: Outlook
-      href: quickstarts/outlook-quickstart-vs.md
-      displayName: Outlook
-    - name: PowerPoint 
-      items:
-      - name: Task pane
-        href: quickstarts/powerpoint-quickstart-vs.md
-        displayName: PowerPoint
-      - name: Content
-        href: quickstarts/powerpoint-quickstart-content.md
-        displayName: PowerPoint
-    - name: Word
-      href: quickstarts/word-quickstart-vs.md
-      displayName: Word
-  - name: Work with a PowerPoint presentation
-    href: tutorials/powerpoint-tutorial-vs.md
   - name: Share code from VSTO Add-in to Office Add-in
     href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
   - name: Make your Office Add-in compatible with an existing COM add-in
