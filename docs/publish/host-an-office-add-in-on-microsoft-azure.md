@@ -1,7 +1,7 @@
 ---
 title: Stage an Office Add-in on Microsoft Azure with Visual Studio
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application using Visual Studio.
-ms.date: 02/12/2025
+ms.date: 05/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -15,7 +15,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 > The process described in this article doesn't apply to Outlook Add-ins or to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). 
 > 
 > - For instructions about staging add-ins for Outlook on Azure with Visual Studio, see [Stage an Outlook Add-in on Microsoft Azure with Visual Studio](stage-outlook-add-in-azure.md).
-> - Add-ins created using Teams Toolkit use the unified manifest. For information about publishing an add-in that you created using Teams Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Teams Toolkit.
+> - Add-ins created using Microsoft 365 Agents Toolkit use the unified manifest. For information about publishing an add-in that you created using Agents Toolkit, see [Deploy Teams app to the cloud](/microsoftteams/platform/toolkit/deploy?pivots=visual-studio-code) and [Deploy your first Teams app](/microsoftteams/platform/sbs-gs-javascript?tabs=vscode%2Cvsc%2Cviscode). The latter article is about Teams tab apps, but it is applicable to Office Add-ins created with Agents Toolkit.
 
 ## Prerequisites
 

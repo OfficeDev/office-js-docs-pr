@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 10/08/2024
+ms.date: 06/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,9 @@ Need to add a required disclaimer to all your messages? With an event-based add-
 The following sections teach you how to develop an add-in that handles the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events. By the end of this walkthrough, you'll have an add-in that automatically sets the subject of new messages and appointments being created.
 
 > [!NOTE]
-> The `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events were introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). To verify that your Outlook client supports these events, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
+>
+> - The `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events were introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). To verify that your Outlook client supports these events, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
+> - The `OnNewMessageCompose` event is now supported in Outlook on mobile devices. To learn how to implement this event in your Outlook mobile add-in, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Set up your environment
 
@@ -27,7 +29,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
 
 1. Open the **manifest.json** file.
 
-1. Navigate to the "authorization.permissions.resourceSpecific" array. In the array object, replace the value of the "name" property with "MailboxItem.ReadWrite.User". This is needed by the add-in to be able to set the subject of the mail item.
+1. Navigate to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array. In the array object, replace the value of the `"name"` property with `"MailboxItem.ReadWrite.User"`. This is needed by the add-in to be able to set the subject of the mail item.
 
     ```json
     ...
@@ -44,17 +46,17 @@ To configure the manifest, select the tab for the type of manifest you're using.
     ...
     ```
 
-1. Add the following object to the "extensions.runtimes" array. Note the following about this markup:
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup:
 
-   - The "minVersion" of the Mailbox requirement set is configured to "1.10" as this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events.
-   - The "id" of the runtime is set to the descriptive name "autorun_runtime".
-   - The "code" property has a child "page" property that is set to an HTML file and a child "script" property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
+   - The `"minVersion"` of the Mailbox requirement set is configured to `"1.10"` as this is the lowest version of the requirement set that supports the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events.
+   - The `"id"` of the runtime is set to the descriptive name `"autorun_runtime"`.
+   - The `"code"` property has a child `"page"` property that is set to an HTML file and a child `"script"` property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
        - Office on Windows executes the event handlers in a JavaScript-only runtime, which loads a JavaScript file directly.
        - Office on Mac and on the web, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handlers in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The "lifetime" property is set to "short", which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
-   - There are two types of "actions" that can run in the runtime. You'll create functions to correspond to these actions in a later step.
+   - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when one of the events is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
+   - There are two types of [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) that can run in the runtime. You'll create functions to correspond to these actions in a later step.
 
     ```json
      {
@@ -88,7 +90,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
     }
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -96,7 +98,7 @@ To configure the manifest, select the tab for the type of manifest you're using.
     ]
     ```
 
-1. Add the following object to the "autoRunEvents" array. The "events" property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the "id" properties of the objects in the "actions" array in an earlier step.
+1. Add the following object to the `"autoRunEvents"` array. The `"events"` property maps handlers to events as described in the table earlier in this article. The handler names must match those used in the `"id"` properties of the objects in the `"actions"` array in an earlier step.
 
     ```json
       {
@@ -288,7 +290,11 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 1. Save your changes.
 
 > [!NOTE]
-> There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+>
+> - There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+> - To ensure your add-in runs as expected when an event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
+>   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
+>   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 
 ## Update the commands HTML file
 

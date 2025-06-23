@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library'
 description: Tutorial on how to share code between a VSTO Add-in and an Office Add-in.
-ms.date: 02/07/2023
+ms.date: 05/19/2025
 ms.service: microsoft-365
 ms.localizationpriority: high
 ---
@@ -36,14 +36,14 @@ Skills and techniques in this tutorial:
 
 To set up your development environment:
 
-1. Install [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
+1. Install [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/).
 1. Install the following workloads.
     - ASP.NET and web development
     - .NET Core cross-platform development
     - Office/SharePoint development
     - The following **Individual** components.
         - Visual Studio Tools for Office (VSTO)
-        - .NET Core 3.0 Runtime
+        - .NET Core 9.0 Runtime
 
 You also need the following:
 
@@ -57,25 +57,25 @@ This tutorial uses the [VSTO Add-in shared library for Office Add-in](https://gi
 > [!NOTE]
 > The sample uses C#, but you can apply the techniques in this tutorial to a VSTO Add-in written in any .NET language.
 
-1. Download the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) PnP solution to a working folder on your computer.
-1. Start Visual Studio 2019 and open the **/start/Cell-Analyzer.sln** solution.
+1. Download the [VSTO Add-in shared library for Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/VSTO-shared-code-migration) sample to a working folder on your computer.
+1. Start Visual Studio and open the **/start/Cell-Analyzer.sln** solution.
 1. On the **Debug** menu, choose **Start Debugging**.
 
-The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show unicode** button. In the **Result** section, the add-in will display a list of each character in the text along with its corresponding Unicode number.
+The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show unicode** button. In the **Result** section, the add-in  displays a list of each character in the text along with its corresponding Unicode number.
 
 ![The Cell Analyzer VSTO add-in running in Excel with the "Show unicode" button and empty Result section.](../images/pnp-cell-analyzer-vsto-add-in.png)
 
 ## Analyze types of code in the VSTO Add-in
 
-The first technique to apply is to analyze the add-in for which parts of code can be shared. In general, project will break down into three types of code.
+The first technique to apply is to analyze the add-in for which parts of code can be shared. In general, the project breaks down into three types of code.
 
 ### UI code
 
-UI code interacts with the user. In VSTO UI code works through Windows Forms. Office Add-ins use HTML, CSS, and JavaScript for UI. Because of these differences, you can't share UI code with the Office Add-in. UI will need to be recreated in JavaScript.
+UI code interacts with the user. In VSTO UI code works through Windows Forms. Office Add-ins use HTML, CSS, and JavaScript for UI. Because of these differences, you can't share UI code with the Office Add-in. The UI needs to be recreated in JavaScript.
 
 ### Document code
 
-In VSTO, code interacts with the document through .NET objects, such as `Microsoft.Office.Interop.Excel.Range`. However, Office Add-ins use the Office.js library. Although these are similar, they aren't exactly the same. So again, you can't share document interaction code with the Office Add-in.
+In VSTO, code interacts with the document through .NET objects, such as `Microsoft.Office.Interop.Excel.Range`. However, Office Add-ins use the Office JavaScript library (also called Office.js). Although these are similar, they aren't exactly the same. So again, you can't share document interaction code with the Office Add-in.
 
 ### Logic code
 

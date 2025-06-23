@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 03/14/2025
+ms.date: 06/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -29,6 +29,16 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 |[Office.context.mailbox.item.sessionData](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sessiondata-member)|Mailbox 1.11|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul>|
 |[Office.AddinCommands.EventCompletedOptions](/javascript/api/office/office.addincommands.eventcompletedoptions)|Mailbox 1.8|<ul><li>Compose</li></ul>|<ul><li>Android</li><li>iOS</li></ul>|
 
+## Supported events
+
+The following table lists the events that can be handled by add-ins running in Outlook on mobile devices. For more information about event-based activation, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
+
+|Event canonical name|Supported clients|
+|---|---|
+|`OnNewMessageCompose`|<ul><li>Android (Version 4.2352.0 and later)</li><li>iOS (Version 4.2352.0 and later)</li></ul>|
+|`OnMessageRecipientsChanged`|<ul><li>Android (Version 4.2425.0 and later)</li><li>iOS (Version 4.2425.0 and later)</li></ul>|
+|`OnMessageFromChanged`|<ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul>|
+
 ## Unsupported APIs
 
 Although Outlook mobile supports up to requirement set 1.5, there are some APIs from these earlier requirement sets that aren't supported. The following table lists these APIs and also notes features that aren't supported in certain Outlook modes.
@@ -51,6 +61,7 @@ Although Outlook mobile supports up to requirement set 1.5, there are some APIs 
 |[Office.context.mailbox.item.displayReplyForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
 |[Office.context.mailbox.item.getRegexMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
 |[Office.context.mailbox.item.getRegexMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.1|<ul><li>Message Read</li><li>Appointment Attendee</li></ul>|
+|[Office.context.mailbox.item.notificationMessages](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)|Mailbox 1.3|<ul><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))<br><br>[Office.context.mailbox.item.cc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))<br><br>[Office.context.mailbox.item.to.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))|Mailbox 1.1|<ul><li>Message Compose</li></ul>|
 |[Office.context.mailbox.item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))<br><br>[Office.context.mailbox.item.cc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))<br><br>[Office.context.mailbox.item.to.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))|Mailbox 1.1|<ul><li>Message Compose</li></ul>|
 |[Office.context.mailbox.item.body.getTypeAsync](/javascript/api/outlook/office.body#outlook-office-body-gettypeasync-member(1))|Mailbox 1.1|<ul><li>Message Compose</li></ul>|

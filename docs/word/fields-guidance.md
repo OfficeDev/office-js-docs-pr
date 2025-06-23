@@ -151,8 +151,8 @@ The following code sample shows how to insert a TOC field at the cursor location
 ```javascript
 /**
  1. Run setup.
- 1. Select "[To place table of contents]" paragraph.
- 1. Run rangeInsertTOCField.
+ 2. Select "[To place table of contents]" paragraph.
+ 3. Run rangeInsertTOCField.
  */
 
 // Inserts a TOC (table of contents) field replacing selection.

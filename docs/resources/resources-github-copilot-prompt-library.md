@@ -106,7 +106,7 @@ JavaScript API.
 ### Insert a copy of an existing workbook into the current one
 
 ```code
-Insert a workbook template as base64 in the current workbook using 
+Insert a workbook template as Base64 in the current workbook using 
 insertWorksheetsFromBase64 Excel JavaScript API.
 ```
 
