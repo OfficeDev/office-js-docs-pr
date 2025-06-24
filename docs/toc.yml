@@ -767,8 +767,6 @@ items:
     - name: API reference - latest release
       href: reference/outlook-api-reference-latest.md
       displayName: Outlook
-    - name: Add-in requirements
-      href: outlook/add-in-requirements.md
     - name: Understanding add-in permissions
       href: outlook/understanding-outlook-add-in-permissions.md
     - name: Outlook add-in design guidelines
