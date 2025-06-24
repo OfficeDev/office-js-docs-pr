@@ -1,6 +1,6 @@
 ---
 title: Publish an add-in using Visual Studio Code and Azure
-description: How to publish an add-in using Visual Studio Code and Azure Active Directory
+description: How to publish an add-in using Visual Studio Code and Microsoft Entra
 ms.date: 05/19/2025
 ms.custom: vscode-azure-extension-update-completed
 ms.localizationpriority: medium

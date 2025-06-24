@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on in an Office Add-in with nested app authentication
 description: Learn how to enable SSO in an Office Add-in with nested app authentication.
-ms.date: 12/23/2024
+ms.date: 06/24/2025
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -17,7 +17,7 @@ You can use the MSAL.js library with nested app authentication to use single sig
 
 ## NAA supported accounts and hosts
 
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support Azure Active Directory B2C for business-to-consumer identity management scenarios. The following table explains the current support by platform. Platforms listed as generally available (GA) are ready for production usage in your add-in.
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support [Azure Active Directory B2C](/azure/active-directory-b2c/overview) for business-to-consumer identity management scenarios. The following table explains the current support by platform. Platforms listed as generally available (GA) are ready for production usage in your add-in.
 
 | Application | Web        | Windows                                              | Mac        | iOS/iPad           | Android        |
 |-------------|------------|------------------------------------------------------|------------|--------------------|----------------|
