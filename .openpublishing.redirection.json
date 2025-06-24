@@ -1323,7 +1323,7 @@
             "redirect_url": "/office/dev/add-ins/concepts/privacy-and-security"
         },
         {
-            "source_path": "/docs/outlook/add-in-requirements.md",
+            "source_path": "docs/outlook/add-in-requirements.md",
             "redirect_url": "/office/dev/add-ins/concepts/requirements-for-running-office-add-ins"
         }
     ]
