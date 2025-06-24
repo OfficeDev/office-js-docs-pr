@@ -33,6 +33,9 @@ items:
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
+  - name: Copy Script Lab snippet to Yo Office
+    href: overview/create-an-office-add-in-from-script-lab.md
+    displayName: 'code samples'
   - name: Samples
     href: overview/office-add-in-code-samples.md
     displayName: PnP, 'code samples'
@@ -346,9 +349,6 @@ items:
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
-      - name: Copy Script Lab snippet to Yo Office
-        href: overview/create-an-office-add-in-from-script-lab.md
-        displayName: 'code samples'
       - name: Develop add-ins with Angular
         href: develop/add-ins-with-angular2.md
     - name: Special requirements for add-ins on the iPad
