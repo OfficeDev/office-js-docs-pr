@@ -94,7 +94,7 @@ Another way to return multiple results is to use multiple functions and return a
 
 ### Complex data structures
 
-[Data types](custom-functions-data-types-concepts.md) are the best way to handle complex data structures in custom functions add-ins. Data types support [Excel errors](custom-functions-errors.md) and formatted numbers as [doubles](custom-functions-data-types-concepts.md#output-a-double). Data types also allow for designing [entity value cards](excel-data-types-entity-card.md), extending Excel data beyond the 2-dimensional grid.
+[Data types](custom-functions-data-types-concepts.md) are the best way to handle complex data structures in custom functions add-ins. Data types support [Excel errors](custom-functions-errors.md) and formatted numbers as [doubles](custom-functions-data-types-concepts.md#output-a-formatted-number). Data types also allow for designing [entity value cards](excel-data-types-entity-card.md), extending Excel data beyond the 2-dimensional grid.
 
 ## Improve the user experience of calls to external services
 

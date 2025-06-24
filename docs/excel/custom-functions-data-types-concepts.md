@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Use data types with custom functions in Excel
 
-Data types expand the Excel JavaScript API to support data types beyond the original four cell value types (string, number, boolean, and error). Data types include support for web images, doubles, entities, and arrays within entities.
+Data types expand the Excel JavaScript API to support data types beyond the original four cell value types (string, number, boolean, and error). Data types include support for web images, formatted numbers as doubles, entities, and arrays within entities.
 
 These data types amplify the power of custom functions, because custom functions accept data types as both input and output values. You can generate data types through custom functions, or take existing data types as function arguments into calculations. Once the JSON schema of a data type is set, this schema is maintained throughout the calculations.
 
@@ -28,9 +28,9 @@ Custom functions projects include a JSON metadata file. This JSON metadata file 
 
 For a full description of the manual JSON metadata creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
 
-## Output a double
+## Output a formatted number
 
-The following code sample shows how to create a formatted number with a custom function, using the [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue) object. The function takes a basic number and a format setting as the input parameters and returns a double data type as the output.
+The following code sample shows how to create a formatted number with a custom function, using the [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue) object. The function takes a basic number and a format setting as the input parameters and returns a formatted number as double data type for the output.
 
 ```js
 /**
@@ -40,7 +40,7 @@ The following code sample shows how to create a formatted number with a custom f
  * @param {string} format (e.g. "0.00%")
  * @returns A formatted number value.
  */
-function createDouble(value, format) {
+function createFormattedNumber(value, format) {
     return {
         type: "Double",
         basicValue: value,
