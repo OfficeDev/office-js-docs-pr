@@ -1,7 +1,7 @@
 ---
 title: Clear the Office cache
 description: Learn how to clear the Office cache on your computer.
-ms.date: 02/04/2025
+ms.date: 06/25/2025
 ms.localizationpriority: high
 ---
 
@@ -21,6 +21,9 @@ You should clear the Office cache in the following scenarios.
 > To remove a sideloaded add-in from Excel, OneNote, PowerPoint, or Word on the web, see [Sideload Office Add-ins in Office on the web for testing: Remove a sideloaded add-in](sideload-office-add-ins-for-testing.md#remove-a-sideloaded-add-in).
 >
 > To remove a sideloaded add-in from Outlook on the web, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+
+> [!CAUTION]
+> When you clear the Office cache, clear it completely. Don't delete individual manifest files. This can cause all add-ins to stop loading.
 
 ## Types of caches
 

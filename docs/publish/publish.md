@@ -56,7 +56,6 @@ The following table summarizes publication methods that are available *only when
 
 |Method|Use|Support limitations|
 |:---------|:------------|:------------|
-|[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser.| Not supported for production add-ins. |
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows computers other than your development computer after you have published the add-in to a server other than localhost.|<ul><li>Not supported for production add-ins.</li><li>Not supported for Outlook add-ins.</li><li>Not supported for testing on iPad, Mac, or the web.</li></ul>|
 |[SharePoint catalog](#sharepoint-app-catalog-deployment)|In an on-premises environment, to distribute your add-in to users in your organization.|<ul><li>Not supported for Outlook add-ins.</li><li>Not supported for Office on Mac.</li><li>Not supported for add-ins with any feature that requires a **\<VersionOverrides\>** element in the add-in only manifest.</li></ul>|
 |[Exchange server](#outlook-add-in-exchange-server-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|Only supported for Outlook add-ins.|
