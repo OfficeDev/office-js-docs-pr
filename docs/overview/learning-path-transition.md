@@ -1,7 +1,7 @@
 ---
 title: VSTO add-in developer's guide to Office Web Add-ins
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
-ms.date: 01/27/2025
+ms.date: 06/25/2025
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -45,7 +45,7 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 ## Step 4: Understand the JavaScript library
 
-Get the big picture of the Office JavaScript library with the [Understand the Office JavaScript APIs tutorial](/training/modules/intro-office-add-ins/3-apis) from Microsoft Learn training.
+Get the big picture of the Office JavaScript library with the article [Develop Office Add-ins](/develop/develop-overview).
 
 Then, explore the Office JavaScript APIs with the [Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
 
