@@ -43,7 +43,7 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 ## Step 5: Understand the JavaScript library
 
-For an overview of the Office JavaScript library, see [Develop Office Add-ins](/develop/develop-overview).
+For an overview of the Office JavaScript library, see [Develop Office Add-ins](../develop/develop-overview.md).
 
 Then return to Script Lab and use it like a playground: make your own code changes to the local copy of any samples you try and see how the results are affected.
 

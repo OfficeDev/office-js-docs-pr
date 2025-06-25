@@ -45,7 +45,7 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 ## Step 4: Understand the JavaScript library
 
-Get the big picture of the Office JavaScript library with the article [Develop Office Add-ins](/develop/develop-overview).
+Get the big picture of the Office JavaScript library with the article [Develop Office Add-ins](../develop/develop-overview.md).
 
 Then, explore the Office JavaScript APIs with the [Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
 
