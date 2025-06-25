@@ -39,7 +39,10 @@ There are two types of add-in commands, based on the kind of action that the com
 
 ## Location of add-in commands
 
-When a user installs an add-in, the add-in's commands are found on the ribbon, in a built-in Office tab or a custom tab that is specified in the manifest. (You can also put add-in commands on a [custom contextual tab](#contextual-tabs) that your add-in code defines at runtime.) An exception is that on certain Outlook platforms the commands are on an action bar. They appear in the UI as a button or an item in a drop-down menu.
+When a user installs an add-in, the add-in's commands are found on the ribbon, in a built-in Office tab or a custom tab that is specified in the manifest. (You can also put add-in commands on a [custom contextual tab](#contextual-tabs) that your add-in code defines at runtime.) They appear in the UI as a button or an item in a drop-down menu.
+
+> [!NOTE]
+> oNn certain Outlook platforms the commands are on an action bar rather than the ribbon.
 
 For add-in commands that appear on the ribbon, if you're using the simplified ribbon layout, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
 
