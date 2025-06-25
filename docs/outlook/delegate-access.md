@@ -91,7 +91,7 @@ An Exchange Server feature known as "automapping" is on by default. This means t
 
 The mailbox owner must first provide access to a delegate. For guidance, see [Add and manage delegates in Outlook for Mac](https://support.microsoft.com/office/49ba7631-1984-453e-8a8f-c78fd43475e4).
 
-Once access is provided, the delegate must then follow the instructions outline in [Become a delegate or stop being a delegate in Outlook for Mac](https://support.microsoft.com/office/818da19c-b03c-4a69-926a-76a7c84c3579).
+Once access is provided, the delegate must then follow the instructions outlined in [Become a delegate or stop being a delegate in Outlook for Mac](https://support.microsoft.com/office/818da19c-b03c-4a69-926a-76a7c84c3579).
 
 #### Shared mailboxes
 
