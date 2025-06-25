@@ -677,6 +677,9 @@ items:
     - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
+    - name: Custom enums
+      href: excel/custom-functions-custom-enums.md
+      displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
