@@ -12,7 +12,7 @@ ms.date: 06/25/2025
 Legacy Exchange Online tokens are deprecated and are being turned off across Microsoft 365 tenants. If you're a developer migrating your Outlook add-in from legacy tokens to Entra ID tokens and nested app authentication, you'll need to test updates to your add-in. Use the Exchange Online PowerShell cmdlets to turn off legacy tokens in a test tenant to confirm that your updated Outlook add-in is working correctly.
 
 > [!IMPORTANT]
-> Beginning in June 2025 the commands in this article will be disabled as part of turning off legacy Exchange Online tokens. For more information see [Can I turn Exchange Online legacy tokens back on?](turn-exchange-tokens-on-off.md#can-i-turn-exchange-online-legacy-tokens-back-on) in the [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
+> Beginning in June 2025 the commands in this article will be disabled as part of turning off legacy Exchange Online tokens. For more information see [Can I turn Exchange Online legacy tokens back on?](faq-nested-app-auth-outlook-legacy-tokens.md#can-i-turn-exchange-online-legacy-tokens-back-on) in the [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
 
 For more information about deprecation of legacy Exchange Online tokens, see [Nested app authentication and Outlook legacy tokens deprecation FAQ](https://aka.ms/NAAFAQ).
 
