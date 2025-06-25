@@ -1,0 +1,2 @@
+> [!NOTE]
+> Currently, an add-in that uses the [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) cannot be sideloaded on the web, Mac, or iPad. To sideload an add-in with a unified manifest on Windows, see [Sideload Office Add-ins that uses the unified manifest for Microsoft 365](../testing/sideload-add-in-with-unified-manifest.md).

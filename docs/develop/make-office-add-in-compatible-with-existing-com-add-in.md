@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 06/18/2024
+ms.date: 02/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -30,7 +30,28 @@ Before you can specify an equivalent COM add-in, you must first identify its `Pr
 > [!IMPORTANT]
 > Applies to Excel, Outlook, PowerPoint, and Word.
 
-To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then, Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed.
+To enable compatibility between your Office Add-in and COM add-in, identify the equivalent COM add-in in the [manifest](add-in-manifests.md) of your Office Add-in. Then, Office on Windows will use the COM add-in instead of the Office Add-in, if they're both installed. The configuration depends on the type of manifest that is being used.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the [`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin#progid) property identifies the COM add-in.
+
+```json
+"extensions" [
+  ...
+  "alternates" [
+    {
+      "prefer": {
+        "comAddin": {
+          "progId": "ContosoCOMAddin"
+        }
+      }
+    }
+  ]
+]
+```
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the `ProgId` element identifies the COM add-in and the [EquivalentAddins](/javascript/api/manifest/equivalentaddins) element must be positioned immediately before the closing `VersionOverrides` tag.
 
@@ -46,15 +67,19 @@ The following example shows the portion of the manifest that specifies a COM add
 </VersionOverrides>
 ```
 
+---
+
 > [!TIP]
-> For information about COM add-in and XLL UDF compatibility, see [Make your custom functions compatible with XLL user-defined functions](../excel/make-custom-functions-compatible-with-xll-udf.md). Not applicable for Outlook.
+>
+> - For information about COM add-in and XLL UDF compatibility, see [Make your custom functions compatible with XLL user-defined functions](../excel/make-custom-functions-compatible-with-xll-udf.md). Not applicable for Outlook.
+> - If you're unable to specify the **\<EquivalentAddins\>** element in the manifest of your Outlook web add-in, you must configure Group Policy instead. This only applies to Outlook. For guidance, see [Configure the Group Policy setting for Outlook add-ins](#configure-the-group-policy-setting-for-outlook-add-ins).
 
-### Configure the Group Policy setting
+### Configure the Group Policy setting for Outlook add-ins
 
-> [!IMPORTANT]
-> Applies to Outlook only.
+For Outlook web add-ins, if you're unable to update the add-in's manifest to specify the **\<EquivalentAddins\>** element, you must identify the equivalent COM add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting instead. This setting must be configured on the user's machine. Then, classic Outlook on Windows will use the COM add-in instead of the web add-in if they're both installed.
 
-To declare compatibility between your Outlook web add-in and COM add-in, identify the equivalent COM add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting. This must be configured on the user's machine. Then, classic Outlook on Windows will use the COM add-in instead of the web add-in, if they're both installed.
+> [!NOTE]
+> Configuring the Group Policy setting isn't necessary if the add-in's manifest already contains an **\<EquivalentAddins\>** section.
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).

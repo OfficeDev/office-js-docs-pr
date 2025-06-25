@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 01/07/2025
+ms.date: 03/19/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -23,11 +23,14 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
+> [!NOTE]
+> Implementing the item multi-select feature with a unified manifest for Microsoft 365 is currently only supported in classic Outlook on Windows. For other supported platforms, use the add-in only manifest instead.
+
 1. In your preferred code editor, open the Outlook quick start project you created.
 
 1. Open the **manifest.json** file located at the root of the project.
 
-1. In the "authorization.permissions.resourceSpecific" array, change the value of the "name" property to "Mailbox.ReadWrite.User". It should look like the following when you're done.
+1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, change the value of the `"name"` property to `"Mailbox.ReadWrite.User"`. It should look like the following when you're done.
 
     ```json
     "authorization": {
@@ -42,11 +45,11 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
     },
     ```
 
-1. In first object of the "extensions.runtimes" array, make the following changes.
+1. In first object of the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, make the following changes.
 
-    1. Change the "requirements.capabilities.minVersion" property to "1.13".
-    1. In the same "actions" object, add the "supportsNoItemContext" property and set it to `true`.
-    1. In the same "actions" object, add the "multiselect" property and set it to `true`.
+    1. Change the [`"requirements.capabilities.minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) property to `"1.15"`. Although the item multi-select feature was introduced in requirement set 1.13, this sample uses enhancements from later requirement sets.
+    1. In the same [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) object, add the `"supportsNoItemContext"` property and set it to `true`.
+    1. In the same "actions" object, add the `"multiselect"` property and set it to `true`.
 
     Your code should look like the following after you've made the changes.
 
@@ -57,7 +60,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
                 "capabilities": [
                     {
                         "name": "Mailbox",
-                        "minVersion": "1.13"
+                        "minVersion": "1.15"
                     }
                 ]
             },
@@ -82,9 +85,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
     ]
     ```
 
-1. Delete the second object of the "extensions.runtimes" array, whose "id" is "CommandsRuntime".
+1. Delete the second object of the `"extensions.runtimes"` array, whose `"id"` is `"CommandsRuntime"`.
 
-1. In the "extensions.ribbons.tabs.controls" array, delete the second object, whose "id" is "ActionButton".
+1. In the `"extensions.ribbons.tabs.controls"` array, delete the second object, whose `"id"` is `"ActionButton"`.
 
 1. Save your changes.
 
@@ -108,7 +111,7 @@ To enable your add-in to activate on multiple selected messages, you must add th
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
         <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
             <Requirements>
-                <bt:Sets DefaultMinVersion="1.13">
+                <bt:Sets DefaultMinVersion="1.15">
                   <bt:Set Name="Mailbox"/>
                 </bt:Sets>
             </Requirements>
@@ -191,15 +194,6 @@ Item multi-select relies on the [SelectedItemsChanged](/javascript/api/office/of
     </main>
     ```
 
-1. For classic Outlook on Windows only. Replace the existing **script** element with the following markup. This references the preview version of the Office JavaScript API.
-
-    ```html
-    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
-    ```
-
-    > [!NOTE]
-    > The preview version of the Office JavaScript API is used because this walkthrough implements the `loadItemByIdAsync` and `unloadAsync` methods, which are currently in preview. If your multi-select add-in doesn't implement these methods, use `https://appsforoffice.microsoft.com/lib/1/hosted/office.js` instead. For more information, see [Referencing the Office JavaScript API library](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
-
 1. Save your changes.
 
 ## Implement a handler for the SelectedItemsChanged event
@@ -247,15 +241,14 @@ Now that you've registered an event handler, your add-in can now get properties 
   - Item mode (`Read` or `Compose`)
   - Item type (`Message` is the only supported type at this time)
   - Subject line
-- Call the [loadItemByIdAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true#outlook-office-mailbox-loaditembyidasync-member(1)) method (preview) to get properties that aren't provided by `getSelectedItemsAsync` or to run operations on the selected messages. The `loadItemByIdAsync` method loads one selected message at a time using the message's Exchange Web Services (EWS) ID. To get the EWS IDs of the selected messages, we recommend calling `getSelectedItemsAsync`. After processing a selected message using `loadItemByIdAsync`, you must call the [unloadAsync](/javascript/api/outlook/office.loadedmessageread?view=outlook-js-preview&preserve-view=true#outlook-office-loadedmessageread-unloadasync-member(1)) method (preview) before calling `loadItemByIdAsync` on another selected message.
+- Call the [loadItemByIdAsync](/javascript/api/outlook/office.mailbox?view=outlook-js-1.15&preserve-view=true#outlook-office-mailbox-loaditembyidasync-member(1)) method to get properties that aren't provided by `getSelectedItemsAsync` or to run operations on the selected messages. The `loadItemByIdAsync` method loads one selected message at a time using the message's Exchange Web Services (EWS) ID. To get the EWS IDs of the selected messages, we recommend calling `getSelectedItemsAsync`. After processing a selected message using `loadItemByIdAsync`, you must call the [unloadAsync](/javascript/api/outlook/office.loadedmessageread?view=outlook-js-1.15&preserve-view=true#outlook-office-loadedmessageread-unloadasync-member(1)) method before calling `loadItemByIdAsync` on another selected message.
 
     > [!TIP]
-    > Before you use the `loadItemByIdAsync` method, determine if you can already access the properties you need using `getSelectedItemsAsync`. If you can, you don't need to call `loadItemByIdAsync`.
+    >
+    > - The `loadItemByIdAsync` and `unloadAsync` methods were introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+    > - Before you use the `loadItemByIdAsync` method, determine if you can already access the properties you need using `getSelectedItemsAsync`. If you can, you don't need to call `loadItemByIdAsync`.
 
 The following example implements the `getSelectedItemsAsync` and `loadItemByIdAsync` methods to get the subject line and sender's email address from each selected message.
-
-> [!NOTE]
-> The `loadItemByIdAsync` method is currently in preview in classic Outlook on Windows. To preview this API, install Version 2405 (Build 17606.10000) or later. Then, join the [Microsoft 365 Insider program](https://insider.microsoft365.com/join/Windows) and select the **Beta Channel** option.
 
 1. In **taskpane.js**, replace the existing `run` function with the following code.
 
@@ -264,7 +257,7 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
       // Clear the list of previously selected messages, if any.
       clearList(list);
 
-      // Get the subject line and sender's email address of each selected message and log it to a list in the task pane.
+      // Get the subject line and sender's email address of each selected message and log them to a list in the task pane.
       Office.context.mailbox.getSelectedItemsAsync((asyncResult) => {
         if (asyncResult.status === Office.AsyncResultStatus.Failed) {
           console.log(asyncResult.error.message);
@@ -280,8 +273,7 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
     async function getItemInfo(selectedItems) {
       for (const item of selectedItems) {
         addToList(item.subject);
-        // The loadItemByIdAsync method is currently only available to preview in classic Outlook on Windows.
-        if (Office.context.diagnostics.platform === Office.PlatformType.PC) {
+        if (Office.context.requirements.isSetSupported("Mailbox", "1.15")) {
           await getSenderEmailAddress(item);
         }
       }
@@ -345,12 +337,11 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
     npm start
     ```
 
-    > [!TIP]
-    > If your add-in doesn't automatically sideload, follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload it in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In Outlook, ensure the Reading Pane is enabled. To enable the Reading Pane, see [Use and configure the Reading Pane to preview messages](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0).
 
-1. Navigate to your inbox and choose multiple messages by holding **Ctrl** while selecting messages.
+1. Navigate to your inbox and choose multiple messages by holding <kbd>Ctrl</kbd> while selecting messages.
 
 1. Select **Show Taskpane**. The location of the add-in varies depending on your Outlook client. For guidance, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 

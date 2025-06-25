@@ -2,7 +2,7 @@
 title: Error handling with the application-specific JavaScript APIs
 description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
 ms.topic: error-reference
-ms.date: 03/01/2024
+ms.date: 06/23/2025
 ms.localizationpriority: medium
 ---
 
@@ -62,7 +62,7 @@ The following tables list the errors that application-specific APIs may return.
 
 |Error code | Error message | Notes |
 |:----------|:--------------|:------|
-|`AccessDenied` |You cannot perform the requested operation.|*None* |
+|`AccessDenied` |You cannot perform the requested operation.| This may be caused by a user's antivirus software blocking parts of Office. See the [Common errors and troubleshooting steps](../testing/testing-and-troubleshooting.md#common-errors-and-troubleshooting-steps) for "Error: Access denied" for more guidance. |
 |`ActivityLimitReached`|Activity limit has been reached.|*None* |
 |`ApiNotAvailable`|The requested API is not available.|*None* |
 |`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of the Office application. See [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets) for more information.|*None* |
@@ -100,13 +100,14 @@ The following tables list the errors that application-specific APIs may return.
 |`FormulaLengthExceedsLimit`|The bytecode of the applied formula exceeds the maximum length limit. For Office on 32-bit machines, the bytecode length limit is 16384 characters. On 64-bit machines, the bytecode length limit is 32768 characters.| This error occurs in both Excel on the web and on desktop.|
 |`GeneralException`|*Various.*|The data types APIs return `GeneralException` errors with dynamic error messages. These messages reference the cell that is the source of the error, and the problem that is causing the error, such as: "Cell A1 is missing the required property `type`."|
 |`InactiveWorkbook`|The operation failed because multiple workbooks are open and the workbook being called by this API has lost focus.|*None* |
-|`InvalidOperationInCellEditMode`|The operation isn't available while Excel is in Edit cell mode. Exit Edit mode by using the **Enter** or **Tab** keys, or by selecting another cell, and then try again.|*None* |
+|`InvalidOperationInCellEditMode`|The operation isn't available while Excel is in Edit cell mode. Exit Edit mode by using the <kbd>Enter</kbd> or <kbd>Tab</kbd> keys, or by selecting another cell, and then try again.|*None* |
 |`MergedRangeConflict`|Cannot complete the operation. A table can't overlap with another table, a PivotTable report, query results, merged cells, or an XML Map.|*None* |
 |`NonBlankCellOffSheet`|Microsoft Excel can't insert new cells because it would push non-empty cells off the end of the worksheet. These non-empty cells might appear empty but have blank values, some formatting, or a formula. Delete enough rows or columns to make room for what you want to insert and then try again.|*None* |
 |`OperationCellsExceedLimit`|The attempted operation affects more than the limit of 33554000 cells.| If the `TableColumnCollection.add API` triggers this error, confirm that there is no unintentional data within the worksheet but outside of the table. In particular, check for data in the right-most columns of the worksheet. Remove the unintended data to resolve this error. One way to verify how many cells that an operation processes is to run the following calculation: `(number of table rows) x (16383 - (number of table columns))`. The number 16383 is the maximum number of columns that Excel supports. <br><br>This error only occurs in Excel on the web. |
 |`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.|*None* |
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|*None* |
 |`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.|*None* |
+|`UndoNotSupported`|The JavaScript API request failed due to lack of support for the undo operation.|*None* |
 |`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|*None* |
 
 ### Word-specific error codes and messages

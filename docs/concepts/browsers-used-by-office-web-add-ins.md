@@ -125,7 +125,7 @@ By default, scroll bars in EdgeHTML and WebView2 are hidden until hovered over. 
 
 ### When debugging with the Microsoft Edge DevTools, the add-in crashes or reloads
 
-Setting breakpoints in the [Microsoft Edge DevTools](https://www.microsoft.com/p/microsoft-edge-devtools-preview/9mzbfrmz0mnj?rtc=1&activetab=pivot%3Aoverviewtab) for EdgeHTML can cause Office to think that the add-in is hung. It will automatically reload the add-in when this happens. To prevent this, add the following Registry key and value to the development computer: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\16.0\Wef]"AlertInterval"=dword:00000000`.
+Setting breakpoints in the [Microsoft Edge DevTools](https://apps.microsoft.com/detail/9mzbfrmz0mnj) for EdgeHTML can cause Office to think that the add-in is hung. It will automatically reload the add-in when this happens. To prevent this, add the following Registry key and value to the development computer: `[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\16.0\Wef]"AlertInterval"=dword:00000000`.
 
 ### When the add-in tries to open, get "ADD-IN ERROR We can't open this add-in from the localhost" error
 

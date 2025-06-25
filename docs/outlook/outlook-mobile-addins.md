@@ -1,7 +1,7 @@
 ---
 title: Add-ins for Outlook on mobile devices
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
-ms.date: 10/17/2024
+ms.date: 06/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -27,30 +27,30 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
   - You'll need to agree to our developer addendum for add-ins on iOS, and you must submit your Apple Developer ID for verification.
 
 - In general, only Message Read mode is supported. This has implications for how you configure the manifest.
-  - **Unified manifest for Microsoft 365**: "mailRead" is the only item you should declare in the "extensions.ribbons.contexts" array.
+  - **Unified manifest for Microsoft 365**: `"mailRead"` is the only item you should declare in the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array.
   - **Add-in only manifest**: `MobileMessageReadCommandSurface` is the only [ExtensionPoint](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) you should declare in the mobile section of your manifest.
   
   However, there are some exceptions.
   1. Appointment Organizer mode is supported for online meeting provider integrated add-ins.
-     - **Unified manifest for Microsoft 365**: "onlineMeetingDetailsOrganizer" is permitted in the "extensions.ribbons.contexts" array.
+     - **Unified manifest for Microsoft 365**: `"onlineMeetingDetailsOrganizer"` is permitted in the `"extensions.ribbons.contexts"` array.
      - **Add-in only manifest**: The [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is permitted.
   
      For more information on this scenario, see [Create an Outlook mobile add-in for an online-meeting provider](online-meeting.md).
 
   1. Appointment Attendee mode is supported for integrated add-ins created by providers of note-taking and customer relationship management (CRM) applications.
-     - **Unified manifest for Microsoft 365**: "logEventMeetingDetailsAttendee" is permitted in the "extensions.ribbons.contexts" array.
+     - **Unified manifest for Microsoft 365**: `"logEventMeetingDetailsAttendee"` is permitted in the `"extensions.ribbons.contexts"` array.
      - **Add-in only manifest**: The [MobileLogEventAppointmentAttendee extension point](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) is permitted.
 
      For more information on this scenario, see [Log appointment notes to an external application in Outlook mobile add-ins](mobile-log-appointments.md).
 
   1. Event-based activation is supported.
-     - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the "extensions.ribbons.contexts" array. But note that event-based add-ins do require an "extensions.autoRunEvents" property in the manifest.
+     - **Unified manifest for Microsoft 365**: Event-based add-ins aren't treated as a context in the unified manifest, so there is no exception for configuring the `"extensions.ribbons.contexts"` array. But note that event-based add-ins do require an `"extensions.autoRunEvents"` property in the manifest.
      - **Add-in only manifest**: The [LaunchEvent extension point](/javascript/api/manifest/extensionpoint#launchevent) *must be declared*.
   
      For more information, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 - Your manifest needs to declare mobile support including special mobile controls and icon sizes.
-  - **Unified manifest for Microsoft 365**: Include the string "mobile" in the "extensions.ribbons.requirements.formFactors" array, and include a "customMobileRibbonGroups" array in the tab object of the "extensions.ribbons.tabs" array. The object in this array must include a "controls.type" of "mobileButton" and a "controls.icons" array.
+  - **Unified manifest for Microsoft 365**: Include the string `"mobile"` in the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, and include a `"customMobileRibbonGroups"` array in the tab object of the [`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array#tabs) array. The object in this array must include a `"controls.type"` of `"mobileButton"` and a `"controls.icons"` array.
   - **Add-in only manifest**: Include a **\<MobileFormFactor\>**, and include the correct types of [controls](/javascript/api/manifest/control) and [icon sizes](/javascript/api/manifest/icon).
   
   To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
@@ -72,6 +72,14 @@ Here are examples of scenarios that make sense in Outlook mobile.
 **An example user interaction to create a Trello card from an email message on Android**
 
 ![Animated GIF showing user interaction with an add-in in Outlook on Android.](../images/outlook-mobile-addin-interaction-android.gif)
+
+## Support for add-ins with the unified manifest for Microsoft 365
+
+Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't directly supported in Outlook on mobile devices. To run this type of add-in, it must first be published to [AppSource](https://appsource.microsoft.com/). An add-in only manifest is then generated from the unified manifest, which enables the add-in to be installed in Outlook mobile.
+
+If you're deploying an add-in that uses the unified manifest in the [Microsoft 365 Admin Center](../publish/publish.md) and require it to run in Outlook mobile, the add-in must be a published AppSource add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can't currently be deployed in the Microsoft 365 Admin Center.
+
+For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 ## Testing your add-ins on mobile
 

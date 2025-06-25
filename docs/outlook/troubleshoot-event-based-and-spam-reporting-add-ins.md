@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot event-based and spam-reporting add-ins
 description: Learn how to troubleshoot development errors in Outlook add-ins that implement event-based activation or integrated spam reporting.
-ms.date: 05/20/2024
+ms.date: 01/28/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -28,8 +28,8 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-report
 
 - Ensure that the following conditions are met in your add-in's manifest.
 
-  - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in the [SourceLocation element](/javascript/api/manifest/sourcelocation) of the add-in only manifest or the "extensions.runtimes.code.page" property of the unified manifest for Microsoft 365.
-  - Verify that the **\<Runtimes\>** element (add-in only manifest) or "extensions.runtimes.code" property (unified manifest) correctly references the HTML or JavaScript file containing the event handlers. Classic Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web, on new Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use the HTML file. For an example of how this is configured in the manifest, see the "Configure the manifest" section of [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md#configure-the-manifest).
+  - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in the [SourceLocation element](/javascript/api/manifest/sourcelocation) of the add-in only manifest or the [`"extensions.runtimes.code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property of the unified manifest for Microsoft 365.
+  - Verify that the **\<Runtimes\>** element (add-in only manifest) or `"extensions.runtimes.code"` property (unified manifest) correctly references the HTML or JavaScript file containing the event handlers. Classic Outlook on Windows uses the JavaScript file during runtime, while Outlook on the web, on new Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use the HTML file. For an example of how this is configured in the manifest, see the "Configure the manifest" section of [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md#configure-the-manifest).
   
     For classic Outlook on Windows, you must bundle all your event-handling JavaScript code into this JavaScript file referenced in the manifest. Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - Verify that your event-handling JavaScript file calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart. The following code is an example.
@@ -38,11 +38,11 @@ As you develop your [event-based](autolaunch.md) or [spam-reporting](spam-report
     Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
     ```
 
-- The JavaScript code of event-based and spam-reporting add-ins that run in classic Outlook on Windows only supports [ECMAScript 2016](https://262.ecma-international.org/7.0/) and earlier specifications. Some examples of programming syntax to avoid are as follows.
+- In classic Outlook on Windows versions prior to Version 2403 (Build 17425.20000), the JavaScript code of event-based and spam-reporting add-ins only supports [ECMAScript 2016](https://262.ecma-international.org/7.0/) and earlier specifications. Some examples of programming syntax to avoid are as follows.
   - Avoid using `async` and `await` statements in your code. Including these in your JavaScript code will cause the add-in to time out.
   - Avoid using the [conditional (ternary) operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) as it will prevent your add-in from loading.
   
-  If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (new and classic), and on Mac, you must limit your code to ECMAScript 2016 to ensure that your add-in runs in classic Outlook on Windows. However, if you have a separate JavaScript file referenced by Outlook on the web, on Mac, and new Outlook on Windows, you can implement a later ECMAScript specification in that file.
+  If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (new and classic), and on Mac, you must limit your code to ECMAScript 2016 to ensure that your add-in runs in earlier versions of classic Outlook on Windows. However, if you have a separate JavaScript file referenced by Outlook on the web, on Mac, recent versions of classic Outlook on Windows, and the new Outlook on Windows, you can implement a later ECMAScript specification in that file.
 
 ## Debug your add-in
 

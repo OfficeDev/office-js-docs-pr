@@ -1,7 +1,7 @@
 ---
 title: Beginner's guide to Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
-ms.date: 08/22/2024
+ms.date: 06/25/2025
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -43,13 +43,17 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 ## Step 5: Understand the JavaScript library
 
-For an overview of the Office JavaScript library, see this tutorial from Microsoft Learn training: [Understand the Office JavaScript APIs](/training/modules/understand-office-javascript-apis/index).
+For an overview of the Office JavaScript library, see [Develop Office Add-ins](../develop/develop-overview.md).
 
 Then return to Script Lab and use it like a playground: make your own code changes to the local copy of any samples you try and see how the results are affected.
 
 ## Step 6: Understand the manifest
 
 Get an understanding of the purposes of the add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
+
+## Step 7: Create a Partner Center account
+
+If you plan to [publish your add-in to AppSource](../publish/publish.md), create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. Get this process going as soon as possible to avoid release delays.
 
 ## Next Steps
 

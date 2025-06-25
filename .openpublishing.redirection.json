@@ -1,6 +1,10 @@
 {
     "redirections": [
-	    {
+        {
+            "source_path": "docs/develop/teams-toolkit-overview.md",
+            "redirect_url": "/office/dev/add-ins/develop/agents-toolkit-overview"
+        },
+        {
             "source_path": "docs/develop/grant-admin-consent-to-an-add-in.md",
             "redirect_url": "/entra/identity-platform/quickstart-configure-app-access-web-apis#more-on-api-permissions-and-admin-consent"
         },	
@@ -54,7 +58,7 @@
         },
         {
             "source_path": "docs/reference/outlook-api-reference-latest.md",
-            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.14"
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.15"
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
@@ -393,6 +397,10 @@
             "source_path": "docs/design/automatically-open-a-task-pane-with-a-document.md",
             "redirect_url": "/office/dev/add-ins/develop/automatically-open-a-task-pane-with-a-document",
             "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/design/design-toolkits.md",
+            "redirect_url": "/office/dev/add-ins/design/add-in-design-language"
         },
         {
             "source_path": "docs/tutorials/powerpoint-tutorial-customize-ui.md",
@@ -1295,6 +1303,10 @@
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
         },
         {
+            "source_path": "docs/develop/extended-overrides.md",
+            "redirect_url": "/javascript/api/manifest/extendedoverrides"
+        },
+        {
             "source_path": "docs/outlook/activation-rules.md",
             "redirect_url": "/javascript/api/manifest/rule"
         },
@@ -1305,6 +1317,14 @@
         {
             "source_path": "docs/outlook/item-data.md",
             "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets"
+        },
+        {
+            "source_path": "docs/outlook/privacy-and-security.md",
+            "redirect_url": "/office/dev/add-ins/concepts/privacy-and-security"
+        },
+        {
+            "source_path": "docs/outlook/add-in-requirements.md",
+            "redirect_url": "/office/dev/add-ins/concepts/requirements-for-running-office-add-ins"
         }
     ]
 }

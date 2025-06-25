@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 01/13/2025
+ms.date: 06/12/2025
 ms.localizationpriority: medium
 ---
 
@@ -12,8 +12,9 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 > [!IMPORTANT]
 > We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite that starts at 8:00 AM Pacific Time, please remove it and download the latest one at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for Febuary 12th, 2025 call
-The agenda for the February Office Add-ins community call will be posted on the week of the call.
+## Agenda for July 9th, 2025 call
+
+The agenda for the July 9th Office Add-ins community call will be posted the week before the call.
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
@@ -33,4 +34,3 @@ Missed a previous community call? Check out the blog resources on the [Microsoft
 - [Microsoft 365 community YouTube channel](https://aka.ms/m365devyoutube)
 - [Microsoft 365 community site](https://aka.ms/m365pnp/community)
 - [Microsoft 365 community blog](https://aka.ms/m365pnp/community/blog)
-- [Archived Office Add-ins community calls – June 10, 2020 - February 10, 2021](https://cdn.graph.office.net/prod/office/Office-Add-ins-Community-Call-Archive.pdf)

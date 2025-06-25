@@ -1,7 +1,7 @@
 ---
 title: Debug your event-based or spam-reporting Outlook add-in
 description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
-ms.date: 12/19/2024
+ms.date: 01/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -35,7 +35,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 1. Get your add-in's ID from the manifest.
 
     - **Add-in only manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
-    - **Unified manifest for Microsoft 365**: Use the value of the "id" property of the root anonymous `{ ... }` object.
+    - **Unified manifest for Microsoft 365**: Use the value of the `"id"` property of the root anonymous `{ ... }` object.
 
 1. In the registry, mark your add-in for debugging.
 
@@ -119,7 +119,7 @@ Configure the debugger in Visual Studio Code. Follow the steps applicable to you
 1. Create a new folder called **Debugging** (perhaps in your **Desktop** folder).
 1. Open Visual Studio Code.
 1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
-1. On the Activity Bar, select **Run and Debug** (Ctrl+Shift+D).
+1. On the Activity Bar, select **Run and Debug** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>).
 
     ![The Run and Debug icon on the Activity Bar.](../images/vs-code-debug.png)
 
@@ -164,6 +164,9 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
 After confirming that the debugger is attached, return to Outlook. In the **Debug Event-based handler** dialog, choose **OK** .
 
 You can now hit your breakpoints to debug your event-based activation or spam-reporting code.
+
+> [!IMPORTANT]
+> Starting in Version 2403 (Build 17425.20000), event-based and spam-reporting add-ins use the [V8 JavaScript engine](https://v8.dev/) to run JavaScript, regardless of whether debugging is turned on or off. In earlier versions, the Chakra JavaScript engine is used when debugging is off, but the V8 engine may be used when debugging is turned on.
 
 ## Stop the debugger
 

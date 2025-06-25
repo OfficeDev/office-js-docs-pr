@@ -1,7 +1,7 @@
 ---
 title: Requirements for running Office Add-ins
 description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
-ms.date: 04/24/2024
+ms.date: 06/25/2025
 ms.localizationpriority: medium
 ---
 
@@ -26,10 +26,15 @@ For all types of add-ins (content, Outlook, and task pane add-ins and add-in com
 
 For content and task pane add-ins, in the supported Office client applications - Excel, PowerPoint, Project, or Word - you also need either an [app catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) on SharePoint to upload the add-in's XML-formatted add-in only manifest file, or you need to deploy the add-in using [Integrated Apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
-To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2016 or later, which is available through Microsoft 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
+To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2016 or later, which is available through Microsoft 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server. For Exchange on-premises installations, the following requirements apply.
+
+- The server must be Exchange 2016 or later.
+- Exchange Web Services (EWS) must be enabled and must be exposed to the Internet. Many add-ins require EWS to function properly.
+- The server must have a valid authentication certificate in order for the server to issue valid identity tokens. New installations of Exchange Server include a default authentication certificate. For more information, see [Digital certificates and encryption in Exchange 2016](/Exchange/architecture/client-access/certificates) and [Set-AuthConfig](/powershell/module/exchange/organization/Set-AuthConfig).
+- To access add-ins from [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office), the client access servers must be able to communicate with AppSource.
 
 > [!NOTE]
-> POP and IMAP email accounts in Outlook don't support Office Add-ins.
+> POP3 and IMAP email accounts in Outlook don't support Office Add-ins.
 
 ## Client requirements: Windows desktop and tablet
 
@@ -74,7 +79,7 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 |Outlook on the web (modern)<sup>1</sup>|<ul><li>iPad 2 or later</li><li>Android tablets</li></ul>|<ul><li>iOS 5 or later</li><li>Android 4.4 KitKat or later</li></ul>|On Microsoft 365, Exchange Online|<ul><li>Microsoft Edge</li><li>Chrome</li><li>Firefox</li><li>Safari</li></ul>|
 |Outlook on the web (classic)|<ul><li>iPhone 4 or later</li><li>iPad 2 or later</li><li>iPod Touch 4 or later</li></ul>|<ul><li>iOS 5 or later</li></ul>|On on-premises Exchange Server 2016 or later<sup>2</sup>|<ul><li>Safari</li></ul>|
 |Outlook on Android|<ul><li>Android tablets</li><li>Android smartphones</li></ul>|<ul><li>Android 4.4 KitKat or later</li></ul>|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for Android.<sup>3</sup>|
-|Outlook on iOS|<ul><li>iPad tablets</li><li>iPhone smartphones|<ul><li>iOS 11 or later</li></ul>|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>3</sup>|
+|Outlook on iOS|<ul><li>iPad tablets</li><li>iPhone smartphones|<ul><li>iOS 11 or later</li><li>iPadOS 13 or later</li></ul>|On the latest update of Microsoft 365 Apps for business or Exchange Online|Browser not applicable. Use the native app for iOS.<sup>3</sup>|
 
 > [!NOTE]
 > <sup>1</sup> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins.

@@ -36,7 +36,7 @@ The first step is to add pinning support, which is done in the add-in manifest. 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-Add a "pinnable" property, set to `true`, to the object in the "actions" array that defines the button or menu item that opens the task pane. The following is an example.
+Add a `"pinnable"` property, set to `true`, to the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array that defines the button or menu item that opens the task pane. The following is an example.
 
 ```json
 "actions": [

@@ -30,7 +30,7 @@ Use GitHub to contribute to this documentation without having to clone the repo 
 2. Once you are on the article in GitHub, sign in to GitHub (get a free account [Join GitHub](https://github.com/join)).
 3. Choose the **pencil icon** (edit the file in your fork of this project) and make your changes in the **<>Edit file** window.
 4. Scroll to the bottom and enter a description.
-5. Choose **Propose file change**>**Create pull request**.
+5. Choose **Propose file change** > **Create pull request**.
 
 You now have successfully submitted a pull request. Pull requests are typically reviewed within 10 business days.
 
@@ -160,7 +160,7 @@ Once your changes are successfully merged into the main repository, delete the b
 #### To delete a branch
 
 1. In the Git Bash command prompt, type `git checkout main`. This ensures that you aren't in the branch to be deleted (which isn't allowed).
-2. Next, at the command prompt, type `git branch -d <branch name>`. This deletes the branch on your computer only if it has been successfully merged to the upstream repository. (You can override this behavior with the `–D` flag, but first be sure you want to do this.)
+2. Next, at the command prompt, type `git branch -d <branch name>`. This deletes the branch on your computer only if it has been successfully merged to the upstream repository. (You can override this behavior with the `-D` flag, but first be sure you want to do this.)
 3. Finally, type `git push origin :<branch name>` at the command prompt (a space before the colon and no space after it).  This will delete the branch on your GitHub fork.  
 
 Congratulations, you have successfully contributed to the project!

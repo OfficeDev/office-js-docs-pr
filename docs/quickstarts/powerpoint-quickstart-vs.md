@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint task pane add-in with Visual Studio
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API and a Visual Studio template.
-ms.date: 08/20/2024
+ms.date: 06/20/2025
 ms.service: powerpoint
 ms.localizationpriority: high
 ---
@@ -153,7 +153,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 ## Try it out
 
-1. Using Visual Studio, test the newly created PowerPoint add-in by pressing **F5** or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
+1. Using Visual Studio, test the newly created PowerPoint add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
 2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 

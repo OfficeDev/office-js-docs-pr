@@ -1,7 +1,7 @@
 ---
 title: JavaScript API for PowerPoint
 description: Overview of the PowerPoint JavaScript API.
-ms.date: 07/05/2019
+ms.date: 05/29/2025
 ms.service: powerpoint
 ms.localizationpriority: high
 ---
@@ -10,9 +10,9 @@ ms.localizationpriority: high
 
 A PowerPoint add-in interacts with objects in PowerPoint by using the Office JavaScript API, which includes two JavaScript object models:
 
-* **PowerPoint JavaScript API**: The [PowerPoint JavaScript API](/javascript/api/powerpoint) provides strongly-typed objects that you can use to access objects in PowerPoint.
+- **PowerPoint JavaScript API**: The [PowerPoint JavaScript API](/javascript/api/powerpoint) provides strongly-typed objects that you can use to access objects in PowerPoint. To learn about the asynchronous nature of the PowerPoint JavaScript APIs and how they work with the presentation, see [Using the application-specific API model](../../develop/application-specific-api-model.md).
 
-* **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
+- **Common APIs**: The [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple Office applications. To learn more about using the Common API, see [Common JavaScript API object model](../../develop/office-javascript-api-object-model.md).
 
 ## Learn programming concepts
 
@@ -20,9 +20,9 @@ See [PowerPoint add-ins overview](../../powerpoint/powerpoint-add-ins.md) for in
 
 ## Learn about API capabilities
 
-For hands-on experience using the Common API to interact with content in PowerPoint, complete the [PowerPoint add-in tutorial](../../tutorials/powerpoint-tutorial-yo.md).
-
 For detailed information about the PowerPoint JavaScript API object model, see the [PowerPoint JavaScript API reference documentation](/javascript/api/powerpoint).
+
+For hands-on experience interacting with content in PowerPoint, complete the [PowerPoint add-in tutorial](../../tutorials/powerpoint-tutorial-yo.md).
 
 ## Try out code samples in Script Lab
 

@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 12/12/2024
+ms.date: 05/19/2025
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -19,7 +19,7 @@ You need a Microsoft 365 account. You might qualify for a Microsoft 365 E5 devel
 There are three kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the three environments is different, so if multiple people will be working on an add-in project, they must all use the same environment.
 
 - **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called webpack. The project creation and scaffolding tool is a command line tool called the Office Yeoman Generator (also called "Yo Office"), though you can still use the Visual Studio Code extensions mentioned in the next option.
-- **Visual Studio Code**: Choose this environment if you use Visual Studio Code and would prefer to create projects from extensions rather than command line tools. The project creation and scaffolding tools are the Teams Toolkit or Office Add-ins Development Kit extensions.
+- **Visual Studio Code**: Choose this environment if you use Visual Studio Code and would prefer to create projects from extensions rather than command line tools. The project creation and scaffolding tools are Microsoft 365 Agents Toolkit or Office Add-ins Development Kit extensions.
 - **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. More information later on the **Visual Studio environment** tab.
 
 > [!NOTE]
@@ -59,7 +59,7 @@ The project creation and scaffolding tool is [Yeoman generator for Office Add-in
 
 ### Install and use the Office JavaScript linter
 
-Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. If you create an add-in project with either the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) or [Teams Toolkit](../develop/teams-toolkit-overview.md), then the linter is installed and configured for you. Skip to [Run the linter](#run-the-linter).
+Microsoft provides a JavaScript linter to help you catch common errors when using the Office JavaScript library. If you create an add-in project with either the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) or [Agents Toolkit](../develop/agents-toolkit-overview.md), then the linter is installed and configured for you. Skip to [Run the linter](#run-the-linter).
 
 If you created your project manually, install and configure the linter with the following steps.
 
@@ -70,17 +70,25 @@ If you created your project manually, install and configure the linter with the 
    npm install eslint-plugin-office-addins --save-dev
    ```
 
-1. In the root of the project, create a text file named **.eslintrc.json**, if there isn't one already there. Be sure it has properties named `plugins` and `extends`, both of type array. The `plugins` array should include `"office-addins"` and the `extends` array should include `"plugin:office-addins/recommended"`. The following is a simple example. Your **.eslintrc.json** file may have additional properties and additional members of the two arrays.
+1. In the root of the project, create a text file named **eslint.config.js** (or **.mjs**), if there isn't one already there. Be sure to inherit the recommended configuration for `eslint-plugin-office-addins`. The `plugins` object should include a mapping to the `eslint-plugin-office-addins` plugin object. The following is a simple example that includes settings for TypeScript. Your **eslint.config.js** file may have additional properties and configurations.
 
-   ```json
-   {
-     "plugins": [
-       "office-addins"
-     ],
-     "extends": [
-       "plugin:office-addins/recommended"
-     ]
-   }
+   ```js
+    const officeAddins = require("eslint-plugin-office-addins");
+    const tsParser = require("@typescript-eslint/parser");
+    const tsEsLint = require("typescript-eslint");
+    
+    export default [
+      ...tsEsLint.configs.recommended,
+      ...officeAddins.configs.recommended,
+      {
+        plugins: {
+          "office-addins": officeAddins,
+        },
+        languageOptions: {
+          parser: tsParser,
+        },
+      },
+    ];
    ```
 
 1. In the root of the project, open the **package.json** file and be sure that the `scripts` array has the following member.
@@ -105,8 +113,8 @@ The main tools to be installed are:
 - npm
 - Visual Studio Code
 - A project creation tool:
-  - Teams Toolkit
-  - The Office Add-ins Development Kit for VS Code
+  - Microsoft 365 Agents Toolkit
+  - Office Add-ins Development Kit for VS Code
 
 This guide assumes that you know how to use a command-line tool.
 
@@ -118,11 +126,11 @@ Get the latest version of Visual Studio Code from [Visual Studio Code homepage](
 
 ### Install a project creation tool
 
-You can create Office add-in projects in Visual Studio Code with either the Teams Toolkit or Office Add-ins Development Kit extensions. Currently, Teams Toolkit focuses on Outlook add-ins that use the modern unified manifest. The Office Add-ins Development Kit is in preview and only focuses on Excel, PowerPoint, and Word experiences. Both tools are being actively expanded with new samples and functionality.
+You can create Office add-in projects in Visual Studio Code with either Agents Toolkit or Office Add-ins Development Kit extensions. Currently, the Office Add-ins Development Kit is in preview and only focuses on Excel, PowerPoint, and Word experiences.
 
-#### Install Teams Toolkit
+#### Install Agents Toolkit
 
-Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Teams Toolkit as described in [Install Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
+Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Agents Toolkit as described in [Install Microsoft 365 Agents Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 
 #### Install the Office Add-ins Development Kit extension 
 

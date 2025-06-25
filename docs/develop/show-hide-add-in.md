@@ -1,7 +1,7 @@
 ---
 title: Show or hide the task pane of your Office Add-in
 description: Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.
-ms.date: 08/15/2022
+ms.date: 02/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -36,7 +36,14 @@ The previous code is a handler that is registered for the [Office.Worksheet.onDe
 
 ## Additional details on showing the task pane
 
-When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your **manifest.xml** file and locating **\<SourceLocation\>** inside the `<Action xsi:type="ShowTaskpane">` element.
+When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you specified in the manifest. The configuration depends on what type of manifest you're using. 
+
+- **Unified manifest for Microsoft 365**: The URL of the file is assigned as the value of a "runtimes.code.page" property of the runtime object which has an action object of type "openPage".
+
+   [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
+   
+- **Add-in only manifest**: The URL of the file is assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your manifest file and locating **\<SourceLocation\>** inside the `<Action xsi:type="ShowTaskpane">` element.
+
 (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)
 
 Since `Office.addin.showAsTaskpane()` is an asynchronous method, your code will continue running until the method is complete. Wait for this completion with either the `await` keyword or a `then()` method, depending on which JavaScript syntax you are using.

@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 10/15/2024
+ms.date: 05/19/2025
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -22,14 +22,20 @@ There are two types of add-in commands, based on the kind of action that the com
 - **Task pane commands**: The button or menu item opens the add-in's [task pane](task-pane-add-ins.md). You add this kind of add-in command with markup in the manifest. The "code behind" the command is provided by Office.
 - **Function commands**: The button or menu item runs any arbitrary JavaScript. The code almost always calls APIs in the Office JavaScript Library, but it doesn't have to. This type of add-in typically displays no UI other than the button or menu item itself. Note the following about function commands:
 
-  - The runtime in which the function command runs is a full [browser-based runtime](../testing/runtimes.md#browser-runtime). It can render HTML and call out to the Internet to send or get data. 
+  - The runtime in which the function command runs is a full [browser-based runtime](../testing/runtimes.md#browser-runtime). It can render HTML and call out to the Internet to send or get data.
   - The runtime closes when either the function completes or 5 minutes have passed, whichever is earlier.
-  - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) method to show a dialog. This is a good way to display an error, show progress, or prompt the user for input. 
+  - The function that is triggered can call the [displayDialogAsync](/javascript/api/office/office.ui?view=common-js&preserve-view=true#office-office-ui-displaydialogasync-member(1)) method to show a dialog. This is a good way to display an error, show progress, or prompt the user for input.
 
      > [!NOTE]
      > Because of the 5-minute timeout, the dialog should be designed so that users complete their interaction and close it within 5 minutes. Your add-in should use a task pane for longer interactions.
 
   - If the add-in is configured to use a [shared runtime](../testing/runtimes.md#shared-runtime), the function can also call the [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method.
+
+   > [!TIP]
+   > Function commands aren't the only way to run arbitrary JavaScript in an add-in. An add-in can also include:
+   >
+   > - Custom handlers for certain events, such as a user opening an new message pane in Outlook.
+   > - Custom [Copilot agents](agent-and-add-in-overview.md) that take actions in response to natural language requests from the add-in's users.
 
 ## Location of add-in commands
 
@@ -69,12 +75,12 @@ The following command capabilities are currently supported.
 - Simple buttons - trigger specific actions.
 - Menus - simple menu dropdown with buttons that trigger actions.
 
-### Default Enabled or Disabled Status
+### Default availability state
 
-You can specify whether the command is enabled or disabled when your add-in launches, and programmatically change the setting.
+You can specify whether the command is available when your add-in launches, and programmatically change the setting.
 
 > [!NOTE]
-> This feature isn't supported in all Office applications or scenarios. For more information, see [Enable and Disable Add-in Commands](disable-add-in-commands.md).
+> This feature isn't supported in all Office applications or scenarios. For more information, see [Change the availability of add-in commands](disable-add-in-commands.md).
 
 ### Position on the ribbon (preview)
 
