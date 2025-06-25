@@ -1,7 +1,7 @@
 ---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 06/26/2025
+ms.date: 07/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -158,7 +158,7 @@ Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolde
 Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) on a message or appointment in compose or read mode. If the item is in a shared folder or shared mailbox, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
 
 > [!NOTE]
-> In Outlook on the web and on Windows (new and classic), when a shared folder or shared mailbox is opened in the same panel as the user's primary mailbox, the `getSharedPropertiesAsync` method requires certain conditions to be met in Message Compose mode. For more information, see the "Message Compose mode" section in [Limitations](#message-compose-mode).
+> In Outlook on the web and on Windows (new and classic), depending on how the shared folder or mailbox is accessed, the `getSharedPropertiesAsync` method may require certain conditions to be met in Message Compose mode. For more information, see the "Message Compose mode" section in [Limitations](#message-compose-mode).
 
 The following example calls the `getSharedPropertiesAsync` method to identify the owner of the mailbox and the permissions of the delegate or shared mailbox user.
 
@@ -243,10 +243,10 @@ The following table outlines the availability of add-ins in shared mailbox scena
 | ----- | ----- | ----- |
 | Add-in installed by the user | Users can't install add-ins in a shared mailbox. Add-ins installed by a user are added to the user's primary mailbox. | Users can't install add-ins in a shared mailbox. The in-app Microsoft 365 and Copilot store doesn't appear on the ribbon of the mailbox. |
 | Add-in installed by an administrator | Administrators shouldn't deploy add-ins to a shared mailbox. They should instead deploy an add-in to the user's primary mailbox. The user can then use the add-in in a shared mailbox as long as the add-in meets certain requirements (see the following scenarios for add-in availability in read and compose modes). | The same limitation and recommendation on other platforms apply (see previous column). |
-| Default add-ins in Outlook | In Outlook on the web and on Windows (new and classic), default Outlook add-ins are available for use in a shared mailbox. Default Outlook add-ins can include My Templates, Unsubscribe, and Action Items. Note that some default add-ins may not appear in your organization.<br><br>In Outlook on Mac, default add-ins aren't available in a shared mailbox. | Default add-ins are available in a shared mailbox. |
-| Templates created using the My Templates add-in | This only applies to Outlook on the web and on Windows (new and classic) since the My Templates add-in isn't supported in shared mailboxes on Outlook on Mac.<br><br>Templates created are saved to the creator's primary mailbox. Although the creator can use these templates in both their primary and shared mailboxes, other users who have access to the shared mailbox can't access these templates. For more information, see [Create an email message template](https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1). | Templates created are saved to the shared mailbox. Anyone with access to the shared mailbox can edit or use these templates if they open the mailbox using **Open another mailbox** in Outlook on the web, or if the mailbox is promoted to a full account in new Outlook on Windows. These shared templates can't be accessed by anyone, including the template creator, from other platforms. This includes Outlook on the web, if the shared mailbox is opened in the same tab as the user's primary mailbox, and new Outlook on Windows, if the shared mailbox wasn't promoted to a full account. Conversely, templates created on other platforms can't be accessed from a shared mailbox opened using the **Open another mailbox** option or from a promoted shared mailbox. For more information, see [Create an email message template](https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1). |
 | Add-in used in read mode | An add-in's manifest must be configured to support shared mailbox scenarios. For more information, see [Configure the manifest](#configure-the-manifest). The add-in must be installed in the user's primary mailbox by the user or administrator. | The same manifest configuration and behavior on other platforms apply (see previous column). |
 | Add-in used in compose mode | In Outlook on the web (mailbox opened in the same window) and on Windows (new and classic), add-ins installed in the user's primary mailbox that support compose mode are available for use. An add-in's manifest doesn't need additional configuration to support shared mailbox scenarios.<br><br>However, in Outlook on Mac, an add-in's manifest must be configured to support shared mailbox scenarios. For more information, see [Configure the manifest](#configure-the-manifest). | An add-in's manifest must be configured to support shared mailbox scenarios. For more information, see [Configure the manifest](#configure-the-manifest). The add-in must be installed in the user's primary mailbox by the user or administrator. |
+| Templates created using the My Templates add-in | This only applies to Outlook on the web and on Windows (new and classic) since the My Templates add-in isn't supported in shared mailboxes on Outlook on Mac.<br><br>Templates created are saved to the creator's primary mailbox. Although the creator can use these templates in both their primary and shared mailboxes, other users who have access to the shared mailbox can't access these templates. For more information, see [Create an email message template](https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1). | Templates created are saved to the shared mailbox. Anyone with access to the shared mailbox can edit or use these templates if they open the mailbox using **Open another mailbox** in Outlook on the web, or if the mailbox is promoted to a full account in new Outlook on Windows. These shared templates can't be accessed by anyone, including the template creator, from other platforms. This includes Outlook on the web, if the shared mailbox is opened in the same tab as the user's primary mailbox, and new Outlook on Windows, if the shared mailbox wasn't promoted to a full account. Conversely, templates created on other platforms can't be accessed from a shared mailbox opened using the **Open another mailbox** option or from a promoted shared mailbox. For more information, see [Create an email message template](https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1). |
+| Default add-ins in Outlook | In Outlook on the web and on Windows (new and classic), default Outlook add-ins are available for use in a shared mailbox. Default Outlook add-ins can include My Templates, Unsubscribe, and Action Items. Note that some default add-ins may not appear in your organization.<br><br>In Outlook on Mac, default add-ins aren't available in a shared mailbox. | Default add-ins are available in a shared mailbox. |
 
 ## Limitations
 
@@ -262,14 +262,17 @@ In Message Compose mode, [getSharedPropertiesAsync](/javascript/api/outlook/offi
     1. They save the message then move it from their own **Drafts** folder to a folder shared with the delegate.
     1. The delegate opens the draft from the shared folder then continues composing.
 
-- **Shared mailbox opened in the same panel as the user's primary mailbox**
+- **Shared mailbox opened in the same panel as the user's primary mailbox (web, classic Windows) or shared mailbox that hasn't been promoted to a full account (new Windows)**
 
     1. A shared mailbox user starts a message. This can be a new message, a reply, or a forward.
     1. They save the message then move it from their own **Drafts** folder to a folder in the shared mailbox.
     1. Another shared mailbox user opens the draft from the shared mailbox then continues composing.
 
   > [!NOTE]
-  > In Outlook on the web, the `getSharedPropertiesAsync` method is supported in a shared mailbox that's opened in a separate tab or window using the **Open another mailbox** option. There are no specific conditions to meet for the method to work.
+  > The `getSharedPropertiesAsync` method is supported on the following platforms without additional conditions.
+  >
+  > - Outlook on the web when the shared mailbox is opened in a separate tab or window using the **Open another mailbox** option.
+  > - new Outlook on Windows when the shared mailbox is promoted to a full account.
 
 Once these conditions are met, the message becomes available in a shared context and add-ins that support these shared scenarios can get the item's shared properties. After the message is sent, it's usually found in the **Sent Items** folder of the sender's personal mailbox.
 
