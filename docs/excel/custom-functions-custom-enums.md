@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 :::image type="content" source="../images/custom-functions-custom-enum-autocomplete.png" alt-text="The members of a custom enum displaying in the Excel AutoComplete menu.":::
 
-With custom enums, the members in your enum display in the Excel AutoComplete menu for your custom function. The planets in the preceding screenshot are members of a custom enum. This article describes how create custom enums and use them as parameters in your custom functions.
+With custom enums, the members in your enum display in the Excel AutoComplete menu for your custom function. The planets in the preceding screenshot are members of a custom enum. This article describes how to create custom enums and use them as parameters in your custom functions.
 
 ## Define the custom enum
 
@@ -158,7 +158,7 @@ The following JSON snippet shows a localized `values` object for the planet Merc
                 "name": "水星", 
                 "value": "mercury",
                 "tooltip": "水星是距离太阳最近的行星"
-            },
+            }
         ]
     }
 ],
