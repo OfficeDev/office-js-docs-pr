@@ -121,7 +121,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
         }
       ]
     }
-  ]
+  ],
   "enums": [ 
     { 
       "id": "PLANETS", 
