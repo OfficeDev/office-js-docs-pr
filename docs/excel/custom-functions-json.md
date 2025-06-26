@@ -110,21 +110,34 @@ The following example shows the contents of a JSON metadata file for an add-in t
       }
     },
     {
-      "id": "SECONDHIGHEST",
-      "name": "SECONDHIGHEST",
-      "description": "Get the second highest number from a range",
-      "helpUrl": "http://www.contoso.com/help",
-      "result": {
-        "dimensionality": "scalar"
-      },
-      "parameters": [
-        {
-          "name": "range",
-          "description": "the input range",
-          "type": "number",
-          "dimensionality": "matrix"
+      "id": "GETPLANETS", 
+      "name": "GETPLANETS", 
+      "description": "A function that uses the custom enum as a parameter.", 
+      "parameters": [ 
+        { 
+          "name": "value", 
+          "type": "string", 
+          "customEnumType": "PLANETS" 
         }
       ]
+    }
+  ]
+  "enums": [ 
+    { 
+      "id": "PLANETS", 
+      "type": "string", 
+      "values": [ 
+        { 
+          "name": "Mercury", 
+          "value": "mercury", 
+          "tooltip": "Mercury is the first planet from the sun." 
+        }, 
+        { 
+          "name": "Venus", 
+          "value": "venus", 
+          "tooltip": "Venus is the second planet from the sun." 
+        }
+      ] 
     }
   ]
 }
@@ -170,7 +183,7 @@ The `functions` property is an array of custom function objects. The following t
 The `enums` property is an array of [enum](https://www.typescriptlang.org/docs/handbook/enums.html) constants. The following table lists the properties of each constant.
 
 > [!TIP]
-> To learn about creating custom enums for your custom functions, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
+> To learn about creating custom enums for your custom functions, see [Create custom enums for your custom functions](custom-functions-custom-enums.md). To learn about editing metadata for custom enums, see [Edit custom enums in JSON metadata](#edit-custom-enums-in-json-metadata).
 
 | Property      | Data type | Required | Description                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -308,6 +321,61 @@ The following sample shows the JSON metadata that corresponds to the functions d
     }
   ]
 }
+```
+
+## Edit custom enums in JSON metadata
+
+Create or edit enum metadata directly with the `enums` property. Each custom enum must have a unique ID value and type value of either `string` or `number`. Mixed type enums are not supported.
+
+If you manually create the JSON metadata for your custom enum, you can associate those enums with either TypeScript or JavaScript custom functions. To learn more about creating custom enums for your custom functions, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
+
+The following JSON snippet shows the metadata for a `PLANETS` enum  that contains the planets Mercury and Venus.
+
+```json
+"enums": [ 
+  { 
+    "id": "PLANETS", 
+    "type": "string", 
+    "values": [ 
+      { 
+        "name": "Mercury", 
+        "value": "mercury", 
+        "tooltip": "Mercury is the first planet from the sun." 
+      }, 
+      { 
+        "name": "Venus", 
+        "value": "venus", 
+        "tooltip": "Venus is the second planet from the sun." 
+      }
+    ] 
+  }
+]
+```
+
+Each constant in the `values` array of the enum is an object with the following properties.
+
+- **value**: The value of the constant.
+- **name**: A brief description of the constant.
+- **tooltip** (Optional): Additional information about the constant that can be shown as a tooltip in user interfaces.
+
+To associate the custom enum with a function, add the property `customEnumType` to the `parameters` object. The `customEnumType` value should match the `id` of the enum. Note that the `customEnumType` value is not case-sensitive. The following JSON snippet shows a `functions` object associated with the `PLANETS` enum.
+
+```json
+"functions": [ 
+  {
+    "description": "A function that uses the custom enum as a parameter.", 
+    "id": "GETPLANETS", 
+    "name": "GETPLANETS", 
+    "parameters": [ 
+      { 
+        "name": "value", 
+        "type": "string", 
+        "customEnumType": "PLANETS" 
+      }
+    ], 
+    "result": {} 
+  } 
+]
 ```
 
 ## Next steps
