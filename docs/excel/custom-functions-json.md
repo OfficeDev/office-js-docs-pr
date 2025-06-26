@@ -150,7 +150,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 
 ### allowCustomDataForDataTypeAny
 
-The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types](custom-functions-data-types-concepts.md).
+The `allowCustomDataForDataTypeAny` property is a Boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types](custom-functions-data-types-concepts.md).
 
 > [!NOTE]
 > Unlike most of the other JSON metadata properties, `allowCustomDataForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
@@ -159,7 +159,7 @@ If your custom function uses the `cellValueType` [parameter](#parameters), then 
 
 ### allowErrorForDataTypeAny
 
-The `allowErrorForDataTypeAny` property is a boolean data type. Setting the value to `true` allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to `true`. The default `allowErrorForDataTypeAny` value is `false`.
+The `allowErrorForDataTypeAny` property is a Boolean data type. Setting the value to `true` allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to `true`. The default `allowErrorForDataTypeAny` value is `false`.
 
 > [!NOTE]
 > Unlike the other JSON metadata properties, `allowErrorForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
@@ -220,8 +220,8 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be `boolean`, `number`, `string`, or `any`, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to `any`. |
 | `cellValueType` | string | No | A subfield of the `type` property. Specifies the Excel data types accepted by the custom function. Accepts the case-insensitive values `cellvalue`, `booleancellvalue`, `doublecellvalue`, `entitycellvalue`, `errorcellvalue`, `linkedentitycellvalue`, `localimagecellvalue`, `stringcellvalue`, and `webimagecellvalue`. <br/><br/>The `type` field must have the value `any` to use the `cellValueType` subfield. |
 | `customEnumType` | string | No | The `id` of the enum in the `enums` array. This associates the custom enum with the function and tells Excel to display the enum members in the formula AutoComplete menu. |
-|  `optional`  | boolean | No | If `true`, the parameter is optional. |
-|`repeating`| boolean | No | If `true`, parameters populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
+|  `optional`  | Boolean | No | If `true`, the parameter is optional. |
+|`repeating`| Boolean | No | If `true`, parameters populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
 
 > [!TIP]
 > See the following code snippet for an example of how to format the `cellValueType` parameter in JSON metadata.
