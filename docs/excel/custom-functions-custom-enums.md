@@ -7,9 +7,9 @@ ms.localizationpriority: medium
 
 # Create custom enums for your custom functions
 
-With custom enums, the members in your enum display in the Excel UI AutoComplete menu for your custom function. This article describes how create custom enums and use them as parameters in your custom functions.
-
 :::image type="content" source="../images/custom-functions-custom-enum-autocomplete.png" alt-text="The members of a custom enum displaying in the Excel AutoComplete menu.":::
+
+With custom enums, the members in your enum display in the Excel AutoComplete menu for your custom function. The planets in the preceding screenshot are members of a custom enum. This article describes how create custom enums and use them as parameters in your custom functions.
 
 ## Define the custom enum
 
@@ -24,8 +24,7 @@ The following code snippet shows how to define and use a simple custom enum as a
 /** 
  * A custom enum with descriptions and tooltips. 
  * @customenum {string} 
- */ 
-
+ */
 enum PLANETS { 
   /** Mercury is the first planet from the sun. */ 
   mercury = "Mercury", 
@@ -101,7 +100,7 @@ To associate the custom enum with a function, add the property `customEnumType` 
 ]
 ```
 
-## Repeating parameters
+## Use a custom enum multiple times
 
 An custom enum can be reused in multiple functions, and it can be used as multiple parameters of a single function. A function can also have multiple enums as parameters at the same time. An enum parameter can be repeating or optional.
 
@@ -130,7 +129,7 @@ enum NUMBERS {
 } 
 
 /**
-* Enter any numbers from the NUMBERS enum and get the sum.
+* Enter multiple numbers from the NUMBERS enum and get the sum.
 * @customfunction
 * @param input Enter enum numbers.
 * @returns
@@ -165,9 +164,9 @@ The following JSON snippet shows a localized `values` object for the planet Merc
 ],
 ```
 
-## Compatibility
+## Backwards compatibility
 
-Custom enums offer backwards compatibility. On legacy applications, parameters using a custom enum work as standard parameters without displaying in the Excel AutoComplete list.
+Custom enums offer backwards compatibility. On older versions of Excel, parameters using a custom enum work as standard parameters without displaying in the Excel AutoComplete list.
 
 ## See also
 
