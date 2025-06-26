@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 :::image type="content" source="../images/custom-functions-custom-enum-autocomplete.png" alt-text="The members of a custom enum displaying in the Excel AutoComplete menu.":::
 
-With custom enums, the members in your enum display in the Excel AutoComplete menu for your custom function. The planets in the preceding screenshot are members of a custom enum. This article describes how to create custom enums and use them as parameters in your custom functions.
+Custom enums give users Excel AutoComplete options for your custom functions. The members in your enum show up in the formula bar as suggestions. The planets in the preceding screenshot are an example of a custom enum that provides a set list. This article describes how to create custom enums and use them as parameters in your custom functions.
 
 ## Define the custom enum
 
@@ -146,7 +146,7 @@ Localizing custom enums is similar to [localizing custom functions](custom-funct
 
 Note that only the `name` and `tooltip` properties within an enum should be localized to the target language. The `value` property should remain unchanged to avoid the need for handling multiple languages within your function body.
 
-The following JSON snippet shows a localized `values` object for the planet Mercury.
+The following JSON snippet shows the Chinese language localized `values` object for the planet Mercury.
 
 ```json
 "enums": [
