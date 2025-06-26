@@ -246,7 +246,7 @@ The `result` object defines the type of information that is returned by the func
 | `dimensionality` | string    | No       | Must be either `scalar` (a non-array value) or `matrix` (a 2-dimensional array). |
 | `type` | string    | No       | The data type of the result. Can be `boolean`, `number`, `string`, or `any` (which allows you to use of any of the previous three types). If this property is not specified, the data type defaults to `any`. |
 
-## Associating function names with JSON metadata
+## Associate function names with JSON metadata
 
 For a function to work properly, you need to associate the function's `id` property with the JavaScript implementation. Make sure there is an association, otherwise the function won't be registered and isn't useable in Excel. The following code sample shows how to make the association using the `CustomFunctions.associate()` function. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
@@ -328,7 +328,7 @@ The following sample shows the JSON metadata that corresponds to the functions d
 
 Create or edit enum metadata directly with the `enums` property. Each custom enum must have a unique ID value and type value of either `string` or `number`. Mixed type enums are not supported.
 
-If you manually create the JSON metadata for your custom enum, you can associate those enums with either TypeScript or JavaScript custom functions. To learn more about creating custom enums for your custom functions, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
+If you manually create the JSON metadata for your custom enum, you can associate those enums with either TypeScript or JavaScript custom functions. To learn more about creating custom enums, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
 
 The following JSON snippet shows the metadata for a `PLANETS` enum  that contains the planets Mercury and Venus.
 
