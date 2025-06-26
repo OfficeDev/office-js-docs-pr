@@ -93,6 +93,7 @@ The following JSDoc tags are supported in Excel custom functions.
 
 - [@cancelable](#cancelable)
 - [@capturesCallingObject](#capturesCallingObject)
+- [@customenum](#customenum) *{type}*
 - [@customfunction](#customfunction) *id* *name*
 - [@excludeFromAutoComplete](#excludeFromAutoComplete)
 - [@helpurl](#helpurl) *url*
@@ -122,6 +123,14 @@ A function can't have both `@cancelable` and `@streaming` tags.
 ### @capturesCallingObject
 
 This tag works with Excel [data types](excel-data-types-overview.md). It specifies that the data type be passed in as the first argument in the custom function. For more information, see [Reference the entity value as a calling object](excel-add-ins-dot-functions.md#reference-the-entity-value-as-a-calling-object).
+
+<a id="customenum"></a>
+
+### @customenum
+
+Syntax: @customenum *{type}*
+
+This tag indicates that a set of values is a custom enum. For more information, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
 
 <a id="customfunction"></a>
 

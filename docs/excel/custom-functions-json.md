@@ -165,6 +165,19 @@ The `functions` property is an array of custom function objects. The following t
 | `parameters`  | array     | Yes      | Array that defines the input parameters for the function. See [parameters](#parameters) for details.                                                                             |
 | `result`      | object    | Yes      | Object that defines the type of information that is returned by the function. See [result](#result) for details.                                                                 |
 
+### enums
+
+The `enums` property is an array of [enum](https://www.typescriptlang.org/docs/handbook/enums.html) constants. The following table lists the properties of each constant.
+
+> [!TIP]
+> To learn about creating custom enums for your custom functions, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
+
+| Property      | Data type | Required | Description                                                                                                                                                                      |
+| :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name` | string    | Yes       | A brief description of the constant. |
+| `tooltip` | string    | No       | Additional information about the constant that can be shown as a tooltip in user interfaces. |
+| `value` | string    | Yes      | The value of the constant. |
+
 ### options
 
 The `options` object enables you to customize some aspects of how and when Excel executes the function. The following table lists the properties of the `options` object.
