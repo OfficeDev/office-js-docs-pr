@@ -33,6 +33,9 @@ items:
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
+  - name: Copy Script Lab snippet to Yo Office
+    href: overview/create-an-office-add-in-from-script-lab.md
+    displayName: 'code samples'
   - name: Samples
     href: overview/office-add-in-code-samples.md
     displayName: PnP, 'code samples'
@@ -310,18 +313,42 @@ items:
         href: develop/import-teams-toolkit.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
-      - name: Create and Develop add-ins with Visual Studio
+      - name: Create and develop add-ins with Visual Studio
         items:
         - name: Overview
           href: develop/develop-add-ins-visual-studio.md
+          displayName: Visual Studio
+        - name: Quick starts
+          items:
+          - name: Excel
+            items:
+            - name: Task pane
+              href: quickstarts/excel-quickstart-vs.md
+              displayName: Excel, Visual Studio
+            - name: Content
+              href: quickstarts/excel-quickstart-content.md
+              displayName: Excel, Visual Studio
+          - name: Outlook
+            href: quickstarts/outlook-quickstart-vs.md
+            displayName: Outlook, Visual Studio
+          - name: PowerPoint 
+            items:
+            - name: Task pane
+              href: quickstarts/powerpoint-quickstart-vs.md
+              displayName: PowerPoint, Visual Studio
+            - name: Content
+              href: quickstarts/powerpoint-quickstart-content.md
+              displayName: PowerPoint, Visual Studio
+          - name: Word
+            href: quickstarts/word-quickstart-vs.md
+            displayName: Word, Visual Studio
+        - name: PowerPoint presentation tutorial
+          href: tutorials/powerpoint-tutorial-vs.md
           displayName: Visual Studio
         - name: Get JavaScript IntelliSense in Visual Studio
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
-      - name: Copy Script Lab snippet to Yo Office
-        href: overview/create-an-office-add-in-from-script-lab.md
-        displayName: 'code samples'
       - name: Develop add-ins with Angular
         href: develop/add-ins-with-angular2.md
     - name: Special requirements for add-ins on the iPad
@@ -650,6 +677,9 @@ items:
     - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
+    - name: Custom enums
+      href: excel/custom-functions-custom-enums.md
+      displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
@@ -740,8 +770,6 @@ items:
     - name: API reference - latest release
       href: reference/outlook-api-reference-latest.md
       displayName: Outlook
-    - name: Add-in requirements
-      href: outlook/add-in-requirements.md
     - name: Understanding add-in permissions
       href: outlook/understanding-outlook-add-in-permissions.md
     - name: Outlook add-in design guidelines
@@ -921,6 +949,9 @@ items:
     - name: API reference
       href: reference/powerpoint-api-reference.md
       displayName: PowerPoint
+    - name: PowerPoint object model
+      href: powerpoint/core-concepts.md
+      displayName: PowerPoint
     - name: Add and delete slides
       href: powerpoint/add-slides.md
       displayName: PowerPoint
@@ -1034,32 +1065,6 @@ items:
   items: 
   - name: VSTO add-in developers' guide to Office Add-ins
     href: overview/learning-path-transition.md
-  - name: Quick starts
-    items:
-    - name: Excel
-      items:
-      - name: Task pane
-        href: quickstarts/excel-quickstart-vs.md
-        displayName: Excel
-      - name: Content
-        href: quickstarts/excel-quickstart-content.md
-        displayName: Excel
-    - name: Outlook
-      href: quickstarts/outlook-quickstart-vs.md
-      displayName: Outlook
-    - name: PowerPoint 
-      items:
-      - name: Task pane
-        href: quickstarts/powerpoint-quickstart-vs.md
-        displayName: PowerPoint
-      - name: Content
-        href: quickstarts/powerpoint-quickstart-content.md
-        displayName: PowerPoint
-    - name: Word
-      href: quickstarts/word-quickstart-vs.md
-      displayName: Word
-  - name: Work with a PowerPoint presentation
-    href: tutorials/powerpoint-tutorial-vs.md
   - name: Share code from VSTO Add-in to Office Add-in
     href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
   - name: Make your Office Add-in compatible with an existing COM add-in

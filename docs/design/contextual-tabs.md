@@ -1,7 +1,7 @@
 ---
 title: Create custom contextual tabs in Office Add-ins
 description: Learn how to add custom contextual tabs to your Office Add-in.
-ms.date: 03/26/2025
+ms.date: 06/30/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -72,7 +72,7 @@ The following is an example.
         "tabs": [
             "groups": [
                 {
-                    "id": "contextualTab",
+                    "id": "ContosoGroup",
                     ...
                     "icons": [
                         {
@@ -90,7 +90,7 @@ The following is an example.
                     ],
                     "controls": [
                         {
-                            "id": "contextualButton",
+                            "id": "WriteDataButton",
                             ...
                             "icons": [
                                 {
@@ -141,7 +141,7 @@ The following is an example.
 ---
 
 > [!IMPORTANT]
-> When you move your add-in from development to production, remember to update the URLs in your manifest as needed (such as changing the domain from `localhost` to `contoso.com`).
+> When you move your add-in from development to staging or production, remember to update the URLs in your manifest as needed (such as changing the domain from `localhost` to `contoso.com`).
 
 ## Define the groups and controls that appear on the tab
 
@@ -149,7 +149,7 @@ Unlike custom core tabs, which are defined in the manifest, custom contextual ta
 
 We'll construct an example of a contextual tabs JSON blob step-by-step. The full schema for the contextual tab JSON is at [dynamic-ribbon.schema.json](https://developer.microsoft.com/json-schemas/office-js/dynamic-ribbon.schema.json). If you're working in Visual Studio Code, you can use this file to get IntelliSense and to validate your JSON. For more information, see [Editing JSON with Visual Studio Code - JSON schemas and settings](https://code.visualstudio.com/docs/languages/json#_json-schemas-and-settings).
 
-1. Begin by creating a JSON string with two array properties named `actions` and `tabs`. The `actions` array is a specification of all the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs, *up to a maximum of 20*.
+1. Begin by creating a JSON string with two array properties named `actions` and `tabs`. The `actions` array is a specification of all the functions that can be executed by controls on the contextual tab. The `tabs` array defines one or more contextual tabs.
 
     ```json
     '{
@@ -181,7 +181,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 
     - The `id` property is required. Use a brief, descriptive ID that is unique among all contextual tabs in your add-in.
     - The `label` property is required. It's a user-friendly string to serve as the label of the contextual tab.
-    - The `groups` property is required. It defines the groups of controls that will appear on the tab. It must have at least one member *and no more than 20*. (There are also limits on the number of controls that you can have on a custom contextual tab and that will also constrain how many groups that you have. See the next step for more information.)
+    - The `groups` property is required. It defines the groups of controls that will appear on the tab. It must have at least one member.
 
     > [!NOTE]
     > The tab object can also have an optional `visible` property that specifies whether the tab is visible immediately when the add-in starts up. Since contextual tabs are normally hidden until a user event triggers their visibility (such as the user selecting an entity of some type in the document), the `visible` property defaults to `false` when not present. In a later section, we show how to set the property to `true` in response to an event.
@@ -203,9 +203,6 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
     - The `label` is a user-friendly string to serve as the label of the group.
     - The `icon` property's value is an array of objects that specify the icons that the group will have on the ribbon depending on the size of the ribbon and the Office application window.
     - The `controls` property's value is an array of objects that specify the buttons and menus in the group. There must be at least one.
-
-    > [!IMPORTANT]
-    > *The total number of controls on the whole tab can be no more than 20.* For example, you could have 3 groups with 6 controls each, and a fourth group with 2 controls, but you can't have 4 groups with 6 controls each.  
 
     ```json
     {
