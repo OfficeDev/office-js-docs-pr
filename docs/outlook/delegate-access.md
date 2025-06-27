@@ -231,7 +231,7 @@ The following table outlines the availability of add-ins in shared folder scenar
 | ----- | ----- |
 | **Inbox** folder is shared with a delegate | Add-ins are available to the delegate in message read mode. |
 | **Drafts** folder is shared with a delegate | Add-ins are available to the delegate in message compose mode. |
-| (New Outlook on Windows only) Shared mailbox is automatically mapped by an administrator and isn't promoted to a full account by the user | See the behaviors outlined in the "Web (same tab or window), Windows (new: non-promoted mailbox), Windows (classic), and Mac" column of [Add-ins in shared mailbox scenarios](#add-ins-in-shared-mailbox-scenarios). |
+| (New Outlook on Windows only) Shared mailbox is automatically mapped by an administrator and isn't promoted to a full account by the user | See the behaviors outlined in the "Web: same tab or window, Windows (new): non-promoted mailbox, Windows (classic), and Mac" column of [Add-ins in shared mailbox scenarios](#add-ins-in-shared-mailbox-scenarios). |
 | Calendar is explicitly shared with a delegate (the entire mailbox may not be shared) | Add-ins are available to the delegate in appointment read and compose modes. |
 | Calendar is shared with a group of users with different access (for example, made it editable to a particular distribution list or the entire organization) | Add-ins are available to users with indirect or implicit permissions in appointment read and compose modes. |
 
@@ -239,7 +239,7 @@ The following table outlines the availability of add-ins in shared folder scenar
 
 The following table outlines the availability of add-ins in shared mailbox scenarios across various Outlook clients. Note that the behavior in Outlook on the web may differ depending on whether the shared mailbox is opened in the same panel as the user's primary mailbox or in a separate tab or window using the **Open another mailbox** option. Similarly, the behavior in new Outlook on Windows may also differ depending on whether the shared mailbox was added or promoted as a full account on the client.
 
-| Scenario | Applicable Outlook clients<ul><li>Web (same tab or window)</li><li>Windows (new: non-promoted)</li><li>Windows (classic)</li><li>Mac</li></ul> | Applicable Outlook clients<ul><li>Web (separate tab or window)</li><li>Windows (new: promoted)</li></ul> |
+| Scenario | Applicable Outlook clients<ul><li>Web: same tab or window</li><li>Windows (new): non-promoted</li><li>Windows (classic)</li><li>Mac</li></ul> | Applicable Outlook clients<ul><li>Web: separate tab or window</li><li>Windows (new): promoted</li></ul> |
 | ----- | ----- | ----- |
 | Add-in installed by the user | Users can't install add-ins in a shared mailbox. Add-ins installed by a user are added to the user's primary mailbox. | Users can't install add-ins in a shared mailbox. The in-app Microsoft 365 and Copilot store doesn't appear on the ribbon of the mailbox. |
 | Add-in installed by an administrator | Administrators shouldn't deploy add-ins to a shared mailbox. They should instead deploy an add-in to the user's primary mailbox. The user can then use the add-in in a shared mailbox as long as the add-in meets certain requirements (see the following scenarios for add-in availability in read and compose modes). | The same limitation and recommendation on other platforms apply (see previous column). |
