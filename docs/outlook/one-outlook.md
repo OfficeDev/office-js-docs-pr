@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows.
-ms.date: 06/05/2025
+ms.date: 06/26/2025
 ms.localizationpriority: medium
 ---
 
@@ -73,7 +73,9 @@ To help you install and set up the Outlook desktop client, see [Getting started 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 
 > [!TIP]
-> If you're moving from the classic Outlook client on Windows to the new Outlook client, note that the location of add-ins is different. While add-ins are accessed from the ribbon or app bar in the classic Outlook client, access to add-ins in the new Outlook client depends on whether you're reading or composing a mail item. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
+>
+> - If you're moving from the classic Outlook client on Windows to the new Outlook client, note that the location of add-ins is different. While add-ins are accessed from the ribbon or app bar in the classic Outlook client, access to add-ins in the new Outlook client depends on whether you're reading or composing a mail item. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
+> - In the new Outlook on Windows, you must keep the main client window open to run add-ins (the window can be active or inactive). If the main window is minimized, the add-in will pause or stop working.
 
 ## Debug your add-in
 
@@ -98,10 +100,10 @@ When you turn on the [offline setting](https://support.microsoft.com/office/2460
 
 | Scenario | Task pane and function command add-ins | Event-based add-ins |
 | ----- | ----- | ----- |
-| No internet connection when Outlook is launched | Installed add-ins don't appear on the ribbon or action bar. | Because Outlook can't determine which add-ins are installed while offline, event-based add-ins can't activate when the event they handle occurs.<br><br>In this scenario, to ensure that Smart Alerts add-ins still check mail items for compliance before they're sent, administrators can configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. When configured, outgoing items are saved to the **Drafts** folder instead of the **Outbox** folder to prevent them from being automatically sent when the machine reconnects to the internet. For more information, see the "Offline when Outlook launches" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#offline-when-outlook-launches). |
-| A connection is established after launching Outlook while offline | Installed add-ins appear on the ribbon and action bar. | Outlook will be able to identify which event-based add-ins are installed. Installed add-ins can then activate when the event they handle occurs.<br><br>When you select **Send** on a mail item that was blocked by the **OnSendAddinsEnabled** mailbox policy, the Smart Alerts add-in runs to check for compliance. |
+| No internet connection when Outlook is launched | Installed add-ins don't appear on the ribbon or action bar. | Because Outlook can't determine which add-ins are installed while offline, event-based add-ins can't activate when the event they handle occurs.<br><br>In this scenario, to ensure that Smart Alerts add-ins still check messages for compliance before they're sent, administrators can configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. When configured, outgoing messages are saved to the **Drafts** folder instead of the **Outbox** folder to prevent them from being automatically sent when the machine reconnects to the internet. For more information, see the "Offline when Outlook launches" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#offline-when-outlook-launches). |
+| A connection is established after launching Outlook while offline | Installed add-ins appear on the ribbon and action bar. | Outlook will be able to identify which event-based add-ins are installed. Installed add-ins can then activate when the event they handle occurs.<br><br>When you select **Send** on a message that was blocked by the **OnSendAddinsEnabled** mailbox policy, the Smart Alerts add-in runs to check for compliance. |
 | Machine loses connection while Outlook is in use | If you lose connection while using Outlook, your installed add-ins won't run. A dialog or notification is shown to notify that you're offline. | If you lose connection when an event occurs, the behavior differs depending on the type of event-based add-in.<ul><li>**Smart Alerts add-ins**: When you select **Send**, the behavior depends on whether the add-in implements the **prompt user**, **soft block**, or **block** send mode option. To learn more, see the "Intermittent connection" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#intermittent-connection).</li><li>**Other event-based add-ins**: An add-in doesn't activate when the event it handles occurs.</li></ul> |
-| A connection is reestablished | Installed add-ins can run operations again. | Installed add-ins resume handling events when they occur. Mail items that were moved to the **Outbox** folder are sent. When items in the **Drafts** folder are sent, Smart Alerts add-ins are activated to ensure that the mail items are compliant. |
+| A connection is reestablished | Installed add-ins can run operations again. | Installed add-ins resume handling events when they occur. Messages that were moved to the **Outbox** folder are sent. When messages in the **Drafts** folder are sent, Smart Alerts add-ins are activated to ensure compliance. |
 
 ## Development experience feedback
 
