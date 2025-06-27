@@ -1,7 +1,7 @@
 ---
 title: Work with notes using the Excel JavaScript API
 description: Information on using the APIs to add, remove, and edit notes.
-ms.date: 04/04/2025
+ms.date: 06/26/2025
 ms.localizationpriority: medium
 ---
 
@@ -71,7 +71,7 @@ await Excel.run(async (context) => {
 
 ## Change the size of a note
 
-By default, notes are automatically sized to fit the content. To make notes larger or smaller, use the [Note.height](/javascript/api/excel/excel.note#excel-excel-note-height-member) and [Note.width](/javascript/api/excel/excel.note#excel-excel-note-width-member) properties.
+To make notes larger or smaller, use the [Note.height](/javascript/api/excel/excel.note#excel-excel-note-height-member) and [Note.width](/javascript/api/excel/excel.note#excel-excel-note-width-member) properties.
 
 The following sample shows how to set the size of the first note in the `NoteCollection`.
 
