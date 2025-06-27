@@ -221,7 +221,7 @@ The `parameters` property is an array of parameter objects. The following table 
 | `cellValueType` | string | No | A subfield of the `type` property. Specifies the Excel data types accepted by the custom function. Accepts the case-insensitive values `cellvalue`, `booleancellvalue`, `doublecellvalue`, `entitycellvalue`, `errorcellvalue`, `linkedentitycellvalue`, `localimagecellvalue`, `stringcellvalue`, and `webimagecellvalue`. <br/><br/>The `type` field must have the value `any` to use the `cellValueType` subfield. |
 | `customEnumType` | string | No | The `id` of the enum in the `enums` array. This associates the custom enum with the function and tells Excel to display the enum members in the formula AutoComplete menu. |
 |  `optional`  | Boolean | No | If `true`, the parameter is optional. |
-|`repeating`| Boolean | No | If `true`, parameters populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
+|`repeating`| Boolean | No | If `true`, parameters populate from a specified array. Note that all repeating parameters are considered optional parameters by definition.  |
 
 > [!TIP]
 > See the following code snippet for an example of how to format the `cellValueType` parameter in JSON metadata.
