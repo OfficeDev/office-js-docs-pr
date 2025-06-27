@@ -140,8 +140,8 @@ Use the following sample manifest code to update your project.
 To enable your add-in to act when the `OnDocumentOpened` event occurs, you must implement a JavaScript event handler. In this section, you'll create the `changeHeader` function, which adds a "Public" header to new documents or a "Highly Confidential" header to existing documents that already have content.
 
 1. From the same quick start project, navigate to the **./src/commands** directory.
-1. In the **./src/commands** folder, create a new file named **autorunCommandsWord.js**.
-1. Open the new **autorunCommandsWord.js** file. Add the following JavaScript code.
+1. In the **./src/commands** folder, create a new file named **autorunCommands.js**.
+1. Open the new **autorunCommands.js** file. Add the following JavaScript code.
 
     ```javascript
     /*
@@ -179,7 +179,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
           header.clear();
           firstPageHeader.clear();
           header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
-          firstPageHeader.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
+          firstPageHeader.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
           header.font.color = "#f8334d";
           firstPageHeader.font.color = "#f8334d";
           await context.sync();
@@ -207,7 +207,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
         else {
           const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
           header.clear();
-          header.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
+          header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
           const font = header.font;
           font.color = "#f8334d";
 
