@@ -47,7 +47,7 @@ function getPlanets(value: PLANETS): any {
 
 ## Use a custom enum multiple times
 
-An custom enum can be reused in multiple functions, and it can be used as multiple parameters of a single function. A function can also have multiple enums as parameters at the same time. An enum parameter can be repeating or optional.
+A custom enum can be reused in multiple functions, and it can be used as multiple parameters of a single function. A function can also have multiple enums as parameters at the same time. An enum parameter can be repeating or optional.
 
 The following code sample shows a `NUMBERS` enum and a custom function that uses the enum multiple times as an input value.
 
