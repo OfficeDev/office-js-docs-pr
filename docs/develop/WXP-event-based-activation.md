@@ -118,7 +118,7 @@ Use the following sample manifest code to update your project.
             <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
             <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
             <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html"/>
-            <bt:Url id="JsRuntimeWord.Url" DefaultValue="https://localhost:3000/commands/autorunCommandsWord.js"/>
+            <bt:Url id="JsRuntimeWord.Url" DefaultValue="https://localhost:3000/commands/autorunCommands.js"/>
           </bt:Urls>
           <bt:ShortStrings>
             <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
@@ -178,7 +178,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
           const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
           header.clear();
           firstPageHeader.clear();
-          header.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
+          header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
           firstPageHeader.insertParagraph("High Confidential - The data must be secret or in some way highly critical", "Start");
           header.font.color = "#f8334d";
           firstPageHeader.font.color = "#f8334d";
@@ -239,15 +239,6 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
     // The add-in command functions need to be available in global scope
     Office.actions.associate("changeHeader", changeHeader);
     ```
-
-1. Add a reference to the event-handling JavaScript file. In the manifest, replace URL in the following line with a link to your "autorunCommandsWord.js" file.
-
-    ```xml
-    <bt:Url id="JsRuntimeWord.Url" DefaultValue="<your project>/src/commands/autorunCommandsWord.js"/>
-    ```
-
-    > [!IMPORTANT]
-    > This URL must point to a JavaScript (".js") file. If you used TypeScript to make your project, reference the transpiled ".js" file version.
 
 1. Update the webpack configuration. In the root folder of your project, open **webpack.config.js**. Immediately after the line `commands: ["./src/commands/commands.js"],`, add the following code.
 
