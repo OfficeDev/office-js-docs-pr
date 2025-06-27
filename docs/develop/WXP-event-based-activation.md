@@ -144,100 +144,101 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
 1. Open the new **autorunCommands.js** file. Add the following JavaScript code.
 
     ```javascript
-    /*
-    * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-    * See LICENSE in the project root for license information.
-    */
-    /* global global, Office, self, window */
-    
-    Office.onReady(() => {
-      // If needed, Office.js is ready to be called
-    });
-    
-    async function changeHeader(event) {
-      Word.run(async (context) => {
-        const body = context.document.body;
-        body.load("text");
-        await context.sync();
-
-        if (body.text.length == 0) {
-        // For new or empty documents, make a "Public" header. 
-          const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-          const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
-          header.clear();
-          firstPageHeader.clear();
-
-          header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-          firstPageHeader.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-          header.font.color = "#07641d";
-          firstPageHeader.font.color = "#07641d";
-          await context.sync();
-        } else {
-          // For existing documents, make a "Highly Confidential" header.
-          const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-          const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
-          header.clear();
-          firstPageHeader.clear();
-          header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
-          firstPageHeader.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
-          header.font.color = "#f8334d";
-          firstPageHeader.font.color = "#f8334d";
-          await context.sync();
-        }
+      /*
+      * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+      * See LICENSE in the project root for license information.
+      */
+      /* global global, Office, self, window */
+      
+      Office.onReady(() => {
+        // If needed, Office.js is ready to be called
       });
-    
-      // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-      event.completed();
-    }
-    
-    async function paragraphChanged() {
-      await Word.run(async (context) => {
-        const results = context.document.body.search("110");
-        results.load("length");
-        await context.sync();
-        if (results.items.length == 0) {
-          const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-          header.clear();
-          header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-          const font = header.font;
-          font.color = "#07641d";
-    
+      
+      async function changeHeader(event) {
+        Word.run(async (context) => {
+          const body = context.document.body;
+          body.load("text");
           await context.sync();
-        }
-        else {
-          const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-          header.clear();
-          header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
-          const font = header.font;
-          font.color = "#f8334d";
-
+  
+          if (body.text.length == 0) {
+          // For new or empty documents, make a "Public" header. 
+            const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
+            const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
+            header.clear();
+            firstPageHeader.clear();
+  
+            header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
+            firstPageHeader.insertParagraph("Public - The data is for the public and shareable externally", "Start");
+            header.font.color = "#07641d";
+            firstPageHeader.font.color = "#07641d";
+            await context.sync();
+          } else {
+            // For existing documents, make a "Highly Confidential" header.
+            const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
+            const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
+            header.clear();
+            firstPageHeader.clear();
+            header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
+            firstPageHeader.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
+            header.font.color = "#f8334d";
+            firstPageHeader.font.color = "#f8334d";
+            await context.sync();
+          }
+        });
+      
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+        event.completed();
+      }
+      
+      async function paragraphChanged() {
+        await Word.run(async (context) => {
+          const results = context.document.body.search("110");
+          results.load("length");
           await context.sync();
-        }
-      });
-    }
-    async function registerOnParagraphChanged(event) {
-      Word.run(async (context) => {
-        let eventContext = context.document.onParagraphChanged.add(paragraphChanged);
-        await context.sync();
-      });
-      // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-      event.completed();
-    }
-    
-    function getGlobal() {
-      return typeof self !== "undefined"
-        ? self
-        : typeof window !== "undefined"
-        ? window
-        : typeof global !== "undefined"
-        ? global
-        : undefined;
-    }
-    
-    const g = getGlobal();
-    
-    // The add-in command functions need to be available in global scope
-    Office.actions.associate("changeHeader", changeHeader);
+          if (results.items.length == 0) {
+            const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
+            header.clear();
+            header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
+            const font = header.font;
+            font.color = "#07641d";
+      
+            await context.sync();
+          }
+          else {
+            const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
+            header.clear();
+            header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
+            const font = header.font;
+            font.color = "#f8334d";
+  
+            await context.sync();
+          }
+        });
+      }
+      async function registerOnParagraphChanged(event) {
+        Word.run(async (context) => {
+          let eventContext = context.document.onParagraphChanged.add(paragraphChanged);
+          await context.sync();
+        });
+        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+        event.completed();
+      }
+      
+      function getGlobal() {
+        return typeof self !== "undefined"
+          ? self
+          : typeof window !== "undefined"
+          ? window
+          : typeof global !== "undefined"
+          ? global
+          : undefined;
+      }
+      
+      const g = getGlobal();
+      
+      // The add-in command functions need to be available in global scope
+      Office.actions.associate("changeHeader", changeHeader);
+      Office.actions.associate("registerOnParagraphChanged", registerOnParagraphChanged);
     ```
 
 1. Update the webpack configuration. In the root folder of your project, open **webpack.config.js**. Immediately after the line `commands: ["./src/commands/commands.js"],`, add the following code.
@@ -251,10 +252,10 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
 ### Test and validate your add-in
 
 1. Run `npm run build` to rebuild the project.
-1. Run `npm start` to launch the web server. This also sideloads the add-in and opens a new Word document.
-1. Create a new Word document or open an existing one, and you will see the headers are added to the document.
+1. Run `npm start` to launch the web server. **Ignore the Word document that is opened**.
+1. Manually sideload your add-in in Word on the web by following the guidance at [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web)
 
-### Deploy your add-in
+## Deploy your add-in
 
 Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch. Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
 
