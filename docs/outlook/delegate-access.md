@@ -15,7 +15,7 @@ This article describes how to implement shared folders (also known as delegate a
 
 ## Supported clients and platforms
 
-The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable. Excluded combinations aren't supported.
+The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable.
 
 | Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
 |---|---|---|---|
