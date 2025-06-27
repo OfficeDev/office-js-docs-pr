@@ -1,7 +1,7 @@
 ---
 title: Options for Excel custom functions
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.
-ms.date: 07/05/2023
+ms.date: 06/26/2025
 ms.localizationpriority: medium
 ---
 
@@ -143,6 +143,9 @@ function secondHighest(values) {
 
 A repeating parameter allows a user to enter a series of optional arguments to a function. When the function is called, the values are provided in an array for the parameter. If the parameter name ends with a number, each argument's number will increase incrementally, such as `ADD(number1, [number2], [number3],…)`. This matches the convention used for built-in Excel functions.
 
+> [!NOTE]
+> For a custom function that takes multiple parameters, a repeating parameter must be the last input parameter in the function. A repeating parameter cannot be followed by another parameter. Similarly, a function can only have one repeating parameter.
+
 The following function sums the total of numbers, cell addresses, as well as ranges, if entered.
 
 ```TS
@@ -173,7 +176,7 @@ This function shows `=CONTOSO.ADD([operands], [operands]...)` in the Excel workb
 
 ### Repeating single value parameter
 
-A repeating single value parameter allows multiple single values to be passed. For example, the user could enter ADD(1,B2,3). The following sample shows how to declare a single value parameter.
+A repeating single value parameter allows multiple single values to be passed. For example, the user could enter **ADD(1,B2,3)**. The following sample shows how to declare a single value parameter.
 
 ```JS
 /**
@@ -192,7 +195,7 @@ function addSingleValue(singleValue) {
 
 ### Single range parameter
 
-A single range parameter isn't technically a repeating parameter, but is included here because the declaration is very similar to repeating parameters. It would appear to the user as ADD(A2:B3) where a single range is passed from Excel. The following sample shows how to declare a single range parameter.
+A single range parameter isn't technically a repeating parameter, but it's included here because the declaration is very similar to repeating parameters. It would appear to the user as **ADD(A2:B3)**, where a single range is passed from Excel. The following sample shows how to declare a single range parameter.
 
 ```JS
 /**
@@ -212,15 +215,13 @@ function addSingleRange(singleRange) {
 
 ### Repeating range parameter
 
-A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter ADD(5,B2,C3,8,E5:E8). Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices. For a sample, see the main sample listed for [repeating parameters](#repeating-parameters).
+A repeating range parameter allows multiple ranges or numbers to be passed. For example, the user could enter **ADD(5,B2,C3,8,E5:E8)**. Repeating ranges are usually specified with the type `number[][][]` as they are three-dimensional matrices. For a sample, see the main sample listed for [repeating parameters](#repeating-parameters).
 
-### Declaring repeating parameters
+### Declare repeating parameters
 
-In Typescript, indicate that the parameter is multi-dimensional. For example,  `ADD(values: number[])` would indicate a one-dimensional array, `ADD(values:number[][])` would indicate a two-dimensional array, and so on.
+To declare a repeating parameter, indicate that the parameter is multi-dimensional. For example in TypeScript, `ADD(values: number[])` would indicate a one-dimensional array, `ADD(values:number[][])` would indicate a two-dimensional array, and so on. In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.
 
-In JavaScript, use `@param values {number[]}` for one-dimensional arrays, `@param <name> {number[][]}` for two-dimensional arrays, and so on for more dimensions.
-
-For hand-authored JSON, ensure your parameter is specified as ``"repeating"`: true` in your JSON file, as well as check that your parameters are marked as ``"dimensionality"`: matrix`.
+For [manually-created JSON metadata](custom-functions-json.md), ensure that the parameter is specified as `"repeating": true` and `"dimensionality": "matrix"` in your JSON file.
 
 ## Invocation parameter
 
