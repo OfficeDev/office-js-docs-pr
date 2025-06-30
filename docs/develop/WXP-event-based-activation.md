@@ -1,6 +1,6 @@
 ---
 title: Implement event-based activation in Excel, PowerPoint, and Word add-ins 
-description: Learn how to develop a Excel, PowerPoint, and Word add-in that implements event-based activation.
+description: Learn how to develop an Excel, PowerPoint, and Word add-in that implements event-based activation.
 ms.date: 06/30/2025
 ms.topic: how-to
 ms.localizationpriority: medium
