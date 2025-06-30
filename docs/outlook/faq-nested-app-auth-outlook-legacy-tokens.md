@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 06/18/2025
+ms.date: 06/25/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -242,10 +242,9 @@ If legacy Exchange Online tokens are off, you'll see an error displayed in the c
 
 ![Screen shot of an error in the console window.](../images/script-lab-error-exchange-token.png)
 
-The actual error and code can vary, but often you will see error code 9017 or 9018 along with the following error descriptions.
+The actual error and code can vary, but often you will see error code 9017 or 9018 along with the following error description.
 
-- `GenericTokenError: An internal error has occurred.`
-- `InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information.`
+- `Legacy Exchange token retrieval is no longer supported. Contact your administrator for assistance. Error ID = '5EF6BA0D-32C5-4772-9F37-638AC7C56b68'.`
 
 If an add-in is affected by Exchange tokens turned off, you can turn them back on. For more information, see [Can I turn Exchange Online legacy tokens back on?](#can-i-turn-exchange-online-legacy-tokens-back-on).
 
@@ -278,8 +277,7 @@ If your add-in is for Exchange on-premises only (for example, Exchange 2019), it
 
 If you don't migrate your Outlook add-ins to NAA, they'll stop working as expected in Exchange Online. When Exchange tokens are turned off, Exchange Online will block legacy token issuance. Any add-in that uses legacy tokens won't be able to access Exchange online resources. When your add-in calls an API that requests an Exchange token, such as `getUserIdentityTokenAsync`, it gets a generic error similar to the following with error codes such as 9017 or 9018.
 
-- "GenericTokenError: An internal error has occurred."
-- "InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information."
+- `Legacy Exchange token retrieval is no longer supported. Contact your administrator for assistance. Error ID = '5EF6BA0D-32C5-4772-9F37-638AC7C56b68'.`
 
 If your add-in only works on-premises or if your add-in is on a deprecation path, you may not need to update. However, most add-ins that access Exchange resources through EWS or Outlook REST must migrate to continue functioning as expected.
 
@@ -347,10 +345,9 @@ Once you've updated your add-in to use NAA, you should test it on all platforms 
 
 To test that your add-in works correctly when Exchange tokens are turned off, deploy your add-in to a tenant with tokens turned off and test it. To turn tokens off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 
-If you've implemented a pattern where your code uses Exchange tokens but then falls over if they are unavailable, be sure you are checking for the correct errors. When a call to get an Exchange token fails, check the [asyncResult.diagnostics](/javascript/api/office/office.asyncresult). If either of the following errors is returned, switch to NAA.
+If you've implemented a pattern where your code uses Exchange tokens but then falls over if they are unavailable, be sure you are checking for the correct errors. When a call to get an Exchange token fails, check the [asyncResult.diagnostics](/javascript/api/office/office.asyncresult). If the following error is returned, switch to NAA.
 
-- `GenericTokenError: An internal error has occurred.`
-- `InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information.`
+- `Legacy Exchange token retrieval is no longer supported. Contact your administrator for assistance. Error ID = '5EF6BA0D-32C5-4772-9F37-638AC7C56b68'.`
 
 #### Test fallback code for Trident+ webview
 
