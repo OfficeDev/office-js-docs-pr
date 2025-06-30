@@ -25,8 +25,9 @@ As you develop an event-based add-in, be mindful of the following feature behavi
 
 - Office on Mac on is not supported.
 - The unified manifest is not supported.
+- Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch. Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
 - If a user installs multiple add-ins that handle the same activation event, only one add-in will be activated. There is no deterministic way to know which add-in will be activated. For example, if multiple add-ins that handle `OnDocumentOpened`, only one of those handlers will run.
-- APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel on Windows.
+- APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel on Windows. This is because the event handler runs in a JavaScript-only runtime. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 
 ## Walkthrough: Automatically act when the document opens
 
@@ -44,6 +45,7 @@ Create a new add-in by following the [Word add-in quick start](../quickstarts/wo
 To enable an event-based add-in, you must configure the following elements in the `VersionOverridesV1_0` node of the manifest.
 
 - In the [Runtimes](/javascript/api/manifest/runtimes) element, make a new [Override element for Runtime](/javascript/api/manifest/override#override-element-for-runtime). Override the "javascript" type and reference the JavaScript file containing the function you want to trigger with the event.
+- In the [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) element, add a [FunctionFile](/javascript/api/manifest/functionfile) element for the JavaScript file with the event handler.
 - In the [ExtensionPoint](/javascript/api/manifest/extensionpoint) element, set the `xsi:type` to `LaunchEvent`. This enables the event-based activation feature in your add-in.
 - In the [LaunchEvent](/javascript/api/manifest/launchevent) element, set the `Type` to `OnDocumentOpened` and specify the JavaScript function name of the event handler in the `FunctionName` attribute.
 
@@ -234,12 +236,12 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
 
 1. Run `npm run build` to rebuild the project.
 1. Run `npm start` to launch the web server. **Ignore the Word document that is opened**.
-1. Manually sideload your add-in in Word on the web by following the guidance at [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).
+1. Manually sideload your add-in in Word on the web by following the guidance at [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web). Use the **manifest.xml** in the root of the project.
 1. Try opening both new and existing Word documents in Word on the web. Headers should automatically be added when they open.
 
 ## Deploy your add-in
 
-Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch. Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
+Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch. To perform an admin deployment, upload the manifest to the Microsoft 365 admin center by taking the following actions.
 
 1. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**.
 1. On the **Integrated apps** page, choose the **Upload custom apps** action.
