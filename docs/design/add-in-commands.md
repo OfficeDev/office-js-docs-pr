@@ -39,14 +39,14 @@ There are two types of add-in commands, based on the kind of action that the com
 
 ## Location of add-in commands
 
-When a user installs an add-in, the add-in's commands are found on the ribbon, in a built-in Office tab or a custom tab that is specified in the manifest. (You can also put add-in commands on a [custom contextual tab](#contextual-tabs) that your add-in code defines at runtime.) They appear in the UI as a button or an item in a drop-down menu.
+When a user installs an add-in, the add-in's commands are found on the ribbon, in a built-in Office tab or a custom tab that is specified in the manifest. (You can also put add-in commands on a [custom contextual tab](#contextual-tabs) that your add-in code defines at runtime.) They appear in the UI as a button or an item in a dropdown menu.
 
 > [!NOTE]
 > On certain Outlook platforms, the commands are on an action bar rather than the ribbon.
 
-For add-in commands that appear on the ribbon, if you're using the simplified ribbon layout, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
-
 As the ribbon or action bar gets more crowded, add-in commands are displayed in the overflow menu. Commands for the same add-in are usually grouped together.
+
+In Office on the web, if you're using the single-line or simplified ribbon layout, the add-in name isn't shown on the ribbon. Only the add-in's command icon is shown.
 
 ### Excel, PowerPoint, and Word
 
@@ -58,11 +58,29 @@ The following shows an example of add-in commands in a custom group on the **Dat
 
 For Outlook, when you want an add-in command on a built-in ribbon tab, rather than creating your own, the command will appear on the default tab based on the platform and current Outlook mode. For guidance, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
-### Drop-down menu
+### Dropdown menu
 
-A drop-down menu add-in command defines a static list of items. The menu can be any mix of items that execute a function or that open a task pane. Submenus aren't supported.
+A dropdown menu add-in command defines a static list of items. The menu can be any mix of items that execute a function or that open a task pane. Submenus aren't supported.
 
 ![A button that drops down a menu on the Outlook ribbon.](../images/commands-menu-button-1.png)
+
+### Grouped add-in commands on the ribbon
+
+Multiple add-in commands can be grouped together on the ribbon. A group must contain at least one add-in command in the form of a button or a dropdown menu. In Office on Windows, the label and icon of a button or dropdown menu are usually shown for add-in commands in a group. However, the icon size and label visibility may vary due to the following factors that constrain space.
+
+- The number of add-in commands in the group.
+- The size of the Office client window.
+- The number of installed add-ins or groups on the ribbon.
+
+If the client window is maximized and there are more than three add-in commands in a group, the label of each add-in command is shown, but the size of its icon may vary (some are shown as 16 x 16 pixels while others are shown as 32 x 32 pixels - //TODO - Confirm.).
+
+When there are two or more add-in commands in a group and space on the ribbon becomes limited, the following adjustments are made to how the add-in commands are displayed. These changes are applied to the groups of add-in commands from right to left across the ribbon in the following sequence.
+
+1. Small icons and labels are shown for each add-in command in a group.
+1. Only small icons are shown.
+1. The group is displayed as a dropdown menu instead of showing individual add-in commands on the ribbon. A scroll slider icon also appears on the ribbon, so that you can scroll through the ribbon.
+
+In Office on the web, the icon size and label visibility of add-in commands in groups don't change as the browser window is resized or as more add-ins are installed. The scroll slider icon is simply shown on the ribbon.
 
 ## Command capabilities
 
