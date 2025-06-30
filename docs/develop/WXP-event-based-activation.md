@@ -17,20 +17,20 @@ Event-based activation automatically launches a centrally deployed Word, Excel, 
 
 | Event name | Description | Supported clients and channels |
 | ----- | ----- | ----- |
-| `OnDocumentOpened` | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | - Windows, version >= 16.0.18324.20032<br>- Office online<br>- Office for Mac will be available later |
+| `OnDocumentOpened` | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | - Windows, version >= 16.0.18324.20032<br>- Office online<br>- Office on Mac will be available later |
 
 ## Behavior and limitations
 
 As you develop an event-based add-in, be mindful of the following feature behaviors and limitations.
 
-- Office for Mac on Desktop is not supported.
+- Office on Mac on is not supported.
 - The unified manifest is not supported.
-- If a user installs multiple add-ins with the same activation event, only one add-in will be activated. There is no deterministic way to know which add-in will be activated.
+- If a user installs multiple add-ins that handle the same activation event, only one add-in will be activated. There is no deterministic way to know which add-in will be activated. For example, if multiple add-ins that handle `OnDocumentOpened`, only one of those handlers will run.
 - APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel on Windows.
 
 ## Walkthrough: Automatically act when the document opens
 
-The following sections walk you through how to develop a Word add-in that automatically changes the document header when a new or existing document opens. While this specific sample is for Word, the manifest additions and event handler code is the same for Excel and PowerPoint.
+The following sections walk you through how to develop a Word add-in that automatically changes the document header when a new or existing document opens. While this specific sample is for Word, the manifest configuration is the same for Excel and PowerPoint.
 
 > [!IMPORTANT]
 > This sample requires you to have a Microsoft 365 subscription with the supported version of Word.
@@ -41,7 +41,7 @@ Create a new add-in by following the [Word add-in quick start](../quickstarts/wo
 
 ### Configure the manifest
 
-To enable an event-based add-in in Word, PowerPoint, or Excel, you must configure the following elements in the `VersionOverridesV1_0` node of the manifest.
+To enable an event-based add-in, you must configure the following elements in the `VersionOverridesV1_0` node of the manifest.
 
 - In the [Runtimes](/javascript/api/manifest/runtimes) element, make a new [Override element for Runtime](/javascript/api/manifest/override#override-element-for-runtime). Override the "javascript" type and reference the JavaScript file containing the function you want to trigger with the event.
 - In the [ExtensionPoint](/javascript/api/manifest/extensionpoint) element, set the `xsi:type` to `LaunchEvent`. This enables the event-based activation feature in your add-in.
@@ -224,17 +224,6 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
         event.completed();
       }
       
-      function getGlobal() {
-        return typeof self !== "undefined"
-          ? self
-          : typeof window !== "undefined"
-          ? window
-          : typeof global !== "undefined"
-          ? global
-          : undefined;
-      }
-      
-      const g = getGlobal();
       
       // The add-in command functions need to be available in global scope
       Office.actions.associate("changeHeader", changeHeader);
@@ -248,7 +237,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
 1. Run `npm run build` to rebuild the project.
 1. Run `npm start` to launch the web server. **Ignore the Word document that is opened**.
 1. Manually sideload your add-in in Word on the web by following the guidance at [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).
-1. Try opening both new and existing Word documents. Headers should automatically be added when they open.
+1. Try opening both new and existing Word documents in Word on the web. Headers should automatically be added when they open.
 
 ## Deploy your add-in
 
