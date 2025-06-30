@@ -247,7 +247,8 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
 
 1. Run `npm run build` to rebuild the project.
 1. Run `npm start` to launch the web server. **Ignore the Word document that is opened**.
-1. Manually sideload your add-in in Word on the web by following the guidance at [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web)
+1. Manually sideload your add-in in Word on the web by following the guidance at [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web).
+1. Try opening both new and existing Word documents. Headers should automatically be added when they open.
 
 ## Deploy your add-in
 
