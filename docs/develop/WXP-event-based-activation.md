@@ -1,7 +1,7 @@
 ---
 title: Implement event-based activation in Excel, PowerPoint, and Word add-ins 
 description: Learn how to develop a Excel, PowerPoint, and Word add-in that implements event-based activation.
-ms.date: 06/25/2025
+ms.date: 06/30/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -118,7 +118,7 @@ Use the following sample manifest code to update your project.
             <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
             <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
             <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html"/>
-            <bt:Url id="JsRuntimeWord.Url" DefaultValue="https://localhost:3000/commands/autorunCommands.js"/>
+            <bt:Url id="JsRuntimeWord.Url" DefaultValue="https://localhost:3000/commands/commands.js"/>
           </bt:Urls>
           <bt:ShortStrings>
             <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
@@ -140,8 +140,8 @@ Use the following sample manifest code to update your project.
 To enable your add-in to act when the `OnDocumentOpened` event occurs, you must implement a JavaScript event handler. In this section, you'll create the `changeHeader` function, which adds a "Public" header to new documents or a "Highly Confidential" header to existing documents that already have content.
 
 1. From the same quick start project, navigate to the **./src/commands** directory.
-1. In the **./src/commands** folder, create a new file named **autorunCommands.js**.
-1. Open the new **autorunCommands.js** file. Add the following JavaScript code.
+1. In the **./src/commands** folder, opened the file named **commands.js**.
+1. Replace the entire contents of **commands.js** with the following JavaScript code.
 
     ```javascript
       /*
@@ -239,12 +239,6 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
       // The add-in command functions need to be available in global scope
       Office.actions.associate("changeHeader", changeHeader);
       Office.actions.associate("registerOnParagraphChanged", registerOnParagraphChanged);
-    ```
-
-1. Update the webpack configuration. In the root folder of your project, open **webpack.config.js**. Immediately after the line `commands: ["./src/commands/commands.js"],`, add the following code.
-
-    ```javascript
-    autorunCommands: ["./src/commands/autorunCommands.js"],
     ```
 
 1. Save your changes.
