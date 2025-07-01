@@ -17,7 +17,7 @@ Event-based activation automatically launches a centrally deployed Word, Excel, 
 
 | Event name | Description | Supported clients and channels |
 | ----- | ----- | ----- |
-| `OnDocumentOpened` | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | - Windows, version >= 16.0.18324.20032<br>- Office online<br>- Office on Mac will be available later |
+| `OnDocumentOpened` | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | <ul><li>Windows (build >= 16.0.18324.20032)</li><li>Office on the web</li><li>Office on Mac will be available later </li></ul>|
 
 ## Behavior and limitations
 
@@ -129,7 +129,7 @@ Use the following sample manifest code to update your project.
           </bt:ShortStrings>
           <bt:LongStrings>
             <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded successfully. Go to the HOME tab and click the 'Show Task Pane' button to get started."/>
-            <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+            <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to show the task pane"/>
           </bt:LongStrings>
         </Resources>
       </VersionOverrides>
@@ -141,7 +141,7 @@ Use the following sample manifest code to update your project.
 
 To enable your add-in to act when the `OnDocumentOpened` event occurs, you must implement a JavaScript event handler. In this section, you'll create the `changeHeader` function, which adds a "Public" header to new documents or a "Highly Confidential" header to existing documents that already have content.
 
-1. In the **./src/commands** folder, opened the file named **commands.js**.
+1. In the **./src/commands** folder, open the file named **commands.js**.
 1. Replace the entire contents of **commands.js** with the following JavaScript code.
 
     ```javascript
@@ -204,8 +204,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
             font.color = "#07641d";
       
             await context.sync();
-          }
-          else {
+          } else {
             const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
             header.clear();
             header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
@@ -216,6 +215,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
           }
         });
       }
+      
       async function registerOnParagraphChanged(event) {
         Word.run(async (context) => {
           let eventContext = context.document.onParagraphChanged.add(paragraphChanged);
