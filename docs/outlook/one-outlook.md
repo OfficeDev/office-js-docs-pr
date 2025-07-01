@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows.
-ms.date: 06/26/2025
+ms.date: 07/01/2025
 ms.localizationpriority: medium
 ---
 
@@ -64,7 +64,7 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 - Have a Microsoft 365 work or school account connected to Exchange Online. The new client doesn't currently support on-premises, hybrid, or sovereign Exchange accounts.
 
     > [!NOTE]
-    > While you can add non-Microsoft mail accounts, such as Gmail, to the new Outlook on Windows, you can only use Outlook add-ins with a Microsoft account.
+    > While you can add non-Microsoft mail accounts, such as Gmail, to the new Outlook on Windows, you can only use Outlook add-ins with a Microsoft account. For more information, see the "Supported accounts" section of the [Outlook add-ins overview](outlook-add-ins-overview.md#supported-accounts).
 
 - Have a minimum OS installation of Windows 10 Version 1809 (Build 17763).
 
