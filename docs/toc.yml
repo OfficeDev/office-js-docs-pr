@@ -33,6 +33,9 @@ items:
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
+  - name: Copy Script Lab snippet to Yo Office
+    href: overview/create-an-office-add-in-from-script-lab.md
+    displayName: 'code samples'
   - name: Samples
     href: overview/office-add-in-code-samples.md
     displayName: PnP, 'code samples'
@@ -346,9 +349,6 @@ items:
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
-      - name: Copy Script Lab snippet to Yo Office
-        href: overview/create-an-office-add-in-from-script-lab.md
-        displayName: 'code samples'
       - name: Develop add-ins with Angular
         href: develop/add-ins-with-angular2.md
     - name: Special requirements for add-ins on the iPad
@@ -677,6 +677,9 @@ items:
     - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
+    - name: Custom enums
+      href: excel/custom-functions-custom-enums.md
+      displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
@@ -767,8 +770,6 @@ items:
     - name: API reference - latest release
       href: reference/outlook-api-reference-latest.md
       displayName: Outlook
-    - name: Add-in requirements
-      href: outlook/add-in-requirements.md
     - name: Understanding add-in permissions
       href: outlook/understanding-outlook-add-in-permissions.md
     - name: Outlook add-in design guidelines

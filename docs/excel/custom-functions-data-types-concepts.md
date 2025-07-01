@@ -1,7 +1,7 @@
 ---
 title: Custom functions and data types
 description: Use Excel data types with your custom functions and Office Add-ins.
-ms.date: 06/15/2025
+ms.date: 06/22/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Use data types with custom functions in Excel
 
-Data types expand the Excel JavaScript API to support data types beyond the original four cell value types (string, number, boolean, and error). Data types include support for web images, formatted number values, entities, and arrays within entities.
+Data types expand the Excel JavaScript API to support data types beyond the original four cell value types (string, number, boolean, and error). Data types include support for web images, formatted numbers, entities, and arrays within entities.
 
 These data types amplify the power of custom functions, because custom functions accept data types as both input and output values. You can generate data types through custom functions, or take existing data types as function arguments into calculations. Once the JSON schema of a data type is set, this schema is maintained throughout the calculations.
 
@@ -28,13 +28,13 @@ Custom functions projects include a JSON metadata file. This JSON metadata file 
 
 For a full description of the manual JSON metadata creation process, see [Manually create JSON metadata for custom functions](custom-functions-json.md). See [allowCustomDataForDataTypeAny](custom-functions-json.md#allowcustomdatafordatatypeany) for additional details about this property.
 
-## Output a formatted number value
+## Output a formatted number
 
-The following code sample shows how to create a [FormattedNumberCellValue](/javascript/api/excel/excel.formattednumbercellvalue) data type with a custom function. The function takes a basic number and a format setting as the input parameters and returns a formatted number value data type as the output.
+The following code sample shows how to create a formatted number with a custom function. This uses the [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue) object. The function takes a basic number and a format setting as the input parameters and returns a formatted number as double data type for the output.
 
 ```js
 /**
- * Take a number as the input value and return a formatted number value as the output.
+ * Take a number as the input value and return a double as the output.
  * @customfunction
  * @param {number} value
  * @param {string} format (e.g. "0.00%")
@@ -42,7 +42,7 @@ The following code sample shows how to create a [FormattedNumberCellValue](/java
  */
 function createFormattedNumber(value, format) {
     return {
-        type: "FormattedNumber",
+        type: "Double",
         basicValue: value,
         numberFormat: format
     }
