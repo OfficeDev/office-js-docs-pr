@@ -291,7 +291,7 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 
 > [!NOTE]
 >
-> - There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+> - There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#event-based-activation-behavior-and-limitations).
 > - To ensure your add-in runs as expected when an event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
 >   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
 >   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
@@ -357,9 +357,9 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 
 ## Next steps
 
-To learn more about event-based activation and other events that you can implement in your add-in, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
+To learn more about event-based activation and other events that you can implement in your add-in, see [Activate add-ins with events](../develop/event-based-activation.md)
 
 ## See also
 
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
 - [Office Add-ins code sample: Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)

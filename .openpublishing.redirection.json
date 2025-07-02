@@ -484,6 +484,10 @@
             "redirect_url": "/office/dev/add-ins/develop/create-addin-commands"
         },
         {
+            "source_path": "docs/outlook/autolaunch.md",
+            "redirect_url": "/office/dev/add-ins/develop/event-based-activation"
+        },
+        {
             "source_path": "docs/publish/centralized-deployment.md",
             "redirect_url": "/office/dev/add-ins/publish/publish"
         },

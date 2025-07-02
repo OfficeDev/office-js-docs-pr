@@ -1,242 +1,175 @@
 ---
-title: Implement event-based activation in Excel, PowerPoint, and Word add-ins 
-description: Learn how to develop an Excel, PowerPoint, and Word add-in that implements event-based activation.
-ms.date: 06/30/2025
-ms.topic: how-to
+title: Activate add-ins with events
+description: Learn how to develop an add-in that implements event-based activation.
+ms.date: 07/02/2025
+ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 
-# Implement event-based activation in Excel, PowerPoint, and Word add-ins 
+# Activate add-ins with events
 
-Event-based activation automatically launches a centrally deployed Word, Excel, or PowerPoint add-in whenever a document is created or opened. This allows the add-in to validate, insert, or refresh critical content without any manual operations. The add-in is opened in the background to avoid disrupting the user.
+Event-based activation automatically triggers your add-in to complete their tasks without explicitly launching it. This allows the add-in to validate, insert, or refresh critical content without any manual operations. The add-in is opened in the background to avoid disrupting the user. You can also integrate event-based activation with the task pane and function commands.
 
-> [!NOTE]
-> For information on how to implement event-based activation for Outlook add-ins, see [Configure your Outlook add-in for event-based activation](../outlook/autolaunch.md).
+## Overview
 
-## Supported events and clients
+While the particular steps to add event-based functionality to your add-in vary by platform and manifest type, the general flow is as follows.
 
-| Event name | Description | Supported clients and channels |
+1. Update the manifest with an extension for the event.
+1. Connect the event in the manifest with a JavaScript function to handle the event.
+1. Have the event handler function perform its actions, then call `event.completed` when it finishes.
+1. Call [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) to connect the event handler function with the ID specified in the manifest.
+
+## Try out event-based activation
+
+Discover how to streamline workflows and improve user experiences with event-based activation. Try out the samples to see the feature in action.
+
+### Outlook
+
+- [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md)
+- [Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)
+- [Automatically update your signature when switching between mail accounts](onmessagefromchanged-onappointmentfromchanged-events.md)
+- [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments)
+- [Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)
+- [Identify and tag external recipients using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external)
+- [Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
+- [Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
+
+### Word
+
+- [Automatically set the subject of a new message or appointment](on-new-compose-events-walkthrough.md)
+
+## Supported events
+
+The following tables list events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Description** column includes a link to the related object where applicable.
+
+### Excel, PowerPoint, Word
+
+| Event canonical name</br>and add-in only manifest name | Description | Supported clients and channels |
 | ----- | ----- | ----- |
 | `OnDocumentOpened` | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | <ul><li>Windows (build >= 16.0.18324.20032)</li><li>Office on the web</li><li>Office on Mac will be available later </li></ul>|
+
+### Outlook
+
+Support for this feature in Outlook was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For details about an event's minimum requirement set and the clients and platforms that support it, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
+
+|Event canonical name</br>and add-in only manifest name|Unified manifest for Microsoft 365 name|Description|Minimum requirement set and supported clients|
+|---|---|---|---|
+|`OnNewMessageCompose`| newMessageComposeCreated |On composing a new message (includes reply, reply all, and forward) but not on editing, for example, a draft.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li><li>Android<sup>2</sup></li><li>iOS<sup>2</sup></li></ul>|
+|`OnNewAppointmentOrganizer`|newAppointmentOrganizerCreated|On creating a new appointment but not on editing an existing one.|[1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnMessageAttachmentsChanged`|messageAttachmentsChanged|On adding or removing attachments while composing a message.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnAppointmentAttachmentsChanged`|appointmentAttachmentsChanged|On adding or removing attachments while composing an appointment.<br><br>Event-specific data object: [AttachmentsChangedEventArgs](/javascript/api/outlook/office.attachmentschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnMessageRecipientsChanged`|messageRecipientsChanged|On adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li><li>Android<sup>2</sup></li><li>iOS<sup>2</sup></li></ul>|
+|`OnAppointmentAttendeesChanged`|appointmentAttendeesChanged|On adding or removing attendees while composing an appointment.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnAppointmentTimeChanged`|appointmentTimeChanged|On changing date/time while composing an appointment.<br><br>Event-specific data object: [AppointmentTimeChangedEventArgs](/javascript/api/outlook/office.appointmenttimechangedeventargs?view=outlook-js-1.11&preserve-view=true)<br><br>**Important**: If you drag and drop an appointment to a different date/time slot on the calendar, the `OnAppointmentTimeChanged` event doesn't occur. It only occurs when the date/time is directly changed from an appointment. |[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnAppointmentRecurrenceChanged`|appointmentRecurrenceChanged|On adding, changing, or removing the recurrence details while composing an appointment. If the date/time is changed, the `OnAppointmentTimeChanged` event also occurs.<br><br>Event-specific data object: [RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnInfoBarDismissClicked`|infoBarDismissClicked|On dismissing a notification while composing a message or appointment item. Only the add-in that added the notification will be notified.<br><br>Event-specific data object: [InfobarClickedEventArgs](/javascript/api/outlook/office.infobarclickedeventargs?view=outlook-js-1.11&preserve-view=true)|[1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnMessageSend`|messageSending|On sending a message item. To learn more, try the [Smart Alerts walkthrough](smart-alerts-onmessagesend-walkthrough.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnAppointmentSend`|appointmentSending|On sending an appointment item. To learn more, see [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnMessageCompose`|messageComposeOpened|On composing a new message (includes reply, reply all, and forward) or editing a draft.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnAppointmentOrganizer`|appointmentOrganizerOpened|On creating a new appointment or editing an existing one.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnMessageFromChanged`|messageFromChanged|On changing the mail account in the **From** field of a message being composed. To learn more, see [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md).|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li><li>Android<sup>2</sup></li><li>iOS<sup>2</sup></li></ul>|
+|`OnAppointmentFromChanged`|appointmentFromChanged|On changing the mail account in the organizer field of an appointment being composed. To learn more, see [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md).|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<br><ul><li>New Mac UI</li></ul>|
+|`OnSensitivityLabelChanged`|sensitivityLabelChanged|On changing the sensitivity label while composing a message or appointment. To learn how to manage the sensitivity label of a mail item, see [Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md).<br><br>Event-specific data object: [SensitivityLabelChangedEventArgs](/javascript/api/outlook/office.sensitivitylabelchangedeventargs?view=outlook-js-preview&preserve-view=true)|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<br><ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI</li></ul>|
+|`OnMessageReadWithCustomAttachment`|Not available|On opening a message that contains a specific attachment type in read mode.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<sup>3</sup><br><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
+|`OnMessageReadWithCustomHeader`|Not available|On opening a message that contains a specific internet header name in read mode.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<sup>3</sup><br><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
+
+> [!NOTE]
+> <sup>1</sup> Event-based add-ins in classic Outlook on Windows require a minimum of Windows 10 Version 1903 (Build 18362) or Windows Server 2019 Version 1903 to run.
+>
+> <sup>2</sup> For more information, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
+>
+> <sup>3</sup> To preview the `OnMessageReadWithCustomAttachment` and `OnMessageReadWithCustomHeader` events, you must install classic Outlook on Windows Version 2312 (Build 17110.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option to access Office beta builds.
+
+#### Event-based activation in Outlook on mobile devices
+
+Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, support is now enabled for additional APIs and features introduced in later requirement sets, such as the `OnNewMessageCompose` event. To learn more, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Behavior and limitations
 
 As you develop an event-based add-in, be mindful of the following feature behaviors and limitations.
 
-- Office on Mac on is not supported.
-- The unified manifest is not supported.
-- Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch. Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
-- If a user installs multiple add-ins that handle the same activation event, only one add-in will be activated. There is no deterministic way to know which add-in will be activated. For example, if multiple add-ins that handle `OnDocumentOpened`, only one of those handlers will run.
-- APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel on Windows. This is because the event handler runs in a JavaScript-only runtime. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch. Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
 
-## Walkthrough: Automatically act when the document opens
+APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel on Windows. This is because the event handler runs in a JavaScript-only runtime. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 
-The following sections walk you through how to develop a Word add-in that automatically changes the document header when a new or existing document opens. While this specific sample is for Word, the manifest configuration is the same for Excel and PowerPoint.
+Event-based add-ins require an internet connection to be able to launch when a specific event occurs. Add-in event handlers are expected to be short-running, lightweight, and as noninvasive as possible. After activation, your add-in will time out within approximately 300 seconds, the maximum length of time allowed for running event-based add-ins. To signal that your add-in has completed processing a launch event, your associated event handler must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. (Note that code included after the `event.completed` statement isn't guaranteed to run.) Each time an event that your add-in handles is triggered, the add-in is reactivated and runs the associated event handler, and the timeout window is reset. The add-in ends after it times out, or the user closes the compose window or sends the item.
 
-> [!IMPORTANT]
-> This sample requires you to have a Microsoft 365 subscription with the supported version of Word.
+Avoid having multiple add-ins that subscribe to the same event. The behavior is not deterministic. Outlook launches the add-ins in no particular order. For Excel, PowerPoint, and Word, only one random add-in will be activated. For example, if multiple Word add-ins that handle `OnDocumentOpened`, only one of those handlers will run.
 
-### Create a new add-in
+Currently, only five event-based add-ins can be actively running.
 
-Create a new add-in by following the [Word add-in quick start](../quickstarts/word-quickstart-yo.md?tabs=yeoman). This will give you a working Office Add-in to which you can add the event-based activation code.
+In all supported Outlook clients, the user must remain on the current mail item where the add-in was activated for it to complete running. Navigating away from the current item (for example, switching to another compose window or tab) terminates the add-in operation. However, an add-in that activates on the `OnMessageSend` event handles item switching differently depending on which Outlook client it's running on. To learn more, see the "User navigates away from current message" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#user-navigates-away-from-current-message).
 
-### Configure the manifest
+In addition to item switching, an event-based add-in also ceases operation when the user sends the message or appointment they're composing.
 
-To enable an event-based add-in, you must configure the following elements in the `VersionOverridesV1_0` node of the manifest.
+### Event-based add-in limitations in the new Outlook on Windows
 
-- In the [Runtimes](/javascript/api/manifest/runtimes) element, make a new [Override element for Runtime](/javascript/api/manifest/override#override-element-for-runtime). Override the "javascript" type and reference the JavaScript file containing the function you want to trigger with the event.
-- In the [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) element, add a [FunctionFile](/javascript/api/manifest/functionfile) element for the JavaScript file with the event handler.
-- In the [ExtensionPoint](/javascript/api/manifest/extensionpoint) element, set the `xsi:type` to `LaunchEvent`. This enables the event-based activation feature in your add-in.
-- In the [LaunchEvent](/javascript/api/manifest/launchevent) element, set the `Type` to `OnDocumentOpened` and specify the JavaScript function name of the event handler in the `FunctionName` attribute.
+In the new Outlook on Windows, you must keep the main window of the client open for the add-in to process the mail item. If the main window is minimized, the add-in will pause or stop working.
 
-Use the following sample manifest code to update your project.
+### Event-based add-in limitations in classic Outlook on Windows
 
-1. In your code editor, open the quick start project you created.
-1. Open the **manifest.xml** file located at the root of your project.
-1. Select the entire **\<VersionOverrides\>** node (including the open and close tags) and replace it with the following XML.
+When developing an event-based add-in to run in the classic Outlook on Windows client, be mindful of the following:
 
-    ```xml
-      <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-        <Hosts>
-          <Host xsi:type="Document">
-            <Runtimes>
-              <Runtime resid="Taskpane.Url" lifetime="long" />
-              <Runtime resid="WebViewRuntime.Url">
-                <Override type="javascript" resid="JsRuntimeWord.Url"/>
-              </Runtime>
-            </Runtimes>
-            <DesktopFormFactor>
-              <GetStarted>
-                <Title resid="GetStarted.Title"/>
-                <Description resid="GetStarted.Description"/>
-                <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
-              </GetStarted>
-              <FunctionFile resid="Commands.Url"/>
-              <ExtensionPoint xsi:type="LaunchEvent">
-                <LaunchEvents>
-                  <LaunchEvent Type="OnDocumentOpened" FunctionName="changeHeader"></LaunchEvent>
-                </LaunchEvents>
-                <SourceLocation resid="WebViewRuntime.Url"/>
-              </ExtensionPoint>
-              <ExtensionPoint xsi:type="PrimaryCommandSurface">
-                <OfficeTab id="TabHome">
-                  <Group id="CommandsGroup">
-                    <Label resid="CommandsGroup.Label"/>
-                    <Icon>
-                      <bt:Image size="16" resid="Icon.16x16"/>
-                      <bt:Image size="32" resid="Icon.32x32"/>
-                      <bt:Image size="80" resid="Icon.80x80"/>
-                    </Icon>
-                    <Control xsi:type="Button" id="TaskpaneButton">
-                      <Label resid="TaskpaneButton.Label"/>
-                      <Supertip>
-                        <Title resid="TaskpaneButton.Label"/>
-                        <Description resid="TaskpaneButton.Tooltip"/>
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="Icon.16x16"/>
-                        <bt:Image size="32" resid="Icon.32x32"/>
-                        <bt:Image size="80" resid="Icon.80x80"/>
-                      </Icon>
-                      <Action xsi:type="ShowTaskpane">
-                        <TaskpaneId>ButtonId1</TaskpaneId>
-                        <SourceLocation resid="Taskpane.Url"/>
-                      </Action>
-                    </Control>
-                  </Group>
-                </OfficeTab>
-              </ExtensionPoint>
-            </DesktopFormFactor>
-          </Host>
-        </Hosts>
-        <Resources>
-          <bt:Images>
-            <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-            <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-            <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
-          </bt:Images>
-          <bt:Urls>
-            <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-            <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-            <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
-            <bt:Url id="WebViewRuntime.Url" DefaultValue="https://localhost:3000/commands.html"/>
-            <bt:Url id="JsRuntimeWord.Url" DefaultValue="https://localhost:3000/commands.js"/>
-          </bt:Urls>
-          <bt:ShortStrings>
-            <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
-            <bt:String id="CommandsGroup.Label" DefaultValue="Event-based add-in activation"/>
-            <bt:String id="TaskpaneButton.Label" DefaultValue="My add-in"/>
-          </bt:ShortStrings>
-          <bt:LongStrings>
-            <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded successfully. Go to the HOME tab and click the 'Show Task Pane' button to get started."/>
-            <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to show the task pane"/>
-          </bt:LongStrings>
-        </Resources>
-      </VersionOverrides>
-    ```
+- Imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
+- Only the JavaScript file referenced in the manifest is supported for event-based activation. You must bundle your event-handling JavaScript code into this single file. The location of the referenced JavaScript file in the manifest varies depending on the type of manifest your add-in uses.
+  - **Add-in only manifest**: **\<Override\>** child element of the **\<Runtime\>** node
+  - **Unified manifest for Microsoft 365**: `"script"` property of the `"code"` object
 
-1. Save your changes.
+  Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
+- When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
 
-### Implement the event handler
+### Event-based add-in limitations in Excel, PowerPoint, and Word
 
-To enable your add-in to act when the `OnDocumentOpened` event occurs, you must implement a JavaScript event handler. In this section, you'll create the `changeHeader` function, which adds a "Public" header to new documents or a "Highly Confidential" header to existing documents that already have content.
+The following platforms or features are not yet supported.
 
-1. In the **./src/commands** folder, open the file named **commands.js**.
-1. Replace the entire contents of **commands.js** with the following JavaScript code.
+- Office on Mac
+- The unified manifest
 
-    ```javascript
-      /*
-      * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
-      * See LICENSE in the project root for license information.
-      */
-      /* global global, Office, self, window */
-      
-      Office.onReady(() => {
-        // If needed, Office.js is ready to be called
-      });
-      
-      async function changeHeader(event) {
-        Word.run(async (context) => {
-          const body = context.document.body;
-          body.load("text");
-          await context.sync();
-  
-          if (body.text.length == 0) {
-          // For new or empty documents, make a "Public" header. 
-            const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-            const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
-            header.clear();
-            firstPageHeader.clear();
-  
-            header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-            firstPageHeader.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-            header.font.color = "#07641d";
-            firstPageHeader.font.color = "#07641d";
-            await context.sync();
-          } else {
-            // For existing documents, make a "Highly Confidential" header.
-            const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-            const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
-            header.clear();
-            firstPageHeader.clear();
-            header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
-            firstPageHeader.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
-            header.font.color = "#f8334d";
-            firstPageHeader.font.color = "#f8334d";
-            await context.sync();
-          }
-        });
-      
-        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-        event.completed();
-      }
-      
-      async function paragraphChanged() {
-        await Word.run(async (context) => {
-          const results = context.document.body.search("110");
-          results.load("length");
-          await context.sync();
-          if (results.items.length == 0) {
-            const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-            header.clear();
-            header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
-            const font = header.font;
-            font.color = "#07641d";
-      
-            await context.sync();
-          } else {
-            const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
-            header.clear();
-            header.insertParagraph("Highly Confidential - The data must be secret or in some way highly critical", "Start");
-            const font = header.font;
-            font.color = "#f8334d";
-  
-            await context.sync();
-          }
-        });
-      }
-      
-      async function registerOnParagraphChanged(event) {
-        Word.run(async (context) => {
-          let eventContext = context.document.onParagraphChanged.add(paragraphChanged);
-          await context.sync();
-        });
-        // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-        event.completed();
-      }
-      
-      
-      Office.actions.associate("changeHeader", changeHeader);
-      Office.actions.associate("registerOnParagraphChanged", registerOnParagraphChanged);
-    ```
+### Unsupported APIs
 
-1. Save your changes.
+Some Office.js APIs that change or alter the UI aren't allowed from event-based add-ins. The following are blocked APIs.
 
-### Test and validate your add-in
+| API | Methods |
+| --- | --- |
+| `Office.devicePermission` | <ul><li>`requestPermissionsAsync`</li></ul> |
+| `Office.context.auth`\* | <ul><li>`getAccessToken`</li><li>`getAccessTokenAsync`</li></ul> |
+| `Office.context.mailbox` | <ul><li>`displayAppointmentForm`</li><li>`displayMessageForm`</li><li>`displayNewAppointmentForm`</li><li>`displayNewMessageForm`</li></ul> |
+| `Office.context.mailbox.item` | <ul><li>`close`</li></ul> |
+| `Office.context.ui` | <ul><li>`displayDialogAsync`</li><li>`messageParent`</li></ul>|
 
-1. Run `npm start` to build your project and launch the web server. **Ignore the Word document that is opened**.
-1. Manually sideload your add-in in Word on the web by following the guidance at [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web). Use the **manifest.xml** in the root of the project.
-1. Try opening both new and existing Word documents in Word on the web. Headers should automatically be added when they open.
+> [!NOTE]
+> \* [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
+
+### Preview features in event handlers (classic Outlook on Windows)
+
+Classic Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry. This will enable you to test [preview features](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview) in your event handlers in classic Outlook on Windows.
+
+1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
+1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
+
+    ![The EnableBetaAPIsInJavaScript registry value is set to 1."](../images/outlook-beta-registry-key.png)
+
+## Enable single sign-on (SSO)
+
+To enable SSO in your event-based add-in, you must add its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
+
+### Request external data
+
+You can request external data by using an API like [Fetch](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using [XMLHttpRequest (XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
+
+> [!NOTE]
+> If your add-in will operate in a JavaScript-only runtime, use absolute URLs in your Fetch API calls. Relative URLs in Fetch API calls aren't supported in a JavaScript-only runtime.
+
+Be aware that you must use additional security measures when using XMLHttpRequest objects, requiring [Same Origin Policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) and [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
+
+> [!NOTE]
+> Full CORS support is available in Outlook on the web, Mac, and Windows (new and classic (starting in Version 2201, Build 16.0.14813.10000) clients).
+
+To make CORS requests from your event-based add-in, you must add the add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
+
+## Troubleshoot your add-in
+
+As you develop your event-based add-in, you may need to troubleshoot issues, such as your add-in not loading or the event not occurring. For guidance on how to troubleshoot an event-based add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## Deploy your add-in
 
@@ -246,3 +179,27 @@ Event-based add-ins work only when deployed by an administrator. If users instal
 1. On the **Integrated apps** page, choose the **Upload custom apps** action.
 
 For more information about how to deploy an add-in, please refer to [Deploy and publish Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/office-addins).
+
+### Deploy to users
+
+Event-based add-ins are restricted to admin-managed deployments only, even if they're acquired from AppSource. If users acquire the add-in from AppSource or the in-app Office Store, they won't be able to activate the event-based function of the add-in. To learn more about listing your event-based add-in in AppSource, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+
+Admin deployments are done by uploading the manifest to the Microsoft 365 admin center. To do so, follow these steps.
+
+1. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**.
+1. On the **Integrated apps** page, choose the **Upload custom apps** action.
+
+![The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.](../images/outlook-deploy-event-based-add-ins.png)
+
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
+
+### Deploy manifest updates
+
+Because event-based add-ins are deployed by admins, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
+
+## See also
+
+- [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
+- [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)
+- [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
+- [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)

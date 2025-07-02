@@ -102,7 +102,7 @@ items:
           href: develop/specify-office-hosts-and-api-requirements-unified.md
         - name: Specify Office applications and API requirements with the add-in only manifest
           href: develop/specify-office-hosts-and-api-requirements.md
-        - name: Understand and use platform-specific requirment sets
+        - name: Understand and use platform-specific requirement sets
           href: develop/platform-specific-requirement-sets.md
         - name: Check for API availability at runtime
           href: develop/specify-api-requirements-runtime.md
@@ -121,6 +121,7 @@ items:
         href: develop/configure-your-add-in-to-use-a-shared-runtime.md
       - name: Implement event-based activation 
         href: develop/event-based-activation.md
+        displayName: event-based activation
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
     - name: Manifest
@@ -778,9 +779,6 @@ items:
       href: outlook/outlook-addin-design.md
     - name: Event-based activation
       items:
-      - name: Implement an event-based add-in
-        href: outlook/autolaunch.md
-        displayName: event-based activation
       - name: Implement Smart Alerts to handle on-send events
         href: outlook/onmessagesend-onappointmentsend-events.md
         displayName: event-based activation
@@ -1024,6 +1022,9 @@ items:
     displayName: Word
   - name: 'Sample: Manage citations'
     href: word/citation-management.md
+    displayName: Word
+  - name: 'Walkthough: Add headers when a document opens'
+    href: word/add-headers-on-document-open.md
     displayName: Word
   - name: Word JavaScript API
     items:

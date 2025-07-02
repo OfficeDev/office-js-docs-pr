@@ -96,7 +96,7 @@ If you have users on older or perpetual license versions for which these excepti
 There are also some scenarios where you might want to maintain both both versions of the add-in for an extended period. For example, there are two features of add-ins that aren't supported with the unified manifest because they're little used or deprecated. You may choose to maintain a version of your add-in that uses these features. The following are the features that aren't supported in the unified manifest.
 
 - [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. But you can provide a nearly identical experience using the unified manifest by [including a Teams Tab with your add-in in a single app](/microsoftteams/platform/m365-apps/combine-office-add-in-and-teams-app).
-- [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. But you can provide similar experiences using the unified manifest and [Event-based activation](../outlook/autolaunch.md).
+- [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. But you can provide similar experiences using the unified manifest and [Event-based activation](../develop/event-based-activation.md).
 
 The critical requirement for making two versions available is to be sure that the two of them appear distinct in the Outlook UI.
 

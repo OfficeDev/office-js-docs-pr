@@ -274,4 +274,4 @@ Learn how you can use notifications in your add-in by trying out the [Work with 
 ## See also
 
 - [Use the Office dialog API in Office Add-ins](../develop/dialog-api-in-office-add-ins.md)
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
