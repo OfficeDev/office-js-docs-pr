@@ -119,6 +119,8 @@ items:
         displayName: manifest
       - name: Configure your add-in to use a shared runtime
         href: develop/configure-your-add-in-to-use-a-shared-runtime.md
+      - name: Implement event-based activation 
+        href: develop/event-based-activation.md
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
     - name: Manifest
