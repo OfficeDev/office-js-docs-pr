@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your contextual Outlook add-in doesn't activate as you expect.
-ms.date: 06/17/2025
+ms.date: 07/08/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -26,10 +26,7 @@ You can verify the version of Exchange by using one of the following approaches.
 
 ## Is the add-in available?
 
-Outlook on Windows (classic) and on Mac can make an add-in unavailable due to performance reasons, including exceeding usage thresholds for CPU core or memory, tolerance for crashes, and length of time to process all the regular expressions for an add-in. When this happens, Outlook on Windows (classic) and on Mac display a notification that it's making an add-in unavailable.
-
-> [!NOTE]
-> Only Outlook on Windows (classic) and Outlook on Mac monitor resource usage. However, an add-in made unavailable in Outlook on Windows (classic) or Outlook on Mac also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+If an add-in that uses regular expressions becomes unavailable in classic Outlook on Windows due to excessive evaluation times, the add-in also becomes unavailable for that mailbox in all other supported Outlook clients. For more information on evaluation time thresholds for regular expressions, see [Evaluation response time for regular expressions in Outlook add-ins](../concepts/resource-limits-and-performance-optimization.md#evaluation-response-time-for-regular-expressions-in-outlook-add-ins).
 
 Check your list of installed add-ins to verify whether an add-in is available. For instructions on how to view your add-ins in Outlook, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 

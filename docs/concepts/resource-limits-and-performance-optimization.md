@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: Learn about the resource limits of the Office Add-in platform, including CPU and memory.
-ms.date: 01/15/2024
+ms.date: 07/08/2025
 ms.localizationpriority: medium
 ---
 
@@ -11,23 +11,23 @@ Quality add-ins must performs within specific requirements for CPU core usage, m
 
 ## Resource usage limits for add-ins
 
-The following runtime resource limits apply to all add-ins running in Office clients on Windows and Mac, but not on mobile apps or in a browser.
+The following runtime resource limits apply to all add-ins running in Excel, PowerPoint, and Word clients on Windows and Mac, but not on web or mobile. These resource limits don't apply to Outlook add-ins.
 
-- **CPU core usage** - A single CPU core usage threshold of 90%, observed 3 times in 5-second intervals by default.
+- **CPU core usage** - A single CPU core usage threshold of 90%, observed three times in five-second intervals by default.
 
-   If the Office client detects the CPU core usage of an add-in is above the threshold value, it displays a message asking if the user wants to continue running the add-in. If the user chooses to continue, the Office client does not ask the user again during that edit session. The default interval for an Office client to check CPU core usage is every 5 seconds. Administrators can use the **AlertInterval** registry key to raise the threshold to reduce the display of this warning message if users run CPU-intensive add-ins.
+   If the Office client detects the CPU core usage of an add-in is above the threshold value, it displays a message asking if the user wants to continue running the add-in. If the user chooses to continue, the Office client does not ask the user again during that edit session. The default interval for an Office client to check CPU core usage is every five seconds. Administrators can use the **AlertInterval** registry key to raise the threshold to reduce the display of this warning message if users run CPU-intensive add-ins.
 
 - **Memory usage** - A default memory usage threshold that is dynamically determined based on the available physical memory of the device.
 
-   By default, when a Office client detects that physical memory usage on a device exceeds 80% of the available memory, the client starts monitoring the add-in's memory usage. This is done at the document level for content and task pane add-ins and at the mailbox level for Outlook add-ins. At a default interval of 5 seconds, the client warns the user if physical memory usage for a set of add-ins at the document or mailbox level exceeds 50%. This memory usage limit uses physical rather than virtual memory to ensure performance on devices with limited RAM, such as tablets. Administrators can override this dynamic setting with an explicit limit by using the **MemoryAlertThreshold** Windows registry key as a global setting. They can also adjust the alert interval with the **AlertInterval** key.
+   By default, when a Office client detects that physical memory usage on a device exceeds 80% of the available memory, the client starts monitoring the add-in's memory usage. This is done at the document level for content and task pane add-ins and at the mailbox level for Outlook add-ins. At a default interval of five seconds, the client warns the user if physical memory usage for a set of add-ins at the document or mailbox level exceeds 50%. This memory usage limit uses physical rather than virtual memory to ensure performance on devices with limited RAM, such as tablets. Administrators can override this dynamic setting with an explicit limit by using the **MemoryAlertThreshold** Windows registry key as a global setting. They can also adjust the alert interval with the **AlertInterval** key.
 
-- **Crash tolerance** - A default limit of 4 crashes during the document's session.
+- **Crash tolerance** - A default limit of four crashes during the document's session.
 
    Administrators can adjust the threshold for crashes by using the **RestartManagerRetryLimit** registry key.
 
-- **Application blocking** - A prolonged unresponsiveness threshold of 5 seconds.
+- **Application blocking** - A prolonged unresponsiveness threshold of five seconds.
 
-   This affects the user's experiences of the add-in and the Office application. When this occurs, the Office application automatically restarts all the active add-ins for a document or mailbox (where applicable), and warns the user which add-in became unresponsive. Add-ins reach this threshold when they do not regularly yield processing while performing long-running tasks. There are techniques listed later in this article to help ensure the add-in doesn't block the Office application. Administrators cannot override this threshold.
+   This affects the user's experiences of the add-in and the Office application. When this occurs, the Office application automatically restarts all the active add-ins for a document or mailbox (where applicable), and warns the user which add-in became unresponsive. Add-ins reach this threshold when they don't regularly yield processing while performing long-running tasks. There are techniques listed later in this article to help ensure the add-in doesn't block the Office application. Administrators cannot override this threshold.
 
 ### Task pane and content add-ins
 
@@ -36,22 +36,20 @@ If any content or task pane add-in exceeds the preceding thresholds on CPU core 
 - Restart the add-in.
 - Cancel further alerts about exceeding that threshold. Ideally, the user should then delete the add-in from the document. Continued use of the add-in would risk further performance and stability issues.
 
-### Outlook add-ins
+### Evaluation response time for regular expressions in Outlook add-ins
 
-If any Outlook add-in exceeds the preceding thresholds for CPU core or memory usage, or tolerance limit for crashes, the add-in becomes unavailable. The Exchange Admin Center displays the add-in's status.
-
-> [!NOTE]
-> Even though only Outlook on Windows (classic) and on Mac monitor resource usage, if either of these clients makes an Outlook add-in unavailable, that add-in also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
-
-In addition to the CPU core, memory, and reliability rules, Outlook add-ins should observe the following rules on activation.
+Outlook add-ins that use regular expressions and run on classic Outlook on Windows should observe the following rules on activation.
 
 - **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
-    Administrators can adjust this default threshold value of 1,000 milliseconds by using a group policy or application-specific setting for the **OutlookActivationAlertThreshold** key in the Windows registry.
+    Administrators can adjust this default threshold value of 1,000 milliseconds by using a group policy or application-specific setting for the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationAlertThreshold` DWORD value in the Windows registry.
 
-- **Regular expressions re-evaluation** - A default limit of 3 times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails to evaluate within the time limit 3 times, Outlook makes the add-in unavailable.
+- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails to evaluate within the time limit three times, Outlook makes the add-in unavailable.
 
-    administrators can adjust this number of times to retry evaluation by using a group policy or application-specific setting for the  **OutlookActivationManagerRetryLimit** key in the Windows registry.
+    Administrators can adjust this number of times to retry evaluation by using a group policy or application-specific setting for the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationRetryLimit` DWORD value in the Windows registry.
+
+> [!NOTE]
+> Although the regular expressions response time thresholds only apply to classic Outlook on Windows, if an Outlook add-in becomes unavailable on this client, the add-in also becomes unavailable for the mailbox in Outlook on the web, on Mac, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 ### Excel add-ins
 
@@ -70,12 +68,7 @@ Office provides a Telemetry Log that maintains a record of certain events (loadi
 
 `%Users%\<Current user>\AppData\Local\Microsoft\Office\16.0\Telemetry`
 
-For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. Refresh the Telemetry Log to see the current tracked events. The following table shows examples of Outlook add-ins that were tracked in the Telemetry log.
-
-|Date/Time|Event ID|Severity|Title|File|ID|Application|
-|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2022 5:57:10 PM|7|*Not applicable*|add-in manifest downloaded successfully|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
-|10/8/2022 5:57:01 PM|7|*Not applicable*|add-in manifest downloaded successfully|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
+For each event that the Telemetry Log tracks for an add-in, there is a date/time of the occurrence, event ID, severity, and short descriptive title for the event, the friendly name and unique ID of the add-in, and the application that logged the event. Refresh the Telemetry Log to see the current tracked events.
 
 The following table lists the events that the Telemetry Log tracks for Office Add-ins.
 
@@ -98,7 +91,7 @@ While the resources limits on CPU and memory usage, crash tolerance, and UI resp
 
 - If your add-in needs to read a large volume of data from an unbounded dataset, you can apply paging when reading the data from a table, or reduce the size of data in each shorter read operation, rather than attempting to complete the read in one single operation. You can do this through the [setTimeout](https://developer.mozilla.org/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout) method of the global object to limit the duration of input and output. It also handles the data in defined chunks instead of randomly unbounded data. Another option is to use [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) to handle your Promises.
 
-- If your add-in uses a CPU-intensive algorithm to process a large volume of data, you can use [web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) to perform the long-running task in the background while running a separate script in the foreground, such as displaying progress in the user interface. Web workers do not block user activities and allow the HTML page to remain responsive. For an example of web workers, see [The Basics of Web Workers](https://www.html5rocks.com/tutorials/workers/basics/).
+- If your add-in uses a CPU-intensive algorithm to process a large volume of data, you can use [web workers](https://developer.mozilla.org/docs/Web/API/Web_Workers_API) to perform the long-running task in the background while running a separate script in the foreground, such as displaying progress in the user interface. Web workers don't block user activities and allow the HTML page to remain responsive. For an example of web workers, see [The Basics of Web Workers](https://www.html5rocks.com/tutorials/workers/basics/).
 
 - If your add-in uses a CPU-intensive algorithm but you can divide the data input or output into smaller sets, consider creating a web service, passing the data to the web service to off-load the CPU, and waiting for an asynchronous callback.
 
@@ -143,7 +136,7 @@ Excel.run(async (context) => {
 });
 ```
 
-Note that needing to untrack objects only becomes important when you're dealing with thousands of them. Most add-ins do not need to manage proxy object tracking.
+Note that needing to untrack objects only becomes important when you're dealing with thousands of them. Most add-ins don't need to manage proxy object tracking.
 
 ## See also
 
