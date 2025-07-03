@@ -452,7 +452,7 @@ Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged
 
 ## Event behavior and limitations
 
-Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are supported through the event-based activation feature, the same behavior and limitations apply to add-ins that activate as a result of this event. For a detailed description, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#event-based-activation-behavior-and-limitations).
+Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are supported through the event-based activation feature, the same behavior and limitations apply to add-ins that activate as a result of this event. For a detailed description, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations).
 
 In addition to these characteristics, the following aspects also apply when an add-in activates on these events.
 

@@ -244,7 +244,7 @@ If the [prompt user](#prompt-user) send mode option is implemented, the followin
 - **Send Anyway**: This option terminates the add-in operation and sends the message.
 
     > [!IMPORTANT]
-    > In Outlook on the web and new Outlook on Windows, the **Send Anyway** option may not appear in the item-switch dialog even if the add-in currently running implements the **prompt user** send mode option. This is because the **Send Anyway** option is shown only if all installed Smart Alerts add-ins implement the **prompt user** send mode option. Otherwise, only the **Wait** and **Save as Draft** options are shown. This helps provide a more secure experience since multiple Smart Alerts add-ins can launch in any order (for more information on this behavior, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#event-based-activation-behavior-and-limitations)).
+    > In Outlook on the web and new Outlook on Windows, the **Send Anyway** option may not appear in the item-switch dialog even if the add-in currently running implements the **prompt user** send mode option. This is because the **Send Anyway** option is shown only if all installed Smart Alerts add-ins implement the **prompt user** send mode option. Otherwise, only the **Wait** and **Save as Draft** options are shown. This helps provide a more secure experience since multiple Smart Alerts add-ins can launch in any order (for more information on this behavior, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations)).
 
 - **Save as Draft**: This option terminates the add-in and send operations and saves a draft of the message to the mailbox's **Drafts** folder.
 
@@ -316,7 +316,7 @@ By default, the **Running Outlook for Simple MAPI Mail Sending** setting is set 
 
 ## Limitations
 
-Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#event-based-activation-behavior-and-limitations).
+Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations).
 
 In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
 

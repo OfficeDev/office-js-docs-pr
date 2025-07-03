@@ -430,6 +430,8 @@ items:
         href: concepts/correlated-objects-pattern.md
       - name: Resource limits and performance optimization for Office Add-ins
         href: concepts/resource-limits-and-performance-optimization.md
+    - name: Troubleshoot event-based and spam-reporting add-ins
+      href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
     - name: Unit testing
       href: testing/unit-testing.md
     - name: Usability testing
@@ -794,8 +796,6 @@ items:
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
         displayName: event-based activation
-      - name: Troubleshoot event-based and spam-reporting add-ins
-        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: AppSource options
         href: outlook/autolaunch-store-options.md
         displayName: event-based activation
