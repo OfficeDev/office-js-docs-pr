@@ -35,7 +35,7 @@ Then, open the Office application and [sideload your add-in](sideload-an-office-
 
 > [!NOTE]
 >
-> - If you're debugging an [event-based](../outlook/autolaunch.md) or [spam-reporting](../outlook/spam-reporting.md) add-in in Outlook on Mac, follow the steps in [Debug your event-based or spam-reporting Outlook add-in](../outlook/debug-autolaunch.md) after configuring the `OfficeWebAddinDeveloperExtras` property.
+> - If you're debugging an [event-based](../develop/event-based-activation.md) or [spam-reporting](../outlook/spam-reporting.md) add-in in Outlook on Mac, follow the steps in [Debug your event-based or spam-reporting Outlook add-in](../outlook/debug-autolaunch.md) after configuring the `OfficeWebAddinDeveloperExtras` property.
 > - If you're trying to use the inspector and the dialog flickers, update Office to the latest version. If that doesn't resolve the flickering, try the following workaround.
 >
 >   1. Reduce the size of the dialog.

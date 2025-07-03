@@ -293,7 +293,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 
 > [!TIP]
 >
-> - The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](autolaunch.md).
+> - The prepend-on-send and append-on-send features must be activated by the user through a task pane or function command button. If you want content to be prepended or appended on send without additional action from the user, you can implement these features in an [event-based activation add-in](../develop/event-based-activation.md).
 > - To learn more about manifests for Outlook add-ins, see [Office Add-in manifests](../develop/add-in-manifests.md).
 
 ## Implement the prepend-on-send handler

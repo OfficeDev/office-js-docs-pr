@@ -39,7 +39,7 @@ Read add-ins can be any combination of the following types.
 
 - [Add-in commands](../design/add-in-commands.md)
 - [Contextual Outlook add-ins](contextual-outlook-add-ins.md)
-- [Event-based activation add-ins](autolaunch.md)
+- [Event-based activation add-ins](../develop/event-based-activation.md)
 
 ## See also
 

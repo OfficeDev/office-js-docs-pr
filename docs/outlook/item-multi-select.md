@@ -362,7 +362,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - A maximum of 100 messages can be selected at a time.
 - The `loadItemByIdAsync` method only processes one selected message at a time. Remember to call `unloadAsync` after `loadItemByIdAsync` finishes processing the message. This way, the add-in can load and process the next selected message.
 - Typically, you can only run get operations on a selected message that's loaded using the `loadItemByIdAsync` method. However, managing the [categories](/javascript/api/outlook/office.categories) of a loaded message is an exception. You can add, get, and remove categories from a loaded message.
-- The `loadItemByIdAsync` method is supported in task pane and function command add-ins. This method isn't supported in [event-based activation](autolaunch.md) add-ins.
+- The `loadItemByIdAsync` method is supported in task pane and function command add-ins. This method isn't supported in [Activate add-ins with events](../develop/event-based-activation.md) add-ins.
 
 > [!NOTE]
 > Meeting invites and responses are considered messages, not appointments, and can therefore be included in a selection.

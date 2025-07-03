@@ -43,7 +43,7 @@ Extension points are the ways that add-ins integrate with Outlook. The following
 
     [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
-- Add-ins can perform tasks when a specific event occurs. For more information, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
+- Add-ins can perform tasks when a specific event occurs. For more information, see [Activate add-ins with events](../develop/event-based-activation.md).
 
 ## Mailbox items available to add-ins
 
