@@ -138,7 +138,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
           body.load("text");
           await context.sync();
   
-          if (body.text.length == 0) {
+          if (body.text.length === 0) {
           // For new or empty documents, make a "Public" header. 
             const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
             const firstPageHeader = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.firstPage);
