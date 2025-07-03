@@ -444,7 +444,7 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
 ## Troubleshoot your add-in
 
-For guidance on how to troubleshoot your event-based activation add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
+For guidance on how to troubleshoot your event-based activation add-in, see [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## Deploy to users
 

@@ -484,6 +484,10 @@
             "redirect_url": "/office/dev/add-ins/develop/create-addin-commands"
         },
         {
+            "source_path": "docs/outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md",
+            "redirect_url": "/office/dev/add-ins/testing/troubleshoot-event-based-and-spam-reporting-add-ins"
+        },
+        {
             "source_path": "docs/outlook/autolaunch.md",
             "redirect_url": "/office/dev/add-ins/develop/event-based-activation"
         },

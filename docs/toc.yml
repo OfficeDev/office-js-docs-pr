@@ -795,7 +795,7 @@ items:
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
         displayName: event-based activation
       - name: Troubleshoot event-based and spam-reporting add-ins
-        href: outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md
+        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: AppSource options
         href: outlook/autolaunch-store-options.md
         displayName: event-based activation
@@ -916,7 +916,7 @@ items:
       - name: Debug function commands
         href: outlook/debug-ui-less.md
       - name: Troubleshoot event-based and spam-reporting add-ins
-        href: outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md
+        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: Debug event-based and spam-reporting add-ins
         href: outlook/debug-autolaunch.md
       - name: Tips for handling date values
