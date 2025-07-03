@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Warnings and dependencies in the Node.js and npm world
 
-COM and VSTO add-in developers who are new to the world of [Node Package Manager (npm)](https://www.npmjs.com/) and open source development are often surprised and alarmed at certain aspects of this kind of development. In this article is intended to reassure such developers about things they may find disconcerting.
+COM and VSTO add-in developers who are new to the world of [Node Package Manager (npm)](https://www.npmjs.com/) and open source development are often surprised and alarmed at certain aspects of this kind of development. This article is intended to reassure such developers about things they may find disconcerting.
 
 ## npm dependency tree
 
