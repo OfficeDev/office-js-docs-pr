@@ -16,7 +16,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
 - Verify that your client supports the minimum requirement set needed. The integrated spam reporting feature was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). See the [Supported Events](../develop/event-based-activation.md#supported-events) for details about build numbers and requirement sets for event-based activation.
 - Review the expected behavior and limitations of the feature.
 
-  - [Event-based activation behavior and limitations](../develop/event-based-activation.md#event-based-activation-behavior-and-limitations)
+  - [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations)
   - [Smart Alerts behavior and scenarios](../outlook/onmessagesend-onappointmentsend-events.md#smart-alerts-feature-behavior-and-scenarios)
   - [Integrated spam-reporting behavior and limitations](../outlook/spam-reporting.md#review-feature-behavior-and-limitations)
 
@@ -75,4 +75,4 @@ If you still need help after performing the recommended troubleshooting steps, [
 ## See also
 
 - [Activate add-ins with events](../develop/event-based-activation.md)
-- [Implement an integrated spam-reporting add-in](spam-reporting.md)
+- [Implement an integrated spam-reporting add-in](../outlook/spam-reporting.md)
