@@ -5,3 +5,5 @@
   - In the command prompt while in the root project directory, run `npm i -g npm-check-updates`. This installs the tool globally.
   - Run `ncu -u`. This provides a report of all packages and to what versions they will be updated.
   - Run `npm install` to update all the packages.
+  
+   For more information about warnings when running `npm install`, see [Warnings and dependencies in the Node.js and npm world](../overview/npm-warnings-advice.md).
