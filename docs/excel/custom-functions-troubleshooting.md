@@ -118,7 +118,7 @@ function add(first, second) {
 CustomFunctions.associate("ADD", add);
 ```
 
-For more information on this process, see [Associating function names with JSON metadata](../excel/custom-functions-json.md#associating-function-names-with-json-metadata).
+For more information on this process, see [Associate function names with JSON metadata](../excel/custom-functions-json.md#associate-function-names-with-json-metadata).
 
 ## Known issues
 
