@@ -1,7 +1,7 @@
 ---
 title: Limits for activation and API usage in Outlook add-ins
 description: Be aware of certain activation and API usage guidelines, and implement your add-ins to stay within these limits.
-ms.date: 07/08/2025
+ms.date: 07/10/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -72,7 +72,7 @@ The following table lists the limits and describes the differences in the suppor
 |:-----|:-----|
 |Clients use regular expression evaluation that's part of JavaScript. It's provided by the browser and supports a superset of ECMAScript 5.|Clients use the C++ regular expression engine provided as part of the Visual Studio standard template library. This engine complies with ECMAScript 5 standards.|
 |You should test each regex thoroughly on each Outlook client. If a regex returns different results, rewrite the regex.|Because of the different regex engines, a regex that includes a custom character class based on predefined character classes may return different results in Outlook on Windows (classic) and on Mac versus in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).<br/><br/>As an example, the regex `[\s\S]{0,100}` matches any number, between 0 and 100, of single characters that is a whitespace or a non-whitespace. This regex returns different results depending on your Outlook client.<br/><br/>As a workaround, you should rewrite the regex as `(\s\|\S){0,100}`. This regex matches any number, between 0 and 100, of white space or non-white space.<br/><br/>You should test each regex thoroughly on each Outlook client. If a regex returns different results, rewrite the regex.|
-|An add-in with regular expressions that becomes unavailable in classic Outlook on Windows also becomes unavailable on all other supported Outlook clients.|By default, the evaluation of all regular expressions for an add-in is limited to one second. Exceeding this limit causes reevaluation of up to three times. Beyond the reevaluation limit, classic Outlook on Windows prevents the add-in from running for the same mailbox in any of the Outlook clients.<br/><br/>Administrators can override these evaluation limits by configuring the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationAlertThreshold` and `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationRetryLimit` DWORD values in the registry.|
+|An add-in with regular expressions that becomes unavailable in Outlook on Windows (classic) or on Mac (classic) also becomes unavailable on all other supported Outlook clients.|By default, the evaluation of all regular expressions for an add-in is limited to one second. Exceeding this limit causes reevaluation of up to three times. Beyond the reevaluation limit, Outlook on Windows (classic) and on Mac (classic) prevent the add-in from running for the same mailbox in any of the Outlook clients.<br/><br/>Administrators can override these evaluation limits by configuring the `ActivationAlertThreshold` and `ActivationRetryLimit` settings. For guidance on how to configure these settings, see [Evaluation response time for regular expressions in Outlook add-ins](../concepts/resource-limits-and-performance-optimization.md#evaluation-response-time-for-regular-expressions-in-outlook-add-ins).|
 
 ### Limits on the size of the item body evaluated
 
@@ -98,3 +98,4 @@ The following table lists the limits and describes the differences in the matche
 
 - [Deploy and install Outlook add-ins for testing](testing-and-tips.md)
 - [Privacy, permissions, and security for Outlook add-ins](../concepts/privacy-and-security.md)
+- [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)

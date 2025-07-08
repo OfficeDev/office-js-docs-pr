@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: Learn about the resource limits of the Office Add-in platform, including CPU and memory.
-ms.date: 07/08/2025
+ms.date: 07/10/2025
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,10 @@ Quality add-ins must performs within specific requirements for CPU core usage, m
 
 ## Resource usage limits for add-ins
 
-The following runtime resource limits apply to all add-ins running in Excel, PowerPoint, and Word clients on Windows and Mac, but not on web or mobile. These resource limits don't apply to Outlook add-ins.
+> [!NOTE]
+> The resource limits in this section only apply to Excel, Outlook on Mac (classic), PowerPoint, and Word.
+
+The following runtime resource limits apply to add-ins running in Office clients on Windows and Mac, but not on mobile apps or in a browser.
 
 - **CPU core usage** - A single CPU core usage threshold of 90%, observed three times in five-second intervals by default.
 
@@ -29,6 +32,9 @@ The following runtime resource limits apply to all add-ins running in Excel, Pow
 
    This affects the user's experiences of the add-in and the Office application. When this occurs, the Office application automatically restarts all the active add-ins for a document or mailbox (where applicable), and warns the user which add-in became unresponsive. Add-ins reach this threshold when they don't regularly yield processing while performing long-running tasks. There are techniques listed later in this article to help ensure the add-in doesn't block the Office application. Administrators cannot override this threshold.
 
+> [!NOTE]
+> Although only Outlook on Mac (classic) monitors resource usage, if the client makes an Outlook add-in unavailable, the add-in also become unavailable in other supported Outlook clients.
+
 ### Task pane and content add-ins
 
 If any content or task pane add-in exceeds the preceding thresholds on CPU core or memory usage, or tolerance limit for crashes, the corresponding Office application displays a warning for the user. At this point, the user can do one of the following:
@@ -38,18 +44,21 @@ If any content or task pane add-in exceeds the preceding thresholds on CPU core 
 
 ### Evaluation response time for regular expressions in Outlook add-ins
 
-Outlook add-ins that use regular expressions and run on classic Outlook on Windows should observe the following rules on activation.
+Outlook add-ins that use regular expressions and run in Outlook on Windows (classic) or on Mac (classic) should observe the following rules on activation.
 
-- **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
+- **Regular expressions response time** - Applies to classic Outlook on Windows only. A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
-    Administrators can adjust this default threshold value of 1,000 milliseconds by using a group policy or application-specific setting for the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationAlertThreshold` DWORD value in the Windows registry.
+  Administrators can adjust this default threshold value of 1,000 milliseconds by using a group policy or application-specific setting for the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationAlertThreshold` DWORD value in the Windows registry.
 
 - **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails to evaluate within the time limit three times, Outlook makes the add-in unavailable.
 
-    Administrators can adjust this number of times to retry evaluation by using a group policy or application-specific setting for the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationRetryLimit` DWORD value in the Windows registry.
+  Administrators can adjust this number of times to retry evaluation by using a group policy or application-specific setting. The location of the setting depends on the platform.
+
+  - **Windows**: The `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationRetryLimit` DWORD value in the Windows registry.
+  - **Mac**: The `ActivationRetryLimit` property list in `~/Library/Preferences`.
 
 > [!NOTE]
-> Although the regular expressions response time thresholds only apply to classic Outlook on Windows, if an Outlook add-in becomes unavailable on this client, the add-in also becomes unavailable for the mailbox in Outlook on the web, on Mac, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+> Although the regular expressions response time thresholds only apply to Outlook on Windows (classic) and on Mac (classic), if an Outlook add-in becomes unavailable on these clients, the add-in also becomes unavailable for the mailbox on other supported Outlook clients.
 
 ### Excel add-ins
 
