@@ -176,7 +176,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
           const results = context.document.body.search("110");
           results.load("length");
           await context.sync();
-          if (results.items.length == 0) {
+          if (results.items.length === 0) {
             const header = context.document.sections.getFirst().getHeader(Word.HeaderFooterType.primary);
             header.clear();
             header.insertParagraph("Public - The data is for the public and shareable externally", "Start");
