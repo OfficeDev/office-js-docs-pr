@@ -7,9 +7,10 @@ ms.localizationpriority: medium
 
 # Make your Office Add-in compatible with an existing COM or VSTO add-in
 
-If you have an existing COM add-in or VSTO add-in, both of which run only in Office on Windows, you can build equivalent functionality in your Office Add-in, thereby enabling your solution to run on other platforms such as Office on the web or Mac. In some cases, your Office Add-in may not be able to provide all of the functionality that's available in the corresponding COM or VSTO add-in. In these situations, your COM or VSTO add-in may provide a better user experience on Windows than the corresponding Office Add-in can provide.
+If you have an existing COM add-in or VSTO add-in, you can build equivalent functionality in your Office Add-in, thereby enabling your solution to run on other platforms such as Office on the web or Mac. In some cases, your Office Add-in may not be able to provide all of the functionality that's available in the corresponding COM or VSTO add-in. In these situations, your COM or VSTO add-in may provide a better user experience on Windows than the corresponding Office Add-in can provide.
 
-Hereafter, this article refers to COM and VSTO add-ins collectively as "Windows-only" add-ins.
+> [!NOTE]
+> Because COM and VSTO add-ins can only be installed on Windows, this article refers to COM and VSTO add-ins collectively as "Windows-only" add-ins.
 
 [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 
@@ -71,7 +72,7 @@ The following example shows the portion of the manifest that specifies a COM add
   ...
   <EquivalentAddins>
     <EquivalentAddin>
-      <ProgId>ContosoCOMAddin</ProgId>
+      <ProgId>ContosoAddin</ProgId>
       <Type>COM</Type>
     </EquivalentAddin>
   </EquivalentAddins>
@@ -82,12 +83,12 @@ The following example shows the portion of the manifest that specifies a COM add
 
 > [!TIP]
 >
-> - For information about XLL UDF compatibility with an Excel add-in that contains custom functions, see [Make your custom functions compatible with XLL user-defined functions](../excel/make-custom-functions-compatible-with-xll-udf.md). Not applicable for Outlook.
-> - For Outlook only, an admin of a computer can specify an equivalent Windows-only add-in even if the manifest of the Office Add-in doesn't by using a Group Policy. For guidance, see [Configure the Group Policy setting for Outlook add-ins](#configure-the-group-policy-setting-for-outlook-add-ins).
+> - For information about XLL UDF compatibility with an Excel add-in that contains custom functions, see [Make your custom functions compatible with XLL user-defined functions](../excel/make-custom-functions-compatible-with-xll-udf.md).
+> - For Outlook only, an admin of a computer can specify an equivalent Windows-only add-in by using a Group Policy. For guidance, see [Configure the Group Policy setting for Outlook add-ins](#configure-the-group-policy-setting-for-outlook-add-ins).
 
 ## Configure the Group Policy setting for Outlook add-ins
 
-If a computer admin wants a Windows-only add-in to be treated as the equivalent of an Outlook add-in (even if the Outlook add-in's developer did not do so in the manifest), the admin identifies the equivalent Windows-only add-in in the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting. This setting must be configured on the user's machine. Then, classic Outlook on Windows uses the Windows-only add-in instead of the Outlook add-in if they're both installed. The following are the steps to configure the policy.
+When the version of Outlook installed on a Windows computer doesn't support the equivalent add-ins manifest markup as specified in the **Important** note earlier in this article, a computer admin can designate a Windows-only add-in to be treated as the equivalent of an Outlook add-in by using the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting on the computer. Then, classic Outlook on Windows uses the Windows-only add-in instead of the Outlook add-in if they're both installed. The following are the steps to configure the policy.
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).
@@ -95,10 +96,7 @@ If a computer admin wants a Windows-only add-in to be treated as the equivalent 
 1. Select the setting **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed**.
 1. Open the link to edit the policy setting.
 1. In the dialog **Outlook web add-ins to deactivate**:
-    1. Set **Value name** to the ID of the Outlook add-in's manifest. In the add-in only manifest, use the value of the `<ID>` element. In the unified manifest, use the value of the `id` property in the root of the manifest.
-    
-       **Important**: Do *not* add curly braces `{}` around the entry.
-
+    1. Set **Value name** to the ID of the Outlook add-in's manifest. In the add-in only manifest, use the value of the `<ID>` element. In the unified manifest, use the value of the `id` property in the root of the manifest. Do *not* add curly braces `{}` around the entry.
     1. Set **Value** to the name of the equivalent Windows-only add-in. See the section [Obtain the ID of the Windows-only add-in](#obtain-the-id-of-the-windows-only-add-in).
     1. Select **OK** to put the update into effect.
 
@@ -106,7 +104,7 @@ If a computer admin wants a Windows-only add-in to be treated as the equivalent 
 
 ## Equivalent behavior for users
 
-When an [equivalent Windows-only add-in is specified](#specify-an-equivalent-windows-only-add-in), Office on Windows will not display your Office Add-in's user interface (UI) if the equivalent Windows-only add-in is installed. But Office only hides the ribbon buttons of the Office Add-in and doesn't prevent installation. Therefore, your Office Add-in will still appear in the following locations within the UI.
+When an equivalent Windows-only add-in is specified, Office on Windows will not display your Office Add-in's user interface (UI) if the equivalent Windows-only add-in is installed. But Office only hides the ribbon buttons of the Office Add-in and doesn't prevent installation. Therefore, your Office Add-in will still appear in the following locations within the UI.
 
 - Under **My add-ins**.
 - As an entry on the ribbon manager (Excel, Word, and PowerPoint only).
