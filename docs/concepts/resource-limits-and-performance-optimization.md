@@ -50,15 +50,12 @@ Outlook add-ins that use regular expressions and run in Outlook on Windows (clas
 
   Administrators can adjust this default threshold value of 1,000 milliseconds by using a group policy or application-specific setting for the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationAlertThreshold` DWORD value in the Windows registry.
 
-- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails to evaluate within the time limit three times, Outlook makes the add-in unavailable.
+- **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails three times, the user must switch to a different mail item then switch back to retry evaluation.
 
   Administrators can adjust this number of times to retry evaluation by using a group policy or application-specific setting. The location of the setting depends on the platform.
 
   - **Windows**: The `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationRetryLimit` DWORD value in the Windows registry.
   - **Mac**: The `ActivationRetryLimit` property list in `~/Library/Preferences`.
-
-> [!NOTE]
-> Although the regular expressions response time thresholds only apply to Outlook on Windows (classic) and on Mac (classic), if an Outlook add-in becomes unavailable on these clients, the add-in also becomes unavailable for the mailbox on other supported Outlook clients.
 
 ### Excel add-ins
 

@@ -28,7 +28,7 @@ You can verify the version of Exchange by using one of the following approaches.
 
 Check your list of installed add-ins to verify whether an add-in is available. For instructions on how to view your add-ins in Outlook, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
-If an add-in that uses regular expressions becomes unavailable in Outlook on Windows (classic) or on Mac (classic) due to excessive evaluation times, the add-in also becomes unavailable for that mailbox in all other supported Outlook clients. For more information on evaluation time thresholds for regular expressions, see [Evaluation response time for regular expressions in Outlook add-ins](../concepts/resource-limits-and-performance-optimization.md#evaluation-response-time-for-regular-expressions-in-outlook-add-ins).
+If you also use the classic Outlook on Mac client, resource usage limits apply to add-ins that could affect their availability across supported platforms. For more information, see [Resource usage limits for add-ins](../concepts/resource-limits-and-performance-optimization.md#resource-usage-limits-for-add-ins).
 
 ## Does the tested item support Outlook add-ins? Is the selected item delivered by a version of Exchange Server that is at least Exchange 2016?
 
