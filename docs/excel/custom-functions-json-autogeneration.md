@@ -122,7 +122,7 @@ A function can't have both `@cancelable` and `@streaming` tags.
 
 ### @capturesCallingObject
 
-This tag works with Excel [data types](excel-data-types-overview.md). It specifies that the data type be passed in as the first argument in the custom function. For more information, see [Reference the entity value as a calling object](excel-add-ins-dot-functions.md#reference-the-entity-value-as-a-calling-object).
+This tag works with Excel [data types](excel-data-types-overview.md). It specifies that the data type being referenced by the custom function is passed as the first argument to the custom function. For more information, see [Reference the entity value as a calling object](excel-add-ins-dot-functions.md#reference-the-entity-value-as-a-calling-object).
 
 <a id="customenum"></a>
 
@@ -232,7 +232,7 @@ In the following example, the `helpurl` is `http://www.contoso.com/weatherhelp`.
 
 ### @linkedEntityLoadService
 
-Use `@linkedEntityLoadService` with [linked entity cell values](excel-data-types-linked-entity-cell-values.md). With linked entities, your add-in is a data provider, and you use a custom function with the tag `@linkedEntityLoadService` to register a data domain that loads data for the entities.
+Use `@linkedEntityLoadService` with [linked entity cell values](excel-data-types-linked-entity-cell-values.md). A custom function that is a linked entity load service returns up-to-date linked entity cell values for any linked entity IDs requested by Excel.
 
 A function can’t have both `@excludeFromAutoComplete` and `@linkedEntityLoadService` tags.
 
