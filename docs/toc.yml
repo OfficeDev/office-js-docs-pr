@@ -424,14 +424,18 @@ items:
         href: testing/testing-and-troubleshooting.md
       - name: Troubleshoot development errors
         href: testing/troubleshoot-development-errors.md
+    - name: Event-based add-ins
+      items:
+      - name: Troubleshoot event-based and spam-reporting add-ins
+        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
+      - name: Debug event-based and spam-reporting add-ins
+        href: testing/debug-autolaunch.md
     - name: Performance
       items:
       - name: Avoid using the context.sync method in loops
         href: concepts/correlated-objects-pattern.md
       - name: Resource limits and performance optimization for Office Add-ins
         href: concepts/resource-limits-and-performance-optimization.md
-    - name: Troubleshoot event-based and spam-reporting Office Add-ins
-      href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
     - name: Unit testing
       href: testing/unit-testing.md
     - name: Usability testing
@@ -918,10 +922,10 @@ items:
         href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
       - name: Debug function commands
         href: outlook/debug-ui-less.md
-      - name: Troubleshoot event-based and spam-reporting Office Add-ins
+      - name: Troubleshoot event-based and spam-reporting add-ins
         href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: Debug event-based and spam-reporting add-ins
-        href: outlook/debug-autolaunch.md
+        href: testing/debug-autolaunch.md
       - name: Tips for handling date values
         href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
 
@@ -1026,7 +1030,7 @@ items:
   - name: 'Sample: Manage citations'
     href: word/citation-management.md
     displayName: Word
-  - name: 'Walkthough: Add headers when a document opens'
+  - name: 'Walkthrough: Add headers when a document opens'
     href: word/add-headers-on-document-open.md
     displayName: Word
   - name: Word JavaScript API

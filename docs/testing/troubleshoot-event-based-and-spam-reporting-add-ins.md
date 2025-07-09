@@ -1,12 +1,12 @@
 ---
-title: Troubleshoot event-based and spam-reporting Office Add-ins
-description: Learn how to troubleshoot development errors in add-ins that implement event-based activation or integrated spam reporting.
+title: Troubleshoot event-based and spam-reporting add-ins
+description: Learn how to troubleshoot development errors in Office Add-ins that implement event-based activation or integrated spam reporting.
 ms.date: 07/02/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 
-# Troubleshoot event-based and spam-reporting Office Add-ins
+# Troubleshoot event-based and spam-reporting add-ins
 
 As you develop your [event-based](../develop/event-based-activation.md) or [spam-reporting](../outlook/spam-reporting.md) add-in, you may encounter issues, such as your add-in not loading or an event not occurring. The following sections provide guidance on how to troubleshoot your add-in.
 
@@ -66,7 +66,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
     [!INCLUDE [outlook-bundle-js](../includes/outlook-bundle-js.md)]
 
 - As you test your add-in on desktop clients (excluding new Outlook on Windows or Mac) enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
-- Set breakpoints in your code to debug your add-in. For platform-specific instructions, see [Debug event-based and spam-reporting add-ins](../outlook/debug-autolaunch.md).
+- Set breakpoints in your code to debug your add-in. For platform-specific instructions, see [Debug event-based and spam-reporting add-ins](debug-autolaunch.md).
 
 ## Seek additional help
 

@@ -331,7 +331,7 @@ To learn more about APIs that are supported in Outlook on mobile devices, see [O
 
 ## Deploy to users
 
-Event-based add-ins must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-to-users).
+Event-based add-ins must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy your add-in" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 ## See also
 

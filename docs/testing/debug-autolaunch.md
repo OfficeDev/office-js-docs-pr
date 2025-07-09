@@ -1,12 +1,12 @@
 ---
-title: Debug your event-based or spam-reporting Office Add-in
-description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
+title: Debug event-based or spam-reporting add-ins
+description: Learn how to debug your Office Add-ins that implement event-based activation or integrated spam reporting.
 ms.date: 01/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Debug your event-based or spam-reporting Office Add-in
+# Debug event-based or spam-reporting add-ins
 
 This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](../develop/event-based-activation.md) or [integrated spam reporting](spam-reporting.md) in your add-in. Before you proceed, we recommend reviewing the [troubleshooting guide](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md) for additional steps on how to resolve development errors.
 
@@ -193,5 +193,5 @@ Event-based add-ins that run in Outlook on Mac use the browser runtime. Because 
 
 - [Activate add-ins with events](../develop/event-based-activation.md)
 - [Implement an integrated spam-reporting add-in](spam-reporting.md)
-- [Troubleshoot event-based and spam-reporting Office Add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
+- [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug your add-in with runtime logging](../testing/runtime-logging.md)

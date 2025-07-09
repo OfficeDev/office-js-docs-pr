@@ -444,11 +444,11 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
 ## Troubleshoot your add-in
 
-For guidance on how to troubleshoot your event-based activation add-in, see [Troubleshoot event-based and spam-reporting Office Add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md).
+For guidance on how to troubleshoot your event-based activation add-in, see [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` and `OnAppointmentFromChanged` events must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-to-users).
+Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` and `OnAppointmentFromChanged` events must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy your add-in" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 ## Event behavior and limitations
 

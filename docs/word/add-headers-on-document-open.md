@@ -17,6 +17,9 @@ The following sections walk you through how to develop a Word add-in that automa
 
 Create a new add-in by following the [Word add-in quick start](../quickstarts/word-quickstart-yo.md?tabs=yeoman). This will give you a working Office Add-in to which you can add the event-based activation code.
 
+> [!NOTE]
+> For a completed version of the sample described in this walkthrough, see the [Automatically add labels with an add-in when a Word document opens sample in our samples GitHub repo](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-label-on-open).
+
 ## Configure the manifest
 
 To enable an event-based add-in, you must configure the following elements in the `VersionOverridesV1_0` node of the manifest.
@@ -129,7 +132,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
       /* global global, Office, self, window */
       
       Office.onReady(() => {
-        // If needed, Office.js is ready to be called
+        // If needed, Office.js is ready to be called.
       });
       
       async function changeHeader(event) {
@@ -218,5 +221,5 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
 ## See also
 
 - [Activate add-ins with events](../develop/event-based-activation.md)
-- [Debug your event-based or spam-reporting Office Add-in](../testing/debug-autolaunch.md)
-- [Troubleshoot event-based and spam-reporting Office Add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
+- [Debug event-based or spam-reporting add-ins](../testing/debug-autolaunch.md)
+- [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
