@@ -690,6 +690,6 @@ For information about validating a manifest against the [XML Schema Definition (
 - [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Localization for Office Add-ins](localization.md)
 - [Schema reference for XML Office Add-ins manifests](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8)
-- [Identify an equivalent COM add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Make your Office Add-in compatible with an existing COM or VSTO add-in](make-office-add-in-compatible-with-existing-com-add-in.md)
 - [Requesting permissions for API use in add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)
 - [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md)
