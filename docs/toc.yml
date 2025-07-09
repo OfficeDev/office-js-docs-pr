@@ -426,10 +426,12 @@ items:
         href: testing/troubleshoot-development-errors.md
     - name: Event-based add-ins
       items:
-      - name: Troubleshoot event-based and spam-reporting add-ins
-        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: Debug event-based and spam-reporting add-ins
         href: testing/debug-autolaunch.md
+      - name: SSO and CORS in event-based or spam-reporting add-ins
+        href: develop/use-sso-in-event-based-activation.md
+      - name: Troubleshoot event-based and spam-reporting add-ins
+        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
     - name: Performance
       items:
       - name: Avoid using the context.sync method in loops
@@ -897,7 +899,7 @@ items:
       - name: Authenticate with SSO token
         href: outlook/authenticate-a-user-with-an-sso-token.md
       - name: SSO and CORS in event-based or spam-reporting add-ins
-        href: outlook/use-sso-in-event-based-activation.md
+        href: develop/use-sso-in-event-based-activation.md
       - name: Authenticate with an identity token
         href: outlook/authenticate-a-user-with-an-identity-token.md
       - name: Validate an identity token

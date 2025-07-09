@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 When an add-in implements event-based activation or integrated spam reporting, the events run in a separate [runtime](../testing/runtimes.md). To configure single sign-on (SSO) or request external data through cross-origin resource sharing (CORS) in these add-ins, you must configure a well-known URI. Through this resource, Office will be able to identify the add-ins, including their JavaScript files, that support SSO or CORS requests.
 
 > [!NOTE]
-> The steps in this article only apply to add-ins that run on Excel, PowerPoint, or Word on Windows, or classic Outlook on Windows. This is because they use a JavaScript file, while these applications on Mac, on the web, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that references the same JavaScript file. To learn more, see [Activate add-ins with events](../develop/event-based-activation.md) and [Implement an integrated spam-reporting add-in](spam-reporting.md).
+> The steps in this article only apply to add-ins that run on Excel, PowerPoint, or Word on Windows, or classic Outlook on Windows. This is because they use a JavaScript file, while these applications on Mac, on the web, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that references the same JavaScript file. To learn more, see [Activate add-ins with events](../develop/event-based-activation.md) and [Implement an integrated spam-reporting add-in](../outlook/spam-reporting.md).
 
 ## List allowed add-ins in a well-known URI
 
@@ -39,6 +39,6 @@ After you configure the well-known URI, if your add-in implements SSO, you can t
 
 ## See also
 
-- [Authenticate a user with a single-sign-on token in an Outlook add-in](authenticate-a-user-with-an-sso-token.md)
+- [Authenticate a user with a single-sign-on token in an Outlook add-in](../outlook/authenticate-a-user-with-an-sso-token.md)
 - [Activate add-ins with events](../develop/event-based-activation.md)
-- [Implement an integrated spam-reporting add-in](spam-reporting.md)
+- [Implement an integrated spam-reporting add-in](../outlook/spam-reporting.md)

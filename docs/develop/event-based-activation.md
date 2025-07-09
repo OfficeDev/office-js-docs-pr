@@ -138,7 +138,7 @@ Some Office.js APIs that change or alter the UI aren't allowed from event-based 
 | `Office.context.ui` | <ul><li>`displayDialogAsync`</li><li>`messageParent`</li></ul>|
 
 > [!NOTE]
-> \* [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../outlook/use-sso-in-event-based-activation.md).
+> \* [OfficeRuntime.auth](/javascript/api/office-runtime/officeruntime.auth) is supported in all versions that support event-based activation and single sign-on (SSO), while [Office.auth](/javascript/api/office/office.auth) is only supported in certain Outlook builds. For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
 
 ### Preview features in event handlers (classic Outlook on Windows)
 
@@ -151,7 +151,7 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 
 ## Enable single sign-on (SSO)
 
-To enable SSO in your event-based add-in, you must add its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../outlook/use-sso-in-event-based-activation.md).
+To enable SSO in your event-based add-in, you must add its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
 
 ### Request external data
 
@@ -165,7 +165,7 @@ Be aware that you must use additional security measures when using XMLHttpReques
 > [!NOTE]
 > Full CORS support is available in Office on the web, Mac, and Windows (starting in Version 2201, Build 16.0.14813.10000) clients.
 
-To make CORS requests from your event-based add-in, you must add the add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Office Add-in](../outlook/use-sso-in-event-based-activation.md).
+To make CORS requests from your event-based add-in, you must add the add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Office Add-in](../develop/use-sso-in-event-based-activation.md).
 
 ## Troubleshoot your add-in
 

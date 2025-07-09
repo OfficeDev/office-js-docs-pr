@@ -356,7 +356,7 @@ The following is an example of a spam-reporting event handler that calls the `ge
 1. Save your changes.
 
 > [!NOTE]
-> To configure single sign-on (SSO) or cross-origin resource sharing (CORS) in your spam-reporting add-in, you must add your add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
+> To configure single sign-on (SSO) or cross-origin resource sharing (CORS) in your spam-reporting add-in, you must add your add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
 
 ### Signal when the event has been processed
 

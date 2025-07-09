@@ -1299,6 +1299,10 @@
             "redirect_url": "/office/dev/add-ins/project/overview"
         },
         {
+            "source_path": "docs/outlook/debug-autolaunch.md",
+            "redirect_url": "/office/dev/add-ins/testing/debug-autolaunch"
+        },
+        {
             "source_path": "docs/outlook/match-strings-in-an-item-as-well-known-entities.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
         },
@@ -1309,6 +1313,10 @@
         {
             "source_path": "docs/outlook/use-regular-expressions-to-show-an-outlook-add-in.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/use-sso-in-event-based-activation.md",
+            "redirect_url": "/office/dev/add-ins/develop/use-sso-in-event-based-activation"
         },
         {
             "source_path": "docs/develop/extended-overrides.md",
