@@ -430,7 +430,7 @@ items:
         href: concepts/correlated-objects-pattern.md
       - name: Resource limits and performance optimization for Office Add-ins
         href: concepts/resource-limits-and-performance-optimization.md
-    - name: Troubleshoot event-based and spam-reporting add-ins
+    - name: Troubleshoot event-based and spam-reporting Office Add-ins
       href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
     - name: Unit testing
       href: testing/unit-testing.md
@@ -781,6 +781,9 @@ items:
       href: outlook/outlook-addin-design.md
     - name: Event-based activation
       items:
+      - name: Implement an event-based add-in
+        href: develop/event-based-activation.md
+        displayName: event-based activation
       - name: Implement Smart Alerts to handle on-send events
         href: outlook/onmessagesend-onappointmentsend-events.md
         displayName: event-based activation
@@ -915,7 +918,7 @@ items:
         href: outlook/compare-outlook-add-in-support-in-outlook-for-mac.md
       - name: Debug function commands
         href: outlook/debug-ui-less.md
-      - name: Troubleshoot event-based and spam-reporting add-ins
+      - name: Troubleshoot event-based and spam-reporting Office Add-ins
         href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: Debug event-based and spam-reporting add-ins
         href: outlook/debug-autolaunch.md

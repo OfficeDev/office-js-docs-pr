@@ -1,12 +1,12 @@
 ---
-title: Troubleshoot event-based and spam-reporting add-ins
+title: Troubleshoot event-based and spam-reporting Office Add-ins
 description: Learn how to troubleshoot development errors in add-ins that implement event-based activation or integrated spam reporting.
 ms.date: 07/02/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 
-# Troubleshoot event-based and spam-reporting add-ins
+# Troubleshoot event-based and spam-reporting Office Add-ins
 
 As you develop your [event-based](../develop/event-based-activation.md) or [spam-reporting](../outlook/spam-reporting.md) add-in, you may encounter issues, such as your add-in not loading or an event not occurring. The following sections provide guidance on how to troubleshoot your add-in.
 
@@ -27,7 +27,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
   - Verify that your add-in's source file location URL is publicly available and isn't blocked by a firewall. This URL is specified in the [SourceLocation element](/javascript/api/manifest/sourcelocation) of the add-in only manifest or the [`"extensions.runtimes.code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property of the unified manifest for Microsoft 365.
   - Verify that the **\<Runtimes\>** element (add-in only manifest) or `"extensions.runtimes.code"` property (unified manifest) correctly references the HTML or JavaScript file containing the event handlers. Classic Outlook on Windows and other Windows-based Office applications use the JavaScript file during runtime, while Office on the web, the new Outlook Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use the HTML file. For an example of how this is configured in the manifest, see the "Configure the manifest" section of [Automatically set the subject of a new message or appointment](../outlook/on-new-compose-events-walkthrough.md#configure-the-manifest).
   
-    For classic Outlook on Windows, you must bundle all your event-handling JavaScript code into this JavaScript file referenced in the manifest. Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
+    For Windows clients (except for new Outlook on Windows), you must bundle all your event-handling JavaScript code into this JavaScript file referenced in the manifest. Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - Verify that your event-handling JavaScript file calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart. The following code is an example.
 
     ```js

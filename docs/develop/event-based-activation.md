@@ -23,7 +23,7 @@ While the particular steps to add event-based functionality to your add-in vary 
 
 Discover how to streamline workflows and improve user experiences with event-based activation. Try out the samples to see the feature in action.
 
-### Outlook
+### Outlook samples
 
 - [Automatically set the subject of a new message or appointment](../outlook/on-new-compose-events-walkthrough.md)
 - [Automatically check for an attachment before a message is sent](../outlook/smart-alerts-onmessagesend-walkthrough.md)
@@ -34,7 +34,7 @@ Discover how to streamline workflows and improve user experiences with event-bas
 - [Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
 - [Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
 
-### Word
+### Word samples
 
 - [Add headers when a document opens](../word/add-headers-on-document-open.md)
 
@@ -42,13 +42,13 @@ Discover how to streamline workflows and improve user experiences with event-bas
 
 The following tables list events that are currently available and the supported clients for each event. When an event is raised, the handler receives an `event` object which may include details specific to the type of event. The **Description** column includes a link to the related object where applicable.
 
-### Excel, PowerPoint, Word
+### Excel, PowerPoint, Word events
 
-| Event canonical name</br>and add-in only manifest name | Description | Supported clients and channels |
+| Event canonical name</br>and add-in only manifest name | Unified manifest for Microsoft 365 name | Description | Supported clients and channels |
 | ----- | ----- | ----- |
-| `OnDocumentOpened` | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | <ul><li>Windows (build >= 16.0.18324.20032)</li><li>Office on the web</li><li>Office on Mac will be available later </li></ul>|
+| `OnDocumentOpened` | *Not yet supported* |Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | <ul><li>Windows (build >= 16.0.18324.20032)</li><li>Office on the web</li><li>Office on Mac will be available later </li></ul>|
 
-### Outlook
+### Outlook events
 
 Support for this feature in Outlook was introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10), with additional events now available in subsequent requirement sets. For details about an event's minimum requirement set and the clients and platforms that support it, see [Supported events](#supported-events) and [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
 
@@ -88,7 +88,7 @@ Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, supp
 
 As you develop an event-based add-in, be mindful of the following feature behaviors and limitations.
 
-Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch. Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
+Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch (for workarounds to the AppSource limitation, see [AppSource listing options for your event-based Outlook add-in](../outlook/autolaunch-store-options.md)). Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
 
 APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel on Windows. This is because the event handler runs in a JavaScript-only runtime. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 
@@ -106,9 +106,9 @@ In addition to item switching, an event-based add-in also ceases operation when 
 
 In the new Outlook on Windows, you must keep the main window of the client open for the add-in to process the mail item. If the main window is minimized, the add-in will pause or stop working.
 
-### Event-based add-in limitations in classic Outlook on Windows
+### Event-based add-in limitations in Excel, PowerPoint, Word, and classic Outlook on Windows
 
-When developing an event-based add-in to run in the classic Outlook on Windows client, be mindful of the following:
+When developing an event-based add-in to run on a Windows client, be mindful of the following:
 
 - Imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
 - Only the JavaScript file referenced in the manifest is supported for event-based activation. You must bundle your event-handling JavaScript code into this single file. The location of the referenced JavaScript file in the manifest varies depending on the type of manifest your add-in uses.
@@ -163,24 +163,15 @@ You can request external data by using an API like [Fetch](https://developer.moz
 Be aware that you must use additional security measures when using XMLHttpRequest objects, requiring [Same Origin Policy](https://developer.mozilla.org/docs/Web/Security/Same-origin_policy) and [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS).
 
 > [!NOTE]
-> Full CORS support is available in Outlook on the web, Mac, and Windows (new and classic (starting in Version 2201, Build 16.0.14813.10000) clients).
+> Full CORS support is available in Office on the web, Mac, and Windows (starting in Version 2201, Build 16.0.14813.10000) clients.
 
 To make CORS requests from your event-based add-in, you must add the add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../outlook/use-sso-in-event-based-activation.md).
 
 ## Troubleshoot your add-in
 
-As you develop your event-based add-in, you may need to troubleshoot issues, such as your add-in not loading or the event not occurring. For guidance on how to troubleshoot an event-based add-in, see [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md).
+As you develop your event-based add-in, you may need to troubleshoot issues, such as your add-in not loading or the event not occurring. For guidance on how to troubleshoot an event-based add-in, see [Troubleshoot event-based and spam-reporting Office Add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## Deploy your add-in
-
-Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch. To perform an admin deployment, upload the manifest to the Microsoft 365 admin center by taking the following actions.
-
-1. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**.
-1. On the **Integrated apps** page, choose the **Upload custom apps** action.
-
-For more information about how to deploy an add-in, please refer to [Deploy and publish Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/office-addins).
-
-### Deploy to users
 
 Event-based add-ins are restricted to admin-managed deployments only, even if they're acquired from AppSource. If users acquire the add-in from AppSource or the in-app Office Store, they won't be able to activate the event-based function of the add-in. To learn more about listing your event-based add-in in AppSource, see [AppSource listing options for your event-based Outlook add-in](../outlook/autolaunch-store-options.md).
 
@@ -193,13 +184,15 @@ Admin deployments are done by uploading the manifest to the Microsoft 365 admin 
 
 [!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
 
+For more information about how to deploy an add-in, please refer to [Deploy and publish Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/office-addins).
+
 ### Deploy manifest updates
 
 Because event-based add-ins are deployed by admins, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](../outlook/autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
 
 ## See also
 
-- [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
+- [Troubleshoot event-based and spam-reporting Office Add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug event-based and spam-reporting add-ins](../outlook/debug-autolaunch.md)
 - [AppSource listing options for your event-based Outlook add-in](../outlook/autolaunch-store-options.md)
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](../outlook/onmessagesend-onappointmentsend-events.md)

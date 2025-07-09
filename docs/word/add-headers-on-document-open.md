@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Add headers when a document opens
 
-The following sections walk you through how to develop a Word add-in that automatically changes the document header when a new or existing document opens. While this specific sample is for Word, the manifest configuration is the same for Excel and PowerPoint.
+The following sections walk you through how to develop a Word add-in that automatically changes the document header when a new or existing document opens. While this specific sample is for Word, the manifest configuration is the same for Excel and PowerPoint. For an overview of this style of event-based activation pattern, see [Activate add-ins with events](../develop/event-based-activation.md).
 
 > [!IMPORTANT]
 > This sample requires you to have a Microsoft 365 subscription with the supported version of Word.
@@ -215,4 +215,8 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
 1. Manually sideload your add-in in Word on the web by following the guidance at [Sideload Office Add-ins to Office on the web](../testing/sideload-office-add-ins-for-testing.md#manually-sideload-an-add-in-to-office-on-the-web). Use the **manifest.xml** in the root of the project.
 1. Try opening both new and existing Word documents in Word on the web. Headers should automatically be added when they open.
 
-## Next steps
+## See also
+
+- [Activate add-ins with events](../develop/event-based-activation.md)
+- [Debug your event-based or spam-reporting Office Add-in](../testing/debug-autolaunch.md)
+- [Troubleshoot event-based and spam-reporting Office Add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
