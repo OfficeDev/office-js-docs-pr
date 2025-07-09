@@ -1023,7 +1023,7 @@ items:
   - name: 'Sample: Manage citations'
     href: word/citation-management.md
     displayName: Word
-  - name: 'Walkthough: Add headers when a document opens'
+  - name: 'Walkthrough: Add headers when a document opens'
     href: word/add-headers-on-document-open.md
     displayName: Word
   - name: Word JavaScript API

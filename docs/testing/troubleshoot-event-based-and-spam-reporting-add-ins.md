@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot event-based and spam-reporting add-ins
-description: Learn how to troubleshoot development errors in add-ins that implement event-based activation or integrated spam reporting.
+description: Learn how to troubleshoot development errors in Office Add-ins that implement event-based activation or integrated spam reporting.
 ms.date: 07/02/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium

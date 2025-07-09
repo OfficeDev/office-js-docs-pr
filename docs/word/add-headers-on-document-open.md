@@ -129,7 +129,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
       /* global global, Office, self, window */
       
       Office.onReady(() => {
-        // If needed, Office.js is ready to be called
+        // If needed, Office.js is ready to be called.
       });
       
       async function changeHeader(event) {
