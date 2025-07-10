@@ -88,7 +88,7 @@ The following example shows the portion of the manifest that specifies a COM add
 
 ## Configure the Group Policy setting for Outlook add-ins
 
-When the version of Outlook installed on a Windows computer doesn't support the equivalent add-ins manifest markup as specified in the **Important** note earlier in this article, a computer admin can designate a Windows-only add-in to be treated as the equivalent of an Outlook add-in by using the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting on the computer. Then, classic Outlook on Windows uses the Windows-only add-in instead of the Outlook add-in if they're both installed. The following are the steps to configure the policy.
+A user with administrator powers on their computer can configure a Windows-only add-in to be the equivalent of an *Outlook* add-in even when the manifest of the Outlook add-in doesn't have the equivalent add-in markup by using the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting on the computer. Then, classic Outlook on Windows uses the Windows-only add-in instead of the Outlook add-in if they're both installed. The following are the steps to configure the policy.
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).
