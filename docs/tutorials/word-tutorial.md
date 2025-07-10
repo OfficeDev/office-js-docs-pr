@@ -37,7 +37,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![The previous prompts and answers given to the Yeoman generator in a command line interface.](../images/yo-office-word.png)
+:::image type="content" source="../images/yo-office-word.png" alt-text="The previous prompts and answers given to the Yeoman generator in a command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -145,7 +145,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. In Word, if the "My Office Add-in" task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![The Show Taskpane button highlighted in Word.](../images/word-quickstart-addin-2b.png)
+    :::image type="content" source="../images/word-quickstart-addin-2b.png" alt-text="The Show Taskpane button highlighted in Word.":::
 
 1. In the task pane, choose the **Insert Paragraph** button.
 
@@ -153,7 +153,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
 1. Choose the **Insert Paragraph** button again. Note that the new paragraph appears above the previous one because the `insertParagraph` method is inserting at the start of the document's body.
 
-    ![The Insert Paragraph button in the add-in.](../images/word-tutorial-insert-paragraph-2.png)
+    :::image type="content" source="../images/word-tutorial-insert-paragraph-2.png" alt-text="The Insert Paragraph button in the add-in.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
@@ -299,7 +299,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. Choose the **Change Font** button. The font of the second paragraph changes to 18 pt., bold, Courier New.
 
-    ![The results of applying the styles and fonts defined for the add-in buttons Apply Style, Apply Custom Style, and Change font.](../images/word-tutorial-apply-styles-and-font-2.png)
+    :::image type="content" source="../images/word-tutorial-apply-styles-and-font-2.png" alt-text="The results of applying the styles and fonts defined for the add-in buttons Apply Style, Apply Custom Style, and Change font.":::
 
 ## Replace text and insert text
 
@@ -539,7 +539,7 @@ async function insertTextIntoRange() {
 
 1. Choose the **Change Quantity Term** button. Note that "many" replaces the selected text.
 
-    ![The results of choosing the add-in buttons Insert Abbreviation, Add Version Info, and Change Quantity Term.](../images/word-tutorial-text-replace-2.png)
+    :::image type="content" source="../images/word-tutorial-text-replace-2.png" alt-text="The results of choosing the add-in buttons Insert Abbreviation, Add Version Info, and Change Quantity Term.":::
 
 ## Insert images, HTML, and tables
 
@@ -718,7 +718,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. Choose the **Insert Table** button and note that a table is inserted after the second paragraph.
 
-    ![The results of choosing the add-in buttons Insert Image, Insert HTML, and Insert Table.](../images/word-tutorial-insert-image-html-table-2.png)
+    :::image type="content" source="../images/word-tutorial-insert-image-html-table-2.png" alt-text="The results of choosing the add-in buttons Insert Image, Insert HTML, and Insert Table.":::
 
 ## Create and update content controls
 
@@ -835,6 +835,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 1. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
 
     ![The results of choosing the add-in buttons Create Content Control and Rename Service.](../images/word-tutorial-content-control-2.png)
+    :::image type="content" source="../images/word-tutorial-content-control-2.png" alt-text="The results of choosing the add-in buttons Create Content Control and Rename Service.":::
 
 ## Next steps
 
