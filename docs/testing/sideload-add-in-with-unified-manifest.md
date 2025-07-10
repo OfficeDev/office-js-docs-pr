@@ -28,7 +28,7 @@ Use the process described in [Sideload with a system prompt, bash shell, or term
     - **PowerPoint Desktop (Edge Chromium)**
     - **Word Desktop (Edge Chromium)**
 
-1. Press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then the desktop version of the Office application that you selected opens. You can now work with your add-in. For an Outlook add-in, be sure you're working in the **Inbox** of *your Microsoft 365 account identity*.
+1. Press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then the desktop version of the Office application that you selected opens. You can now work with your add-in. For an Outlook add-in, be sure you're working in the **Inbox** of *your Microsoft 365 account identity*.
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
 
    > [!NOTE]
