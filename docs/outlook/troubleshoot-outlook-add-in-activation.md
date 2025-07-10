@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your contextual Outlook add-in doesn't activate as you expect.
-ms.date: 07/18/2024
+ms.date: 06/17/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -23,31 +23,6 @@ You can verify the version of Exchange by using one of the following approaches.
 - If you're testing the add-in on Outlook on the web or mobile devices, in a script debugger (for example, the JScript Debugger that comes with Internet Explorer), look for the **src** attribute of the **script** tag that specifies the location from which scripts are loaded. The path should contain a substring **owa/15.0.516.x/owa2/...**, where **15.0.516.x** represents the version of the Exchange Server, such as **15.0.516.2**.
 
 - Alternatively, you can use the [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) property to verify the version. In Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), this property returns the version of the Exchange Server.
-
-- If you can test the add-in on Outlook, you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor.
-
-    1. First, verify that macros are enabled for Outlook. Choose **File**, **Options**, **Trust Center**, **Trust Center Settings**, **Macro Settings**. Ensure that **Notifications for all macros** is selected in the Trust Center. You should have also selected **Enable Macros** during Outlook startup.
-
-    1. On the **Developer** tab of the ribbon, choose **Visual Basic**.
-
-       > [!NOTE]
-       > Not seeing the **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](/visualstudio/vsto/how-to-show-the-developer-tab-on-the-ribbon) to turn it on.
-
-    1. In the Visual Basic Editor, choose **View**, **Immediate Window**.
-
-    1. Type the following in the Immediate window to display the version of the Exchange Server. The major version of the returned value must be equal to or greater than 15.
-
-       - If there is only one Exchange account in the user's profile:
-
-       ```vb
-        ?Session.ExchangeMailboxServerVersion
-       ```
-
-       - If there are multiple Exchange accounts in the same user profile (`emailAddress` represents a string that contains the user's primary SMTP address):
-
-       ```vb
-        ?Session.Accounts.Item(emailAddress).ExchangeMailboxServerVersion
-       ```
 
 ## Is the add-in available?
 

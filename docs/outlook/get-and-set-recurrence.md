@@ -1,7 +1,7 @@
 ---
 title: Get and set the recurrence of appointments
 description: This topic shows you how to use the Office JavaScript API to get and set various recurrence properties of an appointment using an Outlook add-in.
-ms.date: 05/30/2024
+ms.date: 06/17/2024
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -55,7 +55,7 @@ Along with the recurrence pattern, you also need to determine the start and end 
 
 The appointment organizer can specify the recurrence pattern for an appointment series in compose mode only. In the following example, the appointment series is set to occur from 10:30 AM to 11:00 AM PST every Tuesday and Thursday during the period November 2, 2019 to December 2, 2019.
 
-```js
+```javascript
 const seriesTimeObject = new Office.SeriesTime();
 seriesTimeObject.setStartDate(2019,10,2);
 seriesTimeObject.setEndDate(2019,11,2);
@@ -80,9 +80,9 @@ Office.context.mailbox.item.recurrence.setAsync(pattern, (asyncResult) => {
 
 ## Change recurrence as the organizer
 
-In the following example, the appointment organizer gets the `Recurrence` object of an appointment series, then sets a new recurrence duration. This is done in compose mode.
+In the following example, the appointment organizer gets the [Recurrence](/javascript/api/outlook/office.recurrence) object of an appointment series, then sets a new recurrence duration. This is done in compose mode.
 
-```js
+```javascript
 Office.context.mailbox.item.recurrence.getAsync((asyncResult) => {
   const recurrencePattern = asyncResult.value;
   recurrencePattern.seriesTime.setDuration(60);
@@ -101,7 +101,7 @@ Office.context.mailbox.item.recurrence.getAsync((asyncResult) => {
 
 In the following example, the appointment organizer gets the `Recurrence` object of an appointment to determine whether it's a recurring series. This is done in compose mode.
 
-```js
+```javascript
 Office.context.mailbox.item.recurrence.getAsync((asyncResult) => {
     const recurrence = asyncResult.value;
 
@@ -135,7 +135,7 @@ The following example shows the results of the `getAsync` call that retrieves th
 
 In the following example, an appointment attendee gets the `Recurrence` object of an appointment or meeting request.
 
-```js
+```javascript
 outputRecurrence(Office.context.mailbox.item);
 
 function outputRecurrence(item) {
@@ -171,8 +171,8 @@ The following example shows the value of the `item.recurrence` property of an ap
 
 After you've retrieved the recurrence object (either from the `getAsync` callback or from `item.recurrence`), you can get specific properties of the recurrence. For example, get the start and end dates and times of the series by using the [SeriesTime][SeriesTime link] methods on the `recurrence.seriesTime` property.
 
-```js
-// Get series date and time info
+```javascript
+// Get the date and time information of the series.
 const seriesTime = recurrence.seriesTime;
 const startTime = recurrence.seriesTime.getStartTime();
 const endTime = recurrence.seriesTime.getEndTime();
@@ -180,14 +180,42 @@ const startDate = recurrence.seriesTime.getStartDate();
 const endDate = recurrence.seriesTime.getEndDate();
 const duration = recurrence.seriesTime.getDuration();
 
-// Get series time zone
+// Get the series time zone.
 const timeZone = recurrence.recurrenceTimeZone;
 
-// Get recurrence properties
+// Get the recurrence properties.
 const recurrenceProperties = recurrence.recurrenceProperties;
 
-// Get recurrence type
+// Get the recurrence type.
 const recurrenceType = recurrence.recurrenceType;
+```
+
+## Identify when the recurrence pattern changes
+
+There may be scenarios where you want your add-in to detect and handle changes to the recurrence pattern of a series. For example, you'd like to update the appointment's location if the series is extended. To implement this, you must create a handler for the [RecurrenceChanged](/javascript/api/office/office.eventtype) event. To add an event handler for the `RecurrenceChanged` event, call [Office.context.mailbox.item.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods). When a change is detected, the event handler receives an argument of type [Office.RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs), which provides the updated recurrence object.
+
+The following example shows how to register an event handler for the `RecurrenceChanged` event.
+
+```javascript
+// This sample shows how to register an event handler in Outlook.
+Office.onReady(() => {
+    // Register an event handler to identify when the recurrence pattern of a series is updated.
+    Office.context.mailbox.item.addHandlerAsync(Office.EventType.RecurrenceChanged, handleEvent, (asyncResult) => {
+        if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+            console.log(asyncResult.error.message);
+            return;
+        }
+
+        console.log("Event handler added for the RecurrenceChanged event.");
+    });
+});
+
+function handleEvent(event) {
+    // Get the updated recurrence object.
+    const updatedRecurrence = event.recurrence;
+
+    // Perform operations in response to the updated recurrence pattern.
+}
 ```
 
 ## Run sample snippets in Script Lab
@@ -203,9 +231,8 @@ To learn more about Script Lab, see [Explore Office JavaScript API using Script 
 
 ## See also
 
-- [RecurrenceChanged event](/javascript/api/office/office.eventtype)
-- [Recurrence object](/javascript/api/outlook/office.recurrence)
-- [SeriesTime object](/javascript/api/outlook/office.seriestime)
+- [Get or set the time when composing an appointment in Outlook](get-or-set-the-time-of-an-appointment.md)
+- [Get or set the location when composing an appointment in Outlook](get-or-set-the-location-of-an-appointment.md)
 
 [getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
 [item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties

@@ -152,6 +152,79 @@ reader.readAsDataURL(myFile.files[0]);
 
 To see a full code sample that includes an HTML implementation, see [Create presentation](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/powerpoint/document/create-presentation.yaml).
 
+## Detect the presentation's active view and handle the ActiveViewChanged event
+
+If you're building a [content add-in](../design/content-add-ins.md), you'll need to get the presentation's active view and handle the [Document.ActiveViewChanged](/javascript/api/office/office.eventtype#fields) event as part of your [Office.onReady](/javascript/api/office#office-office-onready-function(1)) call.
+
+> [!NOTE]
+> In PowerPoint on the web, the `Document.ActiveViewChanged` event will never fire because **Slide Show** mode is treated as a new session. In this case, the add-in must fetch the active view on load, as shown in the following code sample.
+
+Note the following about the code sample:
+
+- The `getActiveFileView` function calls the [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) method to return whether the presentation's current view is "edit" (any of the view where you can edit slides, such as **Normal**, **Slide Sorter**, or **Outline**) or "read" (**Slide Show** or **Reading View**), represented by the [ActiveView](/javascript/api/office/office.activeview) enum.
+- The `registerActiveViewChanged` function calls the [Document.addHandlerAsync](/javascript/api/office/office.document#office-office-document-addhandlerasync-member(1)) method to register a handler for the `Document.ActiveViewChanged` event.
+- To display information, this example uses the `showNotification` function, which is included in the Visual Studio Office Add-ins project templates. If you aren't using Visual Studio to develop your add-in, you'll need to replace the `showNotification` function with your own code.
+
+```js
+// General Office.onReady function. Called after the add-in loads and Office JS is initialized.
+Office.onReady(() => {
+  // Get whether the current view is edit or read.
+  const currentView = getActiveFileView();
+
+  // Register the active view changed handler.
+  registerActiveViewChanged();
+
+  // Render the content based off of the current view.
+  if (currentView === Office.ActiveView.Read) {
+      // Handle read view.
+      console.log('Current view is read.');
+      // You can add any specific logic for the read view here.
+  } else {
+      // Handle edit view.
+      console.log('Current view is edit.');
+      // You can add any specific logic for the edit view here.
+  }
+});
+
+// Gets the active file view.
+function getActiveFileView() {
+    console.log('Getting active file view...');
+    Office.context.document.getActiveViewAsync(function (result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+            console.log('Active view:', result.value);
+            return result.value;
+        } else {
+            console.error('Error getting active view:', result.error.message);
+            showNotification('Error:', result.error.message);
+            return null;
+        }
+    });
+}
+
+// Registers the ActiveViewChanged event.
+function registerActiveViewChanged() {
+    console.log('Registering ActiveViewChanged event handler...');
+    Office.context.document.addHandlerAsync(
+        Office.EventType.ActiveViewChanged,
+        activeViewHandler,
+        function (result) {
+            if (result.status === Office.AsyncResultStatus.Failed) {
+                console.error('Failed to register active view changed handler:', result.error.message);
+                showNotification('Error:', result.error.message);
+            } else {
+                console.log('Active view changed handler registered successfully.');
+            }
+        });
+}
+
+// ActiveViewChanged event handler.
+function activeViewHandler(eventArgs) {
+    console.log('Active view changed:', JSON.stringify(eventArgs));
+    showNotification('Active view changed', `The active view has changed to: ${eventArgs.activeView}`);
+    // You can add logic here based on the new active view.
+}
+```
+
 ## See also
 
 - [Developing Office Add-ins](../develop/develop-overview.md)

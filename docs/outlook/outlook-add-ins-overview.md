@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 06/05/2025
+ms.date: 07/01/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -22,7 +22,7 @@ Outlook add-ins are different from COM or VSTO add-ins, which are older integrat
 >
 > - COM and VSTO add-ins aren't supported in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627). However, these add-ins are still supported in the classic Outlook on Windows desktop client. To learn more, see [Develop Outlook add-ins for new Outlook on Windows](../outlook/one-outlook.md).
 >
-> - In classic Outlook on Windows, it isn't recommended to install COM add-ins alongside Office web add-ins, especially if they operate on the same surface or mail item. The operations performed by COM and web add-ins could interfere with each other and lead to unexpected behavior. If you need to support both COM and web add-in versions of your solution, you must specify the COM solution as an equivalent add-in. To learn more, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+> - In classic Outlook on Windows, it isn't recommended to install COM add-ins alongside Office web add-ins, especially if they operate on the same surface or mail item. The operations performed by COM and web add-ins could interfere with each other and lead to unexpected behavior. If you need to support both COM and web add-in versions of your solution, you must specify the COM solution as an equivalent add-in. To learn more, see [Make your Office Add-in compatible with an existing COM or VSTO add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 The Outlook items that support add-ins include email messages, meeting requests, responses and cancellations, and appointments. Each Outlook add-in defines the context in which it is available, including the types of items and if the user is reading or composing an item.
 
@@ -91,6 +91,22 @@ However, add-ins won't activate on IRM-protected items when:
 ## Supported clients
 
 Outlook add-ins are supported in Outlook on the web, Outlook on Windows (new and classic), Outlook on Mac, Outlook on iOS, Outlook on Android, and Outlook.com. Not all of the newest features are supported in all clients at the same time. For details about feature support on clients and servers, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) and articles specific to those features.
+
+## Supported accounts
+
+On supported Outlook clients, add-ins can run on Outlook.com (consumer or personal) and Microsoft 365 business mailbox accounts. For more information on Microsoft accounts, see [What's the difference between a Microsoft account and a work or school account?](https://support.microsoft.com/account-billing/72f10e1e-cab8-4950-a8da-7c45339575b0).
+
+While non-Microsoft mailbox accounts, such as Gmail and Yahoo Mail, can be added to certain Outlook clients, Outlook add-ins aren't always supported on these accounts. The following table outlines add-in support on non-Microsoft accounts for each Outlook client.
+
+|Outlook client|Add-in support on non-Microsoft accounts|
+|-----|-----|
+|Web|Not supported.|
+|new Outlook on Windows|Not supported.|
+|classic Outlook on Windows|Not supported.|
+|Mac|<ul><li>If a non-Microsoft account was added using the IMAP CloudCache option, add-ins are supported.</li><li>If a non-Microsoft account was added using the IMAP Direct option, add-ins aren't supported.</li></ul>|
+|Mobile (Android and iOS)|Not supported.|
+
+When using non-Microsoft accounts that support add-ins in Outlook, note that you must first select a folder or item in the non-Microsoft mailbox to load the add-in.
 
 ## Get started building Outlook add-ins
 

@@ -14,7 +14,7 @@ Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to 
 
 Office Add-ins use HTML, JavaScript, and additional web technologies to build Office solutions on all platforms. Migrating your existing VSTO Add-in to an Office Add-in is a great way to make your solution available across all platforms.
 
-You may want to maintain both your VSTO Add-in and a new Office Add-in that both have the same functionality. This enables you to continue servicing your customers that use the VSTO Add-in on Office on Windows. This also enables you to provide the same functionality in an Office Add-in for customers across all platforms. You can also [Make your Office Add-in compatible with the existing VSTO Add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+You may want to maintain both your VSTO Add-in and a new Office Add-in that both have the same functionality. This enables you to continue servicing your customers that use the VSTO Add-in on Office on Windows. This also enables you to provide the same functionality in an Office Add-in for customers across all platforms. You can also [Make your Office Add-in compatible with an existing COM or VSTO add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 However, it's best to avoid rewriting all the code from your VSTO Add-in for the Office Add-in. This tutorial shows how to avoid rewriting code by using a shared code library for both add-ins.
 
