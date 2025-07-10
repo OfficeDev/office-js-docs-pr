@@ -24,7 +24,7 @@ The manifest configuration depends on what type of manifest the add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-The following example shows how to specify both a COM add-in and an XLL add-in as equivalents in a unified manifest. Often you specify both. For completeness, this example shows both equivalents in context. They're identified by their [`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin#progid) and `"alternates.prefer.xllCustomFunctions.filename"` respectively. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+The following example shows how to specify both a COM add-in and an XLL add-in as equivalents in a unified manifest. Often you specify both. For completeness, this example shows both equivalents in context. They're identified by their [`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin#progid) and `"alternates.prefer.xllCustomFunctions.filename"` respectively. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM or VSTO add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```json
 "extensions" [
@@ -46,7 +46,7 @@ The following example shows how to specify both a COM add-in and an XLL add-in a
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-The following example shows how to specify both a COM add-in and an XLL add-in as equivalents in an Excel JavaScript API add-in only manifest file. Often you specify both. For completeness, this example shows both equivalents in context. They're identified by their `ProgId` and `FileName` respectively. The `EquivalentAddins` element must be positioned immediately before the closing `VersionOverrides` tag. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+The following example shows how to specify both a COM add-in and an XLL add-in as equivalents in an Excel JavaScript API add-in only manifest file. Often you specify both. For completeness, this example shows both equivalents in context. They're identified by their `ProgId` and `FileName` respectively. The `EquivalentAddins` element must be positioned immediately before the closing `VersionOverrides` tag. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM or VSTO add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ```xml
 <VersionOverrides>
@@ -90,5 +90,5 @@ The following table compares features across XLL user-defined functions, XLL com
 
 ## See also
 
-- [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
+- [Make your Office Add-in compatible with an existing COM or VSTO add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md)
 - [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)

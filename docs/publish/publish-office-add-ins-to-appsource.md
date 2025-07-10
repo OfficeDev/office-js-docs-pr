@@ -467,7 +467,7 @@ When an end user runs your installation executable, their experience with the we
 
 If you're certified and the administrator has enabled automatic approval for all apps from certified developers, then the web add-in is installed without the need for any special action by the user after the installation executable is started. If you're not certified or the administrator hasn't granted automatic approval for all apps from certified developers, then the user is prompted to approve inclusion of the web add-in as part of the overall installation. After installation, the web add-in is available to the user in Office on the web as well as Office on Windows.
 
-If you're combining the installation of a web add-in with a COM/VSTO add-in, you need to think about the relationship between the two. For more information, see [Make your Office Add-in compatible with an existing COM add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
+If you're combining the installation of a web add-in with a COM/VSTO add-in, you need to think about the relationship between the two. For more information, see [Make your Office Add-in compatible with an existing COM or VSTO add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 
 ## Related content
 
