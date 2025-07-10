@@ -206,7 +206,7 @@ To disable the Windows-only add-in instead of the Office Add-in (or to give the 
 > [!TIP]
 > To force the Windows-only add-in to be enabled and the Office Add-in to be disabled and hidden on the Windows computer, use the `alternates.prefer` property as described in [Configure the manifest](?tabs=jsonmanifest#configure-the-manifest).
 
-In the following example, the user will be prompted whether to disable the Windows-only add-in "Contoso.addin.1" or to disable the Office Add-in.
+In the following example, the user will be prompted whether to disable the Windows-only add-in "ContosoAddin" or to disable the Office Add-in.
 
 ```json
 "extensions" [
@@ -219,7 +219,7 @@ In the following example, the user will be prompted whether to disable the Windo
             "effect": "userOptionToDisable",
             "comAddin": {
               "progIds": [
-                "Contoso.Addin.1"
+                "ContosoAddin"
               ]
             }
           }
@@ -247,7 +247,7 @@ The following is an example. The **\<Effect\>** element must be after all the **
   ...
   <EquivalentAddins>
     <EquivalentAddin>
-      <ProgId>ContosoCOMAddin</ProgId>
+      <ProgId>ContosoAddin</ProgId>
       <Type>COM</Type>
     </EquivalentAddin>
     <Effect>UserOptionToDisable</Effect>
