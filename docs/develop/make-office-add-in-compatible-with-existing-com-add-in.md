@@ -59,7 +59,7 @@ The following example shows the portion of the manifest that specifies a Windows
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-The following example shows the portion of the manifest that specifies a COM add-in as an equivalent add-in. The value of the `ProgId` element identifies the COM add-in and the [EquivalentAddins](/javascript/api/manifest/equivalentaddins) element must be positioned immediately before the closing `VersionOverrides` tag.
+The following example shows the portion of the manifest that specifies a Windows-only add-in as an equivalent add-in. The value of the `ProgId` element identifies the Windows-only add-in and the [EquivalentAddins](/javascript/api/manifest/equivalentaddins) element must be positioned immediately before the closing `VersionOverrides` tag.
 
 > [!NOTE]
 > Although the term "ProgId" is usually associated with only COM add-ins, in the manifest it refers to the name of the Windows-only add-in, regardless of whether the add-in is COM or VSTO.
@@ -88,7 +88,7 @@ The following example shows the portion of the manifest that specifies a COM add
 
 ## Configure the Group Policy setting for Outlook add-ins
 
-A user with administrator powers on their computer can configure a Windows-only add-in to be the equivalent of an *Outlook* add-in even when the manifest of the Outlook add-in doesn't have the equivalent add-in markup by using the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting on the computer. Then, classic Outlook on Windows uses the Windows-only add-in instead of the Outlook add-in if they're both installed. The following are the steps to configure the policy.
+A user with administrator powers on their computer can configure a Windows-only add-in to be the equivalent of an *Outlook* add-in by using the **Deactivate Outlook web add-ins whose equivalent COM or VSTO add-in is installed** Group Policy setting on the computer. This can be achieved even when the manifest of the Outlook add-in doesn't have the equivalent add-in markup. Then, classic Outlook on Windows uses the Windows-only add-in instead of the Outlook add-in if they're both installed. The following are the steps to configure the policy.
 
 1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030), paying attention to the tool's **Install Instructions**.
 1. Open the Local Group Policy Editor (**gpedit.msc**).
@@ -104,7 +104,7 @@ A user with administrator powers on their computer can configure a Windows-only 
 
 ## Equivalent behavior for users
 
-When an equivalent Windows-only add-in is specified, Office on Windows will not display your Office Add-in's user interface (UI) if the equivalent Windows-only add-in is installed. But Office only hides the ribbon buttons of the Office Add-in and doesn't prevent installation. Therefore, your Office Add-in will still appear in the following locations within the UI.
+When an equivalent Windows-only add-in is specified, Office on Windows won't display your Office Add-in's user interface (UI) if the equivalent Windows-only add-in is installed. But Office only hides the ribbon buttons of the Office Add-in and doesn't prevent installation. Therefore, your Office Add-in will still appear in the following locations within the UI.
 
 - Under **My add-ins**.
 - As an entry on the ribbon manager (Excel, Word, and PowerPoint only).
@@ -124,7 +124,7 @@ If a user acquires the Office Add-in from AppSource and the equivalent Windows-o
 
 ### Centralized deployment of Office Add-in
 
-If an admin deploys the Office Add-in to their tenant using centralized deployment, and the equivalent Windows add-in is already installed, the user must restart Office before they'll see any changes. After Office restarts, it will:
+If an admin deploys the Office Add-in to their tenant using centralized deployment, and the equivalent Windows-only add-in is already installed, the user must restart Office before they'll see any changes. After Office restarts, it will:
 
 1. Install the Office Add-in.
 2. Hide the Office Add-in UI on the ribbon.
@@ -144,7 +144,7 @@ If a user has the Windows-only add-in installed, and then gets a shared document
 
 If a user uninstalls the equivalent Windows-only add-in, then Office on Windows restores the Office Add-in UI.
 
-After you specify an equivalent Windows add-in for your Office Add-in, Office stops processing updates for your Office Add-in. To acquire the latest updates for the Office Add-in, the user must first uninstall the Windows-only add-in.
+After you specify an equivalent Windows-only add-in for your Office Add-in, Office stops processing updates for your Office Add-in. To acquire the latest updates for the Office Add-in, the user must first uninstall the Windows-only add-in.
 
 ### Outlook
 
