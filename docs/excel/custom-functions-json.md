@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
-ms.date: 06/27/2025
+ms.date: 07/10/2025
 ms.localizationpriority: medium
 ---
 
@@ -180,7 +180,7 @@ The `functions` property is an array of custom function objects. The following t
 
 ### enums
 
-The `enums` property is an array of [enum](https://www.typescriptlang.org/docs/handbook/enums.html) constants. The following table lists the properties of each constant.
+The `enums` property is an array of [enum](https://www.typescriptlang.org/docs/handbook/enums.html) objects. The following table lists the properties of each object.
 
 > [!TIP]
 > To learn about creating custom enums for your custom functions, see [Create custom enums for your custom functions](custom-functions-custom-enums.md). To learn about editing metadata for custom enums, see [Edit custom enums in JSON metadata](#edit-custom-enums-in-json-metadata).
@@ -330,7 +330,7 @@ Create or edit enum metadata directly with the `enums` property. Each custom enu
 
 If you manually create the JSON metadata for your custom enum, you can associate those enums with either TypeScript or JavaScript custom functions. To learn more about creating custom enums, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
 
-The following JSON snippet shows the metadata for a `PLANETS` enum  that contains the planets Mercury and Venus.
+The following JSON snippet shows the metadata for two enums: a `PLANETS` enum  that contains the planets Mercury and Venus, and a `DAYS` enum that includes the days Monday and Tuesday.
 
 ```json
 "enums": [ 
@@ -347,6 +347,22 @@ The following JSON snippet shows the metadata for a `PLANETS` enum  that contain
         "name": "Venus", 
         "value": "venus", 
         "tooltip": "Venus is the second planet from the sun." 
+      }
+    ] 
+  },
+  {
+    "id": "DAYS", 
+    "type": "number", 
+    "values": [ 
+      { 
+        "name": "Monday",
+        "value": 1,
+        "tooltip": "Monday is the first working day of a week."
+      },
+      { 
+        "name": "Tuesday",
+        "value": 2,
+        "tooltip": "Tuesday is the second working day of a week."
       }
     ] 
   }
