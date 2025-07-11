@@ -1,7 +1,7 @@
 ---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 07/16/2025
+ms.date: 07/21/2025
 ms.localizationpriority: medium
 ---
 
@@ -172,10 +172,7 @@ If the Windows-only add-in is then disconnected during a subsequent Outlook sess
 > The feature described in this section is in preview and shouldn't be used in a production add-in. It has the following limitations.
 >
 > - It's supported only for Excel, PowerPoint, and Word.
-> - The minimum Office version that supports the feature depends on the type of manifest that add-in has.
->
->    - **Unified manifest for Microsoft 365**: ??????
->    - **Add-in only manifest**: Subscription Office on Windows Version 2505 (Build 18925.20042).
+> - The minimum Office version that supports the feature is ubscription Office on Windows Version 2506 (Build 19029.20004)
 
 Use manifest markup to specify whether the Windows-only add-in or the Office Add-in should be disabled and hidden on a Windows computer when they conflict, or give the user that is installing the Office Add-in the choice of which to use.
 
@@ -201,7 +198,7 @@ To disable the Windows-only add-in instead of the Office Add-in (or to give the 
 - **userOptionToDisable**: The user is prompted to choose whether to disable and hide the Windows-only add-ins specified in the child `comAddin.progIds` array of the `windowsExtensions` property or to disable and hide the Office Add-in.
 
 > [!NOTE]
-> The string "com" is in the name `comAddin` for historical reasons. In the manifest, the property refers to either COM or VSTO add-ins. Similarly, the term "progIds" is usually associated with only COM add-ins, but it can be assigned the name of a VSTO add-in.
+> The string "com" is in the name `comAddin` for historical reasons. In the manifest, the property refers to either COM or VSTO add-ins. Similarly, the term "progIds" is usually associated with only COM add-ins, but names of VSTO add-ins can also be included in the `progIds` array.
 
 > [!TIP]
 > To force the Windows-only add-in to be enabled and the Office Add-in to be disabled and hidden on the Windows computer, use the `alternates.prefer` property as described in [Configure the manifest](?tabs=jsonmanifest#configure-the-manifest).
