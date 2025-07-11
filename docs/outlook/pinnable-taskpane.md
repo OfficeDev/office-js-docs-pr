@@ -125,9 +125,9 @@ Office.onReady(() => {
 
 ## Task pane pinning in multi-select
 
-In Outlook on the web and new Outlook on Windows, when the task pane of an add-in that implements the [item multi-select](item-multi-select.md) feature is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
+In Outlook on the web and new Outlook on Windows and Mac, when the task pane of an add-in that implements the [item multi-select](item-multi-select.md) feature is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
 
-Conversely, in classic Outlook on Windows and Outlook on Mac, the task pane of a multi-select add-in isn't automatically pinned and closes when a user switches to a different mail item.
+Conversely, in classic Outlook on Windows, the task pane of a multi-select add-in isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Deploy to users
 
