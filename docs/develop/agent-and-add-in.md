@@ -1,7 +1,7 @@
 ---
 title: Add a Copilot agent to an add-in
 description: Learn how to add a Copilot agent to an add-in.
-ms.date: 06/10/2025
+ms.date: 07/15/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: medium
@@ -86,7 +86,7 @@ Office.onReady(function() {
 });
 
 async function fillColorFromUserData(message) {
-    const {Cell: cell, Color: color} = JSON.parse(message);
+    const {cell, color} = JSON.parse(message);
     await Excel.run(async (context) => {
       context.workbook.worksheets
         .getActiveWorksheet()
@@ -213,18 +213,18 @@ The runtime object should look similar to the following. There may be other prop
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "Cell": {
+                        "cell": {
                             "type": "string",
                             "description": "A cell location in the format of A1, B2, etc.",
                             "default" : "B2"
                         },
-                        "Color": {
+                        "color": {
                             "type": "string",
                             "description": "A color in hex format, e.g., #30d5c8",
                             "default" : "#30d5c8"
                         }
                     },
-                    "required": ["Cell", "Color"]
+                    "required": ["cell", "color"]
                 },
                 "returns": {
                     "type": "string",
@@ -267,7 +267,7 @@ The runtime object should look similar to the following. There may be other prop
 
    - The `"runtimes.run_for_functions"` array must include either the same string as `"functions.name"` or a wildcard string that matches it.
    - The `"reasoning.description"` and `"reasoning.instructions"` refer to a JavaScript function, not a REST API.
-   - The `"runtimes.spec.local_endpoint"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. It tells the Copilot agent to look for functions in an Office Add-in instead of at a REST service URL.
+   - The `"runtimes.spec.local_endpoint"` property tells the Copilot agent to look for functions in an Office Add-in instead of at a REST service URL.
 
 ### Create the app package
 
@@ -324,7 +324,7 @@ In a command prompt or Visual Studio Code **TERMINAL** in the root of the projec
    - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
 
    :::image type="content" source="../images/copilot-agent-list.png" alt-text="A screenshot of the agent list in the Copilot pane in an Office application":::
-   
+
 1. When the agent is listed, select it and the pane for the agent opens. The conversation starters you configured in the `"conversation_starters"` property of declarative agent configuration file will be displayed.
 1. Select a conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The agent action occurs.
 1. Try entering prompts the conversation box that are different from the conversation starters, but that your agent should be able to do.
