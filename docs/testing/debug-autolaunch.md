@@ -14,7 +14,7 @@ To begin debugging, select the tab for your applicable client.
 
 # [Web](#tab/web)
 
-Use your preferred browser's developer tools to debug your event-based add-in in Outlook on the web. For more information, see [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
+Use your preferred browser's developer tools to debug your event-based add-in in Office on the web. For more information, see [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
 
 # [Windows (new)](#tab/new-windows)
 

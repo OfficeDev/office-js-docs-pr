@@ -54,7 +54,7 @@ In most scenarios, there would be little point to obtaining the access token, if
 
 ## SSO for event-based activation or integrated spam reporting
 
-There are additional steps to take if your add-in uses event-based activation or integrated spam reporting (preview). For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
+There are additional steps to take if your add-in uses event-based activation or integrated spam reporting. For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
 
 ## See also
 

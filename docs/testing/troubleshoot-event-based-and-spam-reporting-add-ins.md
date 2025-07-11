@@ -43,7 +43,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
 ## Debug your add-in
 
 - As you make changes to your add-in, be aware that:
-  - If you update the manifest, [remove the add-in](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in), then sideload it again. If you're using Outlook on Windows, you must also close and reopen Outlook.
+  - If you update the manifest, remove the add-in, then sideload it again. For information on how to remove a sideloaded add-in from Outlook, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in). If you're using Outlook on Windows, you must also close and reopen Outlook.
   - If you make changes to files other than the manifest, close and reopen the Outlook client on Windows or on Mac, or refresh the browser tab running Outlook on the web.
   - If you're still unable to see your changes after performing these steps, [clear your Office cache](../testing/clear-cache.md).
 - As you test your add-in in classic Outlook on Windows:
@@ -65,7 +65,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
 
     [!INCLUDE [outlook-bundle-js](../includes/outlook-bundle-js.md)]
 
-- As you test your add-in on desktop clients (excluding new Outlook on Windows or Mac) enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
+- As you test your add-in on desktop clients (excluding new Outlook on Windows) enable runtime logging to identify possible manifest and add-in installation issues. For guidance on how to use runtime logging, see [Debug your add-in with runtime logging](../testing/runtime-logging.md).
 - Set breakpoints in your code to debug your add-in. For platform-specific instructions, see [Debug event-based and spam-reporting add-ins](debug-autolaunch.md).
 
 ## Seek additional help
