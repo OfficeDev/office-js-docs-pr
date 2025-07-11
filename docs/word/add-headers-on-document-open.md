@@ -197,7 +197,7 @@ To enable your add-in to act when the `OnDocumentOpened` event occurs, you must 
       }
       
       async function registerOnParagraphChanged(event) {
-        Word.run(async (context) => {
+        await Word.run(async (context) => {
           let eventContext = context.document.onParagraphChanged.add(paragraphChanged);
           await context.sync();
         });

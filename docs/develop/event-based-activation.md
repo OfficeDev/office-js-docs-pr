@@ -151,7 +151,7 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 
 ## Enable single sign-on (SSO)
 
-To enable SSO in your event-based add-in, you must add its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
+To enable SSO in your event-based add-in, you must add its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Office Add-in](../develop/use-sso-in-event-based-activation.md).
 
 ### Request external data
 
