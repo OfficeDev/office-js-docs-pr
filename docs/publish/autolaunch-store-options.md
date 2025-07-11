@@ -1,11 +1,11 @@
 ---
-title: AppSource listing options for your event-based Outlook add-in
-description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
-ms.date: 10/10/2023
+title: AppSource listing options for your event-based add-in
+description: Learn about the AppSource listing options available for your Office Add-ins that implement event-based activation.
+ms.date: 07/11/2025
 ms.localizationpriority: medium
 ---
 
-# AppSource listing options for your event-based Outlook add-in
+# AppSource listing options for your event-based add-in
 
 Add-ins must be deployed by an organization's admins for end-users to access the [event-based activation](../develop/event-based-activation.md) feature. Event-based activation is restricted if the end-user acquired the add-in directly from [AppSource](https://appsource.microsoft.com). For example, if the Contoso add-in includes an event-based function, the automatic invocation of the add-in only happens if the add-in was installed for the end-user by their organization's admin. Otherwise, the automatic invocation of the add-in is blocked.
 

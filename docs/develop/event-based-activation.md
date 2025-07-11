@@ -88,7 +88,7 @@ Outlook on mobile supports APIs up to Mailbox requirement set 1.5. However, supp
 
 As you develop an event-based add-in, be mindful of the following feature behaviors and limitations.
 
-- Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch (for workarounds to the AppSource limitation, see [AppSource listing options for your event-based Outlook add-in](../outlook/autolaunch-store-options.md)). Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
+- Event-based add-ins work only when deployed by an administrator. If users install them directly from AppSource or the Office Store, they will not automatically launch (for workarounds to the AppSource limitation, see [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)). Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
 
 - APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel on Windows. This is because the event handler runs in a JavaScript-only runtime. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 
@@ -173,7 +173,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 
 ## Deploy your add-in
 
-Event-based add-ins are restricted to admin-managed deployments only, even if they're acquired from AppSource. If users acquire the add-in from AppSource or the in-app Office Store, they won't be able to activate the event-based function of the add-in. To learn more about listing your event-based add-in in AppSource, see [AppSource listing options for your event-based Outlook add-in](../outlook/autolaunch-store-options.md).
+Event-based add-ins are restricted to admin-managed deployments only, even if they're acquired from AppSource. If users acquire the add-in from AppSource or the in-app Office Store, they won't be able to activate the event-based function of the add-in. To learn more about listing your event-based add-in in AppSource, see [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md).
 
 Admin deployments are done by uploading the manifest to the Microsoft 365 admin center. To do so, follow these steps.
 
@@ -188,11 +188,11 @@ For more information about how to deploy an add-in, please refer to [Deploy and 
 
 ### Deploy manifest updates
 
-Because event-based add-ins are deployed by admins, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](../outlook/autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
+Because event-based add-ins are deployed by admins, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](../publish/autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
 
 ## See also
 
 - [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug event-based and spam-reporting add-ins](../testing/debug-autolaunch.md)
-- [AppSource listing options for your event-based Outlook add-in](../outlook/autolaunch-store-options.md)
+- [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](../outlook/onmessagesend-onappointmentsend-events.md)

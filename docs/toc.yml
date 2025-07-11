@@ -469,6 +469,9 @@ items:
       href: /legal/marketplace/certification-policies
     - name: Publish an add-in that requires admin consent
       href: publish/publish-nested-app-auth-add-in.md
+    - name: AppSource options for add-ins with event-based activation
+      href: publish/autolaunch-store-options.md
+      displayName: event-based activation
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Guidance for deploying on government clouds
@@ -804,9 +807,6 @@ items:
         displayName: event-based activation
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
-        displayName: event-based activation
-      - name: AppSource options
-        href: outlook/autolaunch-store-options.md
         displayName: event-based activation
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md

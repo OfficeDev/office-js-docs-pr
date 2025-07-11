@@ -1299,6 +1299,10 @@
             "redirect_url": "/office/dev/add-ins/project/overview"
         },
         {
+            "source_path": "docs/outlook/autolaunch-store-options.md",
+            "redirect_url": "/office/dev/add-ins/publish/autolaunch-store-options"
+        },
+        {
             "source_path": "docs/outlook/debug-autolaunch.md",
             "redirect_url": "/office/dev/add-ins/testing/debug-autolaunch"
         },

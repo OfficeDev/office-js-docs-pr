@@ -419,7 +419,7 @@ For guidance on how to troubleshoot your Smart Alerts add-in, see [Troubleshoot 
 Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section in [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 > [!IMPORTANT]
-> Add-ins that use the Smart Alerts feature can only be published to AppSource if the manifest's [send mode property](#available-send-mode-options) is set to the **soft block** or **prompt user** option. If an add-in's send mode property is set to **block**, it can only be deployed by an organization's admin as it will fail AppSource validation. To learn more about publishing your event-based add-in to AppSource, see [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md).
+> Add-ins that use the Smart Alerts feature can only be published to AppSource if the manifest's [send mode property](#available-send-mode-options) is set to the **soft block** or **prompt user** option. If an add-in's send mode property is set to **block**, it can only be deployed by an organization's admin as it will fail AppSource validation. To learn more about publishing your event-based add-in to AppSource, see [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md).
 
 ## Differences between Smart Alerts and the on-send feature
 
@@ -440,6 +440,6 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 ## See also
 
 - [Activate add-ins with events](../develop/event-based-activation.md)
-- [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
+- [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)
 - [Office Add-ins code sample: Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
 - [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
