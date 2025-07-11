@@ -232,7 +232,7 @@ In the following example, the `helpurl` is `http://www.contoso.com/weatherhelp`.
 
 ### @linkedEntityLoadService
 
-Use `@linkedEntityLoadService` with [linked entity cell values](excel-data-types-linked-entity-cell-values.md). A custom function that is a linked entity load service returns up-to-date linked entity cell values for any linked entity IDs requested by Excel.
+The `@linkedEntityLoadService` tag designates that the function is a linked entity load service that returns [linked entity cell values](excel-data-types-linked-entity-cell-values.md) for linked entity IDs requested by Excel.
 
 A function can’t have both `@excludeFromAutoComplete` and `@linkedEntityLoadService` tags.
 
