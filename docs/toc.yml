@@ -102,7 +102,7 @@ items:
           href: develop/specify-office-hosts-and-api-requirements-unified.md
         - name: Specify Office applications and API requirements with the add-in only manifest
           href: develop/specify-office-hosts-and-api-requirements.md
-        - name: Understand and use platform-specific requirment sets
+        - name: Understand and use platform-specific requirement sets
           href: develop/platform-specific-requirement-sets.md
         - name: Check for API availability at runtime
           href: develop/specify-api-requirements-runtime.md
@@ -121,6 +121,7 @@ items:
         href: develop/configure-your-add-in-to-use-a-shared-runtime.md
       - name: Implement event-based activation 
         href: develop/event-based-activation.md
+        displayName: event-based activation
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
     - name: Manifest
@@ -423,6 +424,14 @@ items:
         href: testing/testing-and-troubleshooting.md
       - name: Troubleshoot development errors
         href: testing/troubleshoot-development-errors.md
+    - name: Event-based add-ins
+      items:
+      - name: Debug event-based and spam-reporting add-ins
+        href: testing/debug-autolaunch.md
+      - name: SSO and CORS in event-based or spam-reporting add-ins
+        href: develop/use-sso-in-event-based-activation.md
+      - name: Troubleshoot event-based and spam-reporting add-ins
+        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
     - name: Performance
       items:
       - name: Avoid using the context.sync method in loops
@@ -460,6 +469,9 @@ items:
       href: /legal/marketplace/certification-policies
     - name: Publish an add-in that requires admin consent
       href: publish/publish-nested-app-auth-add-in.md
+    - name: AppSource options for add-ins with event-based activation
+      href: publish/autolaunch-store-options.md
+      displayName: event-based activation
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Guidance for deploying on government clouds
@@ -779,7 +791,7 @@ items:
     - name: Event-based activation
       items:
       - name: Implement an event-based add-in
-        href: outlook/autolaunch.md
+        href: develop/event-based-activation.md
         displayName: event-based activation
       - name: Implement Smart Alerts to handle on-send events
         href: outlook/onmessagesend-onappointmentsend-events.md
@@ -795,11 +807,6 @@ items:
         displayName: event-based activation
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
-        displayName: event-based activation
-      - name: Troubleshoot event-based and spam-reporting add-ins
-        href: outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md
-      - name: AppSource options
-        href: outlook/autolaunch-store-options.md
         displayName: event-based activation
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md
@@ -892,7 +899,7 @@ items:
       - name: Authenticate with SSO token
         href: outlook/authenticate-a-user-with-an-sso-token.md
       - name: SSO and CORS in event-based or spam-reporting add-ins
-        href: outlook/use-sso-in-event-based-activation.md
+        href: develop/use-sso-in-event-based-activation.md
       - name: Authenticate with an identity token
         href: outlook/authenticate-a-user-with-an-identity-token.md
       - name: Validate an identity token
@@ -918,9 +925,9 @@ items:
       - name: Debug function commands
         href: outlook/debug-ui-less.md
       - name: Troubleshoot event-based and spam-reporting add-ins
-        href: outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md
+        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: Debug event-based and spam-reporting add-ins
-        href: outlook/debug-autolaunch.md
+        href: testing/debug-autolaunch.md
       - name: Tips for handling date values
         href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
 
@@ -1024,6 +1031,9 @@ items:
     displayName: Word
   - name: 'Sample: Manage citations'
     href: word/citation-management.md
+    displayName: Word
+  - name: 'Walkthrough: Add headers when a document opens'
+    href: word/add-headers-on-document-open.md
     displayName: Word
   - name: Word JavaScript API
     items:

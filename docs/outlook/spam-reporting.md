@@ -356,7 +356,7 @@ The following is an example of a spam-reporting event handler that calls the `ge
 1. Save your changes.
 
 > [!NOTE]
-> To configure single sign-on (SSO) or cross-origin resource sharing (CORS) in your spam-reporting add-in, you must add your add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
+> To configure single sign-on (SSO) or cross-origin resource sharing (CORS) in your spam-reporting add-in, you must add your add-in and its JavaScript file to a well-known URI. For guidance on how to configure this resource, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
 
 ### Signal when the event has been processed
 
@@ -601,7 +601,7 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 - The add-in can still process the reported message even if the user navigates away from the selected message. In Outlook on Mac, this is only supported if a user reports a message while it's open in a separate window. If the user reports a message while viewing it from the Reading Pane and then navigates away from it, the reporting process is terminated.
 - In Outlook on the web and the new Outlook on Windows, if a message is reported while it's open in a separate window, a post-processing dialog isn't shown to the user.
 - The buttons that appear in the preprocessing and post-processing dialogs aren't customizable. Additionally, the text and buttons in the timeout and ongoing report dialogs can't be modified.
-- The integrated spam-reporting and [event-based activation](autolaunch.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+- The integrated spam-reporting and [event-based activation](../develop/event-based-activation.md) features must use the same runtime. Multiple runtimes aren't currently supported in Outlook. To learn more about runtimes, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 - A spam-reporting add-in only implements [function commands](../design/add-in-commands.md#types-of-add-in-commands). A task pane command can't be assigned to the spam-reporting button on the ribbon. If you want to implement a task pane separate from the reporting functionality of your add-in, you must configure it in your manifest as follows:
   - **Add-in only manifest**: Include the [Action element](/javascript/api/manifest/action#xsitype-is-showtaskpane) in the manifest and set its `xsi:type` attribute to `ShowTaskpane`.
   - **Unified manifest for Microsoft 365**: Configure a task pane object in the `"extensions.runtimes"` and `"extensions.ribbons"` arrays. For guidance, see the "Add a task pane command" section of [Create add-in commands with the unified manifest for Microsoft 365](../develop/create-addin-commands-unified-manifest.md#add-a-task-pane-command).
@@ -610,13 +610,13 @@ As you develop and test the integrated spam-reporting feature in your add-in, be
 
 ## Troubleshoot your add-in
 
-As you develop your spam-reporting add-in, you might need to troubleshoot issues, such as your add-in not loading. For guidance on how to troubleshoot a spam-reporting add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
+As you develop your spam-reporting add-in, you might need to troubleshoot issues, such as your add-in not loading. For guidance on how to troubleshoot a spam-reporting add-in, see [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## See also
 
 - [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Runtimes in Office Add-ins](../testing/runtimes.md)
-- [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
+- [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [ReportPhishingCommandSurface extension point](/javascript/api/manifest/extensionpoint#reportphishingcommandsurface)
 - [Office.MessageRead.getAsFileAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getasfileasync-member(1))
 - [Office.MailboxEnums.MoveSpamItemTo](/javascript/api/outlook/office.mailboxenums.movespamitemto)

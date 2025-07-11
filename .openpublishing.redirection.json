@@ -484,6 +484,14 @@
             "redirect_url": "/office/dev/add-ins/develop/create-addin-commands"
         },
         {
+            "source_path": "docs/outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md",
+            "redirect_url": "/office/dev/add-ins/testing/troubleshoot-event-based-and-spam-reporting-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/autolaunch.md",
+            "redirect_url": "/office/dev/add-ins/develop/event-based-activation"
+        },
+        {
             "source_path": "docs/publish/centralized-deployment.md",
             "redirect_url": "/office/dev/add-ins/publish/publish"
         },
@@ -1291,6 +1299,14 @@
             "redirect_url": "/office/dev/add-ins/project/overview"
         },
         {
+            "source_path": "docs/outlook/autolaunch-store-options.md",
+            "redirect_url": "/office/dev/add-ins/publish/autolaunch-store-options"
+        },
+        {
+            "source_path": "docs/outlook/debug-autolaunch.md",
+            "redirect_url": "/office/dev/add-ins/testing/debug-autolaunch"
+        },
+        {
             "source_path": "docs/outlook/match-strings-in-an-item-as-well-known-entities.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
         },
@@ -1301,6 +1317,10 @@
         {
             "source_path": "docs/outlook/use-regular-expressions-to-show-an-outlook-add-in.md",
             "redirect_url": "/office/dev/add-ins/outlook/contextual-outlook-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/use-sso-in-event-based-activation.md",
+            "redirect_url": "/office/dev/add-ins/develop/use-sso-in-event-based-activation"
         },
         {
             "source_path": "docs/develop/extended-overrides.md",

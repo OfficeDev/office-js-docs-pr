@@ -1,13 +1,13 @@
 ---
-title: AppSource listing options for your event-based Outlook add-in
-description: Learn about the AppSource listing options available for your Outlook add-in that implements event-based activation.
-ms.date: 10/10/2023
+title: AppSource listing options for your event-based add-in
+description: Learn about the AppSource listing options available for your Office Add-ins that implement event-based activation.
+ms.date: 07/11/2025
 ms.localizationpriority: medium
 ---
 
-# AppSource listing options for your event-based Outlook add-in
+# AppSource listing options for your event-based add-in
 
-Add-ins must be deployed by an organization's admins for end-users to access the [event-based activation](autolaunch.md) feature. Event-based activation is restricted if the end-user acquired the add-in directly from [AppSource](https://appsource.microsoft.com). For example, if the Contoso add-in includes an event-based function, the automatic invocation of the add-in only happens if the add-in was installed for the end-user by their organization's admin. Otherwise, the automatic invocation of the add-in is blocked.
+Add-ins must be deployed by an organization's admins for end-users to access the [event-based activation](../develop/event-based-activation.md) feature. Event-based activation is restricted if the end-user acquired the add-in directly from [AppSource](https://appsource.microsoft.com). For example, if the Contoso add-in includes an event-based function, the automatic invocation of the add-in only happens if the add-in was installed for the end-user by their organization's admin. Otherwise, the automatic invocation of the add-in is blocked.
 
 An end-user or admin can acquire add-ins through AppSource or the in-app Microsoft 365 and Copilot store. If your add-in's primary scenario or workflow requires event-based activation, you may want to restrict your add-in to admin deployment only. To enable that restriction, we can provide flight code URLs for add-ins in AppSource. Thanks to the flight codes, only end-users with these special URLs can access the listing. The following is an example URL.
 
@@ -70,4 +70,4 @@ Each time you add any new event-based activation function to your add-in, admins
 
 ## See also
 
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
