@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
-ms.date: 06/15/2025
+ms.date: 07/10/2025
 ms.localizationpriority: medium
 ---
 
@@ -110,21 +110,34 @@ The following example shows the contents of a JSON metadata file for an add-in t
       }
     },
     {
-      "id": "SECONDHIGHEST",
-      "name": "SECONDHIGHEST",
-      "description": "Get the second highest number from a range",
-      "helpUrl": "http://www.contoso.com/help",
-      "result": {
-        "dimensionality": "scalar"
-      },
-      "parameters": [
-        {
-          "name": "range",
-          "description": "the input range",
-          "type": "number",
-          "dimensionality": "matrix"
+      "id": "GETPLANETS", 
+      "name": "GETPLANETS", 
+      "description": "A function that uses the custom enum as a parameter.", 
+      "parameters": [ 
+        { 
+          "name": "value", 
+          "type": "string", 
+          "customEnumType": "PLANETS" 
         }
       ]
+    }
+  ],
+  "enums": [ 
+    { 
+      "id": "PLANETS", 
+      "type": "string", 
+      "values": [ 
+        { 
+          "name": "Mercury", 
+          "value": "mercury", 
+          "tooltip": "Mercury is the first planet from the sun." 
+        }, 
+        { 
+          "name": "Venus", 
+          "value": "venus", 
+          "tooltip": "Venus is the second planet from the sun." 
+        }
+      ] 
     }
   ]
 }
@@ -137,7 +150,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
 
 ### allowCustomDataForDataTypeAny
 
-The `allowCustomDataForDataTypeAny` property is a boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types](custom-functions-data-types-concepts.md).
+The `allowCustomDataForDataTypeAny` property is a Boolean data type. Setting this value to `true` allows a custom function to accept data types as parameters and return values. To learn more, see [Custom functions and data types](custom-functions-data-types-concepts.md).
 
 > [!NOTE]
 > Unlike most of the other JSON metadata properties, `allowCustomDataForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
@@ -146,7 +159,7 @@ If your custom function uses the `cellValueType` [parameter](#parameters), then 
 
 ### allowErrorForDataTypeAny
 
-The `allowErrorForDataTypeAny` property is a boolean data type. Setting the value to `true` allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to `true`. The default `allowErrorForDataTypeAny` value is `false`.
+The `allowErrorForDataTypeAny` property is a Boolean data type. Setting the value to `true` allows a custom function to process errors as input values. All parameters with the type `any` or `any[][]` can accept errors as input values when `allowErrorForDataTypeAny` is set to `true`. The default `allowErrorForDataTypeAny` value is `false`.
 
 > [!NOTE]
 > Unlike the other JSON metadata properties, `allowErrorForDataTypeAny` is a top-level property and contains no sub-properties. See the preceding [JSON metadata code sample](#json-metadata-example) for an example of how to format this property.
@@ -165,17 +178,35 @@ The `functions` property is an array of custom function objects. The following t
 | `parameters`  | array     | Yes      | Array that defines the input parameters for the function. See [parameters](#parameters) for details.                                                                             |
 | `result`      | object    | Yes      | Object that defines the type of information that is returned by the function. See [result](#result) for details.                                                                 |
 
+### enums
+
+The `enums` property is an array of [enum](https://www.typescriptlang.org/docs/handbook/enums.html) objects. The following table lists the properties of each object.
+
+> [!TIP]
+> To learn about creating custom enums for your custom functions, see [Create custom enums for your custom functions](custom-functions-custom-enums.md). To learn about editing metadata for custom enums, see [Edit custom enums in JSON metadata](#edit-custom-enums-in-json-metadata).
+
+| Property      | Data type | Required | Description                                                                                                                                                                      |
+| :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `name` | string    | Yes       | A brief description of the constant. |
+| `tooltip` | string    | No       | Additional information about the constant that can be shown as a tooltip in user interfaces. |
+| `value` | string    | Yes      | The value of the constant. |
+
 ### options
 
 The `options` object enables you to customize some aspects of how and when Excel executes the function. The following table lists the properties of the `options` object.
 
 | Property          | Data type | Required                               | Description |
 | :---------------- | :-------- | :------------------------------------- | :---------- |
-| `cancelable`      | boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function can't use both the `stream` and `cancelable` properties. |
-| `requiresAddress` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked it. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your custom function. A function can't use both the `stream` and `requiresAddress` properties. |
-| `requiresParameterAddresses` | boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the addresses of the function's input parameters. This property must be used in combination with the `dimensionality` property of the [result](#result) object, and `dimensionality` must be set to `matrix`. See [Detect the address of a parameter](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. |
-| `stream`          | boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback function. For more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `volatile`        | boolean   | No <br/><br/>Default value is `false`. | If `true`, the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. A function can't use both the `stream` and `volatile` properties. If the `stream` and `volatile` properties are both set to `true`, the volatile property will be ignored. |
+| `cancelable`      | Boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function can't use both the `stream` and `cancelable` properties. |
+| `capturesCallingObject` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the data type being referenced by the custom function is passed as the first argument to the custom function. For more information, see [Reference the entity value as a calling object](excel-add-ins-dot-functions.md#reference-the-entity-value-as-a-calling-object). |
+| `excludeFromAutoComplete` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the custom function doesn't appear in the formula AutoComplete menu in Excel. For more information, see [Exclude custom functions from the Excel UI](excel-add-ins-dot-functions.md#exclude-custom-functions-from-the-excel-ui). A function can’t have both `excludeFromAutoComplete` and `linkedEntityLoadService` properties set to `true`. |
+| `linkedEntityLoadService` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the custom function provides a load service that returns up-to-date linked entity cell values for any linked entity IDs requested by Excel. A function can’t have both `excludeFromAutoComplete` and `linkedEntityLoadService` properties set to `true`. For more information, see [Linked entity load service function](excel-data-types-linked-entity-cell-values.md#linked-entity-load-service-function). |
+| `requiresAddress` | Boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked it. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your custom function. A function can't use both the `stream` and `requiresAddress` properties. |
+| `requiresParameterAddresses` | Boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the addresses of the function's input parameters. This property must be used in combination with the `dimensionality` property of the [result](#result) object, and `dimensionality` must be set to `matrix`. See [Detect the address of a parameter](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. |
+| `requiresStreamAddress` | Boolean | No <br/><br/>Default value is `false`. | If `true`, the function can access the address of the cell calling the streaming function. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your streaming function. The function must also have `stream` set to `true`. |
+| `requiresStreamParameterAddresses` | Boolean | No <br/><br/>Default value is `false`. | If `true`, the function can access the parameter addresses of the cell calling the streaming function. The `parameterAddresses` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the parameter addresses for your streaming function. The function must also have `stream` set to `true`. |
+| `stream`          | Boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback function. For more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
+| `volatile`        | Boolean   | No <br/><br/>Default value is `false`. | If `true`, the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. A function can't use both the `stream` and `volatile` properties. If the `stream` and `volatile` properties are both set to `true`, the volatile property will be ignored. |
 
 ### parameters
 
@@ -188,8 +219,9 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's IntelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be `boolean`, `number`, `string`, or `any`, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to `any`. |
 | `cellValueType` | string | No | A subfield of the `type` property. Specifies the Excel data types accepted by the custom function. Accepts the case-insensitive values `cellvalue`, `booleancellvalue`, `doublecellvalue`, `entitycellvalue`, `errorcellvalue`, `linkedentitycellvalue`, `localimagecellvalue`, `stringcellvalue`, and `webimagecellvalue`. <br/><br/>The `type` field must have the value `any` to use the `cellValueType` subfield. |
-|  `optional`  | boolean | No | If `true`, the parameter is optional. |
-|`repeating`| boolean | No | If `true`, parameters populate from a specified array. Note that functions all repeating parameters are considered optional parameters by definition.  |
+| `customEnumType` | string | No | The `id` of the enum in the `enums` array. This associates the custom enum with the function and enables Excel to display the enum members in the formula AutoComplete menu. |
+|  `optional`  | Boolean | No | If `true`, the parameter is optional. |
+|`repeating`| Boolean | No | If `true`, parameters populate from a specified array. Note that all repeating parameters are considered optional parameters by definition.  |
 
 > [!TIP]
 > See the following code snippet for an example of how to format the `cellValueType` parameter in JSON metadata.
@@ -214,7 +246,7 @@ The `result` object defines the type of information that is returned by the func
 | `dimensionality` | string    | No       | Must be either `scalar` (a non-array value) or `matrix` (a 2-dimensional array). |
 | `type` | string    | No       | The data type of the result. Can be `boolean`, `number`, `string`, or `any` (which allows you to use of any of the previous three types). If this property is not specified, the data type defaults to `any`. |
 
-## Associating function names with JSON metadata
+## Associate function names with JSON metadata
 
 For a function to work properly, you need to associate the function's `id` property with the JavaScript implementation. Make sure there is an association, otherwise the function won't be registered and isn't useable in Excel. The following code sample shows how to make the association using the `CustomFunctions.associate()` function. The sample defines the custom function `add` and associates it with the object in the JSON metadata file where the value of the `id` property is **ADD**.
 
@@ -290,6 +322,77 @@ The following sample shows the JSON metadata that corresponds to the functions d
     }
   ]
 }
+```
+
+## Edit custom enums in JSON metadata
+
+Create or edit enum metadata directly with the `enums` property. Each custom enum must have a unique ID value and type value of either `string` or `number`. Mixed type enums are not supported.
+
+If you manually create the JSON metadata for your custom enum, you can associate those enums with either TypeScript or JavaScript custom functions. To learn more about creating custom enums, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
+
+The following JSON snippet shows the metadata for two enums: a `PLANETS` enum  that contains the planets Mercury and Venus, and a `DAYS` enum that includes the days Monday and Tuesday.
+
+```json
+"enums": [ 
+  { 
+    "id": "PLANETS", 
+    "type": "string", 
+    "values": [ 
+      { 
+        "name": "Mercury", 
+        "value": "mercury", 
+        "tooltip": "Mercury is the first planet from the sun." 
+      }, 
+      { 
+        "name": "Venus", 
+        "value": "venus", 
+        "tooltip": "Venus is the second planet from the sun." 
+      }
+    ] 
+  },
+  {
+    "id": "DAYS", 
+    "type": "number", 
+    "values": [ 
+      { 
+        "name": "Monday",
+        "value": 1,
+        "tooltip": "Monday is the first working day of a week."
+      },
+      { 
+        "name": "Tuesday",
+        "value": 2,
+        "tooltip": "Tuesday is the second working day of a week."
+      }
+    ] 
+  }
+]
+```
+
+Each constant in the `values` array of the enum is an object with the following properties.
+
+- **value**: The value of the constant.
+- **name**: A brief description of the constant.
+- **tooltip** (Optional): Additional information about the constant that can be shown as a tooltip in user interfaces.
+
+To associate the custom enum with a function, add the property `customEnumType` to the `parameters` object. The `customEnumType` value should match the `id` of the enum. Note that the `customEnumType` value is not case-sensitive. The following JSON snippet shows a `functions` object associated with the `PLANETS` enum.
+
+```json
+"functions": [ 
+  {
+    "description": "A function that uses the custom enum as a parameter.", 
+    "id": "GETPLANETS", 
+    "name": "GETPLANETS", 
+    "parameters": [ 
+      { 
+        "name": "value", 
+        "type": "string", 
+        "customEnumType": "PLANETS" 
+      }
+    ], 
+    "result": {} 
+  } 
+]
 ```
 
 ## Next steps
