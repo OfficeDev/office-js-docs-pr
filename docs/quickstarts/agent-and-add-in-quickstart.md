@@ -1,7 +1,7 @@
 ---
 title: Build your first add-in as a Copilot skill
 description: Learn how to build a simple Copilot agent that has an Excel add-in as a skill.
-ms.date: 06/10/2025
+ms.date: 07/15/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: high
@@ -20,11 +20,11 @@ In this article, you'll walk through the process of building a simple Excel Copi
 ## Software prerequisites
 
 - All the prerequisites listed at [Create declarative agents using Microsoft 365 Agent Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
-- The [Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md). 
+- The [Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md).
 
 ## Start with an Office Add-in
 
-Create a basic Excel add-in with the following steps. 
+Create a basic Excel add-in with the following steps.
 
 1. Create an Office Add-in in Microsoft 365 Agent Toolkit by following the instructions in [Create Office Add-in projects with Microsoft 365 Agent Toolkit](../develop/teams-toolkit-overview.md#create-an-office-add-in-project). *Stop after the project is created. Don't carry out the steps in the sideloading section.*
 
@@ -124,18 +124,18 @@ Add the agent with the following steps.
                 "parameters": {
                     "type": "object",
                     "properties": {
-                        "Cell": {
+                        "cell": {
                             "type": "string",
                             "description": "A cell location in the format of A1, B2, etc.",
                             "default" : "B2"
                         },
-                        "Color": {
+                        "color": {
                             "type": "string",
                             "description": "A color in hex format, e.g., #30d5c8",
                             "default" : "#30d5c8"
                         }
                     },
-                    "required": ["Cell", "Color"]
+                    "required": ["cell", "color"]
                 },
                 "returns": {
                     "type": "string",
@@ -180,7 +180,7 @@ Add the agent with the following steps.
 
    Office.onReady((info) => {
         Office.actions.associate("fillcolor", async (message) => {
-            const {Cell: cell, Color: color} = JSON.parse(message);
+            const {cell, color} = JSON.parse(message);
             await fillcolor(cell, color);
             return "Cell color changed.";
         });
@@ -290,7 +290,7 @@ Add the agent with the following steps.
 1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run dev-server` to start the server on localhost. Wait until you see a line in the server window that the app compiled successfully. This means the server is running and serving the files.
     
     > [!NOTE]
-    > If this is the first time inover a month you have run a local server for an Office Add-in on your computer, you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
+    > If this is the first time in over a month you have run a local server for an Office Add-in on your computer, you may be prompted to delete an old certificate and to install a new one. Agree to both prompts.
 
 1. The first step in testing depends on the platform.
 
@@ -301,7 +301,6 @@ Add the agent with the following steps.
 
    - Wait a few minutes and reload Copilot.
    - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
-
 
 1. When the agent is listed, select it. The **Excel Add-in + Agent** pane opens.
 1. Select the **Change cell color** conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The cell's color should change.

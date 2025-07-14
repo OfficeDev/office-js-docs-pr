@@ -1,34 +1,34 @@
 ---
-title: Debug your event-based or spam-reporting Outlook add-in
-description: Learn how to debug your Outlook add-in that implements event-based activation or integrated spam reporting.
+title: Debug event-based or spam-reporting add-ins
+description: Learn how to debug your Office Add-ins that implement event-based activation or integrated spam reporting.
 ms.date: 01/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Debug your event-based or spam-reporting Outlook add-in
+# Debug event-based or spam-reporting add-ins
 
-This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](autolaunch.md) or [integrated spam reporting](spam-reporting.md) in your add-in. Before you proceed, we recommend reviewing the [troubleshooting guide](troubleshoot-event-based-and-spam-reporting-add-ins.md) for additional steps on how to resolve development errors.
+This article discusses the key debugging stages to enable and set breakpoints in your code as you implement [event-based activation](../develop/event-based-activation.md) or [integrated spam reporting](../outlook/spam-reporting.md) in your add-in. Before you proceed, we recommend reviewing the [troubleshooting guide](troubleshoot-event-based-and-spam-reporting-add-ins.md) for additional steps on how to resolve development errors.
 
 To begin debugging, select the tab for your applicable client.
 
 # [Web](#tab/web)
 
-Use your preferred browser's developer tools to debug your event-based add-in in Outlook on the web. For more information, see [Debug add-ins in Office on the web](../testing/debug-add-ins-in-office-online.md).
+Use your preferred browser's developer tools to debug your event-based add-in in Office on the web. For more information, see [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
 
 # [Windows (new)](#tab/new-windows)
 
-To debug your add-in in [new Outlook on Windows desktop client (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you must run the following command to open Microsoft Edge DevTools.
+To debug your add-in in [new Outlook on Windows desktop client](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you must run the following command to open Microsoft Edge DevTools.
 
 ```command&nbsp;line
 olk.exe --devtools
 ```
 
-For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](one-outlook.md#debug-your-add-in).
+For more information, see the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](../outlook/one-outlook.md#debug-your-add-in).
 
 # [Windows (classic)](#tab/windows)
 
-If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in project (for example, by completing an [event-based activation walkthrough](on-new-compose-events-walkthrough.md)), follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps.
+If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in project (for example, by completing an [event-based activation walkthrough](../outlook/on-new-compose-events-walkthrough.md)), follow the **Created with Yeoman generator** option throughout this article. Otherwise, follow the **Other** steps.
 
 ## Mark your add-in for debugging and set the debugger port
 
@@ -182,8 +182,8 @@ To prevent the **Debug Event-based handler** dialog from popping up and stop deb
 
 Event-based add-ins that run in Outlook on Mac use the browser runtime. Because of this, you can debug your add-in using Safari Web Inspector.
 
-1. To use the Safari Web Inspector in Outlook, follow the steps in [Debugging with Safari Web Inspector on a Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md#debugging-with-safari-web-inspector-on-a-mac).
-1. Open Outlook, then [sideload your add-in](sideload-outlook-add-ins-for-testing.md).
+1. To use the Safari Web Inspector in Outlook, follow the steps in [Debugging with Safari Web Inspector on a Mac](debug-office-add-ins-on-ipad-and-mac.md#debugging-with-safari-web-inspector-on-a-mac).
+1. Open Outlook, then [sideload your add-in](../outlook/sideload-outlook-add-ins-for-testing.md).
 1. Perform an action that will initiate the event your add-in handles. For example, create a new message to initiate the `OnNewMessageCompose` event. This opens an empty Developer Window. The name of your add-in appears in the title bar of the window.
 1. Right-click (or select and hold) anywhere in the Developer Window, then select **Inspect Element**. This opens the Inspector, where you can set breakpoints and debug your add-in.
 
@@ -191,7 +191,7 @@ Event-based add-ins that run in Outlook on Mac use the browser runtime. Because 
 
 ## See also
 
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [Implement an integrated spam-reporting add-in](spam-reporting.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
+- [Implement an integrated spam-reporting add-in](../outlook/spam-reporting.md)
 - [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
-- [Debug your add-in with runtime logging](../testing/runtime-logging.md)
+- [Debug your add-in with runtime logging](runtime-logging.md)

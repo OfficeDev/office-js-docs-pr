@@ -77,7 +77,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Add the following object to the `"autoRunEvents"` array. Note the following about this code:
 
-   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in `"actionId"` must match the name used in the `"id"` property of the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array in an earlier step.
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](../develop/event-based-activation.md#supported-events)). The function name provided in `"actionId"` must match the name used in the `"id"` property of the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array in an earlier step.
    - The `"sendMode"` option is set to `"softBlock"`. This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
 
     ```json
@@ -737,10 +737,10 @@ If you implemented the optional step to override the send mode option at runtime
 ## See also
 
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
 - [Office Add-in manifests](../develop/add-in-manifests.md)
-- [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
-- [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)
-- [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
+- [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
+- [Debug event-based and spam-reporting add-ins](../testing/debug-autolaunch.md)
+- [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)
 - [Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
 - [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
