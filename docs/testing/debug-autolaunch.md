@@ -18,7 +18,7 @@ Use your preferred browser's developer tools to debug your event-based add-in in
 
 # [Windows (new)](#tab/new-windows)
 
-To debug your add-in in [new Outlook on Windows desktop client (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you must run the following command to open Microsoft Edge DevTools.
+To debug your add-in in [new Outlook on Windows desktop client](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you must run the following command to open Microsoft Edge DevTools.
 
 ```command&nbsp;line
 olk.exe --devtools
