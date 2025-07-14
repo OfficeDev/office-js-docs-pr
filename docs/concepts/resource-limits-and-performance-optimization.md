@@ -46,9 +46,9 @@ If any content or task pane add-in exceeds the preceding thresholds on CPU core 
 
 Outlook add-ins that use regular expressions and run in Outlook on Windows (classic) or on Mac (classic) should observe the following rules on activation.
 
-- **Regular expressions response time** - Applies to classic Outlook on Windows only. A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
+- **Regular expressions response time** - A default threshold of 1,000 milliseconds for Outlook to evaluate all regular expressions in the manifest of an Outlook add-in. Exceeding the threshold causes Outlook to retry evaluation at a later time.
 
-  Administrators can adjust this default threshold value of 1,000 milliseconds by using a group policy or application-specific setting for the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationAlertThreshold` DWORD value in the Windows registry.
+  In classic Outlook on Windows, administrators can adjust this default threshold value of 1,000 milliseconds by using a group policy or application-specific setting for the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Outlook\ActivationAlertThreshold` DWORD value in the Windows registry.
 
 - **Regular expressions re-evaluation** - A default limit of three times for Outlook to reevaluate all the regular expressions in a manifest. If evaluation fails three times, the user must switch to a different mail item then switch back to retry evaluation.
 
