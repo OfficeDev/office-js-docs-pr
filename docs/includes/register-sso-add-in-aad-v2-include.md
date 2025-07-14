@@ -167,7 +167,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
 ## Configure access token version
 
-You must define the access token version that is acceptable for your app. This configuration is made in the Microsoft Entra application manifest.
+You must define the access token version that is acceptable for your app. This configuration is made in the Microsoft Entra ID application manifest.
 
 ### Define the access token version
 
@@ -177,7 +177,7 @@ The access token version can change if you chose an account type other than **Ac
 
     :::image type="content" source="../images/azure-portal-manifest.png" alt-text="Select Azure manifest.":::
 
-    The Microsoft Entra application manifest appears.
+    The Microsoft Entra ID application manifest appears.
 
 1. Enter **2** as the value for the `requestedAccessTokenVersion` property (in the `api` object).
 

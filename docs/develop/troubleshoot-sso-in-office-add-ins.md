@@ -43,7 +43,7 @@ The user isn't signed into Office. In most scenarios, you should prevent this er
 
 But there may be exceptions. For example, you want the add-in to open with features that require a logged in user; but *only if* the user is *already* logged into Office. If the user isn't logged in, you want the add-in to open with an alternate set of features that do not require that the user is signed in. In this case, logic which runs when the add-in launches calls `getAccessToken` without `allowSignInPrompt: true`. Use the 13001 error as the flag to tell the add-in to present the alternate set of features.
 
-Another option is to respond to 13001 by falling back to an alternate system of user authentication. This will sign the user into Microsoft Entra, but not sign the user into Office.
+Another option is to respond to 13001 by falling back to an alternate system of user authentication. This will sign the user into Microsoft Entra ID, but not sign the user into Office.
 
 This error doesn't typically occur in Office on the web. If the user's cookie expires, Office on the web returns [error 13006](#13006). However, if a user accesses Outlook on the web from Firefox with Enhanced Tracking Protection turned on, they'll encounter error 13001.
 
@@ -100,7 +100,7 @@ There are several possible causes.
 
 - The add-in is running on a platform that does not support the `getAccessToken` API. For example, it isn't supported on iPad. See also [Identity API requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 - The Office document was opened from the **Files** tab of a Teams channel using the **Edit in Teams** option on the **Open** dropdown menu. The `getAccessToken` API isn't supported in this scenario.
-- The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the Entra `profile` scope.
+- The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the Microsoft Entra ID `profile` scope.
 
 Your code should fall back to an alternate system of user authentication.
 
@@ -116,7 +116,7 @@ This error (which isn't specific to `getAccessToken`) may indicate that the brow
 
 In a production add-in, the add-in should respond to this error by falling back to an alternate system of user authentication. For more information, see [Requirements and Best Practices](../develop/sso-in-office-add-ins.md#requirements-and-best-practices).
 
-## Errors on the server-side from Microsoft Entra
+## Errors on the server-side from Microsoft Entra ID
 
 For samples of the error-handling described in this section, see:
 
@@ -125,15 +125,15 @@ For samples of the error-handling described in this section, see:
 
 ### Conditional access / Multifactor authentication errors
 
-In certain configurations of identity in Entra and Microsoft 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Microsoft 365 tenancy does not. When Entra receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed.
+In certain configurations of identity in Microsoft Entra ID and Microsoft 365, it is possible for some resources that are accessible with Microsoft Graph to require multifactor authentication (MFA), even when the user's Microsoft 365 tenancy does not. When Microsoft Entra ID receives a request for a token to the MFA-protected resource, via the on-behalf-of flow, it returns to your add-in's web service a JSON message that contains a `claims` property. The claims property has information about what further authentication factors are needed.
 
 Your code should test for this `claims` property. Depending on your add-in's architecture, you may test for it on the client-side, or you may test for it on the server-side and relay it to the client. You need this information in the client because Office handles authentication for SSO add-ins. If you relay it from the server-side, the message to the client can be either an error (such as `500 Server Error` or `401 Unauthorized`) or in the body of a success response (such as `200 OK`). In either case, the (failure or success) callback of your code's client-side AJAX call to your add-in's web API should test for this response.
 
-Regardless of your architecture, if the claims value has been sent from Entra, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When Entra sees this string, it prompts the user for the additional factors and then returns a new access token which will be accepted in the on-behalf-of flow.
+Regardless of your architecture, if the claims value has been sent from Microsoft Entra ID, your code should recall `getAccessToken` and pass the option `authChallenge: CLAIMS-STRING-HERE` in the `options` parameter. When Microsoft Entra ID sees this string, it prompts the user for the additional factors and then returns a new access token which will be accepted in the on-behalf-of flow.
 
 ### Consent missing errors
 
-If Entra has no record that consent (to the Microsoft Graph resource) was granted to the add-in by the user (or tenant administrator), Entra will send an error message to your web service. Your code must tell the client (in the body of a `403 Forbidden` response, for example).
+If Microsoft Entra ID has no record that consent (to the Microsoft Graph resource) was granted to the add-in by the user (or tenant administrator), Microsoft Entra ID will send an error message to your web service. Your code must tell the client (in the body of a `403 Forbidden` response, for example).
 
 If the add-in needs Microsoft Graph scopes that can only be consented to by an admin, your code should throw an error. If the only scopes that are needed can be consented to by the user, then your code should fall back to an alternate system of user authentication.
 

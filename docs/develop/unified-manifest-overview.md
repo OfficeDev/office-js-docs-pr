@@ -45,7 +45,7 @@ Each of the base properties listed in the following table has more extensive doc
 |[`"developer"`](/microsoft-365/extensibility/schema/root#developer)| Information about the developer of the Teams app/add-in. |
 |[`"localizationInfo"`](/microsoft-365/extensibility/schema/root#localizationinfo)| Configures the default locale and other supported locales. |
 |[`"validDomains"`](/microsoft-365/extensibility/schema/root#validdomains) | See [Specify safe domains](#specify-safe-domains). |
-|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the Teams app/add-in's web app as it is known in Microsoft Entra. |
+|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the Teams app/add-in's web app as it is known in Microsoft Entra ID. |
 |[`"authorization"`](/microsoft-365/extensibility/schema/root#authorization)| Identifies any Microsoft Graph permissions that the add-in needs. |
 
 ### `"extensions"` property

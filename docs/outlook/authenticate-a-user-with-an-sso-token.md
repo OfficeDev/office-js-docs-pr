@@ -25,7 +25,7 @@ To use SSO with an Outlook add-in, you must enable Modern Authentication for the
 
 ## Register your add-in
 
-To use SSO, your Outlook add-in will need to have a server-side web API that is registered with Microsoft Entra. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](../develop/register-sso-add-in-aad-v2.md).
+To use SSO, your Outlook add-in will need to have a server-side web API that is registered with Microsoft Entra ID. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](../develop/register-sso-add-in-aad-v2.md).
 
 ### Provide consent when sideloading an add-in
 

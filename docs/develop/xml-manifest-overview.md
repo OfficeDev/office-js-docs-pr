@@ -179,7 +179,7 @@ The optional [VersionOverrides](/javascript/api/manifest/versionoverrides) eleme
 
 - Customizing the Office ribbon and menus.
 - Customizing how Office works with the embedded runtimes in which add-ins run.
-- Configuring how the add-in interacts with Microsoft Entra and Microsoft Graph for Single Sign-on.
+- Configuring how the add-in interacts with Microsoft Entra ID and Microsoft Graph for Single Sign-on.
 
 Some descendant elements of `VersionOverrides` have values that override values of the parent `OfficeApp` element. For example, the `Hosts` element in `VersionOverrides` overrides the `Hosts` element in `OfficeApp`.
 
