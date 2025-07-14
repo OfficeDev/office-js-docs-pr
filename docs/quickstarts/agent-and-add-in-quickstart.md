@@ -290,7 +290,7 @@ Add the agent with the following steps.
 1. In a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run dev-server` to start the server on localhost. Wait until you see a line in the server window that the app compiled successfully. This means the server is running and serving the files.
     
     > [!NOTE]
-    > If this is the first time in over a month you have run a local server for an Office Add-in on your computer, you may be prompted to delete an old certificate or to install a new one. Agree to both prompts.
+    > If this is the first time in over a month you have run a local server for an Office Add-in on your computer, you may be prompted to delete an old certificate and to install a new one. Agree to both prompts.
 
 1. The first step in testing depends on the platform.
 
