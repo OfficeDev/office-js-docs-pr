@@ -1,11 +1,11 @@
 ---
 title: Visio JavaScript API overview
 description: Overview of the Visio JavaScript API.
-ms.date: 07/18/2022
+ms.date: 07/15/2025
 ms.service: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Visio JavaScript API overview
