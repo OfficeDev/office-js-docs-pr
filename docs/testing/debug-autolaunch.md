@@ -18,7 +18,7 @@ Use your preferred browser's developer tools to debug your event-based add-in in
 
 # [Windows (new)](#tab/new-windows)
 
-To debug your add-in in [new Outlook on Windows desktop client (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you must run the following command to open Microsoft Edge DevTools.
+To debug your add-in in [new Outlook on Windows desktop client (preview)](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), run the following command to open Microsoft Edge DevTools.
 
 ```command&nbsp;line
 olk.exe --devtools
@@ -122,7 +122,7 @@ Configure the debugger in Visual Studio Code. Follow the steps applicable to you
 
 1. Create a new folder called **Debugging** (perhaps in your **Desktop** folder).
 1. Open Visual Studio Code.
-1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
+1. Go to **File** > **Open Folder**, navigate to the folder you created, then choose **Select Folder**.
 1. On the Activity Bar, select **Run and Debug** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>).
 
     ![The Run and Debug icon on the Activity Bar.](../images/vs-code-debug.png)
@@ -165,9 +165,9 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
 
 ## Run the debugger
 
-After confirming that the debugger is attached, return to the Office application. In the **Debug Event-based handler** dialog, choose **OK** .
+After confirming that the debugger is attached, return to the Office application. In the **Debug Event-based handler** dialog, select **OK**.
 
-You can now hit your breakpoints to debug your event-based activation or spam-reporting code.
+You can now reach your breakpoints to debug your event-based activation or spam-reporting code.
 
 > [!IMPORTANT]
 > Starting in Version 2403 (Build 17425.20000), event-based and spam-reporting add-ins use the [V8 JavaScript engine](https://v8.dev/) to run JavaScript, regardless of whether debugging is turned on or off. In earlier versions, the Chakra JavaScript engine is used when debugging is off, but the V8 engine may be used when debugging is turned on.
