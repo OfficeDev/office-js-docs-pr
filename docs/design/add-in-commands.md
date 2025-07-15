@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 06/27/2025
+ms.date: 07/15/2025
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -66,16 +66,16 @@ A dropdown menu add-in command defines a static list of items. The menu can be a
 
 ### Grouped add-in commands on the ribbon
 
-Multiple add-in commands can be grouped together on the ribbon. A group must contain at least one add-in command in the form of a button or a dropdown menu. In Office on Windows, the label and icon of a button or dropdown menu are usually shown for add-in commands in a group. However, the icon size and label visibility may vary due to the following factors that constrain space.
+Multiple add-in commands can be grouped together on the ribbon. A group must contain at least one add-in command in the form of a button or a dropdown menu. In Office on Windows and on Mac, the label and icon of a button or dropdown menu are usually shown for add-in commands in a group. However, the icon size and label visibility may vary due to the following factors that constrain space.
 
 - The number of add-in commands in the group.
 - The size of the Office client window.
 
-If the client window is maximized and there are more than three add-in commands in a group, the label of each add-in command is shown, but the size of its icon may vary (some are shown as 16 x 16 pixels while others are shown as 32 x 32 pixels - //TODO - Confirm.).
+If the client window is maximized and there are more than three add-in commands in a group, the label of each add-in command is shown, but the size of its icon may vary (some are shown as 16 x 16 pixels while others are shown as 32 x 32 pixels).
 
 When there are two or more add-in commands in a group and space becomes limited, the following adjustments are made to how the add-in commands are displayed. These changes are applied to the groups of add-in commands from right to left across the ribbon in the following sequence.
 
-1. Small icons and labels are shown for each add-in command in a group.
+1. Small icons (16 x 16 pixels) and labels are shown for each add-in command in a group.
 1. Only small icons are shown.
 1. The group is displayed as a dropdown menu instead of showing individual add-in commands on the ribbon. A scroll slider icon also appears on the ribbon, so that you can scroll through the ribbon.
 
