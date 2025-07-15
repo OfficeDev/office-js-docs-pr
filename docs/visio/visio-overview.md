@@ -10,9 +10,9 @@ ms.localizationpriority: medium
 
 # Visio JavaScript API overview
 
-You can use the Visio JavaScript APIs to embed Visio diagrams in *classic* SharePoint pages in SharePoint Online. (This extensibility feature is not supported in on-premise SharePoint or on SharePoint Framework pages.)
+You can use the Visio JavaScript APIs to embed Visio diagrams in *classic* SharePoint pages in SharePoint Online. (This extensibility feature isn't supported in on-premises SharePoint or SharePoint Framework pages.)
 
-An embedded Visio diagram is a diagram that is stored in a SharePoint document library and displayed on a SharePoint page. To embed a Visio diagram, display it in an HTML `<iframe>` element. Then you can use Visio JavaScript APIs to programmatically work with the embedded diagram.
+An embedded Visio diagram is stored in a SharePoint document library and displayed on a SharePoint page. To embed a Visio diagram, display it in an HTML `<iframe>` element. Then use Visio JavaScript APIs to programmatically work with the embedded diagram.
 
 ![Visio diagram in iframe on SharePoint page along with script editor web part.](../images/visio-api-block-diagram.png)
 
@@ -23,7 +23,7 @@ You can use the Visio JavaScript APIs to:
 - Write custom handlers for mouse events within the drawing.
 - Expose diagram data, such as shape text, shape data, and hyperlinks, to your solution.
 
-This article describes how to use the Visio JavaScript APIs with Visio on the web to build your solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as `EmbeddedSession`, `RequestContext`, and JavaScript proxy objects, and the `sync()`, `Visio.run()`, and `load()` methods. The code examples show you how to apply these concepts.
+This article describes how to use the Visio JavaScript APIs with Visio on the web to build solutions for SharePoint Online. It introduces key concepts that are fundamental to using the APIs, such as `EmbeddedSession`, `RequestContext`, and JavaScript proxy objects, and the `sync()`, `Visio.run()`, and `load()` methods. The code examples show you how to apply these concepts.
 
 ## EmbeddedSession
 
@@ -38,13 +38,13 @@ session.init().then(function () {
 
 ## Visio.run(session, function(context) { batch })
 
-`Visio.run()` executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and `sync()` methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in `Visio.run()` is that when the promise is resolved, any tracked page objects that were allocated during the execution will be automatically released.
+`Visio.run()` executes a batch script that performs actions on the Visio object model. The batch commands include definitions of local JavaScript proxy objects and `sync()` methods that synchronize the state between local and Visio objects and promise resolution. The advantage of batching requests in `Visio.run()` is that when the promise is resolved, any tracked page objects that were allocated during execution are automatically released.
 
-The `run` function takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). It is possible to run the batch operation outside of the `Visio.run()`. However, in such a scenario, any page object references needs to be manually tracked and managed.
+The `run` function takes in session and RequestContext object and returns a promise (typically, just the result of `context.sync()`). You can run the batch operation outside of `Visio.run()`. However, in such a scenario, any page object references need to be manually tracked and managed.
 
 ## RequestContext
 
-The RequestContext object facilitates requests to the Visio application. Because the developer frame and the Visio web client run in two different iframes, the RequestContext object (context in next example) is required to get access to Visio and related objects such as pages and shapes, from the developer frame.
+The RequestContext object facilitates requests to the Visio application. Because the developer frame and the Visio web client run in two different iframes, the RequestContext object (context in the next example) is required to get access to Visio and related objects such as pages and shapes from the developer frame.
 
 ```js
 function hideToolbars() {
@@ -63,9 +63,9 @@ function hideToolbars() {
 
 ## Proxy objects
 
-The Visio JavaScript objects declared and used in an embedded session are proxy objects for the real objects in a Visio document. All actions taken on proxy objects are not realized in Visio, and the state of the Visio document is not realized in the proxy objects until the document state has been synchronized. The document state is synchronized when `context.sync()` is run.
+The Visio JavaScript objects declared and used in an embedded session are proxy objects for the real objects in a Visio document. All actions taken on proxy objects aren't realized in Visio, and the state of the Visio document isn't realized in the proxy objects until the document state has been synchronized. The document state is synchronized when `context.sync()` is run.
 
-For example, the local JavaScript object getActivePage is declared to reference the selected page. This can be used to queue the setting of its properties and invoking methods. The actions on such objects are not realized until the `sync()` method is run.
+For example, the local JavaScript object getActivePage is declared to reference the selected page. You can use this to queue the setting of its properties and invoke methods. The actions on such objects aren't realized until the `sync()` method is run.
 
 ```js
 const activePage = context.document.getActivePage();
@@ -77,7 +77,7 @@ The `sync()` method synchronizes the state between JavaScript proxy objects and 
 
 ## load()
 
-The `load()` method is used to fill in the proxy objects created in the JavaScript layer. When trying to retrieve an object such as a document, a local proxy object is created first in the JavaScript layer. Such an object can be used to queue the setting of its properties and invoking methods. However, for reading object properties or relations, the `load()` and `sync()` methods need to be invoked first. The load() method takes in the properties and relations that need to be loaded when the `sync()` method is called.
+The `load()` method is used to fill in the proxy objects created in the JavaScript layer. When trying to retrieve an object such as a document, a local proxy object is created first in the JavaScript layer. You can use such an object to queue the setting of its properties and invoke methods. However, for reading object properties or relations, the `load()` and `sync()` methods need to be invoked first. The load() method takes in the properties and relations that need to be loaded when the `sync()` method is called.
 
 The following shows the syntax for the `load()` method.
 
@@ -117,7 +117,7 @@ Visio.run(session, function (context) {
 
 ## Error messages
 
-Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions that can occur.
+Errors are returned using an error object that consists of a code and a message. The following table provides a list of possible error conditions.
 
 | error.code            | error.message |
 |-----------------------|----------------------------------------------------------------|
@@ -130,7 +130,7 @@ Errors are returned using an error object that consists of a code and a message.
 
 ## Get started
 
-You can use the example in this section to get started. This example shows you how to programmatically display the shape text of the selected shape in a Visio diagram. To begin, create a classic page in SharePoint Online or edit an existing page. Add a script editor webpart on the page and copy-paste the following code.
+You can use the example in this section to get started. This example shows you how to programmatically display the shape text of the selected shape in a Visio diagram. To begin, create a classic page in SharePoint Online or edit an existing page. Add a script editor web part on the page and copy-paste the following code.
 
 ```HTML
 <script src='https://appsforoffice.microsoft.com/embedded/1.0/visio-web-embedded.js' type='text/javascript'></script>
@@ -192,12 +192,12 @@ function getSelectedShapeText() {
 </script>
 ```
 
-After that, all you need is the URL of a Visio diagram that you want to work with. Just upload the Visio diagram to SharePoint Online and open it in Visio on the web. From there, open the Embed dialog and use the Embed URL in the above example.
+After that, all you need is the URL of a Visio diagram that you want to work with. Upload the Visio diagram to SharePoint Online and open it in Visio on the web. From there, open the Embed dialog and use the Embed URL in the above example.
 
 ![Copy Visio file URL from Embed dialog.](../images/Visio-embed-url.png)
 
-If you are using Visio on the web in Edit mode, open the Embed dialog by choosing **File** > **Share** > **Embed**. If you are using Visio on the web in View mode, open the Embed dialog by choosing '...' and then **Embed**.
+If you're using Visio on the web in Edit mode, open the Embed dialog by choosing **File** > **Share** > **Embed**. If you're using Visio on the web in View mode, open the Embed dialog by choosing '...' and then **Embed**.
 
 ## Visio JavaScript API reference
 
-For detailed information about Visio JavaScript API, see the [Visio JavaScript API reference documentation](/javascript/api/visio).
+For detailed information about the Visio JavaScript API, see the [Visio JavaScript API reference documentation](/javascript/api/visio).
