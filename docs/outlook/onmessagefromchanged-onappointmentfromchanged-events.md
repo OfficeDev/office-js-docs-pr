@@ -56,7 +56,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
 ## Configure the manifest
 
 > [!NOTE]
-> The `OnMessageFromChanged` event isn't currently available with the unified manifest for Microsoft 365 in Outlook on the web, on Mac, and in the new Outlook on Windows. To handle these events, implement an add-in only manifest instead. For information about the types of manifests, see [Office Add-ins manifest](add-in-manifests.md).
+> The `OnMessageFromChanged` event isn't currently available with the unified manifest for Microsoft 365 in Outlook on the web, on Mac, and in the new Outlook on Windows. To handle these events, implement an add-in only manifest instead. For information about the types of manifests, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
