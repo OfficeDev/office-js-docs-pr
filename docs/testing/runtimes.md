@@ -33,7 +33,7 @@ The following table shows the same information organized by which type of runtim
 |Excel custom functions | JavaScript-only</br>(but *browser* when the runtime is shared)|browser| browser |
 |Outlook event-based tasks | JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows) | browser | browser |
 |Event-based tasks on other applications | JavaScript-only | browser | browser |
-|Outlook integrated spam reporting feature (preview)| JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows) | browser | browser |
+|Outlook integrated spam reporting feature | JavaScript-only</br>(classic Outlook on Windows)</br></br>browser</br>(new Outlook on Windows) | browser | browser |
 |task pane | browser | browser | browser |
 |dialog | browser | browser | browser |
 |function command | browser | browser | browser |
