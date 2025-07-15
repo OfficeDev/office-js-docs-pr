@@ -152,7 +152,7 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
 1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. The text enclosed in `[]` represents your applicable Office and add-in information.
 
     ```text
-    %LOCALAPPDATA%\Microsoft\Office\16.0\WEF\{[Office profile GUID]}\[Office account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
+    %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Office profile GUID]}\[Office account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
     ```
 
     [!INCLUDE [office-bundle-js](../includes/office-bundle-js.md)]
@@ -176,7 +176,7 @@ You can now reach your breakpoints to debug your event-based activation or spam-
 
 To stop debugging the rest of the current Office on Windows session, in the **Debug Event-based handler** dialog, choose **Cancel**. To re-enable debugging, restart the Office application.
 
-To prevent the **Debug Event-based handler** dialog from popping up and stop debugging for subsequent sessions, delete the associated registry key, `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`, or set its value to `0`.
+To prevent the **Debug Event-based handler** dialog from popping up and stop debugging for subsequent sessions, delete the associated registry key, `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\UseDirectDebugger`, or set its value to `0`.
 
 ## Stop the local server
 

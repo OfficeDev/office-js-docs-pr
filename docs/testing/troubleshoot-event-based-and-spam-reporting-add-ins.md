@@ -46,7 +46,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
   - If you update the manifest, remove the add-in, then sideload it again. For information on how to remove a sideloaded add-in from Outlook, see [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in). If you're using Outlook on Windows, you must also close and reopen Outlook.
   - If you make changes to files other than the manifest, close and reopen the Office client on Windows or on Mac, or refresh the browser tab running Office on the web.
   - If you're still unable to see your changes after performing these steps, [clear your Office cache](../testing/clear-cache.md).
-- As you test your add-in in Office on Windows (excluding for new Outlook on Windows):
+- As you test your add-in in Office on Windows (excluding the new Outlook on Windows):
   - For event-based add-ins, check [Event Viewer](/shows/inside/event-viewer) for any reported add-in errors.
     1. In Event Viewer, select **Windows Logs** > **Application**.
     1. From the **Actions** panel, select **Filter Current Log**.
@@ -60,7 +60,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
   - Verify that the **bundle.js** file is downloaded to the following folder in File Explorer. The text enclosed in `[]` represents your applicable Office and add-in information.
   
     ```text
-    %LOCALAPPDATA%\Microsoft\Office\16.0\WEF\{[Office profile GUID]}\[Office account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
+    %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Office profile GUID]}\[Office account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
     ```
 
     [!INCLUDE [office-bundle-js](../includes/office-bundle-js.md)]
