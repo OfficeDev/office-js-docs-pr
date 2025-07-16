@@ -1,7 +1,7 @@
 ---
 title: Debug event-based or spam-reporting add-ins
 description: Learn how to debug your Office Add-ins that implement event-based activation or integrated spam reporting.
-ms.date: 01/28/2025
+ms.date: 07/15/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ Use your preferred browser's developer tools to debug your event-based add-in in
 
 # [Windows (new)](#tab/new-windows)
 
-To debug your add-in in [new Outlook on Windows desktop client](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), you must run the following command to open Microsoft Edge DevTools.
+To debug your add-in in [new Outlook on Windows desktop client](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), run the following command to open Microsoft Edge DevTools.
 
 ```command&nbsp;line
 olk.exe --devtools
@@ -51,14 +51,14 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
         [!include[Developer registry key](../includes/developer-registry-key.md)]
 
-1. In the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]`, where `[Add-in ID]` is your add-in's ID from the manifest, create a new `DWORD` value with the following configuration.
+1. In the registry key `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]`, where `[Add-in ID]` is your add-in's ID from the manifest, create a new `DWORD` value with the following configuration.
 
     - **Value name**: `DebuggerPort`
     - **Value data (hexadecimal)**: `00002407`
 
    This sets the debugger port to `9223`.
 
-1. Start Outlook or restart it if it's already open.
+1. Start your Office application or restart it if it's already open.
 1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event or reporting spam messages. The **Debug Event-based handler** dialog should appear. Do *not* interact with the dialog yet.
 
     ![The Debug Event-based handler dialog in Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
@@ -77,10 +77,14 @@ You can debug your add-in using the Microsoft Edge Inspect tool or Visual Studio
     > [!NOTE]
     > It may take some time for your add-in to appear in the **Remote Target** section. You may need to refresh the page for the add-in to appear.
 
-1. In the **Sources** tab, go to **file://** > **Users/[User]/AppData/Microsoft/Office/16.0/Wef/{[Outlook profile GUID]}/[Outlook mail account encoding]/Javascript/[Add-in ID]\_[Add-in Version]_[locale]** > **bundle.js**.
+1. In the **Sources** tab, go to **file://** > **Users/[User]/AppData/Local/Microsoft/Office/16.0/Wef/{[Office profile GUID]}/[Office account encoding]/Javascript/[Add-in ID]\_[Add-in Version]_[locale]** > **bundle.js**. For readability, this article refers to the file name as **bundle.js**, but exact name depends on the Office application.
+    - Excel: **bundle_excel.js**
+    - Outlook: **bundle.js**
+    - PowerPoint: **bundle_powerpoint.js**
+    - Word: **bundle_word.js**
 
     > [!TIP]
-    > There's no direct method to determine the Outlook profile GUID or mail account encoding used in the **bundle.js** file path. If you're debugging multiple add-ins simultaneously, the easiest way to access an add-in's **bundle.js** file from the DevTools window is to locate the add-in's ID in the file path.
+    > There's no direct method to determine the Office profile GUID or mail account encoding used in the **bundle.js** file path. If you're debugging multiple add-ins simultaneously, the easiest way to access an add-in's **bundle.js** file from the DevTools window is to locate the add-in's ID in the file path.
 
 1. In the **bundle.js** file, place breakpoints where you want the debugger to stop.
 1. [Run the debugger](#run-the-debugger).
@@ -118,7 +122,7 @@ Configure the debugger in Visual Studio Code. Follow the steps applicable to you
 
 1. Create a new folder called **Debugging** (perhaps in your **Desktop** folder).
 1. Open Visual Studio Code.
-1. Go to **File** > **Open Folder**, navigate to the folder you just created, then choose **Select Folder**.
+1. Go to **File** > **Open Folder**, navigate to the folder you created, then choose **Select Folder**.
 1. On the Activity Bar, select **Run and Debug** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>).
 
     ![The Run and Debug icon on the Activity Bar.](../images/vs-code-debug.png)
@@ -143,15 +147,15 @@ Configure the debugger in Visual Studio Code. Follow the steps applicable to you
 
 #### Attach the debugger
 
-The **bundle.js** file of an add-in contains the JavaScript code of your add-in. It's created when classic Outlook on Windows is opened. When Outlook starts, the **bundle.js** file of each installed add-in is cached in the **Wef** folder of your machine.
+The **bundle.js** file of an add-in contains the JavaScript code of your add-in. It's created when an Office on Windows application is opened. When Office starts, the **bundle.js** file of each installed add-in is cached in the **Wef** folder of your machine.
 
-1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. The text enclosed in `[]` represents your applicable Outlook and add-in information.
+1. To find the add-in's **bundle.js** file, navigate to the following folder in File Explorer. The text enclosed in `[]` represents your applicable Office and add-in information.
 
     ```text
-    %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Outlook profile GUID]}\[Outlook mail account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
+    %LOCALAPPDATA%\Microsoft\Office\16.0\Wef\{[Office profile GUID]}\[Office account encoding]\Javascript\[Add-in ID]_[Add-in Version]_[locale]
     ```
 
-    [!INCLUDE [outlook-bundle-js](../includes/outlook-bundle-js.md)]
+    [!INCLUDE [office-bundle-js](../includes/office-bundle-js.md)]
 
 1. Open **bundle.js** in Visual Studio Code.
 1. Place breakpoints in **bundle.js** where you want the debugger to stop.
@@ -161,18 +165,18 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
 
 ## Run the debugger
 
-After confirming that the debugger is attached, return to Outlook. In the **Debug Event-based handler** dialog, choose **OK** .
+After confirming that the debugger is attached, return to the Office application. In the **Debug Event-based handler** dialog, select **OK**.
 
-You can now hit your breakpoints to debug your event-based activation or spam-reporting code.
+You can now reach your breakpoints to debug your event-based activation or spam-reporting code.
 
 > [!IMPORTANT]
 > Starting in Version 2403 (Build 17425.20000), event-based and spam-reporting add-ins use the [V8 JavaScript engine](https://v8.dev/) to run JavaScript, regardless of whether debugging is turned on or off. In earlier versions, the Chakra JavaScript engine is used when debugging is off, but the V8 engine may be used when debugging is turned on.
 
 ## Stop the debugger
 
-To stop debugging the rest of the current Outlook on Windows session, in the **Debug Event-based handler** dialog, choose **Cancel**. To re-enable debugging, restart Outlook.
+To stop debugging the rest of the current Office on Windows session, in the **Debug Event-based handler** dialog, choose **Cancel**. To re-enable debugging, restart the Office application.
 
-To prevent the **Debug Event-based handler** dialog from popping up and stop debugging for subsequent Outlook sessions, delete the associated registry key, `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\[Add-in ID]\UseDirectDebugger`, or set its value to `0`.
+To prevent the **Debug Event-based handler** dialog from popping up and stop debugging for subsequent sessions, delete the associated registry key, `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]\UseDirectDebugger`, or set its value to `0`.
 
 ## Stop the local server
 
@@ -180,10 +184,10 @@ To prevent the **Debug Event-based handler** dialog from popping up and stop deb
 
 # [Mac](#tab/mac)
 
-Event-based add-ins that run in Outlook on Mac use the browser runtime. Because of this, you can debug your add-in using Safari Web Inspector.
+Event-based add-ins that run in Office on Mac use the browser runtime. Because of this, you can debug your add-in using Safari Web Inspector.
 
-1. To use the Safari Web Inspector in Outlook, follow the steps in [Debugging with Safari Web Inspector on a Mac](debug-office-add-ins-on-ipad-and-mac.md#debugging-with-safari-web-inspector-on-a-mac).
-1. Open Outlook, then [sideload your add-in](../outlook/sideload-outlook-add-ins-for-testing.md).
+1. To use the Safari Web Inspector in Office, follow the steps in [Debugging with Safari Web Inspector on a Mac](debug-office-add-ins-on-ipad-and-mac.md#debugging-with-safari-web-inspector-on-a-mac).
+1. Open Office, then [sideload your add-in](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 1. Perform an action that will initiate the event your add-in handles. For example, create a new message to initiate the `OnNewMessageCompose` event. This opens an empty Developer Window. The name of your add-in appears in the title bar of the window.
 1. Right-click (or select and hold) anywhere in the Developer Window, then select **Inspect Element**. This opens the Inspector, where you can set breakpoints and debug your add-in.
 
