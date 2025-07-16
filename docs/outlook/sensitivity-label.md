@@ -45,7 +45,7 @@ To use the sensitivity feature in your Outlook add-in project, you must configur
 If your add-in will detect and handle the `OnSensitivityLabelChanged` event, additional manifest configurations are required to enable the event-based activation feature. To learn more, see [Detect sensitivity label changes with the OnSensitivityLabelChanged event](#detect-sensitivity-label-changes-with-the-onsensitivitylabelchanged-event).
 
 > [!NOTE]
-> The `OnSensitivityLabelChanged` event isn't currently available with the unified manifest for Microsoft 365 in Outlook on the web, on Mac, and in the new Outlook on Windows. To handle these events, implement an add-in only manifest instead. For information about the types of manifests, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+> The `OnSensitivityLabelChanged` event isn't currently available with the unified manifest for Microsoft 365 in Outlook on the web and the new Outlook on Windows. To handle these events, implement an add-in only manifest instead. For information about the types of manifests, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ## Verify the status of the catalog of sensitivity labels
 
@@ -203,7 +203,7 @@ Take extra measures to protect your data by using the `OnSensitivityLabelChanged
 The `OnSensitivityLabelChanged` event is available through the event-based activation feature. To learn how to configure, debug, and deploy an event-based add-in that uses this event, see [Activate add-ins with events](../develop/event-based-activation.md).
 
 > [!NOTE]
-> The `OnSensitivityLabelChanged` event isn't currently available with the unified manifest for Microsoft 365 in Outlook on the web, on Mac, and in the new Outlook on Windows. To handle these events, implement an add-in only manifest instead. For information about the types of manifests, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+> The `OnSensitivityLabelChanged` event isn't currently available with the unified manifest for Microsoft 365 in Outlook on the web and the new Outlook on Windows. To handle these events, implement an add-in only manifest instead. For information about the types of manifests, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ## See also
 
