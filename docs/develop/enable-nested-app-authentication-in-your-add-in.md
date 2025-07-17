@@ -300,3 +300,4 @@ If you find a security issue with our libraries or services, report the issue to
 ## See also
 
 - [NAA FAQ](https://aka.ms/NAAFAQ)
+- [Nested app authentication in Microsoft Teams](/microsoftteams/platform/concepts/authentication/nested-authentication).
