@@ -81,7 +81,7 @@ The following is an example of a `"contentRuntimes"` property.
 
 ---
 
-For a sample that implements a content add-in, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) on GitHub.
+For a sample that implements a content add-in, see [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in) on GitHub.
 
 To create your own content add-in, see the [Excel content add-in quick start](../quickstarts/excel-quickstart-content.md) and [PowerPoint content add-in quick start](../quickstarts/powerpoint-quickstart-content.md).
 
