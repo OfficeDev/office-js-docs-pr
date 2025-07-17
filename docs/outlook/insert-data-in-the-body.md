@@ -47,7 +47,7 @@ Depending on the setting, the contents of the entire conversation thread or just
 | Conversations | **Group messages by conversation** > **All messages from the selected conversation** or **Show email grouped by conversation** > **Newest on top**\/**Newest on bottom** | **Organize by thread** > **Newest on top**\/**Newest on bottom** | **Group Emails by Conversation** > **Newest on top**\/**Newest on bottom** |
 | Individual messages | **Do not group messages** > **Only a single message** or **Show email as individual messages** | **Organize by thread** is turned off | **Group Emails by Conversation** is turned off |
 
-For more information on setting, see [Change how the message list is displayed in Outlook](https://support.microsoft.com/office/57fe0cd8-e90b-4b1b-91e4-a0ba658c0042) and [Optimize the Outlook mobile app for your phone or tablet](https://support.microsoft.com/office/de075b19-b73c-4d8a-841b-459982c7e890).
+For more information on message organization settings, see [Change how the message list is displayed in Outlook](https://support.microsoft.com/office/57fe0cd8-e90b-4b1b-91e4-a0ba658c0042) and [Optimize the Outlook mobile app for your phone or tablet](https://support.microsoft.com/office/de075b19-b73c-4d8a-841b-459982c7e890).
 
 When you call `Office.context.mailbox.item.body.getAsync` on a message reply, the entire body of a conversation thread is returned. If you want the returned body to reflect the user's **Message Organization** setting, you can specify the [bodyMode](/javascript/api/outlook/office.mailboxenums.bodymode) option in the `getAsync` call. The following table lists the portion of the body returned depending on the `bodyMode` configuration.
 
