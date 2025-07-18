@@ -1343,6 +1343,14 @@
             "redirect_url": "/office/dev/add-ins/concepts/privacy-and-security"
         },
         {
+            "source_path": "docs/reference/overview/visio-javascript-reference-overview.md",
+            "redirect_url": "/office/dev/add-ins/visio/visio-overview"
+        },
+        {
+            "source_path": "docs/visio/index.yml",
+            "redirect_url": "/office/dev/add-ins/visio/visio-overview"
+        },
+        {
             "source_path": "docs/outlook/add-in-requirements.md",
             "redirect_url": "/office/dev/add-ins/concepts/requirements-for-running-office-add-ins"
         }
