@@ -34,29 +34,17 @@ Office.context.mailbox.item.body.getAsync(Office.CoercionType.Html, (bodyResult)
 
 ## Get the body of message replies in Outlook on the web, on mobile, or in the new Outlook on Windows
 
-In Outlook on the web, on mobile devices, and in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), users can organize their messages as conversations or individual messages. This message organization setting affects how much of a message's body is displayed to the user, particularly in conversation threads with multiple messages. 
+In Outlook on the web, on mobile devices, and in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), when you call `Office.context.mailbox.item.body.getAsync` on a message reply, the entire body of a conversation thread is returned. If you only need the current reply, you can specify the [bodyMode](/javascript/api/outlook/office.mailboxenums.bodymode) option in the `getAsync` call.
 
-- **Outlook on the web and new Outlook on Windows**: **Settings** > **Mail** > **Layout** > **Message organization**
-- **Outlook on Android**: **Settings** > **Mail** > **Threading** > **Organize by thread**
-- **Outlook on iOS**: **Settings** > **Email Organization** > **Group Emails by Conversation**
+In Outlook on the web and the new Outlook on Windows, you can use the `bodyMode` option to reflect a user's **Message Organization** setting. Users can organize their messages as conversations or individual messages in **Settings** > **Mail** > **Layout** > **Message organization**. This setting affects how much of a message's body is displayed to the user, particularly in conversation threads with multiple messages. Depending on the setting, the contents of the entire conversation thread or just the current message is displayed. For more information on the **Message Organization** setting, see [Change how the message list is displayed in Outlook](https://support.microsoft.com/office/57fe0cd8-e90b-4b1b-91e4-a0ba658c0042).
 
-Depending on the setting, the contents of the entire conversation thread or just the current message is displayed. The following table lists the applicable message organization setting for each supported Outlook client.
-
-| Message organization type | Web and Windows (new) | Android | iOS |
-| ----- | ----- | ----- | ----- |
-| Conversations | **Group messages by conversation** > **All messages from the selected conversation** or **Show email grouped by conversation** > **Newest on top**\/**Newest on bottom** | **Organize by thread** > **Newest on top**\/**Newest on bottom** | **Group Emails by Conversation** > **Newest on top**\/**Newest on bottom** |
-| Individual messages | **Do not group messages** > **Only a single message** or **Show email as individual messages** | **Organize by thread** is turned off | **Group Emails by Conversation** is turned off |
-
-For more information on message organization settings, see [Change how the message list is displayed in Outlook](https://support.microsoft.com/office/57fe0cd8-e90b-4b1b-91e4-a0ba658c0042) and [Optimize the Outlook mobile app for your phone or tablet](https://support.microsoft.com/office/de075b19-b73c-4d8a-841b-459982c7e890).
-
-When you call `Office.context.mailbox.item.body.getAsync` on a message reply, the entire body of a conversation thread is returned. If you want the returned body to reflect the user's **Message Organization** setting, you can specify the [bodyMode](/javascript/api/outlook/office.mailboxenums.bodymode) option in the `getAsync` call. The following table lists the portion of the body returned depending on the `bodyMode` configuration.
+The following table lists the portion of the body returned depending on the `bodyMode` configuration.
 
 | bodyMode configuration | Effect on body returned |
 | ----- | ----- |
 | `bodyMode` isn't specified in the `getAsync` call | The entire body of the conversation thread is returned. However, in Outlook on mobile, while in quick reply mode (the reply field at the bottom of the message), only the body of the current reply is returned. |
-| `bodyMode` is set to `Office.MailboxEnums.BodyMode.FullBody` | The entire body of the conversation thread is returned. |
-| `bodyMode` is set to `Office.MailboxEnums.BodyMode.HostConfig` and messages are organized as conversations | Only the body of the current reply is returned. |
-| `bodyMode` is set to `Office.MailboxEnums.BodyMode.HostConfig` and messages are organized as individual messages | The entire body of the conversation thread is returned. |
+| `bodyMode` is set to `Office.MailboxEnums.BodyMode.FullBody` | The entire body of the conversation thread is returned. However, in Outlook on mobile, while in quick reply mode, only the body of the current reply is returned. |
+| `bodyMode` is set to `Office.MailboxEnums.BodyMode.HostConfig` | In Outlook on the web and the new Outlook on Windows, if **Message Organization** is set to **Group messages by conversation** > **All messages from the selected conversation** or **Show email grouped by conversation** > **Newest on top**/**Newest on bottom**, only the body of the current reply is returned. Conversely, if **Message Organization** is set to **Individual messages: Do not group messages** > **Only a single message** or **Show email as individual messages**, the entire body of the conversation thread is returned.<br><br>In Outlook on mobile, only the body of the current reply is returned. |
 
 > [!NOTE]
 > The `bodyMode` option is ignored in Outlook on Windows (classic) and on Mac.
