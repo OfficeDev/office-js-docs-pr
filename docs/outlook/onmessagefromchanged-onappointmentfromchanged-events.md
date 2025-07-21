@@ -1,7 +1,7 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 07/17/2025
+ms.date: 07/22/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -25,23 +25,23 @@ The following tables list client-server combinations that support the `OnMessage
 
 # [OnMessageFromChanged event](#tab/message)
 
-|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
-|-----|-----|-----|-----|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
-|**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
-|**iOS**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|
-|**Android**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|
+|Client|Exchange Online|Exchange Server Subscription Edition (SE)|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
+|-----|-----|-----|-----|-----|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|Not applicable|
+|**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|Supported|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|Not applicable|
+|**iOS**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|Not applicable|
+|**Android**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|Not applicable|
 
 # [OnAppointmentFromChanged event](#tab/appointment)
 
-|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
-|-----|-----|-----|-----|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Not applicable|Not applicable|Not applicable|
-|**Windows (classic)**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
-|**iOS**|Not applicable|Not applicable|Not applicable|
-|**Android**|Not applicable|Not applicable|Not applicable|
+|Client|Exchange Online|Exchange Server Subscription Edition (SE)|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
+|-----|-----|-----|-----|-----|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Not applicable|Not applicable|Not applicable|Not applicable|
+|**Windows (classic)**|Not applicable|Not applicable|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|Not applicable|
+|**Android**|Not applicable|Not applicable|Not applicable|Not applicable|
 
 ---
 

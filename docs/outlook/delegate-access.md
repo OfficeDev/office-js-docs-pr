@@ -1,7 +1,7 @@
 ---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 07/08/2025
+ms.date: 07/22/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,15 +17,15 @@ This article describes how to implement shared folders (also known as delegate a
 
 The following table shows supported client-server combinations for this feature, including the minimum required Cumulative Update where applicable.
 
-| Client | Exchange Online | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
-|---|---|---|---|
-|**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|
-|**Web browser (classic Outlook UI)**|Not applicable|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|
-|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
-|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|
-|**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|
-|**Android**|Not applicable|Not applicable|Not applicable|
-|**iOS**|Not applicable|Not applicable|Not applicable|
+| Client | Exchange Online | Exchange Server Subscription Edition (SE) | Exchange 2019 on-premises<br>(Cumulative Update 1 or later) | Exchange 2016 on-premises<br>(Cumulative Update 6 or later) |
+|---|---|---|---|---|
+|**Web browser (modern Outlook UI)**|Supported|Not applicable|Not applicable|Not applicable|
+|**Web browser (classic Outlook UI)**|Not applicable|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|<ul><li>**Shared folders**: Supported</li><li>**Shared mailboxes**: Not applicable</li></ul>|
+|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|Not applicable|
+|**Windows (classic)**<br>**Shared folders**: Version 1910 (Build 12130.20272) or later<br><br>**Shared mailboxes**: Version 2304 (Build 16327.20248) or later|Supported|Supported\*|Supported\*|Supported\*|
+|**Mac**<br>Version 16.47 or later|Supported|Supported|Supported|Supported|
+|**Android**|Not applicable|Not applicable|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|Not applicable|
 
 > [!NOTE]
 > \* Support for this feature in an on-premises Exchange environment is available starting in classic Outlook on Windows Version 2206 (Build 15330.20000) for the Current Channel and Version 2207 (Build 15427.20000) for the Monthly Enterprise Channel.
