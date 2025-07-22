@@ -79,7 +79,7 @@ Sometimes called an _application password_, a client secret is a string value yo
     For additional application ID URI details, see [Application manifest identifierUris attribute](/azure/active-directory/develop/reference-app-manifest#identifieruris-attribute).
 
     > [!NOTE]
-    > If you get an error saying that the domain is already owned but you own it, follow the procedure at [Quickstart: Add a custom domain name to Azure Active Directory](/azure/active-directory/add-custom-domain) to register it, and then repeat this step. (This error can also occur if you are not signed in with credentials of an admin in the Microsoft 365 tenancy. See step 2. Sign out and sign in again with admin credentials and repeat the process from step 3.)
+    > If you get an error saying that the domain is already owned but you own it, follow the procedure at [Add your custom domain name to your tenant](/entra/fundamentals/add-custom-domain) to register it, and then repeat this step. (This error can also occur if you are not signed in with credentials of an admin in the Microsoft 365 tenancy. See step 2. Sign out and sign in again with admin credentials and repeat the process from step 3.)
 
 ## Add a scope
 
@@ -126,8 +126,6 @@ Sometimes called an _application password_, a client secret is a string value yo
     > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
     > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-
-
 1. In **Authorized scopes**, select the `api://<fully-qualified-domain-name>/<app-id>/access_as_user` checkbox.
 
 1. Select **Add application**.
@@ -169,7 +167,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 
 ## Configure access token version
 
-You must define the access token version that is acceptable for your app. This configuration is made in the Azure Active Directory application manifest.
+You must define the access token version that is acceptable for your app. This configuration is made in the Microsoft Entra ID application manifest.
 
 ### Define the access token version
 
@@ -179,7 +177,7 @@ The access token version can change if you chose an account type other than **Ac
 
     :::image type="content" source="../images/azure-portal-manifest.png" alt-text="Select Azure manifest.":::
 
-    The Azure Active Directory application manifest appears.
+    The Microsoft Entra ID application manifest appears.
 
 1. Enter **2** as the value for the `requestedAccessTokenVersion` property (in the `api` object).
 

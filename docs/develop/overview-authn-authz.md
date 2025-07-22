@@ -37,7 +37,7 @@ Before you begin implementing user authentication with SSO, be sure that you're 
 
 ### Access your Web APIs through SSO
 
-If your add-in has server-side APIs that require an authorized user, call the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) method to get an access token. The access token provides access to your own web server (configured through a [Microsoft Azure app registration](register-sso-add-in-aad-v2.md)). When you call APIs on your web server, you also pass the access token to authorize the user.
+If your add-in has server-side APIs that require an authorized user, call the [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)) method to get an access token. The access token provides access to your own web server (configured through an [app registration in Microsoft Entra ID](register-sso-add-in-aad-v2.md)). When you call APIs on your web server, you also pass the access token to authorize the user.
 
 The following code shows how to construct an HTTPS GET request to the add-in's web server API to get some data. The code runs on the client side, such as in a task pane. It first gets the access token by calling `getAccessToken`. Then it constructs an AJAX call with the correct authorization header and URL for the server API.
 
