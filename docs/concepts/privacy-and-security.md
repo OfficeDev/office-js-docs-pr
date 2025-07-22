@@ -76,7 +76,7 @@ The following table describes the availability of add-ins on Outlook clients whe
 |-----|-----|
 |<ul><li>Web browser</li><li>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li></ul>|Admin-deployed add-ins remain visible and usable. However, add-ins that are installed from the Microsoft 365 and Copilot store don't appear in the Outlook client. While users can still access the Microsoft 365 and Copilot store and install add-ins, these add-ins won't appear in the client until the **Optional connected experiences** setting is turned on. Additionally, sideloaded add-ins are visible, but can't be launched.|
 |<ul><li>Windows (classic)</li></ul>|All add-ins remain visible and usable. However, the Microsoft 365 and Copilot store is inaccessible.|
-|<ul><li>Mac</li></ul>|All add-ins don't appear in the ribbon and the Microsoft 365 and Copilot store is inaccessible.|
+|<ul><li>Mac</li></ul>|Add-ins don't appear in the ribbon and the Microsoft 365 and Copilot store is inaccessible.|
 |<ul><li>Android</li><li>iOS</li></ul>|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
 
 ## Addressing end users' privacy concerns
