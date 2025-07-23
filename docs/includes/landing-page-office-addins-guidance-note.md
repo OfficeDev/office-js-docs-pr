@@ -1,1 +1,0 @@
-<b>Note</b>: See the <a href="../overview/core-concepts-office-add-ins.md">Core concepts</a> section of this documentation for the full set of articles that apply to all types of Office Add-ins.

@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 03/19/2025
+ms.date: 07/15/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -30,7 +30,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
 
 1. Open the **manifest.json** file located at the root of the project.
 
-1. In the "authorization.permissions.resourceSpecific" array, change the value of the "name" property to "Mailbox.ReadWrite.User". It should look like the following when you're done.
+1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, change the value of the `"name"` property to `"Mailbox.ReadWrite.User"`. It should look like the following when you're done.
 
     ```json
     "authorization": {
@@ -45,11 +45,11 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
     },
     ```
 
-1. In first object of the "extensions.runtimes" array, make the following changes.
+1. In first object of the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, make the following changes.
 
-    1. Change the "requirements.capabilities.minVersion" property to "1.15". Although the item multi-select feature was introduced in requirement set 1.13, this sample uses enhancements from later requirement sets.
-    1. In the same "actions" object, add the "supportsNoItemContext" property and set it to `true`.
-    1. In the same "actions" object, add the "multiselect" property and set it to `true`.
+    1. Change the [`"requirements.capabilities.minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) property to `"1.15"`. Although the item multi-select feature was introduced in requirement set 1.13, this sample uses enhancements from later requirement sets.
+    1. In the same [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) object, add the `"supportsNoItemContext"` property and set it to `true`.
+    1. In the same "actions" object, add the `"multiselect"` property and set it to `true`.
 
     Your code should look like the following after you've made the changes.
 
@@ -85,9 +85,9 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
     ]
     ```
 
-1. Delete the second object of the "extensions.runtimes" array, whose "id" is "CommandsRuntime".
+1. Delete the second object of the `"extensions.runtimes"` array, whose `"id"` is `"CommandsRuntime"`.
 
-1. In the "extensions.ribbons.tabs.controls" array, delete the second object, whose "id" is "ActionButton".
+1. In the `"extensions.ribbons.tabs.controls"` array, delete the second object, whose `"id"` is `"ActionButton"`.
 
 1. Save your changes.
 
@@ -337,8 +337,7 @@ The following example implements the `getSelectedItemsAsync` and `loadItemByIdAs
     npm start
     ```
 
-    > [!TIP]
-    > If your add-in doesn't automatically sideload, follow the instructions in [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload it in Outlook.
+    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
 
 1. In Outlook, ensure the Reading Pane is enabled. To enable the Reading Pane, see [Use and configure the Reading Pane to preview messages](https://support.microsoft.com/office/2fd687ed-7fc4-4ae3-8eab-9f9b8c6d53f0).
 
@@ -363,7 +362,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - A maximum of 100 messages can be selected at a time.
 - The `loadItemByIdAsync` method only processes one selected message at a time. Remember to call `unloadAsync` after `loadItemByIdAsync` finishes processing the message. This way, the add-in can load and process the next selected message.
 - Typically, you can only run get operations on a selected message that's loaded using the `loadItemByIdAsync` method. However, managing the [categories](/javascript/api/outlook/office.categories) of a loaded message is an exception. You can add, get, and remove categories from a loaded message.
-- The `loadItemByIdAsync` method is supported in task pane and function command add-ins. This method isn't supported in [event-based activation](autolaunch.md) add-ins.
+- The `loadItemByIdAsync` method is supported in task pane and function command add-ins. This method isn't supported in [event-based activation](../develop/event-based-activation.md) add-ins.
 
 > [!NOTE]
 > Meeting invites and responses are considered messages, not appointments, and can therefore be included in a selection.
@@ -383,9 +382,9 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 
 ### Task pane pinning in multi-select add-ins
 
-In Outlook on the web and in new Outlook on Windows, when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
+In Outlook on the web, on Mac, and in new Outlook on Windows, when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
 
-Conversely, in Outlook on Windows (classic) and on Mac, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
+Conversely, in classic Outlook on Windows, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Next steps
 

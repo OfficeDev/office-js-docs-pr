@@ -2,24 +2,19 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 04/22/2025
+ms.date: 05/19/2025
 ms.localizationpriority: medium
 ---
 
 # Convert an add-in to use the unified manifest for Microsoft 365
 
-To add Teams capabilities to an add-in that uses the add-in only manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
-
-> [!NOTE]
->
-> - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
-> - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Yeoman generator for Office Add-ins (Yo Office)](yeoman-generator-overview.md), it already uses the unified manifest.
+To add Teams capabilities or a Copilot extension to an add-in that uses the add-in only manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
    [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
 
 There are three basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
 
-- Ensure that your add-in is ready to convert.
+- Ensure that your manifest is ready to convert.
 - Convert the XML-formatted add-in only manifest itself to the JSON format of the unified manifest.
 - Package the new manifest and two icon image files (described later) into a zip file for sideloading or deployment. *Depending on how you sideload the converted add-in, this task may be done for you automatically.*
 
@@ -29,9 +24,9 @@ There are three basic tasks to converting an add-in project from the add-in only
 >
 > - Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
 > - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
-> - If you [created the project with Teams Toolkit](teams-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
+> - If you [created the project with Teams Toolkit or Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
-## Ensure that your add-in is ready to convert
+## Ensure that your manifest is ready to convert
 
 The following sections describe conditions that must be met before you convert the manifest.
 
@@ -66,7 +61,7 @@ The following markup is an example.
 
 ### Reduce the number of add-in commands as needed
 
-An add-in that uses the unified manifest may not have more than 20 [add-in commands](../design/add-in-commands.md). If the total number of  [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20.
+An add-in that uses the unified manifest may not have more than 20 [add-in commands](../design/add-in-commands.md). If the total number of [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20.
 
 ### Update the add-in ID, version, domain, and function names in the manifest
 
@@ -83,13 +78,13 @@ An add-in that uses the unified manifest may not have more than 20 [add-in comma
 
 ### Shorten string values as needed
 
-Review and change, as needed, the manifest values in light of the following effects of the conversion.
+Review and change, as needed, manifest values in light of the following effects of the conversion.
 
-- The first 30 characters of `<DisplayName>` becomes the value of "name.short" in the unified manifest.
-- The first 100 characters of `<DisplayName>` becomes the value of "name.long" in the unified manifest.
-- The first 250 characters of `<Description>` becomes the value of "description.short" in the unified manifest.
-- The first 4000 characters of `<Description>` becomes the value of "description.long" in the unified manifest.
-- The first 32 characters of the `<ProviderName>` becomes the value "developer.name" in the unified manifest.
+- The first 30 characters of `<DisplayName>` becomes the value of [`"name.short"`](/microsoft-365/extensibility/schema/root-name#short) in the unified manifest.
+- The first 100 characters of `<DisplayName>` becomes the value of [`"name.full"`](/microsoft-365/extensibility/schema/root-name#full) in the unified manifest.
+- The first 250 characters of `<Description>` becomes the value of [`"description.short"`](/microsoft-365/extensibility/schema/root-description#short) in the unified manifest.
+- The first 4000 characters of `<Description>` becomes the value of [`"description.full"`](/microsoft-365/extensibility/schema/root-description#full) in the unified manifest.
+- The first 32 characters of the `<ProviderName>` becomes the value of [`"developer.name"`](/microsoft-365/extensibility/schema/root-developer#name) in the unified manifest.
 
 ### Verify that the modified add-in only manifest works
 
@@ -103,52 +98,15 @@ Resolve any problems before you attempt to convert the project.
 
 There are several ways to carry out the remaining tasks, depending on the IDE and other tools you want to use for your project, and on the tool you used to create the project.
 
-- [Convert the project with Teams Toolkit](#convert-the-project-with-teams-toolkit)
 - [Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")](#convert-projects-created-with-the-yeoman-generator-for-office-add-ins-aka-yo-office)
 - [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-the-yeoman-generator-for-office-add-ins-yo-office)
 
-### Convert the project with Teams Toolkit
-
-The easiest way to convert is to use Teams Toolkit.
-
-#### Prerequisites
-
-- Install [Visual Studio Code](https://code.visualstudio.com/)
-- Install [Teams Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-teams-toolkit-for-visual-studio-code)
-
-#### Import the add-in project to Teams Toolkit
-
-1. Open Visual Studio Code and select the Teams Toolkit icon on the **Activity Bar**.
-
-    :::image type="content" source="../images/teams-toolkit-icon.png" alt-text="Teams Toolkit icon.":::
-
-1. Select **Create a New App**.
-1. The **New Project** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Office Add-in**.
-
-    :::image type="content" source="../images/teams-toolkit-create-office-add-in.png" alt-text="The options in New Project dropdown menu. One option is called 'Office Add-in'.":::
-
-1. The **App Features Using an Office Add-in** dropdown menu opens. The options listed will vary depending on your version of Teams Toolkit. Select **Upgrade an Existing Office Add-in**.
-
-    :::image type="content" source="../images/teams-toolkit-create-office-import-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The 'Upgrade an Existing Office Add-in' option is selected.":::
-
-1. In the **Existing add-in project folder** dropdown menu, browse to the root folder of the add-in project.
-1. In the **Select import project manifest file** dropdown menu, browse to the add-in only manifest file, typically named **manifest.xml**.
-1. In the **Workspace folder** dialog, select the folder where you want to put the converted project.
-1. In the **Application name** dialog, give a name to the project (with no spaces). Teams Toolkit creates the project with your source files and scaffolding. It then opens the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
-
-#### Sideload the add-in in Visual Studio Code
-
-You can sideload the add-in using the Teams Toolkit or in a command prompt, bash shell, or terminal. For more information, see:
-
-- [Sideload with Teams toolkit](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-the-teams-toolkit)
-- [Sideload with a system prompt, bash shell, or terminal](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal)
-
 > [!NOTE]
-> Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
+> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md) 
 
 ### Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")
 
-If the project was created with the Yeoman generator for Office Add-ins and you don't want to use the Teams Toolkit, convert it using the following steps.
+If the project was created with the Yeoman generator for Office Add-ins, convert it using the following steps.
 
 1. In the root of the project, open a command prompt or bash shell and run the following command. This converts the manifest and updates the package.json to specify current tooling packages. The new unified manifest is in the root of the project and the old add-in only manifest is in a backup.zip file. For details about this command, see [Office-Addin-Project](https://www.npmjs.com/package/office-addin-project).
 
@@ -161,7 +119,7 @@ If the project was created with the Yeoman generator for Office Add-ins and you 
 
 ### Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)
 
-If you don't want to use the Teams Toolkit and your project wasn't created with Yo Office, use the office-addin-manifest-converter tool.
+If your project wasn't created with Yo Office, use the office-addin-manifest-converter tool.
 
 In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named **MyManifest.xml**, the unified manifest is created at **.\MyManifest\MyManifest.json**. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
@@ -170,6 +128,9 @@ npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
 ```
 
 Once you have the unified manifest created, there are two ways to create the zip file and sideload it. For more information, see [Sideload other NodeJS and npm projects](../testing/sideload-add-in-with-unified-manifest.md#sideload-other-nodejs-and-npm-projects).
+
+> [!NOTE]
+> If the original add-in only manifest used any **\<Override\>** elements to localize strings in the manifest, then the conversion process produces JSON string files for each localized language. These files must also be included in the zip file, and they must be at the relative path indicated in the [`"localizationInfo.additionalLanguages.file"`](/microsoft-365/extensibility/schema/root-localization-info-additional-languages#file) property.
 
 ## Next steps
 

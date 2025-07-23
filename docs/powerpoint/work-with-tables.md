@@ -2,17 +2,17 @@
 title: Work with tables using the PowerPoint JavaScript API
 description: Learn how to create tables and control formatting using the PowerPoint JavaScript API.
 ms.topic: how-to
-ms.date: 04/02/2025
+ms.date: 05/02/2025
 ms.localizationpriority: medium
 ---
 
-# Work with tables using the PowerPoint JavaScript API (preview)
+# Work with tables using the PowerPoint JavaScript API
 
 This article provides code samples that show how to create tables and control formatting by using the PowerPoint JavaScript API.  
 
 ## Create an empty table
 
-To create an empty table, call the `Shapes.addTable()` method and specify how many rows and columns the table needs. The following code sample shows how to create a table with 3 rows and 4 columns.
+To create an empty table, call the [ShapeCollection.addTable()](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtable-member(1)) method and specify how many rows and columns the table needs. The following code sample shows how to create a table with 3 rows and 4 columns.
 
 ```javascript
 await PowerPoint.run(async (context) => {
@@ -30,7 +30,7 @@ The previous sample doesn't specify any options, so the table defaults to format
 
 ## Specify values  
 
-You can populate the table with string values when you create it. To do this provide a 2-dimensional array of values in the `TableAddOptions` object. The following code sample creates a table with string values from "1" to "12". Note the following:
+You can populate the table with string values when you create it. To do this provide a 2-dimensional array of values in the [TableAddOptions](/javascript/api/powerpoint/powerpoint.tableaddoptions) object. The following code sample creates a table with string values from "1" to "12". Note the following:
 
 - An empty cell must be specified as an empty string "". If a value is undefined or missing, `addTable` throws an error.
 - The outer array contains a list of rows. Each row is an inner array containing a list of string cell values.
@@ -66,13 +66,13 @@ The previous sample creates a table with values as shown in the following image.
 
 ## Specify cell formatting
 
-You can specify cell formatting when you create a table, including border style, fill style, font style, horizontal alignment, indent level, and vertical alignment. These formats are specified by the `TableCellProperties` object.
+You can specify cell formatting when you create a table, including border style, fill style, font style, horizontal alignment, indent level, and vertical alignment. These formats are specified by the [TableCellProperties](/javascript/api/powerpoint/powerpoint.tablecellproperties) object.
 
 ### Uniform cell formatting
 
 Uniform cell formatting applies to the entire table. For example, if you set the uniform font color to white, all table cells will use the white font. Uniform cell formatting is useful for controlling the default formatting you want on the entire table.
 
-Specify uniform cell formatting for the entire table using the `TableAddOptions.uniformCellProperties` property. The following code sample shows how to set all table cells to dark slate blue fill color and bold white font.
+Specify uniform cell formatting for the entire table using the [TableAddOptions.uniformCellProperties](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-uniformcellproperties-member) property. The following code sample shows how to set all table cells to dark slate blue fill color and bold white font.
 
 ```javascript
 const rowCount = 3;
@@ -97,7 +97,7 @@ The previous sample creates a table as shown in the following image.
 
 ### Specific cell formatting
 
-Specific cell formatting applies to individual cells and overrides the uniform cell formatting, if any. Set individual cell formatting by using the `TableAddOptions.specificCellProperties` property. The following code sample shows how to set the fill color to black for the cell at row 1, column 1. 
+Specific cell formatting applies to individual cells and overrides the uniform cell formatting, if any. Set individual cell formatting by using the [TableAddOptions.specificCellProperties](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-specificcellproperties-member) property. The following code sample shows how to set the fill color to black for the cell at row 1, column 1.
 
 Note the `specificCellProperties` must be a 2D array that matches the 2D size of the table exactly. The sample first creates the entire empty 2D array of objects. Then it sets the specific cell format at row 1, column 1, after the options object is created.
 
@@ -130,7 +130,7 @@ The previous sample creates a table with a specific format applied to the cell i
 
 :::image type="content" source="../images/powerpoint-table-specific-cell-format.png" alt-text="A PowerPoint table with the cell in row 1 column 1 formatted with a black background.":::
 
-The previous sample uses the `font` property which is of type `FontProperties`. The `font` property allows you to specify many properties, such as bold, italic, name, color, and more. The following code sample shows how to specify multiple properties for a font for a cell.
+The previous sample uses the [font](/javascript/api/powerpoint/powerpoint.tablecellproperties#powerpoint-powerpoint-tablecellproperties-font-member) property which is of type [FontProperties](/javascript/api/powerpoint/powerpoint.fontproperties). The `font` property allows you to specify many properties, such as bold, italic, name, color, and more. The following code sample shows how to specify multiple properties for a font for a cell.
 
 ```javascript
 options.specificCellProperties[1][1] = {
@@ -144,20 +144,20 @@ options.specificCellProperties[1][1] = {
 };
 ```
 
-You can also specify a `fill` property which is of type `FillProperties`. The `fill` property can specify a color and the transparency percentage. The following code sample shows how to create a fill for all table cells using the color "light red" and a 50% transparency.
+You can also specify a [fill](/javascript/api/powerpoint/powerpoint.tablecellproperties#powerpoint-powerpoint-tablecellproperties-fill-member) property which is of type [FillProperties](/javascript/api/powerpoint/powerpoint.fillproperties). The `fill` property can specify a color and the transparency percentage. The following code sample shows how to create a fill for all table cells using the color "dark red" and a 50% transparency.
 
 ```javascript
 uniformCellProperties: {
     fill: {
-        color: "lightred",
-            transparency: 0.5
-    },
+        color: "darkred",
+        transparency: 0.5
+    }
 }
 ```
 
 ## Borders
 
-Use the `TableCellProperties.borders` object to define borders for cells in the table. The following code sample shows how to set the borders of a cell in row 1 by column 1 to a red border with weight 3.
+Use the [TableCellProperties.borders](/javascript/api/powerpoint/powerpoint.tablecellproperties#powerpoint-powerpoint-tablecellproperties-borders-member) object to define borders for cells in the table. The following code sample shows how to set the borders of a cell in row 1 by column 1 to a red border with weight 3.
 
 ```javascript
 const columnCount = 3;
@@ -210,7 +210,7 @@ await insertTableOnCurrentSlide(rowCount, columnCount, options);
 
 ## Horizontal and vertical alignment
 
-Use the `TableCellProperties.horizontalAlignment` property to control text alignment in a cell. The following example shows how to set horizontal alignment to left, right, and center for three cells in a table. For a list of all alignment options, see the `ParagraphHorizontalAlignment` enum.
+Use the [TableCellProperties.horizontalAlignment](/javascript/api/powerpoint/powerpoint.tablecellproperties#powerpoint-powerpoint-tablecellproperties-horizontalalignment-member) property to control text alignment in a cell. The following example shows how to set horizontal alignment to left, right, and center for three cells in a table. For a list of all alignment options, see the [ParagraphHorizontalAlignment](/javascript/api/powerpoint/powerpoint.paragraphhorizontalalignment) enum.
 
 ```javascript
 const rowCount = 3;
@@ -248,15 +248,15 @@ const options: PowerPoint.TableAddOptions = {
 };
 options.specificCellProperties[0][0] = {
     horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.left,
-    verticalAlignment: 0 //PowerPoint.TextVerticalAlignment.top
+    verticalAlignment: PowerPoint.TextVerticalAlignment.top
 };
 options.specificCellProperties[1][0] = {
     horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
-    verticalAlignment: 1 //PowerPoint.TextVerticalAlignment.middle
+    verticalAlignment: PowerPoint.TextVerticalAlignment.middle
 };
 options.specificCellProperties[2][0] = {
     horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.right,
-    verticalAlignment: 2 //PowerPoint.TextVerticalAlignment.bottom
+    verticalAlignment: PowerPoint.TextVerticalAlignment.bottom
 };
 await insertTableOnCurrentSlide(3, 3, options);
 ```
@@ -267,7 +267,7 @@ The previous sample creates a table with left/top, centered, and right/bottom te
 
 ## Specify row and column widths
 
-Specify row and column widths using the `TableAddOptions.rows` and `TableAddOptions.columns` properties. The `rows` property is an array of `TableRowProperties` that you use to set each row’s `rowHeight` property. Similarly, the `columns` property is an array of `TableColumnProperties` you use to set each column’s `columnWidth` property. The width or height is set in points.
+Specify row and column widths using the [TableAddOptions.rows](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-rows-member) and [TableAddOptions.columns](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-columns-member) properties. The `rows` property is an array of [TableRowProperties](/javascript/api/powerpoint/powerpoint.tablerowproperties) that you use to set each row's [rowHeight](/javascript/api/powerpoint/powerpoint.tablerowproperties#powerpoint-powerpoint-tablerowproperties-rowheight-member) property. Similarly, the `columns` property is an array of [TableColumnProperties](/javascript/api/powerpoint/powerpoint.tablecolumnproperties) you use to set each column's [columnWidth](/javascript/api/powerpoint/powerpoint.tablecolumnproperties#powerpoint-powerpoint-tablecolumnproperties-columnwidth-member) property. The width or height is set in points.
 
 The height or width that you set may not be honored by PowerPoint if it needs to fit the text. For example, if the text is too wide for a column, PowerPoint will increase the row height so that it can wrap the text to the next line. Similarly, the column width will increase if the specified size is smaller than a single character in the specified font size.
 
@@ -288,7 +288,7 @@ const options: PowerPoint.TableAddOptions = {
     uniformCellProperties: {
         fill: { color: "lightcyan" },
         horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
-        verticalAlignment: 1, //PowerPoint.TextVerticalAlignment.middle
+        verticalAlignment: PowerPoint.TextVerticalAlignment.middle,
         borders: {
             bottom: {
                 color: "black",
@@ -326,7 +326,7 @@ A merged area is two or more cells combined so that they share a single value an
 
 To specify a merged area, provide the upper left location where the area starts (row, column) and the length of the area in rows and columns. The following diagram shows an example of these values for a merged area that is 3 rows by 2 columns in size. Note that merged areas can't overlap with each other.
 
-Use the `TableAddOptions.mergedAreas` property to specify one or more merged areas. The following code sample shows how to create a table with two merged areas. About the code sample, note the following:
+Use the [TableAddOptions.mergedAreas](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-mergedareas-member) property to specify one or more merged areas. The following code sample shows how to create a table with two merged areas. About the code sample, note the following:
 
 - The values property must only specify the value for the upper left corner of the merged area. All other cell values in the merged area must specify empty strings ("").
 
@@ -383,7 +383,7 @@ The previous sample creates a table with two merged areas as shown in the follow
 
 ## Get and set table cell values
 
-After a table is created you can get or set string values in the cells. Note that this is the only part of a table you can change. You can't change borders, fonts, widths, or other cell properties. If you need to update a table, delete it and recreate it. The following code sample shows how to find an existing table and set a new value for a cell in the table.
+After a table is created, you can get or set string values in the cells. Note that this is the only part of a table you can change. You can't change borders, fonts, widths, or other cell properties. If you need to update a table, delete it and recreate it. The following code sample shows how to find an existing table and set a new value for a cell in the table.
 
 ```javascript
 await PowerPoint.run(async (context) => {
@@ -394,13 +394,11 @@ await PowerPoint.run(async (context) => {
     // Find the first shape of type table.
     const shape = shapes.items.find((shape) => shape.type === PowerPoint.ShapeType.table)
     const table = shape.getTable();
-    table.load("values");
+    table.load();
     await context.sync();
     // Set the value of the specified table cell.
-    let values = table.values;
-    values[1][1] = "A new value";
-    table.values = values;
-    await context.sync();
+    const cell = table.getCellOrNullObject(1, 1);
+    cell.text = "A new value";
 });
 ```
 

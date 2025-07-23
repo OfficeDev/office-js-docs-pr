@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 03/11/2025
+ms.date: 07/15/2025
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -31,29 +31,55 @@ There are two types of add-in commands, based on the kind of action that the com
 
   - If the add-in is configured to use a [shared runtime](../testing/runtimes.md#shared-runtime), the function can also call the [showAsTaskpane](/javascript/api/office/office.addin#office-office-addin-showastaskpane-member(1)) method.
 
+   > [!TIP]
+   > Function commands aren't the only way to run arbitrary JavaScript in an add-in. An add-in can also include:
+   >
+   > - Custom handlers for certain events, such as a user opening an new message pane in Outlook.
+   > - Custom [Copilot agents](agent-and-add-in-overview.md) that take actions in response to natural language requests from the add-in's users.
+
 ## Location of add-in commands
 
-When a user installs an add-in, the location of its commands depends on the application, platform, and context. Add-in commands are found on the ribbon, in a default or custom tab, or on an action bar (only applies to certain Outlook platforms). They appear in the UI as a button or an item in a drop-down menu.
+When a user installs an add-in, the add-in's commands are found on the ribbon, in a built-in Office tab or a custom tab that is specified in the manifest. (You can also put add-in commands on a [custom contextual tab](#contextual-tabs) that your add-in code defines at runtime.) They appear in the UI as a button or an item in a dropdown menu.
 
-For add-in commands that appear on the ribbon, if you're using the simplified ribbon layout, the add-in name is removed from the app bar. Only the add-in command button on the ribbon remains.
+> [!NOTE]
+> On certain Outlook platforms, the commands are on an action bar rather than the ribbon.
 
 As the ribbon or action bar gets more crowded, add-in commands are displayed in the overflow menu. Commands for the same add-in are usually grouped together.
 
+In Office on the web, if you're using the single-line or simplified ribbon layout, the add-in name isn't shown on the ribbon. Only the add-in's command icon is shown.
+
 ### Excel, PowerPoint, and Word
 
-The default tab depends on the application and context. For Excel, PowerPoint, and Word, the default tab is **Home**.
+The following shows an example of add-in commands in a custom group on the **Data** tab of the Excel ribbon.
 
 ![Sample add-in commands highlighted in the Excel ribbon.](../images/add-in-commands-1.png)
 
 ### Outlook
 
-For Outlook, the default location of an add-in command is based on the platform and current Outlook mode. For guidance, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
+For Outlook, when you want an add-in command on a built-in ribbon tab, rather than creating your own, the command will appear on the default tab based on the platform and current Outlook mode. For guidance, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
-### Drop-down menu
+### Dropdown menu
 
-A drop-down menu add-in command defines a static list of items. The menu can be any mix of items that execute a function or that open a task pane. Submenus aren't supported.
+A dropdown menu add-in command defines a static list of items. The menu can be any mix of items that execute a function or that open a task pane. Submenus aren't supported.
 
 ![A button that drops down a menu on the Outlook ribbon.](../images/commands-menu-button-1.png)
+
+### Grouped add-in commands on the ribbon
+
+Multiple add-in commands can be grouped together on the ribbon. A group must contain at least one add-in command in the form of a button or a dropdown menu. In Office on Windows and on Mac, the label and icon of a button or dropdown menu are usually shown for add-in commands in a group. However, the icon size and label visibility may vary due to the following factors that constrain space.
+
+- The number of add-in commands in the group.
+- The size of the Office client window.
+
+If the client window is maximized and there are more than three controls in a group, the label of each control is shown, but the size of its icon may vary (some are shown as 16 x 16 pixels while others are shown as 32 x 32 pixels).
+
+When there are two or more add-in commands in a group and space becomes limited, the following adjustments are made to how the add-in commands are displayed. These changes are applied to the groups of add-in commands from right to left across the ribbon in the following sequence.
+
+1. Small icons (16 x 16 pixels) and labels are shown for each add-in command in a group.
+1. Only small icons are shown.
+1. The group is displayed as a dropdown menu instead of showing individual add-in commands on the ribbon. A scroll slider icon also appears on the ribbon, so that you can scroll through the ribbon.
+
+In Office on the web, the icon size and label visibility of controls in groups don't change as the browser window is resized. The scroll slider icon is simply shown on the ribbon.
 
 ## Command capabilities
 
@@ -61,7 +87,10 @@ The following command capabilities are currently supported.
 
 ### Extension points
 
-- Ribbon tabs - Extend built-in tabs or create a new custom tab. An add-in can have just one custom tab.
+- Ribbon tabs - Extend built-in tabs or create a new custom core tab. An add-in can have just one custom core tab. (You can also put add-in commands on a [custom contextual tab](#contextual-tabs).)
+
+  > [!NOTE]
+  > For Outlook, custom tabs are only supported in classic Outlook on Windows. In Outlook on the web, on Mac, and in the new Outlook on Windows, you can put custom groups of controls on one of the built-in ribbon tabs instead.
 - Context menus - Extend selected context menus.
 
 ### Control types
@@ -76,7 +105,7 @@ You can specify whether the command is available when your add-in launches, and 
 > [!NOTE]
 > This feature isn't supported in all Office applications or scenarios. For more information, see [Change the availability of add-in commands](disable-add-in-commands.md).
 
-### Position on the ribbon (preview)
+### Position on the ribbon
 
 You can specify where a custom tab appears on the Office application's ribbon, such as "just to the right of the Home tab".
 
@@ -92,7 +121,7 @@ You can insert the built-in Office ribbon buttons into your custom command group
 
 ### Contextual tabs
 
-You can specify that a tab is only visible on the ribbon in certain contexts, such as when a chart is selected in Excel.
+You can specify a custom contextual tab; that is, a tab that is only visible on the ribbon in certain contexts, such as when a chart is selected in Excel.
 
 > [!NOTE]
 > This feature isn't supported in all Office applications or scenarios. For more information, see [Create custom contextual tabs in Office Add-ins](contextual-tabs.md).

@@ -1,7 +1,7 @@
 ---
 title: Work with shapes using the Excel JavaScript API
 description: Learn how Excel defines shapes as any object that sits on the drawing layer of Excel.
-ms.date: 02/17/2022
+ms.date: 04/14/2025
 ms.localizationpriority: medium
 ---
 
@@ -51,7 +51,7 @@ await Excel.run(async (context) => {
 
 ### Images
 
-JPEG, PNG, and SVG images can be inserted into a worksheet as shapes. The `ShapeCollection.addImage` method takes a base64-encoded string as an argument. This is either a JPEG or PNG image in string form. `ShapeCollection.addSvg` also takes in a string, though this argument is XML that defines the graphic.
+JPEG, PNG, and SVG images can be inserted into a worksheet as shapes. The `ShapeCollection.addImage` method takes a Base64-encoded string as an argument. This is either a JPEG or PNG image in string form. `ShapeCollection.addSvg` also takes in a string, though this argument is XML that defines the graphic.
 
 The following code sample shows an image file being loaded by a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) as a string. The string has the metadata "base64," removed before the shape is created.
 
@@ -135,6 +135,27 @@ await Excel.run(async (context) => {
 });
 ```
 
+## Get the active shape
+
+Get the active shape by using either of the following methods.
+
+- [Workbook.getActiveShape](/javascript/api/excel/excel.workbook)
+- [Workbook.getActiveShapeOrNullObject](/javascript/api/excel/excel.workbook)
+
+The following code sample shows how to get the active shape in a workbook and increase its height by 10%.
+
+```javascript
+ await Excel.run(async (context) => {
+    const shape = context.workbook.getActiveShapeOrNullObject();
+    if (shape !== null) {
+      shape.load("height");
+      await context.sync();
+      shape.height = shape.height + shape.height * 0.1;
+      await context.sync();
+    }
+  });
+```
+
 ## Text in shapes
 
 Geometric Shapes can contain text. Shapes have a `textFrame` property of type [TextFrame](/javascript/api/excel/excel.textframe). The `TextFrame` object manages the text display options (such as margins and text overflow). `TextFrame.textRange` is a [TextRange](/javascript/api/excel/excel.textrange) object with the text content and font settings.
@@ -216,7 +237,7 @@ await Excel.run(async (context) => {
 
 ## Export shapes as images
 
-Any `Shape` object can be converted to an image. [Shape.getAsImage](/javascript/api/excel/excel.shape#excel-excel-shape-getasimage-member(1)) returns base64-encoded string. The image's format is specified as a [PictureFormat](/javascript/api/excel/excel.pictureformat) enum passed to `getAsImage`.
+Any `Shape` object can be converted to an image. [Shape.getAsImage](/javascript/api/excel/excel.shape#excel-excel-shape-getasimage-member(1)) returns Base64-encoded string. The image's format is specified as a [PictureFormat](/javascript/api/excel/excel.pictureformat) enum passed to `getAsImage`.
 
 ```js
 await Excel.run(async (context) => {
@@ -227,7 +248,7 @@ await Excel.run(async (context) => {
     await context.sync();
 
     console.log(stringResult.value);
-    // Instead of logging, your add-in may use the base64-encoded string to save the image as a file or insert it in HTML.
+    // Instead of logging, your add-in may use the Base64-encoded string to save the image as a file or insert it in HTML.
 });
 ```
 

@@ -2,7 +2,7 @@
 title: Error handling with the application-specific JavaScript APIs
 description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
 ms.topic: error-reference
-ms.date: 03/01/2024
+ms.date: 06/23/2025
 ms.localizationpriority: medium
 ---
 
@@ -62,7 +62,7 @@ The following tables list the errors that application-specific APIs may return.
 
 |Error code | Error message | Notes |
 |:----------|:--------------|:------|
-|`AccessDenied` |You cannot perform the requested operation.|*None* |
+|`AccessDenied` |You cannot perform the requested operation.| This may be caused by a user's antivirus software blocking parts of Office. See the [Common errors and troubleshooting steps](../testing/testing-and-troubleshooting.md#common-errors-and-troubleshooting-steps) for "Error: Access denied" for more guidance. |
 |`ActivityLimitReached`|Activity limit has been reached.|*None* |
 |`ApiNotAvailable`|The requested API is not available.|*None* |
 |`ApiNotFound`|The API you are trying to use could not be found. It may be available in a newer version of the Office application. See [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets) for more information.|*None* |
@@ -107,6 +107,7 @@ The following tables list the errors that application-specific APIs may return.
 |`PivotTableRangeConflict`|The attempted operation causes a conflict with a PivotTable range.|*None* |
 |`RangeExceedsLimit`|The cell count in the range has exceeded the maximum supported number. See the [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins) article for more information.|*None* |
 |`RefreshWorkbookLinksBlocked`|The operation failed because the user hasn't granted permission to refresh external workbook links.|*None* |
+|`UndoNotSupported`|The JavaScript API request failed due to lack of support for the undo operation.|*None* |
 |`UnsupportedSheet`|This sheet type does not support this operation, since it is a Macro or Chart sheet.|*None* |
 
 ### Word-specific error codes and messages

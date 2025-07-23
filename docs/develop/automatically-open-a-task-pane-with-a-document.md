@@ -63,9 +63,9 @@ Configure the manifest to specify the task pane page that should open automatica
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
-To specify the task pane to open automatically, find the runtime object in the "runtimes" array whose "code.page" property is set to the URL of the page that you want to open automatically. Ensure that the "actions" array in this same runtime object has at least one action whose "type" value is "openPage". Add a "view" property to this action object and set it to "Office.AutoShowTaskpaneWithDocument". You can only set this value on one action object and it must be an action of type "openPage". If you set this value on multiple actions, the first occurrence of the value will be recognized and the others will be ignored.
+To specify the task pane to open automatically, find the runtime object in the [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes) array whose [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property is set to the URL of the page that you want to open automatically. Ensure that the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array in this same runtime object has at least one action whose `"type"` value is `"openPage"`. Add a `"view"` property to this action object and set it to `"Office.AutoShowTaskpaneWithDocument"`. You can only set this value on one action object and it must be an action of type `"openPage"`. If you set this value on multiple actions, the first occurrence of the value will be recognized and the others will be ignored.
 
-The following example shows a "view" value set to "Office.AutoShowTaskpaneWithDocument".
+The following example shows a `"view"` value set to `"Office.AutoShowTaskpaneWithDocument"`.
 
 ```json
 "runtimes": [
@@ -145,10 +145,10 @@ The `webextension` part also includes a reference to the store or catalog with a
 |`storeType` value|`id` value|`store` value|`version` value|
 |:---------------|:---------------|:---------------|:---------------|
 |OMEX (AppSource)|The AppSource asset ID of the add-in (see Note).|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note).|
-|WOPICatalog (partner [WOPI](/microsoft-365/cloud-storage-partner-program/online/) hosts)| The AppSource asset ID of the add-in (see Note). | "wopicatalog". Use this value for add-ins that are published in App Source and are installed in WOPI hosts. For more information, see [Integrating with Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | The version in the add-in manifest.|
+|WOPICatalog (partner [WOPI](/microsoft-365/cloud-storage-partner-program/online/) hosts)| The AppSource asset ID of the add-in (see Note). | `"wopicatalog"`. Use this value for add-ins that are published in App Source and are installed in WOPI hosts. For more information, see [Integrating with Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | The version in the add-in manifest.|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
-|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|"EXCatalog". EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.|
-|Registry (System registry)|The GUID of the add-in in the add-in manifest.|"developer"|The version in the add-in manifest.|
+|EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|`"EXCatalog"`. EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.|
+|Registry (System registry)|The GUID of the add-in in the add-in manifest.|`"developer"`|The version in the add-in manifest.|
 
 > [!NOTE]
 > To find the asset ID and version of an add-in in AppSource, go to the AppSource landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.

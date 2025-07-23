@@ -1,7 +1,7 @@
 ---
 title: Requesting permissions for API use in add-ins
 description: Learn about different permission levels to declare in the manifest of an add-in to specify the level of JavaScript API access.
-ms.date: 02/12/2025
+ms.date: 06/17/2025
 ms.localizationpriority: medium
 ---
 
@@ -10,18 +10,17 @@ ms.localizationpriority: medium
 This article describes the different permission levels that you declare in your add-in's manifest to specify the level of JavaScript API access your add-in requires for its features.
 
 > [!IMPORTANT]
-> This article applies to only non-Outlook add-ins. To learn about permission levels for Outlook add-ins, see [Outlook permissions model](../outlook/privacy-and-security.md#permissions-model).
+> This article applies to only non-Outlook add-ins. To learn about permission levels for Outlook add-ins, see [Understanding Outlook add-in permissions](../outlook/understanding-outlook-add-in-permissions.md).
 
 ## Permissions model
 
 A five-level JavaScript API access-permissions model provides the basis for privacy and security for users of your add-ins. The following figure shows the five levels of API permissions you can declare in your add-in's manifest.
 
-
 ![Levels of permissions for add-ins.](../images/office15-app-sdk-task-pane-app-permission.png)
 
 These permissions specify the subset of the API that the add-in [runtime](../testing/runtimes.md) allows your add-in to use when a user inserts, and then activates (trusts) your add-in. To declare the permission level your add-in requires, specify one of the permission values in the manifest. The markup varies depending on the type of manifest.
 
-- **Unified manifest for Microsoft 365**: Use the "authorization.permissions.resourceSpecific" property. The following example requests the **write document** permission, which allows only methods that can write to (but not read) the document.
+- **Unified manifest for Microsoft 365**: Use the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) property. The following example requests the **write document** permission, which allows only methods that can write to (but not read) the document.
 
    ```json
    "authorization": {

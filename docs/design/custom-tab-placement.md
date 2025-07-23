@@ -25,9 +25,9 @@ By default, a custom tab is added to the end of the ribbon. However, you can spe
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
-To position your custom tab, include a "position" property in the "extensions.ribbons.tabs" object. Set the "position.builtInTabId" property to the ID of the built-in tab that you want your custom tab to be next to. (See [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).) Set the "position.align" property to either "before" (left) or "after" (right). 
+To position your custom tab, include a [`"position"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item-position) property in the [`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array#tabs) object. Set the `"position.builtInTabId"` property to the ID of the built-in tab that you want your custom tab to be next to. (See [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).) Set the `"position.align"` property to either `"before"` (left) or `"after"` (right).
 
-In the following example, the custom tab is configured to appear *just after* the **Review** tab. 
+In the following example, the custom tab is configured to appear *just after* the **Review** tab.
 
 ```json
 "extensions": [

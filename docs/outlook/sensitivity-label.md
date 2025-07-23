@@ -1,7 +1,7 @@
 ---
 title: Manage the sensitivity label of your message or appointment in compose mode
 description: Learn how to manage the sensitivity label of your message or appointment in compose mode.
-ms.date: 04/12/2024
+ms.date: 07/17/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -39,10 +39,12 @@ The following table lists client-server combinations that support the use of the
 
 To use the sensitivity feature in your Outlook add-in project, you must configure the **read/write item** permission in the manifest of your add-in.
 
-- **Unified manifest for Microsoft 365**: In the "authorization.permissions.resourceSpecific" array, set the "name" property of an object to "MailboxItem.ReadWrite.User".
+- **Unified manifest for Microsoft 365**: In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, set the `"name"` property of an object to `"MailboxItem.ReadWrite.User"`.
 - **Add-in only manifest**: Set the [\<Permissions\> element](/javascript/api/manifest/permissions) to **ReadWriteItem**.
 
 If your add-in will detect and handle the `OnSensitivityLabelChanged` event, additional manifest configurations are required to enable the event-based activation feature. To learn more, see [Detect sensitivity label changes with the OnSensitivityLabelChanged event](#detect-sensitivity-label-changes-with-the-onsensitivitylabelchanged-event).
+
+[!INCLUDE [outlook-sensitivity-label-event-support](../includes/outlook-sensitivity-label-event-support.md)]
 
 ## Verify the status of the catalog of sensitivity labels
 
@@ -197,12 +199,14 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 Take extra measures to protect your data by using the `OnSensitivityLabelChanged` event. This event enables your add-in to complete tasks in response to sensitivity label changes on a message or appointment. For example, you can prevent users from downgrading the sensitivity label of a mail item if it contains certain attachments.
 
-The `OnSensitivityLabelChanged` event is available through the event-based activation feature. To learn how to configure, debug, and deploy an event-based add-in that uses this event, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
+The `OnSensitivityLabelChanged` event is available through the event-based activation feature. To learn how to configure, debug, and deploy an event-based add-in that uses this event, see [Activate add-ins with events](../develop/event-based-activation.md).
+
+[!INCLUDE [outlook-sensitivity-label-event-support](../includes/outlook-sensitivity-label-event-support.md)]
 
 ## See also
 
 - [Learn about sensitivity labels](/microsoft-365/compliance/sensitivity-labels)
 - [Get started with sensitivity labels](/microsoft-365/compliance/get-started-with-sensitivity-labels)
 - [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels)
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
 - [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)

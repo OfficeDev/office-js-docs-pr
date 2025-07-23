@@ -37,7 +37,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 1. Open the **manifest.json** file located at the root of your project.
 
-1. In the "authorization.permissions.resourceSpecific" array, find the *first* object and set its "name" property to "MailboxItem.ReadWrite.User". It should look like the following when you're done.
+1. In the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array, find the *first* object and set its `"name"` property to `"MailboxItem.ReadWrite.User"`. It should look like the following when you're done.
 
     ```json
     {
@@ -46,7 +46,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
     }
     ```
 
-1. In the "validDomains" array, ensure that the URL to `https://www.contoso.com` is included. The array should look like the following when you're done.
+1. In the [`"validDomains"`](/microsoft-365/extensibility/schema/root#validdomains) array, ensure that the URL to `https://www.contoso.com` is included. The array should look like the following when you're done.
 
     ```json
     "validDomains": [
@@ -54,9 +54,9 @@ To configure your add-in's manifest, select the type of manifest you're using.
     ],
     ```
 
-1. In the "extensions.runtimes" array, delete the object whose "id" is set to "TaskPaneRuntime".
+1. In the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array, delete the object whose `"id"` is set to `"TaskPaneRuntime"`.
 
-1. In the same array, navigate to the remaining object, whose "id" is set to "CommandsRuntime", and replace it with the following object.
+1. In the same array, navigate to the remaining object, whose `"id"` is set to `"CommandsRuntime"`, and replace it with the following object.
 
     ```json
     {
@@ -84,12 +84,12 @@ To configure your add-in's manifest, select the type of manifest you're using.
     }
     ```
 
-1. In the "ribbons" array, replace the existing object with the following code. Note the following about these changes.
+1. In the [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) array, replace the existing object with the following code. Note the following about these changes.
 
-    - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso** button to appear in Outlook on mobile devices and on desktop clients.
-    - The "logEventMeetingDetailsAttendee" value in the "contexts" array configures the add-in button to appear in the Appointment Attendee surface, so that users can log their appointment notes.
-    - The object in the "ribbons.tabs.groups.controls" array configures the add-in button that calls the note-logging function in Outlook desktop clients. The "actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
-    - The object in the "ribbons.tabs.customMobileRibbonGroups" array configures the add-in button that calls the note-logging function in Outlook on mobile devices. All nine of the objects specified in the "customMobileRibbonGroups.controls.icons" array are required for a mobile button. Additionally, the "customMobileRibbonGroups.controls.actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
+    - The `"desktop"` and `"mobile"` values in the [`"ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array configure the **Log to Contoso** button to appear in Outlook on mobile devices and on desktop clients.
+    - The `"logEventMeetingDetailsAttendee"` value in the `"contexts"` array configures the add-in button to appear in the Appointment Attendee surface, so that users can log their appointment notes.
+    - The object in the `"ribbons.tabs.groups.controls"` array configures the add-in button that calls the note-logging function in Outlook desktop clients. The `"actionId"` property must match the [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) of the object in the `"extensions.runtimes"` array.
+    - The object in the [`"ribbons.tabs.customMobileRibbonGroups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#custommobileribbongroups) array configures the add-in button that calls the note-logging function in Outlook on mobile devices. All nine of the objects specified in the `"customMobileRibbonGroups.controls.icons"` array are required for a mobile button. Additionally, the `"customMobileRibbonGroups.controls.actionId"` property must match the `"actions.id"` of the object in the `"extensions.runtimes"` array.
 
     ```json
     {
@@ -225,7 +225,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
 
 1. Open the **manifest.json** file located at the root of your project.
 
-1. In the "authorization.permissions.resourceSpecific" array, find the *first* object and set its "name" property to "MailboxItem.ReadWrite.User". It should look like the following when you're done.
+1. In the `"authorization.permissions.resourceSpecific"` array, find the *first* object and set its `"name"` property to `"MailboxItem.ReadWrite.User"`. It should look like the following when you're done.
 
     ```json
     {
@@ -234,7 +234,7 @@ To configure your add-in's manifest, select the type of manifest you're using.
     }
     ```
 
-1. In the "validDomains" array, ensure that the URL to `https://www.contoso.com` is included. The array should look like the following when you're done.
+1. In the `"validDomains"` array, ensure that the URL to `https://www.contoso.com` is included. The array should look like the following when you're done.
 
     ```json
     "validDomains": [
@@ -242,14 +242,14 @@ To configure your add-in's manifest, select the type of manifest you're using.
     ],
     ```
 
-1. In the "extensions.runtimes" array, delete the object whose "id" is set to "CommandsRuntime".
+1. In the `"extensions.runtimes"` array, delete the object whose `"id"` is set to `"CommandsRuntime"`.
 
-1. In the "ribbons" array, replace the existing object with the following code. Note the following about these changes.
+1. In the `"ribbons"` array, replace the existing object with the following code. Note the following about these changes.
 
-    - The "desktop" and "mobile" values in the "ribbons.requirements.formFactors" array configure the **Log to Contoso** button to appear in Outlook on mobile devices and on desktop clients.
-    - The "logEventMeetingDetailsAttendee" value in the "contexts" array configures the add-in button to appear in the Appointment Attendee surface, so that users can open a task pane to view and log their appointment notes.
-    - The object in the "ribbons.tabs.groups.controls" array configures the add-in button to open a task pane in Outlook desktop clients. The "actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
-    - The object in the "ribbons.tabs.customMobileRibbonGroups" array configures the add-in button to open a task pane in Outlook on mobile devices. All nine of the objects specified in the "customMobileRibbonGroups.controls.icons" array are required for a mobile button. Additionally, the "customMobileRibbonGroups.controls.actionId" property must match the "actions.id" of the object in the "extensions.runtimes" array.
+    - The `"desktop"` and `"mobile"` values in the `"ribbons.requirements.formFactors"` array configure the **Log to Contoso** button to appear in Outlook on mobile devices and on desktop clients.
+    - The `"logEventMeetingDetailsAttendee"` value in the `"contexts"` array configures the add-in button to appear in the Appointment Attendee surface, so that users can open a task pane to view and log their appointment notes.
+    - The object in the `"ribbons.tabs.groups.controls"` array configures the add-in button to open a task pane in Outlook desktop clients. The `"actionId"` property must match the `"actions.id"` of the object in the `"extensions.runtimes"` array.
+    - The object in the `"ribbons.tabs.customMobileRibbonGroups"` array configures the add-in button to open a task pane in Outlook on mobile devices. All nine of the objects specified in the `"customMobileRibbonGroups.controls.icons"` array are required for a mobile button. Additionally, the `"customMobileRibbonGroups.controls.actionId"` property must match the `"actions.id"` of the object in the `"extensions.runtimes"` array.
 
     ```json
     {

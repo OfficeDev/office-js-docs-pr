@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins for testing from a network share
 description: Learn how to sideload an Office Add-in for testing from a network share.
-ms.date: 07/14/2024
+ms.date: 05/21/2025
 ms.localizationpriority: medium
 ---
 
@@ -125,7 +125,7 @@ There are two options for how you specify this trust. Follow the instructions fo
     > [!NOTE]
     > For Visual Studio projects, use the manifest built by the project in the `{projectfolder}\bin\Debug\OfficeAppManifests` folder.
 
-1. In Excel, Word, or PowerPoint, select **Home** > **Add-ins** from the ribbon, then select **More Add-ins**. In Project, select **My Add-ins** on the **Project** tab of the ribbon.
+1. In Excel, Word, or PowerPoint, select **Home** > **Add-ins** from the ribbon, then select **Advanced**. In Project, select **My Add-ins** on the **Project** tab of the ribbon.
 
 1. Choose **SHARED FOLDER** at the top of the **Office Add-ins** dialog box.
 

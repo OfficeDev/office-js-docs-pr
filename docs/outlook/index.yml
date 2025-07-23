@@ -36,7 +36,7 @@ landingContent:
           - text: Navigate and use the Mailbox requirement sets
             url: /javascript/api/requirement-sets/outlook/outlook-api-requirement-sets
           - text: Build an event-based add-in
-            url: autolaunch.md
+            url: ../develop/event-based-activation.md
           - text: Use Microsoft Graph to extend your add-in's capabilities
             url: /graph/overview
           - text: Test and debug an Outlook add-in

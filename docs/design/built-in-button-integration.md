@@ -1,7 +1,7 @@
 ---
 title: Integrate built-in Office buttons into custom control groups and tabs
 description: Learn how to include built-in Office buttons in your custom command groups and tabs on the Office ribbon.
-ms.date: 02/12/2025
+ms.date: 06/10/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -25,10 +25,9 @@ Open the tab for the type of manifest your add-in uses for the details of the ma
 
 ## Insert a built-in control group into a custom tab
 
-To insert a built-in Office control group into a custom tab, add a group object with a "builtInGroupId" property *instead of an "id" property* to the "groups" array of your custom tab object. Set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in group object should have no other properties.*
+To insert a built-in Office control group into a custom tab, add a group object with a [`"builtInGroupId"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#builtintabid) property *instead of an [`"id"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#id) property* to the [`"groups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#groups) array of your custom tab object. Set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in group object should have no other properties.*
 
 The following example adds the Office Paragraph control group to a custom tab.
-
 
 ```json
 "extensions": [
@@ -44,11 +43,11 @@ The following example adds the Office Paragraph control group to a custom tab.
                         "id": "MyTab",
                         ...
                         "groups": [
-                            ... // Optionally, other groups in the tab
+                            ... // Optionally, other groups in the tab.
                             {
                                 "builtInGroupId": "Paragraph"
                             },
-                            ... // Optionally, other groups in the tab
+                            ... // Optionally, other groups in the tab.
                         ]
                     }
                 ]
@@ -60,7 +59,7 @@ The following example adds the Office Paragraph control group to a custom tab.
 
 ## Insert a built-in control into a custom group
 
-To insert a built-in Office control into a custom group, add a control object with a "builtInControlId" property *instead of an "id" property* to the "controls" array of your custom group object. Set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in control object should have no other properties.*
+To insert a built-in Office control into a custom group, add a control object with a `"builtInControlId"` property *instead of an `"id"` property* to the [`"controls"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item#controls) array of your custom group object. Set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in control object should have no other properties.*
 
 The following example adds the Office Superscript control to a custom group.
 
@@ -81,11 +80,11 @@ The following example adds the Office Superscript control to a custom group.
                                 "id": "MyGroup",
                                 ...
                                 "controls": [
-                                    ... // Optionally, other controls in the group
+                                    ... // Optionally, other controls in the group.
                                     {
                                         "builtInControlId": "Superscript"
                                     },
-                                    ... // Optionally, other controls in the group
+                                    ... // Optionally, other controls in the group.
                                 ]
                             }
                         ]
@@ -106,10 +105,10 @@ To insert a built-in Office control group into a tab, add an [OfficeGroup](/java
 The following markup example adds the Office Paragraph control group to a custom tab and positions it to appear just after a custom group.
 
 ```xml
-<ExtensionPoint xsi:type="ContosoRibbonTab">
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom1">
     <Group id="Contoso.myCustomTab.group1">
-       <!-- additional markup omitted -->
+       <!-- Additional markup omitted. -->
     </Group>
     <OfficeGroup id="Paragraph" />
     <Label resid="customTabLabel1" />
@@ -124,7 +123,7 @@ To insert a built-in Office control into a custom group, add an [OfficeControl](
 The following markup example adds the Office Superscript control to a custom group and positions it to appear just after a custom button.
 
 ```xml
-<ExtensionPoint xsi:type="ContosoRibbonTab">
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom2">
     <Group id="Contoso.TabCustom2.group1">
         <Label resid="residCustomTabGroupLabel"/>

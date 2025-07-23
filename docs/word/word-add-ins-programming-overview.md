@@ -1,7 +1,7 @@
 ---
 title: Word add-ins overview
 description: Learn the basics of Word add-ins.
-ms.date: 05/16/2024
+ms.date: 05/29/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -17,28 +17,28 @@ Word add-ins are one of the many development options that you have on the [Offic
 
 The following figure shows an example of a Word add-in that runs in a task pane.
 
-![Add-in running in a task pane in Word.](../images/word-add-in-show-host-client.png)
+:::image type="content" source="../images/word-add-in-show-host-client.png" alt-text="Add-in running in a task pane in Word.":::
 
 The Word add-in can do the following:
 
   1. Send requests to the Word document.
   1. Use JavaScript to access the paragraph object and update, delete, or move the paragraph.
 
-For example, the following code shows how to append a new sentence to the first selected paragraph.
+For example, the following code shows how to append a new sentence to the first paragraph.
 
 ```js
 await Word.run(async (context) => {
-  const paragraphs = context.document.getSelection().paragraphs;
+  const paragraphs = context.document.body.paragraphs;
   paragraphs.load();
   await context.sync();
+
   paragraphs.items[0].insertText(' New sentence in the paragraph.',
                                    Word.InsertLocation.end);
   await context.sync();
 });
-
 ```
 
-You can use any web server technology to host your Word add-in, such as ASP.NET, NodeJS, or Python. Use your favorite client-side framework&mdash;Ember, Backbone, Angular, React&mdash;or stick with plain JavaScript to develop your solution. You can also use services like Azure to [authenticate](../develop/overview-authn-authz.md) and host your application.
+You can use any web server technology to host your Word add-in, such as ASP.NET, NodeJS, or Python. Use your favorite client-side framework&mdash;Ember, Backbone, Angular, React&mdash;or stick with plain JavaScript to develop your solution. You can also use services like Microsoft Entra and Microsoft Azure to [authenticate](../develop/overview-authn-authz.md) and host your application respectively.
 
 The Word JavaScript APIs give your application access to the objects and metadata found in a Word document. You can use these APIs to create add-ins that target the following clients.
 
@@ -51,11 +51,13 @@ Write your add-in once, and it will run in all supported versions of Word across
 
 ## JavaScript APIs for Word
 
-You can use two sets of JavaScript APIs to interact with the objects and metadata in a Word document. The first is the [Common API](/javascript/api/office), which was introduced in Office 2013. Many of the objects in the Common API can be used in add-ins hosted by two or more Office clients. This API uses callbacks extensively.
+You can use two sets of JavaScript APIs to interact with the objects and metadata in a Word document.
 
-The second is the [Word JavaScript API](/javascript/api/word). This is an [application-specific API model](../develop/application-specific-api-model.md) that was introduced with Word 2016. It's a strongly-typed object model that you can use to create Word add-ins that target Word 2016 and later on Windows and on Mac. This object model uses promises and provides access to Word-specific objects like [body](/javascript/api/word/word.body), [content controls](/javascript/api/word/word.contentcontrol), [inline pictures](/javascript/api/word/word.inlinepicture), and [paragraphs](/javascript/api/word/word.paragraph). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
+The first is the [Word JavaScript API](/javascript/api/word). This is an [application-specific API model](../develop/application-specific-api-model.md) that was introduced with Word 2016. It's a strongly-typed object model that you can use to create Word add-ins that target Word 2016 and later on Windows and on Mac. This object model uses promises and provides access to Word-specific objects like [body](/javascript/api/word/word.body), [content controls](/javascript/api/word/word.contentcontrol), [inline pictures](/javascript/api/word/word.inlinepicture), and [paragraphs](/javascript/api/word/word.paragraph). The Word JavaScript API includes TypeScript definitions and vsdoc files so that you can get code hints in your IDE.
 
-Currently, all Word clients support the shared Office JavaScript API, and most clients support the Word JavaScript API. For details about supported clients, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
+The second is the [Common API](/javascript/api/office), which was introduced in Office 2013. Many of the objects in the Common API can be used in add-ins hosted by two or more Office clients. This API uses callbacks extensively.
+
+Currently, all Word clients support Word JavaScript API and the shared Office JavaScript API. For details about supported clients, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 We recommend that you start with the Word JavaScript API because the object model is easier to use. Use the Word JavaScript API if you need to access the objects in a Word document.
 

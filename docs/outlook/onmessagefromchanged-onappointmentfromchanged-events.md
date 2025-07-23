@@ -1,14 +1,14 @@
 ---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 03/11/2025
+ms.date: 07/22/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Automatically update your signature when switching between Exchange accounts
 
-Applying the correct signature to messages when using multiple Exchange accounts is now made easier with the addition of the `OnMessageFromChanged` and `OnAppointmentFromChanged` events to the [event-based activation](autolaunch.md) feature. The `OnMessageFromChanged` event occurs when the account in the **From** field of a message being composed is changed, while the `OnAppointmentFromChanged` event occurs when the organizer of a meeting being composed is changed. These events further extend the capabilities of signature add-ins and allow them to:
+Applying the correct signature to messages when using multiple Exchange accounts is now made easier with the addition of the `OnMessageFromChanged` and `OnAppointmentFromChanged` events to the [event-based activation](../develop/event-based-activation.md) feature. The `OnMessageFromChanged` event occurs when the account in the **From** field of a message being composed is changed, while the `OnAppointmentFromChanged` event occurs when the organizer of a meeting being composed is changed. These events further extend the capabilities of signature add-ins and allow them to:
 
 - Provide users with the convenience to apply custom signatures for each of their accounts.
 - Enable mailbox delegates to more accurately and efficiently manage outgoing messages and meeting requests from multiple mailboxes.
@@ -25,23 +25,23 @@ The following tables list client-server combinations that support the `OnMessage
 
 # [OnMessageFromChanged event](#tab/message)
 
-|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
-|-----|-----|-----|-----|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|
-|**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|
-|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
-|**iOS**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|
-|**Android**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|
+|Client|Exchange Online|Exchange Server Subscription Edition (SE)|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
+|-----|-----|-----|-----|-----|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|Not applicable|
+|**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|Supported|Supported|Supported|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|Not applicable|
+|**iOS**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|Not applicable|
+|**Android**<br>Version 4.2502.0|Supported|Not applicable|Not applicable|Not applicable|
 
 # [OnAppointmentFromChanged event](#tab/appointment)
 
-|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
-|-----|-----|-----|-----|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Not applicable|Not applicable|Not applicable|
-|**Windows (classic)**|Not applicable|Not applicable|Not applicable|
-|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|
-|**iOS**|Not applicable|Not applicable|Not applicable|
-|**Android**|Not applicable|Not applicable|Not applicable|
+|Client|Exchange Online|Exchange Server Subscription Edition (SE)|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later)|
+|-----|-----|-----|-----|-----|
+|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Not applicable|Not applicable|Not applicable|Not applicable|
+|**Windows (classic)**|Not applicable|Not applicable|Not applicable|Not applicable|
+|**Mac**<br>Version 16.77 (23081600) or later|Supported|Not applicable|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|Not applicable|
+|**Android**|Not applicable|Not applicable|Not applicable|Not applicable|
 
 ---
 
@@ -55,11 +55,14 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
 
 ## Configure the manifest
 
+> [!NOTE]
+> The `OnMessageFromChanged` event isn't currently available with the unified manifest for Microsoft 365 in Outlook on the web and the new Outlook on Windows. To handle these events, implement an add-in only manifest instead. For information about the types of manifests, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open the **manifest.json** file.
 
-1. Navigate to the ["authorization.permissions.resourceSpecific"](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific) array. In the array object, replace the value of the ["name"](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific#name) property with "MailboxItem.ReadWrite.User". This is needed by the add-in to be able to update the signature of a message.
+1. Navigate to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific) array. In the array object, replace the value of the [`"name"`](/microsoft-365/extensibility/schema/root-authorization-permissions-resource-specific#name) property with `"MailboxItem.ReadWrite.User"`. This is needed by the add-in to be able to update the signature of a message.
 
     ```json
     ...
@@ -76,17 +79,17 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
     ...
     ```
 
-1. Add the following object to the ["extensions.runtimes"](/microsoft-365/extensibility/schema/extension-runtimes-array) array. Note the following about this markup.
+1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array) array. Note the following about this markup.
 
-   - The ["minVersion"](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) of the Mailbox requirement set is configured as "1.13" because this is the lowest version of the requirement set that supports the `OnMessageFromChanged` event. For more information, see the "Supported events" table in [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
-   - The ["id"](/microsoft-365/extensibility/schema/extension-runtimes-array#id) of the runtime is set to a descriptive name, "autorun_runtime".
-   - The ["code"](/microsoft-365/extensibility/schema/extension-runtime-code) property has a child ["page"](/microsoft-365/extensibility/schema/extension-runtime-code#page) property set to an HTML file and a child ["script"](/microsoft-365/extensibility/schema/extension-runtime-code#script) property set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
+   - The [`"minVersion"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities#minversion) of the Mailbox requirement set is configured as `"1.13"` because this is the lowest version of the requirement set that supports the `OnMessageFromChanged` event. For more information, see the "Supported events" table in [Activate add-ins with events](../develop/event-based-activation.md#supported-events).
+   - The [`"id"`](/microsoft-365/extensibility/schema/extension-runtimes-array#id) of the runtime is set to a descriptive name, `"autorun_runtime"`.
+   - The [`"code"`](/microsoft-365/extensibility/schema/extension-runtime-code) property has a child [`"page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property set to an HTML file and a child [`"script"`](/microsoft-365/extensibility/schema/extension-runtime-code#script) property set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values depending on the platform.
        - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
        - Outlook on the web and on Mac, and new Outlook on Windows execute the handler in a browser runtime, which loads an HTML file. The HTML file contains a `<script>` tag that then loads the JavaScript file.
 
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
-   - The ["lifetime"](/microsoft-365/extensibility/schema/extension-runtimes-array#lifetime) property is set to "short". This means the runtime starts up when the event occurs and shuts down when the handler completes.
-   - There are ["actions"](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) to run handlers for the `OnMessageFromChanged` and `OnNewMessageCompose` events. You'll create the handlers in a later step.
+   - The [`"lifetime"`](/microsoft-365/extensibility/schema/extension-runtimes-array#lifetime) property is set to `"short"`. This means the runtime starts up when the event occurs and shuts down when the handler completes.
+   - There are [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) to run handlers for the `OnMessageFromChanged` and `OnNewMessageCompose` events. You'll create the handlers in a later step.
 
     ```json
     {
@@ -120,10 +123,10 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
     }
     ```
 
-1. Add an ["autoRunEvents"](/microsoft-365/extensibility/schema/extension-auto-run-events-array) array as a property of the object in the "extensions" array. The "autoRunEvents" array contains an object with the following key properties.
+1. Add an [`"autoRunEvents"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array. The `"autoRunEvents"` array contains an object with the following key properties.
 
-    - The ["events"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) property assigns handlers to the `OnMessageFromChanged` and `OnNewMessageCompose` events. For information on event names used in the unified manifest, see the "Supported events" table in [Configure your Outlook add-in for event-based activation](autolaunch.md#supported-events).
-    - The function name provided in ["actionId"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) must match the "id" property of its corresponding object in the "actions" array configured earlier.
+    - The [`"events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) property assigns handlers to the `OnMessageFromChanged` and `OnNewMessageCompose` events. For information on event names used in the unified manifest, see the "Supported events" table in [Activate add-ins with events](../develop/event-based-activation.md#supported-events).
+    - The function name provided in [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) must match the `"id"` property of its corresponding object in the `"actions"` array configured earlier.
 
     ```json
     "autoRunEvents": [
@@ -372,18 +375,18 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
     }
 
     // IMPORTANT: To ensure your add-in is supported in Outlook, remember to
-    // map the event handler name specified in the manifest's LaunchEvent element (with the add-in only manifest)
-    // or the "autoRunEvents.events.actionId" property (with the unified manifest for Microsoft 365)
-    // to its JavaScript counterpart.
+    // map the event handler name specified in the manifest to its JavaScript counterpart.
     Office.actions.associate("onNewMessageComposeHandler", onNewMessageComposeHandler);
     Office.actions.associate("onMessageFromChangedHandler", onMessageFromChangedHandler);
     ```
 
 > [!IMPORTANT]
-> Windows: At present, imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
-
-> [!TIP]
-> Event-based add-ins running in classic Outlook on Windows don't run code included in the `Office.onReady()` and `Office.initialize` functions. We recommend adding your add-in startup logic, such as checking the user's Outlook version, to your event handlers instead.
+>
+> - In classic Outlook on Windows, imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
+> - In classic Outlook on Windows, when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
+> - To ensure your add-in runs as expected when an event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
+>   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
+>   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 
 ## Update the commands HTML file
 
@@ -444,15 +447,15 @@ Event handlers must be configured for the `OnNewMessageCompose` and `OnMessageFr
 
 ## Troubleshoot your add-in
 
-For guidance on how to troubleshoot your event-based activation add-in, see [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md).
+For guidance on how to troubleshoot your event-based activation add-in, see [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md).
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` and `OnAppointmentFromChanged` events must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
+Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` and `OnAppointmentFromChanged` events must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy your add-in" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 ## Event behavior and limitations
 
-Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are supported through the event-based activation feature, the same behavior and limitations apply to add-ins that activate as a result of this event. For a detailed description, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+Because the `OnMessageFromChanged` and `OnAppointmentFromChanged` events are supported through the event-based activation feature, the same behavior and limitations apply to add-ins that activate as a result of this event. For a detailed description, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations).
 
 In addition to these characteristics, the following aspects also apply when an add-in activates on these events.
 
@@ -468,5 +471,5 @@ In addition to these characteristics, the following aspects also apply when an a
 
 ## See also
 
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
-- [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
+- [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)

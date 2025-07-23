@@ -35,7 +35,7 @@ When you are developing an add-in, you will have to provide consent in advance. 
 The next step to enable SSO in the add-in is to add some information to the manifest from the add-in's Microsoft identity platform registration. The markup varies depending on the type of manifest.
 
 - **Add-in only manifest**: Add a `WebApplicationInfo` element at the end of the `VersionOverridesV1_1` [VersionOverrides](/javascript/api/manifest/versionoverrides) element. Then, add its required child elements. For detailed information about the markup, see [Configure the add-in](../develop/sso-in-office-add-ins.md#configure-the-add-in).
-- **Unified manifest for Microsoft 365**: Add a "webApplicationInfo" property to the root `{ ... }` object in the manifest. Give this object a child "id" property set to the application ID of the add-in's web app as it was generated in the Azure portal when you registered the add-in. (See the section [Register your add-in](#register-your-add-in) earlier in this article.) Also give it a child "resource" property that is set to the same **Application ID URI** that you set when you registered the add-in. This URI should have the form `api://<fully-qualified-domain-name>/<application-id>`. The following is an example.
+- **Unified manifest for Microsoft 365**: Add a [`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property) property to the root `{ ... }` object in the manifest. Give this object a child `"id"` property set to the application ID of the add-in's web app as it was generated in the Azure portal when you registered the add-in. (See the section [Register your add-in](#register-your-add-in) earlier in this article.) Also give it a child `"resource"` property that is set to the same **Application ID URI** that you set when you registered the add-in. This URI should have the form `api://<fully-qualified-domain-name>/<application-id>`. The following is an example.
 
    ```json
    "webApplicationInfo": {
@@ -54,7 +54,7 @@ In most scenarios, there would be little point to obtaining the access token, if
 
 ## SSO for event-based activation or integrated spam reporting
 
-There are additional steps to take if your add-in uses event-based activation or integrated spam reporting (preview). For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
+There are additional steps to take if your add-in uses event-based activation or integrated spam reporting. For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
 
 ## See also
 
@@ -62,4 +62,4 @@ There are additional steps to take if your add-in uses event-based activation or
 - For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [SSO API reference](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [IdentityAPI requirement set](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
-- [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md)
+- [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md)

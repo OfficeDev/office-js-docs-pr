@@ -17,7 +17,7 @@ Every add-in and protocol pair needs to be trusted. This either comes in the for
 
 ## Registry key format
 
-To automatically trust a custom protocol handler that launches an add-in, create a registry key at one of the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in the add-in only manifest or to the "id" property of the unified manifest.
+To automatically trust a custom protocol handler that launches an add-in, create a registry key at one of the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in the add-in only manifest or to the `"id"` property of the unified manifest.
 
 - Current user (64-bit Office): `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
 - Local machine (64-bit Office): `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`

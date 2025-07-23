@@ -1,18 +1,18 @@
 ---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 04/22/2025
+ms.date: 06/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Implement event-based activation in Outlook mobile add-ins
 
-With the [event-based activation](autolaunch.md) feature, develop an add-in to automatically activate and complete operations when certain events occur in Outlook on Android or on iOS, such as composing a new message.
+With the [event-based activation](../develop/event-based-activation.md) feature, develop an add-in to automatically activate and complete operations when certain events occur in Outlook on Android or on iOS, such as composing a new message.
 
 The following sections walk you through how to develop an Outlook mobile add-in that automatically adds a signature to new messages being composed. This highlights a sample scenario of how you can implement event-based activation in your mobile add-in. Significantly enhance the mobile user experience by exploring other scenarios and supported events in your add-in today.
 
-To learn how to implement an event-based add-in for Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
+To learn how to implement an event-based add-in for Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), and on Mac, see [Activate add-ins with events](../develop/event-based-activation.md).
 
 > [!NOTE]
 > Outlook on Android and on iOS only support up to Mailbox requirement set 1.5. However, to support the event-based activation feature, some APIs from later requirement sets have been enabled on mobile clients. For more information on this exception, see [Additional supported APIs](#additional-supported-apis).
@@ -21,9 +21,9 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 
 | Event canonical name and add-in only manifest name | Unified app manifest for Microsoft 365 name | Description | Supported clients |
 | ----- | ----- | ----- | ----- |
-| `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0)</li><li>iOS (Version 4.2352.0)</li></ul> |
-| `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0)</li><li>iOS (Version 4.2425.0)</li></ul> |
-| `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0)</li><li>iOS (Version 4.2502.0)</li></ul>|
+| `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0 and later)</li><li>iOS (Version 4.2352.0 and later)</li></ul> |
+| `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0 and later)</li><li>iOS (Version 4.2425.0 and later)</li></ul> |
+| `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul>|
 
 ## Set up your environment
 
@@ -38,9 +38,9 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. Configure the "extensions.runtimes" property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
+1. Configure the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
 
-1. In the "extensions.ribbons.contexts" array, add `mailRead` as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.contexts"`](/microsoft-365/extensibility/schema/extension-ribbons-array#contexts) array, add `mailRead` as an item. When you're finished, the array should look like the following.
 
     ```json
     "contexts": [
@@ -48,7 +48,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ],
     ```
 
-1. In the "extensions.ribbons.requirements.formFactors" array, add "mobile" as an item. When you're finished, the array should look like the following.
+1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, add `"mobile"` as an item. When you're finished, the array should look like the following.
 
     ```json
     "formFactors": [
@@ -57,7 +57,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ]
     ```
 
-1. Add the following "autoRunEvents" array as a property of the object in the "extensions" array.
+1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
     "autoRunEvents": [
@@ -65,12 +65,12 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ]
     ```
 
-1. Add an object like the following to the "autoRunEvents" array. Note the following about this code:
+1. Add an object like the following to the `"autoRunEvents"` array. Note the following about this code:
 
-   - The "events" property maps handlers to events.
-   - The "events.type" must be one of the types listed at [Supported events and clients](#supported-events-and-clients).
-   - The value of the "events.actionId" is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
-   - You can have more than one object in the "events" array.
+   - The `"events"` property maps handlers to events.
+   - The `"events.type"` must be one of the types listed at [Supported events and clients](#supported-events-and-clients).
+   - The value of the `"events.actionId"` is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
+   - You can have more than one object in the `"events"` array.
 
     ```json
       {
@@ -331,11 +331,11 @@ To learn more about APIs that are supported in Outlook on mobile devices, see [O
 
 ## Deploy to users
 
-Event-based add-ins must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section of [Configure your Outlook add-in for event-based activation](autolaunch.md#deploy-to-users).
+Event-based add-ins must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy your add-in" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 ## See also
 
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
 - [Add-ins for Outlook on mobile devices](outlook-mobile-addins.md)
 - [Add mobile support to an Outlook add-in](add-mobile-support.md)
 - [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md)

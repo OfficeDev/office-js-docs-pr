@@ -125,7 +125,7 @@ The [CustomXmlParts](/javascript/api/office/office.customxmlparts) and [CustomXm
 
  **Applies to:** Task pane add-ins for Word and PowerPoint
 
-The [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) method and members of the [File](/javascript/api/office/office.file) and [Slice](/javascript/api/office/office.slice) objects to provide functionality for getting entire Word and PowerPoint document files in slices (chunks) of up to 4 MB at a time. For more information, see [Get the whole document from an add-in for PowerPoint or Word](../word/get-the-whole-document-from-an-add-in-for-word.md).
+The [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) method and members of the [File](/javascript/api/office/office.file) and [Slice](/javascript/api/office/office.slice) objects to provide functionality for getting entire Word and PowerPoint document files in slices (chunks) of up to 4 MB at a time. For more information, see [Get the whole document from an add-in for PowerPoint or Word](../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md).
 
 ## Mailbox object
 

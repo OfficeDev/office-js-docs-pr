@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 04/16/2025
+ms.date: 07/07/2025
 ms.localizationpriority: high
 ---
 
@@ -11,7 +11,7 @@ ms.localizationpriority: high
 The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. These projects are Node.js-based. When you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS), [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
 > [!NOTE]
-> Office add-ins can also be created with the [Teams Toolkit](teams-toolkit-overview.md) or the [Office Add-in Development Kit](development-kit-overview.md). 
+> Office add-ins can also be created with the [Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or the [Office Add-in Development Kit](development-kit-overview.md). 
 
 The projects that the tool creates have the following characteristics.
 
@@ -77,7 +77,7 @@ If you choose **Outlook** as the Office application, you get an additional quest
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
-After you've answered all questions, the generator creates the project and installs the dependencies. You may see **WARN** messages in the npm output on screen. You can ignore these. You may also see messages that vulnerabilities were found. You can ignore these for now, but you'll eventually need to fix them before your add-in is released to production. For more information about fixing vulnerabilities, open your browser and search for "npm vulnerability".
+After you've answered all questions, the generator creates the project and installs the dependencies. You may see **WARN** messages in the npm output on screen. You can ignore these. You may also see messages that vulnerabilities were found. You can ignore these for now, but you'll eventually need to fix them before your add-in is released to production. For more information, see [Warnings and dependencies in the Node.js and npm world](../overview/npm-warnings-advice.md).
 
 If the creation is successful, you'll see a **Congratulations!** message in the command window, followed by some suggested next steps. (If you're using the generator as part of a quick start or tutorial, ignore the next steps in the command window and continue with the instructions in the article.)
 

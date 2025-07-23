@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 02/25/2025
+ms.date: 06/25/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -58,7 +58,7 @@ By default, the dialog box will occupy 80% of the height and width of the device
 Office.context.ui.displayDialogAsync("https://www.contoso.com/myDialog.html", { height: 30, width: 20 });
 ```
 
-For a sample add-in that does this, see [Build Office Add-ins for Excel](https://github.com/OfficeDev/TrainingContent/tree/master/OfficeAddin/02%20Building%20Add-ins%20for%20Microsoft%20Excel). For more samples that use `displayDialogAsync`, see [Code samples](#code-samples).
+For a sample add-in that does this, see [Excel Tutorial - Completed](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/excel-tutorial). For more samples that use `displayDialogAsync`, see [Code samples](#code-samples).
 
 Set both values to 100% to get what is effectively a full screen experience. The effective maximum is 99.5%, and the window is still moveable and resizable.
 
@@ -425,7 +425,8 @@ Even when you don't have your own close-dialog UI, an end user can close the dia
 
 All of the following samples use `displayDialogAsync`. Some have NodeJS-based servers and others have ASP.NET/IIS-based servers, but the logic of using the method is the same regardless of how the server-side of the add-in is implemented.
 
-- [Training Content / Building Add-ins](https://github.com/OfficeDev/TrainingContent/tree/master/OfficeAddin/02%20Building%20Add-ins%20for%20Microsoft%20Excel)
+- [Excel Tutorial - Completed](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/excel-tutorial)
+- [Excel Shared Runtime Scenario](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario)
 - [Office Add-in Microsoft Graph ASPNET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET)
 - [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React)
 - [Office Add-in NodeJS SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
@@ -437,7 +438,6 @@ All of the following samples use `displayDialogAsync`. Some have NodeJS-based se
 - [Outlook Add-in Actionable Message](https://github.com/OfficeDev/Outlook-Add-In-Actionable-Message)
 - [Outlook Add-in Sharing to OneDrive](https://github.com/OfficeDev/Outlook-Add-in-Sharing-to-OneDrive)
 - [PowerPoint Add-in Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Excel Shared Runtime Scenario](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-shared-runtime-scenario)
 
 ## See also
 
