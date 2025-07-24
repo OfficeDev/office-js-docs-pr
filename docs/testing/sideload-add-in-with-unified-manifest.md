@@ -125,10 +125,11 @@ Add-ins that use the unified manifest can be manually sideloaded through the Tea
 > [!IMPORTANT]
 > When you want to end a testing session and make changes to the add-in that you sideloaded through the Teams app store, be sure to remove the add-in completely with the following steps. 
 >
+> 1. Close the Office application.
 > 1. Shut down the server. See the documentation for your server application for how to do this. For the webpack dev-server application, shutting it down depends on whether the server is running in the same window in which you ran `npm run dev-server` or a different window. If it's the same window, give the terminal focus and press <kbd>Ctrl</kbd>+<kbd>C</kbd>. Choose "Y" in response to the prompt to end the process. If it's in a different window, then in the window where you ran `npm run dev-server`, run `npm run stop`.
 > 1. Clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).
 > 1. Open Teams and select **Apps** from the app bar, then select **Manage your apps** at the bottom of the **Apps** pane.
-> 1. Find your add-in in the list of apps. It will have the name specified in the `"id"` property of the manifest.
+> 1. Find your add-in in the list of apps. It will have the name specified in the `"name.short"` property of the manifest.
 > 1. Select the arrow head to the left of the name to expand its row.
 > 1. Select the trash can icon near the right end of the row, and then select **Remove** in the prompt.
 >
@@ -136,18 +137,18 @@ Add-ins that use the unified manifest can be manually sideloaded through the Tea
 
 ## Manually create the add-in package file
 
-When the unified manifest is used, the unit of installation and sideloading is a zip-formatted package file. This file is usually created for you by the tools you use to create and test your add-in, but there are scenarios in which you create it manually. to do so, use any zip utility to create a zip file that contains the following files.
+When the unified manifest is used, the unit of installation and sideloading is a zip-formatted package file. This file is usually created for you by the tools you use to create and test your add-in, but there are scenarios in which you create it manually. To do so, use any zip utility to create a zip file that contains the following files.
 
 - The unified manifest, which goes in the root of the zip file.
 - The two image files referenced in the `"icons"` property of the manifest.
-- Include any localization files that are referenced in the `"localizationInfo"` property of the manifest.
-- Include any declarative agent files that are referenced in the `"copilotAgents"` property.
-- Declarative agent configuration files sometimes reference second level supplementary files, such as plugin configuration files. These should be included too.
+- Any localization files that are referenced in the `"localizationInfo"` property of the manifest.
+- Any declarative agent files that are referenced in the `"copilotAgents"` property.
+- Any second-level supplementary files. For example, declarative agent configuration files sometimes reference second level supplementary files, such as plugin configuration files. These should be included too.
 
 > [!IMPORTANT]
-> *All of these files must have the same relative path in the zip file as they do in the project.* For example, if the relative path of the two image files is **assets/icon-64.png** and **assets/icon-128.png**, then you must include an **assets** folder with the two files in the zip package. Second level files, such as plugin configuration files for declarative agents, must have the same relative path in the zip file as they do in the first level file that references them. For example, if the relative path of a declarative agent file specified in the manifest is **agents/myAgent.json**, then you must include an **agents** folder in the zip package and put the **myAgent.json** file in it. If the declarative agent file, in turn, gives the relative path of **plugins/myPlugin.json** for a plugin configuration file, then you must include a **plugins** subfolder under the **agents** folder and put the **myPlugin.json** file in it.
+> *All of these files must have the same relative path in the zip file as specified in the manifest.* For example, if the path of the two image files is **assets/icon-64.png** and **assets/icon-128.png**, then you must include an **assets** folder with the two files in the zip package. Second level files, such as plugin configuration files for declarative agents, must have the same relative path in the zip file as they do in the first level file that references them. For example, if the relative path of a declarative agent file specified in the manifest is **agents/myAgent.json**, then you must include an **agents** folder in the zip package and put the **myAgent.json** file in it. If the declarative agent file, in turn, gives the relative path of **plugins/myPlugin.json** for a plugin configuration file, then you must include a **plugins** subfolder under the **agents** folder and put the **myPlugin.json** file in it.
 
-To maximize compatibility with Microsoft 365 development tools, we recommend that you keep the files that will be included in the package in a folder called **appPackage** off the root of your project, and that you put the package file in a subfolder named **build** in the **appPackage** folder.
+To maximize compatibility with Microsoft 365 development tools, we recommend that you keep the files that will be included in the package in a folder called **appPackage** in the root of your project, and that you put the package file in a subfolder named **build** in the **appPackage** folder.
 
 The following are examples of the recommended structure. The structure inside the **\build\appPackage.zip** file must mirror the structure of the **appPackage** folder, except for the **build** folder itself.
 
