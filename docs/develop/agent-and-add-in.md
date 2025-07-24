@@ -1,7 +1,7 @@
 ---
 title: Add a Copilot agent to an add-in
 description: Learn how to add a Copilot agent to an add-in.
-ms.date: 07/22/2025
+ms.date: 07/24/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: medium
@@ -320,10 +320,10 @@ In a command prompt or Visual Studio Code **TERMINAL** in the root of the projec
 1. Open the Office application (Excel, PowerPoint, or Word) that your combined agent and add-in targets. Wait until the add-in has loaded. This may take as much as two minutes. Depending on your version of Office, ribbon buttons and other artifacts may appear automatically. In recent versions, you need to manually activate the add-in: Select the **Add-ins** button on the **Home** ribbon, and then in the flyout that opens, select your add-in. It will have the name from the name from the [`"name.short"`](/microsoft-365/extensibility/schema/root-name) property in the manifest.
 1. The process of opening your agent depends on the UI for Copilot in Office applications which is in transition.
 
-   - If there is a **Copilot** *button* on the ribbon (not a drop down menu), take the following steps, select the **Copilot** button to open the **Copilot** pane.   
-   - If there is a **Copilot** drop down menu, open the menu and select **App Skills** from the drop down list to open the **Copilot** pane.
+   - If there is a **Copilot** *button* on the ribbon (not a dropdown menu), select the **Copilot** button to open the **Copilot** pane.
+   - If there is a **Copilot** dropdown menu, open the menu and select **App Skills** to open the **Copilot** pane.
 
-1. Select the hamburger control in the **Copilot** pane. 
+1. In the **Copilot** pane, select the hamburger control.
 1. In the pane, your agent should be in the list of agents. It has the name specified in the `"name"` property of the declarative agent configuration file (which may not be the same as the name from the `"name.short"` property in the manifest); for example, **Excel Agent**. You may need to select **See more** to ensure that all agents are listed. If the agent isn't listed, try one or both of the following actions.
 
    - Wait a few minutes and reload Copilot.

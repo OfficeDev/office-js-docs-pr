@@ -1,7 +1,7 @@
 ---
 title: Build your first add-in as a Copilot skill
 description: Learn how to build a simple Copilot agent that has an Excel add-in as a skill.
-ms.date: 07/21/2025
+ms.date: 07/24/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: high
@@ -299,14 +299,14 @@ Add the agent with the following steps.
  
 1. The process of opening your agent depends on the UI for Copilot in Office applications which is in transition.
 
-   - If there is a **Copilot** *button* on the ribbon (not a drop down menu), take the following steps, select the **Copilot** button to open the **Copilot** pane.   
-   - If there is a **Copilot** drop down menu, open the menu and select **App Skills** from the drop down list to open the **Copilot** pane.
+   - If there is a **Copilot** *button* on the ribbon (not a dro down menu), select the **Copilot** button to open the **Copilot** pane.
+   - If there is a **Copilot** dropdown menu, open the menu and select **App Skills** to open the **Copilot** pane.
 
-1. Select the hamburger control in the **Copilot** pane. 
+1. In the **Copilot** pane, select the hamburger control.
 1. In the pane, **Excel Add-in + Agent** should be in the list of agents. (You may need to select **See more** to ensure that all agents are listed.) If the agent isn't, try one or both of the following actions.
 
    - Wait a few minutes and reload Copilot.
-   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
+   - With Copilot open to the list of agents, click the cursor on the **Copilot** pane and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
 
 1. When the agent is listed, select it. The **Excel Add-in + Agent** pane opens.
 1. Select the **Change cell color** conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The cell's color should change.
