@@ -1,7 +1,7 @@
 ---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
-ms.date: 06/17/2025
+ms.date: 07/24/2025
 ms.localizationpriority: medium
 ---
 
@@ -64,7 +64,7 @@ You can make your Office Add-ins available to the public by publishing them to A
 
 ## Optional connected experiences
 
-End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Office Add-ins, the impact of disabling the **Optional connected experiences** setting is that users can no longer access add-ins or the Microsoft 365 and Copilot store through these clients. However, certain Microsoft add-ins that are considered essential or business-critical, and add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available. Additionally, add-ins and the Microsoft 365 and Copilot store remain available in Outlook on the web, regardless of the status of the setting.
+End users and IT admins can turn off [optional connected experiences in Office](/deployoffice/privacy/optional-connected-experiences) desktop and mobile clients. For Office Add-ins, the impact of disabling the **Optional connected experiences** setting is that users can no longer access add-ins or the Microsoft 365 and Copilot store through these clients. However, certain Microsoft add-ins that are considered essential or business-critical, and add-ins deployed by an organization's IT admin through [Centralized Deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) will still be available. In Outlook, the availability of add-ins when the **Optional connected experiences** setting is turned off varies depending on the client. For more information, see [Optional connected experiences in Outlook](#optional-connected-experiences-in-outlook).
 
 Note that if an IT admin disables the [use of connected experiences in Office](/deployoffice/privacy/manage-privacy-controls#policy-setting-for-most-connected-experiences), it has the same effect on add-ins as turning off just optional connected experiences.
 
@@ -74,14 +74,10 @@ The following table describes the availability of add-ins on Outlook clients whe
 
 |Client|Behavior when optional connected experiences is turned off|
 |-----|-----|
-|<ul><li>Web browser</li><li>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li></ul>|Availability of add-ins and access to AppSource are unaffected, so users can continue to [manage their add-ins](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8), including admin-deployed ones.|
-|<ul><li>Windows (classic)<sup>1</sup></li><li>Mac</li></ul>|The **All Apps**<sup>2</sup> or **Get Add-ins** button isn't displayed, so users aren't able to manage their add-ins or access AppSource.|
+|<ul><li>Web browser</li><li>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)</li></ul>|Admin-deployed add-ins remain visible and usable. While users can still access the Microsoft 365 and Copilot store and install add-ins, these add-ins can't be used until the **Optional connected experiences** setting is turned on. Additionally, sideloaded add-ins can't be used.|
+|<ul><li>Windows (classic)</li></ul>|All add-ins remain visible and usable. However, the Microsoft 365 and Copilot store is inaccessible.|
+|<ul><li>Mac</li></ul>|Add-ins don't appear in the ribbon and the Microsoft 365 and Copilot store is inaccessible.|
 |<ul><li>Android</li><li>iOS</li></ul>|The **Get Add-ins** dialog shows only admin-deployed add-ins.|
-
-> [!NOTE]
-> <sup>1</sup> On Windows, support for this experience is available from Version 2008 (Build 13127.20296). For more details on your client version, see the update history page for [Microsoft 365](/officeupdates/update-history-office365-proplus-by-date) and how to [find your Office client version and update channel](https://support.microsoft.com/office/932788b8-a3ce-44bf-bb09-e334518b8b19).<br>
->
-> <sup>2</sup> Starting in classic Outlook on Windows Version 2303 (Build 16215.10000), the **All Apps** button is used to manage add-ins and access AppSource.
 
 ## Addressing end users' privacy concerns
 
