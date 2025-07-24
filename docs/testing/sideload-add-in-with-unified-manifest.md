@@ -112,7 +112,7 @@ Add-ins that use the unified manifest can be manually sideloaded through the Tea
 1. When you're prompted that the app was added, *don't* open it in Teams. Instead, close Teams.
 1. The next task is to start a local web server that hosts your project's HTML and JavaScript files. How you do this depends on several factors including the folder structure of your project, the tools you use, such as a bundler, task manager, server application, and how you have configured those tools. The following instruction applies only to projects that meet the following conditions.
 
-    - There's a **webpack.config.js** file in the root of the project that is similar to the ones in add-in projects that are created with the [Yeoman Generator for Office Add-ins](yeoman-generator-overview.md) or [Microsoft 365 Agent Toolkit](teams-toolkit-overview.md).
+    - There's a **webpack.config.js** file in the root of the project that is similar to the ones in add-in projects that are created with the [Yeoman Generator for Office Add-ins](../develop/yeoman-generator-overview.md) or [Microsoft 365 Agent Toolkit](../develop/agents-toolkit-overview.md).
     - There's a **package.json** file in the root of the project similar to the ones created by the same two tools and the file has a "scripts" section with the following script in it.
 
        ```json
