@@ -69,7 +69,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
     > Regardless of which button you select, a **WebView Stop On Load** prompt appears. Select **OK**.
 
     > [!TIP]
-    > Sideloading in Office on Windows also makes the add-in available in Office on the web, so you can test it on that platform too. After this step is complete, minimize the Office on Windows application window and in a browser navigate to `https://excel.cloud.microsoft/`, `https://word.cloud.microsoft/`, or `https://powerpoint.cloud.microsoft/`, which ever is appropriate for the add-in you are testing. Open a new or existing document in the Office application on the web. The buttons should appear on the **Home** ribbon just as they do in Office on Windows.
+    > Sideloading in Office on Windows also makes the add-in available in Office on the web, so you can test it on that platform too. After this step is complete, minimize the Office on Windows application window and in a browser, navigate to `https://excel.cloud.microsoft/`, `https://word.cloud.microsoft/`, or `https://powerpoint.cloud.microsoft/`, whichever is appropriate for the add-in you're testing. Open a new or existing document in the Office application on the web. The buttons should appear on the **Home** ribbon just as they do in Office on Windows.
 
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code.
 
