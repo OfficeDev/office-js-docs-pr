@@ -1,7 +1,7 @@
 ---
 title: Build your first add-in as a Copilot skill
 description: Learn how to build a simple Copilot agent that has an Excel add-in as a skill.
-ms.date: 07/15/2025
+ms.date: 07/24/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: high
@@ -297,10 +297,16 @@ Add the agent with the following steps.
    - To test in Office on Windows, open Excel. In a few moments, the **Show Task pane** button appears on the **Home** ribbon in the Contoso Add-in group. (If it doesn't appear on the ribbon, select the **Add-ins** button on the ribbon, and then select the **Excel Add-in + Agent** app in the flyout that opens.)
    - To test in Office on the web, in a browser, navigate to `https://excel.cloud.microsoft.com/`, and then create a new workbook.
  
-1. Open **Copilot** from the ribbon and select the hamburger control in the **Copilot** pane. **Excel Add-in + Agent** should be in the list of agents. (You may need to select **See more** to ensure that all agents are listed.) If the agent isn't, try one or both of the following actions.
+1. The process of opening your agent depends on the UI for Copilot in Office applications which is in transition.
+
+   - If there is a **Copilot** *button* on the ribbon (not a dro down menu), select the **Copilot** button to open the **Copilot** pane.
+   - If there is a **Copilot** dropdown menu, open the menu and select **App Skills** to open the **Copilot** pane.
+
+1. In the **Copilot** pane, select the hamburger control.
+1. In the pane, **Excel Add-in + Agent** should be in the list of agents. (You may need to select **See more** to ensure that all agents are listed.) If the agent isn't, try one or both of the following actions.
 
    - Wait a few minutes and reload Copilot.
-   - With Copilot open to the list of agents, click the cursor on the Copilot window and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
+   - With Copilot open to the list of agents, click the cursor on the **Copilot** pane and press <kbd>Ctrl</kbd>+<kbd>R</kbd>.
 
 1. When the agent is listed, select it. The **Excel Add-in + Agent** pane opens.
 1. Select the **Change cell color** conversation starter, and then press the **Send** control in the conversation box at the bottom of the pane. Select **Confirm** in response to the confirmation prompt. The cell's color should change.
