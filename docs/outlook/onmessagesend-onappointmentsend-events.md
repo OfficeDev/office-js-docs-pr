@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 07/22/2025
+ms.date: 07/29/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -329,8 +329,8 @@ The Smart Alerts dialog message must be 500 characters or less. While you can ch
 
 In Outlook on the web and in new Outlook on Windows:
 
-- The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
-- When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
+- The `OnAppointmentSend` event doesn't occur when a meeting is sent from the form that appears after selecting the **New Event** option or selecting a date and time directly from the calendar. It only occurs when the meeting is sent from a separate window. To open the meeting in a separate window, select **Open in new window**.
+- The `OnAppointmentSend` event doesn't occur when forwarding a meeting.
 
 ### Limitations to formatting the dialog message using Markdown
 
