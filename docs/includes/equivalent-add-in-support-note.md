@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> The equivalent add-in feature is supported by the following platform and applications. COM and VSTO add-ins can't be installed on any other platform, so on those platforms the manifest markup that is discussed later in this article is ignored.
+> The equivalent add-in feature is supported by the following platform and applications. COM,  VSTO, and XLL add-ins can't be installed on any other platform, so on those platforms the manifest markup that is discussed later in this article is ignored.
 >
 > - Excel, Word, and PowerPoint on Windows (Version 1904 or later)
 > - Classic Outlook on Windows (Version 2102 or later) against a supported Exchange server version
