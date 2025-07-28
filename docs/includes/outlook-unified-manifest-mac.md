@@ -1,0 +1,2 @@
+> [!NOTE]
+> Add-ins that use the unified manifest for Microsoft 365 aren't directly supported in Outlook on Mac. To run this type of add-in on Mac, the add-in must first be published to [AppSource](https://appsource.microsoft.com/). For more information, see [Support for add-ins with the unified manifest for Microsoft 365](outlook-mobile-addins.md#support-for-add-ins-with-the-unified-manifest-for-microsoft-365).
