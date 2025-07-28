@@ -2,13 +2,13 @@
 title: Office Add-ins with the add-in only manifest
 description: Get an overview of the add-in only manifest for Office add-ins and its uses.
 ms.topic: overview
-ms.date: 04/12/2024
+ms.date: 06/24/2025
 ms.localizationpriority: high
 ---
 
 # Office Add-ins with the add-in only manifest
 
-This article introduces the XML-formatted add-in only manifest for Office Add-ins. It assumes that you're familiar with the [Office Add-ins manifest](add-in-manifests.md). 
+This article introduces the XML-formatted add-in only manifest for Office Add-ins. It assumes that you're familiar with the [Office Add-ins manifest](add-in-manifests.md).
 
 > [!TIP]
 > For an overview of the unified manifest for Microsoft 365, see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
@@ -179,7 +179,7 @@ The optional [VersionOverrides](/javascript/api/manifest/versionoverrides) eleme
 
 - Customizing the Office ribbon and menus.
 - Customizing how Office works with the embedded runtimes in which add-ins run.
-- Configuring how the add-in interacts with Azure Active Directory and Microsoft Graph for Single Sign-on.
+- Configuring how the add-in interacts with Microsoft Entra ID and Microsoft Graph for Single Sign-on.
 
 Some descendant elements of `VersionOverrides` have values that override values of the parent `OfficeApp` element. For example, the `Hosts` element in `VersionOverrides` overrides the `Hosts` element in `OfficeApp`.
 

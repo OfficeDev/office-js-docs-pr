@@ -2,7 +2,7 @@
 title: Compare the add-in only manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the add-in only manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 02/12/2025
+ms.date: 06/24/2025
 ms.localizationpriority: high
 ---
 
@@ -68,7 +68,7 @@ The base manifest properties specify characteristics of the add-in that *any* ty
 |[`"accentColor"`](/microsoft-365/extensibility/schema/root#accentcolor)|*None* |*None* | This property has no equivalent in the add-in only manifest and isn't used in the unified manifest. But it must be present. |
 |[`"developer"`](/microsoft-365/extensibility/schema/root#developer)| Identifies the developer of the add-in. | **\<ProviderName\>** |*None* |
 |[`"localizationInfo"`](/microsoft-365/extensibility/schema/root#localizationinfo)| Configures the default locale and other supported locales. | **\<DefaultLocale\>** and **\<Override\>** |*None* |
-|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the add-in's web app as it is known in Azure Active Directory. | **\<WebApplicationInfo\>** | In the add-in only manifest, the **\<WebApplicationInfo\>** element is inside **\<VersionOverrides\>**, not the base manifest. |
+|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the add-in's web app as it is known in Microsoft Entra ID. | **\<WebApplicationInfo\>** | In the add-in only manifest, the **\<WebApplicationInfo\>** element is inside **\<VersionOverrides\>**, not the base manifest. |
 |[`"authorization"`](/microsoft-365/extensibility/schema/root#authorization)| Identifies any Microsoft Graph permissions that the add-in needs. | **\<WebApplicationInfo\>** | In the add-in only manifest, the **\<WebApplicationInfo\>** element is inside **\<VersionOverrides\>**, not the base manifest. |
 
 The **\<Hosts\>**, **\<Requirements\>**, and **\<ExtendedOverrides\>** elements are part of the base manifest in the add-in only manifest. But concepts and purposes associated with these elements are configured inside the `"extensions"` property of the unified manifest.
