@@ -1,4 +1,4 @@
----
+﻿---
 title: Automatically open a task pane with a document
 description: Learn how to configure an Office Add-in to open automatically when a document opens.
 ms.topic: how-to
@@ -89,7 +89,7 @@ The following example shows a `"view"` value set to `"Office.AutoShowTaskpaneWit
 
 To specify the task pane to open automatically, set the [TaskpaneId](/javascript/api/manifest/action#taskpaneid) value to **Office.AutoShowTaskpaneWithDocument**. You can only set this value on one task pane. If you set this value on multiple task panes, the first occurrence of the value will be recognized and the others will be ignored.
 
-The following example shows the **\<TaskPaneId\>** value set to **Office.AutoShowTaskpaneWithDocument**.
+The following example shows the `<TaskPaneId>` value set to **Office.AutoShowTaskpaneWithDocument**.
 
 ```xml
 <Action xsi:type="ShowTaskpane">

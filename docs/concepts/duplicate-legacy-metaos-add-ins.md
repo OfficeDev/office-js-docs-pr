@@ -1,4 +1,4 @@
----
+﻿---
 title: Manage both a unified manifest and an add-in only manifest version of your Office Add-in
 description: Learn when and how to maintain versions of your add-in for each type of manifest.
 ms.topic: best-practice
@@ -102,7 +102,7 @@ The critical requirement for making two versions available is to be sure that th
 
 - Give the new version a different name from the existing add-in.
 - Create and use different icons for the new version.
-- Be sure that the [`"id"`](/microsoft-365/extensibility/schema/root#id) property of the unified manifest in the new version is a different GUID from the **\<Id\>** element in the add-in only manifest of the existing add-in.
+- Be sure that the [`"id"`](/microsoft-365/extensibility/schema/root#id) property of the unified manifest in the new version is a different GUID from the `<Id>` element in the add-in only manifest of the existing add-in.
 
 > [!NOTE]
 > If you use the same name and icon, the old and new solutions appear indistinguishable in the Outlook UI for add-in installation.

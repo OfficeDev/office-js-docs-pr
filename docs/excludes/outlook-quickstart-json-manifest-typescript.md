@@ -1,4 +1,4 @@
----
+﻿---
 title: Build an Outlook add-in with the unified manifest for Microsoft 365
 description: Learn how to build a simple Outlook task pane add-in with the unified manifest for Microsoft 365.
 ms.date: 05/19/2025
@@ -70,7 +70,7 @@ The add-in project that you've created with the Yeoman generator contains sample
     > [!TIP]
     > On Windows, you can navigate to the root directory of the project via the command line and then enter `code .` to open that folder in VS Code.
 
-1. Open the file **./src/taskpane/taskpane.html** and replace the entire **\<main\>** element (within the **\<body\>** element) with the following markup. This new markup adds a label where the script in **./src/taskpane/taskpane.ts** will write data.
+1. Open the file **./src/taskpane/taskpane.html** and replace the entire `<main>` element (within the `<body>` element) with the following markup. This new markup adds a label where the script in **./src/taskpane/taskpane.ts** will write data.
 
     ```html
     <main id="app-body" class="ms-welcome__main" style="display: none;">

@@ -1,4 +1,4 @@
----
+﻿---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
 ms.date: 06/18/2025
@@ -111,7 +111,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -351,7 +351,7 @@ To modify the text of the dialog button or assign it a task pane or function, yo
 
 - The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the applicable button. Custom text must be a maximum of 20 characters.
 - The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane or function that runs when the applicable button is selected. The value must match the task pane or function command ID in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
-  - **Add-in only manifest**: The `id` attribute of the **\<Control\>** element representing the task pane or function command.
+  - **Add-in only manifest**: The `id` attribute of the `<Control>` element representing the task pane or function command.
   - **Unified manifest for Microsoft 365**: The "id" property of the task pane or function command in the "controls" array.
 
   In supported Outlook clients and versions, when the `commandId` option is specified, the **Take Action** button appears in the Smart Alerts dialog.
@@ -467,7 +467,7 @@ If you implemented the optional steps to customize a dialog button or override t
 > In classic Outlook on Windows starting in Version 2412 (Build 18324.20000), you must implement a task pane or function command to customize the **Take Action** button. This is because the **Take Action** button only appears in the Smart Alerts dialog when a task pane or function command is implemented in the add-in.
 
 1. Navigate to the **./src/taskpane** folder, then open **taskpane.html**.
-1. Select the entire **\<body\>** node (including its open and close tags) and replace it with the following code.
+1. Select the entire `<body>` node (including its open and close tags) and replace it with the following code.
 
     ```html
     <body class="ms-welcome ms-Fabric">

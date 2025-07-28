@@ -1,4 +1,4 @@
----
+﻿---
 title: Authorize to Microsoft Graph with SSO
 description: Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.
 ms.date: 06/24/2025
@@ -13,7 +13,7 @@ Users sign in to Office using either their personal Microsoft account or their M
 
 In addition to hosting the pages and JavaScript of the web application, the add-in must also host, at the same [fully qualified domain name](/windows/desktop/DNS/f-gly#_dns_fully_qualified_domain_name_fqdn__gly), one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
 
-The add-in manifest contains a **\<WebApplicationInfo\>** element that provides important Azure app registration information to Office, including the permissions to Microsoft Graph that the add-in requires.
+The add-in manifest contains a `<WebApplicationInfo>` element that provides important Azure app registration information to Office, including the permissions to Microsoft Graph that the add-in requires.
 
 ### How it works at runtime
 

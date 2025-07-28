@@ -1,4 +1,4 @@
----
+﻿---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
 ms.date: 07/22/2025
@@ -166,7 +166,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags), replace it with the following XML, then save your changes.
+1. Select the entire `<VersionOverrides>` node (including open and close tags), replace it with the following XML, then save your changes.
 
    ```xml
    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

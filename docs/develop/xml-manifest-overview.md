@@ -1,4 +1,4 @@
----
+﻿---
 title: Office Add-ins with the add-in only manifest
 description: Get an overview of the add-in only manifest for Office add-ins and its uses.
 ms.topic: overview
@@ -17,7 +17,7 @@ This article introduces the XML-formatted add-in only manifest for Office Add-in
 
 Not all Office clients support the latest features, and some Office users will have an older version of Office. Having schema versions lets developers build add-ins that are backwards compatible, using the newest features where they are available but still functioning on older versions.
 
-The **\<VersionOverrides\>** element in the manifest is an example of this. All elements defined inside **\<VersionOverrides\>** will override the same element in the other part of the manifest. This means that, whenever possible, Office will use what is in the **\<VersionOverrides\>** section to set up the add-in. However, if the version of Office doesn't support a certain version of **\<VersionOverrides\>**, Office will ignore it and depend on the information in the rest of the manifest.
+The `<VersionOverrides>` element in the manifest is an example of this. All elements defined inside `<VersionOverrides>` will override the same element in the other part of the manifest. This means that, whenever possible, Office will use what is in the `<VersionOverrides>` section to set up the add-in. However, if the version of Office doesn't support a certain version of `<VersionOverrides>`, Office will ignore it and depend on the information in the rest of the manifest.
 
 This approach means that developers don't have to create multiple individual manifests, but rather keep everything defined in one file.
 
@@ -26,11 +26,11 @@ The current versions of the schema are:
 |Version|Description|
 |:-----|:-----|
 |v1.0|Supports version 1.0 of the Office JavaScript API. For example, in Outlook add-ins, this supports the read form. |
-|v1.1|Supports version 1.1 of the Office JavaScript API and **\<VersionOverrides\>**. For example, in Outlook add-ins, this adds support for the compose form.|
-|**\<VersionOverrides\>** 1.0|Supports later versions of the Office JavaScript API. This supports add-in commands.|
-|**\<VersionOverrides\>** 1.1|Supported by Outlook only. This version of **\<VersionOverrides\>** adds support for newer features, such as [pinnable task panes](../outlook/pinnable-taskpane.md) and mobile add-ins.|
+|v1.1|Supports version 1.1 of the Office JavaScript API and `<VersionOverrides>`. For example, in Outlook add-ins, this adds support for the compose form.|
+|`<VersionOverrides>` 1.0|Supports later versions of the Office JavaScript API. This supports add-in commands.|
+|`<VersionOverrides>` 1.1|Supported by Outlook only. This version of `<VersionOverrides>` adds support for newer features, such as [pinnable task panes](../outlook/pinnable-taskpane.md) and mobile add-ins.|
 
-Even if your add-in manifest uses the **\<VersionOverrides\>** element, it is still important to include the v1.1 manifest elements to allow your add-in to work with older clients that do not support **\<VersionOverrides\>**.
+Even if your add-in manifest uses the `<VersionOverrides>` element, it is still important to include the v1.1 manifest elements to allow your add-in to work with older clients that do not support `<VersionOverrides>`.
 
 > [!NOTE]
 > Office uses a schema to validate manifests. The schema requires that elements in the manifest appear in a specific order. If you include elements out of the required order, you may get errors when sideloading your add-in. See [How to find the proper order of manifest elements](../develop/manifest-element-ordering.md) elements in the required order.
@@ -99,7 +99,7 @@ _\*\* SupportUrl is only required for add-ins that are distributed through AppSo
 
 ## Root element
 
-The root element for the Office Add-in manifest is **\<OfficeApp\>**. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element.
+The root element for the Office Add-in manifest is `<OfficeApp>`. This element also declares the default namespace, schema version and the type of add-in. Place all other elements in the manifest within its open and close tags. The following is an example of the root element.
 
 ```XML
 <OfficeApp
@@ -122,7 +122,7 @@ If the add-in's requested permissions change, users will be prompted to upgrade 
 
 ## Hosts
 
-Office add-ins specify the **\<Hosts\>** element like the following:
+Office add-ins specify the `<Hosts>` element like the following:
 
 ```XML
 <OfficeApp>
@@ -134,13 +134,13 @@ Office add-ins specify the **\<Hosts\>** element like the following:
 </OfficeApp>
 ```
 
-This is separate from the **\<Hosts\>** element inside the **\<VersionOverrides\>** element, which is discussed in [Create add-in commands with the add-in only manifest](../develop/create-addin-commands.md).
+This is separate from the `<Hosts>` element inside the `<VersionOverrides>` element, which is discussed in [Create add-in commands with the add-in only manifest](../develop/create-addin-commands.md).
 
 ## Specify safe domains with the AppDomains element
 
 There is an [AppDomains](/javascript/api/manifest/appdomains) element of the add-in only manifest file that is used to tell Office which domains your add-in should be allowed to navigate to. As noted in [Specify domains you want to open in the add-in window](add-in-manifests.md#specify-domains-you-want-to-open-in-the-add-in-window), when running in Office on the web, your task pane can be navigated to any URL. However, in desktop platforms, if your add-in tries to go to a URL in a domain other than the domain that hosts the start page (as specified in the [SourceLocation](/javascript/api/manifest/sourcelocation) element), that URL opens in a new browser window outside the add-in pane of the Office application.
 
-To override this (desktop Office) behavior, add each domain you want to open in the add-in window in the list of domains specified in the **\<AppDomains\>** element. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in desktop Office that URL opens in a new browser window (outside the add-in pane).
+To override this (desktop Office) behavior, add each domain you want to open in the add-in window in the list of domains specified in the `<AppDomains>` element. If the add-in tries to go to a URL in a domain that is in the list, then it opens in the task pane in both Office on the web and desktop. If it tries to go to a URL that isn't in the list, then in desktop Office that URL opens in a new browser window (outside the add-in pane).
 
 The following table describes browser behavior when your add-in attempts to navigate to a URL outside of the add-in's default domain.
 
@@ -150,7 +150,7 @@ The following table describes browser behavior when your add-in attempts to navi
 |Office 2016 on Windows (volume-licensed perpetual)|No|Link opens in Internet Explorer 11.|
 |Other clients|No|Link opens in user's default browser.|
 
-The following add-in only manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the **\<SourceLocation\>** element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the **\<AppDomains\>** element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
+The following add-in only manifest example hosts its main add-in page in the `https://www.contoso.com` domain as specified in the `<SourceLocation>` element. It also specifies the `https://www.northwindtraders.com` domain in an [AppDomain](/javascript/api/manifest/appdomain) element within the `<AppDomains>` element list. If the add-in goes to a page in the `www.northwindtraders.com` domain, that page opens in the add-in pane, even in Office desktop.
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -226,11 +226,11 @@ For an example of a manifest that includes a `VersionOverrides` element, see [Ma
 
 ## Requirements
 
-The **\<Requirements\>** element specifies the set of APIs available to the add-in. For detailed information about requirement sets, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability). For example, in an Outlook add-in, the requirement set must be Mailbox and a value of 1.1 or above.
+The `<Requirements>` element specifies the set of APIs available to the add-in. For detailed information about requirement sets, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability). For example, in an Outlook add-in, the requirement set must be Mailbox and a value of 1.1 or above.
 
-The **\<Requirements\>** element can also appear in the **\<VersionOverrides\>** element, allowing the add-in to specify a different requirement when loaded in clients that support **\<VersionOverrides\>**.
+The `<Requirements>` element can also appear in the `<VersionOverrides>` element, allowing the add-in to specify a different requirement when loaded in clients that support `<VersionOverrides>`.
 
-The following example uses the **DefaultMinVersion** attribute of the **\<Sets\>** element to require office.js version 1.1 or higher, and the **MinVersion** attribute of the **\<Set\>** element to require the Mailbox requirement set version 1.1.
+The following example uses the **DefaultMinVersion** attribute of the `<Sets>` element to require office.js version 1.1 or higher, and the **MinVersion** attribute of the `<Set>` element to require the Mailbox requirement set version 1.1.
 
 ```XML
 <OfficeApp>
@@ -246,7 +246,7 @@ The following example uses the **DefaultMinVersion** attribute of the **\<Sets\>
 
 ## Localization
 
-Some aspects of the add-in need to be localized for different locales, such as the name, description and the URL that's loaded. These elements can easily be localized by specifying the default value and then locale overrides in the **\<Resources\>** element within the **\<VersionOverrides\>** element. The following shows how to override an image, a URL, and a string.
+Some aspects of the add-in need to be localized for different locales, such as the name, description and the URL that's loaded. These elements can easily be localized by specifying the default value and then locale overrides in the `<Resources>` element within the `<VersionOverrides>` element. The following shows how to override an image, a URL, and a string.
 
 ```XML
 <Resources>

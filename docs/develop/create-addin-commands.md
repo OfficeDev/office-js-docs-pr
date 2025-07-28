@@ -1,4 +1,4 @@
----
+﻿---
 title: Create add-in commands with the add-in only manifest
 description: Configure an add-in only manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or menus, and perform actions.
 ms.date: 02/28/2025
@@ -28,9 +28,9 @@ The following steps explain how to add add-in commands to an existing add-in.
 
 ### Step 1: Add VersionOverrides element
 
-The [**\<VersionOverrides\>** element](/javascript/api/manifest/versionoverrides) is the root element that contains the definition of your add-in command. Details on the valid attributes and implications are found in [Version overrides in the manifest](xml-manifest-overview.md?tabs=tabid-1#version-overrides-in-the-manifest).
+The [`<VersionOverrides>` element](/javascript/api/manifest/versionoverrides) is the root element that contains the definition of your add-in command. Details on the valid attributes and implications are found in [Version overrides in the manifest](xml-manifest-overview.md?tabs=tabid-1#version-overrides-in-the-manifest).
 
-The following example shows the **\<VersionOverrides\>** element and its child elements.
+The following example shows the `<VersionOverrides>` element and its child elements.
 
 ```xml
 <OfficeApp>
@@ -54,11 +54,11 @@ The following example shows the **\<VersionOverrides\>** element and its child e
 
 ### Step 2: Add Hosts, Host, and DesktopFormFactor elements
 
-The [**\<Hosts\>** element](/javascript/api/manifest/hosts) contains one or more [**\<Host\>** elements](/javascript/api/manifest/host). A **\<Host\>** element specifies a particular Office application. The **\<Host\>** element contains child elements that specify the add-in commands to display after your add-in is installed in that Office application. To show the same add-in commands in two or more different Office applications, you must duplicate the child elements in each **\<Host\>**.
+The [`<Hosts>` element](/javascript/api/manifest/hosts) contains one or more [`<Host>` elements](/javascript/api/manifest/host). A `<Host>` element specifies a particular Office application. The `<Host>` element contains child elements that specify the add-in commands to display after your add-in is installed in that Office application. To show the same add-in commands in two or more different Office applications, you must duplicate the child elements in each `<Host>`.
 
-The [**\<DesktopFormFactor\>**](/javascript/api/manifest/desktopformfactor) element specifies the settings for an add-in that runs in Office on the web, Windows, and Mac.
+The [`<DesktopFormFactor>`](/javascript/api/manifest/desktopformfactor) element specifies the settings for an add-in that runs in Office on the web, Windows, and Mac.
 
-The following example shows the **\<Hosts\>**, **\<Host\>**, and **\<DesktopFormFactor\>** elements.
+The following example shows the `<Hosts>`, `<Host>`, and `<DesktopFormFactor>` elements.
 
 ```xml
 <OfficeApp>
@@ -82,12 +82,12 @@ The following example shows the **\<Hosts\>**, **\<Host\>**, and **\<DesktopForm
 
 ### Step 3: Add the FunctionFile element
 
-The [**\<FunctionFile\>** element](/javascript/api/manifest/functionfile) specifies a file that contains JavaScript or TypeScript code to run when an add-in command uses the **ExecuteFunction** action. The **\<FunctionFile\>** element's **resid** attribute is set to a HTML file that includes all the JavaScript or TypeScript files your add-in commands require. You can't link directly to a JavaScript or TypeScript file. You can only link to an HTML file. The file name is specified as a [**\<Url\>** element](/javascript/api/manifest/url) in the [**\<Resources\>** element](/javascript/api/manifest/resources).
+The [`<FunctionFile>` element](/javascript/api/manifest/functionfile) specifies a file that contains JavaScript or TypeScript code to run when an add-in command uses the **ExecuteFunction** action. The `<FunctionFile>` element's **resid** attribute is set to a HTML file that includes all the JavaScript or TypeScript files your add-in commands require. You can't link directly to a JavaScript or TypeScript file. You can only link to an HTML file. The file name is specified as a [`<Url>` element](/javascript/api/manifest/url) in the [`<Resources>` element](/javascript/api/manifest/resources).
 
 > [!NOTE]
 > The Yo Office projects use [webpack](https://webpack.js.org/concepts/) to avoid manually adding the JavaScript or TypeScript to the HTML.
 
-The following is an example of the **\<FunctionFile\>** element.
+The following is an example of the `<FunctionFile>` element.
   
 ```xml
 <DesktopFormFactor>
@@ -109,9 +109,9 @@ When an add-in needs to provide status updates, such as progress indicators or e
 
 ### Step 4: Add ExtensionPoint elements
 
-The [**\<ExtensionPoint\>** element](/javascript/api/manifest/extensionpoint) defines where add-in commands should appear in the Office UI.
+The [`<ExtensionPoint>` element](/javascript/api/manifest/extensionpoint) defines where add-in commands should appear in the Office UI.
 
-The following examples show how to use the **\<ExtensionPoint\>** element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
+The following examples show how to use the `<ExtensionPoint>` element with **PrimaryCommandSurface** and **ContextMenu** attribute values, and the child elements that should be used with each.
 
 > [!IMPORTANT]
 > For elements that contain an ID attribute, make sure you provide a unique ID. We recommend that you use your company's name along with your ID. For example, use the following format: `<CustomTab id="mycompanyname.mygroupname">`.
@@ -149,15 +149,15 @@ The following examples show how to use the **\<ExtensionPoint\>** element with *
 
 ### Step 5: Add Control elements
 
-The [**\<Control\>** element](/javascript/api/manifest/control) defines the usable surface of command, such as a button or menu, and the action associated with it.
+The [`<Control>` element](/javascript/api/manifest/control) defines the usable surface of command, such as a button or menu, and the action associated with it.
 
 #### Button controls
 
-A [button control](/javascript/api/manifest/control-button) performs a single action when the user selects it. It can either run a JavaScript or TypeScript function or show a task pane. The following example shows how to define two buttons. The first button runs a JavaScript function without showing a UI, and the second button shows a task pane. In the **\<Control\>** element:
+A [button control](/javascript/api/manifest/control-button) performs a single action when the user selects it. It can either run a JavaScript or TypeScript function or show a task pane. The following example shows how to define two buttons. The first button runs a JavaScript function without showing a UI, and the second button shows a task pane. In the `<Control>` element:
 
 - The **type** attribute is required, and must be set to **Button**.
-- The **id** attribute of the **\<Control\>** element is a string with a maximum of 125 characters.
-- The **xsi:type** attribute of the child [**\<Action\>** element](/javascript/api/manifest/action) must be set to **ExecuteFunction** to run a function or **ShowTaskpane** to display a task pane.
+- The **id** attribute of the `<Control>` element is a string with a maximum of 125 characters.
+- The **xsi:type** attribute of the child [`<Action>` element](/javascript/api/manifest/action) must be set to **ExecuteFunction** to run a function or **ShowTaskpane** to display a task pane.
 
 ```xml
 <!-- Define a control that calls a JavaScript function. -->
@@ -204,7 +204,7 @@ A [menu control](/javascript/api/manifest/control-menu) can be used with either 
 
 When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either run a JavaScript or TypeScript function or show a task pane. Only one level of submenus is supported at this time.
 
-The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function. In the **\<Control\>** element:
+The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function. In the `<Control>` element:
 
 - The **xsi:type** attribute is required, and must be set to **Menu**.
 - The **id** attribute is a string with a maximum of 125 characters.
@@ -259,9 +259,9 @@ The following example shows how to define a menu item with two submenu items. Th
 
 #### Sample code for function commands
 
-The following code shows a function that's invoked by a button or menu item control whose **\<Action\>** element's **xsi:type** is set to **ExecuteFunction**. Note the following about the code.
+The following code shows a function that's invoked by a button or menu item control whose `<Action>` element's **xsi:type** is set to **ExecuteFunction**. Note the following about the code.
 
-- The [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) call tells Office which function to run when a button or menu item is selected. The value passed to its **actionId** parameter must match the value specified in the [**\<FunctionName\>** element](/javascript/api/manifest/action#functionname) of the manifest. You must have an `Office.actions.associate` call for every function command defined in the manifest.
+- The [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) call tells Office which function to run when a button or menu item is selected. The value passed to its **actionId** parameter must match the value specified in the [`<FunctionName>` element](/javascript/api/manifest/action#functionname) of the manifest. You must have an `Office.actions.associate` call for every function command defined in the manifest.
 - The [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) call signals that you've successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
 
 ```js
@@ -296,9 +296,9 @@ Office.actions.associate("highlightSelection", highlightSelection);
 
 ### Step 6: Add the Resources element
 
-The [**\<Resources\>** element](/javascript/api/manifest/resources) contains resources used by the different child elements of the **\<VersionOverrides\>** element. Resources include icons, strings, and URLs. An element in the manifest can use a resource by referencing the **id** of the resource. Using the **id** helps organize the manifest, especially when there are different versions of the resource for different locales. An **id** has a maximum of 32 characters.
+The [`<Resources>` element](/javascript/api/manifest/resources) contains resources used by the different child elements of the `<VersionOverrides>` element. Resources include icons, strings, and URLs. An element in the manifest can use a resource by referencing the **id** of the resource. Using the **id** helps organize the manifest, especially when there are different versions of the resource for different locales. An **id** has a maximum of 32 characters.
   
-The following shows an example of how to use the **\<Resources\>** element. Each resource can have one or more [**\<Override\>** child elements](/javascript/api/manifest/override) to define a different resource for a specific locale.
+The following shows an example of how to use the `<Resources>` element. Each resource can have one or more [`<Override>` child elements](/javascript/api/manifest/override) to define a different resource for a specific locale.
 
 ```xml
 <Resources>
@@ -332,7 +332,7 @@ The following shows an example of how to use the **\<Resources\>** element. Each
 ```
 
 > [!NOTE]
-> You must use Secure Sockets Layer (SSL) for all URLs in the **\<Image\>** and **\<Url\>** elements.
+> You must use Secure Sockets Layer (SSL) for all URLs in the `<Image>` and `<Url>` elements.
 
 ## Outlook support notes
 

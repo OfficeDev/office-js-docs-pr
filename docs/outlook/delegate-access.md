@@ -1,4 +1,4 @@
----
+﻿---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
 ms.date: 07/22/2025
@@ -126,7 +126,7 @@ Add an additional object to the [`"authorization.permissions.resourceSpecific"`]
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-Under the parent **\<DesktopFormFactor\>** element, set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`. At present, other form factors aren't supported.
+Under the parent `<DesktopFormFactor>` element, set the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`. At present, other form factors aren't supported.
 
 ```XML
 ...

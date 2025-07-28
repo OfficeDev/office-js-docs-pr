@@ -1,4 +1,4 @@
----
+﻿---
 title: Troubleshoot error messages for single sign-on (SSO)
 description: Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.
 ms.date: 06/24/2025
@@ -60,7 +60,7 @@ User Type not supported. The user isn't signed into Office with a valid Microsof
 
 ### 13004
 
-Invalid Resource. (This error should only be seen in development.) The add-in manifest hasn't been configured correctly. Update the manifest. For more information, see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md). The most common problem is that the **\<Resource\>** element (in the **\<WebApplicationInfo\>** element) has a domain that does not match the domain of the add-in. Although the protocol part of the Resource value should be "api" not "https"; all other parts of the domain name (including port, if any) should be the same as for the add-in.
+Invalid Resource. (This error should only be seen in development.) The add-in manifest hasn't been configured correctly. Update the manifest. For more information, see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md). The most common problem is that the `<Resource>` element (in the `<WebApplicationInfo>` element) has a domain that does not match the domain of the add-in. Although the protocol part of the Resource value should be "api" not "https"; all other parts of the domain name (including port, if any) should be the same as for the add-in.
 
 ### 13005
 

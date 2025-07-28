@@ -1,4 +1,4 @@
----
+﻿---
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
@@ -81,17 +81,17 @@ Follow these steps to configure a new or existing project to use a shared runtim
     </Requirements>
     ```
 
-1. Find the **\<VersionOverrides\>** section and add the following **\<Runtimes\>** section. Note the following about this markup.
+1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. Note the following about this markup.
     - The lifetime needs to be **long** so that your add-in can take advantage of features, such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions. If you set the lifetime to **short** in this example, your add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
     - The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
         > [!IMPORTANT]
         > The shared runtime won't load if the `resid` uses different values in the manifest. If you change the value to something other than **Taskpane.Url**, be sure to also change the value in all locations shown in the following steps in this article.
 
-    - The **\<Runtimes\>** section must be entered after the **\<Host\>** element in the exact order shown in the following XML.
+    - The `<Runtimes>` section must be entered after the `<Host>` element in the exact order shown in the following XML.
 
         > [!NOTE]
-        > If your add-in includes the **\<Runtimes\>** element in the manifest (required for a shared runtime) and the conditions for using WebView2 (Microsoft Edge Chromium-based) are met, it uses that control. If the conditions are not met, then it uses the Trident (Internet Explorer 11) webview control regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
+        > If your add-in includes the `<Runtimes>` element in the manifest (required for a shared runtime) and the conditions for using WebView2 (Microsoft Edge Chromium-based) are met, it uses that control. If the conditions are not met, then it uses the Trident (Internet Explorer 11) webview control regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
     ```xml
     <VersionOverrides ...>
@@ -104,7 +104,7 @@ Follow these steps to configure a new or existing project to use a shared runtim
         </Host>
     ```
 
-1. If you generated an Excel add-in with custom functions, find the **\<Page\>** element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
+1. If you generated an Excel add-in with custom functions, find the `<Page>` element. Then change the source location from **Functions.Page.Url** to **Taskpane.Url**.
 
    ```xml
    <AllFormFactors>
@@ -115,7 +115,7 @@ Follow these steps to configure a new or existing project to use a shared runtim
    ...
    ```
 
-1. Find the **\<FunctionFile\>** tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a **\<FunctionFile\>** entry, and can skip this step.
+1. Find the `<FunctionFile>` tag and change the `resid` from **Commands.Url** to  **Taskpane.Url**. Note that if you don't have action commands, you won't have a `<FunctionFile>` entry, and can skip this step.
 
     ```xml
     </GetStarted>

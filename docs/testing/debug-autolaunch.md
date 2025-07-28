@@ -1,4 +1,4 @@
----
+﻿---
 title: Debug event-based or spam-reporting add-ins
 description: Learn how to debug your Office Add-ins that implement event-based activation or integrated spam reporting.
 ms.date: 07/15/2025
@@ -34,7 +34,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 1. Get your add-in's ID from the manifest.
 
-    - **Add-in only manifest**: Use the value of the **\<Id\>** element child of the root **\<OfficeApp\>** element.
+    - **Add-in only manifest**: Use the value of the `<Id>` element child of the root `<OfficeApp>` element.
     - **Unified manifest for Microsoft 365**: Use the value of the `"id"` property of the root anonymous `{ ... }` object.
 
 1. In the registry, mark your add-in for debugging.

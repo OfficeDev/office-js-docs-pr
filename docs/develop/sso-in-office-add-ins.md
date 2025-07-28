@@ -1,4 +1,4 @@
----
+﻿---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
 ms.date: 05/06/2024
@@ -83,15 +83,15 @@ There should be a [`"webApplicationInfo"`](/microsoft-365/extensibility/schema/r
 ```
 
 > [!NOTE]
-> Experienced add-in developers should note that, there is no unified manifest property corresponding to the **\<Scopes\>** element in the add-in only manifest. Microsoft Graph and other API permissions are requested at runtime in your code.
+> Experienced add-in developers should note that, there is no unified manifest property corresponding to the `<Scopes>` element in the add-in only manifest. Microsoft Graph and other API permissions are requested at runtime in your code.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-- **\<WebApplicationInfo\>** - The parent of the following elements.
-- **\<Id\>** - The application (client) ID you received when you registered the add-in with the Microsoft identity platform. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
-- **\<Resource\>** - The URI of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in with the Microsoft identity platform. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the **\<Resources\>** section of the add-in's manifest and the URI must end with the client ID specified in the **\<Id\>** element.
-- **\<Scopes\>** - The parent of one or more **\<Scope\>** elements.
-- **\<Scope\>** - Specifies a permission that the add-in needs. The `profile` and `openID` permissions are always needed and may be the only permissions needed. If your add-in needs access to Microsoft Graph or other Microsoft 365 resources, you'll need additional **\<Scope\>** elements. For example, for Microsoft Graph permissions you might request the `User.Read` and `Mail.Read` scopes. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
+- `<WebApplicationInfo>` - The parent of the following elements.
+- `<Id>` - The application (client) ID you received when you registered the add-in with the Microsoft identity platform. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
+- `<Resource>` - The URI of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in with the Microsoft identity platform. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the `<Resources>` section of the add-in's manifest and the URI must end with the client ID specified in the `<Id>` element.
+- `<Scopes>` - The parent of one or more `<Scope>` elements.
+- `<Scope>` - Specifies a permission that the add-in needs. The `profile` and `openID` permissions are always needed and may be the only permissions needed. If your add-in needs access to Microsoft Graph or other Microsoft 365 resources, you'll need additional `<Scope>` elements. For example, for Microsoft Graph permissions you might request the `User.Read` and `Mail.Read` scopes. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
 
 For Word, Excel, and PowerPoint add-ins, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook add-ins, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
