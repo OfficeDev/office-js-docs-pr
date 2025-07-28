@@ -1,4 +1,4 @@
----
+﻿---
 title: PowerPoint add-in tutorial using Visual Studio
 description: "In this tutorial, you'll use Visual Studio to build a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides."
 ms.date: 01/16/2025
@@ -333,7 +333,7 @@ Complete the following steps to add code that retrieves the [Bing](https://www.b
     > If you get an error "Could not find file [...]\bin\roslyn\csc.exe", then do the following:
     >
     > 1. Open the **.\Web.config** file.
-    > 1. Find the **\<compiler\>** node for the .cs `extension`, then remove the `type` attribute and its value.
+    > 1. Find the `<compiler>` node for the .cs `extension`, then remove the `type` attribute and its value.
     > 1. Save the file.
 
 1. In Visual Studio, stop the add-in by pressing <kbd>Shift</kbd>+<kbd>F5</kbd> or choosing the **Stop** button. PowerPoint will automatically close when the add-in is stopped.

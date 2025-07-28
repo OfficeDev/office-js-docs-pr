@@ -1,4 +1,4 @@
----
+﻿---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
 ms.date: 06/12/2025
@@ -105,7 +105,7 @@ To enable an event-based add-in on Outlook mobile, you must configure the follow
 
 1. In your code editor, open the quick start project you created.
 1. Open the **manifest.xml** file located at the root of your project.
-1. Select the entire **\<VersionOverrides\>** node (including the open and close tags) and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node (including the open and close tags) and replace it with the following XML.
 
     ```xml
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

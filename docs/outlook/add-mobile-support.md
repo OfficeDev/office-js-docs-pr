@@ -1,4 +1,4 @@
----
+﻿---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
 ms.date: 01/31/2025
@@ -127,13 +127,13 @@ The first step to enabling add-in commands in Outlook mobile is to define them i
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor). The **\<MobileFormFactor\>** element contains all of the information for loading the add-in in mobile clients. This way, you can define completely different UI elements and JavaScript files for the mobile experience.
+The [VersionOverrides](/javascript/api/manifest/versionoverrides) v1.1 schema defines a new form factor for mobile, [MobileFormFactor](/javascript/api/manifest/mobileformfactor). The `<MobileFormFactor>` element contains all of the information for loading the add-in in mobile clients. This way, you can define completely different UI elements and JavaScript files for the mobile experience.
 
-The following example shows a single task pane button in a **\<MobileFormFactor\>** element. This is very similar to the elements that appear in a [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) element, with some notable differences.
+The following example shows a single task pane button in a `<MobileFormFactor>` element. This is very similar to the elements that appear in a [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) element, with some notable differences.
 
 - The [OfficeTab](/javascript/api/manifest/officetab) element isn't used.
-- The [ExtensionPoint](/javascript/api/manifest/extensionpoint) element must have only one child element. If your add-in implements the [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) or [MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) extension point, you must include a [Control](/javascript/api/manifest/control) child element. If your add-in implements the [MobileMessageReadCommandSurface](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) extension point, you must include a [Group](/javascript/api/manifest/group) child element that contains multiple **\<Control\>** elements.
-- There is no `Menu` type equivalent for the **\<Control\>** element.
+- The [ExtensionPoint](/javascript/api/manifest/extensionpoint) element must have only one child element. If your add-in implements the [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) or [MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) extension point, you must include a [Control](/javascript/api/manifest/control) child element. If your add-in implements the [MobileMessageReadCommandSurface](/javascript/api/manifest/extensionpoint#mobilemessagereadcommandsurface) extension point, you must include a [Group](/javascript/api/manifest/group) child element that contains multiple `<Control>` elements.
+- There is no `Menu` type equivalent for the `<Control>` element.
 - The [Supertip](/javascript/api/manifest/supertip) element isn't used.
 - The required icon sizes are different. Mobile add-ins minimally must support 25x25, 32x32 and 48x48 pixel icons. For more information, see [Additional requirements for mobile form factors](/javascript/api/manifest/icon#additional-requirements-for-mobile-form-factors).
 

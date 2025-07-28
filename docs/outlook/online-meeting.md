@@ -1,4 +1,4 @@
----
+﻿---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
 ms.date: 12/16/2024
@@ -256,7 +256,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -322,13 +322,13 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 ### Add mobile support
 
-To allow users to create an online meeting from their mobile device, the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is configured in the manifest under the parent element **\<MobileFormFactor\>**. This extension point isn't supported in other form factors.
+To allow users to create an online meeting from their mobile device, the [MobileOnlineMeetingCommandSurface extension point](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) is configured in the manifest under the parent element `<MobileFormFactor>`. This extension point isn't supported in other form factors.
 
 1. In your code editor, open the Outlook quick start project you created.
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Add the following markup as the second child of the **\<Host xsi:type="MailHost"\>** element. It should be a peer of the **\<DesktopFormFactor\>** element.
+1. Add the following markup as the second child of the **\<Host xsi:type="MailHost"\>** element. It should be a peer of the `<DesktopFormFactor>` element.
 
 ```xml
 <MobileFormFactor>

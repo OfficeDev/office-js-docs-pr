@@ -1,4 +1,4 @@
----
+﻿---
 title: Use SSO to get the identity of the signed-in user
 description: Call the getAccessToken API to get the ID token with name, email, and additional information about the signed-in user.
 ms.date: 06/24/2025
@@ -44,7 +44,7 @@ To use SSO with Office, you need to create an app registration in the Azure port
 
     When you're finished, the entire ID should have the form `api://localhost:[port]/[app-id-guid]`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
 
-1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the **\<Scope\>** name.
+1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the `<Scope>` name.
 
 1. Set **Who can consent?** to **Admins and users**.
 
@@ -60,7 +60,7 @@ To use SSO with Office, you need to create an app registration in the Azure port
 1. Select **Add scope** .
 
    > [!NOTE]
-   > The domain part of the **\<Scope\>** name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
+   > The domain part of the `<Scope>` name displayed just below the text field should automatically match the Application ID URI that you set earlier, with `/access_as_user` appended to the end; for example, `api://localhost:6789/c6c1f32b-5e55-4997-881a-753cc1d563b7/access_as_user`.
 
 1. In the **Authorized client applications** section, enter the following ID to pre-authorize all Microsoft Office application endpoints.
 
@@ -150,11 +150,11 @@ In Visual Studio Code, open the **manifest.xml** file.
 
 The XML you inserted contains the following elements and information.
 
-- **\<WebApplicationInfo\>** - The parent of the following elements.
-- **\<Id\>** - The client ID of the add-in This is an application ID that you obtain as part of registering the add-in. See [Register an Office Add-in that uses single sign-on (SSO) with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
-- **\<Resource\>** - The URL of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in in Microsoft Entra ID. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the **\<Resources\>** section of the add-in's manifest and the URI must end with the client ID in the **\<Id\>**.
-- **\<Scopes\>** - The parent of one or more **\<Scope\>** elements.
-- **\<Scope\>** - Specifies a permission that the add-in needs. The `profile` and `openID` permissions are always needed and may be the only permissions needed, if your add-in doesn't access Microsoft Graph. If it does, you also need **\<Scope\>** elements for the required Microsoft Graph permissions; for example, `User.Read`, `Mail.Read`. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For example, Microsoft Authentication Library (MSAL) for .NET requires the `offline_access` permission. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
+- `<WebApplicationInfo>` - The parent of the following elements.
+- `<Id>` - The client ID of the add-in This is an application ID that you obtain as part of registering the add-in. See [Register an Office Add-in that uses single sign-on (SSO) with the Microsoft identity platform](register-sso-add-in-aad-v2.md).
+- `<Resource>` - The URL of the add-in. This is the same URI (including the `api:` protocol) that you used when registering the add-in in Microsoft Entra ID. The domain part of this URI must match the domain, including any subdomains, used in the URLs in the `<Resources>` section of the add-in's manifest and the URI must end with the client ID in the `<Id>`.
+- `<Scopes>` - The parent of one or more `<Scope>` elements.
+- `<Scope>` - Specifies a permission that the add-in needs. The `profile` and `openID` permissions are always needed and may be the only permissions needed, if your add-in doesn't access Microsoft Graph. If it does, you also need `<Scope>` elements for the required Microsoft Graph permissions; for example, `User.Read`, `Mail.Read`. Libraries that you use in your code to access Microsoft Graph may need additional permissions. For example, Microsoft Authentication Library (MSAL) for .NET requires the `offline_access` permission. For more information, see [Authorize to Microsoft Graph from an Office Add-in](authorize-to-microsoft-graph.md).
 
 ## Add the jwt-decode package
 

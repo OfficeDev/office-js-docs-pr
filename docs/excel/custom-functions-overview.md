@@ -1,4 +1,4 @@
----
+﻿---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
 ms.date: 11/11/2024
@@ -74,7 +74,7 @@ function add(first, second){
 The add-in only manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) creates) does several things.
 
 - Defines the namespace for your custom functions. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
-- Uses **\<ExtensionPoint\>** and **\<Resources\>** elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
+- Uses `<ExtensionPoint>` and `<Resources>` elements that are unique to a custom functions manifest. These elements contain the information about the locations of the JavaScript, JSON, and HTML files.
 - Specifies which runtime to use for your custom function. We recommend always using a shared runtime unless you have a specific need for another runtime, because a shared runtime allows for the sharing of data between functions and the task pane.
 
 To see a full working manifest from a sample add-in, see the manifest in the [one of our Office Add-in samples Github repositories](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).

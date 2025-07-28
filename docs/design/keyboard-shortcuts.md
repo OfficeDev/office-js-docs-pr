@@ -1,4 +1,4 @@
----
+﻿---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
 ms.date: 03/12/2025
@@ -185,7 +185,7 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
 ### Link the mapping file to the manifest
 
 1. In your add-in project, open the **manifest.xml** file.
-1. Immediately *below* (not inside) the **\<VersionOverrides\>** element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of the JSON file you created in a previous step.
+1. Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of the JSON file you created in a previous step.
 
 ```xml
     ...
@@ -198,7 +198,7 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
 
 ## Map custom actions to their functions
 
-1. In your project, open the JavaScript file loaded by your HTML page in the **\<FunctionFile\>** element.
+1. In your project, open the JavaScript file loaded by your HTML page in the `<FunctionFile>` element.
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action you specified in an earlier step to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
     - The first parameter is the name of an action that you mapped to a keyboard shortcut. The location of the name of the action depends on the type of manifest your add-in uses.
         - **Unified app manifest for Microsoft 365**: The value of the `"extensions.keyboardShortcuts.shortcuts.actionId"` property in the **manifest.json** file.

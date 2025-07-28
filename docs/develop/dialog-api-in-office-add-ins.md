@@ -1,4 +1,4 @@
----
+﻿---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
 ms.date: 06/25/2025
@@ -365,7 +365,7 @@ If the message doesn't include sensitive data, you can set the `targetOrigin` to
 dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 ```
 
-The add-in's manifest specifies trusted domains. In the unified manifest for Microsoft 365, this is specified in the "validDomains" property. In the add-in only manifest, this is specified in the **\<AppDomains\>** element.
+The add-in's manifest specifies trusted domains. In the unified manifest for Microsoft 365, this is specified in the "validDomains" property. In the add-in only manifest, this is specified in the `<AppDomains>` element.
 
 [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 

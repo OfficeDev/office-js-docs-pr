@@ -1,4 +1,4 @@
----
+﻿---
 title: Sideload Office Add-ins for testing from a network share
 description: Learn how to sideload an Office Add-in for testing from a network share.
 ms.date: 05/21/2025
@@ -117,7 +117,7 @@ There are two options for how you specify this trust. Follow the instructions fo
 
 ## Sideload your add-in
 
-1. Put the manifest XML file of any add-in that you're testing into the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the **\<SourceLocation\>** element of the manifest file.
+1. Put the manifest XML file of any add-in that you're testing into the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the `<SourceLocation>` element of the manifest file.
 
     > [!IMPORTANT]
     > [!include[HTTPS guidance](../includes/https-guidance.md)]

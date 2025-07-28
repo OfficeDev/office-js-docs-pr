@@ -1,4 +1,4 @@
----
+﻿---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
 ms.date: 07/17/2025
@@ -114,7 +114,7 @@ When developing an event-based add-in to run on a Windows client, be mindful of 
 
 - Imports aren't supported in the JavaScript file where you implement the handling for event-based activation.
 - Only the JavaScript file referenced in the manifest is supported for event-based activation. You must bundle your event-handling JavaScript code into this single file. The location of the referenced JavaScript file in the manifest varies depending on the type of manifest your add-in uses.
-  - **Add-in only manifest**: **\<Override\>** child element of the **\<Runtime\>** node
+  - **Add-in only manifest**: `<Override>` child element of the `<Runtime>` node
   - **Unified manifest for Microsoft 365**: `"script"` property of the `"code"` object
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.

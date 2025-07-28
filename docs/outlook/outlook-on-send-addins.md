@@ -1,4 +1,4 @@
----
+﻿---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
 ms.date: 07/22/2025
@@ -349,7 +349,7 @@ The following are the supported and unsupported scenarios for add-ins that use t
 
 ### Event handlers are dynamically defined
 
-Your add-in's event handlers must be defined by the time `Office.initialize` or `Office.onReady()` is called (for further information, see [Startup of an Outlook add-in](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) and [Initialize your Office Add-in](../develop/initialize-add-in.md)). If your handler code is dynamically defined by certain circumstances during initialization, you must create a stub function to call the handler once it's completely defined. The stub function must be referenced in the **\<Event\>** element's `FunctionName` attribute of your manifest. This workaround ensures that your handler is defined and ready to be referenced once `Office.initialize` or `Office.onReady()` runs.
+Your add-in's event handlers must be defined by the time `Office.initialize` or `Office.onReady()` is called (for further information, see [Startup of an Outlook add-in](../develop/loading-the-dom-and-runtime-environment.md#startup-of-an-outlook-add-in) and [Initialize your Office Add-in](../develop/initialize-add-in.md)). If your handler code is dynamically defined by certain circumstances during initialization, you must create a stub function to call the handler once it's completely defined. The stub function must be referenced in the `<Event>` element's `FunctionName` attribute of your manifest. This workaround ensures that your handler is defined and ready to be referenced once `Office.initialize` or `Office.onReady()` runs.
 
 If your handler isn't defined once your add-in is initialized, the sender will be notified that "The callback function is unreachable" through an information bar in the mail item.
 

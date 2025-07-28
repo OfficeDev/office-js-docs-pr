@@ -1,4 +1,4 @@
----
+﻿---
 title: Build your first Outlook add-in with Visual Studio
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API and a Visual Studio template.
 ms.date: 08/24/2024
@@ -40,7 +40,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ## Update the code
 
-1. **MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane. In **MessageRead.html**, replace the **\<body\>** element with the following markup and save the file.
+1. **MessageRead.html** specifies the HTML that will be rendered in the add-in's task pane. In **MessageRead.html**, replace the `<body>` element with the following markup and save the file.
 
     ```HTML
     <body class="ms-font-m ms-welcome">
@@ -125,11 +125,11 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Open the manifest file in the Add-in project. This file defines the add-in's settings and capabilities.
 
-1. The **\<ProviderName\>** element has a placeholder value. Replace it with your name.
+1. The `<ProviderName>` element has a placeholder value. Replace it with your name.
 
-1. The **DefaultValue** attribute of the **\<DisplayName\>** element has a placeholder. Replace it with `My Office Add-in`.
+1. The **DefaultValue** attribute of the `<DisplayName>` element has a placeholder. Replace it with `My Office Add-in`.
 
-1. The **DefaultValue** attribute of the **\<Description\>** element has a placeholder. Replace it with `My First Outlook add-in`.
+1. The **DefaultValue** attribute of the `<Description>` element has a placeholder. Replace it with `My First Outlook add-in`.
 
 1. Save the file.
 

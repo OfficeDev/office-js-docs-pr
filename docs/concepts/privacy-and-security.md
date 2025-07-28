@@ -1,4 +1,4 @@
----
+﻿---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
 ms.date: 07/24/2025
@@ -301,7 +301,7 @@ Developers should also take note of the following security practices.
 
 - Developers shouldn't use ActiveX controls in Office Add-ins as ActiveX controls don't support the cross-platform nature of the add-in platform.
 
-- Content and task pane add-ins assume the same SSL settings that the browser uses by default, and allows most content to be delivered only by SSL. Outlook add-ins require all content to be delivered by SSL. Developers must specify in the **\<SourceLocation\>** element of the add-in manifest a URL that uses HTTPS, to identify the location of the HTML file for the add-in.
+- Content and task pane add-ins assume the same SSL settings that the browser uses by default, and allows most content to be delivered only by SSL. Outlook add-ins require all content to be delivered by SSL. Developers must specify in the `<SourceLocation>` element of the add-in manifest a URL that uses HTTPS, to identify the location of the HTML file for the add-in.
 
   To make sure add-ins aren't delivering content by using HTTP, when testing add-ins, developers should make sure the following settings are selected in **Internet Options** in **Control Panel** and no security warnings appear in their test scenarios.
 
