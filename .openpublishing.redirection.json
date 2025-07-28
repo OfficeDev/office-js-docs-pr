@@ -1355,7 +1355,7 @@
             "redirect_url": "/office/dev/add-ins/concepts/requirements-for-running-office-add-ins"
         },
         {
-            "source_path": "docs/concepts/develop-office-add-ins-for-the-ipad.md",
+            "source_path": "docs/develop/develop-office-add-ins-for-the-ipad.md",
             "redirect_url": "/office/dev/add-ins/concepts/add-in-development-best-practices"
         }
     ]
