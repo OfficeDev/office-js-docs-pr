@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Microsoft 365 Agents Toolkit
 description: Learn how to create Office Add-in projects using Microsoft 365 Agents Toolkit.
-ms.date: 05/19/2025
+ms.date: 07/29/2025
 ms.localizationpriority: high
 ---
 
@@ -58,7 +58,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
     - **PowerPoint Desktop (Edge Chromium)**
     - **Word Desktop (Edge Chromium)**
 
-1. Press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, the desktop version of the Office application you selected opens.
+1. Press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, the desktop version of the Office application you selected opens.
 
     > [!NOTE]
     > If this is the first time that you have sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
@@ -68,10 +68,17 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
     > [!NOTE]
     > Regardless of which button you select, a **WebView Stop On Load** prompt appears. Select **OK**.
 
+    > [!TIP]
+    > Sideloading in Office on Windows also makes the add-in available in Office on the web, so you can test it on that platform too. After this step is complete, minimize the Office on Windows application window and in a browser, navigate to `https://excel.cloud.microsoft/`, `https://word.cloud.microsoft/`, or `https://powerpoint.cloud.microsoft/`, whichever is appropriate for the add-in you're testing. Open a new or existing document in the Office application on the web. The buttons should appear on the **Home** ribbon just as they do in Office on Windows.
+
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code.
 
    > [!NOTE]
    > If the preceding step seems to have no effect, uninstall the add-in by opening a **TERMINAL** in Visual Studio Code, and then running the command `npm run stop`. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
+
+#### Other ways to sideload
+
+See [Sideload Office Add-ins that use the unified manifest for Microsoft 365](../testing/sideload-add-in-with-unified-manifest.md) for alternative ways to sideload an Excel, PowerPoint, or Word add-in, including through the app store in Teams.
 
 ### Sideload in Outlook
 
@@ -82,7 +89,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 1. **Close Outlook desktop**.
 1. In Visual Studio Code, open Agents Toolkit.
 1. In the **ACCOUNTS** section, verify that you're signed into Microsoft 365.
-1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press F5. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop will open.
+1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select the option, **Outlook Desktop (Edge Chromium)**, and then press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes and then Outlook desktop will open.
 
     > [!NOTE]
     > If this is the first time that you have sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.

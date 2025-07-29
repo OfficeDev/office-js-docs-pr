@@ -1,7 +1,7 @@
 ---
 title: Stage an Outlook add-in on Microsoft Azure with Visual Studio
 description: Learn how to deploy an Outlook add-in web app to Azure and sideload the add-in for testing in Outlook.
-ms.date: 09/25/2024
+ms.date: 07/29/2025
 ms.localizationpriority: medium
 ---
 
@@ -14,10 +14,10 @@ This article describes how to deploy an Outlook add-in web app to Azure and [sid
 
 ## Prerequisites
 
-1. Install [Visual Studio 2022](https://www.visualstudio.com/downloads) and choose to include the **Azure development** workload.
+1. Install [Visual Studio 2022](https://www.visualstudio.com/downloads) or later, and choose to include the **Azure development** workload.
 
     > [!NOTE]
-    > If you've previously installed Visual Studio 2022, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed.
+    > If you've previously installed Visual Studio, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed.
 
 1. Install Office.
 

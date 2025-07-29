@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your contextual Outlook add-in doesn't activate as you expect.
-ms.date: 07/18/2024
+ms.date: 07/14/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -24,39 +24,11 @@ You can verify the version of Exchange by using one of the following approaches.
 
 - Alternatively, you can use the [Office.context.mailbox.diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) property to verify the version. In Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), this property returns the version of the Exchange Server.
 
-- If you can test the add-in on Outlook, you can use the following simple debugging technique that uses the Outlook object model and Visual Basic Editor.
-
-    1. First, verify that macros are enabled for Outlook. Choose **File**, **Options**, **Trust Center**, **Trust Center Settings**, **Macro Settings**. Ensure that **Notifications for all macros** is selected in the Trust Center. You should have also selected **Enable Macros** during Outlook startup.
-
-    1. On the **Developer** tab of the ribbon, choose **Visual Basic**.
-
-       > [!NOTE]
-       > Not seeing the **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](/visualstudio/vsto/how-to-show-the-developer-tab-on-the-ribbon) to turn it on.
-
-    1. In the Visual Basic Editor, choose **View**, **Immediate Window**.
-
-    1. Type the following in the Immediate window to display the version of the Exchange Server. The major version of the returned value must be equal to or greater than 15.
-
-       - If there is only one Exchange account in the user's profile:
-
-       ```vb
-        ?Session.ExchangeMailboxServerVersion
-       ```
-
-       - If there are multiple Exchange accounts in the same user profile (`emailAddress` represents a string that contains the user's primary SMTP address):
-
-       ```vb
-        ?Session.Accounts.Item(emailAddress).ExchangeMailboxServerVersion
-       ```
-
 ## Is the add-in available?
 
-Outlook on Windows (classic) and on Mac can make an add-in unavailable due to performance reasons, including exceeding usage thresholds for CPU core or memory, tolerance for crashes, and length of time to process all the regular expressions for an add-in. When this happens, Outlook on Windows (classic) and on Mac display a notification that it's making an add-in unavailable.
-
-> [!NOTE]
-> Only Outlook on Windows (classic) and Outlook on Mac monitor resource usage. However, an add-in made unavailable in Outlook on Windows (classic) or Outlook on Mac also becomes unavailable in Outlook on the web, on mobile devices, and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
-
 Check your list of installed add-ins to verify whether an add-in is available. For instructions on how to view your add-ins in Outlook, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
+
+If you also use the classic Outlook on Mac client, resource usage limits apply to add-ins that could affect their availability across supported platforms. For more information, see [Resource usage limits for add-ins](../concepts/resource-limits-and-performance-optimization.md#resource-usage-limits-for-add-ins).
 
 ## Does the tested item support Outlook add-ins? Is the selected item delivered by a version of Exchange Server that is at least Exchange 2016?
 

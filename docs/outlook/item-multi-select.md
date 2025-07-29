@@ -1,7 +1,7 @@
----
+﻿---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 03/19/2025
+ms.date: 07/15/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -93,19 +93,19 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
+To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the `<Action>` element and set its value to `true`. As item multi-select only supports messages at this time, the `<ExtensionPoint>` element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
 
 1. In your preferred code editor, open the Outlook quick start project you created.
 
 1. Open the **manifest.xml** file located at the root of the project.
 
-1. Assign the **\<Permissions\>** element the `ReadWriteMailbox` value.
+1. Assign the `<Permissions>` element the `ReadWriteMailbox` value.
 
     ```xml
     <Permissions>ReadWriteMailbox</Permissions>
     ```
 
-1. Select the entire **\<VersionOverrides\>** node and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node and replace it with the following XML.
 
     ```xml
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -182,7 +182,7 @@ Item multi-select relies on the [SelectedItemsChanged](/javascript/api/office/of
 
 1. From the **./src/taskpane** folder, open **taskpane.html**.
 
-1. In the **\<body\>** element, replace the entire **\<main\>** element with the following markup.
+1. In the `<body>` element, replace the entire `<main>` element with the following markup.
 
     ```html
     <main id="app-body" class="ms-welcome__main">
@@ -362,7 +362,7 @@ Item multi-select only supports messages within an Exchange mailbox in both read
 - A maximum of 100 messages can be selected at a time.
 - The `loadItemByIdAsync` method only processes one selected message at a time. Remember to call `unloadAsync` after `loadItemByIdAsync` finishes processing the message. This way, the add-in can load and process the next selected message.
 - Typically, you can only run get operations on a selected message that's loaded using the `loadItemByIdAsync` method. However, managing the [categories](/javascript/api/outlook/office.categories) of a loaded message is an exception. You can add, get, and remove categories from a loaded message.
-- The `loadItemByIdAsync` method is supported in task pane and function command add-ins. This method isn't supported in [event-based activation](autolaunch.md) add-ins.
+- The `loadItemByIdAsync` method is supported in task pane and function command add-ins. This method isn't supported in [event-based activation](../develop/event-based-activation.md) add-ins.
 
 > [!NOTE]
 > Meeting invites and responses are considered messages, not appointments, and can therefore be included in a selection.
@@ -382,9 +382,9 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 
 ### Task pane pinning in multi-select add-ins
 
-In Outlook on the web and in new Outlook on Windows, when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
+In Outlook on the web, on Mac, and in new Outlook on Windows, when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
 
-Conversely, in Outlook on Windows (classic) and on Mac, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
+Conversely, in classic Outlook on Windows, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
 
 ## Next steps
 

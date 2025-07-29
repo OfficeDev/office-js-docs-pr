@@ -4,12 +4,12 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 05/19/2025
+ms.date: 07/11/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
 
-Exchange [user identity tokens](authentication.md#exchange-user-identity-token) and [callback tokens](authentication.md#callback-tokens) are deprecated and will be completely turned off by June 2025. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
+Exchange [user identity tokens](authentication.md#exchange-user-identity-token) and [callback tokens](authentication.md#callback-tokens) are deprecated and will be completely turned off by August 2025. We recommend moving Outlook add-ins that use legacy Exchange tokens to nested app authentication.
 
 ## General FAQ
 
@@ -24,8 +24,8 @@ Legacy Exchange online tokens have already been turned off for most tenants. We'
 | Date     | Legacy tokens status |
 | -------- | ------------------------------------------------------ |
 | Now | Legacy tokens turned off for most tenants. Admins can reenable legacy tokens via PowerShell. |
-| Jun 2025 | Legacy tokens turned off for all tenants. Admins can no longer reenable legacy tokens via PowerShell and must contact Microsoft for any exception. |
-| Oct 2025 | Legacy tokens turned off for all tenants. Exceptions are no longer allowed. |
+| August 1 2025 - September 2025 | Legacy tokens are turned off for all tenants. This process will take several weeks to complete. Admins can no longer reenable legacy tokens via PowerShell. Admins can request an exception through Microsoft Support at [https://aka.ms/LegacyTokensByOctober](https://aka.ms/LegacyTokensByOctober) (this link requires you to sign in to your tenant). |
+| October 2025 | Legacy tokens turned off for all tenants. Exceptions are no longer allowed. |
 
 ### When is NAA generally available for my channel?
 
@@ -33,17 +33,18 @@ The general availability (GA) date for NAA depends on which channel you are usin
 
 | Date     | NAA General Availability (GA) |
 | -------- | ------------------------------------------------------ |
-| Oct 2024 | NAA is GA in Current Channel. |
-| Nov 2024 | NAA is GA in Monthly Enterprise Channel. |
-| Jan 2025 | NAA is GA in Semi-Annual Channel build 16.0.17928.20392. |
-| Jun 2025 | NAA will GA in Semi-Annual Extended Channel. |
+| October 2024 | NAA is GA in Current Channel. |
+| November 2024 | NAA is GA in Monthly Enterprise Channel. |
+| January 2025 | NAA is GA in Semi-Annual Channel Version 2408 (Build 17928.20392). |
+| June 2025 | NAA is GA in Semi-Annual Extended Channel Version 2408 (Build 17928.20604). |
 
 ### How do I handle legacy tokens turned off in Semi-Annual Extended Channel, which doesn't support NAA yet?
 
-Semi-Annual Extended Channel won't support NAA until June 2025. This means even if add-ins are updated to support NAA, and no longer use legacy Exchange Online tokens, they won't function on this channel. If you are using Semi-Annual Extended Channel as an administrator, we recommend the following.
+Semi-Annual Extended Channel version 2402 doesn't support NAA. To avoid any service interruption to Outlook add-ins on your tenant, we recommend you upgrade to Semi-Annual Extended Channel version 2408. This version is available as of July 8, 2025.
 
-- Check if your tenant is using any add-ins that require legacy Exchange Online tokens. For more information, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids).
-- If you have deployed add-ins that require legacy Exchange Online tokens, and the add-ins are necessary for your organization, we recommend you turn on tokens now so that they continue to function. To turn tokens on, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
+From **now through August 1 2025** we recommend administrators on Semi-Annual Extended Channel **upgrade to version 2408**. Administrators can [request an exception](https://aka.ms/LegacyTokensByOctober) through Microsoft Support if they need more time.
+
+We also recommend to check if your tenant is using any add-ins that require legacy Exchange Online tokens. For more information, see [Find Outlook add-ins that use legacy Exchange Online tokens](https://github.com/OfficeDev/office-js/tree/release/add-in-ids).
 
 ### Are COM Add-ins affected by the deprecation of legacy Exchange Online tokens?
 
@@ -107,7 +108,7 @@ If you rely on an ISV for your add-in, we recommend you contact them as soon as 
 
 ### What do I do for add-ins I can't identify?
 
-It's possible after running `Get-AuthenticationPolicy` there could be some custom add-ins that you can't identify the owner. For those add-ins you may need to perform a scream test. We recommend that administrators perform a scream test before June 2025 to determine if there are any remaining add-ins that will break when legacy tokens are turned off in June. This will give you time to reach out to publishers of any affected add-ins to address breaking issues before the June deadline.
+It's possible after running `Get-AuthenticationPolicy` there could be some custom add-ins that you can't identify the owner. For those add-ins you may need to perform a scream test. We recommend that administrators perform a scream test before August 2025 to determine if there are any remaining add-ins that will break when legacy tokens are turned off in August. This will give you time to reach out to publishers of any affected add-ins to address breaking issues before the August deadline.
 
 > [!NOTE]
 > You only need to perform the scream test if you turned legacy Exchange Online tokens on by using the `Set-AuthenticationPolicy` command. If you haven't run this command, then Exchange Online tokens should already be off by default.
@@ -138,7 +139,7 @@ Use the following steps to perform the test.
 
 Yes, there are PowerShell commands you can use to turn legacy tokens on or off in any tenant. For more information on how to turn legacy tokens on or off, see [Turn legacy Exchange Online tokens on or off](turn-exchange-tokens-on-off.md).
 
-In June 2025, legacy tokens will be turned off and you won't be able to turn them back on without a specific exception granted by Microsoft. In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants.
+In August 2025, legacy tokens will be turned off and you won't be able to turn them back on. Admins can request an exception through Microsoft Support at [https://aka.ms/LegacyTokensByOctober](https://aka.ms/LegacyTokensByOctober) (this link requires you to sign in to your tenant). In October 2025, it won't be possible to turn on legacy tokens and they'll be disabled for all tenants.
 
 ### How does the admin consent flow work?
 
@@ -191,7 +192,7 @@ Some widely used Outlook add-in publishers have already updated their add-ins as
 - [SalesForce for Outlook](https://appsource.microsoft.com/product/office/wa104379334)
 - [LawToolBox](https://lawtoolbox.com/lawtoolbox-for-copilot/)
 - [OnePlace Solutions](https://www.oneplacesolutions.com/oneplacemail-sharepoint-app-for-outlook.html)
-- [Set-OutlookSignatures Benefactor Circle](https://explicitconsulting.at/open-source/set-outlooksignatures/)
+- [Set-OutlookSignatures Benefactor Circle](https://set-outlooksignatures.com)
 - [Wrike](https://appsource.microsoft.com/product/office/wa104381120)
 - [Zoho CRM for Email](https://appsource.microsoft.com/product/office/WA104379468)
 - [Zoho Recruit for Email](https://appsource.microsoft.com/product/office/WA200001485)
@@ -418,6 +419,15 @@ If you're add-in uses SSO through NAA, your add-in must be in compliance with th
 Be sure to handle admin consent properly. See [Publish an add-in that requires admin consent for Microsoft Graph scopes](../publish/publish-nested-app-auth-add-in.md)
 
 For additional deployment details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center). If you update your add-in (change the manifest) you need to go through the [certification process again](../publish/publish-nested-app-auth-add-in.md). You can update your web server code any time without a need for review.
+
+### Users get an unexplained error when signing in
+
+When your add-in requests a token, users may see a sign-in popup dialog showing one of the following errors.
+
+- **Something went wrong.** [*error code*]
+- **You can't get there from here**
+
+Check to see if the admin has any conditional access policies applied that enforce specific client restrictions, such as mobile location, or platform type. Also the **approved client app Conditional Access grant** is deprecated and will cause these errors with NAA token requests. An admin must completely remove this policy and switch over to the newer **application protection policy grant** for NAA to work. For more information, see [Migrate approved client app to application protection policy in Conditional Access](/entra/identity/conditional-access/migrate-approved-client-app).
 
 ## Related content
 

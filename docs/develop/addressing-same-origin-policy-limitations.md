@@ -42,7 +42,7 @@ Another way to address same-origin policy limitations is to provide server-side 
 To learn more about cross-origin resource sharing, see the many resources available on the web, such as [Cross-Origin Resource Sharing (CORS)](https://web.dev/cross-origin-resource-sharing/).
 
 > [!NOTE]
-> For information on how to use CORS in an Outlook add-in that implements event-based activation or integrated spam reporting (preview), see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../outlook/use-sso-in-event-based-activation.md).
+> For information on how to use CORS in an Outlook add-in that implements event-based activation or integrated spam reporting, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
 
 ## Build your own proxy using IFRAME and POST MESSAGE (Cross-Window Messaging)
 

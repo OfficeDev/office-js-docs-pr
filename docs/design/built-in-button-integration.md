@@ -1,7 +1,7 @@
----
+﻿---
 title: Integrate built-in Office buttons into custom control groups and tabs
 description: Learn how to include built-in Office buttons in your custom command groups and tabs on the Office ribbon.
-ms.date: 02/12/2025
+ms.date: 06/10/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -43,11 +43,11 @@ The following example adds the Office Paragraph control group to a custom tab.
                         "id": "MyTab",
                         ...
                         "groups": [
-                            ... // Optionally, other groups in the tab
+                            ... // Optionally, other groups in the tab.
                             {
                                 "builtInGroupId": "Paragraph"
                             },
-                            ... // Optionally, other groups in the tab
+                            ... // Optionally, other groups in the tab.
                         ]
                     }
                 ]
@@ -80,11 +80,11 @@ The following example adds the Office Superscript control to a custom group.
                                 "id": "MyGroup",
                                 ...
                                 "controls": [
-                                    ... // Optionally, other controls in the group
+                                    ... // Optionally, other controls in the group.
                                     {
                                         "builtInControlId": "Superscript"
                                     },
-                                    ... // Optionally, other controls in the group
+                                    ... // Optionally, other controls in the group.
                                 ]
                             }
                         ]
@@ -100,15 +100,15 @@ The following example adds the Office Superscript control to a custom group.
 
 ## Insert a built-in control group into a custom tab
 
-To insert a built-in Office control group into a tab, add an [OfficeGroup](/javascript/api/manifest/customtab#officegroup) element as a child element in the parent **\<CustomTab\>** element. The `id` attribute of the of the **\<OfficeGroup\>** element is set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
+To insert a built-in Office control group into a tab, add an [OfficeGroup](/javascript/api/manifest/customtab#officegroup) element as a child element in the parent `<CustomTab>` element. The `id` attribute of the of the `<OfficeGroup>` element is set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
 
 The following markup example adds the Office Paragraph control group to a custom tab and positions it to appear just after a custom group.
 
 ```xml
-<ExtensionPoint xsi:type="ContosoRibbonTab">
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom1">
     <Group id="Contoso.myCustomTab.group1">
-       <!-- additional markup omitted -->
+       <!-- Additional markup omitted. -->
     </Group>
     <OfficeGroup id="Paragraph" />
     <Label resid="customTabLabel1" />
@@ -118,12 +118,12 @@ The following markup example adds the Office Paragraph control group to a custom
 
 ## Insert a built-in control into a custom group
 
-To insert a built-in Office control into a custom group, add an [OfficeControl](/javascript/api/manifest/group#officecontrol) element as a child element in the parent **\<Group\>** element. The `id` attribute of the **\<OfficeControl\>** element is set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
+To insert a built-in Office control into a custom group, add an [OfficeControl](/javascript/api/manifest/group#officecontrol) element as a child element in the parent `<Group>` element. The `id` attribute of the `<OfficeControl>` element is set to the ID of the built-in control. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups).
 
 The following markup example adds the Office Superscript control to a custom group and positions it to appear just after a custom button.
 
 ```xml
-<ExtensionPoint xsi:type="ContosoRibbonTab">
+<ExtensionPoint xsi:type="PrimaryCommandSurface">
   <CustomTab id="Contoso.TabCustom2">
     <Group id="Contoso.TabCustom2.group1">
         <Label resid="residCustomTabGroupLabel"/>

@@ -1,7 +1,7 @@
 ---
 title: Combine Copilot Agents with Office Add-ins (preview)
 description: Get an overview of why and how to combine a Copilot agent with an Office Add-in.
-ms.date: 05/19/2025
+ms.date: 07/15/2025
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -121,8 +121,8 @@ The agent configuration file includes instructions for the agent and specifies o
 
 ```json
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.3/schema.json",
-    "version": "v1.3",
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
+    "version": "v1.4",
     "name": "Excel Add-in + Agent",
     "description": "Agent for working with Excel cells.",
     "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
@@ -141,7 +141,7 @@ The agent configuration file includes instructions for the agent and specifies o
 }
 ```
 
-The reference documentation for declarative agents is at [Declarative agent schema 1.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.3).
+The reference documentation for declarative agents is at [Declarative agent schema 1.4 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.4).
 
 ### Copilot API plug-in configuration
 
@@ -149,10 +149,10 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
 
 - The `"functions.name"` must match the `"extensions.runtimes.actions.id"` property in the add-in manifest.
 - The `"reasoning.description"` and `"reasoning.instructions"` refer to a JavaScript function, not a REST API.
-- The `"responding.instructions"` property only provides guidance to Copilot about how to respond. It doesn't put any limits or structural requirements on the response.
+- The `"responding.instructions"` property only provides *guidance* to Copilot about how to respond. It doesn't put any limits or structural requirements on the response.
 - The `"runtimes.run_for_functions"` array must include either the same string as `"functions.name"` or a wildcard string that matches it.
-- The `"runtimes.spec.local_endpoint"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. In this case, it specifies that the JavaScript function that is associated with the "fillcolor" string is available in an Office Add-in, rather than in some REST endpoint.
--The `"runtimes.spec.allowed_host"` property is new and isn't yet in the main reference documentation for the API plugins schema. See below for more about it. In this case, it specifies that the agent should only be visible in Excel.
+- The `"runtimes.spec.local_endpoint"` property specifies that the JavaScript function that is associated with the "fillcolor" string is available in an Office Add-in, rather than in some REST endpoint.
+-The `"runtimes.spec.allowed_host"` property specifies that the agent should only be visible in Excel.
 
 ```json
 {
@@ -168,18 +168,18 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "Cell": {
+                    "cell": {
                         "type": "string",
                         "description": "A cell location in the format of A1, B2, etc.",
                         "default" : "B2"
                     },
-                    "Color": {
+                    "color": {
                         "type": "string",
                         "description": "A color in hex format, e.g., #30d5c8",
                         "default" : "#30d5c8"
                     }
                 },
-                "required": ["Cell", "Color"]
+                "required": ["cell", "color"]
             },
             "returns": {
                 "type": "string",
@@ -210,12 +210,7 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
 }
 ```
 
-The reference documentation for API plug-ins is at [API plugin manifest schema 2.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.3). The following is the documentation for two new properties of the `"runtimes.spec"` property.
-
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `local_endpoint` | String | Optional. The ID of a set of available JavaScript functions. This property is roughly analogous to the [`"runtimes.spec.url"`](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.3#openapi-specification-object) property, but for local functions on the client, not REST APIs. Currently, the only allowed value is "Microsoft.Office.Addin".|
-| `allowed_host` | String | Optional. Specifies which Office application Copilots can host the agent. Possible values are "document", "mail", "presentation", and "workbook".|
+The reference documentation for API plug-ins is at [API plugin manifest schema 2.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.3).
 
 ## Create the JavaScript functions
 

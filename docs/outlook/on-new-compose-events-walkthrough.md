@@ -1,7 +1,7 @@
----
+﻿---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 10/08/2024
+ms.date: 06/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,9 @@ Need to add a required disclaimer to all your messages? With an event-based add-
 The following sections teach you how to develop an add-in that handles the `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events. By the end of this walkthrough, you'll have an add-in that automatically sets the subject of new messages and appointments being created.
 
 > [!NOTE]
-> The `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events were introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). To verify that your Outlook client supports these events, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
+>
+> - The `OnNewMessageCompose` and `OnNewAppointmentOrganizer` events were introduced in [requirement set 1.10](/javascript/api/requirement-sets/outlook/requirement-set-1.10/outlook-requirement-set-1.10). To verify that your Outlook client supports these events, see [Requirement sets supported by Exchange servers and Outlook clients](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients).
+> - The `OnNewMessageCompose` event is now supported in Outlook on mobile devices. To learn how to implement this event in your Outlook mobile add-in, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 ## Set up your environment
 
@@ -128,13 +130,13 @@ To configure the manifest, select the tab for the type of manifest you're using.
 
 To enable event-based activation of your add-in, you must configure the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest.
 
-In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
+In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `<Runtime>` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 1. In your code editor, open the quick start project.
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML, then save your changes.
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML, then save your changes.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -288,7 +290,11 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 1. Save your changes.
 
 > [!NOTE]
-> There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](autolaunch.md#event-based-activation-behavior-and-limitations).
+>
+> - There are some limitations you must be aware of when developing an event-based add-in for classic Outlook on Windows. To learn more, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations).
+> - To ensure your add-in runs as expected when an event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
+>   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
+>   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 
 ## Update the commands HTML file
 
@@ -351,9 +357,9 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 
 ## Next steps
 
-To learn more about event-based activation and other events that you can implement in your add-in, see [Configure your Outlook add-in for event-based activation](autolaunch.md).
+To learn more about event-based activation and other events that you can implement in your add-in, see [Activate add-ins with events](../develop/event-based-activation.md)
 
 ## See also
 
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
 - [Office Add-ins code sample: Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature)

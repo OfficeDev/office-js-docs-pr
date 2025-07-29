@@ -91,7 +91,7 @@ Content add-ins are surfaces that you can embed directly into Excel documents. Y
 
 ![Content add-in in Excel.](../images/excel-add-in-content-map.png)
 
-For more information about content add-ins, see [Content Office Add-ins](../design/content-add-ins.md). For a sample that implements a content add-in in Excel, see [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance) in GitHub.
+For more information about content add-ins, see [Content Office Add-ins](../design/content-add-ins.md). For a sample that implements a content add-in in Excel, see [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in) in GitHub.
 
 ## JavaScript APIs to interact with workbook content
 

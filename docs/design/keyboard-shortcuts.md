@@ -1,4 +1,4 @@
----
+﻿---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
 ms.date: 08/26/2025
@@ -186,7 +186,7 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
 ### Link the mapping file to the manifest
 
 1. In your add-in project, open the **manifest.xml** file.
-1. Immediately *below* (not inside) the **\<VersionOverrides\>** element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of the JSON file you created in a previous step.
+1. Immediately *below* (not inside) the `<VersionOverrides>` element in the manifest, add an [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element. Set the `Url` attribute to the full URL of the JSON file you created in a previous step.
 
 ```xml
     ...

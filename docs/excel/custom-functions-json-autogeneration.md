@@ -1,7 +1,7 @@
 ---
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
-ms.date: 07/11/2023
+ms.date: 06/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -34,7 +34,7 @@ The plugin is [CustomFunctionsMetadataPlugin](https://github.com/OfficeDev/Offic
 
 ### Multiple custom function source files
 
-If, and only if, you have organized your custom functions into multiple source files, there are additional steps. 
+If, and only if, you have organized your custom functions into multiple source files, there are additional steps.
 
 1. In the webpack.config.js file, replace the string value of `input` with an array of string URLs that point to each of the files. The following is an example:
 
@@ -92,8 +92,12 @@ In the following example, the phrase "Calculates the volume of a sphere." is the
 The following JSDoc tags are supported in Excel custom functions.
 
 - [@cancelable](#cancelable)
+- [@capturesCallingObject](#capturesCallingObject)
+- [@customenum](#customenum) *{type}*
 - [@customfunction](#customfunction) *id* *name*
+- [@excludeFromAutoComplete](#excludeFromAutoComplete)
 - [@helpurl](#helpurl) *url*
+- [@linkedEntityLoadService](#linkedEntityLoadService)
 - [@param](#param) *{type}* *name* *description*
 - [@requiresAddress](#requiresAddress)
 - [@requiresParameterAddresses](#requiresParameterAddresses)
@@ -113,6 +117,20 @@ The last function parameter must be of type `CustomFunctions.CancelableInvocatio
 If the last function parameter is of type `CustomFunctions.CancelableInvocation`, it will be considered `@cancelable` even if the tag isn't present.
 
 A function can't have both `@cancelable` and `@streaming` tags.
+
+<a id="capturesCallingObject"></a>
+
+### @capturesCallingObject
+
+This tag works with Excel [data types](excel-data-types-overview.md). It specifies that the data type being referenced by the custom function is passed as the first argument to the custom function. For more information, see [Reference the entity value as a calling object](excel-add-ins-dot-functions.md#reference-the-entity-value-as-a-calling-object).
+
+<a id="customenum"></a>
+
+### @customenum
+
+Syntax: @customenum *{type}*
+
+This tag indicates that a set of values is a custom enum. For more information, see [Create custom enums for your custom functions](custom-functions-custom-enums.md).
 
 <a id="customfunction"></a>
 
@@ -183,6 +201,14 @@ In the following example, the phrase "A function that adds two numbers" is the d
  */
 ```
 
+<a id="excludeFromAutoComplete"></a>
+
+### @excludeFromAutoComplete
+
+The `@excludeFromAutoComplete` tag ensures that the custom function doesn't appear in the formula AutoComplete menu in Excel. For more information, see [Exclude custom functions from the Excel UI](excel-add-ins-dot-functions.md#exclude-custom-functions-from-the-excel-ui).
+
+A function can’t have both `@excludeFromAutoComplete` and `@linkedEntityLoadService` tags.
+
 <a id="helpurl"></a>
 
 ### @helpurl
@@ -201,6 +227,14 @@ In the following example, the `helpurl` is `http://www.contoso.com/weatherhelp`.
  * ...
  */
 ```
+
+<a id="linkedEntityLoadService"></a>
+
+### @linkedEntityLoadService
+
+The `@linkedEntityLoadService` tag designates that the function is a linked entity load service that returns [linked entity cell values](excel-data-types-linked-entity-cell-values.md) for linked entity IDs requested by Excel.
+
+A function can’t have both `@excludeFromAutoComplete` and `@linkedEntityLoadService` tags.
 
 <a id="param"></a>
 
@@ -394,6 +428,22 @@ By specifying a parameter type, Excel will convert values into that type before 
 ### Value types
 
 A single value may be represented using one of the following types: `boolean`, `number`, `string`.
+
+### Cell value type
+
+Use the `type` subfield `cellValueType` to specify that a custom function accept and return Excel data types. The `type` value must be `any` to use the `cellValueType` subfield. Accepted `cellValueType` values are:
+
+- `Excel.CellValue`
+- `Excel.BooleanCellValue`
+- `Excel.DoubleCellValue`
+- `Excel.EntityCellValue`
+- `Excel.ErrorCellValue`
+- `Excel.LinkedEntityCellValue`
+- `Excel.LocalImageCellValue`
+- `Excel.StringCellValue`
+- `Excel.WebImageCellValue`
+
+For a code sample using the `Excel.EntityCellValue` type, see [Input an entity value](custom-functions-data-types-concepts.md#input-an-entity-value).
 
 ### Matrix type
 

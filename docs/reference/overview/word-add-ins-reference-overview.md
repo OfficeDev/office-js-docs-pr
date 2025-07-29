@@ -1,7 +1,7 @@
 ---
 title: Word JavaScript API overview
 description: Overview of the Word JavaScript API.
-ms.date: 02/24/2023
+ms.date: 05/29/2025
 ms.topic: concept-article
 ms.service: word
 ms.localizationpriority: high
@@ -13,7 +13,7 @@ A Word add-in interacts with objects in Word by using the Office JavaScript API,
 
 * **Word JavaScript API**: These are the [application-specific APIs](../../develop/application-specific-api-model.md) for Word. Introduced with Office 2016, the [Word JavaScript API](/javascript/api/word) provides strongly-typed objects that you can use to access objects and metadata in a Word document.
 
-* **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
+* **Common APIs**: The [Common API](/javascript/api/office), introduced with Office 2013, can be used to access features such as UI, dialogs, and client settings that are common across multiple Office applications.
 
 This section of the documentation focuses on the Word JavaScript API, which you'll use to develop the majority of functionality in add-ins that target Word on the web, or Word 2016 and later. For information about the Common API, see [Common JavaScript API object model](../../develop/office-javascript-api-object-model.md).
 
@@ -23,7 +23,7 @@ See [Word JavaScript object model in Office Add-ins](../../word/word-add-ins-cor
 
 ## Learn about API capabilities
 
-Use other articles in this section of the documentation to learn how to [get the whole document from an add-in](../../word/get-the-whole-document-from-an-add-in-for-word.md), [use search options in your Word add-in to find text](../../word/search-option-guidance.md), and more. See the table of contents for the complete list of available articles.
+Use other articles in this section of the documentation to learn how to [get the whole document from an add-in](../../develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md), [use search options in your Word add-in to find text](../../word/search-option-guidance.md), and more. See the table of contents for the complete list of available articles.
 
 For hands-on experience using the Word JavaScript API to access objects in Word, complete the [Word add-in tutorial](../../tutorials/word-tutorial.md).
 

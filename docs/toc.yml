@@ -33,6 +33,9 @@ items:
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
     displayName: Excel, Word, PowerPoint
+  - name: Copy Script Lab snippet to Yo Office
+    href: overview/create-an-office-add-in-from-script-lab.md
+    displayName: 'code samples'
   - name: Samples
     href: overview/office-add-in-code-samples.md
     displayName: PnP, 'code samples'
@@ -99,7 +102,7 @@ items:
           href: develop/specify-office-hosts-and-api-requirements-unified.md
         - name: Specify Office applications and API requirements with the add-in only manifest
           href: develop/specify-office-hosts-and-api-requirements.md
-        - name: Understand and use platform-specific requirment sets
+        - name: Understand and use platform-specific requirement sets
           href: develop/platform-specific-requirement-sets.md
         - name: Check for API availability at runtime
           href: develop/specify-api-requirements-runtime.md
@@ -116,6 +119,9 @@ items:
         displayName: manifest
       - name: Configure your add-in to use a shared runtime
         href: develop/configure-your-add-in-to-use-a-shared-runtime.md
+      - name: Implement event-based activation 
+        href: develop/event-based-activation.md
+        displayName: event-based activation
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
     - name: Manifest
@@ -201,7 +207,7 @@ items:
           href: design/accessibility-guidelines.md
         - name: Data visualization
           href: design/data-visualization-guidelines.md
-        - name: Voice and tone
+        - name: Writing and style
           href: design/voice-guidelines.md
       - name: UX design language and patterns
         items:
@@ -305,23 +311,47 @@ items:
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
       - name: Create add-ins with the Microsoft 365 Agents Toolkit
-        href: develop/teams-toolkit-overview.md
+        href: develop/agents-toolkit-overview.md
       - name: Import an add-in project to Microsoft 365 Agents Toolkit
         href: develop/import-teams-toolkit.md
       - name: Develop add-ins with Visual Studio Code
         href: develop/develop-add-ins-vscode.md
-      - name: Create and Develop add-ins with Visual Studio
+      - name: Create and develop add-ins with Visual Studio
         items:
         - name: Overview
           href: develop/develop-add-ins-visual-studio.md
+          displayName: Visual Studio
+        - name: Quick starts
+          items:
+          - name: Excel
+            items:
+            - name: Task pane
+              href: quickstarts/excel-quickstart-vs.md
+              displayName: Excel, Visual Studio
+            - name: Content
+              href: quickstarts/excel-quickstart-content.md
+              displayName: Excel, Visual Studio
+          - name: Outlook
+            href: quickstarts/outlook-quickstart-vs.md
+            displayName: Outlook, Visual Studio
+          - name: PowerPoint 
+            items:
+            - name: Task pane
+              href: quickstarts/powerpoint-quickstart-vs.md
+              displayName: PowerPoint, Visual Studio
+            - name: Content
+              href: quickstarts/powerpoint-quickstart-content.md
+              displayName: PowerPoint, Visual Studio
+          - name: Word
+            href: quickstarts/word-quickstart-vs.md
+            displayName: Word, Visual Studio
+        - name: PowerPoint presentation tutorial
+          href: tutorials/powerpoint-tutorial-vs.md
           displayName: Visual Studio
         - name: Get JavaScript IntelliSense in Visual Studio
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
-      - name: Copy Script Lab snippet to Yo Office
-        href: overview/create-an-office-add-in-from-script-lab.md
-        displayName: 'code samples'
       - name: Develop add-ins with Angular
         href: develop/add-ins-with-angular2.md
     - name: Special requirements for add-ins on the iPad
@@ -394,6 +424,14 @@ items:
         href: testing/testing-and-troubleshooting.md
       - name: Troubleshoot development errors
         href: testing/troubleshoot-development-errors.md
+    - name: Event-based add-ins
+      items:
+      - name: Debug event-based and spam-reporting add-ins
+        href: testing/debug-autolaunch.md
+      - name: SSO and CORS in event-based or spam-reporting add-ins
+        href: develop/use-sso-in-event-based-activation.md
+      - name: Troubleshoot event-based and spam-reporting add-ins
+        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
     - name: Performance
       items:
       - name: Avoid using the context.sync method in loops
@@ -431,6 +469,9 @@ items:
       href: /legal/marketplace/certification-policies
     - name: Publish an add-in that requires admin consent
       href: publish/publish-nested-app-auth-add-in.md
+    - name: AppSource options for add-ins with event-based activation
+      href: publish/autolaunch-store-options.md
+      displayName: event-based activation
     - name: Publish add-ins to a SharePoint app catalog
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Guidance for deploying on government clouds
@@ -650,6 +691,9 @@ items:
     - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
+    - name: Custom enums
+      href: excel/custom-functions-custom-enums.md
+      displayName: Excel, Custom Functions
     - name: Call Excel JavaScript APIs
       href: excel/call-excel-apis-from-custom-function.md
       displayName: Excel, Custom Functions
@@ -740,18 +784,21 @@ items:
     - name: API reference - latest release
       href: reference/outlook-api-reference-latest.md
       displayName: Outlook
-    - name: Add-in requirements
-      href: outlook/add-in-requirements.md
+    - name: Understanding add-in permissions
+      href: outlook/understanding-outlook-add-in-permissions.md
     - name: Outlook add-in design guidelines
       href: outlook/outlook-addin-design.md
     - name: Event-based activation
       items:
       - name: Implement an event-based add-in
-        href: outlook/autolaunch.md
+        href: develop/event-based-activation.md
         displayName: event-based activation
       - name: Implement Smart Alerts to handle on-send events
         href: outlook/onmessagesend-onappointmentsend-events.md
         displayName: event-based activation
+      - name: Event-based activation in Outlook on mobile devices
+        href: outlook/mobile-event-based.md
+        displayName: event-based activation, mobile
       - name: Set the subject of a new mail item
         href: outlook/on-new-compose-events-walkthrough.md
         displayName: event-based activation
@@ -760,11 +807,6 @@ items:
         displayName: event-based activation
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
-        displayName: event-based activation
-      - name: Troubleshoot event-based and spam-reporting add-ins
-        href: outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md
-      - name: AppSource options
-        href: outlook/autolaunch-store-options.md
         displayName: event-based activation
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md
@@ -814,6 +856,10 @@ items:
       href: outlook/use-rest-api.md
     - name: Call Exchange web services
       href: outlook/web-services.md
+    - name: Manage notifications
+      href: outlook/notifications.md
+    - name: Get or set body
+      href: outlook/insert-data-in-the-body.md
     - name: Get or set categories
       href: outlook/categories.md
     - name: Get or set internet headers
@@ -836,8 +882,6 @@ items:
         href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
       - name: Get and set recipients
         href: outlook/get-set-or-add-recipients.md
-      - name: Insert data in the body
-        href: outlook/insert-data-in-the-body.md
       - name: Get and set subject
         href: outlook/get-or-set-the-subject.md
       - name: Get and set times
@@ -848,12 +892,6 @@ items:
         href: outlook/sensitivity-label.md
       - name: Manage delivery time of a message
         href: outlook/delay-delivery.md
-    - name: Privacy and security
-      items:
-      - name: Overview
-        href: outlook/privacy-and-security.md
-      - name: Understanding add-in permissions
-        href: outlook/understanding-outlook-add-in-permissions.md
     - name: Authentication
       items:
       - name: Overview
@@ -861,7 +899,7 @@ items:
       - name: Authenticate with SSO token
         href: outlook/authenticate-a-user-with-an-sso-token.md
       - name: SSO and CORS in event-based or spam-reporting add-ins
-        href: outlook/use-sso-in-event-based-activation.md
+        href: develop/use-sso-in-event-based-activation.md
       - name: Authenticate with an identity token
         href: outlook/authenticate-a-user-with-an-identity-token.md
       - name: Validate an identity token
@@ -887,9 +925,9 @@ items:
       - name: Debug function commands
         href: outlook/debug-ui-less.md
       - name: Troubleshoot event-based and spam-reporting add-ins
-        href: outlook/troubleshoot-event-based-and-spam-reporting-add-ins.md
+        href: testing/troubleshoot-event-based-and-spam-reporting-add-ins.md
       - name: Debug event-based and spam-reporting add-ins
-        href: outlook/debug-autolaunch.md
+        href: testing/debug-autolaunch.md
       - name: Tips for handling date values
         href: outlook/tips-for-handling-date-values-in-outlook-add-ins.md
 
@@ -919,6 +957,9 @@ items:
       displayName: PowerPoint
     - name: API reference
       href: reference/powerpoint-api-reference.md
+      displayName: PowerPoint
+    - name: PowerPoint object model
+      href: powerpoint/core-concepts.md
       displayName: PowerPoint
     - name: Add and delete slides
       href: powerpoint/add-slides.md
@@ -961,11 +1002,8 @@ items:
 
 - name: Visio
   items:
-  - name: Visio documentation
-    href: visio/index.yml
-    displayName: Visio
   - name: Overview
-    href: reference/overview/visio-javascript-reference-overview.md
+    href: visio/visio-overview.md
     displayName: Visio
   - name: API reference
     href: reference/visio-api-reference.md
@@ -990,6 +1028,9 @@ items:
     displayName: Word
   - name: 'Sample: Manage citations'
     href: word/citation-management.md
+    displayName: Word
+  - name: 'Walkthrough: Add headers when a document opens'
+    href: word/add-headers-on-document-open.md
     displayName: Word
   - name: Word JavaScript API
     items:
@@ -1033,35 +1074,11 @@ items:
   items: 
   - name: VSTO add-in developers' guide to Office Add-ins
     href: overview/learning-path-transition.md
-  - name: Quick starts
-    items:
-    - name: Excel
-      items:
-      - name: Task pane
-        href: quickstarts/excel-quickstart-vs.md
-        displayName: Excel
-      - name: Content
-        href: quickstarts/excel-quickstart-content.md
-        displayName: Excel
-    - name: Outlook
-      href: quickstarts/outlook-quickstart-vs.md
-      displayName: Outlook
-    - name: PowerPoint 
-      items:
-      - name: Task pane
-        href: quickstarts/powerpoint-quickstart-vs.md
-        displayName: PowerPoint
-      - name: Content
-        href: quickstarts/powerpoint-quickstart-content.md
-        displayName: PowerPoint
-    - name: Word
-      href: quickstarts/word-quickstart-vs.md
-      displayName: Word
-  - name: Work with a PowerPoint presentation
-    href: tutorials/powerpoint-tutorial-vs.md
+  - name: Warnings and dependencies in the Node.js and npm world
+    href: overview/npm-warnings-advice.md
   - name: Share code from VSTO Add-in to Office Add-in
     href: tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md
-  - name: Make your Office Add-in compatible with an existing COM add-in
+  - name: Make your Office Add-in compatible with an existing COM or VSTO add-in
     href: develop/make-office-add-in-compatible-with-existing-com-add-in.md
     displayName: manifest
 - name: Resources

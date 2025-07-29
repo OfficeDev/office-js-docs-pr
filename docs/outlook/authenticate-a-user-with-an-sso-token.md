@@ -1,12 +1,13 @@
 ---
 title: Authenticate a user with a single-sign-on token
 description: Learn about using the single-sign-on token provided by an Outlook add-in to implement SSO with your service.
-ms.date: 07/24/2024
+ms.date: 06/24/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Authenticate a user with a single-sign-on token in an Outlook add-in
+
 [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 Single sign-on (SSO) provides a seamless way for your add-in to authenticate users (and optionally to obtain access tokens to call the [Microsoft Graph API](/graph/overview)).
@@ -24,7 +25,7 @@ To use SSO with an Outlook add-in, you must enable Modern Authentication for the
 
 ## Register your add-in
 
-To use SSO, your Outlook add-in will need to have a server-side web API that is registered with Azure Active Directory (AAD) v2.0. For more information, see [Register an Office Add-in that uses SSO with the Azure AD v2.0 endpoint](../develop/register-sso-add-in-aad-v2.md).
+To use SSO, your Outlook add-in will need to have a server-side web API that is registered with Microsoft Entra ID. For more information, see [Register an Office Add-in that uses SSO with the Microsoft identity platform](../develop/register-sso-add-in-aad-v2.md).
 
 ### Provide consent when sideloading an add-in
 
@@ -54,7 +55,7 @@ In most scenarios, there would be little point to obtaining the access token, if
 
 ## SSO for event-based activation or integrated spam reporting
 
-There are additional steps to take if your add-in uses event-based activation or integrated spam reporting (preview). For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md).
+There are additional steps to take if your add-in uses event-based activation or integrated spam reporting. For more information, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md).
 
 ## See also
 
@@ -62,4 +63,4 @@ There are additional steps to take if your add-in uses event-based activation or
 - For a sample Outlook add-in that uses the SSO token to access the Microsoft Graph API, see [Outlook Add-in SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO).
 - [SSO API reference](/javascript/api/office/office.auth#office-office-auth-getaccesstoken-member(1))
 - [IdentityAPI requirement set](/javascript/api/requirement-sets/common/identity-api-requirement-sets)
-- [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](use-sso-in-event-based-activation.md)
+- [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Outlook add-in](../develop/use-sso-in-event-based-activation.md)

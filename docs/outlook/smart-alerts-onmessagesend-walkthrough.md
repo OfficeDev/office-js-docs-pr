@@ -1,7 +1,7 @@
----
+﻿---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 03/11/2025
+ms.date: 06/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -46,7 +46,7 @@ To configure the manifest, select the tab for the type of manifest you are using
             "capabilities": [
                 {
                     "name": "Mailbox",
-                    "minVersion": "1.14"
+                    "minVersion": "1.15"
                 }
             ]
         },
@@ -77,7 +77,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Add the following object to the `"autoRunEvents"` array. Note the following about this code:
 
-   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](autolaunch.md#supported-events)). The function name provided in `"actionId"` must match the name used in the `"id"` property of the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array in an earlier step.
+   - The event object assigns a handler function to the `OnMessageSend` event (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](../develop/event-based-activation.md#supported-events)). The function name provided in `"actionId"` must match the name used in the `"id"` property of the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array in an earlier step.
    - The `"sendMode"` option is set to `"softBlock"`. This means that if the message doesn't meet the conditions that the add-in sets for sending, the user must take action before they can send the message. However, if the add-in is unavailable at the time of sending, the item will be sent.
 
     ```json
@@ -111,7 +111,7 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -321,7 +321,10 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 > [!IMPORTANT]
 >
 > - In classic Outlook on Windows, imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
-> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings.
+> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
+>   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
+>   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
+> - In classic Outlook on Windows, when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
 > - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 ## Customize the text and functionality of a button in the dialog (optional)
@@ -348,7 +351,7 @@ To modify the text of the dialog button or assign it a task pane or function, yo
 
 - The [cancelLabel](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-cancellabel-member) option customizes the text of the applicable button. Custom text must be a maximum of 20 characters.
 - The [commandId](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-commandid-member) option specifies the ID of the task pane or function that runs when the applicable button is selected. The value must match the task pane or function command ID in the manifest of your add-in. The markup depends on the type of manifest your add-in uses.
-  - **Add-in only manifest**: The `id` attribute of the **\<Control\>** element representing the task pane or function command.
+  - **Add-in only manifest**: The `id` attribute of the `<Control>` element representing the task pane or function command.
   - **Unified manifest for Microsoft 365**: The "id" property of the task pane or function command in the "controls" array.
 
   In supported Outlook clients and versions, when the `commandId` option is specified, the **Take Action** button appears in the Smart Alerts dialog.
@@ -464,7 +467,7 @@ If you implemented the optional steps to customize a dialog button or override t
 > In classic Outlook on Windows starting in Version 2412 (Build 18324.20000), you must implement a task pane or function command to customize the **Take Action** button. This is because the **Take Action** button only appears in the Smart Alerts dialog when a task pane or function command is implemented in the add-in.
 
 1. Navigate to the **./src/taskpane** folder, then open **taskpane.html**.
-1. Select the entire **\<body\>** node (including its open and close tags) and replace it with the following code.
+1. Select the entire `<body>` node (including its open and close tags) and replace it with the following code.
 
     ```html
     <body class="ms-welcome ms-Fabric">
@@ -734,10 +737,10 @@ If you implemented the optional step to override the send mode option at runtime
 ## See also
 
 - [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
-- [Configure your Outlook add-in for event-based activation](autolaunch.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)
 - [Office Add-in manifests](../develop/add-in-manifests.md)
-- [Troubleshoot event-based and spam-reporting add-ins](troubleshoot-event-based-and-spam-reporting-add-ins.md)
-- [Debug event-based and spam-reporting add-ins](debug-autolaunch.md)
-- [AppSource listing options for your event-based Outlook add-in](autolaunch-store-options.md)
+- [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
+- [Debug event-based and spam-reporting add-ins](../testing/debug-autolaunch.md)
+- [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)
 - [Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
 - [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)

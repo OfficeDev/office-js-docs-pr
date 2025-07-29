@@ -1,4 +1,4 @@
----
+﻿---
 title: Specify Office hosts and API requirements with the add-in only manifest
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
@@ -45,7 +45,7 @@ By default, an add-in is installable in all Office applications supported by the
 
 To ensure that your add-in is installable in only a subset of Office applications, use the [Hosts](/javascript/api/manifest/hosts) and [Host](/javascript/api/manifest/host) elements in the add-in only manifest.
 
-For example, the following **\<Hosts\>** and **\<Host\>** declaration specifies that the add-in can install on any release of Excel, which includes Excel on the web, Windows, and iPad, but can't be installed on any other Office application.
+For example, the following `<Hosts>` and `<Host>` declaration specifies that the add-in can install on any release of Excel, which includes Excel on the web, Windows, and iPad, but can't be installed on any other Office application.
 
 ```xml
 <Hosts>
@@ -53,7 +53,7 @@ For example, the following **\<Hosts\>** and **\<Host\>** declaration specifies 
 </Hosts>
 ```
 
-The **\<Hosts\>** element can contain one or more **\<Host\>** elements. There should be a separate **\<Host\>** element for each Office application on which the add-in should be installable. The `Name` attribute is required and can be set to one of the following values.
+The `<Hosts>` element can contain one or more `<Host>` elements. There should be a separate `<Host>` element for each Office application on which the add-in should be installable. The `Name` attribute is required and can be set to one of the following values.
 
 | Name          | Office client applications                     | Available add-in types |
 |:--------------|:-----------------------------------------------|:-----------------------|
@@ -96,12 +96,12 @@ Requirement set support varies by Office application, the version of the Office 
 
 Use the [Requirements](/javascript/api/manifest/requirements) element and its child element [Sets](/javascript/api/manifest/sets) to specify the minimum requirement sets that must be supported by the Office application to install your add-in.
 
-All APIs in the application specific models are in requirement sets, but some of those in the Common API model are not. Use the [Methods](/javascript/api/manifest/methods) to specify the setless API members that your add-in requires. You can't use the **\<Methods\>** element with Outlook add-ins.
+All APIs in the application specific models are in requirement sets, but some of those in the Common API model are not. Use the [Methods](/javascript/api/manifest/methods) to specify the setless API members that your add-in requires. You can't use the `<Methods>` element with Outlook add-ins.
 
-If the Office application or platform doesn't support the requirement sets or API members specified in the **\<Requirements\>** element, the add-in won't run in that application or platform, and won't display in **My Add-ins**.
+If the Office application or platform doesn't support the requirement sets or API members specified in the `<Requirements>` element, the add-in won't run in that application or platform, and won't display in **My Add-ins**.
 
 > [!NOTE]
-> The **\<Requirements\>** element is optional for all add-ins, except for Outlook add-ins. When the `xsi:type` attribute of the root `OfficeApp` element is `MailApp`, there must be a **\<Requirements\>** element that specifies the minimum version of the Mailbox requirement set that the add-in requires. For more information, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
+> The `<Requirements>` element is optional for all add-ins, except for Outlook add-ins. When the `xsi:type` attribute of the root `OfficeApp` element is `MailApp`, there must be a `<Requirements>` element that specifies the minimum version of the Mailbox requirement set that the add-in requires. For more information, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).
 
 The following code example shows how to configure an add-in that is installable in all Office applications that support the following:
 
@@ -127,11 +127,11 @@ The following code example shows how to configure an add-in that is installable 
 
 Note the following about this example.
 
-- The **\<Requirements\>** element contains the **\<Sets\>** and **\<Methods\>** child elements.
-- The **\<Sets\>** element can contain one or more **\<Set\>** elements. `DefaultMinVersion` specifies the default `MinVersion` value of all child **\<Set\>** elements.
-- A [Set](/javascript/api/manifest/set) element specifies a requirement set that the Office application must support to make the add-in installable. The `Name` attribute specifies the name of the requirement set. The `MinVersion` specifies the minimum version of the requirement set. `MinVersion` overrides the value of the `DefaultMinVersion` attribute in the parent **\<Sets\>**.
-- The **\<Methods\>** element can contain one or more [Method](/javascript/api/manifest/method) elements. You can't use the **\<Methods\>** element with Outlook add-ins.
-- The **\<Method\>** element specifies an individual method that the Office application must support to make the add-in installable. The `Name` attribute is required and specifies the name of the method qualified with its parent object.
+- The `<Requirements>` element contains the `<Sets>` and `<Methods>` child elements.
+- The `<Sets>` element can contain one or more `<Set>` elements. `DefaultMinVersion` specifies the default `MinVersion` value of all child `<Set>` elements.
+- A [Set](/javascript/api/manifest/set) element specifies a requirement set that the Office application must support to make the add-in installable. The `Name` attribute specifies the name of the requirement set. The `MinVersion` specifies the minimum version of the requirement set. `MinVersion` overrides the value of the `DefaultMinVersion` attribute in the parent `<Sets>`.
+- The `<Methods>` element can contain one or more [Method](/javascript/api/manifest/method) elements. You can't use the `<Methods>` element with Outlook add-ins.
+- The `<Method>` element specifies an individual method that the Office application must support to make the add-in installable. The `Name` attribute is required and specifies the name of the method qualified with its parent object.
 
 ## Design for alternate experiences
 
@@ -139,24 +139,24 @@ The extensibility features that the Office Add-in platform provides can be usefu
 
 - Extensibility features that are available immediately after the add-in is installed. You can make use of this kind of feature by configuring a [VersionOverrides](/javascript/api/manifest/versionoverrides) element in the manifest. An example of this kind of feature is [Add-in Commands](../design/add-in-commands.md), which are custom ribbon buttons and menus.
 - Extensibility features that are available only when the add-in is running and that are implemented with Office.js JavaScript APIs; for example, [Dialog Boxes](../develop/dialog-api-in-office-add-ins.md).
-- Extensibility features that are available only at runtime but are implemented with a combination of Office.js JavaScript and configuration in a **\<VersionOverrides\>** element. Examples of these are [Excel custom functions](../excel/custom-functions-overview.md), [single sign-on](sso-in-office-add-ins.md), and [custom contextual tabs](../design/contextual-tabs.md).
+- Extensibility features that are available only at runtime but are implemented with a combination of Office.js JavaScript and configuration in a `<VersionOverrides>` element. Examples of these are [Excel custom functions](../excel/custom-functions-overview.md), [single sign-on](sso-in-office-add-ins.md), and [custom contextual tabs](../design/contextual-tabs.md).
 
 If your add-in uses a specific extensibility feature for some of its functionality but has other useful functionality that doesn't require the extensibility feature, you should design the add-in so that it's installable on platform and Office version combinations that don't support the extensibility feature. It can provide a valuable, albeit diminished, experience on those combinations.
 
 You implement this design differently depending on how the extensibility feature is implemented:
 
 - For features implemented entirely with JavaScript, see [Check for API availability at runtime](specify-api-requirements-runtime.md).
-- For features that require you to configure a **\<VersionOverrides\>** element, see [Specifying requirements in a VersionOverrides element](#specify-requirements-in-a-versionoverrides-element).
+- For features that require you to configure a `<VersionOverrides>` element, see [Specifying requirements in a VersionOverrides element](#specify-requirements-in-a-versionoverrides-element).
 
 ### Specify requirements in a VersionOverrides element
 
 The [VersionOverrides](/javascript/api/manifest/versionoverrides) element was added to the manifest schema primarily, but not exclusively, to support features that must be available immediately after an add-in is installed, such as add-in commands (custom ribbon buttons and menus). Office must know about these features when it parses the add-in manifest.
 
-Suppose your add-in uses one of these features, but the add-in is valuable, and should be installable, even on Office versions that don't support the feature. In this scenario, identify the feature using a [Requirements](/javascript/api/manifest/requirements) element (and its child [Sets](/javascript/api/manifest/sets) and [Methods](/javascript/api/manifest/methods) elements) that you include as a child of the **\<VersionOverrides\>** element itself instead of as a child of the base `OfficeApp` element. The effect of doing this is that Office will allow the add-in to be installed, but Office will ignore certain of the child elements of the **\<VersionOverrides\>** element on Office versions where the feature isn't supported.
+Suppose your add-in uses one of these features, but the add-in is valuable, and should be installable, even on Office versions that don't support the feature. In this scenario, identify the feature using a [Requirements](/javascript/api/manifest/requirements) element (and its child [Sets](/javascript/api/manifest/sets) and [Methods](/javascript/api/manifest/methods) elements) that you include as a child of the `<VersionOverrides>` element itself instead of as a child of the base `OfficeApp` element. The effect of doing this is that Office will allow the add-in to be installed, but Office will ignore certain of the child elements of the `<VersionOverrides>` element on Office versions where the feature isn't supported.
 
-Specifically, the child elements of the **\<VersionOverrides\>** that override elements in the base manifest, such as a **\<Hosts\>** element, are ignored and the corresponding elements of the base manifest are used instead. However, there can be child elements in a **\<VersionOverrides\>** that actually implement additional features rather than override settings in the base manifest. Two examples are the `WebApplicationInfo` and `EquivalentAddins`. These parts of the **\<VersionOverrides\>** will *not* be ignored, assuming the platform and version of Office support the corresponding feature.  
+Specifically, the child elements of the `<VersionOverrides>` that override elements in the base manifest, such as a `<Hosts>` element, are ignored and the corresponding elements of the base manifest are used instead. However, there can be child elements in a `<VersionOverrides>` that actually implement additional features rather than override settings in the base manifest. Two examples are the `WebApplicationInfo` and `EquivalentAddins`. These parts of the `<VersionOverrides>` will *not* be ignored, assuming the platform and version of Office support the corresponding feature.  
 
-For information about the descendent elements of the **\<Requirements\>** element, see [Requirements element](#requirements-element) earlier in this article.
+For information about the descendent elements of the `<Requirements>` element, see [Requirements element](#requirements-element) earlier in this article.
 
 The following is an example.
 
@@ -180,10 +180,10 @@ The following is an example.
 ```
 
 > [!WARNING]
-> If your add-in includes [add-in commands](../design/add-in-commands.md), use great care before including a **\<Requirements\>** element in a **\<VersionOverrides\>**. On platform and version combinations that don't support the requirement, *none* of the add-in commands will be installed, *even those that invoke functionality that doesn't need the requirement*. Consider, for example, an add-in that has two custom ribbon buttons. One of them calls Office JavaScript APIs that are available in requirement set **ExcelApi 1.4** (and later). The other calls APIs that are only available in **ExcelApi 1.9** (and later). If you put a requirement for **ExcelApi 1.9** in the **\<VersionOverrides\>**, then when 1.9 isn't supported, *neither* button will appear on the ribbon. A better strategy in this scenario would be to use the technique described in [Check for API availability at runtime](specify-api-requirements-runtime.md). The code invoked by the second button first uses `isSetSupported` to check for support of **ExcelApi 1.9**. If it isn't supported, the code gives the user a message saying that this feature of the add-in isn't available on their version of Office.
+> If your add-in includes [add-in commands](../design/add-in-commands.md), use great care before including a `<Requirements>` element in a `<VersionOverrides>`. On platform and version combinations that don't support the requirement, *none* of the add-in commands will be installed, *even those that invoke functionality that doesn't need the requirement*. Consider, for example, an add-in that has two custom ribbon buttons. One of them calls Office JavaScript APIs that are available in requirement set **ExcelApi 1.4** (and later). The other calls APIs that are only available in **ExcelApi 1.9** (and later). If you put a requirement for **ExcelApi 1.9** in the `<VersionOverrides>`, then when 1.9 isn't supported, *neither* button will appear on the ribbon. A better strategy in this scenario would be to use the technique described in [Check for API availability at runtime](specify-api-requirements-runtime.md). The code invoked by the second button first uses `isSetSupported` to check for support of **ExcelApi 1.9**. If it isn't supported, the code gives the user a message saying that this feature of the add-in isn't available on their version of Office.
 
 > [!TIP]
-> There's no point to repeating a **\<Requirement\>** element in a **\<VersionOverrides\>** that already appears in the base manifest. If the requirement is specified in the base manifest, then the add-in can't install where the requirement isn't supported so Office doesn't even parse the **\<VersionOverrides\>** element.
+> There's no point to repeating a `<Requirement>` element in a `<VersionOverrides>` that already appears in the base manifest. If the requirement is specified in the base manifest, then the add-in can't install where the requirement isn't supported so Office doesn't even parse the `<VersionOverrides>` element.
 
 ## See also
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Activate your Outlook add-in without the Reading Pane enabled or a message selected
 description: Learn how to activate your Outlook add-in without enabling the Reading Pane or first selecting a message.
 ms.date: 04/12/2024
@@ -77,17 +77,17 @@ The steps to configure the manifest vary depending on which type of manifest you
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action#supportsnoitemcontext) child element to the **\<Action\>** element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
+To activate your add-in with the Reading Pane turned off or without a message selected, you must add the [SupportsNoItemContext](/javascript/api/manifest/action#supportsnoitemcontext) child element to the `<Action>` element and set its value to `true`. As this feature can only be implemented with a task pane in Message Read mode, the following elements must also be configured.
 
 - The [VersionOverrides 1.1 Mail](/javascript/api/manifest/versionoverrides-1-1-mail) schema must be specified.
-- The `xsi:type` attribute value of the **\<ExtensionPoint\>** element must be set to `MessageReadCommandSurface`.
-- The `xsi:type` attribute value of the **\<Action\>** element must be set to `ShowTaskpane`.
+- The `xsi:type` attribute value of the `<ExtensionPoint>` element must be set to `MessageReadCommandSurface`.
+- The `xsi:type` attribute value of the `<Action>` element must be set to `ShowTaskpane`.
 
 1. In your preferred code editor, open the Outlook quick start project you created.
 
 1. Open the **manifest.xml** file located at the root of the project.
 
-1. Select the entire **\<VersionOverrides\>** node and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node and replace it with the following XML.
 
     ```xml
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -156,7 +156,7 @@ To activate your add-in with the Reading Pane turned off or without a message se
 ## Configure the task pane
 
 1. In your project, navigate to the **taskpane** folder, then open **taskpane.html**.
-1. Replace the entire **\<body\>** element with the following markup.
+1. Replace the entire `<body>` element with the following markup.
 
     ```html
     <body class="ms-font-m ms-welcome ms-Fabric">

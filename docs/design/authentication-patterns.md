@@ -1,6 +1,6 @@
 ---
 title: Authentication design guidelines for Office Add-ins
-ms.date: 08/14/2023
+ms.date: 06/24/2025
 ms.topic: best-practice
 description: Learn how to visually design a sign-on or sign-up page in an Office Add-in.
 
@@ -32,7 +32,7 @@ Add-ins may require users to sign-in or sign-up in order to access features and 
 
     ![The Identity Provider Choices dialog in an Office application.](../images/add-in-auth-choices-dialog.png)
 
-1. Identity Provider Sign-in - The identity provider will have their own UI. Microsoft Azure Active Directory allows customization of sign-in and access panel pages for consistent look and feel with your service. [Learn More](/azure/active-directory/fundamentals/customize-branding).
+1. Identity Provider Sign-in - The identity provider will have their own UI. Microsoft Entra ID allows customization of sign-in and access panel pages for consistent look and feel with your service. For more information, see [Configure your company branding](/entra/fundamentals/how-to-customize-branding).
 
     ![The Identity Provider Sign-in dialog in an Office application.](../images/add-in-auth-identity-sign-in.png)
 

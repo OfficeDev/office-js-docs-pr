@@ -86,7 +86,7 @@ Congratulations, you've successfully created an Excel content add-in! Next, lear
 
 ## Code samples
 
-- [Excel Content Add-in Humongous Insurance](https://github.com/OfficeDev/Excel-Content-Add-in-Humongous-Insurance)
+- [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in)
 
 ## See also
 
