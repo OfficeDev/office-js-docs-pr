@@ -111,7 +111,7 @@ The following figure shows the built-in range selection prompt in Excel.
 
 ![The Select Data dialog.](../images/agave-api-overview-excel-selection-ui.png)
 
-## Create a binding to a named item
+## Add a binding to a named item
 
 This example shows how to add a binding to the existing `myRange` named item as a "matrix" binding using the [addFromNamedItemAsync] method, and assigns the binding's `id` as "myMatrix".
 
