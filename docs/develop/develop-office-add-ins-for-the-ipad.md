@@ -6,9 +6,9 @@ ms.date: 07/29/2025
 ms.localizationpriority: medium
 ---
 
-# Special requirements for iPad add-ins
+# Special requirements for add-ins on the iPad
 
-Planning to make your add-in available on iPad? Great choice! If your add-in uses only Office APIs that are supported on iPad, customers can install it on their devices. However, if you're publishing to [AppSource](https://appsource.microsoft.com), there are some additional requirements you'll need to meet.
+You'll need to make additional considerations if you want to make your add-in available on iPad. If your add-in uses only Office APIs that are supported on iPad, customers can install it on their devices. However, if you're publishing to [AppSource](https://appsource.microsoft.com), there are some additional requirements you'll need to meet.
 
 For details on API compatibility, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 
@@ -25,7 +25,7 @@ Here's what you need to know when submitting your add-in to AppSource for iPad u
 
 ## Detecting iPad devices
 
-Want to provide a different experience for iPad users? Your add-in can detect what device it's running on and adjust accordingly. Here's how to detect iPad devices.
+Want to provide a different experience for iPad users? Your add-in can detect what device it's running on and adjust accordingly. Use the [Office.context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) and [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member) properties to detect iPad devices.
 
 ```javascript
 const isTouchEnabled = Office.context.touchEnabled;
