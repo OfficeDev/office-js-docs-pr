@@ -83,7 +83,7 @@ Follow these key principles to create add-ins that feel native to Office:
 
 Touch support is essential for modern Office add-ins.
 
-- **Detect touch support.** Use the [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) property to detect whether the Office app your add-in runs on is touch enabled.
+- **Detect touch support.** Use the [Context.touchEnabled](/javascript/api/office/office.context#office-office-context-touchenabled-member) property to detect whether the Office app your add-in runs on is touch-enabled.
 
   > [!NOTE]
   > This property isn't supported in Outlook.
