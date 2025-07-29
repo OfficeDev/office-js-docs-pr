@@ -7,13 +7,13 @@ ms.localizationpriority: medium
 
 # Bind to regions in a document or spreadsheet
 
-Bindings let your add-in consistently access specific regions of a document or spreadsheet. Think of a binding as a bookmark that remembers where your data is, even if users change their selection or navigate elsewhere in the document.
-
-To create a binding, call one of these methods to associate a document region with a unique identifier: [addFromPromptAsync], [addFromSelectionAsync], or [addFromNamedItemAsync]. Once you've established the binding, you can use its identifier to read from or write to that region anytime. Here's what bindings offer your add-in.
+Bindings let your add-in consistently access specific regions of a document or spreadsheet. Think of a binding as a bookmark that remembers a specific location, even if users change their selection or navigate elsewhere in the document. Specifically, here are what bindings offer your add-in.
 
 - **Access common data structures** across supported Office applications, such as tables, ranges, or text.
 - **Read and write data** without requiring users to make a selection first.
 - **Create persistent relationships** between your add-in and document data. Bindings are saved with the document and work across sessions.
+
+To create a binding, call one of these methods to associate a document region with a unique identifier: [addFromPromptAsync], [addFromSelectionAsync], or [addFromNamedItemAsync]. Once you've established the binding, use its identifier to read from or write to that region anytime.
 
 You can also subscribe to data and selection change events for specific bound regions. This means your add-in only gets notified about changes within the bound area, not the entire document.
 
@@ -74,7 +74,7 @@ function write(message){
 }
 ```
 
-In this example, the binding type is text, so a [TextBinding] will be created for the selection. Different binding types expose different data and operations. [Office.BindingType] is an enumeration of available binding types.
+In this example, the binding type is text, so a [TextBinding] is created for the selection. Different binding types expose different data and operations. [Office.BindingType] is an enumeration of available binding types.
 
 The second optional parameter specifies the ID of the new binding. If you don't specify an ID, one is generated automatically.
 
@@ -136,18 +136,17 @@ function write(message){
 **For Excel**, the `itemName` parameter of [addFromNamedItemAsync] can refer to an existing named range, a range specified with A1 reference style (`"A1:A3"`), or a table. By default, Excel assigns names like "Table1" for the first table, "Table2" for the second table, and so on. To assign a meaningful name to a table in the Excel UI, use the **Table Name** property on the **Table Tools | Design** tab.
 
 > [!NOTE]
-> In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in this format: `"Sheet1!Table1"`
+> In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in this format (e.g., `"Sheet1!Table1"`).
 
 This example creates a binding in Excel to the first three cells in column A (`"A1:A3"`), assigns the ID `"MyCities"`, and then writes three city names to that binding.
 
 ```js
  function bindingFromA1Range() {
-    Office.context.document.bindings.addFromNamedItemAsync("A1:A3", "matrix", {id: "MyCities" },
+    Office.context.document.bindings.addFromNamedItemAsync("A1:A3", "matrix", { id: "MyCities" },
         function (asyncResult) {
             if (asyncResult.status == "failed") {
                 write('Error: ' + asyncResult.error.message);
-            }
-            else {
+            } else {
                 // Write data to the new binding.
                 Office.select("bindings#MyCities").setDataAsync([['Berlin'], ['Munich'], ['Duisburg']], { coercionType: "matrix" },
                     function (asyncResult) {
@@ -314,7 +313,7 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 In the example, the first parameter is the value to set on `myBinding`. Because this is a text binding, the value is a `string`. Different binding types accept different types of data.
 
-The anonymous function passed into the method is a callback that executes when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains the result's status.
+The anonymous function passed into the method is a callback that runs when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains the result's status.
 
 ## Detect changes to data or selection in a binding
 
@@ -390,5 +389,3 @@ function removeEventHandlerFromBinding() {
 
 [TableBinding.rowCount]: /javascript/api/office/office.tablebinding
 [BindingSelectionChangedEventArgs]: /javascript/api/office/office.bindingselectionchangedeventargs
- 
- 
