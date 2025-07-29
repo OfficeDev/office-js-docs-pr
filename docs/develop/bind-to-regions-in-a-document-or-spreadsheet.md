@@ -7,6 +7,8 @@ ms.localizationpriority: medium
 
 # Bind to regions in a document or spreadsheet
 
+[!include[information about the common API](../includes/alert-common-api-info.md)]
+
 Bindings let your add-in consistently access specific regions of a document or spreadsheet. Think of a binding as a bookmark that remembers a specific location, even if users change their selection or navigate elsewhere in the document. Specifically, here are what bindings offer your add-in.
 
 - **Access common data structures** across supported Office applications, such as tables, ranges, or text.
