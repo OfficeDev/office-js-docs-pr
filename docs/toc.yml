@@ -354,6 +354,8 @@ items:
           href: develop/convert-javascript-to-typescript.md
       - name: Develop add-ins with Angular
         href: develop/add-ins-with-angular2.md
+    - name: Special requirements for add-ins on the iPad
+      href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
     items:
     - name: Test Office Add-ins

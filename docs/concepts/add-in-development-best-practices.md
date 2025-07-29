@@ -127,54 +127,6 @@ Performance directly impacts user satisfaction. Follow these guidelines to keep 
 
 - **Minimize data exchanges.** Reduce data exchanges between your add-in and the Office document. For more information, see [Avoid using the context.sync method in loops](correlated-objects-pattern.md).
 
-## Special requirements for iPad add-ins
-
-If your add-in uses only Office APIs that are supported on iPad, customers can install it on iPads. (See [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md) for more information.) If you're publishing to [AppSource](https://appsource.microsoft.com), there are additional requirements for add-ins that can be installed on iPads.
-
-### iPad AppSource requirements
-
-|Task|Description|Resources|
-|:-----|:-----|:-----|
-|Apply iOS design best practices.|Integrate your add-in UI seamlessly with the iOS experience.|[Designing for iOS](https://developer.apple.com/design/human-interface-guidelines/designing-for-ios)|
-|Make your add-in free.|Office on iPad is a channel through which you can reach more users and promote your services. These new users have the potential to become your customers.|[Certification policy 1120.2](/legal/marketplace/certification-policies#11202-mobile-requirements)|
-|Make your add-in commerce free on the iPad.|When it's running on the iPad, your add-in must be free of in-app purchases, trial offers, UI that aims to upsell to a non-free version, or links to any online stores where users can purchase or acquire other content, apps, or add-ins. Your Privacy Policy and Terms of Use pages must also be free of any commerce UI or AppSource links. Your add-in can still have commerce on other platforms. To do so, test the [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member) property and suppress all commerce when it returns `false`.|[Certification policy 1100.3](/legal/marketplace/certification-policies#11003-selling-additional-features)|
-|Submit your add-in to AppSource.|In Partner Center, on the **Product setup** page, select the **Make my product available on iOS and Android (if applicable)** check box, and provide your Apple developer ID in Account settings. Review the [Application Provider Agreement](https://go.microsoft.com/fwlink/?linkid=715691) to make sure you understand the terms.|[Make your solutions available in AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)|
-
-### Detecting iPad devices
-
-Your add-in can provide a different UI based on the device it's running on. To detect whether your add-in is running on an iPad, use the following APIs.
-
-```javascript
-const isTouchEnabled = Office.context.touchEnabled;
-const allowCommerce = Office.context.commerceAllowed;
-
-// On an iPad, touchEnabled returns true and commerceAllowed returns false
-if (isTouchEnabled && !allowCommerce) {
-    // Likely running on iPad - implement iPad-specific UI
-    enableIPadInterface();
-    hideCommerceFeatures();
-}
-```
-
-### iPad development best practices
-
-#### Develop and debug the add-in on Windows or Mac and sideload it to an iPad
-
-You can't develop an add-in directly on an iPad, but you can develop and debug it on a Windows or Mac computer and sideload it to an iPad for testing. Since an add-in that runs in Office on iOS or Mac supports the same APIs as an add-in running in Office on Windows, your add-in's code should run the same way on these platforms. For details, see [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md) and [Sideload Office Add-ins on iPad for testing](../testing/sideload-an-office-add-in-on-ipad.md).
-
-#### Specify API requirements in your add-in's manifest or with runtime checks
-
-When you specify API requirements in your add-in's manifest, Office determines if the Office client app supports those API members. If the API members are available, your add-in will be available too.
-
-Alternatively, you can perform a runtime check to determine if a method is available before using it in your add-in. Runtime checks ensure your add-in is always available and provides additional functionality when the methods are supported. For more information, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
-
-### Outlook add-ins on iPad
-
-For information about designing Outlook add-ins that look good and work well in Outlook on mobile devices, see [Add-ins for Outlook on mobile devices](../outlook/outlook-mobile-addins.md).
-
-> [!NOTE]
-> If you're using [Fluent UI React](../quickstarts/fluent-react-quickstart.md) for your design elements, many of these elements are built into the design system.
-
 ## Publish and market your add-in
 
 Ready to share your add-in with the world? Here's how to get started.
