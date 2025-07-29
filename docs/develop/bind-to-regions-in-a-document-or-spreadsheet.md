@@ -80,7 +80,7 @@ In this example, the binding type is text, so a [TextBinding] is created for the
 
 The second optional parameter specifies the ID of the new binding. If you don't specify an ID, one is generated automatically.
 
-The anonymous function passed as the final _callback_ parameter executes when the binding creation is complete. The function receives a single parameter, `asyncResult`, which provides access to an [AsyncResult] object with the call's status. The `AsyncResult.value` property contains a reference to a [Binding] object of the specified type for the newly created binding. You can use this [Binding] object to get and set data.
+The anonymous function passed as the final _callback_ parameter runs when the binding creation is complete. The function receives a single parameter, `asyncResult`, which provides access to an [AsyncResult] object with the call's status. The `AsyncResult.value` property contains a reference to a [Binding] object of the specified type for the newly created binding. You can use this [Binding] object to get and set data.
 
 ## Create a binding from a prompt
 
@@ -107,7 +107,7 @@ The binding type is text, so a [TextBinding] will be created for the user's sele
 
 The second parameter contains the ID of the new binding. If you don't specify an ID, one is generated automatically.
 
-The anonymous function passed as the third _callback_ parameter executes when the binding creation is complete. When the callback function executes, the [AsyncResult] object contains the call's status and the newly created binding.
+The anonymous function passed as the third _callback_ parameter runs when the binding creation is complete. When the callback function runs, the [AsyncResult] object contains the call's status and the newly created binding.
 
 The following figure shows the built-in range selection prompt in Excel.
 
@@ -135,7 +135,7 @@ function write(message){
 
 ```
 
-**For Excel**, the `itemName` parameter of [addFromNamedItemAsync] can refer to an existing named range, a range specified with A1 reference style (`"A1:A3"`), or a table. By default, Excel assigns names like "Table1" for the first table, "Table2" for the second table, and so on. To assign a meaningful name to a table in the Excel UI, use the **Table Name** property on the **Table Tools | Design** tab.
+**For Excel**, the `itemName` parameter of [addFromNamedItemAsync] can refer to an existing named range, a range specified with A1 reference style (`"A1:A3"`), or a table. By default, Excel assigns the names "Table1" for the first table, "Table2" for the second table, and so on. To assign a meaningful name to a table in the Excel UI, use the **Table Name** property on the **Table Tools | Design** tab.
 
 > [!NOTE]
 > In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in this format (e.g., `"Sheet1!Table1"`).
@@ -209,7 +209,7 @@ function write(message){
 }
 ```
 
-The anonymous function passed as the `callback` parameter executes when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains an array of the bindings in the document. The array is iterated to build a string that contains the IDs of the bindings. The string is then displayed in a message box.
+The anonymous function passed as the `callback` parameter runs when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains an array of the bindings in the document. The array is iterated to build a string that contains the IDs of the bindings. The string is then displayed in a message box.
 
 ## Get a binding by ID using getByIdAsync
 
@@ -233,7 +233,7 @@ function write(message){
 
 In the example, the first `id` parameter is the ID of the binding to retrieve.
 
-The anonymous function passed as the second _callback_ parameter executes when the operation is completed. The function is called with a single parameter, _asyncResult_, which contains the call's status and the binding with the ID "myBinding".
+The anonymous function passed as the second _callback_ parameter runs when the operation is completed. The function is called with a single parameter, _asyncResult_, which contains the call's status and the binding with the ID "myBinding".
 
 ## Get a binding by ID using `Office.select`
 
@@ -274,7 +274,7 @@ function write(message){
 
 In the example, the first `id` parameter is the ID of the binding to release.
 
-The anonymous function passed as the second parameter is a callback that executes when the operation is complete. The function is called with a single parameter, [asyncResult], which contains the call's status.
+The anonymous function passed as the second parameter is a callback that runs when the operation is complete. The function is called with a single parameter, [asyncResult], which contains the call's status.
 
 ## Read data from a binding
 
@@ -301,7 +301,7 @@ function write(message){
 Office.select("bindings#myBindingID").getDataAsync
 ```
 
-The anonymous function passed into the method is a callback that executes when the operation is complete. The [AsyncResult].value property contains the data within `myBinding`. The type of the value depends on the binding type. The binding in this example is a text binding, so the value will contain a string. For additional examples of working with matrix and table bindings, see the [getDataAsync] method topic.
+The anonymous function passed into the method is a callback that runs when the operation is complete. The [AsyncResult].value property contains the data within `myBinding`. The type of the value depends on the binding type. The binding in this example is a text binding, so the value will contain a string. For additional examples of working with matrix and table bindings, see the [getDataAsync] method topic.
 
 ## Write data to a binding
 
@@ -339,7 +339,7 @@ The `myBinding` is a variable that contains an existing text binding in the docu
 
 The first _eventType_ parameter of [addHandlerAsync] specifies the name of the event to subscribe to. [Office.EventType] is an enumeration of available event type values. `Office.EventType.BindingDataChanged` evaluates to the string "bindingDataChanged".
 
-The `dataChanged` function passed as the second _handler_ parameter is an event handler that executes when the data in the binding is changed. The function is called with a single parameter, _eventArgs_, which contains a reference to the binding. This binding can be used to retrieve the updated data.
+The `dataChanged` function passed as the second _handler_ parameter is an event handler that runs when the data in the binding is changed. The function is called with a single parameter, _eventArgs_, which contains a reference to the binding. This binding can be used to retrieve the updated data.
 
 Similarly, you can detect when a user changes selection in a binding by attaching an event handler to the [SelectionChanged] event of a binding. To do that, specify the `eventType` parameter of [addHandlerAsync] as `Office.EventType.BindingSelectionChanged` or `"bindingSelectionChanged"`.
 
