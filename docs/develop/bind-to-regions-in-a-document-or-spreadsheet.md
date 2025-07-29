@@ -233,7 +233,7 @@ In the example, the first `id` parameter is the ID of the binding to retrieve.
 
 The anonymous function passed as the second _callback_ parameter executes when the operation is completed. The function is called with a single parameter, _asyncResult_, which contains the call's status and the binding with the ID "myBinding".
 
-## Get a binding by ID using Office.select
+## Get a binding by ID using `Office.select`
 
 This example shows how to use the [Office.select] function to get a [Binding] object promise in a document by specifying its ID in a selector string. It then calls the [getDataAsync] method to get data from the specified binding. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this article.
 
