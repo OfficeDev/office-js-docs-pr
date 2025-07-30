@@ -1,4 +1,4 @@
----
+﻿---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
 ms.date: 06/23/2025
@@ -57,7 +57,7 @@ The following table summarizes publication methods that are available *only when
 |Method|Use|Support limitations|
 |:---------|:------------|:------------|
 |[Network share](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)|As part of your development process, to test your add-in running on Windows computers other than your development computer after you have published the add-in to a server other than localhost.|<ul><li>Not supported for production add-ins.</li><li>Not supported for Outlook add-ins.</li><li>Not supported for testing on iPad, Mac, or the web.</li></ul>|
-|[SharePoint catalog](#sharepoint-app-catalog-deployment)|In an on-premises environment, to distribute your add-in to users in your organization.|<ul><li>Not supported for Outlook add-ins.</li><li>Not supported for Office on Mac.</li><li>Not supported for add-ins with any feature that requires a **\<VersionOverrides\>** element in the add-in only manifest.</li></ul>|
+|[SharePoint catalog](#sharepoint-app-catalog-deployment)|In an on-premises environment, to distribute your add-in to users in your organization.|<ul><li>Not supported for Outlook add-ins.</li><li>Not supported for Office on Mac.</li><li>Not supported for add-ins with any feature that requires a `<VersionOverrides>` element in the add-in only manifest.</li></ul>|
 |[Exchange server](#outlook-add-in-exchange-server-deployment)|In an on-premises or online environment, to distribute Outlook add-ins to users.|Only supported for Outlook add-ins.|
 
 ### SharePoint app catalog deployment

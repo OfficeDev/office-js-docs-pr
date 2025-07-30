@@ -142,7 +142,7 @@ This section describes how to start and debug an add-in in desktop Office on the
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button. Visual Studio automatically builds the solution and launches the Office application host page of your Microsoft 365 tenancy.
 
 > [!NOTE]
-> When you're debugging an add-in on the web, you may get an AADSTS50011 error similar to the following: 
+> When you're debugging an add-in on the web, you may get an AADSTS50011 error similar to the following:
 >
 >    "The redirect URI `{Full absolute URL to add-in home page}` specified in the request doesn't match the redirect URIs configured for the application  ... "
 >

@@ -1,4 +1,4 @@
----
+﻿---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
 ms.date: 06/12/2025
@@ -130,13 +130,13 @@ To configure the manifest, select the tab for the type of manifest you're using.
 
 To enable event-based activation of your add-in, you must configure the [Runtimes](/javascript/api/manifest/runtimes) element and [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) extension point in the `VersionOverridesV1_1` node of the manifest.
 
-In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the **\<Runtime\>** element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
+In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while Outlook on the web and on the new Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use an HTML file that can reference the same JavaScript file. You must provide references to both these files in the `Resources` node of the manifest as the Outlook platform ultimately determines whether to use HTML or JavaScript based on the Outlook client. As such, to configure event handling, provide the location of the HTML in the `<Runtime>` element, then in its `Override` child element provide the location of the JavaScript file inlined or referenced by the HTML.
 
 1. In your code editor, open the quick start project.
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML, then save your changes.
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML, then save your changes.
 
 ```XML
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

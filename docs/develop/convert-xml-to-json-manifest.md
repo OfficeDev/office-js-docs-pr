@@ -1,4 +1,4 @@
----
+﻿---
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
@@ -36,7 +36,7 @@ To avoid conflicts with UI control names and other problems, be sure the existin
 
 ### Ensure that you have two special image files
 
-If your add-in only manifest doesn't already have both **\<IconUrl\>** and **\<HighResolutionIconUrl\>** (in that order) elements, then add them just below the **\<Description\>** element. The values of the **DefaultValue** attribute should be the full URLs of image files. The images must be a specified size as shown in the following table.
+If your add-in only manifest doesn't already have both `<IconUrl>` and `<HighResolutionIconUrl>` (in that order) elements, then add them just below the `<Description>` element. The values of the **DefaultValue** attribute should be the full URLs of image files. The images must be a specified size as shown in the following table.
 
 |Office application|\<IconUrl\>|\<HighResolutionIconUrl\>|
 |:---------------|:---------------|:---------------|
@@ -61,7 +61,7 @@ The following markup is an example.
 
 ### Reduce the number of add-in commands as needed
 
-An add-in that uses the unified manifest may not have more than 20 [add-in commands](../design/add-in-commands.md). If the total number of [**\<Action\>** elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20.
+An add-in that uses the unified manifest may not have more than 20 [add-in commands](../design/add-in-commands.md). If the total number of [`<Action>` elements](/javascript/api/manifest/action) in the add-in only manifest is greater than 20, you must redesign the add-in to have no more than 20.
 
 ### Update the add-in ID, version, domain, and function names in the manifest
 
@@ -71,7 +71,7 @@ An add-in that uses the unified manifest may not have more than 20 [add-in comma
 
 1. Be sure that the domain segment of the add-in's URLs in the manifest are pointing to `https://localhost:3000`.
 
-1. If your manifest has any **\<FunctionName\>** elements, make sure their values have fewer than 65 characters.
+1. If your manifest has any `<FunctionName>` elements, make sure their values have fewer than 65 characters.
 
    > [!IMPORTANT]
    > The value of this element must exactly match the name of an action that's mapped to a function in a JavaScript or TypeScript file with the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) function. If you change it in the manifest, be sure to change it in the `actionId` parameter passed to `associate()` too.
@@ -130,7 +130,7 @@ npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
 Once you have the unified manifest created, there are two ways to create the zip file and sideload it. For more information, see [Sideload other NodeJS and npm projects](../testing/sideload-add-in-with-unified-manifest.md#sideload-other-nodejs-and-npm-projects).
 
 > [!NOTE]
-> If the original add-in only manifest used any **\<Override\>** elements to localize strings in the manifest, then the conversion process produces JSON string files for each localized language. These files must also be included in the zip file, and they must be at the relative path indicated in the [`"localizationInfo.additionalLanguages.file"`](/microsoft-365/extensibility/schema/root-localization-info-additional-languages#file) property.
+> If the original add-in only manifest used any `<Override>` elements to localize strings in the manifest, then the conversion process produces JSON string files for each localized language. These files must also be included in the zip file, and they must be at the relative path indicated in the [`"localizationInfo.additionalLanguages.file"`](/microsoft-365/extensibility/schema/root-localization-info-additional-languages#file) property.
 
 ## Next steps
 
