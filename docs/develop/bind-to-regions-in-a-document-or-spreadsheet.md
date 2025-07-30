@@ -59,7 +59,7 @@ After creating a binding with one of the three "addFrom" methods, you can work w
 
 ## Create a binding from the current selection
 
-This example shows how to add a text binding called `myBinding` to the current selection using the [addFromSelectionAsync] method.
+The following example adds a text binding called `myBinding` to the current selection using the [addFromSelectionAsync] method.
 
 ```js
 Office.context.document.bindings.addFromSelectionAsync(Office.BindingType.Text, { id: 'myBinding' }, function (asyncResult) {
@@ -84,7 +84,7 @@ The anonymous function passed as the final _callback_ parameter runs when the bi
 
 ## Create a binding from a prompt
 
-This example shows how to add a text binding called `myBinding` using the [addFromPromptAsync] method. This method lets users specify the range for the binding using the application's built-in range selection prompt.
+The following function adds a text binding called `myBinding` using the [addFromPromptAsync] method. This method lets users specify the range for the binding using the application's built-in range selection prompt.
 
 ```js
 function bindFromPrompt() {
@@ -103,19 +103,19 @@ function write(message){
 }
 ```
 
-The binding type is text, so a [TextBinding] will be created for the user's selection in the prompt.
+In this example, the binding type is text, so a [TextBinding] is created for the user's selection in the prompt.
 
 The second parameter contains the ID of the new binding. If you don't specify an ID, one is generated automatically.
 
 The anonymous function passed as the third _callback_ parameter runs when the binding creation is complete. When the callback function runs, the [AsyncResult] object contains the call's status and the newly created binding.
 
-The following figure shows the built-in range selection prompt in Excel.
+The following screenshot shows the built-in range selection prompt in Excel.
 
 ![The Select Data dialog.](../images/agave-api-overview-excel-selection-ui.png)
 
 ## Add a binding to a named item
 
-This example shows how to add a binding to the existing `myRange` named item as a "matrix" binding using the [addFromNamedItemAsync] method, and assigns the binding's `id` as "myMatrix".
+The following function adds a binding to the existing `myRange` named item as a "matrix" binding using the [addFromNamedItemAsync] method and assigns the binding's `id` as "myMatrix".
 
 ```js
 function bindNamedItem() {
@@ -135,12 +135,12 @@ function write(message){
 
 ```
 
-**For Excel**, the `itemName` parameter of [addFromNamedItemAsync] can refer to an existing named range, a range specified with A1 reference style (`"A1:A3"`), or a table. By default, Excel assigns the names "Table1" for the first table, "Table2" for the second table, and so on. To assign a meaningful name to a table in the Excel UI, use the **Table Name** property on the **Table Tools | Design** tab.
+**For Excel**, the `itemName` parameter of [addFromNamedItemAsync] refers to an existing named range, a range specified with A1 reference style (`"A1:A3"`), or a table. By default, Excel assigns the names "Table1" for the first table, "Table2" for the second table, and so on. To assign a meaningful name to a table in the Excel UI, use the **Table Name** property on the **Table Tools | Design** tab.
 
 > [!NOTE]
 > In Excel, when specifying a table as a named item, you must fully qualify the name to include the worksheet name in this format (e.g., `"Sheet1!Table1"`).
 
-This example creates a binding in Excel to the first three cells in column A (`"A1:A3"`), assigns the ID `"MyCities"`, and then writes three city names to that binding.
+The following function creates a binding in Excel to the first three cells in column A (`"A1:A3"`), assigns the ID `"MyCities"`, and then writes three city names to that binding.
 
 ```js
  function bindingFromA1Range() {
@@ -169,7 +169,7 @@ function write(message){
 
 By default, a content control has no `Title` value assigned. To assign a meaningful name in the Word UI, after inserting a **Rich Text** content control from the **Controls** group on the **Developer** tab, use the **Properties** command in the **Controls** group to display the **Content Control Properties** dialog. Then set the `Title` property of the content control to the name you want to reference from your code.
 
-This example creates a text binding in Word to a rich text content control named `"FirstName"`, assigns the **id** `"firstName"`, and then displays that information.
+The following function creates a text binding in Word to a rich text content control named `"FirstName"`, assigns the **id** `"firstName"`, and then displays that information.
 
 ```js
 function bindContentControl() {
@@ -192,7 +192,7 @@ function write(message){
 
 ## Get all bindings
 
-This example shows how to get all bindings in a document using the [getAllAsync] method.
+The following example gets all bindings in a document using the [getAllAsync] method.
 
 ```js
 Office.context.document.bindings.getAllAsync(function (asyncResult) {
@@ -213,7 +213,7 @@ The anonymous function passed as the `callback` parameter runs when the operatio
 
 ## Get a binding by ID using getByIdAsync
 
-This example shows how to use the [getByIdAsync] method to get a binding in a document by specifying its ID. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this article.
+The following example uses the [getByIdAsync] method to get a binding in a document by specifying its ID. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this article.
 
 ```js
 Office.context.document.bindings.getByIdAsync('myBinding', function (asyncResult) {
@@ -231,13 +231,13 @@ function write(message){
 }
 ```
 
-In the example, the first `id` parameter is the ID of the binding to retrieve.
+In this example, the first `id` parameter is the ID of the binding to retrieve.
 
 The anonymous function passed as the second _callback_ parameter runs when the operation is completed. The function is called with a single parameter, _asyncResult_, which contains the call's status and the binding with the ID "myBinding".
 
 ## Get a binding by ID using `Office.select`
 
-This example shows how to use the [Office.select] function to get a [Binding] object promise in a document by specifying its ID in a selector string. It then calls the [getDataAsync] method to get data from the specified binding. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this article.
+The following example uses the [Office.select] function to get a [Binding] object promise in a document by specifying its ID in a selector string. It then calls the [getDataAsync] method to get data from the specified binding. This example assumes that a binding named `'myBinding'` was added to the document using one of the methods described earlier in this article.
 
 ```js
 Office.select("bindings#myBinding", function onError(){}).getDataAsync(function (asyncResult) {
@@ -259,7 +259,7 @@ function write(message){
 
 ## Release a binding by ID
 
-This example shows how to use the [releaseByIdAsync] method to release a binding in a document by specifying its ID.
+The following example uses the [releaseByIdAsync] method to release a binding in a document by specifying its ID.
 
 ```js
 Office.context.document.bindings.releaseByIdAsync('myBinding', function (asyncResult) {
@@ -272,13 +272,13 @@ function write(message){
 }
 ```
 
-In the example, the first `id` parameter is the ID of the binding to release.
+In this example, the first `id` parameter is the ID of the binding to release.
 
 The anonymous function passed as the second parameter is a callback that runs when the operation is complete. The function is called with a single parameter, [asyncResult], which contains the call's status.
 
 ## Read data from a binding
 
-This example shows how to use the [getDataAsync] method to get data from an existing binding.
+The following example uses the [getDataAsync] method to get data from an existing binding.
 
 ```js
 myBinding.getDataAsync(function (asyncResult) {
@@ -305,7 +305,7 @@ The anonymous function passed into the method is a callback that runs when the o
 
 ## Write data to a binding
 
-This example shows how to use the [setDataAsync] method to set data in an existing binding.
+The following example uses the [setDataAsync] method to set data in an existing binding.
 
 ```js
 myBinding.setDataAsync('Hello World!', function (asyncResult) { });
@@ -313,13 +313,13 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
 `myBinding` is a variable that contains an existing text binding in the document.
 
-In the example, the first parameter is the value to set on `myBinding`. Because this is a text binding, the value is a `string`. Different binding types accept different types of data.
+In this example, the first parameter is the value to set on `myBinding`. Because this is a text binding, the value is a `string`. Different binding types accept different types of data.
 
 The anonymous function passed into the method is a callback that runs when the operation is complete. The function is called with a single parameter, `asyncResult`, which contains the result's status.
 
 ## Detect changes to data or selection in a binding
 
-This example shows how to attach an event handler to the [DataChanged](/javascript/api/office/office.binding) event of a binding with an ID of "MyBinding".
+The following function attaches an event handler to the [DataChanged](/javascript/api/office/office.binding) event of a binding with an ID of "MyBinding".
 
 ```js
 function addHandler() {
@@ -343,11 +343,11 @@ The `dataChanged` function passed as the second _handler_ parameter is an event 
 
 Similarly, you can detect when a user changes selection in a binding by attaching an event handler to the [SelectionChanged] event of a binding. To do that, specify the `eventType` parameter of [addHandlerAsync] as `Office.EventType.BindingSelectionChanged` or `"bindingSelectionChanged"`.
 
-You can add multiple event handlers for a given event by calling [addHandlerAsync] again and passing in an additional event handler function for the `handler` parameter. This will work correctly as long as the name of each event handler function is unique.
+You can add multiple event handlers for a given event by calling [addHandlerAsync] again and passing in an additional event handler function for the `handler` parameter. This works correctly as long as the name of each event handler function is unique.
 
 ### Remove an event handler
 
-To remove an event handler for an event, call [removeHandlerAsync] passing in the event type as the first _eventType_ parameter, and the name of the event handler function to remove as the second _handler_ parameter. For example, the following function will remove the `dataChanged` event handler function added in the previous section's example.
+To remove an event handler for an event, call [removeHandlerAsync] passing in the event type as the first _eventType_ parameter, and the name of the event handler function to remove as the second _handler_ parameter. For example, the following function removes the `dataChanged` event handler function added in the previous section's example.
 
 ```js
 function removeEventHandlerFromBinding() {
