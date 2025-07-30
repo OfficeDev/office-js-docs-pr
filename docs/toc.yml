@@ -813,7 +813,7 @@ items:
     - name: Activate add-in without Reading Pane or selected message
       href: outlook/contextless.md
     - name: Drag and drop items into a task pane
-      href: outlook/drag-and-drop.md
+      href: outlook/drag-drop-items.md
     - name: Item multi-select
       href: outlook/item-multi-select.md
     - name: Pinnable task pane
