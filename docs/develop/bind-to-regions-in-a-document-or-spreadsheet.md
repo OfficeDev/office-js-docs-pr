@@ -15,15 +15,9 @@ Bindings let your add-in consistently access specific regions of a document or s
 - **Read and write data** without requiring users to make a selection first.
 - **Create persistent relationships** between your add-in and document data. Bindings are saved with the document and work across sessions.
 
-To create a binding, call one of these methods to associate a document region with a unique identifier: [addFromPromptAsync], [addFromSelectionAsync], or [addFromNamedItemAsync]. Once you've established the binding, use its identifier to read from or write to that region anytime.
+To create a binding, call one of these [Bindings] object methods to associate a document region with a unique identifier: [addFromPromptAsync], [addFromSelectionAsync], or [addFromNamedItemAsync]. Once you've established the binding, use its identifier to read from or write to that region anytime.
 
 You can also subscribe to data and selection change events for specific bound regions. This means your add-in only gets notified about changes within the bound area, not the entire document.
-
-## Work with bindings
-
-The [Bindings] object gives you access to all bindings in your document through the [getAllAsync] method. You can access a specific binding by ID using [getByIdAsync] or the [Office.select] function.
-
-To create new bindings or remove existing ones, use these [Bindings] object methods: [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync], or [releaseByIdAsync].
 
 ## Choose the right binding type
 
@@ -254,8 +248,7 @@ function write(message){
 }
 ```
 
-> [!NOTE]
-> If the `select` function promise successfully returns a [Binding] object, that object exposes only the following four methods: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise can't return a Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information. If you need to call a member of the Binding object other than the four methods exposed by the [Binding] object promise returned by the `select` function, instead use the [getByIdAsync] method by using the [Document.bindings] property and [getByIdAsync] method to retrieve the [Binding] object.
+If the `select` function promise successfully returns a [Binding] object, that object exposes only the following four methods: [getDataAsync], [setDataAsync], [addHandlerAsync], and [removeHandlerAsync]. If the promise can't return a Binding object, the `onError` callback can be used to access an [asyncResult].error object to get more information. If you need to call a member of the Binding object other than the four methods exposed by the [Binding] object promise returned by the `select` function, instead use the [getByIdAsync] method by using the [Document.bindings] property and [getByIdAsync] method to retrieve the [Binding] object.
 
 ## Release a binding by ID
 
@@ -343,7 +336,7 @@ The `dataChanged` function passed as the second _handler_ parameter is an event 
 
 Similarly, you can detect when a user changes selection in a binding by attaching an event handler to the [SelectionChanged] event of a binding. To do that, specify the `eventType` parameter of [addHandlerAsync] as `Office.EventType.BindingSelectionChanged` or `"bindingSelectionChanged"`.
 
-You can add multiple event handlers for a given event by calling [addHandlerAsync] again and passing in an additional event handler function for the `handler` parameter. This works correctly as long as the name of each event handler function is unique.
+You can add multiple event handlers for a given event by calling [addHandlerAsync] again and passing in an additional event handler function for the `handler` parameter. The name of each event handler function must be unique.
 
 ### Remove an event handler
 
