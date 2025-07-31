@@ -1,7 +1,7 @@
 ---
 title: Build your first add-in as a Copilot skill
 description: Learn how to build a simple Copilot agent that has an Excel add-in as a skill.
-ms.date: 07/24/2025
+ms.date: 07/30/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: high
@@ -165,6 +165,8 @@ Add the agent with the following steps.
         ]
     }
    ```
+
+   [!INCLUDE [Validation warning about missing 'auth' property](../includes/auth-property-warning-note.md)]
 
 1. Open the **\src\commands\commands.ts** file and add the following code the end of it.
 

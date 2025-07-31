@@ -1,7 +1,7 @@
 ---
 title: Combine Copilot Agents with Office Add-ins (preview)
 description: Get an overview of why and how to combine a Copilot agent with an Office Add-in.
-ms.date: 07/15/2025
+ms.date: 07/30/2025
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -140,6 +140,8 @@ The agent configuration file includes instructions for the agent and specifies o
     ]
 }
 ```
+
+[!INCLUDE [Validation warning about missing 'auth' property](../includes/auth-property-warning-note.md)]
 
 The reference documentation for declarative agents is at [Declarative agent schema 1.4 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.4).
 
