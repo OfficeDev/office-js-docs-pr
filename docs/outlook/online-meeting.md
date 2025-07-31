@@ -499,7 +499,7 @@ const options = {
 const client = Client.init(options);
 
 // Get the body of the meeting.
-const currentEvent = await client.api('/users/{id}/events/{id}')
+const currentEvent = await client.api('/users/{organizerId}/events/{meetingId}')
     .select('body')
     .get();
 
@@ -523,7 +523,7 @@ const updatedEvent = {
 };
 
 // Update the event with the new body content
-await client.api('/users/{id}/events/{id}')
+await client.api('/users/{organizerId}/events/{meetingId}')
     .update(updatedEvent);
 ```
 
