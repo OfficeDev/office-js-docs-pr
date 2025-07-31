@@ -191,7 +191,7 @@ The runtime object should look similar to the following. There may be other prop
     }
    ```
 
-    [!INCLUDE [Validation warning about missing 'auth' property](../includes/bogus-auth-property-warning.md)]
+    [!INCLUDE [Validation warning about missing 'auth' property](../includes/auth-property-warning-note.md)]
 
 1. *Replace the property values with new values that are appropriate for your add-in.* For more information about these properties, see [Declarative agent manifest object](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.2#declarative-agent-manifest-object).
 

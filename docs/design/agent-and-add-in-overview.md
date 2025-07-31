@@ -141,7 +141,7 @@ The agent configuration file includes instructions for the agent and specifies o
 }
 ```
 
-[!INCLUDE [Validation warning about missing 'auth' property](../includes/bogus-auth-property-warning.md)]
+[!INCLUDE [Validation warning about missing 'auth' property](../includes/auth-property-warning-note.md)]
 
 The reference documentation for declarative agents is at [Declarative agent schema 1.4 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.4).
 

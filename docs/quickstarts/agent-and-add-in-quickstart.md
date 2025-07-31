@@ -166,7 +166,7 @@ Add the agent with the following steps.
     }
    ```
 
-   [!INCLUDE [Validation warning about missing 'auth' property](../includes/bogus-auth-property-warning.md)]
+   [!INCLUDE [Validation warning about missing 'auth' property](../includes/auth-property-warning-note.md)]
 
 1. Open the **\src\commands\commands.ts** file and add the following code the end of it.
 
