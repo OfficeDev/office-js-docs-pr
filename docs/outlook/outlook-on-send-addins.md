@@ -192,7 +192,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox -OwaMailboxPolicy "ContosoCorpOW
 ```
 
 > [!NOTE]
-> For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web or new Outlook on Windows mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).
+> For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web or new Outlook on Windows mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchangepowershell/set-owamailboxpolicy).
 
 To turn off on-send compliance enforcement for all users that have a specific Outlook on the web or new Outlook on Windows mailbox policy assigned, run the following cmdlets.
 
@@ -282,7 +282,7 @@ Get-CASMailbox joe@contoso.com | Set-CASMailbox –OwaMailboxPolicy "ContosoCorp
 ```
 
 > [!NOTE]
-> For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchange/client-access/Set-OwaMailboxPolicy).
+> For more information about how to use the **Set-OwaMailboxPolicy** cmdlet to configure existing Outlook on the web mailbox policies, see [Set-OwaMailboxPolicy](/powershell/module/exchangepowershell/set-owamailboxpolicy).
 
 To disable the on-send feature for all users that have a specific Outlook on the web mailbox policy assigned, run the following cmdlets.
 

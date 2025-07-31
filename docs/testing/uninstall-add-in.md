@@ -152,4 +152,4 @@ Open Outlook with the same identity you used when you created the add-in. If art
 
 - [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md)
 - [Clear the Office cache](clear-cache.md)
-- The PowerShell reference for [Install-Module](/powershell/module/powershellget/install-module), [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy), [Connect-ExchangeOnline](/powershell/exchange/connect-to-exchange-online-powershell), and [Get-App](/powershell/module/exchange/get-app).
+- The PowerShell reference for [Install-Module](/powershell/module/powershellget/install-module), [Set-ExecutionPolicy](/powershell/module/microsoft.powershell.security/set-executionpolicy), [Connect-ExchangeOnline](/powershell/exchange/connect-to-exchange-online-powershell), and [Get-App](/powershell/module/exchangepowershell/get-app).
