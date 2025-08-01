@@ -1,7 +1,7 @@
 ﻿---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 06/12/2025
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -33,10 +33,13 @@ To run the feature, you must have a supported version of Outlook on Android or o
 
 The steps for configuring the manifest depend on which type of manifest you selected in the quick start.
 
-> [!NOTE]
-> When developing an event-based add-in to run in Outlook on Android and on iOS, note that the unified app manifest for Microsoft 365 can only be used if the add-in handles certain events. To learn which events are supported, see [Supported events and clients](#supported-events-and-clients).
-
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
+
+> [!NOTE]
+>
+> - When developing an event-based add-in to run in Outlook on Android and on iOS, note that the unified manifest for Microsoft 365 can only be used if the add-in handles certain events. To learn which events are supported, see [Supported events and clients](#supported-events-and-clients).
+>
+> - Add-ins that use the unified manifest for Microsoft 365 aren't directly supported in Outlook on mobile devices. To run this type of add-in on mobile platforms, the add-in must first be published to [AppSource](https://appsource.microsoft.com/) then deployed in the [Microsoft 365 Admin Center](../publish/publish.md). For more information, see [Support for add-ins with the unified manifest for Microsoft 365](outlook-mobile-addins.md#support-for-add-ins-with-the-unified-manifest-for-microsoft-365).
 
 1. Configure the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
 

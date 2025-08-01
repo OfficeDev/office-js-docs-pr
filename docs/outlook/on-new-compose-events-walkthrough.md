@@ -1,7 +1,7 @@
 ﻿---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 06/12/2025
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -26,6 +26,8 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) whic
 To configure the manifest, select the tab for the type of manifest you're using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+[!INCLUDE [outlook-unified-manifest-platforms](../includes/outlook-unified-manifest-platforms.md)]
 
 1. Open the **manifest.json** file.
 

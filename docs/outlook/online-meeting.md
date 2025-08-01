@@ -1,7 +1,7 @@
 ﻿---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 12/16/2024
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,6 +24,8 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) in w
 The steps for configuring the manifest depend on which type of manifest you selected in the quick start.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+[!INCLUDE [outlook-unified-manifest-platforms](../includes/outlook-unified-manifest-platforms.md)]
 
 1. Open the **manifest.json** file.
 
