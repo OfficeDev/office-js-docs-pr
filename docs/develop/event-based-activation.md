@@ -1,7 +1,7 @@
 ---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 07/29/2025
+ms.date: 08/01/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -76,7 +76,7 @@ Support for this feature in Outlook was introduced in [requirement set 1.10](/ja
 > [!NOTE]
 > <sup>1</sup> Event-based add-ins in classic Outlook on Windows require a minimum of Windows 10 Version 1903 (Build 18362) or Windows Server 2019 Version 1903 to run.
 >
-> <sup>2</sup> Add-ins that use the unified manifest for Microsoft 365 aren't directly supported in Outlook on Mac and on mobile devices. To run this type of add-in on Mac and on mobile platforms, the add-in must first be published to [AppSource](https://appsource.microsoft.com/). For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
+> <sup>2</sup> Add-ins that use the unified manifest for Microsoft 365 aren't directly supported in Outlook on Mac and on mobile devices. To run this type of add-in on Mac and on mobile platforms, the add-in must first be published to [AppSource](https://appsource.microsoft.com/) then deployed in the [Microsoft 365 Admin Center](../publish/publish.md). For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
 >
 > <sup>3</sup> For more information, see [Implement event-based activation in Outlook mobile add-ins](../outlook/mobile-event-based.md).
 >

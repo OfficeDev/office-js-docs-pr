@@ -1,7 +1,7 @@
 ---
 title: Activate your Outlook add-in without the Reading Pane enabled or a message selected
 description: Learn how to activate your Outlook add-in without enabling the Reading Pane or first selecting a message.
-ms.date: 07/29/2025
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
