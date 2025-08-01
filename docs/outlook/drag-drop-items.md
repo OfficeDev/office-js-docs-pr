@@ -16,7 +16,7 @@ Drag and drop functionality allows users to seamlessly transfer messages and fil
 
 ## Supported Outlook clients and surfaces
 
-The following table outlines the Outlook clients that support the drag-and-drop feature and the APIs used to implement the feature.
+The following table outlines the Outlook clients that support the drag-and-drop feature and the APIs used to implement it.
 
 | Outlook client | Support for drag and drop | Implementation method | Supported Outlook surfaces |
 | ----- | ----- | ----- | ----- |
@@ -40,7 +40,7 @@ The drag or drop event occurs when the mouse pointer enters an add-in's task pan
 
 In Outlook on the web and the new Outlook on Windows, create a handler in your JavaScript file for the [Office.EventType.ItemDraggedAndDropped](/javascript/api/office/office.eventtype) event using the [Office.context.mailbox.addHandlerAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-addhandlerasync-member(1)) method. When the `ItemDraggedAndDropped` event occurs, the handler receives a [DragAndDropEventArgs](/javascript/api/outlook/office.draganddropeventargs) object so that you can identify when a user drags an item over the task pane, when they drop the item into the task pane, and what data is associated with the item. Depending on whether a drag or drop event occurred, the [dragAndDropEventData](/javascript/api/outlook/office.draganddropeventargs#outlook-office-draganddropeventargs-draganddropeventdata-member) property of the `DragAndDropEventArgs` object returns a [DragoverEventData](/javascript/api/outlook/office.dragovereventdata) or [DropEventData](/javascript/api/outlook/office.dropeventdata) object. These objects provide information on the position of the mouse pointer and the data being transferred to the task pane.
 
-When messages are dragged to the task pane, they're dropped as .eml files. Attachments that are dropped retain their current format. For a list of supported  types, see [Supported item types](#supported-item-types).
+When messages are dragged to the task pane, they're dropped as .eml files. Attachments that are dropped retain their current format. For a list of supported types, see [Supported item types](#supported-item-types).
 
 The following example shows how to implement the drag-and-drop feature.
 
@@ -80,7 +80,7 @@ In Outlook on Windows (classic) and on Mac, use the [HTML Drag and Drop API](htt
 - **Windows (classic)**: Dropped as a .msg file.
 - **Mac**: Dropped as a .eml file.
 
-Attachments that are dropped into a task pane retain their current format. For a list of supported  types, see [Supported item types](#supported-item-types).
+Attachments that are dropped into a task pane retain their current format. For a list of supported types, see [Supported item types](#supported-item-types).
 
 > [!TIP]
 > In classic Outlook on Windows, if you need the Base64-encoded .eml format to process a message, call [Office.context.mailbox.item.getAsFileAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getasfileasync-member(1)).
@@ -103,7 +103,7 @@ The following file types are supported by the drag-and-drop feature.
 
 ### Supported scenarios
 
-The following tables identifies which scenarios support the drag-and-drop feature in Outlook.
+The following table identifies which scenarios support the drag-and-drop feature in Outlook.
 
 | Scenario | Supports drag and drop |
 | ----- | ----- |
