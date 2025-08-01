@@ -1,4 +1,4 @@
----
+﻿---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
 ms.date: 06/18/2025
@@ -174,24 +174,24 @@ Select the tab for the type of manifest you're using.
 Configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1-1-mail) node of your add-in only manifest accordingly.
 
 - To run a spam-reporting add-in in Outlook on the web and on Mac and in the new Outlook on Windows, you must specify the HTML file that references or contains the code to handle the spam-reporting event in the `resid` attribute of the [Runtime](/javascript/api/manifest/runtime) element.
-- To run a spam-reporting add-in in classic Outlook on Windows, you must specify the JavaScript file that contains the code to handle the spam-reporting event in the [Override](/javascript/api/manifest/override) child element of the **\<Runtime\>** element.
-- To activate the add-in in the Outlook ribbon and prevent it from appearing at the end of the ribbon or in the overflow section, set the `xsi:type` attribute of the **\<ExtensionPoint\>** element to [ReportPhishingCommandSurface](/javascript/api/manifest/extensionpoint#reportphishingcommandsurface).
+- To run a spam-reporting add-in in classic Outlook on Windows, you must specify the JavaScript file that contains the code to handle the spam-reporting event in the [Override](/javascript/api/manifest/override) child element of the `<Runtime>` element.
+- To activate the add-in in the Outlook ribbon and prevent it from appearing at the end of the ribbon or in the overflow section, set the `xsi:type` attribute of the `<ExtensionPoint>` element to [ReportPhishingCommandSurface](/javascript/api/manifest/extensionpoint#reportphishingcommandsurface).
 - To customize the ribbon button and preprocessing dialog, you must define the [ReportPhishingCustomization](/javascript/api/manifest/reportphishingcustomization) node.
-  - To configure the ribbon button, set the `xsi:type` attribute of the [Control](/javascript/api/manifest/control-button) element to `Button`. Then, set the `xsi:type` attribute of the [Action](/javascript/api/manifest/action) child element to `ExecuteFunction` and specify the name of the spam-reporting event handler in its **\<FunctionName\>** child element.
+  - To configure the ribbon button, set the `xsi:type` attribute of the [Control](/javascript/api/manifest/control-button) element to `Button`. Then, set the `xsi:type` attribute of the [Action](/javascript/api/manifest/action) child element to `ExecuteFunction` and specify the name of the spam-reporting event handler in its `<FunctionName>` child element.
   - To customize the preprocessing dialog, configure the [PreProcessingDialog](/javascript/api/manifest/preprocessingdialog) element of your manifest. While the dialog must have a title and description, you can optionally include the following elements.
     - A list of choices to help a user identify the type of message they're reporting. You can configure these options as radio buttons or checkboxes. To learn more, see [ReportingOptions element](/javascript/api/manifest/reportingoptions).
     - A text box for the user to provide additional information about the message they're reporting. To learn how to implement a text box, see [FreeTextLabel element](/javascript/api/manifest/preprocessingdialog#child-elements).
     - Custom text and URL to provide informational resources to the user. To learn how to personalize these elements, see [MoreInfo element](/javascript/api/manifest/moreinfo).
 
       > [!NOTE]
-      > Depending on the Outlook client, the custom text specified in the **\<MoreInfoText\>** element appears before the URL that's provided in the **\<MoreInfoUrl\>** element or as link text for the URL. For more information, see [MoreInfoText](/javascript/api/manifest/moreinfo#moreinfotext).
+      > Depending on the Outlook client, the custom text specified in the `<MoreInfoText>` element appears before the URL that's provided in the `<MoreInfoUrl>` element or as link text for the URL. For more information, see [MoreInfoText](/javascript/api/manifest/moreinfo#moreinfotext).
     - A "Don't show me this message again" checkbox to prevent the preprocessing dialog from appearing again. To learn how to implement this option, see [Suppress the preprocessing dialog](#suppress-the-preprocessing-dialog).
 
-The following is an example of a **\<VersionOverrides\>** node configured for spam reporting.
+The following is an example of a `<VersionOverrides>` node configured for spam reporting.
 
 1. In your preferred code editor, open the add-in project you created.
 1. Open the **manifest.xml** file located at the root of your project.
-1. Select the entire **\<VersionOverrides\>** node (including the open and close tags) and replace it with the following code.
+1. Select the entire `<VersionOverrides>` node (including the open and close tags) and replace it with the following code.
 
     ```xml
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">

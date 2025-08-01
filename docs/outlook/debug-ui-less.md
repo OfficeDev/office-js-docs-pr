@@ -1,4 +1,4 @@
----
+﻿---
 title: Debug function commands in Outlook add-ins
 description: Learn how to debug function commands in Outlook add-ins.
 ms.date: 07/11/2022
@@ -21,7 +21,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 
 Otherwise, if you used another tool to create your add-in, perform the following steps.
 
-1. Navigate to the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]` registry key. Replace `[Add-in ID]` with the **\<Id\>** from your add-in's manifest.
+1. Navigate to the `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\WEF\Developer\[Add-in ID]` registry key. Replace `[Add-in ID]` with the `<Id>` from your add-in's manifest.
 
     [!include[Developer registry key](../includes/developer-registry-key.md)]
 

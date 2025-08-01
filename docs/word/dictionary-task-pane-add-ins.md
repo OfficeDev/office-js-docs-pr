@@ -1,4 +1,4 @@
----
+﻿---
 title: Create a dictionary task pane add-in
 description: Learn how to create a dictionary task pane add-in.
 ms.date: 02/12/2025
@@ -96,7 +96,7 @@ The following code shows sample XSD for the OfficeDefinitions XML schema example
 </xs:schema>
 ```
 
-Returned XML consists of a root **\<Result\>** element that contains a **\<Definitions\>** element with zero to three **\<Definition\>** child elements. Each child element contains definitions that are at most 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the **\<SeeMoreURL\>** element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.
+Returned XML consists of a root `<Result>` element that contains a `<Definitions>` element with zero to three `<Definition>` child elements. Each child element contains definitions that are at most 400 characters in length. Additionally, the URL to the full page on the dictionary site must be provided in the `<SeeMoreURL>` element. The following example shows the structure of returned XML that conforms to the OfficeDefinitions schema.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -295,7 +295,7 @@ The following is an example manifest file for a dictionary add-in.
 </OfficeApp>
 ```
 
-The **\<Dictionary\>** element and its child elements specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md).
+The `<Dictionary>` element and its child elements specific to creating a dictionary add-in's manifest file are described in the following sections. For information about the other elements in the manifest file, see [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md).
 
 ### Dictionary element
 
@@ -303,15 +303,15 @@ Specifies settings for dictionary add-ins.
 
 **Parent element**
 
-**\<OfficeApp\>**
+`<OfficeApp>`
 
 **Child elements**
 
-**\<TargetDialects\>**, **\<QueryUri\>**, **\<CitationText\>**, **\<Name\>**, **\<DictionaryHomePage\>**
+`<TargetDialects>`, `<QueryUri>`, `<CitationText>`, `<Name>`, `<DictionaryHomePage>`
 
 **Remarks**
 
-The **\<Dictionary\>** element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.
+The `<Dictionary>` element and its child elements are added to the manifest of a task pane add-in when you create a dictionary add-in.
 
 #### TargetDialects element
 
@@ -319,15 +319,15 @@ Specifies the regional languages that this dictionary supports. Required for dic
 
 **Parent element**
 
-**\<Dictionary\>**
+`<Dictionary>`
 
 **Child element**
 
-**\<TargetDialect\>**
+`<TargetDialect>`
 
 **Remarks**
 
-The **\<TargetDialects\>** element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (e.g., Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
+The `<TargetDialects>` element and its child elements specify the set of regional languages your dictionary contains. For example, if your dictionary applies to both Spanish (Mexico) and Spanish (Peru), but not Spanish (Spain), you can specify that in this element. Do not specify more than one language (e.g., Spanish and English) in this manifest. Publish separate languages as separate dictionaries.
 
 **Example**
 
@@ -360,7 +360,7 @@ Specifies a regional language that this dictionary supports. Required for dictio
 
 **Parent element**
 
-**\<TargetDialects\>**
+`<TargetDialects>`
 
 **Remarks**
 
@@ -378,7 +378,7 @@ Specifies the endpoint for the dictionary query service. Required for dictionary
 
 **Parent element**
 
-**\<Dictionary\>**
+`<Dictionary>`
 
 **Remarks**
 
@@ -396,13 +396,13 @@ Specifies the text to use in citations. Required for dictionary add-ins.
 
 **Parent element**
 
-**\<Dictionary\>**
+`<Dictionary>`
 
 **Remarks**
 
 This element specifies the beginning of the citation text that will be displayed on a line below the content that is returned from the web service (for example, "Results by: " or "Powered by: ").
 
-For this element, you can specify values for additional locales by using the **\<Override\>** element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see [Localization](../develop/xml-manifest-overview.md#localization).
+For this element, you can specify values for additional locales by using the `<Override>` element. For example, if a user is running the Spanish SKU of Office, but using an English dictionary, this allows the citation line to read "Resultados por: Bing" rather than "Results by: Bing". For more information about how to specify values for additional locales, see [Localization](../develop/xml-manifest-overview.md#localization).
 
 **Example**
 
@@ -416,7 +416,7 @@ Specifies the name of this dictionary. Required for dictionary add-ins.
 
 **Parent element**
 
-**\<Dictionary\>**
+`<Dictionary>`
 
 **Remarks**
 
@@ -436,7 +436,7 @@ Specifies the URL of the home page for the dictionary. Required for dictionary a
 
 **Parent element**
 
-**\<Dictionary\>**
+`<Dictionary>`
 
 **Remarks**
 
@@ -453,10 +453,10 @@ For this element, you can specify values for additional locales.
 ### Update your dictionary add-in's manifest file
 
 1. Open the manifest file in the add-in project.
-1. Update the value of the **\<ProviderName\>** element with your name.
-1. Replace the value of the **\<DisplayName\>** element's **\<DefaultValue\>** attribute with an appropriate name, for example, "Microsoft Office Demo Dictionary".
-1. Replace the value of the **\<Description\>** element's **\<DefaultValue\>** attribute with an appropriate description, for example, "The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It doesn't return real definitions.".
-1. Add the following code after the **\<Permissions\>** node, replacing "contoso" references with your own company name, then save your changes.
+1. Update the value of the `<ProviderName>` element with your name.
+1. Replace the value of the `<DisplayName>` element's `<DefaultValue>` attribute with an appropriate name, for example, "Microsoft Office Demo Dictionary".
+1. Replace the value of the `<Description>` element's `<DefaultValue>` attribute with an appropriate description, for example, "The Microsoft Office Demo Dictionary is an example built to demonstrate how a publisher could create a dictionary that integrates with Office. It doesn't return real definitions.".
+1. Add the following code after the `<Permissions>` node, replacing "contoso" references with your own company name, then save your changes.
 
     ```XML
     <Dictionary>

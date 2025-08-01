@@ -1,4 +1,4 @@
----
+﻿---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
 ms.date: 07/10/2025
@@ -24,13 +24,13 @@ The following image explains the differences between using `yo office` scaffold 
 ![Image of differences between using the Yeoman generator for Office Add-ins and writing your own JSON.](../images/custom-functions-json.png)
 
 > [!NOTE]
-> Remember to connect your manifest to the JSON file you create, through the **\<Resources\>** section in your add-in only manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your add-in only manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
 
 ## Authoring metadata and connecting to the manifest
 
 Create a JSON file in your project and provide all the details about your functions in it, such as the function's parameters. See the [following metadata example](#json-metadata-example) and [the metadata reference](#metadata-reference) for a complete list of function properties.
 
-Ensure your add-in only manifest file references your JSON file in the **\<Resources\>** section, similar to the following example.
+Ensure your add-in only manifest file references your JSON file in the `<Resources>` section, similar to the following example.
 
 ```json
 <Resources>

@@ -1,4 +1,4 @@
----
+﻿---
 title: Add headers when a document opens
 description: Learn how to develop a Word add-in that implements event-based activation to add headers when a document is opened.
 ms.date: 07/02/2025
@@ -33,7 +33,7 @@ Use the following sample manifest code to update your project.
 
 1. In your code editor, open the quick start project you created.
 1. Open the **manifest.xml** file located at the root of your project.
-1. Select the entire **\<VersionOverrides\>** node (including the open and close tags) and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node (including the open and close tags) and replace it with the following XML.
 
     ```xml
       <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
