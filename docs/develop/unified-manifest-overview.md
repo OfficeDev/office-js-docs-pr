@@ -94,7 +94,7 @@ The following tables lists which Office platforms directly support add-ins that 
 | Office on mobile | Not directly supported |
 
 > [!NOTE]
-> Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can't currently be deployed in the Microsoft 365 Admin Center.
+> If you're deploying an add-in in the [Microsoft 365 Admin Center](../publish/publish.md) and require it to run on platforms that don't directly support the unified manifest, the add-in must be a published AppSource add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can't currently be deployed in the Microsoft 365 Admin Center.
 
 ## Sample unified manifest
 
