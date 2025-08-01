@@ -1,7 +1,7 @@
 ---
 title: Drag and drop messages and attachments into the task pane
 description: Learn how to enable drag and drop of messages and file attachments into the task pane of your Outlook add-in.
-ms.date: 07/31/2025
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -100,8 +100,6 @@ The following file types are supported by the drag-and-drop feature.
 
 > [!TIP]
 > For information on the types of data that the HTML Drag and Drop API supports, see [Recommended drag types](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API/Recommended_drag_types).
-
-//TODO - file size
 
 ### Supported scenarios
 
