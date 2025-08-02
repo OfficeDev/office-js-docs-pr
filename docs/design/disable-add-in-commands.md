@@ -1,4 +1,4 @@
----
+﻿---
 title: Enable and Disable Add-in Commands
 description: Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.
 ms.date: 03/11/2025
@@ -93,7 +93,7 @@ Just add an [`"enabled"`](/microsoft-365/extensibility/schema/extension-common-c
 
 Just add an [Enabled](/javascript/api/manifest/enabled) element immediately *below* (not inside) the [Action](/javascript/api/manifest/action) element of the control item. Then, set its value to `false`.
 
-The following shows the basic structure of a manifest that configures the **\<Enabled\>** element.
+The following shows the basic structure of a manifest that configures the `<Enabled>` element.
 
 ```xml
 <OfficeApp ...>
@@ -213,7 +213,7 @@ await Office.contextMenu.requestUpdate({
 
 A common scenario in which the state of a ribbon or context menu control should change is when a user-initiated event changes the add-in context. Consider a scenario in which a button should be available when, and only when, a chart is activated. Although the following example uses ribbon controls, a similar implementation can be applied to custom items on a context menu.
 
-1. First, set the **\<Enabled\>** element for the button in the manifest to `false`. For guidance on how to configure this, see [Deactivate ribbon controls at launch](#deactivate-ribbon-controls-at-launch).
+1. First, set the `<Enabled>` element for the button in the manifest to `false`. For guidance on how to configure this, see [Deactivate ribbon controls at launch](#deactivate-ribbon-controls-at-launch).
 1. Then, assign handlers. This is commonly done in the **Office.onReady** function as in the following example. In the example, handlers (created in a later step) are assigned to the **onActivated** and **onDeactivated** events of all the charts in an Excel worksheet.
 
     ```javascript

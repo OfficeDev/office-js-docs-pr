@@ -1,7 +1,7 @@
----
+﻿---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 07/18/2024
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -28,6 +28,8 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) whic
 To configure the manifest, select the tab for the type of manifest you'll use.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+[!INCLUDE [outlook-unified-manifest-mac](../includes/outlook-unified-manifest-mac.md)]
 
 The following shows how to configure your unified manifest to enable the prepend-on-send and append-on-send features.
 
@@ -182,7 +184,7 @@ To enable the prepend-on-send and append-on-send features in your add-in, you mu
 
 1. Open the **manifest.xml** file located at the root of your project.
 
-1. Select the entire **\<VersionOverrides\>** node (including open and close tags) and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node (including open and close tags) and replace it with the following XML.
 
     ```XML
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -395,7 +397,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. In the same **commands.js** file, insert the following after the `appendDisclaimerOnSend` function. These calls map the function name specified in the manifest to its JavaScript counterpart. The location of the function name in the manifest varies depending on the type of manifest your add-in uses.
 
-- **Add-in only manifest**: The function name specified in the **\<FunctionName\>** element.
+- **Add-in only manifest**: The function name specified in the `<FunctionName>` element.
 - **Unified manifest for Microsoft 365**: The function name specified in the `"id"` property of the objects in the `"extensions.runtimes.actions"` array.
 
     ```javascript

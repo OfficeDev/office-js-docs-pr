@@ -1,7 +1,7 @@
----
+﻿---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 07/15/2025
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -36,6 +36,8 @@ The first step is to add pinning support, which is done in the add-in manifest. 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
+[!INCLUDE [outlook-unified-manifest-mac](../includes/outlook-unified-manifest-mac.md)]
+
 Add a `"pinnable"` property, set to `true`, to the object in the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array that defines the button or menu item that opens the task pane. The following is an example.
 
 ```json
@@ -52,7 +54,7 @@ Add a `"pinnable"` property, set to `true`, to the object in the [`"actions"`](/
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) element to the **\<Action\>** element that describes the task pane button. The following is an example.
+Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) element to the `<Action>` element that describes the task pane button. The following is an example.
 
 ```xml
 <!-- Task pane button. -->
@@ -74,7 +76,7 @@ Add the [SupportsPinning](/javascript/api/manifest/action#supportspinning) eleme
 </Control>
 ```
 
-The **\<SupportsPinning\>** element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](/javascript/api/manifest/versionoverrides) element both for v1.0 and v1.1.
+The `<SupportsPinning>` element is defined in the VersionOverrides v1.1 schema, so you will need to include a [VersionOverrides](/javascript/api/manifest/versionoverrides) element both for v1.0 and v1.1.
 
 ---
 

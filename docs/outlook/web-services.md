@@ -1,4 +1,4 @@
----
+﻿---
 title: Use Exchange Web Services (EWS) from an Outlook add-in
 description: Provides an example that shows how an Outlook add-in in an Exchange on-premises environment can request information from Exchange Web Services.
 ms.date: 10/17/2024
@@ -183,11 +183,11 @@ The following table lists the EWS operations that add-ins support. To see exampl
 When you use the `makeEwsRequestAsync` method, the request is authenticated by using the email account credentials of the current user. The `makeEwsRequestAsync` method manages the credentials for you so that you don't have to provide authentication credentials with your request.
 
 > [!NOTE]
-> The server administrator must use the [New-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/New-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) or the [Set-WebServicesVirtualDirectory](/powershell/module/exchange/client-access-servers/Set-WebServicesVirtualDirectory?view=exchange-ps&preserve-view=true) cmdlet to set the *OAuthAuthentication* parameter to `true` on the Client Access server EWS directory in order to enable the `makeEwsRequestAsync` method to make EWS requests.
+> The server administrator must use the [New-WebServicesVirtualDirectory](/powershell/module/exchangepowershell/new-webservicesvirtualdirectory) or the [Set-WebServicesVirtualDirectory](/powershell/module/exchangepowershell/set-webservicesvirtualdirectory) cmdlet to set the *OAuthAuthentication* parameter to `true` on the Client Access server EWS directory in order to enable the `makeEwsRequestAsync` method to make EWS requests.
 
 To use the `makeEwsRequestAsync` method, your add-in must request the **read/write mailbox** permission in the manifest. The markup varies depending on the type of manifest.
 
-- **Add-in only manifest**: Set the **\<Permissions\>** element to **ReadWriteMailbox**.
+- **Add-in only manifest**: Set the `<Permissions>` element to **ReadWriteMailbox**.
 - **Unified manifest for Microsoft 365**: Set the `"name"` property of an object in the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array to `"Mailbox.ReadWrite.User"`.
 
 For information about using the **read/write mailbox** permission, see [read/write mailbox permission](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).

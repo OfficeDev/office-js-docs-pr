@@ -1,4 +1,4 @@
----
+﻿---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: Learn how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
 ms.date: 07/16/2025
@@ -102,7 +102,7 @@ For more information about the manifest, see [Office Add-ins manifest](../develo
 
 1. In Visual Studio, open the HelloProjectOData.xml file.
 
-1. The default display name is the name of the Visual Studio project ("HelloProjectOData"). For example, change the default value of the **\<DisplayName\>** element to"Hello ProjectData".
+1. The default display name is the name of the Visual Studio project ("HelloProjectOData"). For example, change the default value of the `<DisplayName>` element to"Hello ProjectData".
 
 1. The default description is also "HelloProjectOData". For example, change the default value of the Description element to "Test REST queries of the ProjectData service".
 
@@ -116,7 +116,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
     ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
 
-1. In the HelloProjectOData.xml, add an **\<IconUrl\>** element below the **\<Description\>** element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml file now contains the following (your **\<Id\>** value will be different):
+1. In the HelloProjectOData.xml, add an `<IconUrl>` element below the `<Description>` element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml file now contains the following (your `<Id>` value will be different):
 
     ```XML
     <?xml version="1.0" encoding="UTF-8"?>
@@ -145,7 +145,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
 The **HelloProjectOData** add-in is a sample that includes debugging and error output; it isn't intended for production use. Before you start coding the HTML content, design the UI and user experience for the add-in, and outline the JavaScript functions that interact with the HTML code. For more information, see [Design guidelines for Office Add-ins](../design/add-in-design.md).
 
-The task pane shows the add-in display name at the top, which is the value of the **\<DisplayName\>** element in the manifest. The **body** element in the HelloProjectOData.html file contains the other UI elements, as follows:
+The task pane shows the add-in display name at the top, which is the value of the `<DisplayName>` element in the manifest. The **body** element in the HelloProjectOData.html file contains the other UI elements, as follows:
 
 - A subtitle indicates the general functionality or type of operation, for example, **ODATA REST QUERY**.
 

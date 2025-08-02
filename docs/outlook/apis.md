@@ -1,4 +1,4 @@
----
+﻿---
 title: Outlook add-in APIs
 description: Learn how to reference the Outlook add-in APIs and declare permissions in your Outlook add-in.
 ms.date: 01/07/2025
@@ -46,7 +46,7 @@ if (item.somePropertyOrFunction) {
 
 Specify the minimum requirement set that supports the critical set of APIs for your scenario, without which features of your add-in won't work. You specify the requirement set in the manifest. The markup varies depending on the manifest that you are using.
 
-- **Add-in only manifest**:  Use the **\<Requirements\>** element. Note that the **\<Methods\>** child element of **\<Requirements\>** isn't supported in Outlook add-ins, so you can't declare support for specific methods.
+- **Add-in only manifest**:  Use the `<Requirements>` element. Note that the `<Methods>` child element of `<Requirements>` isn't supported in Outlook add-ins, so you can't declare support for specific methods.
 - **Unified manifest for Microsoft 365**: Use the `"extensions.capabilities"` property.
 
 For more information, see [Office Add-in manifests](../develop/add-in-manifests.md), and [Understanding Outlook API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).

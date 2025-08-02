@@ -1,0 +1,2 @@
+> [!NOTE]
+> Add-ins that use the unified manifest for Microsoft 365 aren't directly supported in Outlook on mobile devices. To run this type of add-in on mobile platforms, the add-in must first be published to [AppSource](https://appsource.microsoft.com/) then deployed in the [Microsoft 365 Admin Center](../publish/publish.md). For more information, see [Support for add-ins with the unified manifest for Microsoft 365](../outlook/outlook-mobile-addins.md#support-for-add-ins-with-the-unified-manifest-for-microsoft-365).

@@ -1,4 +1,4 @@
----
+﻿---
 title: Show or hide the task pane of your Office Add-in
 description: Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.
 ms.date: 02/12/2025
@@ -42,7 +42,7 @@ When you call `Office.addin.showAsTaskpane()`, Office will display in a task pan
 
    [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
    
-- **Add-in only manifest**: The URL of the file is assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your manifest file and locating **\<SourceLocation\>** inside the `<Action xsi:type="ShowTaskpane">` element.
+- **Add-in only manifest**: The URL of the file is assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your manifest file and locating `<SourceLocation>` inside the `<Action xsi:type="ShowTaskpane">` element.
 
 (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)
 

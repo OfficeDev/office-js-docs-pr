@@ -1,4 +1,4 @@
----
+﻿---
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
 ms.topic: troubleshooting-problem-resolution
@@ -83,8 +83,8 @@ The following are some of the causes of this error. If you discover additional c
 - If the add-in only manifest is being used, one of the following may apply.
 
   - The value of the [ID](/javascript/api/manifest/id) element in the manifest has been changed directly in the deployed copy. If for any reason, you want to change this ID, first remove the add-in from the Office host, then replace the original manifest with the changed manifest. You many need to clear the Office cache to remove all traces of the original. See the [Clear the Office cache](clear-cache.md) article for instructions on clearing the cache for your operating system.
-  - The add-in's manifest has a `resid` that isn't defined anywhere in the [Resources](/javascript/api/manifest/resources) section of the manifest, or there is a mismatch in the spelling of the `resid` between where it is used and where it is defined in the **\<Resources\>** section.
-  - There is a `resid` attribute somewhere in the manifest with more than 32 characters. A `resid` attribute, and the `id` attribute of the corresponding resource in the **\<Resources\>** section, cannot be more than 32 characters.
+  - The add-in's manifest has a `resid` that isn't defined anywhere in the [Resources](/javascript/api/manifest/resources) section of the manifest, or there is a mismatch in the spelling of the `resid` between where it is used and where it is defined in the `<Resources>` section.
+  - There is a `resid` attribute somewhere in the manifest with more than 32 characters. A `resid` attribute, and the `id` attribute of the corresponding resource in the `<Resources>` section, cannot be more than 32 characters.
 
 - The add-in has a custom Add-in Command but you are trying to run it on a platform that doesn't support them. For more information, see [Add-in commands requirement sets](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
@@ -102,7 +102,7 @@ See [Troubleshoot Word add-ins](../word/word-add-ins-troubleshooting.md) for pos
 
 ## Add-in only manifest schema validation errors in Visual Studio projects
 
-If you're using newer features that require changes to the add-in only manifest file, you may get validation errors in Visual Studio. For example, when adding the **\<Runtimes\>** element to implement the [shared runtime](runtimes.md#shared-runtime), you may see the following validation error.
+If you're using newer features that require changes to the add-in only manifest file, you may get validation errors in Visual Studio. For example, when adding the `<Runtimes>` element to implement the [shared runtime](runtimes.md#shared-runtime), you may see the following validation error.
 
 **The element 'Host' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides' has invalid child element 'Runtimes' in namespace 'http://schemas.microsoft.com/office/taskpaneappversionoverrides'**
 

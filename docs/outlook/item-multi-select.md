@@ -1,4 +1,4 @@
----
+﻿---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
 ms.date: 07/15/2025
@@ -93,19 +93,19 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the **\<Action\>** element and set its value to `true`. As item multi-select only supports messages at this time, the **\<ExtensionPoint\>** element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
+To enable your add-in to activate on multiple selected messages, you must add the [SupportsMultiSelect](/javascript/api/manifest/action#supportsmultiselect) child element to the `<Action>` element and set its value to `true`. As item multi-select only supports messages at this time, the `<ExtensionPoint>` element's `xsi:type` attribute value must be set to `MessageReadCommandSurface` or `MessageComposeCommandSurface`.
 
 1. In your preferred code editor, open the Outlook quick start project you created.
 
 1. Open the **manifest.xml** file located at the root of the project.
 
-1. Assign the **\<Permissions\>** element the `ReadWriteMailbox` value.
+1. Assign the `<Permissions>` element the `ReadWriteMailbox` value.
 
     ```xml
     <Permissions>ReadWriteMailbox</Permissions>
     ```
 
-1. Select the entire **\<VersionOverrides\>** node and replace it with the following XML.
+1. Select the entire `<VersionOverrides>` node and replace it with the following XML.
 
     ```xml
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -182,7 +182,7 @@ Item multi-select relies on the [SelectedItemsChanged](/javascript/api/office/of
 
 1. From the **./src/taskpane** folder, open **taskpane.html**.
 
-1. In the **\<body\>** element, replace the entire **\<main\>** element with the following markup.
+1. In the `<body>` element, replace the entire `<main>` element with the following markup.
 
     ```html
     <main id="app-body" class="ms-welcome__main">
