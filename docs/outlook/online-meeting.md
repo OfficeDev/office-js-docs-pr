@@ -467,9 +467,9 @@ Registering your online-meeting add-in is optional. It only applies if you want 
 
 ![A new GitHub issue screen with Contoso sample content.](../images/outlook-request-to-register-online-meeting-template.png)
 
-## Provide meeting resources to attendees
+## Automatically provide post-meeting resources and updates to attendees
 
-After a meeting ends, the organizer and attendees often need access to important resources such as video recordings, meeting recaps, or transcripts. Your online-meeting add-in can automatically update the meeting with these resources, making them easily accessible to all participants.
+After a meeting ends, the organizer and attendees often need access to important resources such as video recordings or meeting transcripts. If available, your online-meeting add-in can automatically update the meeting invite with these resources, making them easily accessible to all participants.
 
 This section outlines how to use the Microsoft Graph API to update a calendar item with post-meeting resources. The updated content of a meeting will be reflected in the calendars of the organizer and the attendees. Additionally, an update will be sent to the attendees.
 
@@ -489,7 +489,7 @@ This implementation requires the following:
 
 Once the meeting resources have been added to the meeting, an update is sent to the attendees. The changes are also reflected in the calendar instances of the organizer and the attendees.
 
-The following is an example of how to update the meeting body with a recap.
+The following is an example of how to update the meeting body with a link to a video recording.
 
 ```javascript
 const options = {
@@ -505,12 +505,12 @@ const currentEvent = await client.api('/users/{organizerId}/events/{meetingId}')
 
 const existingBody = currentEvent.body.content;
 
-// Update the body with a meeting recap.
+// Update the body with a link to a video recording.
 const meetingResources = `
 <br><br>
-<h2>Meeting recap</h2>
+<h2>Meeting summary</h2>
 <p>The team discussed monthly sales targets for Fabrikam. Current market conditions were discussed. A follow-up meeting will be scheduled to finalize revenue goals for the quarter.</p>
-<a href="https://contoso.com/recording/123456789" target="_blank">View recap</a>
+<a href="https://contoso.com/recording/123456789" target="_blank">View recording</a>
 `;
 
 const updatedBody = existingBody + meetingResources;
