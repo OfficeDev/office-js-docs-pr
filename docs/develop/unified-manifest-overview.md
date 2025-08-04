@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 06/24/2025
+ms.date: 08/01/2025
 ms.localizationpriority: high
 ---
 
@@ -79,7 +79,7 @@ To override this behavior in desktop platforms, add each domain you want to open
 
 Add-ins that use the unified manifest can be installed if the Office platform *directly* supports it.
 
-To run an add-in on platforms that don't directly support the unified manifest, you must publish the add-in to [AppSource](https://appsource.microsoft.com/). When the app package that contains the unified manifest is deployed in AppSource, an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest is then used to install the add-in on platforms that don't directly support the unified manifest.
+To run an add-in on platforms that don't directly support the unified manifest, you must publish the add-in to [AppSource](https://appsource.microsoft.com/). Then, deploy the add-in in the [Microsoft 365 Admin Center](../publish/publish.md). This way, an add-in only manifest is generated from the unified manifest and stored. The add-in only manifest is then used to install the add-in on platforms that don't directly support the unified manifest.
 
 The following tables lists which Office platforms directly support add-ins that use the unified manifest.
 

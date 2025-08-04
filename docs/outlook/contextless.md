@@ -1,7 +1,7 @@
 ﻿---
 title: Activate your Outlook add-in without the Reading Pane enabled or a message selected
 description: Learn how to activate your Outlook add-in without enabling the Reading Pane or first selecting a message.
-ms.date: 04/12/2024
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -26,6 +26,8 @@ To turn on this feature in a preexisting add-in project, see [Configure the mani
 The steps to configure the manifest vary depending on which type of manifest your add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+[!INCLUDE [outlook-unified-manifest-mac](../includes/outlook-unified-manifest-mac.md)]
 
 1. In your preferred code editor, open the [Outlook quick start](../quickstarts/outlook-quickstart-json-manifest.md) project that you created.
 

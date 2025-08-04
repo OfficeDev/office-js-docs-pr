@@ -1,7 +1,7 @@
 ---
 title: Log appointment notes to an external application in Outlook mobile add-ins
 description: Learn how to set up an Outlook mobile add-in to log appointment notes and other details to an external application.
-ms.date: 01/07/2025
+ms.date: 08/01/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -30,6 +30,8 @@ To configure your add-in's manifest, select the type of manifest you're using.
 - [Add-in only manifest](#add-in-only-manifest)
 
 ### Unified manifest for Microsoft 365
+
+[!INCLUDE [outlook-unified-manifest-mobile](../includes/outlook-unified-manifest-mobile.md)]
 
 # [Function command](#tab/noui)
 

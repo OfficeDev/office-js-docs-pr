@@ -25,6 +25,8 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
+[!INCLUDE [outlook-unified-manifest-platforms](../includes/outlook-unified-manifest-platforms.md)]
+
 1. Open the **manifest.json** file.
 
 1. Find the *first* object in the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array and set its `"name"` property to `"MailboxItem.ReadWrite.User"`. It should look like this when you're done.
