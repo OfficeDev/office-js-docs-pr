@@ -120,7 +120,7 @@ When developing an event-based add-in to run on a Windows client, be mindful of 
   - **Unified manifest for Microsoft 365**: `"script"` property of the `"code"` object
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
-- When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
+- When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's client version, to the event handlers instead.
 
 ### Event-based add-in limitations in Excel, PowerPoint, and Word
 
