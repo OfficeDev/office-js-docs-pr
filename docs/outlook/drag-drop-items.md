@@ -1,7 +1,7 @@
 ---
 title: Drag and drop messages and attachments into the task pane
 description: Learn how to enable drag and drop of messages and file attachments into the task pane of your Outlook add-in.
-ms.date: 08/01/2025
+ms.date: 08/05/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
