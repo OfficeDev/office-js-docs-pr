@@ -29,7 +29,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
   
     For Windows clients (except for new Outlook on Windows), you must bundle all your event-handling JavaScript code into this JavaScript file referenced in the manifest. Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 
-- In classic Outlook on Windows, when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
+- For Windows clients (except for new Outlook on Windows), when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's client version, to the event handlers instead.
 
 - Verify that your event-handling JavaScript file calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart. The following code is an example.
 
