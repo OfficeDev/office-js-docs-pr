@@ -411,11 +411,11 @@ The **accountType** property requires mailbox requirement set 1.6. On older Outl
 
 Call the Autodiscover endpoint for the outlook.office365.com domain. `https://outlook.office365.com/autodiscover/autodiscover.json/v1.0/{email}?Protocol=EWS&ServerLocation=true`
 
-- For online accounts, the service will return a result with the ServerLocation key set to Exchange Online.
-- For on-premise accounts, the service will not return a ServerLocation key.
+- For **online** accounts, the service will return a result with the `ServerLocation` key set to Exchange Online.
+- For **on-premise** accounts, the service will not return a `ServerLocation` key.
 
 > [!NOTE]
-> For customers that use vanity URLs you need to specifically configure your add-in to call the Autodiscover service on the vanity URL endpoint.
+> For customers that use vanity URLs, you need to specifically configure your add-in to call the Autodiscover service on the vanity URL endpoint.
 
 ### How do I deploy my add-in to Microsoft AppSource
 
