@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 07/11/2025
+ms.date: 07/28/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -406,6 +406,16 @@ You can determine if the signed-in user has an Exchange Online account or on-pre
 
 > [!NOTE]
 > Support for Outlook 2016 and Outlook 2019 ends October 2025. For more information, see [End of support for Office 2016 and Office 2019](https://support.microsoft.com/office/818c68bc-d5e5-47e5-b52f-ddf636cf8e16).
+
+The **accountType** property requires mailbox requirement set 1.6. On older Outlook clients you’ll need to use the Autodiscover service as follows.
+
+Call the Autodiscover endpoint for the outlook.office365.com domain. `https://outlook.office365.com/autodiscover/autodiscover.json/v1.0/{email}?Protocol=EWS&ServerLocation=true`
+
+- For **online** accounts, the service will return a result with the `ServerLocation` key set to Exchange Online.
+- For **on-premise** accounts, the service will not return a `ServerLocation` key.
+
+> [!NOTE]
+> For customers that use vanity URLs, you need to specifically configure your add-in to call the Autodiscover service on the vanity URL endpoint.
 
 ### How do I deploy my add-in to Microsoft AppSource
 
