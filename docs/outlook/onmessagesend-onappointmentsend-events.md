@@ -1,7 +1,7 @@
 ---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 06/10/2025
+ms.date: 07/31/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -19,14 +19,14 @@ Smart Alerts is available through the event-based activation feature. To underst
 
 The following table lists supported client-server combinations for the Smart Alerts feature, including the minimum required Exchange Server Cumulative Update where applicable. Excluded combinations aren't supported.
 
-|Client|Exchange Online|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later) |
-|-----|-----|-----|-----|
-|**Web browser (modern UI)**|Yes|Not applicable|Not applicable|
-|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|
-|**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|
-|**Mac**<br>Version 16.65 (22082700) or later|Yes|Not applicable|Not applicable|
-|**Android**|Not applicable|Not applicable|Not applicable|
-|**iOS**|Not applicable|Not applicable|Not applicable|
+|Client|Exchange Online|Exchange Server Subscription Edition (SE)|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later) |
+|-----|-----|-----|-----|-----|
+|**Web browser (modern UI)**|Yes|Not applicable|Not applicable|Not applicable|
+|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|Not applicable|
+|**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|Yes|
+|**Mac**<br>Version 16.65 (22082700) or later|Yes|Not applicable|Not applicable|Not applicable|
+|**Android**|Not applicable|Not applicable|Not applicable|Not applicable|
+|**iOS**|Not applicable|Not applicable|Not applicable|Not applicable|
 
 > [!IMPORTANT]
 > Enhancements to the Smart Alerts feature were introduced in later requirement sets. Because of this, the minimum supported Outlook version and build may vary. The requirement sets and versions needed for a feature are mentioned in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) and applicable sections of this article.
@@ -318,19 +318,16 @@ By default, the **Running Outlook for Simple MAPI Mail Sending** setting is set 
 
 Because the `OnMessageSend` and `OnAppointmentSend` events are supported through the event-based activation feature, the same feature limitations apply to add-ins that activate as a result of these events. For a description of these limitations, see [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations).
 
-In addition to these constraints, only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
+In addition to these constraints, be mindful of the following:
 
-The Smart Alerts dialog message must be 500 characters or less. While you can change the message and certain aspects of a button in the Smart Alerts dialog, the following can't be customized.
+- Only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
+- The Smart Alerts dialog message must be 500 characters or less. While you can change the message and certain aspects of a button in the Smart Alerts dialog, the following can't be customized.
 
-- The dialog's title bar. Your add-in's name is always displayed there.
-- The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
-- The icon next to the dialog message.
-- Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
-
-In Outlook on the web and in new Outlook on Windows:
-
-- The `OnAppointmentSend` event only occurs when the meeting being sent was created through the **New Event** option. If the meeting being sent was created by selecting a date and time directly from the calendar, the `OnAppointmentSend` event doesn't occur.
-- When forwarding a meeting, the `OnAppointmentSend` event only occurs if the organizer forwards the meeting. It doesn't occur if an attendee forwards the meeting to which they're invited.
+    - The dialog's title bar. Your add-in's name is always displayed there.
+    - The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
+    - The icon next to the dialog message.
+    - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
+- In Outlook on the web and in new Outlook on Windows, the `OnAppointmentSend` event only occurs when a meeting is sent from a separate window. The event doesn't occur when a meeting is sent from an embedded meeting form or when a meeting is forwarded.
 
 ### Limitations to formatting the dialog message using Markdown
 

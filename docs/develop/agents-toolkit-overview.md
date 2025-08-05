@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Microsoft 365 Agents Toolkit
 description: Learn how to create Office Add-in projects using Microsoft 365 Agents Toolkit.
-ms.date: 05/19/2025
+ms.date: 07/29/2025
 ms.localizationpriority: high
 ---
 
@@ -68,10 +68,17 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
     > [!NOTE]
     > Regardless of which button you select, a **WebView Stop On Load** prompt appears. Select **OK**.
 
+    > [!TIP]
+    > Sideloading in Office on Windows also makes the add-in available in Office on the web, so you can test it on that platform too. After this step is complete, minimize the Office on Windows application window and in a browser, navigate to `https://excel.cloud.microsoft/`, `https://word.cloud.microsoft/`, or `https://powerpoint.cloud.microsoft/`, whichever is appropriate for the add-in you're testing. Open a new or existing document in the Office application on the web. The buttons should appear on the **Home** ribbon just as they do in Office on Windows.
+
 1. To stop debugging and uninstall the add-in, select **Run** | **Stop Debugging** in Visual Studio Code.
 
    > [!NOTE]
    > If the preceding step seems to have no effect, uninstall the add-in by opening a **TERMINAL** in Visual Studio Code, and then running the command `npm run stop`. Closing the server window doesn't reliably stop the server and closing the Office application doesn't reliably cause Office to unacquire the add-in.
+
+#### Other ways to sideload
+
+See [Sideload Office Add-ins that use the unified manifest for Microsoft 365](../testing/sideload-add-in-with-unified-manifest.md) for alternative ways to sideload an Excel, PowerPoint, or Word add-in, including through the app store in Teams.
 
 ### Sideload in Outlook
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
 ms.date: 01/07/2025
@@ -175,13 +175,13 @@ Make the following updates in the manifest file to specify some basic informatio
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-1. Locate the **\<ProviderName\>** element and replace the default value with your company name.
+1. Locate the `<ProviderName>` element and replace the default value with your company name.
 
     ```xml
     <ProviderName>Contoso</ProviderName>
     ```
 
-1. Locate the **\<Description\>** element, replace the default value with a description of the add-in, and save the file.
+1. Locate the `<Description>` element, replace the default value with a description of the add-in, and save the file.
 
     ```xml
     <Description DefaultValue="Allows users to access their GitHub gists."/>
@@ -375,7 +375,7 @@ Take the following steps:
 
 1. Open the **manifest.xml** file.
 
-1. Locate the **\<ExtensionPoint\>** element with type **MessageReadCommandSurface** and delete it (including its closing tag). This removes the add-in buttons from the read message window.
+1. Locate the `<ExtensionPoint>` element with type **MessageReadCommandSurface** and delete it (including its closing tag). This removes the add-in buttons from the read message window.
 
 ### Add the MessageComposeCommandSurface extension point
 
@@ -383,15 +383,15 @@ Take the following steps:
 
 1. Immediately before this line, insert the following XML markup. Note the following about this markup.
 
-    - The **\<ExtensionPoint\>** with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
+    - The `<ExtensionPoint>` with `xsi:type="MessageComposeCommandSurface"` indicates that you're defining buttons to add to the compose message window.
 
-    - By using an **\<OfficeTab\>** element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
+    - By using an `<OfficeTab>` element with `id="TabDefault"`, you're indicating you want to add the buttons to the default tab on the ribbon.
 
-    - The **\<Group\>** element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
+    - The `<Group>` element defines the grouping for the new buttons, with a label set by the **groupLabel** resource.
 
-    - The first **\<Control\>** element contains an **\<Action\>** element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
+    - The first `<Control>` element contains an `<Action>` element with `xsi:type="ShowTaskPane"`, so this button opens a task pane.
 
-    - The second **\<Control\>** element contains an **\<Action\>** element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
+    - The second `<Control>` element contains an `<Action>` element with `xsi:type="ExecuteFunction"`, so this button invokes a JavaScript function contained in the function file.
 
     ```xml
     <!-- Message Compose -->
@@ -436,11 +436,11 @@ Take the following steps:
 
 ### Update resources in the manifest
 
-The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the **\<Resources\>** section of the manifest.
+The previous code references labels, tooltips, and URLs that you need to define before the manifest will be valid. You'll specify this information in the `<Resources>` section of the manifest.
 
-1. In **manifest.xml**, locate the **\<Resources\>** element in the manifest file and delete the entire element (including its closing tag).
+1. In **manifest.xml**, locate the `<Resources>` element in the manifest file and delete the entire element (including its closing tag).
 
-1. In that same location, add the following markup to replace the **\<Resources\>** element you just removed.
+1. In that same location, add the following markup to replace the `<Resources>` element you just removed.
 
     ```xml
     <Resources>
@@ -963,7 +963,7 @@ This add-in's **Insert default gist** button is a UI-less button that invokes a 
 
 ### Update the function file (HTML)
 
-A function that's invoked by a UI-less button must be defined in the file that's specified by the **\<FunctionFile\>** element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
+A function that's invoked by a UI-less button must be defined in the file that's specified by the `<FunctionFile>` element in the manifest for the corresponding form factor. This add-in's manifest specifies `https://localhost:3000/commands.html` as the function file.
 
 1. Open the **./src/commands/commands.html** and replace the entire contents with the following markup.
 

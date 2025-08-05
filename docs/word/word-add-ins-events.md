@@ -1,13 +1,13 @@
 ---
 title: Work with events using the Word JavaScript API
 description: A list of events for Word JavaScript objects. This includes information on using event handlers and the associated patterns.
-ms.date: 07/11/2024
+ms.date: 08/05/2025
 ms.localizationpriority: medium
 ---
 
 # Work with events using the Word JavaScript API
 
-This article describes important concepts related to working with events in Word and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Word JavaScript API.
+This article introduces key concepts for working with events in Word using the JavaScript API. You'll find practical code samples for registering, handling, and removing event handlers, along with explanations of event life cycles and coauthoring scenarios. Explore the event tables to discover which triggers and objects are supported.
 
 ## Events in Word
 
@@ -21,8 +21,8 @@ When certain changes occur in a Word document, event notifications fire. The Wor
 | `onAnnotationPopupAction` | Occurs when the user performs an action in an annotation pop-up menu.<br><br>Event data object:<br>[AnnotationPopupActionEventArgs](/javascript/api/word/word.annotationpopupactioneventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationpopupaction-member) | No |
 | `onAnnotationRemoved` | Occurs when the user deletes one or more annotations.<br><br>Event data object:<br>[AnnotationRemovedEventArgs](/javascript/api/word/word.annotationremovedeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onannotationremoved-member) | No |
 | `onContentControlAdded` | Occurs when a content control is added. Run `context.sync()` in the handler to get the new content control's properties.<br><br>Event data object:<br>[ContentControlAddedEventArgs](/javascript/api/word/word.contentcontroladdedeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-oncontentcontroladded-member) | Yes |
-| `onDataChanged` | Occurs when data within the content control are changed. To get the new text, load this content control in the handler. To get the old text, do not load it.<br><br>Event data object:<br>[ContentControlDataChangedEventArgs](/javascript/api/word/word.contentcontroldatachangedeventargs) | [**ContentControl**](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-ondatachanged-member) | Yes |
-| `onDeleted` | Occurs when the content control is deleted. Do not load this content control in the handler, otherwise you won't be able to get its original properties.<br><br>Event data object:<br>[ContentControlDeletedEventArgs](/javascript/api/word/word.contentcontroldeletedeventargs) | [**ContentControl**](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-ondeleted-member) | Yes |
+| `onDataChanged` | Occurs when data within the content control are changed. To get the new text, load this content control in the handler. To get the old text, don't load it.<br><br>Event data object:<br>[ContentControlDataChangedEventArgs](/javascript/api/word/word.contentcontroldatachangedeventargs) | [**ContentControl**](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-ondatachanged-member) | Yes |
+| `onDeleted` | Occurs when the content control is deleted. Don't load this content control in the handler, otherwise you won't be able to get its original properties.<br><br>Event data object:<br>[ContentControlDeletedEventArgs](/javascript/api/word/word.contentcontroldeletedeventargs) | [**ContentControl**](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-ondeleted-member) | Yes |
 | `onEntered` | Occurs when the content control is entered.<br><br>Event data object:<br>[ContentControlEnteredEventArgs](/javascript/api/word/word.contentcontrolenteredeventargs) | [**ContentControl**](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-onentered-member) | Yes |
 | `onExited` | Occurs when the content control is exited, for example, when the cursor leaves the content control.<br><br>Event data object:<br>[ContentControlExitedEventArgs](/javascript/api/word/word.contentcontrolexitedeventargs) | [**ContentControl**](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-onexited-member) | Yes |
 | `onParagraphAdded` | Occurs when the user adds new paragraphs.<br><br>Event data object:<br>[ParagraphAddedEventArgs](/javascript/api/word/word.paragraphaddedeventargs) | [**Document**](/javascript/api/word/word.document#word-word-document-onparagraphadded-member) | Yes |
@@ -43,7 +43,7 @@ When certain changes occur in a Word document, event notifications fire. The Wor
 | `onCommentDeselected` | Occurs when a comment is deselected.<br><br>Event data object:<br>[CommentEventArgs](/javascript/api/word/word.commenteventargs) | <ul><li>[**Body**](/javascript/api/word/word.body?view=word-js-preview&preserve-view=true#word-word-body-oncommentdeselected-member)</li><li>[**ContentControl**](/javascript/api/word/word.contentcontrol?view=word-js-preview&preserve-view=true#word-word-contentcontrol-oncommentdeselected-member)</li><li>[**Paragraph**](/javascript/api/word/word.paragraph#word-word-paragraph-oncommentdeselected-member)</li><li>[**Range**](/javascript/api/word/word.range#word-word-range-oncommentdeselected-member)</li></ul> | Yes |
 | `onCommentSelected` | Occurs when a comment is selected.<br><br>Event data object:<br>[CommentEventArgs](/javascript/api/word/word.commenteventargs) | <ul><li>[**Body**](/javascript/api/word/word.body?view=word-js-preview&preserve-view=true#word-word-body-oncommentselected-member)</li><li>[**ContentControl**](/javascript/api/word/word.contentcontrol?view=word-js-preview&preserve-view=true#word-word-contentcontrol-oncommentselected-member)</li><li>[**Paragraph**](/javascript/api/word/word.paragraph#word-word-paragraph-oncommentselected-member)</li><li>[**Range**](/javascript/api/word/word.range#word-word-range-oncommentselected-member)</li></ul> | Yes |
 
-### Event triggers
+## Event triggers
 
 Events within a Word document can be triggered by:
 
@@ -54,11 +54,11 @@ Events within a Word document can be triggered by:
 
 Any change that complies with default behavior of Word will trigger the corresponding events in a document.
 
-### Lifecycle of an event handler
+## Life cycle of an event handler
 
 An event handler is created when an add-in registers the event handler. It's destroyed when the add-in deregisters the event handler or when the add-in is refreshed, reloaded, or closed. Event handlers don't persist as part of the Word file, or across sessions with Word on the web.
 
-### Events and coauthoring
+## Events and coauthoring
 
 With coauthoring, multiple people can work together and edit the same Word document simultaneously. For events that can be triggered by a coauthor, such as `onParagraphChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source == Local`) or was triggered by the remote coauthor (`event.source == Remote`).
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Automatically open a task pane when an add-in is installed
 description: Learn how to configure an Office Add-in to open automatically when it's installed.
 ms.topic: how-to
@@ -62,7 +62,7 @@ The following example shows a `"view"` value set to `"Office.AutoShowTaskpaneWit
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-To designate a task pane as the default, add a [TaskpaneId](/javascript/api/manifest/action#taskpaneid) element as the first child of the **\<Action\>** element and set its value to **Office.AutoShowTaskpaneWithDocument**. The following is an example.
+To designate a task pane as the default, add a [TaskpaneId](/javascript/api/manifest/action#taskpaneid) element as the first child of the `<Action>` element and set its value to **Office.AutoShowTaskpaneWithDocument**. The following is an example.
 
 ```xml
 <Action xsi:type="ShowTaskpane">

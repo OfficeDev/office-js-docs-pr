@@ -1,4 +1,4 @@
----
+﻿---
 title: Inside the Exchange identity token in an Outlook add-in
 description: Learn about the contents of an Exchange user identity token generated from an Outlook add-in.
 ms.date: 04/12/2024
@@ -63,7 +63,7 @@ The following table lists the parts of the identity token payload.
 
 | Claim | Description |
 |:-----|:-----|
-| `aud` | The URL of the add-in that requested the token. A token is only valid if it is sent from the add-in that is running in the client's webview control. The URL of the add-in is specified in the manifest. The markup depends on the type of manifest.</br></br>**Add-in only manifest:** If the add-in uses the Office Add-ins manifests schema v1.1, this URL is the URL specified in the first **\<SourceLocation\>** element, under the form type `ItemRead` or `ItemEdit`, whichever occurs first as part of the [FormSettings](/javascript/api/manifest/formsettings) element in the add-in manifest.</br></br>**Unified manifest for Microsoft 365:** The URL is specified in the `"extensions.audienceClaimUrl"` property. |
+| `aud` | The URL of the add-in that requested the token. A token is only valid if it is sent from the add-in that is running in the client's webview control. The URL of the add-in is specified in the manifest. The markup depends on the type of manifest.</br></br>**Add-in only manifest:** If the add-in uses the Office Add-ins manifests schema v1.1, this URL is the URL specified in the first `<SourceLocation>` element, under the form type `ItemRead` or `ItemEdit`, whichever occurs first as part of the [FormSettings](/javascript/api/manifest/formsettings) element in the add-in manifest.</br></br>**Unified manifest for Microsoft 365:** The URL is specified in the `"extensions.audienceClaimUrl"` property. |
 | `iss` | A unique identifier for the Exchange server that issued the token. All tokens issued by this Exchange server will have the same identifier. |
 | `nbf` | The date and time that the token is valid starting from. The value is the number of seconds since January 1, 1970. |
 | `exp` | The date and time that the token is valid until. The value is the number of seconds since January 1, 1970. |
