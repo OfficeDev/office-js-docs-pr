@@ -483,11 +483,11 @@ This implementation requires the following:
 - Access to the meeting instance created by the organizer. Changes must be made to the organizer's meeting instance to propagate to the attendees' meeting instance.
 
 1. When a meeting ends, configure your add-in to fetch the resources that will be added to the meeting object.
-1. Use the Microsoft Graph API to get the organizer's meeting instance. Ensure that the **body** property is included in the request. For information on the API, see [Get event](/graph/api/event-get).
+1. Use the Microsoft Graph API to get the organizer's meeting instance. Ensure that the `body` property is included in the request. For information on the API, see [Get event](/graph/api/event-get).
 1. Update the body of the meeting with the applicable meeting resources. For information on the API, see [Update event](/graph/api/event-update).
 
   > [!IMPORTANT]
-  > When making changes to the **body** property of a meeting, make sure to preserve the online meeting blob. Removing the meeting blob from the body disables the online-meeting functionality.
+  > When making changes to the `body` property of a meeting, make sure to preserve the online meeting blob. Removing the meeting blob from the body disables the online-meeting functionality.
 
 Once the meeting resources have been added to the meeting, an update is sent to the attendees. The changes are also reflected in the calendar instances of the organizer and the attendees.
 
@@ -524,7 +524,7 @@ const updatedEvent = {
   }
 };
 
-// Update the event with the new body content
+// Update the event with the new body content.
 await client.api('/users/{organizerId}/events/{meetingId}')
     .update(updatedEvent);
 ```
