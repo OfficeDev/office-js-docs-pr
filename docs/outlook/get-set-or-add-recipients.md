@@ -144,7 +144,7 @@ You can optionally provide a callback function as an input argument to the `setA
 > In Outlook on mobile devices, be mindful of the following:
 >
 > - The `addAsync` method is supported starting in Version 4.2530.0.
-> - The `addAsync` isn't supported when a user replies from the reply field at the bottom of a message.
+> - The `addAsync` method isn't supported when a user replies from the reply field at the bottom of a message.
 
 ```js
 let item;
@@ -245,7 +245,7 @@ If you don't want to overwrite any existing recipients in an appointment or mess
 > In Outlook on mobile devices, be mindful of the following:
 >
 > - The `addAsync` method is supported starting in Version 4.2530.0.
-> - The `addAsync` isn't supported when a user replies from the reply field at the bottom of a message.
+> - The `addAsync` method isn't supported when a user replies from the reply field at the bottom of a message.
 
 ```js
 let item;
