@@ -1,7 +1,7 @@
 ﻿---
 title: Add support for add-in commands in Outlook on mobile devices
 description: Learn how to add support for Outlook on mobile devices including how to update the add-in manifest and change your code for mobile scenarios, if necessary.
-ms.date: 01/31/2025
+ms.date: 08/01/2025
 ms.localizationpriority: medium
 ---
 
@@ -14,6 +14,8 @@ Implement add-in commands in Outlook on mobile devices to access the same functi
 The first step to enabling add-in commands in Outlook mobile is to define them in the add-in manifest.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+[!INCLUDE [outlook-unified-manifest-mobile](../includes/outlook-unified-manifest-mobile.md)]
 
 1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, add `"mobile"` as an item. When you are finished, the array should look like the following.
 
