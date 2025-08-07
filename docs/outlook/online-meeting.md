@@ -1,7 +1,7 @@
 ﻿---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 08/01/2025
+ms.date: 08/07/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -10,10 +10,10 @@ ms.localizationpriority: medium
 
 Setting up an online meeting is a core experience for an Outlook user, and it's easy to [create a Teams meeting with Outlook](/microsoftteams/teams-add-in-for-outlook). However, creating an online meeting in Outlook with a non-Microsoft service can be cumbersome. By implementing this feature, service providers can streamline the online meeting creation and joining experience for their Outlook add-in users.
 
+In this article, you'll learn how to set up your Outlook add-in to enable users to organize and join a meeting using your online-meeting service. Throughout this article, we'll use a fictional online-meeting service provider, "Contoso".
+
 > [!IMPORTANT]
 > This feature is supported in Outlook on the web, Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic), Mac, Android, and iOS with a Microsoft 365 subscription.
-
-In this article, you'll learn how to set up your Outlook add-in to enable users to organize and join a meeting using your online-meeting service. Throughout this article, we'll use a fictional online-meeting service provider, "Contoso".
 
 ## Set up your environment
 
@@ -432,7 +432,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
     }
     ```
 
-## Testing and validation
+## Test and validate your add-in
 
 Follow the usual guidance to [test and validate your add-in](testing-and-tips.md), then [sideload](sideload-outlook-add-ins-for-testing.md) the manifest in Outlook on the web, on Windows (new or classic), or on Mac. If your add-in also supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
 
@@ -469,6 +469,66 @@ Registering your online-meeting add-in is optional. It only applies if you want 
 
 ![A new GitHub issue screen with Contoso sample content.](../images/outlook-request-to-register-online-meeting-template.png)
 
+## Automatically provide post-meeting resources and updates to attendees
+
+After a meeting ends, the organizer and attendees often need access to important resources such as video recordings or meeting transcripts. If available, your online-meeting add-in can automatically update the meeting invite with these resources, making them easily accessible to all participants.
+
+This section outlines how to use the Microsoft Graph API to update a calendar item with post-meeting resources. The updated content of a meeting will be reflected in the calendars of the organizer and the attendees. Additionally, an update will be sent to the attendees.
+
+This implementation requires the following:
+- An access token to make Microsoft Graph API calls. For guidance, see [Use the Microsoft Graph REST API from an Outlook add-in](microsoft-graph.md).
+- An indicator to your add-in when a meeting scheduled with your online-meeting add-in has ended.
+- Access to a meeting's Exchange ID and the ID assigned by the add-in.
+- Access to the necessary resources that will be added to the meeting.
+- Access to the meeting instance created by the organizer. Changes must be made to the organizer's meeting instance to propagate to the attendees' meeting instance.
+
+1. When a meeting ends, configure your add-in to fetch the resources that will be added to the meeting object.
+1. Use the Microsoft Graph API to get the organizer's meeting instance. Ensure that the `body` property is included in the request. For information on the API, see [Get event](/graph/api/event-get).
+1. Update the body of the meeting with the applicable meeting resources. For information on the API, see [Update event](/graph/api/event-update).
+
+  > [!IMPORTANT]
+  > When making changes to the `body` property of a meeting, make sure to preserve the online meeting blob. Removing the meeting blob from the body disables the online-meeting functionality.
+
+Once the meeting resources have been added to the meeting, an update is sent to the attendees. The changes are also reflected in the calendar instances of the organizer and the attendees.
+
+The following is an example of how to update the meeting body with a link to a video recording.
+
+```javascript
+const options = {
+    authProvider,
+};
+
+const client = Client.init(options);
+
+// Get the body of the meeting.
+const currentEvent = await client.api('/users/{organizerId}/events/{meetingId}')
+    .select('body')
+    .get();
+
+const existingBody = currentEvent.body.content;
+
+// Update the body with a link to a video recording.
+const meetingResources = `
+<br><br>
+<h2>Meeting summary</h2>
+<p>The team discussed monthly sales targets for Fabrikam. Current market conditions were discussed. A follow-up meeting will be scheduled to finalize revenue goals for the quarter.</p>
+<a href="https://contoso.com/recording/123456789" target="_blank">View recording</a>
+`;
+
+const updatedBody = existingBody + meetingResources;
+
+const updatedEvent = {
+  body: {
+    contentType: 'html',
+    content: updatedBody
+  }
+};
+
+// Update the event with the new body content.
+await client.api('/users/{organizerId}/events/{meetingId}')
+    .update(updatedEvent);
+```
+
 ## Available APIs
 
 The following APIs are available for this feature.
@@ -500,3 +560,4 @@ Several restrictions apply.
 
 - [Add-ins for Outlook on mobile devices](outlook-mobile-addins.md)
 - [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md)
+- [Working with calendars and events using the Microsoft Graph API](/graph/api/resources/calendar-overview)
