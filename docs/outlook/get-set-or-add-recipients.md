@@ -1,7 +1,7 @@
 ---
 title: Get, set, or add recipients when composing an appointment or message in Outlook
 description: Learn how to get, set, or add recipients to a message or appointment in an Outlook add-in.
-ms.date: 02/29/2024
+ms.date: 08/06/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -139,6 +139,13 @@ When calling `setAsync`, provide an array as the input argument for the `recipie
 
 You can optionally provide a callback function as an input argument to the `setAsync` method, to make sure any code that depends on successfully setting the recipients would execute only when that happens. If you implement a callback function, use the `status` and `error` properties of the `asyncResult` output parameter to check the status and any error messages of the asynchronous call. To provide additional information to the callback function, use the optional `asyncContext` parameter in the `setAsync` call.
 
+> [!NOTE]
+>
+> In Outlook on mobile devices, be mindful of the following:
+>
+> - The `addAsync` method is supported starting in Version 4.2530.0.
+> - The `addAsync` method isn't supported when a user replies from the reply field at the bottom of a message.
+
 ```js
 let item;
 
@@ -232,6 +239,13 @@ function setRecipients() {
 ## Add recipients
 
 If you don't want to overwrite any existing recipients in an appointment or message, instead of using `Recipients.setAsync`, use the `Recipients.addAsync` asynchronous method to append recipients. `addAsync` works similarly as `setAsync` in that it requires a `recipients` input argument. You can optionally provide a callback function, and any arguments for the callback using the `asyncContext` parameter. Then, check the status, result, and any error of the asynchronous `addAsync` call using the `asyncResult` output parameter of the callback function. The following example checks if the item being composed is an appointment, then appends two required attendees to it.
+
+> [!NOTE]
+>
+> In Outlook on mobile devices, be mindful of the following:
+>
+> - The `addAsync` method is supported starting in Version 4.2530.0.
+> - The `addAsync` method isn't supported when a user replies from the reply field at the bottom of a message.
 
 ```js
 let item;
