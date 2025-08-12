@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 08/01/2025
+ms.date: 08/13/2025
 ms.localizationpriority: high
 ---
 
@@ -94,7 +94,7 @@ The following tables lists which Office platforms directly support add-ins that 
 | Office on mobile | Not directly supported |
 
 > [!NOTE]
-> If you're deploying an add-in in the [Microsoft 365 Admin Center](../publish/publish.md) and require it to run on platforms that don't directly support the unified manifest, the add-in must be a published AppSource add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can't currently be deployed in the Microsoft 365 Admin Center.
+> If you're deploying an add-in in the [Microsoft 365 Admin Center](../publish/publish.md) and require it to run on platforms that don't directly support the unified manifest, the add-in must be a published AppSource add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can be deployed in the [Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) of the Microsoft 365 Admin Center, but they won't be installable on Office versions that do not directly support the unified manifest.
 
 ## Sample unified manifest
 
