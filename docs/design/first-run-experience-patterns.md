@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # First-run experience patterns
 
-A well-designed first-run experience (FRE) introduces users to your Office Add-in, guiding them through its core features and benefits. An effective FRE not only helps users get started quickly but also increases engagement and retention by making a positive first impression.
+A well-designed first-run experience (FRE) introduces users to your Office Add-in. It guides them through its core features and benefits. An effective FRE not only helps users get started quickly but also increases engagement and retention by making a positive first impression.
 
 ## Why first-run experiences matter
 
