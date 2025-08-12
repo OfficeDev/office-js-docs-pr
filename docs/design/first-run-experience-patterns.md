@@ -1,24 +1,50 @@
 ---
 title: First-run experience patterns for Office Add-ins
 description: Learn the best practices for designing first-run experiences in Office Add-ins.
-ms.date: 08/09/2024
+ms.date: 08/12/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
 # First-run experience patterns
 
-A first-run experience (FRE) is a user's introduction to your add-in. An FRE is presented when a user opens an add-in for the first time and provides them with insight into the functions, features, and/or benefits of the add-in. This experience helps shape the user's impression of an add-in and can strongly influence their likelihood to come back to and continue using your add-in.
+A well-designed first-run experience (FRE) introduces users to your Office Add-in. It guides them through its core features and benefits. An effective FRE not only helps users get started quickly but also increases engagement and retention by making a positive first impression.
+
+## Why first-run experiences matter
+
+The initial moments with your add-in set the tone for future interactions. A clear, concise FRE can:
+
+- Highlight your add-in's unique value.
+- Reduce user confusion and support requests.
+- Encourage users to take meaningful actions.
+- Foster ongoing usage and loyalty.
+
+## Key principles for first-run experiences
+
+- **Keep it simple**: Focus on the essential actions and benefits. Avoid overwhelming users with too much information.
+- **Be actionable**: Provide clear next steps or calls to action that help users realize immediate value.
+- **Offer flexibility**: Allow users to skip or revisit the FRE as needed.
+- **Engage visually**: Use graphics, carousels, or videos to make the experience memorable and easy to follow.
+
+## FRE patterns for Office Add-ins
+
+Explore these proven patterns to design an effective first-run experience:
+
+- [Carousel](#carousel): Guide users through a sequence of screens highlighting features and benefits, with options to advance or skip.
+- [Value placemat](#value-placemat): Present your add-in’s value proposition, logo, feature summary, and a call-to-action in a single, visually engaging layout.
+- [Video placemat](#video-placemat): Use a short video to demonstrate your add-in’s capabilities, paired with a clear call-to-action.
+
+Choose the pattern that best fits your add-in's complexity and user needs. Consider showing the FRE periodically if your add-in is used infrequently, to help users stay familiar with its features.
 
 ## Best practices
 
 Follow these best practices when crafting your first-run experience.
 
-|Do|Don't|
+| Do | Don't |
 |:------|:------|
-|Provide a simple and brief introduction to the main actions in the add-in. | Don't include information and call-outs that aren't relevant to getting started. |
-|Give users the opportunity to complete an action that will positively impact their use of the add-in. | Don't expect users to learn everything at once. Focus on the action that provides the most value. |
-|Create an engaging experience that users will want to complete. | Don't force the users to click through the first-run experience. Give users an option to bypass the first-run experience. |
+| Provide a simple and brief introduction to the main actions in the add-in. | Don't include information and call-outs that aren't relevant to getting started. |
+| Give users the opportunity to complete an action that will positively impact their use of the add-in. | Don't expect users to learn everything at once. Focus on the action that provides the most value. |
+| Create an engaging experience that users will want to complete. | Don't force the users to click through the first-run experience. Give users an option to bypass the first-run experience. |
 
 Consider whether showing users the first-run experience once or periodically is important to your scenario. For example, if your add-in is only utilized periodically, users may become less familiar with your add-in and may benefit from another interaction with the first-run experience.
 
@@ -50,7 +76,7 @@ The value placemat communicates your add-in's value proposition through logo pla
 
 For an example that uses the value placemat pattern, see the [first-run experience tutorial](../tutorials/first-run-experience-tutorial.md).
 
-### Video placemat
+## Video placemat
 
 The video placemat shows users a video before they start using your add-in.
 

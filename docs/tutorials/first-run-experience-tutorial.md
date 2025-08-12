@@ -1,16 +1,40 @@
 ---
 title: First-run experience tutorial
 description: Learn how to implement a first-run experience for your Office Add-in.
-ms.date: 09/06/2024
+ms.date: 08/12/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Build an Office Add-in with a basic first-run experience
 
-In this article, you'll walk through the process of updating a task pane add-in to include a [first-run experience](../design/first-run-experience-patterns.md) using the value placemat pattern. When the user runs the add-in, the add-in determines whether or not to show the first-run experience by checking [local storage](../develop/persisting-add-in-state-and-settings.md#browser-storage) for a flag.
+Implementing a first-run experience helps onboard users and highlights your add-in's value. This tutorial guides you through adding a simple first-run experience to your Office Add-in using local storage to track whether the user has previously launched the add-in.
+
+> [!NOTE]
+> The [first-run experience](../design/first-run-experience-patterns.md) is a recommended pattern for Office Add-ins. It helps users understand your add-in's features and increases engagement.
+
+## What you'll learn
+
+- How to add a first-run UI to your add-in.
+- How to use [browser local storage](../develop/persisting-add-in-state-and-settings.md#browser-storage) to persist user state.
+- How to update your add-in's HTML, JavaScript, and CSS files to support the first-run experience.
+
+## Overview
+
+When a user opens your add-in for the first time, you'll display a welcome message and a list of key features. On subsequent launches, the add-in will skip the welcome and show the main UI. This is accomplished by checking for a flag in local storage and updating the UI accordingly.
 
 This tutorial provides instructions and screenshots for Excel but you can use a similar pattern to implement a first-run experience in other Office applications where Office Web Add-ins are supported.
+
+## Steps
+
+Follow these steps to implement the first-run experience:
+
+1. **Update the HTML**: Add a container for the first-run experience.
+2. **Update the JavaScript**: Check local storage and display the first-run UI if needed.
+3. **Update the CSS**: Ensure the new UI is styled consistently.
+4. **Test your add-in**: Verify the first-run experience works as expected.
+
+Let's get started!
 
 > [!TIP]
 > If you want a completed version of this tutorial, visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/first-run-experience-tutorial).
@@ -110,7 +134,7 @@ Update the CSS file to ensure that the add-in UI is styled appropriately given t
     .ms-welcome__main, .ms-welcome__main > div {
     ```
 
-### Try it out
+## Try it out
 
 1. Ensure that the web server is running and the add-in has been sideloaded, then open the task pane. For details, see the instructions in the quick start you used.
 
@@ -132,9 +156,11 @@ Using this tutorial, you implemented a basic [first-run experience](../design/fi
 
 - Update the features listed in the value placemat to match what your add-in actually does.
 - Implement a different pattern (for example, video placemat or carousel) that better showcases the benefits of your add-in.
-- Use a more secure and robust option for tracking first-run state. For example, use storage partitioning if available, or implement a Single Sign-on (SSO) authentication solution. For more about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md). For more about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
+- Use a more secure and robust option for tracking first-run state. For example, use storage partitioning if available, or implement a Single Sign-on (SSO) authentication solution.
+  - For more about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md).
+  - For more about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
 
-If you're planning to make your add-in available in the AppSource marketplace, you'll need to have a robust and useful first-run experience. For more information, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
+If you're planning to make your add-in available in the AppSource marketplace, you must have a robust and useful first-run experience. For more information, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
 
 ## Code samples
 
