@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins that use the unified manifest for Microsoft 365
 description: Test your Office Add-in on Windows by sideloading.
-ms.date: 07/29/2025
+ms.date: 08/13/2025
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 The process of sideloading an add-in that uses the [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) varies depending on the tool you want to use and on how the add-in project was created.
 
 > [!NOTE]
-> An add-in that uses the unified manifest can be sideloaded on Office on Windows, Version 2304 (Build 16320.20000) or later. Sideloading on Windows has the effect of sideloading to Office on the web too. Currently, it can't be sideloaded on Mac or iPad. If you work on a Mac, you can test the add-in by having your Microsoft 365 administrator deploy the add-in as an [integrated app](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the Microsoft 365 Admin Center.
+> An add-in that uses the unified manifest can be sideloaded on Office on Windows, Version 2304 (Build 16320.20000) or later. Sideloading on Windows has the effect of sideloading to Office on the web too. Currently, it can't be sideloaded on Mac or iPad. If you work on a Mac, you can test the add-in by having your Microsoft 365 administrator deploy the add-in through the [integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the Microsoft 365 admin center.
 
 ## Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)
 

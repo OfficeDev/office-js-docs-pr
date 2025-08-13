@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Microsoft 365 Agents Toolkit
 description: Learn how to create Office Add-in projects using Microsoft 365 Agents Toolkit.
-ms.date: 07/29/2025
+ms.date: 08/13/2025
 ms.localizationpriority: high
 ---
 
@@ -50,7 +50,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 ### Sideload in Excel, PowerPoint, or Word
 
 > [!NOTE]
-> This section only applies if you are developing the add-in on a *Windows* computer. If you work on a Mac, you can test the add-in by having your Microsoft 365 administrator deploy the add-in as an [integrated app](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the Microsoft 365 Admin Center.
+> This section only applies if you are developing the add-in on a *Windows* computer. If you work on a Mac, you can test the add-in by having your Microsoft 365 administrator deploy the add-in through the [integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the Microsoft 365 admin center.
 
 1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select one of these options:
  
