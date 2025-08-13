@@ -20,7 +20,7 @@ The following table summarizes the primary publication methods that can be used 
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.) |
 |[AppSource](#appsource)|To distribute your add-in publicly to users.|
-|[Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the [Microsoft 365 admin center](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)|To distribute your add-in to users in your organization.|
+|[Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the Microsoft 365 admin center|To distribute your add-in to users in your organization.|
 
 ### Production deployment methods
 
@@ -84,7 +84,7 @@ It's important to note that some versions of Outlook clients and Exchange server
 
 [Microsoft 365 subscriptions provided by GoDaddy](https://www.godaddy.com/business/office-365) have limited support for add-ins. The following options are **not** supported.
 
-- Deployment through the Microsoft Admin Center.
+- Deployment through the Microsoft 365 admin center.
 - Deployment through Exchange servers.
 - Acquiring add-ins from AppSource.
 
