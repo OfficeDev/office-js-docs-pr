@@ -1,7 +1,7 @@
 ---
 title: AppSource listing options for your event-based add-in
 description: Learn about the AppSource listing options available for your Office Add-ins that implement event-based activation.
-ms.date: 07/11/2025
+ms.date: 08/13/2025
 ms.localizationpriority: medium
 ---
 
@@ -58,7 +58,7 @@ For end-users who installed the add-in on their own, the event-based activation 
 
 ## Admin consent for installing event-based add-ins
 
-Whenever an event-based add-in is deployed from the **Integrated Apps** screen, the admin gets details about the add-in's event-based activation capabilities in the deployment wizard. The details appear in the **App Permissions and Capabilities** section. The admin should see all the events where the add-in can automatically activate.
+Whenever an event-based add-in is deployed from the **Integrated apps** screen, the admin gets details about the add-in's event-based activation capabilities in the deployment wizard. The details appear in the **App Permissions and Capabilities** section. The admin should see all the events where the add-in can automatically activate.
 
 ![The "Accept permissions requests" screen when deploying a new app.](../images/outlook-deploy-accept-permissions-requests.png)
 
