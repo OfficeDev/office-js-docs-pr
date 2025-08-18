@@ -19,7 +19,7 @@ A protocol handler lets an app or add-in launch from a URI (for example, clickin
 
 ## Registry key format
 
-To automatically trust a custom protocol handler for an add-in, create a registry key at one of the following locations (replace `<add-in ID>` with your add-in's [manifest ID](/javascript/api/manifest/id) or unified manifest `id`).
+To automatically trust a custom protocol handler for an add-in, create a registry key at one of the following locations (replace `<add-in ID>` with your add-in's [manifest ID](/javascript/api/manifest/id) or unified manifest [`id`](/microsoft-365/extensibility/schema/root#id).
 
 - **Current user (64-bit Office)**: `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
 - **Local machine (64-bit Office)**: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
