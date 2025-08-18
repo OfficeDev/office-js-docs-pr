@@ -109,5 +109,5 @@ Windows Registry Editor Version 5.00
 
 ## See also
 
-- [Office Add-ins manifest](https://learn.microsoft.com/office/dev/add-ins/develop/add-in-manifests)
+- [Office Add-ins manifest](../develop/add-in-manifests.md)
 - [Use policy settings to manage privacy controls for Microsoft 365 Apps for enterprise](/microsoft-365-apps/privacy/manage-privacy-controls)
