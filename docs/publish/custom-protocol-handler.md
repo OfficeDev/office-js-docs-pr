@@ -2,35 +2,37 @@
 title: Trust custom protocol handlers that launch add-ins
 description: How to use group policies for protocol handler trust in the registry to launch add-ins.
 ms.topic: how-to
-ms.date: 08/05/2024
+ms.date: 08/15/2025
 ms.localizationpriority: medium
 ---
 
 # Trust custom protocol handlers to launch add-ins
 
-Protocol handlers are registered with the operating system to allow an app to be launched from a URI (for example, how `mailto:` launches an email client). Add-ins can also be launched from protocol handlers. This article explains how to automatically trust these custom protocol handlers by using admin group policies.
-
-Every add-in and protocol pair needs to be trusted. This either comes in the form end-user consent or admin group policies. Similarly, admins can block certain add-in and protocol pairs.
+Let your Office Add-in launch from a custom protocol handler (like `mailto:` or your own scheme) without prompting users for consent. This is useful when you want a seamless experience for users, or when your organization needs to centrally manage which add-ins launch from which protocols.
 
 > [!IMPORTANT]
-> This information about trusting custom protocol handlers that launch add-ins through the registry only pertains to Windows.
+> This article applies to Windows only. Support for this feature starts with Office Version 2408 (Build 17928.20018).
+
+## How protocol handler trust works
+
+A protocol handler lets an app or add-in launch from a URI (for example, clicking a `mailto:` link opens your email client). Office add-ins also launch this way. By default, users are prompted to trust each add-in and protocol pair. As an admin, pre-approve or block these pairs using group policy and the Windows registry.
 
 ## Registry key format
 
-To automatically trust a custom protocol handler that launches an add-in, create a registry key at one of the following locations. Note that `<add-in id>` refers to the [Id element](/javascript/api/manifest/id) specified in the add-in only manifest or to the `"id"` property of the unified manifest.
+To automatically trust a custom protocol handler for an add-in, create a registry key at one of the following locations (replace `<add-in ID>` with your add-in's [manifest ID](/javascript/api/manifest/id) or unified manifest [`id`](/microsoft-365/extensibility/schema/root#id).
 
-- Current user (64-bit Office): `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
-- Local machine (64-bit Office): `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
+- **Current user (64-bit Office)**: `HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
+- **Local machine (64-bit Office)**: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\office\16.0\WEF\ProtocolHandlers\<add-in ID>`
 
-Give the key the following values.
+Add the following values to the key.
 
-- **Name**: The protocol name based on the URI. For example, `mailto`.
-- **Type**: REG_SZ
-- **Data**: ["Allow", "Block"]
+- **Name:** Protocol name (for example, `mailto`)
+- **Type:** REG_SZ
+- **Data:** `Allow` or `Block`
 
 ## Set group policies
 
-The following sample files show how admins define and trust these custom protocol handlers across their organization.
+Admins use group policy to manage protocol handler trust across the organization. The following sample files show how to set up these policies.
 
 ### Sample ADMX file
 
@@ -94,16 +96,18 @@ The following sample files show how admins define and trust these custom protoco
 
 ### Sample .REG file
 
-```text
-Windows Registry Editor Version 5.00 
+The following example shows how to configure the registry directly using a .REG file.
 
-[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Office\16.0\WEF\ProtocolHandlers] 
- 
-[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Office\16.0\WEF\ProtocolHandlers\[add-in id]] 
-"protocol1"="Allow" 
-"protocol2"="Block" 
+```text
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Office\16.0\WEF\ProtocolHandlers]
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Office\16.0\WEF\ProtocolHandlers\[add-in id]]
+"protocol1"="Allow"
+"protocol2"="Block"
 ```
 
-## Support
+## See also
 
-Support for this feature was introduced with Office Version 2408 (Build 17928.20018).
+- [Office Add-ins manifest](../develop/add-in-manifests.md)
+- [Use policy settings to manage privacy controls for Microsoft 365 Apps for enterprise](/microsoft-365-apps/privacy/manage-privacy-controls)
