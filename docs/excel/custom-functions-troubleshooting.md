@@ -84,7 +84,7 @@ function setForceRefreshOff() {
 
 ### Custom functions showing #NAME! error
 
-When opening a workbook that uses a custom functions add-in, sometimes a `#NAME!` error displays in custom function cells instead of the formula result. IntelliSense for custom functions may also not appear in the workbook when authoring new formulas. The likely cause of this issue is that the custom function add-in hasn't registered successfully.
+When opening a workbook that uses a custom functions add-in, sometimes a `#NAME!` error displays in custom function cells instead of the formula result. IntelliSense for custom functions may also not appear in the workbook when authoring new formulas. The likely cause of this issue is that the custom functions add-in hasn't registered successfully.
 
 To resolve the issue, try the following approaches:
 
