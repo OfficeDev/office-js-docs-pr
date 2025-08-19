@@ -1,7 +1,7 @@
 ---
 title: Options for Excel custom functions
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.
-ms.date: 06/26/2025
+ms.date: 08/18/2025
 ms.localizationpriority: medium
 ---
 
@@ -123,8 +123,8 @@ For example, suppose that your function returns the second highest value from a 
  * @param {number[][]} values Multiple ranges of values.
  */
 function secondHighest(values) {
-  let highest = values[0][0],
-    secondHighest = values[0][0];
+  let highest = -Infinity,
+    secondHighest = -Infinity;
   for (let i = 0; i < values.length; i++) {
     for (let j = 0; j < values[i].length; j++) {
       if (values[i][j] >= highest) {
