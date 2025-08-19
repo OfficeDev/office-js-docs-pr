@@ -1,7 +1,7 @@
 ---
 title: Task pane add-ins for Project
 description: Learn about task pane add-ins for Project.
-ms.date: 02/21/2024
+ms.date: 08/19/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -12,6 +12,9 @@ ms.localizationpriority: medium
 Project on Windows supports custom task pane add-ins. Use these to handle selection events in Project and integrate task, resource, view, and other cell-level data in a project with SharePoint lists, SharePoint Add-ins, Web Parts, web services, and enterprise applications.
 
 For an introduction to Office Add-ins, see [Office Add-ins platform overview](../overview/office-add-ins.md).
+
+> [!NOTE]
+> The unified manifest for Microsoft 365 doesn't support Project add-ins. You must use the add-in only manifest. For information about the difference, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ## Add-in scenarios for Project
 
