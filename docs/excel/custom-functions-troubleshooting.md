@@ -1,10 +1,11 @@
 ---
-ms.date: 05/20/2025
+ms.date: 08/18/2025
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
+
 # Troubleshoot custom functions
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
@@ -80,6 +81,15 @@ function setForceRefreshOff() {
 ```
 
 ## Common problems and solutions
+
+### Custom functions displaying incorrectly
+
+When opening a workbook that contains custom functions, sometimes a `#NAME!` error displays in custom function cells. IntelliSense for custom functions also not appear.
+
+To resolve this issue, try the following approaches:
+
+- Refresh the add-in by selecting your add-in icon under **Home** > **Add-ins** > **My Add-ins**.
+- Follow the guidance to [automatically clear the Office cache when Office opens](../testing/clear-cache.md#automatically-clear-the-cache), and then restart Excel.
 
 ### Can't open add-in from localhost: Use a local loopback exemption
 
