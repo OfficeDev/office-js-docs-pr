@@ -173,6 +173,7 @@ If the Windows-only add-in is then disconnected during a subsequent Outlook sess
 >
 > - It's supported only for Excel, PowerPoint, and Word.
 > - The minimum Office version that supports the feature is ubscription Office on Windows Version 2506 (Build 19029.20004)
+> - Add-ins that use this feature can only be sideloaded. They cannot be published any other way.
 
 Use manifest markup to specify whether the Windows-only add-in or the Office Add-in should be disabled and hidden on a Windows computer when they conflict, or give the user that is installing the Office Add-in the choice of which to use.
 
