@@ -1,7 +1,7 @@
 ﻿---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 06/18/2025
+ms.date: 08/26/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ The integrated spam-reporting feature eases the task of developing individual ad
 - Enable an organization's security operations center (SOC) or IT administrators to easily perform spam and phishing simulations for educational purposes.
 
 > [!NOTE]
-> Integrated spam reporting was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Additional functionality was released in later requirement sets. For information on client support for this feature, see [Supported clients](#supported-clients).
+> Integrated spam reporting was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Additional functionality was also added to subsequent requirement sets. To verify that an Outlook client supports these features, see [Supported clients](#supported-clients) and the relevant sections of this article for the features you want to implement.
 
 ## Supported clients
 
@@ -28,16 +28,12 @@ The following table identifies which Outlook clients support the integrated spam
 | **Outlook on the web** | Supported\* |
 | [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Supported\* |
 | **classic Outlook on Windows**<br>Version 2404 (Build 17530.15000) | Supported |
-| **Outlook on Mac**<br>Version 16.81 (23121700) or later | Preview (see [Preview the integrated spam-reporting feature in Outlook on Mac](#preview-the-integrated-spam-reporting-feature-in-outlook-on-mac)) |
+| **Outlook on Mac**<br>Version 16.100 (25072537) | Supported |
 | **Outlook on Android** | Not available |
 | **Outlook on iOS** | Not available |
 
 > [!NOTE]
 > \* In Outlook on the web and the new Outlook on Windows, the integrated spam-reporting feature isn't supported for Microsoft 365 consumer accounts.
-
-## Preview the integrated spam-reporting feature in Outlook on Mac
-
-To preview the integrated spam-reporting feature in Outlook on Mac, you must install Version 16.81.1217.0 or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-macos/4206727) and select the **Beta Channel** option to access Office beta builds.
 
 ## Set up your environment
 
@@ -205,7 +201,7 @@ The following is an example of a `<VersionOverrides>` node configured for spam r
           <Host xsi:type="MailHost">
             <Runtimes>
                 <!-- References the HTML file that links to the spam-reporting event handler.
-                     This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows. -->
+                     This is used by Outlook on the web and on Mac, and new Outlook on Windows. -->
               <Runtime resid="WebViewRuntime.Url">
                 <!-- References the JavaScript file that contains the spam-reporting event handler. This is used by classic Outlook on Windows. -->
                 <Override type="javascript" resid="JSRuntime.Url"/>
@@ -436,14 +432,6 @@ The following is a sample post-processing dialog shown to the user once the add-
     ```html
     <script type="text/javascript" src="../spamreporting/spamreporting.js"></script>    
     ```
-
-    > [!NOTE]
-    > The integrated spam-reporting feature is currently in preview in Outlook on Mac. If you're testing the feature in this client, you must include a reference to the preview version of the Office JavaScript API in your **commands.html** file.
-    >
-    > ```html
-    > <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
-    > <script type="text/javascript" src="../spamreporting/spamreporting.js"></script>
-    > ```
 
 1. Save your changes.
 
