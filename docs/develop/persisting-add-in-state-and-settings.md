@@ -27,14 +27,14 @@ As a best practice, any private data should be stored in partitioned `localStora
 > [!NOTE]
 > The partition key is undefined in environments without partitioning, such as the webview controls for Office on Windows. Where it is defined, the partition key is a hash of the following two domains.
 > 
-> - The domain that the top-level browser window is at, such as excel.cloud.microsoft in the case of Excel on the web.
-> - The domain of the add-in, such as myAddin.contoso.com.
+> - The domain that the top-level browser window is at, such as `excel.cloud.microsoft` in the case of Excel on the web.
+> - The domain of the add-in, such as `myAddin.contoso.com`.
 > 
 > So, each of the following would be a different partition:
 > 
-> - excel.cloud.microsoft + myAddin.contoso.com
-> - word.cloud.microsoft + myAddin.contoso.com
-> - word.cloud.microsoft + myOtherAddin.contoso.com
+> - `excel.cloud.microsoft` + `myAddin.contoso.com`
+> - `word.cloud.microsoft` + `myAddin.contoso.com`
+> - `word.cloud.microsoft` + `myOtherAddin.contoso.com`
 
 The following example shows how to use the partition key with `localStorage`. 
 
