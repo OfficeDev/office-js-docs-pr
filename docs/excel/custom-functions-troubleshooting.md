@@ -30,7 +30,7 @@ Excel has a number of built-in error messages which are returned to a cell if th
 
 Generally, these errors correspond to the errors you might already be familiar with in Excel. The are only a few exceptions specific to custom functions, listed here:
 
-- A `#NAME?` error generally means there has been an issue registering your functions.
+- A `#NAME?` error generally means there has been an issue registering your functions. For additional information, see [Custom functions showing #NAME? error](#custom-functions-showing-name-error).
 - A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
 - A `#VALUE!` error typically indicates an error in the functions' script file.
 - A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
