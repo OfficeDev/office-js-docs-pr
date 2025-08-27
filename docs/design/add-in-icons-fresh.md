@@ -1,7 +1,7 @@
 ---
 title: Fresh style icon guidelines for Office Add-ins
 description: Guidelines for using Fresh style icons in Office Add-ins.
-ms.date: 02/12/2025
+ms.date: 08/25/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -85,7 +85,7 @@ All modifiers should have a 1 px transparent cutout between each element, includ
 ## Icon colors
 
 > [!NOTE]
-> These color guidelines are for ribbon icons used in [Add-in commands](add-in-commands.md). These icons are not rendered with Fluent UI and the color palette is different from the palette described at [Microsoft UI Fabric | Colors | Shared](https://fluentfabric.azurewebsites.net/#/color/shared).
+> These color guidelines are for ribbon icons used in [Add-in commands](add-in-commands.md). These icons aren't rendered with Fluent UI.
 
 Office icons have a limited color palette. Use the colors listed in the following table to guarantee seamless integration with the Office UI. Apply the following guidelines to the use of color.
 
