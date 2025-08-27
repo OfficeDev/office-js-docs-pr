@@ -1,7 +1,7 @@
 ---
 title: Drag and drop messages and attachments into the task pane
 description: Learn how to enable drag and drop of messages and file attachments into the task pane of your Outlook add-in.
-ms.date: 08/05/2025
+ms.date: 08/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -20,8 +20,8 @@ The following table outlines the Outlook clients that support the drag-and-drop 
 
 | Outlook client | Support for drag and drop | Implementation method | Supported Outlook surfaces |
 | ----- | ----- | ----- | ----- |
-| Outlook on the web | Supported | Office.js API ([Office.EventType.ItemDraggedAndDropped](/javascript/api/office/office.eventtype)) | <ul><li>Appointment Compose</li><li>Appointment Read</li><li>Message Compose</li><li>Message Read</li></ul> |
-| New Outlook on Windows | Supported | Office.js API ([Office.EventType.ItemDraggedAndDropped](/javascript/api/office/office.eventtype)) | <ul><li>Appointment Compose</li><li>Appointment Read</li><li>Message Compose</li><li>Message Read</li></ul> |
+| Outlook on the web | Supported | Office.js API ([Office.EventType.DragAndDropEvent](/javascript/api/office/office.eventtype)) | <ul><li>Appointment Compose</li><li>Appointment Read</li><li>Message Compose</li><li>Message Read</li></ul> |
+| New Outlook on Windows | Supported | Office.js API ([Office.EventType.DragAndDropEvent](/javascript/api/office/office.eventtype)) | <ul><li>Appointment Compose</li><li>Appointment Read</li><li>Message Compose</li><li>Message Read</li></ul> |
 | Classic Outlook on Windows | Supported | [HTML Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API) | <ul><li>Appointment Compose</li><li>Appointment Read</li><li>Message Compose</li><li>Message Read</li></ul> |
 | Outlook on Mac | Supported | [HTML Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API) | <ul><li>Appointment Compose</li><li>Appointment Read</li><li>Message Compose</li><li>Message Read</li></ul> |
 | Outlook on iOS | Not supported | Not applicable | Not applicable |
@@ -38,16 +38,16 @@ The drag or drop event occurs when the mouse pointer enters an add-in's task pan
 
 # [Web and Windows (new)](#tab/web)
 
-In Outlook on the web and the new Outlook on Windows, create a handler in your JavaScript file for the [Office.EventType.ItemDraggedAndDropped](/javascript/api/office/office.eventtype) event using the [Office.context.mailbox.addHandlerAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-addhandlerasync-member(1)) method. When the `ItemDraggedAndDropped` event occurs, the handler receives a [DragAndDropEventArgs](/javascript/api/outlook/office.draganddropeventargs) object so that you can identify when a user drags an item over the task pane, when they drop the item into the task pane, and what data is associated with the item. Depending on whether a drag or drop event occurred, the [dragAndDropEventData](/javascript/api/outlook/office.draganddropeventargs#outlook-office-draganddropeventargs-draganddropeventdata-member) property of the `DragAndDropEventArgs` object returns a [DragoverEventData](/javascript/api/outlook/office.dragovereventdata) or [DropEventData](/javascript/api/outlook/office.dropeventdata) object. These objects provide information on the position of the mouse pointer and the data being transferred to the task pane.
+In Outlook on the web and the new Outlook on Windows, create a handler in your JavaScript file for the [Office.EventType.DragAndDropEvent](/javascript/api/office/office.eventtype) event using the [Office.context.mailbox.addHandlerAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-addhandlerasync-member(1)) method. When the `DragAndDropEvent` event occurs, the handler receives a [DragAndDropEventArgs](/javascript/api/outlook/office.draganddropeventargs) object so that you can identify when a user drags an item over the task pane, when they drop the item into the task pane, and what data is associated with the item. Depending on whether a drag or drop event occurred, the [dragAndDropEventData](/javascript/api/outlook/office.draganddropeventargs#outlook-office-draganddropeventargs-draganddropeventdata-member) property of the `DragAndDropEventArgs` object returns a [DragoverEventData](/javascript/api/outlook/office.dragovereventdata) or [DropEventData](/javascript/api/outlook/office.dropeventdata) object. These objects provide information on the position of the mouse pointer and the data being transferred to the task pane.
 
 When messages are dragged to the task pane, they're dropped as .eml files. Attachments that are dropped retain their current format. For a list of supported types, see [Supported item types](#supported-item-types).
 
 The following example shows how to implement the drag-and-drop feature.
 
 ```javascript
-// Handle the ItemDraggedAndDropped event.
+// Handle the DragAndDropEvent event.
 Office.context.mailbox.addHandlerAsync(
-    Office.EventType.ItemDraggedAndDropped,
+    Office.EventType.DragAndDropEvent,
     (event) => {
         console.log(`Event occurred: ${event.type}`);
         const eventData = event.dragAndDropEventData;
