@@ -1,5 +1,5 @@
 ---
-ms.date: 08/18/2025
+ms.date: 08/26/2025
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.topic: troubleshooting
@@ -30,9 +30,9 @@ Excel has a number of built-in error messages which are returned to a cell if th
 
 Generally, these errors correspond to the errors you might already be familiar with in Excel. The are only a few exceptions specific to custom functions, listed here:
 
-- A `#NAME` error generally means there has been an issue registering your functions.
+- A `#NAME?` error generally means there has been an issue registering your functions. For additional information, see [Custom functions showing #NAME? error](#custom-functions-showing-name-error).
 - A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
-- A `#VALUE` error typically indicates an error in the functions' script file.
+- A `#VALUE!` error typically indicates an error in the functions' script file.
 - A `#REF!` error may indicate that your function name is the same as a function name in an add-in that already exists.
 
 ## Clear the Office cache
@@ -82,9 +82,9 @@ function setForceRefreshOff() {
 
 ## Common problems and solutions
 
-### Custom functions showing #NAME! error
+### Custom functions showing #NAME? error
 
-When opening a workbook that uses a custom functions add-in, sometimes a `#NAME!` error displays in custom function cells instead of the formula result. IntelliSense for custom functions may also not appear in the workbook when authoring new formulas. The likely cause of this issue is that the custom functions add-in hasn't registered successfully.
+When opening a workbook that uses a custom functions add-in, sometimes a `#NAME?` error displays in custom function cells instead of the formula result. IntelliSense for custom functions may also not appear in the workbook when authoring new formulas. The likely cause of this issue is that the custom functions add-in hasn't registered successfully.
 
 To resolve the issue, try the following approaches:
 
@@ -101,7 +101,7 @@ If you see the error "TypeError: Network request failed" in your [runtime log](c
 
 ### Ensure promises return
 
-When Excel is waiting for a custom function to complete, it displays #BUSY! in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing `#BUSY!`. Check your functions to make sure that any promises are properly returning a result to a cell.
+When Excel is waiting for a custom function to complete, it displays `#BUSY!` in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing `#BUSY!`. Check your functions to make sure that any promises are properly returning a result to a cell.
 
 ### Error: The dev server is already running on port 3000
 
