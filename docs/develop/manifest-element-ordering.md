@@ -1,7 +1,7 @@
 ﻿---
 title: How to find the proper order of manifest elements
 description: Learn how to find the correct order in which to place child elements in a parent element.
-ms.date: 06/02/2025
+ms.date: 06/13/2025
 ms.localizationpriority: medium
 ---
 
@@ -287,6 +287,7 @@ The following sections show the manifest elements in the order in which they mus
                 <DisplayName>
                 <FileName>
                 <Type>
+            <Effect>
 ```
 
 ## Mail add-in element ordering within VersionOverrides Ver. 1.0
