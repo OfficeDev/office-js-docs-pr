@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 08/13/2025
+ms.date: 09/02/2025
 ms.localizationpriority: high
 ---
 
@@ -61,8 +61,8 @@ We're working hard to complete reference documentation for the `"extensions"` pr
 | [`"requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes) | Identifies the Office applications in which the add-in can be installed. For example, `"mail"` means the add-in can be installed in Outlook. |
 | [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) | The ribbons that the add-in customizes. |
 | `"ribbons.contexts"` | Specifies the command surfaces that the add-in customizes. For example, `"mailRead"` or `"mailCompose"`. |
-| `"ribbons.fixedControls"` (developer preview) | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. |
-| `"ribbons.spamPreProcessingDialog"` (developer preview) | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. |
+| `"ribbons.fixedControls"` | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. |
+| `"ribbons.spamPreProcessingDialog"` | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. |
 | `"ribbons.tabs"` | Configures custom ribbon tabs. |
 | [`"alternates"`](/microsoft-365/extensibility/schema/element-extensions#alternates) | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. |
 | [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes)  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). |
