@@ -83,7 +83,7 @@ Finally, implement the reference method with a custom function. The following co
 /**
  * Returns the value 27.
  * @customfunction
- * @excludeFromAutocomplete
+ * @excludeFromAutoComplete
  * @returns {number} 27
  */
 function get27() {
@@ -347,7 +347,7 @@ The following code sample shows the implementation of the reference method as a 
 /**
  * Generates a dynamic array of random numbers.
  * @customfunction
- * @excludeFromAutocomplete
+ * @excludeFromAutoComplete
  * @param {number} rows Number of rows to generate.
  * @param {number} columns Number of columns to generate.
  * @param {number} [min] Lowest number that can be generated. Default is 1.
