@@ -266,7 +266,7 @@ For more information, see [Manually create JSON metadata for custom functions](c
 
 ## Add a function to a basic value type
 
-To add functions to the basic value types of `Boolean`, `double`, and `string`, use the same process as you would for entity values. Describe the function in JSON as a reference method. The following code sample shows how to create a double basic value with a function `AddValue()` that adds a value `x` to the basic value.
+To add functions to the basic value types of `Boolean`, `double`, and `string`, use the same process as you would for entity values. The following code sample shows how to create a double basic value with a custom function called `addValue`. The function adds the value `x` to the basic value.
 
 ```typescript
 /**
@@ -283,7 +283,7 @@ export function addValue(numberValue: any, x: number): number[][] {
 
 ```
 
-The following code sample shows how to add the `addValue` reference method to a simple number in Excel.
+The following code sample shows how to define the `addValue` custom function from the preceding sample in JSON and then reference it with a method called `createSimpleNumber`.
 
 ```typescript
 const referenceCustomFunctionAddValue: Excel.JavaScriptCustomFunctionReferenceCellValue = { 
