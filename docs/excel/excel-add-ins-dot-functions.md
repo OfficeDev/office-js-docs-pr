@@ -43,7 +43,7 @@ The properties are described in the following table.
 |**namespace** | The namespace that contains the custom function. This value must match the namespace specified by the [customFunctions.namespace element](/microsoftteams/platform/resources/schema/manifest-schema-dev-preview) in the unified manifest, or the [Namespace element](/javascript/api/manifest/namespace) in the add-in only manifest.|
 |**id** | The name of the custom function to map to this reference method. The name is the uppercase version of the custom function name. |
 
-When you create the entity value, add the reference method to the properties list. The following code sample shows how to create a simple entity value named `Math` and add a reference method to it. `Get27` is the method name that appears to users. For example, `A1.Get27()`.
+When you create the entity value, add the reference method to the properties list. The following code sample shows how to create a simple entity value named `Math` and add a reference method to it. `Get27` is the method name that appears to users (for example: `A1.Get27()`).
 
 ```typescript
 function makeMathEntity(value: number){
