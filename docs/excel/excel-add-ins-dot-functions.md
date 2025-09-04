@@ -7,13 +7,13 @@ ms.localizationpriority: medium
 
 # Add reference methods to cell values
 
-Add reference methods to cell values to give users access to dynamic calculations based on the cell value. The `EntityCellValue` and `LinkedEntityCellValue` types support reference methods. For example, add a method to a product entity value that converts its weight to different units.
+Add reference methods to cell values to give users access to dynamic calculations based on the cell value. The [`EntityCellValue`](/javascript/api/excel/excel.entitycellvalue) and [`LinkedEntityCellValue`](/javascript/api/excel/excel.linkedentitycellvalue) types support reference methods. For example, add a method to a product entity value that converts its weight to different units.
 
 The following image shows an example of adding a `ConvertWeight` method to a product entity value representing pancake mix.
 
 :::image type="content" source="../images/excel-add-in-dot-function.png" alt-text="Excel formula showing =A1.ConvertWeight(ounces).":::
 
-The `DoubleCellValue`, `BooleanCellValue`, and `StringCellValue` types also support reference methods. The following image shows an example of adding a `ConvertToRomanNumeral` method to a double value type.
+The [`DoubleCellValue`](/javascript/api/excel/excel.doublecellvalue), [`BooleanCellValue`](/javascript/api/excel/excel.booleancellvalue), and [`StringCellValue`](/javascript/api/excel/excel.stringcellvalue) types also support reference methods. The following image shows an example of adding a `ConvertToRomanNumeral` method to a double value type.
 
 :::image type="content" source="../images/excel-add-in-dot-function-roman-numeral.png" alt-text="Excel formula showing =A1.ConvertToRomanNumeral()":::
 
@@ -99,7 +99,7 @@ When the code runs, it creates a `Math` entity value as shown in the following i
 
 ## Add arguments
 
-If your reference method needs arguments, add them to the custom function. The following code example shows how to add an argument named `x` to a method named `AddValue`. The method adds one to the `x` value by calling a custom function named `AddValue`.
+If your reference method needs arguments, add them to the custom function. The following code example shows how to add an argument named `x` to a method named `addValue`. The method adds one to the `x` value by calling a custom function named `addValue`.
 
 ```typescript
 /**
@@ -116,7 +116,7 @@ function addValue(x): number[][] {
 
 ## Reference the entity value as a calling object
 
-A common scenario is that your methods need to reference properties on the entity value itself to perform calculations. For example, it's more useful if the `AddValue` method adds the argument value to the entity value itself. Specify that the entity value is passed as the first argument by applying the `@capturesCallingObject` tag to the custom function as shown in the following code example.
+A common scenario is that your methods need to reference properties on the entity value itself to perform calculations. For example, it's more useful if the `addValue` method adds the argument value to the entity value itself. Specify that the entity value is passed as the first argument by applying the `@capturesCallingObject` tag to the custom function as shown in the following code example.
 
 ```typescript
 /**
@@ -136,7 +136,7 @@ function addValue(math, x): number[][] {
 
 You can use any argument name that conforms to the Excel syntax rules in [Names in formulas](https://support.microsoft.com/office/names-in-formulas-fc2935f9-115d-4bef-a370-3aa8bb4c91f1). Because this is a math entity, the calling object argument is named `math`. The argument name can be used in the calculation. In the previous code sample, it retrieves the `math.[value]` property to perform the calculation.
 
-The following code sample shows the implementation of the `Contoso.AddValue` function.
+The following code sample shows the implementation of the `Contoso.addValue` function.
 
 ```typescript
 /**
@@ -370,7 +370,7 @@ function generateRandomRange(rows, columns, min, max) {
 }
 ```
 
-When the user enters the function in Excel, AutoComplete shows the properties of the function and indicates optional arguments by surrounding them in brackets (`[]`). The following image shows an example of entering optional parameters by using the `generateRandomRange` reference method.
+When the user enters the custom function in Excel, AutoComplete shows the properties of the function and indicates optional arguments by surrounding them in brackets (`[]`). The following image shows an example of entering optional parameters by using the `generateRandomRange` reference method.
 
 :::image type="content" source="../images/excel-data-types-reference-method-optional-parameters.png" alt-text="Screenshot of entering generateRandomRange method in Excel.":::
 
@@ -478,7 +478,7 @@ The following image shows an example of entering multiple parameters, including 
 
 ## Support details
 
-Reference methods are supported in all custom function types, such as [volatile](custom-functions-volatile.md) and [streaming](custom-functions-web-reqs.md) functions. All custom function return types are supported ([matrix, scalar, and error](custom-functions-json-autogeneration.md)).
+Reference methods are supported in all custom function types, such as [volatile](custom-functions-volatile.md) and [streaming](custom-functions-web-reqs.md#make-a-streaming-function) functions. All custom function return types&mdash;matrix, scalar, and error&mdash;are supported.
 
 > [!IMPORTANT]
 > A linked entity can't have a custom function that combines both a reference method and a data provider. When you develop linked entities, keep these types of custom functions separate.
@@ -486,8 +486,5 @@ Reference methods are supported in all custom function types, such as [volatile]
 ## See also
 
 - [Create custom functions in Excel](custom-functions-overview.md)
-- [Excel.CellValue](/javascript/api/excel/excel.cellvalue)
-- [LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue)
-- [DoubleCellValue](/javascript/api/excel/excel.doublecellvalue)
-- [StringCellValue](/javascript/api/excel/excel.stringcellvalue)
-- [BooleanCellValue](/javascript/api/excel/excel.booleancellvalue)
+- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+- [Manually create JSON metadata for custom functions](custom-functions-json.md)
