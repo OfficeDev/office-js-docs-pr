@@ -1,7 +1,7 @@
 ---
 title: Resource limits and performance optimization for Office Add-ins
 description: Learn about the resource limits of the Office Add-in platform, including CPU and memory.
-ms.date: 07/14/2025
+ms.date: 09/03/2025
 ms.localizationpriority: medium
 ---
 
@@ -61,8 +61,8 @@ Outlook add-ins that use regular expressions and run in Outlook on Windows (clas
 
 Excel add-ins have important data transfer limits when interacting with the workbook.
 
-- Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
-- A range is limited to 5,000,000 cells for read operations.
+- Excel on the web has a payload size limit for requests and responses of **5MB**. `RichAPI.Error` will be thrown if that limit is exceeded.
+- A range is limited to **5,000,000** cells for read operations.
 
 If you expect user input will exceed these limits, check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
 

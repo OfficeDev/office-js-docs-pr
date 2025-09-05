@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: Optimize Excel add-in performance using the JavaScript API.
-ms.date: 02/17/2022
+ms.date: 09/03/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -107,7 +107,7 @@ await Excel.run(async (context) => {
 
 ## Payload size limit best practices
 
-The Excel JavaScript API has size limitations for API calls. Excel on the web has a payload size limit for requests and responses of 5MB, and an API returns a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges typically exceed both of these limitations.
+The Excel JavaScript API has size limitations for API calls. **Excel on the web** has a payload size limit for requests and responses of **5MB**, and an API returns a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges typically exceed both of these limitations.
 
 The payload size of a request is a combination of the following three components.
 

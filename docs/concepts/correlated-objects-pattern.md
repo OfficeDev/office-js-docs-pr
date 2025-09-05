@@ -2,7 +2,7 @@
 title: Avoid using the context.sync method in loops
 description: Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.
 ms.topic: best-practice
-ms.date: 01/31/2025
+ms.date: 09/03/2025
 ms.localizationpriority: medium
 ---
 
@@ -225,4 +225,4 @@ One further caveat: sometimes it takes more than one loop just to create the arr
 
 ## When should you *not* use the patterns in this article?
 
-Excel can't read more than 5MB of data in a given call of `context.sync`. If this limit is exceeded, an error is thrown. (See the "Excel add-ins section" of [Resource limits and performance optimization for Office Add-ins](resource-limits-and-performance-optimization.md#excel-add-ins) for more information.) It's very rare that this limit is approached, but if there's a chance that this will happen with your add-in, then your code should *not* load all the data in a single loop and follow the loop with a `context.sync`. But you still should avoid having a `context.sync` in every iteration of a loop over a collection object. Instead, define subsets of the items in the collection and loop over each subset in turn, with a `context.sync` between the loops. You could structure this with an outer loop that iterates over the subsets and contains the `context.sync` in each of these outer iterations.
+**Excel on the web** can't read more than **5MB** of data in a given call of `context.sync`. If this limit is exceeded, an error is thrown. (See the "Excel add-ins section" of [Resource limits and performance optimization for Office Add-ins](resource-limits-and-performance-optimization.md#excel-add-ins) for more information.) It's very rare that this limit is approached, but if there's a chance that this will happen with your add-in, then your code should *not* load all the data in a single loop and follow the loop with a `context.sync`. But you still should avoid having a `context.sync` in every iteration of a loop over a collection object. Instead, define subsets of the items in the collection and loop over each subset in turn, with a `context.sync` between the loops. You could structure this with an outer loop that iterates over the subsets and contains the `context.sync` in each of these outer iterations.
