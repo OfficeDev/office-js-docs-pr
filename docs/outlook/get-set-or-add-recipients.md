@@ -1,7 +1,7 @@
 ---
 title: Get, set, or add recipients when composing an appointment or message in Outlook
 description: Learn how to get, set, or add recipients to a message or appointment in an Outlook add-in.
-ms.date: 08/06/2025
+ms.date: 09/09/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -143,8 +143,8 @@ You can optionally provide a callback function as an input argument to the `setA
 >
 > In Outlook on mobile devices, be mindful of the following:
 >
-> - The `addAsync` method is supported starting in Version 4.2530.0.
-> - The `addAsync` method isn't supported when a user replies from the reply field at the bottom of a message.
+> - The `setAsync` method is supported starting in Version 4.2530.0.
+> - The `setAsync` method isn't supported when a user replies from the reply field at the bottom of a message.
 
 ```js
 let item;
