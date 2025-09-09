@@ -1,16 +1,13 @@
 ---
 title: Undo capabilities with the Excel JavaScript API
 description: Learn how to preserve the undo stack in your Excel add-ins.
-ms.date: 06/04/2025
+ms.date: 09/09/2025
 ms.localizationpriority: medium
 ---
 
-# Undo support with the Excel JavaScript API (preview)
+# Undo support with the Excel JavaScript API
 
 Excel add-ins support undo behavior. This preserves both actions performed by Excel JavaScript APIs and actions performed by the user in Excel. These actions are saved in the *undo stack* for an individual user, allowing the user to step back through their actions when desired.
-
-> [!NOTE]
-> The features described in this article are currently available only in public preview. [!INCLUDE [Information about using preview APIs](../includes/using-excel-preview-apis.md)] To use this feature, you must also join the [Microsoft 365 Insider Program](https://aka.ms/MSFT365InsiderProgram) and download the latest build of Excel.
 
 ## Undo grouping
 
