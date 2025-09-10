@@ -1,7 +1,7 @@
 ﻿---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 03/12/2025
+ms.date: 09/04/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -23,9 +23,11 @@ Keyboard shortcuts are currently only supported in the following platforms and b
 - Office on the web
 - Office on Windows
   - **Excel**: Version 2102 (Build 13801.20632) and later
+  - **PowerPoint**: Version TBD (Build TBD) and later
   - **Word**: Version 2408 (Build 17928.20114) and later
 - Office on Mac
   - **Excel**: Version 16.55 (21111400) and later
+  - **PowerPoint**: Version TBD (Build TBD) and later
   - **Word**: Version 16.88 (24081116) and later
 
 Additionally, keyboard shortcuts only work on platforms that support the following requirement sets. For information about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
@@ -259,8 +261,9 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 There are many keyboard shortcuts that are already in use by Microsoft 365. Avoid registering keyboard shortcuts for your add-in that are already in use. However, there may be some instances where it's necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
 In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut. Note that the source of the text for the add-in option that's displayed in this dialog varies depending on the type of manifest your add-in uses.
-    - **Unified app manifest for Microsoft 365**: The value of the `"extensions.runtimes.actions.displayName"` property in the **manifest.json** file.
-    - **Add-in only manifest**: The value of the `"actions.name"` property in the shortcuts JSON file.
+
+- **Unified app manifest for Microsoft 365**: The value of the `"extensions.runtimes.actions.displayName"` property in the **manifest.json** file.
+- **Add-in only manifest**: The value of the `"actions.name"` property in the shortcuts JSON file.
 
 ![A conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
 
@@ -271,8 +274,9 @@ The user can select which action the keyboard shortcut will take. After making t
 For the best user experience, we recommend that you minimize keyboard shortcut conflicts with these good practices.
 
 - Use only keyboard shortcuts with the following pattern: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Alt</kbd>+*x*, where *x* is some other key.
-- Avoid using established keyboard shortcuts in Excel and Word. For a list, see the following:
+- Avoid using established keyboard shortcuts in Excel, PowerPoint, and Word. For a list, see the following:
   - [Keyboard shortcuts in Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
+  - [Keyboard shortcuts in PowerPoint](https://support.microsoft.com/office/ebb3d20e-dcd4-444f-a38e-bb5c5ed180f4)
   - [Keyboard shortcuts in Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
 - When the keyboard focus is inside the add-in UI, <kbd>Ctrl</kbd>+<kbd>Space</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F10</kbd> won't work as these are essential accessibility shortcuts.
 - On a Windows or Mac computer, if the **Reset Office Add-ins shortcut preferences** command isn't available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
@@ -454,7 +458,7 @@ Office.actions.areShortcutsInUse(shortcuts)
 
 ## Implement custom keyboard shortcuts across supported Microsoft 365 apps
 
-You can implement a custom keyboard shortcut to be used across supported Microsoft 365 apps, such as Excel and Word. If the implementation to perform the same task is different on each app, you must use the `Office.actions.associate` method to call a different callback function for each app. The following code is an example.
+You can implement a custom keyboard shortcut to be used across supported Microsoft 365 apps, such as Excel, PowerPoint, and Word. If the implementation to perform the same task is different on each app, you must use the `Office.actions.associate` method to call a different callback function for each app. The following code is an example.
 
 ```javascript
 const host = Office.context.host;
