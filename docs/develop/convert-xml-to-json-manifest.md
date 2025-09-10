@@ -10,8 +10,6 @@ ms.localizationpriority: medium
 
 To add Teams capabilities or a Copilot extension to an add-in that uses the add-in only manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
 
-   [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
-
 There are three basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
 
 - Ensure that your manifest is ready to convert.
