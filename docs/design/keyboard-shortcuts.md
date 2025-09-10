@@ -1,7 +1,7 @@
 ﻿---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 03/12/2025
+ms.date: 08/26/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -56,28 +56,26 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
     - While the [`"actions.displayName"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item?view=m365-app-prev&preserve-view=true#displayname) property is optional, it's required if a custom keyboard shortcut will be created for the action. This property is used to describe the action of a keyboard shortcut. The description you provide appears in the dialog that's shown to a user when there's a shortcut conflict between multiple add-ins or with Microsoft 365. Office appends the name of the add-in in parentheses at the end of the description. For more information on how conflicts with keyboard shortcuts are handled, see [Avoid key combinations in use by other add-ins](#avoid-key-combinations-in-use-by-other-add-ins).
 
     ```json
-    "runtimes": [
-        {
-            "id": "TaskPaneRuntime",
-            "type": "general",
-            "code": {
-                "page": "https://localhost:3000/taskpane.html"
+    {
+        "id": "TaskPaneRuntime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/taskpane.html"
+        },
+        "lifetime": "long",
+        "actions": [
+            {
+                "id": "ShowTaskpane",
+                "type": "executeFunction",
+                "displayName": "Show task pane"
             },
-            "lifetime": "long",
-            "actions": [
-                {
-                    "id": "ShowTaskpane",
-                    "type": "executeFunction",
-                    "displayName": "Show task pane (Contoso Add-in)"
-                },
-                {
-                    "id": "HideTaskpane",
-                    "type": "executeFunction",
-                    "displayName": "Hide task pane (Contoso Add-in)"
-                }
-            ],
-        }
-    ]
+            {
+                "id": "HideTaskpane",
+                "type": "executeFunction",
+                "displayName": "Hide task pane"
+            }
+        ]
+    }
     ```
 
 1. Add the following to the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array. Note the following about the markup.
@@ -120,6 +118,9 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
         }
     ]
     ```
+
+> [!NOTE]
+> If you've defined keyboard shortcuts for an add-in that uses the unified manifest and want to publish it to [AppSource](../publish/publish-office-add-ins-to-appsource.md), you must specify JSON resource files for the custom shortcuts and their localized strings (if applicable) in the manifest. These resource files are used for backward compatibility on platforms that don't directly support the unified manifest. To learn how to configure this in your manifest, see [Support backward compatibility for add-ins with a unified manifest in AppSource](#support-backward-compatibility-for-add-ins-with-a-unified-manifest-in-appsource).
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
@@ -198,7 +199,8 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
 
 ## Map custom actions to their functions
 
-1. In your project, open the JavaScript file loaded by your HTML page in the `<FunctionFile>` element.
+1. In your project, open the JavaScript file loaded by the HTML page specified in your manifest.
+
 1. In the JavaScript file, use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member) API to map each action you specified in an earlier step to a JavaScript function. Add the following JavaScript to the file. Note the following about the code.
     - The first parameter is the name of an action that you mapped to a keyboard shortcut. The location of the name of the action depends on the type of manifest your add-in uses.
         - **Unified app manifest for Microsoft 365**: The value of the `"extensions.keyboardShortcuts.shortcuts.actionId"` property in the **manifest.json** file.
@@ -290,70 +292,17 @@ Guidance on how to localize your keyboard shortcuts varies depending on the type
 
 To learn how to localize your custom keyboard shortcuts with the unified app manifest for Microsoft 365, see [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization).
 
+> [!NOTE]
+> If you've defined keyboard shortcuts for an add-in that uses the unified manifest and want to publish it to [AppSource](../publish/publish-office-add-ins-to-appsource.md), you must specify JSON resource files for the custom shortcuts and their localized strings (if applicable) in the manifest. These resource files are used for backward compatibility on platforms that don't directly support the unified manifest. To learn how to configure this in your manifest, see [Support backward compatibility for add-ins with a unified manifest in AppSource](#support-backward-compatibility-for-add-ins-with-a-unified-manifest-in-appsource).
+
 # [Add-in only manifest](#tab/xmlmanifest)
 
-Use the `ResourceUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Microsoft 365 to a file of localized resources. The following is an example.
+### Update the shortcuts JSON file
 
-```xml
-    ...
-    </VersionOverrides>  
-    <ExtendedOverrides Url="https://contoso.com/addin/extended-overrides.json" 
-                       ResourceUrl="https://contoso.com/addin/my-resources.json">
-    </ExtendedOverrides>
-</OfficeApp>
-```
+To define localized strings for your custom shortcuts, you must specify tokens in your add-in's shortcuts JSON file. The tokens name strings in the localization resource file, which you'll create in a later step. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note the following about this markup.
 
-The extended overrides file then uses tokens instead of strings. The tokens name strings in the resource file. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note about this markup:
-
-- The example isn't quite valid. (We add a required additional property to it in a later step.)
-- The tokens must have the format **${resource.*name-of-resource*}**.
-
-```json
-{
-    "actions": [
-        {
-            "id": "ShowTaskpane",
-            "type": "ExecuteFunction",
-            `"name"`: "${resource.ShowTaskpane_action_name}"
-        }
-    ],
-    "shortcuts": [
-        {
-            "action": "ShowTaskpane",
-            "key": {
-                "default": "${resource.ShowTaskpane_default_shortcut}"
-            }
-        }
-    ] 
-}
-```
-
-The resource file, which is also JSON-formatted, has a top-level `resources` property that's divided into subproperties by locale. For each locale, a string is assigned to each token that was used in the extended overrides file. The following is an example which has strings for `en-us` and `fr-fr`. In this example, the keyboard shortcut is the same in both locales, but that won't always be the case, especially when you are localizing for locales that have a different alphabet or writing system, and hence a different keyboard.
-
-```json
-{
-    "resources":{ 
-        "en-us": { 
-            "ShowTaskpane_default_shortcut": { 
-                "value": "CTRL+SHIFT+A", 
-            }, 
-            "ShowTaskpane_action_name": {
-                "value": "Show task pane for add-in",
-            }, 
-        },
-        "fr-fr": { 
-            "ShowTaskpane_default_shortcut": { 
-                "value": "CTRL+SHIFT+A", 
-            }, 
-            "ShowTaskpane_action_name": {
-                "value": "Afficher le volet de tâche pour add-in",
-              } 
-        }
-    }
-}
-```
-
-There is no `default` property in the file that's a peer to the `en-us` and `fr-fr` sections. This is because the default strings, which are used when the locale of the Microsoft 365 host application doesn't match any of the *ll-cc* properties in the resources file, *must be defined in the extended overrides file itself*. Defining the default strings directly in the extended overrides file ensures that Microsoft 365 doesn't download the resource file when the locale of the Microsoft 365 application matches the default locale of the add-in (as specified in the manifest). The following is a corrected version of the preceding example of an extended overrides file that uses resource tokens.
+- The tokens must have the format **${resource.*name-of-resource*}**. The resource name must match the applicable locale string specified in the localization resource file.
+- Default strings *must be defined in the extended overrides file itself*. Default strings are used when the locale of the Microsoft 365 host application doesn't match any of the *ll-cc* properties in the resources file. Defining the default strings directly in the extended overrides file ensures that Microsoft 365 doesn't download the resource file when the locale of the Microsoft 365 application matches the default locale of the add-in (as specified in the manifest).
 
 ```json
 {
@@ -375,14 +324,54 @@ There is no `default` property in the file that's a peer to the `en-us` and `fr-
     "resources": { 
         "default": { 
             "ShowTaskpane_default_shortcut": { 
-                "value": "CTRL+SHIFT+A", 
+                "value": "CTRL+SHIFT+A"
             }, 
             "ShowTaskpane_action_name": {
-                "value": "Show task pane for add-in",
+                "value": "Show task pane for add-in"
             } 
         }
     }
 }
+```
+
+### Create a localization resource file
+
+The localization resource file, which is also JSON-formatted, has a top-level `resources` property that's divided into subproperties by locale. For each locale, a string is assigned to each token that was used in the shortcuts JSON file. The following is an example which has strings for `en-us` and `fr-fr`. In this example, the keyboard shortcut is the same in both locales, but that won't always be the case, especially when you're localizing for locales that have a different alphabet or writing system, and hence a different keyboard.
+
+```json
+{
+    "resources":{ 
+        "en-us": { 
+            "ShowTaskpane_default_shortcut": {
+                "value": "CTRL+SHIFT+A"
+            }, 
+            "ShowTaskpane_action_name": {
+                "value": "Show task pane for add-in"
+            }, 
+        },
+        "fr-fr": { 
+            "ShowTaskpane_default_shortcut": {
+                "value": "CTRL+SHIFT+A"
+            }, 
+            "ShowTaskpane_action_name": {
+                "value": "Afficher le volet de tâche pour add-in"
+              } 
+        }
+    }
+}
+```
+
+### Specify the localization resource file in the manifest
+
+Use the `ResourceUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Microsoft 365 to the localization resource file. The following is an example.
+
+```xml
+    ...
+    </VersionOverrides>  
+    <ExtendedOverrides Url="https://contoso.com/addin/shortcuts.json"
+                       ResourceUrl="https://contoso.com/addin/localization.json">
+    </ExtendedOverrides>
+</OfficeApp>
 ```
 
 ---
@@ -464,6 +453,38 @@ if (host === Office.HostType.Excel) {
     Office.actions.associate("ChangeFormat", changeFormatWord);
 }
 ...
+```
+
+## Support backward compatibility for add-ins with a unified manifest in AppSource
+
+To publish an add-in that uses the unified manifest and implements custom keyboard shortcuts to AppSource, you must specify JSON resource files for the shortcuts and their localized strings (if applicable) in the manifest. This ensures your add-in's keyboard shortcuts and its localized resources work on platforms that don't directly support the unified manifest (for information on supported clients and platforms, see [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support)).
+
+### Create JSON resource files
+
+For guidance on how to create a shortcuts JSON file, see [Create or edit the shortcuts JSON file](#create-or-edit-the-shortcuts-json-file). If your custom shortcuts are supplemented with localized strings, you must define resource tokens in your shortcuts JSON file and create a localization resource file. For guidance, see [Update the shortcuts JSON file](#update-the-shortcuts-json-file) and [Create a localization resource file](#create-a-localization-resource-file).
+
+### Specify the JSON resource files in the manifest
+
+In your add-in's manifest, specify the JSON resource files in the `"extensions.keyboardShortcuts.keyMappingFiles"` object.
+
+- For the shortcuts JSON file, provide its full HTTPS URL in the `"extensions.keyboardShortcuts.keyMappingFiles.shortcutsUrl"` property.
+- For the localization resource file, provide its full HTTPS URL in the `"extensions.keyboardShortcuts.keyMappingFiles.localizationResourceUrl"` property.
+
+The following is an example of how to specify shortcuts and localization resource files in the manifest.
+
+```json
+"keyboardShortcuts": [
+    {
+        ...
+        "shortcuts": [
+            ...
+        ],
+        "keyMappingFiles": {
+            "shortcutsUrl": "https://contoso.com/addin/shortcuts.json",
+            "localizationResourceUrl": "https://contoso.com/addin/localization.json"
+        }
+    }
+]
 ```
 
 ## See also
