@@ -1,7 +1,7 @@
 ﻿---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 07/22/2025
+ms.date: 09/11/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -106,7 +106,7 @@ To implement shared folder and shared mailbox scenarios in your add-in, you must
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Implementing shared folder and shared mailbox scenarios with a unified manifest for Microsoft 365 is currently only supported in classic Outlook on Windows. For other supported platforms, use the add-in only manifest instead.
+> Add-ins that use the unified manifest for Microsoft 365 aren't directly supported in Outlook on Mac. To run this type of add-in in Outlook on Mac, the add-in must first be published to [AppSource](https://appsource.microsoft.com/) then deployed in the [Microsoft 365 Admin Center](../publish/publish.md). For more information, see [Support for add-ins with the unified manifest for Microsoft 365](compare-outlook-add-in-support-in-outlook-for-mac.md#support-for-add-ins-with-the-unified-manifest-for-microsoft-365).
 
 Add an additional object to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array. Set its `"name"` property to `"Mailbox.SharedFolder"` and its `"type"` property to `"Delegated"`.
 
