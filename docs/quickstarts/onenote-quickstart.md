@@ -123,5 +123,5 @@ Congratulations, you've successfully created a OneNote task pane add-in! Next, l
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+- [Sample: Rubric grader task pane add-in for OneNote on the web](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
