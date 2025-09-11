@@ -1,14 +1,14 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 02/12/2025
+ms.date: 09/11/2025
 ms.topic: overview
 ms.localizationpriority: medium
 ---
 
 # Content Office Add-ins
 
-Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.  
+Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents. Content add-ins give users access to interface controls that run code to modify documents or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.
 
 *Figure 1. Typical layout for content add-ins*
 
@@ -88,7 +88,8 @@ To create your own content add-in, see the [Excel content add-in quick start](..
 ## Support considerations
 
 - Check to see if your Office Add-in will work on a [specific Office application or platform](/javascript/api/requirement-sets).
-- Some content add-ins may require the user to "trust" the add-in to read and write to Excel or PowerPoint. You can declare what [level of permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) you want your user to have in the add-in's manifest.  
+- Some content add-ins may require the user to "trust" the add-in to read and write to Excel or PowerPoint. You can declare what [level of permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md) you want your user to have in the add-in's manifest.
+- In Office on the web, the **Show as saved image** option isn't supported. Even if the **Show as saved image** option was enabled from a desktop client, the content add-in remains interactive on the web client.
 
 ## See also
 
