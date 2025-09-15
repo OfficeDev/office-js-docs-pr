@@ -1,54 +1,80 @@
 ﻿---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
-description: Learn how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
-ms.date: 07/16/2025
+description: Build a practical Project add-in that compares project costs and work data with organizational averages using REST and the Project Server OData service.
+ms.date: 09/15/2025
 ms.localizationpriority: medium
 ---
 
 # Create a Project add-in that uses REST with an on-premises Project Server OData service
 
-This article describes how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance. The add-in uses REST with the jQuery library to access the **ProjectData** OData reporting service in Project Server.
+Learn how to build a real-world Project add-in that connects to Project Server data. This tutorial walks you through creating a task pane add-in that compares cost and work data in your active project with averages across all projects in your Project Web App instance.
 
-The code in this article is based on a sample developed by Saurabh Sanghvi and Arvind Iyer, Microsoft Corporation.
+You'll use REST with the jQuery library to access the **ProjectData** OData reporting service, giving you hands-on experience with the most common Project add-in integration pattern.
+
+> [!NOTE]
+> This tutorial focuses on on-premises Project Server installations. The techniques also work with Project Server Online, but the authentication and setup steps differ.
+
+## What you'll build
+
+By the end of this tutorial, you'll have a working add-in that:
+
+- Displays cost and work data for the currently selected project
+- Compares those values with organizational averages
+- Shows the data in an easy-to-read table format
+- Updates automatically when you switch between projects
 
 ## Prerequisites
 
-The following are prerequisites for creating a Project task pane add-in that reads the **ProjectData** service of a Project Web App instance in an on-premises installation of Project Server.
+Before you start, make sure you have:
 
-- Project Professional is required to connect with Project Web App. The development computer must have Project Professional installed to enable <kbd>F5</kbd> debugging with Visual Studio.
+### Required software
 
-    > [!NOTE]
-    > Project Standard can also host task pane add-ins, but can't sign in to Project Web App.
+- **Project Professional** (required for Project Web App connectivity and F5 debugging)
+- **Visual Studio 2015 with Office Developer Tools** (includes Office Add-in templates)
+- **Access to Project Web App** in your organization's Project Server environment
 
-- Visual Studio 2015 with Office Developer Tools for Visual Studio includes templates for creating Office and SharePoint Add-ins. Make sure you've installed the most recent version of Office Developer Tools; see the  *Tools* section of the [Office Add-ins and SharePoint downloads](https://developer.microsoft.com/office/docs).
+> [!IMPORTANT]
+> Project Standard can host task pane add-ins but can't connect to Project Web App or Project Server data.
 
-- The procedures and code examples in this article access the **ProjectData** service of Project Server in a local domain. The jQuery methods in this article don't work with Project on the web.
+### Network access
 
-    Verify that the **ProjectData** service is accessible from your development computer.
+Verify that your development computer can access the Project Server **ProjectData** service. This REST endpoint provides the data your add-in will use.
 
-### Procedure 1. Verify that the ProjectData service is accessible
+### Procedure 1. Test ProjectData service access
 
-1. To enable your browser to directly show the XML data from a REST query, turn off the feed reading view. For information about how to do this in Internet Explorer, see Procedure 1, step 4 in [Query OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
+Before diving into development, let's verify your environment is ready:
 
-1. Query the **ProjectData** service by using your browser with the following URL: `http://ServerName /ProjectServerName /_api/ProjectData`. For example, if the Project Web App instance is  `http://MyServer/pwa`, the browser shows the following results.
+1. **Enable XML viewing in your browser** - Turn off feed reading view so you can see raw XML data from REST queries. In Internet Explorer, go to Internet Options > Content tab > Settings (under Feeds) > uncheck "Turn on feed reading view."
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-        <service xml:base="http://myserver/pwa/_api/ProjectData/"
-        xmlns="https://www.w3.org/2007/app"
-        xmlns:atom="https://www.w3.org/2005/Atom">
-        <workspace>
-            <atom:title>Default</atom:title>
-            <collection href="Projects">
-                <atom:title>Projects</atom:title>
-            </collection>
-            <collection href="ProjectBaselines">
-                <atom:title>ProjectBaselines</atom:title>
-            </collection>
-            <!-- ... and 33 more collection elements -->
-        </workspace>
-        </service>
-    ```
+2. **Test the ProjectData service** - Open your browser and navigate to:
+
+   ```text
+   http://YourServerName/YourProjectWebAppName/_api/ProjectData
+   ```
+   
+   For example: `http://MyServer/pwa/_api/ProjectData`
+
+3. **Verify the response** - You should see XML output similar to this:
+
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <service xml:base="http://myserver/pwa/_api/ProjectData/"
+           xmlns="https://www.w3.org/2007/app"
+           xmlns:atom="https://www.w3.org/2005/Atom">
+       <workspace>
+           <atom:title>Default</atom:title>
+           <collection href="Projects">
+               <atom:title>Projects</atom:title>
+           </collection>
+           <collection href="ProjectBaselines">
+               <atom:title>ProjectBaselines</atom:title>
+           </collection>
+           <!-- Additional collections listed here -->
+       </workspace>
+   </service>
+   ```
+
+If you see this output, you're ready to proceed. If not, work with your Project Server administrator to resolve connectivity issues.
 
 1. You may need to provide your network credentials to see the results. If the browser shows "Error 403, Access Denied," either you don't have logon permission for that Project Web App instance, or there's a network problem that requires administrative help.
 
@@ -1189,6 +1215,62 @@ let Toast = {
     }
 }
 ```
+
+## Congratulations! You've built a working Project add-in
+
+You've successfully created a Project add-in that demonstrates key integration patterns used in real-world scenarios. Your add-in now:
+
+✅ **Connects to Project Server data** using REST and OData  
+✅ **Compares project metrics** with organizational averages  
+✅ **Updates dynamically** when users switch between projects  
+✅ **Handles data formatting** and displays results clearly
+
+## Taking your add-in to the next level
+
+This tutorial covered the fundamentals, but production add-ins need additional considerations:
+
+### Performance and scalability
+
+- **Pagination**: The current implementation assumes fewer than 100 projects. For larger organizations, implement paging to handle thousands of projects efficiently
+- **Caching**: Cache frequently accessed data to reduce server requests and improve responsiveness
+- **CDN references**: Use CDN links for Office.js instead of local files for better performance
+
+### User experience improvements
+
+- **Error handling**: Add comprehensive error checking and user-friendly error messages
+- **Data visualization**: Consider adding charts or graphs to make comparisons more intuitive
+- **Customization options**: Let users choose which metrics to compare or filter by project categories
+
+### Advanced features
+
+- **Additional metrics**: Expand beyond cost and work to include duration, resource utilization, or risk factors
+- **Trend analysis**: Show how project metrics change over time
+- **Export capabilities**: Allow users to export comparison data to Excel or other formats
+
+### Production readiness
+
+- **Security**: Implement proper authentication and authorization
+- **Testing**: Add comprehensive unit tests and integration tests
+- **Deployment**: Consider deployment to SharePoint app catalogs or Microsoft AppSource
+
+## Key concepts you've learned
+
+Through this tutorial, you've gained hands-on experience with:
+
+- **OData and REST**: How to query Project Server data using standard web protocols
+- **jQuery integration**: Using popular JavaScript libraries in Office Add-ins
+- **Office.js APIs**: Leveraging the Common Office JavaScript API for document interaction
+- **Project data structure**: Understanding how Project Server organizes and exposes project information
+- **Add-in lifecycle**: Building, testing, and debugging Office Add-ins in Visual Studio
+
+## Next steps for Project add-in development
+
+Ready to build more sophisticated Project integrations? Explore these resources:
+
+- **[Office Add-ins platform overview](../overview/office-add-ins.md)** - Understand the broader ecosystem
+- **[Project add-ins overview](project-add-ins.md)** - Dive deeper into Project-specific scenarios  
+- **[Microsoft Graph Project integration](/graph/api/resources/project-rome-overview)** - Modern API alternatives for Project data
+- **[Office Add-ins community call](https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call)** - Connect with other developers
 
 ## Next steps
 

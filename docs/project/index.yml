@@ -1,14 +1,14 @@
 ### YamlMime:Landing
 
 title: Project add-ins documentation # < 60 chars
-summary: With Project add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Project on Windows. Learn how to build, test, debug, and publish Project add-ins.  # < 160 chars
+summary: Build powerful Project add-ins that streamline project management workflows. Connect project data with external systems, automate reporting, and enhance team collaboration using familiar web technologies. # < 160 chars
 
 metadata:
   title: Project add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Resources for learning about Project add-ins.  # Required; article description that is displayed in search results. < 160 chars.
+  description: Build Project add-ins with HTML, CSS, and JavaScript. Learn to create task pane add-ins that integrate with Project Server and enhance project management. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: project #Required
   ms.topic: landing-page # Required
-  ms.date: 10/05/2024 #Required; mm/dd/yyyy format.
+  ms.date: 09/15/2025 #Required; mm/dd/yyyy format.
   ms.localizationpriority: medium
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -16,56 +16,71 @@ metadata:
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
+
   # Card (optional)
-  - title: About Project add-ins
+  - title: Get started with Project add-ins
     linkLists:
       - linkListType: overview
         links:
-          - text: What are Project add-ins?
+          - text: What can Project add-ins do?
             url: project-add-ins.md
+          - text: See Project add-ins in action
+            url: https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Project,Samples
       - linkListType: quickstart
         links:
           - text: Build your first Project add-in
             url: ../quickstarts/project-quickstart.md
+          - text: "Try it now: Sample Project add-in"
+            url: https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Project,Samples
+
+  # Card (optional)
+  - title: Build Project management solutions
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Connect to Project Server with REST
+            url: create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
+          - text: Work with project data and resources
+            url: project-add-ins.md
       - linkListType: how-to-guide
         links:
-          - text: Test and debug a Project add-in
+          - text: Test and debug your add-in
             url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish a Project add-in
+          - text: Deploy and publish your add-in
             url: ../publish/publish.md
 
   # Card (optional)
-  - title: Key Office Add-ins concepts
+  - title: Essential Office Add-ins knowledge
     linkLists:
       - linkListType: overview
         links:
           - text: Office Add-ins platform overview
             url: ../overview/office-add-ins.md
-      - linkListType: get-started
+      - linkListType: concept
         links:
           - text: Core concepts for Office Add-ins
             url: ../overview/core-concepts-office-add-ins.md
-          - text: Design Office Add-ins
+          - text: Design guidelines for add-ins
             url: ../design/add-in-design.md
-          - text: Develop Office Add-ins
-            url: ../develop/develop-overview.md
+          - text: Development best practices
+            url: ../concepts/add-in-development-best-practices.md
 
   # Card
-  - title: Resources
+  - title: Community and support
     linkLists:
       - linkListType: reference
         links:
-          - text: Ask questions
-            url: https://stackoverflow.com/questions/tagged/office-js
-          - text: Request features
+          - text: Ask questions on Stack Overflow
+            url: https://stackoverflow.com/questions/tagged/office-js+project
+          - text: Request new features
             url: https://feedbackportal.microsoft.com/feedback/forum/40792262-301c-ec11-b6e7-0022481f8472
-          - text: Report issues
+          - text: Report bugs and issues
             url: https://github.com/officedev/office-js/issues
-          - text: Join Office Add-ins community call
+          - text: Join our monthly community call
             url: https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call
-          - text: Office Add-ins additional resources
+          - text: Browse more resources and samples
             url: ../resources/resources-links-help.md
-          - text: Download samples
+          - text: Explore the sample gallery
             url: https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Project,Samples
         
 

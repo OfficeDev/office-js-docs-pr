@@ -1,7 +1,7 @@
 ---
 title: Task pane add-ins for Project
-description: Learn about task pane add-ins for Project.
-ms.date: 02/21/2024
+description: Build powerful Project add-ins that streamline project management workflows, integrate with external systems, and enhance team collaboration.
+ms.date: 09/15/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -9,52 +9,155 @@ ms.localizationpriority: medium
 
 # Task pane add-ins for Project
 
-Project on Windows supports custom task pane add-ins. Use these to handle selection events in Project and integrate task, resource, view, and other cell-level data in a project with SharePoint lists, SharePoint Add-ins, Web Parts, web services, and enterprise applications.
+Transform how project managers work with Microsoft Project. Task pane add-ins let you integrate project data with external systems, automate routine tasks, and create custom workflows—all without leaving the Project environment.
 
 For an introduction to Office Add-ins, see [Office Add-ins platform overview](../overview/office-add-ins.md).
 
-## Add-in scenarios for Project
+## What can you build with Project add-ins?
 
-Project managers can use Project task pane add-ins to help with project management activities. Instead of leaving Project and opening another application to search for frequently used information, project managers can directly access the information within Project. The content in a task pane add-in can be context-sensitive, based on the selected task, resource, view, or other data in a cell in a Gantt chart, task usage view, or resource usage view.
+Project add-ins solve real-world project management challenges by connecting Project with the tools your team already uses:
+
+### Smart scheduling assistants
+
+- **Resource optimization**: View resource availability across multiple projects and make smarter assignments
+- **Timeline coordination**: Pull milestone data from related projects to identify potential conflicts
+- **Dependency management**: Automatically update schedules based on changes in connected projects
+
+### Team collaboration tools
+
+- **Status dashboards**: Create interactive reports that team members can update directly from Project
+- **Communication hubs**: Send updates, collect feedback, and coordinate with team members without switching apps
+- **Document integration**: Link project tasks to relevant documents, specifications, or design files
+
+### Business system integration
+
+- **ERP connectivity**: Sync budget and cost data with your accounting or ERP system
+- **CRM integration**: Connect project deliverables with customer records and sales pipelines  
+- **Timesheet automation**: Streamline time tracking and approval workflows
+- **Reporting automation**: Generate custom reports that combine Project data with business metrics
+
+### Industry-specific solutions
+
+- **Construction management**: Connect with equipment scheduling, material tracking, or safety reporting systems
+- **Software development**: Integrate with bug tracking, code repositories, or CI/CD pipelines
+- **Marketing campaigns**: Link project milestones with campaign deadlines and deliverable tracking
+
+## How Project add-ins work
+
+Project add-ins are context-aware, meaning they respond to what you're currently working on. When you select a task, resource, or view in Project, your add-in can access that information and provide relevant functionality.
 
 > [!NOTE]
-> With Project Professional, you can develop task pane add-ins that access Project on the web, on-premises installations of Project Server, and on-premises or online SharePoint. Project Standard doesn't support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
+> Project Professional connects seamlessly with Project Web App and Project Server, giving your add-ins access to enterprise project data. Project Standard supports add-ins but can't access Project Server integration features.
 
-Add-in scenarios for Project include the following:
+### Project editions and capabilities
 
-- **Project scheduling**: View data from related projects that can affect scheduling. A task pane add-in can integrate relevant data from other projects in Project Server. For example, you can view the departmental collection of projects and milestone dates, or view specified data from other projects that are based on a selected custom field.
+**Project Professional**: Full add-in support including Project Server integration, SharePoint connectivity, and enterprise features.
 
-- **Resource management**: View the complete resource pool in Project Server or a subset based on specified skills, including cost data and resource availability, to help select appropriate resources.
+**Project Standard**: Basic add-in support for local project files and standalone functionality.
 
-- **Statusing and approvals**: Use a web application in a task pane add-in to update or view data from an external enterprise resource planning (ERP) application, timesheet system, or accounting application. Or, create a custom status approval Web Part that can be used within both Project Web App and Project Professional.
+## Real-world use cases
 
-- **Team communication**: Communicate with team members and resources directly from a task pane add-in, within the context of a project. Or, easily maintain a set of context-sensitive notes for yourself as you work in a project.
+Here are some scenarios where Project add-ins add significant value:
 
-- **Work packages**: Search for specified kinds of project templates within SharePoint libraries and online template collections. For example, find templates for construction projects and add them to your Project template collection.
+### Scenario: Cross-project resource management
 
-- **Related items**: View metadata, documents, and messages that are related to specific tasks in a project plan. For example, you can use Project Professional to manage a project that was imported from a SharePoint task list, and still synchronize the task list with changes in the project. A task pane add-in can show additional fields or metadata that Project didn't import for tasks in the SharePoint list.
+*Challenge*: A department manager needs to see resource allocation across multiple projects before making assignments.
 
-- **Use the Project Server object models**: Use the GUID of a selected task with methods in the Project Server Interface (PSI) or the client-side object model (CSOM) of Project Server. For example, the web application for an add-in can read and update the statusing data of a selected task and resource, or integrate with an external timesheet application.
+*Solution*: An add-in that queries Project Server for all departmental projects, displays resource availability in a dashboard, and highlights potential conflicts when assigning team members.
 
-- **Get reporting data**: Use Representational State Transfer (REST), JavaScript, or LINQ queries to find related information for a selected task or resource in the OData service for reporting tables in Project Web App. Queries that use the OData service can be done with an online or an on-premises installation of Project Server.
+### Scenario: Automated status reporting
 
-    For example, see [Create a Project add-in that uses REST with an on-premises Project Server OData service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
+*Challenge*: Weekly status reports require manually gathering data from Project, emails, and other systems.
 
-## Develop Project add-ins
+*Solution*: An add-in that combines Project timeline data with external status updates, generates formatted reports, and emails them to stakeholders automatically.
 
-Project supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the [Common API](/javascript/api/office) to create Project add-ins. For information about the Common API, see [Office JavaScript API object model](../develop/office-javascript-api-object-model.md).
+### Scenario: Client billing integration
 
-To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an add-in only manifest file for configuration. Project can use a manifest file that includes a **type** attribute that's specified as **TaskPaneExtension**. The manifest file can be used by multiple Office client applications, or you can create a manifest file that's specific for Project. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
+*Challenge*: Time tracking data in Project needs to flow into the company's billing system.
 
-Be sure to test your add-in as you develop it. Learn about testing and sideloading add-in in the article [Test Office Add-ins](../testing/test-debug-office-add-ins.md).
+*Solution*: An add-in that captures time entries, validates them against project budgets, and exports billing data to the accounting system.
 
-## Distribute Project add-ins
+## Development options
 
-You can distribute add-ins through a file share, an app catalog in a SharePoint library, or AppSource. For more information, see [Publish your Office Add-in](../publish/publish.md).
+Project add-ins use the JavaScript API, but there's currently no Project-specific API. Instead, you'll work with:
+
+### Common Office JavaScript API
+
+Access shared functionality like document properties, selection events, and settings storage. This API works consistently across all Office applications.
+
+```javascript
+// Example: Get the currently selected task data
+Office.context.document.getSelectedDataAsync(
+    Office.CoercionType.Text,
+    function (result) {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
+            // Process the selected task information
+            processTaskData(result.value);
+        }
+    }
+);
+```
+
+### Project Server REST APIs
+
+For Project Professional users connected to Project Server, you can access rich project data through REST services:
+
+- Query project information across the organization
+- Access resource pools and availability
+- Read and update project status
+- Generate reports from Project Web App data
+
+### Integration patterns
+
+- **Read project data**: Access task lists, resource assignments, and timeline information
+- **External data sync**: Pull information from CRM, ERP, or other business systems
+- **Custom workflows**: Automate approval processes or update notifications
+- **Reporting**: Generate custom dashboards and status reports
+
+## Building your first Project add-in
+
+Ready to get started? You can build Project add-ins using standard web development tools and techniques.
+
+### Development setup
+
+Create your add-in using familiar web technologies:
+
+- **HTML** for the user interface
+- **CSS** for styling and layout  
+- **JavaScript** for functionality and Office API integration
+- **REST APIs** for connecting to external data sources
+
+### Add-in manifest
+
+Your add-in needs a manifest file that configures how it appears and behaves in Project. The manifest specifies the **TaskPaneExtension** type for Project add-ins and can be shared across multiple Office applications or customized specifically for Project.
+
+### Testing and deployment
+
+Test your add-in thoroughly during development using the sideloading capabilities in Project. Once ready, you can distribute through:
+
+- **File shares** for internal organizational use
+- **SharePoint app catalogs** for broader internal distribution  
+- **Microsoft AppSource** for public availability
+
+For detailed guidance, see [Publish your Office Add-in](../publish/publish.md).
+
+## Getting help and staying connected
+
+Join the vibrant Project add-ins developer community:
+
+- **[Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)** - Get free development resources and support
+- **[Office Add-ins development overview](../develop/develop-overview.md)** - Comprehensive development guidance
+- **[REST with Project Server tutorial](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)** - Hands-on example with real Project Server integration
+
+## Next steps
+
+Ready to dive deeper? Start with these resources:
+
+1. **[Build your first Project add-in](../quickstarts/project-quickstart.md)** - Get hands-on experience
+2. **[Explore the sample gallery](https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Project,Samples)** - See working examples
+3. **[Join the community call](https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call)** - Connect with other developers
 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
-- [Developing Office Add-ins](../develop/develop-overview.md)
 - [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)

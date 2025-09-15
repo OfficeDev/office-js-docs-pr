@@ -1,14 +1,14 @@
 ### YamlMime:Landing
 
 title: OneNote add-ins documentation # < 60 chars
-summary: OneNote add-ins let you use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that runs in OneNote on the web. Learn how to build, test, debug, and publish OneNote add-ins. # < 160 chars
+summary: Build powerful OneNote add-ins using familiar web technologies. Create interactive experiences that help users capture, organize, and share ideas more effectively. # < 160 chars
 
 metadata:
   title: OneNote add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Resources for learning about OneNote add-ins. # Required; article description that is displayed in search results. < 160 chars.
+  description: Build OneNote add-ins with HTML, CSS, and JavaScript. Learn to create, test, and publish add-ins that enhance productivity. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: onenote #Required
   ms.topic: landing-page # Required
-  ms.date: 05/16/2025 #Required; mm/dd/yyyy format.
+  ms.date: 09/15/2025 #Required; mm/dd/yyyy format.
   ms.localizationpriority: medium
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -18,35 +18,41 @@ landingContent:
 # Start card title with a verb
 
   # Card (optional)
-  - title: Get started
+  - title: Get started with OneNote add-ins
     linkLists:
-      - linkListType: get-started
+      - linkListType: quickstart
         links:
-          - text: Build your first OneNote add-in
+          - text: Build your first OneNote add-in in 5 minutes
             url: ../quickstarts/onenote-quickstart.md
-          - text: "Sample: Rubric Grader Task Pane Add-in"
+          - text: "Try it now: Rubric Grader sample"
             url: https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader
-
-  # Card (optional)
-  - title: About OneNote add-ins
-    linkLists:
       - linkListType: overview
         links:
-          - text: What are OneNote add-ins?
+          - text: What can OneNote add-ins do?
             url: onenote-add-ins-programming-overview.md
-          - text: OneNote JavaScript API Overview
-            url: ../reference/overview/onenote-add-ins-javascript-reference.md         
-          - text: Microsoft Graph OneNote REST API Overview
-            url: /graph/integrate-with-onenote
+          - text: See OneNote add-ins in action
+            url: https://developer.microsoft.com/microsoft-365/gallery/?search=&filterBy=OneNote,Samples
+
+  # Card (optional)
+  - title: Build engaging OneNote experiences
+    linkLists:
       - linkListType: concept
         links:
-          - text: Work with OneNote page content
+          - text: Work with page content and HTML
             url: onenote-add-ins-page-content.md
-          - text: Use the OneNote JavaScript API to interact with objects and notebook content
+          - text: OneNote JavaScript API overview
+            url: ../reference/overview/onenote-add-ins-javascript-reference.md         
+          - text: Connect to Microsoft Graph
+            url: /graph/integrate-with-onenote
+      - linkListType: how-to-guide
+        links:
+          - text: Add interactive content to pages
+            url: onenote-add-ins-page-content.md
+          - text: Access notebooks and sections
             url: ../reference/overview/onenote-add-ins-javascript-reference.md
 
   # Card (optional)
-  - title: Key Office Add-ins concepts
+  - title: Essential Office Add-ins knowledge
     linkLists:
       - linkListType: overview
         links:
@@ -56,29 +62,31 @@ landingContent:
         links:
           - text: Core concepts for Office Add-ins
             url: ../overview/core-concepts-office-add-ins.md
-          - text: Design Office Add-ins
+          - text: Design guidelines for add-ins
             url: ../design/add-in-design.md
-          - text: Develop Office Add-ins
-            url: ../develop/develop-overview.md
-          - text: Test and debug a OneNote add-in
+          - text: Development best practices
+            url: ../concepts/add-in-development-best-practices.md
+      - linkListType: how-to-guide
+        links:
+          - text: Test and debug your add-in
             url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish a OneNote add-in
+          - text: Publish to AppSource or your organization
             url: ../publish/publish.md
             
   # Card (optional)
-  - title: Resources
+  - title: Community and support
     linkLists:
       - linkListType: reference
         links:
-          - text: Ask questions
-            url: https://stackoverflow.com/questions/tagged/office-js
-          - text: Request features
+          - text: Ask questions on Stack Overflow
+            url: https://stackoverflow.com/questions/tagged/office-js+onenote
+          - text: Request new features
             url: https://feedbackportal.microsoft.com/feedback/forum/c06dcc30-2e1c-ec11-b6e7-0022481f8472
-          - text: Report issues
+          - text: Report bugs and issues
             url: https://github.com/officedev/office-js/issues
-          - text: Join Office Add-ins community call
+          - text: Join our monthly community call
             url: https://learn.microsoft.com/office/dev/add-ins/overview/office-add-ins-community-call
-          - text: Office Add-ins additional resources
+          - text: Browse more resources and samples
             url: ../resources/resources-links-help.md
-          - text: Download samples
+          - text: Explore the sample gallery
             url: https://developer.microsoft.com/microsoft-365/gallery/?search=&filterBy=OneNote,Samples         

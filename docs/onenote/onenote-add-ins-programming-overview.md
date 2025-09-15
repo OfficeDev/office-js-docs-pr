@@ -9,122 +9,123 @@ ms.localizationpriority: medium
 
 # OneNote JavaScript API programming overview
 
-OneNote introduces a JavaScript API for OneNote add-ins on the web. You can create task pane add-ins, content add-ins, and add-in commands that interact with OneNote objects and connect to web services or other web-based resources.
+Transform how users work with their digital notebooks. OneNote add-ins let you create interactive experiences that help people capture ideas, organize information, and collaborate more effectively—all using familiar web technologies like HTML, CSS, and JavaScript.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
-## Components of an Office Add-in
+## What can you build?
 
-Add-ins consist of two basic components:
+OneNote add-ins open up exciting possibilities for enhancing digital note-taking:
 
-- A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a webview control or iframe.
+- **Smart content creators**: Build add-ins that generate interactive forms, checklists, or templates that adapt to user needs
+- **Research assistants**: Pull in data from external sources and organize it beautifully on OneNote pages
+- **Collaboration tools**: Enable real-time feedback, annotations, or project tracking within notebooks
+- **Educational aids**: Create grading tools, study guides, or interactive learning materials for students and teachers
+- **Business solutions**: Connect with CRM systems, project management tools, or reporting dashboards
 
-- A **manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the [add-in only manifest](../develop/add-in-manifests.md) format.
+The [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader) shows how teachers can streamline grading with interactive rubrics—a perfect example of how add-ins solve real-world problems.
 
-### Office Add-in = Manifest + Webpage
+## How OneNote add-ins work
+
+Like all Office Add-ins, OneNote add-ins consist of two main parts that work together seamlessly:
+
+### Your web application
+
+This is where your creativity shines. Build your user interface with HTML, CSS, and JavaScript—just like any web app. Your code runs in a secure browser environment within OneNote, giving you access to powerful APIs for reading and manipulating notebook content.
+
+### The add-in manifest
+
+This configuration file tells OneNote about your add-in—where to find it, what permissions it needs, and how it should appear to users. Think of it as your add-in's business card.
 
 ![Office Add-in consists of a manifest and webpage.](../images/onenote-add-in.png)
 
-## Using the JavaScript API
+## Working with the OneNote JavaScript API
 
-Add-ins use the runtime context of the Office application to access the JavaScript API. The API has two layers:
+The OneNote JavaScript API gives you two powerful ways to interact with notebooks:
 
-- A **application-specific API** for OneNote-specific operations, accessed through the `Application` object.
-- A **Common API** that's shared across Office applications, accessed through the `Document` object.
+### Application-specific API: Your gateway to OneNote content
 
-### Accessing the application-specific API through the *Application* object
+Access OneNote objects like notebooks, sections, and pages through the `Application` object. This API uses an efficient batch processing system:
 
-Use the `Application` object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With application-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this:
+1. **Get the application context** - Start by accessing the OneNote application
+2. **Create proxies** - Set up lightweight representatives of the OneNote objects you want to work with
+3. **Queue your operations** - Add commands to read data, make changes, or perform calculations
+4. **Execute with context.sync()** - Run all your queued commands efficiently in a single batch
 
-1. Get the application instance from the context.
+Here's how you might grab all pages from the current section:
 
-2. Create a proxy that represents the OneNote object you want to work with. You interact synchronously with proxy objects by reading and writing their properties and calling their methods.
-
-3. Call `load` on the proxy to fill it with the property values specified in the parameter. This call is added to the queue of commands.
-
-   > [!NOTE]
-   > Method calls to the API (such as `context.application.getActiveSection().pages;`) are also added to the queue.
-
-4. Call `context.sync` to run all queued commands in the order that they were queued. This synchronizes the state between your running script and the real objects, and by retrieving properties of loaded OneNote objects for use in your script. You can use the returned promise object for chaining additional actions.
-
-For example:
-
-```js
+```javascript
 async function getPagesInSection() {
     await OneNote.run(async (context) => {
-
-        // Get the pages in the current section.
+        // Get the pages in the current section
         const pages = context.application.getActiveSection().pages;
 
-        // Queue a command to load the id and title for each page.
+        // Tell OneNote which properties you need
         pages.load('id,title');
 
-        // Run the queued commands, and return a promise to indicate task completion.
+        // Execute the request
         await context.sync();
-            
-        // Read the id and title of each page.
-        $.each(pages.items, function(index, page) {
-            let pageId = page.id;
-            let pageTitle = page.title;
-            console.log(pageTitle + ': ' + pageId);
+        
+        // Now you can work with the data
+        pages.items.forEach(page => {
+            console.log(`Page: ${page.title} (ID: ${page.id})`);
         });
     });
 }
 ```
 
-See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn more about the `load`/`sync` pattern and other common practices in the OneNote JavaScript APIs.
+### Common API: Shared functionality across Office
 
-You can find supported OneNote objects and operations in the [API reference](../reference/overview/onenote-add-ins-javascript-reference.md).
+Use familiar Office APIs for basic operations like getting selected text or inserting content. These work the same way across Word, Excel, PowerPoint, and OneNote.
 
-#### OneNote JavaScript API requirement sets
-
-Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
-
-### Accessing the Common API through the *Document* object
-
-Use the `Document` object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1))
-and [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) methods.
-
-For example:  
-
-```js
-function getSelectionFromPage() {
+```javascript
+function getSelectedText() {
     Office.context.document.getSelectedDataAsync(
         Office.CoercionType.Text,
-        { valueFormat: "unformatted" },
-        function (asyncResult) {
-            const error = asyncResult.error;
-            if (asyncResult.status === Office.AsyncResultStatus.Failed) {
-                console.log(error.message);
+        function (result) {
+            if (result.status === Office.AsyncResultStatus.Succeeded) {
+                console.log('Selected text: ' + result.value);
             }
-            else $('#input').val(asyncResult.value);
-        });
+        }
+    );
 }
 ```
 
-OneNote add-ins support only the following Common APIs.
+OneNote add-ins support the most useful Common APIs for text and content manipulation:
 
-| API | Notes |
+| API | What it does |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) | `Office.CoercionType.Text` and `Office.CoercionType.Matrix` only |
-| [Office.context.document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | `Office.CoercionType.Text`, `Office.CoercionType.Image`, and `Office.CoercionType.Html` only |
-| [const mySetting = Office.context.document.settings.get(name);](/javascript/api/office/office.settings#office-office-settings-get-member(1)) | Settings are supported by content add-ins only |
-| [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | Settings are supported by content add-ins only |
-| [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) |*None*|
+| [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) | Get text or data that users have selected on the page |
+| [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) | Insert text, images, or HTML at the current selection |
+| [Settings APIs](/javascript/api/office/office.settings) | Store and retrieve add-in preferences (content add-ins only) |
+| [Selection events](/javascript/api/office/office.documentselectionchangedeventargs) | Respond when users select different content |
 
-In general, you use the Common API to do something that isn't supported in the application-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
+For more details about these shared APIs, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
-<a name="om-diagram"></a>
+## API requirement sets
 
-## OneNote object model diagram
+Requirement sets help ensure your add-in works reliably across different versions of OneNote. Specify which OneNote JavaScript API features your add-in needs in your manifest, or check at runtime whether specific APIs are available.
+
+For the complete list of what's supported in each version, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
+
+## OneNote object model
+
+Here's what you can access through the OneNote JavaScript API:
 
 The following diagram represents what's currently available in the OneNote JavaScript API.
 
   ![OneNote object model diagram.](../images/onenote-om.png)
 
+## Next steps
+
+Ready to start building? Here are your next steps:
+
+- **[Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)** - Get hands-on with a working example
+- **[Explore the Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)** - See a real-world add-in in action
+- **[Dive into the API reference](../reference/overview/onenote-add-ins-javascript-reference.md)** - Discover all available OneNote objects and methods
+- **[Learn about page content](onenote-add-ins-page-content.md)** - Understand how to work with HTML and page structure
+
 ## See also
 
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Developing Office Add-ins](../develop/develop-overview.md)
-- [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
-- [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
-- [Sample: Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
