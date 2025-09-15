@@ -24,8 +24,8 @@ landingContent:
         links:
           - text: Build your first OneNote add-in
             url: ../quickstarts/onenote-quickstart.md
-          - text: "Sample: Rubric Grader Task Pane Add-in"
-            url: https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader
+          - text: "Sample: Rubric grader task pane add-in"
+            url: https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader
 
   # Card (optional)
   - title: About OneNote add-ins
