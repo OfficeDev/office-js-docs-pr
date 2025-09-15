@@ -23,7 +23,7 @@ OneNote add-ins open up exciting possibilities for enhancing digital note-taking
 - **Educational aids**: Create grading tools, study guides, or interactive learning materials for students and teachers
 - **Business solutions**: Connect with CRM systems, project management tools, or reporting dashboards
 
-The [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader) shows how teachers can streamline grading with interactive rubrics—a perfect example of how add-ins solve real-world problems.
+The [Rubric Grader sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader) shows how teachers can streamline grading with interactive rubrics—a perfect example of how add-ins solve real-world problems.
 
 ## How OneNote add-ins work
 
@@ -121,7 +121,7 @@ The following diagram represents what's currently available in the OneNote JavaS
 Ready to start building? Here are your next steps:
 
 - **[Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)** - Get hands-on with a working example
-- **[Explore the Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)** - See a real-world add-in in action
+- **[Explore the Rubric Grader sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)** - See a real-world add-in in action
 - **[Dive into the API reference](../reference/overview/onenote-add-ins-javascript-reference.md)** - Discover all available OneNote objects and methods
 - **[Learn about page content](onenote-add-ins-page-content.md)** - Understand how to work with HTML and page structure
 
@@ -129,3 +129,6 @@ Ready to start building? Here are your next steps:
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Developing Office Add-ins](../develop/develop-overview.md)
+- [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
+- [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
+- [Sample: Rubric grader task pane add-in for OneNote on the web](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)

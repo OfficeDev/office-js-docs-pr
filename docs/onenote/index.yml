@@ -24,8 +24,8 @@ landingContent:
         links:
           - text: Build your first OneNote add-in in 5 minutes
             url: ../quickstarts/onenote-quickstart.md
-          - text: "Try it now: Rubric Grader sample"
-            url: https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader
+          - text: "Try it now: Rubric grader sample"
+            url: https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader
       - linkListType: overview
         links:
           - text: What can OneNote add-ins do?

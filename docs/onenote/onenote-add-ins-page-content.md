@@ -183,10 +183,12 @@ async function addProjectTable() {
 Ready to build more complex OneNote experiences? Explore these resources:
 
 - **[OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)** - Complete API documentation
-- **[Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)** - Real-world example of HTML content manipulation
+- **[Rubric Grader sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)** - Real-world example of HTML content manipulation
 - **[Office Add-ins platform overview](../overview/office-add-ins.md)** - Understanding the broader add-in ecosystem
 
 ## See also
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
+- [Sample: Rubric grader task pane add-in for OneNote on the web](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
