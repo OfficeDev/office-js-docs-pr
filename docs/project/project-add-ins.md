@@ -9,63 +9,39 @@ ms.localizationpriority: medium
 
 # Task pane add-ins for Project
 
-Build custom task pane add-ins to extend Project with web integrations and streamlined workflows. Project add-ins help project managers access critical information, manage resources, and collaborate with teams without leaving Project.
+Build custom task pane add-ins to extend Project with web integrations and streamlined workflows. Project add-ins help project managers consolidate critical information, manage resources, and collaborate with teams, all without leaving Project.
 
 For an introduction to Office Add-ins, see [Office Add-ins platform overview](../overview/office-add-ins.md).
 
 > [!NOTE]
 > Project Professional supports task pane add-ins that can access Project on the web, on-premises Project Server installations, and SharePoint (both on-premises and online). Project Standard doesn't support direct integration with Project Server data or SharePoint task lists synchronized with Project Server.
 
-## Common add-in scenarios
+## Project add-in scenarios
 
-Project task pane add-ins are context-sensitive, meaning they can respond to your current selection—whether it's a task, resource, view, or data in a Gantt chart. This creates opportunities for targeted, relevant functionality that enhances your project management workflow.
+Project task pane add-ins are context-sensitive, meaning they can respond to your currently selected task, resource, view, or Gantt chart data. This creates opportunities for targeted, relevant functionality that enhances your project management workflow.
 
-Here are some ways project managers use Project add-ins to streamline their workflows.
+Here are the primary ways project managers use Project add-ins:
 
-### Project scheduling and coordination
+### External system integration
 
-**View related project data**: Integrate data from other projects in Project Server to make informed scheduling decisions. Display departmental project collections, milestone dates, or custom field data from related projects.
+**Enterprise data connections**: Connect Project with external systems like ERP applications, timesheet systems, or accounting software. Pull relevant data into Project or push project updates to other business systems.
 
-**Cross-project insights**: Get visibility into how your project fits within the broader portfolio, helping you identify dependencies and optimize resource allocation.
+**Custom workflows**: Build approval processes and status update workflows that span multiple systems while keeping Project as the central planning tool.
 
-### Resource management
+### Project Server and SharePoint integration
 
-**Access the complete resource pool**: View your organization's full resource catalog from Project Server, including skills, availability, and cost data.
+**Project Server data access**: Use Project Server's REST APIs and OData services to access portfolio data, resource information, and reporting data. Integrate selected task or resource information with broader organizational project data.
 
-**Smart resource selection**: Filter resources based on specific skills or criteria to find the right people for your project tasks.
+**SharePoint connectivity**: Connect with SharePoint libraries, lists, and workflows. Access project templates, document libraries, and team collaboration spaces directly from Project.
 
-### Status tracking and approvals
+### Data visualization and reporting
 
-**Enterprise system integration**: Connect with external ERP systems, timesheet applications, or accounting software to streamline status updates.
+**Custom dashboards**: Create specialized views of project data by combining Project information with external data sources. Build reports and visualizations tailored to your organization's needs.
 
-**Custom approval workflows**: Build approval processes that work seamlessly in both Project Web App and Project Professional.
-
-### Team communication and collaboration
-
-**Contextual team communication**: Chat with team members and resources directly within Project, keeping conversations tied to specific project elements.
-
-**Project notes and documentation**: Maintain context-sensitive notes and documentation as you work through your project plan.
-
-### Template and resource discovery
-
-**Template libraries**: Search SharePoint libraries and online collections for project templates that match your needs—like construction project templates or IT deployment frameworks.
-
-**Organizational knowledge**: Access your company's project template collection and best practices directly from Project.
-
-### Enhanced project data
-
-**Metadata and documentation**: View additional task information, documents, and messages that complement your project plan.
-
-**SharePoint integration**: Maintain synchronization with SharePoint task lists while accessing richer metadata that Project doesn't typically import.
-
-### Advanced data integration
-
-**Project Server APIs**: Use selected task GUIDs with Project Server Interface (PSI) or Client-Side Object Model (CSOM) to build sophisticated integrations.
-
-**Reporting and analytics**: Connect to Project Web App's OData service using REST, JavaScript, or LINQ queries to pull reporting data for selected tasks or resources.
+**Real-time data display**: Show live data from other systems alongside your project plan, helping you make informed decisions without switching applications.
 
 > [!TIP]
-> For a detailed example of OData integration, see [Create a Project add-in that uses REST with an on-premises Project Server OData service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
+> For a detailed example of Project Server integration, see [Create a Project add-in that uses REST with an on-premises Project Server OData service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
 
 ## Build your Project add-in
 
