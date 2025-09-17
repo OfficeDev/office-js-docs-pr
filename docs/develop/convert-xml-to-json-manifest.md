@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 05/19/2025
+ms.date: 09/16/2025
 ms.localizationpriority: medium
 ---
 
@@ -85,6 +85,12 @@ Review and change, as needed, manifest values in light of the following effects 
 - The first 250 characters of `<Description>` becomes the value of [`"description.short"`](/microsoft-365/extensibility/schema/root-description#short) in the unified manifest.
 - The first 4000 characters of `<Description>` becomes the value of [`"description.full"`](/microsoft-365/extensibility/schema/root-description#full) in the unified manifest.
 - The first 32 characters of the `<ProviderName>` becomes the value of [`"developer.name"`](/microsoft-365/extensibility/schema/root-developer#name) in the unified manifest.
+
+### Ensure conformity of custom functions configuration
+
+If your add-in has custom functions, then it includes a JSON configuration file. Some requirements for this file weren't always enforced by Office or AppSource in the past, but they are all enforced when the add-in has a unified manifest. Before you convert the manifest, ensure that this JSON file conforms to all requirements. For more information, see [Custom functions naming and localization](../excel/custom-functions-naming.md) and [Manually create JSON metadata for custom functions](../excel/custom-functions-json.md)
+
+In particualar, note that [all function names and function ids must have at least 3 characters](../excel/custom-functions-naming.md#custom-functions-naming-guidelines) and that [each function object must have a "result" property](../excel/custom-functions-json.md#metadata-reference). 
 
 ### Verify that the modified add-in only manifest works
 
