@@ -69,6 +69,6 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
 
 ## Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initialization
 
-[!INCLUDE[Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initialization](../includes/autoopen-webview2-dev-tools.md)]
+[!INCLUDE[Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initialization](../includes/auto-open-webview2-dev-tools.md)]
 
 

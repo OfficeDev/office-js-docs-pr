@@ -34,7 +34,7 @@ To debug with Office on the web, use the following steps.
 > [!TIP]
 > [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
 
-[!INCLUDE[Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initializatio](../includes/autoopen-webview2-dev-tools.md)]
+[!INCLUDE[Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initializatio](../includes/auto-open-webview2-dev-tools.md)]
 
 ## See also
 
