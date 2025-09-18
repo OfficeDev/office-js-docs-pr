@@ -1,4 +1,3 @@
-
 To debug your add-in’s initialization sequence, configure your environment so that Microsoft WebView2 (Chromium-based) developer tools automatically open when the add-in launches.
 
 1. Close the Office application where you plan to debug the add-in.
