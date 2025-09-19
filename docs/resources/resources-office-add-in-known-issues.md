@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 09/18/2025
+ms.date: 09/19/2025
 ms.localizationpriority: medium
 ---
 
@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 
 _Last updated 09/19/2025_
 
-Use information in this article to help you resolve current known issues in Office Add-ins.  For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the Details + support tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
+Use information in this article to help you resolve current known issues in Office Add-ins.  For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
 
 ## Active issues in Office Add-ins
 
-### Outlook: Delay in sending email in New Outlook for Windows
+### Outlook: Delay in sending email in the new Outlook for Windows
 
 #### ISSUE
 
@@ -23,17 +23,16 @@ Outlook customers report that there is an ongoing issue where emails composed in
 
 Tracking ID: 678890927.
 
-The versions affected are 20250829003.06 and 20250829003.07.
+Microsoft Outlook Version: 1.2025.806.300 (Production) and others.
 
 #### STATUS
 
-The Outlook team has deployed a fix to Dogfood and is validating it. Rollout to production expected to start soon (week of September 22 or sooner.)
+The Outlook team has deployed a fix to Dogfood and is validating it. Rollout to production started 09/19/2025
 
 #### WORKAROUND
 
-1. Uninstall signature add-ins.
 1. Remove inline images from signature.
-1. Switch to Classic Outlook
+1. Switch to Classic Outlook.
 
 ### Excel: Centrally deployed add-in error "You don't have permission to use this add-in"
 
@@ -67,6 +66,6 @@ Tracking ID: 679969584.
 
 Under investigation.
 
-## Resolved issues in Office Add-ins
+## Recently resolved issues in Office Add-ins
 
 For more information about resolved issues in Office Add-ins, see the [Office-js closed issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed).
