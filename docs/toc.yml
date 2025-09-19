@@ -1094,6 +1094,8 @@ items:
   - name: External resources
     href: resources/resources-links-help.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+  - name: Known issues
+    href: resources/resources-office-add-in-known-issues.md
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
 
