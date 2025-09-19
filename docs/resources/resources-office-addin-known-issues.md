@@ -55,7 +55,7 @@ Office Extensibility team is currently working on a fix. No ETA.
 **ISSUE**
 Since late August, customers are seeing an increase of RichApi.Error 0xF532001 in there error telemetry
 
-Trakcking ID: 679969584.
+Tracking ID: 679969584.
 
 **STATUS**
 Under investigation.
