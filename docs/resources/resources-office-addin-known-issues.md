@@ -41,7 +41,7 @@ The Outlook team has deployed a fix to Dogfood and is validating it. Rollout to 
 
 Numerous customers report that after updating Office from 2505 to 2507 their add-in will not load and an error is displayed "You don't have permission to use this add-in. Contact your system administrator." Any add-in may reproduce this issue; it is not specific to a single add-in.
 
- ![Excel web add-in permissions error message.](../images/excel-web-addin-permission-error.png)
+ ![Excel web add-in permissions error message.](../images/excel-web-add-in-permission-error.png)
 
 Tracking ID: 667052546.
 
@@ -61,7 +61,7 @@ Office Extensibility team is currently working on a fix. No ETA.
 
 Since late August, customers are seeing an increase of RichApi.Error 0xF532001 in their error telemetry.
 
-Trakcking ID: 679969584.
+Tracking ID: 679969584.
 
 #### STATUS
 
