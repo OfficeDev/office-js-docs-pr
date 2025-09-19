@@ -28,6 +28,9 @@ The versions affected are 20250829003.06 and 20250829003.07.
 The Outlook team has deployed a fix to Dogfood and is validating it. Rollout to production rollout expected to start soon (week of September 22 or sooner.)
 
 **WORKAROUND**
-Uninstall signature add-ins and/or remove inline images from signature.
+
+1. Uninstall signature add-ins.
+1. Remove inline images from signature.
+1. Switch to Classic Outlook
 
 ## Resolved issues in Office Add-ins
