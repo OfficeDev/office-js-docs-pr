@@ -1,7 +1,7 @@
 ---
 title: Debug add-ins using developer tools for Microsoft Edge WebView2
 description: Debug add-ins using the developer tools in Microsoft Edge WebView2 (Chromium-based).
-ms.date: 07/14/2024
+ms.date: 09/18/2025
 ms.localizationpriority: medium
 ---
 
@@ -66,3 +66,9 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
    - Right-click (or select and hold) the dialog to open the context menu and select **Inspect**.
 
 1. Use the tool the same as you would for code in a task pane. See [Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools](#debug-a-task-pane-add-in-using-microsoft-edge-chromium-based-developer-tools) earlier in this article.
+
+## Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initialization
+
+[!INCLUDE[Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initialization](../includes/auto-open-webview2-dev-tools.md)]
+
+

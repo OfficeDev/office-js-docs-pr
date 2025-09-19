@@ -1,9 +1,9 @@
 ---
 title: Build your first Project task pane add-in
-description: Learn how to build a simple Project task pane add-in by using the Office JS API.
-ms.date: 12/11/2023
+description: Learn how to build a simple Project task pane add-in by using the Office JavaScript API.
+ms.date: 09/16/2025
 ms.service: project
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ---
 
 # Build your first Project task pane add-in
@@ -31,7 +31,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 ## Explore the project
 
-The add-in project that you've created with the Yeoman generator contains sample code for a very basic task pane add-in.
+The add-in project that you've created with the Yeoman generator contains sample code for a basic task pane add-in.
 
 - The **./manifest.xml** file in the root directory of the project defines the settings and capabilities of the add-in.
 - The **./src/taskpane/taskpane.html** file contains the HTML markup for the task pane.
@@ -46,19 +46,19 @@ The add-in project that you've created with the Yeoman generator contains sample
     cd "My Office Add-in"
     ```
 
-1. Start the local web server.
+1. Complete the following steps to start the local web server and sideload your add-in.
 
     [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
-    Run the following command in the root directory of your project. When you run this command, the local web server will start.
+    - To test your add-in in Project, run the following command in the root directory of your project. This starts the local web server and sideloads your add-in.
 
-    ```command&nbsp;line
-    npm run dev-server
-    ```
+        ```command&nbsp;line
+        npm start
+        ```
+
+    If your add-in doesn't automatically sideload, follow the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to manually sideload the add-in in Project.
 
 1. In Project, create a simple project plan.
-
-1. Load your add-in in Project by following the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
 1. Select a single task within the project.
 
@@ -66,15 +66,9 @@ The add-in project that you've created with the Yeoman generator contains sample
 
     ![The Project application with the task pane add-in loaded.](../images/project-quickstart-addin-1.png)
 
-1. When you want to stop the local web server and uninstall the add-in, follow these instructions:
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
-    - To stop the server, run the following command.
-
-        ```command&nbsp;line
-        npm stop
-        ```
-
-    - To uninstall the sideloaded add-in, see [Remove a sideloaded add-in](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md#remove-a-sideloaded-add-in).
+[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
 
 ## Next steps
 
@@ -83,10 +77,14 @@ Congratulations, you've successfully created a Project task pane add-in! Next, l
 > [!div class="nextstepaction"]
 > [Project add-ins](../project/project-add-ins.md)
 
-[!include[The common troubleshooting section for all Yo Office quick starts](../includes/quickstart-troubleshooting-yo.md)]
+## Code samples
+
+- [Project "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/project-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
 
 ## See also
 
+- [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [Core concepts for Office Add-ins](../overview/core-concepts-office-add-ins.md)
+- [Project add-in code samples](https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Project,Samples)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
