@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 _Last updated 09/19/2025_
 
-Use information in this article to help you resolve current known issues in Office Add-ins.  For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting.md) or contact the add-in developer on the Details + support tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
+Use information in this article to help you resolve current known issues in Office Add-ins.  For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the Details + support tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
 
 ## Active issues in Office Add-ins
 
