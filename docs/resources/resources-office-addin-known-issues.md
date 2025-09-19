@@ -5,9 +5,9 @@ ms.date: 09/18/2025
 ms.localizationpriority: medium
 ---
 
-# Troubleshoot Office Add-ins
+# Office Add-ins known issues
 
-_Last updated 09/18/2025_
+_Last updated 09/19/2025_
 
 Use information in this article to help you resolve current known issues in Office Add-ins.  For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting.md) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
 
@@ -28,7 +28,6 @@ The versions affected are 20250829003.06 and 20250829003.07.
 The Outlook team has deployed a fix to Dogfood and is validating it. Rollout to production rollout expected to start soon (week of September 22 or sooner.)
 
 **WORKAROUND**
-
 1. Uninstall signature add-ins.
 1. Remove inline images from signature.
 1. Switch to Classic Outlook
@@ -53,13 +52,13 @@ Office Extensibility team is currently working on a fix. No ETA.
 ### Excel: Increased frequency of RichApi.Error: Error code: 0xF532001
 
 **ISSUE**
-Since late August, customers are seeing an increase of RichApi.Error 0xF532001 in there error telemetry
+Since late August, customers are seeing an increase of RichApi.Error 0xF532001 in their error telemetry.
 
-Tracking ID: 679969584.
+Trakcking ID: 679969584.
 
 **STATUS**
 Under investigation.
 
 ## Resolved issues in Office Add-ins
 
-For more information about resolved issues in Office Add-ins, see the [Office-js closed issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed). 
+For more information about resolved issues in Office Add-ins, see the [Office-js closed issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed).
