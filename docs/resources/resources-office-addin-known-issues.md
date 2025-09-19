@@ -34,3 +34,9 @@ The Outlook team has deployed a fix to Dogfood and is validating it. Rollout to 
 1. Switch to Classic Outlook
 
 ## Resolved issues in Office Add-ins
+
+TBD
+
+## See also
+
+TBD
