@@ -1,13 +1,23 @@
 ---
 title: Find special cells within a range using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to find special cells, such as cells with formulas, errors, or numbers.
-ms.date: 02/17/2022
+ms.date: 09/19/2025
 ms.localizationpriority: medium
 ---
 
 # Find special cells within a range using the Excel JavaScript API
 
-This article provides code samples that find special cells within a range using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
+Use the Excel JavaScript API to quickly locate cells with formulas, constants, errors, or other characteristics so you can audit, refactor, or apply formatting efficiently. This article shows how to use `Range.getSpecialCells` and `Range.getSpecialCellsOrNullObject`, when to choose each, and how to further narrow results with cell value types. For the full set of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
+
+## Quick reference
+
+| Goal | Use this method | If target might not exist | Result type | Error behavior |
+|------|-----------------|---------------------------|-------------|----------------|
+| Require at least one matching cell | `getSpecialCells` | N/A | `RangeAreas` | Throws `ItemNotFound` if none |
+| Optionally act only if matches exist | `getSpecialCellsOrNullObject` | Check `isNullObject` after `context.sync()` | `RangeAreas` proxy | No exception; `isNullObject = true` |
+
+> [!TIP]
+> Treat `getSpecialCells` like an assertion. Use `getSpecialCellsOrNullObject` when the absence of matches is a valid result, not an error.
 
 ## Find ranges with special cells
 
@@ -21,10 +31,12 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-The following code sample uses the `getSpecialCells` method to find all the cells with formulas. About this code, note:
+The following code sample uses `getSpecialCells` to find all cells with formulas.
 
-- It limits the part of the sheet that needs to be searched by first calling `Worksheet.getUsedRange` and calling `getSpecialCells` for only that range.
-- The `getSpecialCells` method returns a `RangeAreas` object, so all of the cells with formulas will be colored pink even if they are not all contiguous.
+Key points:
+
+- Restrict the search scope for better performance by calling `worksheet.getUsedRange()` first.
+- `getSpecialCells` returns a single `RangeAreas` object, so non‑contiguous matches can be formatted in one operation.
 
 ```js
 await Excel.run(async (context) => {
@@ -62,7 +74,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-For simplicity, all other code samples in this article use the `getSpecialCells` method instead of  `getSpecialCellsOrNullObject`.
+For simplicity, the remaining samples in this article use `getSpecialCells`.
 
 ## Narrow the target cells with cell value types
 
@@ -80,10 +92,12 @@ The `Excel.SpecialCellValueType` enum has these four basic types (in addition to
 - `Excel.SpecialCellValueType.numbers`
 - `Excel.SpecialCellValueType.text`
 
-The following code sample finds special cells that are numerical constants and colors those cells pink. About this code, note:
+The next sample finds numerical constants and colors them pink.
 
-- It only highlights cells that have a literal number value. It won't highlight cells that have a formula (even if the result is a number) or a boolean, text, or error state cells.
-- To test the code, be sure the worksheet has some cells with literal number values, some with other kinds of literal values, and some with formulas.
+Key points:
+
+- Only literal numeric constants are targeted (not formulas that evaluate to numbers, nor booleans, text, or error cells).
+- To test, populate the sheet with literal number values, other kinds of literal values, and formulas.
 
 ```js
 await Excel.run(async (context) => {
@@ -114,6 +128,12 @@ await Excel.run(async (context) => {
     await context.sync();
 });
 ```
+
+## Next steps
+
+- Combine special-cell queries with [string search](excel-add-ins-ranges-string-match.md) for richer auditing.
+- Apply formatting, comments, or data validation to the resulting `RangeAreas`.
+- Chain with [work with multiple ranges](excel-add-ins-multiple-ranges.md) to process disjoint areas efficiently.
 
 ## See also
 
