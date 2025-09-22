@@ -1,23 +1,49 @@
 ---
-title: Trust custom protocol handlers that launch add-ins
-description: How to use group policies for protocol handler trust in the registry to launch add-ins.
+title: Managing trust options for Office Add-ins
+description: How to disable trust prompts for users without installed add-ins and how to use group policies for protocol handler trust in the registry when launching add-ins.
 ms.topic: how-to
-ms.date: 08/15/2025
+ms.date: 09/22/2025
 ms.localizationpriority: medium
 ---
 
-# Trust custom protocol handlers to launch add-ins
+# Managing trust options for Office Add-ins
+
+Office trust prompts help protect users by asking for consent before add-ins access their documents or launch from external protocols. While these security measures are important, there are scenarios where you want to not prompt users to improve their experiences. This article covers how to disable trust prompts when the related add-in is not installed and how to configure protocol handler trust policies.
+
+## Disable trust prompts for add-ins that aren't installed
+
+When you share documents that contain add-in metadata, users without the required add-in installed may see trust prompts. These prompts appear when a document includes settings that instruct Office to automatically launch an add-in.
+
+The following scenarios trigger trust prompts when the required add-in isn't installed.
+
+- Documents with custom functions that use a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+- Documents configured to [automatically open a task pane](../develop/automatically-open-a-task-pane-with-a-document.md).
+- Documents configured to [load add-ins when opened](../develop/run-code-on-document-open.md).
+
+You can prevent these prompts from appearing for users who don't have your add-in installed. Disable trust prompts in your document by setting the [Settings.set](/javascript/api/office/office.settings?view=excel-js-preview#office-office-settings-set-member(1)) method to set the `"Office.DisableTrustUX"` setting to `true`.
+
+```javascript
+Office.context.document.settings.set("Office.DisableTrustUX", true);
+Office.context.document.settings.saveAsync(); 
+```
+
+This setting is saved in the document's OOXML metadata. When enabled, it prevents trust prompts in all the scenarios listed earlier in this section. This provides a better experience for users who don't need the add-in.
+
+> [!IMPORTANT]
+> This setting applies to Office on Windows only.
+
+## Trust custom protocol handlers to launch add-ins
 
 Let your Office Add-in launch from a custom protocol handler (like `mailto:` or your own scheme) without prompting users for consent. This is useful when you want a seamless experience for users, or when your organization needs to centrally manage which add-ins launch from which protocols.
 
 > [!IMPORTANT]
 > This article applies to Windows only. Support for this feature starts with Office Version 2408 (Build 17928.20018).
 
-## How protocol handler trust works
+### How protocol handler trust works
 
 A protocol handler lets an app or add-in launch from a URI (for example, clicking a `mailto:` link opens your email client). Office add-ins also launch this way. By default, users are prompted to trust each add-in and protocol pair. As an admin, pre-approve or block these pairs using group policy and the Windows registry.
 
-## Registry key format
+### Registry key format
 
 To automatically trust a custom protocol handler for an add-in, create a registry key at one of the following locations (replace `<add-in ID>` with your add-in's [manifest ID](/javascript/api/manifest/id) or unified manifest [`id`](/microsoft-365/extensibility/schema/root#id).
 
@@ -30,11 +56,11 @@ Add the following values to the key.
 - **Type:** REG_SZ
 - **Data:** `Allow` or `Block`
 
-## Set group policies
+### Set group policies
 
 Admins use group policy to manage protocol handler trust across the organization. The following sample files show how to set up these policies.
 
-### Sample ADMX file
+#### Sample ADMX file
 
 ```xml
 <?xml version="1.0" encoding="utf-16"?> 
@@ -71,7 +97,7 @@ Admins use group policy to manage protocol handler trust across the organization
 </policyDefinitions> 
 ```
 
-### Sample ADML file
+#### Sample ADML file
 
 ```xml
 <?xml version="1.0" encoding="utf-16"?> 
@@ -94,7 +120,7 @@ Admins use group policy to manage protocol handler trust across the organization
 </policyDefinitionResources> 
 ```
 
-### Sample .REG file
+#### Sample .REG file
 
 The following example shows how to configure the registry directly using a .REG file.
 
