@@ -13,26 +13,27 @@ Use information in this article to help you resolve current known issues in Offi
 
 ## Active issues in Office Add-ins
 
-### Outlook: Delay in sending email in the new Outlook for Windows
+### Outlook: Delay in sending email in the new Outlook for Windows and Outlook for the web
 
 #### ISSUE
 
-Outlook customers report that there is an ongoing issue where emails composed in New Outlook for Windows are stuck in the Outbox and not sent. Our investigations indicate that this Outlook issue affects signature add-ins, including CodeTwo, and causes delays in sending emails due to slow inline image loading.
+Outlook customers report an ongoing issue where emails composed in new Outlook for Windows and Outlook for the web are stuck in the Outbox and not sent. Our investigation indicate that this Outlook issue affects APIs used by signature add-ins in Outlook, causing delays in sending emails due to slow inline image loading.
 
  ![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
 
 Tracking ID: 678890927.
 
-Microsoft Outlook Version: 1.2025.806.300 (Production) and others.
+Microsoft Outlook Version: 1.2025.806.300 (Production) and later.
 
 #### STATUS
 
-The Outlook team has deployed a fix to Dogfood and is validating it. Rollout to production started 09/19/2025
+The Outlook team has deployed a fix and is validating it. Rollout of this fix started 09/19/2025, but will take several days to reach all customers.
 
 #### WORKAROUND
 
 1. Remove inline images from signature.
-1. Switch to Classic Outlook.
+1. Wait for images to load before sending the file. 
+1. Switch to classic Outlook for Windows or Outlook for Mac.
 
 ### Excel: Centrally deployed add-in error "You don't have permission to use this add-in"
 
@@ -48,7 +49,7 @@ Version affected: Office Monthly Enterprise 2507.
 
 #### STATUS
 
-Office Extensibility team is currently working on a fix. No ETA.
+The Office Extensibility team is currently working on a fix.
 
 #### WORKAROUND
 
@@ -64,7 +65,11 @@ Tracking ID: 679969584.
 
 #### STATUS
 
-Under investigation.
+The Office Extensibility team is currently working on a fix.
+
+#### WORKAROUND
+
+1. Roll back Office to previous version 2505.
 
 ## Recently resolved issues in Office Add-ins
 
