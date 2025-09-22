@@ -20,7 +20,7 @@ The following scenarios trigger trust prompts when the required add-in isn't ins
 - Documents configured to [automatically open a task pane](../develop/automatically-open-a-task-pane-with-a-document.md).
 - Documents configured to [load add-ins when opened](../develop/run-code-on-document-open.md).
 
-You can prevent these prompts from appearing for users who don't have your add-in installed. Disable trust prompts in your document by setting the [Settings.set](/javascript/api/office/office.settings?view=excel-js-preview#office-office-settings-set-member(1)) method to set the `"Office.DisableTrustUX"` setting to `true`.
+You can prevent these prompts from appearing for users who don't have your add-in installed. Disable trust prompts in your document by setting the [Settings.set](/javascript/api/office/office.settings#office-office-settings-set-member(1)) method to set the `"Office.DisableTrustUX"` setting to `true`.
 
 ```javascript
 Office.context.document.settings.set("Office.DisableTrustUX", true);
