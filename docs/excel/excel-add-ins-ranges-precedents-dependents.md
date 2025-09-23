@@ -65,7 +65,6 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> The `Range.getPrecedents` and `Range.getDirectPrecedents` methods return an `ItemNotFound` error if no precedent cells are found.
 
 ## Get the dependents of a formula
 
@@ -119,7 +118,8 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> The `Range.getDependents` and `Range.getDirectDependents` methods return an `ItemNotFound` error if no dependent cells are found.
+> The `Range.getDependents` and `Range.getDirectDependents` methods return an `ItemNotFound` error if no dependent cells are found. Catch this to provide a user-friendly message.
+
 
 ## See also
 
