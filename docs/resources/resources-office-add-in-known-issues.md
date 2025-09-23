@@ -55,7 +55,7 @@ We're currently working on a fix.
 
 1. Roll back Office to version 2505.
 
-##### Option 2: Refresh admin managed add-ins
+##### Option 2: Refresh admin-managed add-ins
 
 1. Select **Home** > **Add-ins** in the ribbon.
 1. Select **More add-ins**.
