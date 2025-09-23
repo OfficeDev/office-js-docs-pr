@@ -17,7 +17,7 @@ This article provides information about current known issues with Office Add-ins
 
 #### ISSUE
 
-We are currently investigating reports from Outlook users experiencing delays in the loading of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send while the images are not yet loaded will result in the following dialog box:
+We're currently investigating reports from Outlook users who are experiencing loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send messages while the images are not yet loaded results in the following dialog box.
 
  ![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
 
@@ -25,7 +25,7 @@ Tracking ID: 678890927.
 
 #### STATUS
 
-We are actively investigating this issue with high priority. Because it stems from a server-side performance delay, the impact varies by customer and region. While not all users will experience the issue, those affected may see delays in the loading of all inline images—particularly in scenarios involving signature add-ins.
+We're actively investigating this issue with high priority. Because it stems from a server-side performance delay, the impact varies by customer and region. While not all users will experience the issue, those affected may see delays when loading inline images—particularly in scenarios involving signature add-ins.
 
 #### WORKAROUND
 
@@ -47,7 +47,7 @@ Version affected: Office Monthly Enterprise 2507.
 
 #### STATUS
 
-We are currently working on a fix.
+We're currently working on a fix.
 
 #### WORKAROUND
 
@@ -63,11 +63,11 @@ Tracking ID: 679969584.
 
 #### STATUS
 
-We are currently working on a fix.
+We're currently working on a fix.
 
 #### WORKAROUND
 
-1. Roll back Office to previous version 2505.
+1. Roll back Office to version 2505.
 
 ## Recently resolved issues in Office Add-ins
 
