@@ -1,33 +1,31 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 09/22/2025
+ms.date: 09/23/2025
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 09/22/2025_
+_Last updated 09/23/2025_
 
-Use information in this article to help you resolve current known issues in Office Add-ins.  For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
+This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
 
 ## Active issues in Office Add-ins
 
-### Outlook: Delay in sending email in the new Outlook for Windows and Outlook for the web
+### Outlook: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
 
 #### ISSUE
 
-Outlook customers report an ongoing issue where emails composed in new Outlook for Windows and Outlook for the web are stuck in the Outbox and not sent. Our investigation indicate that this Outlook issue affects APIs used by signature add-ins in Outlook, causing delays in sending emails due to slow inline image loading.
+We are currently investigating reports from Outlook users experiencing delays in the loading of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send while the images are not yet loaded will result in the following dialog box:
 
  ![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
 
 Tracking ID: 678890927.
 
-Microsoft Outlook Version: 1.2025.806.300 (Production) and later.
-
 #### STATUS
 
-The Outlook team has deployed a fix and is validating it. Rollout of this fix started 09/19/2025, but will take several days to reach all customers.
+We are actively investigating this issue with high priority. Because it stems from a server-side performance delay, the impact varies by customer and region. While not all users will experience the issue, those affected may see delays in the loading of all inline images—particularly in scenarios involving signature add-ins.
 
 #### WORKAROUND
 
@@ -49,7 +47,7 @@ Version affected: Office Monthly Enterprise 2507.
 
 #### STATUS
 
-The Office Extensibility team is currently working on a fix.
+We are currently working on a fix.
 
 #### WORKAROUND
 
@@ -65,7 +63,7 @@ Tracking ID: 679969584.
 
 #### STATUS
 
-The Office Extensibility team is currently working on a fix.
+We are currently working on a fix.
 
 #### WORKAROUND
 
