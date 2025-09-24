@@ -30,7 +30,7 @@ We're actively investigating this issue with high priority. Because it stems fro
 #### WORKAROUND
 
 1. Remove inline images from signature.
-1. Wait for images to load before sending the file. 
+1. Wait for images to load before sending the file.
 1. Switch to classic Outlook for Windows or Outlook for Mac.
 
 ### Excel: Centrally deployed add-in error "You don't have permission to use this add-in"
@@ -51,7 +51,17 @@ We're currently working on a fix.
 
 #### WORKAROUND
 
-1. Roll back Office to previous version 2505.
+##### Option 1: Use a previous version of Office
+
+1. Roll back Office to version 2505.
+
+##### Option 2: Refresh admin-managed add-ins
+
+1. Select **Home** > **Add-ins** in the ribbon.
+1. Select **More add-ins**.
+1. Go to the **Admin Managed** tab.
+1. Select the **Refresh** button in top right.
+1. The add-in should reappear. Open it to reload the add-in.
 
 ### Excel: Increased frequency of RichApi.Error: Error code: 0xF532001
 
