@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting Excel add-ins
 description: Learn how to troubleshoot development errors in Excel add-ins.
-ms.date: 02/17/2022
+ms.date: 09/22/2025
 ms.topic: troubleshooting-error-codes
 ms.localizationpriority: medium
 ---
@@ -84,10 +84,6 @@ async function getBindingId(eventArgs) {
 The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to an issue in the Excel on the web UI, setting the `useStandardHeight` property to `true` calculates height imprecisely on this platform. For example, a standard height of **14** is modified to **14.25** in Excel on the web.
 
 On all platforms, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardwidth-member) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect.
-
-### Range `getImage` method unsupported on Excel for Mac
-
-The Range [getImage](/javascript/api/excel/excel.range#excel-excel-range-getimage-member(1)) method isn't currently supported in Excel for Mac. See [OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) for the current status.
 
 ### Range return character limit
 

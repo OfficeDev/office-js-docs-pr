@@ -1,7 +1,7 @@
 ﻿---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 08/26/2025
+ms.date: 09/23/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -465,10 +465,10 @@ For guidance on how to create a shortcuts JSON file, see [Create or edit the sho
 
 ### Specify the JSON resource files in the manifest
 
-In your add-in's manifest, specify the JSON resource files in the `"extensions.keyboardShortcuts.keyMappingFiles"` object.
+In your add-in's manifest, specify the JSON resource files in the [`"extensions.keyboardShortcuts.keyMappingFiles"`](/microsoft-365/extensibility/schema/extension-keyboard-shortcut?view=m365-app-prev&preserve-view=true#keymappingfiles) object.
 
-- For the shortcuts JSON file, provide its full HTTPS URL in the `"extensions.keyboardShortcuts.keyMappingFiles.shortcutsUrl"` property.
-- For the localization resource file, provide its full HTTPS URL in the `"extensions.keyboardShortcuts.keyMappingFiles.localizationResourceUrl"` property.
+- For the shortcuts JSON file, provide its full HTTPS URL in the [`"extensions.keyboardShortcuts.keyMappingFiles.shortcutsUrl"`](/microsoft-365/extensibility/schema/keyboard-shortcuts-mapping-files?view=m365-app-prev&preserve-view=true#shortcutsurl) property.
+- For the localization resource file, provide its full HTTPS URL in the [`"extensions.keyboardShortcuts.keyMappingFiles.localizationResourceUrl"`](/microsoft-365/extensibility/schema/keyboard-shortcuts-mapping-files?view=m365-app-prev&preserve-view=true#localizationresourceurl) property.
 
 The following is an example of how to specify shortcuts and localization resource files in the manifest.
 

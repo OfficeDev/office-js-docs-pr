@@ -1,38 +1,37 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 09/19/2025
+ms.date: 09/23/2025
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 09/19/2025_
+_Last updated 09/23/2025_
 
-Use information in this article to help you resolve current known issues in Office Add-ins.  For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
+This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
 
 ## Active issues in Office Add-ins
 
-### Outlook: Delay in sending email in the new Outlook for Windows
+### Outlook: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
 
 #### ISSUE
 
-Outlook customers report that there is an ongoing issue where emails composed in New Outlook for Windows are stuck in the Outbox and not sent. Our investigations indicate that this Outlook issue affects signature add-ins, including CodeTwo, and causes delays in sending emails due to slow inline image loading.
+We're currently investigating reports from Outlook users who are experiencing loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send messages while the images are not yet loaded results in the following dialog box.
 
  ![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
 
 Tracking ID: 678890927.
 
-Microsoft Outlook Version: 1.2025.806.300 (Production) and others.
-
 #### STATUS
 
-The Outlook team has deployed a fix to Dogfood and is validating it. Rollout to production started 09/19/2025
+We're actively investigating this issue with high priority. Because it stems from a server-side performance delay, the impact varies by customer and region. While not all users will experience the issue, those affected may see delays when loading inline images—particularly in scenarios involving signature add-ins.
 
 #### WORKAROUND
 
 1. Remove inline images from signature.
-1. Switch to Classic Outlook.
+1. Wait for images to load before sending the file.
+1. Switch to classic Outlook for Windows or Outlook for Mac.
 
 ### Excel: Centrally deployed add-in error "You don't have permission to use this add-in"
 
@@ -48,11 +47,21 @@ Version affected: Office Monthly Enterprise 2507.
 
 #### STATUS
 
-Office Extensibility team is currently working on a fix. No ETA.
+We're currently working on a fix.
 
 #### WORKAROUND
 
-1. Roll back Office to previous version 2505.
+##### Option 1: Use a previous version of Office
+
+1. Roll back Office to version 2505.
+
+##### Option 2: Refresh admin-managed add-ins
+
+1. Select **Home** > **Add-ins** in the ribbon.
+1. Select **More add-ins**.
+1. Go to the **Admin Managed** tab.
+1. Select the **Refresh** button in top right.
+1. The add-in should reappear. Open it to reload the add-in.
 
 ### Excel: Increased frequency of RichApi.Error: Error code: 0xF532001
 
@@ -64,7 +73,11 @@ Tracking ID: 679969584.
 
 #### STATUS
 
-Under investigation.
+We're currently working on a fix.
+
+#### WORKAROUND
+
+1. Roll back Office to version 2505.
 
 ## Recently resolved issues in Office Add-ins
 
