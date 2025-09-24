@@ -10,8 +10,6 @@ ms.localizationpriority: high
 
 This article is intended to help readers who are familiar with the add-in only manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
 
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-
 ## Schemas and general points
 
 There is just one schema for the [unified manifest](https://raw.githubusercontent.com/OfficeDev/microsoft-teams-app-schema/preview/DevPreview/MicrosoftTeams.schema.json), in contrast to the add-in only manifest which has a total of seven [schemas](/openspecs/office_file_formats/ms-owemxml/c6a06390-34b8-4b42-82eb-b28be12494a8).
