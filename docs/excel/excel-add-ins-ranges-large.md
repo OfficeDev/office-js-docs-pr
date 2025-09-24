@@ -35,7 +35,7 @@ Formatting and calculation-heavy operations, such as conditional formats or form
 
 - First write raw values (plain numbers or text), then add formulas or formats in a second pass.
 - Use `setDirty()` only on necessary recalculation scopes.
-- Limit conditional formats to used rows instead of entire column references (such as `A2:A5000` intsead of `A:A`).
+- Limit conditional formats to used rows instead of entire column references (such as `A2:A5000` instead of `A:A`).
 
 ## Handling conditional formatting on large data
 
