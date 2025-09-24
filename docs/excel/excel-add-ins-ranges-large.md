@@ -47,7 +47,7 @@ await Excel.run(async (context) => {
   const usedRange = sheet.getUsedRange();
   usedRange.load("address");
   await context.sync();
-  const formattedRange = sheet.getRange(used.address.split("!")[1]);
+  const formattedRange = sheet.getRange(usedRange.address.split("!")[1]);
   // Apply formatting rules to formattedRange instead of whole columns.
 });
 ```
