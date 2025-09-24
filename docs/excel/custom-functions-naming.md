@@ -23,7 +23,6 @@ A function `name` can differ from the `id` for localization. If you don't need l
 A function's `name` and `id` share some similar rules.
 
 - Both must start with a letter and be at least three characters.
-- Both function `name` and `id` must start with a letter and have a minimum limit of three characters.
 - `id`: Only A–Z, 0–9, underscore, and period characters allowed.
 - `name`: Any Unicode letters, underscore, and period characters allowed.
 
