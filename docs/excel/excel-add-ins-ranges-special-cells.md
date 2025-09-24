@@ -13,8 +13,8 @@ Use the Excel JavaScript API to quickly locate cells with formulas, constants, e
 
 | Goal | Use this method | If target might not exist | Result type | Error behavior |
 |------|-----------------|---------------------------|-------------|----------------|
-| Require at least one matching cell | `getSpecialCells` | N/A | `RangeAreas` | Throws `ItemNotFound` if none |
-| Optionally act only if matches exist | `getSpecialCellsOrNullObject` | Check `isNullObject` after `context.sync()` | `RangeAreas` proxy | No exception; `isNullObject = true` |
+| Require at least one matching cell | `getSpecialCells` | N/A | `RangeAreas` | Throws `ItemNotFound` if none exist |
+| Optionally act only if matches exist | `getSpecialCellsOrNullObject` | Check `isNullObject` after `context.sync()` | `RangeAreas` proxy | No error, returns `isNullObject = true` |
 
 > [!TIP]
 > Treat `getSpecialCells` like an assertion. Use `getSpecialCellsOrNullObject` when the absence of matches is a valid result, not an error.
@@ -88,7 +88,7 @@ The `Range.getSpecialCells()` and `Range.getSpecialCellsOrNullObject()` methods 
 The `Excel.SpecialCellValueType` enum has these four basic types (in addition to the other combined values described later in this section):
 
 - `Excel.SpecialCellValueType.errors`
-- `Excel.SpecialCellValueType.logical` (which means boolean)
+- `Excel.SpecialCellValueType.logical` (which means Boolean)
 - `Excel.SpecialCellValueType.numbers`
 - `Excel.SpecialCellValueType.text`
 
@@ -96,7 +96,7 @@ The next sample finds numerical constants and colors them pink.
 
 Key points:
 
-- Only literal numeric constants are targeted (not formulas that evaluate to numbers, nor booleans, text, or error cells).
+- Only literal numeric constants are targeted (not formulas that evaluate to numbers, nor Booleans, text, or error cells).
 - To test, populate the sheet with literal number values, other kinds of literal values, and formulas.
 
 ```js
@@ -114,7 +114,7 @@ await Excel.run(async (context) => {
 
 ### Test for multiple cell value types
 
-Sometimes you need to operate on more than one cell value type, such as all text-valued and all boolean-valued (`Excel.SpecialCellValueType.logical`) cells. The `Excel.SpecialCellValueType` enum has values with combined types. For example, `Excel.SpecialCellValueType.logicalText` targets all boolean and all text-valued cells. `Excel.SpecialCellValueType.all` is the default value, which does not limit the cell value types returned. The following code sample colors all cells with formulas that produce number or boolean value.
+Sometimes you need to operate on more than one cell value type, such as all text-valued and all Boolean-valued (`Excel.SpecialCellValueType.logical`) cells. The `Excel.SpecialCellValueType` enum has values with combined types. For example, `Excel.SpecialCellValueType.logicalText` targets all Boolean and all text-valued cells. `Excel.SpecialCellValueType.all` is the default value, which does not limit the cell value types returned. The following code sample colors all cells with formulas that produce number or Boolean value.
 
 ```js
 await Excel.run(async (context) => {
@@ -139,5 +139,3 @@ await Excel.run(async (context) => {
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
-- [Find a string using the Excel JavaScript API](excel-add-ins-ranges-string-match.md)
-- [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)

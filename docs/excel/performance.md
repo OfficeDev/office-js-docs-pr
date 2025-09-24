@@ -31,7 +31,7 @@ Excel performs background tasks that react to user input and add-in actions. Pau
 
 ### Suspend calculation temporarily
 
-If you need to update a large range (such as to assign values and then recalculate dependent formulas) and interim recalculation results aren't needed, suspend temporarily calculation until the next `context.sync()`.
+If you need to update a large range (such as to assign values and then recalculate dependent formulas) and interim recalculation results aren't needed, suspend calculation temporarily until the next `context.sync()`.
 
 See the [Application Object](/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily.
 
@@ -266,5 +266,4 @@ async function run() {
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Error handling with the application-specific JavaScript APIs](../testing/application-specific-api-error-handling.md)
-- [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
 - [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)

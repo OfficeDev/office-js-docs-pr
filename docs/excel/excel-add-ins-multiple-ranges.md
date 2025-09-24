@@ -24,11 +24,11 @@ A [RangeAreas](/javascript/api/excel/excel.rangeareas) object represents a set o
 
 Examples:
 
-- `address` returns one comma‑delimited string of all addresses.
+- `address` returns one comma-delimited string of all addresses.
 - `dataValidation` returns a single object only if every range has the same rule, otherwise it returns `null`.
 - `cellCount` is the total cells across all ranges.
 - `calculate` recalculates all cells in the set.
-- `getEntireColumn` / `getEntireRow` return a new `RangeAreas` spanning full columns or rows for each member.
+- `getEntireColumn` and `getEntireRow` return a new `RangeAreas` spanning full columns or rows for each member.
 - `copyFrom` accepts either a `Range` or a `RangeAreas` as the source.
 
 ### Complete list of Range members that are also available on RangeAreas
@@ -168,7 +168,7 @@ If values differ, keep these simple rules in mind:
 
 - A Boolean is `true` only if all ranges are true, otherwise it's `false`.
 - Other properties are `null` unless all ranges share the same value. (`address` is excluded from this rule.)
-- `address` always returns the comma‑delimited addresses string.
+- `address` always returns the comma-delimited addresses string.
 
 For example, the following code creates a `RangeAreas` in which only one range is an entire column and only one is filled with pink. The console will show `null` for the fill color, `false` for the `isEntireRow` property, and "Sheet1!F3:F5, Sheet1!H:H" (assuming the sheet name is "Sheet1") for the `address` property.
 

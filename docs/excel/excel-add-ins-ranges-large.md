@@ -44,11 +44,11 @@ Avoid applying conditional formatting to entire columns if only part of the colu
 ```js
 await Excel.run(async (context) => {
   const sheet = context.workbook.worksheets.getActiveWorksheet();
-  const used = sheet.getUsedRange();
-  used.load("address");
+  const usedRange = sheet.getUsedRange();
+  usedRange.load("address");
   await context.sync();
-  const cfRange = sheet.getRange(used.address.split("!")[1]);
-  // apply formatting rules to cfRange instead of whole columns
+  const formattedRange = sheet.getRange(used.address.split("!")[1]);
+  // Apply formatting rules to formattedRange instead of whole columns.
 });
 ```
 

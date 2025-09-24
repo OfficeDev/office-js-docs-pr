@@ -74,7 +74,7 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> The `Range.getPrecedents` and `Range.getDirectPrecedents` methods return an `ItemNotFound` error if no precedent cells are found. Catch this to provide a user-friendly message.
+> The `Range.getPrecedents` and `Range.getDirectPrecedents` methods return an `ItemNotFound` error if no precedent cells are found. Catch this and provide a user-friendly message.
 
 ## Get the dependents of a formula
 
@@ -128,14 +128,14 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> The `Range.getDependents` and `Range.getDirectDependents` methods return an `ItemNotFound` error if no dependent cells are found. Catch this to provide a user-friendly message.
+> The `Range.getDependents` and `Range.getDirectDependents` methods return an `ItemNotFound` error if no dependent cells are found. Catch this and provide a user-friendly message.
 
 ## Best practices for working with precedents and dependents
 
 | Goal | Recommendation |
 |------|----------------|
 | Minimize user impact | Use a light tint and provide a button or command to clear it. |
-| Keep results current | Refresh after big workbook changes (like renaming or moving sheets). |
+| Keep results current | Refresh after big workbook changes, like renaming or moving sheets. |
 | Error handling | Catch `ItemNotFound` errors and show a friendly message instead of an error dialog. |
 | Scale | Use the direct methods for a quick first look, then load the full set only if needed. |
 | Understand workbook size | Log counts of direct or total related cells to spot large or complex models. |
