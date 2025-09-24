@@ -2,7 +2,7 @@
 title: Managing trust options for Office Add-ins
 description: How to disable trust prompts for users without installed add-ins and how to use group policies for protocol handler trust in the registry when launching add-ins.
 ms.topic: how-to
-ms.date: 09/22/2025
+ms.date: 09/24/2025
 ms.localizationpriority: medium
 ---
 
@@ -30,14 +30,14 @@ Office.context.document.settings.saveAsync();
 This setting is saved in the document's OOXML metadata. When enabled, it prevents trust prompts in all the scenarios listed earlier in this section. This provides a better experience for users who don't need the add-in.
 
 > [!IMPORTANT]
-> This setting applies to Office on Windows only.
+> This setting only applies to Office on Windows and Mac.
 
 ## Trust custom protocol handlers to launch add-ins
 
 Let your Office Add-in launch from a custom protocol handler (like `mailto:` or your own scheme) without prompting users for consent. This is useful when you want a seamless experience for users, or when your organization needs to centrally manage which add-ins launch from which protocols.
 
 > [!IMPORTANT]
-> This article applies to Windows only. Support for this feature starts with Office Version 2408 (Build 17928.20018).
+> This section applies to Windows only. Support for this feature starts with Office Version 2408 (Build 17928.20018).
 
 ### How protocol handler trust works
 
