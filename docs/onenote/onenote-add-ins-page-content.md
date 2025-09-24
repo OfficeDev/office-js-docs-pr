@@ -1,7 +1,7 @@
 ---
 title: Work with OneNote page content
 description: Learn how to work with OneNote page content using the JavaScript API.
-ms.date: 03/19/2019
+ms.date: 09/24/2025
 ms.localizationpriority: medium
 ---
 
@@ -45,12 +45,11 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 > [!NOTE]
 > Importing HTML into OneNote consolidates whitespace. The resulting content is pasted into one outline.
 
-OneNote does its best to translate HTML into page content while ensuring security for users. HTML and CSS standards do not exactly match OneNote's content model, so there will be differences in appearances, particularly with CSS stylings. We recommend using the JavaScript objects if specific formatting is needed.
+OneNote does its best to translate HTML into page content while ensuring security for users. HTML and CSS standards don't exactly match OneNote's content model, so there will be differences in appearance, particularly with CSS styling. We recommend using the JavaScript objects if specific formatting is needed.
 
-## Accessing page contents
+## Access page contents
 
-You are only able to access *Page Content* via `Page#load` for the currently
-active page. To change the active  page, invoke `navigateToPage($page)`.
+You can only access *Page Content* via `Page#load` for the currently active page. To change the active page, invoke `navigateToPage($page)`.
 
 Metadata such as title can still be queried for any page.
 
