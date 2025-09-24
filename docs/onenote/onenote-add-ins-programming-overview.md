@@ -29,7 +29,7 @@ Office Add-ins have two main components:
 
 Add-ins use the runtime context of the Office application to access the JavaScript API. The API has two layers:
 
-- A **application-specific API** for OneNote-specific operations, accessed through the `Application` object.
+- An **application-specific API** for OneNote-specific operations, accessed through the `Application` object.
 - A **Common API** that's shared across Office applications, accessed through the `Document` object.
 
 ### Access the application-specific API through the *Application* object

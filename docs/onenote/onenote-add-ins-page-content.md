@@ -47,7 +47,8 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 
 OneNote does its best to translate HTML into page content while ensuring security for users. HTML and CSS standards don't exactly match OneNote's content model, so there will be differences in appearance, particularly with CSS styling. We recommend using the JavaScript objects if specific formatting is needed.
 
-## Access page contents
+## Access page content
+
 
 You can only access *Page Content* via `Page#load` for the currently active page. To change the active page, invoke `navigateToPage($page)`.
 
