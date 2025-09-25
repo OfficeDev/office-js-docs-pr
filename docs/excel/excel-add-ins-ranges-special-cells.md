@@ -31,11 +31,9 @@ getSpecialCells(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCe
 getSpecialCellsOrNullObject(cellType: Excel.SpecialCellType, cellValueType?: Excel.SpecialCellValueType): Excel.RangeAreas;
 ```
 
-The following code sample uses `getSpecialCells` to find all cells with formulas.
+The following code sample uses `getSpecialCells` to find all cells with formulas. Please note:
 
-Key points:
-
-- Restrict the search scope for better performance by calling `worksheet.getUsedRange()` first.
+- The search scope is restricted for better performance by calling `worksheet.getUsedRange()` first.
 - `getSpecialCells` returns a single `RangeAreas` object, so non‑contiguous matches can be formatted in one operation.
 
 ```js
@@ -132,8 +130,7 @@ await Excel.run(async (context) => {
 ## Next steps
 
 - Combine special-cell queries with [string search](excel-add-ins-ranges-string-match.md) for richer auditing.
-- Apply formatting, comments, or data validation to the resulting `RangeAreas`.
-- Chain with [work with multiple ranges](excel-add-ins-multiple-ranges.md) to process disjoint areas efficiently.
+- Apply formatting, comments, or data validation to the resulting [RangeAreas](excel-add-ins-multiple-ranges.md) to process disjoint areas efficiently.
 
 ## See also
 

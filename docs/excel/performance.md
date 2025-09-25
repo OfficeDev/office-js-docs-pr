@@ -12,7 +12,7 @@ Write faster, more scalable Excel add-ins by minimizing processes, batching func
 
 ## Quick improvements
 
-Apply these strategies first for the largest immediate impact:
+Apply these strategies first for the largest immediate impact.
 
 - Batch loads and writes: group property `load` calls, then make a single `context.sync()`.
 - Minimize object creation: operate on block ranges instead of many single-cell ranges.
@@ -260,7 +260,7 @@ async function run() {
 
 - Review [Resource limits and performance optimization](../concepts/resource-limits-and-performance-optimization.md) for host-level constraints.
 - Explore [Working with multiple ranges](excel-add-ins-multiple-ranges.md) to create fewer objects.
-- Add telemetry (operation durations, row counts) to guide further performance optimization.
+- Add telemetry for data such as operation durations and row counts to guide further performance optimization.
 
 ## See also
 

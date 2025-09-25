@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Add data validation to Excel ranges
 
-Use the Excel JavaScript API to enforce data quality. Apply rules and rely on Excel’s validation UI for prompts and error alerts. This article shows how to define rule types, configure prompts and error alerts, and remove or adjust validation. If you need background on Excel’s built-in validation UI, review these end-user articles:
+Use the Excel JavaScript API to enforce data quality. Apply rules and rely on Excel’s validation UI for prompts and error alerts. This article shows how to define rule types, configure prompts and error alerts, and remove or adjust validation. If you need background on Excel’s built-in validation UI, review these articles.
 
 - [Apply data validation to cells](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249)
 - [More on data validation](https://support.microsoft.com/office/f38dee73-9900-4ca6-9301-8a5f6e1f0c4c)
@@ -15,7 +15,7 @@ Use the Excel JavaScript API to enforce data quality. Apply rules and rely on Ex
 
 ## Programmatic control of data validation
 
-The `Range.dataValidation` property, which takes a [DataValidation](/javascript/api/excel/excel.datavalidation) object, is the entry point for programmatic control of data validation in Excel. The object exposes five properties:
+The `Range.dataValidation` property, which takes a [DataValidation](/javascript/api/excel/excel.datavalidation) object, is the entry point for programmatic control of data validation in Excel. The object has five properties:
 
 - `rule` &#8212; Defines what constitutes valid data for the range. See [DataValidationRule](/javascript/api/excel/excel.datavalidationrule).
 - `errorAlert` &#8212; Specifies whether an error pops up if the user enters invalid data, and defines the alert text, title, and style such as `information`, `warning`, and `stop`. See [DataValidationErrorAlert](/javascript/api/excel/excel.datavalidationerroralert).
@@ -155,7 +155,7 @@ await Excel.run(async (context) => {
 
 ## Create validation error alerts
 
-Create an error alert to guide the user when invalid data is entered. The following is an example. Key points:
+Create an error alert to guide the user when invalid data is entered. The following example creates a basic alert. Key points:
 
 - The `style` property determines whether the user gets an informational alert, a warning, or a "stop" alert. Only `stop` actually prevents the user from adding invalid data. The pop-ups for `warning` and `information` have options that allow the user enter the invalid data anyway.
 - The `showAlert` property defaults to `true`. This means that Excel will pop-up a generic alert (of type `stop`) unless you create a custom alert which either sets `showAlert` to `false` or sets a custom message, title, and style. This code sets a custom message and title.
@@ -182,7 +182,7 @@ For more information, see [DataValidationErrorAlert](/javascript/api/excel/excel
 
 ## Create validation prompts
 
-Create an instructional prompt that appears when the user selects the cell. Example:
+Create an instructional prompt that appears when the user selects the cell. This example tells the user about the positive number validation before they enter data.
 
 ```js
 await Excel.run(async (context) => {

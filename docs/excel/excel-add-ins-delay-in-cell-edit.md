@@ -7,15 +7,15 @@ ms.localizationpriority: medium
 
 # Delay execution while cell is being edited
 
-When a user is actively editing a cell, some operations your add-in starts may fail immediately. Use the `delayForCellEdit` option to queue the batch until the user exits cell edit mode instead of throwing an error.
+When a user is actively editing a cell, some add-in operations may fail immediately. Use the `delayForCellEdit` option to queue the batch until the user exits cell edit mode instead of throwing an error.
 
-`Excel.run` has an overload that takes an [Excel.RunOptions](/javascript/api/excel/excel.runoptions) object. It supports the following property relevant to this scenario:
+`Excel.run` has an overload that takes an [Excel.RunOptions](/javascript/api/excel/excel.runoptions) object. It supports the following property relevant to this scenario.
 
-- `delayForCellEdit`: When `true`, Excel queues the batch until the user exits cell edit mode. When `false`, the batch fails immediately if the user is editing. If omitted, the default value is `false`.
+- `delayForCellEdit`: When `true`, Excel queues the batch until the user exits cell edit mode. When `false`, the batch fails immediately if the user is editing. The default value is `false`.
 
 ## Behavior comparison
 
-| User editing? | delayForCellEdit = false (default) | delayForCellEdit = true |
+| User editing? | `delayForCellEdit = false` (default) | `delayForCellEdit = true` |
 |---------------|------------------------------------|--------------------------|
 | No | Batch runs immediately | Batch runs immediately |
 | Yes | Batch fails (`InvalidOperation` error) | Batch waits; then runs after edit is committed or canceled |
@@ -35,7 +35,7 @@ await Excel.run({ delayForCellEdit: true }, async (context) => {
 
 - Use `delayForCellEdit` only when user-initiated commands may overlap active cell editing, such as with a ribbon button that triggers a bulk update.
 - Consider showing a status indicator in your add-in if queued work may be lengthy.
-- Avoid chaining multiple long-running delayed batches. Queue depth can create a perceived lag for your add-in users.
+- Avoid chaining multiple long-running delayed batches. This creates a perceived lag for your users.
 
 ## Next steps
 

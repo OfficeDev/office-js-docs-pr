@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Work with multiple ranges simultaneously in Excel add-ins
 
-You can apply operations or set properties on several ranges at once, even if they're not contiguous. This keeps code shorter and often runs faster than looping each range separately.
+You can apply operations or set properties on several ranges at once, even if they're not contiguous. This makes code shorter and more efficient when compared to accessing each range separately.
 
 ## Key points
 
@@ -164,11 +164,11 @@ await Excel.run(async (context) => {
 });
 ```
 
-If values differ, keep these simple rules in mind:
+Since property values can differ, keep these simple rules in mind.
 
-- A Boolean is `true` only if all ranges are true, otherwise it's `false`.
-- Other properties are `null` unless all ranges share the same value. (`address` is excluded from this rule.)
+- Boolean properties are `true` only if they're true in all ranges, otherwise they're `false`.
 - `address` always returns the comma-delimited addresses string.
+- Other properties are `null` unless all ranges share the same value.
 
 For example, the following code creates a `RangeAreas` in which only one range is an entire column and only one is filled with pink. The console will show `null` for the fill color, `false` for the `isEntireRow` property, and "Sheet1!F3:F5, Sheet1!H:H" (assuming the sheet name is "Sheet1") for the `address` property.
 

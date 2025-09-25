@@ -12,10 +12,10 @@ Use these patterns to read or write large ranges, while avoiding resource limit 
 
 ## Key points
 
-- Don't load or write everything at once. Split big ranges into smaller blocks.
+- Split big ranges into smaller blocks. Don't load or write everything at once.
 - Load only what you need (for example, just `values` instead of `values,numberFormat,formulas`).
 - Choose row blocks or column blocks based on data shape.
-- Use `RangeAreas` to work with scattered cells instead of looping each range.
+- Use `getSpecialCells` and `RangeAreas` to work with scattered cells instead of a large range.
 - If you hit a limit error, retry with a smaller block size.
 - Apply formatting after the data is in place.
 
@@ -27,7 +27,7 @@ Use these patterns to read or write large ranges, while avoiding resource limit 
 | Writing a large result set | Single `values` write fails | Write in row blocks (with same column count for each block). |
 | Sparse updates | Many distant cells | Build combined address string with `getRanges` and `RangeAreas`. |
 | Growing table | Don't know final size | Use `getUsedRange()` then step through new rows until empty. |
-| Mixed data and formatting | Formatting slows writes | Write values first, format afterward. |
+| Writing data and formatting | Formatting slows Excel | Write values first, format afterward. |
 
 ## Defer formatting & calculations
 
