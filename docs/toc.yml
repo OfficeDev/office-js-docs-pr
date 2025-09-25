@@ -479,7 +479,7 @@ items:
     - name: Maintain your Office Add-in
       href: publish/maintain-breaking-changes.md
     - name: Trust custom protocol handlers to launch add-ins
-      href: publish/custom-protocol-handler.md
+      href: publish/manage-trust-options.md
 
 - name: Excel
   items: 
