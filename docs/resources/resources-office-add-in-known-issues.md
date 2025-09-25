@@ -65,7 +65,7 @@ We're currently working on a fix.
 
 #### Resolution summary
 
-Outlook users experienced loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicated that this is a server-side performance issue that affected rendering of all inline images. Attempting to send messages while the images are not yet loaded results in the following dialog box.
+Outlook users experienced loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicated that this was a server-side performance issue that affected rendering of all inline images. Attempting to send messages while the images weren't loaded resulted in the following dialog box.
 
  ![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
 
