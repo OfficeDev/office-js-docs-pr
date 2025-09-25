@@ -34,9 +34,9 @@ To play a video in a dialog box with the Office dialog API, follow these steps.
     </iframe>
     ```
 
-2. Call `displayDialogAsync` in the host page to open "video.dialogbox.html".
+1. Call `displayDialogAsync` in the host page to open "video.dialogbox.html".
 
-3. Handle dialog close events (optional). If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see [Errors and events in the Office dialog box](dialog-handle-errors-events.md).
+1. Handle dialog close events (optional). If your add-in needs to know when the user closes the dialog box, register a handler for the `DialogEventReceived` event and handle the 12006 event. For details, see [Errors and events in the Office dialog box](dialog-handle-errors-events.md).
 
 ## See it in action
 
