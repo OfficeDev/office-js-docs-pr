@@ -10,13 +10,10 @@ ms.localizationpriority: medium
 
 Use these patterns to read or write large ranges, while avoiding resource limit errors.
 
-## Key points
-
 - Split big ranges into smaller blocks. Don't load or write everything at once.
 - Load only what you need (for example, just `values` instead of `values,numberFormat,formulas`).
-- Choose row blocks or column blocks based on data shape.
 - Use `getSpecialCells` and `RangeAreas` to work with scattered cells instead of a large range.
-- If you hit a limit error, retry with a smaller block size.
+- If you encounter a limit error, retry with a smaller block size.
 - Apply formatting after the data is in place.
 
 ## When to split a large range
@@ -26,7 +23,6 @@ Use these patterns to read or write large ranges, while avoiding resource limit 
 | Reading millions of cells | Timeout or resource error | Read in row or column blocks. Start with 5k–20k rows. |
 | Writing a large result set | Single `values` write fails | Write in row blocks (with same column count for each block). |
 | Sparse updates | Many distant cells | Build combined address string with `getRanges` and `RangeAreas`. |
-| Growing table | Don't know final size | Use `getUsedRange()` then step through new rows until empty. |
 | Writing data and formatting | Formatting slows Excel | Write values first, format afterward. |
 
 ## Defer formatting & calculations
@@ -34,23 +30,8 @@ Use these patterns to read or write large ranges, while avoiding resource limit 
 Formatting and calculation-heavy operations, such as conditional formats or formula writes, add time on large areas. Consider:
 
 - First write raw values (plain numbers or text), then add formulas or formats in a second pass.
-- Use `setDirty()` only on necessary recalculation scopes.
-- Limit conditional formats to used rows instead of entire column references (such as `A2:A5000` instead of `A:A`).
-
-## Handling conditional formatting on large data
-
-Avoid applying conditional formatting to entire columns if only part of the column has data. Find the used range and apply the rule there:
-
-```js
-await Excel.run(async (context) => {
-  const sheet = context.workbook.worksheets.getActiveWorksheet();
-  const usedRange = sheet.getUsedRange();
-  usedRange.load("address");
-  await context.sync();
-  const formattedRange = sheet.getRange(usedRange.address.split("!")[1]);
-  // Apply formatting rules to formattedRange instead of whole columns.
-});
-```
+- Use `setDirty` only on necessary recalculation scopes.
+- Limit conditional formats to used rows instead of entire column references (such as `A2:A5000` instead of `A:A`) with `getUsedRange`.
 
 ## Next steps
 

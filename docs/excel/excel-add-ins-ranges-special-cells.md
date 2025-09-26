@@ -130,7 +130,7 @@ await Excel.run(async (context) => {
 ## Next steps
 
 - Combine special-cell queries with [string search](excel-add-ins-ranges-string-match.md) for richer auditing.
-- Apply formatting, comments, or data validation to the resulting [RangeAreas](excel-add-ins-multiple-ranges.md) to process disjoint areas efficiently.
+- Apply formatting, comments, or data validation to the resulting [RangeAreas](excel-add-ins-multiple-ranges.md) object.
 
 ## See also
 

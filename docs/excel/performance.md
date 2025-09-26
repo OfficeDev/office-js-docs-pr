@@ -74,7 +74,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-Only formula calculations are suspended. Structural updates, such as renaming a worksheet, still occur.
+Only formula calculations are suspended. Any altered references are still rebuilt. For example, renaming a worksheet still updates any references in formulas to that worksheet.
 
 ### Suspend screen updating
 
@@ -128,9 +128,9 @@ The Excel JavaScript API has size limitations for API calls. **Excel on the web*
 
 The payload size of a request combines:
 
-- The number of API calls
-- The number of objects, such as `Range` objects
-- The length of the value to set or get
+- The number of API calls.
+- The number of objects, such as `Range` objects.
+- The length of the value to set or get.
 
 If you get `RequestPayloadSizeLimitExceeded`, apply the following strategies to reduce size before you split operations.
 

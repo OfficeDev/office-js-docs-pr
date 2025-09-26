@@ -15,7 +15,6 @@ You can apply operations or set properties on several ranges at once, even if th
 - A property is `null` unless all member ranges share the same value.
 - Set a property once on the `RangeAreas` object instead of looping, unless each range needs different logic.
 - Avoid large `RangeAreas` objects made of many single cells. Narrow first with `getSpecialCells` or other filters.
-- Use `getSpecialCells` and `RangeAreas` to target only needed cells before formatting or validation.
 - Be careful with whole columns or rows. For more details, see [Read or write to an unbounded range](excel-add-ins-ranges-unbounded.md).
 
 ## RangeAreas

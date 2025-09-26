@@ -135,7 +135,7 @@ Use the `custom` property to specify a custom validation formula. The following 
 
 - It assumes a there is two-column table with columns **Athlete Name** and **Comments** in the A and B columns of the worksheet.
 - To reduce verbosity in the **Comments** column, the rule makes data that includes the athlete's name invalid.
-- `SEARCH(A2,B2)` returns the starting position in B2 of the string in A2. If A2 isn't contained in B2, it doesn't return a number. 
+- `SEARCH(A2,B2)` returns the starting position in B2 of the string in A2. If A2 isn't contained in B2, it doesn't return a number.
 - `ISNUMBER()` returns a boolean. So the `formula` property says that valid data for **Comments** is data that doesn't include the **Athlete Name** string.
 
 ```js
@@ -219,7 +219,7 @@ The range you clear doesn’t need to precisely match the range on which you add
 ## Next steps
 
 - Combine validation with events: [Events](excel-add-ins-events.md).
-- Add conditional formatting for stronger visual cues.
+- Add [conditional formatting](excel-add-ins-conditional-formatting.md) for stronger visual cues.
 
 ## See also
 
