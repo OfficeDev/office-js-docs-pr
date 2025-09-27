@@ -1,12 +1,12 @@
 ---
-title: Troubleshooting Excel add-ins
-description: Learn how to troubleshoot development errors in Excel add-ins.
+title: Troubleshoot Excel add-ins
+description: 'Diagnose and resolve common Excel add-in errors: workbook focus changes, API limitations, and known issues.'
 ms.date: 09/22/2025
 ms.topic: troubleshooting-error-codes
 ms.localizationpriority: medium
 ---
 
-# Troubleshooting Excel add-ins
+# Troubleshoot Excel add-ins
 
 This article discusses troubleshooting issues that are unique to Excel. Please use the feedback tool at the bottom of the page to suggest other issues that can be added to the article.
 
@@ -38,11 +38,11 @@ The following APIs are affected by this workbook switch.
 > [!NOTE]
 > This only applies to multiple Excel workbooks open on Windows or Mac.
 
-## Coauthoring
+## Coauthoring and merge conflicts
 
 See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for patterns to use with events in a coauthoring environment. The article also discusses potential merge conflicts when using certain APIs, such as [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)).
 
-## Known Issues
+## Known issues
 
 ### Binding events return temporary `Binding` objects
 
