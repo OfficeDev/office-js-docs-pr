@@ -19,14 +19,17 @@ We're currently investigating reports from Outlook users who are experiencing lo
 
 ![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
 
-Tracking ID: 678890927.
+Tracking ID: 678890927
+
 Client version: 20250822005.18
 
 #### STATUS
 
-We're still receiving isolated reports from some users regarding this previously resolved issue. While the issue has been largely mitigated, certain users in specific regions are still experiencing inline signature images loading slowly and the blocking dialog during email send. Because this stems from a server-side performance delay, the impact varies by customer and region. Those still affected may see delays when loading inline images—particularly in scenarios involving signature add-ins.  We're still actively investigating this issue with highest priority.
+We're still receiving isolated reports from some users regarding this previously resolved issue. While the issue has been largely mitigated, certain users in specific regions are still experiencing inline signature images loading slowly and the blocking dialog during email send. Because this stems from a server-side performance delay, the impact varies by customer and region. Those affected may see delays when loading inline images—particularly in scenarios involving signature add-ins. We're actively investigating this issue with highest priority.
 
 #### WORKAROUND
+
+Options:
 
 1. Remove inline images from signature.
 1. Wait for images to load before sending the file.
@@ -38,8 +41,9 @@ Numerous customers report that after updating Office from 2505 to 2507 their add
 
  ![Excel web add-in permissions error message.](../images/excel-web-add-in-permission-error.png)
 
-Tracking ID: 667052546.
-Version affected: Office Monthly Enterprise 2507.
+Tracking ID: 667052546
+
+Version affected: Office Monthly Enterprise 2507
 
 #### STATUS
 
@@ -62,8 +66,11 @@ We're currently working on a fix.
 ### Excel: Increased frequency of RichApi.Error: Error code: 0xF5320001
 
 Date reported: 09/04/2025
+
 Since late August, customers are seeing an increase of RichApi.Error 0xF532001 in their error telemetry. This error happens only when the Office.ribbon.requestUpdate API is called immediately after Office.ribbon.requestCreateControls is called.
+
 Tracking ID: 10529994
+
 GitHub issue: [Increased frequency of RichApi.Error code 0xF5320001](https://github.com/OfficeDev/office-js/issues/6072)
 
 #### STATUS
@@ -71,6 +78,8 @@ GitHub issue: [Increased frequency of RichApi.Error code 0xF5320001](https://git
 We're currently working on a fix.
 
 #### WORKAROUND
+
+Options:
 
 1. When you make the initial call requestCreateControls, include the enabled/disabled state, if known. Instead of making two calls one right after the other, do it in one call.
 1. Roll back Office from version 2508 to 2507.
@@ -80,12 +89,16 @@ We're currently working on a fix.
 ### Excel: RichApi.Error code 0x8002802B known as hrNotFound is occuring more frequently when not expected
 
 Date reported: 09/17/2025
+
 Users might experience failures when executing Excel grid operations initiated through add-in commands on the ribbon or context menu. This issue occurs primarily when users have Custom Functions.
 Platform affected: Windows Desktop
 
 #### STATUS
 
 Date fixed: 09/26/2025
+
 Users should upgrade Excel to 2508 (19127.20264) or later for the fix.
 
-For more information about resolved issues in Office Add-ins, see the [Office-js closed issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed).
+### See also
+
+- For more information about resolved issues in Office Add-ins, see the [Office-js closed issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed).
