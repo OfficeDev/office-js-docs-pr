@@ -1,5 +1,5 @@
 ---
-ms.date: 09/09/2022
+ms.date: 09/19/2025
 description: Batch custom functions together to reduce network calls to a remote service.
 title: Batching custom function calls for a remote service
 ms.topic: best-practice
@@ -8,9 +8,18 @@ ms.localizationpriority: medium
 
 # Batch custom function calls for a remote service
 
-If your custom functions call a remote service you can use a batching pattern to reduce the number of network calls to the remote service. To reduce network round trips you batch all the calls into a single call to the web service. This is ideal when the spreadsheet is recalculated.
+Use batching to group calls to a remote service into one network request. This cuts down the number of trips to your remote service and helps the worksheet finish recalculating faster.
 
-For example, if someone used your custom function in 100 cells in a spreadsheet, and then recalculated the spreadsheet, your custom function would run 100 times and make 100 network calls. By using a batching pattern, the calls can be combined to make all 100 calculations in a single network call.
+## Key points
+
+- Several calls can be combined into one request that runs every short interval (for example, about 100 ms).
+- Each function call gets a `Promise` that is resolved when the single combined response returns.
+- Shorter intervals show results sooner but send more requests. Slightly longer intervals reduce traffic.
+- Map errors back to the specific call so one failure does not hide others.
+- Set a reasonable maximum number of items per batch (for example, 500) to keep the request size safe.
+- Cache recent results if many calls use the same inputs.
+
+Example scenario: 100 cells call the custom function. Instead of 100 network requests, you send one request that lists all 100 operations and then return 100 answers.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -176,7 +185,7 @@ Add the following code to your **functions.js** or **functions.ts** file.
 
 ```javascript
 // This function simulates the work of a remote service. Because each service
-// differs, you will need to modify this function appropriately to work with the service you are using. 
+// differs, you will need to modify this function appropriately to work with the service you are using.
 // This function takes a batch of argument sets and returns a promise that may contain a batch of values.
 // NOTE: When implementing this function on a server, also apply an appropriate authentication mechanism
 //       to ensure only the correct callers can access it.
@@ -231,6 +240,18 @@ To modify the `_fetchFromRemoteService` function to run in your live remote serv
 - Modify the function to perform the operations (or call functions that do the operations).
 - Apply an appropriate authentication mechanism. Ensure that only the correct callers can access the function.
 - Place the code in the remote service.
+
+## When to avoid batching
+
+Batching adds a small delay and some extra code. Avoid batching in the following scenarios.
+
+| Scenario | Negative impact of batching | Recommendation |
+|----------|-------------------|----------------|
+| Single or very few calls | Extra wait for timer | Call service directly if list is still empty |
+| Very large input data per call | Request might get too large | Limit size or send those calls alone |
+| Some calls are much slower than others | One slow call delays faster ones | Group slow types separately |
+| Need near‑instant result (less than 50 ms) | Timer adds delay | Use a shorter timer or skip batching |
+| Server already combines work | No benefit | Skip batching on the client |
 
 ## Next steps
 
