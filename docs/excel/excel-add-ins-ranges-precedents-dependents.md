@@ -1,17 +1,26 @@
 ---
 title: Work with formula precedents and dependents using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to retrieve formula precedents and dependents.
-ms.date: 05/30/2024
+ms.date: 09/22/2025
 ms.localizationpriority: medium
 ---
 
 # Get formula precedents and dependents using the Excel JavaScript API
 
-Excel formulas often contain references to other cells in the same worksheet or workbook. These cross-cell references are known as "precedents" and "dependents". A precedent is a cell that provides data to a formula. A dependent is a cell that contains a formula which refers to other cells. To learn more about features in the Excel UI related to precedents and dependents, such as **Trace Precedents** and **Trace Dependents**, see [Display the relationships between formulas and cells](https://support.microsoft.com/office/a59bef2b-3701-46bf-8ff1-d3518771d507).
+Excel formulas often refer to other cells. Those input cells are the formula's "precedents". Any formula cell that depends on other cells is a "dependent" of those cells. To learn more about the related Excel UI features, see [Display the relationships between formulas and cells](https://support.microsoft.com/office/a59bef2b-3701-46bf-8ff1-d3518771d507).
 
-A precedent cell may have its own precedent cells. Every precedent cell in this chain of precedents is still a precedent of the original cell. The same relationship exists for dependents. Any cell affected by another cell is a dependent of that cell. A "direct precedent" is the first preceding group of cells in this sequence, similar to the concept of parents in a parent-child relationship. A "direct dependent" is the first dependent group of cells in a sequence, similar to children in a parent-child relationship.
+Chains of precedents and dependents can form. A precedent can itself have precedents, and so on. The same idea applies to dependents. A "direct precedent" or "direct dependent" is only the first level: the cells a formula points to, or the cells that point straight to a formula.
 
 This article provides code samples that retrieve the precedents and dependents of formulas using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range).
+
+## Key points
+
+- Use `getPrecedents` or `getDependents` to get all related cells. Use `getDirectPrecedents` or `getDirectDependents` to get only the first level.
+- Both APIs return a `WorkbookRangeAreas` object. It groups addresses by worksheet. Look in each `areas.items` list for the individual `Range` objects.
+- Very large sets, such as thousands of cells, can be slow. Start with the direct methods or narrow the selection first.
+- These APIs do not cross workbook boundaries.
+- If there are no related cells, an `ItemNotFound` error is thrown. Catch it and show a friendly message.
+- If you highlight cells, give users a way to clear the formatting.
 
 ## Get the precedents of a formula
 
@@ -65,7 +74,7 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> The `Range.getPrecedents` and `Range.getDirectPrecedents` methods return an `ItemNotFound` error if no precedent cells are found.
+> The `Range.getPrecedents` and `Range.getDirectPrecedents` methods return an `ItemNotFound` error if no precedent cells are found. Catch this and provide a user-friendly message.
 
 ## Get the dependents of a formula
 
@@ -119,7 +128,7 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> The `Range.getDependents` and `Range.getDirectDependents` methods return an `ItemNotFound` error if no dependent cells are found.
+> The `Range.getDependents` and `Range.getDirectDependents` methods return an `ItemNotFound` error if no dependent cells are found. Catch this and provide a user-friendly message.
 
 ## See also
 

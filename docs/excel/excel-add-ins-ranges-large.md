@@ -1,28 +1,47 @@
 ---
 title: Read or write to large ranges using the Excel JavaScript API
-description: Learn how to read or write to large ranges with the Excel JavaScript API.
-ms.date: 04/02/2021
+description: Learn strategies to efficiently read or write large Excel ranges with the Excel JavaScript API, without hitting resource limits.
+ms.date: 09/22/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
 # Read or write to a large range using the Excel JavaScript API
 
-This article describes how to handle reading and writing to large ranges with the Excel JavaScript API.
+Use these patterns to read or write large ranges, while avoiding resource limit errors.
 
-## Run separate read or write operations for large ranges
+- Split big ranges into smaller blocks. Don't load or write everything at once.
+- Load only what you need (for example, just `values` instead of `values,numberFormat,formulas`).
+- Use `getSpecialCells` and `RangeAreas` to work with scattered cells instead of a large range.
+- If you encounter a limit error, retry with a smaller block size.
+- Apply formatting after the data is in place.
 
-If a range contains a large number of cells, values, number formats, or formulas, it may not be possible to run API operations on that range. The API will always make a best attempt to run the requested operation on a range (i.e., to retrieve or write the specified data), but attempting to perform read or write operations for a large range may result in an API error due to excessive resource utilization. To avoid such errors, we recommend that you run separate read or write operations for smaller subsets of a large range, instead of attempting to run a single read or write operation on a large range.
+## When to split a large range
 
-For details on the system limitations, see the "Excel add-ins" section of [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins).
+| Scenario | Sign you should split the range | Approach |
+|----------|----------------------|----------|
+| Reading millions of cells | Timeout or resource error | Read in row or column blocks. Start with 5k–20k rows. |
+| Writing a large result set | Single `values` write fails | Write in row blocks (with same column count for each block). |
+| Sparse updates | Many distant cells | Build combined address string with `getRanges` and `RangeAreas`. |
+| Writing data and formatting | Formatting slows Excel | Write values first, format afterward. |
 
-### Conditional formatting of ranges
+## Defer formatting & calculations
 
-Ranges can have formats applied to individual cells based on conditions. For more information about this, see [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md).
+Formatting and calculation-heavy operations, such as conditional formats or formula writes, add time on large areas. Consider:
+
+- First write raw values (plain numbers or text), then add formulas or formats in a second pass.
+- Use `setDirty` only on necessary recalculation scopes.
+- Limit conditional formats to used rows instead of entire column references (such as `A2:A5000` instead of `A:A`) with `getUsedRange`.
+
+## Next steps
+
+- Learn about related [resource limits and performance optimization](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins).
+- Handle large but sparse selections with [multiple ranges](excel-add-ins-multiple-ranges.md).
+- Compare with patterns for [unbounded ranges](excel-add-ins-ranges-unbounded.md).
+- Explore special cell targeting in [find special cells](excel-add-ins-ranges-special-cells.md).
 
 ## See also
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
-- [Read or write to an unbounded range using the Excel JavaScript API](excel-add-ins-ranges-unbounded.md)
-- [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)
+- [Apply conditional formatting to Excel ranges](excel-add-ins-conditional-formatting.md)
