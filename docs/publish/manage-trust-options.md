@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Managing trust options for Office Add-ins
 
-Office trust prompts help protect users by asking for consent before add-ins access their documents or launch from external protocols. While these security measures are important, there are scenarios where you want to not prompt users to improve their experiences. This article covers how to disable trust prompts when the related add-in is not installed and how to configure protocol handler trust policies.
+Office trust prompts help protect users by asking for consent before add-ins access their documents or launch from external protocols. While these security measures are important, there are scenarios where you don't want to prompt users to improve their experiences. This article covers how to disable trust prompts when the related add-in is not installed and how to configure protocol handler trust policies.
 
 ## Disable trust prompts for add-ins that aren't installed
 
