@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 09/26/2025
+ms.date: 09/29/2025
 ms.localizationpriority: medium
 ---
 
@@ -35,7 +35,7 @@ Options:
 1. Wait for images to load before sending the file.
 1. Switch to classic Outlook for Windows or Outlook for Mac.
 
-### Excel: Centrally deployed add-in error "You don't have permission to use this add-in"
+### Centrally deployed add-in error "You don't have permission to use this add-in"
 
 Numerous customers report that after updating Office from 2505 to 2507 their add-in will not load and an error is displayed "You don't have permission to use this add-in. Contact your system administrator." Any add-in may reproduce this issue; it is not specific to a single add-in.
 
@@ -51,17 +51,17 @@ We're currently working on a fix.
 
 #### WORKAROUND
 
-**Option 1: Use a previous version of Office**
-
-1. Roll back Office to version 2505.
-
-**Option 2: Refresh admin-managed add-ins**
+**Option 1: Refresh admin-managed add-ins**
 
 1. Select **Home** > **Add-ins** in the ribbon.
 1. Select **More add-ins**.
 1. Go to the **Admin Managed** tab.
 1. Select the **Refresh** button in top right.
 1. The add-in should reappear. Open it to reload the add-in.
+
+**Option 2: Use a previous version of Office**
+
+1. Roll back Office to version 2505.
 
 ### Excel: Increased frequency of RichApi.Error: Error code: 0xF5320001
 
