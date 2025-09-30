@@ -1,25 +1,37 @@
 ---
 title: Excel JavaScript API performance optimization
-description: Optimize Excel add-in performance using the JavaScript API.
-ms.date: 09/03/2025
+description: Optimize Excel add-in performance using the Excel JavaScript API with batching, fewer objects, and reduced payload size.
+ms.date: 09/19/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
 # Performance optimization using the Excel JavaScript API
 
-There are multiple ways that you can perform common tasks with the Excel JavaScript API. You'll find significant performance differences between various approaches. This article provides guidance and code samples to show you how to perform common tasks efficiently using Excel JavaScript API.
+Write faster, more scalable Excel add-ins by minimizing processes, batching functions, and reducing payload size. This article shows patterns, anti-patterns, and code samples to help you optimize common operations.
+
+## Quick improvements
+
+Apply these strategies first for the largest immediate impact.
+
+- Batch loads and writes: group property `load` calls, then make a single `context.sync()`.
+- Minimize object creation: operate on block ranges instead of many single-cell ranges.
+- Write data in arrays, then assign once to a target range.
+- Suspend screen updating or calculation only around large changes.
+- Avoid per-iteration `Excel.run` or `context.sync()` inside loops.
+- Reuse worksheet, table, and range objects instead of re-querying inside loops.
+- Keep payloads below size limits by chunking or aggregating before assignment.
 
 > [!IMPORTANT]
 > Many performance issues can be addressed through recommended usage of `load` and `sync` calls. See the "Performance improvements with the application-specific APIs" section of [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md#performance-improvements-with-the-application-specific-apis) for advice on working with the application-specific APIs in an efficient way.
 
 ## Suspend Excel processes temporarily
 
-Excel has a number of background tasks reacting to input from both users and your add-in. Some of these Excel processes can be controlled to yield a performance benefit. This is especially helpful when your add-in deals with large data sets.
+Excel performs background tasks that react to user input and add-in actions. Pausing selected processes can improve performance for large operations.
 
 ### Suspend calculation temporarily
 
-If you are trying to perform an operation on a large number of cells (for example, setting the value of a huge range object) and you don't mind suspending the calculation in Excel temporarily while your operation finishes, we recommend that you suspend calculation until the next `context.sync()` is called.
+If you need to update a large range (such as to assign values and then recalculate dependent formulas) and interim recalculation results aren't needed, suspend calculation temporarily until the next `context.sync()`.
 
 See the [Application Object](/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily.
 
@@ -62,22 +74,27 @@ await Excel.run(async (context) => {
 });
 ```
 
-Please note that only formula calculations are suspended. Any altered references are still rebuilt. For example, renaming a worksheet still updates any references in formulas to that worksheet.
+Only formula calculations are suspended. Any altered references are still rebuilt. For example, renaming a worksheet still updates any references in formulas to that worksheet.
 
 ### Suspend screen updating
 
-Excel displays changes your add-in makes approximately as they happen in the code. For large, iterative data sets, you may not need to see this progress on the screen in real-time. `Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates to Excel until the add-in calls `context.sync()`, or until `Excel.run` ends (implicitly calling `context.sync`). Be aware, Excel will not show any signs of activity until the next sync. Your add-in should either give users guidance to prepare them for this delay or provide a status bar to demonstrate activity.
+Excel displays changes as they occur. For large, iterative updates, suppress intermediate screen updates. `Application.suspendScreenUpdatingUntilNextSync()` pauses visual updates until the next `context.sync()` or the end of `Excel.run`. Provide your users with feedback such as status text or a progress bar, because the UI appears idle during suspension.
 
 > [!NOTE]
 > Don't call `suspendScreenUpdatingUntilNextSync` repeatedly (such as in a loop). Repeated calls will cause the Excel window to flicker.
 
 ### Enable and disable events
 
-Performance of an add-in may be improved by disabling events. A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
+You can sometimes improve performance by disabling events. A code sample showing how to enable and disable events is in the [Work with Events](excel-add-ins-events.md#enable-and-disable-events) article.
 
 ## Importing data into tables
 
-When trying to import a huge amount of data directly into a [Table](/javascript/api/excel/excel.table) object directly (for example, by using `TableRowCollection.add()`), you might experience slow performance. If you are trying to add a new table, you should fill in the data first by setting `range.values`, and then call `worksheet.tables.add()` to create a table over the range. If you are trying to write data into an existing table, write the data into a range object via `table.getDataBodyRange()`, and the table will expand automatically.
+When you import large datasets directly into a [Table](/javascript/api/excel/excel.table), such as repeatedly calling `TableRowCollection.add()`, performance can degrade. Instead, take the following approach:
+
+1. Write the entire 2D array to a range with `range.values`.
+2. Create the table over that populated range (`worksheet.tables.add()`).
+
+For existing tables, set values on `table.getDataBodyRange()` in bulk. The table expands automatically.
 
 Here is an example of this approach:
 
@@ -107,19 +124,19 @@ await Excel.run(async (context) => {
 
 ## Payload size limit best practices
 
-The Excel JavaScript API has size limitations for API calls. **Excel on the web** has a payload size limit for requests and responses of **5MB**, and an API returns a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges typically exceed both of these limitations.
+The Excel JavaScript API has size limitations for API calls. **Excel on the web** limits requests and responses to **5 MB**. The API returns a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges often exceed both limits.
 
-The payload size of a request is a combination of the following three components.
+The payload size of a request combines:
 
-* The number of API calls
-* The number of objects, such as `Range` objects
-* The length of the value to set or get
+- The number of API calls.
+- The number of objects, such as `Range` objects.
+- The length of the value to set or get.
 
-If an API returns the `RequestPayloadSizeLimitExceeded` error, use the best practice strategies documented in this article to optimize your script and avoid the error.
+If you get `RequestPayloadSizeLimitExceeded`, apply the following strategies to reduce size before you split operations.
 
 ### Strategy 1: Move unchanged values out of loops
 
-Limit the number of processes that occur within loops to improve performance. In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for` loop, because it doesn't change within that loop.
+Limit the processes inside loops to improve performance. In the following code sample, `context.workbook.worksheets.getActiveWorksheet()` can be moved out of the `for` loop because it doesn't change within that loop.
 
 ```js
 // DO NOT USE THIS CODE SAMPLE. This sample shows a poor performance strategy. 
@@ -136,7 +153,7 @@ async function run() {
 }
 ```
 
-The following code sample shows logic similar to the preceding code sample, but with an improved performance strategy. The value `context.workbook.worksheets.getActiveWorksheet()` is retrieved before the `for` loop, because this value doesn't need to be retrieved each time the `for` loop runs. Only values that change within the context of a loop should be retrieved within that loop.
+The following code sample shows similar logic but with an improved strategy. The value `context.workbook.worksheets.getActiveWorksheet()` is retrieved before the loop because it doesn't change. Only values that vary should be retrieved inside the loop.
 
 ```js
 // This code sample shows a good performance strategy.
@@ -157,14 +174,14 @@ async function run() {
 
 ### Strategy 2: Create fewer range objects
 
-Create fewer range objects to improve performance and minimize payload size. Two approaches for creating fewer range objects are described in the following article sections and code samples.
+Create fewer range objects to improve performance and reduce payload size. Two approaches follow.
 
 #### Split each range array into multiple arrays
 
 One way to create fewer range objects is to split each range array into multiple arrays, and then process each new array with a loop and a new `context.sync()` call.
 
 > [!IMPORTANT]
-> Only use this strategy if you've first determined that you're exceeding the payload request size limit. Using multiple loops can reduce the size of each payload request to avoid exceeding the 5MB limit, but using multiple loops and multiple `context.sync()` calls also negatively impacts performance.
+> Only use this strategy after you have confirmed that you exceed the payload size limit. Multiple loops reduce the size of each payload request but also add extra `context.sync()` calls and can hurt performance.
 
 The following code sample attempts to process a large array of ranges in a single loop and then a single `context.sync()` call. Processing too many range values in one `context.sync()` call causes the payload request size to exceed the 5MB limit.
 
@@ -239,9 +256,14 @@ async function run() {
 }
 ```
 
+## Next steps
+
+- Review [resource limits and performance optimization](../concepts/resource-limits-and-performance-optimization.md) for host-level constraints.
+- Explore [working with multiple ranges](excel-add-ins-multiple-ranges.md) to create fewer objects.
+- Add telemetry for data such as operation durations and row counts to guide further performance optimization.
+
 ## See also
 
-* [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-* [Error handling with the application-specific JavaScript APIs](../testing/application-specific-api-error-handling.md)
-* [Resource limits and performance optimization for Office Add-ins](../concepts/resource-limits-and-performance-optimization.md)
-* [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Error handling with the application-specific JavaScript APIs](../testing/application-specific-api-error-handling.md)
+- [Worksheet Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
