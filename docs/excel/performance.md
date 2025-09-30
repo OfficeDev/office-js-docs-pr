@@ -258,8 +258,8 @@ async function run() {
 
 ## Next steps
 
-- Review [Resource limits and performance optimization](../concepts/resource-limits-and-performance-optimization.md) for host-level constraints.
-- Explore [Working with multiple ranges](excel-add-ins-multiple-ranges.md) to create fewer objects.
+- Review [resource limits and performance optimization](../concepts/resource-limits-and-performance-optimization.md) for host-level constraints.
+- Explore [working with multiple ranges](excel-add-ins-multiple-ranges.md) to create fewer objects.
 - Add telemetry for data such as operation durations and row counts to guide further performance optimization.
 
 ## See also

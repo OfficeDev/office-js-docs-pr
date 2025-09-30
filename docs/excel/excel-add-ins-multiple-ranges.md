@@ -82,9 +82,10 @@ The `RangeAreas` type has some properties and methods that are not on the `Range
 
 ## Create RangeAreas
 
-You can create a `RangeAreas` object in two main ways:
+You can create a `RangeAreas` object in multiple ways. The following list includes some examples.
 
 - Call `Worksheet.getRanges()` and pass it a string with comma-delimited range addresses. If any range you want to include has been made into a [NamedItem](/javascript/api/excel/excel.nameditem), you can include the name, instead of the address, in the string.
+- Call `Range.getSpecialCells()` and return a `RangeAreas` object with cells of a specific type, such as cells that contain formulas, data validation, or conditional formatting.
 - Call `Workbook.getSelectedRanges()`. This method returns a `RangeAreas` representing all the ranges that are selected on the currently active worksheet.
 
 Once you have a `RangeAreas` object, you can create others using the methods on the object that return `RangeAreas` such as `getOffsetRangeAreas` and `getIntersection`.
