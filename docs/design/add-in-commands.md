@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 08/13/2025
+ms.date: 09/30/2025
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -145,21 +145,35 @@ Apply the following best practices when you develop add-in commands.
 
 - Use commands to represent a specific action with a clear and specific outcome for users. Don't combine multiple actions in a single button.
 - Provide granular actions that make common tasks within your add-in more efficient to perform. Minimize the number of steps an action takes to complete.
-- For the placement of your commands in the Office app ribbon:
-  - Place commands on an existing tab (Insert, Review, and so on) if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins manifest](../develop/add-in-manifests.md).
-  - Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office on the web or desktop) and a tab is not available in all versions (for example, the Design tab doesn't exist in Office on the web).  
-  - Place commands on a custom tab if you have more than six top-level commands.
-  - Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
-  - Don't add unnecessary buttons to increase the real estate of your add-in.
-  - Don't position a custom tab to the left of the Home tab, or give it focus by default when the document opens, unless your add-in is the primary way users will interact with the document. Giving excessive prominence to your add-in inconveniences and annoys users and administrators.
-  - If your add-in is the primary way users interact with the document and you have a custom ribbon tab, consider integrating into the tab the buttons for the Office functions that users will frequently need.
-  - If the functionality provided with a custom tab should only be available in certain contexts, use [custom contextual tabs](contextual-tabs.md). If you use custom contextual tabs, make sure to implement a [fallback experience for when your add-in runs on platforms that don't support custom contextual tabs](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-arent-supported).
-
-  > [!NOTE]
-  > Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
-
 - For all icons, follow the [icon design guidelines](add-in-icons.md).
 - Provide a version of your add-in that works on Office applications or platforms (such as iPad) that don't support commands. A single add-in manifest can be used for these versions.
+
+### Best practices for add-in commands on the ribbon
+
+The following table outlines the recommended limits for objects on an Office app ribbon.
+
+| Object | Recommended limit | Usability rationale |
+| ------ | ----------------- | ------------------- |
+| Tabs   | Seven visible tabs at a time | Prevents overwhelming users with too many options and helps them remember where commands are located. We recommend using contextual tabs to reduce clutter. |
+| Groups per tab | Six groups | Helps users scan and locate commands quickly. |
+| Commands per group | Seven commands | Decreases decision fatigue from too many options. |
+| Total commands on the ribbon | 70 visible commands | Helps users locate actions efficiently. If your add-in has more than 70 commands, we recommend implementing galleries, dropdown menus, or dialogs for overflow. |
+
+In addition to the recommended object limits, keep the following in mind when configuring add-in commands on the ribbon.
+
+- Place commands on an existing tab, such as the Insert and Review tabs, if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+- Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office on the web or desktop) and a tab isn't available in all versions.
+- Place commands on a custom tab if you have more than six top-level commands.
+- Name your group to match the name of your add-in. If you have multiple groups, name each group based on the functionality that the commands in that group provide.
+- Make sure that groups collapse gracefully when the size of the Office app window changes. While the ribbon offers dynamic resizing (see [Grouped add-in commands on the ribbon](#grouped-add-in-commands-on-the-ribbon)), you must also define group combinations for your add-in.
+- Don't add unnecessary buttons to increase the real estate of your add-in.
+- Don't position a custom tab to the left of the Home tab, or give it focus by default when the document opens, unless your add-in is the primary way users will interact with the document. Giving excessive prominence to your add-in inconveniences and annoys users and administrators.
+- If your add-in is the primary way users interact with the document and you have a custom ribbon tab, consider integrating into the tab the buttons for the Office functions that users will frequently need.
+- If the functionality provided with a custom tab should only be available in certain contexts, use [custom contextual tabs](contextual-tabs.md). If you use custom contextual tabs, make sure to implement a [fallback experience for when your add-in runs on platforms that don't support custom contextual tabs](contextual-tabs.md#implement-an-alternate-ui-experience-when-custom-contextual-tabs-arent-supported).
+- Implement a dialog to provide users with advanced options. This prevents your add-in from overloading the ribbon with rarely used commands. To learn how to implement a dialog, see [Use the Office dialog API in Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+
+> [!NOTE]
+> Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
 
 ## Next steps
 
