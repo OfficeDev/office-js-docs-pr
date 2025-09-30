@@ -150,16 +150,16 @@ Apply the following best practices when you develop add-in commands.
 
 ### Best practices for add-in commands on the ribbon
 
-The following table outlines the recommended number of objects on an Office app ribbon.
+The following table outlines the recommended limits for objects on an Office app ribbon.
 
-| Object | Recommended range | Usability rationale |
+| Object | Recommended limit | Usability rationale |
 | ------ | ----------------- | ------------------- |
-| Tabs   | Five to seven visible tabs at a time | Prevents overwhelming users with too many options and helps them remember where commands are located. We recommend using contextual tabs to reduce clutter. |
-| Groups per tab | Three to six groups | Helps users scan and locate commands quickly. |
-| Commands per group | Five to seven commands | Decreases decision fatigue from too many options. |
-| Total commands on the ribbon | About 50-70 visible commands | Helps users locate actions efficiently. If your add-in has more than 70 commands, we recommend implementing galleries, dropdown menus, or dialogs for overflow. |
+| Tabs   | Seven visible tabs at a time | Prevents overwhelming users with too many options and helps them remember where commands are located. We recommend using contextual tabs to reduce clutter. |
+| Groups per tab | Six groups | Helps users scan and locate commands quickly. |
+| Commands per group | Seven commands | Decreases decision fatigue from too many options. |
+| Total commands on the ribbon | 70 visible commands | Helps users locate actions efficiently. If your add-in has more than 70 commands, we recommend implementing galleries, dropdown menus, or dialogs for overflow. |
 
-In addition to the recommended object ranges, keep the following in mind when configuring add-in commands on the ribbon.
+In addition to the recommended object limits, keep the following in mind when configuring add-in commands on the ribbon.
 
 - Place commands on an existing tab, such as the Insert and Review tabs, if the functionality provided fits there. For example, if your add-in enables users to insert media, add a group to the Insert tab. Note that not all tabs are available across all Office versions. For more information, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 - Place commands on the Home tab if the functionality doesn't fit on another tab, and you have fewer than six top-level commands. You can also add commands to the Home tab if your add-in needs to work across Office versions (such as Office on the web or desktop) and a tab isn't available in all versions.
