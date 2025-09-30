@@ -2,7 +2,7 @@
 title: Get JavaScript IntelliSense in Visual Studio
 description: Learn how to use JSDoc to create IntelliSense for your JavaScript variables, objects, parameters, and return values.
 ms.topic: best-practice
-ms.date: 08/18/2023
+ms.date: 09/30/2025
 ms.localizationpriority: medium
 ---
 
