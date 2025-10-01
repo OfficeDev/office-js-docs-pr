@@ -14,9 +14,8 @@ Use these guidelines to understand how entire-column and entire-row addresses be
 - "Unbounded" means entire columns (like `A:F`) or entire rows (such as `2:2`).
 - Cell-level properties (like `values`, `text`, `numberFormat`, or `formulas`) come back as `null` for unbounded reads.
 - You can't set cell-level properties on an unbounded range. This returns an error.
-- Always narrow to the used cells first.
-- Use `getUsedRange()` or intersect with a bounded range to get real cells.
-- Prefer explicit bounds (like `A1:F5000`) for speed and lower memory use.
+- Narrow to the used cells first with `getUsedRange()`.
+- Prefer explicit bounds (like `A1:F5000`) for faster calculation speeds and lower memory use.
 
 The following are examples of unbounded ranges.
 
@@ -40,15 +39,6 @@ You can't set cell-level properties like `values`, `numberFormat`, or `formula` 
 let range = context.workbook.worksheets.getActiveWorksheet().getRange("A:B");
 range.values = [["Due Date"]]; // This throws an error.
 ```
-
-## Alternatives to unbounded addresses
-
-| Goal | Prefer this approach | Why |
-|------|----------------------|-----|
-| Apply style to a column in use | `getUsedRange().getIntersection(sheet.getRange("A:A"))` | Avoid formatting unused cells |
-| Add formulas to growing dataset | Write formulas only to populated rows; watch for new rows | Reduces recalculation work |
-| Read dataset sized by import | Use `usedRange` then read in pages | Known size |
-| Conditional formatting | Limit to known data rectangle | Better performance |
 
 ## Next steps
 
