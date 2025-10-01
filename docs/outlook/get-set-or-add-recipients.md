@@ -92,8 +92,7 @@ function getAllRecipients() {
     if (item.itemType === Office.MailboxEnums.ItemType.Appointment) {
         toRecipients = item.requiredAttendees;
         ccRecipients = item.optionalAttendees;
-    }
-    else {
+    } else {
         toRecipients = item.to;
         ccRecipients = item.cc;
         bccRecipients = item.bcc;
