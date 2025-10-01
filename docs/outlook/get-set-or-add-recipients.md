@@ -178,6 +178,7 @@ The [setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipien
 > In Outlook on mobile devices, be mindful of the following:
 >
 > - The `setAsync` method is supported starting in Version 4.2530.0.
+> - The `setAsync` method isn't supported when a user replies from the reply field at the bottom of a message.
 
 ```js
 let item;

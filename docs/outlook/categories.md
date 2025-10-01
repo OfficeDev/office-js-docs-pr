@@ -93,7 +93,7 @@ Office.context.mailbox.masterCategories.removeAsync(masterCategoriesToRemove, fu
 Use the item-level `item.categories` object to add, get, or remove categories on the current message or appointment.
 
 > [!IMPORTANT]
-> A category must already exist in the master list before you can apply it. For more information, see [Manage the master category list](#manage-the-master-category-list).
+> A category must already exist in the master list before you can apply it. For more information, see [Manage categories in the master list](#manage-categories-in-the-master-list).
 
 ### Add categories to an item
 
