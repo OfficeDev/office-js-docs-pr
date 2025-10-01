@@ -199,7 +199,7 @@ function setRecipients() {
     if (item.itemType === Office.MailboxEnums.ItemType.Appointment) {
         toRecipients = item.requiredAttendees;
         ccRecipients = item.optionalAttendees;
-    if (item.itemType === Office.MailboxEnums.ItemType.Appointment) {
+    } else {
         toRecipients = item.to;
         ccRecipients = item.cc;
         bccRecipients = item.bcc;
