@@ -1,34 +1,60 @@
 ---
 title: Get or set the location of an appointment in an add-in
 description: Learn how to get or set the location of an appointment in an Outlook add-in.
-ms.date: 04/12/2024
+ms.date: 10/02/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Get or set the location when composing an appointment in Outlook
 
-The Office JavaScript API provides properties and methods to manage the location of an appointment that the user is composing. Currently, there are two properties that provide an appointment's location:
+Learn how to build an Outlook add-in that effectively manages appointment locations.
 
-- [item.location](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties): Basic API that allows you to get and set the location.
-- [item.enhancedLocation](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties): Enhanced API that allows you to get and set the location, and includes specifying the [location type](/javascript/api/outlook/office.mailboxenums.locationtype). The type is `LocationType.Custom` if you set the location using `item.location`.
+## Choose the right API for your scenario
 
-The following table lists the location APIs and the modes (i.e., Compose or Read) where they are available.
+There are two APIs you can use to manage an appointment's locations.
+
+- [item.enhancedLocation](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+- [item.location](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+
+The following table compares the two location APIs to help you choose the right approach.
+
+| Feature | `enhancedLocation` API | `location` API |
+|---------|----------------|------------------------|
+| **Minimum requirement set** | [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) | [1.1](/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1) |
+| **Recommended use** | Use the [enhancedLocation API](#use-the-enhancedlocation-api) to better identify and manage locations, especially if you need to determine the [location type](/javascript/api/outlook/office.mailboxenums.locationtype). | Use the [location API](#use-the-location-api) if Outlook clients don't support requirement set 1.8 or later or if you only need basic string-based location management. |
+| **Supported input and output types** | [Office.LocationIdentifier](/javascript/api/outlook/office.locationidentifier) | String |
+| **Supported operations** | <ul><li>Get</li><li>Set</li><li>Remove</li></ul> | <ul><li>Get</li><li>Set</li></ul> |
+
+> [!TIP]
+> For guidance on how to check if an Outlook client supports a particular requirement set, see [Use APIs from later requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#use-apis-from-later-requirement-sets).
+
+## Try it out
+
+Try interactive samples to see the location APIs in action. Install the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/wa200001603) then try out the following sample snippets.
+
+- Get the location (Read) - implements the `location` API
+- Get and set the location (Appointment Organizer) - implements the `location` API
+- Manage the locations of an appointment - implements the `enhancedLocation` API
+
+To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+
+## API availability by mode
+
+The following table lists the location APIs and their availability in compose and read modes.
 
 | API | Applicable appointment modes |
 |---|---|
-| [item.location](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-location-member) | Attendee/Read |
-| [item.location.getAsync](/javascript/api/outlook/office.location#outlook-office-location-getasync-member(1)) | Organizer/Compose |
-| [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1)) | Organizer/Compose |
-| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) | Organizer/Compose,<br>Attendee/Read |
-| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | Organizer/Compose |
-| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | Organizer/Compose |
+| [item.location](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-location-member) | <ul><li>Read (Attendee)</li></ul> |
+| [item.location.getAsync](/javascript/api/outlook/office.location#outlook-office-location-getasync-member(1)) | <ul><li>Compose (Organizer)</li></ul> |
+| [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1)) | <ul><li>Compose (Organizer)</li></ul> |
+| [item.enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) | <ul><li>Read (Attendee)</li><li>Compose (Organizer)</li></ul> |
+| [item.enhancedLocation.addAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-addasync-member(1)) | <ul><li>Compose (Organizer)</li></ul> |
+| [item.enhancedLocation.removeAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-removeasync-member(1)) | <ul><li>Compose (Organizer)</li></ul> |
 
-To use the methods that are available only to compose add-ins, configure the add-in only manifest to activate the add-in in Organizer/Compose mode. See [Create Outlook add-ins for compose forms](compose-scenario.md) for more details. Activation rules aren't supported in add-ins that use a [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md).
+## Use the enhancedLocation API
 
-## Use the `enhancedLocation` API
-
-You can use the `enhancedLocation` API to get and set an appointment's location. The location field supports multiple locations and, for each location, you can set the display name, type, and conference room email address (if applicable). See [LocationType](/javascript/api/outlook/office.mailboxenums.locationtype) for supported location types.
+On Outlook clients that support requirement set 1.8 or later, use the `enhancedLocation` API to [add](#add-location), [get](#get-location), and [remove](#remove-location) locations.
 
 ### Add location
 
@@ -83,7 +109,9 @@ function callbackFunction(asyncResult) {
 ```
 
 > [!NOTE]
-> [Personal contact groups](https://support.microsoft.com/office/88ff6c60-0a1d-4b54-8c9d-9e1a71bc3023) added as appointment locations aren't returned by the [enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) method.
+>
+> - [Personal contact groups](https://support.microsoft.com/office/88ff6c60-0a1d-4b54-8c9d-9e1a71bc3023) added as appointment locations aren't returned by the [enhancedLocation.getAsync](/javascript/api/outlook/office.enhancedlocation#outlook-office-enhancedlocation-getasync-member(1)) method.
+> - If a location was added using the `item.location` API, its room type is `LocationType.Custom`.
 
 ### Remove location
 
@@ -110,9 +138,9 @@ function callbackFunction(asyncResult) {
 }
 ```
 
-## Use the `location` API
+## Use the location API
 
-You can use the `location` API to get and set an appointment's location.
+On Outlook clients that don't support requirement set 1.8 or later, use the `location` API to [get](#get-the-location) and [set](#set-the-location) locations. You can also use the `location` API on recent versions of Outlook clients if you don't need advanced features to manage multiple locations.
 
 ### Get the location
 
@@ -202,3 +230,4 @@ function write(message){
 
 - [Create your first Outlook add-in](../quickstarts/outlook-quickstart-yo.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
+- [Get and set the recurrence of appointments](get-and-set-recurrence.md)
