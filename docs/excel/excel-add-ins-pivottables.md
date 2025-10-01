@@ -13,7 +13,7 @@ Use the PivotTable APIs to summarize data, group fields, filter, and apply calcu
 
 - Four hierarchy categories: rows, columns, data, and filters.
 - Adding a hierarchy to a new category removes it from the old one.
-- `PivotLayout` gives you the output ranges (for example `getDataBodyRange`).
+- `PivotLayout` gives you the output ranges (for example, `getDataBodyRange`).
 - Filtering options: code (PivotFilters) or UI (slicers).
 - Add multiple hierarchies, then call `context.sync()` once for speed.
 
@@ -62,7 +62,7 @@ This PivotTable could be generated through the JavaScript API or through the Exc
 
 ## Create a PivotTable
 
-You provide a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`).
+Provide a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`).
 The following samples show various PivotTable creation techniques.
 
 ### Create a PivotTable with range addresses
