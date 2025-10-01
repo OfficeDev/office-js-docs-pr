@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 09/29/2025
+ms.date: 10/01/2025
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 09/26/2025_
+_Last updated October 1st, 2025_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
 
@@ -47,7 +47,13 @@ Version affected: Office Monthly Enterprise 2507
 
 #### STATUS
 
-We're currently working on a fix.
+A fix is being deployed.
+
+| Channel | Release timeline |
+| --- | --- |
+| Insiders | Available as of September 30th, 2025 |
+| Current Channel | Available to install on October 7th, 2025 |
+| Monthly Enterprise Channel | Available to install on October Patch Tuesday, October 14th, 2025 |
 
 #### WORKAROUND
 
@@ -59,15 +65,18 @@ We're currently working on a fix.
 1. Select the **Refresh** button in top right.
 1. The add-in should reappear. Open it to reload the add-in.
 
-**Option 2: Use a previous version of Office**
+**Option 2: Forced admin refresh**
 
-1. Roll back Office to version 2505.
+IT admins can force the add-ins to refresh by creating the following registry key.
+
+Key: `HKCU\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\ClearInstalledExtensions`
+Value: `DWORD = 1`
 
 ### Excel: Increased frequency of RichApi.Error: Error code: 0xF5320001
 
 Date reported: 09/04/2025
 
-Since late August, customers are seeing an increase of RichApi.Error 0xF532001 in their error telemetry. This error happens only when the Office.ribbon.requestUpdate API is called immediately after Office.ribbon.requestCreateControls is called.
+Since late August, customers are seeing an increase in `RichApi.Error 0xF532001` in their error telemetry. This error happens only when the `Office.ribbon.requestUpdate` API is called immediately after the `Office.ribbon.requestCreateControls` API is called.
 
 Tracking ID: 10529994
 
@@ -81,16 +90,17 @@ We're currently working on a fix.
 
 Options:
 
-1. When you make the initial call requestCreateControls, include the enabled/disabled state, if known. Instead of making two calls one right after the other, do it in one call.
+1. When you make the initial `requestCreateControls` call, include the enabled/disabled state, if known. Instead of making two calls one right after the other, do it in one call.
 1. Roll back Office from version 2508 to 2507.
 
 ## Recently resolved issues in Office Add-ins
 
-### Excel: RichApi.Error code 0x8002802B known as hrNotFound is occuring more frequently when not expected
+### Excel: RichApi.Error code 0x8002802B known as hrNotFound is occurring more frequently when not expected
 
 Date reported: 09/17/2025
 
 Users might experience failures when executing Excel grid operations initiated through add-in commands on the ribbon or context menu. This issue occurs primarily when users have Custom Functions.
+
 Platform affected: Windows Desktop
 
 #### STATUS
