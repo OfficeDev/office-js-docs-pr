@@ -9,7 +9,7 @@ ms.date: 10/01/2025
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
 
-Legacy Exchange Online [user identity tokens](authentication.md#exchange-user-identity-token) and [callback tokens](authentication.md#callback-tokens) are deprecated turned off across all Microsoft 365 tenants. If an Outlook add-in requires delegated user access or user identity, we recommend using MSAL (Microsoft Authentication Library) and nested app authentication.
+Legacy Exchange Online [user identity tokens](authentication.md#exchange-user-identity-token) and [callback tokens](authentication.md#callback-tokens) are deprecated and are turned off across all Microsoft 365 tenants. If an Outlook add-in requires delegated user access or user identity, we recommend using MSAL (Microsoft Authentication Library) and nested app authentication.
 
 ## General FAQ
 
@@ -19,11 +19,11 @@ Nested app authentication enables single sign-on (SSO) for applications nested i
 
 ### What is the timeline for shutting down legacy Exchange online tokens?
 
-Legacy Exchange Online tokens are turned off. If you are an admin for a tenant and were granted an exemption from Microsoft for your tenant, most of this FAQ will still apply to you. All exemptions end on October 31st, 2025. **No more exemptions are allowed**.
+Legacy Exchange Online tokens are turned off. If you're an admin for a tenant and were granted an exemption from Microsoft for your tenant, most of this FAQ will still apply to you. All exemptions end on October 31st, 2025. **No more exemptions are allowed**.
 
 ### When is NAA generally available for my channel?
 
-The general availability (GA) date for NAA depends on which channel you are using. The following table lists build and GA information for Outlook.
+The general availability (GA) date for NAA depends on which channel you're using. The following table lists build and GA information for Outlook.
 
 | Date     | NAA General Availability (GA) for Outlook |
 | -------- | ------------------------------------------------------ |
@@ -34,7 +34,7 @@ The general availability (GA) date for NAA depends on which channel you are usin
 
 ### Are COM Add-ins affected by the deprecation of legacy Exchange Online tokens?
 
-It's very unlikely any COM add-ins are affected by the deprecation of legacy Exchange Online tokens. Outlook web add-ins are primarily affected because they can use Office.js APIs that rely on Exchange tokens. For more information, see [How do i know if my outlook add in relies on legacy tokens](#how-do-i-know-if-my-outlook-add-in-relies-on-legacy-tokens). The Exchange tokens are used to access Exchange Web Services (EWS) or Outlook REST APIs, both of which are also deprecated.
+It's very unlikely any COM add-ins are affected by the deprecation of legacy Exchange Online tokens. Outlook web add-ins are primarily affected because they can use Office.js APIs that rely on Exchange tokens. For more information, see [How do I know if my Outlook add-in relies on legacy tokens?](#how-do-i-know-if-my-outlook-add-in-relies-on-legacy-tokens). The Exchange tokens are used to access Exchange Web Services (EWS) or Outlook REST APIs, both of which are also deprecated.
 
 ## Microsoft 365 administrator questions
 
@@ -87,7 +87,7 @@ If you rely on an ISV for your add-in, we recommend you contact them as soon as 
 
 ### What do I do for add-ins I can't identify?
 
-It's possible after running `Get-AuthenticationPolicy` there could be some custom add-ins for which you can't identify an owner. For those add-ins you may need to perform a scream test.
+If you come across add-ins you can’t identify after running `Get-AuthenticationPolicy`, try performing a scream test to determine ownership.
 
 > [!NOTE]
 > You only need to perform the scream test if you turned legacy Exchange Online tokens on by using the `Set-AuthenticationPolicy` command. If you haven't run this command, then Exchange Online tokens should already be off by default.
