@@ -56,7 +56,7 @@ In read mode, you can access recipients from the parent object directly, such as
 Office.context.mailbox.item.cc;
 ```
 
-The recipients are returned as an array of [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) objects. You can then determine the following information about a recipient from their corresponding `EmailAddressDetails` object:
+The recipients are returned as an array of [EmailAddressDetails](/javascript/api/outlook/office.emailaddressdetails) objects. You can then determine the following information about a recipient from their corresponding `EmailAddressDetails` object.
 
 - Display name
 - Email address
