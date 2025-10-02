@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Batch custom function calls for a remote service
 
-Use batching to group calls to a remote service into one network request. This cuts down the number of trips to your remote service and helps the worksheet finish recalculating faster.
+Use batching to group calls to a remote service into one network request. This cuts down the number of network round trips to your remote service and helps the worksheet finish recalculating faster.
 
 ## Key points
 
