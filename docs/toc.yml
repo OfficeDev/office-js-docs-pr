@@ -866,6 +866,8 @@ items:
       href: outlook/categories.md
     - name: Get or set internet headers
       href: outlook/internet-headers.md
+    - name: Get and set location
+      href: outlook/get-or-set-the-location-of-an-appointment.md
     - name: Get or set recurrence
       href: outlook/get-and-set-recurrence.md
     - name: Get or set add-in metadata
@@ -888,8 +890,6 @@ items:
         href: outlook/get-or-set-the-subject.md
       - name: Get and set times
         href: outlook/get-or-set-the-time-of-an-appointment.md
-      - name: Get and set location
-        href: outlook/get-or-set-the-location-of-an-appointment.md
       - name: Manage sensitivity labels
         href: outlook/sensitivity-label.md
       - name: Manage delivery time of a message

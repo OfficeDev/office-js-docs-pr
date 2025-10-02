@@ -1,15 +1,23 @@
 ---
 title: Read or write to an unbounded range using the Excel JavaScript API
-description: Learn how to use the Excel JavaScript API to read or write to an unbounded range.
-ms.date: 02/17/2022
+description: Understand what unbounded ranges are, why cell-level operations return null or fail, and how to safely work with entire rows or columns by narrowing scope.
+ms.date: 09/22/2025
 ms.localizationpriority: medium
 ---
 
 # Read or write to an unbounded range using the Excel JavaScript API
 
-This article describes how to read and write to an unbounded range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
+Use these guidelines to understand how entire-column and entire-row addresses behave, and apply patterns that reduce errors and memory usage. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
-An unbounded range address is a range address that specifies either entire columns or entire rows. For example:
+## Key points
+
+- "Unbounded" means entire columns (like `A:F`) or entire rows (such as `2:2`).
+- Cell-level properties (like `values`, `text`, `numberFormat`, or `formulas`) come back as `null` for unbounded reads.
+- You can't set cell-level properties on an unbounded range. This returns an error.
+- Narrow to the used cells first with `getUsedRange()`.
+- Prefer explicit bounds (like `A1:F5000`) for faster calculation speeds and lower memory use.
+
+The following are examples of unbounded ranges.
 
 - Range addresses comprised of entire columns.
   - `C:C`
@@ -20,17 +28,24 @@ An unbounded range address is a range address that specifies either entire colum
 
 ## Read an unbounded range
 
-When the API makes a request to retrieve an unbounded range (for example, `getRange('C:C')`), the response will contain `null` values for cell-level properties such as `values`, `text`, `numberFormat`, and `formula`. Other properties of the range, such as `address` and `cellCount`, will contain valid values for the unbounded range.
+When you request an unbounded range (for example, `getRange('C:C')`), the response returns `null` for cell-level properties like `values`, `text`, `numberFormat`, and `formula`. Other properties (`address`, `cellCount`) are still valid.
 
 ## Write to an unbounded range
 
-You cannot set cell-level properties such as `values`, `numberFormat`, and `formula` on an unbounded range because the input request is too large. For example, the following code example is not valid because it attempts to specify `values` for an unbounded range. The API returns an error if you attempt to set cell-level properties for an unbounded range.
+You can't set cell-level properties like `values`, `numberFormat`, or `formula` on an unbounded range because the request is too large. For example, the next code sample fails because it sets `values` for an unbounded range.
 
 ```js
-// Note: This code sample attempts to specify `values` for an unbounded range, which is not a valid request. The sample will return an error. 
-let range = context.workbook.worksheets.getActiveWorksheet().getRange('A:B');
-range.values = 'Due Date';
+// Invalid: Attempting to write cell-level data to unbounded columns.
+let range = context.workbook.worksheets.getActiveWorksheet().getRange("A:B");
+range.values = [["Due Date"]]; // This throws an error.
 ```
+
+## Next steps
+
+- Learn strategies for [large bounded ranges](excel-add-ins-ranges-large.md).
+- Combine multiple explicit ranges with [multiple ranges](excel-add-ins-multiple-ranges.md).
+- Optimize performance with [resource limits guidance](../concepts/resource-limits-and-performance-optimization.md#excel-add-ins).
+- Identify specific cells using [special cells](excel-add-ins-ranges-special-cells.md).
 
 ## See also
 
