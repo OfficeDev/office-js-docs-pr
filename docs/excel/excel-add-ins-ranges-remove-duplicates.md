@@ -1,17 +1,26 @@
 ---
 title: Remove duplicates using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to remove duplicates.
-ms.date: 02/17/2022
+ms.date: 09/22/2025
 ms.localizationpriority: medium
 ---
 
 # Remove duplicates using the Excel JavaScript API
 
-This article provides a code sample that removes duplicate entries in a range using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
+This article shows how to remove duplicate rows within a range using the [Range.removeDuplicates](/javascript/api/excel/excel.range#excel-excel-range-removeduplicates-member(1)) method. For the full list of range members, see [Excel.Range class](/javascript/api/excel/excel.range).
+
+## Key points
+
+- It works only inside the supplied `range`.
+- Column indexes are zero-based and relative to the range.
+- Set `includeHeader: true` to skip the first row when checking duplicates.
+- Empty cells count like any other value. Two empty cells can be duplicates.
+- It compares stored cell values, not formula logic.
+- It returns `RemoveDuplicatesResult` with `removed` and `uniqueRemaining` counts.
 
 ## Remove rows with duplicate entries
 
-The [Range.removeDuplicates](/javascript/api/excel/excel.range#excel-excel-range-removeduplicates-member(1)) method removes rows with duplicate entries in the specified columns. The method goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` does not affect the position of cells outside of the range.
+The `removeDuplicates` method removes rows with duplicate entries in the specified columns. The method goes through each row in the range from the lowest-valued index to the highest-valued index in the range (from top to bottom). A row is deleted if a value in its specified column or columns appeared earlier in the range. Rows in the range below the deleted row are shifted up. `removeDuplicates` doesn't affect the position of cells outside of the range.
 
 `removeDuplicates` takes in a `number[]` representing the column indices which are checked for duplicates. This array is zero-based and relative to the range, not the worksheet. The method also takes in a boolean parameter that specifies whether the first row is a header. When `true`, the top row is ignored when considering duplicates. The `removeDuplicates` method returns a `RemoveDuplicatesResult` object that specifies the number of rows removed and the number of unique rows remaining.
 
