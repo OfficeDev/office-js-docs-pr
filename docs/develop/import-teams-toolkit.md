@@ -2,13 +2,13 @@
 title: Import an add-in project to Microsoft 365 Agents Toolkit
 description: Learn how to import an add-in project to Microsoft 365 Agents Toolkit.
 ms.topic: how-to
-ms.date: 05/19/2025
+ms.date: 10/10/2025
 ms.localizationpriority: medium
 ---
 
 # Import an add-in project to Microsoft 365 Agents Toolkit
 
-The [Agents Toolkit extension for Visual Studio Code](/microsoftteams/platform/toolkit/teams-toolkit-fundamentals) is a richly featured tool for working with extensions on the Microsoft 365 developer platform, including Teams apps, Office Add-ins, and Copilot extensions, among others. It also makes it easy to work with extensions that transcend the boundaries between Teams apps, add-ins, and Copilot extensions. For example, it makes sideloading such cross-boundary extensions easier.
+The [Agents Toolkit extension for Visual Studio Code](/microsoftteams/platform/toolkit/teams-toolkit-fundamentals) is a richly featured tool for working with Apps for Microsoft 365, that is, extensions on the Microsoft 365 developer platform, including Teams apps, Office Add-ins, and Copilot extensions, among others. It also makes it easy to work with extensions that transcend the boundaries between Teams apps, add-ins, and Copilot extensions. For example, it makes sideloading such cross-boundary extensions easier.
 
 There can be no algorithmic procedure for importing an add-in into the toolkit because an algorithm would have to make assumptions about the following aspects of the project.
 
