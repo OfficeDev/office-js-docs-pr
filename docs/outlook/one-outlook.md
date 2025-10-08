@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows.
-ms.date: 09/11/2025
+ms.date: 10/09/2025
 ms.localizationpriority: medium
 ---
 

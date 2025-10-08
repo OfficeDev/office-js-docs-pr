@@ -1,17 +1,17 @@
 ---
 title: Create an encryption Outlook add-in
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
-ms.date: 09/11/2025
+ms.date: 10/09/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Create an encryption Outlook add-in
 
-Implement custom encryption and decryption functionality in an Outlook add-in to secure email communications. With the `OnMessageDecrypt` event, your add-in can provide a seamless user experience by automatically identifying encrypted messages and handling decryption, content display, and error notifications.
+Implement custom encryption and decryption functionality in an Outlook add-in to secure email communications. With the `OnMessageRead` event, your add-in can provide a seamless user experience by automatically identifying encrypted messages and handling decryption, content display, and error notifications.
 
 > [!NOTE]
-> The `OnMessageDecrypt` event and decryption APIs are in preview. Features in preview shouldn't be used in production add-ins. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the "Office Add-ins feedback" section at the end of this page).
+> The `OnMessageRead` event and decryption APIs are in preview. Features in preview shouldn't be used in production add-ins as they may change based on feedback we receive. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the "Office Add-ins feedback" section at the end of this page).
 
 ## Overview of the encryption and decryption workflows
 
@@ -25,27 +25,27 @@ The following table provides an overview of the encryption and decryption workfl
 | Step | Implementation |
 | ---- | -------------- |
 | User composes a message and uses your add-in to apply encryption rules | You must implement your own encryption protocol so that the add-in can secure the contents of the message and its attachments. |
-| User sends the message | Implement a handler for the [OnMessageSend](onmessagesend-onappointmentsend-events.md) event so that your add-in can automatically run your encryption protocol when the user selects **Send**.<br><br>To identify a message that was encrypted using your add-in during the decryption process, use the [internet headers APIs](/javascript/api/outlook/office.internetheaders) to add a header to a message. The header key must match the value specified in the `HeaderName` attribute of the [\<LaunchEvent\>](/javascript/api/manifest/launchevent?view=outlook-js-preview&preserve-view=true) element for the [OnMessageDecrypt](../develop/event-based-activation.md#outlook-events) event in the add-in's manifest. For more information, see [Implement decryption using event-based activation](#implement-decryption-using-event-based-activation). |
-| Recipient receives the encrypted message and opens it | If the recipient has the same add-in that was used to encrypt the message installed in Outlook, the add-in checks whether the header key included in the message matches the value specified for the `OnMessageDecrypt` event in the manifest. This operation is automatically done by an add-in that handles the `OnMessageDecrypt` event, so that you don't have to manually implement the check. If the headers match, the `OnMessageDecrypt` event occurs and its handler runs. For more information, see [Implement decryption using event-based activation](#implement-decryption-using-event-based-activation). |
-| Add-in decrypts the message | You must implement your own decryption protocol in the `OnMessageDecrypt` event handler. While your add-in decrypts the message and its attachments, a notification is shown to the user to alert them that their message is being processed by the add-in. This notification is automatically shown by an add-in that handles the `OnMessageDecrypt` event, so that you don't have to manually create one. |
-| Recipient views the decrypted message and its attachments, if any | Once the decryption operation is complete, a notification is automatically shown to the user to alert them that the add-in has finished processing the message. In your `OnMessageDecrypt` handler, call the [event.completed](/javascript/api/outlook/office.mailboxevent?view=outlook-js-preview&preserve-view=true#outlook-office-mailboxevent-completed-member(1)) method and pass it a [MessageDecryptEventCompletedOptions](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true) object. With the `MessageDecryptEventCompletedOptions` object, you can specify whether to display the decrypted content to the recipient. For more information, see [Implement event handling](#implement-event-handling). |
+| User sends the message | Implement a handler for the [OnMessageSend](onmessagesend-onappointmentsend-events.md) event so that your add-in can automatically run your encryption protocol when the user selects **Send**.<br><br>To identify a message that was encrypted using your add-in during the decryption process, use the [internet headers APIs](/javascript/api/outlook/office.internetheaders) to add a header to a message. The header key must match the value specified in the `HeaderName` attribute of the [\<LaunchEvent\>](/javascript/api/manifest/launchevent?view=outlook-js-preview&preserve-view=true) element for the [OnMessageRead](../develop/event-based-activation.md#outlook-events) event in the add-in's manifest. For more information, see [Implement decryption using event-based activation](#implement-decryption-using-event-based-activation). |
+| Recipient receives the encrypted message and opens it | If the recipient has the same add-in that was used to encrypt the message installed in Outlook, the add-in checks whether the header key included in the message matches the value specified for the `OnMessageRead` event in the manifest. This operation is automatically done by an add-in that handles the `OnMessageRead` event, so that you don't have to manually implement the check. If the headers match, the `OnMessageRead` event occurs and its handler runs. For more information, see [Implement decryption using event-based activation](#implement-decryption-using-event-based-activation). |
+| Add-in decrypts the message | You must implement your own decryption protocol in the `OnMessageRead` event handler. While your add-in decrypts the message and its attachments, a notification is shown to the user to alert them that their message is being processed by the add-in. This notification is automatically shown by an add-in that handles the `OnMessageRead` event, so that you don't have to manually create one. |
+| Recipient views the decrypted message and its attachments, if any | Once the decryption operation is complete, a notification is automatically shown to the user to alert them that the add-in has finished processing the message. In your `OnMessageRead` handler, call the [event.completed](/javascript/api/outlook/office.mailboxevent?view=outlook-js-preview&preserve-view=true#outlook-office-mailboxevent-completed-member(1)) method and pass it a [MessageDecryptEventCompletedOptions](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true) object. With the `MessageDecryptEventCompletedOptions` object, you can specify whether to display the decrypted content to the recipient. For more information, see [Implement event handling](#implement-event-handling). |
 
 ## Implement decryption using event-based activation
 
-While you must implement your own encryption and decryption protocols, configure your add-in to handle the `OnMessageDecrypt` event to conveniently determine when your add-in can decrypt a message and display the decrypted contents. To implement the `OnMessageDecrypt` event, you must:
+While you must implement your own encryption and decryption protocols, configure your add-in to handle the `OnMessageRead` event to conveniently determine when your add-in can decrypt a message and display the decrypted contents. To implement the `OnMessageRead` event, you must:
 
 1. [Configure the add-in's manifest](#configure-the-manifest).
 1. [Implement event handling](#implement-event-handling).
 
 ### Supported environments
 
-The `OnMessageDecrypt` event is supported on the Message Read surface. Support varies by client and Exchange environment as shown in the following table.
+The `OnMessageRead` event is supported on the Message Read surface. Support varies by client and Exchange environment as shown in the following table.
 
 | Client | Exchange Online | Exchange Subscription Edition (SE) | Exchange Server 2019 | Exchange Server 2016 |
 | ------ | --------------- | ---------------------------------- | -------------------- | -------------------- |
 | **Web browser** | Not available | Not available | Not available | Not available |
 | **Windows (new)** | Not available | Not available | Not available | Not available |
-| **Windows (classic)**<br>Version TBD (Build TBD) and later | In preview | Not available | Not available | Not available |
+| **Windows (classic)**<br>Version 2510 (Build 19312.20000) and later | In preview | Not available | Not available | Not available |
 | **Mac** | Not available | Not available | Not available | Not available |
 | **Android** | Not available | Not available | Not available | Not available |
 | **iOS** | Not available | Not available | Not available | Not available |
@@ -63,14 +63,14 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 ### Configure the manifest
 
 > [!NOTE]
-> The `OnMessageDecrypt`event can currently only be implemented with an add-in only manifest.
+> The `OnMessageRead`event can currently only be implemented with an add-in only manifest.
 
-To activate your add-in on the `OnMessageDecrypt` event, you must configure the [\<VersionOverridesV1_1\>](/javascript/api/manifest/versionoverrides-1-1-mail) node of your add-in's **manifest.xml** file as follows.
+To activate your add-in on the `OnMessageRead` event, you must configure the [\<VersionOverridesV1_1\>](/javascript/api/manifest/versionoverrides-1-1-mail) node of your add-in's **manifest.xml** file as follows.
 
 - To run an event-based add-in in classic Outlook on Windows, you must specify the JavaScript file that contains the event handler in the [\<Override\>](/javascript/api/manifest/override) child element of the [\<Runtime\>](/javascript/api/manifest/runtime) element.
-- Specify the `OnMessageDecrypt` event in the `Type` attribute of a [\<LaunchEvent\>](/javascript/api/manifest/launchevent?view=outlook-js-preview&preserve-view=true) element. You must assign the function name of the event handler to the `FunctionName` attribute of the element. To facilitate checking whether the add-in encrypted a message, a header key must be specified in the `HeaderName` attribute. The same header is added to a message that's encrypted by the add-in.
+- Specify the `OnMessageRead` event in the `Type` attribute of a [\<LaunchEvent\>](/javascript/api/manifest/launchevent?view=outlook-js-preview&preserve-view=true) element. You must assign the function name of the event handler to the `FunctionName` attribute of the element. To facilitate checking whether the add-in encrypted a message, a header key must be specified in the `HeaderName` attribute. The same header is added to a message that's encrypted by the add-in.
 
-The following is an example of a `<VersionOverrides>` node that implements the `OnMessageDecrypt` event.
+The following is an example of a `<VersionOverrides>` node that implements the `OnMessageRead` event.
 
 ```xml
 <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -95,7 +95,7 @@ The following is an example of a `<VersionOverrides>` node that implements the `
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="SoftBlock"/>
-              <LaunchEvent Type="OnMessageDecrypt" FunctionName="onMessageDecryptHandler" HeaderName="contoso-encrypted"/>
+              <LaunchEvent Type="OnMessageRead" FunctionName="onMessageReadHandler" HeaderName="contoso-encrypted"/>
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -117,10 +117,10 @@ The following is an example of a `<VersionOverrides>` node that implements the `
 
 ### Implement event handling
 
-The `OnMessageDecrypt` event handler is used to run the decryption operation and determine whether to display the decrypted contents of a message.
+The `OnMessageRead` event handler is used to run the decryption operation and determine whether to display the decrypted contents of a message.
 
-- To ensure your handler runs when the `OnMessageDecrypt` event occurs, call `Office.actions.associate` in the JavaScript file where the handler is implemented. This maps the handler name specified in the `FunctionName` attribute of the `<LaunchEvent>` element in the manifest to its JavaScript counterpart.
-- Once the decryption operation finishes, you must call `event.completed` to signal to the client that your add-in has completed processing the `OnMessageDecrypt` event. To display the decrypted contents of a message and its attachments, pass a [MessageDecryptEventCompletedOptions](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true) object to the `event.completed` call and set its [allowEvent](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-allowevent-member) property to `true`. Then, specify the decrypted contents of the message in the object's [emailBody](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-emailbody-member) and [attachments](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-attachments-member) properties.
+- To ensure your handler runs when the `OnMessageRead` event occurs, call `Office.actions.associate` in the JavaScript file where the handler is implemented. This maps the handler name specified in the `FunctionName` attribute of the `<LaunchEvent>` element in the manifest to its JavaScript counterpart.
+- Once the decryption operation finishes, you must call `event.completed` to signal to the client that your add-in has completed processing the `OnMessageRead` event. To display the decrypted contents of a message and its attachments, pass a [MessageDecryptEventCompletedOptions](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true) object to the `event.completed` call and set its [allowEvent](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-allowevent-member) property to `true`. Then, specify the decrypted contents of the message in the object's [emailBody](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-emailbody-member) and [attachments](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-attachments-member) properties. You can also specify any data that your add-in may need for processing in the [contextData](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-contextdata-member) property. For example, you can store custom internet headers to decrypt messages in reply and forward scenarios. 
 
 > [!NOTE]
 > Be mindful of the following when creating an event-based add-in for classic Outlook on Windows.
@@ -128,10 +128,10 @@ The `OnMessageDecrypt` event handler is used to run the decryption operation and
 > - Imports aren't currently supported in the JavaScript file containing the event handler.
 > - When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by the event handler, such as checking the user's Outlook version, to the event handler instead.
 
-The following is an example of an `OnMessageDecrypt` event handler.
+The following is an example of an `OnMessageRead` event handler.
 
 ```javascript
-function onMessageDecryptHandler(event) {
+function onMessageReadHandler(event) {
     // Your code to decrypt the contents of a message would appear here.
     ...
 
@@ -172,12 +172,13 @@ function onMessageDecryptHandler(event) {
     event.completed({
         allowEvent: true,
         emailBody: decryptedBody,
-        attachments: decryptedAttachments
+        attachments: decryptedAttachments,
+        contextData: { messageType: "ReplyFromDecryptedMessage" }
     });
 }
 
 // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-Office.actions.associate("onMessageDecryptHandler", onMessageDecryptHandler);
+Office.actions.associate("onMessageReadHandler", onMessageReadHandler);
 ```
 
 > [!TIP]
@@ -201,16 +202,16 @@ Office.actions.associate("onMessageDecryptHandler", onMessageDecryptHandler);
 
 ### Decryption notifications
 
-Add-ins that handle the `OnMessageDecrypt` event automatically display notifications in certain decryption scenarios as described in the following table.
+Add-ins that handle the `OnMessageRead` event automatically display notifications in certain decryption scenarios as described in the following table.
 
 | Notification | Scenario |
 | ------------ | -------- |
 | \<Add-in name\> is unavailable and can't process your message at this time | Applies to classic Outlook on Windows only. This notification is shown when the add-in fails to load because an error prevented the add-in from loading or the user's client or machine is offline. |
-| \<Add-in name\> failed to process your message | An error was encountered while the add-in was decrypting the message. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageDecrypt` event. |
-| \<Add-in name\> is processing your message | The add-in is handling the `OnMessageDecrypt` event to decrypt the message. |
+| \<Add-in name\> failed to process your message | An error was encountered while the add-in was decrypting the message. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageRead` event. |
+| \<Add-in name\> is processing your message | The add-in is handling the `OnMessageRead` event to decrypt the message. |
 | \<Add-in name\> has finished processing your message | The add-in successfully decrypted the contents of the message. The user can now view the message and its attachments. |
 | \<Add-in name\> is taking longer than expected to process your message | The add-in has been running for more than five seconds, but less than five minutes. |
-| \<Add-in name\> timed out. To retry, select another email and then return to this message | The add-in times out after running for five minutes. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageDecrypt` event. |
+| \<Add-in name\> timed out. To retry, select another email and then return to this message | The add-in times out after running for five minutes. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageRead` event. |
 
 ## See also
 
