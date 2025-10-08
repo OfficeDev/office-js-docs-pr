@@ -182,7 +182,7 @@ Office.actions.associate("onMessageReadHandler", onMessageReadHandler);
 ```
 
 > [!TIP]
-> When images are added to a message as inline attachments, they're automatically assigned a content ID. In the body of a message, the content ID of an inline attachment is specified in the `src` attribute of the `<img>` element similar to the following example.
+> In classic Outlook on Windows, when images are added to a message as inline attachments, they're automatically assigned a content ID. In the body of a message, the content ID of an inline attachment is specified in the `src` attribute of the `<img>` element similar to the following example.
 >
 > `<img width=96 height=96 id="Picture_1" src="cid:image001.png@01DC1E6F.FC7C7410">`
 >
