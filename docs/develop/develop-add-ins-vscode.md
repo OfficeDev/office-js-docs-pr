@@ -2,7 +2,7 @@
 title: Develop Office Add-ins with Visual Studio Code
 description: How to develop Office Add-ins with Visual Studio Code.
 ms.topic: overview
-ms.date: 08/15/2024
+ms.date: 10/08/2025
 ms.localizationpriority: high
 ---
 
@@ -33,7 +33,7 @@ When the Yeoman generator finishes creating the add-in project, open the root fo
 
 The Yeoman generator creates a basic add-in with limited functionality. You can customize the add-in by editing the [manifest](add-in-manifests.md), HTML, JavaScript or TypeScript, and CSS files in VS Code. For a high-level description of the project structure and files in the add-in project that the Yeoman generator creates, see the Yeoman generator guidance within the [5-minute quick start](../index.yml) that corresponds to the type of add-in you've created.
 
-### Create the add-in project using the Office Add-ins Development Kit (preview)
+### Create the add-in project using the Office Add-ins Development Kit
 
 The [Office Add-ins Development Kit](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) is a Visual Studio Code extension that allows you to create new projects directly from VS Code. For information on installing the extension and creating projects from templates and samples, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
 
