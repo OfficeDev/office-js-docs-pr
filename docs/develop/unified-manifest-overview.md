@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 09/02/2025
+ms.date: 10/10/2025
 ms.localizationpriority: high
 ---
 
@@ -28,7 +28,7 @@ We've taken an important first step toward these goals by making it possible for
 
 ## Key properties of the unified manifest
 
-The main reference documentation for the version of the unified app manifest is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema). In this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office Add-in. This is followed by some basic documentation for the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
+The main reference documentation for the version of the unified app manifest is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema). In this article, we provide a brief description of the meaning of base properties when the App for Microsoft 365 is (or includes) an Office Add-in. This is followed by some basic documentation for the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
 
 ### Base properties
 
@@ -38,14 +38,14 @@ Each of the base properties listed in the following table has more extensive doc
 |:-----|:-----|
 |"$schema"| Identifies the manifest schema. |
 |[`"manifestVersion"`](/microsoft-365/extensibility/schema/root#manifestversion)| Version of the manifest schema. |  
-|`"id"`| GUID of the Teams app/add-in. |
-|[`"version"`](/microsoft-365/extensibility/schema/root#version)| Version of the Teams app/add-in. The format must be `n.n.n` where each `n` can be no more than five digits.|
-|[`"name"`](/microsoft-365/extensibility/schema/root#name)| Public short and long names of the Teams app/add-in. The short name appears at the top of an add-in's task pane. |
-|[`"description"`](/microsoft-365/extensibility/schema/root#description)| Public short and long descriptions of the Teams app/add-in. |
-|[`"developer"`](/microsoft-365/extensibility/schema/root#developer)| Information about the developer of the Teams app/add-in. |
+|`"id"`| GUID of the App for Microsoft 365. |
+|[`"version"`](/microsoft-365/extensibility/schema/root#version)| Version of the App for Microsoft 365. The format must be `n.n.n` where each `n` can be no more than five digits.|
+|[`"name"`](/microsoft-365/extensibility/schema/root#name)| Public short and long names of the App for Microsoft 365. The short name appears at the top of an add-in's task pane. |
+|[`"description"`](/microsoft-365/extensibility/schema/root#description)| Public short and long descriptions of the App for Microsoft 365. |
+|[`"developer"`](/microsoft-365/extensibility/schema/root#developer)| Information about the developer of the App for Microsoft 365. |
 |[`"localizationInfo"`](/microsoft-365/extensibility/schema/root#localizationinfo)| Configures the default locale and other supported locales. |
 |[`"validDomains"`](/microsoft-365/extensibility/schema/root#validdomains) | See [Specify safe domains](#specify-safe-domains). |
-|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the Teams app/add-in's web app as it is known in Microsoft Entra ID. |
+|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the App for Microsoft 365's web app as it is known in Microsoft Entra ID. |
 |[`"authorization"`](/microsoft-365/extensibility/schema/root#authorization)| Identifies any Microsoft Graph permissions that the add-in needs. |
 
 ### `"extensions"` property
