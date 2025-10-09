@@ -474,4 +474,4 @@ In addition to these characteristics, the following aspects also apply when an a
 ## See also
 
 - [Activate add-ins with events](../develop/event-based-activation.md)
-- [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)
+- [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md)

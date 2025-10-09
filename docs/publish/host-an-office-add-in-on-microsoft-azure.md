@@ -1,4 +1,4 @@
----
+﻿---
 title: Stage an Office Add-in on Microsoft Azure with Visual Studio
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application using Visual Studio.
 ms.date: 05/19/2025
@@ -47,7 +47,7 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 1. In **File Sharing**, choose the drop-down arrow and then choose **Everyone** > **Add** > **Share**.
 
 > [!NOTE]
-> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in manifest file. In a real-world scenario, you might instead choose to [deploy the manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
+> In this walkthrough, you're using a local file share as a trusted catalog where you'll store the add-in manifest file. In a real-world scenario, you might instead choose to [deploy the manifest file to a SharePoint catalog](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) or [publish the add-in to Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
 
 ## Step 2: Add the file share to the Trusted Add-ins catalog
 

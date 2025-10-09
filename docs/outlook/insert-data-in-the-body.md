@@ -1,4 +1,4 @@
----
+﻿---
 title: Get or set the body of a message or appointment in Outlook
 description: Learn how to get or insert data into the body of an appointment or message of an Outlook add-in.
 ms.date: 06/03/2025

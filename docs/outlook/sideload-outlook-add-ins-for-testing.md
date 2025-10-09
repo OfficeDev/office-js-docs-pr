@@ -1,4 +1,4 @@
----
+﻿---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
 ms.date: 05/19/2025
@@ -89,7 +89,7 @@ Note that your organization may include its own logo in the mailbox toolbar, so 
 
 ### Earlier versions of Outlook on Mac
 
-In Outlook on Mac, starting in Version 16.85 (24051214), the **Get Add-ins** button no longer opens the **Add-Ins for Outlook** dialog. Instead, it opens [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office%3Boutlook&page=1&src=office) in your default browser. Earlier versions can still access the **Add-Ins for Outlook** dialog through the **Get Add-ins** button. If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
+In Outlook on Mac, starting in Version 16.85 (24051214), the **Get Add-ins** button no longer opens the **Add-Ins for Outlook** dialog. Instead, it opens [Microsoft Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=office%3Boutlook&page=1&src=office) in your default browser. Earlier versions can still access the **Add-Ins for Outlook** dialog through the **Get Add-ins** button. If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
 
 ![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
 

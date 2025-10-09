@@ -1,4 +1,4 @@
----
+﻿---
 title: Best practices for developing Office Add-ins
 description: Apply the best practices when developing Office Add-ins.
 ms.topic: best-practice
@@ -23,11 +23,11 @@ Build add-ins that help users complete tasks quickly and efficiently. Focus on s
 
 Make sure users understand your add-in's value immediately by [creating an engaging first-run experience](#create-an-engaging-first-run-experience).
 
-When you're ready to promote your add-in, learn how to create an [effective AppSource listing](/partner-center/marketplace-offers/create-effective-office-store-listings).
+When you're ready to promote your add-in, learn how to create an [effective Microsoft Marketplace listing](/partner-center/marketplace-offers/create-effective-office-store-listings).
 
 - Make your add-in's benefits clear in the title and description. Don't rely only on your brand to communicate what your add-in does.
 - Ensure your add-in provides sufficient value to justify users' investment. It shouldn't be just a simple utility or have limited scope.
-- [!INCLUDE [AppSource enterprise info](../includes/appsource-enterprise.md)]
+- [!INCLUDE [Microsoft Marketplace enterprise info](../includes/appsource-enterprise.md)]
 
 ## Create an engaging first-run experience
 
@@ -131,27 +131,27 @@ Performance directly impacts user satisfaction. Follow these guidelines to keep 
 
 Ready to share your add-in with the world? Here's how to get started.
 
-- **Create a Partner Center account.** This process can take time, so if you plan to publish to AppSource, start early. See [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account).
+- **Create a Partner Center account.** This process can take time, so if you plan to publish to Microsoft Marketplace, start early. See [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account).
 
-- **Create an effective AppSource listing.** Follow these tips:
+- **Create an effective Microsoft Marketplace listing.** Follow these tips:
 
   - Use succinct, descriptive titles (128 characters or fewer).
   - Write short, compelling descriptions that answer "What problem does this add-in solve?"
   - Convey your add-in's value proposition clearly in the title and description. Don't rely only on your brand.
 
-  Learn more about [creating effective AppSource listings](/partner-center/marketplace-offers/create-effective-office-store-listings).
+  Learn more about [creating effective Microsoft Marketplace listings](/partner-center/marketplace-offers/create-effective-office-store-listings).
 
-- **Publish to AppSource.** Follow the AppSource [prepublish checklist](/partner-center/marketplace-offers/checklist) and [submission guide](/partner-center/marketplace-offers/add-in-submission-guide). Make sure to:
+- **Publish to Microsoft Marketplace.** Follow the Microsoft Marketplace [prepublish checklist](/partner-center/marketplace-offers/checklist) and [submission guide](/partner-center/marketplace-offers/add-in-submission-guide). Make sure to:
 
   - Test your add-in thoroughly on all supported operating systems, browsers, and devices.
   - Provide detailed testing instructions and resources for certification reviewers.
 
-- **Create a website.** Help users discover your add-in outside of AppSource.
+- **Create a website.** Help users discover your add-in outside of Microsoft Marketplace.
 
 - **Promote your add-in** from your website. See [how to promote your add-in](/partner-center/marketplace-offers/promote-your-office-store-solution).
 
 > [!IMPORTANT]
-> [!INCLUDE [AppSource enterprise info](../includes/appsource-enterprise.md)]
+> [!INCLUDE [Microsoft Marketplace enterprise info](../includes/appsource-enterprise.md)]
 
 ## Support older Microsoft webviews and Office versions (recommended but not required)
 

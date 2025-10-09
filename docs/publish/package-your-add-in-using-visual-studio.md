@@ -1,4 +1,4 @@
----
+﻿---
 title: Publish your add-in using Visual Studio
 description: How to deploy your web project and package your add-in by using Visual Studio 2019.
 ms.date: 01/23/2023
@@ -32,7 +32,7 @@ Complete the following steps to package your add-in using Visual Studio 2019.
 1. From the **Build** tab, choose **Publish [Name of your add-in]**.
 2. In the **Pick a publish target** window, choose **IIS, FTP, etc**, and select **Configure**. Next, select **Publish**.
 3. A wizard appears that will help guide you through the process. Ensure the publish method is your preferred method, such as Web Deploy.
-4. In the **Destination URL** box, enter the URL of the website that will host the content files of your add-in, and then select **Next**. If you plan to submit your add-in to AppSource, you can choose the **Validate Connection** button to identify any issues that will prevent your add-in from being accepted. You should address all issues before you submit your add-in to the store.
+4. In the **Destination URL** box, enter the URL of the website that will host the content files of your add-in, and then select **Next**. If you plan to submit your add-in to Microsoft Marketplace, you can choose the **Validate Connection** button to identify any issues that will prevent your add-in from being accepted. You should address all issues before you submit your add-in to the store.
 5. Confirm any settings desired including **File Publish Options** and select **Save**.
 
     > [!IMPORTANT]
@@ -49,4 +49,4 @@ You can now upload your manifest to the appropriate location to [publish your ad
 ## See also
 
 - [Publish your Office Add-in](../publish/publish.md)
-- [Make your solutions available in AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)
+- [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)

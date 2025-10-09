@@ -1,4 +1,4 @@
----
+﻿---
 title: Word add-ins overview
 description: Learn the basics of Word add-ins.
 ms.date: 05/29/2025
@@ -75,7 +75,7 @@ Ready to create your first Word add-in? See [Build your first Word add-in](../qu
 
 To learn more about how to design a world-class Word add-in that creates a compelling experience for your users, see [Design guidelines](../design/add-in-design.md) and [Best practices](../concepts/add-in-development-best-practices.md).
 
-After you develop your add-in, you can [publish](../publish/publish.md) it to a network share, an app catalog, or AppSource.
+After you develop your add-in, you can [publish](../publish/publish.md) it to a network share, an app catalog, or Microsoft Marketplace.
 
 ## See also
 

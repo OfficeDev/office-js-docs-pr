@@ -1,4 +1,4 @@
----
+﻿---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
 ms.date: 09/30/2025
@@ -12,7 +12,7 @@ Add-in commands are UI elements that extend the Office UI and start actions in y
 
 > [!NOTE]
 >
-> - SharePoint catalogs don't support add-in commands. You can deploy add-in commands via the [integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), or use [sideloading](../testing/test-debug-non-local-server.md) to deploy your add-in command for testing.
+> - SharePoint catalogs don't support add-in commands. You can deploy add-in commands via the [integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) or [Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), or use [sideloading](../testing/test-debug-non-local-server.md) to deploy your add-in command for testing.
 > - Content add-ins don't currently support add-in commands.
 
 ## Types of add-in commands
@@ -173,7 +173,7 @@ In addition to the recommended object limits, keep the following in mind when co
 - Implement a dialog to provide users with advanced options. This prevents your add-in from overloading the ribbon with rarely used commands. To learn how to implement a dialog, see [Use the Office dialog API in Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 > [!NOTE]
-> Add-ins that take up too much space might not pass [AppSource validation](/legal/marketplace/certification-policies).
+> Add-ins that take up too much space might not pass [Microsoft Marketplace validation](/legal/marketplace/certification-policies).
 
 ## Next steps
 

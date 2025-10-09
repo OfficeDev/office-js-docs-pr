@@ -1,4 +1,4 @@
----
+﻿---
 title: Get or set the time when composing an appointment in Outlook
 description: Learn how to get or set the start and end time of an appointment in an Outlook add-in.
 ms.date: 10/02/2025

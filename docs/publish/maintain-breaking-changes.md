@@ -1,4 +1,4 @@
----
+﻿---
 title: Maintain your Office Add-in
 description: Understand our commitments to compatibility and how to keep your add-in up to date.
 ms.topic: best-practice
@@ -15,8 +15,8 @@ After you publish your add-in, you should keep it up to date with any important 
 The Microsoft 365 Developer Platform is committed to ensuring the compatibility of your add-in. We strive to avoid making breaking changes to the API surface and behavior. However, there are cases where we need to make breaking updates for the sake of security or reliability. In those rare cases, the following steps are taken to ensure users of your add-in are unaffected.
 
 - Announcements that describe the impacted features and recommended changes are made on the [Microsoft 365 Developer Blog](https://devblogs.microsoft.com/microsoft365dev/).
-- If your add-in is published in [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), you'll be contacted through the information you provided.
-- Where possible, admins of impacted Microsoft 365 tenants (including [Microsoft 365 Developer Program tenants](https://aka.ms/m365devprogram)) will be contacted through [Message Center](/microsoft-365/admin/manage/message-center). It's the responsibility of the admin to contact providers of add-in solutions published outside of AppSource.
+- If your add-in is published in [Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), you'll be contacted through the information you provided.
+- Where possible, admins of impacted Microsoft 365 tenants (including [Microsoft 365 Developer Program tenants](https://aka.ms/m365devprogram)) will be contacted through [Message Center](/microsoft-365/admin/manage/message-center). It's the responsibility of the admin to contact providers of add-in solutions published outside of Microsoft Marketplace.
 
 ### Deprecation policy
 
@@ -57,7 +57,7 @@ While we strive to maintain backwards compatibility, the patterns and practices 
 
 ## Update your add-in
 
-When you update your add-in, there are two pieces to consider: the web application and the manifest. Updates to your web application don't require any action from your users. Those users only have the manifest in their Office application. Changes to the manifest do require users to update. If you have published your add-in to AppSource, you will need to update your submission. More information about that process is found in the article [Update an existing offer](/partner-center/marketplace-offers/update-existing-offer).
+When you update your add-in, there are two pieces to consider: the web application and the manifest. Updates to your web application don't require any action from your users. Those users only have the manifest in their Office application. Changes to the manifest do require users to update. If you have published your add-in to Microsoft Marketplace, you will need to update your submission. More information about that process is found in the article [Update an existing offer](/partner-center/marketplace-offers/update-existing-offer).
 
 Whenever you make a change to the manifest, you must raise the version number of the manifest.
 

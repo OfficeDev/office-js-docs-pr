@@ -1,4 +1,4 @@
----
+﻿---
 title: Manage the delivery date and time of a message
 description: Learn how to schedule message delivery with the Office JavaScript API.
 ms.date: 10/02/2025

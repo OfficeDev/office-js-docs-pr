@@ -1,4 +1,4 @@
----
+﻿---
 title: Troubleshoot user errors with Office Add-ins
 description: Learn how to troubleshoot user errors in Office Add-ins.
 ms.topic: troubleshooting-problem-resolution
@@ -18,7 +18,7 @@ The following table lists common error messages that users might encounter and s
 
 |Error message|Resolution|
 |:-----|:-----|
-|App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to AppSource. This message indicates that the user cannot access AppSource.|
+|App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to Microsoft Marketplace. This message indicates that the user cannot access Microsoft Marketplace.|
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or update with the [Windows Installer](/officeupdates/office-updates-msi).|
 |Error: Access denied. `E_ACCESSDENIED (0x80070005)` | The antivirus software installed on the machine might prevent the host app from creating a WebView2 process. To resolve this issue, add an exemption or exclusion to the antivirus for the `.exe` files in the Office root folder (`C:\Program Files\Microsoft Office\root\Office16`) or for the entire Office root folder. If this does not fix the issue, add an exemption or exclusion for the WebView2 process (`C:\Program Files (x86)\Microsoft\EdgeWebView\Application[latest installed version]\msedgewebview2.exe`). |
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to **Tools** > **Compatibility View Settings**.|

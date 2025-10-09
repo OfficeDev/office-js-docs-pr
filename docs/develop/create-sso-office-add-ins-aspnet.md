@@ -69,7 +69,7 @@ Use the following values for placeholders for the subsequent app registration st
 1. Replace the placeholder "Enter_client_ID_here" _in both places_ in the markup with the **Application ID** that you copied when you created the **Office-Add-in-ASPNET-SSO** app registration. This is the same ID you used for the application ID in the appsettings.json file.
 
    > [!NOTE]
-   > The `<Resource>` value is the **Application ID URI** you set when you registered the add-in. The `<Scopes>` section is used only to generate a consent dialog box if the add-in is sold through AppSource.
+   > The `<Resource>` value is the **Application ID URI** you set when you registered the add-in. The `<Scopes>` section is used only to generate a consent dialog box if the add-in is sold through Microsoft Marketplace.
 
 1. Save and close the manifest file.
 
