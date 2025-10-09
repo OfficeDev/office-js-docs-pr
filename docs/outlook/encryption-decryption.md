@@ -65,7 +65,7 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 ### Configure the manifest
 
 > [!NOTE]
-> The `OnMessageRead`event can currently only be implemented with an add-in only manifest.
+> The `OnMessageRead` event can currently only be implemented with an add-in only manifest.
 
 To activate your add-in on the `OnMessageRead` event, you must configure the [\<VersionOverridesV1_1\>](/javascript/api/manifest/versionoverrides-1-1-mail) node of your add-in's **manifest.xml** file as follows.
 
