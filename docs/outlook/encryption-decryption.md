@@ -1,12 +1,12 @@
 ---
-title: Create an encryption Outlook add-in
+title: Create an encryption Outlook add-in (preview)
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
 ms.date: 10/09/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Create an encryption Outlook add-in
+# Create an encryption Outlook add-in (preview)
 
 Implement custom encryption and decryption functionality in an Outlook add-in to secure email communications. With the `OnMessageRead` event, your add-in can provide a seamless user experience by automatically identifying encrypted messages and handling decryption, content display, and error notifications.
 
@@ -51,6 +51,8 @@ The `OnMessageRead` event is supported on the Message Read surface. Support vari
 | **iOS** | Not available | Not available | Not available | Not available |
 
 #### Preview the decryption APIs in classic Outlook on Windows
+
+To preview the decryption APIs in classic Outlook on Windows, join the [Microsoft 365 Insider program](https://aka.ms/MSFT365InsiderProgram), then choose the Beta Channel in the Outlook client. Your client must be on Version 2510 (Build 19312.20000) or later.
 
 Classic Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry. This will enable you to test [preview features](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview) in your event handlers in classic Outlook on Windows.
 
