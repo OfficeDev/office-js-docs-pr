@@ -1,4 +1,4 @@
----
+﻿---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
 ms.date: 04/18/2025
@@ -48,7 +48,7 @@ You can have more than one capability object. The following example shows how to
 
 ## Filter features
 
-The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application.
+The "requirements" properties in descendant objects of "extensions" are used to block some features of an add-in while still allowing the add-in to be installed. The implementation of this filtering is done at the source of installation, such as [Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) or [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish). If the version of Office doesn't support the requirements specified for the feature, then the JSON node for the feature is removed from the manifest before it is installed in the Office application.
 
 > [!TIP]
 > Don't include a capability, formFactor, or scope requirement in a descendant object of "extensions" that's *less* restrictive than the corresponding capability, formFactor, or scope requirement in the ancestor "extensions.requirements" property, if there is one. Since the add-in can't be installed on clients that don't meet the ancestor requirement, no feature filtering would occur anyway. For example, if an "extensions.requirements.capabilities" property requires **Mailbox 1.10**, there's no point in requiring **Mailbox 1.9** in any descendant objects.
@@ -56,7 +56,7 @@ The "requirements" properties in descendant objects of "extensions" are used to 
 > [!NOTE]
 > Office Add-ins that use the unified manifest for Microsoft 365 are *directly* supported in Office on the web, in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), and in Office on Windows connected to a Microsoft 365 subscription, Version 2304 (Build 16320.00000) or later.
 >
-> When the app package that contains the unified manifest is deployed in [AppSource](https://appsource.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
+> When the app package that contains the unified manifest is deployed in [Microsoft Marketplace](https://marketplace.microsoft.com/) or the [Microsoft 365 Admin Center](/office/dev/add-ins/publish/publish) then an add-in only manifest is generated from the unified manifest and stored. This add-in only manifest enables the add-in to be installed on platforms that don't directly support the unified manifest, including Office on Mac, Office on mobile, subscription versions of Office on Windows earlier than 2304 (Build 16320.00000), and perpetual versions of Office on Windows.
 >
 > Feature filtering is less fine-grained in the add-in only manifest. As a result, on platforms that don't directly support the unified manifest, adding a "requirements" subproperty to *any* child of "extensions" is effectively the same as adding that same "requirements" subproperty to *all* the children of "extensions" with one possible exception. So, on these platforms *none* of the features that are configured in these child properties of "extensions" will be available on platform and version combinations that don't meet the specified requirements. The exception is the "extensions.alternates" property. If this property is present, the alternates feature will be filtered in or out based only on its own "requirements" subproperty (if any), not on the "requirements" subproperties of any other child properties of "extensions".
 

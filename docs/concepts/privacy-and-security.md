@@ -52,9 +52,9 @@ In supported web clients, Office Add-ins are hosted in an **iframe** that runs u
 
 ![Diagram of the infrastructure that supports Office Add-ins in Office on the web clients.](../images/dk2-agave-overview-03.png)
 
-## Add-in integrity in AppSource
+## Add-in integrity in Microsoft Marketplace
 
-You can make your Office Add-ins available to the public by publishing them to AppSource. AppSource enforces the following measures to maintain the integrity of add-ins.
+You can make your Office Add-ins available to the public by publishing them to Microsoft Marketplace. Microsoft Marketplace enforces the following measures to maintain the integrity of add-ins.
 
 - Requires the host server of an Office Add-in to always use Secure Sockets Layer (SSL) to communicate.
 
@@ -85,7 +85,7 @@ This section describes the protection offered by the Office Add-ins platform fro
 
 ### End users' perspective
 
-Office Add-ins are built using web technologies that run in a browser control or **iframe**. Because of this, using add-ins is similar to browsing to web sites on the Internet or intranet. Add-ins can be external to an organization (if you acquire the add-in from AppSource) or internal (if you acquire the add-in from an Exchange Server add-in catalog, SharePoint app catalog, or file share on an organization's network). Add-ins have limited access to the network and most add-ins can read or write to the active document or mail item. The add-in platform applies certain constraints before a user or administrator installs or starts an add-in. But as with any extensibility model, users should be cautious before starting an unknown add-in.
+Office Add-ins are built using web technologies that run in a browser control or **iframe**. Because of this, using add-ins is similar to browsing to web sites on the Internet or intranet. Add-ins can be external to an organization (if you acquire the add-in from Microsoft Marketplace) or internal (if you acquire the add-in from an Exchange Server add-in catalog, SharePoint app catalog, or file share on an organization's network). Add-ins have limited access to the network and most add-ins can read or write to the active document or mail item. The add-in platform applies certain constraints before a user or administrator installs or starts an add-in. But as with any extensibility model, users should be cautious before starting an unknown add-in.
 
 > [!NOTE]
 > Users may see a security prompt to trust the domain the first time an add-in is loaded. This will happen if the add-in's domain host is outside of the domain of Exchange on-premise or Office Online Server.
@@ -94,7 +94,7 @@ The add-in platform addresses end users' privacy concerns in the following ways.
 
 - Data communicated with the web server that hosts a content, Outlook or task pane add-in as well as communication between the add-in and any web services it uses must be encrypted using the Secure Socket Layer (SSL) protocol.
 
-- Before a user installs an add-in from AppSource, the user can view the privacy policy and requirements of that add-in. In addition, Outlook add-ins that interact with users' mailboxes surface the specific permissions that they require; the user can review the terms of use, requested permissions and privacy policy before installing an Outlook add-in.
+- Before a user installs an add-in from Microsoft Marketplace, the user can view the privacy policy and requirements of that add-in. In addition, Outlook add-ins that interact with users' mailboxes surface the specific permissions that they require; the user can review the terms of use, requested permissions and privacy policy before installing an Outlook add-in.
 
 - When sharing a document, users also share add-ins that have been inserted in or associated with that document. If a user opens a document that contains an add-in that the user hasn't used before, the Office client application prompts the user to grant permission for the add-in to run in the document. In an organizational environment, the Office client application also prompts the user if the document comes from an external source.
 
@@ -106,11 +106,11 @@ The add-in platform addresses end users' privacy concerns in the following ways.
 
   A user's device capabilities include their camera, geolocation, and microphone. To learn more, see [View, manage, and install add-ins for Excel, PowerPoint, and Word](https://support.microsoft.com/office/16278816-1948-4028-91e5-76dca5380f8d).
 
-- Users can enable or disable the access to AppSource. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**).
+- Users can enable or disable the access to Microsoft Marketplace. For content and task pane add-ins, users manage access to trusted add-ins and catalogs from the **Trust Center** on the host Office client (opened from **File** > **Options** > **Trust Center** > **Trust Center Settings** > **Trusted Add-in Catalogs**).
 
   In Outlook, access to manage add-ins depends on the user's Outlook client. To learn more, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
-  Administrators can also manage access to AppSource [through the admin center](/microsoft-365/admin/manage/manage-addins-in-the-admin-center).
+  Administrators can also manage access to Microsoft Marketplace [through the admin center](/microsoft-365/admin/manage/manage-addins-in-the-admin-center).
 
 - The design of the add-in platform provides security and performance for end users in the following ways.
 
@@ -152,9 +152,9 @@ The following lists some specific PII protection guidelines for you as a develop
 
 - Using some applications can reveal PII. Make sure that you securely store data for your users' identity, location, access times, and any other credentials so that data won't become available to other users of the add-in.
 
-- If your add-in is available in AppSource, the AppSource requirement for HTTPS protects PII transmitted between your web server and the client computer or device. However, if you re-transmit that data to other servers, make sure you observe the same level of protection.
+- If your add-in is available in Microsoft Marketplace, the requirement for HTTPS protects PII transmitted between your web server and the client computer or device. However, if you re-transmit that data to other servers, make sure you observe the same level of protection.
 
-- If you store users' PII, make sure you reveal that fact, and provide a way for users to inspect and delete it. If you submit your add-in to AppSource, you can outline the data you collect and how it's used in the privacy statement.
+- If you store users' PII, make sure you reveal that fact, and provide a way for users to inspect and delete it. If you submit your add-in to Microsoft Marketplace, you can outline the data you collect and how it's used in the privacy statement.
 
 ## Developers' permission choices and security practices
 
@@ -315,7 +315,7 @@ Developers should also take note of the following security practices.
 
 - Developers shouldn't embed keys that they use to access APIs or services from Microsoft and others (such as Bing, Google, or Facebook) directly in the HTML pages of their add-in. Instead, they should create a custom web service or store the keys in some other form of secure web storage that they can then call to pass the key value to their add-in.
 
-- Developers should do the following when submitting an add-in to AppSource.
+- Developers should do the following when submitting an add-in to Microsoft Marketplace.
 
   - Host the add-in they are submitting on a web server that supports SSL.
   - Produce a statement outlining a compliant privacy policy.
@@ -325,7 +325,7 @@ Other than resource usage rules, developers for Outlook add-ins should also make
 
 ## IT administrators' control
 
-In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to AppSource and any private catalogs.
+In a corporate setting, IT administrators have ultimate authority over enabling or disabling access to Microsoft Marketplace and any private catalogs.
 
 The management and enforcement of Office settings is done with group policy settings. These are configurable through the [Office Deployment Tool](/deployoffice/overview-office-deployment-tool), in conjunction with the [Office Customization Tool](/deployoffice/admincenter/overview-office-customization-tool).
 
@@ -333,7 +333,7 @@ The management and enforcement of Office settings is done with group policy sett
 |--------------|-------------|
 | Allow Unsecure web add-ins and Catalogs | Allows users to run non-secure Office Add-ins, which are Office Add-ins that have webpage or catalog locations that are not SSL-secured (https://) and are not in users' Internet zones. |
 | Block Web Add-ins | Allows you to prevent users from running Office Add-ins that use web technologies. |
-| Block the Office Store |  Allows you to prevent users from getting or running Office Add-ins that come from [AppSource](https://appsource.microsoft.com). |
+| Block the Office Store |  Allows you to prevent users from getting or running Office Add-ins that come from [Microsoft Marketplace](https://marketplace.microsoft.com). |
 
 To specify permissions to install and manage Outlook add-ins in an organization that uses Exchange Online, configure administrative and user roles in the Exchange admin center. For more information, see [Specify the administrators and users who can install and manage add-ins for Outlook in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/specify-who-can-install-and-manage-add-ins).
 

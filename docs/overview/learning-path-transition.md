@@ -1,4 +1,4 @@
----
+﻿---
 title: VSTO add-in developer's guide to Office Web Add-ins
 description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
 ms.date: 06/25/2025
@@ -63,7 +63,7 @@ You can reuse some of your VSTO add-in code in an Office web add-in by moving it
 
 ## Step 7: Create a Partner Center account
 
-If you plan to [publish your add-in to AppSource](../publish/publish.md), create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. Get this process going as soon as possible to avoid release delays.
+If you plan to [publish your add-in to Microsoft Marketplace](../publish/publish.md), create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. Get this process going as soon as possible to avoid release delays.
 
 ## Next Steps
 

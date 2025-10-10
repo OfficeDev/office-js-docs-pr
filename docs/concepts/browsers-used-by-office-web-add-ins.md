@@ -23,8 +23,8 @@ Which webview is used depends on:
 >
 > We recommend (but don't require) that you continue to support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in one of these webviews. Keep these additional points in mind:
 >
-> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on these web browsers.
-> - AppSource still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by AppSource.
+> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on these web browsers.
+> - Microsoft Marketplace still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by Microsoft Marketplace.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Trident.
 >
 > For more information about supporting Trident or EdgeHTML, including configuring a graceful failure message on your add-in, see [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).

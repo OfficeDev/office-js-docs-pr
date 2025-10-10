@@ -100,7 +100,7 @@ There are several possible causes.
 
 - The add-in is running on a platform that does not support the `getAccessToken` API. For example, it isn't supported on iPad. See also [Identity API requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 - The Office document was opened from the **Files** tab of a Teams channel using the **Edit in Teams** option on the **Open** dropdown menu. The `getAccessToken` API isn't supported in this scenario.
-- The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from AppSource. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the Microsoft Entra ID `profile` scope.
+- The `forMSGraphAccess` option was passed in the call to `getAccessToken` and the user obtained the add-in from Microsoft Marketplace. In this scenario, the tenant admin has not granted consent to the add-in for the Microsoft Graph scopes (permissions) that it needs. Recalling `getAccessToken` with the `allowConsentPrompt` will not solve the problem because Office is allowed to prompt the user for consent to only the Microsoft Entra ID `profile` scope.
 
 Your code should fall back to an alternate system of user authentication.
 

@@ -735,6 +735,6 @@ If you implemented the optional step to override the send mode option at runtime
 - [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug event-based and spam-reporting add-ins](../testing/debug-autolaunch.md)
-- [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)
+- [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md)
 - [Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
 - [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)

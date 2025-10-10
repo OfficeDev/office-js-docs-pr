@@ -1,4 +1,4 @@
----
+﻿---
 title: Monoline style icon guidelines for Office Add-ins
 description: Guidelines for using Monoline style icons in Office Add-ins.
 ms.date: 02/12/2025
@@ -57,7 +57,7 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
 
 > [!IMPORTANT]
-> For an image that is your add-in's representative icon, see [Create effective listings in AppSource and within Office](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
+> For an image that is your add-in's representative icon, see [Create effective listings in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
 
 ### Layout
 

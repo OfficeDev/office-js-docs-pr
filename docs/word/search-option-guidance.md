@@ -1,4 +1,4 @@
----
+﻿---
 title: Use search options in your Word add-in to find text 
 description: Learn to use search options in your Word add-in.
 ms.date: 02/06/2024

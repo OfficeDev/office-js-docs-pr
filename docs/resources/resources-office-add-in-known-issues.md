@@ -1,4 +1,4 @@
----
+﻿---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
 ms.date: 10/01/2025
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 _Last updated October 1st, 2025_
 
-This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [AppSource](https://appsource.microsoft.com).
+This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 ## Active issues in Office Add-ins
 

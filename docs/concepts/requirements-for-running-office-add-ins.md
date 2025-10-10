@@ -1,4 +1,4 @@
----
+﻿---
 title: Requirements for running Office Add-ins
 description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
 ms.date: 08/13/2025
@@ -31,7 +31,7 @@ To test and run an Outlook add-in, the user's Outlook email account must reside 
 - The server must be Exchange 2016 or later.
 - Exchange Web Services (EWS) must be enabled and must be exposed to the Internet. Many add-ins require EWS to function properly.
 - The server must have a valid authentication certificate in order for the server to issue valid identity tokens. New installations of Exchange Server include a default authentication certificate. For more information, see [Digital certificates and encryption in Exchange 2016](/Exchange/architecture/client-access/certificates) and [Set-AuthConfig](/powershell/module/exchangepowershell/set-authconfig).
-- To access add-ins from [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office), the client access servers must be able to communicate with AppSource.
+- To access add-ins from [Microsoft Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=office), the client access servers must be able to communicate with Microsoft Marketplace.
 
 > [!NOTE]
 > POP3 and IMAP email accounts in Outlook don't support Office Add-ins.

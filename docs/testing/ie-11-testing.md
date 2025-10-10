@@ -1,4 +1,4 @@
----
+﻿---
 title: Trident testing
 description: Test your Office Add-in on the Trident webview associated with Internet Explorer 11.
 ms.date: 09/30/2025
@@ -20,8 +20,8 @@ If you plan to support older versions of Windows and Office, your add-in must wo
 
 When deciding whether, and how, to support Trident, keep these additional points in mind:
 
-- Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
-- AppSource still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by AppSource.
+- Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
+- Microsoft Marketplace still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by Microsoft Marketplace.
 - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Trident.
 - Trident doesn't support JavaScript versions later than ES5. If you want to use the syntax and features of ECMAScript 2015 or later, you have to use a transpiler or polyfill or both. For more information about these options, see [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).
 - Trident doesn't support some HTML5 features such as media, recording, and location. To learn more, see [Determine the webview the add-in is running in at runtime](../develop/support-ie-11.md#determine-the-webview-the-add-in-is-running-in-at-runtime).
