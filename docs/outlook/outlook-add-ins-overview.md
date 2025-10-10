@@ -1,4 +1,4 @@
----
+﻿---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
 ms.date: 07/01/2025
@@ -13,7 +13,7 @@ Outlook add-ins are solutions that extend the functionality of the Outlook clien
 
 - The same add-in and business logic works across web (Microsoft 365 and Outlook.com), desktop (Outlook on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic) and on Mac), and mobile.
 - Outlook add-ins consist of a manifest, which describes how the add-in integrates into Outlook (for example, a button, task pane, or event). It also includes JavaScript and HTML code, which make up the UI and business logic of the add-in.
-- Outlook add-ins can be acquired from [AppSource](https://appsource.microsoft.com) or [sideloaded](sideload-outlook-add-ins-for-testing.md) by end users or administrators.
+- Outlook add-ins can be acquired from [Microsoft Marketplace](https://marketplace.microsoft.com) or [sideloaded](sideload-outlook-add-ins-for-testing.md) by end users or administrators.
 - Outlook add-ins require a network connection to run.
 
 Outlook add-ins are different from COM or VSTO add-ins, which are older integrations specific to Outlook running on Windows. Unlike COM add-ins, Outlook add-ins don't have any code physically installed on the user's device or Outlook client. For an Outlook add-in, Outlook reads the manifest and hooks up the specified controls in the UI, and then loads the JavaScript and HTML. The web components all run in the context of a browser or webview control in a sandbox.
@@ -122,4 +122,4 @@ To get started building Outlook add-ins, try the following:
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
 - [License your Office and SharePoint Add-ins](/partner-center/marketplace-offers/why-publish)
 - [Publish your Office Add-in](../publish/publish.md)
-- [Make your solutions available in AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)
+- [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)

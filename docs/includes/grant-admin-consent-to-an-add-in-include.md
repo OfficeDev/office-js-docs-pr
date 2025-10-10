@@ -1,6 +1,6 @@
-
+﻿
 > [!NOTE]
-> This procedure is only needed when you're developing the add-in. When your production add-in is deployed to AppSource or the Microsoft 365 admin center, users will individually trust it or an admin will consent for the organization at installation.
+> This procedure is only needed when you're developing the add-in. When your production add-in is deployed to Microsoft Marketplace or the Microsoft 365 admin center, users will individually trust it or an admin will consent for the organization at installation.
 
 Carry out this procedure *after* you have [registered the add-in](../develop/register-sso-add-in-aad-v2.md). (If you have just completed that procedure and the **API permissions** tab of the **$ADD-IN-NAME$** page is open in your browser, you can choose the **Grant admin consent for [tenant name]** button, and then select **Yes** for the confirmation that appears. Skip the rest of this procedure.)
 

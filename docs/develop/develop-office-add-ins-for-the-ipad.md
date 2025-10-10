@@ -1,4 +1,4 @@
----
+﻿---
 title: Special requirements for add-ins on the iPad
 description: Learn some requirements for creating an Office Add-in that runs on an iPad.
 ms.topic: best-practice
@@ -8,20 +8,20 @@ ms.localizationpriority: medium
 
 # Special requirements for add-ins on the iPad
 
-You'll need to make additional considerations if you want to make your add-in available on iPad. If your add-in uses only Office APIs that are supported on iPad, customers can install it on their devices. However, if you're publishing to [AppSource](https://appsource.microsoft.com), there are some additional requirements you'll need to meet.
+You'll need to make additional considerations if you want to make your add-in available on iPad. If your add-in uses only Office APIs that are supported on iPad, customers can install it on their devices. However, if you're publishing to [Microsoft Marketplace](https://marketplace.microsoft.com), there are some additional requirements you'll need to meet.
 
 For details on API compatibility, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
 
-## iPad AppSource requirements
+## iPad Microsoft Marketplace requirements
 
-Here's what you need to know when submitting your add-in to AppSource for iPad users.
+Here's what you need to know when submitting your add-in to Microsoft Marketplace for iPad users.
 
 |Task|Description|Resources|
 |:-----|:-----|:-----|
 |Apply iOS design best practices.|Make your add-in UI feel native to iOS by following Apple's design guidelines.|[Designing for iOS](https://developer.apple.com/design/human-interface-guidelines/designing-for-ios)|
 |Make your add-in free.|Your add-in must be free on iPad. Office on iPad is a great way to reach new users who might become customers on other platforms.|[Certification policy 1120.2](/legal/marketplace/certification-policies#11202-mobile-requirements)|
 |Remove commerce features on iPad.|When running on iPad, your add-in can't include in-app purchases, trial offers, upselling UI, or links to online stores. Your Privacy Policy and Terms of Use pages must also be commerce-free. You can still have commerce on other platforms. Check the [Office.context.commerceAllowed](/javascript/api/office/office.context#office-office-context-commerceallowed-member) property and hide commerce features when it returns `false`.|[Certification policy 1100.3](/legal/marketplace/certification-policies#11003-selling-additional-features)|
-|Submit to AppSource correctly.|In Partner Center, go to the **Product setup** page and select **Make my product available on iOS and Android (if applicable)**. You'll also need to provide your Apple developer ID in Account settings. Don't forget to review the [Application Provider Agreement](https://go.microsoft.com/fwlink/?linkid=715691).|[Make your solutions available in AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)|
+|Submit to Microsoft Marketplace correctly.|In Partner Center, go to the **Product setup** page and select **Make my product available on iOS and Android (if applicable)**. You'll also need to provide your Apple developer ID in Account settings. Don't forget to review the [Application Provider Agreement](https://go.microsoft.com/fwlink/?linkid=715691).|[Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)|
 
 ## Detecting iPad devices
 

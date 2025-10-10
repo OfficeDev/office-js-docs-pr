@@ -1,4 +1,4 @@
----
+﻿---
 title: Debug add-ins using developer tools for Internet Explorer
 description: Debug add-ins using the developer tools in Internet Explorer.
 ms.date: 12/26/2024
@@ -60,7 +60,7 @@ The following steps are the instructions for debugging your add-in. If you just 
 
 ### Example add-in to test the F12 tools
 
-This example uses Word and a free add-in from AppSource.
+This example uses Word and a free add-in from Microsoft Marketplace.
 
 1. Open Word and choose a blank document.
 1. Select **Home** > **Add-ins**, then select **More Add-ins**.

@@ -1,4 +1,4 @@
----
+﻿---
 title: Understand when and how to use Office Open XML in your Word add-in
 description: Overview of when and how to use Office Open XML in your Word add-in.
 ms.date: 06/07/2023

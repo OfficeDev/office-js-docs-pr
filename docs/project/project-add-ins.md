@@ -1,4 +1,4 @@
----
+﻿---
 title: Task pane add-ins for Project
 description: Learn about task pane add-ins for Project.
 ms.date: 09/16/2025
@@ -79,7 +79,7 @@ Once you've built your Project add-in, you have several options for distribution
 
 - **File share**: Share manifest files through network file shares for small team or departmental deployments
 - **SharePoint app catalog**: Deploy through your organization's SharePoint app catalog for enterprise distribution
-- **AppSource**: Publish to Microsoft AppSource to reach Project users worldwide
+- **Microsoft Marketplace**: Publish to Microsoft Marketplace to reach Project users worldwide
 
 Each distribution method has different benefits depending on your target audience and organizational requirements. Learn more about your options in [Publish your Office Add-in](../publish/publish.md).
 

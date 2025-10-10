@@ -1,4 +1,4 @@
----
+﻿---
 title: Office Add-ins manifest
 description: Get an overview of the Office Add-in manifest and its uses.
 ms.topic: overview
@@ -45,11 +45,11 @@ All image URIs, such as those used for [add-in commands](../design/add-in-comman
 
 All URLs to code or content files in the add-in should be **SSL-secured (HTTPS)**. [!INCLUDE [HTTPS guidance](../includes/https-guidance.md)]
 
-## Best practices for submitting to AppSource
+## Best practices for submitting to Microsoft Marketplace
 
 Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
-Add-ins submitted to AppSource must also include a support URL in the manifest. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/legal/marketplace/certification-policies).
+Add-ins submitted to Microsoft Marketplace must also include a support URL in the manifest. For more information, see [Validation policies for apps and add-ins submitted to Microsoft Marketplace](/legal/marketplace/certification-policies).
 
 ## Specify domains you want to open in the add-in window
 

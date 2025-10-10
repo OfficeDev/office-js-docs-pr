@@ -1,4 +1,4 @@
----
+﻿---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
 ms.date: 10/08/2025
@@ -155,7 +155,7 @@ Install the latest version of Visual Studio from [Visual Studio Downloads](https
 
 ## Install Script Lab
 
-Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
+Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from Microsoft Marketplace at [Script Lab](https://marketplace.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
 
 ## Next steps
 

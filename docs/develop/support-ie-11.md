@@ -1,4 +1,4 @@
----
+﻿---
 title: Support older Microsoft webviews and Office versions
 description: Learn how to support support older Microsoft webviews and Office versions in your add-in.
 ms.date: 01/07/2025
@@ -16,8 +16,8 @@ Office Add-ins are web applications that are displayed inside iframes when runni
 >
 > We recommend (but don't require) that you support these combinations, at least in a minimal way, by providing users of your add-in a graceful failure message when your add-in is launched in these webviews. Keep these additional points in mind:
 >
-> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
-> - AppSource still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by AppSource.
+> - Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy. Consequently, [Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center) doesn't test add-ins in Office on the web on these browsers.
+> - Microsoft Marketplace still tests for combinations of platform and Office *desktop* versions that use Trident or EdgeHTML. However, it only issues a warning when the add-in doesn't support these webviews; the add-in isn't rejected by Microsoft Marketplace.
 > - The [Script Lab tool](../overview/explore-with-script-lab.md) no longer supports Trident.
 
 If you plan to support older versions of Windows and Office, your add-in must work in the embeddable browser controls used by these versions. For example, browser controls based on Internet Explorer 11 (IE11) or Microsoft Edge Legacy (EdgeHTML-based). For information about which combinations of Windows and Office use these browser controls, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).

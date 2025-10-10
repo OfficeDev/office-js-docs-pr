@@ -88,7 +88,7 @@ Review and change, as needed, manifest values in light of the following effects 
 
 ### Ensure conformity of custom functions configuration
 
-If your add-in has custom functions, then it includes a JSON configuration file. Some requirements for this file weren't always enforced by Office or AppSource in the past, but they are all enforced when the add-in has a unified manifest. Before you convert the manifest, ensure that this JSON file conforms to all requirements. For more information, see [Custom functions naming and localization](../excel/custom-functions-naming.md) and [Manually create JSON metadata for custom functions](../excel/custom-functions-json.md)
+If your add-in has custom functions, then it includes a JSON configuration file. Some requirements for this file weren't always enforced by Office or Microsoft Marketplace in the past, but they are all enforced when the add-in has a unified manifest. Before you convert the manifest, ensure that this JSON file conforms to all requirements. For more information, see [Custom functions naming and localization](../excel/custom-functions-naming.md) and [Manually create JSON metadata for custom functions](../excel/custom-functions-json.md)
 
 In particualar, note that [all function names and function ids must have at least 3 characters](../excel/custom-functions-naming.md#custom-functions-naming-guidelines) and that [each function object must have a "result" property](../excel/custom-functions-json.md#metadata-reference). 
 

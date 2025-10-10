@@ -42,7 +42,7 @@ Apply the following best practices when you use the autoopen feature.
 - Don't use the autoopen feature to artificially increase usage of your add-in. If it doesn't make sense for your add-in to open automatically with certain documents, this feature can annoy users.
 
     > [!NOTE]
-    > If Microsoft detects abuse of the autoopen feature, your add-in might be rejected from AppSource.
+    > If Microsoft detects abuse of the autoopen feature, your add-in might be rejected from Microsoft Marketplace.
 
 - Don't use this feature to pin multiple task panes. You can only set one pane of your add-in to open automatically with a document.  
 
@@ -127,7 +127,7 @@ The following example shows how to add the `webextension` part.
 
 ```xml
 <we:webextension xmlns:we="http://schemas.microsoft.com/office/webextensions/webextension/2010/11" id="[ADD-IN ID PER MANIFEST]">
-  <we:reference id="[GUID or AppSource asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
+  <we:reference id="[GUID or Microsoft Marketplace asset ID]" version="[your add-in version]" store="[Pointer to store or catalog]" storeType="[Store or catalog type]"/>
   <we:alternateReferences/>
   <we:properties>
    <we:property name="Office.AutoShowTaskpaneWithDocument" value="true"/>
@@ -143,14 +143,14 @@ The `webextension` part also includes a reference to the store or catalog with a
 
 |`storeType` value|`id` value|`store` value|`version` value|
 |:---------------|:---------------|:---------------|:---------------|
-|OMEX (AppSource)|The AppSource asset ID of the add-in (see Note).|The locale of AppSource; for example, "en-us".|The version in the AppSource catalog (see Note).|
-|WOPICatalog (partner [WOPI](/microsoft-365/cloud-storage-partner-program/online/) hosts)| The AppSource asset ID of the add-in (see Note). | `"wopicatalog"`. Use this value for add-ins that are published in App Source and are installed in WOPI hosts. For more information, see [Integrating with Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | The version in the add-in manifest.|
+|OMEX (Microsoft Marketplace)|The Microsoft Marketplace asset ID of the add-in (see Note).|The locale of Microsoft Marketplace; for example, "en-us".|The version in the Microsoft Marketplace catalog (see Note).|
+|WOPICatalog (partner [WOPI](/microsoft-365/cloud-storage-partner-program/online/) hosts)| The Microsoft Marketplace asset ID of the add-in (see Note). | `"wopicatalog"`. Use this value for add-ins that are published in App Source and are installed in WOPI hosts. For more information, see [Integrating with Office Online](/microsoft-365/cloud-storage-partner-program/online/overview). | The version in the add-in manifest.|
 |FileSystem (a network share)|The GUID of the add-in in the add-in manifest.|The path of the network share; for example, "\\\\MyComputer\\MySharedFolder".|The version in the add-in manifest.|
 |EXCatalog (deployment via the Exchange server) |The GUID of the add-in in the add-in manifest.|`"EXCatalog"`. EXCatalog row is the row to use with add-ins that use Centralized Deployment in the Microsoft 365 admin center.|The version in the add-in manifest.|
 |Registry (System registry)|The GUID of the add-in in the add-in manifest.|`"developer"`|The version in the add-in manifest.|
 
 > [!NOTE]
-> To find the asset ID and version of an add-in in AppSource, go to the AppSource landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
+> To find the asset ID and version of an add-in in Microsoft Marketplace, go to the Microsoft Marketplace landing page for the add-in. The asset ID appears in the address bar in the browser. The version is listed in the **Details** section of the page.
 
 For more information about the webextension markup, see [[MS-OWEXML] 2.2.5. WebExtensionReference](/openspecs/office_standards/ms-owexml/d4081e0b-5711-45de-b708-1dfa1b943ad1).
 

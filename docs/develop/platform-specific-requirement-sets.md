@@ -1,4 +1,4 @@
----
+﻿---
 title: Understanding platform-specific requirement sets
 description: Understand and learn how to use platform-specific requirement sets.
 ms.topic: how-to
@@ -46,7 +46,7 @@ When you note a requirement set in the [Set element](/javascript/api/manifest/se
 
 When you declare a platform-specific requirement set, your add-in activates only when it's run in Office on that platform. For example, if you have the WordApiDesktop 1.1 requirement set in your manifest, your add-in will only activate in Word on Windows and on Mac.
 
-Keep in mind that in the case where the APIs become supported cross-platform, you'll need to update your add-in manifest to add a cross-platform requirement set and remove the platform-specific requirement set. If your add-in is available in AppSource or the Office store, you'll need to resubmit it for validation.
+Keep in mind that in the case where the APIs become supported cross-platform, you'll need to update your add-in manifest to add a cross-platform requirement set and remove the platform-specific requirement set. If your add-in is available in Microsoft Marketplace, you'll need to resubmit it for validation.
 
 ### Code
 
@@ -72,13 +72,13 @@ if (Office.context.document.setSelectedDataAsync)
 }
 ```
 
-## Notify customers on AppSource
+## Notify customers on Microsoft Marketplace
 
-If your add-in is in AppSource or the Office store, be sure to notify customers about any platform-specific behavior.
+If your add-in is in Microsoft Marketplace or the Office store, be sure to notify customers about any platform-specific behavior.
 
-**Details + support** > **Products supported** on your add-in's AppSource page should automatically show the appropriate supported platforms based on the requirements you declared in the manifest.
+**Details + support** > **Products supported** on your add-in's Microsoft Marketplace page should automatically show the appropriate supported platforms based on the requirements you declared in the manifest.
 
-However, if your add-in is supported cross-platform but you also implemented platform-specific behaviors, you should point out those feature differences in the **Overview** section on your add-in's AppSource page.
+However, if your add-in is supported cross-platform but you also implemented platform-specific behaviors, you should point out those feature differences in the **Overview** section on your add-in's Microsoft Marketplace page.
 
 ## Exceptions
 

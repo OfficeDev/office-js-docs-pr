@@ -1,4 +1,4 @@
----
+﻿---
 title: Nested app authentication and Outlook legacy tokens deprecation FAQ
 description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
@@ -95,7 +95,7 @@ If you come across add-ins you can’t identify after running `Get-Authenticatio
 Before performing the scream test you may want to let your users know in advance, such as through email, that there will be a test to turn off legacy tokens and that it may affect some Outlook add-ins. You should consider providing users the following information.
 
 - The expected time period of the test.
-- If there are known Outlook add-ins that will break, such as add-ins deployed from Microsoft AppSource that you’ve already identified.
+- If there are known Outlook add-ins that will break, such as add-ins deployed from Microsoft Marketplace that you’ve already identified.
 - That in general, Outlook add-ins shouldn’t break. However, if they do see issues, ask users to report the name, and description of the add-in, along with any error information observed.
 
 Use the following steps to perform the test.
@@ -143,7 +143,7 @@ If you have an add-in that uses legacy Exchange tokens, you should reach out to 
 
 The ISV may also provide you with an updated app manifest to deploy through centralized deployment. During centralized deployment, this may prompt you to consent to any Microsoft Graph scopes the add-in requires. In this scenario you won't need to use an admin consent URI.
 
-If the add-in is deployed from Microsoft AppSource, most likely you'll be prompted to consent to Microsoft Graph scopes when the ISV rolls out updates to the add-in. Until you consent, users on the tenant won't be able to use the new version of the add-in with NAA.
+If the add-in is deployed from Microsoft Marketplace, most likely you'll be prompted to consent to Microsoft Graph scopes when the ISV rolls out updates to the add-in. Until you consent, users on the tenant won't be able to use the new version of the add-in with NAA.
 
 ### Where do I find which add-ins have consent?
 
@@ -347,9 +347,9 @@ Call the Autodiscover endpoint for the outlook.office365.com domain. `https://ou
 > [!NOTE]
 > For customers that use vanity URLs, you need to specifically configure your add-in to call the Autodiscover service on the vanity URL endpoint.
 
-### How do I deploy my add-in to Microsoft AppSource
+### How do I deploy my add-in to Microsoft Marketplace
 
-If you're publishing a new add-in to Microsoft AppSource, it will need to go through a certification process. For more information, see [Publish your Office Add-in to Microsoft AppSource](../publish/publish-office-add-ins-to-appsource.md). If you're updating the manifest of an add-in that is already published to Microsoft AppSource, you need to go through the certification process again. You can update the add-in's source code on your web server any time without a need to go through the certification process.
+If you're publishing a new add-in to Microsoft Marketplace, it will need to go through a certification process. For more information, see [Publish your Office Add-in to Microsoft Marketplace](../publish/publish-office-add-ins-to-appsource.md). If you're updating the manifest of an add-in that is already published to Microsoft Marketplace, you need to go through the certification process again. You can update the add-in's source code on your web server any time without a need to go through the certification process.
 
 If you're add-in uses SSO through NAA, your add-in must be in compliance with the following publishing guidelines.
 
@@ -358,7 +358,7 @@ If you're add-in uses SSO through NAA, your add-in must be in compliance with th
 
 Be sure to handle admin consent properly. See [Publish an add-in that requires admin consent for Microsoft Graph scopes](../publish/publish-nested-app-auth-add-in.md)
 
-For additional deployment details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center). If you update your add-in (change the manifest) you need to go through the [certification process again](../publish/publish-nested-app-auth-add-in.md). You can update your web server code any time without a need for review.
+For additional deployment details, see [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center). If you update your add-in (change the manifest) you need to go through the [certification process again](../publish/publish-nested-app-auth-add-in.md). You can update your web server code any time without a need for review.
 
 ### Users get an unexplained error when signing in
 

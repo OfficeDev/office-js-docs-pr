@@ -66,7 +66,7 @@ The following table specifies the elements that are required for the three types
 
 _\*Added in the Office Add-in Manifest Schema version 1.1._
 
-_\*\* SupportUrl is only required for add-ins that are distributed through AppSource._
+_\*\* SupportUrl is only required for add-ins that are distributed through Microsoft Marketplace._
 
 <!-- Links for above table -->
 
