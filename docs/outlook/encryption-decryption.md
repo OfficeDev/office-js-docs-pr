@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Create an encryption Outlook add-in (preview)
 
-Implement custom encryption and decryption functionality in an Outlook add-in to secure email communications. With the `OnMessageRead` event, your add-in can provide a seamless user experience by automatically identifying encrypted messages and handling decryption, content display, and error notifications.
+Implement custom encryption and decryption functionality in an Outlook add-in to secure email communications. The `OnMessageRead` event lets your add-in automatically identify encrypted messages and handle decryption, content display, and error notifications.
 
 > [!NOTE]
 > The `OnMessageRead` event and decryption APIs are in preview. Features in preview shouldn't be used in production add-ins as they may change based on feedback we receive. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the "Office Add-ins feedback" section at the end of this page).
@@ -32,14 +32,14 @@ The following table provides an overview of the encryption and decryption workfl
 
 ## Implement decryption using event-based activation
 
-While you must implement your own encryption and decryption protocols, configure your add-in to handle the `OnMessageRead` event to conveniently determine when your add-in can decrypt a message and display the decrypted contents. To implement the `OnMessageRead` event, you must:
+You must implement your own encryption and decryption protocols. The add-in must also be configured to handle the `OnMessageRead` event to conveniently determine when your add-in can decrypt a message and display the decrypted contents. To implement the `OnMessageRead` event, you must:
 
 1. [Configure the add-in's manifest](#configure-the-manifest).
 1. [Implement event handling](#implement-event-handling).
 
 ### Supported environments
 
-The `OnMessageRead` event is supported on the Message Read surface. Support varies by client and Exchange environment as shown in the following table.
+The `OnMessageRead` event is supported on the [Message Read](read-scenario.md) surface. Support varies by client and Exchange environment, as shown in the following table.
 
 | Client | Exchange Online | Exchange Subscription Edition (SE) | Exchange Server 2019 | Exchange Server 2016 |
 | ------ | --------------- | ---------------------------------- | -------------------- | -------------------- |
@@ -70,7 +70,7 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 To activate your add-in on the `OnMessageRead` event, you must configure the [\<VersionOverridesV1_1\>](/javascript/api/manifest/versionoverrides-1-1-mail) node of your add-in's **manifest.xml** file as follows.
 
 - To run an event-based add-in in classic Outlook on Windows, you must specify the JavaScript file that contains the event handler in the [\<Override\>](/javascript/api/manifest/override) child element of the [\<Runtime\>](/javascript/api/manifest/runtime) element.
-- Specify the `OnMessageRead` event in the `Type` attribute of a [\<LaunchEvent\>](/javascript/api/manifest/launchevent?view=outlook-js-preview&preserve-view=true) element. You must assign the function name of the event handler to the `FunctionName` attribute of the element. To facilitate checking whether the add-in encrypted a message, a header key must be specified in the `HeaderName` attribute. The same header is added to a message that's encrypted by the add-in.
+- Specify the `OnMessageRead` event in the `Type` attribute of a [\<LaunchEvent\>](/javascript/api/manifest/launchevent?view=outlook-js-preview&preserve-view=true) element. You must assign the function name of the event handler to the `FunctionName` attribute of the element. To facilitate checking whether the message was encrypted by the add-in, a header key must be specified in the `HeaderName` attribute. The same header is added to a message that's encrypted by the add-in.
 
 The following is an example of a `<VersionOverrides>` node that implements the `OnMessageRead` event.
 
