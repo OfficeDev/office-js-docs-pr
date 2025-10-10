@@ -1,7 +1,7 @@
 ---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 05/19/2025
+ms.date: 10/08/2025
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -126,7 +126,7 @@ Get the latest version of Visual Studio Code from [Visual Studio Code homepage](
 
 ### Install a project creation tool
 
-You can create Office add-in projects in Visual Studio Code with either Agents Toolkit or Office Add-ins Development Kit extensions. Currently, the Office Add-ins Development Kit is in preview and only focuses on Excel, PowerPoint, and Word experiences.
+You can create Office add-in projects in Visual Studio Code with either Agents Toolkit or Office Add-ins Development Kit extensions. The Office Add-ins Development Kit currently focuses on Excel, PowerPoint, and Word experiences.
 
 #### Install Agents Toolkit
 

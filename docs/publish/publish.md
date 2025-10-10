@@ -1,7 +1,7 @@
 ﻿---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 08/13/2025
+ms.date: 10/10/2025
 ms.localizationpriority: high
 ---
 
@@ -36,7 +36,7 @@ You can make your add-in available through [AppSource](https://appsource.microso
 
 The Microsoft 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups in their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use integrated apps portal to deploy internal add-ins as well as add-ins provided by independent software vendors (ISVs). The integrated apps portal also shows admins add-ins and other apps bundled together by same ISV, giving them exposure to the entire experience across the Microsoft 365 platform.
 
-When you link your Office Add-ins, Teams apps, SharePoint Framework (SPFx) apps, and [other apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#what-apps-can-i-deploy-from-integrated-apps) together, you create a single software as a service (SaaS) offering for your customers. For general information about this process, see [How to plan a SaaS offer for the commercial marketplace](/azure/marketplace/plan-saas-offer). For specifics on how to create the offer, see [Create the offer](/azure/marketplace/create-new-saas-offer).
+When you link your Apps for Microsoft 365 (including Office Add-ins and Teams apps), SharePoint Framework (SPFx) apps, and [other apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#what-apps-can-i-deploy-from-integrated-apps) together, you create a single software as a service (SaaS) offering for your customers. For general information about this process, see [How to plan a SaaS offer for the commercial marketplace](/azure/marketplace/plan-saas-offer). For specifics on how to create the offer, see [Create the offer](/azure/marketplace/create-new-saas-offer).
 
 For more information on the deployment process, see [Get started with the integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
