@@ -160,7 +160,7 @@ Using this tutorial, you implemented a basic [first-run experience](../design/fi
   - For more about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md).
   - For more about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
 
-If you're planning to make your add-in available in the Microsoft Marketplace marketplace, you must have a robust and useful first-run experience. For more information, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
+If you're planning to make your add-in available in Microsoft Marketplace, you must have a robust and useful first-run experience. For more information, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
 
 ## Code samples
 

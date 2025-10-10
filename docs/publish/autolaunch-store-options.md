@@ -11,7 +11,7 @@ Add-ins must be deployed by an organization's admins for end-users to access the
 
 An end-user or admin can acquire add-ins through Microsoft Marketplace or the in-app Microsoft 365 and Copilot store. If your add-in's primary scenario or workflow requires event-based activation, you may want to restrict your add-in to admin deployment only. To enable that restriction, we can provide flight code URLs for add-ins in Microsoft Marketplace. Thanks to the flight codes, only end-users with these special URLs can access the listing. The following is an example URL.
 
-`https://appsource.microsoft.com/product/office/WA200002862?flightCodes=EventBasedTest1`
+`https://marketplace.microsoft.com/product/office/WA200002862?flightCodes=EventBasedTest1`
 
 Users and admins can't explicitly search for an add-in by its name in Microsoft Marketplace or the in-app Microsoft 365 and Copilot store when a flight code is enabled for it. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
 

@@ -79,7 +79,7 @@ To override this behavior in desktop platforms, add each domain you want to open
 
 Add-ins that use the unified manifest can be installed if the Office platform *directly* supports it.
 
-To run an add-in on platforms that don't directly support the unified manifest, you must publish the add-in to [Microsoft Marketplace](https://appsource.microsoft.com/). Then, deploy the add-in in the [Microsoft 365 admin center](../publish/publish.md). This way, an add-in only manifest is generated from the unified manifest and stored. The add-in only manifest is then used to install the add-in on platforms that don't directly support the unified manifest.
+To run an add-in on platforms that don't directly support the unified manifest, you must publish the add-in to [Microsoft Marketplace](https://marketplace.microsoft.com/). Then, deploy the add-in in the [Microsoft 365 admin center](../publish/publish.md). This way, an add-in only manifest is generated from the unified manifest and stored. The add-in only manifest is then used to install the add-in on platforms that don't directly support the unified manifest.
 
 The following tables lists which Office platforms directly support add-ins that use the unified manifest.
 

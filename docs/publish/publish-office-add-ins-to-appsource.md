@@ -8,7 +8,7 @@ CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft 
 
 # Publish your Office Add-in to Microsoft Marketplace
 
-Publish your Office Add-in to [Microsoft Marketplace](https://appsource.microsoft.com/) to make it widely available to customers and businesses. Microsoft Marketplace is an online store that contains thousands of business applications and services built by industry-leading software providers. When you publish your add-in to Microsoft Marketplace, you also make it available in the in-product experience within Office.
+Publish your Office Add-in to [Microsoft Marketplace](https://marketplace.microsoft.com/) to make it widely available to customers and businesses. Microsoft Marketplace is an online store that contains thousands of business applications and services built by industry-leading software providers. When you publish your add-in to Microsoft Marketplace, you also make it available in the in-product experience within Office.
 
 ## The publishing process
 
@@ -57,7 +57,7 @@ Change the placeholders in the URL as follows.
 - **addInId**: The ID of your add-in as listed in Microsoft Marketplace.
 - **addInName**: The full title of your add-in. This must be URL-encoded.
 
-For example, the following is an installation link for [Script Lab](https://appsource.microsoft.com/product/office/wa104380862).
+For example, the following is an installation link for [Script Lab](https://marketplace.microsoft.com/product/office/wa104380862).
 
 [https://go.microsoft.com/fwlink/?linkid=2261819&templateid=WA104380862&templatetitle=Script%20Lab,%20a%20Microsoft%20Garage%20project](https://go.microsoft.com/fwlink/?linkid=2261819&templateid=WA104380862&templatetitle=Script%20Lab,%20a%20Microsoft%20Garage%20project)
 
@@ -224,7 +224,7 @@ namespace SampleProject
 
 ##### Check for Microsoft Marketplace disablement (recommended)
 
-We recommend that your installation check whether the [Microsoft Marketplace](https://appsource.microsoft.com/) store is disabled in the user's Office application. Microsoft 365 Administrators sometimes disable the store. If the store is disabled, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they contact their administrator about your web add-in. They would need to rerun the installation after the store is enabled. 
+We recommend that your installation check whether the [Microsoft Marketplace](https://marketplace.microsoft.com/) store is disabled in the user's Office application. Microsoft 365 Administrators sometimes disable the store. If the store is disabled, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they contact their administrator about your web add-in. They would need to rerun the installation after the store is enabled. 
 
 The following is an example of how to check for disablement of the store. 
 
@@ -471,5 +471,5 @@ If you're combining the installation of a web add-in with a COM/VSTO add-in, you
 
 ## Related content
 
-- [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center)
-- [What is Microsoft Marketplace?](/marketplace/appsource-overview)
+- [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)
+- [What is Microsoft Marketplace?](/marketplace/marketplace-overview)
