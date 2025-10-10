@@ -137,37 +137,55 @@ function onMessageReadHandler(event) {
     // Your code to decrypt the contents of a message would appear here.
     ...
 
-    // Display the message body and attachments if decryption is successful.
+    // Use the results from your decryption process to display the decrypted contents of the message body and attachments.
+    const decryptedBodyContent = "<p>Please find attached the recent report and its supporting documentation.</p>";
     const decryptedBody = {
         coercionType: Office.CoercionType.Html,
-        content: "<p>Please find attached the recent report and its supporting documentation.</p>"
+        content: decryptedBodyContent
     };
 
+    // Decrypted content and properties of a file attachment.
+    const decryptedPdfFile = "JVBERi0xLjQKJeLjz9MKNCAwIG9i...";
+    const pdfFileName = "Fabrikam_Report_202509";
+
+    // Decrypted content and properties of a mail item.
+    const decryptedEmailFile = "VGhpcyBpcyBhIHRleHQgZmlsZS4=...";
+    const emailFileName = "Fabrikam_Report_202508.eml";
+
+    // Decrypted properties of a cloud attachment.
+    const cloudFilePath = "https://contosostorage.com/reports/weekly_forecast.xlsx";
+    const cloudFileName = "weekly_forecast.xlsx";
+
+    // Decrypted content and properties of an inline image.
+    const decryptedImageFile = "iVBORw0KGgoAAAANSUhEUgAA...";
+    const imageFileName = "banner.png";
+    const imageContentId = "image001.png@01DC1DD9.1A4AA300";
+
     const decryptedAttachments = [
-        {
-            attachmentType: Office.MailboxEnums.AttachmentType.File,
-            content: "JVBERi0xLjQKJeLjz9MKNCAwIG9i...",
+      {
+        attachmentType: Office.MailboxEnums.AttachmentType.File,
+            content: decryptedPdfFile,
             isInline: false,
-            name: "Fabrikam_Report_202509"
+            name: pdfFileName
         },
         {
-            attachmentType: Office.MailboxEnums.AttachmentType.Item,
-            content: "VGhpcyBpcyBhIHRleHQgZmlsZS4=...",
+          attachmentType: Office.MailboxEnums.AttachmentType.Item,
+            content: decryptedEmailFile,
             isInline: false,
-            name: "Fabrikam_Report_202508.eml"
+            name: emailFileName
         },
         {
-            attachmentType: Office.MailboxEnums.AttachmentType.Cloud,
+          attachmentType: Office.MailboxEnums.AttachmentType.Cloud,
             isInline: false,
-            name: "weekly_forecast.xlsx",
-            path: "https://contosostorage.com/reports/weekly_forecast.xlsx"
+            name: cloudFileName,
+            path: cloudFilePath
         },
         {
-            attachmentType: Office.MailboxEnums.AttachmentType.File,
-            content: "iVBORw0KGgoAAAANSUhEUgAA...",
-            contentId: "image001.png@01DC1DD9.1A4AA300",
+          attachmentType: Office.MailboxEnums.AttachmentType.File,
+            content: decryptedImageFile,
+            contentId: imageContentId,
             isInline: true,
-            name: "banner.png"
+            name: imageFileName
         }
     ];
 
