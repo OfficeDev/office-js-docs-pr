@@ -808,6 +808,9 @@
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
         displayName: event-based activation
+    - name: Create an encryption add-in
+      href: outlook/encryption-decryption.md
+      displayName: preview
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md
     - name: Activate add-in without Reading Pane or selected message
