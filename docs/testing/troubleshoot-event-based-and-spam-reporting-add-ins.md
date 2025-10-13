@@ -45,7 +45,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
 
 ## Check your webpack configuration
 
-On Windows clients (except for new Outlook on Windows), if your event-based add-in uses webpack to bundle files and the event handlers never run, configure your add-in's webpack dev server to serve static files. This approach prevents webpack from adding code to your add-in's files that may be incompatible with the JavaScript runtime. Configure your add-in to use static files as follows:
+On Windows clients (except for the new Outlook on Windows), if your event-based add-in uses webpack to bundle files and the event handlers never run, configure your add-in's webpack dev server to serve static files. This approach prevents webpack from adding code to your add-in's files that may be incompatible with the JavaScript runtime. Configure your add-in to use static files as follows:
 
 1. In the `webpack.config.js` file of your add-in, import the Node.js `path` module.
 
