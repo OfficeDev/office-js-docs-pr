@@ -4,7 +4,7 @@ description: Nested app authentication and Outlook legacy tokens deprecation FAQ
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 10/01/2025
+ms.date: 10/14/2025
 ---
 
 # Nested app authentication and Outlook legacy tokens deprecation FAQ
@@ -31,6 +31,8 @@ The general availability (GA) date for NAA depends on which channel you're using
 | November 2024 | NAA is GA in Monthly Enterprise Channel. |
 | January 2025 | NAA is GA in Semi-Annual Channel Version 2408 (Build 17928.20392). |
 | June 2025 | NAA is GA in Semi-Annual Extended Channel Version 2408 (Build 17928.20604). |
+
+For more information on NAA requirements, see [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets).
 
 ### Are COM Add-ins affected by the deprecation of legacy Exchange Online tokens?
 
