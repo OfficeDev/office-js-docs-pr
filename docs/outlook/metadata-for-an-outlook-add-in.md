@@ -247,7 +247,7 @@ If you only need to save and access data while a mail item is being composed, us
 Custom data is saved to the SessionData object as key-value pairs. For each mail item, the data in the SessionData object is limited to 50,000 characters per add-in. That is, if multiple add-ins set custom session data on a single mail item, each add-in can create a SessionData object that contains up to 50,000 characters.
 
 > [!NOTE]
-> An increased SessionData character limit of up to 2,621,440 characters is in preview in classic Outlook on Windows.
+> An increased SessionData character limit of up to 2,621,440 characters is in preview in classic Outlook on Windows. To test the updated limit, join the [Microsoft 365 Insider program](https://aka.ms/MSFT365InsiderProgram), then choose the Beta Channel in the classic Outlook on Windows client. Your client must be on Version 2510 (Build 19317.20000) or later.
 
 ### Try the code example in Script Lab
 
