@@ -25,7 +25,7 @@ Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to con
 
 ### Developer community forums
 
-Post your questions and help other community members by sharing and responding to Office Add-in development questions.
+Post your questions and help other community members by sharing and responding to Office Add-in development questions. 
 
 | Developer need | Contact |
 |:---------------------|:---------------|
