@@ -1,4 +1,4 @@
----
+﻿---
 title: Deploy and install Outlook add-ins for testing
 description: Create a manifest file, deploy the add-in UI file to a web server, install the add-in in your mailbox, and then test the add-in.
 ms.date: 03/21/2023
@@ -72,7 +72,7 @@ Deciding what versions of the Outlook client to test depends on your development
 
 - If you're developing an add-in for private use, or only for members of your organization, then it is important to test the versions of Outlook that your company uses. Keep in mind that some users may use Outlook on the web, so testing your company's standard browser versions is also important.
 
-- If you're developing an add-in to list in [AppSource](https://appsource.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
+- If you're developing an add-in to list in [Microsoft Marketplace](https://marketplace.microsoft.com), you must test the required versions as specified in the [Commercial marketplace certification policies 1120.3](/legal/marketplace/certification-policies#11203-functionality). This includes:
   - The latest version of Outlook on Windows and the version prior to the latest.
   - The latest version of Outlook on Mac.
   - The latest version of Outlook on iOS and Android (if your add-in [supports mobile form factor](add-mobile-support.md)).
@@ -83,7 +83,7 @@ Deciding what versions of the Outlook client to test depends on your development
 
 ## Outlook on the web and Exchange server versions
 
-Consumer and Microsoft 365 account users see the modern UI version when they access Outlook on the web and no longer see the classic version which has been deprecated. However, on-premises Exchange servers continue to support classic Outlook on the web. Therefore, during the validation process, your submission may receive a warning that the add-in is not compatible with classic Outlook on the web. In that case, you should consider testing your add-in in an on-premises Exchange environment. This warning won't block your submission to AppSource but your customers may experience a sub-optimal experience if they use Outlook on the web in an on-premises Exchange environment.
+Consumer and Microsoft 365 account users see the modern UI version when they access Outlook on the web and no longer see the classic version which has been deprecated. However, on-premises Exchange servers continue to support classic Outlook on the web. Therefore, during the validation process, your submission may receive a warning that the add-in is not compatible with classic Outlook on the web. In that case, you should consider testing your add-in in an on-premises Exchange environment. This warning won't block your submission to Microsoft Marketplace but your customers may experience a sub-optimal experience if they use Outlook on the web in an on-premises Exchange environment.
 
 To mitigate this, we recommend you test your add-in in Outlook on the web connected to your own private on-premises Exchange environment. For more information, see [Establish an Exchange Server test environment](/Exchange/plan-and-deploy/plan-and-deploy#establish-an-exchange-server-test-environment) and [Outlook on the web in Exchange Server](/exchange/clients/outlook-on-the-web/outlook-on-the-web).
 

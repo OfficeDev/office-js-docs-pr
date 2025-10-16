@@ -28,7 +28,7 @@ Permissions are declared in the manifest. The markup varies depending on the typ
 
 The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item** and **restricted**, **read/write item** includes **read item** and **restricted**, and the **read item** permission includes **restricted**.
 
-You can see the permissions requested by a mail add-in before installing it from [AppSource](https://appsource.microsoft.com). You can also see the required permissions of installed add-ins in the Exchange Admin Center.
+You can see the permissions requested by a mail add-in before installing it from [Microsoft Marketplace](https://marketplace.microsoft.com). You can also see the required permissions of installed add-ins in the Exchange Admin Center.
 
 > [!TIP]
 > To make sure that your Outlook add-in specifies the correct permission level, verify the minimum permission level required by each API implemented by your add-in. For information on minimum permission levels, see [Outlook API reference](/javascript/api/outlook).

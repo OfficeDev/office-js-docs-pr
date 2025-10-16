@@ -133,7 +133,7 @@ Conversely, in classic Outlook on Windows, the task pane of a multi-select add-i
 
 ## Deploy to users
 
-If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com) and it's configured with a pinnable task pane, the pinned content of the add-in must not be static. That is, the pinned content must change depending on the message or appointment that's currently open or selected in the mailbox. This ensures that your add-in will pass [AppSource validation](/legal/marketplace/certification-policies).
+If you plan to [publish](../publish/publish.md) your Outlook add-in to [Microsoft Marketplace](https://marketplace.microsoft.com) and it's configured with a pinnable task pane, the pinned content of the add-in must not be static. That is, the pinned content must change depending on the message or appointment that's currently open or selected in the mailbox. This ensures that your add-in will pass [Microsoft Marketplace validation](/legal/marketplace/certification-policies).
 
 ## See also
 

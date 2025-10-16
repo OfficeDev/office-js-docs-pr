@@ -1,4 +1,4 @@
----
+﻿---
 title: Loading the DOM and runtime environment
 description: Load the DOM and Office Add-ins runtime environment.
 ms.date: 05/20/2023
@@ -20,7 +20,7 @@ The following events occur when a content or task pane add-in starts.
 
 1. The user opens a document that already contains an add-in or inserts an add-in in the document.
 
-2. The Office client application reads the add-in's manifest from AppSource, an app catalog on SharePoint, or the shared folder catalog it originates from.
+2. The Office client application reads the add-in's manifest from Microsoft Marketplace, an app catalog on SharePoint, or the shared folder catalog it originates from.
 
 3. The Office client application opens the add-in's HTML page in a webview control.
 

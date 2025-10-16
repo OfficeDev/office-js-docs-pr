@@ -1,33 +1,33 @@
----
-title: Publish your Office Add-in to Microsoft AppSource
-description: Learn how to publish your Office Add-in to Microsoft AppSource and install the add-in with a Windows app or COM/VSTO add-in.
+﻿---
+title: Publish your Office Add-in to Microsoft Marketplace
+description: Learn how to publish your Office Add-in to Microsoft Marketplace and install the add-in with a Windows app or COM/VSTO add-in.
 ms.topic: concept-article
 ms.date: 06/06/2025
-CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft AppSource so that customers can deploy and use my new add-in.
+CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft Marketplace so that customers can deploy and use my new add-in.
 ---
 
-# Publish your Office Add-in to Microsoft AppSource
+# Publish your Office Add-in to Microsoft Marketplace
 
-Publish your Office Add-in to [Microsoft AppSource](https://appsource.microsoft.com/) to make it widely available to customers and businesses. Microsoft AppSource is an online store that contains thousands of business applications and services built by industry-leading software providers. When you publish your add-in to Microsoft AppSource, you also make it available in the in-product experience within Office.
+Publish your Office Add-in to [Microsoft Marketplace](https://marketplace.microsoft.com/) to make it widely available to customers and businesses. Microsoft Marketplace is an online store that contains thousands of business applications and services built by industry-leading software providers. When you publish your add-in to Microsoft Marketplace, you also make it available in the in-product experience within Office.
 
 ## The publishing process
 
 Before you proceed:
 
 - Have a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account).
-- Ensure that your add-in adheres to the applicable [AppSource validation policies](/legal/marketplace/certification-policies).
+- Ensure that your add-in adheres to the applicable [Microsoft Marketplace validation policies](/legal/marketplace/certification-policies).
 - Confirm that you're [ready to publish](/partner-center/marketplace-offers/checklist).
 
-When you're ready to include your solution in Microsoft AppSource and within Office, submit it to Partner Center. Then, it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
+When you're ready to include your solution in Microsoft Marketplace and within Office, submit it to Partner Center. Then, it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
 
-When your add-in is available in AppSource, there are two further steps you can take to make it more widely installed. 
+When your add-in is available in Microsoft Marketplace, there are two further steps you can take to make it more widely installed. 
 
 - [Provide an installation link](#provide-an-installation-link)
 - [Include the add-in in the installation of a Windows app or a COM or VSTO add-in](#include-the-add-in-in-the-installation-of-a-windows-app-or-comvsto-add-in)
 
 ### Provide an installation link
 
-After you publish to Microsoft AppSource, you can create an installation link to help customers discover and install your add-in. The installation link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in. When users select the link, the Office application opens with a new document and your add-in is installed without the need for users to search for it in Microsoft AppSource and install it manually.
+After you publish to Microsoft Marketplace, you can create an installation link to help customers discover and install your add-in. The installation link provides a "click and run" experience. Put the link on your website, social media, or anywhere you think helps your customers discover your add-in. When users select the link, the Office application opens with a new document and your add-in is installed without the need for users to search for it in Microsoft Marketplace and install it manually.
 
 > [!NOTE]
 > Installation links can only be created for Excel, PowerPoint, and Word add-ins.
@@ -54,17 +54,17 @@ Change the placeholders in the URL as follows.
   - For Excel on the web: `2261819`
   - For PowerPoint on the web: `2261820`
 
-- **addInId**: The ID of your add-in as listed in AppSource.
+- **addInId**: The ID of your add-in as listed in Microsoft Marketplace.
 - **addInName**: The full title of your add-in. This must be URL-encoded.
 
-For example, the following is an installation link for [Script Lab](https://appsource.microsoft.com/product/office/wa104380862).
+For example, the following is an installation link for [Script Lab](https://marketplace.microsoft.com/product/office/wa104380862).
 
 [https://go.microsoft.com/fwlink/?linkid=2261819&templateid=WA104380862&templatetitle=Script%20Lab,%20a%20Microsoft%20Garage%20project](https://go.microsoft.com/fwlink/?linkid=2261819&templateid=WA104380862&templatetitle=Script%20Lab,%20a%20Microsoft%20Garage%20project)
 
 The following parameter values are used for the Script Lab installation link.
 
 - **linkid:** The value `2261819` specifies the Excel endpoint. Script Lab supports Word, Excel, and PowerPoint, so this value can be changed to support different endpoints.
-- **templateid:** The value `WA104380862` is the Microsoft AppSource ID for Script Lab.
+- **templateid:** The value `WA104380862` is the Microsoft Marketplace ID for Script Lab.
 - **templatetitle:** The value `Script%20Lab,%20a%20Microsoft%20Garage%20project` is the URL-encoded value of the title.
 
 #### Open in Office on Windows or Mac
@@ -83,7 +83,7 @@ Change the placeholders in the URL as follows.
 
 - **language:** This is the language of the add-in. For example: `de-DE`, `ja-JP`, or `zh-CN`.
 - **correlationID:** A GUID for diagnostic purposes. For example, "7bf846ec-905a-5edd-b162-83498f9a8674". Use a GUID generation tool. The diagnostic purpose is defeated if multiple users have the same GUID, so we recommend you to generate it at runtime and make it different per click.
-- **addInId:** The ID of your add-in as listed in AppSource. *This parameter is case-sensitive. Use uppercase letters.*
+- **addInId:** The ID of your add-in as listed in Microsoft Marketplace. *This parameter is case-sensitive. Use uppercase letters.*
 - **addInName:** The full name of your add-in. This must be URL-encoded.
 - **fileFormat:** Specifies the format of the file that is created.
 
@@ -118,7 +118,7 @@ We recommend that you join the [developer certification program](/microsoft-365-
 The following are the steps for updating your installation executable.
 
 1. [Check that user's Office version supports the add-ins (recommended)](#check-that-users-office-version-supports-web-add-ins-recommended)
-1. [Check for AppSource disablement (recommended)](#check-for-appsource-disablement-recommended)
+1. [Check for Microsoft Marketplace disablement (recommended)](#check-for-Microsoft Marketplace-disablement-recommended)
 1. [Create a registry key for the add-in (required)](#create-a-registry-key-for-the-add-in-required)
 1. [Include privacy terms in your terms & conditions (required for certified developers)](#include-privacy-terms-in-your-terms--conditions-required-for-certified-developers)
 
@@ -222,9 +222,9 @@ namespace SampleProject
 }
 ```
 
-##### Check for AppSource disablement (recommended)
+##### Check for Microsoft Marketplace disablement (recommended)
 
-We recommend that your installation check whether the [AppSource](https://appsource.microsoft.com/) store is disabled in the user's Office application. Microsoft 365 Administrators sometimes disable the store. If the store is disabled, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they contact their administrator about your web add-in. They would need to rerun the installation after the store is enabled. 
+We recommend that your installation check whether the [Microsoft Marketplace](https://marketplace.microsoft.com/) store is disabled in the user's Office application. Microsoft 365 Administrators sometimes disable the store. If the store is disabled, the installation program should skip all the remaining steps. Consider displaying a message to the user that recommends that they contact their administrator about your web add-in. They would need to rerun the installation after the store is enabled. 
 
 The following is an example of how to check for disablement of the store. 
 
@@ -329,7 +329,7 @@ Replace the placeholders as follows:
    > If the add-in's manifest is configured to support more than one Office application, replace `{{OfficeApplication}}` with any *one* of the supported applications. Don't create separate registry entries for each supported application. The add-in will be installed for all the Office applications that it supports. 
 
 - `{{add-inName}}` with the name of the add-in; for example `ContosoAdd-in`.
-- `{{assetId}}` with the AppSource asset ID of your add-in, such as `WA999999999`.
+- `{{assetId}}` with the Microsoft Marketplace asset ID of your add-in, such as `WA999999999`.
 
 The following is an example.
 
@@ -375,7 +375,7 @@ namespace SampleProject
                 }
 
                 string wxpName = "Word";  // Can be "Word", "Powerpoint", or "Excel".
-                string assetID = "WA999999999"; // AppSource asset ID of your web add-in.
+                string assetID = "WA999999999"; // Microsoft Marketplace asset ID of your web add-in.
                 string appName = "ContosoAddin"; // Your web add-in name.
                 const int supportedBuildMajorNumber = 16;
                 const string assetIdStr = "AssetIDs";
@@ -471,5 +471,5 @@ If you're combining the installation of a web add-in with a COM/VSTO add-in, you
 
 ## Related content
 
-- [Make your solutions available in Microsoft AppSource and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center)
-- [What is Microsoft AppSource?](/marketplace/appsource-overview)
+- [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center)
+- [What is Microsoft Marketplace?](/marketplace/marketplace-overview)

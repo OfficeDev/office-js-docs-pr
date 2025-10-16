@@ -1,7 +1,7 @@
 ﻿---
 title: Troubleshoot event-based and spam-reporting add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins that implement event-based activation or integrated spam reporting.
-ms.date: 08/05/2025
+ms.date: 10/14/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -42,6 +42,33 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
   - Avoid using the [conditional (ternary) operator](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) as it will prevent your add-in from loading.
   
   If your add-in has only one JavaScript file referenced by Outlook on the web, on Windows (new and classic), and on Mac, you must limit your code to ECMAScript 2016 to ensure that your add-in runs in earlier versions of classic Outlook on Windows. However, if you have a separate JavaScript file referenced by Outlook on the web, on Mac, recent versions of classic Outlook on Windows, and the new Outlook on Windows, you can implement a later ECMAScript specification in that file.
+
+## Check your webpack configuration
+
+On Windows clients (except for the new Outlook on Windows), if your event-based add-in uses webpack to bundle files and the event handlers never run, configure your add-in's webpack dev server to serve static files. This approach prevents webpack from adding code to your add-in's files that may be incompatible with the JavaScript runtime. Configure your add-in to use static files as follows:
+
+1. In the `webpack.config.js` file of your add-in, import the Node.js `path` module.
+
+    ```javascript
+    const path = require("path");
+    ```
+
+1. In the same file, configure the webpack dev server to serve static files from the `dist` folder.
+
+    ```javascript
+    ...
+    devServer: {
+      static: {
+        directory: path.join(__dirname, "dist"),
+        publicPath: "/public",
+      },
+      ...
+    }
+    ...
+    ```
+
+1. Run `npm run build`.
+1. In your add-in's manifest, update the path to the event-handling JavaScript file to reference the built file served from the static directory. For example, `https://localhost:3000/public/launchevent.js`.
 
 ## Debug your add-in
 

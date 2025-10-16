@@ -1,4 +1,4 @@
----
+﻿---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
 ms.date: 07/21/2025
@@ -128,9 +128,9 @@ When an equivalent Windows-only add-in is specified, Office on Windows won't dis
 
 The following scenarios describe what happens depending on how the user acquires the Office Add-in.
 
-### AppSource acquisition of an Office Add-in
+### Microsoft Marketplace acquisition of an Office Add-in
 
-If a user acquires the Office Add-in from AppSource and the equivalent Windows-only add-in is already installed, then Office will:
+If a user acquires the Office Add-in from Microsoft Marketplace and the equivalent Windows-only add-in is already installed, then Office will:
 
 1. Install the Office Add-in.
 2. Hide the Office Add-in UI on the ribbon.

@@ -1,8 +1,8 @@
----
+﻿---
 title: Office Add-ins manifest
 description: Get an overview of the Office Add-in manifest and its uses.
 ms.topic: overview
-ms.date: 02/12/2025
+ms.date: 10/10/2025
 ms.localizationpriority: high
 ---
 
@@ -11,7 +11,7 @@ ms.localizationpriority: high
 Every Office add-in has a manifest. There are two types of manifests:
 
 - **Add-in only manifest**: This type of manifest can be used for production add-ins in Excel, OneNote, Outlook, PowerPoint, Project, and Word. It can't be used for an app that combines an add-in with some other kind of extension of the Microsoft 365 platform. Its format is XML.
-- **Unified manifest for Microsoft 365**: This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Add-ins that use this manifest can be combined with other kinds of extensions of the Microsoft 365 platform in a single app that's installable as a unit. You can use this type of manifest for production Outlook add-ins. It's available for preview in Excel, PowerPoint, and Word add-ins.
+- **Unified manifest for Microsoft 365**: This is an expanded version of the JSON-formatted manifest that has been used for years as the manifest for Teams Apps. Add-ins that use this manifest can be combined with other kinds of Apps for Microsoft 365, that is, extensions of Microsoft 365, in a single app that's installable as a unit. You can use this type of manifest for production Outlook add-ins. It's available for preview in Excel, PowerPoint, and Word add-ins.
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
@@ -45,11 +45,11 @@ All image URIs, such as those used for [add-in commands](../design/add-in-comman
 
 All URLs to code or content files in the add-in should be **SSL-secured (HTTPS)**. [!INCLUDE [HTTPS guidance](../includes/https-guidance.md)]
 
-## Best practices for submitting to AppSource
+## Best practices for submitting to Microsoft Marketplace
 
 Make sure that the add-in ID is a valid and unique GUID. Various GUID generator tools are available on the web that you can use to create a unique GUID.
 
-Add-ins submitted to AppSource must also include a support URL in the manifest. For more information, see [Validation policies for apps and add-ins submitted to AppSource](/legal/marketplace/certification-policies).
+Add-ins submitted to Microsoft Marketplace must also include a support URL in the manifest. For more information, see [Validation policies for apps and add-ins submitted to Microsoft Marketplace](/legal/marketplace/certification-policies).
 
 ## Specify domains you want to open in the add-in window
 

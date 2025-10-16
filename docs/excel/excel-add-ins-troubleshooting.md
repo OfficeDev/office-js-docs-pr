@@ -1,12 +1,12 @@
 ---
-title: Troubleshooting Excel add-ins
-description: Learn how to troubleshoot development errors in Excel add-ins.
-ms.date: 02/17/2022
+title: Troubleshoot Excel add-ins
+description: 'Diagnose and resolve common Excel add-in errors: workbook focus changes, API limitations, and known issues.'
+ms.date: 09/22/2025
 ms.topic: troubleshooting-error-codes
 ms.localizationpriority: medium
 ---
 
-# Troubleshooting Excel add-ins
+# Troubleshoot Excel add-ins
 
 This article discusses troubleshooting issues that are unique to Excel. Please use the feedback tool at the bottom of the page to suggest other issues that can be added to the article.
 
@@ -38,11 +38,11 @@ The following APIs are affected by this workbook switch.
 > [!NOTE]
 > This only applies to multiple Excel workbooks open on Windows or Mac.
 
-## Coauthoring
+## Coauthoring and merge conflicts
 
 See [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md) for patterns to use with events in a coauthoring environment. The article also discusses potential merge conflicts when using certain APIs, such as [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)).
 
-## Known Issues
+## Known issues
 
 ### Binding events return temporary `Binding` objects
 
@@ -84,10 +84,6 @@ async function getBindingId(eventArgs) {
 The [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) property of `CellPropertiesFormat` doesn't work properly in Excel on the web. Due to an issue in the Excel on the web UI, setting the `useStandardHeight` property to `true` calculates height imprecisely on this platform. For example, a standard height of **14** is modified to **14.25** in Excel on the web.
 
 On all platforms, the [useStandardHeight](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardheight-member) and [useStandardWidth](/javascript/api/excel/excel.cellpropertiesformat#excel-excel-cellpropertiesformat-usestandardwidth-member) properties of `CellPropertiesFormat` are only intended to be set to `true`. Setting these properties to `false` has no effect.
-
-### Range `getImage` method unsupported on Excel for Mac
-
-The Range [getImage](/javascript/api/excel/excel.range#excel-excel-range-getimage-member(1)) method isn't currently supported in Excel for Mac. See [OfficeDev/office-js Issue #235](https://github.com/OfficeDev/office-js/issues/235) for the current status.
 
 ### Range return character limit
 

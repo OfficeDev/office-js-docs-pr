@@ -1,4 +1,4 @@
----
+﻿---
 title: Get and set the recurrence of appointments
 description: This topic shows you how to use the Office JavaScript API to get and set various recurrence properties of an appointment using an Outlook add-in.
 ms.date: 06/17/2024

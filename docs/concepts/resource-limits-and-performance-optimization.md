@@ -1,7 +1,7 @@
----
+﻿---
 title: Resource limits and performance optimization for Office Add-ins
 description: Learn about the resource limits of the Office Add-in platform, including CPU and memory.
-ms.date: 07/14/2025
+ms.date: 09/03/2025
 ms.localizationpriority: medium
 ---
 
@@ -61,8 +61,8 @@ Outlook add-ins that use regular expressions and run in Outlook on Windows (clas
 
 Excel add-ins have important data transfer limits when interacting with the workbook.
 
-- Excel on the web has a payload size limit for requests and responses of 5MB. `RichAPI.Error` will be thrown if that limit is exceeded.
-- A range is limited to 5,000,000 cells for read operations.
+- Excel on the web has a payload size limit for requests and responses of **5MB**. `RichAPI.Error` will be thrown if that limit is exceeded.
+- A range is limited to **5,000,000** cells for read operations.
 
 If you expect user input will exceed these limits, check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
 
@@ -81,7 +81,7 @@ The following table lists the events that the Telemetry Log tracks for Office Ad
 |Event ID|Title|Severity|Description|
 |:-----|:-----|:-----|:-----|
 |7|Add-in manifest downloaded successfully|*Not applicable*|The manifest of the Office Add-in was successfully loaded and read by the Office application.|
-|8|Add-in manifest did not download|Critical|The Office application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or AppSource.|
+|8|Add-in manifest did not download|Critical|The Office application was unable to load the manifest file for the Office Add-in from the SharePoint catalog, corporate catalog, or Microsoft Marketplace.|
 |9|Add-in markup could not be parsed|Critical|The Office application loaded the Office Add-in manifest, but could not read the HTML markup of the app.|
 |10|Add-in used too much CPU|Critical|The Office Add-in used more than 90% of the CPU resources over a finite period of time.|
 |15|Add-in disabled due to string search time-out|*Not applicable*|Outlook add-ins search the subject line and message of an e-mail to determine whether they should be displayed by using a regular expression. The Outlook add-in listed in the **File** column was disabled by Outlook because it timed out repeatedly while trying to match a regular expression.|

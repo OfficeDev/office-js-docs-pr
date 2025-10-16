@@ -2,7 +2,7 @@
 title: Compare the add-in only manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the add-in only manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 06/24/2025
+ms.date: 09/02/2025
 ms.localizationpriority: high
 ---
 
@@ -103,8 +103,8 @@ The following table maps the child properties of the anonymous child objects in 
 |:-----|:-----|:-----|:-----|
 | `"contexts"` | Specifies the command surfaces that the add-in customizes. | Various **\*CommandSurface** elements, such as **PrimaryCommandSurface** and **MessageReadCommandSurface** |*None.* |
 | `"tabs"` | Configures custom ribbon tabs. | `<CustomTab>` | The names and hierarchy of the descendant properties of `"tabs"` closely match the descendants of `<CustomTab>`. |
-| `"fixedControls"` (developer preview) | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. | `<Control>` child element of `<ReportPhishingCustomization>` | *None.* |
-| `"spamPreProcessingDialog"` (developer preview) | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. | `<PreProcessingDialog>` child element of `<ReportPhishingCustomization>` | *None.* |
+| `"fixedControls"` | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. | `<Control>` child element of `<ReportPhishingCustomization>` | *None.* |
+| `"spamPreProcessingDialog"` | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. | `<PreProcessingDialog>` child element of `<ReportPhishingCustomization>` | *None.* |
 
 For a full sample unified manifest, see [Sample unified manifest](unified-manifest-overview.md#sample-unified-manifest).
 

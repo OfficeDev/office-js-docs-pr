@@ -1,4 +1,4 @@
----
+﻿---
 title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
 ms.date: 02/19/2025
@@ -31,11 +31,11 @@ Office Add-ins provide the following advantages over add-ins built using VBA, CO
 
 - Centralized deployment and distribution: Admins can deploy Office Add-ins centrally across an organization.
 
-- Easy access via AppSource: You can make your solution available to a broad audience by submitting it to AppSource.
+- Easy access via Microsoft Marketplace: You can make your solution available to a broad audience by submitting it to Microsoft Marketplace.
 
 - Based on standard web technology: You can use any library you like to build Office Add-ins.
 
-![The reasons to use Office Add-ins: cross-platform, centralized deployment, easy access via AppSource, and built on standard web technologies.](../images/why.png)
+![The reasons to use Office Add-ins: cross-platform, centralized deployment, easy access via Microsoft Marketplace, and built on standard web technologies.](../images/why.png)
 
 [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 

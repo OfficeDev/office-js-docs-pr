@@ -1,8 +1,8 @@
----
+﻿---
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 08/13/2025
+ms.date: 10/10/2025
 ms.localizationpriority: high
 ---
 
@@ -28,7 +28,7 @@ We've taken an important first step toward these goals by making it possible for
 
 ## Key properties of the unified manifest
 
-The main reference documentation for the version of the unified app manifest is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema). In this article, we provide a brief description of the meaning of base properties when the Teams App is (or includes) an Office Add-in. This is followed by some basic documentation for the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
+The main reference documentation for the version of the unified app manifest is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema). In this article, we provide a brief description of the meaning of base properties when the App for Microsoft 365 is (or includes) an Office Add-in. This is followed by some basic documentation for the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) property and its descendant properties. There is a full sample manifest for an add-in at [Sample unified manifest](#sample-unified-manifest).
 
 ### Base properties
 
@@ -38,14 +38,14 @@ Each of the base properties listed in the following table has more extensive doc
 |:-----|:-----|
 |"$schema"| Identifies the manifest schema. |
 |[`"manifestVersion"`](/microsoft-365/extensibility/schema/root#manifestversion)| Version of the manifest schema. |  
-|`"id"`| GUID of the Teams app/add-in. |
-|[`"version"`](/microsoft-365/extensibility/schema/root#version)| Version of the Teams app/add-in. The format must be `n.n.n` where each `n` can be no more than five digits.|
-|[`"name"`](/microsoft-365/extensibility/schema/root#name)| Public short and long names of the Teams app/add-in. The short name appears at the top of an add-in's task pane. |
-|[`"description"`](/microsoft-365/extensibility/schema/root#description)| Public short and long descriptions of the Teams app/add-in. |
-|[`"developer"`](/microsoft-365/extensibility/schema/root#developer)| Information about the developer of the Teams app/add-in. |
+|`"id"`| GUID of the App for Microsoft 365. |
+|[`"version"`](/microsoft-365/extensibility/schema/root#version)| Version of the App for Microsoft 365. The format must be `n.n.n` where each `n` can be no more than five digits.|
+|[`"name"`](/microsoft-365/extensibility/schema/root#name)| Public short and long names of the App for Microsoft 365. The short name appears at the top of an add-in's task pane. |
+|[`"description"`](/microsoft-365/extensibility/schema/root#description)| Public short and long descriptions of the App for Microsoft 365. |
+|[`"developer"`](/microsoft-365/extensibility/schema/root#developer)| Information about the developer of the App for Microsoft 365. |
 |[`"localizationInfo"`](/microsoft-365/extensibility/schema/root#localizationinfo)| Configures the default locale and other supported locales. |
 |[`"validDomains"`](/microsoft-365/extensibility/schema/root#validdomains) | See [Specify safe domains](#specify-safe-domains). |
-|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the Teams app/add-in's web app as it is known in Microsoft Entra ID. |
+|[`"webApplicationInfo"`](/microsoft-365/extensibility/schema/root#webApplicationInfo-property)| Identifies the App for Microsoft 365's web app as it is known in Microsoft Entra ID. |
 |[`"authorization"`](/microsoft-365/extensibility/schema/root#authorization)| Identifies any Microsoft Graph permissions that the add-in needs. |
 
 ### `"extensions"` property
@@ -61,8 +61,8 @@ We're working hard to complete reference documentation for the `"extensions"` pr
 | [`"requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes) | Identifies the Office applications in which the add-in can be installed. For example, `"mail"` means the add-in can be installed in Outlook. |
 | [`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons) | The ribbons that the add-in customizes. |
 | `"ribbons.contexts"` | Specifies the command surfaces that the add-in customizes. For example, `"mailRead"` or `"mailCompose"`. |
-| `"ribbons.fixedControls"` (developer preview) | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. |
-| `"ribbons.spamPreProcessingDialog"` (developer preview) | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. |
+| `"ribbons.fixedControls"` | Configures and adds the button of an [integrated spam-reporting](../outlook/spam-reporting.md) add-in to the Outlook ribbon. |
+| `"ribbons.spamPreProcessingDialog"` | Configures the preprocessing dialog shown after the button of a spam-reporting add-in is selected from the Outlook ribbon. |
 | `"ribbons.tabs"` | Configures custom ribbon tabs. |
 | [`"alternates"`](/microsoft-365/extensibility/schema/element-extensions#alternates) | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. Also specifies the main icons that are used to represent the add-in on older versions of Office. |
 | [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes)  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). |
@@ -79,7 +79,7 @@ To override this behavior in desktop platforms, add each domain you want to open
 
 Add-ins that use the unified manifest can be installed if the Office platform *directly* supports it.
 
-To run an add-in on platforms that don't directly support the unified manifest, you must publish the add-in to [AppSource](https://appsource.microsoft.com/). Then, deploy the add-in in the [Microsoft 365 admin center](../publish/publish.md). This way, an add-in only manifest is generated from the unified manifest and stored. The add-in only manifest is then used to install the add-in on platforms that don't directly support the unified manifest.
+To run an add-in on platforms that don't directly support the unified manifest, you must publish the add-in to [Microsoft Marketplace](https://marketplace.microsoft.com/). Then, deploy the add-in in the [Microsoft 365 admin center](../publish/publish.md). This way, an add-in only manifest is generated from the unified manifest and stored. The add-in only manifest is then used to install the add-in on platforms that don't directly support the unified manifest.
 
 The following tables lists which Office platforms directly support add-ins that use the unified manifest.
 
@@ -94,7 +94,7 @@ The following tables lists which Office platforms directly support add-ins that 
 | Office on mobile | Not directly supported |
 
 > [!NOTE]
-> If you're deploying an add-in in the [Microsoft 365 admin center](../publish/publish.md#integrated-apps-portal-in-the-microsoft-365-admin-center) and require it to run on platforms that don't directly support the unified manifest, the add-in must be a published AppSource add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can be deployed in the [Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) of the Microsoft 365 admin center, but they won't be installable on Office versions that don't directly support the unified manifest.
+> If you're deploying an add-in in the [Microsoft 365 admin center](../publish/publish.md#integrated-apps-portal-in-the-microsoft-365-admin-center) and require it to run on platforms that don't directly support the unified manifest, the add-in must be a published Microsoft Marketplace add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can be deployed in the [Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) of the Microsoft 365 admin center, but they won't be installable on Office versions that don't directly support the unified manifest.
 
 ## Sample unified manifest
 

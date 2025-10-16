@@ -1,4 +1,4 @@
-items:
+﻿items:
 - name: Office Add-ins Documentation
   href: index.yml
 
@@ -463,13 +463,13 @@ items:
         href: publish/host-an-office-add-in-on-microsoft-azure.md
       - name: Stage an Outlook add-in on Microsoft Azure with Visual Studio
         href: publish/stage-outlook-add-in-azure.md
-    - name: Publish add-ins to AppSource
+    - name: Publish add-ins to Microsoft Marketplace
       href: publish/publish-office-add-ins-to-appsource.md
-    - name: AppSource validation policies
+    - name: Microsoft Marketplace validation policies
       href: /legal/marketplace/certification-policies
     - name: Publish an add-in that requires admin consent
       href: publish/publish-nested-app-auth-add-in.md
-    - name: AppSource options for add-ins with event-based activation
+    - name: Microsoft Marketplace options for add-ins with event-based activation
       href: publish/autolaunch-store-options.md
       displayName: event-based activation
     - name: Publish add-ins to a SharePoint app catalog
@@ -479,7 +479,7 @@ items:
     - name: Maintain your Office Add-in
       href: publish/maintain-breaking-changes.md
     - name: Trust custom protocol handlers to launch add-ins
-      href: publish/custom-protocol-handler.md
+      href: publish/manage-trust-options.md
 
 - name: Excel
   items: 
@@ -808,6 +808,9 @@ items:
       - name: Update your signature when switching between accounts
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
         displayName: event-based activation
+    - name: Create an encryption add-in
+      href: outlook/encryption-decryption.md
+      displayName: preview
     - name: Implement a spam reporting add-in
       href: outlook/spam-reporting.md
     - name: Activate add-in without Reading Pane or selected message
@@ -866,6 +869,8 @@ items:
       href: outlook/categories.md
     - name: Get or set internet headers
       href: outlook/internet-headers.md
+    - name: Get and set location
+      href: outlook/get-or-set-the-location-of-an-appointment.md
     - name: Get or set recurrence
       href: outlook/get-and-set-recurrence.md
     - name: Get or set add-in metadata
@@ -888,8 +893,6 @@ items:
         href: outlook/get-or-set-the-subject.md
       - name: Get and set times
         href: outlook/get-or-set-the-time-of-an-appointment.md
-      - name: Get and set location
-        href: outlook/get-or-set-the-location-of-an-appointment.md
       - name: Manage sensitivity labels
         href: outlook/sensitivity-label.md
       - name: Manage delivery time of a message
@@ -1094,6 +1097,8 @@ items:
   - name: External resources
     href: resources/resources-links-help.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
+  - name: Known issues
+    href: resources/resources-office-add-in-known-issues.md
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
 ms.date: 04/22/2025
@@ -13,7 +13,7 @@ The [Office.context.mailbox.item](/javascript/api/requirement-sets/outlook/previ
 > [!IMPORTANT]
 > **Outlook REST v2.0 and beta endpoints are deprecated**
 >
-> The Outlook REST v2.0 and beta endpoints are now [deprecated](https://devblogs.microsoft.com/microsoft365dev/final-reminder-outlook-rest-api-v2-0-and-beta-endpoints-decommissioning/). However, privately released and AppSource-hosted add-ins are still able to use the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Traffic from these add-ins is automatically identified for exemption. This exemption also applies to new add-ins developed after March 31, 2024.
+> The Outlook REST v2.0 and beta endpoints are now [deprecated](https://devblogs.microsoft.com/microsoft365dev/final-reminder-outlook-rest-api-v2-0-and-beta-endpoints-decommissioning/). However, privately released and Microsoft Marketplace-hosted add-ins are still able to use the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Traffic from these add-ins is automatically identified for exemption. This exemption also applies to new add-ins developed after March 31, 2024.
 >
 > Although add-ins are able to use the REST service until October 2025, we highly encourage you to migrate your add-ins to use [Microsoft Graph](microsoft-graph.md).
 

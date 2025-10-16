@@ -1,4 +1,4 @@
----
+﻿---
 title: Usability testing for Office Add-ins
 description: Learn how to test your add-in design with real users.
 ms.date: 01/13/2025
@@ -20,7 +20,7 @@ These testing services help you to streamline test plan creation and remove the 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
 > [!NOTE]
-> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to AppSource](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
+> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
 
 ## 1. Sign up for a testing service
 
@@ -45,7 +45,7 @@ Research questions define the objectives of your research and guide your test pl
 
 It's important to get data on the entire user journey – from discovering your add-in, to installing and using it. Consider research questions that address the following aspects of the add-in user experience.
 
-- Finding your add-in in AppSource
+- Finding your add-in in Microsoft Marketplace
 - Choosing to install your add-in
 - First-run experience
 - Ribbon commands

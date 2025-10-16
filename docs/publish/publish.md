@@ -1,7 +1,7 @@
 ﻿---
 title: Deploy and publish Office Add-ins
 description: Methods and options to deploy your Office Add-in for testing or distribution to users.
-ms.date: 08/13/2025
+ms.date: 10/10/2025
 ms.localizationpriority: high
 ---
 
@@ -19,16 +19,16 @@ The following table summarizes the primary publication methods that can be used 
 |Method|Use|
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.) |
-|[AppSource](#appsource)|To distribute your add-in publicly to users.|
+|[Microsoft Marketplace](#Microsoft Marketplace)|To distribute your add-in publicly to users.|
 |[Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the Microsoft 365 admin center|To distribute your add-in to users in your organization.|
 
 ### Production deployment methods
 
 The following sections provide additional information about the deployment methods that are most commonly used to distribute production Office Add-ins to users.
 
-#### AppSource
+#### Microsoft Marketplace
 
-You can make your add-in available through [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office), Microsoft's online app store which is accessible through a browser and through the UI of Office applications. Distribution through AppSource gives you the option of including installation of your add-in with the installation of your Windows app or a COM or VSTO add-in. For more information, see [Publish to your Office Add-in to AppSource](publish-office-add-ins-to-appsource.md).
+You can make your add-in available through [Microsoft Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=office), Microsoft's online app store which is accessible through a browser and through the UI of Office applications. Distribution through Microsoft Marketplace gives you the option of including installation of your add-in with the installation of your Windows app or a COM or VSTO add-in. For more information, see [Publish to your Office Add-in to Microsoft Marketplace](publish-office-add-ins-to-appsource.md).
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
@@ -36,12 +36,12 @@ You can make your add-in available through [AppSource](https://appsource.microso
 
 The Microsoft 365 admin center makes it easy for an administrator to deploy Office Add-ins to users and groups in their organization. Add-ins deployed via the admin center are available to users in their Office applications right away, with no client configuration required. You can use integrated apps portal to deploy internal add-ins as well as add-ins provided by independent software vendors (ISVs). The integrated apps portal also shows admins add-ins and other apps bundled together by same ISV, giving them exposure to the entire experience across the Microsoft 365 platform.
 
-When you link your Office Add-ins, Teams apps, SharePoint Framework (SPFx) apps, and [other apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#what-apps-can-i-deploy-from-integrated-apps) together, you create a single software as a service (SaaS) offering for your customers. For general information about this process, see [How to plan a SaaS offer for the commercial marketplace](/azure/marketplace/plan-saas-offer). For specifics on how to create the offer, see [Create the offer](/azure/marketplace/create-new-saas-offer).
+When you link your Apps for Microsoft 365 (including Office Add-ins and Teams apps), SharePoint Framework (SPFx) apps, and [other apps](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#what-apps-can-i-deploy-from-integrated-apps) together, you create a single software as a service (SaaS) offering for your customers. For general information about this process, see [How to plan a SaaS offer for the commercial marketplace](/azure/marketplace/plan-saas-offer). For specifics on how to create the offer, see [Create the offer](/azure/marketplace/create-new-saas-offer).
 
 For more information on the deployment process, see [Get started with the integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 > [!NOTE]
-> If your add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) and is distributed as an internal add-in in the integrated apps portal (instead of being acquired by the administrator from AppSource), it won't be installable by users with certain versions of Office. For more information, see [Office Add-ins with the unified app manifest for Microsoft 365 - Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support).
+> If your add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) and is distributed as an internal add-in in the integrated apps portal (instead of being acquired by the administrator from Microsoft Marketplace), it won't be installable by users with certain versions of Office. For more information, see [Office Add-ins with the unified app manifest for Microsoft 365 - Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 > [!IMPORTANT]
 > Customers in sovereign or government clouds don't have access to the integrated apps portal. They use Centralized Deployment instead. (See [Additional publication methods for the add-in only manifest](#additional-publication-methods-for-the-add-in-only-manifest) later in this article.) Centralized Deployment is a similar deployment method, but doesn't expose connected add-ins and apps to the admin. For more information, see [Determine if Centralized Deployment of add-ins works for your organization](/microsoft-365/admin/manage/centralized-deployment-of-add-ins).
@@ -86,15 +86,15 @@ It's important to note that some versions of Outlook clients and Exchange server
 
 - Deployment through the Microsoft 365 admin center.
 - Deployment through Exchange servers.
-- Acquiring add-ins from AppSource.
+- Acquiring add-ins from Microsoft Marketplace.
 
 ## See also
 
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
-- [Publish to your Office Add-in to AppSource](publish-office-add-ins-to-appsource.md)
-- [AppSource](https://appsource.microsoft.com/marketplace/apps?product=office)
+- [Publish to your Office Add-in to Microsoft Marketplace](publish-office-add-ins-to-appsource.md)
+- [Microsoft Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=office)
 - [Design guidelines for Office Add-ins](../design/add-in-design.md)
-- [Create effective AppSource listings](/partner-center/marketplace-offers/create-effective-office-store-listings)
+- [Create effective Microsoft Marketplace listings](/partner-center/marketplace-offers/create-effective-office-store-listings)
 - [Troubleshoot user errors with Office Add-ins](../testing/testing-and-troubleshooting.md)
 - [What is the Microsoft commercial marketplace?](/azure/marketplace/overview)
 - [Microsoft Dev Center app publishing page](https://developer.microsoft.com/microsoft-teams/app-publishing)

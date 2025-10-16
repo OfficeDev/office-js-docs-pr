@@ -114,7 +114,7 @@ The following is an example of the markup.
 > If your add-in is deployed by one or more admins to their organizations, adding new scopes to the manifest will require the admin to consent to the updates. Users will be blocked from the add-in until consent is granted.
 
 > [!NOTE]
-> If you don't follow the format requirements in the manifest for SSO, your add-in will be rejected from AppSource until it meets the required format.
+> If you don't follow the format requirements in the manifest for SSO, your add-in will be rejected from Microsoft Marketplace until it meets the required format.
 
 ---
 

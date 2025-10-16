@@ -1,7 +1,7 @@
 ---
 title: OneNote JavaScript API programming overview
 description: Learn about the OneNote JavaScript API for OneNote add-ins on the web.
-ms.date: 07/22/2024
+ms.date: 09/24/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -9,15 +9,15 @@ ms.localizationpriority: medium
 
 # OneNote JavaScript API programming overview
 
-OneNote introduces a JavaScript API for OneNote add-ins on the web. You can create task pane add-ins, content add-ins, and add-in commands that interact with OneNote objects and connect to web services or other web-based resources.
+The OneNote JavaScript API lets you build add-ins that extend OneNote on the web. You can create task pane add-ins, content add-ins, and add-in commands that interact with OneNote objects and connect to web services or other resources.
 
 [!INCLUDE [publish policies note](../includes/note-publish-policies.md)]
 
 ## Components of an Office Add-in
 
-Add-ins consist of two basic components:
+Office Add-ins have two main components:
 
-- A **web application** consisting of a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a webview control or iframe.
+- A **web application** with a webpage and any required JavaScript, CSS, or other files. These files are hosted on a web server or web hosting service, such as Microsoft Azure. In OneNote on the web, the web application displays in a webview control or iframe.
 
 - A **manifest** that specifies the URL of the add-in's webpage and any access requirements, settings, and capabilities for the add-in. This file is stored on the client. OneNote add-ins use the [add-in only manifest](../develop/add-in-manifests.md) format.
 
@@ -29,12 +29,12 @@ Add-ins consist of two basic components:
 
 Add-ins use the runtime context of the Office application to access the JavaScript API. The API has two layers:
 
-- A **application-specific API** for OneNote-specific operations, accessed through the `Application` object.
+- An **application-specific API** for OneNote-specific operations, accessed through the `Application` object.
 - A **Common API** that's shared across Office applications, accessed through the `Document` object.
 
-### Accessing the application-specific API through the *Application* object
+### Access the application-specific API through the *Application* object
 
-Use the `Application` object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With application-specific APIs, you run batch operations on proxy objects. The basic flow goes something like this:
+Use the `Application` object to access OneNote objects such as **Notebook**, **Section**, and **Page**. With application-specific APIs, you run batch operations on proxy objects. The basic flow works like this:
 
 1. Get the application instance from the context.
 
@@ -80,7 +80,7 @@ You can find supported OneNote objects and operations in the [API reference](../
 
 Requirement sets are named groups of API members. Office Add-ins use requirement sets specified in the manifest or use a runtime check to determine whether an Office application supports APIs that an add-in needs. For detailed information about OneNote JavaScript API requirement sets, see [OneNote JavaScript API requirement sets](/javascript/api/requirement-sets/onenote/onenote-api-requirement-sets).
 
-### Accessing the Common API through the *Document* object
+### Access the Common API through the *Document* object
 
 Use the `Document` object to access the Common API, such as the [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1))
 and [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) methods.
@@ -112,7 +112,7 @@ OneNote add-ins support only the following Common APIs.
 | [Office.context.document.settings.set(name, value);](/javascript/api/office/office.settings#office-office-settings-set-member(1)) | Settings are supported by content add-ins only |
 | [Office.EventType.DocumentSelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) |*None*|
 
-In general, you use the Common API to do something that isn't supported in the application-specific API. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
+In general, you use the Common API to do something that isn't supported in the application-specific API. For more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 <a name="om-diagram"></a>
 
@@ -127,4 +127,4 @@ The following diagram represents what's currently available in the OneNote JavaS
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
-- [Sample: Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+- [Sample: Rubric grader task pane add-in for OneNote on the web](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)

@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 > Smart Alerts provides the following benefits.
 >
 > - It offers [send mode options](onmessagesend-onappointmentsend-events.md#available-send-mode-options) when you want to provide your users with optional recommendations instead of mandatory conditions, so that they won't be unnecessarily blocked from sending messages. For example, with the **soft block** option, users can still send messages even if the add-in is unavailable during an outage. This option isn't supported by the on-send feature.
-> - It allows your add-in to be published to AppSource if the send mode property is set to the **prompt user** or **soft block** option. To learn more about publishing an event-based add-in, see [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md).
+> - It allows your add-in to be published to Microsoft Marketplace if the send mode property is set to the **prompt user** or **soft block** option. To learn more about publishing an event-based add-in, see [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md).
 >
 > The on-send feature should only be used to support older Outlook versions that don't support the Smart Alerts feature. For improved security, we encourage users to upgrade to the latest version of Outlook.
 >
@@ -46,7 +46,7 @@ The following table shows supported client-server combinations for the on-send f
 > The on-send feature was officially released in requirement set 1.8 (see [current server and client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) for details). However, note that the feature's support matrix is a superset of the requirement set's.
 
 > [!IMPORTANT]
-> Add-ins that use the on-send feature aren't allowed in [AppSource](https://appsource.microsoft.com).
+> Add-ins that use the on-send feature aren't allowed in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 ## How does the on-send feature work?
 
@@ -74,10 +74,10 @@ The following screenshot shows an information bar that notifies the sender that 
 The on-send feature currently has the following limitations.
 
 - **Append-on-send** feature &ndash; If you call [item.body.AppendOnSendAsync](/javascript/api/outlook/office.body?view=outlook-js-1.9&preserve-view=true#outlook-office-body-appendonsendasync-member(1)) in the on-send handler, an error is returned.
-- **AppSource** &ndash; You can't publish Outlook add-ins that use the on-send feature to [AppSource](https://appsource.microsoft.com) as they will fail AppSource validation. Add-ins that use the on-send feature should be deployed by administrators. If you want the option to publish your add-in to AppSource, consider using Smart Alerts instead, which is a newer version of the on-send feature. To learn more about Smart Alerts and how to deploy these add-ins, see [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](smart-alerts-onmessagesend-walkthrough.md) and [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md).
+- **Microsoft Marketplace** &ndash; You can't publish Outlook add-ins that use the on-send feature to [Microsoft Marketplace](https://marketplace.microsoft.com) as they will fail Microsoft Marketplace validation. Add-ins that use the on-send feature should be deployed by administrators. If you want the option to publish your add-in to Microsoft Marketplace, consider using Smart Alerts instead, which is a newer version of the on-send feature. To learn more about Smart Alerts and how to deploy these add-ins, see [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](smart-alerts-onmessagesend-walkthrough.md) and [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md).
   
   > [!IMPORTANT]
-  > When running `npm run validate` to [validate your add-in's manifest](../testing/troubleshoot-manifest.md), you'll receive the error, "Mailbox add-in containing ItemSend event is invalid. Mailbox add-in manifest contains ItemSend event in VersionOverrides which is not allowed." This message appears because add-ins that use the `ItemSend` event, which is required for this version of the on-send feature, can't be published to AppSource. You'll still be able to sideload and run your add-in, provided that no other validation errors are found.
+  > When running `npm run validate` to [validate your add-in's manifest](../testing/troubleshoot-manifest.md), you'll receive the error, "Mailbox add-in containing ItemSend event is invalid. Mailbox add-in manifest contains ItemSend event in VersionOverrides which is not allowed." This message appears because add-ins that use the `ItemSend` event, which is required for this version of the on-send feature, can't be published to Microsoft Marketplace. You'll still be able to sideload and run your add-in, provided that no other validation errors are found.
 
 - **Manifest** &ndash; The on-send feature is only supported in add-ins that use the [add-in only manifest](../develop/add-in-manifests.md). It isn't supported in add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). In the add-in only manifest, only one `ItemSend` event is supported per add-in. If you have two or more `ItemSend` events in a manifest, the manifest will fail validation.
 - **Performance** &ndash; Multiple roundtrips to the web server that hosts the add-in can affect the performance of the add-in. Consider the effects on performance when you create add-ins that require multiple message- or meeting-based operations.
