@@ -1,7 +1,7 @@
 ---
 title: Drag and drop messages and attachments into the task pane
 description: Learn how to enable drag and drop of messages and file attachments into the task pane of your Outlook add-in.
-ms.date: 08/28/2025
+ms.date: 10/16/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -73,6 +73,12 @@ Office.context.mailbox.addHandlerAsync(
     }
 );
 ```
+
+### Try it out
+
+Try the interactive sample to see the drag-and-drop feature in action. Install the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/wa200001603) then run the "Drag and drop an item into the task pane" sample.
+
+To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
 # [Windows (classic) and Mac](#tab/desktop)
 
