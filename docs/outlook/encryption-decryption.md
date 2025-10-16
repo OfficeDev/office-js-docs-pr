@@ -1,7 +1,7 @@
 ---
 title: Create an encryption Outlook add-in (preview)
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
-ms.date: 10/09/2025
+ms.date: 10/16/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -228,8 +228,8 @@ Add-ins that handle the `OnMessageRead` event automatically display notification
 | ------------ | -------- |
 | \<Add-in name\> is unavailable and can't process your message at this time | Applies to classic Outlook on Windows only. This notification is shown when the add-in fails to load because an error prevented the add-in from loading or the user's client or machine is offline. |
 | \<Add-in name\> failed to process your message | An error was encountered while the add-in was decrypting the message. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageRead` event. |
-| \<Add-in name\> is processing your message | The add-in is handling the `OnMessageRead` event to decrypt the message. |
-| \<Add-in name\> has finished processing your message | The add-in successfully decrypted the contents of the message. The user can now view the message and its attachments. |
+| \<Add-in name\> add-in is decrypting your message | The add-in is handling the `OnMessageRead` event to decrypt the message. |
+| \<Add-in name\> add-in has decrypted your message | The add-in successfully decrypted the contents of the message. The user can now view the message and its attachments. |
 | \<Add-in name\> is taking longer than expected to process your message | The add-in has been running for more than five seconds, but less than five minutes. |
 | \<Add-in name\> timed out. To retry, select another email and then return to this message | The add-in times out after running for five minutes. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageRead` event. |
 
