@@ -1,7 +1,7 @@
-﻿---
+---
 title: Office Add-ins additional resources
-description: Useful resources about Office Add-ins.
-ms.date: 10/10/2023
+description: Useful resources about developing Office Add-ins.
+ms.date: 10/16/2025
 ms.localizationpriority: medium
 ---
 
@@ -11,12 +11,12 @@ These resources provide additional information and support for developing Office
 
 ## Product support and service issues
 
-Use **Microsoft 365 Admin Center** or **Azure Admin Center**  for any **business-critical issues** that need SLA-based support.
+Use **Microsoft 365 Admin Center** or **Azure portal**  for any **business-critical issues** that need SLA-based support.
 
 | Product support | Contact |
 |:------------|:------------|
 | **Microsoft 365 product issues and failures** | If you have a Premier support contract for Microsoft 365, visit the Microsoft 365 Admin Center and use the Support menu to [open a service request](https://admin.microsoft.com/). |
-| **Azure help and support** | If you have a paid Azure subscription, visit the Azure Admin Center to [open a ticket](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportreq). |
+| **Azure help and support** | If you have a paid Azure subscription, visit the Azure portal to [open a ticket](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportreq). |
 | **General questions about Microsoft 365** | If you have general questions about Microsoft 365 or Office, submit your questions on [Microsoft 365 and Office Community](https://answers.microsoft.com).|
 
 ## Developer community help
@@ -25,11 +25,11 @@ Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to con
 
 ### Developer community forums
 
-Post your questions and help other community members by sharing and responding to Office Add-in Development questions.
+Post your questions and help other community members by sharing and responding to Office Add-in development questions. 
 
 | Developer need | Contact |
 |:---------------------|:---------------|
-| **Office Add-in / Office JavaScript API questions** | <ul> <li> Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Please note that Stack Overflow has guidelines such as requiring a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic; new users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details. </li> <li> You can also post questions using the `Office Development` tag on [Microsoft Q&A](https://aka.ms/office-addins-dev-questions).</li></ul> |
+| **Office Add-in / Office JavaScript API questions** | <ul> <li> Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Please note that Stack Overflow has guidelines such as requiring a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic; new users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details. </li> <li> You can also post questions on [Microsoft Q&A](/answers/) using one of the following tags.<ul> <li>[Microsoft 365 and Office | Development | Office JavaScript API](/answers/tags/255/m365-office-development-routing-javascript-api)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 Publishing](/answers/tags/367/m365-office-development-routing-m365-publishing)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 App Publishing](/answers/tags/665/m365-office-development-routing-m365-app-publishing)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 Developer Program](/answers/tags/666/m365-office-development-routing-m365-developer-program)</li> <li>[Microsoft 365 and Office | Development | Other](/answers/tags/321/m365-office-development-routing-development-other)</li> </ul> </li></ul> |
 | **Documentation gaps** | If the documentation is missing something that would help you understand how to create add-ins, please submit an issue to the [Office Add-ins documentation GitHub repository](https://github.com/officedev/office-js-docs-pr/issues)|
 
 ### Report issues
