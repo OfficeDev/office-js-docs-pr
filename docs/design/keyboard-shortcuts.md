@@ -1,7 +1,7 @@
 ﻿---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 09/23/2025
+ms.date: 10/21/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -44,9 +44,6 @@ The process to define custom keyboard shortcuts for your add-in varies depending
 > To learn more about manifests for Office Add-ins, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
-
-> [!NOTE]
-> Implementing keyboard shortcuts with the unified app manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema/?view=m365-app-prev&preserve-view=true).
 
 If your add-in uses the unified app manifest for Microsoft 365, custom keyboard shortcuts and their actions are defined in the manifest.
 
