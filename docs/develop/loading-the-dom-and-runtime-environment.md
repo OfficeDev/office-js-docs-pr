@@ -1,7 +1,7 @@
 ﻿---
 title: Loading the DOM and runtime environment
 description: Load the DOM and Office Add-ins runtime environment.
-ms.date: 05/20/2023
+ms.date: 10/16/2025
 ms.localizationpriority: medium
 ---
 
@@ -29,6 +29,9 @@ The following events occur when a content or task pane add-in starts.
 4. The webview control loads the DOM and HTML body, and calls the event handler for the `window.onload` event.
 
 5. The Office client application loads the runtime environment, which downloads and caches the Office JavaScript API library files from the content distribution network (CDN) server, and then calls the add-in's event handler for the [initialize](/javascript/api/office#Office_initialize_reason_) event of the [Office](/javascript/api/office) object, if a handler has been assigned to it. At this time it also checks to see if any callbacks (or chained `then()` method) have been passed (or chained) to the `Office.onReady` handler. For more information about the distinction between `Office.initialize` and `Office.onReady`, see [Initialize your add-in](initialize-add-in.md).
+
+    > [!IMPORTANT]
+    > If the Office JavaScript API library files are blocked by network filters, firewalls, or browser extensions, `Office.onReady` will never resolve.
 
 6. When the DOM and HTML body finish loading and the add-in finishes initializing, the main function of the add-in can proceed.
 
