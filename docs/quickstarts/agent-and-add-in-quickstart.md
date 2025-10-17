@@ -1,7 +1,7 @@
 ---
 title: Build your first add-in as a Copilot skill
 description: Learn how to build a simple Copilot agent that has an Excel add-in as a skill.
-ms.date: 07/30/2025
+ms.date: 10/17/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: high

@@ -1,7 +1,7 @@
 ---
 title: Add a Copilot agent to an add-in
 description: Learn how to add a Copilot agent to an add-in.
-ms.date: 07/30/2025
+ms.date: 10/17/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: medium
