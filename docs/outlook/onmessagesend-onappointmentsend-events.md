@@ -149,8 +149,8 @@ When Outlook launches without internet connectivity, it's unable to determine wh
 
 > [!NOTE]
 >
-> - We're working on deploying the **OnSendAddinsEnabled** mailbox policy. Periodically check this article for updates.
-> - The **OnSendAddinsEnabled** policy applies to all installed add-ins, not just Smart Alerts add-ins. If the policy is configured and installed add-ins don't load, the user won't be able to send items when they're offline. Administrators should only enable this policy for users in their organization if they have mandatory Smart Alerts add-ins installed.
+> - We're working on enabling the **OnSendAddinsEnabled** mailbox policy for Smart Alerts add-ins. Periodically check this article for updates.
+> - When the **OnSendAddinsEnabled** policy is enabled, it will apply to all installed add-ins, not just Smart Alerts add-ins. If the policy is configured and installed add-ins don't load, the user won't be able to send items when they're offline. Administrators should only enable this policy for users in their organization if they have mandatory Smart Alerts add-ins installed.
 
 For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. This ensures that installed add-ins always run on outgoing messages while offline.
 
@@ -175,6 +175,10 @@ For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsE
    ```powershell
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'} | Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
+
+# [Windows (classic)](#tab/windows)
+
+Outlook on Windows (classic) can load and run add-ins even if the user launches Outlook while offline. To learn more about the behavior of Smart Alerts add-ins while offline, see [Intermittent connection](#intermittent-connection).
 
 # [Mac](#tab/mac)
 
@@ -222,7 +226,7 @@ If the Smart Alerts add-in implements the **prompt user** option, it doesn't pro
 
 When a user navigates away from the message they're sending (for example, to read a message in their inbox), the behavior of a Smart Alerts add-in differs between Outlook clients. Select the tab for the Outlook client on which the add-in is running.
 
-# [Web / Windows](#tab/web-new-windows)
+# [Web / Windows](#tab/web-new-windows+windows)
 
 #### Message composed in a window
 
