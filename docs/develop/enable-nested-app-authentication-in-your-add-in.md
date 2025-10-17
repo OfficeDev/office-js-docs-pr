@@ -1,14 +1,14 @@
 ---
 title: Enable single sign-on in an Office Add-in with nested app authentication
 description: Learn how to enable SSO in an Office Add-in with nested app authentication.
-ms.date: 07/14/2025
+ms.date: 10/13/2025
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
 # Enable single sign-on in an Office Add-in with nested app authentication
 
-You can use the MSAL.js library with nested app authentication to use single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
+Use the MSAL.js library with nested app authentication to enable single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
 
 - You only need to use the MSAL.js library and don’t need the `getAccessToken` function in Office.js.
 - You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
@@ -17,19 +17,7 @@ You can use the MSAL.js library with nested app authentication to use single sig
 
 ## NAA supported accounts and hosts
 
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support [Azure Active Directory B2C](/azure/active-directory-b2c/overview) for business-to-consumer identity management scenarios. The following table explains the current support by platform. Platforms listed as generally available (GA) are ready for production usage in your add-in.
-
-| Application | Web        | Windows                                              | Mac        | iOS/iPad           | Android        |
-|-------------|------------|------------------------------------------------------|------------|--------------------|----------------|
-| Excel       | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
-| Outlook     | GA         | GA | GA         | GA (iOS)           | GA             |
-| PowerPoint  | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
-| Word        | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
-
-> [!IMPORTANT]
-> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the [Microsoft 365 Insider Program](https://aka.ms/MSFT365InsiderProgram) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
-
-For information on using NAA in Microsoft Teams, see [Nested app authentication in Microsoft Teams](/microsoftteams/platform/concepts/authentication/nested-authentication).
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support [Azure Active Directory B2C](/azure/active-directory-b2c/overview) for business-to-consumer identity management scenarios. For more information on NAA requirements, see [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets).
 
 ## Register your single-page application
 
@@ -61,15 +49,11 @@ Configure your add-in to use NAA by calling the `createNestablePublicClientApp
 
 The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office` (**Office Add-in Task Pane** project).
 
-1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser). We recommend using the latest version of the package (at time of the last article update it was 3.26.0).
+1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser). To install the latest version, run the following command.
 
-    ```json
-    "dependencies": {
-        "@azure/msal-browser": "^3.27.0",
-        ...
+    ```command&nbsp;line
+    npm install @azure/msal-browser
     ```
-
-1. Save and run `npm install` to install `@azure/msal-browser`.
 
 1. Add the following code to the top of the `taskpane.js` or `taskpane.ts` file. This will import the MSAL browser library.
 
@@ -125,6 +109,12 @@ The following code shows how to implement this authentication pattern in your ow
     const tokenRequest = {
       scopes: ["Files.Read", "User.Read", "openid", "profile"],
     };
+
+    // If running on Excel, Word, or PowerPoint for web, a login hint is needed for SSO.
+    if ((Office.context.platform === Office.PlatformType.OfficeOnline) && (Office.context.host !== Office.HostType.Outlook)) {
+      const authCtx = await Office.auth.getAuthContext();
+      tokenRequest.loginHint = authCtx.userPrincipalName;
+    }
     let accessToken = null;
 
     // TODO 1: Call acquireTokenSilent.
@@ -300,4 +290,5 @@ If you find a security issue with our libraries or services, report the issue to
 ## See also
 
 - [NAA FAQ](https://aka.ms/NAAFAQ)
+- [Nested app authentication in Microsoft Teams](/microsoftteams/platform/concepts/authentication/nested-authentication).
 - [Nested app authentication in Microsoft Teams](/microsoftteams/platform/concepts/authentication/nested-authentication).
