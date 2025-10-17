@@ -5,7 +5,7 @@
 > - Office on Windows
 >   - Microsoft 365 subscription
 >   - retail perpetual Office 2016 and later
->   - volume-licensed perpetual Office 2021 and later
+>   - volume-licensed perpetual/[LTSC](../resources/resources-glossary.md#long-term-service-channel-ltsc) Office 2021 and later
 > - Office on Mac
 >
 > Excel custom functions aren't currently supported in the following:
