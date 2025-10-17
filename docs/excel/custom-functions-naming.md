@@ -13,7 +13,7 @@ This article lists simple rules and tips for naming custom functions and shows h
 
 A custom function is identified by an `id` and a `name` in the JSON metadata.
 
-- `id`: Unique identifier used in code. Keep it stable.
+- `id`: Unique identifier used in code.
 - `name`: Display name shown to users. It can be localized.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
@@ -23,8 +23,8 @@ A function `name` can differ from the `id` for localization. If you don't need l
 A function's `name` and `id` share some similar rules.
 
 - Both must start with a letter and be at least three characters.
-- `id`: Only A–Z, 0–9, underscore, and period characters allowed.
-- `name`: Any Unicode letters, underscore, and period characters allowed.
+- `id`: Only A–Z, 0–9, underscore, and period characters are allowed.
+- `name`: Any Unicode alphabetic characters, underscore, and period characters are allowed.
 
 Excel shows built‑in function names in uppercase letters (such as `SUM`). Using uppercase helps your custom functions fit in.
 
@@ -37,14 +37,14 @@ Avoid names that match:
 
 If your function `name` conflicts with one from another add‑in, Excel shows the **#REF!** error.
 
-Fix conflicts by renaming your function or uninstalling the other add‑in. For testing in multiple environments, use a short namespace prefix (such as `ACME_FUNCTIONNAME`).
+Fix conflicts by renaming your function or uninstalling the other add‑in. For testing in multiple environments, use a short namespace prefix (such as `ADDINNAME_FUNCTIONNAME`).
 
 ## Best practices
 
 - Prefer extra function arguments over multiple near-duplicate function names.
 - Avoid unclear abbreviations (`INCREASETIME` is clearer than `INC`).
 - Use action verbs (`GETZIPCODE` not just `ZIPCODE`).
-- Be consistent: Use the same verb for similar actions (`DELETEZIPCODE`, `DELETEADDRESS`).
+- Be consistent: Use the same verb for similar actions (`DELETEZIPCODE` and `DELETEADDRESS`).
 - Consider adding `STREAM` or a note in the description for streaming functions.
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
@@ -53,7 +53,7 @@ Fix conflicts by renaming your function or uninstalling the other add‑in. For 
 
 | Aspect | `id` | `name` | Notes |
 |--------|------|-------|-------|
-| Allowed characters | A–Z 0–9 `_` `.` | Unicode letters `_` `.` | Keep `id` simple. Localize `name`. |
+| Allowed characters | A–Z 0–9 `_` `.` | Unicode alphabetic characters `_` `.` | Keep `id` simple. Localize `name`. |
 | Starts with letter | Yes | Yes | Avoids cell reference confusion. |
 | Minimum length | 3 | 3 | Short names reduce clarity. |
 | Case style | Uppercase recommended | Uppercase recommended | Matches Excel style. |
@@ -88,7 +88,7 @@ You can localize both your add-in and your custom function names. Add localized 
 
 Create one JSON metadata file per language. In each, localize `name` and `description`. The default English file is **functions.json**. Add locale tags to new files, like **functions-de.json**.
 
-Excel localizes `name` and `description`. The `id` stays fixed and should not change once it's set.
+Excel only localizes `name` and `description`. The `id` is not localized and shouldn't be changed once it's set.
 
 > [!IMPORTANT]
 > Avoid an `id` or `name` that matches a built‑in Excel function in any language.
@@ -135,12 +135,12 @@ Compare the previous JSON with the following JSON for English.
     "parameters": [
         {
             "name": "one",
-            "description": "First number",
+            "description": "first number",
             "dimensionality": "scalar"
         },
         {
             "name": "two",
-            "description": "Second number",
+            "description": "second number",
             "dimensionality": "scalar"
         }
     ]
@@ -149,7 +149,7 @@ Compare the previous JSON with the following JSON for English.
 
 ### Localize your add-in
 
-After creating each language file, add a manifest override that points to that file. The following manifest XML shows a default `en-us` locale plus an override JSON file for `de-de` (Germany).
+After creating each language file, add an override value to the add-in only manifest that points to that file. The following manifest XML shows a default `en-us` locale plus an override JSON file URL for `de-de` (Germany).
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>

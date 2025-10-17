@@ -62,7 +62,7 @@ If needed, edit code in VS Code, save, then refresh the workbook page to load up
 
 ## Use the command line tools to debug
 
-If you aren't using VS Code, you can use the command line such as bash or PowerShell to run your add-in. Use the browser developer tools to debug your code in Excel on the web. You cannot debug the desktop version of Excel from the command line.
+If you aren't using VS Code, you can use the command line such as bash or PowerShell to run your add-in. Use the browser developer tools to debug your code in Excel on the web.
 
 1. From the command line run `npm run watch` to watch for and rebuild when code changes occur.
 1. Open a second command line window (the first one is busy while running the watch.)
