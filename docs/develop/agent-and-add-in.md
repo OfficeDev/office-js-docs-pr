@@ -1,7 +1,7 @@
 ---
 title: Add a Copilot agent to an add-in
 description: Learn how to add a Copilot agent to an add-in.
-ms.date: 07/30/2025
+ms.date: 10/17/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: medium
@@ -171,8 +171,8 @@ The runtime object should look similar to the following. There may be other prop
 
    ```json
    {
-        "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
-        "version": "v1.4",
+        "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
+        "version": "v1.5",
         "name": "Excel Add-in + Agent",
         "description": "Agent for working with Excel cells.",
         "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
