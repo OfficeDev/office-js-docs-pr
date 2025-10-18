@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 07/31/2025
+ms.date: 10/17/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -147,7 +147,12 @@ When Outlook launches without internet connectivity, it's unable to determine wh
 
 # [Web/Windows (new)](#tab/web-new-windows)
 
-For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. This ensures that outgoing messages are checked before they're sent.
+> [!NOTE]
+>
+> - We're working on enabling the **OnSendAddinsEnabled** mailbox policy for Smart Alerts add-ins. Periodically check this article for updates.
+> - When the **OnSendAddinsEnabled** policy is enabled, it will apply to all installed add-ins, not just Smart Alerts add-ins. If the policy is configured and installed add-ins don't load, the user won't be able to send items when they're offline. Administrators should only enable this policy for users in their organization if they have mandatory Smart Alerts add-ins installed.
+
+For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. This ensures that installed add-ins always run on outgoing messages while offline.
 
 1. [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 1. Create a new mailbox policy.
@@ -173,20 +178,16 @@ For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsE
 
 # [Windows (classic)](#tab/windows)
 
-Configure the **Block send when web add-ins can't load** Group Policy setting. When the setting is turned on, mail items are moved to the **Drafts** folder when the **Send** button is selected. This way, when Outlook is able to load add-ins, any installed Smart Alerts add-ins can run checks on the items before they're sent.
-
-To turn on the setting, perform the following:
-
-1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).
-1. Open the **Local Group Policy Editor** (**gpedit.msc**).
-1. Navigate to **User Configuration** > **Administrative Templates** > **Microsoft Outlook 2016** > **Security** > **Trust Center**.
-1. Open the **Block send when web add-ins can't load** setting.
-1. In the dialog that appears, select **Enabled**.
-1. Select **OK** or **Apply** to save your change.
+Outlook on Windows (classic) can load and run add-ins even if the user launches Outlook while offline. To learn more about the behavior of Smart Alerts add-ins while offline, see [Intermittent connection](#intermittent-connection).
 
 # [Mac](#tab/mac)
 
-For Outlook on Mac, the **OnSendAddinsWaitForLoad** mailbox key must be configured on each user's machine. This key ensures that add-ins are loaded from Exchange and are available to run checks on outgoing items. As the **OnSendAddinsWaitForLoad** key is CFPreference-compatible, it can be set by any enterprise management software for Mac, such as Jamf Pro. The following table provides details about the key.
+For Outlook on Mac, the **OnSendAddinsWaitForLoad** mailbox key must be configured on each user's machine. This key ensures that add-ins are loaded from Exchange and are available to run checks on outgoing items. As the **OnSendAddinsWaitForLoad** key is CFPreference-compatible, it can be set by any enterprise management software for Mac, such as Jamf Pro.
+
+> [!NOTE]
+> The `OnSendAddinsWaitForLoad` policy applies to all installed add-ins, not just Smart Alerts add-ins. If the policy is configured and installed add-ins don't load, the user won't be able to send items when they're offline. Administrators should only enable this policy for users in their organization if they have mandatory Smart Alerts add-ins installed.
+
+The following table provides details about the key.
 
 |Field|Value|
 |:---|:---|
