@@ -61,7 +61,7 @@ function StoreValue(key, value) {
 
 ## Compare with shared runtime
 
-Need UI integration, richer Office.js objects, or advanced events? Move those functions to a [shared runtime](../testing/runtimes.md#shared-runtime) so they can use those features.
+Need UI integration or Office.js objects and events? Move those functions to a [shared runtime](../testing/runtimes.md#shared-runtime).
 
 ## Next steps
 

@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Custom functions naming and localization
 
-This article lists simple rules and tips for naming custom functions and shows how to localize them.
+This article lists guidelines and best practices for naming custom functions and shows how to localize them.
 
 ## Custom functions naming guidelines
 
@@ -51,27 +51,15 @@ Fix conflicts by renaming your function or uninstalling the other add‑in. For 
 
 ## Naming constraints quick reference
 
-| Aspect | `id` | `name` | Notes |
+| Guideline | `id` | `name` | Notes |
 |--------|------|-------|-------|
 | Allowed characters | A–Z 0–9 `_` `.` | Unicode alphabetic characters `_` `.` | Keep `id` simple. Localize `name`. |
-| Starts with letter | Yes | Yes | Avoids cell reference confusion. |
+| Must start with a letter | Yes | Yes | Avoids cell reference confusion. |
 | Minimum length | 3 | 3 | Short names reduce clarity. |
-| Case style | Uppercase recommended | Uppercase recommended | Matches Excel style. |
+| Capitalization | All uppercase recommended | All uppercase recommended | Matches Excel style. |
 | Localizable | No | Yes | Keep `id` stable. Localize `name` as needed. |
 | Can mimic cell address | No | No | Prevent address parsing errors. |
 | Reserved macro names | Disallowed | Disallowed | Some examples: `RUN`, `ECHO`. |
-
-### Invalid `id` and `name` examples
-
-| `id` | `name` | Reason |
-|------|--------|--------|
-| `1ADD` | `1ADD` | Starts with digit. |
-| `A` | `A` | Too short (less than 3 characters). |
-| `SUM` | `SUM` | Built‑in Excel formula name. |
-| `MÜLTIPLY` | `MÜLTIPLY` | Non-ASCII letter in `id`. |
-| `GET-VALUE` | `GET-VALUE` | Hyphen not allowed. Use underscore instead. |
-| `RUN` | `RUN` | Reserved macro name. |
-| `A1R1` | `A1R1` | Looks like a cell reference. |
 
 ### Recommended namespace pattern
 
@@ -86,7 +74,7 @@ You can localize both your add-in and your custom function names. Add localized 
 
 ### Localize function names
 
-Create one JSON metadata file per language. In each, localize `name` and `description`. The default English file is **functions.json**. Add locale tags to new files, like **functions-de.json**.
+To localize your custom functions, create a new JSON metadata file for each language. In each language JSON file, add `name` and `description` properties in the target language. The default file for English is named **functions.json**. Use the locale in the filename for each additional JSON file, such as **functions-de.json** to help identify them.
 
 Excel only localizes `name` and `description`. The `id` is not localized and shouldn't be changed once it's set.
 
