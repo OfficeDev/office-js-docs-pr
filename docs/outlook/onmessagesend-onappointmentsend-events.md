@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 10/17/2025
+ms.date: 10/21/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -149,7 +149,7 @@ When Outlook launches without internet connectivity, it's unable to determine wh
 
 > [!NOTE]
 >
-> - We're working on enabling the **OnSendAddinsEnabled** mailbox policy for Smart Alerts add-ins. Periodically check this article for updates.
+> - We're working on enabling the **OnSendAddinsEnabled** mailbox policy on Outlook on the web and the new Outlook on Windows. Periodically check this article for updates.
 > - When the **OnSendAddinsEnabled** policy is enabled, it will apply to all installed add-ins, not just Smart Alerts add-ins. If the policy is configured and installed add-ins don't load, the user won't be able to send items when they're offline. Administrators should only enable this policy for users in their organization if they have mandatory Smart Alerts add-ins installed.
 
 For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. This ensures that installed add-ins always run on outgoing messages while offline.
