@@ -165,25 +165,9 @@
       items:
       - name: Overview
         href: develop/overview-authn-authz.md
-      - name: Single sign-on with on-behalf-of flow
-        items:
-        - name: Enable SSO using on-behalf-of flow
-          href: develop/sso-in-office-add-ins.md
-        - name: Quick start
-          href: quickstarts/sso-quickstart.md
-        - name: Register with Microsoft identity platform
-          href: develop/register-sso-add-in-aad-v2.md
-        - name: Get the identity token
-          href: develop/use-sso-to-get-office-signed-in-user-token.md
-        - name: Authorize to Microsoft Graph
-          href: develop/authorize-to-microsoft-graph.md
-        - name: Create an SSO add-in using ASP.NET
-          href: develop/create-sso-office-add-ins-aspnet.md
-        - name: Create an SSO add-in using Node.js
-          href: develop/create-sso-office-add-ins-nodejs.md
-        - name: Troubleshoot error messages
-          href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Enable SSO using nested app authentication
+      - name: SSO quick start
+        href: quickstarts/sso-quickstart.md
+      - name: Enable SSO using NAA for SPA authentication
         href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
@@ -193,6 +177,18 @@
         href: develop/authorize-to-microsoft-graph-without-sso.md
       - name: Automatically save passwords in WebView2
         href: develop/auth-save-passwords.md
+      - name: Office legacy SSO
+        items:
+        - name: Enable SSO using on-behalf-of flow
+          href: develop/sso-in-office-add-ins.md
+        - name: Register with Microsoft identity platform
+          href: develop/register-sso-add-in-aad-v2.md
+        - name: Get the identity token
+          href: develop/use-sso-to-get-office-signed-in-user-token.md
+        - name: Authorize to Microsoft Graph
+          href: develop/authorize-to-microsoft-graph.md
+        - name: Troubleshoot error messages
+          href: develop/troubleshoot-sso-in-office-add-ins.md
     - name: UI and UX
       items:
       - name: Overview
