@@ -84,11 +84,6 @@ Before you begin implementing SSO to access Microsoft Graph in your add-in, be s
 - [Enable single sign-on for Office Add-ins](sso-in-office-add-ins.md)
 - [Authorize to Microsoft Graph with SSO](authorize-to-microsoft-graph.md)
 
-You should also read at least one of the following articles that'll walk you through building an Office Add-in to use SSO and access Microsoft Graph. Even if you don't carry out the steps, they contain valuable information about how you implement SSO and the On-Behalf-Of flow.
-
-- [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md) which walks you through the sample at [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
-- [Create an Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md) which walks you through the sample at [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO).
-
 ## Non-SSO scenarios
 
 In some scenarios, you may not want to use SSO. For example, you may need to authenticate using a different identity provider than the Microsoft identity platform. Also, SSO isn't supported in all scenarios. For example, older versions of Office don't support SSO. In this case, you'd need to fall back to an alternate authentication system for your add-in.

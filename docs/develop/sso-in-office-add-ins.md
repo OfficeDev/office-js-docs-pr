@@ -52,8 +52,8 @@ For code samples that use the Microsoft identity platform as the fallback system
 
 This section describes the tasks involved in creating an Office Add-in that uses SSO. These tasks are described here independently of language or framework. For step-by-step instructions, see:
 
-- [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
-- [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
+- [Create a Node.js Office Add-in that uses single sign-on](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Create an ASP.NET Office Add-in that uses single sign-on](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 
 ### Register your add-in with the Microsoft identity platform
 
