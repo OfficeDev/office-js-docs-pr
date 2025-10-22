@@ -40,7 +40,7 @@ In Outlook on the web and the new Outlook on Windows, you can use the `bodyMode`
 
 The following table lists the portion of the body returned depending on the `bodyMode` configuration.
 
-| bodyMode configuration | Effect on body returned |
+| `bodyMode` configuration | Effect on body returned |
 | ----- | ----- |
 | `bodyMode` isn't specified in the `getAsync` call | The entire body of the conversation thread is returned. However, in Outlook on mobile, while in quick reply mode (the reply field at the bottom of the message), only the body of the current reply is returned. |
 | `bodyMode` is set to `Office.MailboxEnums.BodyMode.FullBody` | The entire body of the conversation thread is returned. However, in Outlook on mobile, while in quick reply mode, only the body of the current reply is returned. |
