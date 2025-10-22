@@ -1,7 +1,7 @@
 ---
 title: Get or set the body of a message or appointment in Outlook
 description: Learn how to get or insert data into the body of an appointment or message of an Outlook add-in.
-ms.date: 07/24/2025
+ms.date: 10/23/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -47,7 +47,9 @@ The following table lists the portion of the body returned depending on the `bod
 | `bodyMode` is set to `Office.MailboxEnums.BodyMode.HostConfig` | In Outlook on the web and the new Outlook on Windows, if **Message Organization** is set to **Group messages by conversation** > **All messages from the selected conversation** or **Show email grouped by conversation** > **Newest on top**/**Newest on bottom**, only the body of the current reply is returned. Conversely, if **Message Organization** is set to **Individual messages: Do not group messages** > **Only a single message** or **Show email as individual messages**, the entire body of the conversation thread is returned.<br><br>In Outlook on mobile, only the body of the current reply is returned. |
 
 > [!NOTE]
-> The `bodyMode` option is ignored in Outlook on Windows (classic) and on Mac.
+>
+> - In Outlook on mobile devices, the `bodyMode` option is available starting with Version 4.2538.0.
+> - The `bodyMode` option is ignored in Outlook on Windows (classic) and on Mac.
 
 The following example specifies the `bodyMode` option to honor the user's message setting.
 
