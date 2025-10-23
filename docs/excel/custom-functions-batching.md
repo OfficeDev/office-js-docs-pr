@@ -1,5 +1,5 @@
 ---
-ms.date: 09/19/2025
+ms.date: 10/22/2025
 description: Batch custom functions together to reduce network calls to a remote service.
 title: Batching custom function calls for a remote service
 ms.topic: best-practice

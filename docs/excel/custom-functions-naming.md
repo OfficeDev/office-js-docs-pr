@@ -30,7 +30,7 @@ Excel shows built‑in function names in uppercase letters (such as `SUM`). Usin
 
 Avoid names that match:
 
-- A cell reference (A1 to XFD1048576 or R1C1 style).
+- A cell reference (A1 to XFD1048576 or R1C1 to R1048576C16384).
 - An Excel 4.0 Macro Function (such as `RUN`, `ECHO`). For a full list of these functions, see [this Excel Macro Functions Reference document](https://www.myonlinetraininghub.com/cdn/files/Excel%204.0%20Macro%20Functions%20Reference.pdf).
 
 ## Naming conflicts

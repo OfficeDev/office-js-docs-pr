@@ -1,5 +1,5 @@
 ---
-ms.date: 09/22/2025
+ms.date: 10/22/2025
 description: Understand Excel custom functions that don't use a shared runtime and their specific JavaScript-only runtime.
 title: JavaScript-only runtime for custom functions
 ms.localizationpriority: medium
