@@ -1,7 +1,7 @@
 ---
 title: Naming and localization for custom functions in Excel
 description: Learn requirements for names of Excel custom functions and how to localize custom functions.
-ms.date: 09/22/2025
+ms.date: 10/22/2025
 ms.localizationpriority: medium
 ---
 
@@ -41,7 +41,7 @@ Fix conflicts by renaming your function or uninstalling the other add‑in. For 
 
 ## Best practices
 
-- Prefer extra function arguments over multiple near-duplicate function names.
+- Prefer extra function arguments over multiple near-duplicate function names. (`GETNAME(firstName, middleName, lastName)` is more efficient than `GETFIRSTNAME`, `GETMIDDLENAME   `, and `GETLASTNAME`).
 - Avoid unclear abbreviations (`INCREASETIME` is clearer than `INC`).
 - Use action verbs (`GETZIPCODE` not just `ZIPCODE`).
 - Be consistent: Use the same verb for similar actions (`DELETEZIPCODE` and `DELETEADDRESS`).
