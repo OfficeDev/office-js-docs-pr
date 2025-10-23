@@ -284,7 +284,7 @@ The previous example shown in [extensions.autoRunEvents.requirements](#extension
 
 Similarly, for the example in [extensions.ribbons.requirements](#extensionsribbonsrequirements), if the action linked to the custom button is the only action configured in a runtime object, then that runtime object should be blocked in the same circumstances in which the ribbon object is blocked.
 
-### extensions.keyboardShortcuts.requirements (developer preview)
+### extensions.keyboardShortcuts.requirements
 
 The `extensions.keyboardShortcuts` property defines custom keyboard shortcuts or key combinations to run specific actions. To learn how to create custom shortcuts, see [Add custom keyboard shortcuts to your Office Add-ins](../design/keyboard-shortcuts.md).
 
