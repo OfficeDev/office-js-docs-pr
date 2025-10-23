@@ -26,7 +26,7 @@ A function's `name` and `id` share some similar rules.
 - `id`: Only A–Z, 0–9, underscore, and period characters are allowed.
 - `name`: Any Unicode alphabetic characters, underscore, and period characters are allowed.
 
-Excel shows built‑in function names in uppercase letters (such as `SUM`). Using uppercase helps your custom functions fit in.
+Excel shows built-in function names in uppercase letters (such as `SUM`). Using uppercase helps your custom functions fit in.
 
 Avoid names that match:
 
@@ -35,9 +35,9 @@ Avoid names that match:
 
 ## Naming conflicts
 
-If your function `name` conflicts with one from another add‑in, Excel shows the **#REF!** error.
+If your function `name` conflicts with one from another add-in, Excel shows the **#REF!** error.
 
-Fix conflicts by renaming your function or uninstalling the other add‑in. For testing in multiple environments, use a short namespace prefix (such as `ADDINNAME_FUNCTIONNAME`).
+Fix conflicts by renaming your function or uninstalling the other add-in. For testing in multiple environments, use a short namespace prefix (such as `ADDINNAME_FUNCTIONNAME`).
 
 ## Best practices
 
@@ -79,7 +79,7 @@ To localize your custom functions, create a new JSON metadata file for each lang
 Excel only localizes `name` and `description`. The `id` is not localized and shouldn't be changed once it's set.
 
 > [!IMPORTANT]
-> Avoid an `id` or `name` that matches a built‑in Excel function in any language.
+> Avoid an `id` or `name` that matches a built-in Excel function in any language.
 
 The following JSON shows how to define a function with the `id` property "MULTIPLY". The `name` and `description` property of the function is localized for German. Each parameter `name` and `description` is also localized for German.
 

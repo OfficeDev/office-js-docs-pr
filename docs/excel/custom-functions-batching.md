@@ -242,7 +242,7 @@ Batching adds a small delay and some extra code. Avoid batching in the following
 | Single or very few calls | Extra wait for timer | Call service directly if list is still empty |
 | Very large input data per call | Request might get too large | Limit size or send those calls alone |
 | Some calls are much slower than others | One slow call delays faster ones | Group slow types separately |
-| Need near‑instant result (less than 50 ms) | Timer adds delay | Use a shorter timer or skip batching |
+| Need near-instant result (less than 50 ms) | Timer adds delay | Use a shorter timer or skip batching |
 | Server already combines work | No benefit | Skip batching on the client |
 
 ## Next steps
