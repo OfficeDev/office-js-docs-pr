@@ -1,7 +1,7 @@
 ﻿---
 title: Get or set the time when composing an appointment in Outlook
 description: Learn how to get or set the start and end time of an appointment in an Outlook add-in.
-ms.date: 10/02/2025
+ms.date: 10/27/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -64,10 +64,11 @@ function getStartTime() {
             return;
         }
 
+        const startTime = asyncResult.value;
         // Display the start time in UTC format on the page.
-        write(`The start time in UTC is: ${asyncResult.value.toString()}`);
-        // Convert the start time to local time and display it on the page.
-        write(`The start time in local time is: ${asyncResult.value.toLocaleString()}`);
+        write(`The start time in UTC is: ${startTime.toUTCString()}`);
+        // Display the start time in local time on the page.
+        write(`The start time in local time is: ${startTime.toLocaleString()}`);
     });
 }
 
