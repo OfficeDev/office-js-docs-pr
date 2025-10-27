@@ -1,7 +1,7 @@
 ﻿---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
-ms.date: 07/10/2025
+ms.date: 10/27/2025
 ms.localizationpriority: medium
 ---
 
@@ -171,7 +171,7 @@ The `functions` property is an array of custom function objects. The following t
 | Property      | Data type | Required | Description                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `description` | string    | No       | The description of the function that end users see in Excel. For example, **Converts a Celsius value to Fahrenheit**.                                                            |
-| `helpUrl`     | string    | No       | URL that provides information about the function. (It is displayed in a task pane.) For example, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
+| `helpUrl`     | string    | No       | URL that provides information about the function. For example, `http://contoso.com/help/convertcelsiustofahrenheit.html`.                      |
 | `id`          | string    | Yes      | A unique ID for the function. This ID can only contain alphanumeric characters and periods and should not be changed after it is set.                                            |
 | `name`        | string    | Yes      | The name of the function that end users see in Excel. In Excel, this function name is prefixed by the custom functions namespace that's specified in the add-in only manifest file. |
 | `options`     | object    | No       | Enables you to customize some aspects of how and when Excel executes the function. See [options](#options) for details.                                                          |
