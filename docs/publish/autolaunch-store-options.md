@@ -1,7 +1,7 @@
 ﻿---
 title: Microsoft Marketplace listing options for your event-based add-in
 description: Learn about the Microsoft Marketplace listing options available for your Office Add-ins that implement event-based activation.
-ms.date: 10/23/2025
+ms.date: 10/28/2025
 ms.localizationpriority: medium
 ---
 

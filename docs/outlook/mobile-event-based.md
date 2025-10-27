@@ -1,7 +1,7 @@
 ﻿---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 10/23/2025
+ms.date: 10/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

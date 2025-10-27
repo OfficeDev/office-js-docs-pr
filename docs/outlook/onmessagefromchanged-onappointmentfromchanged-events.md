@@ -1,7 +1,7 @@
 ﻿---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 10/23/2025
+ms.date: 10/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
