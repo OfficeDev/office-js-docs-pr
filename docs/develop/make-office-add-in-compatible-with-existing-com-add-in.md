@@ -1,7 +1,7 @@
 ﻿---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 10/24/2025
+ms.date: 10/28/2025
 ms.localizationpriority: medium
 ---
 
@@ -252,6 +252,8 @@ The following is an example. The **\<Effect\>** element must be after all the **
 </VersionOverrides>
 ```
 
+> [!NOTE]
+> The **\<Type\>** value is "COM" for historical reasons, but it refers to either a COM or a VSTO add-in. Similarly, the **\<ProgId\>** value can be either the progId of a COM add-in or the name of a VSTO add-in.
 ---
 
 ## See also
