@@ -252,6 +252,8 @@ The following is an example. The **\<Effect\>** element must be after all the **
 </VersionOverrides>
 ```
 
+> [!NOTE]
+> The **\<Type\>** value is "COM" for historical reasons, but it refers to either a COM or a VSTO add-in. Similarly, the **\<ProgId\>** value can be either the progId of a COM add-in or the name of a VSTO add-in.
 ---
 
 ## See also
