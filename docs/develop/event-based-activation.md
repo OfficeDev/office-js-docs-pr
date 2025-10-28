@@ -181,7 +181,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 Depending on the Office application, event-based add-ins can be deployed through one of the following options.
 - **Admin-managed deployment**: Add-in is deployed through the Microsoft 365 admin center.
 - **Restricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace, but acquisition requires a flight code URL. The add-in must still be deployed by an admin for the event-based activation feature to work.
-- **Unrestricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace and can be explicitly searched by users and admins. Admin deployment isn't necessary for the event-based activation feature to work. The add-in must meet certain requirements for unrestricted listing.
+- **Unrestricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace and can be explicitly searched for by users and admins. Admin deployment isn't necessary for the event-based activation feature to work. The add-in must meet certain requirements for unrestricted listing.
 
 The following table outlines the deployment options for event-based activation by Office application.
 

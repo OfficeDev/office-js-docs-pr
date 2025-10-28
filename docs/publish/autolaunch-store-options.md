@@ -76,7 +76,7 @@ After submitting the form, your add-in will undergo further review for usage and
 
 You can update your existing add-in to include event-based activation then resubmit it for validation and decide if you want a restricted or unrestricted Microsoft Marketplace listing.
 
-After the updated add-in is approved, organization admins who have previously deployed the add-in will receive an update message in the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to users. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](#admin-consent-for-installing-event-based-add-ins).
+After the updated add-in is approved, organization admins who previously deployed the add-in will receive an update message in the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to users. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](#admin-consent-for-installing-event-based-add-ins).
 
 ![App update notifications on the "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
 
