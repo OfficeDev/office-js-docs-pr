@@ -18,7 +18,7 @@ An event-based add-in can have either a restricted or unrestricted listing in Mi
 | Listing features | Restricted | Unrestricted |
 | --- | --- | --- |
 | **Event-based activation support** | Add-in must be deployed by an organization's admin for the event-based activation feature to work. | Event-based activation works immediately upon installation by either the user or admin, without requiring admin deployment. |
-| **Store searchability** | Users and admins can't explicitly search for the add-in in Microsoft Marketplace. They must use a specific flight code URL to install the add-in. | Users and administrators can explicitly search and install the add-in from Microsoft Marketplace. |
+| **Store searchability** | The add-in isn't searchable by name or ID in Microsoft Marketplace. Users and admins must use a specific flight code URL to install the add-in. | The add-in is searchable by name or ID and it appears in the Microsoft Marketplace search results. Users and admins can install the add-in directly from the store. |
 | **Prerequisites** | You must specify a flight code for your add-in when you publish it to Microsoft Marketplace. | Your add-in must be [Microsoft 365 Certified](/microsoft-365-app-certification/docs/certification) and must comply with certain usage requirements. |
 | **Supported Office apps** | <ul><li>Excel</li><li>Outlook</li><li>PowerPoint</li><li>Word</li></ul> | <ul><li>Outlook</li></ul> |
 
@@ -32,7 +32,7 @@ To enable that restriction, we can provide flight code URLs for add-ins in Micro
 
 `https://marketplace.microsoft.com/product/office/WA200002862?flightCodes=EventBasedTest1`
 
-When a flight code is enabled for an add-in, users and admins can't explicitly search for an add-in by name in Microsoft Marketplace or the in-app Microsoft 365 and Copilot store. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
+When a flight code is enabled for an add-in, the add-in isn't searchable by name or ID in Microsoft Marketplace or the in-app Microsoft 365 and Copilot store. As the add-in creator, you can privately share these flight codes with organization admins for add-in deployment.
 
 > [!NOTE]
 > While users can install an event-based add-in using a flight code, the add-in won't include event-based activation. However, users can use other components of the add-in, such as a task pane or function command.
