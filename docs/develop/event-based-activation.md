@@ -1,7 +1,7 @@
 ﻿---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 10/09/2025
+ms.date: 10/28/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -178,7 +178,25 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 
 ## Deploy your add-in
 
-Event-based add-ins are restricted to admin-managed deployments only, even if they're acquired from Microsoft Marketplace. If users acquire the add-in from Microsoft Marketplace or the in-app Office Store, they won't be able to activate the event-based function of the add-in. To learn more about listing your event-based add-in in Microsoft Marketplace, see [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md).
+Depending on the Office application, event-based add-ins can be deployed through one of the following options.
+- **Admin-managed deployment**: Add-in is deployed through the Microsoft 365 admin center.
+- **Restricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace, but it doesn't appear in search results. Add-in acquisition requires a flight code URL. The add-in must still be deployed by an admin for the event-based activation feature to work.
+- **Unrestricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace and can be searched for by users and admins using the add-in's name or ID. Admin deployment isn't necessary for the event-based activation feature to work. The add-in must meet certain requirements for unrestricted listing.
+
+The following table outlines the deployment options for event-based activation by Office application.
+
+| Office application | Admin-managed deployment | Microsoft Marketplace |
+| --- | --- | --- |
+| **Excel** | Supported | Restricted listing option |
+| **Outlook** | Supported | Restricted and unrestricted listing options |
+| **PowerPoint** | Supported | Restricted listing option |
+| **Word** | Supported | Restricted listing option |
+
+For instructions on how to deploy an add-in through the Microsoft 365 admin center, see [Admin-managed deployment](#admin-managed-deployment). To learn more about listing your event-based add-in in Microsoft Marketplace, see [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md).
+
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
+
+### Admin-managed deployment
 
 Admin deployments are done by uploading the manifest to the Microsoft 365 admin center. To do so, follow these steps.
 
@@ -187,13 +205,11 @@ Admin deployments are done by uploading the manifest to the Microsoft 365 admin 
 
 ![The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.](../images/outlook-deploy-event-based-add-ins.png)
 
-[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
-
 For more information about how to deploy an add-in, please refer to [Deploy and publish Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/office-addins).
 
 ### Deploy manifest updates
 
-Because event-based add-ins are deployed by admins, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](../publish/autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
+If an event-based add-in was admin-deployed, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](../publish/autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
 
 ## See also
 

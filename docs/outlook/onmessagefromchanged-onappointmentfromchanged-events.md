@@ -1,7 +1,7 @@
 ﻿---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 08/01/2025
+ms.date: 10/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -453,7 +453,7 @@ For guidance on how to troubleshoot your event-based activation add-in, see [Tro
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the `OnMessageFromChanged` and `OnAppointmentFromChanged` events must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy your add-in" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
+For guidance on how to deploy your event-based add-in, see the "Deploy your add-in" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 ## Event behavior and limitations
 

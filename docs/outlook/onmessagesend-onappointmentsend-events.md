@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 10/21/2025
+ms.date: 10/28/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -414,7 +414,7 @@ For guidance on how to troubleshoot your Smart Alerts add-in, see [Troubleshoot 
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section in [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
+For guidance on how to deploy your Smart Alerts add-in, see the "Deploy to users" section in [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 > [!IMPORTANT]
 > Add-ins that use the Smart Alerts feature can only be published to Microsoft Marketplace if the manifest's [send mode property](#available-send-mode-options) is set to the **soft block** or **prompt user** option. If an add-in's send mode property is set to **block**, it can only be deployed by an organization's admin as it will fail Microsoft Marketplace validation. To learn more about publishing your event-based add-in to Microsoft Marketplace, see [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md).
