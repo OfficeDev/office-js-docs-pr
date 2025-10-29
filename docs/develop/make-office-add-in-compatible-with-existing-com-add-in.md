@@ -1,7 +1,7 @@
 ﻿---
 title: Make your Office Add-in compatible with an existing COM add-in
 description: Enable compatibility between your Office Add-in and equivalent COM add-in.
-ms.date: 07/21/2025
+ms.date: 10/28/2025
 ms.localizationpriority: medium
 ---
 
@@ -173,7 +173,6 @@ If the Windows-only add-in is then disconnected during a subsequent Outlook sess
 >
 > - It's supported only for Excel, PowerPoint, and Word.
 > - The minimum Office version that supports the feature is ubscription Office on Windows Version 2506 (Build 19029.20004)
-> - Add-ins that use this feature can only be sideloaded. They cannot be published any other way.
 
 Use manifest markup to specify whether the Windows-only add-in or the Office Add-in should be disabled and hidden on a Windows computer when they conflict, or give the user that is installing the Office Add-in the choice of which to use.
 
@@ -253,6 +252,8 @@ The following is an example. The **\<Effect\>** element must be after all the **
 </VersionOverrides>
 ```
 
+> [!NOTE]
+> The **\<Type\>** value is "COM" for historical reasons, but it refers to either a COM or a VSTO add-in. Similarly, the **\<ProgId\>** value can be either the progId of a COM add-in or the name of a VSTO add-in.
 ---
 
 ## See also
