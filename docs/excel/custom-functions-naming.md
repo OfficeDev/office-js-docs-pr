@@ -62,9 +62,6 @@ Fix conflicts by renaming your function or uninstalling the other add-in. For te
 | Can mimic cell address | No | No | Prevent address parsing errors. |
 | Reserved macro names | Disallowed | Disallowed | Some examples: `RUN`, `ECHO`. |
 
-### Recommended namespace pattern
-
-For many functions, add a short vendor prefix such as `CONTOSO_GETPRICE` or `CONTOSO_TAX_CALC` to reduce conflicts with other add-ins.
 
 ## Localize custom functions
 
