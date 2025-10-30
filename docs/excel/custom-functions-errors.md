@@ -7,11 +7,11 @@ ms.localizationpriority: medium
 
 # Handle and return errors from your custom function
 
-When a custom function encounters invalid input, an unavailable resource, or a computation failure, return the most specific Excel error possible. Validate parameters early to fail promptly and wrap external calls in `try...catch` blocks to translate low-level exceptions into meaningful Excel errors.
+When a custom function receives invalid input, can't access a resource, or fails to compute a result, return the most specific Excel error you can. Validate parameters early to fail promptly and use `try...catch` blocks to turn low-level exceptions into clear Excel errors.
 
 ## Detect and throw an error
 
-The following example validates a U.S. ZIP Code with a regular expression before it proceeds. If the format is invalid, it throws a `#VALUE!` error.
+The following example validates a U.S. ZIP Code with a regular expression before continuing. If the format is invalid, it throws a `#VALUE!` error.
 
 ```typescript
 /**
@@ -59,7 +59,7 @@ throw error;
 
 ### Handle errors when working with dynamic arrays
 
-You can return dynamic arrays that contain errors. For example, a custom function could output the array `[1],[#NUM!],[3]`. The following code sample shows how to input three parameters into a custom function, replace one of the input parameters with a `#NUM!` error, and then return a 2-dimensional array with the results of processing each input parameter.
+Custom functions can return dynamic arrays that include errors. For example, a custom function could output the array `[1],[#NUM!],[3]`. The following code sample shows how to pass three parameters into a custom function, replace one parameter with a `#NUM!` error, and then return a two-dimensional array with the results for each input.
 
 ```js
 /**
@@ -100,7 +100,7 @@ To process inputs that contain errors, a custom function must have the JSON meta
 
 Use [`try...catch`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/try...catch) blocks to catch potential errors and return meaningful error messages to your users. By default, Excel returns `#VALUE!` for unhandled errors or exceptions.
 
-In the following code sample, the custom function makes a fetch call to a REST service. It's possible that the call will fail, for example, if the REST service returns an error or the network goes down. If this happens, the custom function will return `#N/A` to indicate that the web call failed.
+In the following code sample, the custom function uses fetch to call a REST service. If the call fails, such as when the REST service returns an error or the network is unavailable, the custom function returns `#N/A` to show that the web call failed.
 
 ```typescript
 /**

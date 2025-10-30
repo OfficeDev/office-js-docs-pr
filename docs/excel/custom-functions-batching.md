@@ -1,16 +1,16 @@
 ---
 ms.date: 10/22/2025
 description: Batch custom functions together to reduce network calls to a remote service.
-title: Batching custom function calls for a remote service
+title: Batch custom function calls for a remote service
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
 # Batch custom function calls for a remote service
 
-Use batching to group calls to a remote service into one network request. This cuts down the number of network round trips to your remote service and helps the worksheet finish recalculating faster.
+Use batching to group calls to a remote service into a single network request. This reduces the number of network round trips to your remote service and helps your worksheet finish recalculating faster.
 
-Here's a batching example scenario: 100 cells call the custom function. Instead of 100 network requests, you send one request that lists all 100 operations and then returns 100 answers.
+Here's a batching example scenario: If 100 cells call the custom function, send one request that lists all 100 operations. The service returns 100 results in a single response.
 
 ## Key points
 
@@ -27,13 +27,13 @@ To set up batching for your custom functions you'll need to write three main sec
 In the following sections, you'll learn how to construct the code one example at a time. It's recommended you create a brand-new custom functions project using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) generator. To create a new project, see [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md). You can use TypeScript or JavaScript.
 
 > [!TIP]
-> To view the completed sample, create a new custom functions project with the Yeoman generator for Office Add-ins, and then paste the code examples into your own project. Run the code and try it out.
+> To view the completed sample, create a new custom functions project with the Yeoman generator for Office Add-ins. Copy and paste the code examples into your project then, run the code and try it out.
 >
-> Alternatively, download or view the complete sample project at [Custom function batching pattern](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). If you want to view the code in whole before reading any further, take a look at the [script file](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
+> Alternatively, download or view the complete sample project at [Custom function batching pattern](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching). If you want to view the entire code before continuing, take a look at the [script file](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions/Batching/src/functions/functions.js).
 
 ## Batch each call to your custom function
 
-Your custom functions work by calling a remote service to perform the operation and calculate the result they need. This provides a way for them to store each requested operation into a batch. Later you'll see how to create a `_pushOperation` function to batch the operations. First, take a look at the following code example to see how to call `_pushOperation` from your custom function.
+Your custom functions work by calling a remote service to perform operations and return results. This provides a way for them to store each requested operation into a batch. Later you'll see how to create a `_pushOperation` function to batch the operations. First, review the following code example to see how to call `_pushOperation` from your custom function.
 
 In the following code, the custom function performs division but relies on a remote service to do the actual calculation. It calls `_pushOperation` to batch the operation along with other operations to the remote service. It names the operation **div2**. You can use any naming scheme you want for operations as long as the remote service is also using the same scheme (more on the remote service later). Also, the arguments the remote service will need to run the operation are passed.
 
@@ -177,7 +177,7 @@ Add the following code to your **functions.js** or **functions.ts** file.
 
 ```javascript
 // This function simulates the work of a remote service. Because each service
-// differs, you will need to modify this function appropriately to work with the service you are using.
+// differs, modify this function as needed to work with the service you are using.
 // This function takes a batch of argument sets and returns a promise that may contain a batch of values.
 // NOTE: When implementing this function on a server, also apply an appropriate authentication mechanism
 //       to ensure only the correct callers can access it.

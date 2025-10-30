@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # JavaScript-only runtime for custom functions
 
-Custom functions that don't use a shared runtime instead use a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime) that's focused on fast calculation and has fewer APIs available.
+Custom functions that don't use a shared runtime rely on a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). This runtime is optimized for fast calculation but has fewer APIs available.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 

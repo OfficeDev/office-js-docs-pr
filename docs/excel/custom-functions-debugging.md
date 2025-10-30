@@ -31,7 +31,7 @@ The process of debugging a custom function for add-ins that don't use a shared r
 
 ## Use the browser developer tools to debug custom functions in Excel on the web
 
-You can use the browser developer tools to debug custom functions that don't use a shared runtime in Excel on the web. The following steps work for Windows and macOS.
+Use the browser developer tools to debug custom functions that don't use a shared runtime in Excel on the web. The following steps work for Windows and macOS.
 
 ### Run your add-in from Visual Studio Code
 
@@ -54,15 +54,15 @@ You can use the browser developer tools to debug custom functions that don't use
 
 ### Start debugging
 
-1. Open developer tools in the browser. For Chrome and most browsers F12 opens the developer tools.
+1. Open your browser's developer tools. In Chrome and most browsers, press F12 to open the developer tools.
 1. In developer tools, open your source code script file using <kbd>Cmd</kbd>+<kbd>P</kbd> or <kbd>Ctrl</kbd>+<kbd>P</kbd> (**functions.js** or **functions.ts**).
 1. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code.
 
-If needed, edit code in VS Code, save, then refresh the workbook page to load updates.
+If you need to make changes, edit the code in VS Code, save your work, then refresh the workbook page to apply the update.
 
 ## Use the command line tools to debug
 
-If you aren't using VS Code, you can use the command line such as bash or PowerShell to run your add-in. Use the browser developer tools to debug your code in Excel on the web.
+If you don't use VS Code, run your add-in from the command line using tools such as Bash or PowerShell. To debug your code in Excel on the web, use your browser's developer tools.
 
 1. From the command line run `npm run watch` to watch for and rebuild when code changes occur.
 1. Open a second command line window (the first one is busy while running the watch.)
@@ -75,9 +75,9 @@ If you aren't using VS Code, you can use the command line such as bash or PowerS
   
     [!include[Mac command line note](../includes/mac-command-line.md)]
   
-    If your add-in doesn't sideload in the document, follow the steps in [Sideload your add-in](#sideload-your-add-in) to sideload your add-in. Then continue to the next section to start debugging.
+    If your add-in doesn't sideload in the document, follow the steps in [Sideload your add-in](#sideload-your-add-in). Then continue to the next section to start debugging.
   
-1. Open developer tools in the browser. For Chrome and most browsers F12 opens the developer tools.
+1. Open your browser's developer tools. In Chrome and most browsers, press F12 to open the developer tools.
 1. In developer tools, open your source code script file (**functions.js** or **functions.ts**). Your custom functions code may be located near the end of the file.
 1. In the custom function source code, apply a breakpoint by selecting a line of code.
 
