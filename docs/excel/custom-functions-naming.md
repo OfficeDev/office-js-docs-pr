@@ -1,75 +1,87 @@
 ---
 title: Naming and localization for custom functions in Excel
 description: Learn requirements for names of Excel custom functions and how to localize custom functions.
-ms.date: 02/29/2024
+ms.date: 10/22/2025
 ms.localizationpriority: medium
 ---
+
 # Custom functions naming and localization
 
-This article describes guidelines and best practices for naming custom functions. It also shows how to localize custom function names to languages other than English.
+This article provides guidelines and best practices for naming custom functions and explains how to localize them.
 
 ## Custom functions naming guidelines
 
-A custom function is identified by an `id` and `name` property in the JSON metadata file.
+A custom function is identified by an `id` and a `name` in the JSON metadata.
 
-- The function `id` is used to uniquely identify custom functions in your JavaScript code.
-- The function `name` is used as the display name that appears to a user in Excel.
+- `id`: Unique identifier used in code.
+- `name`: Display name shown to users. It can be localized.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-A function `name` can differ from the function `id`, such as for localization purposes. In general, a function's `name` should stay the same as the `id` if there is no reason for them to differ.
+A function `name` can differ from the `id` for localization. If you don't need localization, it's best to use the same value for both.
 
-A function's `name` and `id` share some common requirements.
+A function's `name` and `id` share some similar rules.
 
-- A function's `id` may only use characters A through Z, numbers zero through nine, underscores, and periods.
+- Both must start with a letter and be at least three characters.
+- `id`: Only A–Z, 0–9, underscore, and period characters are allowed.
+- `name`: Any Unicode alphabetic characters, underscore, and period characters are allowed.
 
-- A function's `name` may use any Unicode alphabetic characters, underscores, and periods.
+Excel displays built-in function names in uppercase letters (for example, `SUM`). Use uppercase for your custom functions to help them blend in naturally.
 
-- Both function `name` and `id` must start with a letter and have a minimum limit of three characters.
+Avoid names that match:
 
-Excel uses uppercase letters for built-in function names (such as `SUM`). Use uppercase letters for your custom function's `name` and `id` as a best practice.
-
-A function's `name` shouldn't be the same as:
-
-- Any cells between A1 to XFD1048576 or any cells between R1C1 to R1048576C16384.
-
-- Any Excel 4.0 Macro Function (such as `RUN`, `ECHO`).  For a full list of these functions, see [this Excel Macro Functions Reference document](https://www.myonlinetraininghub.com/cdn/files/Excel%204.0%20Macro%20Functions%20Reference.pdf).
+- A cell reference (A1 to XFD1048576 or R1C1 to R1048576C16384).
+- An Excel 4.0 Macro Function (such as `RUN`, `ECHO`). For a full list of these functions, see [this Excel Macro Functions Reference document](https://www.myonlinetraininghub.com/cdn/files/Excel%204.0%20Macro%20Functions%20Reference.pdf).
 
 ## Naming conflicts
 
-If your function `name` is the same as a function `name` in an add-in that already exists, the **#REF!** error will appear in your workbook.
+If your function `name` conflicts with one from another add-in, Excel shows the **#REF!** error.
 
-To fix a naming conflict, change the `name` in your add-in and try the function again. You can also uninstall the add-in with the conflicting name. Or, if you're testing your add-in in different environments, try using a different namespace to differentiate your function (such as `NAMESPACE_NAMEOFFUNCTION`).
+Fix conflicts by renaming your function or uninstalling the other add-in. For testing in multiple environments, use a short namespace prefix (such as `ADDINNAME_FUNCTIONNAME`).
 
 ## Best practices
 
-- Consider adding multiple arguments to a function rather than creating multiple functions with the same or similar names.
-- Avoid ambiguous abbreviations in function names. Clarity is more important than brevity. Choose a name like `=INCREASETIME` rather than `=INC`.
-- Function names should indicate the action of the function, such as =GETZIPCODE instead of ZIPCODE.
-- Consistently use the same verbs for functions which perform similar actions. For example, use `=DELETEZIPCODE` and `=DELETEADDRESS`, rather than `=DELETEZIPCODE` and `=REMOVEADDRESS`.
-- When naming a streaming function, consider adding a note to that effect in the description of the function or adding `STREAM` to the end of the function's name.
+- Use extra function arguments instead of creating multiple similar function names. For example, `GETNAME(firstName, middleName, lastName)` is more efficient than having separate functions like `GETFIRSTNAME`, `GETMIDDLENAME`, and `GETLASTNAME`.
+- Avoid abbreviations that aren’t clear. For example, `INCREASETIME` is easier to understand than `INC`.
+- Choose action verbs for function names. Use `GETZIPCODE` instead of just `ZIPCODE`.
+- Be consistent. Use the same verb for similar actions, such as `DELETEZIPCODE` and `DELETEADDRESS`.
+- For streaming functions, add `STREAM` to the name or include a note in the description.
+- Use a short vendor prefix in your function names to avoid conflicts with other add-ins. For example, use `CONTOSO_GETPRICE` or `CONTOSO_TAX_CALC`.
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
+## Naming constraints quick reference
+
+| Guideline | `id` | `name` | Notes |
+|--------|------|-------|-------|
+| Allowed characters | A–Z 0–9 `_` `.` | Unicode alphabetic characters `_` `.` | Keep `id` simple. Localize `name`. |
+| Must start with a letter | Yes | Yes | Avoids cell reference confusion. |
+| Minimum length | 3 | 3 | Short names reduce clarity. |
+| Capitalization | All uppercase recommended | All uppercase recommended | Matches Excel style. |
+| Localizable | No | Yes | Keep `id` stable. Localize `name` as needed. |
+| Can mimic cell address | No | No | Prevent address parsing errors. |
+| Reserved macro names | Disallowed | Disallowed | Some examples: `RUN`, `ECHO`. |
+
+
 ## Localize custom functions
 
-You can localize both your add-in and your custom function names. To do so, provide localized function names in the functions' JSON file and locale information in the add-in only manifest file.
+You can localize both your add-in and your custom function names. Add localized function names in your JSON file and set locale overrides in the add-in only manifest.
 
 > [!IMPORTANT]
 > Autogenerated metadata doesn't work for localization so you need to update the JSON file manually. To learn how to do this, see [Manually create JSON metadata for custom functions](custom-functions-json.md).
 
 ### Localize function names
 
-To localize your custom functions, create a new JSON metadata file for each language. In each language JSON file, add `name` and `description` properties in the target language. The default file for English is named **functions.json**. Use the locale in the filename for each additional JSON file, such as **functions-de.json** to help identify them.
+To localize your custom functions, create a separate JSON metadata file for each language. In each file, add the `name` and `description` properties in the target language. Use **functions.json** for English and include the locale in the filename for other languages, such as **functions-de.json** for German.
 
-The `name` and `description` appear in Excel and are localized. However, the `id` of each function isn't localized. The `id` property is how Excel identifies your function as unique and shouldn't be changed once it is set.
+Excel only localizes the `name` and `description` properties. The `id` is not localized and should remain unchanged after it's set.
 
 > [!IMPORTANT]
-> Avoid giving your functions an `id` or `name` that is a built-in Excel function in another language as this conflicts with localized functions.
+> Avoid an `id` or `name` that matches a built-in Excel function in any language.
 
 The following JSON shows how to define a function with the `id` property "MULTIPLY". The `name` and `description` property of the function is localized for German. Each parameter `name` and `description` is also localized for German.
 
-```JSON
+```json
 {
     "id": "MULTIPLY",
     "name": "SUMME",
@@ -89,17 +101,17 @@ The following JSON shows how to define a function with the `id` property "MULTIP
             "name": "zwei",
             "description": "Zweite Nummer",
             "dimensionality": "scalar"
-        },
-    ],
+        }
+    ]
 }
 ```
 
 Compare the previous JSON with the following JSON for English.
 
-```JSON
+```json
 {
     "id": "MULTIPLY",
-    "name": "Multiply",
+    "name": "MULTIPLY",
     "description": "Multiplies two numbers",
     "helpUrl": "http://www.contoso.com",
     "result": {
@@ -116,14 +128,14 @@ Compare the previous JSON with the following JSON for English.
             "name": "two",
             "description": "second number",
             "dimensionality": "scalar"
-        },
-    ],
+        }
+    ]
 }
 ```
 
 ### Localize your add-in
 
-After creating a JSON file for each language, update your add-in only manifest file with an override value for each locale that specifies the URL of each JSON metadata file. The following manifest XML shows a default `en-us` locale with an override JSON file URL for `de-de` (Germany). The **functions-de.json** file contains the localized German function names and IDs.
+After you create a JSON for each language, add an override to your add-in only manifest that points to the correct file. The following manifest XML shows a default `en-us` locale plus an override JSON file URL for `de-de` (Germany).
 
 ```XML
 <DefaultLocale>en-us</DefaultLocale>
