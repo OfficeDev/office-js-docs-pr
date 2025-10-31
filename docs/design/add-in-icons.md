@@ -1,7 +1,7 @@
 ---
 title: Icon guidelines for Office Add-ins
 description: Get an overview of how to design icons and the Fresh and Monoline design styles for add-in commands.
-ms.date: 08/18/2023
+ms.date: 11/03/2025
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -9,6 +9,9 @@ ms.localizationpriority: medium
 # Icons
 
 Icons are the visual representation of a behavior or concept. They are often used to add meaning to controls and commands. Visuals, either realistic or symbolic, enable the user to navigate the UI the same way signs help users navigate their environment. They should be simple, clear, and contain only the necessary details to enable customers to quickly parse what action will occur when they choose a control.
+
+> [!NOTE]
+> This article about designing icons for ribbon buttons. For guidance about icons that represent the add-in in the app  acquisition and managment UIs of Microsoft 365 applications, see [Design icons for add-in acquisisiton and management](microsoft-365-extension-management-icons.md).
 
 Office app ribbon interfaces have a standard visual style. This ensures consistency and familiarity across Office apps. The guidelines will help you design a set of PNG assets for your solution that fit in as a natural part of Office.
 
