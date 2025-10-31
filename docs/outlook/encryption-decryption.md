@@ -39,7 +39,7 @@ You must implement your own encryption and decryption protocols. The add-in must
 
 ### Supported environments
 
-The `OnMessageRead` event is supported on the [Message Read](read-scenario.md) surface. Support varies by client and Exchange environment, as shown in the following table.
+The `OnMessageRead` event is supported on the Message Read surface. Support varies by client and Exchange environment, as shown in the following table.
 
 | Client | Exchange Online | Exchange Subscription Edition (SE) | Exchange Server 2019 | Exchange Server 2016 |
 | ------ | --------------- | ---------------------------------- | -------------------- | -------------------- |

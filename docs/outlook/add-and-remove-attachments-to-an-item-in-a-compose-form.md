@@ -240,6 +240,5 @@ function removeAttachment(attachmentId) {
 ## See also
 
 - [Get an Outlook item's attachments from Exchange](get-attachments-of-an-outlook-item.md)
-- [Create Outlook add-ins for compose forms](compose-scenario.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)

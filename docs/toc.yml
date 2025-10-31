@@ -772,6 +772,8 @@
     displayName: Outlook
   - name: Develop Outlook add-ins for the new Outlook on Windows
     href: outlook/one-outlook.md
+  - name: Outlook add-in design guidelines
+    href: outlook/outlook-addin-design.md
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
@@ -786,8 +788,23 @@
       displayName: Outlook
     - name: Understanding add-in permissions
       href: outlook/understanding-outlook-add-in-permissions.md
-    - name: Outlook add-in design guidelines
-      href: outlook/outlook-addin-design.md
+    - name: Add-ins for Outlook on mobile devices
+      items:
+      - name: Overview
+        href: outlook/outlook-mobile-addins.md
+        displayName: outlook, add-ins, mobile
+      - name: Add support for Outlook on mobile devices
+        href: outlook/add-mobile-support.md
+        displayName: outlook, add-ins, mobile
+      - name: Outlook JavaScript API support on mobile devices
+        href: outlook/outlook-mobile-apis.md
+        displayName: outlook, add-ins, mobile
+      - name: Log appointment notes on mobile
+        href: outlook/mobile-log-appointments.md
+        displayName: outlook, add-ins, mobile
+      - name: Event-based activation in Outlook on mobile devices
+        href: outlook/mobile-event-based.md
+        displayName: outlook, add-ins, mobile, event-based activation
     - name: Event-based activation
       items:
       - name: Implement an event-based add-in
@@ -826,25 +843,36 @@
     - name: Shared folders and shared mailboxes
       href: outlook/delegate-access.md
       displayName: delegate access
-    - name: Add-ins for Outlook on mobile devices
-      items:
-      - name: Overview
-        href: outlook/outlook-mobile-addins.md
-        displayName: outlook, add-ins, mobile
-      - name: Add support for Outlook on mobile devices
-        href: outlook/add-mobile-support.md
-        displayName: outlook, add-ins, mobile
-      - name: Outlook JavaScript API support on mobile devices
-        href: outlook/outlook-mobile-apis.md
-        displayName: outlook, add-ins, mobile
-      - name: Log appointment notes on mobile
-        href: outlook/mobile-log-appointments.md
-        displayName: outlook, add-ins, mobile
-      - name: Event-based activation in Outlook on mobile devices
-        href: outlook/mobile-event-based.md
-        displayName: outlook, add-ins, mobile, event-based activation
     - name: Create an online meeting add-in
       href: outlook/online-meeting.md
+    - name: Manage sensitivity labels
+      href: outlook/sensitivity-label.md
+    - name: Manage notifications
+      href: outlook/notifications.md
+    - name: Get or set body
+      href: outlook/insert-data-in-the-body.md
+    - name: Add and remove attachments
+      href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
+    - name: Get attachments from server
+      href: outlook/get-attachments-of-an-outlook-item.md
+    - name: Get and set recipients
+      href: outlook/get-set-or-add-recipients.md
+    - name: Get and set subject
+      href: outlook/get-or-set-the-subject.md
+    - name: Manage delivery time of a message
+      href: outlook/delay-delivery.md
+    - name: Get or set add-in metadata
+      href: outlook/metadata-for-an-outlook-add-in.md
+    - name: Get or set internet headers
+      href: outlook/internet-headers.md
+    - name: Get or set categories
+      href: outlook/categories.md
+    - name: Get and set location
+      href: outlook/get-or-set-the-location-of-an-appointment.md
+    - name: Get or set recurrence
+      href: outlook/get-and-set-recurrence.md
+    - name: Get and set times
+      href: outlook/get-or-set-the-time-of-an-appointment.md
     - name: Contextual add-ins
       items:
       - name: Overview
@@ -855,48 +883,14 @@
       href: outlook/extension-module-outlook-add-ins.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
-    - name: Call the Microsoft Graph API
-      href: outlook/microsoft-graph.md
-    - name: Call Outlook REST APIs
-      href: outlook/use-rest-api.md
-    - name: Call Exchange web services
-      href: outlook/web-services.md
-    - name: Manage notifications
-      href: outlook/notifications.md
-    - name: Get or set body
-      href: outlook/insert-data-in-the-body.md
-    - name: Get or set categories
-      href: outlook/categories.md
-    - name: Get or set internet headers
-      href: outlook/internet-headers.md
-    - name: Get and set location
-      href: outlook/get-or-set-the-location-of-an-appointment.md
-    - name: Get or set recurrence
-      href: outlook/get-and-set-recurrence.md
-    - name: Get or set add-in metadata
-      href: outlook/metadata-for-an-outlook-add-in.md
-    - name: Read scenario
+    - name: External API integration
       items:
-      - name: Overview
-        href: outlook/read-scenario.md
-      - name: Get attachments from server
-        href: outlook/get-attachments-of-an-outlook-item.md
-    - name: Compose scenario
-      items:
-      - name: Overview
-        href: outlook/compose-scenario.md
-      - name: Add and remove attachments
-        href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
-      - name: Get and set recipients
-        href: outlook/get-set-or-add-recipients.md
-      - name: Get and set subject
-        href: outlook/get-or-set-the-subject.md
-      - name: Get and set times
-        href: outlook/get-or-set-the-time-of-an-appointment.md
-      - name: Manage sensitivity labels
-        href: outlook/sensitivity-label.md
-      - name: Manage delivery time of a message
-        href: outlook/delay-delivery.md
+      - name: Call the Microsoft Graph API
+        href: outlook/microsoft-graph.md
+      - name: Call Exchange web services
+        href: outlook/web-services.md
+      - name: Call Outlook REST APIs
+        href: outlook/use-rest-api.md
     - name: Authentication
       items:
       - name: Overview
