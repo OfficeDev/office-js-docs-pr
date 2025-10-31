@@ -467,7 +467,6 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 
 ## See also
 
-- [Create Outlook add-ins for read forms](read-scenario.md)
 - [Manage an item's attachments in a compose form in Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
 - [Office Add-in sample: Single Sign-On(SSO) in an Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Use the Microsoft Graph API](/graph/use-the-api)

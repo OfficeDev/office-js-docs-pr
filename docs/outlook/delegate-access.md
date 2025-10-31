@@ -221,7 +221,7 @@ To implement your shared folder and shared mailbox scenarios, use Microsoft Grap
 The availability of add-ins in a shared folder or shared mailbox varies depending on the scenario and Outlook client.
 
 > [!TIP]
-> To learn more about where add-ins do and don't activate in general, refer to the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page.
+> To learn more about where add-ins do and don't activate in general, see the [Add-in activation limitations](outlook-add-ins-overview.md#add-in-activation-limitations) section of the Outlook add-ins overview page.
 
 ### Add-ins in shared folder scenarios
 

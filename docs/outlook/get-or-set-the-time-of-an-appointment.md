@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Programmatically manage the start and end time of appointments to streamline meeting scheduling and enhance productivity in your Outlook add-ins.
 
-The Office JavaScript API provides asynchronous methods ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) and [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) to get and set the start or end time of an appointment being composed. These asynchronous methods are available only to compose add-ins. To use these methods, make sure you have set up the add-in only manifest of the add-in appropriately for Outlook to activate the add-in in compose forms, as described in [Create Outlook add-ins for compose forms](compose-scenario.md).
+The Office JavaScript API provides asynchronous methods ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) and [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) to get and set the start or end time of an appointment being composed. These asynchronous methods are available only to compose add-ins. To use these methods, make sure you have set up the add-in only manifest of the add-in appropriately for Outlook to activate the add-in in compose forms.
 
 The [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) properties are available for appointments in both compose and read forms. In read form, you can access the properties directly from the parent object, as in:
 
@@ -130,9 +130,8 @@ When working with appointment times, be aware of how changes to the `start` or `
 
 ## See also
 
-- [Create Outlook add-ins for compose forms](compose-scenario.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Get or set the location when composing an appointment in Outlook](get-or-set-the-location-of-an-appointment.md)
-- [Get, set, or add recipients when composing an appointment or message in Outlook](get-set-or-add-recipients.md)
+- [Get, set, or add recipients to an appointment or message in Outlook](get-set-or-add-recipients.md)
 - [Get or set the subject when composing an appointment or message in Outlook](get-or-set-the-subject.md)
 - [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md)

@@ -1,7 +1,7 @@
 ﻿---
 title: Manage the delivery date and time of a message
 description: Learn how to schedule message delivery with the Office JavaScript API.
-ms.date: 10/02/2025
+ms.date: 10/30/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -78,4 +78,6 @@ The `item.delayDeliveryTime.setAsync` behavior differs from a message scheduled 
 
 ## See also
 
-- [Create Outlook add-ins for compose forms](compose-scenario.md)
+- [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
+- [Get, set, or add recipients to an appointment or message in Outlook](get-set-or-add-recipients.md)
+- [Get or set the subject when composing an appointment or message in Outlook](get-or-set-the-subject.md)

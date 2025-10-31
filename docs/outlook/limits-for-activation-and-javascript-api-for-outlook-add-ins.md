@@ -15,7 +15,7 @@ To provide a satisfactory experience for users of Outlook add-ins, you should be
 
 ## Limits on where add-ins activate
 
-To learn more about where add-ins do and don't activate, see the "Mailbox items available to add-ins" section of [Outlook add-ins overview](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
+To learn more about where add-ins do and don't activate, see the [Add-in activation limitations](outlook-add-ins-overview.md#add-in-activation-limitations) section of Outlook add-ins overview page.
 
 ## Limits for JavaScript API
 

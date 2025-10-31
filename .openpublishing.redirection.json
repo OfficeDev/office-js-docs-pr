@@ -1357,6 +1357,14 @@
         {
             "source_path": "docs/outlook/add-in-requirements.md",
             "redirect_url": "/office/dev/add-ins/concepts/requirements-for-running-office-add-ins"
+        },
+        {
+            "source_path": "docs/outlook/read-scenario.md",
+            "redirect_url": "/office/dev/add-ins/outlook/outlook-add-ins-overview"
+        },
+        {
+            "source_path": "docs/outlook/compose-scenario.md",
+            "redirect_url": "/office/dev/add-ins/outlook/outlook-add-ins-overview"
         }
     ]
 }
