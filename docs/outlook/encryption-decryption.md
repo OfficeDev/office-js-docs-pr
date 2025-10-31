@@ -162,26 +162,26 @@ function onMessageReadHandler(event) {
     const imageContentId = "image001.png@01DC1DD9.1A4AA300";
 
     const decryptedAttachments = [
-      {
-        attachmentType: Office.MailboxEnums.AttachmentType.File,
+        {
+            attachmentType: Office.MailboxEnums.AttachmentType.File,
             content: decryptedPdfFile,
             isInline: false,
             name: pdfFileName
         },
         {
-          attachmentType: Office.MailboxEnums.AttachmentType.Item,
+            attachmentType: Office.MailboxEnums.AttachmentType.Item,
             content: decryptedEmailFile,
             isInline: false,
             name: emailFileName
         },
         {
-          attachmentType: Office.MailboxEnums.AttachmentType.Cloud,
+            attachmentType: Office.MailboxEnums.AttachmentType.Cloud,
             isInline: false,
             name: cloudFileName,
             path: cloudFilePath
         },
         {
-          attachmentType: Office.MailboxEnums.AttachmentType.File,
+            attachmentType: Office.MailboxEnums.AttachmentType.File,
             content: decryptedImageFile,
             contentId: imageContentId,
             isInline: true,
