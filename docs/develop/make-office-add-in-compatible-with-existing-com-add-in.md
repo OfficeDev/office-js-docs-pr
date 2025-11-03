@@ -22,9 +22,9 @@ If you have an existing COM add-in or VSTO add-in, you can build nearly equivale
 
 Because the Windows-only and the Office Add-in may not have exactly the same features, there are three scenarios you need to consider.
 
-- Your Office Add-in does not provide all of the functionality that's available in the corresponding Windows-only add-in. In this scenario, you should configure the Office add-in to be hidden on any Windows computer on which the Windows-only add-in is installed. 
-- Your Office Add-in provides more and better functionality than the corresponding Windows-only add-in. In this scenario, you should configure the Office add-in so that it detects the presence of the Windows-only add-in and hides it.
-- Neither add-in would be regarded as better than the other by all your users. In this scenario, you should configure the Office add-in to give each user on a Windows computer the choice of which add-in is hidden.
+- Your Office Add-in does not provide all of the functionality that's available in the corresponding Windows-only add-in. In this scenario, you should [configure the Office add-in to be hidden](#hide-the-office-add-in) on any Windows computer on which the Windows-only add-in is installed. 
+- Your Office Add-in provides more and better functionality than the corresponding Windows-only add-in. In this scenario, you should [configure the Office add-in so that it detects the presence of the Windows-only add-in and hides it](#hide-the-windows-only-add-in).
+- Neither add-in would be regarded as better than the other by all your users. In this scenario, you should configure the Office add-in to [give each user on a Windows computer the choice of which add-in is hidden](#give-the-user-the-choice-of-which-add-in-to--use).
 
 ## Obtain the name of the Windows-only add-in
 
