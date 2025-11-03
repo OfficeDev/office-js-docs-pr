@@ -185,7 +185,7 @@ To disable the Windows-only add-in, take the following steps.
 
 [`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin#progid)
 
-1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
+1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
 1. Add a child `effect` property to the `windowsExtensions` property and set its value to  **disableWithNotification**.
 1, Add a child [`"comAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions-com-addin) property to the `windowsExtensions` property.
 1. Add a child `progIds` array property to the `comAddin` property.
@@ -270,7 +270,7 @@ The details to configure this feature depend on which type of manifest is being 
 
 To give the user a choice of which add-in to hide, take the following steps.
 
-1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
+1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
 1. Add a child `effect` property to the `windowsExtensions` property and set its value to  **userOptionToDisable**.
 1, Add a child [`"comAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions-com-addin) property to the `windowsExtensions` property.
 1. Add a child `progIds` array property to the `comAddin` property.
