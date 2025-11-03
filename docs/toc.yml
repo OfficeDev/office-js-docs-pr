@@ -165,8 +165,6 @@
       items:
       - name: Overview
         href: develop/overview-authn-authz.md
-      - name: SSO quick start
-        href: quickstarts/sso-quickstart.md
       - name: Enable SSO using NAA for SPA authentication
         href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Office dialog API

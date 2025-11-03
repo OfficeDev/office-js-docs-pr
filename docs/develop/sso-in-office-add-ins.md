@@ -1,15 +1,15 @@
 ﻿---
-title: Enable single sign-on (SSO) in an Office Add-in
-description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
+title: Enable single sign-on (SSO) legacy in an Office Add-in
+description: Learn how to use Office.js legacy API for SSO.
 ms.date: 05/06/2024
 ms.localizationpriority: high
 ---
 
-# Enable single sign-on (SSO) in an Office Add-in
+# Use legacy single sign-on (SSO) in an Office Add-in
 
-Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
+We recommend using MSAL with NAA as it supports both SPA and OBO auth workflows. It also offers a more modern experience across more platforms.
 
-![An image showing the sign-in process for an add-in.](../images/sso-for-office-addins.png)
+If you have a legacy add-in that still uses legacy SSO, read on.
 
 ## How SSO works at runtime
 
