@@ -185,7 +185,7 @@
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Enable SSO using nested app authentication
         href: develop/enable-nested-app-authentication-in-your-add-in.md
-      - name: Legacy token deprecation FAQ 
+      - name: Nested app authentication FAQ 
         href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
