@@ -36,7 +36,7 @@ Before you can configure the Office Add-in's manifest, you must first identify t
 
 ## Hide the Office Add-in
 
-You can configure your Office Add-in so that when the equivalent Windows-only add-in is already installed on a user's computer, Office on Windows runs the Windows-only add-in instead of the Office Add-in. If the Windows-only add-in is ever uninstalled, Office will automatically activate the Office Add-in the next time the host Office application is started. If the Windows-only add-in is installed *after* the Office Add-in, then when the Office application is restarted, the Office Add-in will be hidden. For more information, see [Equivalent behavior for users](#equivalent-behavior-for-users). 
+You can configure your Office Add-in so that when the equivalent Windows-only add-in is already installed on a user's computer, Office on Windows runs the Windows-only add-in instead of the Office Add-in. If the Windows-only add-in is ever uninstalled, Office will automatically activate the Office Add-in the next time the host Office application is started. If the Windows-only add-in is installed *after* the Office Add-in, then when the Office application is restarted, the Office Add-in will be hidden. For more information, see [Behavior for users when the Office Add-in is hidden](#behavior-for-users-when-the-office-add-in-is-hidden). 
 
 [!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
@@ -45,7 +45,7 @@ You can configure your Office Add-in so that when the equivalent Windows-only ad
 > [!IMPORTANT]
 > Applies to Excel, Outlook, PowerPoint, and Word.
 
-To enable compatibility between your Office Add-in and the Windows-only add-in, identify the equivalent Windows-only add-in in the [manifest](add-in-manifests.md) of your Office Add-in using the name that you obtained in the section [Obtain the ID of the Windows-only add-in](#obtain-the-id-of-the-windows-only-add-in). Then, Office on Windows will use the Windows-only add-in instead of the Office Add-in, if they're both installed. The configuration depends on the type of manifest that is being used.
+To enable compatibility between your Office Add-in and the Windows-only add-in, identify the equivalent Windows-only add-in in the [manifest](add-in-manifests.md) of your Office Add-in using the name that you obtained in the section [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in). Then, Office on Windows will use the Windows-only add-in instead of the Office Add-in, if they're both installed. The configuration depends on the type of manifest that is being used.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -112,7 +112,7 @@ A user with administrator powers on their computer can configure a Windows-only 
 1. Open the link to edit the policy setting.
 1. In the dialog **Outlook web add-ins to deactivate**:
     1. Set **Value name** to the ID of the Outlook add-in's manifest. In the add-in only manifest, use the value of the `<ID>` element. In the unified manifest, use the value of the `id` property in the root of the manifest. Do *not* add curly braces `{}` around the entry.
-    1. Set **Value** to the name of the equivalent Windows-only add-in. See the section [Obtain the ID of the Windows-only add-in](#obtain-the-id-of-the-windows-only-add-in).
+    1. Set **Value** to the name of the equivalent Windows-only add-in. See the section [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
     1. Select **OK** to put the update into effect.
 
     ![The "Outlook web add-ins to deactivate" dialog.](../images/outlook-deactivate-gpo-dialog.png)
@@ -219,11 +219,11 @@ The following example of how the JSON should look.
 
 To disable the Windows-only add-in, take the following steps.
 
-1. Create an **\<EquivalentAddins\>** as the very last child of the **<VersionOverrides>** element.
+1. Create an **\<EquivalentAddins\>** as the very last child of the **\<VersionOverrides/>** element.
 1. Add an **\<EquivalentAddin\>** child for every Windows-only add-in that you want to hide.
-1. For each **\<EquivalentAddin\>** element, add a **<ProgId>** and **<Type>** child, *in that order*.
-1. Set the **<ProgId>** element to the name of a Windows-only add-in that you want to hide. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
-1. Set the **<Type>** element to "COM". 
+1. For each **\<EquivalentAddin\>** element, add a **\<ProgId/>** and **\<Type/>** child, *in that order*.
+1. Set the **\<ProgId/>** element to the name of a Windows-only add-in that you want to hide. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
+1. Set the **\<Type/>** element to "COM". 
 
    > [!NOTE]
    > The **\<Type\>** value is "COM" for historical reasons, but it refers to either a COM or a VSTO add-in. Similarly, the **\<ProgId\>** value can be either the progId of a COM add-in or the name of a VSTO add-in.
@@ -303,11 +303,11 @@ The following example of how the JSON should look.
 
 To disable the Windows-only add-in, take the following steps.
 
-1. Create an **\<EquivalentAddins\>** as the very last child of the **<VersionOverrides>** element.
+1. Create an **\<EquivalentAddins\>** as the very last child of the **\<VersionOverrides/>** element.
 1. Add an **\<EquivalentAddin\>** child for every Windows-only add-in that you want to hide.
-1. For each **\<EquivalentAddin\>** element, add a **<ProgId>** and **<Type>** child, *in that order*.
-1. Set the **<ProgId>** element to the name of a Windows-only add-in that you want to hide. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
-1. Set the **<Type>** element to "COM". 
+1. For each **\<EquivalentAddin\>** element, add a **\<ProgId/>** and **\<Type/>** child, *in that order*.
+1. Set the **\<ProgId/>** element to the name of a Windows-only add-in that you want to hide. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
+1. Set the **\<Type/>** element to "COM". 
 
    > [!NOTE]
    > The **\<Type\>** value is "COM" for historical reasons, but it refers to either a COM or a VSTO add-in. Similarly, the **\<ProgId\>** value can be either the progId of a COM add-in or the name of a VSTO add-in.
