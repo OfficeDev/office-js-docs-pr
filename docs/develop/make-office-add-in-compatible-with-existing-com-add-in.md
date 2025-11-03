@@ -183,9 +183,12 @@ The details to configure this feature depend on which type of manifest is being 
 
 To disable the Windows-only add-in, take the following steps.
 
-1. If it doesn't already exist, create an `extensions.alternates.hide.windowsExtensions` property.
+[`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin#progid)
+
+1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
 1. Add a child `effect` property to the `windowsExtensions` property and set its value to  **disableWithNotification**.
-1. Add a child `progIds` array property to the `windowsExtensions` property.
+1, Add a child [`"comAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions-com-addin) property to the `windowsExtensions` property.
+1. Add a child `progIds` array property to the `comAddin` property.
 1. Add the names of all the Windows-only add-ins that you want to hide to the `progIds` array. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
 
 > [!NOTE]
@@ -219,7 +222,7 @@ The following example of how the JSON should look.
 
 To disable the Windows-only add-in, take the following steps.
 
-1. Create an **\<EquivalentAddins\>** as the very last child of the **\<VersionOverrides/>** element.
+1. Create an [EquivalentAddins](/javascript/api/manifest/equivalentaddins) as the very last child of the **\<VersionOverrides/>** element.
 1. Add an **\<EquivalentAddin\>** child for every Windows-only add-in that you want to hide.
 1. For each **\<EquivalentAddin\>** element, add a **\<ProgId/>** and **\<Type/>** child, *in that order*.
 1. Set the **\<ProgId/>** element to the name of a Windows-only add-in that you want to hide. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
@@ -265,12 +268,13 @@ The details to configure this feature depend on which type of manifest is being 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-To disable the Windows-only add-in, take the following steps.
+To give the user a choice of which add-in to hide, take the following steps.
 
-1. If it doesn't already exist, create an `extensions.alternates.hide.windowsExtensions` property.
+1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
 1. Add a child `effect` property to the `windowsExtensions` property and set its value to  **userOptionToDisable**.
-1. Add a child `progIds` array property to the `windowsExtensions` property.
-1. Add the names of all the Windows-only add-ins that you want to hide to the `progIds` array. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
+1, Add a child [`"comAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions-com-addin) property to the `windowsExtensions` property.
+1. Add a child `progIds` array property to the `comAddin` property.
+1. Add the names of all the equivalent Windows-only add-ins to the `progIds` array. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
 
 > [!NOTE]
 > The string "com" is in the name `comAddin` for historical reasons. In the manifest, the property refers to either COM or VSTO add-ins. Similarly, the term "progIds" is usually associated with only COM add-ins, but names of VSTO add-ins can also be included in the `progIds` array.
@@ -303,7 +307,7 @@ The following example of how the JSON should look.
 
 To disable the Windows-only add-in, take the following steps.
 
-1. Create an **\<EquivalentAddins\>** as the very last child of the **\<VersionOverrides/>** element.
+1. Create an [EquivalentAddins](/javascript/api/manifest/equivalentaddins) as the very last child of the **\<VersionOverrides/>** element.
 1. Add an **\<EquivalentAddin\>** child for every Windows-only add-in that you want to hide.
 1. For each **\<EquivalentAddin\>** element, add a **\<ProgId/>** and **\<Type/>** child, *in that order*.
 1. Set the **\<ProgId/>** element to the name of a Windows-only add-in that you want to hide. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
