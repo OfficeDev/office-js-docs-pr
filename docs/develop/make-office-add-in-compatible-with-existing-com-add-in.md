@@ -18,6 +18,9 @@ If you have an existing COM add-in or VSTO add-in, you can build nearly equivale
 - They both are designed to be installed on the same Office application or applications, and they address the same workload with mainly overlapping functionality.
 - They have identical, or highly similar, public names, and user interfaces including control names and icons.
 
+
+[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
+
 [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 
 Because the Windows-only and the Office Add-in may not have exactly the same features, there are three scenarios you need to consider.
@@ -37,8 +40,6 @@ Before you can configure the Office Add-in's manifest, you must first identify t
 ## Hide the Office Add-in
 
 You can configure your Office Add-in so that when the equivalent Windows-only add-in is already installed on a user's computer, Office on Windows runs the Windows-only add-in instead of the Office Add-in. If the Windows-only add-in is ever uninstalled, Office will automatically activate the Office Add-in the next time the host Office application is started. If the Windows-only add-in is installed *after* the Office Add-in, then when the Office application is restarted, the Office Add-in will be hidden. For more information, see [Behavior for users when the Office Add-in is hidden](#behavior-for-users-when-the-office-add-in-is-hidden). 
-
-[!INCLUDE [Support note for equivalent add-ins feature](../includes/equivalent-add-in-support-note.md)]
 
 ### Configure the manifest
 
@@ -182,8 +183,6 @@ The details to configure this feature depend on which type of manifest is being 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 To disable the Windows-only add-in, take the following steps.
-
-[`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin#progid)
 
 1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
 1. Add a child `effect` property to the `windowsExtensions` property and set its value to  **disableWithNotification**.
