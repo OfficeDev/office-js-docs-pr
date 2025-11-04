@@ -100,7 +100,7 @@ Sometimes you need to handle claims challenges based on policies. To learn more 
 
 There is a known issue where MSAL sometimes doesn't refresh the ID token after it expires. This shouldn't cause any issues in your add-in since the ID token is only intended for use in your task pane to get basic user identity information, such as name and email. There's no reason to validate the ID token or check the expiration claim. If you need to authenticate the user to your own resources, use the access token which also contains user identity information. The ID token must never be passed outside of your client code that received it.
 
-## In Outlook how do I determine if the user is an online or on-premise account?
+## In Outlook, how do I determine if the user is an online or on-premise account?
 
 You can determine if the signed-in user has an Exchange Online account or on-premise Exchange account by using the [Office.UserProfile.accountType](/javascript/api/outlook/office.userprofile) property. If the account type property value is **enterprise**, then the mailbox is on an on-premises Exchange server. Note that volume-licensed perpetual Outlook 2016 doesn’t support the **accountType** property. To work around this, call the [ResolveNames](/exchange/client-developer/web-service-reference/resolvenames-operation) operation in Exchange Web Service (EWS) in the Exchange on-premise server to get the recipient types.
 
