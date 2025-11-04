@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Make your Office Add-in compatible with an existing COM or VSTO add-in
 
-If you have an existing COM add-in or VSTO add-in, you can build nearly equivalent functionality in your Office Web Add-in, thereby enabling your solution to run on other platforms such as Office on the web or Mac. In this scenario, the two add-ins are called "equivalent" and you can use the manifest of the Office add-in to control which add-in users on Windows computers have available (or give users the choice).
+If you have an existing COM add-in or VSTO add-in, you can build nearly equivalent functionality in your Office Web Add-in, thereby enabling your solution to run on other platforms such as in Office on the web or on Mac. In this scenario, the two add-ins are called "equivalent" and you can use the manifest of the Office Web Add-in to control which add-in is available to users on Windows computers (or give users the choice).
 
 > [!NOTE]
 > Because COM and VSTO add-ins can only be installed on Windows, this article refers to COM and VSTO add-ins collectively as "Windows-only" add-ins.
@@ -23,11 +23,11 @@ If you have an existing COM add-in or VSTO add-in, you can build nearly equivale
 
 [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 
-Because the Windows-only and the Office Add-in may not have exactly the same features, there are three scenarios you need to consider.
+Because the Windows-only add-in and the Office Add-in may not have exactly the same features, there are three scenarios you need to consider.
 
 - Your Office Add-in does not provide all of the functionality that's available in the corresponding Windows-only add-in. In this scenario, you should [configure the Office add-in to be hidden](#hide-the-office-add-in) on any Windows computer on which the Windows-only add-in is installed. 
-- Your Office Add-in provides more and better functionality than the corresponding Windows-only add-in. In this scenario, you should [configure the Office add-in so that it detects the presence of the Windows-only add-in and hides it](#hide-the-windows-only-add-in).
-- Neither add-in would be regarded as better than the other by all your users. In this scenario, you should configure the Office add-in to [give each user on a Windows computer the choice of which add-in is hidden](#give-the-user-the-choice-of-which-add-in-to--use).
+- Your Office Add-in provides more and better functionality than the corresponding Windows-only add-in. In this scenario, you should [configure the Office Add-in so that it detects the presence of the Windows-only add-in and hides it](#hide-the-windows-only-add-in).
+- Neither add-in would be regarded as better than the other by all your users. In this scenario, you should configure the Office Add-in to [give each user on a Windows computer the choice of which add-in is hidden](#give-the-user-the-choice-of-which-add-in-to-use).
 
 ## Obtain the name of the Windows-only add-in
 
@@ -130,7 +130,7 @@ When an equivalent Windows-only add-in is specified, Office on Windows won't dis
 
 The following scenarios describe what happens depending on how the user acquires the Office Add-in.
 
-#### Microsoft Marketplace acquisition of an Office Add-in
+#### Microsoft Marketplace acquisition of the Office Add-in
 
 If a user acquires the Office Add-in from Microsoft Marketplace and the equivalent Windows-only add-in is already installed, then Office will:
 
@@ -138,7 +138,7 @@ If a user acquires the Office Add-in from Microsoft Marketplace and the equivale
 2. Hide the Office Add-in UI on the ribbon.
 3. Display a call-out for the user that points out the Windows-only add-in ribbon button.
 
-#### Centralized deployment of Office Add-in
+#### Centralized deployment of the Office Add-in
 
 If an admin deploys the Office Add-in to their tenant using centralized deployment, and the equivalent Windows-only add-in is already installed, the user must restart Office before they'll see any changes. After Office restarts, it will:
 
@@ -146,7 +146,7 @@ If an admin deploys the Office Add-in to their tenant using centralized deployme
 2. Hide the Office Add-in UI on the ribbon.
 3. Display a call-out for the user that points out the Windows-only add-in ribbon button.
 
-#### Document shared with embedded Office Add-in
+#### Document shared with the Office Add-in embedded
 
 If a user has the Windows-only add-in installed, and then gets a shared document with the embedded Office Add-in, then when they open the document, Office will:
 
@@ -174,7 +174,7 @@ If the Windows-only add-in is then disconnected during a subsequent Outlook sess
 > The option described in this section has the following limitations.
 >
 > - It's supported only for Excel, PowerPoint, and Word.
-> - The minimum Office version that supports the feature is subscription Office on Windows Version 2506 (Build 19029.20004)
+> - The minimum Office version that supports the feature is subscription Office on Windows Version 2506 (Build 19029.20004).
 
 ### Configure the manifest
 
@@ -186,14 +186,14 @@ To disable the Windows-only add-in, take the following steps.
 
 1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
 1. Add a child `effect` property to the `windowsExtensions` property and set its value to  **disableWithNotification**.
-1, Add a child [`"comAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions-com-addin) property to the `windowsExtensions` property.
+1. Add a child [`"comAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions-com-addin) property to the `windowsExtensions` property.
 1. Add a child `progIds` array property to the `comAddin` property.
 1. Add the names of all the Windows-only add-ins that you want to hide to the `progIds` array. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
 
 > [!NOTE]
 > The string "com" is in the name `comAddin` for historical reasons. In the manifest, the property refers to either COM or VSTO add-ins. Similarly, the term "progIds" is usually associated with only COM add-ins, but names of VSTO add-ins can also be included in the `progIds` array.
 
-The following example of how the JSON should look.
+The following example shows how the JSON should look.
 
 ```json
 "extensions" [
@@ -253,13 +253,13 @@ The following is an example.
 
 When a Windows-only add-in is hidden, Office on Windows won't display its user interface (UI) if the equivalent Office Add-in is installed. A popup dialog notifies the user that this is happening. But Office only hides the Windows-only add-in and doesn't prevent installation.
 
-## Give the user the choice of which add-in to  use
+## Give the user the choice of which add-in to use
 
 > [!NOTE]
 > The option described in this section has the following limitations.
 >
 > - It's supported only for Excel, PowerPoint, and Word.
-> - The minimum Office version that supports the feature is subscription Office on Windows Version 2506 (Build 19029.20004)
+> - The minimum Office version that supports the feature is subscription Office on Windows Version 2506 (Build 19029.20004).
 
 ### Configure the manifest
 
@@ -271,14 +271,14 @@ To give the user a choice of which add-in to hide, take the following steps.
 
 1. If it doesn't already exist, create an [`"extensions.alternates.hide.windowsExtensions"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions) property.
 1. Add a child `effect` property to the `windowsExtensions` property and set its value to  **userOptionToDisable**.
-1, Add a child [`"comAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions-com-addin) property to the `windowsExtensions` property.
+1. Add a child [`"comAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-windows-extensions-com-addin) property to the `windowsExtensions` property.
 1. Add a child `progIds` array property to the `comAddin` property.
 1. Add the names of all the equivalent Windows-only add-ins to the `progIds` array. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
 
 > [!NOTE]
 > The string "com" is in the name `comAddin` for historical reasons. In the manifest, the property refers to either COM or VSTO add-ins. Similarly, the term "progIds" is usually associated with only COM add-ins, but names of VSTO add-ins can also be included in the `progIds` array.
 
-The following example of how the JSON should look.
+The following example shows how the JSON should look.
 
 ```json
 "extensions" [
