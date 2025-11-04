@@ -170,11 +170,7 @@ If the Windows-only add-in is then disconnected during a subsequent Outlook sess
 
 ## Hide the Windows-only add-in
 
-> [!NOTE]
-> The option described in this section has the following limitations.
->
-> - It's supported only for Excel, PowerPoint, and Word.
-> - The minimum Office version that supports the feature is subscription Office on Windows Version 2506 (Build 19029.20004)
+[!INCLUDE [Support limits on the equivalent add-ins feature](../includes/equivalent-add-ins-limitations.md)]
 
 ### Configure the manifest
 
@@ -255,11 +251,7 @@ When a Windows-only add-in is hidden, Office on Windows won't display its user i
 
 ## Give the user the choice of which add-in to  use
 
-> [!NOTE]
-> The option described in this section has the following limitations.
->
-> - It's supported only for Excel, PowerPoint, and Word.
-> - The minimum Office version that supports the feature is subscription Office on Windows Version 2506 (Build 19029.20004)
+[!INCLUDE [Support limits on the equivalent add-ins feature](../includes/equivalent-add-ins-limitations.md)]
 
 ### Configure the manifest
 
