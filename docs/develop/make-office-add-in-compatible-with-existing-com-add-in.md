@@ -301,7 +301,7 @@ To disable the Windows-only add-in, take the following steps.
 1. Create an [EquivalentAddins](/javascript/api/manifest/equivalentaddins) as the very last child of the **\<VersionOverrides/>** element.
 1. Add an **\<EquivalentAddin\>** child for every Windows-only add-in that you want to hide.
 1. For each **\<EquivalentAddin\>** element, add a **\<ProgId/>** and **\<Type/>** child, *in that order*.
-1. Set the **\<ProgId/>** element to the name of a Windows-only add-in that you want to hide. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
+1. Set the **\<ProgId/>** element to the name of a Windows-only add-in whose hidden/visible status you want the user to decide. For information about how to obtain these names, see [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
 1. Set the **\<Type/>** element to "COM". 
 
    > [!NOTE]
