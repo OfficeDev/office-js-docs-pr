@@ -11,6 +11,8 @@ ms.localizationpriority: high
 This article describes how to use Visual Studio to develop an Office Add-in. If you've already created your add-in, you can skip ahead to the [Develop the add-in using Visual Studio](#develop-the-add-in-using-visual-studio) section.
 
 > [!NOTE]
+> Beginning with Visual Studio 2026, Office Add-in development in Visual Studio is deprecated and will be removed in a future release.
+>
 > As an alternative to using Visual Studio, you may choose to use the Yeoman generator for Office Add-ins and VS Code to create an Office Add-in. For more information about this choice, see [Creating an Office Add-in](../develop/develop-overview.md#create-an-office-add-in).
 
 ## Create the add-in project using Visual Studio
