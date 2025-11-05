@@ -24,7 +24,7 @@ There are four basic tasks to converting an add-in project from the add-in only 
 > [!NOTE]
 >
 > - Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
-> - Visual Studio doesn't support the unified manifest for Office Add-ins. So projects that were created in Visual Studio shouldn't be converted.
+> - Visual Studio doesn't support the unified manifest for Office Add-ins. Projects that were created in Visual Studio shouldn't be converted.
 > - If you [created the project with Teams Toolkit or Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
 ## Ensure that your manifest is ready to convert
@@ -134,13 +134,13 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
    ```command&nbsp;line
    npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
    ```
-1. Carry out the steps in [Edit the new unified manifest](#edit-the-new-unified-manifest)
+1. Carry out the steps in [Edit the new unified manifest](#edit-the-new-unified-manifest).
 
 ## Edit the new unified manifest
 
 1. Open the unified manifest file.
-1. Scroll to the [`"developer'`](/microsoft-365/extensibility/schema/root-developer) property and ensure there are child `"privacyUrl"` and `"termsOfUseUrl"` properties and that they have appropriate values with a localhost domain.
-1. You can now [Sideload the add-in](#sideload-the-add-in).
+1. Navigate to the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property and ensure there are child `"privacyUrl"` and `"termsOfUseUrl"` properties. These properties must have appropriate values with a localhost domain.
+1. You can now [sideload the add-in](#sideload-the-add-in).
 
 ## Sideload the add-in
 

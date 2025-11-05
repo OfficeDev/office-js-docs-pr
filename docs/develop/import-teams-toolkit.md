@@ -38,7 +38,7 @@ There are four tasks to using the importation feature.
 - [Prepare the existing manifest](#prepare-the-existing-manifest)
 - [Import the project](#import-the-project)
 - [Verify that the add-in can be sideloaded](#verify-that-the-add-in-can-be-sideloaded)
-- [Post-importation adjustments](#post-importation)
+- [Make post-importation adjustments](#post-importation)
 
 ### Prepare the existing manifest
 
@@ -74,16 +74,16 @@ Sideload the add-in using the instructions at [Sideload with Microsoft 365 Agent
 
 If you encounter problems, as a troubleshooting step, try [sideloading with a system prompt, bash shell, or terminal](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal). If you can, then the problem is isolated to the toolkit.
 
-It's possible that sideloading problems are the result of a file and folder structure, or configuration settings, that are different from what Agents Toolkit normally expects. See the section [Adjust the project structure and settings as needed](#adjust-the-project-structure-and-settings-as-needed).
+It's possible that sideloading problems are the result of a file and folder structure, or configuration settings, that are different from what Agents Toolkit normally expects. See [Adjust the project structure and settings as needed](#adjust-the-project-structure-and-settings-as-needed).
 
-### Post-importation
+### Make post-importation adjustments
 
-There are some post-importation tasks.
+After you import your add-in project, perform the following tasks.
 
 #### Edit the manifest
 
 1. Open the unified manifest file.
-1. Scroll to the [`"developer'`](/microsoft-365/extensibility/schema/root-developer) property and ensure that there are child `"privacyUrl"` and `"termsOfUseUrl"` properties and that they have appropriate values.
+1. Navigate to the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property. Ensure that there are child `"privacyUrl"` and `"termsOfUseUrl"` properties and that they have appropriate values.
 
 #### Adjust the project structure and settings as needed
 
