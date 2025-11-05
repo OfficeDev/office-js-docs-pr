@@ -112,7 +112,7 @@ There are several ways to carry out the remaining tasks, depending on the IDE an
 - [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-the-yeoman-generator-for-office-add-ins-yo-office)
 
 > [!NOTE]
-> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md) 
+> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md). 
 
 ### Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")
 
@@ -138,8 +138,8 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 
 ## Edit the new unified manifest
 
-1. Open the unified manifest file in an editor.
-1. Scroll to the [`"developer'`](/microsoft-365/extensibility/schema/root-developer) property and ensure that the child `"privacyUrl"` and `"termsOfUseUrl"` properties have values. Use a localhost domain.
+1. Open the unified manifest file.
+1. Scroll to the [`"developer'`](/microsoft-365/extensibility/schema/root-developer) property and ensure there are child `"privacyUrl"` and `"termsOfUseUrl"` properties and that they have appropriate values with a localhost domain.
 1. You can now [Sideload the add-in](#sideload-the-add-in).
 
 ## Sideload the add-in
