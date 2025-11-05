@@ -1,7 +1,7 @@
 ﻿---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 10/28/2025
+ms.date: 11/06/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -122,6 +122,7 @@ When developing an event-based add-in to run on a Windows client, be mindful of 
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's client version, to the event handlers instead.
+- The event-handling file and the **bundle.js** file must support caching in production. The server hosting these files shouldn't return a `Cache-Control` header specifying `no-cache` or similar options in the HTTP response. For more information, see the "Hosting requirements" section of [Office Add-ins manifest](add-in-manifests.md#hosting-requirements).
 
 ### Event-based add-in limitations in Excel, PowerPoint, and Word
 
