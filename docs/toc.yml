@@ -185,6 +185,8 @@
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Enable SSO using nested app authentication
         href: develop/enable-nested-app-authentication-in-your-add-in.md
+      - name: Nested app authentication FAQ 
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
       - name: Identity providers
@@ -906,11 +908,7 @@
       - name: Inside the identity token
         href: outlook/inside-the-identity-token.md
       - name: "Scenario: Implement single sign-on"
-        href: outlook/implement-sso-in-outlook-add-in.md
-      - name: Legacy token deprecation FAQ 
-        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
-      - name: Turn legacy tokens on or off
-        href: outlook/turn-exchange-tokens-on-off.md  
+        href: outlook/implement-sso-in-outlook-add-in.md      
     - name: Testing and tips
       items:
       - name: Overview
