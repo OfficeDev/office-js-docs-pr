@@ -38,7 +38,7 @@ There are four tasks to using the importation feature.
 - [Prepare the existing manifest](#prepare-the-existing-manifest)
 - [Import the project](#import-the-project)
 - [Verify that the add-in can be sideloaded](#verify-that-the-add-in-can-be-sideloaded)
-- [Post importation: Adjust the project structure as needed](#post-importation-adjust-the-project-structure-and-settings-as-needed)
+- [Post-importation adjustments](#post-importation)
 
 ### Prepare the existing manifest
 
