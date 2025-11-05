@@ -2,7 +2,7 @@
 title: Import an add-in project to Microsoft 365 Agents Toolkit
 description: Learn how to import an add-in project to Microsoft 365 Agents Toolkit.
 ms.topic: how-to
-ms.date: 10/10/2025
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
