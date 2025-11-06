@@ -391,6 +391,5 @@ Now that you've enabled your add-in to operate on multiple selected messages, yo
 ## See also
 
 - [Office Add-in manifests](../develop/add-in-manifests.md)
-- [Call web services from an Outlook add-in](web-services.md)
 - [Overview of Microsoft Graph](/graph/overview)
 - [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)
