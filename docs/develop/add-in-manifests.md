@@ -2,7 +2,7 @@
 title: Office Add-ins manifest
 description: Get an overview of the Office Add-in manifest and its uses.
 ms.topic: overview
-ms.date: 10/10/2025
+ms.date: 11/06/2025
 ms.localizationpriority: high
 ---
 
@@ -41,7 +41,11 @@ A manifest file enables an Office Add-in to do the following:
 
 ## Hosting requirements
 
-All image URIs, such as those used for [add-in commands](../design/add-in-commands.md), must support caching in production. The server hosting the image shouldn't return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response. However, when you're developing the add-in and making changes to image files, the caching can prevent you from seeing your changes, so using `Cache-Control` headers is advisable in development.
+The following URIs must support caching in production.
+- All image URIs, such as those used for [add-in commands](../design/add-in-commands.md).
+- The event-handling file of an [event-based activation](event-based-activation.md) add-in that runs in a JavaScript-only runtime.
+
+The server hosting the image or event-handling file shouldn't return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
 All URLs to code or content files in the add-in should be **SSL-secured (HTTPS)**. [!INCLUDE [HTTPS guidance](../includes/https-guidance.md)]
 
