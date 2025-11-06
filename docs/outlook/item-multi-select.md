@@ -382,9 +382,9 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 
 ### Task pane pinning in multi-select add-ins
 
-When an add-in supports multi-select, the pinning behavior of the task pane varies depending on the Outlook client.
-- **Mac**: When selecting multiple items and launching the add-in's task pane, the task pane stays open even when a user switches to a different mail item. The task pane can only be closed by selecting the **Close** button from the task pane.
-- **Windows (new and classic) and web**: When selecting multiple items and launching the add-in's task pane, the task pane doesn't stay open when the user switches to a new item.
+When you select multiple mail items and launch the multi-select add-in's task pane, the pinning behavior of the task pane varies depending on the Outlook client.
+- **Mac**: The task pane stays open even when a user switches to a different mail item. The task pane can only be closed by selecting the **Close** button from the task pane.
+- **Windows (new and classic) and web**: The task pane doesn't stay open when the user switches to a new item.
 
 ## Next steps
 
