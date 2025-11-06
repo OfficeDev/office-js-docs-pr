@@ -1,7 +1,7 @@
 ﻿---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 09/23/2025
+ms.date: 11/06/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -363,13 +363,13 @@ The localization resource file, which is also JSON-formatted, has a top-level `r
 
 ### Specify the localization resource file in the manifest
 
-Use the `ResourceUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Microsoft 365 to the localization resource file. The following is an example.
+Use the `ResourcesUrl` attribute of the [ExtendedOverrides](/javascript/api/manifest/extendedoverrides) element to point Microsoft 365 to the localization resource file. The following is an example.
 
 ```xml
     ...
     </VersionOverrides>  
     <ExtendedOverrides Url="https://contoso.com/addin/shortcuts.json"
-                       ResourceUrl="https://contoso.com/addin/localization.json">
+                       ResourcesUrl="https://contoso.com/addin/localization.json">
     </ExtendedOverrides>
 </OfficeApp>
 ```
