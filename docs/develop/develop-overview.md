@@ -34,7 +34,7 @@ Create your project using HTML, CSS and JavaScript (or TypeScript), or using Rea
 ### Visual Studio
 
 > [!NOTE]
-> Beginning with Visual Studio 2026, Office Add-in development in Visual Studio is deprecated and will be removed in a future release.
+> Beginning with Visual Studio 2026, Office Add-in development in Visual Studio is deprecated and will be removed in a future release. Support for Office Add-in development in a different form may be added to a future version of Visual Studio.
 >
 > We recommend creating Office Add-in projects with the Microsoft 365 Agents Toolkit or the Yeoman Generator. For more information, see [Create Office Add-in projects using the Yeoman Generator](../develop/yeoman-generator-overview.md).
 
