@@ -41,11 +41,11 @@ A manifest file enables an Office Add-in to do the following:
 
 ## Hosting requirements
 
-The following must support caching in production.
+The following URIs must support caching in production.
 - All image URIs, such as those used for [add-in commands](../design/add-in-commands.md).
 - The event-handling file of an [event-based activation](event-based-activation.md) add-in that runs in a JavaScript-only runtime.
 
-The server hosting the image or event-handling file shouldn't return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response. However, when you're developing the add-in and making changes to image or event-handling files, caching can prevent you from seeing your changes. To prevent this, use `Cache-Control` headers during development and testing to see your latest changes.
+The server hosting the image or event-handling file shouldn't return a `Cache-Control` header specifying `no-cache`, `no-store`, or similar options in the HTTP response.
 
 All URLs to code or content files in the add-in should be **SSL-secured (HTTPS)**. [!INCLUDE [HTTPS guidance](../includes/https-guidance.md)]
 
