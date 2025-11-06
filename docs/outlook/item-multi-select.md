@@ -1,7 +1,7 @@
 ﻿---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 07/15/2025
+ms.date: 11/06/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -393,6 +393,5 @@ Now that you've enabled your add-in to operate on multiple selected messages, yo
 ## See also
 
 - [Office Add-in manifests](../develop/add-in-manifests.md)
-- [Call web services from an Outlook add-in](web-services.md)
 - [Overview of Microsoft Graph](/graph/overview)
 - [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)
