@@ -1,14 +1,14 @@
 ﻿---
 title: Fresh style icon guidelines for Office Add-ins
 description: Guidelines for using Fresh style icons in Office Add-ins.
-ms.date: 08/25/2025
+ms.date: 11/06/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
 # Fresh style icon guidelines for Office Add-ins
 
-Perpetual Office 2016 and later use Microsoft's Fresh style iconography. If you would prefer that your icons match the Monoline style of Microsoft 365, see [Monoline style icon guidelines for Office Add-ins](add-in-icons-monoline.md).
+Older Office clients use Microsoft's Fresh style iconography. If you would prefer that your icons match the Monoline style of Microsoft 365, see [Monoline style icon guidelines for Office Add-ins](add-in-icons-monoline.md).
 
 ## Office Fresh visual style
 

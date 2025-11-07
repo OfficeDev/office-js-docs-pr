@@ -7,18 +7,7 @@ ms.localizationpriority: medium
 
 # Debug add-ins using developer tools in Microsoft Edge (Chromium-based)
 
-This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in when the following conditions are met.
-
-- You can't, or don't wish to, debug using tools built into your IDE; or you are encountering a problem that only occurs when the add-in is run outside the IDE.
-- Your computer is using a combination of Windows and Office versions that use the Edge (Chromium-based) webview control, WebView2.
-
-> [!TIP]
-> For information about debugging with Edge WebView2 (Chromium-based) inside Visual Studio Code, see [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)](debug-desktop-using-edge-chromium.md).
-
-To determine which webview you're using, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
-
-> [!TIP]
-> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
+This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in outside of your current IDE.
 
 ## Debug a task pane add-in using Microsoft Edge (Chromium-based) developer tools
 

@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on in an Office Add-in with nested app authentication
 description: Learn how to enable SSO in an Office Add-in with nested app authentication.
-ms.date: 07/14/2025
+ms.date: 11/06/2025
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -242,7 +242,6 @@ Use the following code to check if NAA is supported when your add-in loads.
 
 For more information, see the following resources.
 
-- [Outlook sample: How to fall back and support Internet Explorer 11](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE/README.md)
 - [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
 - [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
 - [Microsoft identity samples for various app types and frameworks](/entra/identity-platform/sample-v2-code?tabs=apptype)
@@ -295,7 +294,6 @@ If you find a security issue with our libraries or services, report the issue to
 | [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA) | Shows how to use NAA in an Outlook Add-in to access Microsoft Graph APIs for the signed-in user. |
 |[Implement SSO in events in an Outlook add-in using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Event-SSO-NAA) |Shows how to use NAA and SSO in Outlook add-in events.|
 |[Send identity claims to resources using nested app authentication (NAA) and SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA-Identity)|Shows how to send the signed-in user's identity claims (such as name, email, or a unique ID) to a resource such as a database. This sample replaces an obsolete pattern for legacy Exchange Online tokens.|
-|[Outlook add-in with SSO using nested app authentication including Internet Explorer fallback](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE)|Shows how to implement a fallback authentication strategy when NAA isn't available and the add-in needs to support [Outlook versions that still use Internet Explorer 11](../concepts/browsers-used-by-office-web-add-ins.md).|
 
 ## See also
 
