@@ -1,7 +1,7 @@
 ﻿---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 08/07/2025
+ms.date: 11/07/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -70,7 +70,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
         "id": "online_meeting_runtime",
         "type": "general",
         "code": {
-            "page": "https://contoso.com/commands.html"
+            "page": "https://localhost:3000/commands.html"
         },
         "lifetime": "short",
         "actions": [
@@ -201,47 +201,47 @@ The steps for configuring the manifest depend on which type of manifest you sele
                             {
                                 "scale": 1,
                                 "size": 25,
-                               "url": "https://contoso.com/assets/icon-25.png"
+                                "url": "https://localhost:3000/assets/icon-25.png"
                             },
                             {
                                 "scale": 1,
                                 "size": 32,
-                                "url": "https://contoso.com/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "scale": 1,
                                 "size": 48,
-                                "url": "https://contoso.com/assets/icon-48.png"
+                                "url": "https://localhost:3000/assets/icon-48.png"
                             },                                
                             {
                                 "scale": 2,
                                 "size": 25,
-                                "url": "https://contoso.com/assets/icon-25.png"
+                                "url": "https://localhost:3000/assets/icon-25.png"
                             },
                             {
                                 "scale": 2,
                                 "size": 32,
-                                "url": "https://contoso.com/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "scale": 2,
                                 "size": 48,
-                                "url": "https://contoso.com/assets/icon-48.png"
+                                "url": "https://localhost:3000/assets/icon-48.png"
                             },                                
                             {
                                 "scale": 3,
                                 "size": 25,
-                                "url": "https://contoso.com/assets/icon-25.png"
+                                "url": "https://localhost:3000/assets/icon-25.png"
                             },
                             {
                                 "scale": 3,
                                 "size": 32,
-                                "url": "https://contoso.com/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "scale": 3,
                                 "size": 48,
-                                "url": "https://contoso.com/assets/icon-48.png"
+                                "url": "https://localhost:3000/assets/icon-48.png"
                             }
                         ]
                     }
@@ -301,14 +301,14 @@ The steps for configuring the manifest depend on which type of manifest you sele
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
-        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
-        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
-        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
-        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+        <bt:Image id="icon-16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://localhost:3000/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://localhost:3000/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+        <bt:Url id="residFunctionFile" DefaultValue="https://localhost:3000/commands.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
