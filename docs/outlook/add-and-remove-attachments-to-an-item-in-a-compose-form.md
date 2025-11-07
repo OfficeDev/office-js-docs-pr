@@ -48,7 +48,7 @@ You can attach a file to a message or appointment in a compose form by using the
 
 > [!NOTE]
 >
-> - The URI of the file to be attached must support caching in production. The server hosting the image shouldn't return a `Cache-Control` header that specifies `no-cache`, `no-store`, or similar options in the HTTP response. However, when you're developing the add-in and making changes to files, caching can prevent you from seeing your changes. We recommend using `Cache-Control` headers during development.
+> - The URI of the file to be attached must support caching in production. The server hosting the image shouldn't return a `Cache-Control` header that specifies `no-cache`, `no-store`, or similar options in the HTTP response.
 >
 > - The `addFileAttachmentAsync` method doesn't support bitmap (BMP) images if they're added as inline attachments.
 
