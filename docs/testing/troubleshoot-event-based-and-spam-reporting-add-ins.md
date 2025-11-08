@@ -1,7 +1,7 @@
 ﻿---
 title: Troubleshoot event-based and spam-reporting add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins that implement event-based activation or integrated spam reporting.
-ms.date: 11/06/2025
+ms.date: 10/14/2025
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -28,7 +28,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
   - Verify that the `<Runtimes>` element (add-in only manifest) or `"extensions.runtimes.code"` property (unified manifest) correctly references the HTML or JavaScript file containing the event handlers. Classic Outlook on Windows and other Windows-based Office applications use the JavaScript file during runtime, while Office on the web, the new Outlook Mac UI, and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) use the HTML file. For an example of how this is configured in the manifest, see the "Configure the manifest" section of [Automatically set the subject of a new message or appointment](../outlook/on-new-compose-events-walkthrough.md#configure-the-manifest).
   
     For Windows clients (except for new Outlook on Windows), you must bundle all your event-handling JavaScript code into this JavaScript file referenced in the manifest. Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
-  - For the JavaScript-only runtime, the event-handling file and the **bundle.js** file must support caching in production. The server hosting these files shouldn't return a `Cache-Control` header specifying `no-cache` or similar options in the HTTP response. If caching is preventing you from seeing your changes during testing, try [clearing your cache](clear-cache.md#clear-the-office-cache-on-windows).
+
 - For Windows clients (except for new Outlook on Windows), when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's client version, to the event handlers instead.
 
 - Verify that your event-handling JavaScript file calls `Office.actions.associate`. This ensures that the event handler name specified in the manifest is mapped to its JavaScript counterpart. The following code is an example.
