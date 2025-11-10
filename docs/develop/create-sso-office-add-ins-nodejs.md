@@ -98,7 +98,7 @@ Use the following values for placeholders for the subsequent app registration st
 
 ### Call our web server REST API
 
-1. In your code editor, open the file `public\javascripts\ssoAuthES6.js`. It already has code that ensures that Promises are supported and an `Office.onReady` call to assign a handler to the add-in's only button.
+1. In your code editor, open the file `public\javascripts\ssoAuthES6.js`. It already has an `Office.onReady` call to assign a handler to the add-in's only button.
 
 1. In the `getFileNameList` function, replace `TODO 1` with the following code. About this code, note:
 

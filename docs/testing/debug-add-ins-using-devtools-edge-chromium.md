@@ -5,7 +5,7 @@ ms.date: 09/18/2025
 ms.localizationpriority: medium
 ---
 
-# Debug add-ins using developer tools in Microsoft Edge (Chromium-based)
+# Debug add-ins using developer tools in Microsoft Edge
 
 This article shows how to debug the client-side code (JavaScript or TypeScript) of your add-in outside of your current IDE.
 
