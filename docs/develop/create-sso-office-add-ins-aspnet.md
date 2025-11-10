@@ -88,7 +88,7 @@ Use the following values for placeholders for the subsequent app registration st
 
 ### Get the access token and call the application server REST API
 
-1. In the **Office-Add-in-ASPNETCore-WebAPI** project, open the **wwwroot\js\HomeES6.js** file. It already has code that ensures that Promises are supported and an `Office.onReady` call to assign a handler to the add-in's only button.
+1. In the **Office-Add-in-ASPNETCore-WebAPI** project, open the **wwwroot\js\HomeES6.js** file. It already has an `Office.onReady` call to assign a handler to the add-in's only button.
 
 1. In the `getUserFileNames` function, replace `TODO 1` with the following code. About this code, note:
 

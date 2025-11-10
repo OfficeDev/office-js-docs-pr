@@ -114,7 +114,7 @@ Next, Visual Studio does the following:
 
 1. Launch the add-in in the Office application if it isn't already open. For example, if it's a task pane add-in, it'll have added a button (for example, a **Show Taskpane** button) to the **Home** ribbon or to a custom ribbon tab that's installed with the add-in. Select the button on the ribbon.
 
-1. Open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Attach a debugger**. This action opens the debugging tools for the webview control that Office is using to run add-ins on your Windows computer. You can set breakpoints and step through code as described in the article [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md).
+1. Open the [personality menu](../design/task-pane-add-ins.md#personality-menu) and then choose **Attach a debugger**. This action opens the debugging tools for the webview control that Office is using to run add-ins on your Windows computer. You can set breakpoints and step through code as described in the article [Debug add-ins using developer tools in Microsoft Edge](../testing/debug-add-ins-using-devtools-edge-chromium.md).
 
 1. To make changes to your code, first stop the debugging session in Visual Studio and close the Office application. Make your changes, and start a new debugging session.
 
@@ -195,7 +195,7 @@ Next, Visual Studio does the following:
 
    ![The More apps button and the callout that it opens with the add-in's name and icon visible along with other app icons.](../images/outlook-more-apps-button.png)
 
-1. Set breakpoints and step through code by following the instructions in the article [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](../testing/debug-add-ins-using-devtools-edge-chromium.md).
+1. Set breakpoints and step through code by following the instructions in the article [Debug add-ins using developer tools in Microsoft Edge](../testing/debug-add-ins-using-devtools-edge-chromium.md).
 
    > [!TIP]
    > To debug code that runs in the `Office.initialize` function or an `Office.onReady` function that runs when the add-in opens, set your breakpoints, and then close and reopen the add-in. For more information about these functions, see [Initialize your Office Add-in](../develop/initialize-add-in.md).

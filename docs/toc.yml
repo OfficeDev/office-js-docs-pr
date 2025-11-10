@@ -372,7 +372,7 @@
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
-      - name: Debug using developer tools for Edge Chromium WebView2
+      - name: Debug using developer tools for Edge
         href: testing/debug-add-ins-using-devtools-edge-chromium.md
       - name: Debug using Visual Studio Code and Edge Chromium WebView2
         href: testing/debug-desktop-using-edge-chromium.md
