@@ -1,11 +1,11 @@
 ---
-title: Insert slides in a PowerPoint presentation
+title: Insert slides from another PowerPoint presentation
 description: Learn how to insert slides from one presentation into another.
-ms.date: 03/07/2021
+ms.date: 11/07/2025
 ms.localizationpriority: medium
 ---
 
-# Insert slides in a PowerPoint presentation
+# Insert slides from another PowerPoint presentation
 
 A PowerPoint add-in can insert slides from one presentation into the current presentation by using PowerPoint's application-specific JavaScript library. You can control whether the inserted slides keep the formatting of the source presentation or the formatting of the target presentation.
 
@@ -38,13 +38,13 @@ There are many ways to convert a file to Base64. Which programming language and 
     > [!NOTE]
     > There are many other ways to get a PowerPoint file. For example, if the file is stored on OneDrive or SharePoint, you can use Microsoft Graph to download it. For more information, see [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and [Access Files with Microsoft Graph](/training/modules/msgraph-access-file-data/).
 
-2. Add the following code to the add-in's JavaScript to assign a function to the input control's `change` event. (You create the `storeFileAsBase64` function in the next step.)
+1. Add the following code to the add-in's JavaScript to assign a function to the input control's `change` event. (You create the `storeFileAsBase64` function in the next step.)
 
     ```javascript
     $("#file").on("change", storeFileAsBase64);
     ```
 
-3. Add the following code. Note the following about this code.
+1. Add the following code. Note the following about this code.
 
     - The `reader.readAsDataURL` method converts the file to Base64 and stores it in the `reader.result` property. When the method completes, it triggers the `onload` event handler.
     - The `onload` event handler trims metadata off of the encoded file and stores the encoded string in a global variable.
@@ -165,6 +165,6 @@ async function insertAfterSelectedSlide() {
 > [!NOTE]
 > The slides will be inserted in the same relative order in which they appear in the source presentation, regardless of the order in which they appear in the array.
 
-There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. For this reason, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
+There's no practical way that users can discover the ID or creation ID of a slide in the source presentation. For this reason, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
 
 Accordingly, the `sourceSlideIds` property is primarily used in presentation template scenarios: The add-in is designed to work with a specific set of presentations that serve as pools of slides that can be inserted. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as titles or images) with slide IDs or slide creation IDs that has been constructed from the set of possible source presentations.
