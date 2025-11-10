@@ -1,7 +1,7 @@
 ---
 title: Insert slides from another PowerPoint presentation
 description: Learn how to insert slides from one presentation into another.
-ms.date: 11/07/2025
+ms.date: 11/10/2025
 ms.localizationpriority: medium
 ---
 
@@ -81,21 +81,19 @@ async function insertAllSlides() {
 }
 ```
 
-You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting , by passing an [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
+You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting, by passing an [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
 
-- There are two possible values for the `formatting` property: "UseDestinationTheme" and "KeepSourceFormatting". Optionally, you can use the `InsertSlideFormatting` enum, (e.g., `PowerPoint.InsertSlideFormatting.useDestinationTheme`).
+- There are two possible values for the `formatting` property: "UseDestinationTheme" and "KeepSourceFormatting". Optionally, you can use the `InsertSlideFormatting` enum (e.g., `PowerPoint.InsertSlideFormatting.useDestinationTheme`).
 - The function will insert the slides from the source presentation immediately after the slide specified by the `targetSlideId` property. The value of this property is a string of one of three possible forms: ***nnn*#**, **#*mmmmmmmmm***, or ***nnn*#*mmmmmmmmm***, where *nnn* is the slide's ID (typically 3 digits) and *mmmmmmmmm* is the slide's creation ID (typically 9 digits). Some examples are `267#763315295`, `267#`, and `#763315295`.
 
 ```javascript
 async function insertSlidesDestinationFormatting() {
   await PowerPoint.run(async function(context) {
-    context.presentation
-    .insertSlidesFromBase64(chosenFileBase64,
-                            {
+    const insertSlideOptions: PowerPoint.InsertSlideOptions = {
                                 formatting: "UseDestinationTheme",
                                 targetSlideId: "267#"
-                            }
-                          );
+    };
+    context.presentation.insertSlidesFromBase64(chosenFileBase64, insertSlideOptions);
     await context.sync();
   });
 }
@@ -132,11 +130,12 @@ Of course, you typically won't know at coding time the ID or creation ID of the 
         await PowerPoint.run(async function(context) {
 
             const selectedSlideID = await getSelectedSlideID();
-
-            context.presentation.insertSlidesFromBase64(chosenFileBase64, {
+            const insertSlideOptions: PowerPoint.InsertSlideOptions = {
                 formatting: "UseDestinationTheme",
                 targetSlideId: selectedSlideID + "#"
-            });
+            };
+
+            context.presentation.insertSlidesFromBase64(chosenFileBase64, insertSlideOptions);
 
             await context.sync();
         });
@@ -151,11 +150,12 @@ You can also use the [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.
 async function insertAfterSelectedSlide() {
     await PowerPoint.run(async function(context) {
         const selectedSlideID = await getSelectedSlideID();
-        context.presentation.insertSlidesFromBase64(chosenFileBase64, {
+        const insertSlideOptions: PowerPoint.InsertSlideOptions = {
             formatting: "UseDestinationTheme",
             targetSlideId: selectedSlideID + "#",
             sourceSlideIds: ["267#763315295", "256#", "#926310875", "1270#"]
-        });
+        };
+        context.presentation.insertSlidesFromBase64(chosenFileBase64, insertSlideOptions);
 
         await context.sync();
     });
@@ -168,3 +168,11 @@ async function insertAfterSelectedSlide() {
 There's no practical way that users can discover the ID or creation ID of a slide in the source presentation. For this reason, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
 
 Accordingly, the `sourceSlideIds` property is primarily used in presentation template scenarios: The add-in is designed to work with a specific set of presentations that serve as pools of slides that can be inserted. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as titles or images) with slide IDs or slide creation IDs that has been constructed from the set of possible source presentations.
+
+## Try it out
+
+Try the following interactive sample using the [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862).
+
+- Insert slides from other presentation
+
+To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
