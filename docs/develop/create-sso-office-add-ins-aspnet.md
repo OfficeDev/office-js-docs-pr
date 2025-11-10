@@ -56,14 +56,14 @@ Use the following values for placeholders for the subsequent app registration st
 
     ```xml
     <WebApplicationInfo>
-	    <Id>Enter_client_ID_here</Id>
-		<Resource>api://localhost:44355/Enter_client_ID_here</Resource>
-		<Scopes>
+        <Id>Enter_client_ID_here</Id>
+        <Resource>api://localhost:44355/Enter_client_ID_here</Resource>
+        <Scopes>
             <Scope>Files.Read</Scope>
-			<Scope>profile</Scope>
+            <Scope>profile</Scope>
             <Scope>openid</Scope>
-		</Scopes>
-	</WebApplicationInfo>
+        </Scopes>
+    </WebApplicationInfo>
     ```
 
 1. Replace the placeholder "Enter_client_ID_here" _in both places_ in the markup with the **Application ID** that you copied when you created the **Office-Add-in-ASPNET-SSO** app registration. This is the same ID you used for the application ID in the appsettings.json file.
