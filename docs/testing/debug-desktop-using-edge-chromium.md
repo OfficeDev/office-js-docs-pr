@@ -5,12 +5,12 @@ ms.date: 11/06/2025
 ms.localizationpriority: high
 ---
 
-# Debug Office Add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)
+# Debug Office Add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2
 
 Office Add-ins running on Windows can debug against the Edge runtime directly in Visual Studio Code.
 
 > [!TIP]
-> If you can't, or don't wish to, debug using tools built into Visual Studio Code; or you're encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug Edge Chromium WebView2 runtime by using the Edge (Chromium-based) developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
+> If you can't, or don't wish to, debug using tools built into Visual Studio Code; or you're encountering a problem that only occurs when the add-in is run outside Visual Studio Code, you can debug the Microsoft Edge WebView2 runtime by using the Edge developer tools as described in [Debug add-ins using developer tools for Microsoft Edge WebView2](debug-add-ins-using-devtools-edge-chromium.md).
 
 This debugging mode is dynamic, allowing you to set breakpoints while code is running. See changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you see the results of multiple changes to your code. The following image shows this extension in action.
 
@@ -21,7 +21,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Node.js (version 10+)](https://nodejs.org/)
 - Windows 10, 11
-- A combination of platform and Office application that supports Microsoft Edge with WebView2 (Chromium-based) as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Office from a Microsoft 365 subscription is earlier than Version 2101, you'll need to install WebView2. For instructions to install WebView2, see [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
+- A combination of platform and Office application that supports Microsoft Edge with WebView2 as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Office from a Microsoft 365 subscription is earlier than Version 2101, you'll need to install WebView2. For instructions to install WebView2, see [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
 ## Debug a project created with Yo Office
 
@@ -36,7 +36,7 @@ These instructions assume you have experience using the command line, understand
 
 1. Choose **View** > **Run** or enter <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> to switch to debug view.
 
-1. From the **RUN AND DEBUG** options, choose the Edge Chromium option for your host application, such as **Outlook Desktop (Edge Chromium)**. Select <kbd>F5</kbd> or choose **Run** > **Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
+1. From the **RUN AND DEBUG** options, choose the Microsoft Edge option for your host application, such as **Outlook Desktop (Edge Chromium)**. Select <kbd>F5</kbd> or choose **Run** > **Start Debugging** from the menu to begin debugging. This action automatically launches a local server in a Node window to host your add-in and then automatically opens the host application, such as Excel or Word. This may take several seconds.
 
    > [!TIP]
    > If you aren't using a project created with Yo Office, you may be prompted to adjust a registry key. While in the root folder of your project, run the following in the command line.
@@ -171,6 +171,6 @@ You can now debug your project using the VS Code debugger (F5).
 ## See also
 
 - [Test and debug Office Add-ins](test-debug-office-add-ins.md)
-- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
+- [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md)
 - [Attach a debugger from the task pane](attach-debugger-from-task-pane.md)
 - [Runtimes in Office Add-ins](runtimes.md)

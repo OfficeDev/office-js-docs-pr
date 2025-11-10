@@ -29,7 +29,7 @@ Otherwise, if you used another tool to create your add-in, perform the following
 
 ## Configure and run the debugger
 
-Now that you've enabled debugging on your add-in, you're ready to configure and run the debugger. Step-by-step instructions are found in the article [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2 (Chromium-based)](../testing/debug-desktop-using-edge-chromium.md).
+Now that you've enabled debugging on your add-in, you're ready to configure and run the debugger. Step-by-step instructions are found in the article [Debug add-ins on Windows using Visual Studio Code and Microsoft Edge WebView2](../testing/debug-desktop-using-edge-chromium.md).
 
 ## See also
 

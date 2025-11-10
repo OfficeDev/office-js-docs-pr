@@ -16,7 +16,7 @@ The following table specifies which browser is used for the various platforms an
 
 |OS|Office version|Browser|
 |:-----|:-----|:-----|
-|any|Office on the web|The browser in which Office is opened. |
+|any|Office on the web|The browser in which Office is opened.|
 |Windows|any|Microsoft Edge (Chromium-based) with WebView2*|
 |Mac|any|Safari with WKWebView|
 |iOS|any|Safari with WKWebView|

@@ -168,7 +168,7 @@ To clear the web cache on iOS, call `window.location.reload(true)` from JavaScri
 ## See also
 
 - [Troubleshoot development errors with Office Add-ins](troubleshoot-development-errors.md)
-- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
+- [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
 - [Office Add-ins manifest](../develop/add-in-manifests.md)

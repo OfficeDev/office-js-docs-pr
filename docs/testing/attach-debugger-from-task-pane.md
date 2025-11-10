@@ -15,7 +15,7 @@ To launch the debugger, choose the top right corner of the task pane to activate
 
 ![The Attach Debugger menu in the add-in task pane.](../images/attach-debugger.png)
 
-Select **Attach Debugger**. This launches the Microsoft Edge (Chromium-based) developer tools. Use the tools as described in [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md).
+Select **Attach Debugger**. This launches the Microsoft Edge developer tools. Use the tools as described in [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md).
 
 ## See also
 

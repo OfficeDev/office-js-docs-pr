@@ -28,7 +28,7 @@ To debug with Office on the web, use the following steps.
 
 ## Debug using Office on Windows
 
-[!INCLUDE[Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initializatio](../includes/auto-open-webview2-dev-tools.md)]
+[!INCLUDE[Automatically open the Microsoft Edge developer tools to debug initializatio](../includes/auto-open-webview2-dev-tools.md)]
 
 ## See also
 

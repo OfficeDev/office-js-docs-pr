@@ -54,7 +54,7 @@ To find guidance for debugging client-side code, the first variable is the opera
 The following provides general guidance to debugging on Windows. Debugging on Windows depends on your IDE.
 
 - **Visual Studio**: Debug using the browser's F12 tools. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
-- **Any other IDE** (or you don't want to debug inside your IDE): Debug with the Webview2 debugging tools. See [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
+- **Any other IDE** (or you don't want to debug inside your IDE): Debug with the Webview2 debugging tools. See [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md)
 
 ### Debug on Mac
 
