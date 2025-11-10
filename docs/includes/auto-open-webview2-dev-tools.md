@@ -4,7 +4,7 @@ To debug your add-in’s initialization sequence, configure your environment so 
 1. Set the `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS` environment variable to include the value `--auto-open-devtools-for-tabs`.
 1. Open the Office application.
 1. Run the add-in.
-1. The Microsoft Edge developer tools should automatically open. Use the tool the same as you would when debugging a task pane, as specified in [Debug a task pane add-in using Microsoft Edge developer tools](../testing/debug-add-ins-using-devtools-edge-chromium.md#debug-a-task-pane-add-in-using-microsoft-edge-chromium-based-developer-tools).
+1. The Microsoft Edge developer tools should automatically open. Use the tool the same as you would when debugging a task pane, as specified in [Debug a task pane add-in using Microsoft Edge developer tools](../testing/debug-add-ins-using-devtools-edge-chromium.md#debug-a-task-pane-add-in-using-microsoft-edge-developer-tools).
 
  > [!NOTE]
  > You may see other instances of the Microsoft Edge developer tool auto-opening since this environment variable will affect all WebView2 instances in your system.

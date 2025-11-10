@@ -54,10 +54,8 @@ If your add-in uses the Office Dialog API, the dialog runs in a separate process
    - Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> or <kbd>F12</kbd>.
    - Right-click (or select and hold) the dialog to open the context menu and select **Inspect**.
 
-1. Use the tool the same as you would for code in a task pane. See [Debug a task pane add-in using Microsoft Edge developer tools](#debug-a-task-pane-add-in-using-microsoft-edge-chromium-based-developer-tools) earlier in this article.
+1. Use the tool the same as you would for code in a task pane. See [Debug a task pane add-in using Microsoft Edge developer tools](#debug-a-task-pane-add-in-using-microsoft-edge-developer-tools) earlier in this article.
 
 ## Automatically open the Microsoft Edge developer tools to debug initialization
 
 [!INCLUDE[Automatically open the Microsoft Edge developer tools to debug initialization](../includes/auto-open-webview2-dev-tools.md)]
-
-

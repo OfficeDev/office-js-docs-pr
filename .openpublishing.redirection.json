@@ -1385,6 +1385,10 @@
         {
             "source_path": "docs/testing/ie-11-testing.md",
             "redirect_url": "/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins"
+        },
+        {
+            "source_path": "docs/design/add-in-icons-fresh.md",
+            "redirect_url": "/office/dev/add-ins/design/add-in-icons"
         }
     ]
 }
