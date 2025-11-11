@@ -1,7 +1,7 @@
 ---
 title: Design icons for add-in acquisition and management
 description: Get design guidance for the icons that represent an add-in in the UIs for app acquisition and managment.
-ms.date: 11/03/2025
+ms.date: 11/11/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
