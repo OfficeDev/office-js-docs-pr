@@ -1,50 +1,46 @@
 ﻿---
 title: Monoline style icon guidelines for Office Add-ins
 description: Guidelines for using Monoline style icons in Office Add-ins.
-ms.date: 02/12/2025
+ms.date: 11/06/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
 # Monoline style icon guidelines for Office Add-ins
 
-Monoline style iconography are used in Office apps. If you'd prefer that your icons match the Fresh style of perpetual Office 2016 and later, see [Fresh style icon guidelines for Office Add-ins](add-in-icons-fresh.md).
-
-## Office Monoline visual style
-
 The goal of the Monoline style to have consistent, clear, and accessible iconography to communicate action and features with simple visuals, ensure the icons are accessible to all users, and have a style that is consistent with those used elsewhere in Windows.
 
 The following guidelines are for 3rd party developers who want to create icons for features that will be consistent with the icons already present Office products.
 
-### Design principles
+## Design principles
 
 - Simple, clean, clear.
 - Contain only necessary elements.
 - Inspired by Windows icon style.
 - Accessible to all users.
 
-#### Convey meaning
+### Convey meaning
 
 - Use descriptive elements such as a page to represent a document or an envelope to represent mail.
 - Use the same element to represent the same concept. For example, mail is always represented by an envelope, not a stamp.
 - Use a core metaphor during concept development.
 
-#### Reduction of elements
+### Reduction of elements
 
 - Reduce the icon to its core meaning, using only elements that are essential to the metaphor.
 - Limit the number of elements in an icon to two, regardless of icon size.
 
-#### Consistency
+### Consistency
 
 Sizes, arrangement, and color of icons should be consistent.
 
-#### Styling
+### Styling
 
-##### Perspective
+#### Perspective
 
 Monoline icons are forward-facing by default. Certain elements that require perspective and/or rotation, such as a cube, are allowed, but exceptions should be kept to a minimum.
 
-##### Embellishment
+#### Embellishment
 
 Monoline is a clean minimal style. Everything uses flat color, which means there are no gradients, textures, or light sources.
 
