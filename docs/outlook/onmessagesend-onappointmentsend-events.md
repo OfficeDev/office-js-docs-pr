@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 10/28/2025
+ms.date: 11/13/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -333,7 +333,9 @@ In addition to these constraints, be mindful of the following:
 ### Limitations to formatting the dialog message using Markdown
 
 > [!NOTE]
-> Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+>
+> - Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The `errorMessageMarkdown` option of the `event.completed` call is available for preview in Outlook on Mac starting in Version //TBD. To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 You can use Markdown to format the message of a Smart Alerts dialog through the `errorMessageMarkdown` option of the `event.completed` call. However, only the following elements are supported.
 
