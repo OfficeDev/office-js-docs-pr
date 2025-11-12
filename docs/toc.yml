@@ -65,8 +65,6 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Runtimes in Office Add-ins
       href: testing/runtimes.md
-    - name: Support older Microsoft webviews and Office versions
-      href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Manage both a unified manifest and an add-in only manifest version of your add-in
       href: concepts/duplicate-legacy-metaos-add-ins.md
@@ -223,8 +221,6 @@
             items:
             - name: Icon guidelines
               href: design/add-in-icons.md
-            - name: Fresh style
-              href: design/add-in-icons-fresh.md
             - name: Monoline style
               href: design/add-in-icons-monoline.md
           - name: Layout
@@ -374,18 +370,12 @@
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
-      - name: Debug using developer tools for Internet Explorer
-        href: testing/debug-add-ins-using-f12-tools-ie.md
-      - name: Debug using developer tools for Edge Legacy
-        href: testing/debug-add-ins-using-devtools-edge-legacy.md
-      - name: Debug using developer tools for Edge Chromium WebView2
+      - name: Debug using developer tools for Edge
         href: testing/debug-add-ins-using-devtools-edge-chromium.md
-      - name: Debug using Visual Studio Code and Edge Chromium WebView2
+      - name: Debug using Visual Studio Code and Edge WebView2
         href: testing/debug-desktop-using-edge-chromium.md
       - name: Debug Office Add-ins in Visual Studio
         href: develop/debug-office-add-ins-in-visual-studio.md
-      - name: Test with Trident
-        href: testing/ie-11-testing.md
       - name: Unsupported window objects
         href: reference/window-objects-unsupported-in-add-ins.md
     - name: Web browser

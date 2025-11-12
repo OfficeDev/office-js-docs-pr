@@ -1,7 +1,7 @@
 ﻿---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 11/06/2025
+ms.date: 11/11/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -74,7 +74,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
                 {
                     "id": "TaskPaneRuntimeShow",
                     "type": "openPage",
-                    "pinnable": false,
+                    "pinnable": true,
                     "view": "dashboard",
                     "supportsNoItemContext": true,
                     "multiselect": true
@@ -136,7 +136,7 @@ To enable your add-in to activate on multiple selected messages, you must add th
                                         </Icon>
                                         <Action xsi:type="ShowTaskpane">
                                             <SourceLocation resid="Taskpane.Url"/>
-                                            <SupportsPinning>false</SupportsPinning>
+                                            <SupportsPinning>true</SupportsPinning>
                                             <SupportsNoItemContext>true</SupportsNoItemContext>
                                             <!-- Enables your add-in to activate on multiple selected messages. -->
                                             <SupportsMultiSelect>true</SupportsMultiSelect>

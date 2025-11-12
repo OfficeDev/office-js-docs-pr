@@ -55,7 +55,7 @@ There are various possibilities for extending the Outlook functionality through 
 
 ## Support for classic Outlook on Windows
 
-Classic Outlook on Windows with a Microsoft 365 subscription or a retail perpetual version of Office 2016 or later will continue to support the development of new and existing Outlook web add-ins. Additionally, it will continue to receive releases of the latest Outlook add-in features.
+Classic Outlook on Windows with a Microsoft 365 subscription or a retail perpetual version of Office 2021 or later will continue to support the development of new and existing Outlook web add-ins. Additionally, it will continue to receive releases of the latest Outlook add-in features.
 
 ## Test your add-in in the new Outlook on Windows
 

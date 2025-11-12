@@ -128,9 +128,9 @@ You can specify a custom contextual tab; that is, a tab that is only visible on 
 Add-in commands are currently supported on the following platforms, except for limitations specified in the subsections of [Command capabilities](#command-capabilities) earlier.
 
 - Office on the web
-- Office on Windows (Version 1604 (Build 6769.2000) or later, connected to a Microsoft 365 subscription)
-- Office on Mac (Version 15.33 (17040900) or later, connected to a Microsoft 365 subscription)
-- Perpetual Office 2019 or later on Windows or on Mac
+- Office on Windows connected to a Microsoft 365 subscription
+- Office on Mac connected to a Microsoft 365 subscription
+- Perpetual Office 2021 or later on Windows or on Mac
 
 > [!NOTE]
 > For information about support in Outlook, see [Outlook support notes](../develop/create-addin-commands.md#outlook-support-notes).

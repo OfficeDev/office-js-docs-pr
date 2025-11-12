@@ -2,7 +2,7 @@
 title: Develop Office Add-ins with Angular
 description: Use Angular to create an Office Add-in as a single page application.
 ms.topic: best-practice
-ms.date: 08/25/2025
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -114,17 +114,3 @@ ng serve --aot
 
 > [!NOTE]
 > To learn more about the Angular Ahead-of-Time (AOT) compiler, see the [official guide](https://angular.io/guide/aot-compiler).
-
-## Support the Trident webview control
-
-Older Office clients use the Trident webview control provided by Internet Explorer 11, as described in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). *Angular versions 12 and later are incompatible with the Trident webview, so an add-in based on Angular version 12 or later won't run on older Office clients.*
-
-If you need to support older versions of Office, you must use an Angular version between 2 and 11, such as Angular 10. In addition, there are a couple Angular-specific considerations to make if your add-in needs to support these Office versions.
-
-Angular depends on a few `window.history` APIs. These APIs don't work in the Trident webview. When these APIs don't work, your add-in may not work properly, for example, it may load a blank task pane. To mitigate this, Office.js nullifies those APIs. However, if you're dynamically loading Office.js, AngularJS may load before Office.js. In that case, you should disable the `window.history` APIs by adding the following code to your add-in's **index.html** page.
-
-```js
-<script type="text/javascript">window.history.replaceState=null;window.history.pushState=null;</script>
-```
-
-If your add-in supports Trident-based browser controls, you'll need to use [hash location strategy](https://angular.io/api/common/HashLocationStrategy) instead of the default [path location strategy](https://angular.io/api/common/PathLocationStrategy). The path location strategy requires HTML5 support which Trident doesn't provide.
