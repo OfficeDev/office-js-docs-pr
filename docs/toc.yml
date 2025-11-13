@@ -218,11 +218,7 @@
           - name: Color
             href: design/add-in-color.md
           - name: Icons
-            items:
-            - name: Icon guidelines
-              href: design/add-in-icons.md
-            - name: Monoline style
-              href: design/add-in-icons-monoline.md
+            href: design/add-in-icons.md
           - name: Layout
             href: design/add-in-layout.md
           - name: Motion
