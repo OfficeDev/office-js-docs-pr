@@ -1,6 +1,6 @@
 ---
 title: Icon guidelines for Office Add-ins
-description: Design guidelines for creating Monoline style icons for Office Add-in commands.
+description: Design guidelines for creating icons for Office Add-in commands, focusing on the Monoline style.
 ms.date: 11/12/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
@@ -119,7 +119,7 @@ The size of the gap should be the same width as the line weight used on that siz
 
 ![32 px icon with a gap of 1px between the modifier and the underlying base.](../images/monolineicon25.png)
 
-In some cases, the gap can be increase by a 1/2 px if the modifier has a diagonal or curved edge and the standard gap doesn't provide enough separation. This will likely only affect the icons with 1px line weight: 16 px, 20 px, 24 px, and 32 px.
+In some cases, the gap can be increased by a 1/2 px if the modifier has a diagonal or curved edge and the standard gap doesn't provide enough separation. This will likely only affect the icons with 1px line weight: 16 px, 20 px, 24 px, and 32 px.
 
 #### Background fills
 
@@ -169,7 +169,7 @@ The following are examples of using color.
 
 ![Compilation of three icons with color in a border or fill or both.](../images/monolineicon28.png)
 
-The most common situation is to have an element use Dark Gray Standalone with Background Fill.
+The most common situation is that an element uses Dark Gray Standalone with Background Fill.
 
 When using a colored Fill, it should always be with its corresponding Outline color. For example, Blue Fill should only be used with Blue Outline. But there are two exceptions to this general rule.
 
