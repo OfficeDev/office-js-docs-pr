@@ -23,7 +23,7 @@ The way you call a web service varies based on where the web service is located.
 ## Determine if EWS tokens are enabled in an organization (preview)
 
 > [!NOTE]
-> The `getTokenStatusAsync` method is currently in preview in Outlook on the web and on Windows (new and classic (Version 2510, Build 19328.20000)). Features in preview shouldn't be used in production add-ins as they may change based on feedback we receive. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the "Office Add-ins feedback" section at the end of this page).
+> The `getTokenStatusAsync` method is currently in preview in Outlook on the web and on Windows (new and classic (Version 2510, Build 19328.20000 and later)). Features in preview shouldn't be used in production add-ins as they may change based on feedback we receive. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the "Office Add-ins feedback" section at the end of this page).
 
 To determine if EWS tokens are enabled in an organization, call [Office.context.mailbox.diagnostics.ews.getTokenStatusAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-ews-gettokenstatusasync-member(1)). The call returns one of the following [token status values](/javascript/api/outlook/office.mailboxenums.tokenstatus?view=outlook-js-preview&preserve-view=true):
 - `Office.MailboxEnums.TokenStatus.Enabled`: EWS tokens are supported in the organization.
