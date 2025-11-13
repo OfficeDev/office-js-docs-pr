@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 11/13/2025
+ms.date: 08/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -15,7 +15,6 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 
 |API|Minimum requirement set|Supported Outlook modes|Supported Outlook on mobile clients|
 |---|---|---|---|
-|[Office.context.mailbox.diagnostics.ews.getTokenStatusAsync](/javascript/api/outlook/office.ews?view=outlook-js-preview&preserve-view=true#outlook-office-ews-gettokenstatusasync-member(1)) (preview)|Mailbox preview|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version TBD)</li><li>iOS (Version TBD)</li></ul>|
 |[Office.context.mailbox.getIsIdentityManaged](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getisidentitymanaged-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
 |[Office.context.mailbox.getIsOpenFromLocationAllowed](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getisopenfromlocationallowed-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
 |[Office.context.mailbox.getIsSaveToLocationAllowed](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getissavetolocationallowed-member(1))|Not applicable|<ul><li>Compose</li><li>Read</li></ul>|<ul><li>Android (Version 4.2443.0 or later)</li><li>iOS (Version 4.2443.0 or later)</li></ul>|
