@@ -47,7 +47,7 @@ Sizes, arrangement, and color of icons should be consistent.
 
 #### Perspective
 
-Monoline icons are forward-facing by default. Certain elements that require perspective and/or rotation, such as a cube, are allowed, but exceptions should be kept to a minimum.
+Monoline icons are forward-facing by default. Certain elements that require perspective or rotation, such as a cube, are allowed, but exceptions should be kept to a minimum.
 
 #### Embellishment
 
@@ -62,7 +62,7 @@ We recommend that you produce each icon in all these sizes to support high DPI d
 **16 px, 20 px, 24 px, 32 px, 40 px, 48 px, 64 px, 80 px, 96 px**
 
 > [!IMPORTANT]
-> For an image that is your add-in's representative icon, see [Create effective listings in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in) for size and other requirements.
+> For guidance on how to create an icon for your add-in that adheres to certain formatting requirements, see [Create effective listings in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in).
 
 ### Layout
 
@@ -96,7 +96,7 @@ Modifiers are almost always placed in the bottom right corner of the icon canvas
 
 #### Padding
 
-Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should butt up to the edge of the canvas, extending outside of the padding to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
+Each size icon has a specified amount of padding around the icon. The base element stays within the padding, but the modifier should align with the edge of the canvas, extending beyond the padding to the edge of the icon border. The following images show the recommended padding to use for each of the icon sizes.
 
 |16px|20px|24px|32px|40px|48px|64px|80px|96px|
 |:---|:---|:---|:---|:---|:---|:---|:---|:---|
