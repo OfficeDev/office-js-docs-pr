@@ -1389,6 +1389,10 @@
         {
             "source_path": "docs/design/add-in-icons-fresh.md",
             "redirect_url": "/office/dev/add-ins/design/add-in-icons"
+        },
+        {
+            "source_path": "docs/design/add-in-icons-monoline.md",
+            "redirect_url": "/office/dev/add-ins/design/add-in-icons"
         }
     ]
 }
