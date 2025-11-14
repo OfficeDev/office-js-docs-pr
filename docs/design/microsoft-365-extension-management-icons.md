@@ -18,5 +18,3 @@ An Office add-in is an App for Microsoft 365, just as are Teams apps and Copilot
 
 
 [!INCLUDE [Microsoft 365 icon design guidance](~/../Outlook-Add-in-GifMe/cross-repo-includes/includes/design-microsoft-365-extension-icons.md)]
-
-[!INCLUDE [Microsoft 365 icon design guidance](~/../reusable-content/microsoft-365-development/includes/design-microsoft-365-extension-icons.md)]
