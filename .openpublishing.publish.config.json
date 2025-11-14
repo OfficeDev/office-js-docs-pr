@@ -118,7 +118,7 @@
       "branch_mapping": {}
     },
     {
-      "path_to_root": "Outlook-Add-in-GifMe",
+      "path_to_root": "add-ins/Outlook-Add-in-GifMe",
       "url": "https://github.com/OfficeDev/Outlook-Add-in-GifMe",
       "branch": "master",
       "branch_mapping": {}

@@ -17,4 +17,4 @@ An Office add-in is an App for Microsoft 365, just as are Teams apps and Copilot
 > - For guidance about designing icons that represent an add-in Microsoft Marketplace, see [Create an icon for your add-in](/partner-center/marketplace-offers/create-effective-office-store-listings#create-an-icon-for-your-add-in).
 
 
-[!INCLUDE [Microsoft 365 icon design guidance](~/../Outlook-Add-in-GifMe/cross-repo-includes/includes/design-microsoft-365-extension-icons.md)]
+[!INCLUDE [Microsoft 365 icon design guidance](~/../add-ins/Outlook-Add-in-GifMe/cross-repo-includes/includes/design-microsoft-365-extension-icons.md)]
