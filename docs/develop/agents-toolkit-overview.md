@@ -50,7 +50,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 ### Sideload in Excel, PowerPoint, or Word
 
 > [!NOTE]
-> This section only applies if you are developing the add-in on a *Windows* computer. 
+> This section only applies if you are developing the add-in on a *Windows* computer.
 
 1. Select **View** | **Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select one of these options:
  

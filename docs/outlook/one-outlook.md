@@ -1,7 +1,7 @@
 ---
 title: Develop Outlook add-ins for the new Outlook on Windows
 description: Learn how to develop add-ins that are compatible with the new Outlook on Windows.
-ms.date: 10/21/2025
+ms.date: 11/14/2025
 ms.localizationpriority: medium
 ---
 
@@ -55,7 +55,7 @@ There are various possibilities for extending the Outlook functionality through 
 
 ## Support for classic Outlook on Windows
 
-Classic Outlook on Windows with a Microsoft 365 subscription or a retail perpetual version of Office 2016 or later will continue to support the development of new and existing Outlook web add-ins. Additionally, it will continue to receive releases of the latest Outlook add-in features.
+Classic Outlook on Windows with a Microsoft 365 subscription or a retail perpetual version of Office 2021 or later will continue to support the development of new and existing Outlook web add-ins. Additionally, it will continue to receive releases of the latest Outlook add-in features.
 
 ## Test your add-in in the new Outlook on Windows
 
@@ -71,10 +71,6 @@ Test your Outlook web add-in in the new Outlook on Windows today! To switch to t
 To help you install and set up the Outlook desktop client, see [Getting started with the new Outlook for Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627).
 
 For guidance on how to sideload your add-in, see [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
-
-> [!TIP]
->
-> In the new Outlook on Windows, you must keep the main client window open to run add-ins (the window can be active or inactive). If the main window is minimized, the add-in will pause or stop working.
 
 ## Debug your add-in
 

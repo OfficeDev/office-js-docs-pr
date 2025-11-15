@@ -1,7 +1,7 @@
 ---
 title: Debug the initialize and onReady functions
 description: Learn how to debug the Office.initialize and Office.onReady functions.
-ms.date: 09/18/2025
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -26,15 +26,9 @@ To debug with Office on the web, use the following steps.
 > [!TIP]
 > For more detailed information, see [Debug add-ins in Office on the web](debug-add-ins-in-office-online.md).
 
-## Debug using Office on Windows 
+## Debug using Office on Windows
 
-> [!NOTE]
-> The technique described in this section works only when the add-in using the WebView2 webview control. To determine which webview you're using, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
-
-> [!TIP]
-> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
-
-[!INCLUDE[Automatically open the Microsoft Edge (Chromium-based) developer tools to debug initializatio](../includes/auto-open-webview2-dev-tools.md)]
+[!INCLUDE[Automatically open the Microsoft Edge developer tools to debug initialization](../includes/auto-open-webview2-dev-tools.md)]
 
 ## See also
 

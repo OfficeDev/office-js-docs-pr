@@ -2,7 +2,7 @@
 title: Best practices for developing Office Add-ins
 description: Apply the best practices when developing Office Add-ins.
 ms.topic: best-practice
-ms.date: 07/28/2025
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -152,10 +152,6 @@ Ready to share your add-in with the world? Here's how to get started.
 
 > [!IMPORTANT]
 > [!INCLUDE [Microsoft Marketplace enterprise info](../includes/appsource-enterprise.md)]
-
-## Support older Microsoft webviews and Office versions (recommended but not required)
-
-See [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).
 
 ## See also
 

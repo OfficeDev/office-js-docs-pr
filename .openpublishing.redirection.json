@@ -1365,6 +1365,34 @@
         {
             "source_path": "docs/outlook/compose-scenario.md",
             "redirect_url": "/office/dev/add-ins/outlook/outlook-add-ins-overview"
+        },
+       {
+            "source_path": "docs/outlook/turn-exchange-tokens-on-off.md",
+            "redirect_url": "/office/dev/add-ins/develop/faq-legacy-exchange-tokens"
+        },
+        {
+            "source_path": "docs/develop/support-ie-11.md",
+            "redirect_url": "/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins"
+        },
+        {
+            "source_path": "docs/testing/debug-add-ins-using-devtools-edge-legacy.md",
+            "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-overview"
+        },
+        {
+            "source_path": "docs/testing/debug-add-ins-using-f12-tools-ie.md",
+            "redirect_url": "/office/dev/add-ins/testing/debug-add-ins-overview"
+        },
+        {
+            "source_path": "docs/testing/ie-11-testing.md",
+            "redirect_url": "/office/dev/add-ins/concepts/browsers-used-by-office-web-add-ins"
+        },
+        {
+            "source_path": "docs/design/add-in-icons-fresh.md",
+            "redirect_url": "/office/dev/add-ins/design/add-in-icons"
+        },
+        {
+            "source_path": "docs/design/add-in-icons-monoline.md",
+            "redirect_url": "/office/dev/add-ins/design/add-in-icons"
         }
     ]
 }

@@ -90,7 +90,7 @@ The following are some of the causes of this error. If you discover additional c
 
 ## Add-in doesn't work on Edge but it works on other browsers
 
-See [Troubleshoot EdgeHTML and WebView2 (Microsoft Edge) issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-edgehtml-and-webview2-microsoft-edge-issues).
+See [Troubleshoot WebView2 issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-webview2-issues).
 
 ## Excel add-in throws errors, but not consistently
 

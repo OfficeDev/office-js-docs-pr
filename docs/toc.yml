@@ -65,8 +65,6 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Runtimes in Office Add-ins
       href: testing/runtimes.md
-    - name: Support older Microsoft webviews and Office versions
-      href: develop/support-ie-11.md
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: Manage both a unified manifest and an add-in only manifest version of your add-in
       href: concepts/duplicate-legacy-metaos-add-ins.md
@@ -185,6 +183,8 @@
           href: develop/troubleshoot-sso-in-office-add-ins.md
       - name: Enable SSO using nested app authentication
         href: develop/enable-nested-app-authentication-in-your-add-in.md
+      - name: Nested app authentication FAQ 
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
       - name: Identity providers
@@ -218,13 +218,7 @@
           - name: Color
             href: design/add-in-color.md
           - name: Icons
-            items:
-            - name: Icon guidelines
-              href: design/add-in-icons.md
-            - name: Fresh style
-              href: design/add-in-icons-fresh.md
-            - name: Monoline style
-              href: design/add-in-icons-monoline.md
+            href: design/add-in-icons.md
           - name: Layout
             href: design/add-in-layout.md
           - name: Motion
@@ -372,18 +366,12 @@
         href: testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md
       - name: Attach a debugger from the task pane
         href: testing/attach-debugger-from-task-pane.md
-      - name: Debug using developer tools for Internet Explorer
-        href: testing/debug-add-ins-using-f12-tools-ie.md
-      - name: Debug using developer tools for Edge Legacy
-        href: testing/debug-add-ins-using-devtools-edge-legacy.md
-      - name: Debug using developer tools for Edge Chromium WebView2
+      - name: Debug using developer tools for Edge
         href: testing/debug-add-ins-using-devtools-edge-chromium.md
-      - name: Debug using Visual Studio Code and Edge Chromium WebView2
+      - name: Debug using Visual Studio Code and Edge WebView2
         href: testing/debug-desktop-using-edge-chromium.md
       - name: Debug Office Add-ins in Visual Studio
         href: develop/debug-office-add-ins-in-visual-studio.md
-      - name: Test with Trident
-        href: testing/ie-11-testing.md
       - name: Unsupported window objects
         href: reference/window-objects-unsupported-in-add-ins.md
     - name: Web browser
@@ -906,11 +894,7 @@
       - name: Inside the identity token
         href: outlook/inside-the-identity-token.md
       - name: "Scenario: Implement single sign-on"
-        href: outlook/implement-sso-in-outlook-add-in.md
-      - name: Legacy token deprecation FAQ 
-        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
-      - name: Turn legacy tokens on or off
-        href: outlook/turn-exchange-tokens-on-off.md  
+        href: outlook/implement-sso-in-outlook-add-in.md      
     - name: Testing and tips
       items:
       - name: Overview
@@ -963,7 +947,7 @@
     - name: Add and delete slides
       href: powerpoint/add-slides.md
       displayName: PowerPoint
-    - name: Insert slides
+    - name: Insert slides from another presentation
       href: powerpoint/insert-slides-into-presentation.md
       displayName: PowerPoint
     - name: Get the whole document from an add-in
@@ -972,7 +956,7 @@
     - name: Use custom tags on presentations, slides, and shapes
       href: powerpoint/tagging-presentations-slides-shapes.md
       displayName: PowerPoint 
-    - name: Use document themes in your PowerPoint add-ins
+    - name: Use Office document themes
       href: powerpoint/use-document-themes-in-your-powerpoint-add-ins.md
       displayName: PowerPoint
     - name: Work with shapes

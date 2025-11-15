@@ -1,7 +1,7 @@
 ---
 title: Limits for activation and API usage in Outlook add-ins
 description: Be aware of certain activation and API usage guidelines, and implement your add-ins to stay within these limits.
-ms.date: 07/14/2025
+ms.date: 11/04/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -25,7 +25,7 @@ Each Outlook client enforces certain limits in the JavaScript object model, as d
 |:-----|:-----|:-----|:-----|
 |Custom properties|2,500 characters|[CustomProperties](/javascript/api/outlook/office.customproperties) object<br/><br/>[Item.loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method|Limit for all custom properties for an appointment or message item. All the Outlook clients return an error if the total size of all custom properties of an add-in exceeds this limit.|
 |Roaming settings|32 KB number of characters|[RoamingSettings](/javascript/api/outlook/office.roamingsettings) object<br/><br/>[Context.roamingSettings](/javascript/api/office/office.context#office-office-context-roamingsettings-member) property|Limit for all roaming settings for the add-in. All the Outlook clients return an error if your settings exceed this limit.|
-|Session data|50,000 characters|[Office.SessionData](/javascript/api/outlook/office.sessiondata)<br/><br/>[Item.sessionData](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method|For a specific mail item, the limit of an entire SessionData object per add-in.|
+|Session data|50,000 characters (Mailbox 1.15 and earlier)<br><br>2,621,440 characters (in preview in classic Outlook on Windows)|[Office.SessionData](/javascript/api/outlook/office.sessiondata)<br/><br/>[Item.sessionData](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method|For a specific mail item, the limit of an entire SessionData object per add-in.|
 |Internet headers|256 KB per message in Exchange Online<br/><br/>Header size limit determined by the organization's administrators in Exchange on-premises|[InternetHeaders.setAsync](/javascript/api/outlook/office.internetheaders) method|The total size limit of headers that can be applied to a message.|
 |Exchange Web Services|5 MB number of characters in Outlook on the web, on Windows (starting in Version 2303 (Build 16225.10000)), on Mac (starting in Version 16.73 (23042601)), and in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)<br><br>1 MB of characters in earlier versions of Outlook on Windows (classic) and on Mac|[Mailbox.makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1)) method|Limit for a request or response to a `Mailbox.makeEwsRequestAsync` call.|
 |Item multi-select|100 messages|[Mailbox.getSelectedItemsAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getselecteditemsasync-member(1)) method|The maximum number of selected messages on which an Outlook add-in can activate.|
