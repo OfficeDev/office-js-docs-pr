@@ -1,7 +1,7 @@
 ﻿---
 title: Use Exchange Web Services (EWS) from an Outlook add-in in Exchange on-premises
 description: Provides an example that shows how an Outlook add-in in an Exchange on-premises environment can request information from Exchange Web Services.
-ms.date: 11/06/2025
+ms.date: 11/14/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -16,16 +16,42 @@ The way you call a web service varies based on where the web service is located.
 
 |Web service location|Way to call the web service|
 |:-----|:-----|
-|The Exchange server that hosts the client mailbox|Use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to call EWS operations that add-ins support. The Exchange server that hosts the mailbox also exposes EWS.|
+|The Exchange server that hosts the client mailbox|Call the [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1)) method to run EWS operations that add-ins support. The Exchange server that hosts the mailbox also exposes EWS.|
 |The web server that provides the source location for the add-in UI|Call the web service by using standard JavaScript techniques. The JavaScript code in the UI frame runs in the context of the web server that provides the UI. Therefore, it can call web services on that server without causing a cross-site scripting error.|
 |All other locations|Create a proxy for the web service on the web server that provides the source location for the UI. If you don't provide a proxy, cross-site scripting errors will prevent your add-in from running. One way to provide a proxy is by using JSON/P. For more information, see [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md).|
 
-## Using the makeEwsRequestAsync method to access EWS operations
+## Determine if EWS tokens are enabled in an organization (preview)
+
+> [!NOTE]
+> The `getTokenStatusAsync` method is currently in preview in Outlook on the web and on Windows (new and classic (Version 2510, Build 19328.20000 and later)). Features in preview shouldn't be used in production add-ins as they may change based on feedback we receive. We invite you to try out this feature in test or development environments and welcome feedback on your experience through GitHub (see the "Office Add-ins feedback" section at the end of this page).
+
+To determine if EWS tokens are enabled in an organization, call [Office.context.mailbox.diagnostics.ews.getTokenStatusAsync](/javascript/api/outlook/office.messagecompose?view=outlook-js-preview&preserve-view=true#outlook-office-ews-gettokenstatusasync-member(1)). The call returns one of the following [token status values](/javascript/api/outlook/office.mailboxenums.tokenstatus?view=outlook-js-preview&preserve-view=true):
+- `Office.MailboxEnums.TokenStatus.Enabled`: EWS tokens are supported in the organization.
+- `Office.MailboxEnums.TokenStatus.Disabled`: EWS tokens are turned off in the organization.
+- `Office.MailboxEnums.TokenStatus.Removed`: The organization is using Exchange Online. Legacy Exchange tokens are no longer supported and are turned off.
+
+The following example shows how to call `getTokenStatusAsync` in your add-in code.
+
+```javascript
+Office.context.mailbox.diagnostics.ews.getTokenStatusAsync((asyncResult) => {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+        console.log(asyncResult.error.message);
+        return;
+    }
+
+    const tokenStatus = asyncResult.value;
+    if (tokenStatus === Office.MailboxEnums.TokenStatus.Enabled) {
+        // Add your EWS requests here.
+    }
+});
+```
+
+## Call the makeEwsRequestAsync method to access EWS operations
 
 > [!IMPORTANT]
 > EWS calls and operations aren't supported in add-ins running in Outlook on Android and on iOS.
 
-You can use the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method to make an EWS request to the on-premises Exchange server that hosts the user's mailbox.
+To make an EWS request to the on-premises Exchange server that hosts the user's mailbox, call [Office.context.mailbox.makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1)).
 
 EWS supports different operations on an Exchange server; for example, item-level operations to copy, find, update, or send an item, and folder-level operations to create, get, or update a folder. To perform an EWS operation, create an XML SOAP request for that operation. When the operation finishes, you get an XML SOAP response that contains data that's relevant to the operation. EWS SOAP requests and responses follow the schema defined in the **Messages.xsd** file. Like other EWS schema files, the **Message.xsd** file is located in the IIS virtual directory that hosts EWS.
 
