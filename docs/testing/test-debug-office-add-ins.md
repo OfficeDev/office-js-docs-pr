@@ -20,11 +20,7 @@ Office Add-ins run across major platforms, so you need to test an add-in in all 
 
 Add-ins are tested for Office on the web with all major modern browsers, including Microsoft Edge (Chromium-based WebView2), Chrome, and Safari. Accordingly, you should test on these platforms and browsers before you submit to [Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center). For more information about validation, see [Commercial marketplace certification policies](/legal/marketplace/certification-policies), especially [section 1120.3](/legal/marketplace/certification-policies#11203-functionality), and the [Office Add-in application and availability page](/javascript/api/requirement-sets).
 
-Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy (EdgeHTML). Consequently, Microsoft Marketplace doesn't test Office on the web on these browsers. Office still supports these browsers for add-in runtimes, so if you think you've encountered a bug in how add-ins run in them, please create an issue in the [office-js](https://github.com/OfficeDev/office-js/issues) repository. For more information, see [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md) and [Troubleshoot EdgeHTML and WebView2 (Microsoft Edge) issues](../concepts/browsers-used-by-office-web-add-ins.md#troubleshoot-edgehtml-and-webview2-microsoft-edge-issues).
-
-### Add-ins tested for Office on Windows
-
-Some Office versions on Windows still use the webview controls that come with Internet Explorer and Microsoft Edge Legacy. Microsoft Marketplace tests whether your add-in supports these browser controls. If your add-in doesn't support these browser controls, Microsoft Marketplace only issues a warning and doesn't reject your add-in. In this instance, we recommend configuring a graceful failure message on your add-in for a smoother user experience. For further guidance, see [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).
+Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy (EdgeHTML). Consequently, Microsoft Marketplace doesn't test Office on the web on these browsers.
 
 ## Sideload an Office Add-in for testing
 

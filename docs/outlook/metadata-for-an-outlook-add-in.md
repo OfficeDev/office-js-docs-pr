@@ -1,7 +1,7 @@
 ﻿---
 title: Get and set metadata in an Outlook add-in
 description: Manage custom data in your Outlook add-in by using roaming settings, custom properties, or session data.
-ms.date: 02/11/2025
+ms.date: 11/04/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -245,6 +245,9 @@ To handle the situation in classic Outlook on Windows:
 If you only need to save and access data while a mail item is being composed, use the [SessionData](/javascript/api/outlook/office.sessiondata) API. Because data is only saved for the duration of the current compose session, data from a SessionData object can't be accessed from an item that's been saved as a draft. This behavior applies even if the same add-in is used.
 
 Custom data is saved to the SessionData object as key-value pairs. For each mail item, the data in the SessionData object is limited to 50,000 characters per add-in. That is, if multiple add-ins set custom session data on a single mail item, each add-in can create a SessionData object that contains up to 50,000 characters.
+
+> [!NOTE]
+> An increased SessionData character limit of up to 2,621,440 characters is in preview in classic Outlook on Windows. To test the updated limit, join the [Microsoft 365 Insider program](https://aka.ms/MSFT365InsiderProgram), then choose the Beta Channel in the classic Outlook on Windows client. Your client must be on Version 2510 (Build 19317.20000) or later.
 
 ### Try the code example in Script Lab
 

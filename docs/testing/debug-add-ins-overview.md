@@ -54,16 +54,7 @@ To find guidance for debugging client-side code, the first variable is the opera
 The following provides general guidance to debugging on Windows. Debugging on Windows depends on your IDE.
 
 - **Visual Studio**: Debug using the browser's F12 tools. See [Debug Office Add-ins in Visual Studio](../develop/debug-office-add-ins-in-visual-studio.md).
-- **Any other IDE** (or you don't want to debug inside your IDE): Use the developer tools that are associated with the webview control that add-ins use on your development computer. See one of the following:
-
-  - For the Trident webview: [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-  - For the EdgeHTML webview: [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-  - For the WebView2 webview: [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md)
-
-For information about which runtime is being used, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md) and [Runtimes in Office Add-ins](runtimes.md).
-
-> [!TIP]
-> [!INCLUDE[Identify the webview through the add-in UI](../includes/identify-webview-in-ui.md)]
+- **Any other IDE** (or you don't want to debug inside your IDE): Debug with the Webview2 debugging tools. See [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md)
 
 ### Debug on Mac
 
