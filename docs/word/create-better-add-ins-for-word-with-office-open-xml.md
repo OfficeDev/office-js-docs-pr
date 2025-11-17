@@ -23,7 +23,7 @@ So what are your options when you need to add rich content to a document, such a
 
 1. **HTML coercion.** If APIs aren't yet available, you can use HTML for inserting some types of rich content, such as pictures. Depending on your scenario, there can be drawbacks to HTML coercion, such as limitations in the formatting and positioning options available to your content.
 
-   If your needs are meet by the APIs, HTML coercion, or some combination, then you can stop here.
+   If your needs are met by the APIs, HTML coercion, or some combination, then you can stop here.
 
 1. **Office Open XML (OOXML).** Because Office Open XML is the language in which Word documents (such as .docx and .dotx) are written, you can insert virtually any type of content that a user can add to a Word document, with virtually any type of formatting the user can apply. Use this option only if the others don't provide what you need. Continue reading to learn about using OOXML and how to determine the OOXML markup you need to get it done.
 
