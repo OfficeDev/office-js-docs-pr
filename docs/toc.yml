@@ -219,6 +219,8 @@
             href: design/add-in-color.md
           - name: Icons
             href: design/add-in-icons.md
+          - name: Design icons for add-in acquisition and management
+            href: design/microsoft-365-extension-management-icons.md
           - name: Layout
             href: design/add-in-layout.md
           - name: Motion
