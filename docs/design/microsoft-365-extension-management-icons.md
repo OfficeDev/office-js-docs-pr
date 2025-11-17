@@ -6,9 +6,9 @@ ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
-# Design icons for add-in acquisisiton and management
+# Design icons for add-in acquisition and management
 
-An Office add-in is an App for Microsoft 365, just as are Teams apps and Copilot extensions. If the add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), then it must conform to the requirements for Microsoft 365 extensions. In particular, it must have two icons that represent it in the app acquisition and managment UI of Teams, Office, Copilot, and other Microsoft 365 applications. 
+An Office Add-in is an App for Microsoft 365, just as are Teams apps and Copilot extensions. If the add-in uses the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), then it must conform to the requirements for Microsoft 365 extensions. In particular, it must have two icons that represent it in the app acquisition and managment UI of Teams, Office, Copilot, and other Microsoft 365 applications. 
 
 > [!NOTE]
 >
