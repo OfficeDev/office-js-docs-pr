@@ -1,7 +1,7 @@
 ﻿---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 08/26/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -62,8 +62,7 @@ To configure the manifest, select the tab for the type of manifest you are using
         "actions": [
             {
                 "id": "onMessageSendHandler",
-                "type": "executeFunction",
-                "displayName": "onMessageSendHandler"
+                "type": "executeFunction"
             }
         ]
     }

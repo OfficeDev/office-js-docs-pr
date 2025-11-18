@@ -1,7 +1,7 @@
 ﻿---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 08/07/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -76,8 +76,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
         "actions": [
             {
                 "id": "insertContosoMeeting",
-                "type": "executeFunction",
-                "displayName": "insertContosoMeeting"
+                "type": "executeFunction"
             }
         ]
     }
