@@ -1,16 +1,23 @@
 ---
 title: Work with PivotTables using the Excel JavaScript API
-description: Use the Excel JavaScript API to create PivotTables and interact with their components.
-ms.date: 03/04/2022
+description: Learn how to create, configure, and filter PivotTables programmatically with the Excel JavaScript API.
+ms.date: 09/22/2025
 ms.localizationpriority: medium
 ---
 
 # Work with PivotTables using the Excel JavaScript API
 
-PivotTables streamline larger data sets. They allow the quick manipulation of grouped data. The Excel JavaScript API lets your add-in create PivotTables and interact with their components. This article describes how PivotTables are represented by the Office JavaScript API and provides code samples for key scenarios.
+Use the PivotTable APIs to summarize data, group fields, filter, and apply calculations in a workbook.
 
-If you are unfamiliar with the functionality of PivotTables, consider exploring them as an end user.
-See [Create a PivotTable to analyze worksheet data](https://support.microsoft.com/office/ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EBBD=PivotTables) for a good primer on these tools.
+## Key concepts
+
+- Four hierarchy categories: rows, columns, data, and filters.
+- Adding a hierarchy to a new category removes it from the old one.
+- `PivotLayout` gives you the output ranges (for example, `getDataBodyRange`).
+- Filtering options: code (PivotFilters) or UI (slicers).
+- Add multiple hierarchies, then call `context.sync()` once for speed.
+
+If you're unfamiliar with PivotTables as an end user, review [Create a PivotTable to analyze worksheet data](https://support.microsoft.com/office/ccd3c4a6-272f-4c97-afbb-d3f27407fcde#ID0EBBD=PivotTables).
 
 > [!IMPORTANT]
 > PivotTables created with OLAP are not currently supported. There is also no support for Power Pivot.
@@ -21,9 +28,9 @@ See [Create a PivotTable to analyze worksheet data](https://support.microsoft.co
 
 The [PivotTable](/javascript/api/excel/excel.pivottable) is the central object for PivotTables in the Office JavaScript API.
 
-- `Workbook.pivotTables` and `Worksheet.pivotTables` are [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) that contain the [PivotTables](/javascript/api/excel/excel.pivottable) in the workbook and worksheet, respectively.
-- A [PivotTable](/javascript/api/excel/excel.pivottable) contains a [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) that has multiple [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
-- These [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) can be added to specific hierarchy collections to define how the PivotTable pivots data (as explained in the [following section](#hierarchies)).
+- `Workbook.pivotTables` and `Worksheet.pivotTables` are [PivotTableCollections](/javascript/api/excel/excel.pivottablecollection) that contain the [PivotTables](/javascript/api/excel/excel.pivottable) in the workbook and worksheet.
+- A [PivotTable](/javascript/api/excel/excel.pivottable) has a [PivotHierarchyCollection](/javascript/api/excel/excel.pivothierarchycollection) with multiple [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy).
+- [PivotHierarchies](/javascript/api/excel/excel.pivothierarchy) can be added to specific hierarchy collections to define how the PivotTable pivots data.
 - A [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) contains a [PivotFieldCollection](/javascript/api/excel/excel.pivotfieldcollection) that has exactly one [PivotField](/javascript/api/excel/excel.pivotfield). If the design expands to include OLAP PivotTables, this may change.
 - A [PivotField](/javascript/api/excel/excel.pivotfield) can have one or more [PivotFilters](/javascript/api/excel/excel.pivotfilters) applied, as long as the field's [PivotHierarchy](/javascript/api/excel/excel.pivothierarchy) is assigned to a hierarchy category.
 - A [PivotField](/javascript/api/excel/excel.pivotfield) contains a [PivotItemCollection](/javascript/api/excel/excel.pivotitemcollection) that has multiple [PivotItems](/javascript/api/excel/excel.pivotitem).
@@ -37,9 +44,9 @@ This fruit farm sales data will be used to make a PivotTable. Each column, such 
 
 ### Hierarchies
 
-PivotTables are organized based on four hierarchy categories: [row](/javascript/api/excel/excel.rowcolumnpivothierarchy), [column](/javascript/api/excel/excel.rowcolumnpivothierarchy), [data](/javascript/api/excel/excel.datapivothierarchy), and [filter](/javascript/api/excel/excel.filterpivothierarchy).
+PivotTables have four hierarchy categories: [row](/javascript/api/excel/excel.rowcolumnpivothierarchy), [column](/javascript/api/excel/excel.rowcolumnpivothierarchy), [data](/javascript/api/excel/excel.datapivothierarchy), and [filter](/javascript/api/excel/excel.filterpivothierarchy). 
 
-The farm data shown earlier has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies, it cannot also be in the row, data, or filter hierarchies. If **Type** is subsequently added to row hierarchies, it is removed from the column hierarchies. This behavior is the same whether hierarchy assignment is done through the Excel UI or the Excel JavaScript APIs.
+Our farm data has five hierarchies: **Farms**, **Type**, **Classification**, **Crates Sold at Farm**, and **Crates Sold Wholesale**. Each hierarchy can only exist in one of the four categories. If **Type** is added to column hierarchies, it cannot also be in the row, data, or filter hierarchies. If **Type** is subsequently added to row hierarchies, it is removed from the column hierarchies. This behavior is the same whether hierarchy assignment is done through the Excel UI or the Excel JavaScript APIs.
 
 Row and column hierarchies define how data will be grouped. For example, a row hierarchy of **Farms** will group together all the data sets from the same farm. The choice between row and column hierarchy defines the orientation of the PivotTable.
 
@@ -55,7 +62,7 @@ This PivotTable could be generated through the JavaScript API or through the Exc
 
 ## Create a PivotTable
 
-PivotTables need a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`).
+Provide a name, source, and destination. The source can be a range address or table name (passed as a `Range`, `string`, or `Table` type). The destination is a range address (given as either a `Range` or `string`).
 The following samples show various PivotTable creation techniques.
 
 ### Create a PivotTable with range addresses
@@ -112,9 +119,7 @@ await Excel.run(async (context) => {
 
 ## Add rows and columns to a PivotTable
 
-Rows and columns pivot the data around those fields' values.
-
-Adding the **Farm** column pivots all the sales around each farm. Adding the **Type** and **Classification** rows further breaks down the data based on what fruit was sold and whether it was organic or not.
+Rows and columns define how data is grouped. Adding the **Farm** column groups all the sales around each farm. Adding the **Type** and **Classification** rows further breaks down the data based on what fruit was sold and whether it was organic or not.
 
 ![A PivotTable with a Farm column and Type and Classification rows.](../images/excel-pivots-table-rows-and-columns.png)
 
@@ -238,7 +243,7 @@ await Excel.run(async (context) => {
 
 ### Other PivotLayout functions
 
-By default, PivotTables adjust row and column sizes as needed. This is done when the PivotTable is refreshed. `PivotLayout.autoFormat` specifies that behavior. Any row or column size changes made by your add-in persist when `autoFormat` is `false`. Additionally, the default settings of a PivotTable keep any custom formatting in the PivotTable (such as fills and font changes). Set `PivotLayout.preserveFormatting` to `false` to apply the default format when refreshed.
+By default, PivotTables adjust row and column sizes as needed. This occurs when the PivotTable is refreshed. `PivotLayout.autoFormat` specifies that behavior. Any row or column size changes made by your add-in persist when `autoFormat` is `false`. Additionally, the default settings of a PivotTable keep any custom formatting in the PivotTable (such as fills and font changes). Set `PivotLayout.preserveFormatting` to `false` to apply the default format when refreshed.
 
 A `PivotLayout` also controls header and total row settings, how empty data cells are displayed, and [alt text](https://support.microsoft.com/topic/44989b2a-903c-4d9a-b742-6a75b451c669) options. The [PivotLayout](/javascript/api/excel/excel.pivotlayout) reference provides a complete list of these features.
 
@@ -417,7 +422,7 @@ await Excel.run(async (context) => {
 
 #### Create a slicer
 
-You can create a slicer in a workbook or worksheet by using the `Workbook.slicers.add` method or `Worksheet.slicers.add` method. Doing so adds a slicer to the [SlicerCollection](/javascript/api/excel/excel.slicercollection) of the specified `Workbook` or `Worksheet` object. The `SlicerCollection.add` method has three parameters:
+Create a slicer in a workbook or worksheet with the `slicers.add` method. This adds a slicer to the [SlicerCollection](/javascript/api/excel/excel.slicercollection) of the specified `Workbook` or `Worksheet` object. The `SlicerCollection.add` method has three parameters:
 
 - `slicerSource`: The data source on which the new slicer is based. It can be a `PivotTable`, `Table`, or string representing the name or ID of a `PivotTable` or `Table`.
 - `sourceField`: The field in the data source by which to filter. It can be a `PivotField`, `TableColumn`, or string representing the name or ID of a `PivotField` or `TableColumn`.
@@ -467,7 +472,7 @@ await Excel.run(async (context) => {
 
 #### Style and format a slicer
 
-You add-in can adjust a slicer's display settings through `Slicer` properties. The following code sample sets the style to **SlicerStyleLight6**, sets the text at the top of the slicer to **Fruit Types**, places the slicer at the position **(395, 15)** on the drawing layer, and sets the slicer's size to **135x150** pixels.
+Adjust a slicer's display settings with `Slicer` properties. The following code sample sets the style to **SlicerStyleLight6**, sets the text at the top of the slicer to **Fruit Types**, places the slicer at the position **(395, 15)** on the drawing layer, and sets the slicer's size to **135x150** pixels.
 
 ```js
 await Excel.run(async (context) => {

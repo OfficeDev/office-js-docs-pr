@@ -1,4 +1,4 @@
----
+﻿---
 title: Beginner's guide to Office Add-ins
 description:  A recommended path for beginners through the learning resources for Office Add-ins.
 ms.date: 06/25/2025
@@ -53,7 +53,7 @@ Get an understanding of the purposes of the add-in manifest and an introduction 
 
 ## Step 7: Create a Partner Center account
 
-If you plan to [publish your add-in to AppSource](../publish/publish.md), create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. Get this process going as soon as possible to avoid release delays.
+If you plan to [publish your add-in to Microsoft Marketplace](../publish/publish.md), create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. Get this process going as soon as possible to avoid release delays.
 
 ## Next Steps
 

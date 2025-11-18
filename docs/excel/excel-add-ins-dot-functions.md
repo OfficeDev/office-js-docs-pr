@@ -1,7 +1,7 @@
 ---
 title: Add reference methods to cell values
 description: Learn how to add reference methods to cell values.
-ms.date: 08/28/2025
+ms.date: 11/04/2025
 ms.localizationpriority: medium
 ---
 
@@ -134,24 +134,7 @@ function addValue(math, x): number[][] {
 }
 ```
 
-You can use any argument name that conforms to the Excel syntax rules in [Names in formulas](https://support.microsoft.com/office/names-in-formulas-fc2935f9-115d-4bef-a370-3aa8bb4c91f1). Because this is a math entity, the calling object argument is named `math`. The argument name can be used in the calculation. In the previous code sample, it retrieves the `math.[value]` property to perform the calculation.
-
-The following code sample shows the implementation of the `Contoso.addValue` function.
-
-```typescript
-/**
- * Adds x to the calling object.
- * @customfunction
- * @excludeFromAutoComplete
- * @param {any} math The math object (calling object).
- * @param {number} x The value to add.
- * @return {number[][]}  Sum.
- */
-function addValue(math, x): number[][] {  
-  const result: number = math.properties["value"].basicValue + x;
-  return [[result]];
-}
-```
+You can use any argument name that conforms to the Excel syntax rules in [Names in formulas](https://support.microsoft.com/office/names-in-formulas-fc2935f9-115d-4bef-a370-3aa8bb4c91f1). Because this is a math entity, the calling object argument is named `math`. The argument name can be used in the calculation.
 
 Note the following about the previous code sample.
 

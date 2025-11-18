@@ -1,7 +1,7 @@
----
+﻿---
 title: Task pane add-ins for Project
 description: Learn about task pane add-ins for Project.
-ms.date: 02/21/2024
+ms.date: 09/16/2025
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -9,48 +9,86 @@ ms.localizationpriority: medium
 
 # Task pane add-ins for Project
 
-Project on Windows supports custom task pane add-ins. Use these to handle selection events in Project and integrate task, resource, view, and other cell-level data in a project with SharePoint lists, SharePoint Add-ins, Web Parts, web services, and enterprise applications.
+Build custom task pane add-ins to extend Project with web integrations and streamlined workflows. Project add-ins help project managers consolidate critical information, manage resources, and collaborate with teams, all without leaving Project.
 
 For an introduction to Office Add-ins, see [Office Add-ins platform overview](../overview/office-add-ins.md).
 
-## Add-in scenarios for Project
-
-Project managers can use Project task pane add-ins to help with project management activities. Instead of leaving Project and opening another application to search for frequently used information, project managers can directly access the information within Project. The content in a task pane add-in can be context-sensitive, based on the selected task, resource, view, or other data in a cell in a Gantt chart, task usage view, or resource usage view.
-
 > [!NOTE]
-> With Project Professional, you can develop task pane add-ins that access Project on the web, on-premises installations of Project Server, and on-premises or online SharePoint. Project Standard doesn't support direct integration with Project Server data or SharePoint task lists that are synchronized with Project Server.
+> Project Professional supports task pane add-ins that can access Project on the web, on-premises Project Server installations, and SharePoint (both on-premises and online). Project Standard doesn't support direct integration with Project Server data or SharePoint task lists synchronized with Project Server.
 
-Add-in scenarios for Project include the following:
+## Project add-in scenarios
 
-- **Project scheduling**: View data from related projects that can affect scheduling. A task pane add-in can integrate relevant data from other projects in Project Server. For example, you can view the departmental collection of projects and milestone dates, or view specified data from other projects that are based on a selected custom field.
+Project task pane add-ins are context-sensitive, meaning they can respond to your currently selected task, resource, view, or Gantt chart data. This creates opportunities for targeted, relevant functionality that enhances your project management workflow.
 
-- **Resource management**: View the complete resource pool in Project Server or a subset based on specified skills, including cost data and resource availability, to help select appropriate resources.
+Here are the primary ways project managers use Project add-ins:
 
-- **Statusing and approvals**: Use a web application in a task pane add-in to update or view data from an external enterprise resource planning (ERP) application, timesheet system, or accounting application. Or, create a custom status approval Web Part that can be used within both Project Web App and Project Professional.
+### External system integration
 
-- **Team communication**: Communicate with team members and resources directly from a task pane add-in, within the context of a project. Or, easily maintain a set of context-sensitive notes for yourself as you work in a project.
+**Enterprise data connections**: Connect Project with external systems like ERP applications, timesheet systems, or accounting software. Pull relevant data into Project or push project updates to other business systems.
 
-- **Work packages**: Search for specified kinds of project templates within SharePoint libraries and online template collections. For example, find templates for construction projects and add them to your Project template collection.
+**Custom workflows**: Build approval processes and status update workflows that span multiple systems while keeping Project as the central planning tool.
 
-- **Related items**: View metadata, documents, and messages that are related to specific tasks in a project plan. For example, you can use Project Professional to manage a project that was imported from a SharePoint task list, and still synchronize the task list with changes in the project. A task pane add-in can show additional fields or metadata that Project didn't import for tasks in the SharePoint list.
+### Project Server and SharePoint integration
 
-- **Use the Project Server object models**: Use the GUID of a selected task with methods in the Project Server Interface (PSI) or the client-side object model (CSOM) of Project Server. For example, the web application for an add-in can read and update the statusing data of a selected task and resource, or integrate with an external timesheet application.
+**Project Server data access**: Use Project Server's REST APIs and OData services to access portfolio data, resource information, and reporting data. Integrate selected task or resource information with broader organizational project data.
 
-- **Get reporting data**: Use Representational State Transfer (REST), JavaScript, or LINQ queries to find related information for a selected task or resource in the OData service for reporting tables in Project Web App. Queries that use the OData service can be done with an online or an on-premises installation of Project Server.
+**SharePoint connectivity**: Connect with SharePoint libraries, lists, and workflows. Access project templates, document libraries, and team collaboration spaces directly from Project.
 
-    For example, see [Create a Project add-in that uses REST with an on-premises Project Server OData service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
+### Data visualization and reporting
 
-## Develop Project add-ins
+**Custom dashboards**: Create specialized views of project data by combining Project information with external data sources. Build reports and visualizations tailored to your organization's needs.
 
-Project supports add-ins made with the JavaScript API, but there's currently no JavaScript API designed specifically for interacting with Project. You can use the [Common API](/javascript/api/office) to create Project add-ins. For information about the Common API, see [Office JavaScript API object model](../develop/office-javascript-api-object-model.md).
+**Real-time data display**: Show live data from other systems alongside your project plan, helping you make informed decisions without switching applications.
 
-To create an add-in, you can use a simple text editor to create an HTML webpage and related JavaScript files, CSS files, and REST queries. In addition to an HTML page or a web application, an add-in requires an add-in only manifest file for configuration. Project can use a manifest file that includes a **type** attribute that's specified as **TaskPaneExtension**. The manifest file can be used by multiple Office client applications, or you can create a manifest file that's specific for Project. For more information, see the  _Development basics_ section in [Office Add-ins platform overview](../overview/office-add-ins.md).
+> [!TIP]
+> For a detailed example of Project Server integration, see [Create a Project add-in that uses REST with an on-premises Project Server OData service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
 
-Be sure to test your add-in as you develop it. Learn about testing and sideloading add-in in the article [Test Office Add-ins](../testing/test-debug-office-add-ins.md).
+## Build your Project add-in
 
-## Distribute Project add-ins
+Project add-ins use the Office JavaScript API to interact with Project data and integrate with external services. While there's no Project-specific JavaScript API, you can use the [Common API](/javascript/api/office) to create add-ins.
 
-You can distribute add-ins through a file share, an app catalog in a SharePoint library, or AppSource. For more information, see [Publish your Office Add-in](../publish/publish.md).
+### Development approach
+
+You have flexibility in how you build your Project add-in:
+
+- **Simple approach**: Create an HTML webpage with JavaScript, CSS, and REST queries using any text editor.
+- **Framework-based**: Use modern web frameworks like React, Angular, or Vue.js for more complex user interfaces.
+- **Server-side**: Build with ASP.NET, Node.js, PHP, or other server technologies for backend integration.
+
+### Required components
+
+Every Project add-in needs two key components:
+
+1. **Web application**: Your HTML, CSS, and JavaScript files that provide the user interface and functionality.
+2. **Manifest file**: An XML configuration file that tells Project how to integrate your add-in.
+
+The manifest file specifies the `TaskPaneExtension` type and can be shared across multiple Office applications or created specifically for Project. Learn more about manifests in the [Office Add-ins platform overview](../overview/office-add-ins.md).
+
+### Development best practices
+
+- **Test continuously**: Sideload and test your add-in frequently during development to catch issues early
+- **Start simple**: Begin with basic functionality and gradually add complexity
+- **Use familiar web technologies**: Leverage your existing HTML, CSS, and JavaScript skills
+
+> [!TIP]
+> Learn about testing and sideloading techniques in [Test Office Add-ins](../testing/test-debug-office-add-ins.md).
+
+## Share your Project add-in
+
+Once you've built your Project add-in, you have several options for distribution:
+
+- **File share**: Share manifest files through network file shares for small team or departmental deployments
+- **SharePoint app catalog**: Deploy through your organization's SharePoint app catalog for enterprise distribution
+- **Microsoft Marketplace**: Publish to Microsoft Marketplace to reach Project users worldwide
+
+Each distribution method has different benefits depending on your target audience and organizational requirements. Learn more about your options in [Publish your Office Add-in](../publish/publish.md).
+
+## Get started
+
+Ready to being building your first Project add-in? Build an add-in in minutes by following with this quick start.
+
+> [!div class="nextstepaction"]
+> [Get started with your first Project add-in](../quickstarts/project-quickstart.md)
 
 ## See also
 

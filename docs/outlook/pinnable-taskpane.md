@@ -1,7 +1,7 @@
 ﻿---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 08/01/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -46,7 +46,6 @@ Add a `"pinnable"` property, set to `true`, to the object in the [`"actions"`](/
         "id": "OpenTaskPane",
         "type": "openPage",
         "view": "TaskPaneView",
-        "displayName": "OpenTaskPane",
         "pinnable": true
     }
 ]
@@ -127,13 +126,11 @@ Office.onReady(() => {
 
 ## Task pane pinning in multi-select
 
-In Outlook on the web, on Mac, and in the new Outlook on Windows, when the task pane of an add-in that implements the [item multi-select](item-multi-select.md) feature is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
-
-Conversely, in classic Outlook on Windows, the task pane of a multi-select add-in isn't automatically pinned and closes when a user switches to a different mail item.
+[!INCLUDE [outlook-multi-select-pinning](../includes/outlook-multi-select-pinning.md)]
 
 ## Deploy to users
 
-If you plan to [publish](../publish/publish.md) your Outlook add-in to [AppSource](https://appsource.microsoft.com) and it's configured with a pinnable task pane, the pinned content of the add-in must not be static. That is, the pinned content must change depending on the message or appointment that's currently open or selected in the mailbox. This ensures that your add-in will pass [AppSource validation](/legal/marketplace/certification-policies).
+If you plan to [publish](../publish/publish.md) your Outlook add-in to [Microsoft Marketplace](https://marketplace.microsoft.com) and it's configured with a pinnable task pane, the pinned content of the add-in must not be static. That is, the pinned content must change depending on the message or appointment that's currently open or selected in the mailbox. This ensures that your add-in will pass [Microsoft Marketplace validation](/legal/marketplace/certification-policies).
 
 ## See also
 

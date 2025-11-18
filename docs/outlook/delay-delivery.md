@@ -1,17 +1,23 @@
----
+﻿---
 title: Manage the delivery date and time of a message
-description: Learn how to get and set the delivery date and time of a message in compose mode.
-ms.date: 09/27/2024
+description: Learn how to schedule message delivery with the Office JavaScript API.
+ms.date: 10/30/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Manage the delivery date and time of a message
 
-The Outlook client gives you the option to delay the delivery of a message, but requires you to keep Outlook and your device running to send it at the specified time. With the Office JavaScript API, you can now implement an Outlook add-in that sends scheduled messages even with your Outlook client closed or with your device turned off. This capability provides your users with the convenience to schedule email marketing campaigns or time a message to be delivered during a colleague or customer's business hours.
+Learn to build an Outlook add-in that schedules and sends messages even when the Outlook client is closed or the device is turned off. With the Office JavaScript API, your users can conveniently schedule email marketing campaigns or time messages for delivery during colleagues' or customers' business hours.
 
 > [!NOTE]
 > Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+
+## Try it out
+
+See the message delivery API in action. Install the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/wa200001603) and try out the "Get and set message delivery (Message Compose)" sample snippet. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+
+:::image type="content" source="../images/outlook-delay-delivery-script-lab.png" alt-text="The message delivery sample snippet in Script Lab.":::
 
 ## Configure the manifest
 
@@ -70,12 +76,8 @@ When you schedule the delivery of a message using the `item.delayDeliveryTime.se
 
 The `item.delayDeliveryTime.setAsync` behavior differs from a message scheduled using the native **Delay Delivery** option in the Outlook client, which processes the delay client-side. A message scheduled using this option appears in the **Outbox** folder and is only delivered if the Outlook client from which it was sent is running at the specified delivery time.
 
-## Try sample snippets in Script Lab
-
-Get the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/wa200001603) and try out the "Get and set message delivery (Message Compose)" sample snippet. To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
-
-:::image type="content" source="../images/outlook-delay-delivery-script-lab.png" alt-text="The message delivery sample snippet in Script Lab.":::
-
 ## See also
 
-- [Create Outlook add-ins for compose forms](compose-scenario.md)
+- [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
+- [Get, set, or add recipients to an appointment or message in Outlook](get-set-or-add-recipients.md)
+- [Get or set the subject when composing an appointment or message in Outlook](get-or-set-the-subject.md)

@@ -1,7 +1,7 @@
 ﻿---
 title: Create a Node.js Office Add-in that uses single sign-on
 description: Learn how to create a Node.js-based add-in that uses Office Single Sign-on.
-ms.date: 05/20/2023
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -88,7 +88,7 @@ Use the following values for placeholders for the subsequent app registration st
 1. Replace the placeholder "$app-id-guid$" _in both places_ in the markup with the **Application ID** that you copied when you created the **Office-Add-in-NodeJS-SSO** app registration. The "$" symbols are not part of the ID, so don't include them. This is the same ID you used for the CLIENT_ID in the .ENV file.
 
    > [!NOTE]
-   > The `<Resource>` value is the **Application ID URI** you set when you registered the add-in. The `<Scopes>` section is used only to generate a consent dialog box if the add-in is sold through AppSource.
+   > The `<Resource>` value is the **Application ID URI** you set when you registered the add-in. The `<Scopes>` section is used only to generate a consent dialog box if the add-in is sold through Microsoft Marketplace.
 
 1. Open the `\public\javascripts\fallback-msal\authConfig.js` file. Replace the placeholder "$app-id-guid$" with the application ID that you saved from the **Office-Add-in-NodeJS-SSO** app registration you created previously.
 
@@ -98,10 +98,7 @@ Use the following values for placeholders for the subsequent app registration st
 
 ### Call our web server REST API
 
-1. In your code editor, open the file `public\javascripts\ssoAuthES6.js`. It already has code that ensures that Promises are supported, even in the Trident (Internet Explorer 11) webview control, and an `Office.onReady` call to assign a handler to the add-in's only button.
-
-   > [!NOTE]
-   > As the name suggests, the ssoAuthES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will support Trident.
+1. In your code editor, open the file `public\javascripts\ssoAuthES6.js`. It already has an `Office.onReady` call to assign a handler to the add-in's only button.
 
 1. In the `getFileNameList` function, replace `TODO 1` with the following code. About this code, note:
 

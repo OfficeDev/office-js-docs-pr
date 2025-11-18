@@ -114,7 +114,7 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
     ```js
     const docBody = context.document.body;
-    docBody.insertParagraph("Office has several versions, including Office 2016, Microsoft 365 subscription, and Office on the web.",
+    docBody.insertParagraph("Office has several versions, including Office 2021, Microsoft 365 subscription, and Office on the web.",
                             Word.InsertLocation.start);
     ```
 
@@ -441,7 +441,7 @@ async function insertTextIntoRange() {
 
 1. Within the `insertTextBeforeRange()` function, replace `TODO1` with the following code. Note:
 
-   - The function is intended to add a range whose text is "Office 2019, " before the range with text "Microsoft 365". It makes an assumption that the string is present and the user has selected it.
+   - The function is intended to add a range whose text is "Office 2024, " before the range with text "Microsoft 365". It makes an assumption that the string is present and the user has selected it.
 
    - The first parameter of the `Range.insertText` method is the string to add.
 
@@ -450,7 +450,7 @@ async function insertTextIntoRange() {
     ```js
     const doc = context.document;
     const originalRange = doc.getSelection();
-    originalRange.insertText("Office 2019, ", Word.InsertLocation.before);
+    originalRange.insertText("Office 2024, ", Word.InsertLocation.before);
     ```
 
 1. Within the `insertTextBeforeRange()` function, replace `TODO2` with the following code.
@@ -533,7 +533,7 @@ async function insertTextIntoRange() {
 
 1. Within the document, select the phrase "Microsoft 365". *Be careful not to include the preceding or following space in the selection.*
 
-1. Choose the **Add Version Info** button. Note that "Office 2019, " is inserted between "Office 2016" and "Microsoft 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
+1. Choose the **Add Version Info** button. Note that "Office 2024, " is inserted between "Office 2021" and "Microsoft 365". Note also that at the bottom of the document a new paragraph is added but it contains only the originally selected text because the new string became a new range rather than being added to the original range.
 
 1. Within the document, select the word "several". *Be careful not to include the preceding or following space in the selection.*
 

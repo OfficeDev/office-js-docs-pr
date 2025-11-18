@@ -1,7 +1,7 @@
 ﻿---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 08/01/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -80,13 +80,11 @@ To configure the manifest, select the tab for the type of manifest you're using.
         "actions": [
             {
                 "id": "onNewMessageComposeHandler",
-                "type": "executeFunction",
-                "displayName": "onNewMessageComposeHandler"
+                "type": "executeFunction"
             },
             {
                 "id": "onNewAppointmentComposeHandler",
-                "type": "executeFunction",
-                "displayName": "onNewAppointmentComposeHandler"
+                "type": "executeFunction"
             }
         ]
     }

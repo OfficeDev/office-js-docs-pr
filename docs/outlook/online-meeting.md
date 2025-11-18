@@ -1,7 +1,7 @@
 ﻿---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 08/07/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -76,8 +76,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
         "actions": [
             {
                 "id": "insertContosoMeeting",
-                "type": "executeFunction",
-                "displayName": "insertContosoMeeting"
+                "type": "executeFunction"
             }
         ]
     }
@@ -458,7 +457,7 @@ Registering your online-meeting add-in is optional. It only applies if you want 
 > [!IMPORTANT]
 >
 > - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows.
-> - Only online-meeting add-ins published to AppSource can be registered. Line-of-business add-ins aren't supported.
+> - Only online-meeting add-ins published to Microsoft Marketplace can be registered. Line-of-business add-ins aren't supported.
 
 1. Create a [new GitHub issue](https://github.com/OfficeDev/office-js/issues/new).
 1. Set the **Title** of the new issue to "Outlook: Register the online-meeting template for my-service", replacing `my-service` with your service name.

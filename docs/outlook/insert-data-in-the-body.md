@@ -1,7 +1,7 @@
----
+﻿---
 title: Get or set the body of a message or appointment in Outlook
 description: Learn how to get or insert data into the body of an appointment or message of an Outlook add-in.
-ms.date: 06/03/2025
+ms.date: 10/23/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -32,20 +32,24 @@ Office.context.mailbox.item.body.getAsync(Office.CoercionType.Html, (bodyResult)
 });
 ```
 
-## Get the body of message replies in Outlook on the web or the new Outlook on Windows
+## Get the body of message replies in Outlook on the web, on mobile, or in the new Outlook on Windows
 
-In Outlook on the web and the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), users can organize their messages as conversations or individual messages in **Settings** > **Mail** > **Layout** > **Message organization**. This setting affects how much of a message's body is displayed to the user, particularly in conversation threads with multiple messages. Depending on the setting, the contents of the entire conversation thread or just the current message is displayed. For more information on the **Message Organization** setting, see [Change how the message list is displayed in Outlook](https://support.microsoft.com/office/57fe0cd8-e90b-4b1b-91e4-a0ba658c0042).
+In Outlook on the web, on mobile devices, and in the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), when you call `Office.context.mailbox.item.body.getAsync` on a message reply, the entire body of a conversation thread is returned. If you only need the current reply, you can specify the [bodyMode](/javascript/api/outlook/office.mailboxenums.bodymode) option in the `getAsync` call.
 
-When you call `Office.context.mailbox.item.body.getAsync` on a message reply, the entire body of a conversation thread is returned. If you want the returned body to reflect the user's **Message Organization** setting, you can specify the [bodyMode](/javascript/api/outlook/office.mailboxenums.bodymode) option in the `getAsync` call. The following table lists the portion of the body returned depending on the `bodyMode` configuration.
+In Outlook on the web and the new Outlook on Windows, you can use the `bodyMode` option to reflect a user's **Message Organization** setting. Users can organize their messages as conversations or individual messages in **Settings** > **Mail** > **Layout** > **Message organization**. This setting affects how much of a message's body is displayed to the user, particularly in conversation threads with multiple messages. Depending on the setting, the contents of the entire conversation thread or just the current message is displayed. For more information on the **Message Organization** setting, see [Change how the message list is displayed in Outlook](https://support.microsoft.com/office/57fe0cd8-e90b-4b1b-91e4-a0ba658c0042).
 
-| bodyMode configuration | Effect on body |
+The following table lists the portion of the body returned depending on the `bodyMode` configuration.
+
+| `bodyMode` configuration | Effect on body returned |
 | ----- | ----- |
-| `bodyMode` isn't specified in the `getAsync` call | The entire body of the conversation thread is returned. |
-| `bodyMode` is set to `Office.MailboxEnums.BodyMode.FullBody` | The entire body of the conversation thread is returned. |
-| `bodyMode` is set to `Office.MailboxEnums.BodyMode.HostConfig` | If **Message Organization** is set to **Group messages by conversation** > **All messages from the selected conversation** or **Show email grouped by conversation** > **Newest on top**/**Newest on bottom**, only the body of the current reply is returned.<br><br>If **Message Organization** is set to **Individual messages: Do not group messages** > **Only a single message** or **Show email as individual messages**, the entire body of the conversation thread is returned. |
+| `bodyMode` isn't specified in the `getAsync` call | The entire body of the conversation thread is returned. However, in Outlook on mobile, while in quick reply mode (the reply field at the bottom of the message), only the body of the current reply is returned. |
+| `bodyMode` is set to `Office.MailboxEnums.BodyMode.FullBody` | The entire body of the conversation thread is returned. However, in Outlook on mobile, while in quick reply mode, only the body of the current reply is returned. |
+| `bodyMode` is set to `Office.MailboxEnums.BodyMode.HostConfig` | In Outlook on the web and the new Outlook on Windows, if **Message Organization** is set to **Group messages by conversation** > **All messages from the selected conversation** or **Show email grouped by conversation** > **Newest on top**/**Newest on bottom**, only the body of the current reply is returned. Conversely, if **Message Organization** is set to **Individual messages: Do not group messages** > **Only a single message** or **Show email as individual messages**, the entire body of the conversation thread is returned.<br><br>In Outlook on mobile, only the body of the current reply is returned. |
 
 > [!NOTE]
-> The `bodyMode` option is ignored in Outlook on Windows (classic), on Mac, and on mobile devices.
+>
+> - In Outlook on mobile devices, the `bodyMode` option is available starting with Version 4.2538.0.
+> - The `bodyMode` option is ignored in Outlook on Windows (classic) and on Mac.
 
 The following example specifies the `bodyMode` option to honor the user's message setting.
 
@@ -68,7 +72,7 @@ Office.context.mailbox.item.body.getAsync(
 
 # [Set body](#tab/set)
 
-Use the asynchronous methods ([Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)), [Body.getTypeAsync](/javascript/api/outlook/office.body#outlook-office-body-gettypeasync-member(1)), [Body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1)), [Body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(1)) and [Body.setSelectedDataAsync](/javascript/api/outlook/office.body#outlook-office-body-setselecteddataasync-member(1))) to get the body type then insert data in the body of an appointment or message being composed. These asynchronous methods are only available to compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately so that Outlook activates your add-in in compose forms, as described in [Create Outlook add-ins for compose forms](compose-scenario.md).
+Use the asynchronous methods ([Body.getAsync](/javascript/api/outlook/office.body#outlook-office-body-getasync-member(1)), [Body.getTypeAsync](/javascript/api/outlook/office.body#outlook-office-body-gettypeasync-member(1)), [Body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1)), [Body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(1)) and [Body.setSelectedDataAsync](/javascript/api/outlook/office.body#outlook-office-body-setselecteddataasync-member(1))) to get the body type then insert data in the body of an appointment or message being composed. These asynchronous methods are only available to compose add-ins. To use these methods, make sure you have set up the add-in manifest appropriately so that Outlook activates your add-in in compose forms.
 
 In Outlook, a user can create a message in text, HTML, or Rich Text Format (RTF), and can create an appointment in HTML format. Before inserting data, you must first verify the supported item format by calling `getTypeAsync`, as you may need to take additional steps. The value that `getTypeAsync` returns depends on the original item format, as well as the support of the device operating system and application to edit in HTML format. Once you've verified the item format, set the `coercionType` parameter of `prependAsync` or `setSelectedDataAsync` accordingly to insert the data, as shown in the following table. If you don't specify an argument, `prependAsync` and `setSelectedDataAsync` assume the data to insert is in text format.
 
@@ -262,9 +266,8 @@ Get the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/
 
 ## See also
 
-- [Create Outlook add-ins for compose forms](compose-scenario.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Prepend or append content to a message or appointment body on send](append-on-send.md)
 - [Limits for activation and JavaScript API for Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-- [Get, set, or add recipients when composing an appointment or message in Outlook](get-set-or-add-recipients.md)
+- [Get, set, or add recipients to an appointment or message in Outlook](get-set-or-add-recipients.md)
 - [Get or set the subject when composing an appointment or message in Outlook](get-or-set-the-subject.md)

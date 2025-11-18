@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code
 description: Learn how to create Office Add-in projects using Office Add-ins Development Kit extension.
-ms.date: 12/19/2024
+ms.date: 10/08/2025
 ms.localizationpriority: high
 ---
 

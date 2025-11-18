@@ -2,7 +2,7 @@
 title: Run code in your Office Add-in when the document opens
 description: Learn how to run code in your Office Add-in add-in when the document opens.
 ms.topic: how-to
-ms.date: 07/11/2023
+ms.date: 09/22/2025
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 [!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible. 
+You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
 > [!NOTE]
 > The configuration is implemented with a method that your code calls at runtime. This means that the add-in *won't* run the *first time* a user opens the document. The add-in must be opened manually for the first time on any document. After the method runs, either in [Office.initialize](/javascript/api/office#office-office-initialize-function(1)), [Office.onReady](/javascript/api/office#office-office-onready-function(1)), or because the user takes a code path that runs it; then whenever the document is reopened, the add-in loads immediately and any code in the `Office.initialize` or `Office.onReady` method runs.
@@ -110,3 +110,4 @@ let behavior = await Office.addin.getStartupBehavior();
 - [Share data and events between Excel custom functions and task pane tutorial](../tutorials/share-data-and-events-between-custom-functions-and-the-task-pane-tutorial.md)
 - [Work with Events using the Excel JavaScript API](../excel/excel-add-ins-events.md)
 - [Runtimes in Office Add-ins](../testing/runtimes.md)
+- [Managing trust options for Office Add-ins](../publish/manage-trust-options.md)

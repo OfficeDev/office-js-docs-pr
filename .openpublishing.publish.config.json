@@ -29,6 +29,8 @@
         "excel-js-1.17",
         "excel-js-1.18",
         "excel-js-1.19",
+        "excel-js-1.20",
+        "excel-js-desktop-1.1",
         "excel-js-online",
         "onenote-js-1.1",
         "outlook-js-preview",
@@ -73,6 +75,8 @@
         "word-js-1.5-hidden-document",
         "word-js-desktop-1.1",
         "word-js-desktop-1.2",
+        "word-js-desktop-1.3",
+        "word-js-desktop-1.4",
         "word-js-online"
       ],
       "open_to_public_contributors": true,
@@ -105,6 +109,18 @@
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
       "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "docs/reusable-content",
+      "url": "https://github.com/MicrosoftDocs/reusable-content/",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "docs/Outlook-Add-in-GifMe",
+      "url": "https://github.com/OfficeDev/Outlook-Add-in-GifMe",
+      "branch": "master",
       "branch_mapping": {}
     }
   ],

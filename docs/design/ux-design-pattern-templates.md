@@ -1,7 +1,7 @@
 ---
 title: UX design patterns for Office Add-ins
 description: Get an overview of the UI design patterns for Office Add-ins, including patterns for navigation, authentication, first-run, and branding.
-ms.date: 06/27/2023
+ms.date: 10/29/2025
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -36,7 +36,7 @@ The patterns are organized by key actions or experiences that are common in an a
 Browse each grouping to get an idea of how you can design your add-in using best practices.
 
 > [!NOTE]
-> The example screens shown throughout this documentation are designed and displayed at a resolution of **1366x768**.
+> The example screens shown throughout the design pattern documentation are designed and displayed at a resolution of **1366x768**.
 
 ## See also
 

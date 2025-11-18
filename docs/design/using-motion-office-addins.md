@@ -1,7 +1,7 @@
 ---
 title: Using motion in Office Add-ins
 description: Get best practices for using transitions, motion, or animation in Office Add-ins.
-ms.date: 06/27/2023
+ms.date: 10/29/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -34,7 +34,7 @@ We recommend using [Fluent UI](../design/add-in-design.md) to create a visual co
 - [Fluent UI React motion patterns](https://react.fluentui.dev/?path=/docs/theme-motion--page)
 - [Fabric Core motion and animation patterns](https://developer.microsoft.com/fluentui#/styles/web/motion)
 
-Use it to fit seamlessly in your add-in. It will help you create experiences that are more felt than observed. The animation CSS classes provide directionality, enter/exit, and duration specifics that reinforce Office mental models and provide opportunities for customers to learn how to interact with your add-in.
+Use it to fit seamlessly in your add-in. It will help you create experiences that are more felt than observed. The animation CSS classes provide directionality, enter, exit, and duration specifics that reinforce Office mental models and provide opportunities for customers to learn how to interact with your add-in.
 
 ### Best practices
 

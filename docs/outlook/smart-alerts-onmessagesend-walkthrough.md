@@ -1,7 +1,7 @@
 ﻿---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 08/26/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -62,8 +62,7 @@ To configure the manifest, select the tab for the type of manifest you are using
         "actions": [
             {
                 "id": "onMessageSendHandler",
-                "type": "executeFunction",
-                "displayName": "onMessageSendHandler"
+                "type": "executeFunction"
             }
         ]
     }
@@ -735,6 +734,6 @@ If you implemented the optional step to override the send mode option at runtime
 - [Office Add-in manifests](../develop/add-in-manifests.md)
 - [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Debug event-based and spam-reporting add-ins](../testing/debug-autolaunch.md)
-- [AppSource listing options for your event-based add-in](../publish/autolaunch-store-options.md)
+- [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md)
 - [Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
 - [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)

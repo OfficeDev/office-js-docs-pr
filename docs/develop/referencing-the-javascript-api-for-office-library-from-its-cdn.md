@@ -1,4 +1,4 @@
----
+﻿---
 title: Referencing the Office JavaScript API library
 description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
 ms.date: 01/14/2025
@@ -23,7 +23,7 @@ This will download and cache the Office JavaScript API files the first time your
 
 ## Office.js-specific web API behavior
 
-Office.js replaces the default [Window.history](https://developer.mozilla.org/docs/Web/API/History) methods of `replaceState` and `pushState` with `null`. This is done to [support older Microsoft webviews and Office versions](support-ie-11.md). If your add-in relies on these methods and doesn't need to run on Office versions that use the Internet Explorer 11 browser control, replace the Office.js library reference with the following workaround.
+Office.js replaces the default [Window.history](https://developer.mozilla.org/docs/Web/API/History) methods of `replaceState` and `pushState` with `null`. If your add-in relies on these methods, replace the Office.js library reference with the following workaround.
 
 ```HTML
 <script type="text/javascript">
@@ -50,7 +50,7 @@ Thank you to [@stepper and the Stack Overflow community](https://stackoverflow.c
 
 In the previous HTML snippet, the `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the Office JavaScript API maintains backward compatibility, the latest release will continue to support API members that were introduced earlier in version 1.
 
-If you plan to publish your Office Add-in from AppSource, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
+If you plan to publish your Office Add-in from Microsoft Marketplace, you must use this CDN reference. Local references are only appropriate for internal, development, and debugging scenarios.
 
 > [!NOTE]
 > To use preview APIs, reference the preview version of the Office JavaScript API library on the CDN: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.

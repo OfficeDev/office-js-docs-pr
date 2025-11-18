@@ -1,7 +1,7 @@
----
+﻿---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 05/19/2025
+ms.date: 10/08/2025
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -126,7 +126,7 @@ Get the latest version of Visual Studio Code from [Visual Studio Code homepage](
 
 ### Install a project creation tool
 
-You can create Office add-in projects in Visual Studio Code with either Agents Toolkit or Office Add-ins Development Kit extensions. Currently, the Office Add-ins Development Kit is in preview and only focuses on Excel, PowerPoint, and Word experiences.
+You can create Office add-in projects in Visual Studio Code with either Agents Toolkit or Office Add-ins Development Kit extensions. The Office Add-ins Development Kit currently focuses on Excel, PowerPoint, and Word experiences.
 
 #### Install Agents Toolkit
 
@@ -155,7 +155,7 @@ Install the latest version of Visual Studio from [Visual Studio Downloads](https
 
 ## Install Script Lab
 
-Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from AppSource at [Script Lab](https://appsource.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
+Script Lab is a tool for quickly prototyping code that calls the Office JavaScript Library APIs. Script Lab is itself an Office Add-in and can be installed from Microsoft Marketplace at [Script Lab](https://marketplace.microsoft.com/marketplace/apps?search=script%20lab&page=1). There's a version for Excel, PowerPoint, and Word, and a separate version for Outlook. For information about how to use Script Lab, see [Explore Office JavaScript API using Script Lab](explore-with-script-lab.md).
 
 ## Next steps
 

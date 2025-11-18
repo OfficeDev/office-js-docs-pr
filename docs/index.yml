@@ -1,4 +1,4 @@
-### YamlMime:Hub
+﻿### YamlMime:Hub
 
 title: Office Add-ins documentation # < 60 chars
 summary: Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents and in Outlook mail messages and calendar items. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build solutions that can run in Office on the web, Windows, Mac, and mobile. # < 160 chars
@@ -135,7 +135,7 @@ conceptualContent:
       links:
         - url: /partner-center/marketplace-offers/open-a-developer-account
           itemType: overview
-          text: Create a Partner Center account for AppSource
+          text: Create a Partner Center account for Microsoft Marketplace
         - url: /partner-center/marketplace-offers/checklist
           itemType: overview
           text: Validate your Office Add-in

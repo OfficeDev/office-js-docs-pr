@@ -1,4 +1,4 @@
----
+﻿---
 title: Publish an add-in that requires admin consent for Microsoft Graph scopes
 description: Learn how to publish updates to an Office Add-in to use Microsoft Graph scopes and require admin consent.
 ms.service: microsoft-365
@@ -55,7 +55,7 @@ https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=63e6
 
 ## Get admin consent via the unified manifest
 
-You can also get admin consent as an automatic part of the deployment workflow when your add-in is deployed. To do this, add the `webApplicationInfo` property to your unified manifest. Then the admin deploys the updated manifest, either through central deployment, or from an update through Microsoft AppSource. When the admin deploys the updated manifest, they are automatically prompted to consent to the scopes required by the add-in. If they don't consent, the updated add-in will not deploy.
+You can also get admin consent as an automatic part of the deployment workflow when your add-in is deployed. To do this, add the `webApplicationInfo` property to your unified manifest. Then the admin deploys the updated manifest, either through central deployment, or from an update through Microsoft Marketplace. When the admin deploys the updated manifest, they are automatically prompted to consent to the scopes required by the add-in. If they don't consent, the updated add-in will not deploy.
 
 ### Add Graph scopes to app registration
 
@@ -102,13 +102,13 @@ To get admin consent as part of the deployment workflow, add the `webApplication
 
 ### Deploy the updated manifest
 
-If you deployed your add-in through Microsoft AppSource, you'll need to submit your updated unified manifest for approval. For more information, see [Microsoft AppSource submission FAQ](/partner-center/marketplace-offers/appsource-submission-faq).
+If you deployed your add-in through Microsoft Marketplace, you'll need to submit your updated unified manifest for approval. For more information, see [Microsoft Marketplace submission FAQ](/partner-center/marketplace-offers/appsource-submission-faq).
 
 If you deployed your add-in by providing the manifest to admins for central deployment, you'll need to provide admins with an updated [app package](/microsoftteams/platform/concepts/build-and-test/apps-package) that contains the updated manifest.
 
 ## Related content
 
-- [Microsoft AppSource submission FAQ](/partner-center/marketplace-offers/appsource-submission-faq)
+- [Microsoft Marketplace submission FAQ](/partner-center/marketplace-offers/appsource-submission-faq)
 - [Admin consent on the Microsoft identity platform](/entra/identity-platform/v2-admin-consent)
 - [Requesting permissions through consent](/entra/identity-platform/consent-types-developer)
 - [webApplicationInfo property](/microsoft-365/extensibility/schema/root#webapplicationinfo)

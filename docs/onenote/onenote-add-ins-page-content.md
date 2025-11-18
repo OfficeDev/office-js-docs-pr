@@ -1,7 +1,7 @@
 ---
 title: Work with OneNote page content
 description: Learn how to work with OneNote page content using the JavaScript API.
-ms.date: 03/19/2019
+ms.date: 09/24/2025
 ms.localizationpriority: medium
 ---
 
@@ -45,12 +45,12 @@ The OneNote add-in JavaScript API supports the following HTML for creating and u
 > [!NOTE]
 > Importing HTML into OneNote consolidates whitespace. The resulting content is pasted into one outline.
 
-OneNote does its best to translate HTML into page content while ensuring security for users. HTML and CSS standards do not exactly match OneNote's content model, so there will be differences in appearances, particularly with CSS stylings. We recommend using the JavaScript objects if specific formatting is needed.
+OneNote does its best to translate HTML into page content while ensuring security for users. HTML and CSS standards don't exactly match OneNote's content model, so there will be differences in appearance, particularly with CSS styling. We recommend using the JavaScript objects if specific formatting is needed.
 
-## Accessing page contents
+## Access page content
 
-You are only able to access *Page Content* via `Page#load` for the currently
-active page. To change the active  page, invoke `navigateToPage($page)`.
+
+You can only access *Page Content* via `Page#load` for the currently active page. To change the active page, invoke `navigateToPage($page)`.
 
 Metadata such as title can still be queried for any page.
 
@@ -58,5 +58,5 @@ Metadata such as title can still be queried for any page.
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
 - [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+- [Sample: Rubric grader task pane add-in for OneNote on the web](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
