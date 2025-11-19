@@ -218,11 +218,9 @@
           - name: Color
             href: design/add-in-color.md
           - name: Icons
-            items:
-            - name: Icon guidelines
-              href: design/add-in-icons.md
-            - name: Monoline style
-              href: design/add-in-icons-monoline.md
+            href: design/add-in-icons.md
+          - name: Design icons for add-in acquisition and management
+            href: design/microsoft-365-extension-management-icons.md
           - name: Layout
             href: design/add-in-layout.md
           - name: Motion
