@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 10/10/2025
+ms.date: 11/27/2025
 ms.localizationpriority: high
 ---
 
@@ -15,9 +15,9 @@ This article introduces the unified app manifest for Microsoft 365. It assumes t
 > - For an overview of the add-in only manifest, see [Office Add-ins with the add-in only manifest](xml-manifest-overview.md).
 > - If you're familiar with the add-in only manifest, you might get a grasp on the JSON-formatted unified manifest easier by reading [Compare the add-in only manifest with the unified manifest for Microsoft 365](json-manifest-overview.md).
 
-Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of extensions of Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
+Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of apps for Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
 
-One important improvement is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema.
+One important improvement is the ability to create a single unit of distribution for multiple types of apps for Microsoft 365 by using a single manifest and app package. For example an Office add-in can be combined with a custom Teams tab into a single app for Microsoft 365. 
 
 > [!TIP]
 > Ready to get started with the unified manifest? Begin with [Build an Outlook add-in with the unified manifest for Microsoft 365](../quickstarts/outlook-quickstart-json-manifest.md).
@@ -73,24 +73,20 @@ To override this behavior in desktop platforms, add each domain you want to open
 
 ## Client and platform support
 
-Add-ins that use the unified manifest can be installed if the Office platform *directly* supports it.
+Add-ins that use the unified manifest can't be installed on all platforms. We're working hard to bring support to all platforms. In the meantime, to take advantage of the possibilities unlocked by the unified manifest, but still provide an add-in to users on unsupported platforms, you must create and deploy two versions of the add-in; one that uses the unified manifest and one that uses the add-in only manifest. For guidance about managing the two versions, see [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins).
 
-To run an add-in on platforms that don't directly support the unified manifest, you must publish the add-in to [Microsoft Marketplace](https://marketplace.microsoft.com/). Then, deploy the add-in in the [Microsoft 365 admin center](../publish/publish.md). This way, an add-in only manifest is generated from the unified manifest and stored. The add-in only manifest is then used to install the add-in on platforms that don't directly support the unified manifest.
 
-The following tables lists which Office platforms directly support add-ins that use the unified manifest.
+The following tables lists which Office platforms support add-ins that use the unified manifest.
 
-| Client/platform | Support for add-ins with the unified manifest|
+| Client/platform | Supports add-ins with the unified manifest|
 | ----- | ----- |
-| Office on the web | Directly supported |
-| Office on Windows (Version 2304 (Build 16320.00000) or later) connected to a Microsoft 365 subscription | Directly supported |
-| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Directly supported |
-| Office on Windows (prior to Version 2304 (Build 16320.00000)) connected to a Microsoft 365 subscription | Not directly supported |
-| Office on Windows (perpetual versions) | Not directly supported |
-| Office on Mac | Not directly supported |
-| Office on mobile | Not directly supported |
-
-> [!NOTE]
-> If you're deploying an add-in in the [Microsoft 365 admin center](../publish/publish.md#integrated-apps-portal-in-the-microsoft-365-admin-center) and require it to run on platforms that don't directly support the unified manifest, the add-in must be a published Microsoft Marketplace add-in. Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can be deployed in the [Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) of the Microsoft 365 admin center, but they won't be installable on Office versions that don't directly support the unified manifest.
+| Office on the web | Yes |
+| Office on Windows (Version 2304 (Build 16320.00000) or later) connected to a Microsoft 365 subscription | Yes |
+| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes |
+| Office on Windows (prior to Version 2304 (Build 16320.00000)) connected to a Microsoft 365 subscription | No |
+| Office on Windows (perpetual versions) | No |
+| Office on Mac | No |
+| Office on mobile | No |
 
 ## Sample unified manifest
 
@@ -129,10 +125,6 @@ The following is an example of a unified app manifest for an add-in. It doesn't 
         "file": "es-es.json"
       }
     ]
-  },
-  "webApplicationInfo": {
-    "id": "00000000-0000-0000-0000-000000000000",
-    "resource": "api://www.contoso.com/prodapp"
   },
   "authorization": {
     "permissions": {
@@ -359,38 +351,6 @@ The following is an example of a unified app manifest for an add-in. It doesn't 
                   "controls": [
                     {
                       "id": "msgReadFunctionButton",
-                      "type": "mobileButton",
-                      "label": "Action 1",
-                      "icons": [
-                        {
-                          "size": 16,
-                          "url": "test_16.png"
-                        },
-                        {
-                          "size": 32,
-                          "url": "test_32.png"
-                        },
-                        {
-                          "size": 80,
-                          "url": "test_80.png"
-                        }
-                      ],
-                      "supertip": {
-                        "title": "Action 1 Title",
-                        "description": "Action 1 Description"
-                      },
-                      "actionId": "action1"
-                    }
-                  ]
-                }
-              ]
-              "customMobileRibbonGroups": [
-                {
-                  "id": "mobileDashboard",
-                  "label": "Controls",
-                  "controls": [
-                    {
-                      "id": "control1",
                       "type": "mobileButton",
                       "label": "Action 1",
                       "icons": [
