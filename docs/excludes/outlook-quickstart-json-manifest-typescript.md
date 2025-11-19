@@ -1,7 +1,7 @@
 ﻿---
 title: Build an Outlook add-in with the unified manifest for Microsoft 365
 description: Learn how to build a simple Outlook task pane add-in with the unified manifest for Microsoft 365.
-ms.date: 05/19/2025
+ms.date: 11/18/2025
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -173,8 +173,7 @@ Add a custom button to the ribbon that inserts text into a message body.
         "actions": [
             {
                 "id": "insertHelloWorld",
-                "type": "executeFunction",
-                "displayName": "insertHelloWorld"
+                "type": "executeFunction"
             }
         ]
     }

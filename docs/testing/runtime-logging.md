@@ -1,16 +1,13 @@
 ---
 title: Debug your add-in with runtime logging
 description: Learn how to use runtime logging to debug your add-in.
-ms.date: 11/08/2024
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
 # Debug your add-in with runtime logging
 
 You can use runtime logging to debug your add-in's manifest as well as several installation errors. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.
-
-> [!NOTE]
-> The runtime logging feature is currently available for Office 2016 or later on desktop.
 
 > [!IMPORTANT]
 > Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
@@ -53,8 +50,6 @@ Enabling runtime logging from the command line is the fastest way to use this lo
     ```
 
 ## Runtime logging on Mac
-
-1. Make sure that you are running Office 2016 desktop build **16.27.19071500** or later.
 
 1. Open **Terminal** and set a runtime logging preference by using the `defaults` command:
 
@@ -122,7 +117,5 @@ You might see messages in the log file that are confusing or that are classified
 - [Validate an Office Add-in's manifest](troubleshoot-manifest.md)
 - [Clear the Office cache](clear-cache.md)
 - [Sideload Office Add-ins for testing](sideload-office-add-ins-for-testing.md)
-- [Debug add-ins using developer tools for Internet Explorer](debug-add-ins-using-f12-tools-ie.md)
-- [Debug add-ins using developer tools for Edge Legacy](debug-add-ins-using-devtools-edge-legacy.md)
-- [Debug add-ins using developer tools in Microsoft Edge (Chromium-based)](debug-add-ins-using-devtools-edge-chromium.md) 
+- [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md)
 - [Runtimes in Office Add-ins](runtimes.md)
