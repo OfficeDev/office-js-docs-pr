@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 10/28/2025
+ms.date: 11/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -324,16 +324,18 @@ In addition to these constraints, be mindful of the following:
 - Only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
 - The Smart Alerts dialog message must be 500 characters or less. While you can change the message and certain aspects of a button in the Smart Alerts dialog, the following can't be customized.
 
-    - The dialog's title bar. Your add-in's name is always displayed there.
-    - The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
-    - The icon next to the dialog message.
-    - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
+  - The dialog's title bar. Your add-in's name is always displayed there.
+  - The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
+  - The icon next to the dialog message.
+  - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 - In Outlook on the web and in new Outlook on Windows, the `OnAppointmentSend` event only occurs when a meeting is sent from a separate window. The event doesn't occur when a meeting is sent from an embedded meeting form or when a meeting is forwarded.
 
 ### Limitations to formatting the dialog message using Markdown
 
 > [!NOTE]
-> Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+>
+> - Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The `errorMessageMarkdown` option of the `event.completed` call is available for preview in Outlook on Mac starting in Version 16.103 (Build 25102433). To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 You can use Markdown to format the message of a Smart Alerts dialog through the `errorMessageMarkdown` option of the `event.completed` call. However, only the following elements are supported.
 
