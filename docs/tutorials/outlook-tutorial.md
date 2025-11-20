@@ -110,7 +110,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which manifest would you like to use?** - `unified manifest for Microsoft 365`
 
-      :::image type="content" source="../images/yo-office-outlook-json-manifest-javascript-gist.png" alt-text="The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.":::
+    :::image type="content" source="../images/yo-office-outlook-json-manifest-javascript-gist.png" alt-text="The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.":::
 
     # [Add-in only manifest](#tab/xmlmanifest)
 
@@ -162,7 +162,7 @@ Make the following updates in the manifest file to specify some basic informatio
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. Locate the `"description"` property, replace the default `"short"` and `"long"` values with descriptions of the add-in, and save the file.
+1. Locate the `"description"` property, replace the default `"short"` and `"full"` values with descriptions of the add-in, and save the file.
 
     ```json
     "description": {
