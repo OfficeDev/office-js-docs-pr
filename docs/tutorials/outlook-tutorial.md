@@ -1,7 +1,7 @@
 ﻿---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 11/18/2025
+ms.date: 11/20/2025
 ms.service: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -110,7 +110,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which manifest would you like to use?** - `unified manifest for Microsoft 365`
 
-      ![The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.](../images/yo-office-outlook-json-manifest-javascript-gist.png)
+    :::image type="content" source="../images/yo-office-outlook-json-manifest-javascript-gist.png" alt-text="The prompts and answers for the Yeoman generator with unified manifest and JavaScript options chosen.":::
 
     # [Add-in only manifest](#tab/xmlmanifest)
 
@@ -124,7 +124,7 @@ The add-in that you'll create in this tutorial will read [gists](https://gist.gi
 
     - **Which manifest would you like to use?** - `Add-in only manifest`
 
-    ![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-outlook-xml-manifest-javascript-gist.png)
+    :::image type="content" source="../images/yo-office-outlook-xml-manifest-javascript-gist.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface.":::
 
     ---
 
@@ -162,7 +162,7 @@ Make the following updates in the manifest file to specify some basic informatio
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-1. Locate the `"description"` property, replace the default `"short"` and `"long"` values with descriptions of the add-in, and save the file.
+1. Locate the `"description"` property, replace the default `"short"` and `"full"` values with descriptions of the add-in, and save the file.
 
     ```json
     "description": {
@@ -211,7 +211,7 @@ Before going any further, let's test the basic add-in that the generator created
 
     If everything's been set up correctly, the task pane opens and renders the add-in's welcome page.
 
-    ![The Show Taskpane button and Git the gist task pane added by the sample.](../images/button-and-pane.png)
+    :::image type="content" source="../images/button-and-pane.png" alt-text="The Show Taskpane button and Git the gist task pane added by the sample.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
@@ -219,7 +219,7 @@ Before going any further, let's test the basic add-in that the generator created
 
 Now that you've verified the base add-in works, you can customize it to add more functionality. By default, the manifest only defines buttons for the read message window. Let's update the manifest to remove the buttons from the read message window and define two new buttons for the compose message window:
 
-- **Insert gist**: a button that opens a task pane
+- **Display gist list**: a button that opens a task pane
 
 - **Insert default gist**: a button that invokes a function
 
@@ -238,10 +238,8 @@ Take the following steps:
         "id": "CommandsRuntime",
         "type": "general",
         "code": {
-            "page": "https://localhost:3000/commands.html",
-            "script": "https://localhost:3000/commands.js"
+            "page": "https://localhost:3000/commands.html"
         },
-        "lifetime": "short",
         "actions": [
             {
                 "id": "insertDefaultGist",
@@ -266,9 +264,9 @@ Take the following steps:
 
 1. That same group object has a `"controls"` array with two control objects. We need to make changes to the JSON for each of them. In the first one, take these steps.
 
-    1. Change the `"id"` to `"msgComposeInsertGist"`.
-    1. Change the `"label"` to "Insert gist".
-    1. Change the `"supertip.title"` to "Insert gist".
+    1. Change the `"id"` to `"msgComposeShowGistListTaskPane"`.
+    1. Change the `"label"` to "Display gist list".
+    1. Change the `"supertip.title"` to "Display gist list".
     1. Change the `"supertip.description"` to "Displays a list of your gists and allows you to insert their contents into the current message."
 
 1. In the second control object, take these steps.
@@ -312,7 +310,7 @@ Take the following steps:
                                 {
                                     "id": "msgComposeInsertGist",
                                     "type": "button",
-                                    "label": "Insert gist",
+                                    "label": "Display gist list",
                                     "icons": [
                                         {
                                             "size": 16,
@@ -328,7 +326,7 @@ Take the following steps:
                                         }
                                     ],
                                     "supertip": {
-                                        "title": "Insert gist",
+                                        "title": "Display gist list",
                                         "description": "Displays a list of your gists and allows you to insert their contents into the current message."
                                     },
                                     "actionId": "TaskPaneRuntimeShow"
@@ -398,7 +396,7 @@ Take the following steps:
       <OfficeTab id="TabDefault">
         <Group id="msgComposeCmdGroup">
           <Label resid="GroupLabel"/>
-          <Control xsi:type="Button" id="msgComposeInsertGist">
+          <Control xsi:type="Button" id="msgComposeShowGistListTaskPane">
             <Label resid="TaskpaneButton.Label"/>
             <Supertip>
               <Title resid="TaskpaneButton.Title"/>
@@ -454,8 +452,8 @@ The previous code references labels, tooltips, and URLs that you need to define 
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Git the gist"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Insert gist"/>
-        <bt:String id="TaskpaneButton.Title" DefaultValue="Insert gist"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Display gist list"/>
+        <bt:String id="TaskpaneButton.Title" DefaultValue="Display gist list"/>
         <bt:String id="FunctionButton.Label" DefaultValue="Insert default gist"/>
         <bt:String id="FunctionButton.Title" DefaultValue="Insert default gist"/>
       </bt:ShortStrings>
@@ -486,15 +484,15 @@ You must reinstall the add-in for the manifest changes to take effect.
     npm start
     ```
 
-After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Insert gist** and **Insert default gist** in a compose message window. Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.
+After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Display gist list** and **Insert default gist** in a compose message window. Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.
 
-- If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons on the ribbon of the compose message window: **Insert gist** and **Insert default gist**.
+- If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons on the ribbon of the compose message window: **Display gist list** and **Insert default gist**.
 
-    ![The ribbon overflow menu in classic Outlook on Windows with the add-in's buttons highlighted.](../images/add-in-buttons-in-windows.png)
+  :::image type="content" source="../images/add-in-buttons-in-windows.png" alt-text="The add-in buttons as they appear in classic Outlook on Windows.":::
 
-- If you're running this add-in in Outlook on the web or new Outlook on Windows, select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Insert gist** and **Insert default gist** options.
+- If you're running this add-in in Outlook on the web or new Outlook on Windows, select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Display gist list** and **Insert default gist** options.
 
-    ![The message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.](../images/add-in-buttons-in-owa.png)
+  :::image type="content" source="../images/add-in-buttons-in-owa.png" alt-text="The message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.":::
 
 ## Implement a first-run experience
 
@@ -1179,20 +1177,20 @@ A function that's invoked by a UI-less button must be defined in the file that's
 
 1. In the compose message window, select the **Insert default gist** button. You should see a dialog where you can configure the add-in, starting with the prompt to set your GitHub username.
 
-    ![The dialog prompt to configure the add-in.](../images/addin-prompt-configure.png)
+    :::image type="content" source="../images/addin-prompt-configure.png" alt-text="The dialog prompt to configure the add-in.":::
 
 1. In the settings dialog, enter your GitHub username and then either **Tab** or click elsewhere in the dialog to invoke the **change** event, which should load your list of public gists. Select a gist to be the default, and select **Done**.
 
-    ![The add-in's settings dialog.](../images/addin-settings.png)
+    :::image type="content" source="../images/addin-settings.png" alt-text="The add-in's settings dialog.":::
 
 1. Select the **Insert default gist** button again. This time, you should see the contents of the gist inserted into the body of the email.
 
    > [!NOTE]
-   > Outlook on Windows: To pick up the latest settings, you may need to close and reopen the compose message window.
+   > **Classic Outlook on Windows**: To pick up the latest settings, you may need to close and reopen the compose message window.
 
 ## Implement a task pane
 
-This add-in's **Insert gist** button opens a task pane and displays the user's gists. The user can then select one of the gists to insert into the body of the message. If the user hasn't yet configured the add-in, they'll be prompted to do so.
+This add-in's **Display gist list** button opens a task pane and displays the user's gists. The user can then select one of the gists to insert into the body of the message. If the user hasn't yet configured the add-in, they'll be prompted to do so.
 
 ### Specify the HTML for the task pane
 
@@ -1550,17 +1548,17 @@ This add-in's **Insert gist** button opens a task pane and displays the user's g
 
 1. Save your changes.
 
-### Test the Insert gist button
+### Test the "Display gist list" button
 
 1. If the local web server isn't already running, run `npm start` from the command prompt.
 
 1. Open Outlook and compose a new message.
 
-1. In the compose message window, select the **Insert gist** button. You should see a task pane open to the right of the compose form.
+1. In the compose message window, select the **Display gist list** button. You should see a task pane open to the right of the compose form.
 
 1. In the task pane, select the **Hello World Html** gist and select **Insert** to insert that gist into the body of the message.
 
-![The add-in task pane and the selected gist content displayed in the message body.](../images/addin-taskpane.png)
+:::image type="content" source="../images/addin-taskpane.png" alt-text="The add-in task pane and the selected gist content displayed in the message body.":::
 
 ## Next steps
 
