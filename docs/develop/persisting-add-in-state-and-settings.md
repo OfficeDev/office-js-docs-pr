@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 08/28/2025
+ms.date: 10/16/2025
 ms.localizationpriority: medium
 ---
 
@@ -294,4 +294,4 @@ function getReviewers() {
 - [Outlook add-ins](../outlook/outlook-add-ins-overview.md)
 - [Get and set add-in metadata for an Outlook add-in](../outlook/metadata-for-an-outlook-add-in.md)
 - [Get and set internet headers on a message in an Outlook add-in](../outlook/internet-headers.md)
-- [Excel-Add-in-JavaScript-PersistCustomSettings](https://github.com/OfficeDev/Excel-Add-in-JavaScript-PersistCustomSettings)
+- [Save custom settings in your Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-save-custom-settings)

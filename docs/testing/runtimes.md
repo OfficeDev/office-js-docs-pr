@@ -2,7 +2,7 @@
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 07/03/2025
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -136,9 +136,6 @@ This type of runtime is used in event-based and spam-reporting add-ins in classi
 
 A JavaScript-only runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
 
-> [!IMPORTANT]
-> In Office for Windows versions before 2403 (Build 16.0.17425.20000) and perpetual license Office through Office 2021, the JavaScript-only runtime directly supports the ECMAScript 2016 standard of JavaScript. However, you can use later versions of JavaScript or TypeScript. For information about how to do this, see [Support for recent versions of JavaScript](../develop/support-ie-11.md#support-for-recent-versions-of-javascript).
-
 ## Browser runtime
 
 Office Add-ins use a different browser type runtime depending on the platform in which Office is running (web, Mac, or Windows), and on the version and build of Windows and Office. For example, if the user is running Office on the web in a FireFox browser, then the Firefox runtime is used. If the user is running Office on Mac, then the Safari runtime is used. If the user is running Office on Windows, then either an Edge or Internet Explorer provides the runtime, depending on the version of Windows and Office. Details can be found in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
@@ -169,4 +166,3 @@ A "shared runtime" isn't a type of runtime. It refers to a [browser-type runtime
 >
 > - You can share runtimes only in Excel, PowerPoint, and Word.
 > - You can't configure a dialog to share a runtime. Each dialog always has its own, except when the dialog is launched in Office on the web with the `displayInIFrame` option set to `true`.
-> - A shared runtime never uses the original Microsoft Edge WebView (EdgeHTML) runtime. If the conditions for using Microsoft Edge with WebView2 (Chromium-based) are met (as specified in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)), then that runtime is used. Otherwise, the Internet Explorer 11 runtime is used.

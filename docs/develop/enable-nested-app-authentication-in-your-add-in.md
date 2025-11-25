@@ -242,6 +242,12 @@ Use the following code to check if NAA is supported when your add-in loads.
    Office.context.requirements.isSetSupported("NestedAppAuth", "1.1");
 ```
 
+For more information, see the following resources.
+
+- [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
+- [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
+- [Microsoft identity samples for various app types and frameworks](/entra/identity-platform/sample-v2-code?tabs=apptype)
+
 ## MSAL.js APIs supported by NAA
 
 The following table shows which APIs are supported when NAA is enabled in the MSAL config.
@@ -290,7 +296,6 @@ If you find a security issue with our libraries or services, report the issue to
 | [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA) | Shows how to use NAA in an Outlook Add-in to access Microsoft Graph APIs for the signed-in user. |
 |[Implement SSO in events in an Outlook add-in using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Event-SSO-NAA) |Shows how to use NAA and SSO in Outlook add-in events.|
 |[Send identity claims to resources using nested app authentication (NAA) and SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA-Identity)|Shows how to send the signed-in user's identity claims (such as name, email, or a unique ID) to a resource such as a database. This sample replaces an obsolete pattern for legacy Exchange Online tokens.|
-|[Outlook add-in with SSO using nested app authentication including Internet Explorer fallback](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE)|Shows how to implement a fallback authentication strategy when NAA isn't available and the add-in needs to support [Outlook versions that still use Internet Explorer 11](../concepts/browsers-used-by-office-web-add-ins.md).|
 
 ## See also
 

@@ -1,7 +1,7 @@
 ﻿---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 08/01/2025
+ms.date: 10/28/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -334,7 +334,7 @@ To learn more about APIs that are supported in Outlook on mobile devices, see [O
 
 ## Deploy to users
 
-Event-based add-ins must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy your add-in" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
+For guidance on how to deploy your event-based add-in, see the "Deploy your add-in" section of [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 ## See also
 

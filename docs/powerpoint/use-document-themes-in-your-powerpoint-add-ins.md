@@ -1,19 +1,19 @@
 ---
-title: Use document themes in your PowerPoint add-ins
+title: Use Office document themes in your PowerPoint add-ins
 description: Learn how to visually coordinate themes, such as fonts and colors, to apply to PowerPoint presentations.
-ms.date: 06/18/2024
+ms.date: 11/10/2025
 ms.localizationpriority: medium
 ---
 
-# Use document themes in your PowerPoint add-ins
+# Use Office document themes in your PowerPoint add-ins
 
-An [Office theme](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, you use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
+An [Office theme](https://support.microsoft.com/office/83e68627-2c17-454a-9fd8-62deb81951a6) consists, in part, of a visually coordinated set of fonts and colors that you can apply to presentations, documents, worksheets, and emails. To apply or customize the theme of a presentation in PowerPoint, use the **Themes** and **Variants** groups on **Design** tab of the ribbon. PowerPoint assigns a new blank presentation with the default **Office Theme**, but you can choose other themes available on the **Design** tab, download additional themes from Office.com, or create and customize your own theme.
 
 Using **OfficeThemes.css**, design add-ins that are coordinated with PowerPoint in two ways.
 
-- **In content add-ins for PowerPoint**. Use the document theme classes of **OfficeThemes.css** to specify fonts and colors that match the theme of the presentation your content add-in is inserted into - and those fonts and colors will dynamically update if a user changes or customizes the presentation's theme.
+- **In content add-ins for PowerPoint**. Use the document theme classes of **OfficeThemes.css** to specify fonts and colors that match the theme of the presentation your content add-in is inserted into. Those fonts and colors will dynamically update if a user changes or customizes the presentation's theme.
 
-- **In task pane add-ins for PowerPoint**. Use the Office UI theme classes of **OfficeThemes.css** to specify the same fonts and background colors used in the UI so that your task pane add-ins will match the colors of built-in task panes - and those colors will dynamically update if a user changes the Office UI theme.
+- **In task pane add-ins for PowerPoint**. Use the Office UI theme classes of **OfficeThemes.css** to specify the same fonts and background colors used in the UI so that your task pane add-ins will match the colors of built-in task panes. Those colors will dynamically update if a user changes the Office UI theme.
 
 ## Document theme colors
 
@@ -21,7 +21,7 @@ Every Office document theme defines 12 colors. Ten of these colors are available
 
 ![Color palette.](../images/office15-app-color-palette.png)
 
-To view or customize the full set of 12 theme colors in PowerPoint, in the **Variants** group on the **Design** tab, click the **More** drop-down - then select **Colors** > **Customize Colors** to display the **Create New Theme Colors** dialog box.
+To view or customize the full set of 12 theme colors in PowerPoint, in the **Variants** group on the **Design** tab, expand the **More** dropdown list then select **Colors** > **Customize Colors** to display the **Create New Theme Colors** dialog box.
 
 ![Create new theme colors dialog box.](../images/office15-app-create-new-theme-colors.png)
 
@@ -29,19 +29,19 @@ The first four colors are for text and backgrounds. Text that is created with th
 
 ## Document theme fonts
 
-Every Office document theme also defines two fonts -- one for headings and one for body text. PowerPoint uses these fonts to construct automatic text styles. In addition, **Quick Styles** galleries for text and **WordArt** use these same theme fonts. These two fonts are available as the first two selections when you select fonts with the font picker.
+Every Office document theme also defines two fonts: one for headings and one for body text. PowerPoint uses these fonts to construct automatic text styles. In addition, **Quick Styles** galleries for text and **WordArt** use these same theme fonts. These two fonts are available as the first two selections when you select fonts with the font picker.
 
 ![The font picker.](../images/office15-app-font-picker.png)
 
-To view or customize theme fonts in PowerPoint, in the **Variants** group on the **Design** tab, click the **More** drop-down - then select **Fonts** > **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
+To view or customize theme fonts in PowerPoint, in the **Variants** group on the **Design** tab, expand the **More** dropdown list then select **Fonts** > **Customize Fonts** to display the **Create New Theme Fonts** dialog box.
 
 ![Create new theme fonts dialog box.](../images/office15-app-create-new-theme-fonts.png)
 
 ### Office UI theme fonts and colors
 
-Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. To do that, you use the **File** > **Account** > **Office Theme** drop-down (from any Office application).
+Office also lets you choose between several predefined themes that specify some of the colors and fonts used in the UI of all Office applications. To do that, you use the **File** > **Account** > **Office Theme** dropdown list (from any Office application).
 
-![Office theme drop-down.](../images/office15-app-office-theme-picker.png)
+![Office theme dropdown list.](../images/office15-app-office-theme-picker.png)
 
 **OfficeThemes.css** includes classes that you can use in your task pane add-ins for PowerPoint so they will use these same fonts and colors. This lets you design your task pane add-ins that match the appearance of built-in task panes.
 
@@ -54,7 +54,7 @@ Using the **OfficeThemes.css** file with your content add-ins for PowerPoint let
 Use the following steps to add and reference the **OfficeThemes.css** file to your add-in project.
 
 > [!NOTE]
-> The steps in this procedure only apply to Visual Studio 2015. If you are using Visual Studio 2019, the **OfficeThemes.css** file is created automatically for any new PowerPoint add-in projects that you create.
+> If you're using Visual Studio 2019 or later, the **OfficeThemes.css** file is created automatically for any new PowerPoint add-in projects that you create.
 
 1. In **Solution Explorer**, right-click (or select and hold) the **Content** folder in the _**project_name**_**Web** project, choose **Add**, and then select **Style Sheet**.
 
@@ -123,7 +123,7 @@ Use the following steps to add and reference the **OfficeThemes.css** file to yo
     .office-officeTheme-secondary-bgColor { background-color:#ffffff; }
     ```
 
-1. If you are using a tool other than Visual Studio to create your add-in, copy the CSS code from the previous step into a text file. Then, save the file as **OfficeThemes.css**.
+1. If you're using a tool other than Visual Studio to create your add-in, copy the CSS code from the previous step into a text file. Then, save the file as **OfficeThemes.css**.
 
 ## Reference OfficeThemes.css in your add-in's HTML pages
 
@@ -133,7 +133,7 @@ To use the **OfficeThemes.css** file in your add-in project, add a `<link>` tag 
 <link href="<local_path_to_OfficeThemes.css>" rel="stylesheet" type="text/css" />
 ```
 
-To do this in Visual Studio, follow these steps.
+To do this in Visual Studio, follow these steps:
 
 1. Choose **Create a new project**.
 
@@ -151,7 +151,7 @@ To do this in Visual Studio, follow these steps.
     <link href="../../Content/OfficeThemes.css" rel="stylesheet" type="text/css" />
     ```
 
-If you are creating your add-in with a tool other than Visual Studio, add a `<link>` tag with the same format specifying a relative path to the copy of **OfficeThemes.css** that will be deployed with your add-in.
+If you're creating your add-in with a tool other than Visual Studio, add a `<link>` tag with the same format specifying a relative path to the copy of **OfficeThemes.css** that will be deployed with your add-in.
 
 ### Use OfficeThemes.css document theme classes in your content add-in's HTML page
 
@@ -182,7 +182,7 @@ If you change the presentation to use another theme or customize the presentatio
 
 ### Use OfficeThemes.css Office UI theme classes in your task pane add-in's HTML page
 
-In addition to the document theme, users can customize the color scheme of the Office user interface for all Office applications using the **File** > **Account** > **Office Theme** drop-down box.
+In addition to the document theme, users can customize the color scheme of the Office user interface for all Office applications using the **File** > **Account** > **Office Theme** dropdown box.
 
 The following shows a simple example of HTML in a task pane add-in that uses OfficeTheme.css classes to specify font color and background color. For details about the **OfficeThemes.css** classes that correspond to fonts and colors of the Office UI theme, see [Theme classes for task pane add-ins](#theme-classes-for-task-pane-add-ins).
 
@@ -225,11 +225,11 @@ The **OfficeThemes.css** file provides classes that correspond to the 2 fonts an
 |Class|Description|
 |:-----|:-----|
 | `office-bodyFont-eastAsian`|East Asian name of the body font.|
-| `office-bodyFont-latin`|Latin name of the body font. Default "Calabri"|
+| `office-bodyFont-latin`|Latin name of the body font. Default "Calibri"|
 | `office-bodyFont-script`|Script name of the body font.|
 | `office-bodyFont-localized`|Localized name of the body font. Specifies the default font name according to the culture currently used in Office.|
 | `office-headerFont-eastAsian`|East Asian name of the headers font.|
-| `office-headerFont-latin`|Latin name of the headers font. Default "Calabri Light"|
+| `office-headerFont-latin`|Latin name of the headers font. Default "Calibri Light"|
 | `office-headerFont-script`|Script name of the headers font.|
 | `office-headerFont-localized`|Localized name of the headers font. Specifies the default font name according to the culture currently used in Office.|
 

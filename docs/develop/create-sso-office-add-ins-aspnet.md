@@ -1,7 +1,7 @@
 ﻿---
 title: Create an ASP.NET Office Add-in that uses single sign-on (SSO)
 description: A step-by-step guide for how to create (or convert) an Office Add-in with an ASP.NET backend to use single sign-on (SSO).
-ms.date: 05/20/2023
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -56,14 +56,14 @@ Use the following values for placeholders for the subsequent app registration st
 
     ```xml
     <WebApplicationInfo>
-	    <Id>Enter_client_ID_here</Id>
-		<Resource>api://localhost:44355/Enter_client_ID_here</Resource>
-		<Scopes>
+        <Id>Enter_client_ID_here</Id>
+        <Resource>api://localhost:44355/Enter_client_ID_here</Resource>
+        <Scopes>
             <Scope>Files.Read</Scope>
-			<Scope>profile</Scope>
+            <Scope>profile</Scope>
             <Scope>openid</Scope>
-		</Scopes>
-	</WebApplicationInfo>
+        </Scopes>
+    </WebApplicationInfo>
     ```
 
 1. Replace the placeholder "Enter_client_ID_here" _in both places_ in the markup with the **Application ID** that you copied when you created the **Office-Add-in-ASPNET-SSO** app registration. This is the same ID you used for the application ID in the appsettings.json file.
@@ -88,10 +88,7 @@ Use the following values for placeholders for the subsequent app registration st
 
 ### Get the access token and call the application server REST API
 
-1. In the **Office-Add-in-ASPNETCore-WebAPI** project, open the **wwwroot\js\HomeES6.js** file.  It already has code that ensures that Promises are supported, even in the Trident (Internet Explorer 11) webview control, and an `Office.onReady` call to assign a handler to the add-in's only button.
-
-   > [!NOTE]
-   > As the name suggests, the HomeES6.js uses JavaScript ES6 syntax because using `async` and `await` best shows the essential simplicity of the SSO API. When the localhost server is started, this file is transpiled to ES5 syntax so that the sample will support Trident.
+1. In the **Office-Add-in-ASPNETCore-WebAPI** project, open the **wwwroot\js\HomeES6.js** file. It already has an `Office.onReady` call to assign a handler to the add-in's only button.
 
 1. In the `getUserFileNames` function, replace `TODO 1` with the following code. About this code, note:
 

@@ -1,7 +1,7 @@
 ---
 title: Build your first Word task pane add-in with Visual Studio
 description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API and a Visual Studio template.
-ms.date: 08/20/2024
+ms.date: 11/06/2025
 ms.service: word
 ms.localizationpriority: high
 ---
@@ -202,7 +202,7 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 1. Using Visual Studio, test the newly created Word add-in by pressing <kbd>F5</kbd> or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
-1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane. (If you're using a volume-licensed perpetual version of Office 2016 or older, then custom buttons aren't supported. Instead, the task pane will open immediately.)
+1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
     ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
 

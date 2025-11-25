@@ -1,7 +1,7 @@
 ﻿---
 title: Requirements for running Office Add-ins
 description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
-ms.date: 08/13/2025
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -47,13 +47,7 @@ The following software is required for developing an Office Add-in for the suppo
   If you have a valid Microsoft 365 subscription and you don't have access to the Office client, you can [download and install the latest version of Office](https://support.microsoft.com/office/4414eaaf-0478-48be-9c42-23adc4716658).
 
 - Microsoft Edge must be installed, but doesn't have to be the default browser. To support Office Add-ins, the Office client that acts as host uses webview components that are part of Microsoft Edge.
-
-  > [!NOTE]
-  >
-  > - Strictly speaking, it's possible to develop add-ins on a machine that has Internet Explorer 11 (IE11) installed, but not Microsoft Edge. However, IE11 is used to run add-ins only on certain older combinations of Windows and Office versions. See [Browsers and webview controls used by Office Add-ins](browsers-used-by-office-web-add-ins.md) for more details. We don't recommend using such old environments as your primary add-in development environment. However, if you're likely to have customers of your add-in that are working in these older combinations, we recommend that you support the Trident webview that's provided by Internet Explorer. For more information, see [Support older Microsoft webviews and Office versions](../develop/support-ie-11.md).
-  > - Internet Explorer's Enhanced Security Configuration (ESC) must be turned off for Office Web Add-ins to work. If you are using a Windows Server computer as your client when developing add-ins, note that ESC is turned on by default in Windows Server.
-
-- One of the following as the default browser: Internet Explorer 11, or the latest version of Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
+- One of the following as the default browser: Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 - An HTML and JavaScript editor such as [Visual Studio Code](https://code.visualstudio.com/), [Visual Studio and the Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs), or non-Microsoft web development tool.
 
 ## Client requirements: OS X desktop
@@ -68,7 +62,7 @@ The following are the minimum client versions of Office on Mac that support Offi
 
 ## Client requirements: Browser support for Office web clients and SharePoint
 
-Any browser, except Internet Explorer, that supports ECMAScript 5.1, HTML5, and CSS3, such as Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
+Any browser that supports ECMAScript 5.1, HTML5, and CSS3, such as Microsoft Edge, Chrome, Firefox, or Safari (Mac OS).
 
 ## Client requirements: Non-Windows smartphone and tablet
 

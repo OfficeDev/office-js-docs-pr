@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 07/31/2025
+ms.date: 11/25/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -147,7 +147,10 @@ When Outlook launches without internet connectivity, it's unable to determine wh
 
 # [Web/Windows (new)](#tab/web-new-windows)
 
-For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. This ensures that outgoing messages are checked before they're sent.
+> [!NOTE]
+> When the **OnSendAddinsEnabled** policy is enabled, it will apply to all installed add-ins, not just Smart Alerts add-ins. If the policy is configured and installed add-ins don't load, the user won't be able to send items when they're offline. Administrators should only enable this policy for users in their organization if they have mandatory Smart Alerts add-ins installed.
+
+For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsEnabled** mailbox policy in Exchange Online PowerShell. This ensures that installed add-ins always run on outgoing messages while offline.
 
 1. [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell).
 1. Create a new mailbox policy.
@@ -173,20 +176,16 @@ For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsE
 
 # [Windows (classic)](#tab/windows)
 
-Configure the **Block send when web add-ins can't load** Group Policy setting. When the setting is turned on, mail items are moved to the **Drafts** folder when the **Send** button is selected. This way, when Outlook is able to load add-ins, any installed Smart Alerts add-ins can run checks on the items before they're sent.
-
-To turn on the setting, perform the following:
-
-1. Download the latest [Administrative Templates tool](https://www.microsoft.com/download/details.aspx?id=49030).
-1. Open the **Local Group Policy Editor** (**gpedit.msc**).
-1. Navigate to **User Configuration** > **Administrative Templates** > **Microsoft Outlook 2016** > **Security** > **Trust Center**.
-1. Open the **Block send when web add-ins can't load** setting.
-1. In the dialog that appears, select **Enabled**.
-1. Select **OK** or **Apply** to save your change.
+Outlook on Windows (classic) can load and run add-ins even if the user launches Outlook while offline. To learn more about the behavior of Smart Alerts add-ins while offline, see [Intermittent connection](#intermittent-connection).
 
 # [Mac](#tab/mac)
 
-For Outlook on Mac, the **OnSendAddinsWaitForLoad** mailbox key must be configured on each user's machine. This key ensures that add-ins are loaded from Exchange and are available to run checks on outgoing items. As the **OnSendAddinsWaitForLoad** key is CFPreference-compatible, it can be set by any enterprise management software for Mac, such as Jamf Pro. The following table provides details about the key.
+For Outlook on Mac, the **OnSendAddinsWaitForLoad** mailbox key must be configured on each user's machine. This key ensures that add-ins are loaded from Exchange and are available to run checks on outgoing items. As the **OnSendAddinsWaitForLoad** key is CFPreference-compatible, it can be set by any enterprise management software for Mac, such as Jamf Pro.
+
+> [!NOTE]
+> The `OnSendAddinsWaitForLoad` policy applies to all installed add-ins, not just Smart Alerts add-ins. If the policy is configured and installed add-ins don't load, the user won't be able to send items when they're offline. Administrators should only enable this policy for users in their organization if they have mandatory Smart Alerts add-ins installed.
+
+The following table provides details about the key.
 
 |Field|Value|
 |:---|:---|
@@ -323,16 +322,18 @@ In addition to these constraints, be mindful of the following:
 - Only one instance each of the `OnMessageSend` and `OnAppointmentSend` event can be declared in the manifest. If you require multiple `OnMessageSend` or `OnAppointmentSend` events, you must declare each one in a separate add-in.
 - The Smart Alerts dialog message must be 500 characters or less. While you can change the message and certain aspects of a button in the Smart Alerts dialog, the following can't be customized.
 
-    - The dialog's title bar. Your add-in's name is always displayed there.
-    - The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
-    - The icon next to the dialog message.
-    - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
+  - The dialog's title bar. Your add-in's name is always displayed there.
+  - The font or color of the dialog message. However, you can use Markdown to format certain elements of your message. For a list of supported elements, see [Limitations to formatting the dialog message using Markdown](#limitations-to-formatting-the-dialog-message-using-markdown).
+  - The icon next to the dialog message.
+  - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 - In Outlook on the web and in new Outlook on Windows, the `OnAppointmentSend` event only occurs when a meeting is sent from a separate window. The event doesn't occur when a meeting is sent from an embedded meeting form or when a meeting is forwarded.
 
 ### Limitations to formatting the dialog message using Markdown
 
 > [!NOTE]
-> Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+>
+> - Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The `errorMessageMarkdown` option of the `event.completed` call is available for preview in Outlook on Mac starting in Version 16.103 (Build 25102433). To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 You can use Markdown to format the message of a Smart Alerts dialog through the `errorMessageMarkdown` option of the `event.completed` call. However, only the following elements are supported.
 
@@ -413,7 +414,7 @@ For guidance on how to troubleshoot your Smart Alerts add-in, see [Troubleshoot 
 
 ## Deploy to users
 
-Similar to other event-based add-ins, add-ins that use the Smart Alerts feature must be deployed by an organization's administrator. For guidance on how to deploy your add-in via the Microsoft 365 admin center, see the "Deploy to users" section in [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
+For guidance on how to deploy your Smart Alerts add-in, see the "Deploy to users" section in [Activate add-ins with events](../develop/event-based-activation.md#deploy-your-add-in).
 
 > [!IMPORTANT]
 > Add-ins that use the Smart Alerts feature can only be published to Microsoft Marketplace if the manifest's [send mode property](#available-send-mode-options) is set to the **soft block** or **prompt user** option. If an add-in's send mode property is set to **block**, it can only be deployed by an organization's admin as it will fail Microsoft Marketplace validation. To learn more about publishing your event-based add-in to Microsoft Marketplace, see [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md).

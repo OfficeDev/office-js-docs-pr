@@ -1,7 +1,7 @@
 ﻿---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 08/01/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -65,13 +65,11 @@ The following shows how to configure your unified manifest to enable the prepend
         "actions": [
             {
                 "id": "prependHeaderOnSend",
-                "type": "executeFunction",
-                "displayName": "prependHeaderOnSend"
+                "type": "executeFunction"
             },
             {
                 "id": "appendDisclaimerOnSend",
-                "type": "executeFunction",
-                "displayName": "appendDisclaimerOnSend"
+                "type": "executeFunction"
             }
         ]
     }
