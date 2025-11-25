@@ -1,12 +1,12 @@
 ---
-title: Enable single sign-on in an Office Add-in with nested app authentication
-description: Learn how to enable SSO in an Office Add-in with nested app authentication.
-ms.date: 10/20/2025
+title: Enable single sign-on in an Outlook add-in with nested app authentication
+description: Learn how to enable SSO in an Outlook add-in with nested app authentication.
+ms.date: 11/24/2025
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
-# Enable single sign-on in an Office Add-in with nested app authentication
+# Enable single sign-on in an Outlook Add-in with nested app authentication
 
 Use the MSAL.js library with nested app authentication to enable single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
 
@@ -14,6 +14,9 @@ Use the MSAL.js library with nested app authentication to enable single sign-on 
 - You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
 - You can use incremental and dynamic consent for scopes.
 - You don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (for example, Teams, Office) to call your endpoints.
+
+> [!NOTE]
+> This article explains how to use SSO with an Outlook add-in. To use SSO with Word, Excel, or PowerPoint add-in, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-single-sign-on-in-an-office-add-in.md).
 
 ## NAA supported accounts and hosts
 
