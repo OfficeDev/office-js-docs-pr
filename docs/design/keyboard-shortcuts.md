@@ -346,7 +346,7 @@ Similar to the shortcuts file, the localization resource file is also JSON-forma
 {
     "resources":{
         "default": {
-            "showtaskpane_action_name": {
+            "showTaskpane_action_name": {
                 "value": "(es-es) Mostrar panel de tareas",
                 "comment": "Display name for the ShowTaskpane action."
             },
