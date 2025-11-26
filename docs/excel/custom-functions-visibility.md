@@ -16,10 +16,9 @@ The following code sample shows how to map functions to different categories of 
 
 ```typescript
 /**
- * This code sample maps four existing custom functions to three add-in user types: banker, trander, and analyst.
+ * This code sample maps four existing custom functions to three add-in user types: banker, trader, and analyst.
  * The primary function, functionBasic, is visible for all user types. 
  * The other three functions, functionA, functionB, and functionC, are only visible to specific user types.
- * @customfunction
  *
  */
 const allFunctions = ["functionBasic", "functionA", "functionB", "functionC"];
