@@ -128,7 +128,7 @@ The following platforms or features are not yet supported.
 
 ### Event-based add-in limitations in Outlook on the web and the new Outlook on Windows
 
-In Outlook on the web and the new Outlook on Windows, event-based activation is only supported on standard read and compose message and appointment surfaces. Event-based activation doesn't work when composing from non-standard surfaces, such as:
+In Outlook on the web and the new Outlook on Windows, event-based activation is only supported on standard read and compose message and appointment surfaces. Event-based activation may not work when composing on some non-standard surfaces. For example:
 
 - Responding to a meeting invite using the **RSVP with note** option.
 - Forwarding a meeting from the calendar.
@@ -182,6 +182,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 ## Deploy your add-in
 
 Depending on the Office application, event-based add-ins can be deployed through one of the following options.
+
 - **Admin-managed deployment**: Add-in is deployed through the Microsoft 365 admin center.
 - **Restricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace, but it doesn't appear in search results. Add-in acquisition requires a flight code URL. The add-in must still be deployed by an admin for the event-based activation feature to work.
 - **Unrestricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace and can be searched for by users and admins using the add-in's name or ID. Admin deployment isn't necessary for the event-based activation feature to work. The add-in must meet certain requirements for unrestricted listing.
