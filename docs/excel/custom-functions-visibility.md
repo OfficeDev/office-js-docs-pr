@@ -1,0 +1,55 @@
+---
+title: Manage custom function visibility
+description: Show or hide custom functions from the Excel UI.
+ms.date: 11/25/2025
+ms.localizationpriority: medium
+---
+
+# Show or hide custom functions in the Excel UI
+
+Control which custom functions display in Excel AutoComplete and the Formula Builder. If your add-in serves multiple user types (such as parents, teachers, and students), each category may use a specialized set of custom functions.
+
+> [!NOTE]
+> To hide custom functions before an add-in launches, use the [`excludeFromAutoComplete` JSDoc tag](custom-functions-json-autogeneration.md#excludeFromAutoComplete) or set the [`excludeFromAutoComplete` property](custom-functions-json.md#options) to `true`.
+
+The following code sample shows how to map functions to different categories of add-in users so that the functions are programmatically visible or hidden for each user type. The sample assumes that four functions already exist: `functionBasic`, `functionA`, `functionB`, and `functionC`.
+
+```typescript
+/**
+ * The primary function, functionBasic, is visible for all user types. 
+ * The other three functions, functionA, functionB, and functionC, are only visible to specific user types.
+ * @customfunction
+ *
+ */
+const allFunctions = ["functionBasic", "functionA", "functionB", "functionC"];
+
+// Map each function to the user types.
+const userFunctionMapping = new Map<string, string[]>([
+    ["banker", ["functionBasic", "functionA", "functionB"]],
+    ["trader", ["functionBasic", "functionB"]],
+    ["analyst", ["functionBasic", "functionA", "functionC"]]
+]);
+
+// Create a placeholder to retrieve the user types.
+(async () => {
+    await Office.onReady();
+    let userType = getCurrentUser();
+    await showFunctionsBasedOnUserType(userType);
+});
+
+// 
+async function showFunctionsBasedOnUserType(userType: string) {
+    let availableFunctions: string[] = userFunctionMapping.get(userType);
+    let customFunctionVisibilityOptions: Excel.CustomFunctionVisibilityOptions = {
+        show: availableFunctions,
+    };
+    // Assuming "functionA", "functionB" and "functionC" are hidden initially in metadata.
+    await Excel.CustomFunctionManager.setVisibility(customFunctionVisibilityOptions);
+}
+
+```
+
+## See also
+
+- [Manually create JSON metadata for custom functions](custom-functions-json.md)
+- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
