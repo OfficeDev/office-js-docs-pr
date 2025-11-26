@@ -130,6 +130,8 @@
         items: 
         - name: Office Add-ins with the unified manifest for Microsoft 365
           href: develop/unified-manifest-overview.md
+        - name: Specify Office Add-in requirements in the unified manifest for Microsoft 365
+          href: develop/requirements-property-unified-manifest.md
         - name: Compare the add-in only manifest with the unified manifest for Microsoft 365
           href: develop/json-manifest-overview.md
         - name: Convert an add-in to use the unified manifest for Microsoft 365
