@@ -684,7 +684,7 @@
       href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
     - name: Manage function visibility
-      href: excel/custom-functions-manage-visibility.md
+      href: excel/custom-functions-visibility.md
       displayName: Excel, Custom Functions
     - name: Custom enums
       href: excel/custom-functions-custom-enums.md
