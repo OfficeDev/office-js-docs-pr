@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Show or hide custom functions in the Excel UI
 
-Control which custom functions display in Excel AutoComplete and the Formula Builder. If your add-in serves multiple user types (such as parents, teachers, and students), each category may use a specialized set of custom functions.
+Control which custom functions display in Excel AutoComplete and the Formula Builder. If your add-in serves multiple user types (such as parents, teachers, and students), each category can use a specialized set of custom functions.
 
 > [!NOTE]
 > To hide custom functions before an add-in launches, use the [`excludeFromAutoComplete` JSDoc tag](custom-functions-json-autogeneration.md#excludeFromAutoComplete) or set the [`excludeFromAutoComplete` property](custom-functions-json.md#options) to `true`.
@@ -16,7 +16,7 @@ The following code sample shows how to map functions to different categories of 
 
 ```typescript
 /**
- * This code sample maps four existing custom functions to three add-in user types: banker, trader, and analyst.
+ * This code snippet shows how to map four existing custom functions to three add-in user types: banker, trader, and analyst.
  * The primary function, functionBasic, is visible for all user types. 
  * The other three functions, functionA, functionB, and functionC, are only visible to specific user types.
  *
@@ -33,7 +33,7 @@ const userFunctionMapping = new Map<string, string[]>([
 // Create a placeholder to retrieve the current user type.
 (async () => {
     await Office.onReady();
-    let userType = getCurrentUser(); // Implement getCurrentUser() to return the current user's type ("banker", "trader", or "analyst").
+    let userType = getCurrentUser(); // Implement `getCurrentUser()` to return the current user type (banker, trader, or analyst).
     await showFunctionsBasedOnUserType(userType);
 });
 
@@ -46,7 +46,6 @@ async function showFunctionsBasedOnUserType(userType: string) {
     // If functionA, functionB, and functionC are initially hidden with `excludeFromAutoComplete`, adjust visibility so the correct functions are shown.
     await Excel.CustomFunctionManager.setVisibility(customFunctionVisibilityOptions);
 }
-
 ```
 
 ## See also
