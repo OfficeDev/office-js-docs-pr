@@ -1,7 +1,7 @@
 ﻿---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 11/14/2025
+ms.date: 11/27/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -125,6 +125,13 @@ The following platforms or features are not yet supported.
 
 - Office on Mac
 - The unified manifest for Microsoft 365
+
+### Event-based add-in limitations in Outlook on the web and the new Outlook on Windows
+
+In Outlook on the web and the new Outlook on Windows, event-based activation is only supported on standard read and compose message and appointment surfaces. Event-based activation doesn't work when composing from non-standard surfaces, such as:
+
+- Responding to a meeting invite using the **RSVP with note** option.
+- Forwarding a meeting from the calendar.
 
 ### Unsupported APIs
 
