@@ -34,7 +34,7 @@ const userFunctionMapping = new Map<string, string[]>([
 // Create a placeholder to retrieve the current user type.
 (async () => {
     await Office.onReady();
-    let userType = getCurrentUser();
+    let userType = getCurrentUser(); // Implement getCurrentUser() to return the current user's type ("banker", "trader", or "analyst").
     await showFunctionsBasedOnUserType(userType);
 });
 
