@@ -1,35 +1,26 @@
 ---
-title: Enable single sign-on in an Office Add-in with nested app authentication
-description: Learn how to enable SSO in an Office Add-in with nested app authentication.
-ms.date: 11/06/2025
+title: Enable single sign-on in an Outlook add-in with nested app authentication
+description: Learn how to enable SSO in an Outlook add-in with nested app authentication.
+ms.date: 11/24/2025
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
-# Enable single sign-on in an Office Add-in with nested app authentication
+# Enable single sign-on in an Outlook Add-in with nested app authentication
 
-You can use the MSAL.js library with nested app authentication to use single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
+Use the MSAL.js library with nested app authentication to enable single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
 
 - You only need to use the MSAL.js library and don’t need the `getAccessToken` function in Office.js.
 - You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
 - You can use incremental and dynamic consent for scopes.
 - You don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (for example, Teams, Office) to call your endpoints.
 
+> [!NOTE]
+> This article explains how to use SSO with an Outlook add-in. To use SSO with Word, Excel, or PowerPoint add-in, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-single-sign-on-in-an-office-add-in.md).
+
 ## NAA supported accounts and hosts
 
-NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support [Azure Active Directory B2C](/azure/active-directory-b2c/overview) for business-to-consumer identity management scenarios. The following table explains the current support by platform. Platforms listed as generally available (GA) are ready for production usage in your add-in.
-
-| Application | Web        | Windows                                              | Mac        | iOS/iPad           | Android        |
-|-------------|------------|------------------------------------------------------|------------|--------------------|----------------|
-| Excel       | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
-| Outlook     | GA         | GA | GA         | GA (iOS)           | GA             |
-| PowerPoint  | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
-| Word        | In preview | In preview                                           | In preview | In preview on iPad | Not applicable |
-
-> [!IMPORTANT]
-> To use NAA on platforms that are still in preview (Word, Excel, and PowerPoint), join the [Microsoft 365 Insider Program](https://aka.ms/MSFT365InsiderProgram) and choose **Current Channel (Preview)**. Don't use NAA in production add-ins for any preview platforms. We invite you to try out NAA in test or development environments and welcome feedback on your experience through GitHub (see the **Feedback** section at the end of this page).
-
-For information on using NAA in Microsoft Teams, see [Nested app authentication in Microsoft Teams](/microsoftteams/platform/concepts/authentication/nested-authentication).
+NAA supports both Microsoft Accounts and Microsoft Entra ID (work/school) identities. It doesn't support [Azure Active Directory B2C](/azure/active-directory-b2c/overview) for business-to-consumer identity management scenarios. For more information on NAA requirements, see [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets).
 
 ## Register your single-page application
 
@@ -61,15 +52,11 @@ Configure your add-in to use NAA by calling the `createNestablePublicClientApp
 
 The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts` file in a project built with `yo office` (**Office Add-in Task Pane** project).
 
-1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser). We recommend using the latest version of the package (at time of the last article update it was 3.26.0).
+1. Add the `@azure/msal-browser` package to the `dependencies` section of the `package.json` file for your project. For more information on this package, see [Microsoft Authentication Library for JavaScript (MSAL.js) for Browser-Based Single-Page Applications](https://www.npmjs.com/package/%40azure/msal-browser). To install the latest version, run the following command.
 
-    ```json
-    "dependencies": {
-        "@azure/msal-browser": "^3.27.0",
-        ...
+    ```command&nbsp;line
+    npm install @azure/msal-browser
     ```
-
-1. Save and run `npm install` to install `@azure/msal-browser`.
 
 1. Add the following code to the top of the `taskpane.js` or `taskpane.ts` file. This will import the MSAL browser library.
 
@@ -115,7 +102,7 @@ The following steps show the pattern to use for acquiring a token.
 1. Call `acquireTokenSilent`. This will get the token without requiring user interaction.
 1. If `acquireTokenSilent` fails, call `acquireTokenPopup` to display an interactive dialog for the user. `acquireTokenSilent` can fail if the token expired, or the user has not yet consented to all of the requested scopes.
 
-The following code shows how to implement this authentication pattern in your own project.
+The following code shows how to implement this authentication pattern in your own project. Note that it obtains the login hint if running on Excel, Word, or PowerPoint for web. The login hint is required later in this code for these platforms.
 
 1. Replace the `run` function in `taskpane.js` or `taskpane.ts` with the following code. The code specifies the minimum scopes needed to read the user's files.
 
@@ -125,7 +112,15 @@ The following code shows how to implement this authentication pattern in your ow
     const tokenRequest = {
       scopes: ["Files.Read", "User.Read", "openid", "profile"],
     };
-    let accessToken = null;
+    let loginHint;
+    // If running on Excel, Word, or PowerPoint for web, a login hint is needed for SSO.
+    if ((Office.context.platform === Office.PlatformType.OfficeOnline) && (Office.context.host !== Office.HostType.Outlook)) {
+      const authCtx = await Office.auth.getAuthContext();
+      loginHint = authCtx.userPrincipalName;
+    }
+
+    let accessToken;
+    let authResult;
 
     // TODO 1: Call acquireTokenSilent.
 
@@ -143,12 +138,19 @@ The following code shows how to implement this authentication pattern in your ow
 
 1. Replace `TODO 1` with the following code. This code calls `acquireTokenSilent` to get the access token.
 
+About the following code, note that it checks for a login hint. Excel, Word, and PowerPoint for web require calling **ssoSilent** with the login hint to successfully complete SSO.
+
     ```JavaScript
     try {
-      console.log("Trying to acquire token silently...");
-      const userAccount = await pca.acquireTokenSilent(tokenRequest);
-      console.log("Acquired token silently.");
-      accessToken = userAccount.accessToken;
+    console.log("Trying to acquire token silently...");
+    if (loginHint) {
+      tokenRequest["loginHint"] = loginHint;
+      authResult = await pca.ssoSilent(tokenRequest);
+    } else {
+      authResult = await pca.acquireTokenSilent(tokenRequest);
+    }
+    console.log("Acquired token silently.");
+    accessToken = authResult.accessToken;
     } catch (error) {
       console.log(`Unable to acquire token silently: ${error}`);
     }
@@ -157,17 +159,17 @@ The following code shows how to implement this authentication pattern in your ow
 1. Replace `TODO 2` with the following code. This code checks if the access token is acquired. If not it attempts to interactively get the access token by calling `acquireTokenPopup`.
 
     ```javascript
-    if (accessToken === null) {
-      // Acquire token silent failure. Send an interactive request via popup.
-      try {
-        console.log("Trying to acquire token interactively...");
-        const userAccount = await pca.acquireTokenPopup(tokenRequest);
-        console.log("Acquired token interactively.");
-        accessToken = userAccount.accessToken;
-      } catch (popupError) {
-        // Acquire token interactive failure.
-        console.log(`Unable to acquire token interactively: ${popupError}`);
-      }
+    if (!accessToken) {
+       // Acquire token silent failure. Send an interactive request via popup.
+       try {
+         console.log("Trying to acquire token interactively...");
+         authResult = await pca.acquireTokenPopup(tokenRequest);
+         console.log("Acquired token interactively.");
+         accessToken = authResult.accessToken;
+       } catch (popupError) {
+         // Acquire token interactive failure.
+         console.log(`Unable to acquire token interactively: ${popupError}`);
+       }
     }
     ```
 
@@ -175,7 +177,7 @@ The following code shows how to implement this authentication pattern in your ow
 
     ```javascript
     // Log error if both silent and popup requests failed.
-    if (accessToken === null) {
+    if (!accessToken) {
       console.error(`Unable to acquire access token.`);
       return;
     }
@@ -192,7 +194,7 @@ After acquiring the token, use it to call an API. The following example shows ho
     const response = await fetch(
       `https://graph.microsoft.com/v1.0/me/drive/root/children?$select=name&$top=10`,
       {
-        headers: { Authorization: accessToken },
+        headers: { Authorization: `Bearer ${accessToken}` },
       }
     );
   
@@ -200,10 +202,10 @@ After acquiring the token, use it to call an API. The following example shows ho
       // Write file names to the console.
       const data = await response.json();
       const names = data.value.map((item) => item.name);
-
+  
       // Be sure the taskpane.html has an element with Id = item-subject.
       const label = document.getElementById("item-subject");
-    
+  
       // Write file names to task pane and the console.
       const nameText = names.join(", ");
       if (label) label.textContent = nameText;
@@ -232,7 +234,7 @@ In certain cases, the `acquireTokenSilent` method's attempt to get the token f
 
 ### Have a fallback when NAA isn't supported
 
-While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. In general you'll want to use the MSAL SPA authentication pattern with the [Office JS dialog API](auth-with-office-dialog-api.md).
+While we strive to provide a high-degree of compatibility with these flows across the Microsoft ecosystem, your add-in may be loaded in an older Office host that does not support NAA. In these cases, your add-in won't support seamless SSO and you may need to fall back to an alternate method of authenticating the user. Refer to the [code samples](#code-samples) in this article for samples that show how to handle a fallback scenario.
 
 Use the following code to check if NAA is supported when your add-in loads.
 
@@ -299,3 +301,7 @@ If you find a security issue with our libraries or services, report the issue to
 
 - [NAA FAQ](https://aka.ms/NAAFAQ)
 - [Nested app authentication in Microsoft Teams](/microsoftteams/platform/concepts/authentication/nested-authentication).
+- [Outlook sample: How to fall back and support Internet Explorer 11](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Outlook-Add-in-SSO-NAA-IE/README.md)
+- [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
+- [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
+- [Microsoft identity samples for various app types and frameworks](/entra/identity-platform/sample-v2-code?tabs=apptype)
