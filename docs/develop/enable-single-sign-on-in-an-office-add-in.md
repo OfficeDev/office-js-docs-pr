@@ -58,7 +58,7 @@ Use the following steps to set up an app registration for your Office Add-in.
     * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
     * Set **Redirect URI** to use the platform **Single-page application (SPA)** and the URI to `brk-multihub://localhost:3000`. This redirect assumes you are testing your add-in from a localhost server.
 
-    :::image type="content" source="../images/azure-portal-create-app-reg-naa.png" alt-text="Register an application pane with name and supported account completed.":::
+    :::image type="content" source="../images/azure-portal-create-application-registration-nested-app-authentication.png" alt-text="Register an application pane with name and supported account completed.":::
 
 1. Select **Register**. A message is displayed stating that the application registration was created.
 
@@ -76,7 +76,7 @@ Finally add an SPA redirect URI for your task pane page. This redirect URI is re
 1. Select **Add URI**.
     :::image type="content" source="../images/azure-portal-add-uri.png" alt-text="Selecting the add URI option on the Azure app registration page.":::
 1. Enter **https://localhost:3000/taskpane.html** and select **Save**. This redirect URI assume you are using NAA from the `taskpane.html` file.
-    :::image type="content" source="../images/azure-portal-add-taskpane-redirect-uri.png" alt-text="Adding the taskpane redirect URI on the Azure app registration page.":::
+    :::image type="content" source="../images/azure-portal-add-task-pane-redirect-uri.png" alt-text="Adding the taskpane redirect URI on the Azure app registration page.":::
 
 ## Add the MSAL library to your project
 

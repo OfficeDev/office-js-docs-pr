@@ -140,21 +140,21 @@ The following code shows how to implement this authentication pattern in your ow
 
 About the following code, note that it checks for a login hint. Excel, Word, and PowerPoint for web require calling **ssoSilent** with the login hint to successfully complete SSO.
 
-    ```JavaScript
-    try {
-    console.log("Trying to acquire token silently...");
-    if (loginHint) {
-      tokenRequest["loginHint"] = loginHint;
-      authResult = await pca.ssoSilent(tokenRequest);
-    } else {
-      authResult = await pca.acquireTokenSilent(tokenRequest);
-    }
-    console.log("Acquired token silently.");
-    accessToken = authResult.accessToken;
-    } catch (error) {
-      console.log(`Unable to acquire token silently: ${error}`);
-    }
-    ```
+```JavaScript
+try {
+console.log("Trying to acquire token silently...");
+if (loginHint) {
+  tokenRequest["loginHint"] = loginHint;
+  authResult = await pca.ssoSilent(tokenRequest);
+} else {
+  authResult = await pca.acquireTokenSilent(tokenRequest);
+}
+console.log("Acquired token silently.");
+accessToken = authResult.accessToken;
+} catch (error) {
+  console.log(`Unable to acquire token silently: ${error}`);
+}
+```
 
 1. Replace `TODO 2` with the following code. This code checks if the access token is acquired. If not it attempts to interactively get the access token by calling `acquireTokenPopup`.
 
