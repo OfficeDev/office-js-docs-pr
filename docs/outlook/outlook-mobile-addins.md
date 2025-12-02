@@ -1,7 +1,7 @@
 ﻿---
 title: Add-ins for Outlook on mobile devices
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
-ms.date: 08/13/2025
+ms.date: 12/02/2025
 ms.localizationpriority: medium
 ---
 
@@ -64,14 +64,6 @@ Here are examples of scenarios that make sense in Outlook mobile.
 - The add-in brings valuable information into Outlook, helping users triage their email and respond appropriately. For example, a customer relationship management (CRM) add-in that lets the user see customer information and share appropriate information.
 
 - The add-in adds value to the user's email content by saving the information to a tracking, collaboration, or similar system. For example, an add-in that lets users turn emails into task items for project tracking, or help tickets for a support team.
-
-**An example user interaction to create a Trello card from an email message on iOS**
-
-![Animated GIF showing user interaction with an add-in in Outlook on iOS.](../images/outlook-mobile-addin-interaction.gif)
-
-**An example user interaction to create a Trello card from an email message on Android**
-
-![Animated GIF showing user interaction with an add-in in Outlook on Android.](../images/outlook-mobile-addin-interaction-android.gif)
 
 ## Support for add-ins with the unified manifest for Microsoft 365
 
