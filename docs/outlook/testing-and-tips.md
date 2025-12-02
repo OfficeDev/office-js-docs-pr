@@ -32,7 +32,7 @@ After preparing the add-in manifest file and deploying the add-in UI to a web se
 
 - [Sideload the add-in for a mailbox on an Exchange server by using an Outlook client](#sideload-the-add-in).
 - [Deploy the add-in through the Microsoft 365 admin center](#deploy-the-add-in-via-the-microsoft-365-admin-center).
-- [Install the add-in by running remote Windows PowerShell cmdlets](#install-an-add-in-by-using-remote-powershell).
+- [Install the add-in by running remote Windows PowerShell cmdlets](#install-the-add-in-by-using-remote-powershell).
 
 > [!NOTE]
 > To install and manage add-ins in a mailbox, the mailbox account must be assigned the **My Custom Apps** user role in Exchange. For more information, see [Specify the administrators and users who can install and manage add-ins for Outlook in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/add-ins-for-outlook/specify-who-can-install-and-manage-add-ins).
@@ -45,7 +45,7 @@ For guidance on how to sideload your add-in in Outlook, see [Sideload Outlook ad
 
 Another option to test your Outlook add-in is to deploy it to the relevant accounts via the Microsoft 365 admin center. In the admin center, go to **Settings** > **Integrated apps**. Then, select **Upload custom apps**. For more information, see [Deploy and manage Office Add-ins through the integrated apps portal](/microsoft-365/admin/manage/office-addins).
 
-### Install the add-in via remote PowerShell
+### Install the add-in by using remote PowerShell
 
 After you create a remote Windows PowerShell session on your Exchange server, you can install an Outlook add-in by using the `New-App` cmdlet with the following PowerShell command.
 
