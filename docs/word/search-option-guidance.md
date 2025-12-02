@@ -68,9 +68,9 @@ The following table provides guidance around the Word JavaScript API's search wi
 | One of the specified characters | [ ] | `w[io]n` finds `win` and `won`. |
 | Any single character in this range | [-] | `[r-t]ight` finds `right`, `sight`, and `tight`. Ranges must be in ascending order. |
 | Any single character except the characters in the range inside the brackets |[!x-z] | `t[!a-m]ck` finds `tock` and `tuck`, but not `tack` or `tick`. |
-| Exactly *`n`* occurrences of the previous character or expression | {n} | `fe{2}d` finds `feed` but not `fed`. |
-| At least *`n`* occurrences of the previous character or expression | {n,} | `fe{1,}d` finds `fed` and `feed`. |
-| From *`n`* to *`m`* occurrences of the previous character or expression | {n,m} | `10{1,3}` finds `10`, `100`, and `1000`. |
+| Exactly *n* occurrences of the previous character or expression | {n} | `fe{2}d` finds `feed` but not `fed`. |
+| At least *n* occurrences of the previous character or expression | {n,} | `fe{1,}d` finds `fed` and `feed`. |
+| From *n* to *m* occurrences of the previous character or expression | {n,m} | `10{1,3}` finds `10`, `100`, and `1000`. |
 | One or more occurrences of the previous character or expression | @ | `lo@t` finds `lot` and `loot`. |
 
 ### Escape special characters
