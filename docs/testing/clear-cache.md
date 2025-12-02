@@ -87,9 +87,9 @@ To clear the cache in classic Outlook on Windows, perform the following:
 
 1. If your Outlook add-in uses the [unified manifest for Microsoft 365](../develop/json-manifest-overview.md), also delete the following folder.
 
-  ```
-  %userprofile%\AppData\Local\Microsoft\Outlook\HubAppFileCache
-  ```
+    ```
+    %userprofile%\AppData\Local\Microsoft\Outlook\HubAppFileCache
+    ```
 
 ##### New Outlook on Windows
 
