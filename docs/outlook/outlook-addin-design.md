@@ -74,7 +74,7 @@ Include your branding element on the first screen of your add-in. The brand bar 
 :::image type="content" source="../images/outlook-mobile-design-branding.png" alt-text="Examples of brand bars on iOS.":::
 
 > [!NOTE]
-> Ads should not be shown within add-ins in Outlook on iOS or on Android.
+> Ads shouldn't be shown within add-ins in Outlook on iOS or on Android.
 
 ### Margins
 
