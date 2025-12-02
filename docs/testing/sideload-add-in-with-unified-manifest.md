@@ -180,4 +180,4 @@ The following are examples of the recommended structure. The structure inside th
 ```
 
 > [!NOTE]
-> The JSON files that are referenced in the `"extensions.keyboardShortcuts.keyMappingFiles"` property are *not* included in the app package. They are deployed with the add-in's web application files. 
+> The JSON files that are referenced in the `"extensions.keyboardShortcuts.keyMappingFiles"` property are *not* included in the app package. They are deployed with the add-in's web application files. For more information, see [Support backward compatibility for add-ins with a unified manifest in Microsoft Marketplace](../design/keyboard-shortcuts.md#support-backward-compatibility-for-add-ins-with-a-unified-manifest-in-microsoft-marketplace).
