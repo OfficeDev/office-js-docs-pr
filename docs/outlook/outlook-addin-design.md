@@ -112,18 +112,18 @@ Use simple typography to make content easy to scan. The following table outlines
 
 Use color subtly in Outlook on mobile. Limit color usage to actions and error states and use a unique color only for the brand bar.
 
-The following table outlines the recommended color palette for add-in components on Outlook mobile.
+The following table outlines the recommended color palette for add-in components on Outlook mobile. Color codes are shown in hexadecimal format.
 
 | Color | Component |
 | --- | --- |
-| 222222 | Most headlining types |
-| 545454 | Secondary headlining type |
-| 8E8E93 | Icons only |
-| 999999 | Secondary icon type |
-| E1E1E1 | Dividers or disabled states |
-| F8F8F8 | Form background or section title bar |
-| 0075DA | Actions |
-| E63237 | Error states or damaging actions |
+| #222222 | Most headlining types |
+| #545454 | Secondary headlining type |
+| #8E8E93 | Icons only |
+| #999999 | Secondary icon type |
+| #E1E1E1 | Dividers or disabled states |
+| #F8F8F8 | Form background or section title bar |
+| #0075DA | Actions |
+| #E63237 | Error states or damaging actions |
 
 :::image type="content" source="../images/outlook-mobile-design-color-palette.png" alt-text="Color palette for Outlook on mobile devices.":::
 
