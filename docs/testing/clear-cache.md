@@ -77,7 +77,7 @@ If the following folder exists, delete its contents, too.
 
 #### Manually clear the cache in Outlook
 
-Before attempting to clear the cache in Outlook, first try to remove the sideloaded add-in using the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in). If this option doesn't remove the add-in or resolves the issue with your add-in, follow the instructions to clear the cache for your applicable Outlook on Windows client.
+Before clearing the cache in Outlook, first try removing the sideloaded add-in using the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in). If this option doesn't remove the add-in or resolve the issue with your add-in, clear the cache for your Outlook on Windows client.
 
 ##### Classic Outlook on Windows
 
