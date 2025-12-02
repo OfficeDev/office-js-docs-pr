@@ -1,7 +1,7 @@
 ﻿---
 title: Build your first Outlook add-in with Visual Studio
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API and a Visual Studio template.
-ms.date: 08/24/2024
+ms.date: 12/02/2025
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -12,7 +12,7 @@ In this article, you'll walk through the process of building an Outlook task pan
 
 ## Prerequisites
 
-- [Visual Studio 2019](https://www.visualstudio.com/vs/) or later with the **Office/SharePoint development** workload installed
+- [Visual Studio 2019](https://www.visualstudio.com/vs/) or later with the **Office/SharePoint development** workload installed.
 
     > [!NOTE]
     > If you've previously installed Visual Studio 2019 or later, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Office/SharePoint development** workload is installed.
@@ -183,6 +183,7 @@ Congratulations, you've successfully created your first Outlook task pane add-in
 ## Code samples
 
 - [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
+- [Build a message compose Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/outlook-tutorial): Learn how to create an Outlook add-in that runs in a compose message.
 
 ## See also
 
