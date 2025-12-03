@@ -81,7 +81,7 @@ Before clearing the cache in Outlook, first try removing the sideloaded add-in u
 
 ##### Classic Outlook on Windows
 
-To clear the cache in classic Outlook on Windows, perform the following:
+To clear the cache in classic Outlook on Windows, perform the following actions.
 
 1. Delete the contents of the `Wef` folder as noted for Excel, Word, and PowerPoint in [Manually clear the cache in Excel, Word, and PowerPoint](#manually-clear-the-cache-in-excel-word-and-powerpoint).
 
