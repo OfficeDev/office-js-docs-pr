@@ -1,7 +1,7 @@
 ---
 title: Clear the Office cache
 description: Learn how to clear the Office cache on your computer.
-ms.date: 06/25/2025
+ms.date: 12/02/2025
 ms.localizationpriority: high
 ---
 
@@ -77,15 +77,21 @@ If the following folder exists, delete its contents, too.
 
 #### Manually clear the cache in Outlook
 
-Before attempting to clear the cache in Outlook, first try to remove the sideloaded add-in using the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in).
+Before clearing the cache in Outlook, first try removing the sideloaded add-in using the steps outlined in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#remove-a-sideloaded-add-in). If this option doesn't remove the add-in or resolve the issue with your add-in, clear the cache for your Outlook on Windows client.
 
-If this add-in removal doesn't work, then delete the contents of the `Wef` folder as noted for Excel, Word, and PowerPoint in [Manually clear the cache in Excel, Word, and PowerPoint](#manually-clear-the-cache-in-excel-word-and-powerpoint).
+##### Classic Outlook on Windows
 
-If your Outlook add-in uses the [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md), also delete the following folder.
+To clear the cache in classic Outlook on Windows, perform the following actions.
 
-```
-%userprofile%\AppData\Local\Microsoft\Outlook\HubAppFileCache
-```
+1. Delete the contents of the `Wef` folder as noted for Excel, Word, and PowerPoint in [Manually clear the cache in Excel, Word, and PowerPoint](#manually-clear-the-cache-in-excel-word-and-powerpoint).
+
+1. If your Outlook add-in uses the [unified manifest for Microsoft 365](../develop/json-manifest-overview.md), also delete the following folder.
+
+    ```
+    %userprofile%\AppData\Local\Microsoft\Outlook\HubAppFileCache
+    ```
+
+##### New Outlook on Windows
 
 To clear the cache in [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), perform the following steps.
 
@@ -99,6 +105,8 @@ To clear the cache in [new Outlook on Windows](https://support.microsoft.com/off
     This opens the new Outlook on Windows client and an instance of the Microsoft Edge DevTools.
 1. In the Microsoft Edge DevTools window, select the **Network** tab.
 1. Select and hold (or right-click) anywhere in the **Requests** table. Then, select **Clear browser cache**.
+
+  :::image type="content" source="../images/devtools-clear-cache.png" alt-text="The 'Clear browser cache' option is selected in Microsoft Edge DevTools.":::
 
 ### Use the Microsoft Edge developer tools on Windows 10
 
