@@ -64,6 +64,8 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
     import { createNestablePublicClientApplication } from "@azure/msal-browser";
     ```
 
+# [Outlook add-ins](#tab/outlook)
+
 ## Initialize the public client application
 
 Next, you need to initialize MSAL and get an instance of the [public client application](/entra/identity-platform/msal-client-applications). This is used to get access tokens when needed. We recommend that you put the code that creates the public client application in the `Office.onReady` method.
@@ -217,6 +219,108 @@ After acquiring the token, use it to call an API. The following example shows ho
     ```
 
 Once all the previous code is added to the `run` function, be sure a button on the task pane calls the `run` function. Then you can sideload the add-in and try out the code.
+
+# [Word, Excel, and PowerPoint add-ins](#tab/office)
+
+## Initialize the MSAL library
+
+Next, you need to initialize MSAL and get an instance of the [public client application](/entra/identity-platform/msal-client-applications). This is used to get access tokens when needed. We recommend that you put the code that creates the public client application in the `Office.onReady` method.
+
+1. Add the following `initMsal` function to the `taskpane.js` or `taskpane.ts` file. It calls `createNestablePublicClientApplication` to initialize an MSAL instance to use NAA.
+1. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
+
+```javascript
+let myMSALObj = null; // MSAL instance
+
+/**
+ * Initialize MSAL as a nestable public client application.
+ */
+async function initMsal() {
+  if (!myMSALObj) {
+    const clientId = "Enter_the_Application_Id_Here";
+    const msalConfig = {
+      auth: {
+        clientId: clientId,
+        authority: "https://login.microsoftonline.com/common"
+      },
+      cache: {
+        cacheLocation: "localStorage"
+      }
+    };
+    myMSALObj = await createNestablePublicClientApplication(msalConfig);
+  }
+}
+```
+
+## Add a function to get the login hint
+
+When running in Word, Excel, or PowerPoint in the browser, you must provide a login hint to MSAL to identify the correct account. You can get the login hint from the Office `authContext.userPrincipalName` property. Add the following function which can be called at any time to get the login hint.
+
+Add the following function to the `taskpane.js` or `taskpane.ts` file.
+
+```javascript
+/**
+ * Get the login hint from Office.AuthContext for a better SSO experience.
+ * This is especially important for Office in a browser.
+ */
+async function getLoginHint() {
+    try {
+        if (typeof Office !== "undefined" && Office.context) {
+            const authContext = await Office.auth.getAuthContext();
+            if (authContext?.userPrincipalName) return authContext.userPrincipalName;
+        }
+    } catch (error) {
+        console.warn("Could not get login hint:", error);
+    }
+    return null;
+}
+
+```
+
+## Acquire the access token
+
+Build a function to acquire the access token.  
+
+Add the following function to the `taskpane.js` or `taskpane.ts` file. About the following code note:
+
+- It gets the login hint which is required when running in Word, Excel, or PowerPoint in a browser.
+- It calls `ssoSilent` (not `acquireTokenSilent`) to get an access token.
+- If `ssoSilent` fails, it checks if interaction is required. If so it calls `acquireTokenPopup` so MSAL can interact with the user.
+
+```javascript
+/**
+ * Acquire an access token silently, or interactively if needed.
+ * @param {Array} scopes - The scopes for which the token is requested.
+ * @returns {Promise<string>} - The acquired access token.
+ */
+async function acquireAccessToken(scopes) {
+  await initMsal();
+
+  const request = {
+    scopes: scopes,
+    loginHint: await getLoginHint()
+  }
+
+  let authResult = null;
+  try {
+    authResult = await myMSALObj.ssoSilent(request);
+  } catch (error) {
+    if (error instanceof InteractionRequiredAuthError) {
+      authResult = await myMSALObj.acquireTokenPopup(request);
+    } else {
+      console.error("Silent token acquisition failed:", error);
+    }
+  }
+  if (!authResult) {
+    throw new Error("Could not acquire access token");
+  }
+  console.log(authResult);
+  return authResult.accessToken;
+
+}
+```
+
+---
 
 ## What is nested app authentication
 
