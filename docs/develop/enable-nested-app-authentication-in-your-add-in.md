@@ -46,6 +46,50 @@ Your domain must include only the origin and not its subpaths. For example:
 
 Trusted broker groups are dynamic by design and can be updated in the future to include additional hosts where your add-in may use NAA flows. Currently the brk-multihub group includes Office Word, Excel, PowerPoint, Outlook, and Teams (for when Office is activated inside).
 
+> [!IMPORTANT]
+> For Word, Excel, and PowerPoint in the browser, you also need an additional redirect since the browser uses a standard authentication flow. The SPA redirect URI must reference the HTML page where you will use the MSAL.js library to request tokens through NAA.
+
+Use the following steps to set up an app registration for your Office Add-in.
+
+1. Sign in to the [Azure portal](https://portal.azure.com/) with the ***admin*** credentials to your Microsoft 365 tenancy. For example, **MyName@contoso.onmicrosoft.com**.
+1. Select **App registrations**. If you don't see the icon, search for "app registration" in the search bar.
+
+    :::image type="content" source="../images/azure-portal-select-app-registration.png" alt-text="The Azure portal home page.":::
+
+    The **App registrations** page appears.
+
+1. Select **New registration**.
+
+    :::image type="content" source="../images/azure-portal-select-new-registration.png" alt-text="New registration on the App registrations pane.":::
+
+    The **Register an application** page appears.
+
+1. On the **Register an application** page, set the values as follows.
+
+    * Set **Name** to `contoso-office-add-in-sso`.
+    * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
+    * Set **Redirect URI** to use the platform **Single-page application (SPA)** and the URI to `brk-multihub://localhost:3000`. This redirect assumes you are testing your add-in from a localhost server.
+
+    :::image type="content" source="../images/azure-portal-create-application-registration-nested-app-authentication.png" alt-text="Register an application pane with name and supported account completed.":::
+
+1. Select **Register**. A message is displayed stating that the application registration was created.
+
+    :::image type="content" source="../images/azure-portal-application-created-message.png" alt-text="Message stating that the application registration was created.":::
+
+1. Copy and save the value for the **Application (client) ID**. You'll use it in a later procedure.
+
+    :::image type="content" source="../images/azure-portal-copy-client-id.png" alt-text="App registration pane for Contoso displaying the client ID and directory ID.":::
+
+If your add-in supports Word, Excel, or PowerPoint in a browser, you must add an SPA redirect URI for your task pane page. Use the following steps to add an SPA redirect URI for your task pane page.
+
+1. From the left pane, select **Manage > Authentication**.
+    :::image type="content" source="../images/azure-portal-authentication-page.png" alt-text="The authentication page in the Azure app registration.":::
+1. In the **Platform configurations** section there is a list of **Single-page application Redirect URIs**.
+1. Select **Add URI**.
+    :::image type="content" source="../images/azure-portal-add-uri.png" alt-text="Selecting the add URI option on the Azure app registration page.":::
+1. Enter **https://localhost:3000/taskpane.html** and select **Save**. This redirect URI assume you are using NAA from the `taskpane.html` file.
+    :::image type="content" source="../images/azure-portal-add-task-pane-redirect-uri.png" alt-text="Adding the taskpane redirect URI on the Azure app registration page.":::
+
 ## Configure MSAL config to use NAA
 
 Configure your add-in to use NAA by calling the `createNestablePublicClientApplication` function in MSAL. MSAL returns a public client application that can be nested in a native application host (for example, Outlook) to acquire tokens for your application.
@@ -63,6 +107,8 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
     ```JavaScript
     import { createNestablePublicClientApplication } from "@azure/msal-browser";
     ```
+
+The following steps are different for Outlook than for Word, Excel, and PowerPoint. Select the tab that corresponds to the type of add-in you're building.
 
 # [Outlook add-ins](#tab/outlook)
 
@@ -317,6 +363,55 @@ async function acquireAccessToken(scopes) {
   console.log(authResult);
   return authResult.accessToken;
 
+}
+```
+
+## Get token and call the Graph API
+
+After acquiring the token, use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the *Authorization* header.
+
+Update the `run` function in the `taskpane.js` or `taskpane.ts` file to match the following code. About the following code note:
+
+- It calls the `acquireAccessToken` function you created previously and passes the `Files.Read` and `User.Read` scopes.
+- It uses the access token to make a call the Microsoft Graph API to retrieve 10 of the user's file names from OneDrive.
+
+```javascript
+export async function run() {
+  let accessToken;
+  try {
+    // Acquire an access token for Microsoft Graph.
+    accessToken = await acquireAccessToken(["Files.Read", "User.Read"]);
+    console.log("Access token acquired:", accessToken);
+  }
+  catch (error) {
+    console.error("Error acquiring access token:", error);
+    return;
+  }
+
+  // Call the Microsoft Graph API with the access token.
+  const response = await fetch(
+    `https://graph.microsoft.com/v1.0/me/drive/root/children?$select=name&$top=10`,
+    {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    }
+  );
+
+  if (response.ok) {
+    // Write file names to the console.
+    const data = await response.json();
+    const names = data.value.map((item) => item.name);
+
+    // Be sure the taskpane.html has an element with Id = item-subject.
+    const label = document.getElementById("item-subject");
+
+    // Write file names to task pane and the console.
+    const nameText = names.join(", ");
+    if (label) label.textContent = nameText;
+    console.log(nameText);
+  } else {
+    const errorText = await response.text();
+    console.error("Microsoft Graph call failed - error text: " + errorText);
+  }
 }
 ```
 
