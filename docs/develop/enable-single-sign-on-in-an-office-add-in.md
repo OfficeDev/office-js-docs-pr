@@ -88,67 +88,39 @@ You need the MSAL library to support SSO in your project.
     npm install @azure/msal-browser
     ```
 
-1. Create a  new file named `auth.js` in your project. You'll put all the authentication and SSO related code in this file.
-1. Add the following code to the top of the `auth.js` file. About the following code, note:
-    - It defines a couple global variables that are used by following steps.
-    - It creates a `setGlobalActiveAccount` helper function which is used by other functions to track the active account of the user correctly.
+1. Add the following code to the top of the `taskpane.js` or `taskpane.ts` file. This will import the MSAL browser library.
 
-    ```javascript
-    import { createNestablePublicClientApplication } from "@azure/msal-browser";
-        
-    let msalInstance = null;
-    let currentAccount = null;
- 
-    /**
-     * Helper function to set the global variable for the current account and the MSAL active account.
-     * 
-     * @param {*}  account The current account.
-     */
-    function setGlobalActiveAccount(account) {
-        if (account) {
-            currentAccount = account;
-            msalInstance.setActiveAccount(currentAccount);
-        }
-    }
+    ```JavaScript
+    import { createNestablePublicClientApplication, InteractionRequiredAuthError } from "@azure/msal-browser";
     ```
 
-1. Save the file.
+## Initialize the MSAL library
 
-## Initialize the public client application
+Next, you need to initialize MSAL and get an instance of the [public client application](/entra/identity-platform/msal-client-applications). This is used to get access tokens when needed. We recommend that you put the code that creates the public client application in the `Office.onReady` method.
 
-You need to initialize MSAL and get an instance of the [public client application](/entra/identity-platform/msal-client-applications). This is used to get access tokens when needed.
-
-Add the following code to the `auth.js` file. About the following code note:
-
-- It calls the`createNestablePublicClientApplication` function in MSAL. MSAL returns a public client application that can be nested in a native application host (for example, Outlook) to acquire tokens for your application.
-- The `createNestablePublicClientApplication` requires an MSAL configuration. Replace the `Enter_client_ID_here` with the client ID from your app registration.
+1. Add the following `initMsal` function to the `taskpane.js` or `taskpane.ts` file. It calls `createNestablePublicClientApplication` to initialize an MSAL instance to use NAA.
+1. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
 
 ```javascript
+let myMSALObj = null; // MSAL instance
+
 /**
- * Initialize the MSAL PublicClientApplication instance.
- * This should be called once when the add-in loads.
+ * Initialize MSAL as a nestable public client application.
  */
-export async function initializeMsal() {
-    if (msalInstance) return;
-
-    try {
-        msalInstance = await createNestablePublicClientApplication({
-        auth: {
-            clientId: "Enter_client_ID_here",
-            authority: "https://login.microsoftonline.com/common",
-        }});
-        const response = await msalInstance.handleRedirectPromise();
-
-        if (response?.account) {
-            currentAccount = response.account;
-        } else {
-            const accounts = msalInstance.getAllAccounts();
-            if (accounts.length > 0) currentAccount = accounts[0];
-        }
-    } catch (error) {
-        console.error("MSAL initialization failed:", error);
-        throw error;
-    }
+async function initMsal() {
+  if (!myMSALObj) {
+    const clientId = "Enter_the_Application_Id_Here";
+    const msalConfig = {
+      auth: {
+        clientId: clientId,
+        authority: "https://login.microsoftonline.com/common"
+      },
+      cache: {
+        cacheLocation: "localStorage"
+      }
+    };
+    myMSALObj = await createNestablePublicClientApplication(msalConfig);
+  }
 }
 ```
 
@@ -156,7 +128,7 @@ export async function initializeMsal() {
 
 When running in Word, Excel, or PowerPoint in the browser, you must provide a login hint to MSAL to identify the correct account. You can get the login hint from the Office `authContext.userPrincipalName` property. Add the following function which can be called at any time to get the login hint.
 
-Add the following function to the `auth.js` file.
+Add the following function to the `taskpane.js` or `taskpane.ts` file.
 
 ```javascript
 /**
@@ -181,130 +153,60 @@ async function getLoginHint() {
 
 Build a function to acquire the access token.  
 
-Add the following function to the `auth.js` file. About the following code note:
+Add the following function to the `taskpane.js` or `taskpane.ts` file. About the following code note:
 
-- The function first checks if a current account is available for the signed in user. If a current account exists, then the function calls `acquireTokenSilent` to get an access token using that account.
-- If there isn't a current account, or if `acquireTokenSilent` fails, the function calls `acquireTokenWithSSO` as the next step to get the access token.
-
-```javascript
-/**
- * Acquire an access token for a resource (such as Microsoft Graph). Attempts to acquire the token by using the current account.
- * Switches to SSO or interactive login if needed.
- * @param scopes - The scopes to request; for example, ["User.Read"].
- * @returns Access token string
- */
-export async function acquireAccessToken(scopes) {
-    if (!msalInstance) await initializeMsal();
-
-    // Try to get the current account.
-    try {
-        if (!currentAccount) {
-            const accounts = msalInstance.getAllAccounts();
-            if (accounts.length > 0) {
-                setGlobalActiveAccount(accounts[0]);
-            } else {
-                // Acquire token using SSO if no account is available.
-                return await acquireTokenWithSSO(scopes);
-            }
-        }
-
-        // Try to acquire the token silently based on current account.
-        const response = await msalInstance.acquireTokenSilent({
-            scopes,
-            account: currentAccount,
-        });
-        setGlobalActiveAccount(response.account);
-        return response.accessToken;
-    } catch (error) {
-        console.error("Silent token acquisition failed:", error);
-        // Fall back and acquire token using SSO.
-        return await acquireTokenWithSSO(scopes);
-    }
-}
-```
-
-## Acquire the token with SSO
-
-Build a function to acquire the access token through SSO. Add the following function to the `auth.js` file. About the following code note:
-
-- The function creates a token request with the scopes and the login hint. Then it calls `ssoSilent` to attempt to silently get an access token.
-- If the call fails, then  the function calls `acquireTokenInteractively` to interact with the user as the next step to get the access token.
+- It gets the login hint which is required when running in Word, Excel, or PowerPoint in a browser.
+- It calls `ssoSilent` (not `acquireTokenSilent`) to get an access token.
+- If `ssoSilent` fails, it checks if interaction is required. If so it calls `acquireTokenPopup` so MSAL can interact with the user.
 
 ```javascript
 /**
- * Acquire an access token using SSO.
- * @param scopes - The scopes to request.
- * @returns Access token string.
+ * Acquire an access token silently, or interactively if needed.
+ * @param {Array} scopes - The scopes for which the token is requested.
+ * @returns {Promise<string>} - The acquired access token.
  */
-async function acquireTokenWithSSO(scopes) {
-    try {
-        // Create token request with login hint.
-        const hint = await getLoginHint();
-        const ssoTokenRequest = { scopes };
-        if (hint) ssoTokenRequest.loginHint = hint;
+async function acquireAccessToken(scopes) {
+  await initMsal();
 
-        // Try to acquire token silently using SSO.
-        const response = await msalInstance.ssoSilent(ssoTokenRequest);
-        setGlobalActiveAccount(response.account);
-        return response.accessToken;
-    } catch (error) {
-        console.error("SSO silent failed:", error);
-        // Fall back to interactive token acquisition.
-        return await acquireTokenInteractive(scopes);
+  const request = {
+    scopes: scopes,
+    loginHint: await getLoginHint()
+  }
+
+  let authResult = null;
+  try {
+    authResult = await myMSALObj.ssoSilent(request);
+  } catch (error) {
+    if (error instanceof InteractionRequiredAuthError) {
+      authResult = await myMSALObj.acquireTokenPopup(request);
+    } else {
+      console.error("Silent token acquisition failed:", error);
     }
+  }
+  if (!authResult) {
+    throw new Error("Could not acquire access token");
+  }
+  console.log(authResult);
+  return authResult.accessToken;
+
 }
-```
-
-## Acquire the token interactively
-
-Build a function to acquire the access token interactively.   
-
-Add the following function to the `auth.js` file. About the following code note:
-
-- The function creates a token request with the scopes and the login hint.
-- Then it calls the MSAL API `acquireTokenPopup`. MSAL will show a popup window and interact with the user. The interaction could be to ask for consent to the scopes, perform multi-factor authentication, or to resolve a conditional access policy.
-- The call should succeed unless the interaction can't be completed successfully (such as user canceling the popup).
-
-```javascript
-/**
- * Acquire an access token interactively via popup.
- * This is a fallback when silent authentication fails.
- * @param scopes - The scopes to request.
- * @returns Access token string.
- */
-async function acquireTokenInteractive(scopes) {
-    try {
-        // Create token request with login hint.
-        const hint = await getLoginHint();
-        const popupTokenRequest = { scopes };
-        if (hint) popupTokenRequest.loginHint = hint;
-
-        // Use MSAL popup to acquire token interactively.
-        const response = await msalInstance.acquireTokenPopup(popupTokenRequest);
-        setGlobalActiveAccount(response.account);
-        return response.accessToken;
-    } catch (error) {
-        console.error("Interactive token acquisition failed:", error);
-        throw error;
-    }
-}
-
 ```
 
 ## Get token and call the Graph API
 
-The next steps assume you have a `taskpane.js` file in a project built with `yo office` (**Office Add-in Task Pane** project). However these steps can be used in any project task pane.
+After acquiring the token, use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the *Authorization* header.
 
-In your `taskpane.js` file update the `run` function to get an access token and call the Graph API. Call the `acquireAccessToken` function you created previously and pass the `Files.Read` and `User.Read` scopes. Then use the access token to make a call the Microsoft Graph API to retrieve 10 of the user's file names from OneDrive.
+Update the `run` function in the `taskpane.js` or `taskpane.ts` file to match the following code. About the following code note:
 
-Update the `run` function to match the following code.
+- It calls the `acquireAccessToken` function you created previously and passes the `Files.Read` and `User.Read` scopes.
+- It uses the access token to make a call the Microsoft Graph API to retrieve 10 of the user's file names from OneDrive.
 
 ```javascript
 export async function run() {
-   let accessToken;
+  let accessToken;
   try {
     // Acquire an access token for Microsoft Graph.
-    accessToken = await acquireAccessToken(["Files.Read","User.Read"]);
+    accessToken = await acquireAccessToken(["Files.Read", "User.Read", "mail.read"]);
     console.log("Access token acquired:", accessToken);
   }
   catch (error) {
