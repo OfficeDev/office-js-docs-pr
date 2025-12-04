@@ -38,7 +38,7 @@ In this tutorial, you'll create an Excel task pane add-in that:
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![The Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
+:::image type="content" source="../images/yo-office-excel-xml-manifest.png" alt-text="The Yeoman Generator for Office Add-ins command line interface.":::
 
 Next, select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
 
@@ -193,13 +193,13 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
         [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Task Pane** button on the ribbon to open the add-in task pane.
 
-    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
+    :::image type="content" source="../images/excel-quickstart-add-in-3b.png" alt-text="The Excel Home menu, with the Show Task Pane button highlighted.":::
 
 1. In the task pane, choose the **Create Table** button.
 
-    ![Excel displaying an add-in task pane with a Create Table button, and a table in the worksheet populated with Date, Merchant, Category, and Amount data.](../images/excel-tutorial-create-table-2.png)
+    :::image type="content" source="../images/excel-tutorial-create-table-2.png" alt-text="Excel displaying an add-in task pane with a Create Table button, and a table in the worksheet populated with Date, Merchant, Category, and Amount data.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
@@ -310,13 +310,13 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button in the task pane.
 
 1. Choose the **Filter Table** button and the **Sort Table** button, in either order.
 
-    ![Excel with Filter Table and Sort Table buttons visible in the add-in task pane.](../images/excel-tutorial-filter-and-sort-table-2.png)
+    :::image type="content" source="../images/excel-tutorial-filter-and-sort-table-2.png" alt-text="Excel with Filter Table and Sort Table buttons visible in the add-in task pane.":::
 
 ## Create a chart
 
@@ -399,13 +399,13 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button, and then the **Filter Table** button and the **Sort Table** button, in either order.
 
 1. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
-    ![Excel with a Create Chart button visible in the add-in task pane, and a chart in the worksheet displaying grocery and education expense data.](../images/excel-tutorial-create-chart-2.png)
+    :::image type="content" source="../images/excel-tutorial-create-chart-2.png" alt-text="Excel with a Create Chart button visible in the add-in task pane, and a chart in the worksheet displaying grocery and education expense data.":::
 
 ## Freeze a table header
 
@@ -459,7 +459,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is present in the worksheet, delete it.
 
@@ -469,7 +469,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. Scroll down the worksheet far enough to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
-    ![An Excel worksheet with a frozen table header.](../images/excel-tutorial-freeze-header-2.png)
+    :::image type="content" source="../images/excel-tutorial-freeze-header-2.png" alt-text="An Excel worksheet with a frozen table header.":::
 
 ## Protect a worksheet
 
@@ -590,7 +590,7 @@ The steps vary depending on the type of manifest.
 
 1. Open the manifest file **./manifest.xml**.
 
-1. Locate the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing **\</Control\>** tag and the closing **\</Group\>** tag, add the following markup.
+1. Locate the `<Control>` element. This element defines the **Show Task Pane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing **\</Control\>** tag and the closing **\</Group\>** tag, add the following markup.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -808,7 +808,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot.
 
-    ![The Excel ribbon with the Toggle Worksheet Protection button highlighted and enabled. Most other buttons appear gray and disabled.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
+    :::image type="content" source="../images/excel-tutorial-ribbon-with-protection-on-2.png" alt-text="The Excel ribbon with the Toggle Worksheet Protection button highlighted and enabled. Most other buttons appear gray and disabled.":::
 
 1. Select a cell and try to edit its content. Excel displays an error message indicating that the worksheet is protected.
 
@@ -1056,7 +1056,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. Choose the **Open Dialog** button in the task pane.
 
@@ -1066,7 +1066,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. Optionally, in the **./src/taskpane/taskpane.js** file, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
-    ![Excel with an Open Dialog button visible in the add-in task pane and a dialog box displayed over the worksheet.](../images/excel-tutorial-dialog-open-2.png)
+    :::image type="content" source="../images/excel-tutorial-dialog-open-2.png" alt-text="Excel with an Open Dialog button visible in the add-in task pane and a dialog box displayed over the worksheet.":::
 
 ## Next steps
 

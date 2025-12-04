@@ -50,11 +50,11 @@ The Office Add-ins Development Kit will create the project. It will then open th
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-![The Yeoman Generator for Office Add-ins command line interface.](../images/yo-office-excel.png)
+:::image type="content" source="../images/yo-office-excel-xml-manifest.png" alt-text="The Yeoman Generator for Office Add-ins command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -72,15 +72,15 @@ After you complete the wizard, the generator creates the project and installs su
 
 1. [!include[Start server section](../includes/quickstart-yo-start-server-excel.md)]
 
-1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Task Pane** button on the ribbon to open the add-in task pane.
 
-    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
+    :::image type="content" source="../images/excel-quickstart-add-in-3b.png" alt-text="The Excel Home menu, with the Show Task Pane button highlighted.":::
 
 1. Select any range of cells in the worksheet.
 
 1. At the bottom of the task pane, choose the **Run** link to set the color of the selected range to yellow.
 
-    ![The add-in task pane open in Excel, with the Run button highlighted in the add-in task pane.](../images/excel-quickstart-addin-3c.png)
+    :::image type="content" source="../images/excel-quickstart-add-in-3c.png" alt-text="The add-in task pane open in Excel, with the Run button highlighted in the add-in task pane.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
