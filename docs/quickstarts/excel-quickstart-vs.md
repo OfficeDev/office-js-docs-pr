@@ -140,13 +140,13 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-2a.png)
+    :::image type="content" source="../images/excel-quickstart-add-in-2a.png" alt-text="The Excel Home menu, with the Show Taskpane button highlighted.":::
 
 1. Select any range of cells in the worksheet.
 
 1. In the task pane, choose the **Set color** button to set the color of the selected range to green.
 
-    ![The add-in task pane open in Excel.](../images/excel-quickstart-addin-2c.png)
+    :::image type="content" source="../images/excel-quickstart-add-in-2c.png" alt-text="The add-in task pane open in Excel.":::
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 
