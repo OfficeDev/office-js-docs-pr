@@ -259,6 +259,8 @@
             href: develop/create-addin-commands.md
           - name: Create add-in commands with the unified manifest for Microsoft 365
             href: develop/create-addin-commands-unified-manifest.md
+          - name: Find the IDs of built-in Office ribbon tabs
+            href: develop/built-in-ui-ids.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
           - name: Change the availability of add-in commands
