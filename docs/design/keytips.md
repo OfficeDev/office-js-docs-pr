@@ -23,7 +23,7 @@ Custom KeyTips are supported in the following Office applications and platforms.
 | Office app | Office on the web | Office on Windows | Office on Mac |
 | ----- | ----- | ----- | ----- |
 | Excel | Supported | Supported | Supported |
-| Outlook | Supported | New Outlook on Windows | Not supported |
+| Outlook | Not supported | Not supported | Not supported |
 | PowerPoint | Supported | Supported | Supported |
 | Word | Supported | Supported | Supported |
 
@@ -34,15 +34,13 @@ Custom KeyTips are supported in the following Office applications and platforms.
 
 ## Supported surfaces and controls
 
-KeyTips can be defined for the ribbon tab in which the add-in appears and add-in controls. The following table outlines which ribbon tabs and controls support KeyTips for each Office application.
+KeyTips can be defined for the add-in's controls and the ribbon tab in which the add-in appears. The following are ribbon tabs and controls that support custom KeyTips.
 
-| Tab type | Excel | Outlook | PowerPoint | Word |
-| ----- | ----- | ----- | ----- | ----- |
-| Built-in Office tabs | Supported | Home tab only | Supported | Supported |
-| Custom tab | Not available | Not available | Supported | Not available |
-| Contextual tab | Supported | Not available | Not available | Not available |
-| Buttons | Supported | Supported | Supported | Supported |
-| Menu items | Supported | Supported | Supported | Supported |
+- Built-in Office tabs
+- Custom tabs
+- Contextual tabs
+- Buttons
+- Menu items
 
 ## Configure the manifest
 
