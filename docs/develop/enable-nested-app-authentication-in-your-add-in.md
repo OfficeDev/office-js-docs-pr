@@ -79,7 +79,7 @@ If your add-in supports Word, Excel, or PowerPoint in a browser, you must add an
 1. In the **Platform configurations** section there is a list of **Single-page application Redirect URIs**.
 1. Select **Add URI**.
     :::image type="content" source="../images/azure-portal-add-uri.png" alt-text="Selecting the add URI option on the Azure app registration page.":::
-1. Enter **<https://localhost:3000/taskpane.html>** and select **Save**. This redirect URI assume you are using NAA from the `taskpane.html` file.
+1. Enter `https://localhost:3000/taskpane.html` and select **Save**. This redirect URI assume you are using NAA from the `taskpane.html` file.
     :::image type="content" source="../images/azure-portal-add-task-pane-redirect-uri.png" alt-text="Adding the taskpane redirect URI on the Azure app registration page.":::
 
 ## Configure MSAL config to use NAA
@@ -111,26 +111,17 @@ Next, you need to initialize MSAL and get an instance of the [public client appl
 Add the following code to the `taskpane.js` or `taskpane.ts` file. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously. About the following code note:
 
 - The `initMsal` function initializes MSAL by calling `createNestablePublicClientApplication`. This creates a nestable public client application that supports SSO with Outlok.
-- It's recommended to initialize MSAL as soon as your add-in loads. `Office.onReady` calls `initMsal` to initialize MSAL.
 - The `initMsal` function sets the **authority** to **common**, which supports work and school accounts or personal Microsoft accounts. If you want to configure a single tenant or other account types, see [Application configuration options](/entra/identity-platform/msal-client-application-configuration) for additional authority options.
 
 ```javascript
 let msalInstance = undefined;
-Office.onReady(async (info) => {
-  if (info.host) {
-    document.getElementById("sideload-msg").style.display = "none";
-    document.getElementById("app-body").style.display = "flex";
-    document.getElementById("run").onclick = run;
-  }
-  await initMsal();
-});
 
 /**
  * Initialize MSAL as a nestable public client application.
   */
 async function initMsal() {
   if (!msalInstance) {
-    const clientId = "9c72862c-0d3e-4455-9115-e1ea2832c63c";
+    const clientId = "Enter_the_Application_Id_Here";
     const msalConfig = {
       auth: {
         clientId: clientId,
@@ -171,7 +162,7 @@ The following code shows how to implement this authentication pattern in your ow
       // TODO 1: Use msalInstance to get an access token.
     
       // TODO 2: Call the Microsoft Graph API.
-    
+    }
     ```
 
     > [!IMPORTANT]
@@ -257,13 +248,13 @@ Next, you need to initialize MSAL and get an instance of the [public client appl
 1. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
 
 ```javascript
-let myMSALObj = null; // MSAL instance
+let msalInstance = null; // MSAL instance
 
 /**
  * Initialize MSAL as a nestable public client application.
  */
 async function initMsal() {
-  if (!myMSALObj) {
+  if (!msalInstance) {
     const clientId = "Enter_the_Application_Id_Here";
     const msalConfig = {
       auth: {
@@ -274,7 +265,7 @@ async function initMsal() {
         cacheLocation: "localStorage"
       }
     };
-    myMSALObj = await createNestablePublicClientApplication(msalConfig);
+    msalInstance = await createNestablePublicClientApplication(msalConfig);
   }
 }
 ```
@@ -333,10 +324,10 @@ async function acquireAccessToken(scopes) {
 
   let authResult = null;
   try {
-    authResult = await myMSALObj.ssoSilent(request);
+    authResult = await msalInstance.ssoSilent(request);
   } catch (error) {
     if (error instanceof InteractionRequiredAuthError) {
-      authResult = await myMSALObj.acquireTokenPopup(request);
+      authResult = await msalInstance.acquireTokenPopup(request);
     } else {
       console.error("Silent token acquisition failed:", error);
     }
@@ -356,7 +347,7 @@ After acquiring the token, use it to call an API. The following example shows ho
 
 Update the `run` function in the `taskpane.js` or `taskpane.ts` file to match the following code. About the following code note:
 
-- It calls the `acquireAccessToken` function you created previously and passes the `Files.Read` and `User.Read` scopes.
+- It calls the `acquireAccessToken` function you created previously and passes the `Files.Read` and `User.Read` scopes. The token request must include scopes other than just `offline_access`, `openid`, `profile`, or `email`. You can use any combination of the previous scopes, but you must include at least one additional scope. If not, the token request can fail.
 - It uses the access token to make a call the Microsoft Graph API to retrieve 10 of the user's file names from OneDrive.
 
 ```javascript
