@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins to Office on the web
 description: Test your Office Add-in in Office on the web by sideloading.
-ms.date: 11/06/2025
+ms.date: 12/03/2025
 ms.localizationpriority: medium
 ---
 
@@ -98,7 +98,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 If you ran the `npm start` command and your add-in was automatically sideloaded, then run `npm stop` when you're ready to stop the dev server and uninstall your add-in.
 
-Otherwise, to remove an add-in sideloaded to Office on the web, simply clear your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to clear your browser's cache and then re-sideload the add-in using the updated manifest. Doing so allows Office on the web to render the add-in as it's described by the updated manifest.
+Otherwise, to remove a sideloaded add-in, see [Uninstall add-ins under development](uninstall-add-in.md).
 
 ## See also
 
