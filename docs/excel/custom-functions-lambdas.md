@@ -16,8 +16,6 @@ ms.localizationpriority: medium
 - [MAKEARRAY](https://support.microsoft.com/office/makearray-function-b80da5ad-b338-4149-a523-5b221da09097)
 - [MAP](https://support.microsoft.com/office/map-function-48006093-f97c-47c1-bfcc-749263bb1f01)
 
-
 ## See also
 - [Custom functions overview](custom-functions-overview.md)
-- [Create custom functions in Excel](custom-functions-create.md)
 - [LAMBDA function documentation](https://support.microsoft.com/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67)
