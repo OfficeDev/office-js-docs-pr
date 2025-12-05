@@ -102,7 +102,7 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
 
 The following steps are different for Outlook than for Word, Excel, and PowerPoint. Select the tab that corresponds to the type of add-in you're building.
 
-# [Outlook add-ins](#tab/outlook)
+## [Outlook add-ins](#tab/outlook)
 
 ## Initialize the MSAL library
 
@@ -238,7 +238,7 @@ After acquiring the token, use it to call an API. The following example shows ho
 
 Once all the previous code is added to the `run` function, be sure a button on the task pane calls the `run` function. Then you can sideload the add-in and try out the code.
 
-# [Word, Excel, and PowerPoint add-ins](#tab/office)
+## [Word, Excel, and PowerPoint add-ins](#tab/office)
 
 ## Initialize the MSAL library
 
