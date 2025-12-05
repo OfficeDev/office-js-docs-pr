@@ -1,22 +1,14 @@
 ---
-title: Enable single sign-on in an Outlook add-in with nested app authentication
-description: Learn how to enable SSO in an Outlook add-in with nested app authentication.
+title: Enable single sign-on in an Office add-in with nested app authentication
+description: Learn how to enable SSO in an Office add-in with nested app authentication.
 ms.date: 11/24/2025
 ms.topic: how-to
 ms.localizationpriority: high
 ---
 
-# Enable single sign-on in an Outlook Add-in with nested app authentication
+# Enable single sign-on in an Office Add-in with nested app authentication
 
-Use the MSAL.js library with nested app authentication to enable single sign-on (SSO) from your Office Add-in. Using nested app authentication (NAA) offers several advantages over the On-Behalf-Of (OBO) flow.
-
-- You only need to use the MSAL.js library and don’t need the `getAccessToken` function in Office.js.
-- You can call services such as Microsoft Graph with an access token from your client code as an SPA. There’s no need for a middle-tier server.
-- You can use incremental and dynamic consent for scopes.
-- You don't need to [preauthorize your hosts](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab?tabs=manifest-teams-toolkit#update-azure-ad-app-registration-for-sso) (for example, Teams, Office) to call your endpoints.
-
-> [!NOTE]
-> This article explains how to use SSO with an Outlook add-in. To use SSO with Word, Excel, or PowerPoint add-in, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-single-sign-on-in-an-office-add-in.md).
+Use the MSAL.js library with nested app authentication (NAA) to enable single sign-on (SSO) from your Office Add-in. The procedures in this article guide you through creating an app registration and adding code to your project to use NAA successfully.
 
 ## NAA supported accounts and hosts
 
@@ -28,7 +20,7 @@ You’ll need to create a Microsoft Azure App registration for your add-in on th
 
 - A name
 - A supported account type
-- An SPA redirect
+- An SPA redirect for NAA
 
 If your add-in requires additional app registration beyond NAA and SSO, see [Single-page application: App registration](/entra/identity-platform/scenario-spa-app-registration).
 
@@ -51,7 +43,7 @@ Trusted broker groups are dynamic by design and can be updated in the future to 
 
 Use the following steps to set up an app registration for your Office Add-in.
 
-1. Sign in to the [Azure portal](https://portal.azure.com/) with the ***admin*** credentials to your Microsoft 365 tenancy. For example, **MyName@contoso.onmicrosoft.com**.
+1. Sign in to the [Azure portal](https://portal.azure.com/) with the ***admin*** credentials to your Microsoft 365 tenancy. For example, **<MyName@contoso.onmicrosoft.com>**.
 1. Select **App registrations**. If you don't see the icon, search for "app registration" in the search bar.
 
     :::image type="content" source="../images/azure-portal-select-app-registration.png" alt-text="The Azure portal home page.":::
@@ -66,9 +58,9 @@ Use the following steps to set up an app registration for your Office Add-in.
 
 1. On the **Register an application** page, set the values as follows.
 
-    * Set **Name** to `contoso-office-add-in-sso`.
-    * Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
-    * Set **Redirect URI** to use the platform **Single-page application (SPA)** and the URI to `brk-multihub://localhost:3000`. This redirect assumes you are testing your add-in from a localhost server.
+    - Set **Name** to `contoso-office-add-in-sso`.
+    - Set **Supported account types** to **Accounts in any organizational directory (any Azure AD directory - multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)**.
+    - Set **Redirect URI** to use the platform **Single-page application (SPA)** and the URI to `brk-multihub://localhost:3000`. This redirect assumes you are testing your add-in from a localhost server.
 
     :::image type="content" source="../images/azure-portal-create-application-registration-nested-app-authentication.png" alt-text="Register an application pane with name and supported account completed.":::
 
@@ -87,7 +79,7 @@ If your add-in supports Word, Excel, or PowerPoint in a browser, you must add an
 1. In the **Platform configurations** section there is a list of **Single-page application Redirect URIs**.
 1. Select **Add URI**.
     :::image type="content" source="../images/azure-portal-add-uri.png" alt-text="Selecting the add URI option on the Azure app registration page.":::
-1. Enter **https://localhost:3000/taskpane.html** and select **Save**. This redirect URI assume you are using NAA from the `taskpane.html` file.
+1. Enter **<https://localhost:3000/taskpane.html>** and select **Save**. This redirect URI assume you are using NAA from the `taskpane.html` file.
     :::image type="content" source="../images/azure-portal-add-task-pane-redirect-uri.png" alt-text="Adding the taskpane redirect URI on the Azure app registration page.":::
 
 ## Configure MSAL config to use NAA
@@ -105,7 +97,7 @@ The following steps show how to enable NAA in the `taskpane.js` or `taskpane.ts`
 1. Add the following code to the top of the `taskpane.js` or `taskpane.ts` file. This will import the MSAL browser library.
 
     ```JavaScript
-    import { createNestablePublicClientApplication } from "@azure/msal-browser";
+    import { createNestablePublicClientApplication, InteractionRequiredAuthError } from "@azure/msal-browser";
     ```
 
 The following steps are different for Outlook than for Word, Excel, and PowerPoint. Select the tab that corresponds to the type of add-in you're building.
@@ -114,31 +106,44 @@ The following steps are different for Outlook than for Word, Excel, and PowerPoi
 
 ## Initialize the public client application
 
-Next, you need to initialize MSAL and get an instance of the [public client application](/entra/identity-platform/msal-client-applications). This is used to get access tokens when needed. We recommend that you put the code that creates the public client application in the `Office.onReady` method.
+Next, you need to initialize MSAL and get an instance of the [public client application](/entra/identity-platform/msal-client-applications).
 
-- In your `Office.onReady` function, add a call to `createNestablePublicClientApplication` as shown below. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously.
+Add the following code to the `taskpane.js` or `taskpane.ts` file. Replace the `Enter_the_Application_Id_Here` placeholder with the Azure app ID you saved previously. About the following code note:
 
-    ```javascript
-    let pca = undefined;
-    Office.onReady(async (info) => {
-      if (info.host) {
-        document.getElementById("sideload-msg").style.display = "none";
-        document.getElementById("app-body").style.display = "flex";
-        document.getElementById("run").onclick = run;
-  
-        // Initialize the public client application
-        pca = await createNestablePublicClientApplication({
-          auth: {
-            clientId: "Enter_the_Application_Id_Here",
-            authority: "https://login.microsoftonline.com/common"
-          },
-        });
+- The `initMsal` function initializes MSAL by calling `createNestablePublicClientApplication`. This creates a nestable public client application that supports SSO with Outlok.
+- It's recommended to initialize MSAL as soon as your add-in loads. `Office.onReady` calls `initMsal` to initialize MSAL.
+- The `initMsal` function sets the **authority** to **common**, which supports work and school accounts or personal Microsoft accounts. If you want to configure a single tenant or other account types, see [Application configuration options](/entra/identity-platform/msal-client-application-configuration) for additional authority options.
+
+```javascript
+let msalInstance = undefined;
+Office.onReady(async (info) => {
+  if (info.host) {
+    document.getElementById("sideload-msg").style.display = "none";
+    document.getElementById("app-body").style.display = "flex";
+    document.getElementById("run").onclick = run;
+  }
+  await initMsal();
+});
+
+/**
+ * Initialize MSAL as a nestable public client application.
+  */
+async function initMsal() {
+  if (!msalInstance) {
+    const clientId = "9c72862c-0d3e-4455-9115-e1ea2832c63c";
+    const msalConfig = {
+      auth: {
+        clientId: clientId,
+        authority: "https://login.microsoftonline.com/common"
+      },
+      cache: {
+        cacheLocation: "localStorage"
       }
-    });
-    ```
-
-> [!NOTE]
-> The previous code sample sets the **authority** to **common**, which supports work and school accounts or personal Microsoft accounts. If you want to configure a single tenant or other account types, see [Application configuration options](/entra/identity-platform/msal-client-application-configuration) for additional authority options.
+    };
+    msalInstance = await createNestablePublicClientApplication(msalConfig);
+  }
+}
+```
 
 ## Acquire your first token
 
@@ -150,35 +155,23 @@ The following steps show the pattern to use for acquiring a token.
 1. Call `acquireTokenSilent`. This will get the token without requiring user interaction.
 1. If `acquireTokenSilent` fails, call `acquireTokenPopup` to display an interactive dialog for the user. `acquireTokenSilent` can fail if the token expired, or the user has not yet consented to all of the requested scopes.
 
-The following code shows how to implement this authentication pattern in your own project. Note that it obtains the login hint if running on Excel, Word, or PowerPoint for web. The login hint is required later in this code for these platforms.
+The following code shows how to implement this authentication pattern in your own project.
 
 1. Replace the `run` function in `taskpane.js` or `taskpane.ts` with the following code. The code specifies the minimum scopes needed to read the user's files.
 
     ```javascript
-    async function run() {
-    // Specify minimum scopes needed for the access token.
-    const tokenRequest = {
-      scopes: ["Files.Read", "User.Read", "openid", "profile"],
-    };
-    let loginHint;
-    // If running on Excel, Word, or PowerPoint for web, a login hint is needed for SSO.
-    if ((Office.context.platform === Office.PlatformType.OfficeOnline) && (Office.context.host !== Office.HostType.Outlook)) {
-      const authCtx = await Office.auth.getAuthContext();
-      loginHint = authCtx.userPrincipalName;
-    }
-
-    let accessToken;
-    let authResult;
-
-    // TODO 1: Call acquireTokenSilent.
-
-    // TODO 2: Call acquireTokenPopup.
+    export async function run() {
+      await initMsal();
+      // Specify minimum scopes needed for the access token.
+      const tokenRequest = {
+        scopes: ["Files.Read", "User.Read"],
+      };
+      let accessToken = null;
     
-    // TODO 3: Log error if token still null.
+      // TODO 1: Use msalInstance to get an access token.
     
-    // TODO 4: Call the Microsoft Graph API.
-
-    }
+      // TODO 2: Call the Microsoft Graph API.
+    
     ```
 
     > [!IMPORTANT]
@@ -186,47 +179,35 @@ The following code shows how to implement this authentication pattern in your ow
 
 1. Replace `TODO 1` with the following code. This code calls `acquireTokenSilent` to get the access token.
 
-About the following code, note that it checks for a login hint. Excel, Word, and PowerPoint for web require calling **ssoSilent** with the login hint to successfully complete SSO.
-
-```JavaScript
-try {
-console.log("Trying to acquire token silently...");
-if (loginHint) {
-  tokenRequest["loginHint"] = loginHint;
-  authResult = await pca.ssoSilent(tokenRequest);
-} else {
-  authResult = await pca.acquireTokenSilent(tokenRequest);
-}
-console.log("Acquired token silently.");
-accessToken = authResult.accessToken;
-} catch (error) {
-  console.log(`Unable to acquire token silently: ${error}`);
-}
-```
-
-1. Replace `TODO 2` with the following code. This code checks if the access token is acquired. If not it attempts to interactively get the access token by calling `acquireTokenPopup`.
-
-    ```javascript
-    if (!accessToken) {
-       // Acquire token silent failure. Send an interactive request via popup.
-       try {
-         console.log("Trying to acquire token interactively...");
-         authResult = await pca.acquireTokenPopup(tokenRequest);
-         console.log("Acquired token interactively.");
-         accessToken = authResult.accessToken;
-       } catch (popupError) {
-         // Acquire token interactive failure.
-         console.log(`Unable to acquire token interactively: ${popupError}`);
-       }
+    ```JavaScript
+    try {
+      const userAccount = await msalInstance.acquireTokenSilent(tokenRequest);
+      console.log("Acquired token silently.");
+      accessToken = userAccount.accessToken;
+    } catch (silentError) {
+      // TODO 1a: Handle acquireTokenSilent failure.
+    
     }
     ```
 
-1. Replace `TODO 3` with the following code. If both silent and interactive sign-in failed, log the error and return.
+1. Replace `TODO 1a` with the following code. This code checks if `acquireTokenSilent` threw an `InteractionRequiredAuthError`. If so the code calls `acquireTokenPopup` so that MSAL can use a popup dialog to interact with the user. Interaction can be required for a variety of reasons, such as completing multi-factor authorization.
 
     ```javascript
-    // Log error if both silent and popup requests failed.
-    if (!accessToken) {
-      console.error(`Unable to acquire access token.`);
+    if (silentError instanceof InteractionRequiredAuthError) {
+      console.log(`Unable to acquire token silently: ${silentError}`);
+      // Silent acquisition failed. Continue to interactive acquisition.
+      try {
+        const userAccount = await msalInstance.acquireTokenPopup(tokenRequest);
+        console.log("Acquired token interactively.");
+        accessToken = userAccount.accessToken;
+      } catch (popupError) {
+        // Acquire token interactive failure.
+        console.error(`Unable to acquire token interactively: ${popupError}`);
+        return;
+      }
+    } else {
+      // Acquire token silent failure. Error can't be resolved through interaction.
+      console.error(`Unable to acquire token silently: ${silentError}`);
       return;
     }
     ```
@@ -235,7 +216,7 @@ accessToken = authResult.accessToken;
 
 After acquiring the token, use it to call an API. The following example shows how to call the Microsoft Graph API by calling `fetch` with the token attached in the *Authorization* header.
 
-- Replace `TODO 4` with the following code.
+- Replace `TODO 2` with the following code.
 
     ```javascript
     // Call the Microsoft Graph API with the access token.
@@ -297,6 +278,9 @@ async function initMsal() {
   }
 }
 ```
+
+> [!NOTE]
+> The previous code sample sets the **authority** to **common**, which supports work and school accounts or personal Microsoft accounts. If you want to configure a single tenant or other account types, see [Application configuration options](/entra/identity-platform/msal-client-application-configuration) for additional authority options.
 
 ## Add a function to get the login hint
 
@@ -414,6 +398,8 @@ export async function run() {
   }
 }
 ```
+
+Once all the previous code is added to the `run` function, be sure a button on the task pane calls the `run` function. Then you can sideload the add-in and try out the code.
 
 ---
 
