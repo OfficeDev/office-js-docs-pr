@@ -18,11 +18,9 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-Currently, there are two available options for the manifest. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+Select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
-Select a tab to proceed.
-
-# [Unified manifest for Microsoft 365](#tab/json)
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 - **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365`
 - **What do you want to name your add-in?** `My Office Add-in`
@@ -30,7 +28,7 @@ Select a tab to proceed.
 
 :::image type="content" source="../images/yo-office-powerpoint-json-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
 
-# [Add-in only manifest](#tab/xml)
+# [Add-in only manifest](#tab/xmlmanifest)
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `JavaScript`

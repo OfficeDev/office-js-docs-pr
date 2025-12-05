@@ -31,19 +31,28 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 ## Create your add-in project
 
-[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+Select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+
+Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
+
+:::image type="content" source="../images/yo-office-excel-json-manifest.png" alt-text="The Yeoman Generator for Office Add-ins command line interface when the unified manifest is selected.":::
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
-:::image type="content" source="../images/yo-office-excel-xml-manifest.png" alt-text="The Yeoman Generator for Office Add-ins command line interface.":::
+:::image type="content" source="../images/yo-office-excel-xml-manifest.png" alt-text="The Yeoman Generator for Office Add-ins command line interface when the add-in only manifest is selected.":::
 
-Next, select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
-
-> [!NOTE]
-> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
+---
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
 
@@ -479,10 +488,7 @@ In this step of the tutorial, you'll add a button to the ribbon that toggles wor
 
 The steps vary depending on the type of manifest.
 
-# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
-
-> [!NOTE]
-> Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 #### Configure the runtime for the ribbon button
 

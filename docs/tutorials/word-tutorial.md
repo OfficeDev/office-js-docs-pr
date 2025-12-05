@@ -32,12 +32,26 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
+Select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Word`
+
+:::image type="content" source="../images/yo-office-powerpoint-json-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-:::image type="content" source="../images/yo-office-word-xml-manifest.png" alt-text="The prompts and answers given to the Yeoman generator in a command line interface.":::
+:::image type="content" source="../images/yo-office-word-xml-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the add-in only manifest is selected.":::
+
+---
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
