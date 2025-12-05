@@ -10,37 +10,6 @@ ms.localizationpriority: high
 
 In this article, you'll walk through the process of building an Excel task pane add-in. You'll use either the Office Add-ins Development Kit or the Yeoman generator to create your Office Add-in. Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally. If you'd like to create the add-in project within Visual Studio Code, we recommend the Office Add-ins Development Kit.
 
-# [Office Add-ins Development Kit](#tab/devkit)
-
-[!include[Dev_kit prerequisites](../includes/dev-kit-prerequisites.md)]
-
-## Create the add-in project
-
-Click the following button to create an add-in project using the Office Add-ins Development Kit for Visual Studio Code. You'll be prompted to install the extension if don't already have it. A page that contains the project description will open in Visual Studio Code.
-
-> [!div class="nextstepaction"]
-> [Create an add-in in Visual Studio Code](vscode://msoffice.microsoft-office-add-in-debugger/open-specific-sample?sample-id=excel-get-started-with-dev-kit)
-
-In the prompted page, select **Create** to create the add-in project. In the **Workspace folder** dialog that opens, select the folder where you want to create the project. 
-
-:::image type="content" source="../images/office-add-ins-development-kit-samplepage-excelquickstart.png" alt-text="The Development Kit sample gallery in Visual Studio Code":::
-
-The Office Add-ins Development Kit will create the project. It will then open the project in a *second* Visual Studio Code window. Close the original Visual Studio Code window.
-
-> [!NOTE]
-> If you use VSCode Insiders, or you have problems opening the project page in VSCode, install the extension manually by following [these steps](../develop/development-kit-overview.md?tabs=vscode), and find the sample in the sample gallery.
-[!include[Devkit_project_components_taskpane](../includes/devkit-project-components-taskpane.md)]
-
-## Try it out
-
-[!include[Dev_kit_start_debugging](../includes/dev-kit-start-debugging.md)]
-
-[!include[Dev_kit_stop_debugging](../includes/dev-kit-stop-debugging.md)]
-
-[!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]
-
-# [Yeoman generator](#tab/yeoman)
-
 ## Prerequisites
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
@@ -49,12 +18,28 @@ The Office Add-ins Development Kit will create the project. It will then open th
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
+Currently, there are two available options for the manifest. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+
+Select a tab to proceed.
+
+# [Unified manifest for Microsoft 365](#tab/json)
+
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
+
+:::image type="content" source="../images/yo-office-excel-json-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
+
+# [Add-in only manifest](#tab/xml)
+
 - **Choose a project type:** `Office Add-in Task Pane project`
 - **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Excel`
 
 :::image type="content" source="../images/yo-office-excel-xml-manifest.png" alt-text="The Yeoman Generator for Office Add-ins command line interface.":::
+
+---
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
