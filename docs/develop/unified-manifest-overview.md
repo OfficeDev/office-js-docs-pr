@@ -19,10 +19,6 @@ Microsoft is making a number of improvements to the Microsoft 365 developer plat
 
 One important improvement is the ability to create a single unit of distribution for all your Microsoft 365 extensions by using the same manifest format and schema.
 
-We've taken an important first step toward these goals by making it possible for you to create Outlook add-ins with a unified manifest for Microsoft 365.
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-
 > [!TIP]
 > Ready to get started with the unified manifest? Begin with [Build an Outlook add-in with the unified manifest for Microsoft 365](../quickstarts/outlook-quickstart-json-manifest.md).
 
