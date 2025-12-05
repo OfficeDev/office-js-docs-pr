@@ -104,7 +104,7 @@ The following steps are different for Outlook than for Word, Excel, and PowerPoi
 
 # [Outlook add-ins](#tab/outlook)
 
-## Initialize the public client application
+## Initialize the MSAL library
 
 Next, you need to initialize MSAL and get an instance of the [public client application](/entra/identity-platform/msal-client-applications).
 
