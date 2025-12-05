@@ -700,6 +700,9 @@
     - name: Work with formula value preview
       href: excel/custom-functions-formula-value-preview.md
       displayName: Excel, Custom Functions
+    - name: LAMBDA functions
+      href: excel/custom-functions-lambda.md
+      displayName: Excel, Custom Functions
     - name: Batch custom function remote calls
       href: excel/custom-functions-batching.md
       displayName: Excel, Custom Functions
