@@ -183,7 +183,7 @@
           href: develop/create-sso-office-add-ins-nodejs.md
         - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Enable SSO using nested app authentication
+      - name: Enable SSO in an Office add-in
         href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Nested app authentication FAQ 
         href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
