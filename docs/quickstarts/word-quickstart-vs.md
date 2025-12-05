@@ -204,11 +204,11 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
+    :::image type="content" source="../images/word-quickstart-add-in-0.png" alt-text="The Word application with the Show Taskpane button highlighted.":::
 
 1. In the task pane, choose any of the buttons to add boilerplate text to the document.
 
-    ![The Word application with the boilerplate add-in loaded.](../images/word-quickstart-addin-1b.png)
+    :::image type="content" source="../images/word-quickstart-add-in-1b.png" alt-text="The Word application with the boilerplate add-in loaded.":::
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

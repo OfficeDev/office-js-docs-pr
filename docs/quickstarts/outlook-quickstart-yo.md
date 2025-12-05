@@ -31,9 +31,9 @@ In this article, you'll walk through the process of building an Outlook task pan
 
     Depending on your choice of manifest, the prompts and answers should look like one of the following:
 
-    ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and add-in only manifest are chosen.](../images/yo-office-outlook-xml-manifest-javascript.png)
+    :::image type="content" source="../images/yo-office-outlook-xml-manifest-javascript.png" alt-text="The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and add-in only manifest are chosen.":::
 
-    ![The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and unified manifest are chosen.](../images/yo-office-outlook-json-manifest-javascript.png)
+    :::image type="content" source="../images/yo-office-outlook-json-manifest-javascript.png" alt-text="The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and unified manifest are chosen.":::
 
     After you complete the wizard, the generator will create the project and install supporting Node components.
 
@@ -74,7 +74,7 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
     The following screenshots show how the add-in appears in classic Outlook on Windows.
 
-    ![A message window in Outlook with the add-in ribbon button highlighted.](../images/outlook-quick-start-button-1.png)
+    :::image type="content" source="../images/outlook-quick-start-button-1.png" alt-text="A message window in Outlook with the add-in ribbon button highlighted.":::
 
 1. When prompted with the **WebView Stop On Load** dialog box, select **OK**.
 
@@ -82,9 +82,9 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
 1. Scroll to the bottom of the task pane and choose the **Run** link to write the message subject to the task pane.
 
-    ![The add-in's task pane with the Run link highlighted.](../images/outlook-quick-start-task-pane-2.png)
+    :::image type="content" source="../images/outlook-quick-start-task-pane-2.png" alt-text="The add-in's task pane with the Run link highlighted.":::
 
-    ![The add-in's task pane displaying message subject.](../images/outlook-quick-start-task-pane-3.png)
+    :::image type="content" source="../images/outlook-quick-start-task-pane-3.png" alt-text="The add-in's task pane displaying message subject.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 

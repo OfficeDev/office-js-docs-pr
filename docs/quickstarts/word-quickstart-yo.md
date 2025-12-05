@@ -39,7 +39,9 @@ The Office Add-ins Development Kit will create the project. It will then open th
 [!include[Dev_kit_stop_debugging](../includes/dev-kit-stop-debugging.md)]
 
 [!include[Dev_kit_troubleshooting](../includes/dev-kit-troubleshooting.md)]
+
 # [Yeoman generator](#tab/yeoman)
+
 ## Prerequisites
 
 [!include[Yeoman generator prerequisites](../includes/quickstart-yo-prerequisites.md)]
@@ -53,7 +55,7 @@ The Office Add-ins Development Kit will create the project. It will then open th
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-word.png)
+:::image type="content" source="../images/yo-office-word-xml-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -90,13 +92,13 @@ After you complete the wizard, the generator creates the project and installs su
 
         [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In Word, if the "My Office Add-in" task pane isn't already open, open a new document, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In Word, if the "My Office Add-in" task pane isn't already open, open a new document, choose the **Home** tab, and then choose the **Show Task Pane** button on the ribbon to open the add-in task pane.
 
-    ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-2b.png)
+    :::image type="content" source="../images/word-quickstart-add-in-2b.png" alt-text="The Word application with the Show Task Pane button highlighted.":::
 
 1. At the bottom of the task pane, choose the **Run** link to add the text "Hello World" to the document in blue font.
 
-    ![The Word application with the task pane add-in loaded.](../images/word-quickstart-addin-1c.png)
+    :::image type="content" source="../images/word-quickstart-add-in-1c.png" alt-text="The Word application with the task pane add-in loaded.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 

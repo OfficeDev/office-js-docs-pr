@@ -19,11 +19,11 @@ In this article, you'll walk through the process of building a PowerPoint task p
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `PowerPoint`
 
-![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
+:::image type="content" source="../images/yo-office-powerpoint-xml-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -60,13 +60,13 @@ After you complete the wizard, the generator creates the project and installs su
 
         [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Task Pane** button on the ribbon to open the add-in task pane.
 
-    ![PowerPoint with the Show Taskpane button highlighted.](../images/powerpoint_quickstart_addin_1c.png)
+    :::image type="content" source="../images/powerpoint-quickstart-add-in-1c.png" alt-text="PowerPoint with the Show Task Pane button highlighted.":::
 
 1. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
 
-    ![PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.](../images/powerpoint_quickstart_addin_3c.png)
+    :::image type="content" source="../images/powerpoint-quickstart-add-in-3c.png" alt-text="PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 

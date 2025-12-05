@@ -37,7 +37,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-:::image type="content" source="../images/yo-office-word.png" alt-text="The previous prompts and answers given to the Yeoman generator in a command line interface.":::
+:::image type="content" source="../images/yo-office-word-xml-manifest.png" alt-text="The prompts and answers given to the Yeoman generator in a command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -143,9 +143,9 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
         [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In Word, if the "My Office Add-in" task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In Word, if the "My Office Add-in" task pane isn't already open, choose the **Home** tab, and then choose the **Show Task Pane** button on the ribbon to open the add-in task pane.
 
-    :::image type="content" source="../images/word-quickstart-addin-2b.png" alt-text="The Show Taskpane button highlighted in Word.":::
+    :::image type="content" source="../images/word-quickstart-add-in-2b.png" alt-text="The Show Task Pane button highlighted in Word.":::
 
 1. In the task pane, choose the **Insert Paragraph** button.
 
@@ -287,7 +287,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. Be sure there are at least three paragraphs in the document. You can choose the **Insert Paragraph** button three times. *Check carefully that there's no blank paragraph at the end of the document. If there is, delete it.*
 
@@ -523,7 +523,7 @@ async function insertTextIntoRange() {
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. In the task pane, choose the **Insert Paragraph** button to ensure that there's a paragraph at the start of the document.
 
@@ -708,7 +708,7 @@ Complete the following steps to define the image that you'll insert into the doc
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. In the task pane, choose the **Insert Paragraph** button at least three times to ensure that there are a few paragraphs in the document.
 
@@ -826,7 +826,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-word-start-server.md)]
 
-1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Word, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. In the task pane, choose the **Insert Paragraph** button to ensure that there's a paragraph with "Microsoft 365" at the top of the document.
 
@@ -834,7 +834,6 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
 
 1. Choose the **Rename Service** button and note that the text of the content control changes to "Fabrikam Online Productivity Suite".
 
-    ![The results of choosing the add-in buttons Create Content Control and Rename Service.](../images/word-tutorial-content-control-2.png)
     :::image type="content" source="../images/word-tutorial-content-control-2.png" alt-text="The results of choosing the add-in buttons Create Content Control and Rename Service.":::
 
 ## Next steps

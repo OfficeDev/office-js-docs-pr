@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 11/25/2025
+ms.date: 12/04/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -69,7 +69,7 @@ The following table lists the available send mode options.
 
 If the item doesn't meet the add-in's conditions, the user can choose **Send Anyway** in the alert, or address the issue then try to send the item again. If the add-in is taking a long time to process the item, the user will be prompted with the option to stop running the add-in and choose **Send Anyway**. In the event the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.
 
-![The prompt user dialog with the Send Anyway and Don't Send options.](../images/outlook-smart-alerts-prompt-user.png)
+:::image type="content" source="../images/outlook-smart-alerts-prompt-user.png" alt-text="The prompt user dialog with the Send Anyway and Don't Send options.":::
 
 Use the **prompt user** option in your add-in if one of the following applies.
 
@@ -82,7 +82,7 @@ Some scenarios where the **prompt user** option is applied include suggesting to
 
 Default option if the send mode property of your manifest isn't configured. The user is alerted that the item they're sending doesn't meet the add-in's conditions and they must address the issue before trying to send the item again. However, if the add-in is unavailable (for example, there's an error loading the add-in), the item will be sent.
 
-![The soft block dialog with the Don't Send option.](../images/outlook-smart-alerts-soft-hard-block.png)
+:::image type="content" source="../images/outlook-smart-alerts-soft-hard-block.png" alt-text="The soft block dialog with the Don't Send option.":::
 
 Use the **soft block** option in your add-in when you want a condition to be met before a message or appointment can be sent, but you don't want the user to be blocked from sending the item if the add-in is unavailable. Sample scenarios where the **soft block** option is used include prompting the user to set a message or appointment's importance level and checking that the appropriate signature is applied before the item is sent.
 
@@ -94,7 +94,7 @@ The item isn't sent if any of the following situations occur.
 - The add-in is unable to connect to the server.
 - There's an error loading the add-in.
 
-![The block dialog with the Don't Send option.](../images/outlook-smart-alerts-soft-hard-block.png)
+:::image type="content" source="../images/outlook-smart-alerts-soft-hard-block.png" alt-text="The block dialog with the Don't Send option.":::
 
 Use the **block** option if the add-in's conditions are mandatory, even if the add-in is unavailable. For example, the **block** option is ideal when users are required to apply a sensitivity label to a message or appointment before it can be sent.
 
@@ -104,11 +104,11 @@ If the add-in is unavailable when a message or appointment is being sent (for ex
 
 If the **prompt user** or **soft block** option is used, the user can choose **Send Anyway** to send the item without the add-in checking it, or **Try Later** to let the item be checked by the add-in when it becomes available again.
 
-![Dialog that alerts the user that the add-in is unavailable and gives the user the option to send the item now or later.](../images/outlook-soft-block-prompt-user-unavailable.png)
+:::image type="content" source="../images/outlook-soft-block-prompt-user-unavailable.png" alt-text="Dialog that alerts the user that the add-in is unavailable and gives the user the option to send the item now or later.":::
 
 If the **block** option is used, the user can't send the item until the add-in becomes available.
 
-![Dialog that alerts the user that the add-in is unavailable. The user can only send the item when the add-in is available again.](../images/outlook-hard-block-unavailable.png)
+:::image type="content" source="../images/outlook-hard-block-unavailable.png" alt-text="Dialog that alerts the user that the add-in is unavailable. The user can only send the item when the add-in is available again.":::
 
 > [!IMPORTANT]
 > If a Smart Alerts add-in that implements the [send mode override](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional) feature can't complete processing an event due to an error or is unavailable when the event occurs, it uses the send mode option specified in the manifest.
@@ -119,11 +119,11 @@ If the add-in runs for more than five seconds, but less than five minutes, the u
 
 If the **prompt user** option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can select **Don't Send** to stop the add-in from processing.
 
-![Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user can choose to send the item without the add-in completing its check or stop the add-in from processing the item.](../images/outlook-prompt-user-long-running.png)
+:::image type="content" source="../images/outlook-prompt-user-long-running.png" alt-text="Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user can choose to send the item without the add-in completing its check or stop the add-in from processing the item.":::
 
 However, if the **soft block** or **block** option is used, the user will not be able to send the item until the add-in completes processing it.
 
-![Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user must wait until the add-in completes processing the item before it can be sent.](../images/outlook-soft-hard-block-long-running.png)
+:::image type="content" source="../images/outlook-soft-hard-block-long-running.png" alt-text="Dialog that alerts the user that the add-in is taking longer than expected to process the item. The user must wait until the add-in completes processing the item before it can be sent.":::
 
 `OnMessageSend` and `OnAppointmentSend` add-ins should be short-running and lightweight. To avoid the long-running operation dialog, use other events to process conditional checks before the `OnMessageSend` or `OnAppointmentSend` event is activated. For example, if the user is required to encrypt attachments for every message or appointment, consider using the `OnMessageAttachmentsChanged` or `OnAppointmentAttachmentsChanged` event to perform the check.
 
@@ -131,11 +131,11 @@ However, if the **soft block** or **block** option is used, the user will not be
 
 If the add-in runs for five minutes or more, it will time out. If the **prompt user** option is used, the user can choose **Send Anyway** to send the item without the add-in completing its check. Alternatively, the user can choose **Don't Send**.
 
-![Dialog that alerts the user that the add-in process has timed out. The user can choose to send the item without the add-in completing its check, or not send the item.](../images/outlook-prompt-user-timeout.png)
+:::image type="content" source="../images/outlook-prompt-user-timeout.png" alt-text="Dialog that alerts the user that the add-in process has timed out. The user can choose to send the item without the add-in completing its check, or not send the item.":::
 
 If the **soft block** or **block** option is  used, the user can't send the item until the add-in completes its check. The user must attempt to send the item again to reactivate the add-in.
 
-![Dialog that alerts the user that the add-in process has timed out. The user must attempt to send the item again to activate the add-in before they can send the message or appointment.](../images/outlook-soft-hard-block-timeout.png)
+:::image type="content" source="../images/outlook-soft-hard-block-timeout.png" alt-text="Dialog that alerts the user that the add-in process has timed out. The user must attempt to send the item again to activate the add-in before they can send the message or appointment.":::
 
 ### Intermittent or no internet connection
 
@@ -174,6 +174,10 @@ For Outlook on the web and new Outlook on Windows, configure the **OnSendAddinsE
     Get-User -Filter {RecipientTypeDetails -eq 'UserMailbox'} | Set-CASMailbox -OwaMailboxPolicy OWAOnSendAddinAllUserPolicy
    ```
 
+When the **OnSendAddinsEnabled** policy is enabled and a user attempts to send a message without connectivity, the message is saved to the **Drafts** folder and a dialog is shown notifying them to reconnect.
+
+:::image type="content" source="../images/outlook-smart-alerts-policy.png" alt-text="Dialog that alerts the user to reconnect so that the add-in can check the message before it's sent.":::
+
 # [Windows (classic)](#tab/windows)
 
 Outlook on Windows (classic) can load and run add-ins even if the user launches Outlook while offline. To learn more about the behavior of Smart Alerts add-ins while offline, see [Intermittent connection](#intermittent-connection).
@@ -210,13 +214,17 @@ If the **prompt user** or **soft block** option is used, the following behavior 
 - **Send Anyway** option is selected: The message is moved to the **Outbox** folder. When a connection is reestablished, the message is automatically sent.
 - **Don't Send** option is selected: The message is saved to the **Drafts** folder. This prevents the message from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
 
+:::image type="content" source="../images/outlook-smart-alerts-intermittent-connection.png" alt-text="Dialog that alerts the user that their message can't be processed by the add-in. The user can choose Send Anyway or Don't Send.":::
+
 If the **block** option is used, the message is saved to the **Drafts** folder and a dialog is shown to the user notifying them to reconnect. This prevents the message from being automatically sent when a connection is reestablished. When Outlook is back online and the user selects **Send**, the Smart Alerts add-in is activated.
+
+:::image type="content" source="../images/outlook-smart-alerts-intermittent-connection-block.png" alt-text="Dialog that alerts the user that they must reconnect to complete the add-in's check before the message can be sent.":::
 
 #### Outlook client in Work Offline mode
 
 In Outlook on Windows (classic client starting in Version 2310 (Build 16913.10000)) and on Mac (starting in Version 16.80 (23121017)), a Smart Alerts add-in that implements the **soft block** or **block** option can only process a mail item while the Outlook client is online. If [Work Offline mode](https://support.microsoft.com/office/f3a1251c-6dd5-4208-aef9-7c8c9522d633) is turned on in the Outlook client when a mail item is sent, the item isn't saved to the **Outbox** folder and the user is alerted that they must deactivate Work Offline mode before they can attempt to send their item.
 
-![Dialog that alerts the user that their mail item can't be processed by the Smart Alerts add-in while their Outlook client is in Work Offline mode.](../images/outlook-smart-alerts-offline-mode.png)
+:::image type="content" source="../images/outlook-smart-alerts-offline-mode.png" alt-text="Dialog that alerts the user that their mail item can't be processed by the Smart Alerts add-in while their Outlook client is in Work Offline mode.":::
 
 If the Smart Alerts add-in implements the **prompt user** option, it doesn't process mail items while Work Offline mode is turned on. The item is saved to the **Outbox** folder instead.
 
