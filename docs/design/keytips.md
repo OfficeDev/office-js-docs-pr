@@ -34,13 +34,15 @@ Custom KeyTips are supported in the following Office applications and platforms.
 
 ## Supported surfaces and controls
 
-KeyTips can be defined for the add-in's controls and the ribbon tab in which the add-in appears. The following are ribbon tabs and controls that support custom KeyTips.
+KeyTips can be defined for the add-in's controls and the ribbon tab in which the add-in appears. The following table outlines which ribbon tabs and controls allow KeyTips for each supported Office application.
 
-- Built-in Office tabs
-- Custom tabs
-- Contextual tabs
-- Buttons
-- Menu items
+| Tab type | Excel | PowerPoint | Word |
+| ----- | ----- | ----- | ----- | ----- |
+| Built-in Office tabs | Supported | Supported | Supported |
+| Custom tab | Supported |  Supported | Supported |
+| Contextual tab | Supported | Not available | Not available |
+| Buttons | Supported | Supported | Supported |
+| Menu items | Supported | Supported | Supported |
 
 ## Configure the manifest
 
