@@ -101,7 +101,7 @@ For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/ou
 
 ### Carry out Copilot instructions (preview)
 
-You can create custom Copilot agents that enable your users to read and write to Office documents with natural language instructions entered in Copilot chat. For more information, see [Combine Copilot Agents with Office Add-ins (preview)](../design/agent-and-add-in-overview). 
+You can create custom Copilot agents that enable your users to read and write to Office documents with natural language instructions entered in Copilot chat. For more information, see [Combine Copilot Agents with Office Add-ins (preview)](../design/agent-and-add-in-overview.md). 
 
 ### Create new objects in Office documents
 
