@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Enable single sign-on in an Office Add-in with nested app authentication
 
-Use the MSAL.js library with nested app authentication (NAA) to enable single sign-on (SSO) from your Office Add-in. The procedures in this article guide you through creating an app registration and adding code to your project to use NAA successfully.
+Use the MSAL.js library with nested app authentication (NAA) to enable single sign-on (SSO) from your Office Add-in. The procedures in this article guide you through creating an app registration and adding code to your project to use NAA.
 
 ## NAA supported accounts and hosts
 
@@ -36,10 +36,10 @@ Your domain must include only the origin and not its subpaths. For example:
 ✔️ brk-multihub://www.contoso.com<br>
 ❌ brk-multihub://www.contoso.com/go
 
-Trusted broker groups are dynamic by design and can be updated in the future to include additional hosts where your add-in may use NAA flows. Currently the brk-multihub group includes Office Word, Excel, PowerPoint, Outlook, and Teams (for when Office is activated inside).
+Trusted broker groups are dynamic by design and can be updated in the future to include additional hosts where your add-in may use NAA flows. Currently the brk-multihub group includes Word, Excel, PowerPoint, Outlook, and Teams (for when Office is activated inside).
 
 > [!IMPORTANT]
-> For Word, Excel, and PowerPoint in the browser, you also need an additional redirect since the browser uses a standard authentication flow. The SPA redirect URI must reference the HTML page where you will use the MSAL.js library to request tokens through NAA.
+> For Word, Excel, and PowerPoint on the web, you also need an additional redirect since the browser uses a standard authentication flow. The SPA redirect URI must reference the HTML page where you will use the MSAL.js library to request tokens through NAA.
 
 Use the following steps to set up an app registration for your Office Add-in.
 
@@ -72,7 +72,7 @@ Use the following steps to set up an app registration for your Office Add-in.
 
     :::image type="content" source="../images/azure-portal-copy-client-id.png" alt-text="App registration pane for Contoso displaying the client ID and directory ID.":::
 
-If your add-in supports Word, Excel, or PowerPoint in a browser, you must add an SPA redirect URI for your task pane page. Use the following steps to add an SPA redirect URI for your task pane page.
+If your add-in supports Word, Excel, or PowerPoint on the web, you must add an SPA redirect URI for your task pane page. Use the following steps to add an SPA redirect URI for your task pane page.
 
 1. From the left pane, select **Manage > Authentication**.
     :::image type="content" source="../images/azure-portal-authentication-page.png" alt-text="The authentication page in the Azure app registration.":::
