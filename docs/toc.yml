@@ -122,7 +122,7 @@
         displayName: event-based activation
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
-    - name: Manifest
+    - name: Manifest and app package
       items:
       - name: Overview
         href: develop/add-in-manifests.md
@@ -147,6 +147,8 @@
         - name: Update API and manifest version
           href: develop/update-your-javascript-api-for-office-and-manifest-schema-version.md
           displayName: manifest
+      - name: App package for Microsoft 365
+        href: overview/app-package-for-microsoft-365.md
     - name: Privacy, security, and storage
       items:
       - name: Overview of add-in privacy and security

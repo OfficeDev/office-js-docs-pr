@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins that use the unified manifest for Microsoft 365
 description: Test your Office Add-in on Windows by sideloading.
-ms.date: 08/13/2025
+ms.date: 12/10/2025
 ms.localizationpriority: medium
 ---
 
@@ -137,47 +137,4 @@ Add-ins that use the unified manifest can be manually sideloaded through the Tea
 
 ## Manually create the add-in package file
 
-When the unified manifest is used, the unit of installation and sideloading is a zip-formatted package file. This file is usually created for you by the tools you use to create and test your add-in, but there are scenarios in which you create it manually. To do so, use any zip utility to create a zip file that contains the following files.
-
-- The unified manifest, which goes in the root of the zip file.
-- The two image files referenced in the `"icons"` property of the manifest.
-- Any localization files that are referenced in the `"localizationInfo"` property of the manifest.
-- Any declarative agent files that are referenced in the `"copilotAgents"` property.
-- Any second-level supplementary files. For example, declarative agent configuration files sometimes reference second-level supplementary files, such as plugin configuration files. These should be included too.
-
-> [!IMPORTANT]
-> *All of these files must have the same relative path in the zip file as specified in the manifest.* For example, if the path of the two image files is **assets/icon-64.png** and **assets/icon-128.png**, then you must include an **assets** folder with the two files in the zip package. Second-level files, such as plugin configuration files for declarative agents, must have the same relative path in the zip file as they do in the first-level file that references them. For example, if the relative path of a declarative agent file specified in the manifest is **agents/myAgent.json**, then you must include an **agents** folder in the zip package and put the **myAgent.json** file in it. If the declarative agent file, in turn, gives the relative path of **plugins/myPlugin.json** for a plugin configuration file, then you must include a **plugins** subfolder under the **agents** folder and put the **myPlugin.json** file in it.
-
-To maximize compatibility with Microsoft 365 development tools, we recommend that you keep the files that will be included in the package in a folder called **appPackage** in the root of your project, and that you put the package file in a subfolder named **build** in the **appPackage** folder.
-
-The following are examples of the recommended structure. The structure inside the **\build\appPackage.zip** file must mirror the structure of the **appPackage** folder, except for the **build** folder itself.
-
-```console
-\appPackage
-    \assets
-        color.png
-        outline.png
-    \build
-        appPackage.zip
-    manifest.json
-```
-
-```console
-\appPackage
-    \agents
-        myAgent.json
-        \plugins
-            myPlugin.json
-    \assets
-        color.png
-        outline.png
-    \build
-        appPackage.zip
-    \languages
-        fr-FR.json
-        es-MX.json
-    manifest.json
-```
-
-> [!NOTE]
-> The JSON files that are referenced in the `"extensions.keyboardShortcuts.keyMappingFiles"` property are *not* included in the app package. They are deployed with the add-in's web application files. For more information, see [Support backward compatibility for add-ins with a unified manifest in Microsoft Marketplace](../design/keyboard-shortcuts.md#support-backward-compatibility-for-add-ins-with-a-unified-manifest-in-microsoft-marketplace).
+When the unified manifest is used, the unit of installation and sideloading is a zip-formatted package file. This file is usually created for you by the tools you use to create and test your add-in, but there are scenarios in which you create it manually. For guidance in how to create the package, see [Manually create the app package file](../overview/app-package-for-microsoft-365.md).
