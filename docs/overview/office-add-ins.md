@@ -20,7 +20,7 @@ Use the Office Add-ins platform to:
 
 - **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose functionality from Microsoft and others in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.
 
-- **Create custom Copilot agents that that read and write to documents open in Office applications.** - Enable your users to use natural language to access your add-in's functionality. 
+- **Create custom Copilot agents that that read and write to documents open in Office applications. (preview)** - Enable your users to use natural language to access your add-in's functionality. 
 
 - **Create new rich, interactive objects that can be embedded in Office documents** - Embed maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.
 
@@ -30,7 +30,7 @@ An Office Add-in includes two basic components: an app package and your own web 
 
 ### App package
 
-The app package of an app for Microsoft 365 is a zip file that contains a manifest file, two app icons, and possibly additional configuration or localization files. *Your app logic and data storage are hosted elsewhere* and accessed by the Microsoft 365 host application via HTTPS. You'll submit the app package to your admin to publish to your organization or to Partner Center to publish to Microsoft Marketplace.
+The app package of an app for Microsoft 365 is a zip file that contains a manifest file, two app icons, and possibly additional configuration or localization files. Your app logic and data storage are hosted elsewhere and accessed by the Microsoft 365 host application via HTTPS. You'll submit the app package to your admin to publish to your organization or to Partner Center to publish to Microsoft Marketplace.
 
 For a detailed overview of the app package, see [App package for Microsoft 365](app-package-for-microsoft-365.md)
 
