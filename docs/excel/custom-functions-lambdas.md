@@ -21,6 +21,7 @@ The following Excel functions support using a custom function as the LAMBDA func
 >
 > - Office on Windows: Version 2510 (Build 19328.20158).
 > - Office on Mac: Version 16.102 (Build 25101223).
+> - Office on the web: Supported.
 
 ## See also
 
