@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Use custom functions with LAMBDA functions
 
-[LAMBDA functions](https://support.microsoft.com/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67) are custom, reusable Excel functions that users can create without JavaScript. Custom functions add-ins created with Office JavaScript APIs are compatible with some LAMBDA functions.
+The data analysis offered by your custom functions add-ins can be extended and customized by your users with LAMBDA functions. [LAMBDA functions](https://support.microsoft.com/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67) are custom, reusable Excel functions that users can create without JavaScript.
 
 The following Excel functions support using a custom function as the LAMBDA function parameter.
 
@@ -19,7 +19,7 @@ The following Excel functions support using a custom function as the LAMBDA func
 > [!NOTE]
 > Support for using a custom functions add-in with LAMBDA functions requires the following minimum versions.
 >
-> - Office on Windows (Microsoft 365 subscription): Version 2510 (Build 19328.20158).
+> - Office on Windows: Version 2510 (Build 19328.20158).
 > - Office on Mac: Version 16.102 (Build 25101223).
 
 ## See also
