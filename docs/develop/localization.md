@@ -1,4 +1,4 @@
-ï»¿---
+---
 title: Localization for Office Add-ins
 description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
 ms.date: 02/12/2025
@@ -64,17 +64,17 @@ When using the unified app manifest for Microsoft 365, localize the public-facin
 ```json
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.16/MicrosoftTeams.Localization.schema.json",
-  "name.short": "Lecteur vidÃ©o",
-  "name.full": "Lecteur vidÃ©o pour Outlook",
-  "description.short": "Voir les vidÃ©os YouTube dans Outlook via les mails.",
-  "description.full": "Visualisez les vidÃ©os YouTube rÃ©fÃ©rencÃ©es dans vos courriers Ã©lectronique directement depuis Outlook.",
+  "name.short": "Lecteur vidéo",
+  "name.full": "Lecteur vidéo pour Outlook",
+  "description.short": "Voir les vidéos YouTube dans Outlook via les mails.",
+  "description.full": "Visualisez les vidéos YouTube référencées dans vos courriers électronique directement depuis Outlook.",
   "icons.color": "https://localhost:3000/assets/fr-fr/icon-128.png",
   "extensions[0].audienceClaimUrl": "https://localhost:3000/fr-fr/taskpane.html",
-  "extensions[0].ribbons[0].tabs[0].groups[0].label": "Outils de mÃ©dias",
+  "extensions[0].ribbons[0].tabs[0].groups[0].label": "Outils de médias",
   "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].icons[0].url": "https://localhost:3000/assets/fr-fr/player-icon.png",
-  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].label": "Ouvrir le lecteur vidÃ©o",
-  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.description": "Cliquez pour ouvrir le lecteur vidÃ©o.",
-  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.title": "Ouvrir le lecteur vidÃ©o",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].label": "Ouvrir le lecteur vidéo",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.description": "Cliquez pour ouvrir le lecteur vidéo.",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.title": "Ouvrir le lecteur vidéo",
 }
 ```
 
@@ -102,14 +102,14 @@ For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For th
 <DefaultLocale>en-us</DefaultLocale>
 ...
 <DisplayName DefaultValue="Video player">
-    <Override Locale="fr-fr" Value="Lecteur vidÃ©o" />
+    <Override Locale="fr-fr" Value="Lecteur vidéo" />
 </DisplayName>
 ```
 
 > [!NOTE]
 > If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using the language name alone, in this case, `de`, is not supported across all combinations of Office client applications and platforms.
 
-This means that the add-in assumes the `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidÃ©o".
+This means that the add-in assumes the `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
 
 > [!NOTE]
 > You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well.
@@ -123,8 +123,8 @@ The following example applies a locale override for the [Description] element. I
    "Watch YouTube videos referenced in the emails you receive
    without leaving your email client.">
    <Override Locale="fr-fr" Value=
-   "Visualisez les vidÃ©os YouTube rÃ©fÃ©rencÃ©es dans vos courriers 
-   Ã©lectronique directement depuis Outlook."/>
+   "Visualisez les vidéos YouTube référencées dans vos courriers 
+   électronique directement depuis Outlook."/>
 </Description>
 ```
 
@@ -238,10 +238,10 @@ The text that you want to localize for another language appears in two areas.
 
     ```xml
     <DisplayName DefaultValue="World Ready add-in">
-      <Override Locale="es-es" Value="AplicaciÃ³n de uso internacional"/>
+      <Override Locale="es-es" Value="Aplicación de uso internacional"/>
     </DisplayName>
     <Description DefaultValue="An add-in for testing localization">
-      <Override Locale="es-es" Value="Una aplicaciÃ³n para la prueba de la localizaciÃ³n"/>
+      <Override Locale="es-es" Value="Una aplicación para la prueba de la localización"/>
     </Description>
     ```
 
@@ -273,7 +273,7 @@ The text that you want to localize for another language appears in two areas.
 
 The following figure shows the heading (h1) element and the paragraph (p) element that will display localized text when you complete the remaining steps and run the add-in.
 
-![App user interface with sections highlighted.](../images/office15-app-how-to-localize-fig03.png)
+:::image type="content" source="../images/office15-app-how-to-localize-fig03.png" alt-text="App user interface with sections highlighted.":::
 
 #### Add the resource file that contains the localized strings
 
@@ -308,7 +308,7 @@ To enable localized strings for the heading and paragraph, you place the strings
         // JSON object for Spanish strings
         UIStrings.ES = {
             "Greeting": "Bienvenido",
-            "Introduction": "Esta es mi aplicaciÃ³n localizada."
+            "Introduction": "Esta es mi aplicación localizada."
         };
 
         UIStrings.getLocaleStrings = (locale) => {
@@ -397,7 +397,7 @@ To test your localized add-in, change the language used for display or editing i
 
 1. In Word, choose **File** > **Options** > **Language**. The following figure shows the **Word Options** dialog box opened to the Language tab.
 
-    ![Word Options dialog.](../images/office15-app-how-to-localize-fig04.png)
+    :::image type="content" source="../images/office15-app-how-to-localize-fig04.png" alt-text="Word Options dialog.":::
 
 2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
 
@@ -409,7 +409,7 @@ To test your localized add-in, change the language used for display or editing i
 
 Once running, the strings in the add-in UI change to match the language used by the application, as shown in the following figure.
 
-![App with localized UI text.](../images/office15-app-how-to-localize-fig05.png)
+:::image type="content" source="../images/office15-app-how-to-localize-fig05.png" alt-text="App with localized UI text.":::
 
 ## See also
 

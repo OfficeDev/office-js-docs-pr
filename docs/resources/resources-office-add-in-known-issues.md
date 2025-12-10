@@ -1,4 +1,4 @@
-﻿---
+---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
 ms.date: 11/26/2025
@@ -45,7 +45,7 @@ Monday, November 3, 2025, at 4:31 PM UTC
 
 We're currently investigating reports from Outlook users who are experiencing loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send messages while the images are not yet loaded results in the following dialog box.
 
-![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
+:::image type="content" source="../images/outlook-images-still-loading-error.png" alt-text="Outlook images still loading error message.":::
 
 Tracking ID: 678890927
 
@@ -53,7 +53,7 @@ Client version: 20250822005.18
 
 #### STATUS
 
-We're still receiving isolated reports from some users regarding this previously resolved issue. While the issue has been largely mitigated, certain users in specific regions are still experiencing inline signature images loading slowly and the blocking dialog during email send. Because this stems from a server-side performance delay, the impact varies by customer and region. Those affected may see delays when loading inline images—particularly in scenarios involving signature add-ins. We're actively investigating this issue with highest priority.
+We're still receiving isolated reports from some users regarding this previously resolved issue. While the issue has been largely mitigated, certain users in specific regions are still experiencing inline signature images loading slowly and the blocking dialog during email send. Because this stems from a server-side performance delay, the impact varies by customer and region. Those affected may see delays when loading inline images�particularly in scenarios involving signature add-ins. We're actively investigating this issue with highest priority.
 
 #### WORKAROUND
 
@@ -67,7 +67,7 @@ Options:
 
 Numerous customers report that after updating Office from 2505 to 2507 their add-in will not load and an error is displayed "You don't have permission to use this add-in. Contact your system administrator." Any add-in may reproduce this issue; it is not specific to a single add-in.
 
- ![Excel web add-in permissions error message.](../images/excel-web-add-in-permission-error.png)
+ :::image type="content" source="../images/excel-web-add-in-permission-error.png" alt-text="Excel web add-in permissions error message.":::
 
 Tracking ID: 667052546
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Debug event-based or spam-reporting add-ins
 description: Learn how to debug your Office Add-ins that implement event-based activation or integrated spam reporting.
 ms.date: 07/15/2025
@@ -61,7 +61,7 @@ If you used the [Yeoman generator for Office Add-ins](../develop/yeoman-generato
 1. Start your Office application or restart it if it's already open.
 1. Perform the action to initiate the event you're developing for, such as creating a new message to initiate the `OnNewMessageCompose` event or reporting spam messages. The **Debug Event-based handler** dialog should appear. Do *not* interact with the dialog yet.
 
-    ![The Debug Event-based handler dialog in Windows.](../images/outlook-win-autolaunch-debug-dialog.png)
+    :::image type="content" source="../images/outlook-win-autolaunch-debug-dialog.png" alt-text="The Debug Event-based handler dialog in Windows.":::
 
 ## Configure and attach the debugger
 
@@ -125,11 +125,11 @@ Configure the debugger in Visual Studio Code. Follow the steps applicable to you
 1. Go to **File** > **Open Folder**, navigate to the folder you created, then choose **Select Folder**.
 1. On the Activity Bar, select **Run and Debug** (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>).
 
-    ![The Run and Debug icon on the Activity Bar.](../images/vs-code-debug.png)
+    :::image type="content" source="../images/vs-code-debug.png" alt-text="The Run and Debug icon on the Activity Bar.":::
 
 1. Select the **create a launch.json file** link.
 
-    ![The link located under the Run and Debug option to create a launch.json file in Visual Studio Code.](../images/vs-code-create-launch.json.png)
+    :::image type="content" source="../images/vs-code-create-launch.json.png" alt-text="The link located under the Run and Debug option to create a launch.json file in Visual Studio Code.":::
 
 1. In the **Select Environment** dropdown, select **Edge: Launch** to create a launch.json file.
 1. Add the following excerpt to your list of configurations. Save your changes.
@@ -161,7 +161,7 @@ The **bundle.js** file of an add-in contains the JavaScript code of your add-in.
 1. Place breakpoints in **bundle.js** where you want the debugger to stop.
 1. In the **DEBUG** dropdown, select **Direct Debugging**, then select the **Start Debugging** icon.
 
-    ![The Direct Debugging option selected from configuration options in the Visual Studio Code Debug dropdown.](../images/outlook-win-autolaunch-debug-vsc.png)
+    :::image type="content" source="../images/outlook-win-autolaunch-debug-vsc.png" alt-text="The Direct Debugging option selected from configuration options in the Visual Studio Code Debug dropdown.":::
 
 ## Run the debugger
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Compare Outlook add-in support in Outlook on Mac
 description: Learn how add-in support in Outlook on Mac compares with other Outlook clients.
 ms.date: 08/13/2025
@@ -32,11 +32,11 @@ You can determine which UI version you're on, as follows:
 
 **Classic UI**
 
-![Classic UI on Mac.](../images/outlook-on-mac-classic.png)
+:::image type="content" source="../images/outlook-on-mac-classic.png" alt-text="Classic UI on Mac.":::
 
 **New UI**
 
-![New UI on Mac.](../images/outlook-on-mac-new.png)
+:::image type="content" source="../images/outlook-on-mac-new.png" alt-text="New UI on Mac.":::
 
 ## Support for add-ins with the unified manifest for Microsoft 365
 
