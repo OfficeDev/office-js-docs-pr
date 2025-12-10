@@ -64,17 +64,17 @@ When using the unified app manifest for Microsoft 365, localize the public-facin
 ```json
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.16/MicrosoftTeams.Localization.schema.json",
-  "name.short": "Lecteur vidéo",
-  "name.full": "Lecteur vidéo pour Outlook",
-  "description.short": "Voir les vidéos YouTube dans Outlook via les mails.",
-  "description.full": "Visualisez les vidéos YouTube référencées dans vos courriers électronique directement depuis Outlook.",
+  "name.short": "Lecteur vidÃ©o",
+  "name.full": "Lecteur vidÃ©o pour Outlook",
+  "description.short": "Voir les vidÃ©os YouTube dans Outlook via les mails.",
+  "description.full": "Visualisez les vidÃ©os YouTube rÃ©fÃ©rencÃ©es dans vos courriers Ã©lectronique directement depuis Outlook.",
   "icons.color": "https://localhost:3000/assets/fr-fr/icon-128.png",
   "extensions[0].audienceClaimUrl": "https://localhost:3000/fr-fr/taskpane.html",
-  "extensions[0].ribbons[0].tabs[0].groups[0].label": "Outils de médias",
+  "extensions[0].ribbons[0].tabs[0].groups[0].label": "Outils de mÃ©dias",
   "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].icons[0].url": "https://localhost:3000/assets/fr-fr/player-icon.png",
-  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].label": "Ouvrir le lecteur vidéo",
-  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.description": "Cliquez pour ouvrir le lecteur vidéo.",
-  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.title": "Ouvrir le lecteur vidéo",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].label": "Ouvrir le lecteur vidÃ©o",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.description": "Cliquez pour ouvrir le lecteur vidÃ©o.",
+  "extensions[0].ribbons[0].tabs[0].groups[0].controls[0].supertip.title": "Ouvrir le lecteur vidÃ©o",
 }
 ```
 
@@ -102,14 +102,14 @@ For example, an Office Add-in can specify the [DefaultLocale] as `en-us`. For th
 <DefaultLocale>en-us</DefaultLocale>
 ...
 <DisplayName DefaultValue="Video player">
-    <Override Locale="fr-fr" Value="Lecteur vidéo" />
+    <Override Locale="fr-fr" Value="Lecteur vidÃ©o" />
 </DisplayName>
 ```
 
 > [!NOTE]
 > If you need to localize for more than one area within a language family, such as `de-de` and `de-at`, we recommend that you use separate `Override` elements for each area. Using the language name alone, in this case, `de`, is not supported across all combinations of Office client applications and platforms.
 
-This means that the add-in assumes the `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidéo".
+This means that the add-in assumes the `en-us` locale by default. Users see the English display name of "Video player" for all locales unless the client computer's locale is `fr-fr`, in which case users would see the French display name "Lecteur vidÃ©o".
 
 > [!NOTE]
 > You may only specify a single override per language, including for the default locale. For example, if your default locale is `en-us` you cannot not specify an  override for `en-us` as well.
@@ -123,8 +123,8 @@ The following example applies a locale override for the [Description] element. I
    "Watch YouTube videos referenced in the emails you receive
    without leaving your email client.">
    <Override Locale="fr-fr" Value=
-   "Visualisez les vidéos YouTube référencées dans vos courriers 
-   électronique directement depuis Outlook."/>
+   "Visualisez les vidÃ©os YouTube rÃ©fÃ©rencÃ©es dans vos courriers 
+   Ã©lectronique directement depuis Outlook."/>
 </Description>
 ```
 
@@ -238,10 +238,10 @@ The text that you want to localize for another language appears in two areas.
 
     ```xml
     <DisplayName DefaultValue="World Ready add-in">
-      <Override Locale="es-es" Value="Aplicación de uso internacional"/>
+      <Override Locale="es-es" Value="AplicaciÃ³n de uso internacional"/>
     </DisplayName>
     <Description DefaultValue="An add-in for testing localization">
-      <Override Locale="es-es" Value="Una aplicación para la prueba de la localización"/>
+      <Override Locale="es-es" Value="Una aplicaciÃ³n para la prueba de la localizaciÃ³n"/>
     </Description>
     ```
 
@@ -308,7 +308,7 @@ To enable localized strings for the heading and paragraph, you place the strings
         // JSON object for Spanish strings
         UIStrings.ES = {
             "Greeting": "Bienvenido",
-            "Introduction": "Esta es mi aplicación localizada."
+            "Introduction": "Esta es mi aplicaciÃ³n localizada."
         };
 
         UIStrings.getLocaleStrings = (locale) => {

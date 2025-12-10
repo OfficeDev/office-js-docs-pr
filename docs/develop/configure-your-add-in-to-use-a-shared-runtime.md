@@ -163,7 +163,7 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
 
 1. Save your changes and rebuild the project.
 
-   ```command line
+   ```command line
    npm run build
    ```
 
