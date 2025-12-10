@@ -30,7 +30,7 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 ## Create your add-in project
 
-Select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+Decide the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
