@@ -13,13 +13,13 @@ The app package of an app for Microsoft 365 is a zip file that contains a manife
 
 At minimum, an app package contains:
 
-- The **app manifest** (`manifest.json`), which describes app configuration, capabilities, required resources, and important attributes
-- A **large color icon** (`color.png`), a full-color 92x92 icon to display your agent in the Microsoft 365 Copilot UI and store
-- A **small outline icon** (`outline.png`), a 32x32 icon with transparent background (not currently used in Copilot, but required to pass validation)
+- The **app manifest** (`manifest.json`), which describes app configuration, capabilities, required resources, and important attributes.
+- A **large full-color icon** (`color.png`), 192 x 192 pixels, to display your agent in the Microsoft 365 Copilot UI and store.
+- A **small outline icon** (`outline.png`), 32 x 32 pixels, with a transparent background (not currently used in Copilot, but required to pass validation).
 
 The app package can also contain declarative agent and API plugin definitions, as well as localization files for other supported languages.
 
-:::image type="content" source="../images/app-package.png" alt-text="Diagram showing the anatomy of a Microsoft 365 app package: app manifest (.json file) + icons (color and outline .png files) wrapped in a .zip file" border="false":::
+:::image type="content" source="../images/app-package.png" alt-text="Diagram showing the anatomy of a Microsoft 365 app package: app manifest (.json file) + icons (color and outline .png files) wrapped in a .zip file." border="false":::
 
 ## App manifest
 
@@ -29,11 +29,11 @@ The unified app manifest for Microsoft 365 is a JSON file that describes the fun
 
 - How the add-in integrates with Office.  
 
-- How the add-in itegrates with Copilot (preview)
+- How the add-in integrates with Copilot (preview).
 
 - The permission level and data access requirements for the add-in.
 
-For a detailed overview of the manifest, see [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md). Reference documentation for the app manifest at [The app manifest for Microsoft 365](/microsoft-365/extensibility/schema).
+For a detailed overview of the manifest, see [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md). For reference documentation, see [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 ## App icons
 
@@ -48,17 +48,17 @@ The color icon represents your app for Microsoft 365 within the Copilot UI and i
 :::row:::
 :::column:::
 
-:::image type="content" source="../images/color-icon.png" alt-text="Sample image of an app color icon, showing 192x192 pixels as total icon size with background included, with a central 120x120 pixel space showing the 'Safe region' for the app symbol":::
+:::image type="content" source="../images/color-icon.png" alt-text="Sample image of an app color icon, showing 192x192 pixels as total icon size with background included, and a central 120x120 pixel space showing the 'Safe region' for the app symbol.":::
 
 :::column-end:::
 :::column span="2":::
 
 Your color icon:
 
-- Can be any color
-- Must be 192 x 192 pixels in size
-- Should contain a symbol within 120 x 120 pixels (to allow 36 pixels of padding for [host scenarios where it is cropped](/microsoftteams/platform/concepts/build-and-test/apps-package#color-icon))
-- Must sit atop a fully solid or fully transparent square background
+- Can be any color.
+- Must be 192 x 192 pixels in size.
+- Should contain a symbol within 120 x 120 pixels (to allow 36 pixels of padding for [host scenarios where it's cropped](/microsoftteams/platform/concepts/build-and-test/apps-package#color-icon)).
+- Must sit atop a fully solid or fully transparent square background.
 
 :::column-end:::
 :::row-end:::
@@ -77,9 +77,9 @@ The outline icon is used to represent pinned and/or active apps on the Teams app
 
 Your outline icon:
 
-- Must be 32 x 32 pixels
-- Must be either white with a transparent background, or transparent with a white background
-- Must not contain additional padding around the symbol
+- Must be 32 x 32 pixels.
+- Must be either white with a transparent background, or transparent with a white background.
+- Must not contain additional padding around the symbol.
 
 :::column-end:::
 :::row-end:::

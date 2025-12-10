@@ -122,7 +122,7 @@
         displayName: event-based activation
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
-    - name: Manifest and app package
+    - name: App package and manifest
       items:
       - name: Overview
         href: develop/add-in-manifests.md

@@ -9,10 +9,10 @@ ms.localizationpriority: high
 
 # Office Add-ins platform overview
 
-You can use the Office Add-ins platform to build apps and agents that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Outlook, Excel, Word, PowerPoint, OneNote, and Project. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. When you build an add-in, you're also building an app for Microsoft 365, that is, an extensions of Microsoft 365. Apps for Microsoft 365 share a common manifest schema and packaging format, and unified distribution and management processes and tools. This system enables add-ins to be combined with other kinds of apps for Microsoft 365 in a single package that's installable as a unit.
+Use the Office Add-ins platform to build apps and agents that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Outlook, Excel, Word, PowerPoint, OneNote, and Project. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. When you build an add-in, you're also building an app for Microsoft 365, that is, an extensions of Microsoft 365. Apps for Microsoft 365 share a common manifest schema and packaging format, and unified distribution and management processes and tools. This system enables add-ins to be combined with other kinds of apps for Microsoft 365 in a single package that's installable as a unit.
 
 > [!IMPORTANT]
-> An add-in can have either of two types of manifests. This article is written on the assumption that the add-in is using the type that recommended for most scenarios: the unified manifest for Microsoft 365. For more information about the two types, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+> An add-in can have either of two types of manifests. This article is written on the assumption that the add-in is using the type that's recommended for most scenarios: the unified manifest for Microsoft 365. For more information about the two types, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ![Office application plus an embedded website (add-in) make endless extensibility possibilities.](../images/addins-overview.png)
 
@@ -20,19 +20,19 @@ Use the Office Add-ins platform to:
 
 - **Add new functionality to Office clients** - Bring external data into Office, automate Office documents, expose functionality from Microsoft and others in Office clients, and more. For example, use Microsoft Graph API to connect to data that drives productivity.
 
-- **Create custom Copilot agents that that read and write to documents open in Office applications. (preview)** - Enable your users to use natural language to access your add-in's functionality. 
+- **Create custom Copilot agents that read and write to documents open in Office applications (preview)** - Enable your users to use natural language to access your add-in's functionality. 
 
 - **Create new rich, interactive objects that can be embedded in Office documents** - Embed maps, charts, and interactive visualizations that users can add to their own Excel spreadsheets and PowerPoint presentations.
 
 ## Components of an Office Add-in
 
-An Office Add-in includes two basic components: an app package and your own web application. The package includes a manifest defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
+An Office Add-in includes two basic components: an app package and your own web application. The package includes a manifest that defines various settings, including how your add-in integrates with Office clients. Your web application needs to be hosted on a web server, or web hosting service, such as Microsoft Azure.
 
 ### App package
 
 The app package of an app for Microsoft 365 is a zip file that contains a manifest file, two app icons, and possibly additional configuration or localization files. Your app logic and data storage are hosted elsewhere and accessed by the Microsoft 365 host application via HTTPS. You'll submit the app package to your admin to publish to your organization or to Partner Center to publish to Microsoft Marketplace.
 
-For a detailed overview of the app package, see [App package for Microsoft 365](app-package-for-microsoft-365.md)
+For a detailed overview of the app package, see [App package for Microsoft 365](app-package-for-microsoft-365.md).
 
 #### Manifest
 
@@ -41,6 +41,8 @@ The manifest specifies settings and capabilities of the add-in, such as:
 - The add-in's display name, description, ID, version, and default locale.
 
 - How the add-in integrates with Office.  
+
+- How the add-in integrates with Copilot (preview).
 
 - The permission level and data access requirements for the add-in.
 

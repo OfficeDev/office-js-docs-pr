@@ -116,7 +116,7 @@ The following image shows an add-in command on the ribbon, a task pane to the ri
 For more information about extending the Office UI and designing the add-in's UX, see [Office UI elements for Office Add-ins](../design/interface-elements.md).
 
 > [!NOTE]
-> It is not necessary for an add-in to have any custom UI. An add-in can consist of only a custom Copilot agent that interacts with an Office document in response to natural language instructions given in Copilot chat.
+> It isn't necessary for an add-in to have any custom UI. An add-in can consist of only a custom Copilot agent that interacts with an Office document in response to natural language instructions given in Copilot chat.
 
 ## Next steps
 
