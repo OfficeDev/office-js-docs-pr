@@ -122,9 +122,11 @@
         displayName: event-based activation
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
-    - name: Manifest
+    - name: App package and manifest
       items:
-      - name: Overview
+      - name: App package for Microsoft 365
+        href: overview/app-package-for-microsoft-365.md      
+      - name: Manifest overview
         href: develop/add-in-manifests.md
       - name: Unified manifest for Microsoft 365
         items: 
