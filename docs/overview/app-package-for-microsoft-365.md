@@ -37,52 +37,7 @@ For a detailed overview of the manifest, see [Office Add-ins with the unified ap
 
 ## App icons
 
-Your app package must include both a color and outline version of your app icon, as .png files. These icons have specific size requirements in order to pass store validation.
-
-For detailed design guidance for color and outline icons for the Microsoft 365 app package, see [Design icons for add-in acquisition and management](../design/microsoft-365-extension-management-icons.md).
-
-### Color icon
-
-The color icon represents your app for Microsoft 365 within the Copilot UI and in-product (Teams, Office, Outlook, Microsoft 365) app stores.
-
-:::row:::
-:::column:::
-
-:::image type="content" source="../images/color-icon.png" alt-text="Sample image of an app color icon, showing 192x192 pixels as total icon size with background included, and a central 120x120 pixel space showing the 'Safe region' for the app symbol.":::
-
-:::column-end:::
-:::column span="2":::
-
-Your color icon:
-
-- Can be any color.
-- Must be 192 x 192 pixels in size.
-- Should contain a symbol within 120 x 120 pixels (to allow 36 pixels of padding for [host scenarios where it's cropped](/microsoftteams/platform/concepts/design/design-teams-app-icon-store-appbar#color-icon-architecture)).
-- Must sit atop a fully solid or fully transparent square background.
-
-:::column-end:::
-:::row-end:::
-
-### Outline icon
-
-The outline icon is used to represent pinned and/or active apps on the Teams app bar. It's not currently used for agents, but still required in order for the app package to pass validation.
-
-:::row:::
-:::column:::
-
-:::image type="content" source="../images/outline-icon.png" alt-text="Sample image of an app outline icon, showing 32x32 pixel size and white icon outline with transparent background":::
-
-:::column-end:::
-:::column span="2":::
-
-Your outline icon:
-
-- Must be 32 x 32 pixels.
-- Must be either white with a transparent background, or transparent with a white background.
-- Must not contain additional padding around the symbol.
-
-:::column-end:::
-:::row-end:::
+Your app package must include both a color and outline version of your app icon, as .png files. These icons have specific size requirements in order to pass store validation. For detailed design guidance for color and outline icons for the Microsoft 365 app package, see [Design icons for add-in acquisition and management](../design/microsoft-365-extension-management-icons.md).
 
 ## Other configuration and localization files
 
