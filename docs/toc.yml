@@ -700,6 +700,9 @@
     - name: Work with formula value preview
       href: excel/custom-functions-formula-value-preview.md
       displayName: Excel, Custom Functions
+    - name: Synchronous custom functions
+      href: excel/custom-functions-synchronous.md
+      displayName: Excel, Custom Functions
     - name: LAMBDA functions
       href: excel/custom-functions-lambdas.md
       displayName: Excel, Custom Functions
