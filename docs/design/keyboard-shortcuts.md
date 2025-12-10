@@ -208,13 +208,13 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
     - The second parameter is the function that runs when a user presses the key combination that's mapped to an action.
 
     ```javascript
-    Office.actions.associate("ShowTaskpane",?() => {
-        return?Office.addin.showAsTaskpane()
-            .then(() =>?{
+    Office.actions.associate("ShowTaskpane", () => {
+        return Office.addin.showAsTaskpane()
+            .then(() => {
                 return;
             })
-            .catch((error) =>?{
-                return?error.code;
+            .catch((error) => {
+                return error.code;
             });
     });
     ```
@@ -226,7 +226,7 @@ If your add-in uses an add-in only manifest, custom keyboard shortcuts are defin
                 return;
             })
             .catch((error) => {
-                return?error.code;
+                return error.code;
             });
     });
     ```
@@ -354,7 +354,7 @@ The localization resource file, which is also JSON-formatted, has a top-level `r
                 "value": "CTRL+SHIFT+A"
             }, 
             "ShowTaskpane_action_name": {
-                "value": "Afficher le volet de t‚che pour add-in"
+                "value": "Afficher le volet de t√¢che pour add-in"
               } 
         }
     }
