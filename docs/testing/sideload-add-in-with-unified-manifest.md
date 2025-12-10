@@ -63,7 +63,7 @@ There are two tools you can use to sideload.
 
 ### Sideload with Microsoft 365 Agents Toolkit CLI (command-line interface)
 
-1. Create a zip package. See [Manually create the add-in package file](#manually-create-the-add-in-package-file).
+1. Create a zip package. See [Manually create the app package file](../overview/app-package-for-microsoft-365.md).
 
 1. In the root of the project, open a command prompt or bash shell and run the following command to install the Agents Toolkit CLI.
 
@@ -103,7 +103,7 @@ There are two tools you can use to sideload.
 
 Add-ins that use the unified manifest can be manually sideloaded through the Teams app store, even if they have no Teams-related functionality. The steps are as follows.
 
-1. Create an app package manually if it hasn't already been created by a tool. See [Manually create the add-in package file](#manually-create-the-add-in-package-file).
+1. Create an app package manually if it hasn't already been created by a tool. See [Manually create the app package file](../overview/app-package-for-microsoft-365.md).
 1. Close all Office applications, and then clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).
 1. Open Teams and select **Apps** from the app bar, then select **Manage your apps** at the bottom of the **Apps** pane.
 1. Select **Upload an app** in the **Apps** dialog, and then in the dialog that opens, select **Upload a custom app**.
@@ -135,6 +135,3 @@ Add-ins that use the unified manifest can be manually sideloaded through the Tea
 >
 > Make your changes and then sideload the add-in again.
 
-## Manually create the add-in package file
-
-When the unified manifest is used, the unit of installation and sideloading is a zip-formatted package file. This file is usually created for you by the tools you use to create and test your add-in, but there are scenarios in which you create it manually. For guidance in how to create the package, see [Manually create the app package file](../overview/app-package-for-microsoft-365.md).
