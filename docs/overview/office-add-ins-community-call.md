@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 11/19/2025
+ms.date: 12/09/2025
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,8 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 
 ## Agenda for December 10th, 2025 call
 
-The agenda for the December 10th Office Add-ins community call will be posted the week before the call.
+- Nested App Authentication GA for Word, Excel, and PowerPoint
+- Updates on CDN outage and Visual Studio template deprecation
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
