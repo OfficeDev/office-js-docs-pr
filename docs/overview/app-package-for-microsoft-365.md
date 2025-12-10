@@ -57,7 +57,7 @@ Your color icon:
 
 - Can be any color.
 - Must be 192 x 192 pixels in size.
-- Should contain a symbol within 120 x 120 pixels (to allow 36 pixels of padding for [host scenarios where it's cropped](/microsoftteams/platform/concepts/build-and-test/apps-package#color-icon)).
+- Should contain a symbol within 120 x 120 pixels (to allow 36 pixels of padding for [host scenarios where it's cropped](/microsoftteams/platform/concepts/design/design-teams-app-icon-store-appbar#color-icon-architecture)).
 - Must sit atop a fully solid or fully transparent square background.
 
 :::column-end:::
