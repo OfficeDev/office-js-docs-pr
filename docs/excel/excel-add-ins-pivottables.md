@@ -558,7 +558,7 @@ The previous example set the calculation to the column, relative to the field of
 The following example shows the `differenceFrom` calculation. It displays the difference of the farm crate sales data hierarchy entries relative to those of **A Farms**.
 The `baseField` is **Farm**, so we see the differences between the other farms, as well as breakdowns for each type of like fruit (**Type** is also a row hierarchy in this example).
 
-:::image type="content" source="../images/excel-pivots-showas-differencefrom.png" alt-text="A PivotTable showing the differences of fruit sales between "A Farms" and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If "A Farms" did not sell a particular type of fruit, "#N/A" is displayed.":::
+:::image type="content" source="../images/excel-pivots-showas-differencefrom.png" alt-text="A PivotTable showing the differences of fruit sales between 'A Farms' and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If 'A Farms' did not sell a particular type of fruit, '#N/A' is displayed.":::
 
 ```js
 await Excel.run(async (context) => {

@@ -150,7 +150,7 @@ To clear the web cache in Excel, PowerPoint, and Word, use the personality menu 
 
 From the add-in's task pane, choose the personality menu. Then, choose **Clear Web Cache**.
 
-:::image type="content" source="../images/mac-clear-cache-menu.png" alt-text="The "Clear web cache" option on the personality menu of an add-in's task pane.":::
+:::image type="content" source="../images/mac-clear-cache-menu.png" alt-text="The 'Clear web cache' option on the personality menu of an add-in's task pane.":::
 
 ### Clear the web and Wef caches
 

@@ -233,7 +233,7 @@ Text comparison conditional formatting uses string comparisons as the condition.
 
 The following example formats the font color red when a cell's text contains "Delayed".
 
-:::image type="content" source="../images/excel-conditional-format-text.png" alt-text="A range with cells containing "Delayed" in red.":::
+:::image type="content" source="../images/excel-conditional-format-text.png" alt-text="A range with cells containing 'Delayed' in red.":::
 
 ```js
 await Excel.run(async (context) => {

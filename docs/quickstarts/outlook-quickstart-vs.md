@@ -163,7 +163,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. From the list of add-ins, select **My Office Add-in**, then choose **Show task pane**.
 
-    :::image type="content" source="../images/outlook-quickstart-add-in-owa-vs.png" alt-text="A message window in Outlook on the web with the "Show task pane" option selected.":::
+    :::image type="content" source="../images/outlook-quickstart-add-in-owa-vs.png" alt-text="A message window in Outlook on the web with the 'Show task pane' option selected.":::
 
 1. View the properties of the selected message from the task pane that opens.
 

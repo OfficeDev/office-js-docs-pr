@@ -116,7 +116,7 @@ A user with administrator powers on their computer can configure a Windows-only 
     1. Set **Value** to the name of the equivalent Windows-only add-in. See the section [Obtain the name of the Windows-only add-in](#obtain-the-name-of-the-windows-only-add-in).
     1. Select **OK** to put the update into effect.
 
-    :::image type="content" source="../images/outlook-deactivate-gpo-dialog.png" alt-text="The "Outlook web add-ins to deactivate" dialog.":::
+    :::image type="content" source="../images/outlook-deactivate-gpo-dialog.png" alt-text="The 'Outlook web add-ins to deactivate' dialog.":::
 
 ### Behavior for users when the Office Add-in is hidden
 

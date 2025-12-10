@@ -56,7 +56,7 @@ The carousel takes users through a series of features or informational pages bef
 
 *Figure 1. Allow users to advance or skip the beginning pages of the carousel flow*
 
-:::image type="content" source="../images/add-in-FRE-step-1.png" alt-text="Illustration showing step 1 of a carousel in the first-run experience of an Office desktop application task pane. In this example, a "Skip" action is included in the top right of the task pane.":::
+:::image type="content" source="../images/add-in-FRE-step-1.png" alt-text="Illustration showing step 1 of a carousel in the first-run experience of an Office desktop application task pane. In this example, a 'Skip' action is included in the top right of the task pane.":::
 
 *Figure 2. Minimize the number of carousel screens to only what is needed to effectively communicate your message*
 

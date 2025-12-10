@@ -155,7 +155,7 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
 1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
 
-    :::image type="content" source="../images/outlook-beta-registry-key.png" alt-text="The EnableBetaAPIsInJavaScript registry value is set to 1."":::
+    :::image type="content" source="../images/outlook-beta-registry-key.png" alt-text="The EnableBetaAPIsInJavaScript registry value is set to 1.":::
 
 ## Enable single sign-on (SSO)
 

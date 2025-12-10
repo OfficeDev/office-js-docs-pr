@@ -79,7 +79,7 @@ The following steps apply to Outlook on the web, on Windows (new and classic), a
 
 In Outlook on the web, if your mailbox toolbar looks like the following image, you're using the classic version of Outlook on the web.
 
-:::image type="content" source="../images/outlook-on-the-web-classic-toolbar.png" alt-text="Header of the classic Outlook on the web toolbar with "Office 365 | Outlook" as its title.":::
+:::image type="content" source="../images/outlook-on-the-web-classic-toolbar.png" alt-text="Header of the classic Outlook on the web toolbar with 'Office 365 | Outlook' as its title.":::
 
 To access the **Add-Ins for Outlook** dialog, open [Outlook on the web](https://outlook.office365.com). Then, select the gear icon from the top-right section of the toolbar and choose **Manage add-ins**.
 

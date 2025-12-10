@@ -27,7 +27,7 @@ The CommandBar is a surface within the task pane that houses commands that opera
 
 The tab bar shows navigation using buttons with vertically stacked text and icons. Use the tab bar to provide navigation using tabs with short and descriptive titles.
 
-:::image type="content" source="../images/add-in-tab-bar.png" alt-text="Illustration showing a tab bar within an Office desktop application task pane. This example shows a tab bar immediately below the add-in name with "Home", "Settings", "Favorites", and "Account" tabs.":::
+:::image type="content" source="../images/add-in-tab-bar.png" alt-text="Illustration showing a tab bar within an Office desktop application task pane. This example shows a tab bar immediately below the add-in name with 'Home', 'Settings', 'Favorites', and 'Account' tabs.":::
 
 ## Back Button
 
