@@ -42,11 +42,12 @@ To support synchronous scenarios in your add-in:
 
 - If you [autogenerate JSON metadata](custom-functions-json-autogeneration.md), use the `@supportSync` JSDoc tag.
 - If you [manually create JSON metadata](custom-functions-json.md), use the `"supportSync": true` setting in the `"options"` object of your **functions.json** file.
+- If the function uses `Excel.RequestContext`, call the `setInvocation` method of `Excel.RequestContext` and pass in the `CustomFunctions.Invocation` object. For an example, see the [synchronous custom function code sample](#synchronous-custom-function-code-sample).
 
 > [!NOTE]
 > Synchronous custom functions cannot be **streaming** or **volatile** functions.
 
-### Code sample
+### Synchronous custom function code sample
 
 ```typescript
 /** 
@@ -67,3 +68,8 @@ export async function getRangeExcelContextSet(address, invocation) {
   return range.values[0][0];
 }
 ```
+
+## See also
+
+- [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md)
+- [Manually create JSON metadata for custom functions](custom-functions-json.md)
