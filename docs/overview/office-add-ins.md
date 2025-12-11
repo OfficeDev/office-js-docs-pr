@@ -49,7 +49,7 @@ The manifest specifies settings and capabilities of the add-in, such as:
 
 - The add-in's display name, description, ID, version, and default locale.
 
-- How the add-in integrates with Office.  
+- How the add-in integrates with Office.
 
 - The permission level and data access requirements for the add-in.
 
@@ -69,21 +69,21 @@ Office Add-ins can do the following within an Office client application.
 
 ### Extend Office functionality
 
-You can add new functionality to Office applications via the following:  
+You can add new functionality to Office applications via the following:
 
 - Custom ribbon buttons and menu commands (collectively called "add-in commands").
 
 - Insertable task panes.
 
-Custom UI and task panes are specified in the add-in manifest.  
+Custom UI and task panes are specified in the add-in manifest.
 
-#### Custom buttons and menu commands  
+#### Custom buttons and menu commands
 
-You can add custom ribbon buttons and menu items to the ribbon in Office on the web and on Windows. This makes it easy for users to access your add-in directly from their Office application. Custom buttons and menu items can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.  
+You can add custom ribbon buttons and menu items to the ribbon in Office on the web and on Windows. This makes it easy for users to access your add-in directly from their Office application. Custom buttons and menu items can launch different actions such as showing a task pane with custom HTML or executing a JavaScript function.
 
 :::image type="content" source="../images/about-addins-addincommands.png" alt-text="Custom buttons and menu commands.":::
 
-#### Task panes  
+#### Task panes
 
 You can use task panes in addition to add-in commands to enable users to interact with your solution. Clients that don't support add-in commands (Office on iPad) run your add-in as a task pane. In Excel, Word, and PowerPoint, users launch task pane add-ins via the **Home** > **Add-ins** button. In Outlook, users launch task pane add-ins via the add-in button or via the **All Apps** button on the ribbon.
 

@@ -53,7 +53,7 @@ Client version: 20250822005.18
 
 #### STATUS
 
-We're still receiving isolated reports from some users regarding this previously resolved issue. While the issue has been largely mitigated, certain users in specific regions are still experiencing inline signature images loading slowly and the blocking dialog during email send. Because this stems from a server-side performance delay, the impact varies by customer and region. Those affected may see delays when loading inline images—particularly in scenarios involving signature add-ins. We're actively investigating this issue with highest priority.
+We're still receiving isolated reports from some users regarding this previously resolved issue. While the issue has been largely mitigated, certain users in specific regions are still experiencing inline signature images loading slowly and the blocking dialog during email send. Because this stems from a server-side performance delay, the impact varies by customer and region. Those affected may see delays when loading inline imagesâ€”particularly in scenarios involving signature add-ins. We're actively investigating this issue with highest priority.
 
 #### WORKAROUND
 

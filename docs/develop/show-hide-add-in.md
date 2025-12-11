@@ -13,8 +13,8 @@ ms.localizationpriority: medium
 You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` method.
 
 ```javascript
-function onCurrentQuarter() {
-    Office.addin.showAsTaskpane()
+function onCurrentQuarter() {
+    Office.addin.showAsTaskpane()
     .then(function() {
         // Code that enables task pane UI elements for
         // working with the current quarter.
@@ -27,8 +27,8 @@ The previous code assumes a scenario where there is an Excel worksheet named **C
 You can also hide the task pane by calling the `Office.addin.hide()` method.
 
 ```javascript
-function onCurrentQuarterDeactivated() {
-    Office.addin.hide();
+function onCurrentQuarterDeactivated() {
+    Office.addin.hide();
 }
 ```
 
@@ -71,8 +71,8 @@ When your code changes the visibility of the task pane with `showAsTaskpane()` o
 To register a handler for the event, you do not use an "add handler" method as you would in most Office JavaScript contexts. Instead, there is a special function to which you pass your handler: [Office.addin.onVisibilityModeChanged](/javascript/api/office/office.addin#office-office-addin-onvisibilitymodechanged-member(1)). The following is an example. Note that the `args.visibilityMode` property is type [VisibilityMode](/javascript/api/office/office.visibilitymode).
 
 ```javascript
-Office.addin.onVisibilityModeChanged(function(args) {
-    if (args.visibilityMode == "Taskpane") {
+Office.addin.onVisibilityModeChanged(function(args) {
+    if (args.visibilityMode == "Taskpane") {
         // Code that runs whenever the task pane is made visible.
         // For example, an Excel.run() that loads the names of
         // all worksheets and passes them to the task pane UI.
@@ -83,9 +83,9 @@ Office.addin.onVisibilityModeChanged(function(args) {
 The function returns another function that *deregisters* the handler. Here is a simple, but not robust, example.
 
 ```javascript
-const removeVisibilityModeHandler =
-    Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode == "Taskpane") {
+const removeVisibilityModeHandler =
+    Office.addin.onVisibilityModeChanged(function(args) {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -100,9 +100,9 @@ The `onVisibilityModeChanged` method is asynchronous and returns a promise, whic
 ```javascript
 // await the promise from onVisibilityModeChanged and assign
 // the returned deregister handler to removeVisibilityModeHandler.
-const removeVisibilityModeHandler =
-    await Office.addin.onVisibilityModeChanged(function(args) {
-        if (args.visibilityMode == "Taskpane") {
+const removeVisibilityModeHandler =
+    await Office.addin.onVisibilityModeChanged(function(args) {
+        if (args.visibilityMode == "Taskpane") {
             // Code that runs whenever the task pane is made visible.
         }
     });
@@ -112,7 +112,7 @@ The deregister function is also asynchronous and returns a promise. So, if you h
 
 ```javascript
 // await the promise from the deregister handler before continuing
-await removeVisibilityModeHandler();
+await removeVisibilityModeHandler();
 // subsequent code here
 ```
 
