@@ -1,14 +1,14 @@
 ---
 title: Build your first Word task pane add-in
 description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API.
-ms.date: 12/12/2024
+ms.date: 12/11/2025
 ms.service: word
 ms.localizationpriority: high
 ---
 
 # Build your first Word task pane add-in
 
-In this article, you'll walk through the process of building a Word task pane add-in. You'll use either the Office Add-ins Development Kit or the Yeoman generator to create your Office Add-in. Select the tab for the one you'd like to use and then follow the instructions to create your add-in and test it locally. If you'd like to create the add-in project within Visual Studio Code, we recommend the Office Add-ins Development Kit.
+In this article, you'll walk through the process of building a Word task pane add-in.
 
 ## Prerequisites
 
@@ -18,11 +18,14 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 Decide the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
-# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
+
+> [!NOTE]
+> Using the unified manifest for Microsoft 365 with Word add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Word add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365`
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
@@ -33,11 +36,11 @@ Decide the type of manifest that you'd like to use, either the **unified manifes
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `JavaScript`
+- **Choose a script type:** `TypeScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-:::image type="content" source="../images/yo-office-word-xml-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the add-in only manifest is selected.":::
+:::image type="content" source="../images/yo-office-word-xml-manifest-ts.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the add-in only manifest is selected.":::
 
 ---
 
@@ -45,7 +48,7 @@ After you complete the wizard, the generator creates the project and installs su
 
 ## Explore the project
 
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-ts.md)]
 
 ## Try it out
 
