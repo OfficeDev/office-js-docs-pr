@@ -12,7 +12,7 @@ When multiple users and add-ins work in the same Excel workbook, changes made by
 
 ## Why add-in developers need to handle coauthoring
 
-Excel supports [coauthoring](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104) in workbooks stored on OneDrive, OneDrive for Business, or SharePoint Online. When AutoSave is enabled, changes synchronize in real time. **Your add-in code doesn't automatically know when coauthors modify the workbook**.
+Excel supports [coauthoring](https://support.microsoft.com/office/7152aa8b-b791-414c-a3bb-3024e46fb104) in workbooks stored on OneDrive, OneDrive for Business, or SharePoint Online. When AutoSave is enabled, changes synchronize in real-time. **Your add-in code doesn't automatically know when coauthors modify the workbook**.
 
 You need to handle coauthoring if your add-in:
 
@@ -24,7 +24,7 @@ You need to handle coauthoring if your add-in:
 If your add-in only reads data once at startup or rarely runs in shared workbooks, coauthoring support is lower priority but should still be monitored.
 
 > [!IMPORTANT]
-> In Excel for Microsoft 365, AutoSave synchronizes changes in real time. When you turn on AutoSave, coauthoring problems become more frequent and noticeable. Test your add-in with AutoSave enabled to identify potential problems. Users can toggle AutoSave via the switch in the upper left of the Excel window.
+> In Excel for Microsoft 365, AutoSave synchronizes changes in real-time. When you turn on AutoSave, coauthoring problems become more frequent and noticeable. Test your add-in with AutoSave enabled to identify potential problems. Users can toggle AutoSave via the switch in the upper left of the Excel window.
 
 ## Excel synchronizes workbook content, not your add-in's memory
 
@@ -147,7 +147,7 @@ let cachedData = null;
 
 binding.onDataChanged.add(async (event) => {
   await Excel.run(async (context) => {
-    const range = binding.getRange();
+    const range = event.binding.getRange();
     range.load("values");
     await context.sync();
     
@@ -155,17 +155,14 @@ binding.onDataChanged.add(async (event) => {
     cachedData = range.values;
     
     // Update displayed values without dialogs or alerts.
-    document.getElementById("dashboard").textContent = formatData(cachedData);
+    document.getElementById("dashboard").textContent = JSON.stringify(cachedData);
   });
 });
 
 // Only show UI in response to explicit user actions.
-document.getElementById("validateButton").onclick = async () => {
+document.getElementById("showData").onclick = async () => {
   // Now it's OK to show UI - user clicked a button.
-  const isValid = validateData(cachedData);
-  if (!isValid) {
-    Office.context.ui.displayDialogAsync("https://contoso.com/validation.html");
-  }
+  Office.context.ui.displayDialogAsync("https://contoso.com/validation.html");
 };
 ```
 
@@ -200,7 +197,7 @@ await Excel.run(async (context) => {
   
   // Get the range directly below the table.
   const sheet = context.workbook.worksheets.getActiveWorksheet();
-  const newRowRange = sheet.getRange(`A${tableRange.rowCount + 1}:C${tableRange.rowCount + 1}`);
+  const newRowRange = table.getDataBodyRange().getRowsBelow(1);
   
   // Set values - table automatically expands without conflicts.
   newRowRange.values = [["Product", 100, "=B2*1.2"]];
@@ -218,11 +215,12 @@ For the `Range.values` approach to work reliably:
 
    ```js
    // Insert empty row to push existing data down.
-   const insertRange = sheet.getRange(`A${tableRange.rowCount + 1}:C${tableRange.rowCount + 1}`);
+   let insertRange = table.getDataBodyRange().getRowsBelow(1);
    insertRange.insert(Excel.InsertShiftDirection.down);
    await context.sync();
    
    // Now set your data.
+   insertRange = table.getDataBodyRange().getRowsBelow(1);
    insertRange.values = [["Product", 100, "=B2*1.2"]];
    ```
 
