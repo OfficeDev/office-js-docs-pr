@@ -1,6 +1,6 @@
 ---
 title: Coauthoring in Excel add-ins
-description: Learn to coauthor an Excel workbook stored in OneDrive, OneDrive for Business, or SharePoint Online.
+description: Learn how to handle coauthoring scenarios in Excel add-ins to prevent stale data, synchronization conflicts, and merge issues.
 ms.date: 12/11/2025
 ms.localizationpriority: medium
 ---
@@ -16,10 +16,10 @@ Excel supports [coauthoring](https://support.microsoft.com/office/7152aa8b-b791-
 
 You need to handle coauthoring if your add-in:
 
-- Caches workbook values in JavaScript variables (risk: stale data).
-- Stores state in hidden worksheets (risk: lost synchronization).
-- Adds rows to tables using `TableRowCollection.add` (risk: merge conflicts).
-- Shows UI in response to data changes (risk: unexpected dialogs for all users).
+- Caches workbook values in JavaScript variables (risk of stale data).
+- Stores state in hidden worksheets (risk of lost synchronization).
+- Adds rows to tables using `TableRowCollection.add` (risk of merge conflicts).
+- Shows UI in response to data changes (risk of unexpected dialogs for all users).
 
 If your add-in only reads data once at startup or rarely runs in shared workbooks, coauthoring support is lower priority but should still be monitored.
 
