@@ -29,11 +29,11 @@ await Excel.run(async (context) => {
 
 ### Data in range before font color and fill color are set
 
-![Data in Excel before format is set.](../images/excel-ranges-format-before.png)
+:::image type="content" source="../images/excel-ranges-format-before.png" alt-text="Data in Excel before format is set.":::
 
 ### Data in range after font color and fill color are set
 
-![Data in Excel after format is set.](../images/excel-ranges-format-font-and-fill.png)
+:::image type="content" source="../images/excel-ranges-format-font-and-fill.png" alt-text="Data in Excel after format is set.":::
 
 ## Set number format
 
@@ -58,11 +58,11 @@ await Excel.run(async (context) => {
 
 ### Data in range before number format is set
 
-![Data in Excel before number format is set.](../images/excel-ranges-format-font-and-fill.png)
+:::image type="content" source="../images/excel-ranges-format-font-and-fill.png" alt-text="Data in Excel before number format is set.":::
 
 ### Data in range after number format is set
 
-![Data in Excel after number format is set.](../images/excel-ranges-format-numbers.png)
+:::image type="content" source="../images/excel-ranges-format-numbers.png" alt-text="Data in Excel after number format is set.":::
 
 ## See also
 

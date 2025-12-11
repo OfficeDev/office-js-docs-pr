@@ -1,4 +1,4 @@
-﻿---
+---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
 ms.date: 11/06/2025
@@ -264,11 +264,11 @@ In the case of a conflict, the user will see a dialog box the first time they at
     - **Unified app manifest for Microsoft 365**: The value of the `"extensions.runtimes.actions.displayName"` property in the **manifest.json** file.
     - **Add-in only manifest**: The value of the `"actions.name"` property in the shortcuts JSON file.
 
-![A conflict modal with two different actions for a single shortcut.](../images/add-in-shortcut-conflict-modal.png)
+:::image type="content" source="../images/add-in-shortcut-conflict-modal.png" alt-text="A conflict modal with two different actions for a single shortcut.":::
 
 The user can select which action the keyboard shortcut will take. After making the selection, the preference is saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the **Reset Office Add-ins shortcut preferences** command from the **Tell me** search box. Invoking the command clears all of the user's add-in shortcut preferences and the user will again be prompted with the conflict dialog box the next time they attempt to use a conflicting shortcut.
 
-![The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action.](../images/add-in-reset-shortcuts-action.png)
+:::image type="content" source="../images/add-in-reset-shortcuts-action.png" alt-text="The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action.":::
 
 For the best user experience, we recommend that you minimize keyboard shortcut conflicts with these good practices.
 

@@ -13,7 +13,7 @@ Task panes are interface surfaces that typically appear on the right side of the
 
 *Figure 1. Typical task pane layout*
 
-![A typical task pane layout with section tabs at the top, company logo and company name in the bottom left, and a settings icon in the bottom right.](../images/overview-with-app-task-pane.png)
+:::image type="content" source="../images/overview-with-app-task-pane.png" alt-text="A typical task pane layout with section tabs at the top, company logo and company name in the bottom left, and a settings icon in the bottom right.":::
 
 ## Best practices
 
@@ -30,7 +30,7 @@ The following images show the various task pane sizes with the Office app ribbon
 
 *Figure 2. Office task pane sizes*
 
-![Task pane sizes at 1366x768 resolution.](../images/office-365-taskpane-sizes.png)
+:::image type="content" source="../images/office-365-taskpane-sizes.png" alt-text="Task pane sizes at 1366x768 resolution.":::
 
 - Excel - 350x378 pixels
 - PowerPoint - 348x391 pixels
@@ -45,13 +45,13 @@ For Windows, the personality menu measures 12x32 pixels, as shown.
 
 *Figure 3. Personality menu on Windows*
 
-![The personality menu on Windows desktop.](../images/personality-menu-win.png)
+:::image type="content" source="../images/personality-menu-win.png" alt-text="The personality menu on Windows desktop.":::
 
 For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the space to 34x32 pixels, as shown.
 
 *Figure 4. Personality menu on Mac*
 
-![The personality menu on Mac desktop.](../images/personality-menu-mac.png)
+:::image type="content" source="../images/personality-menu-mac.png" alt-text="The personality menu on Mac desktop.":::
 
 ## Implementation
 

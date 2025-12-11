@@ -11,7 +11,7 @@ One of the ways that custom functions enhances Excel's power is by receiving dat
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
-![GIF of a custom function which streams the time from an API.](../images/custom-functions-web-api.gif)
+:::image type="content" source="../images/custom-functions-web-api.gif" alt-text="GIF of a custom function which streams the time from an API.":::
 
 ## Functions that return data from external sources
 

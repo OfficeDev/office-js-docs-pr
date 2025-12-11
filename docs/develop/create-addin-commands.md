@@ -1,4 +1,4 @@
-﻿---
+---
 title: Create add-in commands with the add-in only manifest
 description: Configure an add-in only manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or menus, and perform actions.
 ms.date: 02/28/2025
@@ -16,7 +16,7 @@ This article describes how to edit your add-in only manifest to define add-in co
 
 The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
 
-![Overview of add-in commands elements in the manifest. The top node here is VersionOverrides with children Hosts and Resources. Under Hosts are Host then DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Under ExtensionPoint are CustomTab or OfficeTab and Office Menu. Under CustomTab or Office Tab are Group then Control then Action. Under Office Menu are Control then Action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.](../images/version-overrides.png)
+:::image type="content" source="../images/version-overrides.png" alt-text="Overview of add-in commands elements in the manifest. The top node here is VersionOverrides with children Hosts and Resources. Under Hosts are Host then DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Under ExtensionPoint are CustomTab or OfficeTab and Office Menu. Under CustomTab or Office Tab are Group then Control then Action. Under Office Menu are Control then Action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.":::
 
 ## Sample commands
 

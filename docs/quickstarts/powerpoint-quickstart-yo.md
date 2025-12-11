@@ -1,7 +1,7 @@
 ---
 title: Build your first PowerPoint task pane add-in
 description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API.
-ms.date: 08/20/2024
+ms.date: 12/11/2025
 ms.service: powerpoint
 ms.localizationpriority: high
 ---
@@ -16,20 +16,39 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 ## Create the add-in project
 
+Decide the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+
+# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
+
+> [!NOTE]
+> Using the unified manifest for Microsoft 365 with PowerPoint add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production PowerPoint add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
+
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `PowerPoint`
 
-![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-powerpoint.png)
+:::image type="content" source="../images/yo-office-powerpoint-json-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `TypeScript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `PowerPoint`
+
+:::image type="content" source="../images/yo-office-powerpoint-xml-manifest-ts.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the add-in only manifest is selected.":::
+
+---
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 ## Explore the project
 
-[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-js.md)]
+[!include[Yeoman generator add-in project components](../includes/yo-task-pane-project-components-ts.md)]
 
 ## Try it out
 
@@ -60,13 +79,13 @@ After you complete the wizard, the generator creates the project and installs su
 
         [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Task Pane** button on the ribbon to open the add-in task pane.
 
-    ![PowerPoint with the Show Taskpane button highlighted.](../images/powerpoint_quickstart_addin_1c.png)
+    :::image type="content" source="../images/powerpoint-quickstart-add-in-1c.png" alt-text="PowerPoint with the Show Task Pane button highlighted.":::
 
 1. At the bottom of the task pane, choose the **Run** link to insert the text "Hello World" into the current slide.
 
-    ![PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.](../images/powerpoint_quickstart_addin_3c.png)
+    :::image type="content" source="../images/powerpoint-quickstart-add-in-3c.png" alt-text="PowerPoint with an image of a dog and the text 'Hello World` displayed on the slide.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 

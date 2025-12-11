@@ -1,4 +1,4 @@
-﻿---
+---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
 ms.date: 11/06/2025
@@ -18,7 +18,7 @@ Script Lab is a free tool for anyone to learn how to develop Office Add-ins. Scr
 > [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 
 See Script Lab in action in this one-minute YouTube video.
-[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+[:::image type="content" source="../images/screenshot-wide-youtube.png" alt-text="Preview video showing Script Lab running in Excel, Word, and PowerPoint.":::](https://aka.ms/scriptlabvideo)
 
 ## What is Script Lab?
 
@@ -35,7 +35,7 @@ Script Lab offers a number of features to help you prototype add-in functionalit
 
 Get started quickly with a collection of built-in sample snippets that show how to complete tasks with the API. Run the samples to instantly see the result in the task pane or document, examine the samples to learn how the API works, and even use samples to prototype your own add-in.
 
-![Samples.](../images/script-lab-samples.jpg)
+:::image type="content" source="../images/script-lab-samples.jpg" alt-text="Samples.":::
 
 ### Code and style
 

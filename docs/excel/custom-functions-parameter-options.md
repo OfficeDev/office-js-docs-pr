@@ -172,7 +172,7 @@ function ADD(operands: number[][][]): number {
 
 This function shows `=CONTOSO.ADD([operands], [operands]...)` in the Excel workbook.
 
-![The ADD custom function being entered into cell of an Excel worksheet](../images/operands.png)
+:::image type="content" source="../images/operands.png" alt-text="The ADD custom function being entered into cell of an Excel worksheet":::
 
 ### Repeating single value parameter
 

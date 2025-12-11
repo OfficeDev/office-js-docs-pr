@@ -1,7 +1,7 @@
-﻿---
+---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 11/14/2025
+ms.date: 11/27/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -126,6 +126,13 @@ The following platforms or features are not yet supported.
 - Office on Mac
 - The unified manifest for Microsoft 365
 
+### Event-based add-in limitations in Outlook on the web and the new Outlook on Windows
+
+In Outlook on the web and the new Outlook on Windows, event-based activation is only supported on standard read and compose message and appointment surfaces. Event-based activation may not work when composing on some non-standard surfaces. For example:
+
+- Responding to a meeting invite using the **RSVP with note** option.
+- Forwarding a meeting from the calendar.
+
 ### Unsupported APIs
 
 Some Office.js APIs that change or alter the UI aren't allowed from event-based add-ins. The following are blocked APIs.
@@ -148,7 +155,7 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
 1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
 
-    ![The EnableBetaAPIsInJavaScript registry value is set to 1."](../images/outlook-beta-registry-key.png)
+    :::image type="content" source="../images/outlook-beta-registry-key.png" alt-text="The EnableBetaAPIsInJavaScript registry value is set to 1.":::
 
 ## Enable single sign-on (SSO)
 
@@ -175,6 +182,7 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 ## Deploy your add-in
 
 Depending on the Office application, event-based add-ins can be deployed through one of the following options.
+
 - **Admin-managed deployment**: Add-in is deployed through the Microsoft 365 admin center.
 - **Restricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace, but it doesn't appear in search results. Add-in acquisition requires a flight code URL. The add-in must still be deployed by an admin for the event-based activation feature to work.
 - **Unrestricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace and can be searched for by users and admins using the add-in's name or ID. Admin deployment isn't necessary for the event-based activation feature to work. The add-in must meet certain requirements for unrestricted listing.
@@ -199,7 +207,7 @@ Admin deployments are done by uploading the manifest to the Microsoft 365 admin 
 1. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**.
 1. On the **Integrated apps** page, choose the **Upload custom apps** action.
 
-![The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.](../images/outlook-deploy-event-based-add-ins.png)
+:::image type="content" source="../images/outlook-deploy-event-based-add-ins.png" alt-text="The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.":::
 
 For more information about how to deploy an add-in, please refer to [Deploy and publish Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/office-addins).
 

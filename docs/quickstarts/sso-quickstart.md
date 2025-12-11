@@ -93,22 +93,22 @@ Complete the following steps to test an Excel, Word, or PowerPoint add-in.
 
 1. When Excel, Word, or PowerPoint opens when you run the previous command, make sure you're signed in with a user account that's a member of the same Microsoft 365 organization as the Microsoft 365 administrator account that you used to connect to Azure while configuring SSO in step 3 of the [previous section](#configure-sso). Doing so establishes the appropriate conditions for SSO to succeed.
 
-1. In the Office client application, choose the **Home** tab, and then choose **Show Taskpane** to open the add-in task pane.
+1. In the Office client application, choose the **Home** tab, and then choose **Show Task Pane** to open the add-in task pane.
 
-    :::image type="content" source="../images/excel-quickstart-addin-3b.png" alt-text="Excel add-in button.":::
+    :::image type="content" source="../images/excel-quickstart-add-in-3b.png" alt-text="Excel add-in button.":::
 
 1. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
 
 1. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed in to Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose **Accept** to continue.
 
-    ![The permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
+    :::image type="content" source="../images/sso-permissions-request.png" alt-text="The permissions requested dialog with Accept button highlighted.":::
 
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
 1. The add-in retrieves profile information for the signed-in user and writes it to the document. The following image shows an example of profile information written to an Excel worksheet.
 
-    ![The user profile information in Excel worksheet.](../images/sso-user-profile-info-excel.png)
+    :::image type="content" source="../images/sso-user-profile-info-excel.png" alt-text="The user profile information in Excel worksheet.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
@@ -130,20 +130,20 @@ Complete the following steps to try out an Outlook add-in.
 
 1. In the message compose window, choose the **Show Taskpane** button to open the add-in task pane.
 
-    ![The highlighted add-in ribbon button in Outlook compose message window.](../images/outlook-sso-ribbon-button.png)
+    :::image type="content" source="../images/outlook-sso-ribbon-button.png" alt-text="The highlighted add-in ribbon button in Outlook compose message window.":::
 
 1. At the bottom of the task pane, choose the **Get My User Profile Information** button to initiate the SSO process.
 
 1. If a dialog window appears to request permissions on behalf of the add-in, this means that SSO is not supported for your scenario and the add-in has instead fallen back to an alternate method of user authentication. This may occur when the tenant administrator hasn't granted consent for the add-in to access Microsoft Graph, or when the user isn't signed in to Office with a valid Microsoft account or Microsoft 365 Education or Work account. Choose **Accept** to continue.
 
-    ![The permissions requested dialog with Accept button highlighted.](../images/sso-permissions-request.png)
+    :::image type="content" source="../images/sso-permissions-request.png" alt-text="The permissions requested dialog with Accept button highlighted.":::
 
     > [!NOTE]
     > After a user accepts this permissions request, they won't be prompted again in the future.
 
 1. The add-in retrieves profile information for the signed-in user and writes it to the body of the email message.
 
-    ![The user profile information in Outlook compose message window.](../images/sso-user-profile-info-outlook.png)
+    :::image type="content" source="../images/sso-user-profile-info-outlook.png" alt-text="The user profile information in Outlook compose message window.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 

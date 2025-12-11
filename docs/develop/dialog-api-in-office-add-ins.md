@@ -1,4 +1,4 @@
-﻿---
+---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
 ms.date: 06/25/2025
@@ -25,7 +25,7 @@ Use the [Office dialog API](/javascript/api/office/office.ui) to open dialog box
 
 The following image shows an example of a dialog box.
 
-![Sign-in dialog with Microsoft identity platform in Word.](../images/dialog-api-sign-in.png)
+:::image type="content" source="../images/dialog-api-sign-in.png" alt-text="Sign-in dialog with Microsoft identity platform in Word.":::
 
 The dialog box always opens in the center of the screen. The user can move and resize it. The window is *nonmodal*--a user can continue to interact with both the document in the Office application and with the page in the task pane, if there is one.
 

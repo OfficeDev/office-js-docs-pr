@@ -130,6 +130,8 @@
         items: 
         - name: Office Add-ins with the unified manifest for Microsoft 365
           href: develop/unified-manifest-overview.md
+        - name: Specify Office Add-in requirements in the unified manifest for Microsoft 365
+          href: develop/requirements-property-unified-manifest.md
         - name: Compare the add-in only manifest with the unified manifest for Microsoft 365
           href: develop/json-manifest-overview.md
         - name: Convert an add-in to use the unified manifest for Microsoft 365
@@ -181,7 +183,7 @@
           href: develop/create-sso-office-add-ins-nodejs.md
         - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Enable SSO using nested app authentication
+      - name: Enable SSO in an Office add-in
         href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Nested app authentication FAQ 
         href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
@@ -257,6 +259,8 @@
             href: develop/create-addin-commands.md
           - name: Create add-in commands with the unified manifest for Microsoft 365
             href: develop/create-addin-commands-unified-manifest.md
+          - name: Find the IDs of built-in Office ribbon tabs
+            href: develop/built-in-ui-ids.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
           - name: Change the availability of add-in commands
@@ -681,6 +685,9 @@
     - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
+    - name: Manage function visibility
+      href: excel/custom-functions-visibility.md
+      displayName: Excel, Custom Functions
     - name: Custom enums
       href: excel/custom-functions-custom-enums.md
       displayName: Excel, Custom Functions
@@ -692,6 +699,9 @@
       displayName: Excel, Custom Functions
     - name: Work with formula value preview
       href: excel/custom-functions-formula-value-preview.md
+      displayName: Excel, Custom Functions
+    - name: LAMBDA functions
+      href: excel/custom-functions-lambdas.md
       displayName: Excel, Custom Functions
     - name: Batch custom function remote calls
       href: excel/custom-functions-batching.md
@@ -762,8 +772,6 @@
     displayName: Outlook
   - name: Develop Outlook add-ins for the new Outlook on Windows
     href: outlook/one-outlook.md
-  - name: Outlook add-in design guidelines
-    href: outlook/outlook-addin-design.md
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
@@ -785,6 +793,9 @@
         displayName: outlook, add-ins, mobile
       - name: Add support for Outlook on mobile devices
         href: outlook/add-mobile-support.md
+        displayName: outlook, add-ins, mobile
+      - name: Outlook add-in design guidelines
+        href: outlook/outlook-addin-design.md
         displayName: outlook, add-ins, mobile
       - name: Outlook JavaScript API support on mobile devices
         href: outlook/outlook-mobile-apis.md

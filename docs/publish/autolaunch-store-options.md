@@ -1,4 +1,4 @@
-﻿---
+---
 title: Microsoft Marketplace listing options for your event-based add-in
 description: Learn about the Microsoft Marketplace listing options available for your Office Add-ins that implement event-based activation.
 ms.date: 10/28/2025
@@ -41,7 +41,7 @@ When a flight code is enabled for an add-in, the add-in isn't searchable by name
 
 To specify the flight code for your add-in, share the code in the **Notes for certification** when you publish your add-in. **Important**: Flight codes are case-sensitive.
 
-![A sample request for flight code in Notes for certification screen during publishing process.](../images/outlook-publish-notes-for-certification.png)
+:::image type="content" source="../images/outlook-publish-notes-for-certification.png" alt-text="A sample request for flight code in Notes for certification screen during publishing process.":::
 
 ### Deploy add-in with flight code
 
@@ -78,7 +78,7 @@ You can update your existing add-in to include event-based activation then resub
 
 After the updated add-in is approved, organization admins who previously deployed the add-in will receive an update message in the **Integrated apps** section of the admin center. The message advises the admin about the event-based activation changes. After the admin accepts the changes, the update will be deployed to users. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](#admin-consent-for-installing-event-based-add-ins).
 
-![App update notifications on the "Integrated apps" screen.](../images/outlook-deploy-update-notification.png)
+:::image type="content" source="../images/outlook-deploy-update-notification.png" alt-text="App update notifications on the 'Integrated apps' screen.":::
 
 > [!NOTE]
 > For users who installed an add-in listed as restricted, the event-based activation feature won't work even after the add-in has been updated.
@@ -87,13 +87,13 @@ After the updated add-in is approved, organization admins who previously deploye
 
 Whenever an event-based add-in is deployed from the **Integrated apps** screen, the admin gets details about the add-in's event-based activation capabilities in the deployment wizard. The details appear in the **App Permissions and Capabilities** section. The admin should see all the events where the add-in can automatically activate.
 
-![The "Accept permissions requests" screen when deploying a new app.](../images/outlook-deploy-accept-permissions-requests.png)
+:::image type="content" source="../images/outlook-deploy-accept-permissions-requests.png" alt-text="The 'Accept permissions requests' screen when deploying a new app.":::
 
 Similarly, when an existing add-in is updated to event-based functionality, the admin sees an "Update Pending" status on the add-in. The updated add-in is deployed only if the admin consents to the changes noted in the **App Permissions and Capabilities** section, including the set of events where the add-in can automatically activate.
 
 Each time you add any new event-based activation function to your add-in, admins will see the update flow in the admin portal and need to provide consent for additional events. To learn more about the update and consent process, see [Manage apps in the Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps#manage-apps-in-the-integrated-apps-portal).
 
-![The "Updates" flow when deploying an updated app.](../images/outlook-deploy-update-flow.png)
+:::image type="content" source="../images/outlook-deploy-update-flow.png" alt-text="The 'Updates' flow when deploying an updated app.":::
 
 ## See also
 
