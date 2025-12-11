@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Synchronous custom functions
 
-Synchronous custom functions allow evaluate and conditional format processes to run in Excel simultaneously with the custom function. If a custom function doesn't support synchronous operations, it returns an error such as `#CALC!` or `#VALUE!` when it runs at the same time as these Excel processes.
+Synchronous custom functions allow evaluate and conditional format processes to run in Excel simultaneously with the custom function. Enable synchronous support when your custom function needs to run in tandem with any the Excel processes listed in this article. If a custom function doesn't support synchronous operations, it returns an error such as `#CALC!` or `#VALUE!` when it runs at the same time as these Excel processes.
 
 > [!WARNING]
 > Synchronous custom functions don't support write operations with Office JavaScript APIs, such as using `Range.values` to set a cell value. Calling a write operation in a synchronous custom function may cause Excel to freeze.
