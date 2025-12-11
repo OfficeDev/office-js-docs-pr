@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Coauthoring in Excel add-ins  
 
-When multiple users work in the same Excel workbook with your add-in open, changes made by one user can create unexpected behavior in another user's add-in instance. If your add-in caches workbook data in memory or stores state in hidden worksheets, these cached values can become stale when coauthors modify the workbook. This stale data results in your add-in displaying incorrect data, making decisions based on outdated information, or creating merge conflicts.
+When multiple users and add-ins work in the same Excel workbook, changes made by one user can create unexpected behavior in another user's add-in instance. Cached values for your add-in can become stale when coauthors modify the workbook. This stale data results in your add-in displaying incorrect data, making decisions based on outdated information, or creating merge conflicts.
 
 ## Why add-in developers need to handle coauthoring
 
@@ -16,10 +16,10 @@ Excel supports [coauthoring](https://support.microsoft.com/office/7152aa8b-b791-
 
 You need to handle coauthoring if your add-in:
 
-- Caches workbook values in JavaScript variables (risk: stale data)
-- Stores state in hidden worksheets (risk: lost synchronization)
-- Adds rows to tables using `TableRowCollection.add` (risk: merge conflicts)
-- Shows UI in response to data changes (risk: unexpected dialogs for all users)
+- Caches workbook values in JavaScript variables (risk: stale data).
+- Stores state in hidden worksheets (risk: lost synchronization).
+- Adds rows to tables using `TableRowCollection.add` (risk: merge conflicts).
+- Shows UI in response to data changes (risk: unexpected dialogs for all users).
 
 If your add-in only reads data once at startup or rarely runs in shared workbooks, coauthoring support is lower priority but should still be monitored.
 
@@ -28,9 +28,11 @@ If your add-in only reads data once at startup or rarely runs in shared workbook
 
 ## Excel synchronizes workbook content, not your add-in's memory
 
-Excel automatically synchronizes workbook content (cell values, formatting, table data) across all coauthors. However, Excel doesn't synchronize your add-in's JavaScript variables, objects, or in-memory state. Each user runs their own instance of your add-in with separate memory.
+Excel automatically synchronizes workbook content (cell values, formatting, table data) across all coauthors. However, **Excel doesn't synchronize your add-in's JavaScript variables, objects, or in-memory state**. Each user runs their own instance of your add-in with separate memory.
 
-### Example: The stale data problem
+### Problem: Stale data from cached variables
+
+In the following code, User A's `cachedValue` variable never updates automatically. If your add-in logic uses `cachedValue` for calculations, displays, or decisions, it's working with outdated information.
 
 ```js
 // User A's add-in reads a value.
@@ -53,17 +55,24 @@ await context.sync();
 console.log(range.values[0][0]); // "Fabrikam" - CURRENT
 ```
 
-**The problem**: User A's `cachedValue` variable never updates automatically. If your add-in logic uses `cachedValue` for calculations, displays, or decisions, it's working with outdated information.
-
-**What developers must understand**: Each coauthor has their own separate add-in instance. When you copy workbook values to JavaScript variables, those copies don't stay synchronized with the workbook. You must explicitly refresh values or use events to detect changes.
+Each coauthor has their own separate add-in instance. When you copy workbook values to JavaScript variables, those copies don't stay synchronized with the workbook. You must explicitly refresh values or use events to detect changes.
 
 ### Solution: Use events to detect coauthor changes
 
 To keep your add-in's state synchronized when coauthors modify the workbook, use Excel events. Events notify your add-in when workbook content changes, so you can refresh cached data or update your UI.
 
-#### Practical example: Keeping a dashboard synchronized
+| Scenario | Use Event | Reason |
+|----------|-----------|--------|
+| Hidden worksheet stores settings | `BindingDataChanged` | Detect when coauthors change configuration |
+| Dashboard displays cell values | `BindingDataChanged` | Keep display synchronized with workbook |
+| Monitor specific range for changes | `WorksheetChanged` | More flexible for complex change detection |
+| Track any worksheet modification | `WorksheetChanged` | Broader change awareness |
+
+#### Example: Keeping a dashboard synchronized
 
 Scenario: Your add-in displays a dashboard showing data from cells A1:C10. Without event handling, the dashboard shows stale data when coauthors update those cells.
+
+The following code uses the `BindingDataChanged` event ([BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs)). This event activates whenever any user (local or coauthor) modifies the bound range. The event handler refreshes the cached data, so all users see current information.
 
 ```js
 let cachedData = null;
@@ -116,20 +125,9 @@ function updateDashboardDisplay(data) {
 }
 ```
 
-**Why this works**: The `BindingDataChanged` event ([BindingDataChanged](/javascript/api/office/office.bindingdatachangedeventargs)) activates whenever any user (local or coauthor) modifies the bound range. Your event handler refreshes the cached data, so all users see current information.
+### Don't show UI in event handlers
 
-#### When to use events
-
-| Scenario | Use Event | Reason |
-|----------|-----------|--------|
-| Hidden worksheet stores settings | `BindingDataChanged` | Detect when coauthors change configuration |
-| Dashboard displays cell values | `BindingDataChanged` | Keep display synchronized with workbook |
-| Monitor specific range for changes | `WorksheetChanged` | More flexible for complex change detection |
-| Track any worksheet modification | `WorksheetChanged` | Broader change awareness |
-
-### Important: Don't show UI in event handlers
-
-When coauthoring is active, your event handlers run for **all users** when **any user** makes a change. This behavior creates a critical design constraint:
+When coauthoring is active, your event handlers run for **all users** when **any user** makes a change. This behavior creates a critical design constraint.
 
 **❌ Don't do this:**
 
@@ -140,7 +138,7 @@ binding.onDataChanged.add(async (event) => {
 });
 ```
 
-**Why this approach is bad**: When User B changes a cell, User A unexpectedly sees a validation dialog, even though User A didn't make any changes. This experience is confusing and disruptive.
+When User B changes a cell, User A unexpectedly sees a validation dialog, even though User A didn't make any changes. This experience is confusing and disruptive.
 
 **✅ Do this instead**:
 
@@ -171,13 +169,13 @@ document.getElementById("validateButton").onclick = async () => {
 };
 ```
 
-**Design principle**: Use events to update your add-in's internal state and passive displays. Only show dialogs, alerts, or modal UI in response to explicit user actions, such as button clicks or menu selections.
+Use events to update your add-in's internal state and passive displays. Only show dialogs, alerts, or modal UI in response to explicit user actions, such as button clicks or menu selections.
 
 ## Avoid table row conflicts in coauthoring scenarios
 
-**The problem**: When your add-in uses [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) while coauthors are editing the same table or nearby cells, Excel detects a merge conflict. Users see a yellow bar prompting them to refresh, and recent changes might be lost.
+When your add-in uses [`TableRowCollection.add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) while coauthors are editing the same table or nearby cells, Excel detects a merge conflict. Users see a yellow bar prompting them to refresh, and recent changes might be lost.
 
-**Why this problem happens**: The `TableRowCollection.add` API changes the table structure in a way that conflicts with simultaneous edits. When User A's add-in adds a row while User B is editing cell B5, Excel can't safely merge both changes.
+The `TableRowCollection.add` API changes the table structure in a way that conflicts with simultaneous edits. When User A's add-in adds a row while User B is editing cell B5, Excel can't safely merge both changes.
 
 ### Use Range.values to add rows
 
@@ -216,7 +214,7 @@ For the `Range.values` approach to work reliably:
 
 1. **No data validation rules below the table**: Remove [data validation rules](https://support.microsoft.com/office/29fecbcc-d1b9-42c1-9d76-eff3ce5f7249) from cells below the table, or apply validation to entire columns instead of specific cell ranges.
 
-1. **Handle existing data below the table**: If users have data below your table, insert a blank row first:
+1. **Handle existing data below the table**: If users have data below your table, insert a blank row first.
 
    ```js
    // Insert empty row to push existing data down.
@@ -228,11 +226,9 @@ For the `Range.values` approach to work reliably:
    insertRange.values = [["Product", 100, "=B2*1.2"]];
    ```
 
-1. **Can't add truly empty rows**: Tables only auto-expand when you set actual data. If you need an empty row, use a workaround:
-   - Put temporary data (like a space character) in a hidden column
-   - Or use placeholder data that users can clear
-
-**When to use this approach**: Always use `Range.values` if your add-in runs in shared workbooks where multiple users might edit simultaneously. The reliability gain is worth the slightly more complex code.
+1. **Can't add truly empty rows**: Tables only auto-expand when you set actual data. If you need an empty row, use a workaround.
+   - Put temporary data (like a space character) in a hidden column.
+   - Use placeholder data that users can clear.
 
 ## Troubleshooting common coauthoring issues
 
