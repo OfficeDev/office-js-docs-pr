@@ -714,7 +714,7 @@ The steps vary depending on the type of manifest.
 
 1. Open the file **.\commands\commands.ts**.
 
-1. Add the following function immediately after the `action` function. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office client application that the function has finished and the UI can become responsive again.
+1. Add the following function immediately after the `Office.onReady` statement. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office client application that the function has finished and the UI can become responsive again.
 
     ```js
     async function toggleProtection(args) {
