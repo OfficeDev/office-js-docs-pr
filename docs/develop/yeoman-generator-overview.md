@@ -55,7 +55,7 @@ The first question asks you to choose between several types of projects. The opt
 - **Office Add-in Task Pane project supporting Nested App Auth single sign-on (preview)**
 - **Office Add-in project containing the manifest only**
 
-![The prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
+:::image type="content" source="../images/yo-office-project-type-prompt.png" alt-text="The prompt for project type, and the possible answers, in the Yeoman generator.":::
 
 > [!NOTE]
 > - The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
@@ -63,15 +63,15 @@ The first question asks you to choose between several types of projects. The opt
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
 
-![The Yo Office interface after the user chose "Office Add-in Task Pane project" to the preceding question. It shows the prompt for language, and the possible answers, TypeScript and JavaScript, in the Yeoman generator.](../images/yo-office-language-prompt.png)
+:::image type="content" source="../images/yo-office-language-prompt.png" alt-text="The Yo Office interface after the user chose 'Office Add-in Task Pane project' to the preceding question. It shows the prompt for language, and the possible answers, TypeScript and JavaScript, in the Yeoman generator.":::
 
 You're then prompted to give the add-in a name. The name you specify will be used in the add-in's manifest, but you can change it later. This is also the folder name for the project.
 
-![The Yo Office interface after the user chose TypeScript to the previous question. It shows the prompt for the add-in name in the Yeoman generator.](../images/yo-office-name-prompt.png)
+:::image type="content" source="../images/yo-office-name-prompt.png" alt-text="The Yo Office interface after the user chose TypeScript to the previous question. It shows the prompt for the add-in name in the Yeoman generator.":::
 
 You're then prompted to choose which Office application the add-in should run in. There are six possible applications to choose from: **Excel**, **OneNote**, **Outlook**, **PowerPoint**, **Project**, and **Word**. You must choose just one, but you can change the manifest later to support the additional Office applications. The exception is Outlook. A manifest that supports Outlook cannot support any other Office application.
 
-![The Yo Office interface after the user named the project "Contoso Add-in". It shows the prompt for Office application, and the possible answers, in the Yeoman generator.](../images/yo-office-host-prompt.png)
+:::image type="content" source="../images/yo-office-host-prompt.png" alt-text="The Yo Office interface after the user named the project 'Contoso Add-in'. It shows the prompt for Office application, and the possible answers, in the Yeoman generator.":::
 
 If you choose **Outlook** as the Office application, you get an additional question asking you which type of manifest you want to use. We recommend that you choose **unified manifest for Microsoft 365** unless your add-in will include an extensibility feature that isn't yet supported by the unified manifest.
 

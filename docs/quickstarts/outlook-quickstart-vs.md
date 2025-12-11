@@ -1,4 +1,4 @@
-﻿---
+---
 title: Build your first Outlook add-in with Visual Studio
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API and a Visual Studio template.
 ms.date: 12/02/2025
@@ -159,15 +159,15 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 1. Within the message, navigate to the action bar, then select **Apps**.
 
-    ![A message window in Outlook on the web with the Apps option selected.](../images/outlook-quickstart-apps-owa-vs.png)
+    :::image type="content" source="../images/outlook-quickstart-apps-owa-vs.png" alt-text="A message window in Outlook on the web with the Apps option selected.":::
 
 1. From the list of add-ins, select **My Office Add-in**, then choose **Show task pane**.
 
-    ![A message window in Outlook on the web with the "Show task pane" option selected.](../images/outlook-quickstart-add-in-owa-vs.png)
+    :::image type="content" source="../images/outlook-quickstart-add-in-owa-vs.png" alt-text="A message window in Outlook on the web with the 'Show task pane' option selected.":::
 
 1. View the properties of the selected message from the task pane that opens.
 
-    ![The add-in's task pane in Outlook on the web displaying message properties.](../images/outlook-quickstart-task-pane-owa-vs.png)
+    :::image type="content" source="../images/outlook-quickstart-task-pane-owa-vs.png" alt-text="The add-in's task pane in Outlook on the web displaying message properties.":::
 
     > [!NOTE]
     > If the task pane doesn't load, try to verify by opening it in a browser on the same machine.

@@ -80,7 +80,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. **Browse** to the add-in manifest file, and then select **Upload**.
 
-    ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
+    :::image type="content" source="../images/upload-add-in.png" alt-text="The upload add-in dialog with buttons for browse, upload, and cancel.":::
 
 1. Verify that your add-in is installed. For example, if it has an add-in command, it should appear on either the ribbon or the context menu. If it's a task pane add-in that has no add-in commands, the task pane should appear.
 

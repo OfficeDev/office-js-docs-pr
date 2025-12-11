@@ -1,4 +1,4 @@
-﻿---
+---
 title: Enable single sign-on (SSO) in an Office Add-in
 description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
 ms.date: 05/06/2024
@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
 
-![An image showing the sign-in process for an add-in.](../images/sso-for-office-addins.png)
+:::image type="content" source="../images/sso-for-office-addins.png" alt-text="An image showing the sign-in process for an add-in.":::
 
 ## How SSO works at runtime
 
@@ -127,7 +127,7 @@ To use SSO your add-in requires the Identity API 1.3 requirement set. For more i
 Add JavaScript to the add-in to:
 
 - Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)).
-- Parse the access token or pass it to the add-in’s server-side code.
+- Parse the access token or pass it to the add-in's server-side code.
 
 The following code shows a simple example of calling `getAccessToken` and parsing the token for the user name and other credentials.
 

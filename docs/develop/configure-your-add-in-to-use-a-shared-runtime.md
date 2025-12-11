@@ -1,4 +1,4 @@
-﻿---
+---
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
@@ -163,7 +163,7 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
 
 1. Save your changes and rebuild the project.
 
-   ```command line
+   ```command&nbsp;line
    npm run build
    ```
 
@@ -234,7 +234,7 @@ Configuring a shared runtime enables the following scenarios.
 
 Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same runtime.
 
-![Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser runtime in Excel.](../images/custom-functions-in-browser-runtime.png)
+:::image type="content" source="../images/custom-functions-in-browser-runtime.png" alt-text="Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser runtime in Excel.":::
 
 ### Multiple task panes
 

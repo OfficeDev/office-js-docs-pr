@@ -47,7 +47,7 @@ await Excel.run(async (context) => {
 
 ### New table
 
-![New table in Excel.](../images/excel-tables-create.png)
+:::image type="content" source="../images/excel-tables-create.png" alt-text="New table in Excel.":::
 
 ## Add rows to a table
 
@@ -86,7 +86,7 @@ await Excel.run(async (context) => {
 
 ### Table with new rows
 
-![Table with new rows in Excel.](../images/excel-tables-add-rows.png)
+:::image type="content" source="../images/excel-tables-add-rows.png" alt-text="Table with new rows in Excel.":::
 
 ## Add a column to a table
 
@@ -124,7 +124,7 @@ await Excel.run(async (context) => {
 
 #### Table with new column
 
-![Table with new column in Excel.](../images/excel-tables-add-column.png)
+:::image type="content" source="../images/excel-tables-add-column.png" alt-text="Table with new column in Excel.":::
 
 ### Add a column that contains formulas
 
@@ -155,7 +155,7 @@ await Excel.run(async (context) => {
 
 #### Table with new calculated column
 
-![Table with new calculated column in Excel.](../images/excel-tables-add-calculated-column.png)
+:::image type="content" source="../images/excel-tables-add-calculated-column.png" alt-text="Table with new calculated column in Excel.":::
 
 ## Resize a table
 
@@ -179,7 +179,7 @@ await Excel.run(async (context) => {
 
 ### Table after resize
 
-![Table with multiple empty rows in Excel.](../images/excel-tables-resize.png)
+:::image type="content" source="../images/excel-tables-resize.png" alt-text="Table with multiple empty rows in Excel.":::
 
 ## Update column name
 
@@ -205,7 +205,7 @@ await Excel.run(async (context) => {
 
 ### Table with new column name
 
-![Table with new column name in Excel.](../images/excel-tables-update-column-name.png)
+:::image type="content" source="../images/excel-tables-update-column-name.png" alt-text="Table with new column name in Excel.":::
 
 ## Get data from a table
 
@@ -250,7 +250,7 @@ await Excel.run(async (context) => {
 
 ### Table and data output
 
-![Table data in Excel.](../images/excel-tables-get-data.png)
+:::image type="content" source="../images/excel-tables-get-data.png" alt-text="Table data in Excel.":::
 
 ## Detect data changes
 
@@ -298,7 +298,7 @@ await Excel.run(async (context) => {
 
 ### Table data sorted by Amount (descending)
 
-![Sorted table data in Excel.](../images/excel-tables-sort.png)
+:::image type="content" source="../images/excel-tables-sort.png" alt-text="Sorted table data in Excel.":::
 
 When data is sorted in a worksheet, an event notification fires. To learn more about sort-related events and how your add-in can register event handlers to respond to such events, see [Handle sorting events](excel-add-ins-worksheets.md#handle-sorting-events).
 
@@ -332,7 +332,7 @@ await Excel.run(async (context) => {
 
 ### Table data with filters applied for Category and Amount
 
-![Table data filtered in Excel.](../images/excel-tables-filters-apply.png)
+:::image type="content" source="../images/excel-tables-filters-apply.png" alt-text="Table data filtered in Excel.":::
 
 ## Clear table filters
 
@@ -351,7 +351,7 @@ await Excel.run(async (context) => {
 
 ### Table data with no filters applied
 
-![Table data non-filtered in Excel.](../images/excel-tables-filters-clear.png)
+:::image type="content" source="../images/excel-tables-filters-clear.png" alt-text="Table data non-filtered in Excel.":::
 
 ## Get the visible range from a filtered table
 
@@ -416,7 +416,7 @@ await Excel.run(async (context) => {
 
 ### Table after formatting is applied
 
-![Table after formatting is applied in Excel.](../images/excel-tables-formatting-after.png)
+:::image type="content" source="../images/excel-tables-formatting-after.png" alt-text="Table after formatting is applied in Excel.":::
 
 ## Convert a range to a table
 
@@ -454,11 +454,11 @@ await Excel.run(async (context) => {
 
 ### Data in the range (before the range is converted to a table)
 
-![Data in range in Excel.](../images/excel-ranges.png)
+:::image type="content" source="../images/excel-ranges.png" alt-text="Data in range in Excel.":::
 
 ### Data in the table (after the range is converted to a table)
 
-![Data in table in Excel.](../images/excel-tables-from-range.png)
+:::image type="content" source="../images/excel-tables-from-range.png" alt-text="Data in table in Excel.":::
 
 ## Import JSON data into a table
 
@@ -503,7 +503,7 @@ await Excel.run(async (context) => {
 
 ### New table
 
-![New table from imported JSON data in Excel.](../images/excel-tables-create-from-json.png)
+:::image type="content" source="../images/excel-tables-create-from-json.png" alt-text="New table from imported JSON data in Excel.":::
 
 ## See also
 

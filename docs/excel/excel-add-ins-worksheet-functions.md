@@ -33,7 +33,7 @@ await Excel.run(async (context) => {
 
 The following image shows a table in an Excel worksheet that contains sales data for various types of tools over a three month period. Each number in the table represents the number of units sold for a specific tool in a specific month. The examples that follow will show how to apply built-in worksheet functions to this data.
 
-![Sales data in Excel for Hammer, Wrench, and Saw in months November, December, and January.](../images/worksheet-functions-chaining-results.jpg)
+:::image type="content" source="../images/worksheet-functions-chaining-results.jpg" alt-text="Sales data in Excel for Hammer, Wrench, and Saw in months November, December, and January.":::
 
 ## Example 1: Single function
 

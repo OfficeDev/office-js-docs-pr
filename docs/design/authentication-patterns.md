@@ -26,19 +26,19 @@ Add-ins may require users to sign-in or sign-up in order to access features and 
 
 1. First-Run Placemat - Place your sign-in button as a clear call-to action inside your add-in's first-run experience.
 
-    ![A sample add-in task pane in an Office application.](../images/add-in-fre-value-placemat.png)
+    :::image type="content" source="../images/add-in-fre-value-placemat.png" alt-text="A sample add-in task pane in an Office application.":::
 
 1. Identity Provider Choices Dialog - Display a clear list of identity providers including a username and password form if applicable. Your add-in UI may be blocked while the authentication dialog is open.
 
-    ![The Identity Provider Choices dialog in an Office application.](../images/add-in-auth-choices-dialog.png)
+    :::image type="content" source="../images/add-in-auth-choices-dialog.png" alt-text="The Identity Provider Choices dialog in an Office application.":::
 
 1. Identity Provider Sign-in - The identity provider will have their own UI. Microsoft Entra ID allows customization of sign-in and access panel pages for consistent look and feel with your service. For more information, see [Configure your company branding](/entra/fundamentals/how-to-customize-branding).
 
-    ![The Identity Provider Sign-in dialog in an Office application.](../images/add-in-auth-identity-sign-in.png)
+    :::image type="content" source="../images/add-in-auth-identity-sign-in.png" alt-text="The Identity Provider Sign-in dialog in an Office application.":::
 
 1. Progress - Indicate progress while settings and UI load.
 
-    ![A sample dialog with a progress indicator in an Office application.](../images/add-in-auth-modal-interstitial.png)
+    :::image type="content" source="../images/add-in-auth-modal-interstitial.png" alt-text="A sample dialog with a progress indicator in an Office application.":::
 
 > [!NOTE]
 > When using Microsoft's Identity service you'll have the opportunity to use a branded sign-in button that is customizable to light and dark themes. Learn more.
@@ -52,14 +52,14 @@ Use single sign-on for a smoother end-user experience. The user's identity withi
 
 1. As an add-in is being installed, a user will see a consent window similar to the one following:
 
-    ![The consent window in an Office application when an add-in is being installed.](../images/add-in-auth-SSO-consent-dialog.png)
+    :::image type="content" source="../images/add-in-auth-SSO-consent-dialog.png" alt-text="The consent window in an Office application when an add-in is being installed.":::
 
     > [!NOTE]
     > The add-in publisher will have control over the logo, strings and permission scopes included in the consent window. The UI is pre-configured by Microsoft.
 
 1. The add-in will load after the user consents. It can extract and display any necessary user customized information.
 
-    ![An Office application with add-in buttons displayed on the ribbon.](../images/add-in-ribbon.png)
+    :::image type="content" source="../images/add-in-ribbon.png" alt-text="An Office application with add-in buttons displayed on the ribbon.":::
 
 ## See also
 

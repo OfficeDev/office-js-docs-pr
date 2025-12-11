@@ -1,4 +1,4 @@
-﻿---
+---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
 ms.date: 11/11/2024
@@ -16,7 +16,7 @@ Custom functions enable developers to add new functions to Excel by defining tho
 
 The following animated image shows your workbook calling a function you've created with JavaScript or TypeScript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
-![Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.](../images/SphereVolumeNew.gif)
+:::image type="content" source="../images/SphereVolumeNew.gif" alt-text="Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.":::
 
 The following code defines the custom function `=MYFUNCTION.SPHEREVOLUME`.
 
@@ -67,7 +67,7 @@ function add(first, second){
 > [!TIP]
 > In Excel on the web, custom function descriptions and parameter descriptions display inline. This gives users additional information when writing custom functions. Learn how to configure the inline descriptions by exploring any of the [custom functions Script Lab samples](https://github.com/OfficeDev/office-js-snippets/tree/prod/samples/excel/16-custom-functions) in Excel on the web. See the following screenshot for an example.
 >
-> ![A custom function with inline descriptions displayed in Excel on the web.](../images/custom-functions-inline-description.png)
+> :::image type="content" source="../images/custom-functions-inline-description.png" alt-text="A custom function with inline descriptions displayed in Excel on the web.":::
 
 ### Manifest file
 
