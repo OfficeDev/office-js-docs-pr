@@ -405,9 +405,9 @@ Streaming functions can't be marked as [@supportSync](#supportsync) or [@volatil
 
 Indicates that a custom function supports synchronous processes in Excel, like evaluate and conditional format actions.
 
-For more information, see [Synchronous custom functions](custom-functions-synchronous.md).
+If the function uses `Excel.RequestContext`, call the `setInvocation` method of `Excel.RequestContext` and pass in the `CustomFunctions.Invocation` object. For more information, see [Synchronous custom functions](custom-functions-synchronous.md).
 
-Synchronous custom functions can't be marked as [@streaming](#streaming) or [@volatile](#volatile).
+Synchronous custom functions can't be marked as [@streaming](#streaming) or [@volatile](#volatile). If `@streaming` or `@volatile` tags are used, the `@supportSync` tag is ignored.
 
 <a id="volatile"></a>
 

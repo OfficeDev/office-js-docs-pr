@@ -7,34 +7,37 @@ ms.localizationpriority: medium
 
 # Synchronous custom functions
 
-Synchronous custom functions allow concurrent evaluate and conditional format processes in Excel. Without an explicit synchronous setting, custom functions can't run during these Excel processes.
+Synchronous custom functions allow evaluate and conditional format processes to run in Excel simultaneously with the custom function. If a custom function doesn't support synchronous operations, it returns an error such as `#CALC!` or `#VALUE!` when it runs at the same time as these Excel processes.
+
+> [!IMPORTANT]
+> Synchronous custom functions don't support write operations with Office JavaScript APIs, such as using `Range.values` to set a cell value. Calling a write operation in a synchronous custom function may cause Excel to freeze.
 
 ## Excel processes supported by synchronous custom functions
 
-The following actions and processes are supported with synchronous custom functions.
+The following Excel actions and processes work with synchronous custom functions.
 
 ### Evaluate actions
 
 - UI action: Formulas > Evaluate Formula.
 - UI action: Formulas > Insert Function.
 - UI action: In cell edit mode, selecting part of a formula and using F9 to see partial calculation results.
-- VBA API: Application.Calculate
+- VBA API: Application.Calculate.
 
 ### Conditional format actions
 
-The following list applies to both UI actions and Office JavaScript API actions.
+The following list applies to conditional format actions triggered by both the Excel UI and Office JavaScript APIs.
 
-- Create new rule
-- Edit rules
-- Delete rules
-- Reorder rules
-- Change “Applies to” range
-- Toggle “Stop if True”
-- Clear all rules
-- Copy/Cut and Paste cells containing conditional formatting
+- Create new rule.
+- Edit rules.
+- Delete rules.
+- Reorder rules.
+- Change “Applies to” range.
+- Toggle “Stop if True”.
+- Clear all rules.
+- Copy/Cut and Paste cells containing conditional formatting.
 
 > [!NOTE]
-> When a synchronous custom function takes a significant amount of time to complete, Excel may temporarily block the user interface while waiting for the result. To avoid prolonged interruptions, users can cancel the execution at any time by using <kbd>Esc</kbd> or by selecting anywhere outside the cell or dialog.
+> When a synchronous custom function takes a significant amount of time to complete, Excel might temporarily block the user interface while waiting for the result. To avoid prolonged interruptions, users can cancel the execution at any time by using <kbd>Esc</kbd> or by selecting anywhere outside the cell or dialog.
 
 ## Enable synchronous support in your add-in
 
@@ -42,12 +45,14 @@ To support synchronous scenarios in your add-in:
 
 - If you [autogenerate JSON metadata](custom-functions-json-autogeneration.md), use the `@supportSync` JSDoc tag.
 - If you [manually create JSON metadata](custom-functions-json.md), use the `"supportSync": true` setting in the `"options"` object of your **functions.json** file.
-- If the function uses `Excel.RequestContext`, call the `setInvocation` method of `Excel.RequestContext` and pass in the `CustomFunctions.Invocation` object. For an example, see the [synchronous custom function code sample](#synchronous-custom-function-code-sample).
+- If the function uses `Excel.RequestContext`, call the `setInvocation` method of `Excel.RequestContext` and pass in the `CustomFunctions.Invocation` object. For an example, see the [code sample](#code-sample).
 
 > [!NOTE]
-> Synchronous custom functions cannot be **streaming** or **volatile** functions.
+> Synchronous custom functions can't be **streaming** or **volatile** functions. If you use the `@supportSync` tag with `@volatile` or `@streaming` tags, Excel ignores the synchronous support. Volatile or streaming support takes precedence, and the custom function can't run at the same time as evaluate or conditional format processes.
 
-### Synchronous custom function code sample
+### Code sample
+
+The following code sample shows how to create a synchronous custom function.
 
 ```typescript
 /** 
@@ -59,7 +64,7 @@ To support synchronous scenarios in your add-in:
  **/ 
 export async function getRangeExcelContextSet(address, invocation) {
   const context = new Excel.RequestContext();
-  context.setInvocation(invocation);
+  context.setInvocation(invocation); // The `invocation` object must be passed in the `setInvocation` method for synchronous functions.
 
   const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
   range.load("values");
