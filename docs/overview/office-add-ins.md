@@ -11,7 +11,7 @@ ms.localizationpriority: high
 
 You can use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Outlook, Excel, Word, PowerPoint, OneNote, and Project. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
 
-:::image type="content" source="../images/addins-overview.png" alt-text="Office application plus an embedded website (add-in) make endless  extensibility possibilities.":::
+:::image type="content" source="../images/addins-overview.png" alt-text="Office application plus an embedded website (add-in) make endless extensibility possibilities.":::
 
 Office Add-ins can do almost anything a webpage can do inside a browser. Use the Office Add-ins platform to:
 
