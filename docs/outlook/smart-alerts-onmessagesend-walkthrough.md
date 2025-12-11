@@ -1,4 +1,4 @@
-﻿---
+---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
 ms.date: 11/20/2025
@@ -341,8 +341,8 @@ The button you can customize depends on the Outlook client and version on which 
 
 | Client | Customizable dialog button | Specifications |
 | --- | --- | --- |
-| **Windows (classic)**<br>[Supported Mailbox 1.14 versions](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#version-support-for-requirement-sets-in-classic-outlook-on-windows) prior to Version 2412 (Build 18324.20000)<br><br>**Mac**<br>Version 16.100 (25072537) | **Don't Send** | The text and functionality of the **Don't Send** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Don't Send** button appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog.<br><br>![Smart Alerts dialog with the Don't Send button.](../images/outlook-smart-alerts-dont-send.png) |
-| **Web browser**<br><br>**Windows (new)**<br><br>**Windows (classic)**<br>Version 2412 (Build 18324.20000) or later | **Take Action** | The text and functionality of the **Take Action** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Take Action** button only appears in the Smart Alerts dialog when you configure a task pane or function to run from the dialog. When the **Take Action** button is present, the **Don't Send** button is used to cancel the mail item being sent. The text and functionality of the **Don't Send** button can't be customized.<br><br>![Smart Alerts dialog with the Take Action button.](../images/outlook-smart-alerts-take-action.png) |
+| **Windows (classic)**<br>[Supported Mailbox 1.14 versions](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#version-support-for-requirement-sets-in-classic-outlook-on-windows) prior to Version 2412 (Build 18324.20000)<br><br>**Mac**<br>Version 16.100 (25072537) | **Don't Send** | The text and functionality of the **Don't Send** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Don't Send** button appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog.<br><br>:::image type="content" source="../images/outlook-smart-alerts-dont-send.png" alt-text="Smart Alerts dialog with the Don't Send button."::: |
+| **Web browser**<br><br>**Windows (new)**<br><br>**Windows (classic)**<br>Version 2412 (Build 18324.20000) or later | **Take Action** | The text and functionality of the **Take Action** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Take Action** button only appears in the Smart Alerts dialog when you configure a task pane or function to run from the dialog. When the **Take Action** button is present, the **Don't Send** button is used to cancel the mail item being sent. The text and functionality of the **Don't Send** button can't be customized.<br><br>:::image type="content" source="../images/outlook-smart-alerts-take-action.png" alt-text="Smart Alerts dialog with the Take Action button."::: |
 
 > [!NOTE]
 > In classic Outlook on Windows, if you customized the text and functionality of the **Don't Send** button in your Smart Alerts add-in prior to Version 2412 (Build 18324.20000), no additional action is needed to implement the **Take Action** button in the latest supported versions. The default or customized **Take Action** button will automatically appear the next time a user receives a Smart Alerts dialog. Although no implementation changes are needed, we recommend notifying users of this updated experience.
@@ -678,26 +678,26 @@ To further streamline a user's experience when recommending changes to the mail 
 
     - Default **Don't Send** button.
 
-        ![Dialog requesting the user to add an attachment to the message.](../images/outlook-win-smart-alerts.png)
+        :::image type="content" source="../images/outlook-win-smart-alerts.png" alt-text="Dialog requesting the user to add an attachment to the message.":::
 
     - Default **Take Action** button.
 
-        ![Dialog with a Take Action button that opens a task pane.](../images/outlook-win-smart-alerts-take-action.png)
+        :::image type="content" source="../images/outlook-win-smart-alerts-take-action.png" alt-text="Dialog with a Take Action button that opens a task pane.":::
 
     - Customized **Add an attachment** button. Applies to Outlook on the web, new Outlook on Windows, and classic Outlook on Windows (starting in Version 2412 (Build 18324.20000)).
 
-        ![Dialog with a customized Take Action button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-take-action.png)
+        :::image type="content" source="../images/outlook-smart-alerts-custom-take-action.png" alt-text="Dialog with a customized Take Action button requesting the user to add an attachment to the message.":::
 
     - Customized **Add an attachment** button. Applies to classic Outlook on Windows prior to Version 2412 (Build 18324.20000).
 
-        ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
+        :::image type="content" source="../images/outlook-smart-alerts-custom-button.png" alt-text="Dialog with a customized Don't Send button requesting the user to add an attachment to the message.":::
 
     > [!NOTE]
     > In supported versions of classic Outlook on Windows prior to Version 2410 (Build 18031.15000), if you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
 
 1. Add an attachment to your message. If you implemented the optional step to customize a dialog button, use the task pane to add an attachment.
 
-    ![Task pane with an option to add an attachment.](../images/outlook-smart-alerts-task-pane.png)
+    :::image type="content" source="../images/outlook-smart-alerts-task-pane.png" alt-text="Task pane with an option to add an attachment.":::
 
 1. Send the message. If you implemented the optional step to programmatically send the message from the task pane, the message will send when you select **Add and send**. There should be no alert this time.
 
@@ -719,11 +719,11 @@ If you implemented the optional step to override the send mode option at runtime
 
     - Applies to Outlook on the web, new Outlook on Windows, and classic Outlook on Windows (starting in Version 2412 (Build 18324.20000)).
 
-        ![Customized Smart Alerts dialog with the Send Anyway option available at runtime.](../images/outlook-smart-alerts-custom-button-and-override.png)
+        :::image type="content" source="../images/outlook-smart-alerts-custom-button-and-override.png" alt-text="Customized Smart Alerts dialog with the Send Anyway option available at runtime.":::
 
     - Applies to classic Outlook on Windows prior to Version 2412 (Build 18324.20000).
 
-        ![Smart Alerts dialog with the Send Anyway option available at runtime in classic Outlook on Windows prior to Version 2412 (Build 18324.20000).](../images/outlook-smart-alerts-send-mode-override.png)
+        :::image type="content" source="../images/outlook-smart-alerts-send-mode-override.png" alt-text="Smart Alerts dialog with the Send Anyway option available at runtime in classic Outlook on Windows prior to Version 2412 (Build 18324.20000).":::
 
 > [!IMPORTANT]
 > If a Smart Alerts add-in that implements the override feature can't complete processing an event due to an error or is unavailable when the event occurs, it uses the send mode option specified in the manifest.

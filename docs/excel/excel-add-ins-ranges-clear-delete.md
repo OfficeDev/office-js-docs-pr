@@ -28,11 +28,11 @@ await Excel.run(async (context) => {
 
 ### Data before range is cleared
 
-![Data in Excel before range is cleared.](../images/excel-ranges-start.png)
+:::image type="content" source="../images/excel-ranges-start.png" alt-text="Data in Excel before range is cleared.":::
 
 ### Data after range is cleared
 
-![Data in Excel after range is cleared.](../images/excel-ranges-after-clear.png)
+:::image type="content" source="../images/excel-ranges-after-clear.png" alt-text="Data in Excel after range is cleared.":::
 
 ## Delete a range of cells
 
@@ -51,11 +51,11 @@ await Excel.run(async (context) => {
 
 ### Data before range is deleted
 
-![Data in Excel before range is deleted.](../images/excel-ranges-start.png)
+:::image type="content" source="../images/excel-ranges-start.png" alt-text="Data in Excel before range is deleted.":::
 
 ### Data after range is deleted
 
-![Data in Excel after range is deleted.](../images/excel-ranges-after-delete.png)
+:::image type="content" source="../images/excel-ranges-after-delete.png" alt-text="Data in Excel after range is deleted.":::
 
 ## See also
 

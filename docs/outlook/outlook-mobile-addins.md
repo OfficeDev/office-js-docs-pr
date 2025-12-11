@@ -1,4 +1,4 @@
-﻿---
+---
 title: Add-ins for Outlook on mobile devices
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
 ms.date: 12/02/2025
@@ -13,11 +13,11 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
 
 **An example task pane in Outlook on iOS**
 
-![A sample task pane in Outlook on iOS.](../images/outlook-mobile-addin-taskpane.png)
+:::image type="content" source="../images/outlook-mobile-addin-taskpane.png" alt-text="A sample task pane in Outlook on iOS.":::
 
 **An example task pane in Outlook on Android**
 
-![A sample task pane in Outlook on Android.](../images/outlook-mobile-addin-taskpane-android.png)
+:::image type="content" source="../images/outlook-mobile-addin-taskpane-android.png" alt-text="A sample task pane in Outlook on Android.":::
 
 ## What's different on mobile?
 

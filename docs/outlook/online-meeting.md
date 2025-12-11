@@ -1,4 +1,4 @@
-﻿---
+---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
 ms.date: 11/18/2025
@@ -439,13 +439,13 @@ Follow the usual guidance to [test and validate your add-in](testing-and-tips.md
 
 As a meeting organizer, you should see screens similar to the following three images when you create a meeting.
 
-[![The create meeting screen on Android with the Contoso toggle off.](../images/outlook-android-create-online-meeting-off.png)](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [![The create meeting screen on Android with a loading Contoso toggle.](../images/outlook-android-create-online-meeting-load.png)](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [![The create meeting screen on Android with the Contoso toggle on.](../images/outlook-android-create-online-meeting-on.png)](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[:::image type="content" source="../images/outlook-android-create-online-meeting-off.png" alt-text="The create meeting screen on Android with the Contoso toggle off.":::](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [:::image type="content" source="../images/outlook-android-create-online-meeting-load.png" alt-text="The create meeting screen on Android with a loading Contoso toggle.":::](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [:::image type="content" source="../images/outlook-android-create-online-meeting-on.png" alt-text="The create meeting screen on Android with the Contoso toggle on.":::](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### Join meeting UI
 
 As a meeting attendee, you should see a screen similar to the following image when you view the meeting.
 
-[![The join meeting screen on Android.](../images/outlook-android-join-online-meeting-view-1.png)](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[:::image type="content" source="../images/outlook-android-join-online-meeting-view-1.png" alt-text="The join meeting screen on Android.":::](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!IMPORTANT]
 > The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows. If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service isn't registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
@@ -466,7 +466,7 @@ Registering your online-meeting add-in is optional. It only applies if you want 
     - The string you set in the `newBody` or similar variable from the [Implement adding online meeting details](#implement-adding-online-meeting-details) section earlier in this article.
 1. Click **Submit new issue**.
 
-![A new GitHub issue screen with Contoso sample content.](../images/outlook-request-to-register-online-meeting-template.png)
+:::image type="content" source="../images/outlook-request-to-register-online-meeting-template.png" alt-text="A new GitHub issue screen with Contoso sample content.":::
 
 ## Automatically provide post-meeting resources and updates to attendees
 

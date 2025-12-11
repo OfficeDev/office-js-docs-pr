@@ -1,4 +1,4 @@
-﻿---
+---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
 ms.date: 10/30/2025
@@ -71,7 +71,7 @@ Add-ins can integrate with Outlook in the following ways.
 
 - Add-ins can declare buttons that appear in command surfaces across messages and appointments. Add-in buttons can either open a task pane or run a function. For more information, see [Add-in commands](../design/add-in-commands.md).
 
-    ![Add-in command buttons on the ribbon.](../images/outlook-windows-ribbon.png)
+    :::image type="content" source="../images/outlook-windows-ribbon.png" alt-text="Add-in command buttons on the ribbon.":::
 
 - Add-ins can perform tasks when a specific event occurs. For more information, see [Activate add-ins with events](../develop/event-based-activation.md).
 

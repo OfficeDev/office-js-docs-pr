@@ -46,7 +46,7 @@ Use the browser developer tools to debug custom functions that don't use a share
 1. On the **Office Add-ins** dialog, select **Upload My Add-in**.
 1. **Browse** to the add-in manifest file, and then select **Upload**.
   
-    ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
+    :::image type="content" source="../images/upload-add-in.png" alt-text="The upload add-in dialog with buttons for browse, upload, and cancel.":::
 
 > [!NOTE]
 > Once you've sideloaded to the document, it will remain sideloaded each time you open the document.
