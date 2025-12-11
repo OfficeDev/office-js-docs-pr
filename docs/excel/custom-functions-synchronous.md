@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 Synchronous custom functions allow evaluate and conditional format processes to run in Excel simultaneously with the custom function. If a custom function doesn't support synchronous operations, it returns an error such as `#CALC!` or `#VALUE!` when it runs at the same time as these Excel processes.
 
-> [!IMPORTANT]
+> [!WARNING]
 > Synchronous custom functions don't support write operations with Office JavaScript APIs, such as using `Range.values` to set a cell value. Calling a write operation in a synchronous custom function may cause Excel to freeze.
 
 ## Excel processes supported by synchronous custom functions
@@ -47,7 +47,7 @@ To support synchronous scenarios in your add-in:
 - If you [manually create JSON metadata](custom-functions-json.md), use the `"supportSync": true` setting in the `"options"` object of your **functions.json** file.
 - If the function uses `Excel.RequestContext`, call the `setInvocation` method of `Excel.RequestContext` and pass in the `CustomFunctions.Invocation` object. For an example, see the [code sample](#code-sample).
 
-> [!NOTE]
+> [!IMPORTANT]
 > Synchronous custom functions can't be **streaming** or **volatile** functions. If you use the `@supportSync` tag with `@volatile` or `@streaming` tags, Excel ignores the synchronous support. Volatile or streaming support takes precedence, and the custom function can't run at the same time as evaluate or conditional format processes.
 
 ### Code sample
@@ -56,13 +56,14 @@ The following code sample shows how to create a synchronous custom function.
 
 ```typescript
 /** 
+ * A synchronous custom function that takes a cell address and returns the value of that cell.
  * @customfunction
  * @supportSync
  * @param {string} address The address of the cell from which to retrieve the value.
  * @param {CustomFunctions.Invocation} invocation Invocation object.
  * @returns The value of the cell at the input address.
- **/ 
-export async function getRangeExcelContextSet(address, invocation) {
+ */ 
+export async function getCellValue(address, invocation) {
   const context = new Excel.RequestContext();
   context.setInvocation(invocation); // The `invocation` object must be passed in the `setInvocation` method for synchronous functions.
 
