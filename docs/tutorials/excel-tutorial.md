@@ -93,6 +93,8 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     
     Office.onReady((info) => {
       if (info.host === Office.HostType.Excel) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
       }
     });
     ```
