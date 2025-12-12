@@ -367,8 +367,6 @@ dialog.messageChild(messageToDialog, { targetOrigin: "*" });
 
 The add-in's manifest specifies trusted domains. In the unified manifest for Microsoft 365, this is specified in the "validDomains" property. In the add-in only manifest, this is specified in the `<AppDomains>` element.
 
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-
 But the runtime that's hosting the dialog can't access the manifest and thereby determine whether the domain *from which the message comes* is trusted, you must use the `DialogParentMessageReceived` handler to determine this. The object that's passed to the handler contains the domain that's currently hosted in the parent as its `origin` property. The following is an example of how to use the property.
 
 ```javascript

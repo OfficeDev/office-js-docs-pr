@@ -11,8 +11,6 @@ A primary tool for developing Microsoft 365 apps and agents, including Office Ad
 
 Add-ins created with Agents Toolkit use the [unified manifest for Microsoft 365](unified-manifest-overview.md).
 
-   [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
-
 > [!TIP]
 > There's another Visual Studio Code extension that creates Office Add-ins that use the add-in only manifest. See [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
 

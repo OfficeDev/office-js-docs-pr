@@ -2,15 +2,13 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 11/18/2025
 ms.localizationpriority: medium
 ---
 
 # Convert an add-in to use the unified manifest for Microsoft 365
 
 To upgrade an add-in that uses the add-in only manifest to a full App for Microsoft 365 to which you can add Teams capabilities or a Copilot extension, you need to convert it to use the unified manifest for Microsoft 365.
-
-   [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
 
 There are four basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
 
