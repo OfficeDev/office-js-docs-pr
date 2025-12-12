@@ -19,7 +19,7 @@ If choosing to autogenerate your JSON file, declare a volatile function with the
 
 An example of a volatile custom function follows, which simulates rolling a six-sided dice.
 
-![GIF showing a custom function returning a random value to simulate rolling a six-sided dice.](../images/six-sided-die.gif)
+:::image type="content" source="../images/six-sided-die.gif" alt-text="GIF showing a custom function returning a random value to simulate rolling a six-sided dice.":::
 
 ```JS
 /**

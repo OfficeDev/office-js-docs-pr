@@ -1,4 +1,4 @@
-﻿---
+---
 title: Localization for Office Add-ins
 description: Use the Office JavaScript API to determine a locale and display strings based on the locale of the Office application, or to interpret or display data based on the locale of the data.
 ms.date: 02/12/2025
@@ -273,7 +273,7 @@ The text that you want to localize for another language appears in two areas.
 
 The following figure shows the heading (h1) element and the paragraph (p) element that will display localized text when you complete the remaining steps and run the add-in.
 
-![App user interface with sections highlighted.](../images/office15-app-how-to-localize-fig03.png)
+:::image type="content" source="../images/office15-app-how-to-localize-fig03.png" alt-text="App user interface with sections highlighted.":::
 
 #### Add the resource file that contains the localized strings
 
@@ -397,7 +397,7 @@ To test your localized add-in, change the language used for display or editing i
 
 1. In Word, choose **File** > **Options** > **Language**. The following figure shows the **Word Options** dialog box opened to the Language tab.
 
-    ![Word Options dialog.](../images/office15-app-how-to-localize-fig04.png)
+    :::image type="content" source="../images/office15-app-how-to-localize-fig04.png" alt-text="Word Options dialog.":::
 
 2. Under **Choose Display Language**, select the language that you want for display, for example Spanish, and then choose the up arrow to move the Spanish language to the first position in the list. Alternatively, to change the language used for editing, under **Choose Editing Languages**, choose the language you want to use for editing, for example, Spanish, and then choose **Set as Default**.
 
@@ -409,7 +409,7 @@ To test your localized add-in, change the language used for display or editing i
 
 Once running, the strings in the add-in UI change to match the language used by the application, as shown in the following figure.
 
-![App with localized UI text.](../images/office15-app-how-to-localize-fig05.png)
+:::image type="content" source="../images/office15-app-how-to-localize-fig05.png" alt-text="App with localized UI text.":::
 
 ## See also
 

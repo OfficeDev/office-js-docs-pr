@@ -42,7 +42,7 @@ To play a video in a dialog box with the Office dialog API, follow these steps.
 
 For a sample of a video playing in a dialog box, see the [video placemat design pattern](../design/first-run-experience-patterns.md#video-placemat).
 
-![A video playing in an add-in dialog box in front of Excel.](../images/video-placemats-dialog-open.png)
+:::image type="content" source="../images/video-placemats-dialog-open.png" alt-text="A video playing in an add-in dialog box in front of Excel.":::
 
 ## See also
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
 ms.date: 10/27/2025
@@ -21,7 +21,7 @@ However, you can make a custom functions project from scratch. This process requ
 
 The following image explains the differences between using `yo office` scaffold files and writing JSON from scratch.
 
-![Image of differences between using the Yeoman generator for Office Add-ins and writing your own JSON.](../images/custom-functions-json.png)
+:::image type="content" source="../images/custom-functions-json.png" alt-text="Image of differences between using the Yeoman generator for Office Add-ins and writing your own JSON.":::
 
 > [!NOTE]
 > Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your add-in only manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
@@ -199,8 +199,8 @@ The `options` object enables you to customize some aspects of how and when Excel
 | :---------------- | :-------- | :------------------------------------- | :---------- |
 | `cancelable`      | Boolean   | No<br/><br/>Default value is `false`.  | If `true`, Excel calls the `CancelableInvocation` handler whenever the user takes an action that has the effect of canceling the function; for example, manually triggering recalculation or editing a cell that is referenced by the function. Cancelable functions are typically only used for asynchronous functions that return a single result and need to handle the cancellation of a request for data. A function can't use both the `stream` and `cancelable` properties. |
 | `capturesCallingObject` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the data type being referenced by the custom function is passed as the first argument to the custom function. For more information, see [Reference the entity value as a calling object](excel-add-ins-dot-functions.md#reference-the-entity-value-as-a-calling-object). |
-| `excludeFromAutoComplete` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the custom function doesn't appear in the formula AutoComplete menu in Excel. For more information, see [Exclude custom functions from the Excel UI](excel-add-ins-dot-functions.md#exclude-custom-functions-from-the-excel-ui). A function can’t have both `excludeFromAutoComplete` and `linkedEntityLoadService` properties set to `true`. |
-| `linkedEntityLoadService` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the custom function provides a load service that returns up-to-date linked entity cell values for any linked entity IDs requested by Excel. A function can’t have both `excludeFromAutoComplete` and `linkedEntityLoadService` properties set to `true`. For more information, see [Linked entity load service function](excel-data-types-linked-entity-cell-values.md#linked-entity-load-service-function). |
+| `excludeFromAutoComplete` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the custom function doesn't appear in the formula AutoComplete menu in Excel. For more information, see [Exclude custom functions from the Excel UI](excel-add-ins-dot-functions.md#exclude-custom-functions-from-the-excel-ui). A function can't have both `excludeFromAutoComplete` and `linkedEntityLoadService` properties set to `true`. |
+| `linkedEntityLoadService` | Boolean | No<br/><br/>Default value is `false`. | If `true`, the custom function provides a load service that returns up-to-date linked entity cell values for any linked entity IDs requested by Excel. A function can't have both `excludeFromAutoComplete` and `linkedEntityLoadService` properties set to `true`. For more information, see [Linked entity load service function](excel-data-types-linked-entity-cell-values.md#linked-entity-load-service-function). |
 | `requiresAddress` | Boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the address of the cell that invoked it. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your custom function. A function can't use both the `stream` and `requiresAddress` properties. |
 | `requiresParameterAddresses` | Boolean   | No <br/><br/>Default value is `false`. | If `true`, your custom function can access the addresses of the function's input parameters. This property must be used in combination with the `dimensionality` property of the [result](#result) object, and `dimensionality` must be set to `matrix`. See [Detect the address of a parameter](custom-functions-parameter-options.md#detect-the-address-of-a-parameter) for more information. |
 | `requiresStreamAddress` | Boolean | No <br/><br/>Default value is `false`. | If `true`, the function can access the address of the cell calling the streaming function. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your streaming function. The function must also have `stream` set to `true`. |
@@ -369,7 +369,7 @@ The following JSON snippet shows the metadata for two enums: a `PLANETS` enum  t
 ]
 ```
 
-Each constant in the `values` array of the enum is an object with the following properties.
+Each constant in the `values` array of the enum is an object with the following properties.
 
 - **value**: The value of the constant.
 - **name**: A brief description of the constant.

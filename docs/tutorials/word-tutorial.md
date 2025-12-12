@@ -1,7 +1,7 @@
 ---
 title: Word add-in tutorial
 description: In this tutorial, you'll build a Word add-in that inserts (and replaces) text ranges, paragraphs, images, HTML, tables, and content controls. You'll also learn how to format text and how to insert (and replace) content in content controls.
-ms.date: 01/16/2025
+ms.date: 12/11/2025
 ms.service: word
 #Customer intent: As a developer, I want to build a Word add-in that can interact with content in a Word document.
 ms.localizationpriority: high
@@ -30,14 +30,33 @@ In this tutorial, you'll create a Word task pane add-in that:
 
 ## Create your add-in project
 
+Decide the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+
+# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
+
+> [!NOTE]
+> Using the unified manifest for Microsoft 365 with Word add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Word add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
+
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `JavaScript`
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-:::image type="content" source="../images/yo-office-word-xml-manifest.png" alt-text="The prompts and answers given to the Yeoman generator in a command line interface.":::
+:::image type="content" source="../images/yo-office-powerpoint-json-manifest-preview.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `TypeScript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Word`
+
+:::image type="content" source="../images/yo-office-word-xml-manifest-ts.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the add-in only manifest is selected.":::
+
+---
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -59,13 +78,23 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     <button class="ms-Button" id="insert-paragraph">Insert Paragraph</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
+1. Open the file **./src/taskpane/taskpane.ts**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. Replace the entire contents with the following code and save the file.
 
-1. Remove all references to the `run` button and the `run()` function by doing the following:
-
-    - Locate and delete the line `document.getElementById("run").onclick = run;`.
-
-    - Locate and delete the entire `run()` function.
+    ```js
+    /*
+     * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+     * See LICENSE in the project root for license information.
+     */
+    
+    /* global document, Office, Word */
+    
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.Word) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+      }
+    });
+    ```
 
 1. Within the `Office.onReady` function call, locate the line `if (info.host === Office.HostType.Word) {` and add the following code immediately after that line. Note:
 
@@ -171,7 +200,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     <button class="ms-Button" id="apply-style">Apply Style</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `insert-paragraph` button, and add the following code after that line.
 
@@ -209,7 +238,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     <button class="ms-Button" id="apply-custom-style">Apply Custom Style</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `apply-style` button, and add the following code after that line.
 
@@ -249,7 +278,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
     <button class="ms-Button" id="change-font">Change Font</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `apply-custom-style` button, and add the following code after that line.
 
@@ -315,7 +344,7 @@ In this step of the tutorial, you'll add text inside and outside of selected ran
     <button class="ms-Button" id="insert-text-into-range">Insert Abbreviation</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `change-font` button, and add the following code after that line.
 
@@ -415,7 +444,7 @@ async function insertTextIntoRange() {
     <button class="ms-Button" id="insert-text-outside-range">Add Version Info</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `insert-text-into-range` button, and add the following code after that line.
 
@@ -488,7 +517,7 @@ async function insertTextIntoRange() {
     <button class="ms-Button" id="replace-text">Change Quantity Term</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `insert-text-outside-range` button, and add the following code after that line.
 
@@ -568,7 +597,7 @@ Complete the following steps to define the image that you'll insert into the doc
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Locate the `Office.onReady` function call near the top of the file and add the following code immediately before that line. This code imports the variable that you defined previously in the file **./base64Image.js**.
 
@@ -611,7 +640,7 @@ Complete the following steps to define the image that you'll insert into the doc
     <button class="ms-Button" id="insert-html">Insert HTML</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `insert-image` button, and add the following code after that line.
 
@@ -653,7 +682,7 @@ Complete the following steps to define the image that you'll insert into the doc
     <button class="ms-Button" id="insert-table">Insert Table</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `insert-html` button, and add the following code after that line.
 
@@ -737,7 +766,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     <button class="ms-Button" id="create-content-control">Create Content Control</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `insert-table` button, and add the following code after that line.
 
@@ -789,7 +818,7 @@ In this step of the tutorial, you'll learn how to create Rich Text content contr
     <button class="ms-Button" id="replace-content-in-control">Rename Service</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-content-control` button, and add the following code after that line.
 

@@ -47,7 +47,7 @@ For best practices in dialog box design, see [Dialog boxes in Office Add-ins](..
 
 Attempting to display a dialog box while using Office on the web may cause the browser's pop-up blocker to block the dialog box. To prevent this, Office on the web prompts the user to **Allow** or **Ignore** opening the dialog.
 
-![The prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers.](../images/dialog-prompt-before-open.png)
+:::image type="content" source="../images/dialog-prompt-before-open.png" alt-text="The prompt with a brief description and Allow and Ignore buttons that an add-in can generate to avoid in-browser pop-up blockers.":::
 
 If the user chooses **Allow**, the Office dialog box opens. If the user chooses **Ignore**, the prompt closes and the Office dialog box does not open. Instead, the `displayDialogAsync` method returns error 12009. Your code should catch this error and either provide an alternate experience that doesn't require a dialog, or display a message to the user advising that the add-in requires them to allow the dialog. (For more about 12009, see [Errors from displayDialogAsync](dialog-handle-errors-events.md#errors-from-displaydialogasync).)
 

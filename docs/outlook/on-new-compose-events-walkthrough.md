@@ -1,4 +1,4 @@
-﻿---
+---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
 ms.date: 11/18/2025
@@ -343,15 +343,15 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 
 1. In Outlook on the web or in new Outlook on Windows, create a new message.
 
-    ![A message window in Outlook on the web with the subject set on compose.](../images/outlook-web-autolaunch-1.png)
+    :::image type="content" source="../images/outlook-web-autolaunch-1.png" alt-text="A message window in Outlook on the web with the subject set on compose.":::
 
 1. In Outlook on the new Mac UI, create a new message.
 
-    ![A message window in Outlook on the new Mac UI with the subject set on compose.](../images/outlook-mac-autolaunch.png)
+    :::image type="content" source="../images/outlook-mac-autolaunch.png" alt-text="A message window in Outlook on the new Mac UI with the subject set on compose.":::
 
 1. In classic Outlook on Windows, create a new message.
 
-    ![A message window in classic Outlook on Windows with the subject set on compose.](../images/outlook-win-autolaunch.png)
+    :::image type="content" source="../images/outlook-win-autolaunch.png" alt-text="A message window in classic Outlook on Windows with the subject set on compose.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 

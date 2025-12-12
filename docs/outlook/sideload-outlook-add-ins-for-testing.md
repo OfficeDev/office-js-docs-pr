@@ -1,4 +1,4 @@
-﻿---
+---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
 ms.date: 05/19/2025
@@ -58,11 +58,11 @@ The following steps apply to Outlook on the web, on Windows (new and classic), a
 
 1. In the **Add-Ins for Outlook** dialog box, select **My add-ins**.
 
-    ![The My add-ins option selected in the Add-Ins for Outlook dialog.](../images/outlook-sideload-my-add-ins-owa.png)
+    :::image type="content" source="../images/outlook-sideload-my-add-ins-owa.png" alt-text="The My add-ins option selected in the Add-Ins for Outlook dialog.":::
 
 1. Locate the **Custom Addins** section at the bottom of the dialog box. Select the **Add a custom add-in** link, and then select **Add from File**.
 
-    ![The Add from File option is selected in the Custom Addins section.](../images/outlook-sideload-custom-add-in.png)
+    :::image type="content" source="../images/outlook-sideload-custom-add-in.png" alt-text="The Add from File option is selected in the Custom Addins section.":::
 
     [!INCLUDE [outlook-sideloading-url](../includes/outlook-sideloading-url.md)]
 
@@ -79,11 +79,11 @@ The following steps apply to Outlook on the web, on Windows (new and classic), a
 
 In Outlook on the web, if your mailbox toolbar looks like the following image, you're using the classic version of Outlook on the web.
 
-![Header of the classic Outlook on the web toolbar with "Office 365 | Outlook" as its title.](../images/outlook-on-the-web-classic-toolbar.png)
+:::image type="content" source="../images/outlook-on-the-web-classic-toolbar.png" alt-text="Header of the classic Outlook on the web toolbar with 'Office 365 | Outlook' as its title.":::
 
 To access the **Add-Ins for Outlook** dialog, open [Outlook on the web](https://outlook.office365.com). Then, select the gear icon from the top-right section of the toolbar and choose **Manage add-ins**.
 
- ![The Manage add-ins option is selected in classic Outlook on the web.](../images/outlook-sideload-web-manage-integrations.png)
+ :::image type="content" source="../images/outlook-sideload-web-manage-integrations.png" alt-text="The Manage add-ins option is selected in classic Outlook on the web.":::
 
 Note that your organization may include its own logo in the mailbox toolbar, so you might see something slightly different from what is shown in the preceding images.
 
@@ -91,7 +91,7 @@ Note that your organization may include its own logo in the mailbox toolbar, so 
 
 In Outlook on Mac, starting in Version 16.85 (24051214), the **Get Add-ins** button no longer opens the **Add-Ins for Outlook** dialog. Instead, it opens [Microsoft Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=office%3Boutlook&page=1&src=office) in your default browser. Earlier versions can still access the **Add-Ins for Outlook** dialog through the **Get Add-ins** button. If you don't see **Get Add-ins** in your version of Outlook, select the ellipsis button (`...`) from the ribbon, then select **Get Add-ins**.
 
-![The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.](../images/outlook-sideload-new-mac.png)
+:::image type="content" source="../images/outlook-sideload-new-mac.png" alt-text="The Get Add-ins option is selected from the ellipsis button in Outlook on Mac.":::
 
 ## Remove a sideloaded add-in
 

@@ -13,7 +13,7 @@ You can use several types of UI elements to extend the Office UI, including add-
 
 The following image shows the types of Office UI elements that you can create.
 
-![Add-in commands on the ribbon, a task pane, and a dialog box / content add-in in an Office document.](../images/add-in-ui-elements.png)
+:::image type="content" source="../images/add-in-ui-elements.png" alt-text="Add-in commands on the ribbon, a task pane, and a dialog box / content add-in in an Office document.":::
 
 ## Add-in commands
 

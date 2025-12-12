@@ -1,4 +1,4 @@
-﻿---
+---
 title: First-run experience tutorial
 description: Learn how to implement a first-run experience for your Office Add-in.
 ms.date: 08/12/2025
@@ -140,11 +140,11 @@ Update the CSS file to ensure that the add-in UI is styled appropriately given t
 
 1. Verify that the task pane includes the list of features.
 
-    ![The add-in task pane UI on first run.](../images/fre-tutorial-addin-first-run.png)
+    :::image type="content" source="../images/fre-tutorial-addin-first-run.png" alt-text="The add-in task pane UI on first run.":::
 
 1. Close the task pane then reopen it. Verify that the task pane no longer displays the list of features.
 
-    ![The add-in task pane UI on second run.](../images/fre-tutorial-addin-next-run.png)
+    :::image type="content" source="../images/fre-tutorial-addin-next-run.png" alt-text="The add-in task pane UI on second run.":::
 
 ## Next steps
 

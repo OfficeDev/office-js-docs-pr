@@ -1,7 +1,7 @@
 ﻿---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 11/06/2025
+ms.date: 12/11/2025
 ms.service: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -31,19 +31,35 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 ## Create your add-in project
 
-[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+Decide the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
-- **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `JavaScript`
-- **What do you want to name your add-in?** `My Office Add-in`
-- **Which Office client application would you like to support?** `Excel`
+Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
 
-:::image type="content" source="../images/yo-office-excel-xml-manifest.png" alt-text="The Yeoman Generator for Office Add-ins command line interface.":::
-
-Next, select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
+# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
 
 > [!NOTE]
 > Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
+
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
+
+:::image type="content" source="../images/yo-office-excel-json-manifest-preview.png" alt-text="The Yeoman Generator for Office Add-ins command line interface when the unified manifest is selected.":::
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `TypeScript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
+
+:::image type="content" source="../images/yo-office-excel-xml-manifest-ts.png" alt-text="The Yeoman Generator for Office Add-ins command line interface when the add-in only manifest is selected.":::
+
+---
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
 
@@ -65,13 +81,23 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
+1. Open the file **./src/taskpane/taskpane.ts**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. Replace the entire contents with the following code and save the file.
 
-1. Remove all references to the `run` button and the `run()` function by doing the following:
-
-    - Locate and delete the line `document.getElementById("run").onclick = run;`.
-
-    - Locate and delete the entire `run()` function.
+    ```js
+    /*
+     * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+     * See LICENSE in the project root for license information.
+     */
+    
+    /* global console, document, Excel, Office */
+    
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.Excel) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+      }
+    });
+    ```
 
 1. Within the `Office.onReady` function call, locate the line `if (info.host === Office.HostType.Excel) {` and add the following code immediately after that line. Note:
 
@@ -217,7 +243,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line.
 
@@ -262,7 +288,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line.
 
@@ -332,7 +358,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
     <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line.
 
@@ -421,7 +447,7 @@ When a table is long enough that a user must scroll to see some rows, the header
     <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line.
 
@@ -488,7 +514,7 @@ The steps vary depending on the type of manifest.
 
 1. Open the manifest file **./manifest.json**.
 
-1. Find the **[`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true)** array and add the following commands runtime object.
+1. Find the **[`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true)** array and replace the existing commands runtime object with the following:
 
     ```json
     "runtimes": [
@@ -502,17 +528,17 @@ The steps vary depending on the type of manifest.
             "actions": [
                 {
                     "id": <!--TODO1: Set the action ID -->,
-                    "type": "executeFunction",
+                    "type": "executeFunction"
                 }
             ]
-        }       
+        }
     ]
     ```
 
 1. Find `TODO1` and replace it with **`"toggleProtection"`**. This matches the `id` for the JavaScript function you create in a later step.
 
     > [!TIP]
-    > The value of **[`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id)** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
+    > The value of **[`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id)** must match the first parameter of the call to `Office.actions.associate` in your **commands.ts** file.
 
 1. Ensure that the **[`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities)** array contains an object that specifies the **`"AddinCommands"`** requirement set with a **`"minVersion"`** of **`"1.1"`**.
 
@@ -529,7 +555,7 @@ The steps vary depending on the type of manifest.
 
 #### Configure the UI for the ribbon button
 
-1. After the **`"extensions.runtimes"`** array, add the following **[`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons)** array.
+1. After the **`"extensions.runtimes"`** array, replace the existing **[`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons)** array with the following:
 
     ```json
     "ribbons": [
@@ -686,9 +712,9 @@ The steps vary depending on the type of manifest.
 
 ### Create the function that protects the sheet
 
-1. Open the file **.\commands\commands.js**.
+1. Open the file **.\commands\commands.ts**.
 
-1. Add the following function immediately after the `action` function. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office client application that the function has finished and the UI can become responsive again.
+1. Add the following function immediately after the `Office.onReady` statement. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office client application that the function has finished and the UI can become responsive again.
 
     ```js
     async function toggleProtection(args) {
@@ -875,7 +901,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     document.getElementById("ok-button").onclick = () => tryCatch(sendStringToParentPage);
     ```
 
-1. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter must be a string, which includes anything that can be serialized as a string, such as XML or JSON, or any type that can be cast to a string. This also adds the same `tryCatch` method used in **taskpane.js** for error handling.
+1. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter must be a string, which includes anything that can be serialized as a string, such as XML or JSON, or any type that can be cast to a string. This also adds the same `tryCatch` method used in **taskpane.ts** for error handling.
 
     ```js
     function sendStringToParentPage() {
@@ -912,8 +938,8 @@ Open the file **webpack.config.js** in the root directory of the project and com
     ```js
     entry: {
       polyfill: "@babel/polyfill",
-      taskpane: "./src/taskpane/taskpane.js",
-      commands: "./src/commands/commands.js",
+      taskpane: "./src/taskpane/taskpane.ts",
+      commands: "./src/commands/commands.ts",
       popup: "./src/dialogs/popup.js"
     },
     ```
@@ -985,7 +1011,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     <label id="user-name"></label><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `freeze-header` button, and add the following code after that line. You'll create the `openDialog` method in a later step.
 
@@ -1026,7 +1052,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 ### Process the message from the dialog and close the dialog
 
-1. Within the `openDialog` function in the file **./src/taskpane/taskpane.js**, replace `TODO2` with the following code. Note:
+1. Within the `openDialog` function in the file **./src/taskpane/taskpane.ts**, replace `TODO2` with the following code. Note:
 
    - The callback is executed immediately after the dialog successfully opens and before the user has taken any action in the dialog.
 
@@ -1064,7 +1090,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. In the dialog, enter a name and choose the **OK** button. The name appears on the task pane and the dialog closes.
 
-1. Optionally, in the **./src/taskpane/taskpane.js** file, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
+1. Optionally, in the **./src/taskpane/taskpane.ts** file, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
     :::image type="content" source="../images/excel-tutorial-dialog-open-2.png" alt-text="Excel with an Open Dialog button visible in the add-in task pane and a dialog box displayed over the worksheet.":::
 

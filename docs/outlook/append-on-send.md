@@ -1,4 +1,4 @@
-﻿---
+---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
 ms.date: 11/18/2025
@@ -425,7 +425,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. Send the message, then open it from your **Inbox** or **Sent Items** folder to view the inserted content.
 
-    ![A sample of a sent message with the Contoso header prepended and the disclaimer appended to its body.](../images/outlook-prepend-append-on-send.png)
+    :::image type="content" source="../images/outlook-prepend-append-on-send.png" alt-text="A sample of a sent message with the Contoso header prepended and the disclaimer appended to its body.":::
 
     > [!TIP]
     > Because content is only prepended or appended once the message is sent, the sender will only be able to view the added content from their **Inbox** or **Sent Items** folder. If you require the sender to view the added content before the message is sent, see [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md).
