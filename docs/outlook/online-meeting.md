@@ -1,7 +1,7 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 11/18/2025
+ms.date: 12/16/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -38,14 +38,6 @@ The steps for configuring the manifest depend on which type of manifest you sele
     }
     ```
 
-1. In the [`"validDomains"`](/microsoft-365/extensibility/schema/root#validdomains) array, change the URL to `"https://contoso.com"`, which is the URL of the fictional online meeting provider. The array should look like this when you're done.
-
-    ```json
-    "validDomains": [
-        "https://contoso.com"
-    ],
-    ```
-
 1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this code.
 
    - The `"minVersion"` of the Mailbox requirement set is set to `"1.3"` so the runtime won't launch on platforms and Office versions where this feature isn't supported.
@@ -70,7 +62,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
         "id": "online_meeting_runtime",
         "type": "general",
         "code": {
-            "page": "https://contoso.com/commands.html"
+            "page": "https://localhost:3000/commands.html"
         },
         "lifetime": "short",
         "actions": [
@@ -200,47 +192,47 @@ The steps for configuring the manifest depend on which type of manifest you sele
                             {
                                 "scale": 1,
                                 "size": 25,
-                               "url": "https://contoso.com/assets/icon-25.png"
+                               "url": "https://localhost:3000/assets/icon-25.png"
                             },
                             {
                                 "scale": 1,
                                 "size": 32,
-                                "url": "https://contoso.com/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "scale": 1,
                                 "size": 48,
-                                "url": "https://contoso.com/assets/icon-48.png"
+                                "url": "https://localhost:3000/assets/icon-48.png"
                             },                                
                             {
                                 "scale": 2,
                                 "size": 25,
-                                "url": "https://contoso.com/assets/icon-25.png"
+                                "url": "https://localhost:3000/assets/icon-25.png"
                             },
                             {
                                 "scale": 2,
                                 "size": 32,
-                                "url": "https://contoso.com/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "scale": 2,
                                 "size": 48,
-                                "url": "https://contoso.com/assets/icon-48.png"
+                                "url": "https://localhost:3000/assets/icon-48.png"
                             },                                
                             {
                                 "scale": 3,
                                 "size": 25,
-                                "url": "https://contoso.com/assets/icon-25.png"
+                                "url": "https://localhost:3000/assets/icon-25.png"
                             },
                             {
                                 "scale": 3,
                                 "size": 32,
-                                "url": "https://contoso.com/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "scale": 3,
                                 "size": 48,
-                                "url": "https://contoso.com/assets/icon-48.png"
+                                "url": "https://localhost:3000/assets/icon-48.png"
                             }
                         ]
                     }
@@ -300,14 +292,14 @@ The steps for configuring the manifest depend on which type of manifest you sele
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon-16" DefaultValue="https://contoso.com/assets/icon-16.png"/>
-        <bt:Image id="icon-32" DefaultValue="https://contoso.com/assets/icon-32.png"/>
-        <bt:Image id="icon-48" DefaultValue="https://contoso.com/assets/icon-48.png"/>
-        <bt:Image id="icon-64" DefaultValue="https://contoso.com/assets/icon-64.png"/>
-        <bt:Image id="icon-80" DefaultValue="https://contoso.com/assets/icon-80.png"/>
+        <bt:Image id="icon-16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
+        <bt:Image id="icon-32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
+        <bt:Image id="icon-48" DefaultValue="https://localhost:3000/assets/icon-48.png"/>
+        <bt:Image id="icon-64" DefaultValue="https://localhost:3000/assets/icon-64.png"/>
+        <bt:Image id="icon-80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="residFunctionFile" DefaultValue="https://contoso.com/commands.html"/>
+        <bt:Url id="residFunctionFile" DefaultValue="https://localhost:3000/commands.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="residDescription" DefaultValue="Contoso meeting"/>
@@ -433,7 +425,10 @@ In this section, learn how your add-in script can update a user's meeting to inc
 
 ## Test and validate your add-in
 
-Follow the usual guidance to [test and validate your add-in](testing-and-tips.md), then [sideload](sideload-outlook-add-ins-for-testing.md) the manifest in Outlook on the web, on Windows (new or classic), or on Mac. If your add-in also supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
+To test and validate your add-in, [sideload the manifest](sideload-outlook-add-ins-for-testing.md) in Outlook on the web or on Windows (new or classic). If you're using the add-in only manifest, you can also sideload on Mac. For an add-in that supports mobile, restart Outlook on your Android or iOS device after sideloading. Once the add-in is sideloaded, create a new meeting and verify that the Microsoft Teams or Skype toggle is replaced with your own.
+
+> [!NOTE]
+> Add-ins that use the unified manifest can't be sideloaded in Outlook on Mac or on mobile devices. To run this type of add-in, the add-in must first be published to [Microsoft Marketplace](https://marketplace.microsoft.com/) then deployed in the [Microsoft 365 Admin Center](../publish/publish.md). For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 ### Create meeting UI
 
@@ -447,17 +442,20 @@ As a meeting attendee, you should see a screen similar to the following image wh
 
 [:::image type="content" source="../images/outlook-android-join-online-meeting-view-1.png" alt-text="The join meeting screen on Android.":::](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
-> [!IMPORTANT]
-> The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows. If you only see a meeting link, but don't see the **Join** button in a supported client, it may be that the online-meeting template for your service isn't registered on our servers. See the [Register your online-meeting template](#register-your-online-meeting-template) section for details.
+> [!NOTE]
+> Your online-meeting add-in must meet certain requirements to include the **Join** button in meetings. For more information, see [Implement the Join button](#implement-the-join-button).
 
-## Register your online-meeting template
+## Implement the Join button
 
-Registering your online-meeting add-in is optional. It only applies if you want to surface the **Join** button in meetings, in addition to the meeting link. Once you've published your online-meeting add-in and would like to register it, create a GitHub issue using the following guidance. We'll contact you to coordinate a registration timeline.
+The **Join** button only appears in meetings if:
 
-> [!IMPORTANT]
->
-> - The **Join** button is only supported in Outlook on the web, on Mac, on Android, on iOS, and in new Outlook on Windows.
-> - Only online-meeting add-ins published to Microsoft Marketplace can be registered. Line-of-business add-ins aren't supported.
+- The online-meeting add-in is published to Microsoft Marketplace. Line-of-business add-ins aren't supported.
+- The add-in is registered.
+- The registered add-in is running in Outlook on the web, on Mac, on Android, on iOS, and in the new Outlook on Windows.
+
+### Register your online-meeting template
+
+To register your online-meeting add-in, once you've published your add-in to Microsoft Marketplace, create a GitHub issue using the following guidance. We'll contact you to coordinate a registration timeline.
 
 1. Create a [new GitHub issue](https://github.com/OfficeDev/office-js/issues/new).
 1. Set the **Title** of the new issue to "Outlook: Register the online-meeting template for my-service", replacing `my-service` with your service name.
@@ -475,6 +473,7 @@ After a meeting ends, the organizer and attendees often need access to important
 This section outlines how to use the Microsoft Graph API to update a calendar item with post-meeting resources. The updated content of a meeting will be reflected in the calendars of the organizer and the attendees. Additionally, an update will be sent to the attendees.
 
 This implementation requires the following:
+
 - An access token to make Microsoft Graph API calls. For guidance, see [Use the Microsoft Graph REST API from an Outlook add-in](microsoft-graph.md).
 - An indicator to your add-in when a meeting scheduled with your online-meeting add-in has ended.
 - Access to a meeting's Exchange ID and the ID assigned by the add-in.
