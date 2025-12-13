@@ -306,7 +306,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
         <bt:String id="residLabel" DefaultValue="Add meeting"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="residTooltip" DefaultValue="Add a contoso meeting to this appointment."/>
+        <bt:String id="residTooltip" DefaultValue="Add a Contoso meeting to this appointment."/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
@@ -364,7 +364,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
 1. Replace the entire content of the **commands.js** file with the following JavaScript.
 
     ```js
-    // 1. How to construct online meeting details.
+    // 1. Construct online meeting details.
     // Not shown: How to get the meeting organizer's ID and other details from your service.
     const newBody = '<br>' +
         '<a href="https://contoso.com/meeting?id=123456789" target="_blank">Join Contoso meeting</a>' +
@@ -380,13 +380,12 @@ In this section, learn how your add-in script can update a user's meeting to inc
 
     let mailboxItem;
 
-    // Office is ready.
     Office.onReady(function () {
             mailboxItem = Office.context.mailbox.item;
         }
     );
 
-    // 2. How to define and register a function command named `insertContosoMeeting` (referenced in the manifest)
+    // 2. Define and register a function command named `insertContosoMeeting` (referenced in the manifest)
     //    to update the meeting body with the online meeting details.
     function insertContosoMeeting(event) {
         // Get HTML body from the client.
@@ -405,7 +404,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
     // Register the function.
     Office.actions.associate("insertContosoMeeting", insertContosoMeeting);
 
-    // 3. How to implement a supporting function `updateBody`
+    // 3. Implement a supporting function `updateBody`
     //    that appends the online meeting details to the current body of the meeting.
     function updateBody(event, existingBody) {
         // Append new body to the existing body.
