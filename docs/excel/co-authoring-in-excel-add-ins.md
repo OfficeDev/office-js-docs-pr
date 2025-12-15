@@ -28,7 +28,7 @@ If your add-in only reads data once at startup or rarely runs in shared workbook
 
 ## Excel synchronizes workbook content, not your add-in's memory
 
-Excel automatically synchronizes workbook content (cell values, formatting, table data) across all coauthors. However, **Excel doesn't synchronize your add-in's JavaScript variables, objects, or in-memory state**. Each user runs their own instance of your add-in with separate memory.
+Excel automatically synchronizes workbook content (such as cell values, formatting, table data) across all coauthors. However, **Excel doesn't synchronize your add-in's JavaScript variables, objects, or in-memory state**. Each user runs their own instance of your add-in with separate memory.
 
 ### Problem: Stale data from cached variables
 
@@ -61,7 +61,7 @@ Each coauthor has their own separate add-in instance. When you copy workbook val
 
 To keep your add-in's state synchronized when coauthors modify the workbook, use Excel events. Events notify your add-in when workbook content changes, so you can refresh cached data or update your UI.
 
-| Scenario | Use Event | Reason |
+| Scenario | Event to use | Reason |
 |----------|-----------|--------|
 | Hidden worksheet stores settings | `BindingDataChanged` | Detect when coauthors change configuration |
 | Dashboard displays cell values | `BindingDataChanged` | Keep display synchronized with workbook |
@@ -133,7 +133,7 @@ When coauthoring is active, your event handlers run for **all users** when **any
 
 ```js
 binding.onDataChanged.add(async (event) => {
-  // BAD: Shows dialog to ALL users when ANY user changes data.
+  // This is a bad pattern. It shows a dialog to all users when any user changes data.
   Office.context.ui.displayDialogAsync("https://contoso.com/validation.html");
 });
 ```
@@ -178,12 +178,12 @@ The `TableRowCollection.add` API changes the table structure in a way that confl
 
 Instead of using the Table API, set values in the range directly below the table. Excel automatically expands the table without creating conflicts.
 
-**❌ Avoid (causes conflicts)**:
+**❌ Don't do this (it causes conflicts):**
 
 ```js
 const table = context.workbook.tables.getItem("SalesData");
 table.rows.add(null, [["Product", 100, "=B2*1.2"]]);
-// This code causes coauthoring conflicts!
+// This is a bad pattern. This code causes coauthoring conflicts.
 ```
 
 **✅ Use this approach**:
