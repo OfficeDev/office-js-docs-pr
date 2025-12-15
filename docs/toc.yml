@@ -191,18 +191,6 @@
         href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Nested app authentication FAQ 
         href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
-      - name: Office legacy SSO
-        items:
-        - name: Enable SSO using on-behalf-of flow
-          href: develop/sso-in-office-add-ins.md
-        - name: Register with Microsoft identity platform
-          href: develop/register-sso-add-in-aad-v2.md
-        - name: Get the identity token
-          href: develop/use-sso-to-get-office-signed-in-user-token.md
-        - name: Authorize to Microsoft Graph
-          href: develop/authorize-to-microsoft-graph.md
-        - name: Troubleshoot error messages
-          href: develop/troubleshoot-sso-in-office-add-ins.md
     - name: UI and UX
       items:
       - name: Overview
