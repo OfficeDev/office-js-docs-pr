@@ -1,15 +1,18 @@
 ﻿---
-title: Authorize to Microsoft Graph with SSO
-description: Learn how users of an Office Add-in can use single sign-on (SSO) to fetch data from Microsoft Graph.
-ms.date: 08/13/2025
+title: Authorize to Microsoft Graph with legacy Office SSO
+description: Learn how users of an Office Add-in can use legacy Office single sign-on (SSO) to fetch data from Microsoft Graph.
+ms.date: 05/25/2025
 ms.localizationpriority: medium
 ---
 
-# Authorize to Microsoft Graph with SSO
+# Authorize to Microsoft Graph with legacy Office SSO
+
+> [!NOTE]
+> This article is about using legacy Office SSO. We recommend using the Microsoft Authorization Library (MSAL) with nested app authentication (NAA) which supports the SPA authorization workflow. MSAL and NAA also offer a more modern experience across more platforms. For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
 
 Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. The best way for an Office Add-in to get authorized access to [Microsoft Graph](https://developer.microsoft.com/graph/docs) is to use the credentials from the user's Office sign on. This enables them to access their Microsoft Graph data without needing to sign in a second time.
 
-## Add-in architecture for SSO and Microsoft Graph
+## Add-in architecture for legacy Office SSO and Microsoft Graph
 
 In addition to hosting the pages and JavaScript of the web application, the add-in must also host, at the same [fully qualified domain name](/windows/desktop/DNS/f-gly#_dns_fully_qualified_domain_name_fqdn__gly), one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
 
@@ -37,7 +40,7 @@ The following diagram shows the steps involved to sign in and access Microsoft G
 
 On subsequent requests the client code will always pass access token *A* when making authenticated calls to server-side code. The server-side code can cache token *B* so that it does not need to request it again on future API calls.
 
-## Develop an SSO add-in that accesses Microsoft Graph
+## Develop a legacy Office SSO add-in that accesses Microsoft Graph
 
 You develop an add-in that accesses Microsoft Graph just as you would any other application that uses SSO. For a thorough description, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md). The difference is that it is mandatory that the add-in have a server-side Web API.
 
@@ -54,7 +57,7 @@ For examples of detailed walkthroughs and scenarios, see:
 * [Create an ASP.NET Office Add-in that uses single sign-on](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 * [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md)
 
-## Distributing SSO-enabled add-ins in Microsoft Marketplace
+## Distributing legacy Office SSO-enabled add-ins in Microsoft Marketplace
 
 When a Microsoft 365 admin acquires an add-in from [Microsoft Marketplace](https://marketplace.microsoft.com), the admin can redistribute it through the [integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) and grant admin consent to the add-in to access Microsoft Graph scopes. It's also possible, however, for the end user to acquire the add-in directly from Microsoft Marketplace, in which case the user must grant consent to the add-in. This can create a potential performance problem for which we've provided a solution.
 
@@ -67,7 +70,7 @@ Your code can, and should, handle this error by falling back to an alternate sys
 
 As a best practice, always pass `forMSGraphAccess` to `getAccessToken` when your add-in will be distributed in Microsoft Marketplace and needs Microsoft Graph scopes.
 
-## Details on SSO with an Outlook add-in
+## Details on Office leacy SSO with an Outlook add-in
 
 If you develop an Outlook add-in that uses SSO and you sideload it for testing, Office will *always* return error 13012 when `forMSGraphAccess` is passed to `getAccessToken` even if administrator consent has been granted. For this reason, you should comment out the `forMSGraphAccess` option **when developing** an Outlook add-in. Be sure to uncomment the option when you deploy for production. The bogus 13012 only happens when you are sideloading in Outlook.
 

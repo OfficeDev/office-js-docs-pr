@@ -1,7 +1,7 @@
 ---
 title: Overview of authentication and authorization in Office Add-ins
 description: Learn how authentication and authorization works in Office Add-ins.
-ms.date: 10/22/2025
+ms.date: 12/25/2025
 ms.localizationpriority: high
 ---
 
@@ -13,7 +13,7 @@ Your add-in can also get the user's consent to access their Microsoft Graph data
 
 ## Key resources for authentication and authorization
 
-This documentation explains how to build and configure Office Add-ins to successfully implement authentication and authorization. However, many concepts and security technologies mentioned are outside the scope of this documentation. For example, general security concepts such as OAuth flows, token caching, or identity management are not explained here. This documentation also doesn't document anything specific to Microsoft Azure or the Microsoft identity platform. We recommend you refer to the following resources if you need more information in those areas.
+This documentation explains how to build and configure Office Add-ins to successfully implement authentication and authorization. However, many concepts and security technologies mentioned are outside the scope of this documentation. For example, general security concepts such as OAuth flows, token caching, or identity management are not explained here. This documentation also doesn't document anything specific to Microsoft Entra ID or the Microsoft identity platform. We recommend you refer to the following resources if you need more information in those areas.
 
 - [Microsoft identity platform documentation](/entra/identity-platform/)
 - [Microsoft identity platform support and help options for developers](/entra/identity-platform/developer-support-help-options)
@@ -39,7 +39,7 @@ Your add-in can sign in users using the [Microsoft identity platform](/azure/act
 
 It's important to note that the Microsoft identity platform doesn't allow its sign-in page to open in an iframe. When an Office Add-in is running in *Office on the web*, the task pane is an iframe. This means that you'll need to open the sign-in page by using a dialog box opened with the Office dialog API. This affects how you use authentication helper libraries. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
 
-For information about implementing authentication with the Microsoft identity platform, see [What is the Microsoft identity platform?](/entra/identity-platform/v2-overview). The documentation contains many tutorials and guides, as well as links to relevant samples and libraries. As explained in [Authentication with the Office dialog API](auth-with-office-dialog-api.md), you may need to adjust the code in the samples to run in the Office dialog box.
+For information about implementing authentication with the Microsoft identity platform, see [What is the Microsoft identity platform?](/entra/identity-platform/v2-overview) The documentation contains many tutorials and guides, as well as links to relevant samples and libraries. As explained in [Authentication with the Office dialog API](auth-with-office-dialog-api.md), you may need to adjust the code in the samples to run in the Office dialog box.
 
 ### Access to Microsoft Graph without SSO
 
@@ -47,7 +47,7 @@ You can get authorization to Microsoft Graph data for your add-in by obtaining a
 
 ### Access to non-Microsoft data sources
 
-Popular online services, including Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in. For an overview of the ways that your add-in can do this, see [Authorize external services in your Office Add-in](auth-external-add-ins.md).
+Popular online services, including Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in. For an overview of the ways that your add-in can do this, see [Authorization with non-Microsoft identity providers](auth-external-add-ins.md).
 
 > [!IMPORTANT]
 > Before you begin coding, find out if the data source allows its sign-in page to open in an iframe. When an Office Add-in is running in *Office on the web*, the task pane is an iframe. If the data source doesn't allow its sign-in page to open in an iframe, then you'll need to open the sign-in page in a dialog box opened with the Office dialog API. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
