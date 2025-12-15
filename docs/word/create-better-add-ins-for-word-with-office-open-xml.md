@@ -1,7 +1,7 @@
-﻿---
+---
 title: Understand when and how to use Office Open XML in your Word add-in
 description: Overview of when and how to use Office Open XML in your Word add-in.
-ms.date: 06/07/2023
+ms.date: 11/17/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,11 +17,15 @@ If you're building Office Add-ins to run in Word, you might already know that th
 
 So what are your options when you need to add rich content to a document, such as images, formatted tables, charts, or even just formatted text?
 
-1. **Word JavaScript APIs.** Start with the APIs available through the [WordApi requirement sets](/javascript/api/requirement-sets/word/word-api-requirement-sets) to see if they provide what you need. For an example, see the [Insert formatted text](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) code snippet. You can try this and other snippets in the [Script Lab add-in](https://appsource.microsoft.com/product/office/wa104380862) on Word! To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+1. **Word JavaScript APIs.** Start with the APIs available through the [WordApi requirement sets](/javascript/api/requirement-sets/word/word-api-requirement-sets) to see if they provide what you need. For an example, see the [Insert formatted text](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) code snippet. You can try this and other snippets using the [Script Lab add-in](https://appsource.microsoft.com/product/office/wa104380862) in Word! To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+
+   If this option provides what you need, no need to continue through this article.
 
 1. **HTML coercion.** If APIs aren't yet available, you can use HTML for inserting some types of rich content, such as pictures. Depending on your scenario, there can be drawbacks to HTML coercion, such as limitations in the formatting and positioning options available to your content.
 
-1. **Office Open XML.** Because Office Open XML is the language in which Word documents (such as .docx and .dotx) are written, you can insert virtually any type of content that a user can add to a Word document, with virtually any type of formatting the user can apply. Determining the Office Open XML markup you need to get it done is easier than you might think.
+   If your needs are met by the APIs, HTML coercion, or some combination, then you can stop here.
+
+1. **Office Open XML (OOXML).** Because Office Open XML is the language in which Word documents (such as .docx and .dotx) are written, you can insert virtually any type of content that a user can add to a Word document, with virtually any type of formatting the user can apply. Use this option only if the others don't provide what you need. Continue reading to learn about using OOXML and how to determine the OOXML markup you need to get it done.
 
 > [!NOTE]
 > Office Open XML is also the language behind PowerPoint and Excel (and, as of Office 2013, Visio) documents. However, currently, you can coerce content as Office Open XML only in Office Add-ins created for Word. For more information about Office Open XML, including the complete language reference documentation, see the [See also](#see-also) section.
@@ -38,67 +42,67 @@ Throughout this article, the terms **content types** and **rich content** refer 
 
 *Figure 1. Text with direct formatting*
 
-![Text with direct formatting applied.](../images/office15-app-create-wd-app-using-ooxml-fig01.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig01.png" alt-text="Text with direct formatting applied.":::
 
 Use direct formatting to specify exactly what the text will look like regardless of existing formatting in the user's document.
 
 *Figure 2. Text formatted using a style*
 
-![Text formatted with paragraph style.](../images/office15-app-create-wd-app-using-ooxml-fig02.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig02.png" alt-text="Text formatted with paragraph style.":::
 
 Use a style to automatically coordinate the look of text you insert with the user's document.
 
 *Figure 3. A simple image*
 
-![A sample logo.](../images/office15-app-create-wd-app-using-ooxml-fig03.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig03.png" alt-text="A sample logo.":::
 
 Use the same method for inserting any Office-supported image format.
 
 *Figure 4. An image formatted using picture styles and effects*
 
-![Formatted image in Word.](../images/office15-app-create-wd-app-using-ooxml-fig04.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig04.png" alt-text="Formatted image in Word.":::
 
 Adding high quality formatting and effects to your images requires much less markup than you might expect.
 
 *Figure 5. A content control*
 
-![Text within a bound content control.](../images/office15-app-create-wd-app-using-ooxml-fig05.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig05.png" alt-text="Text within a bound content control.":::
 
 Use content controls with your add-in to add content at a specified (bound) location rather than at the selection.
 
 *Figure 6. A text box with WordArt formatting*
 
-![Text formatted with WordArt text effects.](../images/office15-app-create-wd-app-using-ooxml-fig06.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig06.png" alt-text="Text formatted with WordArt text effects.":::
 
 Text effects are available in Word for text inside a text box (as shown here) or for regular body text.
 
 *Figure 7. A shape*
 
-![A drawing shape in Word.](../images/office15-app-create-wd-app-using-ooxml-fig07.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig07.png" alt-text="A drawing shape in Word.":::
 
 Insert built-in or custom drawing shapes, with or without text and formatting effects.
 
 *Figure 8. A table with direct formatting*
 
-![A formatted table in Word.](../images/office15-app-create-wd-app-using-ooxml-fig08.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig08.png" alt-text="A formatted table in Word.":::
 
 Include text formatting, borders, shading, cell sizing, or any table formatting you need.
 
 *Figure 9. A table formatted using a table style*
 
-![A table formatted with a table style in Word.](../images/office15-app-create-wd-app-using-ooxml-fig09.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig09.png" alt-text="A table formatted with a table style in Word.":::
 
 Use built-in or custom table styles just as easily as using a paragraph style for text.
 
 *Figure 10. A SmartArt diagram*
 
-![A dynamic SmartArt diagram in Word.](../images/office15-app-create-wd-app-using-ooxml-fig10.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig10.png" alt-text="A dynamic SmartArt diagram in Word.":::
 
 Office offers a wide array of SmartArt diagram layouts (and you can use Office Open XML to create your own).
 
 *Figure 11. A chart*
 
-![A chart in Word.](../images/office15-app-create-wd-app-using-ooxml-fig11.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig11.png" alt-text="A chart in Word.":::
 
 You can insert Excel charts as live charts in Word documents, which also means you can use them in your add-in for Word.
 As you can see by the preceding examples, you can use Office Open XML coercion to insert essentially any type of content that a user can insert into their own document.
@@ -129,11 +133,11 @@ You can edit Office Open XML markup in a text editor like Notepad. If you open i
 
 *Figure 12. Collapse and expand package parts for easier editing in Visual Studio*
 
-![Office Open XML code snippet for a package part in Visual Studio.](../images/office15-app-create-wd-app-using-ooxml-fig12.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig12.png" alt-text="Office Open XML code snippet for a package part in Visual Studio.":::
 
 *Figure 13. The parts included in a basic Word Office Open XML document package*
 
-![Office Open XML code snippet for a package part.](../images/office15-app-create-wd-app-using-ooxml-fig13.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig13.png" alt-text="Office Open XML code snippet for a package part.":::
 
 With all that markup, you might be surprised to discover that the only elements you actually need to insert the formatted text example are pieces of the .rels part and the document.xml part.
 
@@ -311,7 +315,7 @@ Since document.xml is the primary document part where you place your content, ta
 
 *Figure 14. How common tags in document.xml relate to the content and layout of a Word document*
 
-![Office Open XML elements in a Word document.](../images/office15-app-create-wd-app-using-ooxml-fig14.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig14.png" alt-text="Office Open XML elements in a Word document.":::
 
 > [!TIP]
 > In markup you create, you might see another attribute in several tags that includes the characters **w:rsid**, which you don't see in the examples used in this topic. These are revision identifiers. They're used in Word for the Combine Documents feature and they're on by default. You'll never need them in markup you're inserting with your add-in and turning them off makes for much cleaner markup. You can easily remove existing RSID tags or disable the feature (as described in the following procedure) so that they aren't added to your markup for new content.
@@ -364,7 +368,7 @@ In Word, find content controls on the Developer tab of the ribbon, as shown here
 
 *Figure 15. The Controls group on the Developer tab in Word*
 
-![Content Controls group on the Word ribbon.](../images/office15-app-create-wd-app-using-ooxml-fig15.png)
+:::image type="content" source="../images/office15-app-create-wd-app-using-ooxml-fig15.png" alt-text="Content Controls group on the Word ribbon.":::
 
 Types of content controls in Word include rich text, plain text, picture, building block gallery, check box, dropdown list, combo box, date picker, and repeating section.
 

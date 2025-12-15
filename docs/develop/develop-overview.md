@@ -1,4 +1,4 @@
-﻿---
+---
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
@@ -32,6 +32,11 @@ The Yeoman generator for Office Add-ins can be used to create a Node.js Office A
 Create your project using HTML, CSS and JavaScript (or TypeScript), or using React. If you choose React, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the generator, see [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
 
 ### Visual Studio
+
+> [!NOTE]
+> Beginning with Visual Studio 2026, Office Add-in development in Visual Studio is deprecated and will be removed in a future release. Support for Office Add-in development in a different form may be added to a future version of Visual Studio.
+>
+> We recommend creating Office Add-in projects with the Microsoft 365 Agents Toolkit or the Yeoman Generator. For more information, see [Create Office Add-in projects using the Yeoman Generator](../develop/yeoman-generator-overview.md).
 
 Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and PowerPoint. An Office Add-in project gets created as part of a Visual Studio solution and uses HTML, CSS, and JavaScript. For more information about creating add-ins with Visual Studio, see [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
@@ -90,7 +95,7 @@ Script Lab is an add-in that enables you to explore the Office JavaScript API an
 
 The following one-minute video shows Script Lab in action.
 
-[![Short video that shows Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+[:::image type="content" source="../images/screenshot-wide-youtube.png" alt-text="Short video that shows Script Lab running in Excel, Word, and PowerPoint.":::](https://aka.ms/scriptlabvideo)
 
 For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
@@ -104,7 +109,7 @@ An Office Add-in can extend the Office UI by using add-in commands and HTML cont
 
 The following image shows an add-in command on the ribbon, a task pane to the right of the document, and a dialog box or content add-in over the document.
 
-![Diagram showing add-in commands on the ribbon, a task pane, and a dialog box / content add-in in an Office document.](../images/add-in-ui-elements.png)
+:::image type="content" source="../images/add-in-ui-elements.png" alt-text="Diagram showing add-in commands on the ribbon, a task pane, and a dialog box / content add-in in an Office document.":::
 
 For more information about extending the Office UI and designing the add-in's UX, see [Office UI elements for Office Add-ins](../design/interface-elements.md).
 

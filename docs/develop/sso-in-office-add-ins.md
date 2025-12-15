@@ -1,4 +1,4 @@
-﻿---
+---
 title: Enable single sign-on (SSO) legacy in an Office Add-in
 description: Learn how to use Office.js legacy API for SSO.
 ms.date: 05/06/2024
@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 We recommend using MSAL with NAA as it supports both SPA and OBO auth workflows. It also offers a more modern experience across more platforms.
 
-If you have a legacy add-in that still uses legacy SSO, read on.
+:::image type="content" source="../images/sso-for-office-addins.png" alt-text="An image showing the sign-in process for an add-in.":::
 
 ## How SSO works at runtime
 
@@ -127,7 +127,7 @@ To use SSO your add-in requires the Identity API 1.3 requirement set. For more i
 Add JavaScript to the add-in to:
 
 - Call [getAccessToken](/javascript/api/office-runtime/officeruntime.auth#office-runtime-officeruntime-auth-getaccesstoken-member(1)).
-- Parse the access token or pass it to the add-in’s server-side code.
+- Parse the access token or pass it to the add-in's server-side code.
 
 The following code shows a simple example of calling `getAccessToken` and parsing the token for the user name and other credentials.
 

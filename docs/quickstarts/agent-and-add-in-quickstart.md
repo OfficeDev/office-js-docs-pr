@@ -1,7 +1,7 @@
 ---
 title: Build your first add-in as a Copilot skill
 description: Learn how to build a simple Copilot agent that has an Excel add-in as a skill.
-ms.date: 10/17/2025
+ms.date: 11/11/2025
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: high
@@ -75,10 +75,10 @@ Add the agent with the following steps.
       },
       ```
 
-    1. There are multiple objects in the `"extensions.runtimes"` array. Find the one whose `"id"` is "CommandRuntime" and copy it as an additional runtime object in the array.
+    1. There are multiple objects in the `"extensions.runtimes"` array. Find the one whose `"id"` is "CommandsRuntime" and copy it as an additional runtime object in the array.
     1. Make the following changes to this additional runtime object. 
     
-       1. Change the `"id"` from "CommandRuntime" to "CopilotAgentActionsRuntime".
+       1. Change the `"id"` from "CommandsRuntime" to "CopilotAgentActionsRuntime".
        1. Change its `"actions.id"` property to "fillcolor". This is the ID of a function that you add in a later step.
        1. Change the `"actions.type"` property to "executeDataFunction".
 
@@ -160,13 +160,14 @@ Add the agent with the following steps.
                     "local_endpoint": "Microsoft.Office.Addin",
                     "allowed_host": ["workbook"]
                 },
-                "run_for_functions": ["fillcolor"]
+                "run_for_functions": ["fillcolor"],
+                "auth": {
+                    "type": "None"
+                }
             }
         ]
     }
    ```
-
-   [!INCLUDE [Validation warning about missing 'auth' property](../includes/auth-property-warning-note.md)]
 
 1. Open the **\src\commands\commands.ts** file and add the following code the end of it.
 

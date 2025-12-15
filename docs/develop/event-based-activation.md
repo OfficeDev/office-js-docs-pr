@@ -1,7 +1,7 @@
-﻿---
+---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 10/09/2025
+ms.date: 11/27/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -107,10 +107,6 @@ As you develop an event-based add-in, be mindful of the following feature behavi
 
 - In addition to item switching, an event-based add-in also ceases operation when the user sends the message or appointment they're composing.
 
-### Event-based add-in limitations in the new Outlook on Windows
-
-In the new Outlook on Windows, you must keep the main window of the client open for the add-in to process the mail item. If the main window is minimized, the add-in will pause or stop working.
-
 ### Event-based add-in limitations in Excel, PowerPoint, Word, and classic Outlook on Windows
 
 When developing an event-based add-in to run on a Windows client, be mindful of the following:
@@ -129,6 +125,13 @@ The following platforms or features are not yet supported.
 
 - Office on Mac
 - The unified manifest for Microsoft 365
+
+### Event-based add-in limitations in Outlook on the web and the new Outlook on Windows
+
+In Outlook on the web and the new Outlook on Windows, event-based activation is only supported on standard read and compose message and appointment surfaces. Event-based activation may not work when composing on some non-standard surfaces. For example:
+
+- Responding to a meeting invite using the **RSVP with note** option.
+- Forwarding a meeting from the calendar.
 
 ### Unsupported APIs
 
@@ -152,7 +155,7 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
 1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
 
-    ![The EnableBetaAPIsInJavaScript registry value is set to 1."](../images/outlook-beta-registry-key.png)
+    :::image type="content" source="../images/outlook-beta-registry-key.png" alt-text="The EnableBetaAPIsInJavaScript registry value is set to 1.":::
 
 ## Enable single sign-on (SSO)
 
@@ -178,22 +181,39 @@ As you develop your event-based add-in, you may need to troubleshoot issues, suc
 
 ## Deploy your add-in
 
-Event-based add-ins are restricted to admin-managed deployments only, even if they're acquired from Microsoft Marketplace. If users acquire the add-in from Microsoft Marketplace or the in-app Office Store, they won't be able to activate the event-based function of the add-in. To learn more about listing your event-based add-in in Microsoft Marketplace, see [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md).
+Depending on the Office application, event-based add-ins can be deployed through one of the following options.
+
+- **Admin-managed deployment**: Add-in is deployed through the Microsoft 365 admin center.
+- **Restricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace, but it doesn't appear in search results. Add-in acquisition requires a flight code URL. The add-in must still be deployed by an admin for the event-based activation feature to work.
+- **Unrestricted listing on Microsoft Marketplace**: Add-in is published to Microsoft Marketplace and can be searched for by users and admins using the add-in's name or ID. Admin deployment isn't necessary for the event-based activation feature to work. The add-in must meet certain requirements for unrestricted listing.
+
+The following table outlines the deployment options for event-based activation by Office application.
+
+| Office application | Admin-managed deployment | Microsoft Marketplace |
+| --- | --- | --- |
+| **Excel** | Supported | Restricted listing option |
+| **Outlook** | Supported | Restricted and unrestricted listing options |
+| **PowerPoint** | Supported | Restricted listing option |
+| **Word** | Supported | Restricted listing option |
+
+For instructions on how to deploy an add-in through the Microsoft 365 admin center, see [Admin-managed deployment](#admin-managed-deployment). To learn more about listing your event-based add-in in Microsoft Marketplace, see [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md).
+
+[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
+
+### Admin-managed deployment
 
 Admin deployments are done by uploading the manifest to the Microsoft 365 admin center. To do so, follow these steps.
 
 1. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**.
 1. On the **Integrated apps** page, choose the **Upload custom apps** action.
 
-![The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.](../images/outlook-deploy-event-based-add-ins.png)
-
-[!INCLUDE [outlook-smart-alerts-deployment](../includes/outlook-smart-alerts-deployment.md)]
+:::image type="content" source="../images/outlook-deploy-event-based-add-ins.png" alt-text="The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.":::
 
 For more information about how to deploy an add-in, please refer to [Deploy and publish Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/office-addins).
 
 ### Deploy manifest updates
 
-Because event-based add-ins are deployed by admins, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](../publish/autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
+If an event-based add-in was admin-deployed, any change you make to the manifest requires admin consent through the Microsoft 365 admin center. Until the admin accepts your changes, users in their organization are blocked from using the add-in. To learn more about the admin consent process, see [Admin consent for installing event-based add-ins](../publish/autolaunch-store-options.md#admin-consent-for-installing-event-based-add-ins).
 
 ## See also
 

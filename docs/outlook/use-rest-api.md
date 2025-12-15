@@ -29,8 +29,7 @@ By setting the `isRest` option to `true`, you can request a token compatible wit
 
 It is important to consider what level of access your add-in will need via the REST APIs. In most cases, the token returned by `getCallbackTokenAsync` will provide read-only access to the current item only. This is true even if your add-in specifies the [read/write item permission](understanding-outlook-add-in-permissions.md#readwrite-item-permission) level in its manifest.
 
-If your add-in will require write access to the current item or other items in the user's mailbox, your add-in must specify the [read/write mailbox permission](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission).
- level in its manifest. In this case, the token returned will contain read/write access to the user's messages, events, and contacts.
+If your add-in will require write access to the current item or other items in the user's mailbox, your add-in must specify the [read/write mailbox permission](understanding-outlook-add-in-permissions.md#readwrite-mailbox-permission) level in its manifest. In this case, the token returned will contain read/write access to the user's messages, events, and contacts.
 
 ### Example
 

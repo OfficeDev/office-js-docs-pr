@@ -1,8 +1,8 @@
-﻿---
+---
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
-ms.date: 03/12/2025
+ms.date: 11/06/2025
 ms.localizationpriority: high
 ---
 
@@ -90,9 +90,6 @@ Follow these steps to configure a new or existing project to use a shared runtim
 
     - The `<Runtimes>` section must be entered after the `<Host>` element in the exact order shown in the following XML.
 
-        > [!NOTE]
-        > If your add-in includes the `<Runtimes>` element in the manifest (required for a shared runtime) and the conditions for using WebView2 (Microsoft Edge Chromium-based) are met, it uses that control. If the conditions are not met, then it uses the Trident (Internet Explorer 11) webview control regardless of the Windows or Microsoft 365 version. For more information, see [Runtimes](/javascript/api/manifest/runtimes) and [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
-
     ```xml
     <VersionOverrides ...>
       <Hosts>
@@ -166,7 +163,7 @@ The **webpack.config.js** will build multiple runtime loaders. You need to modif
 
 1. Save your changes and rebuild the project.
 
-   ```command line
+   ```command&nbsp;line
    npm run build
    ```
 
@@ -235,9 +232,9 @@ Configuring a shared runtime enables the following scenarios.
   - Custom functions will have full CORS support.
   - Custom functions can call Office.js APIs to read spreadsheet document data.
 
-For Office on Windows, the shared runtime uses WebView2 (Microsoft Edge Chromium-based) if the conditions for using it are met as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). Otherwise, it uses Trident (Internet Explorer 11). Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same runtime.
+Additionally, any buttons that your add-in displays on the ribbon will run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code will all run in the same runtime.
 
-![Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser runtime in Excel.](../images/custom-functions-in-browser-runtime.png)
+:::image type="content" source="../images/custom-functions-in-browser-runtime.png" alt-text="Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser runtime in Excel.":::
 
 ### Multiple task panes
 

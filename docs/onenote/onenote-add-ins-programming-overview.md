@@ -23,7 +23,7 @@ Office Add-ins have two main components:
 
 ### Office Add-in = Manifest + Webpage
 
-![Office Add-in consists of a manifest and webpage.](../images/onenote-add-in.png)
+:::image type="content" source="../images/onenote-add-in.png" alt-text="Office Add-in consists of a manifest and webpage.":::
 
 ## Using the JavaScript API
 
@@ -120,7 +120,7 @@ In general, you use the Common API to do something that isn't supported in the a
 
 The following diagram represents what's currently available in the OneNote JavaScript API.
 
-  ![OneNote object model diagram.](../images/onenote-om.png)
+  :::image type="content" source="../images/onenote-om.png" alt-text="OneNote object model diagram.":::
 
 ## See also
 

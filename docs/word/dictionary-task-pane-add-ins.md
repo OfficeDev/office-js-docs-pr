@@ -20,7 +20,7 @@ Figure 1 shows the selection and display experience for a Bing-branded dictionar
 
 *Figure 1. Dictionary add-in displaying definitions for the selected word*
 
-![Dictionary app displaying a definition.](../images/dictionary-add-in-01.png)
+:::image type="content" source="../images/dictionary-add-in-01.png" alt-text="Dictionary app displaying a definition.":::
 
 It's up to you to determine if selecting the **See More** link in the dictionary add-in's HTML UI displays more information within the task pane or opens a separate window to the full webpage for the selected word or phrase.
 
@@ -32,11 +32,11 @@ Figure 2 shows the **Define** command in the context menu that enables users to 
 
 *Figure 3. Definitions in the Spelling and Grammar panes*
 
-![Definitions in the Spelling and Grammar panes.](../images/dictionary-agave-03.jpg)
+:::image type="content" source="../images/dictionary-agave-03.jpg" alt-text="Definitions in the Spelling and Grammar panes.":::
 
 *Figure 4. Definitions in the Thesaurus pane*
 
-![Definitions in the Thesaurus pane.](../images/dictionary-agave-04.jpg)
+:::image type="content" source="../images/dictionary-agave-04.jpg" alt-text="Definitions in the Thesaurus pane.":::
 
 *Figure 5. Definitions in Reading Mode*
 
@@ -692,7 +692,7 @@ function errorHandler(jqXHR, textStatus, errorThrown) {
 
 1. In Word, if the add-in task pane isn't already open, choose the **Home** tab, and then choose the **Show Taskpane** button to open the add-in task pane. (If you're using the volume-licensed perpetual or [LTSC](../resources/resources-glossary.md#long-term-service-channel-ltsc) version of Office, instead of the Microsoft 365 version or a retail perpetual version, then custom buttons aren't supported. Instead, the task pane will open immediately.)
 
-    ![The Word application with the Show Taskpane button highlighted.](../images/word-quickstart-addin-0.png)
+    :::image type="content" source="../images/word-quickstart-add-in-0.png" alt-text="The Word application with the Show Taskpane button highlighted.":::
 
 1. In Word, add text to the document then select any or all of that text.
 

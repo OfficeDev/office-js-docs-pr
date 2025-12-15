@@ -1,5 +1,5 @@
 ---
-ms.date: 06/15/2022
+ms.date: 10/22/2025
 description: Understand Excel custom functions that don't use a shared runtime and their specific JavaScript-only runtime.
 title: JavaScript-only runtime for custom functions
 ms.localizationpriority: medium
@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # JavaScript-only runtime for custom functions
 
-Custom functions that don't use a shared runtime use a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime) that is designed to optimize performance of calculations.
+Custom functions that don't use a shared runtime rely on a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). This runtime is optimized for fast calculation but has fewer APIs available.
 
 [!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
@@ -58,6 +58,10 @@ function StoreValue(key, value) {
   });
 }
 ```
+
+## Compare with shared runtime
+
+Need UI integration or Office.js objects and events? Move those functions to a [shared runtime](../testing/runtimes.md#shared-runtime).
 
 ## Next steps
 
