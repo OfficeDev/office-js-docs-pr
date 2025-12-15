@@ -1,13 +1,16 @@
 ---
 title: Enable single sign-on (SSO) legacy in an Office Add-in
 description: Learn how to use Office.js legacy API for SSO.
-ms.date: 05/06/2024
+ms.date: 12/15/2025
 ms.localizationpriority: high
 ---
 
 # Use legacy single sign-on (SSO) in an Office Add-in
 
-We recommend using MSAL with NAA as it supports both SPA and OBO auth workflows. It also offers a more modern experience across more platforms.
+> [!NOTE]
+> We recommend using the Microsoft Authorization Library (MSAL) with nested app authentication (NAA) which supports the SPA authorization workflow. MSAL and NAA also offer a more modern experience across more platforms. For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md). This article explains how to use the legacy Office SSO API.
+
+Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
 
 :::image type="content" source="../images/sso-for-office-addins.png" alt-text="An image showing the sign-in process for an add-in.":::
 
