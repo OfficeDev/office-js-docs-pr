@@ -14,7 +14,7 @@ The steps in this article refer to [Visual Studio Code](https://code.visualstudi
 
 ## Create a new Yo Office project
 
-You need to create the standalone add-in project which will be the new development location for your snippet code. Follow the guidance in [Create Office Add-in projects using the Yeoman Generator](../develop/yeoman-generator-overview.md). If your snippet is a custom function, use one of the Yo Office custom functions options, and then skip to the section [Custom functions](#custom-functions).
+You need to create the standalone add-in project which will be the new development location for your snippet code. Follow the guidance in [Create Office Add-in projects using the Yeoman Generator](../develop/yeoman-generator-overview.md). If your snippet is a custom function, use one of the custom functions options in the generator, and then skip to the section [Custom functions](#custom-functions).
 
 ## Open the snippet in Script Lab
 
@@ -58,42 +58,20 @@ If you created a snippet that has additional library dependencies, be sure to ad
 Script Lab handles the `Office.onReady` initialization automatically. You'll need to modify the code to provide your own `Office.onReady` handler.
 
 1. Open the **taskpane.ts** (or **taskpane.js** for JavaScript) file.
-1. For Excel, PowerPoint, or Word, replace:
+1. Wrap the event handler assignments in callbacks to the Office **onReady** and HTML **DOM content loaded** events. For example, replace:
 
     ```typescript
-    $("#run").on("click", () => tryCatch(run));
+    document.getElementById("run").addEventListener("click", () => tryCatch(run));
     ```
 
     with:
 
     ```typescript
     Office.onReady(function () {
-      // Office is ready.
-      $(document).ready(function () {
+      // Office is ready.      
+      document.addEventListener("DOMContentLoaded", () => {
         // The document is ready.
-        $("#run").on("click", () => tryCatch(run));
-      });
-    });
-    ```
-
-1. For Outlook, replace:
-
-    ```typescript
-    $("#get").on("click", get);
-    $("#set").on("click", set);
-    $("#save").on("click", save);
-    ```
-
-    with:
-
-    ```typescript
-    Office.onReady(function () {
-      // Office is ready
-      $(document).ready(function () {
-        // The document is ready
-        $("#get").on("click", get);
-        $("#set").on("click", set);
-        $("#save").on("click", save);
+        document.getElementById("run").addEventListener("click", () => tryCatch(run));
       });
     });
     ```
@@ -127,6 +105,8 @@ When you're ready to stop the dev server and uninstall the add-in, run the follo
 ```command&nbsp;line
 npm stop
 ```
+
+For more information about sideloading, testing, and troubleshooting an add-in, see the [Test and debug section of the documentation](..testing/test-debug-office-add-ins.md).
 
 ## Console logging
 
