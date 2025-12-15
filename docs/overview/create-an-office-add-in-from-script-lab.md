@@ -51,7 +51,13 @@ In Visual Studio Code, open the add-in project. In the next steps, you'll copy c
 
 ## Add additional library support
 
-If you created a snippet that has additional library dependencies, be sure to add them to the Yo Office project. Find a list of all library dependencies on the **Libraries** tab in Script Lab.
+If you created a snippet that has additional library dependencies, be sure to add them to the Yo Office project with the following steps. 
+
+1. Find a list of all library dependencies on the **Libraries** tab in Script Lab.
+1. For each library, add a `<script>` tag to the `<head>` of the **/src/taskpane/taskpane.html** file.
+1. Set the `src` attribute of the tag to the URL of the library. 
+
+For more information, see [HTML <script> src Attribute](https://www.w3schools.com/TAGS/att_script_src.asp).
 
 ## Handle initialization
 
