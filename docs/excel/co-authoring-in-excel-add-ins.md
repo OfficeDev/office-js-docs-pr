@@ -1,7 +1,7 @@
 ---
 title: Coauthoring in Excel add-ins
 description: Learn how to handle coauthoring scenarios in Excel add-ins to prevent stale data, synchronization conflicts, and merge issues.
-ms.date: 12/11/2025
+ms.date: 12/15/2025
 ms.localizationpriority: medium
 ---
 
@@ -129,7 +129,7 @@ function updateDashboardDisplay(data) {
 
 When coauthoring is active, your event handlers run for **all users** when **any user** makes a change. This behavior creates a critical design constraint.
 
-**❌ Don't do this:**
+**❌ Don't do this**:
 
 ```js
 binding.onDataChanged.add(async (event) => {
@@ -178,7 +178,7 @@ The `TableRowCollection.add` API changes the table structure in a way that confl
 
 Instead of using the Table API, set values in the range directly below the table. Excel automatically expands the table without creating conflicts.
 
-**❌ Don't do this (it causes conflicts):**
+**❌ Don't do this (it causes conflicts)**:
 
 ```js
 const table = context.workbook.tables.getItem("SalesData");
