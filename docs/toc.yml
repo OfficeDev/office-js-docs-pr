@@ -175,6 +175,8 @@
         href: develop/authorize-to-microsoft-graph-without-sso.md
       - name: Automatically save passwords in WebView2
         href: develop/auth-save-passwords.md
+      - name: Nested app authentication FAQ 
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
       - name: Office legacy single sign-on
         items:
         - name: Enable SSO using on-behalf-of flow
@@ -187,10 +189,6 @@
           href: develop/authorize-to-microsoft-graph.md
         - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Enable SSO in an Office add-in
-        href: develop/enable-nested-app-authentication-in-your-add-in.md
-      - name: Nested app authentication FAQ 
-        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
     - name: UI and UX
       items:
       - name: Overview
