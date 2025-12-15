@@ -2,7 +2,7 @@
 title: Create a standalone Office Add-in from your Script Lab code
 description: Learn how to move your snippet from Script Lab into a Yo Office project
 ms.topic: how-to
-ms.date: 11/10/2023
+ms.date: 12/17/2025
 ms.localizationpriority: high
 ---
 
@@ -14,76 +14,42 @@ The steps in this article refer to [Visual Studio Code](https://code.visualstudi
 
 ## Create a new Yo Office project
 
-You need to create the standalone add-in project which will be the new development location for your snippet code.
-
-Run the command `yo office --projectType taskpane --ts true --host <host> --name "my-add-in"`, where `<host>` is one of the following values.
-
-- excel
-- outlook
-- powerpoint
-- word
-
-> [!IMPORTANT]
-> The `--name` argument value must be in double quotation marks, even if it has no spaces.
-
-The previous command creates a new project folder named **my-add-in**. It's configured to run in the host you specified, and uses TypeScript. Script Lab uses TypeScript by default, but most of the snippets are JavaScript. You can build a Yo Office JavaScript project if you prefer, but just be sure any code you copy over is JavaScript.
+You need to create the standalone add-in project which will be the new development location for your snippet code. Follow the guidance in [Create Office Add-in projects using the Yeoman Generator](../develop/yeoman-generator-overview.md). If your snippet is a custom function, use one of the Yo Office custom functions options, and then skip to the section [Custom functions](#custom-functions).
 
 ## Open the snippet in Script Lab
 
-Use an existing snippet in Script Lab to learn how to copy a snippet to a Yo Office generated project.
-
 1. Open Office (Word, Excel, PowerPoint, or Outlook) and then open Script Lab.
 1. Select **Script Lab** > **Code**. If you're working in Outlook, open an email message to see Script Lab on the ribbon.
-1. Open your snippet in Script Lab. If you want to start with an existing sample, go to the Script Lab task pane and choose **Samples**.
+1. Open your snippet in Script Lab. 
 
 ## Copy snippet code to Visual Studio code
 
-Now you can copy the code from the snippet to the Yo Office project in VS Code.
+Now you can copy the code from the snippet to the Yo Office project in Visual Studio Code.
 
-- In VS Code, open the **my-add-in** project.
-
-In the next steps, you'll copy code from several tabs in Script Lab.
+In Visual Studio Code, open the add-in project. In the next steps, you'll copy code from several tabs in Script Lab.
 
 :::image type="content" source="../images/script-lab-script-tabs.png" alt-text="Tabs in Script Lab.":::
 
 ### Copy task pane code
 
-1. In VS Code, open the **/src/taskpane/taskpane.ts** file. If you're using a JavaScript project, the filename is **taskpane.js**.
+1. In Visual Studio Code, open the **/src/taskpane/taskpane.ts** file. If you're using a JavaScript project, the filename is **taskpane.js**.
 1. In Script Lab, select the **Script** tab.
 1. Copy all of the code in the **Script** tab to the clipboard. Replace the entire contents of **taskpane.ts** (or **taskpane.js** for JavaScript) with the code you copied.
 
 ### Copy task pane HTML
 
-1. In VS Code, open the **/src/taskpane/taskpane.html** file.
+1. In Visual Studio Code, open the **/src/taskpane/taskpane.html** file.
 1. In Script Lab, select the **HTML** tab.
 1. Copy all of the HTML in the **HTML** tab to the clipboard. Replace all of the HTML inside the `<body>` tag with the HTML you copied.
 
 ### Copy task pane CSS
 
-1. In VS Code, open the **/src/taskpane/taskpane.css** file.
+1. In Visual Studio Code, open the **/src/taskpane/taskpane.css** file.
 1. In Script Lab, select the **CSS** tab.
 1. Copy all of the CSS in the **CSS** tab to the clipboard. Replace the entire contents of **taskpane.css** with the CSS you copied.
 1. Save all changes to the files you updated in previous steps.
 
-## Add jQuery support
-
-Script Lab uses jQuery in the snippets. You need to add this dependency to the Yo Office project to run the code successfully.
-
-1. Open the **taskpane.html** file, and add the following script tag to the `<head>` section.
-
-    ```html
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.js"></script>
-    ```
-
-    > [!NOTE]
-    > The specific version of jQuery may vary. You can determine which version Script Lab is using by choosing the **Libraries** tab.
-
-1. Open a terminal in VS Code and enter the following commands.
-
-    ```command&nbsp;line
-    npm install --save-dev jquery@3.1.1
-    npm install --save-dev @types/jquery@3.3.1
-    ```
+## Add additional library support
 
 If you created a snippet that has additional library dependencies, be sure to add them to the Yo Office project. Find a list of all library dependencies on the **Libraries** tab in Script Lab.
 
@@ -136,16 +102,11 @@ Script Lab handles the `Office.onReady` initialization automatically. You'll nee
 
 ## Custom functions
 
-If your snippet uses custom functions, you need to use the Yo Office custom functions template. To turn custom functions into a standalone add-in, follow these steps.
-
-1. Run the command `yo office --projectType excel-functions --ts true --name "my-functions"`.
-
-    > [!IMPORTANT]
-    > The `--name` argument value must be in double quotation marks, even if it has no spaces.
+ To turn custom functions into a standalone add-in, follow these steps.
 
 1. Open Excel, and then open Script Lab.
 1. Select **Script Lab** > **Code**.
-1. Open your snippet in Script Lab. If you want to start with an existing sample, go to the Script Lab task pane, choose **Samples**, and search under the **Custom Functions** section.
+1. Open your snippet in Script Lab. 
 1. Open the **/src/functions/functions.ts** file. If you're using a JavaScript project, the filename is **functions.js**.
 1. In Script Lab, select the **Script** tab.
 1. Copy all of the code in the **Script** tab to the clipboard. Paste the code at the top of the **functions.ts** (or **functions.js** for JavaScript) with the code you copied.
@@ -153,7 +114,7 @@ If your snippet uses custom functions, you need to use the Yo Office custom func
 
 ## Test the standalone add-in
 
-Once all the steps are complete, run and test out your standalone add-in. Run the following command to get started.
+Once all the steps are complete, run and test out your standalone add-in. Open a command prompt, terminal, or bash shell in the root of the project, and run the following command to get started.
 
 ```command&nbsp;line
 npm start
