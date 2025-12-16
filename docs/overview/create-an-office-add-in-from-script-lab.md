@@ -19,7 +19,7 @@ Create the standalone add-in project. This project is the new development locati
 ## Open the snippet in Script Lab
 
 1. Open Office (Word, Excel, PowerPoint, or Outlook) and then open Script Lab.
-1. Select **Script Lab** > **Code**. If you're working in Outlook, open an email message to see Script Lab on the ribbon.
+1. Select **Script Lab** > **Code**.
 1. Open your snippet in Script Lab. 
 
 ## Copy snippet code to Visual Studio code
