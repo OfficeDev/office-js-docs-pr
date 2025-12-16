@@ -57,7 +57,7 @@ If you created a snippet that has additional library dependencies, add them to t
 1. For each library, add a `<script>` tag to the `<head>` of the **/src/taskpane/taskpane.html** file.
 1. Set the `src` attribute of the tag to the URL of the library. 
 
-For more information, see [HTML <script> src Attribute](https://www.w3schools.com/TAGS/att_script_src.asp).
+For more information, see [HTML script tag src Attribute](https://www.w3schools.com/TAGS/att_script_src.asp).
 
 ## Handle initialization
 
@@ -112,7 +112,7 @@ When you're ready to stop the dev server and uninstall the add-in, run the follo
 npm stop
 ```
 
-For more information about sideloading, testing, and troubleshooting an add-in, see the [Test and debug section of the documentation](..testing/test-debug-office-add-ins.md).
+For more information about sideloading, testing, and troubleshooting an add-in, see the [Test and debug section of the documentation](../testing/test-debug-office-add-ins.md).
 
 ## Console logging
 
