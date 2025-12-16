@@ -435,19 +435,19 @@ The meeting organizer's UI varies depending on the Outlook client.
 
 #### Outlook on the web and the new Outlook on Windows
 
-:::image type="content" source="../images/outlook-web-new-windows-create-meeting.png" alt-text="The create meeting screen in Outlook on the web and the new Outlook on Windows.":::
+:::image type="content" source="../images/outlook-web-new-windows-create-meeting.png" alt-text="The create-meeting screen in Outlook on the web and the new Outlook on Windows.":::
 
 #### Classic Outlook on Windows
 
-:::image type="content" source="../images/outlook-classic-win-create-meeting.png" alt-text="The create meeting screen in classic Outlook on Windows.":::
+:::image type="content" source="../images/outlook-classic-win-create-meeting.png" alt-text="The create-meeting screen in classic Outlook on Windows.":::
 
 #### Outlook on Mac
 
-:::image type="content" source="../images/outlook-mac-create-meeting.png" alt-text="The create meeting screen in Outlook on Mac.":::
+:::image type="content" source="../images/outlook-mac-create-meeting.png" alt-text="The create-meeting screen in Outlook on Mac.":::
 
 #### Outlook on mobile devices
 
-[:::image type="content" source="../images/outlook-android-create-online-meeting-off.png" alt-text="The create meeting screen in Outlook on Android with the Contoso toggle off.":::](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [:::image type="content" source="../images/outlook-android-create-online-meeting-load.png" alt-text="The create meeting screen in Outlook on Android with a loading Contoso toggle.":::](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [:::image type="content" source="../images/outlook-android-create-online-meeting-on.png" alt-text="The create meeting screen in Outlook on Android with the Contoso toggle on.":::](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
+[:::image type="content" source="../images/outlook-android-create-online-meeting-off.png" alt-text="The create-meeting screen in Outlook on Android with the Contoso toggle off.":::](../images/outlook-android-create-online-meeting-off-expanded.png#lightbox) [:::image type="content" source="../images/outlook-android-create-online-meeting-load.png" alt-text="The create-meeting screen in Outlook on Android with a loading Contoso toggle.":::](../images/outlook-android-create-online-meeting-load-expanded.png#lightbox) [:::image type="content" source="../images/outlook-android-create-online-meeting-on.png" alt-text="The create-meeting screen in Outlook on Android with the Contoso toggle on.":::](../images/outlook-android-create-online-meeting-on-expanded.png#lightbox)
 
 ### Join meeting UI
 
@@ -455,22 +455,22 @@ The meeting attendee's UI varies depending on the Outlook client.
 
 #### Outlook on the web and the new Outlook on Windows
 
-:::image type="content" source="../images/outlook-web-new-windows-join-meeting.png" alt-text="The join meeting screen in Outlook on the web and the new Outlook on Windows.":::
+:::image type="content" source="../images/outlook-web-new-windows-join-meeting.png" alt-text="The join-meeting screen in Outlook on the web and the new Outlook on Windows.":::
 
 #### Classic Outlook on Windows
 
-:::image type="content" source="../images/outlook-classic-win-join-meeting.png" alt-text="The join meeting screen in classic Outlook on Windows.":::
+:::image type="content" source="../images/outlook-classic-win-join-meeting.png" alt-text="The join-meeting screen in classic Outlook on Windows.":::
 
 #### Outlook on Mac
 
-:::image type="content" source="../images/outlook-mac-join-meeting.png" alt-text="The join meeting screen in Outlook on Mac.":::
+:::image type="content" source="../images/outlook-mac-join-meeting.png" alt-text="The join-meeting screen in Outlook on Mac.":::
 
 #### Outlook on mobile devices
 
-[:::image type="content" source="../images/outlook-android-join-online-meeting-view-1.png" alt-text="The join meeting screen in Outlook on Android.":::](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
+[:::image type="content" source="../images/outlook-android-join-online-meeting-view-1.png" alt-text="The join-meeting screen in Outlook on Android.":::](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!NOTE]
-> Your online-meeting add-in must meet certain requirements to include the **Join** meeting button in Outlook on the web, on Mac, on Android, on iOS, and in the new Outlook on Windows. For more information, see [Implement the Join button](#implement-the-join-button).
+> Your online-meeting add-in must meet certain requirements to include the **Join** button in Outlook on the web, on Mac, on Android, on iOS, and in the new Outlook on Windows. For more information, see [Implement the Join button](#implement-the-join-button).
 
 ## Implement the Join button
 
