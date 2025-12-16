@@ -435,7 +435,7 @@ The meeting organizer's UI varies depending on the Outlook client.
 
 #### Outlook on the web and the new Outlook on Windows
 
-:::image type="content" source="../images/outlook-owa-new-win-create-meeting.png" alt-text="The create meeting screen in Outlook on the web and the new Outlook on Windows.":::
+:::image type="content" source="../images/outlook-web-new-windows-create-meeting.png" alt-text="The create meeting screen in Outlook on the web and the new Outlook on Windows.":::
 
 #### Classic Outlook on Windows
 
@@ -455,7 +455,7 @@ The meeting attendee's UI varies depending on the Outlook client.
 
 #### Outlook on the web and the new Outlook on Windows
 
-:::image type="content" source="../images/outlook-owa-new-win-join-meeting.png" alt-text="The join meeting screen in Outlook on the web and the new Outlook on Windows.":::
+:::image type="content" source="../images/outlook-web-new-windows-join-meeting.png" alt-text="The join meeting screen in Outlook on the web and the new Outlook on Windows.":::
 
 #### Classic Outlook on Windows
 
