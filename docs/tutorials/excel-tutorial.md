@@ -348,7 +348,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 In this step of the tutorial, you'll create a chart using data from the table that you created previously, and then format the chart.
 
-### Chart a chart using table data
+### Create a chart using table data
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
@@ -1088,7 +1088,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the task pane, but you cannot launch a second dialog from the same task pane page.
 
-1. In the dialog, enter a name and choose the **OK** button. The name appears on the task pane and the dialog closes.
+1. In the dialog, enter a name and choose the **OK** button. The name appears at the end of the task pane and the dialog closes.
 
 1. Optionally, in the **./src/taskpane/taskpane.ts** file, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
