@@ -225,7 +225,7 @@ In this step of the tutorial, you'll apply a built-in style to text, apply a cus
 
     ```js
     const firstParagraph = context.document.body.paragraphs.getFirst();
-    firstParagraph.styleBuiltIn = Word.Style.intenseReference;
+    firstParagraph.styleBuiltIn = Word.BuiltInStyleName.intenseReference;
     ```
 
 ### Apply a custom style to text
