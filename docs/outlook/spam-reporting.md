@@ -1,7 +1,7 @@
 ﻿---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 08/26/2025
+ms.date: 12/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -54,6 +54,9 @@ To implement the integrated spam-reporting feature in your add-in, you must conf
 - The preprocessing dialog. When a user selects the add-in button, a dialog appears with **Report** and **Don't Report** options. In this dialog, you can share information about the reporting process or implement input options to get information about a reported message. Input options include checkboxes, radio buttons, and a text box. When a user selects **Report** from the dialog, the [SpamReporting](/javascript/api/office/office.eventtype) event is activated and is then handled by the JavaScript event handler. The following is an example of a preprocessing dialog in classic Outlook on Windows. Note that the appearance of the dialog may vary depending on the platform the user's Outlook client is running on.
 
     :::image type="content" source="../images/outlook-spam-processing-dialog.png" alt-text="A sample preprocessing dialog of a spam-reporting add-in.":::
+
+    > [!NOTE]
+    > Using radio buttons as an input option is available to preview in Outlook on Mac starting in Version 16.103.102 (Build 25112216). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 Select the tab for the type of manifest you're using.
 
@@ -464,7 +467,9 @@ The following is a sample post-processing dialog shown to the user once the add-
 ## Suppress the preprocessing dialog
 
 > [!NOTE]
-> The "Don't show me this message again" option was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+>
+> - The "Don't show me this message again" option was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The "Don't show me this message again" option is available to preview in Outlook on Mac starting in Version 16.103.102 (Build 25112216). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 Depending on your scenario, you might not need a user to provide additional information about a message they're reporting. If the preprocessing dialog of your spam-reporting add-in only provides information to the user, you can choose to include a "Don't show me this message again" option in the dialog.
 
@@ -536,7 +541,9 @@ The preprocessing dialog will appear the next time a message is reported.
 ## Open a task pane after reporting a message
 
 > [!NOTE]
-> The option to implement a task pane from the `event.completed` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+>
+> - The option to implement a task pane from the `event.completed` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - Implementing a task pane from the `event.completed` method is available to preview in Outlook on Mac starting in Version 16.103.102 (Build 25112216). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 Instead of a post-processing dialog, you can implement a task pane to open after a user reports a message. For example, you can use the task pane to show additional information based on the user's input in the preprocessing dialog. Similar to the post-processing dialog, the task pane is implemented through the add-in's `event.completed` call.
 
