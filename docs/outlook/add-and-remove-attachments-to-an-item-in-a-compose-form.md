@@ -246,7 +246,7 @@ In the HTML body of a mail item, inline images are represented by a content ID (
 The following is an example.
 
 ```html
-<img src="cid:ee058cc2-ad96-485f-95c7-44b2f40cb987" style="max-width: 1281px;"originalsrc="cid:ee058cc2-ad96-485f-95c7-44b2f40cb987" size="19720" contenttype="image/png">
+<img src="cid:ee058cc2-ad96-485f-95c7-44b2f40cb987" style="max-width: 1281px;" originalsrc="cid:ee058cc2-ad96-485f-95c7-44b2f40cb987" size="19720" contenttype="image/png">
 ```
 
 ## See also
