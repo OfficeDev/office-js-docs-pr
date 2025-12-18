@@ -68,7 +68,7 @@ For more information, see [Apps for meetings and calls](/microsoftteams/platform
 
 The following table shows platforms support the various types of Apps for Microsoft 365.
 
-| Teams app features| Teams support |Outlook support |Microsoft 365 Copilot application support |Word, Excel, PowerPoint support (preview)| Notes |
+| Teams app features| Teams support |Outlook support |Microsoft 365 Copilot application support |Word, Excel, PowerPoint support| Notes |
 |--|--|--|--|--|--|--|
 | [**Tabs-personal scope**](/microsoftteams/platform/tabs/how-to/create-personal-tab)     |Web, Desktop, Mobile | Web, Desktop, Mobile (Android, iOS) | Web, Desktop, Mobile (Android, iOS)|-|Channel and group scopes aren't supported for Microsoft 365. For more information, see [Teams JavaScript client library](/microsoftteams/platform/tabs/how-to/using-teams-client-sdk#microsoft-365-support-running-teams-apps-in-office-and-outlook).
 | [**Meeting apps**](/microsoftteams/platform/m365-apps/extend-m365-meeting-app)|Web, Desktop, Mobile|Desktop|-|-|Meeting Stageview isn't supported in Outlook. See [Extend a meeting app to Outlook](/microsoftteams/platform/m365-apps/extend-m365-meeting-app).|
