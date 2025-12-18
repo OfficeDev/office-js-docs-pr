@@ -13,7 +13,7 @@ This article provides information about current known issues with Office Add-ins
 
 ## Active issues in Office add-ins
 
-### New-Outlook: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel
+### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel.
 
 Customers in targeted release using New-outlook for windows with offline mode enabled were seeing broken images with 5xx errors while inserting images via an add-in. 
 
