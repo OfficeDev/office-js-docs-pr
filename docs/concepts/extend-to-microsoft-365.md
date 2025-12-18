@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 An Office Add-in is an App for Microsoft 365, just as a custom Teams app and a custom Copilot agent are. This enables you to combine an add-in with one or more of these other types of Microsoft 365 extensions. Your combination solution has a single manifest that configures all of its parts, and a single app package &mdash; a ZIP file &mdash; that is the unit of sideloading and of publishing to Microsoft Marketplace or the Microsoft 365 admin center.
 
-> [TIP!]
+> [!TIP]
 > You can't include a [SharePoint Framework app](/sharepoint/dev/spfx/sharepoint-framework-overview) in the Microsoft extension's app package, but you can bundle your Microsoft 365 extension with one or more SharePoint Framework apps into a single Software as a Service (SaaS) offering. The SaaS is installed and managed as a unit using the integrated apps portal in the admin center. For more information, see [SaaS linked apps](/microsoft-365/admin/manage/saas-linked-apps) and [Integrated Apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
 We recommend that you take advantage of this packaging system to combine closely related functionality and experiences into a single app for Microsoft 365. The following are just a few of the scenarios. 
@@ -54,11 +54,11 @@ Link unfurling works in both Outlook messages and Teams chat messages. You can a
 
 :::image type="content" source="../images/outlook-teams-link-unfurling.png" alt-text="The screenshot is an example that shows Link unfurling running in Outlook and Teams.":::
 
-For more information, see [Build message extensions](/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) and [Teams message extensions](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension). See also the guidance in [Scenarios for creating an Outlook add-in and a message extension](/microsoftteams/platform/m365-apps/me-or-outlook-add-in)to learn when to use a Outlook add-in and when to use a message extension in Outlook.
+For more information, see [Build message extensions](/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) and [Teams message extensions](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension). See also the guidance in [Scenarios for creating an Outlook add-in and a message extension](/microsoftteams/platform/m365-apps/me-or-outlook-add-in) to learn when to use a Outlook add-in and when to use a message extension in Outlook.
 
 ### Meeting apps
 
-Meeting apps are essentially Teams tab apps that are designed to foster collaboration before, during, and after meetings. You can configure and add meeting apps to the Teams meetings scheduled from Outlook and also run meeting apps within the Outlook calendar.
+Meeting apps are essentially tab apps that are designed to foster collaboration before, during, and after meetings. You can configure and add meeting apps to the Teams meetings scheduled from Outlook and also run meeting apps within the Outlook calendar.
 
 :::image type="content" source="../images/outlook-teams-meeting-app.png" alt-text="Screenshot of a sample meeting app running in both Teams and Outlook":::
 
@@ -70,11 +70,11 @@ The following table shows platforms support the various types of Apps for Micros
 
 | Teams app features| Teams support |Outlook support |Microsoft 365 Copilot application support |Word, Excel, PowerPoint support (preview)| Notes |
 |--|--|--|--|--|--|--|
-| [**Tabs-personal scope**](/microsoftteams/platform/tabs/how-to/create-personal-tab.md)     |Web, Desktop, Mobile | Web, Desktop, Mobile (Android, iOS) | Web, Desktop, Mobile (Android, iOS)|-|Channel and group scopes aren't supported for Microsoft 365. For more information, see [Teams JavaScript client library](/microsoftteams/platform/tabs/how-to/using-teams-client-sdk.md#microsoft-365-support-running-teams-apps-in-office-and-outlook).
+| [**Tabs-personal scope**](/microsoftteams/platform/tabs/how-to/create-personal-tab)     |Web, Desktop, Mobile | Web, Desktop, Mobile (Android, iOS) | Web, Desktop, Mobile (Android, iOS)|-|Channel and group scopes aren't supported for Microsoft 365. For more information, see [Teams JavaScript client library](/microsoftteams/platform/tabs/how-to/using-teams-client-sdk#microsoft-365-support-running-teams-apps-in-office-and-outlook).
 | [**Meeting apps**](/microsoftteams/platform/m365-apps/extend-m365-meeting-app)|Web, Desktop, Mobile|Desktop|-|-|Meeting Stageview isn't supported in Outlook. See [Extend a meeting app to Outlook](/microsoftteams/platform/m365-apps/extend-m365-meeting-app).|
-| [**Message extensions-search-based**](/microsoftteams/platform/messaging-extensions/how-to/search-commands/define-search-command.md)| Web, Desktop, Mobile| Web, Desktop | - |-|For limitations and troubleshooting, see [Limitations](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension#limitations). |
-| [**Action-based message extensions**](/microsoftteams/platform/messaging-extensions/how-to/action-commands/define-action-command.md)| Web, Desktop, Mobile| Web | - |-| Viewable/actionable (not composable) in Teams/Outlook mobile preview (iOS, Android). For limitations and troubleshooting, see [Limitations](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension#limitations). |
-| [**Link unfurling (including Stageview)**](/microsoftteams/platform/tabs/tabs-link-unfurling.md) | Web, Desktop | Web, Desktop | - | -|See notes on [link unfurling](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension) and [Stageview](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension)|
+| [**Message extensions-search-based**](/microsoftteams/platform/messaging-extensions/how-to/search-commands/define-search-command)| Web, Desktop, Mobile| Web, Desktop | - |-|For limitations and troubleshooting, see [Limitations](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension#limitations). |
+| [**Action-based message extensions**](/microsoftteams/platform/messaging-extensions/how-to/action-commands/define-action-command)| Web, Desktop, Mobile| Web | - |-| Viewable/actionable (not composable) in Teams/Outlook mobile preview (iOS, Android). For limitations and troubleshooting, see [Limitations](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension#limitations). |
+| [**Link unfurling (including Stageview)**](/microsoftteams/platform/tabs/tabs-link-unfurling) | Web, Desktop | Web, Desktop | - | -|See notes on [link unfurling](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension) and [Stageview](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension)|
 | [**Adaptive Card Loop components**](/microsoftteams/platform/m365-apps/design-loop-components)|Web, Desktop |Web, Desktop (only for [new Outlook](https://support.microsoft.com/office/getting-started-with-the-new-outlook-for-windows-656bb8d9-5a60-49b2-a98b-ba7822bc7627)) |-|-| Viewable (not composable) in Teams/Outlook mobile preview (iOS, Android). See [Adaptive Card-based Loop components](/microsoftteams/platform/m365-apps/cards-loop-component).|
 | [**Stageview**](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension)|Web, Desktop, Mobile|Web (preview), Desktop (preview)|-|-| Viewable/actionable (not composable) in Outlook mobile preview (iOS, Android). See [Message extensions](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension).|
 | [**Office Add-ins**](/office/dev/add-ins/develop/json-manifest-overview) | - | Web, Desktop | - |-| See [office Add-ins platform overview](../overview/office-add-ins.md).|
