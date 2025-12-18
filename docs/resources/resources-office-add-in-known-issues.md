@@ -19,7 +19,7 @@ While inserting images via an add-in, customers in targeted releases using New O
 
 #### STATUS 
 
-A recent update to support offline mode in New-Outlook for windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
+A recent update to support offline mode in New Outlook for Windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
 
 Tracking ID: 713714633
 
