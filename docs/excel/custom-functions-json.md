@@ -115,7 +115,7 @@ The following example shows the contents of a JSON metadata file for an add-in t
       "description": "A function that uses the custom enum as a parameter.", 
       "parameters": [ 
         { 
-          "name": "value", 
+          "name": "planetName", 
           "type": "string", 
           "customEnumId": "PLANETS" 
         }
@@ -372,7 +372,7 @@ The following JSON snippet shows the metadata for two enums: a `PLANETS` enum  t
 
 Each constant in the `values` array of the enum is an object with the following properties.
 
-- **value**: The value of the constant.
+- **stringValue** or **numberValue**: The string or number value of the constant. If the enum type is `number`, then `numberValue` is required. If the enum type is `string`, then `stringValue` is required.
 - **name**: A brief description of the constant.
 - **tooltip** (Optional): Additional information about the constant that can be shown as a tooltip in user interfaces.
 
@@ -386,7 +386,7 @@ To associate the custom enum with a function, add the property `customEnumId` to
     "name": "GETPLANETS", 
     "parameters": [ 
       { 
-        "name": "value", 
+        "name": "planetName", 
         "type": "string", 
         "customEnumId": "PLANETS" 
       }

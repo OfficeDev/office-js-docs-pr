@@ -40,8 +40,8 @@ enum PLANETS {
  * A sample function that uses the custom enum as a parameter.
  * @customfunction 
  */ 
-function getPlanets(value: PLANETS): any { 
-  return value; 
+function getPlanets(planetName: PLANETS): any { 
+  return planetName; 
 } 
 ```
 
