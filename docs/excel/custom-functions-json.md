@@ -129,12 +129,12 @@ The following example shows the contents of a JSON metadata file for an add-in t
       "values": [ 
         { 
           "name": "Mercury", 
-          "value": "mercury", 
+          "stringValue": "mercury", 
           "tooltip": "Mercury is the first planet from the sun." 
         }, 
         { 
           "name": "Venus", 
-          "value": "venus", 
+          "stringValue": "venus", 
           "tooltip": "Venus is the second planet from the sun." 
         }
       ] 
