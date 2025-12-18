@@ -17,7 +17,7 @@ Learn how to leverage Office Open XML (OOXML) in your Word add-ins to insert vir
 
 ### What you'll learn
 
-- When to use Office Open XML versus other insertion methods (Word JavaScript APIs, HTML coercion).
+- When to use Office Open XML versus other insertion methods (Word JavaScript API, HTML coercion).
 - How to extract and edit OOXML markup for your content.
 - Techniques for inserting formatted text, images, charts, tables, SmartArt, and shapes.
 - Best practices for minimizing markup and optimizing performance.
