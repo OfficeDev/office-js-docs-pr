@@ -217,7 +217,7 @@ Open the file **Home.css** in the root of the web application project. This file
     ...
     ```
 
-## Step 5: Run and test your add-in
+## Try it out
 
 1. Using Visual Studio, test the newly created Word add-in by pressing <kbd>F5</kbd> or choosing **Debug** > **Start Debugging** to launch Word with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
