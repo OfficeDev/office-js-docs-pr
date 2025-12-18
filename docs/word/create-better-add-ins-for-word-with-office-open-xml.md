@@ -189,7 +189,7 @@ Several of the other types of content shown at the start of this topic require a
 
 - Many parts are automatically ignored by the Set methods when inserting content into a document using Office Open XML coercion, so you might as well remove them. These include the theme1.xml file (the document's formatting theme), the document properties parts (core, add-in, and thumbnail), and setting files (including settings, webSettings, and fontTable).
 
-- In the Figure 1 example, text formatting is directly applied (that is, each font and paragraph formatting setting applied individually). But, if you use a style (such as if you want your text to automatically take on the formatting of the Heading 1 style in the destination document) as shown earlier in Figure 2, then you would need part of the styles.xml part as well as a relationship definition for it. For more information, see the topic section [Add objects that use additional Office Open XML parts](#add-objects-that-use-additional-office-open-xml-parts).
+- In the Figure 1 example, text formatting is directly applied (that is, each font and paragraph formatting setting applied individually). But, if you use a style (such as if you want your text to automatically take on the formatting of the Heading 1 style in the destination document) as shown earlier in Figure 2, then you would need part of the styles.xml part as well as a relationship definition for it. For more information, see the topic section [Work with complex content: Additional Office Open XML parts](#work-with-complex-content-additional-office-open-xml-parts).
 
 ## How to insert content at the active selection
 
@@ -259,7 +259,7 @@ function writeContent() {
 }
 ```
 
-## Create your own markup: best practices
+## Create your own markup: Best practices
 
 Let's take a closer look at the markup you need to insert the preceding formatted text example.
 
@@ -580,11 +580,11 @@ Remember, if you're retaining any additional parts referenced in document.xml, y
 
 Before you explore the samples, take a look at a few tips for working with each of these content types.
 
-### Working with styles
+### Work with styles
 
 The same approach to editing the markup that you looked at for the preceding example with directly-formatted text applies when using paragraph styles or table styles to format your content. However, the markup for working with paragraph styles is considerably simpler, so that's the example described here.
 
-#### Editing the markup for content using paragraph styles
+#### Edit the markup for content using paragraph styles
 
 The following markup represents the body content for the styled text example shown in Figure 2.
 
@@ -679,7 +679,7 @@ Be aware that, because a relationship reference is explicitly used ( **r:embed="
 
 When you review the markup, notice the additional namespaces used in the a:blip tag. You'll see in document.xml that the **xmlns:a** namespace (the main drawingML namespace) is dynamically placed at the beginning of the use of drawingML references rather than at the top of the document.xml part. However, the relationships namespace (r) must be retained where it appears at the start of document.xml. Check your picture markup for additional namespace requirements. Remember that you don't have to memorize which types of content require what namespaces, you can easily tell by reviewing the prefixes of the tags throughout document.xml.
 
-### Understanding additional image parts and formatting
+### Understand additional image parts and formatting
 
 When you use some Office picture formatting effects on your image, such as for the image shown in Figure 4, which uses adjusted brightness and contrast settings (in addition to picture styling), a second binary data part for an HD format copy of the image data may be required. This additional HD format is required for formatting considered a layering effect, and the reference to it appears in document.xml similar to the following:
 
