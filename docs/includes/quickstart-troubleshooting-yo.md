@@ -8,4 +8,4 @@
   
    For more information about warnings when running `npm install`, see [Warnings and dependencies in the Node.js and npm world](../overview/npm-warnings-advice.md).
 
-- If you don't see the add-in button in the ribbon (e.g., **Show Task Pane**), select the **Add-ins** button from the **Home** tab, then choose the test add-in.
+- If you don't see the add-in button on the ribbon (e.g., **Show Task Pane**), select the **Add-ins** button from the **Home** ribbon tab, then choose the test add-in.
