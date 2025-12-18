@@ -27,6 +27,9 @@ Tracking ID: 713714633
 
 Friday, Oct 31 2025
 
+#### RESOLUTION TIME
+
+The fix was released Nov 26, 2025
 ### Outlook: Outlook add-ins disappearing from ribbon
 
 Customers are reporting their Outlook add-ins are missing from the ribbon and are also reporting difficulties deploying them in some tenants. 
