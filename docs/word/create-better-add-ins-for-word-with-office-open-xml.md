@@ -11,19 +11,9 @@ ms.localizationpriority: medium
 
 **Provided by:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
-## Overview
-
 Learn how to leverage Office Open XML (OOXML) in your Word add-ins to insert virtually any type of rich content with complete formatting control. Office Open XML enables you to add complex content types that aren't fully supported by standard HTML coercion or the Word JavaScript API alone.
 
-### What you'll learn
-
-- When to use Office Open XML versus other insertion methods (Word JavaScript API, HTML coercion).
-- How to extract and edit OOXML markup for your content.
-- Techniques for inserting formatted text, images, charts, tables, SmartArt, and shapes.
-- Best practices for minimizing markup and optimizing performance.
-- How to work with content controls and bindings for precise content placement.
-
-### Why use Office Open XML?
+## Why use Office Open XML?
 
 Office Open XML is the native file format for Word documents (.docx), which means you can insert virtually any content type with the exact formatting users can apply manually. This approach is essential when:
 

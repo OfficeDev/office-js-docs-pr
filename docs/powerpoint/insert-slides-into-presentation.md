@@ -7,11 +7,11 @@ ms.localizationpriority: medium
 
 # Insert slides from another PowerPoint presentation
 
-Learn how to build PowerPoint add-ins that programmatically insert slides from one presentation into another, giving users powerful slide management capabilities directly within PowerPoint.
+Learn how to build PowerPoint add-ins that programmatically insert slides from one presentation into another, giving users customized slide management capabilities directly within PowerPoint.
 
 ## Overview
 
-PowerPoint add-ins can insert slides from one presentation into the current presentation using PowerPoint's application-specific JavaScript library. You have full control over which slides to insert, where to place them, and whether the inserted slides keep the source presentation's formatting or adopt the target presentation's theme.
+PowerPoint add-ins can insert slides from one presentation into the current presentation using PowerPoint's application-specific JavaScript library. You have control over which slides to insert, where to place them, and whether the inserted slides keep the source presentation's formatting or adopt the target presentation's theme.
 
 This capability is particularly valuable for:
 
