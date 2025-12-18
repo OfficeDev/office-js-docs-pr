@@ -15,7 +15,7 @@ This article provides information about current known issues with Office Add-ins
 
 ### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel.
 
-Customers in targeted release using New-outlook for windows with offline mode enabled were seeing broken images with 5xx errors while inserting images via an add-in. 
+While inserting images via an add-in, customers in targeted releases using New Outlook for Windows with offline mode enabled report seeing broken images with 5xx errors.
 
 #### STATUS 
 
