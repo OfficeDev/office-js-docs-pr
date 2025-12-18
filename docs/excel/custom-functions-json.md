@@ -189,8 +189,8 @@ The `enums` property is an array of [enum](https://www.typescriptlang.org/docs/h
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name` | string | Yes | A brief description of the constant. |
 | `tooltip` | string | No | Additional information about the constant that can be shown as a tooltip in user interfaces. |
-| `numberValue` | number | Yes | The number value of the constant. If the enum `type` is `number`, then this field is required. |
-| `stringValue` | string | Yes | The string value of the constant. If the enum `type` is `string`, then this field is required. |
+| `numberValue` | number | Conditional | The number value of the constant. If the enum `type` is `number`, then this field is required. |
+| `stringValue` | string | Conditional | The string value of the constant. If the enum `type` is `string`, then this field is required. |
 
 ### options
 

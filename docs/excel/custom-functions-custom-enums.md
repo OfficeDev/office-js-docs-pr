@@ -89,7 +89,7 @@ function addNumbers(input: NUMBERS[]): any {
 
 Localizing custom enums is similar to [localizing custom functions](custom-functions-naming.md#localize-custom-functions). You must [manually create your JSON metadata](custom-functions-json.md) and then create a new JSON metadata file for each language.
 
-Note that only the `name` and `tooltip` properties within an enum should be localized to the target language. The `stringValue` or `stringNumber` property should remain unchanged to avoid the need for handling multiple languages within your function body.
+Note that only the `name` and `tooltip` properties within an enum should be localized to the target language. The `stringValue` or `numberValue` property should remain unchanged to avoid the need for handling multiple languages within your function body.
 
 The following JSON snippet shows the Chinese language localized `values` object for the planet Mercury.
 
