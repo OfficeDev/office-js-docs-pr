@@ -39,7 +39,7 @@ Before working with Office Open XML in your Word add-in, you should have:
 - Familiarity with the [Office JavaScript API (Office.js)](../reference/javascript-api-for-office.md).
 - Basic understanding of [Word add-in development](../word/word-add-ins-programming-overview.md).
 - Knowledge of XML and JavaScript/TypeScript.
-- A text or XML editor for viewing and editing OOXML markup (Visual Studio or Visual Studio Code recommended).
+- A text or XML editor for viewing and editing OOXML markup (Visual Studio Code recommended).
 
 ## Understand coercion types
 
