@@ -13,6 +13,20 @@ This article provides information about current known issues with Office Add-ins
 
 ## Active issues in Office add-ins
 
+### New-Outlook: Addin added images were broken for customers with offline mode enabled in the targeted release channel
+
+Customers in targeted release using New-outlook for windows with offline mode enabled were seeing broken images while inserting images via an add-in. 
+
+#### STATUS 
+
+A recent update to support offline mode in New-Outlook for windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
+
+Tracking ID: 713714633
+
+#### START TIME 
+
+Friday, Oct 31 2025
+
 ### Outlook: Outlook add-ins disappearing from ribbon
 
 Customers are reporting their Outlook add-ins are missing from the ribbon and are also reporting difficulties deploying them in some tenants. 
