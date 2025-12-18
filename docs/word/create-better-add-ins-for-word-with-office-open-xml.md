@@ -45,7 +45,7 @@ Before working with Office Open XML in your Word add-in, you should have:
 
 If you're building Office Add-ins to run in Word, you might already know that the Office JavaScript API (Office.js) offers several formats for reading and writing document content. These are called coercion types, and they include plain text, tables, HTML, and Office Open XML.
 
-## Choose the right method for inserting rich content
+## Explore methods for inserting rich content
 
 When you need to add rich content to a Word document—such as images, formatted tables, charts, or formatted text—you have three main options. Choose the approach that best fits your needs:
 
@@ -66,7 +66,7 @@ When you need to add rich content to a Word document—such as images, formatted
 
 Download the code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), which contains ready-to-use Office Open XML markup and Office.js code for all the content types shown in this article.
 
-## What you can insert: Rich content types with Office Open XML
+## Rich content types with Office Open XML
 
 To begin, take a look at some of the content types you can insert using Office Open XML coercion.
 

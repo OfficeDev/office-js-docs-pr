@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Quick start: Build your first Word task pane add-in with Visual Studio
 
-In this quickstart, you'll create a Word task pane add-in that demonstrates how to:
+In this quick start, you'll create a Word task pane add-in that demonstrates how to:
 
 - Insert text at different locations in a document (selection, beginning, end).
 - Use the Word JavaScript API to manipulate document content.
