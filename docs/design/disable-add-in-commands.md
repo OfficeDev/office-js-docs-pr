@@ -53,8 +53,6 @@ By default, a custom button or menu item on the ribbon is available for use when
 
 #### Unified manifest for Microsoft 365
 
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-
 Just add an [`"enabled"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#enabled) property with the value `false` to the control or menu item object. The following shows the basic structure.
 
 ```json

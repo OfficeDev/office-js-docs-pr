@@ -45,9 +45,6 @@ In a text editor, add the following code to the manifest file. If you're using a
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-> [!NOTE]
-> The unified manifest is generally available for production Outlook add-ins. It's available only for preview in Excel, PowerPoint, and Word add-ins.
-
 ```json
 {
     "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json#",

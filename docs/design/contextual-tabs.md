@@ -630,8 +630,6 @@ The add-in's manifest provides a way to create a fallback experience in an add-i
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-
 Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then, mark any control groups, or individual controls, or menu items that shouldn't be visible on platforms that support contextual tabs. You mark a group, control, or menu item object by adding an `"overriddenByRibbonApi"` property to it and setting its value to `true`. The effect of doing so is the following:
 
 - If the add-in runs on an application and platform that support custom contextual tabs, then the marked custom groups, controls, and menu items won't appear on the ribbon. Instead, the custom contextual tab will be created when the add-in calls the `requestCreateControls` method.

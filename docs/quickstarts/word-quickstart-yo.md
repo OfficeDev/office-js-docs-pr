@@ -18,18 +18,15 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 Decide the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
-# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
-
-> [!NOTE]
-> Using the unified manifest for Microsoft 365 with Word add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Word add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)`
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Word`
 
-:::image type="content" source="../images/yo-office-word-json-manifest-preview.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
+:::image type="content" source="../images/yo-office-word-json-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
 
 # [Add-in only manifest](#tab/xmlmanifest)
 

@@ -38,10 +38,7 @@ The previous code is a handler that is registered for the [Office.Worksheet.onDe
 
 When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you specified in the manifest. The configuration depends on what type of manifest you're using. 
 
-- **Unified manifest for Microsoft 365**: The URL of the file is assigned as the value of a "runtimes.code.page" property of the runtime object which has an action object of type "openPage".
-
-   [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-   
+- **Unified manifest for Microsoft 365**: The URL of the file is assigned as the value of a "runtimes.code.page" property of the runtime object which has an action object of type "openPage".  
 - **Add-in only manifest**: The URL of the file is assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your manifest file and locating `<SourceLocation>` inside the `<Action xsi:type="ShowTaskpane">` element.
 
 (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)

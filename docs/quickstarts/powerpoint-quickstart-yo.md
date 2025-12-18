@@ -20,16 +20,13 @@ Decide the type of manifest that you'd like to use, either the **unified manifes
 
 # [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
 
-> [!NOTE]
-> Using the unified manifest for Microsoft 365 with PowerPoint add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production PowerPoint add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
-
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)`
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `PowerPoint`
 
-:::image type="content" source="../images/yo-office-powerpoint-json-manifest-preview.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
+:::image type="content" source="../images/yo-office-powerpoint-json-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
 
 # [Add-in only manifest](#tab/xmlmanifest)
 

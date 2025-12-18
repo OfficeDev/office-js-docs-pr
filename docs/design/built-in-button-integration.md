@@ -21,8 +21,6 @@ Open the tab for the type of manifest your add-in uses for the details of the ma
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-
 ## Insert a built-in control group into a custom tab
 
 To insert a built-in Office control group into a custom tab, add a group object with a [`"builtInGroupId"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#builtintabid) property *instead of an [`"id"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#id) property* to the [`"groups"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item#groups) array of your custom tab object. Set to the ID of the built-in group. See [Find the IDs of controls and control groups](#find-the-ids-of-controls-and-control-groups). *The built-in group object should have no other properties.*
