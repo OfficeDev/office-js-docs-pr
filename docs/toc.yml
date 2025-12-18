@@ -69,6 +69,8 @@
     - name: Manage both a unified manifest and an add-in only manifest version of your add-in
       href: concepts/duplicate-legacy-metaos-add-ins.md
       displayName: Excel, Word, PowerPoint, Outlook
+    - name: Extend your solution to other parts of Microsoft 365
+      href: concepts/extend-to-microsoft-365.md
   - name: Develop
     items:
     - name: Overview
