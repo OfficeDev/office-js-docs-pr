@@ -1,21 +1,53 @@
 ---
-title: Understand when and how to use Office Open XML in your Word add-in
-description: Overview of when and how to use Office Open XML in your Word add-in.
-ms.date: 11/17/2025
+title: Use Office Open XML (OOXML) in Word add-ins for rich content insertion
+description: Learn when and how to use Office Open XML coercion in Word add-ins to insert formatted text, images, charts, SmartArt, tables, and complex content with complete formatting control.
+ms.date: 12/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 
-# Understand when and how to use Office Open XML in your Word add-in
+# Use Office Open XML in your Word add-in
 
 **Provided by:** Stephanie Krieger, Microsoft Corporation | Juan Balmori Labra, Microsoft Corporation
 
+## Overview
+
+Learn how to leverage Office Open XML (OOXML) in your Word add-ins to insert virtually any type of rich content with complete formatting control. Office Open XML enables you to add complex content types that aren't fully supported by standard HTML coercion or the Word JavaScript API alone.
+
+### What you'll learn
+
+- When to use Office Open XML versus other insertion methods (Word JavaScript APIs, HTML coercion).
+- How to extract and edit OOXML markup for your content.
+- Techniques for inserting formatted text, images, charts, tables, SmartArt, and shapes.
+- Best practices for minimizing markup and optimizing performance.
+- How to work with content controls and bindings for precise content placement.
+
+### Why use Office Open XML?
+
+Office Open XML is the native file format for Word documents (.docx), which means you can insert virtually any content type with the exact formatting users can apply manually. This approach is essential when:
+
+- You need formatting options beyond what HTML coercion provides.
+- The Word JavaScript API doesn't yet support your specific content type or formatting.
+- You're building template-based solutions requiring precise formatting control.
+- You need to maintain consistent branding and styling across inserted content.
+
+## Prerequisites
+
+Before working with Office Open XML in your Word add-in, you should have:
+
+- Familiarity with the [Office JavaScript API (Office.js)](../reference/javascript-api-for-office.md).
+- Basic understanding of [Word add-in development](../word/word-add-ins-programming-overview.md).
+- Knowledge of XML and JavaScript/TypeScript.
+- A text or XML editor for viewing and editing OOXML markup (Visual Studio or Visual Studio Code recommended).
+
+## Understand coercion types
+
 If you're building Office Add-ins to run in Word, you might already know that the Office JavaScript API (Office.js) offers several formats for reading and writing document content. These are called coercion types, and they include plain text, tables, HTML, and Office Open XML.
 
-## Options for adding rich content
+## Choose the right method for inserting rich content
 
-So what are your options when you need to add rich content to a document, such as images, formatted tables, charts, or even just formatted text?
+When you need to add rich content to a Word document—such as images, formatted tables, charts, or formatted text—you have three main options. Choose the approach that best fits your needs:
 
 1. **Word JavaScript APIs.** Start with the APIs available through the [WordApi requirement sets](/javascript/api/requirement-sets/word/word-api-requirement-sets) to see if they provide what you need. For an example, see the [Insert formatted text](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/insert-formatted-text.yaml) code snippet. You can try this and other snippets using the [Script Lab add-in](https://appsource.microsoft.com/product/office/wa104380862) in Word! To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
@@ -30,11 +62,11 @@ So what are your options when you need to add rich content to a document, such a
 > [!NOTE]
 > Office Open XML is also the language behind PowerPoint and Excel (and, as of Office 2013, Visio) documents. However, currently, you can coerce content as Office Open XML only in Office Add-ins created for Word. For more information about Office Open XML, including the complete language reference documentation, see the [See also](#see-also) section.
 
-## Download the companion code sample
+## Get started: Download the companion code sample
 
-Download the code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), which contains the Office Open XML markup and Office.js code required for inserting any of the following examples into Word.
+Download the code sample [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml), which contains ready-to-use Office Open XML markup and Office.js code for all the content types shown in this article.
 
-## Learn about content types
+## What you can insert: Rich content types with Office Open XML
 
 To begin, take a look at some of the content types you can insert using Office Open XML coercion.
 
@@ -121,7 +153,7 @@ If you're one of the many add-in developers seeing Office Open XML markup for th
 
 In this topic, you'll use some common scenarios we've been hearing from the Office Add-ins developer community to show you techniques for simplifying Office Open XML for use in your add-in. We'll explore the markup for some types of content shown earlier along with the information you need for minimizing the Office Open XML payload. We'll also look at the code you need for inserting rich content into a document at the active selection and how to use Office Open XML with the bindings object to add or replace content at specified locations.
 
-## Explore the Office Open XML document package
+## Understand the Office Open XML document package structure
 
 When you use [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) to retrieve the Office Open XML for a selection of content (or when you save the document in Word XML Document format), what you're getting isn't just the markup that describes your selected content; it's an entire document with many options and settings that you almost certainly don't need. In fact, if you use that method from a document that contains a task pane add-in, the markup you get even includes your task pane.
 
@@ -159,7 +191,7 @@ Several of the other types of content shown at the start of this topic require a
 
 - In the Figure 1 example, text formatting is directly applied (that is, each font and paragraph formatting setting applied individually). But, if you use a style (such as if you want your text to automatically take on the formatting of the Heading 1 style in the destination document) as shown earlier in Figure 2, then you would need part of the styles.xml part as well as a relationship definition for it. For more information, see the topic section [Add objects that use additional Office Open XML parts](#add-objects-that-use-additional-office-open-xml-parts).
 
-## Insert document content at the selection
+## How to insert content at the active selection
 
 Let's take a look at the minimal Office Open XML markup required for the formatted text example shown in Figure 1 and the JavaScript required for inserting it at the active selection in the document.
 
@@ -528,7 +560,7 @@ As with `setSelectedDataAsync`, you specify the content to be inserted and the c
 > [!TIP]
 > The preceding code is all you need whether you are initially populating or replacing the content in a binding. When you insert a new piece of content at a bound location, the existing content in that binding is automatically replaced. Check out an example of this in the previously-referenced code sample [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings), which provides two separate content samples that you can use interchangeably to populate the same binding.
 
-## Add objects that use additional Office Open XML parts
+## Work with complex content: Additional Office Open XML parts
 
 Many types of content require additional document parts in the Office Open XML package, meaning that they either reference information in another part or the content itself is stored in one or more additional parts and referenced in document.xml.
 
@@ -697,7 +729,7 @@ However, similar to SmartArt, you can delete the colors and styles parts. If you
 
 See the edited markup for the example chart shown in Figure 11 in the [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) code sample.
 
-## Edit the Office Open XML for use in your task pane add-in
+## Step-by-step guide: Edit Office Open XML markup for your add-in
 
 You've already seen how to identify and edit the content in your markup. If the task still seems difficult when you take a look at the massive Office Open XML package generated for your document, following is a quick summary of recommended steps to help you edit that package down quickly.
 
@@ -736,11 +768,20 @@ When using templates with your app, whether the add-in will be resident in the t
 
 ## See also
 
+### Core documentation
+
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
-- The complete language reference and related documentation on Open XML: [Standard ECMA-376: Office Open XML File Formats](https://www.ecma-international.org/publications-and-standards/standards/ecma-376/)
+- [Word JavaScript API overview](../reference/overview/word-add-ins-reference-overview.md)
+- [Word add-ins programming overview](../word/word-add-ins-programming-overview.md)
 - [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
+
+### Office Open XML resources
+
+- [Standard ECMA-376: Office Open XML File Formats](https://www.ecma-international.org/publications-and-standards/standards/ecma-376/) - Complete language reference
 - [Exploring the Office JavaScript API: Data Binding and Custom XML Parts](/archive/msdn-magazine/2013/april/microsoft-office-exploring-the-javascript-api-for-office-data-binding-and-custom-xml-parts)
-- Companion code sample: [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)
-- Other code samples referenced in this article:
-  - [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
-  - [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings)
+
+### Code samples
+
+- [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) - Companion sample
+- [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) - Tool for retrieving and testing markup
+- [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings) - Work with bindings and content controls
