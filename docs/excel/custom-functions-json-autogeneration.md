@@ -1,7 +1,7 @@
 ---
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
-ms.date: 06/19/2025
+ms.date: 12/09/2025
 ms.localizationpriority: medium
 ---
 
@@ -103,6 +103,7 @@ The following JSDoc tags are supported in Excel custom functions.
 - [@requiresParameterAddresses](#requiresParameterAddresses)
 - [@returns](#returns) *{type}*
 - [@streaming](#streaming)
+- [@supportSync](#supportsync)
 - [@volatile](#volatile)
 
 ---
@@ -387,7 +388,7 @@ function add(first: number, second: number): number {
 
 ### @streaming
 
-Used to indicate that a custom function is a streaming function.
+Indicates that a custom function is a streaming function.
 
 The last parameter is of type `CustomFunctions.StreamingInvocation<ResultType>`.
 The function returns `void`.
@@ -396,7 +397,17 @@ Streaming functions don't return values directly, instead they call `setResult(r
 
 Exceptions thrown by a streaming function are ignored. `setResult()` may be called with Error to indicate an error result. For an example of a streaming function and more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function).
 
-Streaming functions can't be marked as [@volatile](#volatile).
+Streaming functions can't be marked as [@supportSync](#supportsync) or [@volatile](#volatile).
+
+<a id="supportsync"></a>
+
+### @supportSync
+
+Indicates that a custom function supports synchronous processes in Excel, like evaluate and conditional format actions.
+
+If the function uses `Excel.RequestContext`, call the `setInvocation` method of `Excel.RequestContext` and pass in the `CustomFunctions.Invocation` object. For more information, see [Synchronous custom functions](custom-functions-synchronous.md).
+
+Synchronous custom functions can't be marked as [@streaming](#streaming) or [@volatile](#volatile). If `@streaming` or `@volatile` tags are used, the `@supportSync` tag is ignored.
 
 <a id="volatile"></a>
 
@@ -404,7 +415,7 @@ Streaming functions can't be marked as [@volatile](#volatile).
 
 A volatile function is one whose result isn't the same from one moment to the next, even if it takes no arguments or the arguments haven't changed. Excel re-evaluates cells that contain volatile functions, together with all dependents, every time that a calculation is done. For this reason, too much reliance on volatile functions can make recalculation times slow, so use them sparingly.
 
-Streaming functions can't be volatile.
+Volatile functions can't be marked as [@streaming](#streaming) or [@supportSync](#supportsync).
 
 The following function is volatile and uses the `@volatile` tag.
 
