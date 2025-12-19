@@ -77,7 +77,7 @@ The following table shows platforms support the various types of Apps for Micros
 | [**Link unfurling (including Stageview)**](/microsoftteams/platform/tabs/tabs-link-unfurling) | Web, Desktop | Web, Desktop | - | -|See notes on [link unfurling](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension) and [Stageview](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension)|
 | [**Adaptive Card Loop components**](/microsoftteams/platform/m365-apps/design-loop-components)|Web, Desktop |Web, Desktop (only for [new Outlook](https://support.microsoft.com/office/getting-started-with-the-new-outlook-for-windows-656bb8d9-5a60-49b2-a98b-ba7822bc7627)) |-|-| Viewable (not composable) in Teams/Outlook mobile preview (iOS, Android). See [Adaptive Card-based Loop components](/microsoftteams/platform/m365-apps/cards-loop-component).|
 | [**Stageview**](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension)|Web, Desktop, Mobile|Web (preview), Desktop (preview)|-|-| Viewable/actionable (not composable) in Outlook mobile preview (iOS, Android). See [Message extensions](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension).|
-| [**Office Add-ins**](../overview/office-add-ins.md) | - | Web, Desktop | - |-| See [office Add-ins platform overview](../overview/office-add-ins.md).|
+| [**Office Add-ins**](../overview/office-add-ins.md) | - | Web, Desktop | - | Web, Desktop | See [office Add-ins platform overview](../overview/office-add-ins.md).|
 | [**Copilot agents**](/microsoft-365-copilot/extensibility/ecosystem) | Web, Desktop | - | Web, Desktop | Web, Desktop | See [Declarative agents for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/overview-declarative-agent) |
 
 ## See also
