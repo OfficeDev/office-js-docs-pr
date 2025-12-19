@@ -1,4 +1,4 @@
----
+﻿---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
 ms.date: 10/27/2025
@@ -115,9 +115,9 @@ The following example shows the contents of a JSON metadata file for an add-in t
       "description": "A function that uses the custom enum as a parameter.", 
       "parameters": [ 
         { 
-          "name": "value", 
+          "name": "planetName", 
           "type": "string", 
-          "customEnumType": "PLANETS" 
+          "customEnumId": "PLANETS" 
         }
       ]
     }
@@ -129,12 +129,12 @@ The following example shows the contents of a JSON metadata file for an add-in t
       "values": [ 
         { 
           "name": "Mercury", 
-          "value": "mercury", 
+          "stringValue": "mercury", 
           "tooltip": "Mercury is the first planet from the sun." 
         }, 
         { 
           "name": "Venus", 
-          "value": "venus", 
+          "stringValue": "venus", 
           "tooltip": "Venus is the second planet from the sun." 
         }
       ] 
@@ -187,9 +187,10 @@ The `enums` property is an array of [enum](https://www.typescriptlang.org/docs/h
 
 | Property      | Data type | Required | Description                                                                                                                                                                      |
 | :------------ | :-------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name` | string    | Yes       | A brief description of the constant. |
-| `tooltip` | string    | No       | Additional information about the constant that can be shown as a tooltip in user interfaces. |
-| `value` | string    | Yes      | The value of the constant. |
+| `name` | string | Yes | A brief description of the constant. |
+| `tooltip` | string | No | Additional information about the constant that can be shown as a tooltip in user interfaces. |
+| `numberValue` | number | Conditional | The number value of the constant. If the enum `type` is `number`, then this field is required. |
+| `stringValue` | string | Conditional | The string value of the constant. If the enum `type` is `string`, then this field is required. |
 
 ### options
 
@@ -219,7 +220,7 @@ The `parameters` property is an array of parameter objects. The following table 
 |  `name`  |  string  |  Yes  |  The name of the parameter. This name is displayed in Excel's IntelliSense.  |
 |  `type`  |  string  |  No  |  The data type of the parameter. Can be `boolean`, `number`, `string`, or `any`, which allows you to use of any of the previous three types. If this property is not specified, the data type defaults to `any`. |
 | `cellValueType` | string | No | A subfield of the `type` property. Specifies the Excel data types accepted by the custom function. Accepts the case-insensitive values `cellvalue`, `booleancellvalue`, `doublecellvalue`, `entitycellvalue`, `errorcellvalue`, `linkedentitycellvalue`, `localimagecellvalue`, `stringcellvalue`, and `webimagecellvalue`. <br/><br/>The `type` field must have the value `any` to use the `cellValueType` subfield. |
-| `customEnumType` | string | No | The `id` of the enum in the `enums` array. This associates the custom enum with the function and enables Excel to display the enum members in the formula AutoComplete menu. |
+| `customEnumId` | string | No | The `id` of the enum in the `enums` array. This associates the custom enum with the function and enables Excel to display the enum members in the formula AutoComplete menu. |
 |  `optional`  | Boolean | No | If `true`, the parameter is optional. |
 |`repeating`| Boolean | No | If `true`, parameters populate from a specified array. Note that all repeating parameters are considered optional parameters by definition.  |
 
@@ -340,12 +341,12 @@ The following JSON snippet shows the metadata for two enums: a `PLANETS` enum  t
     "values": [ 
       { 
         "name": "Mercury", 
-        "value": "mercury", 
+        "stringValue": "mercury", 
         "tooltip": "Mercury is the first planet from the sun." 
       }, 
       { 
         "name": "Venus", 
-        "value": "venus", 
+        "stringValue": "venus", 
         "tooltip": "Venus is the second planet from the sun." 
       }
     ] 
@@ -356,12 +357,12 @@ The following JSON snippet shows the metadata for two enums: a `PLANETS` enum  t
     "values": [ 
       { 
         "name": "Monday",
-        "value": 1,
+        "numberValue": 1,
         "tooltip": "Monday is the first working day of a week."
       },
       { 
         "name": "Tuesday",
-        "value": 2,
+        "numberValue": 2,
         "tooltip": "Tuesday is the second working day of a week."
       }
     ] 
@@ -371,11 +372,11 @@ The following JSON snippet shows the metadata for two enums: a `PLANETS` enum  t
 
 Each constant in the `values` array of the enum is an object with the following properties.
 
-- **value**: The value of the constant.
+- **stringValue** or **numberValue**: The string or number value of the constant. If the enum type is `number`, then `numberValue` is required. If the enum type is `string`, then `stringValue` is required.
 - **name**: A brief description of the constant.
 - **tooltip** (Optional): Additional information about the constant that can be shown as a tooltip in user interfaces.
 
-To associate the custom enum with a function, add the property `customEnumType` to the `parameters` object. The `customEnumType` value should match the `id` of the enum. Note that the `customEnumType` value is not case-sensitive. The following JSON snippet shows a `functions` object associated with the `PLANETS` enum.
+To associate the custom enum with a function, add the property `customEnumId` to the `parameters` object. The `customEnumId` value should match the `id` of the enum. Note that the `customEnumId` value is not case-sensitive. The following JSON snippet shows a `functions` object associated with the `PLANETS` enum.
 
 ```json
 "functions": [ 
@@ -385,9 +386,9 @@ To associate the custom enum with a function, add the property `customEnumType` 
     "name": "GETPLANETS", 
     "parameters": [ 
       { 
-        "name": "value", 
+        "name": "planetName", 
         "type": "string", 
-        "customEnumType": "PLANETS" 
+        "customEnumId": "PLANETS" 
       }
     ], 
     "result": {} 

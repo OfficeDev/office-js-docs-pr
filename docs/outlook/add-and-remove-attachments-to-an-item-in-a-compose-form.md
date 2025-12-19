@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 03/12/2025
+ms.date: 12/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -236,6 +236,18 @@ function removeAttachment(attachmentId) {
 
 > [!TIP]
 > The `removeAttachmentAsync` method doesn't remove inline attachments from a mail item. To remove an inline attachment, first get the item's body, then remove any references of the attachment from its contents. Use the [Office.Body](/javascript/api/outlook/office.body) APIs to get and set the body of an item.
+
+## Identify inline images in the HTML body of a mail item
+
+While you should call `getAttachmentsAsync` to identify the attachments of a mail item, there may be scenarios where you need to locate an inline image directly from the HTML body of a mail item. For example, you may need to determine the position of an inline image in the body of a message or remove an inline attachment from a message.
+
+In the HTML body of a mail item, inline images are represented by a content ID (`cid`) in the `src` attribute of its corresponding `<img>` element. The `cid` matches the value returned by the [contentId](/javascript/api/outlook/office.attachmentdetailscompose#outlook-office-attachmentdetailscompose-contentid-member) property of an attachment when you call `getAttachmentsAsync`.
+
+The following is an example.
+
+```html
+<img src="cid:ee058cc2-ad96-485f-95c7-44b2f40cb987" style="max-width: 1281px;" originalsrc="cid:ee058cc2-ad96-485f-95c7-44b2f40cb987" size="19720" contenttype="image/png">
+```
 
 ## See also
 

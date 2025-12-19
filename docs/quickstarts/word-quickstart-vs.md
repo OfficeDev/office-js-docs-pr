@@ -1,14 +1,29 @@
 ---
-title: Build your first Word task pane add-in with Visual Studio
-description: Learn how to build a simple Word task pane add-in by using the Office JavaScript API and a Visual Studio template.
-ms.date: 11/06/2025
+title: 'Quick start: Build your first Word task pane add-in using Visual Studio'
+description: Create a Word task pane add-in using Visual Studio. Learn to insert text, manipulate content, and use the Word JavaScript API with step-by-step instructions.
+ms.date: 12/18/2025
 ms.service: word
 ms.localizationpriority: high
 ---
 
-# Build your first Word task pane add-in with Visual Studio
+# Quick start: Build your first Word task pane add-in with Visual Studio
 
-In this article, you'll walk through the process of building a Word task pane add-in.
+In this quick start, you'll create a Word task pane add-in that demonstrates how to:
+
+- Insert text at different locations in a document (selection, beginning, end).
+- Use the Word JavaScript API to manipulate document content.
+- Set up a Visual Studio project for Office Add-in development.
+
+## What you'll build
+
+You'll create a simple but functional task pane add-in with three buttons that insert inspirational quotes into a Word document at different positions. This hands-on quick start teaches you the fundamentals of Word add-in development.
+
+### Key features you'll implement
+
+- Insert content at the current selection.
+- Insert content at the beginning of the document.
+- Insert content at the end of the document.
+- Handle asynchronous operations with the Word JavaScript API.
 
 ## Prerequisites
 
@@ -22,161 +37,165 @@ In this article, you'll walk through the process of building a Word task pane ad
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-## Update the code
+## Step 1: Update the HTML markup
 
-1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
+**Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
-    ```html
-    <body>
-        <div id="content-header">
-            <div class="padding">
-                <h1>Welcome</h1>
-            </div>
+```html
+<body>
+    <div id="content-header">
+        <div class="padding">
+            <h1>Welcome</h1>
         </div>
-        <div id="content-main">
-            <div class="padding">
-                <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
-                <br />
-                <h3>Try it out</h3>
-                <button id="emerson">Add quote from Ralph Waldo Emerson</button>
-                <br /><br />
-                <button id="checkhov">Add quote from Anton Chekhov</button>
-                <br /><br />
-                <button id="proverb">Add Chinese proverb</button>
-            </div>
+    </div>
+    <div id="content-main">
+        <div class="padding">
+            <p>Choose the buttons below to add boilerplate text to the document by using the Word JavaScript API.</p>
+            <br />
+            <h3>Try it out</h3>
+            <button id="emerson">Add quote from Ralph Waldo Emerson</button>
+            <br /><br />
+            <button id="checkhov">Add quote from Anton Chekhov</button>
+            <br /><br />
+            <button id="proverb">Add Chinese proverb</button>
         </div>
-        <br />
-        <div id="supportedVersion"/>
-    </body>
-    ```
+    </div>
+    <br />
+    <div id="supportedVersion"/>
+</body>
+```
 
-1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
+## Step 2: Add the JavaScript functionality
 
-    ```js
-    'use strict';
+Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
-    (function () {
+```js
+'use strict';
 
-        Office.onReady(function() {
-            // Office is ready.
-            $(document).ready(function () {
-                // The document is ready.
-                // Use this to check whether the API is supported in the Word client.
-                if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
-                    // Do something that is only available via the new APIs.
-                    $('#emerson').on("click", insertEmersonQuoteAtSelection);
-                    $('#checkhov').on("click", insertChekhovQuoteAtTheBeginning);
-                    $('#proverb').on("click", insertChineseProverbAtTheEnd);
-                    $('#supportedVersion').html('This code is using Word 2016 or later.');
-                } else {
-                    // Lets you know that this code will not work with your version of Word.
-                    $('#supportedVersion').html('This code requires Word 2016 or later.');
-                }
-            });
+(function () {
+
+    Office.onReady(function() {
+        // Office is ready.
+        $(document).ready(function () {
+            // The document is ready.
+            // Use this to check whether the API is supported in the Word client.
+            if (Office.context.requirements.isSetSupported('WordApi', '1.1')) {
+                // Do something that is only available via the new APIs.
+                $('#emerson').on("click", insertEmersonQuoteAtSelection);
+                $('#checkhov').on("click", insertChekhovQuoteAtTheBeginning);
+                $('#proverb').on("click", insertChineseProverbAtTheEnd);
+                $('#supportedVersion').html('This code is using Word 2016 or later.');
+            } else {
+                // Lets you know that this code will not work with your version of Word.
+                $('#supportedVersion').html('This code requires Word 2016 or later.');
+            }
         });
+    });
 
-        async function insertEmersonQuoteAtSelection() {
-            await Word.run(async (context) => {
+    async function insertEmersonQuoteAtSelection() {
+        await Word.run(async (context) => {
 
-                // Create a proxy object for the document.
-                const thisDocument = context.document;
+            // Create a proxy object for the document.
+            const thisDocument = context.document;
 
-                // Queue a command to get the current selection.
-                // Create a proxy range object for the selection.
-                const range = thisDocument.getSelection();
+            // Queue a command to get the current selection.
+            // Create a proxy range object for the selection.
+            const range = thisDocument.getSelection();
 
-                // Queue a command to replace the selected text.
-                range.insertText('"Hitch your wagon to a star." - Ralph Waldo Emerson\n', Word.InsertLocation.replace);
+            // Queue a command to replace the selected text.
+            range.insertText('"Hitch your wagon to a star." - Ralph Waldo Emerson\n', Word.InsertLocation.replace);
 
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                await context.sync();
-                console.log('Added a quote from Ralph Waldo Emerson.');
-            })
-            .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-                }
-            });
-        }
-
-        async function insertChekhovQuoteAtTheBeginning() {
-            await Word.run(async (context) => {
-
-                // Create a proxy object for the document body.
-                const body = context.document.body;
-
-                // Queue a command to insert text at the start of the document body.
-                body.insertText('"Knowledge is of no value unless you put it into practice." - Anton Chekhov\n', Word.InsertLocation.start);
-
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                await context.sync();
-                console.log('Added a quote from Anton Chekhov.');
-            })
-            .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-                }
-            });
-        }
-
-        async function insertChineseProverbAtTheEnd() {
-            await Word.run(async (context) => {
-
-                // Create a proxy object for the document body.
-                const body = context.document.body;
-
-                // Queue a command to insert text at the end of the document body.
-                body.insertText('"To know the road ahead, ask those coming back." - Chinese proverb\n', Word.InsertLocation.end);
-
-                // Synchronize the document state by executing the queued commands,
-                // and return a promise to indicate task completion.
-                await context.sync();
-                console.log('Added a quote from a Chinese proverb.');
-            })
-            .catch(function (error) {
-                console.log('Error: ' + JSON.stringify(error));
-                if (error instanceof OfficeExtension.Error) {
-                    console.log('Debug info: ' + JSON.stringify(error.debugInfo));
-                }
-            });
-        }
-    })();
-    ```
-
-1. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
-
-    ```css
-    #content-header {
-        background: #2a8dd4;
-        color: #fff;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        overflow: hidden;
+            // Synchronize the document state by executing the queued commands,
+            // and return a promise to indicate task completion.
+            await context.sync();
+            console.log('Added a quote from Ralph Waldo Emerson.');
+        })
+        .catch(function (error) {
+            console.log('Error: ' + JSON.stringify(error));
+            if (error instanceof OfficeExtension.Error) {
+                console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+            }
+        });
     }
 
-    #content-main {
-        background: #fff;
-        position: fixed;
-        top: 80px;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: auto;
+    async function insertChekhovQuoteAtTheBeginning() {
+        await Word.run(async (context) => {
+
+            // Create a proxy object for the document body.
+            const body = context.document.body;
+
+            // Queue a command to insert text at the start of the document body.
+            body.insertText('"Knowledge is of no value unless you put it into practice." - Anton Chekhov\n', Word.InsertLocation.start);
+
+            // Synchronize the document state by executing the queued commands,
+            // and return a promise to indicate task completion.
+            await context.sync();
+            console.log('Added a quote from Anton Chekhov.');
+        })
+        .catch(function (error) {
+            console.log('Error: ' + JSON.stringify(error));
+            if (error instanceof OfficeExtension.Error) {
+                console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+            }
+        });
     }
 
-    .padding {
-        padding: 15px;
-    }
-    ```
+    async function insertChineseProverbAtTheEnd() {
+        await Word.run(async (context) => {
 
-## Update the manifest
+            // Create a proxy object for the document body.
+            const body = context.document.body;
+
+            // Queue a command to insert text at the end of the document body.
+            body.insertText('"To know the road ahead, ask those coming back." - Chinese proverb\n', Word.InsertLocation.end);
+
+            // Synchronize the document state by executing the queued commands,
+            // and return a promise to indicate task completion.
+            await context.sync();
+            console.log('Added a quote from a Chinese proverb.');
+        })
+        .catch(function (error) {
+            console.log('Error: ' + JSON.stringify(error));
+            if (error instanceof OfficeExtension.Error) {
+                console.log('Debug info: ' + JSON.stringify(error.debugInfo));
+            }
+        });
+    }
+})();
+```
+
+## Step 3: Add custom styling
+
+Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
+
+```css
+#content-header {
+    background: #2a8dd4;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+}
+
+#content-main {
+    background: #fff;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.padding {
+    padding: 15px;
+}
+```
+
+## Step 4: Update the add-in manifest
 
 1. Open the add-in only manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
@@ -224,12 +243,21 @@ Congratulations, you've successfully created a Word task pane add-in! Next, to l
 ## Code samples
 
 - [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world): Learn how to build a simple Office Add-in with only a manifest, HTML web page, and a logo.
+- [Word add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word): Explore more advanced Word add-in examples
 
 ## See also
 
+### Core concepts
+
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Develop Office Add-ins](../develop/develop-overview.md)
 - [Word add-ins overview](../word/word-add-ins-programming-overview.md)
-- [Word add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+
+### API reference and tools
+
 - [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)
+- [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md)
+
+### Publishing and deployment
+
 - [Publish your add-in using Visual Studio](../publish/package-your-add-in-using-visual-studio.md)
