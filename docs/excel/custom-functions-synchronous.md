@@ -1,11 +1,16 @@
 ---
 title: Synchronous custom functions
 description: Use synchronous custom functions to support evaluation and conditional format processes in Excel.
-ms.date: 12/09/2025
+ms.date: 01/05/2026
 ms.localizationpriority: medium
 ---
 
-# Synchronous custom functions
+# Synchronous custom functions (preview)
+
+> [!NOTE]
+> Synchronous custom functions are available in public preview and subject to change based on feedback. Do not use synchronous custom functions in a production add-in.
+>
+> [!include[Preview APIs note](../includes/using-preview-apis.md)]
 
 Synchronous custom functions enable the evaluation and conditional format processes to run in Excel simultaneously with the custom function. Enable synchronous support when your custom function needs to run in tandem with any of the Excel processes listed in this article. Custom functions that don't support synchronous operations return an error such as `#CALC!` or `#VALUE!` when they run at the same time as these Excel processes.
 
