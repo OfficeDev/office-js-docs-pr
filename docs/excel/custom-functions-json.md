@@ -1,7 +1,7 @@
 ﻿---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
-ms.date: 12/09/2025
+ms.date: 01/05/2026
 ms.localizationpriority: medium
 ---
 
@@ -207,7 +207,7 @@ The `options` object enables you to customize some aspects of how and when Excel
 | `requiresStreamAddress` | Boolean | No <br/><br/>Default value is `false`. | If `true`, the function can access the address of the cell calling the streaming function. The `address` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the address of the cell that invoked your streaming function. The function must also have `stream` set to `true`. |
 | `requiresStreamParameterAddresses` | Boolean | No <br/><br/>Default value is `false`. | If `true`, the function can access the parameter addresses of the cell calling the streaming function. The `parameterAddresses` property of the [invocation parameter](custom-functions-parameter-options.md#invocation-parameter) contains the parameter addresses for your streaming function. The function must also have `stream` set to `true`. |
 | `stream`          | Boolean   | No<br/><br/>Default value is `false`.  | If `true`, the function can output repeatedly to the cell even when invoked only once. This option is useful for rapidly-changing data sources, such as a stock price. The function should have no `return` statement. Instead, the result value is passed as the argument of the `StreamingInvocation.setResult` callback function. For more information, see [Make a streaming function](custom-functions-web-reqs.md#make-a-streaming-function). |
-| `supportSync`     | Boolean   | No <br/><br/>Default value is `false`. | If `true`, the function supports synchronous processes in Excel. A function can only use one of the following three properties: `stream`, `supportSync` or `volatile`. If `supportSync` is combined with `stream` or `volatile`, `supportSync` is ignored. For more information, see [Synchronous custom functions](custom-functions-synchronous.md). |
+| `supportSync` (preview) | Boolean   | No <br/><br/>Default value is `false`. | If `true`, the function supports synchronous processes in Excel. A function can only use one of the following three properties: `stream`, `supportSync` or `volatile`. If `supportSync` is combined with `stream` or `volatile`, `supportSync` is ignored. For more information, see [Synchronous custom functions](custom-functions-synchronous.md). Note: This property is in preview and shouldn't be used in a production add-in. |
 | `volatile`        | Boolean   | No <br/><br/>Default value is `false`. | If `true`, the function recalculates each time Excel recalculates, instead of only when the formula's dependent values have changed. A volatile function can't use the `stream` property. If the `stream` and `volatile` properties are both set to `true`, the volatile property is ignored. |
 
 ### parameters
