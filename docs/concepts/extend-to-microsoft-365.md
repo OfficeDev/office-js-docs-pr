@@ -19,17 +19,15 @@ Use this packaging system to combine closely related functionality and experienc
 - Include similar handlers for similar events, such as a user being added to a Teams conversation and a recipient being added to an Outlook message.
 - Record in a database discrete user actions in an Office application, and view the accumulated data in a custom tab that is opened from the **App bar** in Teams, Outlook, or Microsoft 365 Copilot.
 
-## Cross application development features
-
 The following sections introduce some of the Microsoft 365 development features that cross the boundaries between Office, Teams, and Copilot. For a matrix of support on various platforms, see [Platform support](#platform-support).
 
-### Personal tabs
+## Personal tabs
 
 Reach your users where they are, right in the context of their work by extending your web app as a [personal tab](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab) application that also runs in Outlook, Teams, and the Microsoft 365 Copilot application. 
 
 :::image type="content" source="../images/outlook-office-teams-personal-tab.png" alt-text="The screenshot is an example that shows Personal tab running in Outlook, Microsoft 365, and Teams.":::
 
-On mobile, you can test and debug your Teams personal tab running on Microsoft 365 for [iOS](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#microsoft-365-for-ios) and [Android app](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#microsoft-365-for-android-app), in addition to Outlook for [iOS](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#outlook-app-for-ios) and [Android app](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#outlook-for-android-app).
+The following images show the personal tab running on Microsoft 365 for [iOS](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#microsoft-365-for-ios) and [Android app](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#microsoft-365-for-android-app). (It will also run in Outlook for [iOS](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#outlook-app-for-ios) and [Android app](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#outlook-for-android-app).)
 
 # [Android](#tab/Android)
 
@@ -44,7 +42,7 @@ On mobile, you can test and debug your Teams personal tab running on Microsoft 3
 > [!TIP]
 > Personal tabs can be built and hosted with [SharePoint Framework](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab#sharepoint-framework-spfx-apps) (SPFx) version 1.16 and later as an alternative to hosting them on a web server or web service. See [Add Teams tab to SharePoint](/microsoftteams/platform/tabs/how-to/tabs-in-sharepoint) and [Build Microsoft Teams tab using SharePoint Framework - Tutorial](/sharepoint/dev/spfx/web-parts/get-started/using-web-part-as-ms-teams-tab). Although these articles use the term "Teams tab" they apply also to personal tabs in Outlook and Microsoft 365 Copilot.
 
-### Message extensions and link unfurling
+## Message extensions and link unfurling
 
 Message extensions enable users to interact with your web service using buttons and forms. Users can search or initiate actions in an external system from chat messages in Teams and email messages in Outlook.
 
@@ -56,15 +54,15 @@ Link unfurling works in both Outlook messages and Teams chat messages. You can a
 
 For more information, see [Build message extensions](/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) and [Teams message extensions](/microsoftteams/platform/m365-apps/extend-m365-teams-message-extension). See also the guidance in [Scenarios for creating an Outlook add-in and a message extension](/microsoftteams/platform/m365-apps/me-or-outlook-add-in) to learn when to use a Outlook add-in and when to use a message extension in Outlook.
 
-### Meeting apps
+## Meeting apps
 
-Meeting apps are essentially tab apps that are designed to foster collaboration before, during, and after meetings. You can configure and add meeting apps to the Teams meetings scheduled from Outlook and also run meeting apps within the Outlook calendar.
+Meeting apps are essentially [personal tabs](#personal-tabs) that are designed to foster collaboration before, during, and after meetings. You can configure and add meeting apps to the Teams meetings scheduled from Outlook and also run meeting apps within the Outlook calendar.
 
 :::image type="content" source="../images/outlook-teams-meeting-app.png" alt-text="Screenshot of a sample meeting app running in both Teams and Outlook":::
 
 For more information, see [Apps for meetings and calls](/microsoftteams/platform/apps-in-teams-meetings/teams-apps-in-meetings) and [Extend a meeting app to Outlook](/microsoftteams/platform/m365-apps/extend-m365-meeting-app).
 
-### Platform support 
+## Platform support 
 
 The following table shows platforms support the various types of Apps for Microsoft 365.
 

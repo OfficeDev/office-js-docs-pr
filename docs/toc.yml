@@ -71,6 +71,7 @@
       displayName: Excel, Word, PowerPoint, Outlook
     - name: Extend your solution to other parts of Microsoft 365
       href: concepts/extend-to-microsoft-365.md
+      displayName: Excel, Word, PowerPoint, Outlook, Copilot, Teams
   - name: Develop
     items:
     - name: Overview
