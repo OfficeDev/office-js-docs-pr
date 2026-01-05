@@ -5,7 +5,7 @@ ms.date: 01/05/2026
 ms.localizationpriority: medium
 ---
 
-# Synchronous custom functions
+# Synchronous custom functions (preview)
 
 > [!NOTE]
 > Synchronous custom functions are available in public preview and subject to change based on feedback. Do not use synchronous custom functions in a production add-in.
