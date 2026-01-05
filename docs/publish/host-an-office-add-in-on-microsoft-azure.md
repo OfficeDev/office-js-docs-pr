@@ -11,10 +11,7 @@ The simplest Office Add-in is made up of an manifest file and an HTML page. The 
 
 This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/test-debug-non-local-server.md) for testing in an Office client application using Visual Studio. 
 
-> [!IMPORTANT]
-> Beginning with Visual Studio 2026, Office Add-in development and publishing in Visual Studio is deprecated and will be removed in a future release. Support for Office Add-in development in a different form may be added to a future version of Visual Studio.
->
-> We recommend creating Office Add-in projects with the [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md) or the [Yeoman Generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+[!INCLUDE [Deprecation warning for add-in projects in Visual Studio](../includes/vs-deprecation.md)]
 
 For information about publishing an Office Add-in that you created using Visual Studio Code to Azure, see [Publish an add-in using Visual Studio Code and Azure](publish-add-in-vs-code.md).
 
