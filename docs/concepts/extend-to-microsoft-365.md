@@ -1,18 +1,18 @@
 ---
 title: Extend your solution to other parts of Microsoft 365
 description: Learn how an Office Add-ins can be combined with other extensions into an app for Microsoft 365
-ms.date: 01/17/2025
+ms.date: 01/17/2026
 ms.localizationpriority: medium
 ---
 
 # Extend your solution to other parts of Microsoft 365
 
-An Office Add-in is an App for Microsoft 365, just as a custom Teams app and a custom Copilot agent are. This enables you to combine an add-in with one or more of these other types of Microsoft 365 extensions. Your combination solution has a single manifest that configures all of its parts, and a single app package &mdash; a ZIP file &mdash; that is the unit of sideloading and of publishing to Microsoft Marketplace or the Microsoft 365 admin center.
+An Office Add-in is an App for Microsoft 365, just as a custom Teams app and a custom Copilot agent are. This enables you to combine an add-in with one or more of these other types of Microsoft 365 extensions. Your combination solution has a single manifest that configures all of its parts, and a single app package&mdash;a ZIP file&mdash;that is the unit of sideloading and of publishing to Microsoft Marketplace or the Microsoft 365 admin center.
 
 > [!TIP]
 > You can't include a [SharePoint Framework app](/sharepoint/dev/spfx/sharepoint-framework-overview) in the Microsoft extension's app package, but you can bundle your Microsoft 365 extension with one or more SharePoint Framework apps into a single Software as a Service (SaaS) offering. The SaaS is installed and managed as a unit using the integrated apps portal in the admin center. For more information, see [SaaS linked apps](/microsoft-365/admin/manage/saas-linked-apps) and [Integrated Apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps).
 
-We recommend that you take advantage of this packaging system to combine closely related functionality and experiences into a single app for Microsoft 365. The following are just a few of the scenarios. 
+Use this packaging system to combine closely related functionality and experiences into a single app for Microsoft 365. Some possible scenarios include: 
 
 - Make a page experience available in both your add-in task pane and in a custom personal tab in one or more of the Microsoft 365 applications with an **App bar**: Teams, Outlook, and the Microsoft 365 Copilot application.
 - Create a Copilot agent that gets Microsoft Graph data and is available in Excel and Teams. 
