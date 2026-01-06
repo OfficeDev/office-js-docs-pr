@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Persist add-in state and settings
 
-Office Add-ins are essentially web applications running in the stateless environment of a browser iframe or a webview control. For brevity, this article uses "browser control" to mean "browser or webview control." When in use, your add-in might need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in might have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To persist data, you can:
+Office Add-ins are essentially web applications running in the stateless environment of a browser iframe or a webview control. For brevity, this article uses "browser control" to mean "browser or webview control". When in use, your add-in might need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in might have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To persist data, you can:
 
 - [Use techniques provided by the underlying browser control](#browser-storage).
 - [Use the application-specific Office JavaScript APIs for Excel, Word, and Outlook that store data](#application-specific-settings-and-persistence).
