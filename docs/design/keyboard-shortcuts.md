@@ -1,7 +1,7 @@
 ﻿---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 01/06/2025
+ms.date: 01/06/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
