@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 11/06/2025
+ms.date: 01/06/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -283,7 +283,7 @@ For the best user experience, we recommend that you minimize keyboard shortcut c
 
 You may need to localize your custom keyboard shortcuts in the following scenarios.
 
-- Your add-in supports multiple locales.
+- Your add-in supports another locale.
 - Your add-in supports different alphabets, writing systems, or keyboard layouts.
 
 Guidance on how to localize your keyboard shortcuts varies depending on the type of manifest your add-in uses.
@@ -299,10 +299,10 @@ To learn how to localize your custom keyboard shortcuts with the unified app man
 
 ### Update the shortcuts JSON file
 
-To define localized strings for your custom shortcuts, you must specify tokens in your add-in's shortcuts JSON file. The tokens name strings in the localization resource file, which you'll create in a later step. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note the following about this markup.
+To define an alternative keyboard binding for another locale, you must specify tokens in your add-in's shortcuts JSON file. The tokens name reference strings in the shortcuts JSON file and the localization resource file, which you'll create in a later step. The following is an example that assigns a keyboard shortcut to a function (defined elsewhere) that displays the add-in's task pane. Note the following about this markup.
 
-- The tokens must have the format **${resource.*name-of-resource*}**. The resource name must match the applicable locale string specified in the localization resource file.
-- Default strings *must be defined in the extended overrides file itself*. Default strings are used when the locale of the Microsoft 365 host application doesn't match any of the *ll-cc* properties in the resources file. Defining the default strings directly in the extended overrides file ensures that Microsoft 365 doesn't download the resource file when the locale of the Microsoft 365 application matches the default locale of the add-in (as specified in the manifest).
+- The tokens must have the format **${resource.*name-of-resource*}**. The resource name must match the applicable string specified in the shortcuts and localization resource files.
+- Default strings *must be defined in the shortcuts JSON file itself*. Default strings are used when the locale of the Microsoft 365 host application doesn't match the other *ll-cc* property in the localization resource file. Defining the default strings directly in the shortcuts file ensures that Microsoft 365 doesn't download the localization resource file when the locale of the Microsoft 365 application matches the default locale of the add-in (as specified in the manifest).
 
 ```json
 {
@@ -310,25 +310,27 @@ To define localized strings for your custom shortcuts, you must specify tokens i
         {
             "id": "ShowTaskpane",
             "type": "ExecuteFunction",
-            "name": "${resource.ShowTaskpane_action_name}"
+            "name": "${resource.showTaskpane_action_name}"
         }
     ],
     "shortcuts": [
         {
             "action": "ShowTaskpane",
             "key": {
-                "default": "${resource.ShowTaskpane_default_shortcut}"
+                "default": "${resource.showTaskpane_default_key}"
             }
         }
     ],
     "resources": { 
-        "default": { 
-            "ShowTaskpane_default_shortcut": { 
-                "value": "CTRL+SHIFT+A"
-            }, 
-            "ShowTaskpane_action_name": {
-                "value": "Show task pane for add-in"
-            } 
+        "default": {
+            "showTaskpane_action_name": {
+                "value": "Show task pane",
+                "comment": "Display name for the ShowTaskpane action."
+            },
+            "showTaskpane_default_key": { 
+                "value": "Ctrl+Shift+A",
+                "comment": "Default shortcut to show the task pane."
+            }
         }
     }
 }
@@ -336,27 +338,19 @@ To define localized strings for your custom shortcuts, you must specify tokens i
 
 ### Create a localization resource file
 
-The localization resource file, which is also JSON-formatted, has a top-level `resources` property that's divided into subproperties by locale. For each locale, a string is assigned to each token that was used in the shortcuts JSON file. The following is an example which has strings for `en-us` and `fr-fr`. In this example, the keyboard shortcut is the same in both locales, but that won't always be the case, especially when you're localizing for locales that have a different alphabet or writing system, and hence a different keyboard.
+While the default shortcuts and strings are defined in the shortcuts JSON file, the localization resource file configures alternative keyboard shortcuts for one additional locale. The localized strings defined in this file are used when the language of the Microsoft 365 host application matches the **ll-cc** property specified in the file.
+
+Similar to the shortcuts file, the localization resource file is also JSON-formatted and includes strings for the alternative locale. A string is assigned to each token that was used in the shortcuts JSON file. The following is an example of alternative strings for `es-es`. Note that keyboard shortcuts may differ from the default when localizing for locales that have a different alphabet or writing system, and hence a different keyboard.
 
 ```json
 {
-    "resources":{ 
-        "en-us": { 
-            "ShowTaskpane_default_shortcut": {
-                "value": "CTRL+SHIFT+A"
-            }, 
-            "ShowTaskpane_action_name": {
-                "value": "Show task pane for add-in"
-            }, 
-        },
-        "fr-fr": { 
-            "ShowTaskpane_default_shortcut": {
-                "value": "CTRL+SHIFT+A"
-            }, 
-            "ShowTaskpane_action_name": {
-                "value": "Afficher le volet de tâche pour add-in"
-              } 
-        }
+    "showTaskpane_action_name": {
+        "value": "(es-es) Mostrar panel de tareas",
+        "comment": "Display name for the ShowTaskpane action."
+    },
+    "showTaskpane_default_key": {
+        "value": "Ctrl+Shift+A",
+        "comment": "(es-es) Shortcut to show the task pane."
     }
 }
 ```
