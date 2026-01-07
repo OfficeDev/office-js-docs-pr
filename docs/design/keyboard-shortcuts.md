@@ -261,8 +261,9 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 There are many keyboard shortcuts that are already in use by Microsoft 365. Avoid registering keyboard shortcuts for your add-in that are already in use. However, there may be some instances where it's necessary to override existing keyboard shortcuts or handle conflicts between multiple add-ins that have registered the same keyboard shortcut.
 
 In the case of a conflict, the user will see a dialog box the first time they attempt to use a conflicting keyboard shortcut. Note that the source of the text for the add-in option that's displayed in this dialog varies depending on the type of manifest your add-in uses.
-    - **Unified app manifest for Microsoft 365**: The value of the `"extensions.runtimes.actions.displayName"` property in the **manifest.json** file.
-    - **Add-in only manifest**: The value of the `"actions.name"` property in the shortcuts JSON file.
+
+- **Unified app manifest for Microsoft 365**: The value of the `"extensions.runtimes.actions.displayName"` property in the **manifest.json** file.
+- **Add-in only manifest**: The value of the `"actions.name"` property in the shortcuts JSON file.
 
 :::image type="content" source="../images/add-in-shortcut-conflict-modal.png" alt-text="A conflict modal with two different actions for a single shortcut.":::
 
