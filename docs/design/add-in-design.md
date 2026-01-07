@@ -1,7 +1,7 @@
 ---
 title: Design the UI of Office Add-ins
-description: Learn the best practices for the visual design of Office Add-ins.
-ms.date: 10/18/2022
+description: Apply best practices and design principles to create engaging Office Add-in experiences across all platforms.
+ms.date: 01/06/2026
 ms.topic: best-practice
 ms.localizationpriority: high
 ---
@@ -19,19 +19,31 @@ Office applications follow a general set of interaction guidelines. The applicat
 
 Follow the Office design principles to create positive add-in experiences.
 
-- **Design explicitly for Office.** The functionality, as well as the look and feel, of an add-in must harmoniously complement the Office experience. Add-ins should feel native. They should fit seamlessly into Word on an iPad or PowerPoint on the web. A well-designed add-in will be an appropriate blend of your experience, the platform, and the Office application. Apply document and UI theming where appropriate. Consider using Fluent UI for the web as your design language and tool set. The Fluent UI for the web has two flavors.
+### Design explicitly for Office
 
-  - **For non-React UIs:** Use **Fabric Core**, an open-source collection of CSS classes and Sass mixins that give you access to colors, animations, fonts, icons, and grids. (It's called "Fabric Core" instead of "Fluent Core" for historical reasons.) To get started, see [Fabric Core in Office Add-ins](fabric-core.md).
-  
+The functionality, as well as the look and feel, of an add-in must harmoniously complement the Office experience. Add-ins should feel native across all platforms, whether in Word on an iPad or PowerPoint on the web. A well-designed add-in will be an appropriate blend of your experience, the platform, and the Office application. Apply document and UI theming where appropriate.
+
+#### Use Fluent UI for the web as your design language
+
+Consider using Fluent UI for the web as your design language and tool set. The Fluent UI for the web has two flavors.
+
+- **For React projects:** Use [Fluent UI React](../quickstarts/fluent-react-quickstart.md), a React front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS. To get started, see [Use Fluent UI React in Office Add-ins](../quickstarts/fluent-react-quickstart.md).
+
+- **For non-React projects:** Use **Fabric Core**, an open-source collection of CSS classes and Sass mixins for colors, animations, fonts, icons, and grids. (It's called "Fabric Core" instead of "Fluent Core" for historical reasons.) To get started, see [Fabric Core in Office Add-ins](fabric-core.md).
+
   [!INCLUDE [alert-fluent-ui-web-components](../includes/alert-fluent-ui-web-components.md)]
 
-  - **For React UIs:** use **Fluent UI React**, a React front-end framework designed to build experiences that fit seamlessly into a broad range of Microsoft products. It provides robust, up-to-date, accessible React-based components which are highly customizable using CSS-in-JS. To get started, see [Fluent UI React in Office Add-ins](../quickstarts/fluent-react-quickstart.md).
+### Favor content over chrome
 
-- **Favor content over chrome.** Allow customers’ page, slide, or spreadsheet to remain the focus of the experience. An add-in is an auxiliary interface. No accessory chrome should interfere with the add-in’s content and functionality. Brand your experience wisely. We know it's important to provide users with a unique, recognizable experience but avoid distraction. Strive to keep the focus on content and task completion, not brand attention.
+Allow the customer's page, slide, or spreadsheet to remain the focus of the experience. An add-in is an auxiliary interface. No accessory chrome should interfere with the add-in’s content and functionality. Brand your experience wisely. We know it's important to provide users with a unique, recognizable experience but avoid distraction. Strive to keep the focus on content and task completion, not brand attention. For guidance on effective branding, see [Branding patterns](branding-patterns.md).
 
-- **Make it enjoyable and keep users in control.** People enjoy using products that are both functional and visually appealing. Craft your experience carefully. Get the details right by considering every interaction and visual detail. Allow users to control their experience. The necessary steps to complete a task must be clear and relevant. Important decisions should be easy to understand. Actions should be easily reversible. An add-in is not a destination – it’s an enhancement to Office functionality.
+### Make it enjoyable and keep users in control
 
-- **Design for all platforms and input methods**. Add-ins are designed to work on all the platforms that Office supports, and your add-in UX should be optimized to work across platforms and form factors. Support mouse/keyboard and touch input devices, and ensure that your custom HTML UI is responsive to adapt to different form factors. For more information, see [Touch](../concepts/add-in-development-best-practices.md#optimize-for-touch).
+People enjoy using products that are both functional and visually appealing. Craft your experience carefully. Get the details right by considering every interaction and visual detail. Allow users to control their experience. The necessary steps to complete a task must be clear and relevant. Important decisions should be easy to understand. Actions should be easily reversible. An add-in is not a destination—it's an enhancement to Office functionality.
+
+### Design for all platforms and input methods
+
+Add-ins are designed to work on all the platforms that Office supports, so your add-in UX must be optimized to work across platforms and form factors. Support mouse/keyboard and touch input devices, and ensure that your custom HTML UI is responsive to adapt to different form factors. For more information, see [Optimize for touch](../concepts/add-in-development-best-practices.md#optimize-for-touch).
 
 ## See also
 
