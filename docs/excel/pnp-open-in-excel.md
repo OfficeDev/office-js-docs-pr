@@ -39,7 +39,7 @@ The solution described in this article adds an **Open in Microsoft Excel** butto
 1. The server uses the ExcelJS library to create a new Excel spreadsheet in memory. It populates the spreadsheet with the data and embeds your Office Add-in.
 1. The server returns the spreadsheet as a binary blob to the web page.
     > [!IMPORTANT]
-    > The sample code is designed for development and demonstration purposes only. In a production environment, you **must** implement authentication and authorization for the `/api/create-spreadsheet` endpoint to ensure only authorized users can generate spreadsheets. Without proper security measures, this endpoint could be exploited to generate excessive spreadsheets, consume server resources, or access data inappropriately.
+    > The sample code is designed for development and demonstration purposes only. In a production environment, you **must** implement authentication and authorization for the `/api/create-spreadsheet` endpoint to ensure only authorized users can generate spreadsheets. Without proper security measures, bad actors could exploit this endpoint to generate excessive spreadsheets, consume server resources, or access data inappropriately.
 1. The web page calls the Microsoft Graph API to upload the spreadsheet to the user's OneDrive.
 1. Microsoft Graph returns the web url location of the new spreadsheet file.
 1. The web page opens a new browser tab to open the spreadsheet at the web url. The spreadsheet contains the data and your embedded add-in.
@@ -98,7 +98,7 @@ When the spreadsheet is fully constructed, the server returns it as a binary blo
 
 ### Secure the API endpoint
 
-The `/api/create-spreadsheet` endpoint is a critical security boundary. Without proper protection, malicious actors can:
+The `/api/create-spreadsheet` endpoint acts as a critical security boundary. Without proper protection, malicious actors can:
 
 - Generate unlimited spreadsheets, consuming server resources and storage.
 - Access data they shouldn't have permission to view.
