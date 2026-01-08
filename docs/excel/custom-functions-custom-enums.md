@@ -1,7 +1,7 @@
 ---
 title: Custom enums for custom functions
 description: Create custom enums to use with your custom functions.
-ms.date: 06/24/2025
+ms.date: 12/17/2025
 ms.localizationpriority: medium
 ---
 
@@ -40,8 +40,8 @@ enum PLANETS {
  * A sample function that uses the custom enum as a parameter.
  * @customfunction 
  */ 
-function getPlanets(value: PLANETS): any { 
-  return value; 
+function getPlanets(planetName: PLANETS): any { 
+  return planetName; 
 } 
 ```
 
@@ -89,7 +89,7 @@ function addNumbers(input: NUMBERS[]): any {
 
 Localizing custom enums is similar to [localizing custom functions](custom-functions-naming.md#localize-custom-functions). You must [manually create your JSON metadata](custom-functions-json.md) and then create a new JSON metadata file for each language.
 
-Note that only the `name` and `tooltip` properties within an enum should be localized to the target language. The `value` property should remain unchanged to avoid the need for handling multiple languages within your function body.
+Note that only the `name` and `tooltip` properties within an enum should be localized to the target language. The `stringValue` or `numberValue` property should remain unchanged to avoid the need for handling multiple languages within your function body.
 
 The following JSON snippet shows the Chinese language localized `values` object for the planet Mercury.
 
@@ -101,7 +101,7 @@ The following JSON snippet shows the Chinese language localized `values` object 
         "values": [
             {
                 "name": "水星", 
-                "value": "mercury",
+                "stringValue": "mercury",
                 "tooltip": "水星是距离太阳最近的行星"
             }
         ]

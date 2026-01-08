@@ -1,7 +1,7 @@
 ---
 title: Stage an Outlook add-in on Microsoft Azure with Visual Studio
 description: Learn how to deploy an Outlook add-in web app to Azure and sideload the add-in for testing in Outlook.
-ms.date: 07/29/2025
+ms.date: 01/07/2026
 ms.localizationpriority: medium
 ---
 
@@ -9,7 +9,9 @@ ms.localizationpriority: medium
 
 This article describes how to deploy an Outlook add-in web app to Azure and [sideload the add-in](../testing/test-debug-non-local-server.md) for testing in an Outlook client application.
 
-> [!IMPORTANT]
+[!INCLUDE [Deprecation warning for add-in projects in Visual Studio](../includes/vs-deprecation.md)]
+
+> [!NOTE]
 > The process described in this article applies only to Outlook add-ins. For instructions about staging add-ins for other Office applications on Azure, see [Stage an Office Add-in on Microsoft Azure with Visual Studio](host-an-office-add-in-on-microsoft-azure.md).
 
 ## Prerequisites
