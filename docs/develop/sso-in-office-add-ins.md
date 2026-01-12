@@ -8,7 +8,7 @@ ms.localizationpriority: high
 # Use legacy Office single sign-on (SSO) in an Office Add-in
 
 > [!NOTE]
-> We recommend using the Microsoft Authorization Library (MSAL) with nested app authentication (NAA) which supports the SPA authorization workflow. MSAL and NAA also offer a more modern experience across more platforms. For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
+> This article is about using legacy Office SSO. We recommend using the Microsoft Authorization Library (MSAL) with nested app authentication (NAA) which supports the SPA authorization workflow. MSAL and NAA also offer a more modern experience across more platforms. For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
 
 Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
 
