@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 01/13/2025
+ms.date: 01/13/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
