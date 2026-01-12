@@ -1,7 +1,7 @@
 ---
 title: Authorize to Microsoft Graph from an Office Add-in
 description: Learn to authorize to Microsoft Graph from an Office Add-in.
-ms.date: 01/22/2024
+ms.date: 01/12/2026
 ms.localizationpriority: medium
 ---
 
@@ -21,10 +21,9 @@ After your code obtains the access token to Microsoft Graph, it passes the acces
 We recommend that you use the following libraries when accessing Microsoft Graph.
 
 - For add-ins using a server-side with a .NET-based framework such as .NET Core or ASP.NET, use [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation).
-- For add-ins using a NodeJS-based server-side, use [Passport Azure AD](https://github.com/AzureAD/passport-azure-ad).
-- For add-ins using the Implicit flow, use [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki).
+- For add-ins using a NodeJS-based server-side, use [Microsoft Authentication Library for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/README.md).
 
-For more information about recommended libraries for working with Microsoft Identity Platform (formerly AAD v.2.0), see [Microsoft identity platform authentication libraries](/azure/active-directory/develop/reference-v2-libraries).
+For more information about recommended libraries for working with Microsoft Identity Platform, see [Microsoft identity platform authentication libraries](/azure/active-directory/develop/reference-v2-libraries).
 
 The following samples get Microsoft Graph data from an Office Add-in.
 
