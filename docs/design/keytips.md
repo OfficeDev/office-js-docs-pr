@@ -1,7 +1,7 @@
 ---
 title: Custom KeyTips for Office Add-ins
 description: Learn how to add custom KeyTips, also known as sequential key shortcuts or access keys, to your Office Add-in.
-ms.date: 12/04/2025
+ms.date: 01/15/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -52,10 +52,10 @@ KeyTips can be defined for the add-in's controls and the ribbon tab in which the
 Custom KeyTips are defined in your add-in's manifest. The following example customizes KeyTips to access the add-in and its actions from the built-in Home tab of Excel, PowerPoint, or Word. Note the following about this markup.
 
 - The `"keytip"` property defines the custom KeyTip. It's specified for the following tabs and controls.
-  - The Home tab on the ribbon (`"extensions.ribbons.tabs"` object whose `"builtInTabId"` property is set to `"TabHome"`). For guidance on built-in Office ribbon tabs and their IDs, see [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).
+  - The Home tab on the ribbon ([`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item?view=m365-app-prev&preserve-view=true) object whose `"builtInTabId"` property is set to `"TabHome"`). For guidance on built-in Office ribbon tabs and their IDs, see [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).
   - The custom contextual tab (`"extensions.ribbons.tabs"` object whose `"id"` property is set to `"CustomTab"`).
-  - The add-in's button on the ribbon (`"extensions.ribbons.tabs.groups.controls"` object).
-  - The add-in's menu items on the ribbon (`"extensions.ribbons.tabs.groups.controls.items"`).
+  - The add-in's button on the ribbon ([`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item?view=m365-app-prev&preserve-view=true) object).
+  - The add-in's menu items on the ribbon ([`"extensions.ribbons.tabs.groups.controls.items"`](/microsoft-365/extensibility/schema/extension-common-custom-control-menu-item?view=m365-app-prev&preserve-view=true)).
 - KeyTips support up to three uppercase alphanumeric characters ("A-Z", "0-9").
 - KeyTips must be unique across tabs and controls.
 
