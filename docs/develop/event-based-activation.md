@@ -116,7 +116,7 @@ When developing an event-based add-in to run on a Windows client, be mindful of 
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's client version, to the event handlers instead.
-- In Outlook, when composing a message initiated by a return email link (`mailto` link), retrieving the recipients from the To, Cc, or Bcc field in the `OnNewMessageCompose` event handler may return an empty array. To work around this, check for recipients in the `OnMessageRecipientsChanged` event handler instead.
+- In Outlook, when composing a message initiated by a [return email link](https://support.microsoft.com/office/86cea017-8f4e-4f20-85aa-0683779ccb0a) (`mailto` link), retrieving the recipients from the To, Cc, or Bcc field in the `OnNewMessageCompose` event handler may return an empty array. This happens if Outlook hasn't completed resolving the email addresses of the recipients by the time the `OnNewMessageCompose` event occurs. To work around this, check for recipients in the `OnMessageRecipientsChanged` event handler instead.
 
 ### Event-based add-in limitations in Excel, PowerPoint, and Word
 
