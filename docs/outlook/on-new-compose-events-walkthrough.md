@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 11/18/2025
+ms.date: 01/13/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -295,6 +295,7 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
 > - To ensure your add-in runs as expected when an event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
 >   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
 >   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
+> - In classic Outlook on Windows, when composing a message initiated by a [return email link](https://support.microsoft.com/office/86cea017-8f4e-4f20-85aa-0683779ccb0a) (`mailto` link), retrieving the recipients from the To, Cc, or Bcc field in the `OnNewMessageCompose` event handler may return an empty array. This happens if Outlook hasn't completed resolving the email addresses of the recipients by the time the `OnNewMessageCompose` event occurs. To work around this, check for recipients in the `OnMessageRecipientsChanged` event handler instead. For more information about supported events, see [Outlook events](../develop/event-based-activation.md#outlook-events).
 
 ## Update the commands HTML file
 
