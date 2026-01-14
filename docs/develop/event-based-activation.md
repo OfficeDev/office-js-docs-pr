@@ -1,7 +1,7 @@
 ---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 12/16/2025
+ms.date: 01/13/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -116,6 +116,7 @@ When developing an event-based add-in to run on a Windows client, be mindful of 
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's client version, to the event handlers instead.
+- In Outlook, when composing a message initiated by a [return email link](https://support.microsoft.com/office/86cea017-8f4e-4f20-85aa-0683779ccb0a) (`mailto` link), retrieving the recipients from the To, Cc, or Bcc field in the `OnNewMessageCompose` event handler may return an empty array. This happens if Outlook hasn't completed resolving the email addresses of the recipients by the time the `OnNewMessageCompose` event occurs. To work around this, check for recipients in the `OnMessageRecipientsChanged` event handler instead.
 
 ### Event-based add-in limitations in Excel, PowerPoint, and Word
 
