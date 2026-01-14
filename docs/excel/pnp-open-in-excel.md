@@ -1,12 +1,12 @@
 ﻿---
-title: Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in
-description: Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in.
-ms.date: 01/08/2026
+title: Create an Excel workbook from a web site with an auto-open task pane
+description: Create an Excel workbook from your web page with data and configure a custom Office Add-in task pane that automatically opens.
+ms.date: 01/14/2026
 ms.topic: sample
 ms.localizationpriority: medium
 ---
 
-# Create an Excel spreadsheet from your web page, populate it with data, and embed your Office Add-in
+# Create an Excel workbook from a web site with an auto-open task pane
 
 :::image type="content" source="../images/pnp-open-in-excel.png" alt-text="Diagram illustrating how the Excel button on your web page opens a new Excel document and AutoOpens your add-in in the right pane.":::
 
@@ -27,11 +27,9 @@ Microsoft partners who implemented this pattern have seen increased customer sat
 
 ## Run the sample code
 
-The sample code for this article is named [Create a spreadsheet from your web site, populate it with data, and embed your Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-create-worksheet-from-web-site) To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-create-worksheet-from-web-site).
+The sample code for this article is named [Create an Excel workbook from a web site with an auto-open task pane](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-create-worksheet-from-web-site). To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-create-worksheet-from-web-site).
 
 ## Solution architecture
-
-:::image type="content" source="../images/open-in-excel-architecture.svg" alt-text="The sequence of steps to create a spreadsheet, populate it with data, and open it on a new browser tab for the user.":::
 
 The solution described in this article adds an **Open in Microsoft Excel** button to the web site and interacts with a Node.js server API and the Microsoft Graph API. The following sequence of events occurs when the user wants to open their data in a new Excel spreadsheet.
 
@@ -78,14 +76,39 @@ The `/api/create-spreadsheet` endpoint in the Node.js server accepts an HTTP POS
 
 ### Embed your Office Add-in inside the spreadsheet
 
-The sample embeds the Script Lab add-in from Microsoft AppSource into the spreadsheet. Embedding Office Add-ins requires manipulating the Office Open XML (OOXML) structure of the Excel file. The sample's `embedAddin` function in `server.js` performs the following operations:
+The sample embeds a custom add-in into the spreadsheet. Embedding Office Add-ins requires manipulating the Office Open XML (OOXML) structure of the Excel file. The sample's `embedAddin` function in `server.js` performs the following operations:
 
 - Adds `webextension1.xml` with the add-in reference.
 - Adds `taskpanes.xml` to configure task pane behavior.
 - Updates `[Content_Types].xml` to register the web extension parts.
 - Updates `workbook.xml.rels` to link the taskpane configuration.
 
-For more information, see [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md).
+> [!IMPORTANT]
+> The auto-open feature only works if the add-in is already installed (sideloaded or deployed) on the user's machine. If the user hasn't installed the add-in, the embedded reference is ignored. For security reasons, Office Add-ins can't force themselves to open without prior user interaction.
+
+### Configure auto-open behavior
+
+The sample demonstrates the auto-open feature, which allows the task pane to automatically open when the user opens the workbook. However, this feature requires a specific workflow.
+
+1. **First open**: The user opens the downloaded file. The task pane doesn't auto-open yet.
+1. **Manual activation**: The user selects the **Show Task Pane** button on the ribbon.
+1. **Enable auto-open**: The user selects **Set auto-open ON** in the task pane.
+1. **Save the file**: The user saves and closes the file.
+1. **Subsequent opens**: The task pane now automatically opens when the user reopens the file.
+
+Office.js controls the auto-open behavior by setting the document property `Office.AutoShowTaskpaneWithDocument`.
+
+```javascript
+function setAutoOpenOn() {
+    Office.context.document.settings.set(
+        'Office.AutoShowTaskpaneWithDocument',
+        true
+    );
+    Office.context.document.settings.saveAsync();
+}
+```
+
+This workflow is standard Office Add-in behavior. For more information, see [Automatically open a task pane with a document](../develop/automatically-open-a-task-pane-with-a-document.md).
 
 ### Upload the spreadsheet to OneDrive
 
