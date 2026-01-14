@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 01/07/2026
+ms.date: 01/15/2026
 ms.localizationpriority: high
 ---
 
@@ -15,7 +15,7 @@ All Office Add-ins are built upon the Office Add-ins platform. For any add-in yo
 
 ## Create an Office Add-in
 
-You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Visual Studio, Microsoft 365 Agents Toolkit, or the [Office Add-ins Development Kit](development-kit-overview.md).
+You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](#yeoman-generator), [Visual Studio](#visual-studio), or [Microsoft 365 Agents Toolkit](#agents-toolkit).
 
 ### Yeoman generator
 
@@ -40,10 +40,6 @@ Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and
 ### Agents Toolkit
 
 The Agents Toolkit can be used to create almost any kind of Microsoft 365 extension. For details about creating an add-in, see [Create Office Add-in projects with Microsoft 365 Agents Toolkit](agents-toolkit-overview.md).
-
-### Office Add-ins Development Kit
-
-The Office Add-ins Development Kit is an extension for Visual Studio Code. It lets you create new add-in projects and load samples directly from the IDE. Download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) or learn more in the article [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
 
 ## Understand the two parts of an Office Add-in
 
