@@ -31,6 +31,8 @@ The sample code for this article is named [Create an Excel workbook from a web s
 
 ## Solution architecture
 
+:::image type="content" source="../images/open-in-excel-architecture.svg" alt-text="The sequence of steps to create a spreadsheet, populate it with data, and open it on a new browser tab for the user.":::
+
 The solution described in this article adds an **Open in Microsoft Excel** button to the web site and interacts with a Node.js server API and the Microsoft Graph API. The following sequence of events occurs when the user wants to open their data in a new Excel spreadsheet.
 
 1. The user selects the **Open in Microsoft Excel** button. The web page passes the data to an API endpoint on the Node.js server.
