@@ -1,4 +1,4 @@
-﻿---
+---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
 ms.date: 11/26/2025
@@ -13,6 +13,23 @@ This article provides information about current known issues with Office Add-ins
 
 ## Active issues in Office add-ins
 
+### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel.
+
+While inserting images via an add-in, customers in targeted releases using New Outlook for Windows with offline mode enabled report seeing broken images with 5xx errors.
+
+#### STATUS 
+
+A recent update to support offline mode in New Outlook for Windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
+
+Tracking ID: 713714633
+
+#### START TIME 
+
+Friday, Oct 31 2025
+
+#### RESOLUTION TIME
+
+The fix was released Nov 26, 2025
 ### Outlook: Outlook add-ins disappearing from ribbon
 
 Customers are reporting their Outlook add-ins are missing from the ribbon and are also reporting difficulties deploying them in some tenants. 
@@ -45,7 +62,7 @@ Monday, November 3, 2025, at 4:31 PM UTC
 
 We're currently investigating reports from Outlook users who are experiencing loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send messages while the images are not yet loaded results in the following dialog box.
 
-![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
+:::image type="content" source="../images/outlook-images-still-loading-error.png" alt-text="Outlook images still loading error message.":::
 
 Tracking ID: 678890927
 
@@ -67,7 +84,7 @@ Options:
 
 Numerous customers report that after updating Office from 2505 to 2507 their add-in will not load and an error is displayed "You don't have permission to use this add-in. Contact your system administrator." Any add-in may reproduce this issue; it is not specific to a single add-in.
 
- ![Excel web add-in permissions error message.](../images/excel-web-add-in-permission-error.png)
+ :::image type="content" source="../images/excel-web-add-in-permission-error.png" alt-text="Excel web add-in permissions error message.":::
 
 Tracking ID: 667052546
 

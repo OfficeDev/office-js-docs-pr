@@ -35,7 +35,7 @@ await Excel.run(async (context) => {
 
 ### New line chart
 
-![New line chart in Excel.](../images/excel-charts-create-line.png)
+:::image type="content" source="../images/excel-charts-create-line.png" alt-text="New line chart in Excel.":::
 
 ## Add a data series to a chart
 
@@ -56,11 +56,11 @@ await Excel.run(async (context) => {
 
 ### Chart before the 2016 data series is added
 
-![Chart in Excel before 2016 data series added.](../images/excel-charts-data-series-before.png)
+:::image type="content" source="../images/excel-charts-data-series-before.png" alt-text="Chart in Excel before 2016 data series added.":::
 
 ### Chart after the 2016 data series is added
 
-![Chart in Excel after 2016 data series added.](../images/excel-charts-data-series-after.png)
+:::image type="content" source="../images/excel-charts-data-series-after.png" alt-text="Chart in Excel after 2016 data series added.":::
 
 ## Set chart title
 
@@ -79,7 +79,7 @@ await Excel.run(async (context) => {
 
 ### Chart after title is set
 
-![Chart with title in Excel.](../images/excel-charts-title-set.png)
+:::image type="content" source="../images/excel-charts-title-set.png" alt-text="Chart with title in Excel.":::
 
 ## Set properties of an axis in a chart
 
@@ -102,7 +102,7 @@ await Excel.run(async (context) => {
 
 ### Chart after title of category axis is set
 
-![Chart with axis title in Excel.](../images/excel-charts-axis-title-set.png)
+:::image type="content" source="../images/excel-charts-axis-title-set.png" alt-text="Chart with axis title in Excel.":::
 
 ### Set axis display unit
 
@@ -121,7 +121,7 @@ await Excel.run(async (context) => {
 
 ### Chart after display unit of value axis is set
 
-![Chart with axis display unit in Excel.](../images/excel-charts-axis-display-unit-set.png)
+:::image type="content" source="../images/excel-charts-axis-display-unit-set.png" alt-text="Chart with axis display unit in Excel.":::
 
 ## Set visibility of gridlines in a chart
 
@@ -140,7 +140,7 @@ await Excel.run(async (context) => {
 
 ### Chart with gridlines hidden
 
-![Chart with gridlines hidden in Excel.](../images/excel-charts-gridlines-removed.png)
+:::image type="content" source="../images/excel-charts-gridlines-removed.png" alt-text="Chart with gridlines hidden in Excel.":::
 
 ## Chart trendlines
 
@@ -162,7 +162,7 @@ await Excel.run(async (context) => {
 
 #### Chart with moving average trendline
 
-![Chart with moving average trendline in Excel.](../images/excel-charts-create-trendline.png)
+:::image type="content" source="../images/excel-charts-create-trendline.png" alt-text="Chart with moving average trendline in Excel.":::
 
 ### Update a trendline
 
@@ -183,7 +183,7 @@ await Excel.run(async (context) => {
 
 #### Chart with linear trendline
 
-![Chart with linear trendline in Excel.](../images/excel-charts-trendline-linear.png)
+:::image type="content" source="../images/excel-charts-trendline-linear.png" alt-text="Chart with linear trendline in Excel.":::
 
 ## Add and format a chart data table
 
@@ -223,7 +223,7 @@ await Excel.run(async (context) => {
 
 The following screenshot shows the data table that the preceding code sample creates.
 
-![A chart with a data table, showcasing custom formatting of the data table.](../images/excel-charts-data-table.png)
+:::image type="content" source="../images/excel-charts-data-table.png" alt-text="A chart with a data table, showcasing custom formatting of the data table.":::
 
 ## Export a chart as an image
 

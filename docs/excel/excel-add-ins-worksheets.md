@@ -344,15 +344,15 @@ The `onColumnSorted` and `onRowSorted` events provide their callbacks with [Work
 
 The following images show the ranges returned by the `address` property for sort events. First, here is the sample data before sorting:
 
-![Table data in Excel before being sorted.](../images/excel-sort-event-before.png)
+:::image type="content" source="../images/excel-sort-event-before.png" alt-text="Table data in Excel before being sorted.":::
 
 If a top-to-bottom sort is performed on "**Q1**" (the values in "**B**"), the following highlighted rows are returned by `WorksheetRowSortedEventArgs.address`.
 
-![Table data in Excel after a top-to-bottom sort. The rows that have moved are highlighted.](../images/excel-sort-event-after-row.png)
+:::image type="content" source="../images/excel-sort-event-after-row.png" alt-text="Table data in Excel after a top-to-bottom sort. The rows that have moved are highlighted.":::
 
 If a left-to-right sort is performed on "**Quinces**" (the values in "**4**") on the original data, the following highlighted columns are returned by `WorksheetColumnsSortedEventArgs.address`.
 
-![Table data in Excel after a left-to-right sort. The columns that have moved are highlighted.](../images/excel-sort-event-after-column.png)
+:::image type="content" source="../images/excel-sort-event-after-column.png" alt-text="Table data in Excel after a left-to-right sort. The columns that have moved are highlighted.":::
 
 The following code sample shows how to register an event handler for the `Worksheet.onRowSorted` event. The handler's callback clears the fill color for the range, then fills the cells of the moved rows.
 

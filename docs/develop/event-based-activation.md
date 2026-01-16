@@ -1,7 +1,7 @@
-﻿---
+---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 11/27/2025
+ms.date: 01/13/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -67,11 +67,11 @@ Support for this feature in Outlook was introduced in [requirement set 1.10](/ja
 |`OnAppointmentSend`|appointmentSending|On sending an appointment item. To learn more, see [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](../outlook/onmessagesend-onappointmentsend-events.md).|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI<sup>2</sup></li></ul>|
 |`OnMessageCompose`|messageComposeOpened|On composing a new message (includes reply, reply all, and forward) or editing a draft.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI<sup>2</sup></li></ul>|
 |`OnAppointmentOrganizer`|appointmentOrganizerOpened|On creating a new appointment or editing an existing one.|[1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)<ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI<sup>2</sup></li></ul>|
-|`OnMessageFromChanged`|messageFromChanged|On changing the mail account in the **From** field of a message being composed. To learn more, see [Automatically update your signature when switching between Exchange accounts](../outlook/onmessagefromchanged-onappointmentfromchanged-events.md).|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<ul><li>Web browser<sup>4</sup></li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)<sup>4</sup> and classic<sup>1</sup>)</li><li>New Mac UI<sup>2</sup></li><li>Android<sup>2</sup> <sup>3</sup></li><li>iOS<sup>2</sup> <sup>3</sup></li></ul>|
+|`OnMessageFromChanged`|messageFromChanged|On changing the mail account in the **From** field of a message being composed. To learn more, see [Automatically update your signature when switching between Exchange accounts](../outlook/onmessagefromchanged-onappointmentfromchanged-events.md).|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI<sup>2</sup></li><li>Android<sup>2</sup> <sup>3</sup></li><li>iOS<sup>2</sup> <sup>3</sup></li></ul>|
 |`OnAppointmentFromChanged`|appointmentFromChanged|On changing the mail account in the organizer field of an appointment being composed. To learn more, see [Automatically update your signature when switching between Exchange accounts](../outlook/onmessagefromchanged-onappointmentfromchanged-events.md).|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<ul><li>New Mac UI<sup>2</sup></li></ul>|
-|`OnSensitivityLabelChanged`|sensitivityLabelChanged|On changing the sensitivity label while composing a message or appointment. To learn how to manage the sensitivity label of a mail item, see [Manage the sensitivity label of your message or appointment in compose mode](../outlook/sensitivity-label.md).<br><br>Event-specific data object: [SensitivityLabelChangedEventArgs](/javascript/api/outlook/office.sensitivitylabelchangedeventargs?view=outlook-js-preview&preserve-view=true)|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<ul><li>Web browser<sup>4</sup></li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)<sup>4</sup> and classic<sup>1</sup>)</li><li>New Mac UI<sup>2</sup></li></ul>|
-|`OnMessageReadWithCustomAttachment`|Not available|On opening a message that contains a specific attachment type in read mode.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<sup>5</sup><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
-|`OnMessageReadWithCustomHeader`|Not available|On opening a message that contains a specific internet header name in read mode.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<sup>5</sup><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
+|`OnSensitivityLabelChanged`|sensitivityLabelChanged|On changing the sensitivity label while composing a message or appointment. To learn how to manage the sensitivity label of a mail item, see [Manage the sensitivity label of your message or appointment in compose mode](../outlook/sensitivity-label.md).<br><br>Event-specific data object: [SensitivityLabelChangedEventArgs](/javascript/api/outlook/office.sensitivitylabelchangedeventargs?view=outlook-js-preview&preserve-view=true)|[1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13)<ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li><li>New Mac UI<sup>2</sup></li></ul>|
+|`OnMessageReadWithCustomAttachment`|Not available|On opening a message that contains a specific attachment type in read mode.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<sup>4</sup><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
+|`OnMessageReadWithCustomHeader`|Not available|On opening a message that contains a specific internet header name in read mode.|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<sup>4</sup><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
 |`OnMessageRead` (preview)|Not available|On matching the header of an encrypted message to the header key in an add-in's manifest. To learn more, see [Create an encryption Outlook add-in](../outlook/encryption-decryption.md).|[Preview](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview)<ul><li>Windows (classic<sup>1</sup>)</li></ul>|
 
 > [!NOTE]
@@ -81,9 +81,7 @@ Support for this feature in Outlook was introduced in [requirement set 1.10](/ja
 >
 > <sup>3</sup> For more information, see [Implement event-based activation in Outlook mobile add-ins](../outlook/mobile-event-based.md).
 >
-> <sup>4</sup> The `OnMessageFromChanged` and `OnSensitivityLabelChanged` events aren't currently available with the unified manifest for Microsoft 365 in Outlook on the web and the new Outlook on Windows. To handle these events, implement an add-in only manifest instead. For information about the types of manifests, see [Office Add-ins manifest](add-in-manifests.md).
->
-> <sup>5</sup> To preview the `OnMessageReadWithCustomAttachment` and `OnMessageReadWithCustomHeader` events, you must install classic Outlook on Windows Version 2312 (Build 17110.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option to access Office beta builds.
+> <sup>4</sup> To preview the `OnMessageReadWithCustomAttachment` and `OnMessageReadWithCustomHeader` events, you must install classic Outlook on Windows Version 2312 (Build 17110.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option to access Office beta builds.
 
 #### Event-based activation in Outlook on mobile devices
 
@@ -118,6 +116,7 @@ When developing an event-based add-in to run on a Windows client, be mindful of 
 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's client version, to the event handlers instead.
+- In Outlook, when composing a message initiated by a [return email link](https://support.microsoft.com/office/86cea017-8f4e-4f20-85aa-0683779ccb0a) (`mailto` link), retrieving the recipients from the To, Cc, or Bcc field in the `OnNewMessageCompose` event handler may return an empty array. This happens if Outlook hasn't completed resolving the email addresses of the recipients by the time the `OnNewMessageCompose` event occurs. To work around this, check for recipients in the `OnMessageRecipientsChanged` event handler instead.
 
 ### Event-based add-in limitations in Excel, PowerPoint, and Word
 
@@ -155,7 +154,7 @@ Classic Outlook on Windows includes a local copy of the production and beta vers
 1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
 1. Create an entry named `EnableBetaAPIsInJavaScript` and set its value to `1`.
 
-    ![The EnableBetaAPIsInJavaScript registry value is set to 1."](../images/outlook-beta-registry-key.png)
+    :::image type="content" source="../images/outlook-beta-registry-key.png" alt-text="The EnableBetaAPIsInJavaScript registry value is set to 1.":::
 
 ## Enable single sign-on (SSO)
 
@@ -207,7 +206,7 @@ Admin deployments are done by uploading the manifest to the Microsoft 365 admin 
 1. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**.
 1. On the **Integrated apps** page, choose the **Upload custom apps** action.
 
-![The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.](../images/outlook-deploy-event-based-add-ins.png)
+:::image type="content" source="../images/outlook-deploy-event-based-add-ins.png" alt-text="The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.":::
 
 For more information about how to deploy an add-in, please refer to [Deploy and publish Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/office-addins).
 

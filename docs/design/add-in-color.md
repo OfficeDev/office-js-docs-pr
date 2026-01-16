@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Color is often used to emphasize brand and reinforce visual hierarchy. It helps identify an interface as well as guide customers through an experience. Inside Office, color is used for the same goals but it's applied purposefully and minimally. At no point does it overwhelm customer content. Even when each Office app is branded with its own dominant color, it's used sparingly.
 
-![The color scheme for Office, Excel, Word, and PowerPoint. Major colors for Office are black and white, and minor colors are light gray, dark gray, and orange. The dominant color for Excel is green, Word is blue, and PowerPoint is orange.](../images/office-addins-color-schemes.png)
+:::image type="content" source="../images/office-addins-color-schemes.png" alt-text="The color scheme for Office, Excel, Word, and PowerPoint. Major colors for Office are black and white, and minor colors are light gray, dark gray, and orange. The dominant color for Excel is green, Word is blue, and PowerPoint is orange.":::
 
 ## Use UI component libraries
 [Fluent UI React](../quickstarts/fluent-react-quickstart.md) and [Fabric Core](fabric-core.md) include a set of default theme colors. When these libraries are applied to the components or layouts of an Office Add-in, the same goals apply. Color should communicate hierarchy, purposefully guiding customers to action without interfering with content. Theme colors from Fluent UI React or Fabric Core can introduce a new accent color to the overall interface. These accent colors can conflict with Office app branding and the hierarchy. Consider ways to avoid conflicts and interference. Use neutral accents or overwrite theme colors to match Office app branding or your own brand colors.

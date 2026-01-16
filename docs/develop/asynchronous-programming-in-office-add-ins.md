@@ -15,7 +15,7 @@ The names of all asynchronous methods in the Common APIs end with "Async", such 
 
 The following diagram shows the flow of an "Async" method that reads the data the user selected in a document. When the "Async" call is made, the JavaScript thread is free to perform any additional client-side processing (although none is shown in the diagram). When the "Async" method returns, the callback resumes on the thread. The add-in can then access data, do something with it, and display the result. The pattern is the same across platforms.
 
-![Diagram showing the command execution interaction over time with the user, the add-in page, and the web app server that hosts the add-in.](../images/office-addins-asynchronous-programming-flow.png)
+:::image type="content" source="../images/office-addins-asynchronous-programming-flow.png" alt-text="Diagram showing the command execution interaction over time with the user, the add-in page, and the web app server that hosts the add-in.":::
 
 ## Write the callback function for an "Async" method
 

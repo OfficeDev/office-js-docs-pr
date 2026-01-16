@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about PowerPoint add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: powerpoint #Required
   ms.topic: landing-page # Required
-  ms.date: 03/29/2021 #Required; mm/dd/yyyy format.
+  ms.date: 12/18/2025 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -33,9 +33,11 @@ landingContent:
             url: ../overview/explore-with-script-lab.md
       - linkListType: how-to-guide
         links:
-          - text: Test and debug a PowerPoint add-ins
+          - text: Use the PowerPoint JavaScript API to interact with presentation content and metadata
+            url: ../reference/overview/powerpoint-add-ins-reference-overview.md
+          - text: Test and debug a PowerPoint add-in
             url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish a PowerPoint add-ins
+          - text: Deploy and publish a PowerPoint add-in
             url: ../publish/publish.md
 
   # Card (optional)

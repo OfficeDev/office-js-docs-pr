@@ -1,7 +1,7 @@
 ﻿---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 10/08/2025
+ms.date: 01/15/2026
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -18,12 +18,12 @@ You need a Microsoft 365 account. You might qualify for a Microsoft 365 E5 devel
 
 There are three kinds of development environments to choose from. The scaffolding of Office Add-in projects that is created in the three environments is different, so if multiple people will be working on an add-in project, they must all use the same environment.
 
-- **Node.js environment**: Recommended. In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called webpack. The project creation and scaffolding tool is a command line tool called the Office Yeoman Generator (also called "Yo Office"), though you can still use the Visual Studio Code extensions mentioned in the next option.
-- **Visual Studio Code**: Choose this environment if you use Visual Studio Code and would prefer to create projects from extensions rather than command line tools. The project creation and scaffolding tools are Microsoft 365 Agents Toolkit or Office Add-ins Development Kit extensions.
+- **Node.js environment**: In this environment, your tools are installed and run at a command line. The server-side of the web application part of the add-in is written in JavaScript or TypeScript and is hosted in a Node.js runtime. There are many helpful add-in development tools in this environment, such as an Office linter and a bundler/task-runner called webpack. The project creation and scaffolding tool is a command line tool called the Office Yeoman Generator (also called "Yo Office"), though you can still use the Visual Studio Code extensions mentioned in the next option.
+- **Visual Studio Code**: Choose this environment if you use Visual Studio Code and would prefer to create projects from an extension rather than command line tools. The project creation and scaffolding tool is Microsoft 365 Agents Toolkit.
 - **Visual Studio environment**: Choose this environment only if your development computer is Windows, and you want to develop the server-side of the add-in with a .NET based language and framework, such as ASP.NET. The add-in project templates in Visual Studio aren't updated as frequently as those in the Node.js environment. More information later on the **Visual Studio environment** tab.
 
 > [!NOTE]
-> Visual Studio for Mac doesn't include the project scaffolding templates for Office Add-ins, so if your development computer is a Mac, you should work with the Node.js environment.
+> Visual Studio for Mac doesn't include the project scaffolding templates for Office Add-ins, so if your development computer is a Mac, you should work with the Node.js or Visual Studio Code environments.
 
 Select the tab for the environment you choose.
 
@@ -112,9 +112,7 @@ The main tools to be installed are:
 - Node.js
 - npm
 - Visual Studio Code
-- A project creation tool:
-  - Microsoft 365 Agents Toolkit
-  - Office Add-ins Development Kit for VS Code
+- Microsoft 365 Agents Toolkit
 
 This guide assumes that you know how to use a command-line tool.
 
@@ -124,25 +122,15 @@ This guide assumes that you know how to use a command-line tool.
 
 Get the latest version of Visual Studio Code from [Visual Studio Code homepage](https://code.visualstudio.com). Select the appropriate option for your platform of choice.
 
-### Install a project creation tool
+### Install Agents Toolkit
 
-You can create Office add-in projects in Visual Studio Code with either Agents Toolkit or Office Add-ins Development Kit extensions. The Office Add-ins Development Kit currently focuses on Excel, PowerPoint, and Word experiences.
-
-#### Install Agents Toolkit
-
-Install [Visual Studio Code](https://code.visualstudio.com/) and then install the latest version of Agents Toolkit as described in [Install Microsoft 365 Agents Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
-
-#### Install the Office Add-ins Development Kit extension 
-
-The Office Add-ins Development Kit extension for Visual Studio Code lets you create and run new add-ins directly from the IDE. For more information about the extension, see [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](../develop/development-kit-overview.md).
-
-[!INCLUDE [Instructions to install the Office Add-ins Development Kit through VS Code.](../includes/install-dev-kit.md)]
-
-[!INCLUDE [Information about the preview status of the dev kit.](../includes/dev-kit-preview-note.md)]
+When Visual Studio Code is installed, install the latest version of Agents Toolkit as described in [Install Microsoft 365 Agents Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
 
 # [Visual Studio environment](#tab/visualstudio)
 
 This option only installs Visual Studio.
+
+[!INCLUDE [Deprecation warning for add-in projects in Visual Studio](../includes/vs-deprecation.md)]
 
 ### Install Visual Studio
 

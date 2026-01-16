@@ -37,7 +37,7 @@ The following diagram outlines this basic process. The dotted line indicates tha
 1. Your custom function then sets this access token to an item in the `OfficeRuntime.storage`.
 1. Your add-in's task pane accesses the token from `OfficeRuntime.storage`.
 
-![Diagram of custom function using dialog API to get access token, and then share token with task pane through the OfficeRuntime.storage API.](../images/authentication-diagram.png "Authentication diagram.")
+:::image type="content" source="../images/authentication-diagram.png" alt-text="Diagram of custom function using dialog API to get access token, and then share token with task pane through the OfficeRuntime.storage API.":::
 
 ## Storing the token
 

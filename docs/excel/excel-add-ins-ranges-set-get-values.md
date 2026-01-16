@@ -33,11 +33,11 @@ await Excel.run(async (context) => {
 
 #### Data before cell value is updated
 
-![Data in Excel before cell value is updated.](../images/excel-ranges-set-start.png)
+:::image type="content" source="../images/excel-ranges-set-start.png" alt-text="Data in Excel before cell value is updated.":::
 
 #### Data after cell value is updated
 
-![Data in Excel after cell value is updated.](../images/excel-ranges-set-cell-value.png)
+:::image type="content" source="../images/excel-ranges-set-cell-value.png" alt-text="Data in Excel after cell value is updated.":::
 
 ### Set values for a range of cells
 
@@ -61,11 +61,11 @@ await Excel.run(async (context) => {
 
 #### Data before cell values are updated
 
-![Data in Excel before cell values are updated.](../images/excel-ranges-set-start.png)
+:::image type="content" source="../images/excel-ranges-set-start.png" alt-text="Data in Excel before cell values are updated.":::
 
 #### Data after cell values are updated
 
-![Data in Excel after cell values are updated.](../images/excel-ranges-set-cell-values.png)
+:::image type="content" source="../images/excel-ranges-set-cell-values.png" alt-text="Data in Excel after cell values are updated.":::
 
 ### Set formula for a single cell
 
@@ -85,11 +85,11 @@ await Excel.run(async (context) => {
 
 #### Data before cell formula is set
 
-![Data in Excel before cell formula is set.](../images/excel-ranges-start-set-formula.png)
+:::image type="content" source="../images/excel-ranges-start-set-formula.png" alt-text="Data in Excel before cell formula is set.":::
 
 #### Data after cell formula is set
 
-![Data in Excel after cell formula is set.](../images/excel-ranges-set-formula.png)
+:::image type="content" source="../images/excel-ranges-set-formula.png" alt-text="Data in Excel after cell formula is set.":::
 
 ### Set formulas for a range of cells
 
@@ -116,11 +116,11 @@ await Excel.run(async (context) => {
 
 #### Data before cell formulas are set
 
-![Data in Excel before cell formulas are set.](../images/excel-ranges-start-set-formula.png)
+:::image type="content" source="../images/excel-ranges-start-set-formula.png" alt-text="Data in Excel before cell formulas are set.":::
 
 #### Data after cell formulas are set
 
-![Data in Excel after cell formulas are set.](../images/excel-ranges-set-formulas.png)
+:::image type="content" source="../images/excel-ranges-set-formulas.png" alt-text="Data in Excel after cell formulas are set.":::
 
 ## Get values, text, or formulas
 
@@ -144,7 +144,7 @@ await Excel.run(async (context) => {
 
 #### Data in range (values in column E are a result of formulas)
 
-![Data in Excel after cell formulas are set.](../images/excel-ranges-set-formulas.png)
+:::image type="content" source="../images/excel-ranges-set-formulas.png" alt-text="Data in Excel after cell formulas are set.":::
 
 #### range.values (as logged to the console by the code sample above)
 
@@ -201,7 +201,7 @@ await Excel.run(async (context) => {
 
 #### Data in range (values in column E are a result of formulas)
 
-![Data in Excel after cell formulas are set.](../images/excel-ranges-set-formulas.png)
+:::image type="content" source="../images/excel-ranges-set-formulas.png" alt-text="Data in Excel after cell formulas are set.":::
 
 #### range.text (as logged to the console by the code sample above)
 
@@ -258,7 +258,7 @@ await Excel.run(async (context) => {
 
 #### Data in range (values in column E are a result of formulas)
 
-![Data in Excel after cell formulas are set.](../images/excel-ranges-set-formulas.png)
+:::image type="content" source="../images/excel-ranges-set-formulas.png" alt-text="Data in Excel after cell formulas are set.":::
 
 #### range.formulas (as logged to the console by the code sample above)
 

@@ -183,7 +183,7 @@
           href: develop/create-sso-office-add-ins-nodejs.md
         - name: Troubleshoot error messages
           href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Enable SSO using nested app authentication
+      - name: Enable SSO in an Office add-in
         href: develop/enable-nested-app-authentication-in-your-add-in.md
       - name: Nested app authentication FAQ 
         href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
@@ -259,6 +259,8 @@
             href: develop/create-addin-commands.md
           - name: Create add-in commands with the unified manifest for Microsoft 365
             href: develop/create-addin-commands-unified-manifest.md
+          - name: Find the IDs of built-in Office ribbon tabs
+            href: develop/built-in-ui-ids.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
           - name: Change the availability of add-in commands
@@ -697,6 +699,12 @@
       displayName: Excel, Custom Functions
     - name: Work with formula value preview
       href: excel/custom-functions-formula-value-preview.md
+      displayName: Excel, Custom Functions
+    - name: Synchronous custom functions
+      href: excel/custom-functions-synchronous.md
+      displayName: Excel, Custom Functions
+    - name: LAMBDA functions
+      href: excel/custom-functions-lambdas.md
       displayName: Excel, Custom Functions
     - name: Batch custom function remote calls
       href: excel/custom-functions-batching.md

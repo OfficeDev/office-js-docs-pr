@@ -12,7 +12,7 @@ Templates enable users to quickly create consistent documents for their organiza
 
 This article features a sample add-in that imports a .docx file to use as a template in a Word document. The add-in replaces the current document's content with the content from the template.
 
-![The import template add-in task pane.](../images/word-import-template.png)
+:::image type="content" source="../images/word-import-template.png" alt-text="The import template add-in task pane.":::
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ This article features a sample add-in that imports a .docx file to use as a temp
 
 The sample code for this article is named [Import templates in a Word document](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-import-template). To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-import-template).
 
-![The imported template.](../images/word-import-template-applied.png)
+:::image type="content" source="../images/word-import-template-applied.png" alt-text="The imported template.":::
 
 ## Key steps in the sample
 

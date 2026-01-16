@@ -52,7 +52,7 @@ If an add-in doesn't activate for any items, the manifest might not have been in
 
 The following figure shows a summary of the steps to verify whether Outlook has a valid version of the manifest.
 
-![Flow chart to check manifest.](../images/troubleshoot-manifest-flow.png)
+:::image type="content" source="../images/troubleshoot-manifest-flow.png" alt-text="Flow chart to check manifest.":::
 
 The following procedure describes the details.
 

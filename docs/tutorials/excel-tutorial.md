@@ -1,7 +1,7 @@
 ﻿---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 11/06/2025
+ms.date: 12/11/2025
 ms.service: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -31,19 +31,35 @@ In this tutorial, you'll create an Excel task pane add-in that:
 
 ## Create your add-in project
 
-[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+Decide the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
-- **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `JavaScript`
-- **What do you want to name your add-in?** `My Office Add-in`
-- **Which Office client application would you like to support?** `Excel`
+Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
 
-![The Yeoman Office Add-in generator command line interface.](../images/yo-office-excel.png)
-
-Next, select the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. Most of the steps in this tutorial are the same regardless of the manifest type, but the [Protect a worksheet](#protect-a-worksheet) section has separate steps for each manifest type.
+# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
 
 > [!NOTE]
 > Using the unified manifest for Microsoft 365 with Excel add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production Excel add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
+
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
+
+:::image type="content" source="../images/yo-office-excel-json-manifest-preview.png" alt-text="The Yeoman Generator for Office Add-ins command line interface when the unified manifest is selected.":::
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `TypeScript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `Excel`
+
+:::image type="content" source="../images/yo-office-excel-xml-manifest-ts.png" alt-text="The Yeoman Generator for Office Add-ins command line interface when the add-in only manifest is selected.":::
+
+---
 
 After you complete the wizard, the generator creates the project and installs supporting Node components. You may need to manually run `npm install` in the root folder of your project if something fails during the initial setup.
 
@@ -65,13 +81,23 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
     <button class="ms-Button" id="create-table">Create Table</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application.
+1. Open the file **./src/taskpane/taskpane.ts**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. Replace the entire contents with the following code and save the file.
 
-1. Remove all references to the `run` button and the `run()` function by doing the following:
-
-    - Locate and delete the line `document.getElementById("run").onclick = run;`.
-
-    - Locate and delete the entire `run()` function.
+    ```js
+    /*
+     * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
+     * See LICENSE in the project root for license information.
+     */
+    
+    /* global console, document, Excel, Office */
+    
+    Office.onReady((info) => {
+      if (info.host === Office.HostType.Excel) {
+        document.getElementById("sideload-msg").style.display = "none";
+        document.getElementById("app-body").style.display = "flex";
+      }
+    });
+    ```
 
 1. Within the `Office.onReady` function call, locate the line `if (info.host === Office.HostType.Excel) {` and add the following code immediately after that line. Note:
 
@@ -193,13 +219,13 @@ In this step of the tutorial, you'll programmatically test that your add-in supp
 
         [!INCLUDE [npm start on web command syntax](../includes/start-web-sideload-instructions.md)]
 
-1. In Excel, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In Excel, choose the **Home** tab, and then choose the **Show Task Pane** button on the ribbon to open the add-in task pane.
 
-    ![The Excel Home menu, with the Show Taskpane button highlighted.](../images/excel-quickstart-addin-3b.png)
+    :::image type="content" source="../images/excel-quickstart-add-in-3b.png" alt-text="The Excel Home menu, with the Show Task Pane button highlighted.":::
 
 1. In the task pane, choose the **Create Table** button.
 
-    ![Excel displaying an add-in task pane with a Create Table button, and a table in the worksheet populated with Date, Merchant, Category, and Amount data.](../images/excel-tutorial-create-table-2.png)
+    :::image type="content" source="../images/excel-tutorial-create-table-2.png" alt-text="Excel displaying an add-in task pane with a Create Table button, and a table in the worksheet populated with Date, Merchant, Category, and Amount data.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
@@ -217,7 +243,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     <button class="ms-Button" id="filter-table">Filter Table</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-table` button, and add the following code after that line.
 
@@ -262,7 +288,7 @@ In this step of the tutorial, you'll filter and sort the table that you created 
     <button class="ms-Button" id="sort-table">Sort Table</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `filter-table` button, and add the following code after that line.
 
@@ -310,19 +336,19 @@ In this step of the tutorial, you'll filter and sort the table that you created 
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button in the task pane.
 
 1. Choose the **Filter Table** button and the **Sort Table** button, in either order.
 
-    ![Excel with Filter Table and Sort Table buttons visible in the add-in task pane.](../images/excel-tutorial-filter-and-sort-table-2.png)
+    :::image type="content" source="../images/excel-tutorial-filter-and-sort-table-2.png" alt-text="Excel with Filter Table and Sort Table buttons visible in the add-in task pane.":::
 
 ## Create a chart
 
 In this step of the tutorial, you'll create a chart using data from the table that you created previously, and then format the chart.
 
-### Chart a chart using table data
+### Create a chart using table data
 
 1. Open the file **./src/taskpane/taskpane.html**.
 
@@ -332,7 +358,7 @@ In this step of the tutorial, you'll create a chart using data from the table th
     <button class="ms-Button" id="create-chart">Create Chart</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `sort-table` button, and add the following code after that line.
 
@@ -399,13 +425,13 @@ In this step of the tutorial, you'll create a chart using data from the table th
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is not present in the open worksheet, choose the **Create Table** button, and then the **Filter Table** button and the **Sort Table** button, in either order.
 
 1. Choose the **Create Chart** button. A chart is created and only the data from the rows that have been filtered are included. The labels on the data points across the bottom are in the sort order of the chart; that is, merchant names in reverse alphabetical order.
 
-    ![Excel with a Create Chart button visible in the add-in task pane, and a chart in the worksheet displaying grocery and education expense data.](../images/excel-tutorial-create-chart-2.png)
+    :::image type="content" source="../images/excel-tutorial-create-chart-2.png" alt-text="Excel with a Create Chart button visible in the add-in task pane, and a chart in the worksheet displaying grocery and education expense data.":::
 
 ## Freeze a table header
 
@@ -421,7 +447,7 @@ When a table is long enough that a user must scroll to see some rows, the header
     <button class="ms-Button" id="freeze-header">Freeze Header</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `create-chart` button, and add the following code after that line.
 
@@ -459,7 +485,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. If the table you added previously in this tutorial is present in the worksheet, delete it.
 
@@ -469,7 +495,7 @@ When a table is long enough that a user must scroll to see some rows, the header
 
 1. Scroll down the worksheet far enough to see that the table header remains visible at the top even when the higher rows scroll out of sight.
 
-    ![An Excel worksheet with a frozen table header.](../images/excel-tutorial-freeze-header-2.png)
+    :::image type="content" source="../images/excel-tutorial-freeze-header-2.png" alt-text="An Excel worksheet with a frozen table header.":::
 
 ## Protect a worksheet
 
@@ -488,7 +514,7 @@ The steps vary depending on the type of manifest.
 
 1. Open the manifest file **./manifest.json**.
 
-1. Find the **[`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true)** array and add the following commands runtime object.
+1. Find the **[`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true)** array and replace the existing commands runtime object with the following:
 
     ```json
     "runtimes": [
@@ -502,17 +528,17 @@ The steps vary depending on the type of manifest.
             "actions": [
                 {
                     "id": <!--TODO1: Set the action ID -->,
-                    "type": "executeFunction",
+                    "type": "executeFunction"
                 }
             ]
-        }       
+        }
     ]
     ```
 
 1. Find `TODO1` and replace it with **`"toggleProtection"`**. This matches the `id` for the JavaScript function you create in a later step.
 
     > [!TIP]
-    > The value of **[`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id)** must match the first parameter of the call to `Office.actions.associate` in your **commands.js** file.
+    > The value of **[`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id)** must match the first parameter of the call to `Office.actions.associate` in your **commands.ts** file.
 
 1. Ensure that the **[`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities)** array contains an object that specifies the **`"AddinCommands"`** requirement set with a **`"minVersion"`** of **`"1.1"`**.
 
@@ -529,7 +555,7 @@ The steps vary depending on the type of manifest.
 
 #### Configure the UI for the ribbon button
 
-1. After the **`"extensions.runtimes"`** array, add the following **[`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons)** array.
+1. After the **`"extensions.runtimes"`** array, replace the existing **[`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons)** array with the following:
 
     ```json
     "ribbons": [
@@ -590,7 +616,7 @@ The steps vary depending on the type of manifest.
 
 1. Open the manifest file **./manifest.xml**.
 
-1. Locate the `<Control>` element. This element defines the **Show Taskpane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing **\</Control\>** tag and the closing **\</Group\>** tag, add the following markup.
+1. Locate the `<Control>` element. This element defines the **Show Task Pane** button on the **Home** ribbon you have been using to launch the add-in. We're going to add a second button to the same group on the **Home** ribbon. In between the closing **\</Control\>** tag and the closing **\</Group\>** tag, add the following markup.
 
     ```xml
     <Control xsi:type="Button" id="<!--TODO1: Unique (in manifest) name for button -->">
@@ -686,9 +712,9 @@ The steps vary depending on the type of manifest.
 
 ### Create the function that protects the sheet
 
-1. Open the file **.\commands\commands.js**.
+1. Open the file **.\commands\commands.ts**.
 
-1. Add the following function immediately after the `action` function. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office client application that the function has finished and the UI can become responsive again.
+1. Add the following function immediately after the `Office.onReady` statement. Note that we specify an `args` parameter to the function and the very last line of the function calls `args.completed`. This is a requirement for all add-in commands of type **ExecuteFunction**. It signals the Office client application that the function has finished and the UI can become responsive again.
 
     ```js
     async function toggleProtection(args) {
@@ -808,7 +834,7 @@ These steps must be completed whenever your code needs to *read* information fro
 
 1. On the **Home** tab in Excel, choose the **Toggle Worksheet Protection** button. Note that most of the controls on the ribbon are disabled (and visually grayed-out) as seen in the following screenshot.
 
-    ![The Excel ribbon with the Toggle Worksheet Protection button highlighted and enabled. Most other buttons appear gray and disabled.](../images/excel-tutorial-ribbon-with-protection-on-2.png)
+    :::image type="content" source="../images/excel-tutorial-ribbon-with-protection-on-2.png" alt-text="The Excel ribbon with the Toggle Worksheet Protection button highlighted and enabled. Most other buttons appear gray and disabled.":::
 
 1. Select a cell and try to edit its content. Excel displays an error message indicating that the worksheet is protected.
 
@@ -875,7 +901,7 @@ In this final step of the tutorial, you'll open a dialog in your add-in, pass a 
     document.getElementById("ok-button").onclick = () => tryCatch(sendStringToParentPage);
     ```
 
-1. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter must be a string, which includes anything that can be serialized as a string, such as XML or JSON, or any type that can be cast to a string. This also adds the same `tryCatch` method used in **taskpane.js** for error handling.
+1. Replace `TODO2` with the following code. The `messageParent` method passes its parameter to the parent page, in this case, the page in the task pane. The parameter must be a string, which includes anything that can be serialized as a string, such as XML or JSON, or any type that can be cast to a string. This also adds the same `tryCatch` method used in **taskpane.ts** for error handling.
 
     ```js
     function sendStringToParentPage() {
@@ -912,8 +938,8 @@ Open the file **webpack.config.js** in the root directory of the project and com
     ```js
     entry: {
       polyfill: "@babel/polyfill",
-      taskpane: "./src/taskpane/taskpane.js",
-      commands: "./src/commands/commands.js",
+      taskpane: "./src/taskpane/taskpane.ts",
+      commands: "./src/commands/commands.ts",
       popup: "./src/dialogs/popup.js"
     },
     ```
@@ -985,7 +1011,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
     <label id="user-name"></label><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**.
+1. Open the file **./src/taskpane/taskpane.ts**.
 
 1. Within the `Office.onReady` function call, locate the line that assigns a click handler to the `freeze-header` button, and add the following code after that line. You'll create the `openDialog` method in a later step.
 
@@ -1026,7 +1052,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 ### Process the message from the dialog and close the dialog
 
-1. Within the `openDialog` function in the file **./src/taskpane/taskpane.js**, replace `TODO2` with the following code. Note:
+1. Within the `openDialog` function in the file **./src/taskpane/taskpane.ts**, replace `TODO2` with the following code. Note:
 
    - The callback is executed immediately after the dialog successfully opens and before the user has taken any action in the dialog.
 
@@ -1056,17 +1082,17 @@ Open the file **webpack.config.js** in the root directory of the project and com
 
 1. [!include[Start server and sideload add-in instructions](../includes/tutorial-excel-start-server.md)]
 
-1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Taskpane** button on the ribbon to open it.
+1. If the add-in task pane isn't already open in Excel, go to the **Home** tab and choose the **Show Task Pane** button on the ribbon to open it.
 
 1. Choose the **Open Dialog** button in the task pane.
 
 1. While the dialog is open, drag it and resize it. Note that you can interact with the worksheet and press other buttons on the task pane, but you cannot launch a second dialog from the same task pane page.
 
-1. In the dialog, enter a name and choose the **OK** button. The name appears on the task pane and the dialog closes.
+1. In the dialog, enter a name and choose the **OK** button. The name appears at the end of the task pane and the dialog closes.
 
-1. Optionally, in the **./src/taskpane/taskpane.js** file, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
+1. Optionally, in the **./src/taskpane/taskpane.ts** file, comment out the line `dialog.close();` in the `processMessage` function. Then repeat the steps of this section. The dialog stays open and you can change the name. You can close it manually by pressing the **X** button in the upper right corner.
 
-    ![Excel with an Open Dialog button visible in the add-in task pane and a dialog box displayed over the worksheet.](../images/excel-tutorial-dialog-open-2.png)
+    :::image type="content" source="../images/excel-tutorial-dialog-open-2.png" alt-text="Excel with an Open Dialog button visible in the add-in task pane and a dialog box displayed over the worksheet.":::
 
 ## Next steps
 
