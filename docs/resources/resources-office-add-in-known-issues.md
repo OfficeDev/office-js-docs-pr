@@ -1,17 +1,39 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 11/26/2025
+ms.date: 01/16/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated November 26, 2025_
+_Last updated January 16, 2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 ## Active issues in Office add-ins
+
+### Outlook for MAC: Signatures not inserted using add-ins and user with smart alert add-ins not able to send email.
+
+A disruption in Launch Event processing caused the following issues:
+Signatures were not stamped on outgoing emails
+Users with Smart Alerts add-ins were unable to send emails in some cases
+
+#### STATUS 
+
+Resolved. This issue was caused by a temporary configuration issue during a backend change management update for Launch events support. For a subset of users having launch event add-ins, this resulted in add‑ins not initializing as expected, which in turn blocked sending emails. The configuration has now been corrected.
+
+Note: Because these settings are cached locally and sync asynchronously, some users may need to restart Outlook more than once to pick up the updated configuration.
+
+Tracking ID: 734492427
+
+#### START TIME 
+
+Thursday, Jan 15 2026 5:45am PST
+
+#### RESOLUTION TIME
+
+The fix was released Thursday, Jan 15 2026 7:00am PST
 
 ### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel.
 
