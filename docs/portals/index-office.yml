@@ -1,1 +1,159 @@
+### YamlMime:Marketing
+title: Office Extensibility learning hub
+metadata:
+  title: 'Learn how to create Office Add-ins | Microsoft Learn'
+  description: Use the Office JavaScript API to extend functionality for Word, Excel, PowerPoint, and Outlook. Find documentation, training, blogs, samples, and more. 
+  ms.service: microsoft-365
+  keywords: what is office-js, excel add-ins, word add-ins, powerpoint add-ins, outlook add-ins, Office Add-ins documentation
+  ms.topic: marketing-hub
+  ms.author: lindalu
+  author: lindalu
+  ms.date: 01/19/2026
+  ms.update-cycle: 180-days
+  ms.collection: office
+  brand: office
+sections:
+  # Intro
+  # Hero with background image - default transform
+  - componentType: hero-product
+    supertitle: Microsoft Learn
+    title: Office Extensibility learning hub for Developers
+  # size: small
+    summary: |+
+     Use the Office JavaScript API to extend functionality for Word, Excel, PowerPoint, and Outlook.
+    heroImage:
+     componentType: hero-image
+     lightImageSrc: /docs/images/office-add-ins-hero-859x557.webp
+     darkImageSrc: /docs/images/office-add-ins-hero-859x557.webp
 
+
+# Start your Journey here
+  - componentType: cards
+    isShadowless: false
+    backgroundColor: alternating-grey
+    title: Explore libraries and training
+    summary: Find content by app.
+    blocks:
+
+    - componentType: card
+      title: "Word"
+      summary: Use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Word across multiple platforms, including on the web, Windows, Mac, and iPad.
+      imageUrl: /docs/images/Word_220.webp
+      links: 
+        - componentType: link
+          text: Extend Word across multiple platforms
+          url: /office/dev/add-ins/word/
+    - componentType: card
+      title: "Excel"
+      summary: Extend Excel functionality and access Excel data over the web.
+      imageUrl: /docs/images/Excel_220.webp
+      links: 
+        - componentType: link
+          text: Extend Excel functionality with Office Add-ins
+          url: /office/dev/add-ins/reference/overview/excel-add-ins-reference-overview
+        - componentType: link
+          text: Access Excel data with Microsoft Graph
+          url: https://learn.microsoft.com/graph/excel-concept-overview
+    - componentType: card
+      title: "PowerPoint"
+      summary: Build engaging solutions for your users presentations across platforms on Windows, Office on the web, iOS, and Mac.
+      imageUrl: /docs/images/PowerPoint_220.webp
+      links: 
+        - componentType: link
+          text: Start building apps for PowerPoint
+          url: /office/dev/add-ins/quickstarts/powerpoint-quickstart?tabs=yeomangenerator
+        - componentType: link
+          text: Another powerpoint link
+          url: /training/paths/copilot-power-platform/
+ 
+    - componentType: card
+      title: "Outlook"
+      summary: Build Outlook add-ins for the new Outlook for Windows.
+      imageUrl: /docs/images/Outlook_220.webp
+      links: 
+        - componentType: link
+          text: Read overview
+          url: /office/dev/add-ins/outlook/one-outlook
+        - componentType: link
+          text: Build your first Outlook add-in
+          url: office/dev/add-ins/quickstarts/outlook-quickstart-yo
+
+  - componentType: cards
+    isShadowless: false
+    backgroundColor: alternating-grey
+    blocks:
+    - componentType: card
+      title: "Script Lab"
+      summary: Use Security Copilot to bring the full power of OpenAI architecture to defend your organization at machine speed and scale.
+      imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-microsoft-security.png
+      links: 
+        - componentType: link
+          text: Explore Script Lab
+          url: https://aka.ms/getscriptlab
+        - componentType: link
+          text: Microsoft Security Copilot training
+          url: /training/paths/security-copilot-and-ai/
+    - componentType: card
+      title: "Office Scripts"
+      summary: Use Office Scripts in Excel on the web to automate your common tasks. Learn how to create and edit Office Scripts and get started automating today.
+      imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-microsoft-fabric.png
+      links: 
+        - componentType: link
+          text: Automate tasks with Office Scripts
+          url: /office/dev/scripts/overview/excel
+    - componentType: card
+      title: "Fluent UI"
+      summary: Use the official front-end framework for building experiences that fit seamlessly into Microsoft 365.
+      imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-azure.png
+      links: 
+        - componentType: link
+          text: Explore Fluent UI
+          url: https://developer.microsoft.com/en-us/fluentui/
+    - componentType: card
+      title: "Developer Tools"
+      summary: Use our developer tools to build solutions for consumer and professional markets.
+      imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-github.png
+      links: 
+        - componentType: link
+          text: Learn more
+          url: https://www.visualstudio.com/vs/office-tools/
+
+
+
+  # Copilot Documentation
+  - componentType: grid
+    title: More Office Developer resources
+    summary: Curious about which Copilot to use and how to get started? Access the resources to understand Copilot use cases, the fundamentals, how to deploy, and how to extend in your own environments as a technical professional.
+    blocks:
+      - componentType: summary-card
+        title: Microsoft Developer Tools repository on GitHub
+        summary: Find a variety of code samples for Office Add-in development on the Microsoft 365 platform.
+        url: https://github.com/OfficeDev/Office-Add-in-samples
+      - componentType: summary-card
+        title: Community Calls
+        summary: Learn from others how to build apps on Microsoft 365 & Power Platform.
+        url: https://aka.ms/M365DevCalls
+      - componentType: summary-card
+        title: Microsoft 365 Developer Blog
+        summary: A developer platform for building collaborative apps for hybrid work.
+        url: https://devblogs.microsoft.com/microsoft365dev
+      - componentType: summary-card
+        title: Microsoft Q&A forum
+        summary: Ask experts questions about your custom Office solutions.
+        url: https://learn.microsoft.com/en-us/answers/tags/321/m365-office-development-routing-development-other
+      - componentType: summary-card
+        title: Request a feature
+        summary: Office Add-ins developer feedback on Tech Community.
+        url: https://techcommunity.microsoft.com/tag/office%20add-ins%20development?nodeId=board%3AMicrosoft365DeveloperPlatform
+      - componentType: summary-card
+        title: Get the Office Add-ins Development Kit
+        summary: Set up your environment, create Office Add-ins, debug the code, and view more samples using Visual Studio Code.
+        url: /office/dev/add-ins/develop/development-kit-overview?tabs=vscode
+      - componentType: summary-card
+        title: Bring your Office solutions to market
+        summary: Submit your Office app to Microsoft AppSource to make it available to millions of consumers and businesses.
+        url: /office/dev/store/submit-to-appsource-via-partner-center
+      - componentType: summary-card
+        title: Join the M365 Developer Program
+        summary: Current Visual Studio Professional or Enterprise subscribers and members of qualifying programs can set up a free Microsoft 365 E5 developer subscription to use for development.
+        url: /office/developer-program/microsoft-365-developer-program-faq
