@@ -1,7 +1,7 @@
 ---
 title: Enable single sign-on in an Office add-in with nested app authentication
 description: Learn how to enable SSO in an Office add-in with nested app authentication.
-ms.date: 11/24/2025
+ms.date: 12/15/2025
 ms.topic: how-to
 ms.localizationpriority: high
 ---
@@ -481,3 +481,4 @@ If you find a security issue with our libraries or services, report the issue to
 - [Authenticate and authorize with the Office dialog API](/office/dev/add-ins/develop/auth-with-office-dialog-api).
 - [Microsoft identity sample for SPA and JavaScript](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/blob/main/2-Authorization-I/1-call-graph/README.md)
 - [Microsoft identity samples for various app types and frameworks](/entra/identity-platform/sample-v2-code?tabs=apptype)
+- [Microsoft identity platform and OAuth 2.0 On-Behalf-Of flow](/entra/identity-platform/v2-oauth2-on-behalf-of-flow)
