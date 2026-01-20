@@ -21,7 +21,7 @@ This documentation explains how to build and configure Office Add-ins to success
 
 ## Single Sign-on (SSO)
 
-Using Single Sign-on (SSO) is convenient for the user because they only have to sign in once to Office. They don't need to sign in separately to your add-in.
+Single sign-on (SSO) improves the user experience by allowing users to sign in once to Office. Users aren’t required to sign in again when interacting with the add-in.
 
 To get started with SSO, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md)
 
@@ -50,7 +50,7 @@ You can get authorization to Microsoft Graph data for your add-in by obtaining a
 Popular online services, including Google, Facebook, LinkedIn, SalesForce, and GitHub, let developers give users access to their accounts in other applications. This gives you the ability to include these services in your Office Add-in. For an overview of the ways that your add-in can do this, see [Authorization with non-Microsoft identity providers](auth-external-add-ins.md).
 
 > [!IMPORTANT]
-> Before you begin coding, find out if the data source allows its sign-in page to open in an iframe. When an Office Add-in is running in *Office on the web*, the task pane is an iframe. If the data source doesn't allow its sign-in page to open in an iframe, then you'll need to open the sign-in page in a dialog box opened with the Office dialog API. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
+> Before you begin coding, verify whether the data source supports opening its sign-in page in an iframe. In *Office on the web*, the task pane runs inside an iframe. If the data source doesn't allow its sign-in page to load in an iframe, open the sign-in page in a dialog box using the Office dialog API. For more information, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md).
 
 ## See also
 

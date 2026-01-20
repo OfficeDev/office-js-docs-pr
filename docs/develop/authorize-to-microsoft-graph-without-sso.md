@@ -14,11 +14,11 @@ Your add-in can get authorization to Microsoft Graph data by obtaining an access
 
 For information about programming authentication using the Microsoft identity platform, see [Microsoft identity platform documentation](/azure/active-directory/develop). You'll find tutorials and guides in that documentation set, as well as links to relevant samples. Once again, you may need to adjust the code in the samples to run in the Office dialog box to account for the Office dialog box that runs in a separate process from the task pane.
 
-After your code obtains the access token to Microsoft Graph, it passes the access token from the dialog box to the task pane. (See [Authentication with the Office dialog API](auth-with-office-dialog-api.md) for details.) Code in the task pane requests data from Microsoft Graph and includes the token in those requests. For more information about calling Microsoft Graph and the Microsoft Graph SDKs, see [Microsoft Graph documentation](/graph/).
+After your code obtains the access token to Microsoft Graph, it passes the access token from the dialog box to the task pane. For details, see [Authentication with the Office dialog API](auth-with-office-dialog-api.md). Code in the task pane requests data from Microsoft Graph and includes the token in those requests. For more information about calling Microsoft Graph and the Microsoft Graph SDKs, see [Microsoft Graph documentation](/graph/).
 
 ## Recommended libraries and samples
 
-We recommend that you use the following libraries when accessing Microsoft Graph.
+The following libraries provide access to Microsoft Graph.
 
 - For add-ins using a server-side with a .NET-based framework such as .NET Core or ASP.NET, use [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation).
 - For add-ins using a NodeJS-based server-side, use [Microsoft Authentication Library for Node](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-node/README.md).
