@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 # Use legacy Office SSO to get the identity of the signed-in user
 
 > [!NOTE]
-> This article is about using legacy Office SSO. We recommend using the Microsoft Authorization Library (MSAL) with nested app authentication (NAA) which supports the SPA authorization workflow. MSAL and NAA also offer a more modern experience across more platforms. For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
+> This article describes legacy Office single sign-on (SSO). For a modern authentication experience with support across a wider range of platforms, use the Microsoft Authentication Library (MSAL) with nested app authentication (NAA). For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
 
 Use the `getAccessToken` API to get an access token that contains the identity for the current user signed in to Office. The access token is also an ID token because it contains identity claims about the signed-in user, such as their name and email. You can also use the ID token to identify the user when calling your own web services. To call `getAccessToken`, you must configure your Office Add-in to use SSO with Office.
 

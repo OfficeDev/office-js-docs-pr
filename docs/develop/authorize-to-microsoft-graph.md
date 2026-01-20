@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 # Authorize to Microsoft Graph with legacy Office SSO
 
 > [!NOTE]
-> This article is about using legacy Office SSO. We recommend using the Microsoft Authorization Library (MSAL) with nested app authentication (NAA) which supports the SPA authorization workflow. MSAL and NAA also offer a more modern experience across more platforms. For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
+> This article describes legacy Office single sign-on (SSO). For a modern authentication experience with support across a wider range of platforms, use the Microsoft Authentication Library (MSAL) with nested app authentication (NAA). For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
 
 Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. The best way for an Office Add-in to get authorized access to [Microsoft Graph](https://developer.microsoft.com/graph/docs) is to use the credentials from the user's Office sign on. This enables them to access their Microsoft Graph data without needing to sign in a second time.
 

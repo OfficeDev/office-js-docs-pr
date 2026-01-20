@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 # Register an Office Add-in that uses legacy Office SSO with the Microsoft identity platform
 
 > [!NOTE]
-> This article is about using legacy Office SSO. We recommend using the Microsoft Authorization Library (MSAL) with nested app authentication (NAA) which supports the SPA authorization workflow. MSAL and NAA also offer a more modern experience across more platforms. For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
+> This article describes legacy Office single sign-on (SSO). For a modern authentication experience with support across a wider range of platforms, use the Microsoft Authentication Library (MSAL) with nested app authentication (NAA). For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
 
 This article explains how to register an Office Add-in with the Microsoft identity platform so that you can use legacy Office SSO. Register the add-in when you begin developing it so that when you progress to testing or production, you can change the existing registration or create separate registrations for development, testing, and production versions of the add-in.
 
