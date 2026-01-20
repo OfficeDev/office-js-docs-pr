@@ -13,7 +13,7 @@ Your add-in can also get the user's consent to access their Microsoft Graph data
 
 ## Key resources for authentication and authorization
 
-This documentation explains how to build and configure Office Add-ins to successfully implement authentication and authorization. However, many concepts and security technologies mentioned are outside the scope of this documentation. For example, general security concepts such as OAuth flows, token caching, or identity management are not explained here. This documentation also doesn't document anything specific to Microsoft Entra ID or the Microsoft identity platform. We recommend you refer to the following resources if you need more information in those areas.
+This documentation describes how to build and configure Office Add-ins to support authentication and authorization. Some concepts and security technologies referenced are outside the scope of this content. For example, general security topics such as OAuth flows, token caching, and identity management are not covered. This documentation also does not include guidance specific to Microsoft Entra ID or the Microsoft identity platform. Use the following resources for additional information on those topics.
 
 - [Microsoft identity platform documentation](/entra/identity-platform/)
 - [Microsoft identity platform support and help options for developers](/entra/identity-platform/developer-support-help-options)
