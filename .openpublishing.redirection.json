@@ -1393,6 +1393,18 @@
         {
             "source_path": "docs/design/add-in-icons-monoline.md",
             "redirect_url": "/office/dev/add-ins/design/add-in-icons"
+        },
+        {
+            "source_path": "docs/develop/create-sso-office-add-ins-aspnet.md",
+            "redirect_url": "/office/dev/add-ins/develop/enable-nested-app-authentication-in-your-add-in"
+        },
+        {
+            "source_path": "docs/develop/create-sso-office-add-ins-nodejs.md",
+            "redirect_url": "/office/dev/add-ins/develop/enable-nested-app-authentication-in-your-add-in"
+        },
+        {
+            "source_path": "docs/quickstarts/sso-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/develop/enable-nested-app-authentication-in-your-add-in"
         }
     ]
 }
