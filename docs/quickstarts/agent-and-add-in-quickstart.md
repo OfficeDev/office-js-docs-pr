@@ -24,7 +24,7 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 1. In Visual Studio Code, open Microsoft 365 Agents Toolkit. 
 
-    :::image type="content" source="../images/atk-start-panel.png" alt-text="Agents Toolkit start panel.":::
+    :::image type="content" source="../images/agent-toolkit-start-panel.png" alt-text="Agents Toolkit start panel.":::
 
 1. Select **Create a New Agent/App**.
 1. In the **New Project** list, select **Office Add-in**.
@@ -33,11 +33,11 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 1. On the **Select a capability** list, select **Create Declarative Agent with Office Add-in Action**.
 
-    :::image type="content" source="../images/atk-add-in-capability-list.png" alt-text="A drop down list of add-in capabilities including, Task pane, Custom Function and Shortcut, Create Declarative Agent with Office Add-in Action, and Upgrade an Existing Office Add-in":::
+    :::image type="content" source="../images/agent-toolkit-add-in-capability-list.png" alt-text="A drop down list of add-in capabilities including, Task pane, Custom Function and Shortcut, Create Declarative Agent with Office Add-in Action, and Upgrade an Existing Office Add-in":::
 
 1. In the refined capability list that opens, select **New Declarative Agent with Office Add-in Actions**.
 
-    :::image type="content" source="../images/atk-refined-add-in-capability-list.png" alt-text="A drop down list of two choices: New Declarative Agent with Office Add-in Action, and Extend an Existing Office Add-in":::
+    :::image type="content" source="../images/agent-toolkit-refined-add-in-capability-list.png" alt-text="A drop down list of two choices: New Declarative Agent with Office Add-in Action, and Extend an Existing Office Add-in":::
 
 1. In the **Workspace Folder** control that opens, choose a folder for the project.
 1. In the **Application Name** text box, enter "Add-in + Agent Actions".
