@@ -13,7 +13,7 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 ## Knowledge prerequisites
 
-- A basic understanding of declarative agents in Microsoft 365 Copilot. If you aren't familiar with them already, we recommend readiing [Declarative agents for Microsoft 365 Copilot overview](/microsoft-365-copilot/extensibility/overview-declarative-agent).
+- A basic understanding of declarative agents in Microsoft 365 Copilot. If you aren't familiar with them already, we recommend reading [Declarative agents for Microsoft 365 Copilot overview](/microsoft-365-copilot/extensibility/overview-declarative-agent).
 
 ## Software prerequisites
 
