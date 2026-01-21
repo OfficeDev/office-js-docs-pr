@@ -13,8 +13,7 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 ## Knowledge prerequisites
 
-- A basic understanding of declarative agents in Microsoft 365 Copilot. If you aren't familiar with them already, we recommend the following actions.
-    - Read [Declarative agents for Microsoft 365 Copilot overview](/microsoft-365-copilot/extensibility/overview-declarative-agent).
+- A basic understanding of declarative agents in Microsoft 365 Copilot. If you aren't familiar with them already, we recommend readiing [Declarative agents for Microsoft 365 Copilot overview](/microsoft-365-copilot/extensibility/overview-declarative-agent).
 
 ## Software prerequisites
 
@@ -23,7 +22,7 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 ## Create the project
 
-1. In Visual Studio Code, open Microsoft 365 Agents Toolkit, and select **Create a New Agent/App**. 
+1. In Visual Studio Code, open Microsoft 365 Agents Toolkit. 
 
     :::image type="content" source="../images/atk-start-panel.png" alt-text="Agents Toolkit start panel.":::
 
@@ -43,12 +42,12 @@ In this article, you'll walk through the process of building a simple Excel Copi
 1. In the **Workspace Folder** control that opens, choose a folder for the project.
 1. In the **Application Name** text box, enter "Add-in + Agent Actions".
 1. The project opens in a new Visual Studio Code window. Close the original Visual Studio Code window.
-1. Open the Agents Toolkit, and in the **ACCOUNTS** secction, ensure that you are logged into your Microsoft 365 tenancy and that both **Custom App Upload** and **Copilot Access** are enabled.
+1. Open the Agents Toolkit, and in the **ACCOUNTS** section, ensure that you are logged into your Microsoft 365 tenancy and that both **Custom App Upload** and **Copilot Access** are enabled.
 
 ## Run the project
 
 1. Close all Office applications.
-1. Select **View | Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select **{{HOST}} Desktop (Edge Chromium)**, where {{HOST}} is `excel`, `powerpoint`, or `word`. 
+1. Select **View | Run** in Visual Studio Code. In the **RUN AND DEBUG** dropdown menu, select **{{HOST}} Desktop (Edge Chromium)**, where {{HOST}} is `Excel`, `Powerpoint`, or `Word`. 
 
 1. Press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, the Office application opens.
 
@@ -62,8 +61,8 @@ You can start working with either the add-in or the Copilot agent. If both have 
 1. There should be a **Contoso Add-in** group on the **Home** ribbon. If it isn't there, select the **Add-ins** button on the ribbon, and then select the **Add-in + Agent Actions** app in the flyout that opens.
 1. The **Contoso Add-in** group has a **Show Taskpane** button which opens the task pane and a **Perform an action** button.
 
-> [!NOTE]
-> If a **WebView Stop On Load** prompt appears, select **OK**.
+   > [!NOTE]
+   > If a **WebView Stop On Load** prompt appears, select **OK**.
 
 1. Test the add-in by pressing the **Run** link in the task pane, or selecting the **Perform an action** button.
 
