@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 # Build your first add-in as a Copilot skill
 
-In this article, you'll walk through the process of building a simple Excel Copilot agent that can perform actions on the content of an Excel workbook. The app also includes an Excel task pane add-in.
+In this article, you'll walk through the process of building a simple Copilot agent that can perform actions on the content of an Office document. The app also includes a task pane add-in.
 
 ## Knowledge prerequisites
 
