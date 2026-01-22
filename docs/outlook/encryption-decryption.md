@@ -148,10 +148,6 @@ function onMessageReadHandler(event) {
     const decryptedPdfFile = "JVBERi0xLjQKJeLjz9MKNCAwIG9i...";
     const pdfFileName = "Fabrikam_Report_202509";
 
-    // Decrypted content and properties of a mail item.
-    const decryptedEmailFile = "VGhpcyBpcyBhIHRleHQgZmlsZS4=...";
-    const emailFileName = "Fabrikam_Report_202508.eml";
-
     // Decrypted properties of a cloud attachment.
     const cloudFilePath = "https://contosostorage.com/reports/weekly_forecast.xlsx";
     const cloudFileName = "weekly_forecast.xlsx";
