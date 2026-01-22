@@ -1,17 +1,20 @@
 ---
-title: Enable single sign-on (SSO) in an Office Add-in
-description: Learn the key steps to enable single sign-on (SSO) for your Office Add-in using common Microsoft personal, work, or education accounts.
-ms.date: 05/06/2024
+title: Enable legacy Office single sign-on (SSO) legacy in an Office Add-in
+description: Learn how to use Office.js legacy API for SSO.
+ms.date: 12/15/2025
 ms.localizationpriority: high
 ---
 
-# Enable single sign-on (SSO) in an Office Add-in
+# Use legacy Office single sign-on (SSO) in an Office Add-in
+
+> [!NOTE]
+> This article describes legacy Office single sign-on (SSO). For a modern authentication experience with support across a wider range of platforms, use the Microsoft Authentication Library (MSAL) with nested app authentication (NAA). For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
 
 Users sign in to Office using either their personal Microsoft account or their Microsoft 365 Education or work account. Take advantage of this and use single sign-on (SSO) to authenticate and authorize the user to your add-in without requiring them to sign in a second time.
 
 :::image type="content" source="../images/sso-for-office-addins.png" alt-text="An image showing the sign-in process for an add-in.":::
 
-## How SSO works at runtime
+## How legacy Office SSO works at runtime
 
 The following diagram shows how the SSO process works. The blue elements represent Office or the Microsoft identity platform. The gray elements represent the code you write and include the client-side code (task pane) and the server-side code for your add-in.
 
@@ -48,12 +51,12 @@ You can also use a system of user tables and authentication, or you can leverage
 
 For code samples that use the Microsoft identity platform as the fallback system, see [Office Add-in NodeJS SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO) and [Office Add-in ASP.NET SSO](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO).
 
-## Develop an SSO add-in
+## Develop a legacy Office SSO add-in
 
 This section describes the tasks involved in creating an Office Add-in that uses SSO. These tasks are described here independently of language or framework. For step-by-step instructions, see:
 
-- [Create a Node.js Office Add-in that uses single sign-on](create-sso-office-add-ins-nodejs.md)
-- [Create an ASP.NET Office Add-in that uses single sign-on](create-sso-office-add-ins-aspnet.md)
+- [Create a Node.js Office Add-in that uses single sign-on](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
+- [Create an ASP.NET Office Add-in that uses single sign-on](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
 
 ### Register your add-in with the Microsoft identity platform
 
@@ -252,7 +255,7 @@ The following is a typical decoded payload of an access token. For information a
 }
 ```
 
-## Using SSO with an Outlook add-in
+## Using legacy Office SSO with an Outlook add-in
 
 There are some small, but important differences in using SSO in an Outlook add-in from using it in an Excel, PowerPoint, or Word add-in. Be sure to read [Authenticate a user with a single sign-on token in an Outlook add-in](../outlook/authenticate-a-user-with-an-sso-token.md) and [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md).
 
