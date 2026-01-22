@@ -33,11 +33,11 @@ In this article, you'll walk through the process of building a simple Excel Copi
 
 1. On the **Select a capability** list, select **Create Declarative Agent with Office Add-in Action**.
 
-    :::image type="content" source="../images/agent-toolkit-add-in-capability-list.png" alt-text="A drop down list of add-in capabilities including, Task pane, Custom Function and Shortcut, Create Declarative Agent with Office Add-in Action, and Upgrade an Existing Office Add-in":::
+    :::image type="content" source="../images/agent-toolkit-add-in-capability-list.png" alt-text="A dropdown list of add-in capabilities including, Task pane, Custom Function and Shortcut, Create Declarative Agent with Office Add-in Action, and Upgrade an Existing Office Add-in.":::
 
 1. In the refined capability list that opens, select **New Declarative Agent with Office Add-in Actions**.
 
-    :::image type="content" source="../images/agent-toolkit-refined-add-in-capability-list.png" alt-text="A drop down list of two choices: New Declarative Agent with Office Add-in Action, and Extend an Existing Office Add-in":::
+    :::image type="content" source="../images/agent-toolkit-refined-add-in-capability-list.png" alt-text="A dropdown list of two choices: New Declarative Agent with Office Add-in Action, and Extend an Existing Office Add-in.":::
 
 1. In the **Workspace Folder** control that opens, choose a folder for the project.
 1. In the **Application Name** text box, enter "Add-in + Agent Actions".
@@ -52,13 +52,13 @@ In this article, you'll walk through the process of building a simple Excel Copi
 1. Press <kbd>F5</kbd>. The project builds and a Node dev-server window opens. This process may take a couple of minutes. Eventually, the Office application opens.
 
 > [!NOTE]
-> If this is the first time that you have sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
+> If this is the first time that you've sideloaded an Office Add-in on your computer (or the first time in over a month), you may be prompted to delete an old certificate and/or to install a new one. Agree to both prompts.
 
 You can start working with either the add-in or the Copilot agent. If both have been started, then they each have an icon tab on the right side of the task pane so you can switch between them. 
 
 ### Start the add-in
 
-1. There should be a **Contoso Add-in** group on the **Home** ribbon. If it isn't there, select the **Add-ins** button on the ribbon, and then select the **Add-in + Agent Actions** app in the flyout that opens.
+1. There should be a **Contoso Add-in** group on the **Home** tab of the ribbon. If it isn't there, select the **Add-ins** button on the ribbon, and then select the **Add-in + Agent Actions** app in the flyout that opens.
 1. The **Contoso Add-in** group has a **Show Taskpane** button which opens the task pane and a **Perform an action** button.
 
    > [!NOTE]
@@ -75,7 +75,7 @@ You can start working with either the add-in or the Copilot agent. If both have 
 1. In the **Copilot** pane, select the hamburger control.
 1. It may take a minute for the pane to completely rerender. When it does, there is a list of agents and **Add-in Skill + Agent for Add-in + Agent Actions** should be in the list. 
 1. When the agent is listed, select it. The **Add-in Skill + Agent for Add-in + Agent Actions** pane opens.
-1. Some conversation starters are listed. select one that's appropriate for the Office application you have opened, and then press the **Send** control in the conversation box at the bottom of the pane. 
+1. Some conversation starters are listed. Select one that's appropriate for the Office application you have opened, and then press the **Send** control in the conversation box at the bottom of the pane. 
 1. Select **Confirm** in response to the confirmation prompt.
 
    > [!TIP]
@@ -85,13 +85,13 @@ You can start working with either the add-in or the Copilot agent. If both have 
 
 ## Shut down the session completely
 
-It is important to shut down the debugging session and uninstall the add-in and agent completely to avoid subtle problems. Use the following steps.
+It's important to shut down the debugging session and uninstall the add-in and agent completely to avoid subtle problems. Use the following steps.
 
-1. In Visual Studio Code, open the **Run** menu and select **Stop debugging**, or press <kbd>Shift</kbd>+<kbd>F5</kbd>. Due to a bug we are working on, this action doesn't always completely shutdown the server, close the Office application, and uninstall the add-in. So, carry out the remaining steps.
-1. Close the Office application if it is still running.
+1. In Visual Studio Code, open the **Run** menu and select **Stop debugging**, or press <kbd>Shift</kbd>+<kbd>F5</kbd>. Due to a bug we're working on, this action doesn't always completely shut down the server, close the Office application, and uninstall the add-in. So, carry out the remaining steps.
+1. Close the Office application if it's still running.
 1. If the dev server is still running, shutting down the server depends on what window it's running in.
 
-   - If the web server is running in a separate window from Visual Studio Code, then in a command prompt or Visual Studio Code **TERMINAL** in the root of the project, run `npm run stop`.
+   - If the web server is running in a separate window from Visual Studio Code, open a command prompt or the Visual Studio Code **TERMINAL**. In the root of the project, run `npm run stop`.
    - If the web server is running in the Visual Studio Code **TERMINAL**, give the window focus and press <kbd>Ctrl</kbd>+<kbd>C</kbd>. Choose "Y" in response to the prompt to end the process. 
 
 1. Clear the Office cache following the instructions at [Manually clear the cache](../testing/clear-cache.md#manually-clear-the-cache).
@@ -106,7 +106,7 @@ See [Troubleshooting combined add-ins and agents](../design/agent-and-add-in-ove
 ## Next steps
 
 1. Complete the tutorial that begins at [Create declarative agents using Microsoft 365 Agent Toolkit](/microsoft-365-copilot/extensibility/build-declarative-agents).
-1. [Add a Copilot agent to an existing add-in](../develop/agent-and-add-in.md)
+1. [Add a Copilot agent to an existing add-in](../develop/agent-and-add-in.md).
 
 ## See also
 
