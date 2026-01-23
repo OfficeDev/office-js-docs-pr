@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 
 When an Excel custom function is written in JavaScript or TypeScript, [JSDoc tags](https://jsdoc.app/) are used to provide extra information about the custom function. We provide a [Webpack](https://webpack.js.org/) plugin that uses these JSDoc tags to automatically create the JSON metadata file at build time. Using the plugin saves you from the effort of [manually editing the JSON metadata file](custom-functions-json.md).
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 ## CustomFunctionsMetadataPlugin
 
 The plugin is [CustomFunctionsMetadataPlugin](https://github.com/OfficeDev/Office-Addin-Scripts/blob/master/packages/custom-functions-metadata-plugin/README.md). To install and configure it, use the following steps.
