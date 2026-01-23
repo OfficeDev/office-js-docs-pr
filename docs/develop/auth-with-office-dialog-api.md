@@ -1,15 +1,15 @@
 ---
 title: Authenticate and authorize with the Office dialog API
 description: Learn how to use the Office dialog API to enable users to sign in to Google, Facebook, Microsoft 365, and other services protected by Microsoft Identity Platform.
-ms.date: 11/30/2023
+ms.date: 01/08/2026
 ms.localizationpriority: high
 ---
 
 # Authenticate and authorize with the Office dialog API
 
-Always use the Office dialog API to authenticate and authorize users with your Office Add-in. You must also use the Office dialog API if you're implementing fallback authentication when single sign-on (SSO) can't be used.
+For scenarios where you don't want to use single sign-on (SSO), or can't use SSO, use the Office dialog API to authenticate and authorize users with your Office Add-in.
 
-Office Add-ins run in an iframe when opened in Office on the web. Many identity authorities, also called Secure Token Services (STS), prevent their sign-in page from opening in an iframe. These include Google, Facebook, and services protected by the Microsoft identity platform (formerly Azure AD V 2.0) such as a Microsoft account, a Microsoft 365 Education or work account, or other common account. Also security features implemented in the webview when Office Add-ins run in Office on Windows, or Office on Mac can prevent sign-in pages from working correctly.
+Office Add-ins run in an iframe when opened in Office on the web. Many identity authorities, also called Secure Token Services (STS), prevent their sign-in page from opening in an iframe. These include Google, Facebook, and services protected by Microsoft Entra ID, such as a Microsoft account, a Microsoft 365 Education or work account, or other common account. Also security features implemented in the webview when Office Add-ins run in Office on Windows, or Office on Mac can prevent sign-in pages from working correctly.
 
 For authorization to work correctly, the sign-in page must open in a separate browser or webview control instance. This is why Office provides the [Office dialog API](dialog-api-in-office-add-ins.md), specifically the [displayDialogAsync](/javascript/api/office/office.ui) method.
 
@@ -89,7 +89,7 @@ These auth-context objects, and the methods that create them, are not usable in 
 
 ### How you can use libraries with the Office dialog API
 
-In addition to, or instead of, monolithic "auth context" objects, most libraries provide APIs at a lower level of abstraction that enable your code to create less monolithic helper objects. For example, [MSAL.NET](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki#conceptual-documentation) v. 3.x.x has an API to construct a sign-in URL, and another API that constructs an AuthResult object that contains an access token in a property that is accessible to your code. For examples of MSAL.NET in an Office Add-in see: [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) and [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). For an example of using [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) in an add-in, see [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React).
+Instead of relying on large monolithic "auth context" objects, most libraries provide lower-level APIs that let you create smaller, purpose-built helper objects. For example, [MSAL.NET](/entra/identity-platform/msal-overview) provides an API that returns an AuthResult object, which exposes the access token through a property your code can use directly. For MSAL.NET examples in Office Add-ins, see: [Office Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-ASPNET) and [Outlook Add-in Microsoft Graph ASP.NET](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-Microsoft-Graph-ASPNET). For an example of using [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js) in an add-in, see [Office Add-in Microsoft Graph React](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-Microsoft-Graph-React).
 
 For more information about authentication and authorization libraries, see [Microsoft Graph: Recommended libraries](authorize-to-microsoft-graph-without-sso.md#recommended-libraries-and-samples) and [Other external services: Libraries](auth-external-add-ins.md#libraries).
 

@@ -1,11 +1,14 @@
 ﻿---
-title: Use SSO to get the identity of the signed-in user
+title: Use legacy Office SSO to get the identity of the signed-in user
 description: Call the getAccessToken API to get the ID token with name, email, and additional information about the signed-in user.
-ms.date: 06/24/2025
+ms.date: 12/15/2025
 ms.localizationpriority: medium
 ---
 
-# Use SSO to get the identity of the signed-in user
+# Use legacy Office SSO to get the identity of the signed-in user
+
+> [!NOTE]
+> This article describes legacy Office single sign-on (SSO). For a modern authentication experience with support across a wider range of platforms, use the Microsoft Authentication Library (MSAL) with nested app authentication (NAA). For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
 
 Use the `getAccessToken` API to get an access token that contains the identity for the current user signed in to Office. The access token is also an ID token because it contains identity claims about the signed-in user, such as their name and email. You can also use the ID token to identify the user when calling your own web services. To call `getAccessToken`, you must configure your Office Add-in to use SSO with Office.
 
