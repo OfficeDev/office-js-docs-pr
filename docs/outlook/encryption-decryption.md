@@ -1,7 +1,7 @@
 ---
 title: Create an encryption Outlook add-in (preview)
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
-ms.date: 10/23/2025
+ms.date: 01/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -148,10 +148,6 @@ function onMessageReadHandler(event) {
     const decryptedPdfFile = "JVBERi0xLjQKJeLjz9MKNCAwIG9i...";
     const pdfFileName = "Fabrikam_Report_202509";
 
-    // Decrypted content and properties of a mail item.
-    const decryptedEmailFile = "VGhpcyBpcyBhIHRleHQgZmlsZS4=...";
-    const emailFileName = "Fabrikam_Report_202508.eml";
-
     // Decrypted properties of a cloud attachment.
     const cloudFilePath = "https://contosostorage.com/reports/weekly_forecast.xlsx";
     const cloudFileName = "weekly_forecast.xlsx";
@@ -167,12 +163,6 @@ function onMessageReadHandler(event) {
             content: decryptedPdfFile,
             isInline: false,
             name: pdfFileName
-        },
-        {
-            attachmentType: Office.MailboxEnums.AttachmentType.Item,
-            content: decryptedEmailFile,
-            isInline: false,
-            name: emailFileName
         },
         {
             attachmentType: Office.MailboxEnums.AttachmentType.Cloud,
@@ -219,6 +209,7 @@ Office.actions.associate("onMessageReadHandler", onMessageReadHandler);
 - An encrypted message must first be decrypted before a user can reply or forward it. A user can't reply or forward an encrypted message while it's being decrypted.
 - If a user navigates to another mail item while an encrypted message is being decrypted, the decryption process stops running. The user must select or open the message again to activate the decryption process.
 - When replying to or forwarding encrypted messages, drafts are saved unencrypted in the **Drafts** folder.
+- The `attachments` property of the `event.completed` method doesn't currently support attachments of type `Office.MailboxEnums.AttachmentType.Item`.
 
 ### Decryption notifications
 
