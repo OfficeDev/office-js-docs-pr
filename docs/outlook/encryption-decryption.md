@@ -30,6 +30,10 @@ The following table provides an overview of the encryption and decryption workfl
 | Add-in decrypts the message | You must implement your own decryption protocol in the `OnMessageRead` event handler. While your add-in decrypts the message and its attachments, a notification is shown to the user to alert them that their message is being processed by the add-in. This notification is automatically shown by an add-in that handles the `OnMessageRead` event, so that you don't have to manually create one. |
 | Recipient views the decrypted message and its attachments, if any | Once the decryption operation is complete, a notification is automatically shown to the user to alert them that the add-in has finished processing the message. In your `OnMessageRead` handler, call the [event.completed](/javascript/api/outlook/office.mailboxevent?view=outlook-js-preview&preserve-view=true#outlook-office-mailboxevent-completed-member(1)) method and pass it a [MessageDecryptEventCompletedOptions](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true) object. With the `MessageDecryptEventCompletedOptions` object, you can specify whether to display the decrypted content to the recipient. For more information, see [Implement event handling](#implement-event-handling). |
 
+## Try out a completed add-in
+
+To immediately see a completed encryption add-in in action, try out the [Encrypt and decrypt messages in Outlook sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-decrypt-messages).
+
 ## Implement decryption using event-based activation
 
 You must implement your own encryption and decryption protocols. The add-in must also be configured to handle the `OnMessageRead` event to conveniently determine when your add-in can decrypt a message and display the decrypted contents. To implement the `OnMessageRead` event, you must:
@@ -227,6 +231,7 @@ Add-ins that handle the `OnMessageRead` event automatically display notification
 
 ## See also
 
+- [Sample: Encrypt and decrypt messages in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-decrypt-messages)
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
 - [Activate add-ins with events](../develop/event-based-activation.md)
 - [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
