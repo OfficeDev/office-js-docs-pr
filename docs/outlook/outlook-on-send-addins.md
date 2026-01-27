@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 > [!IMPORTANT]
 >
-> We recommend using [Smart Alerts](onmessagesend-onappointmentsend-events.md) instead of the on-send feature to check that certain conditions are met before a mail item is sent. Smart Alerts was released in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12) and introduced the `OnMessageSend` and `OnAppointmentSend` events.
+> We recommend using [Smart Alerts](onmessagesend-onappointmentsend-events.md) instead of the on-send feature to check that certain conditions are met before a mail item is sent. Smart Alerts was released in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.12) and introduced the `OnMessageSend` and `OnAppointmentSend` events.
 >
 > Smart Alerts provides the following benefits.
 >

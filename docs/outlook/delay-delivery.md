@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 Learn to build an Outlook add-in that schedules and sends messages even when the Outlook client is closed or the device is turned off. With the Office JavaScript API, your users can conveniently schedule email marketing campaigns or time messages for delivery during colleagues' or customers' business hours.
 
 > [!NOTE]
-> Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Try it out
 

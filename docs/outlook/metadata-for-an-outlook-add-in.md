@@ -14,9 +14,9 @@ The following table provides an overview of the available options to manage cust
 
 | Custom data option | Minimum requirement set | Applies to | Description |
 | ----- | ----- | ----- | ----- |
-| Roaming settings | [1.1](/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1) | Mailbox | Manages custom data in a user's mailbox. The add-in that sets the custom data can access it from other supported devices where the user's mailbox is set up. Stored data is accessible in subsequent Outlook sessions. |
-| Custom properties | [1.1](/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1) | Mail item | Manages custom data for a mail item in a user's mailbox. The add-in that sets the custom data can access it from the mail item on supported devices where the user's mailbox is set up. Stored data is accessible in subsequent Outlook sessions. |
-| Session data | [1.11](/javascript/api/requirement-sets/outlook/requirement-set-1.11/outlook-requirement-set-1.11) | Mail item | Manages custom data for a mail item in the user's current Outlook session. The add-in that sets the custom data can only access it from the mail item while it's being composed. |
+| Roaming settings | [1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.1) | Mailbox | Manages custom data in a user's mailbox. The add-in that sets the custom data can access it from other supported devices where the user's mailbox is set up. Stored data is accessible in subsequent Outlook sessions. |
+| Custom properties | [1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.1) | Mail item | Manages custom data for a mail item in a user's mailbox. The add-in that sets the custom data can access it from the mail item on supported devices where the user's mailbox is set up. Stored data is accessible in subsequent Outlook sessions. |
+| Session data | [1.11](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.11) | Mail item | Manages custom data for a mail item in the user's current Outlook session. The add-in that sets the custom data can only access it from the mail item while it's being composed. |
 
 > [!NOTE]
 > For information on requirement sets and their supported clients, see [Outlook JavaScript API requirement sets](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets).

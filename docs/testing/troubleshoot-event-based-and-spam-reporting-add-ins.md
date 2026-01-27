@@ -13,7 +13,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
 ## Review feature prerequisites
 
 - Verify that the add-in is installed on a supported client. Some clients only support certain events or aspects of event-based activation or integrated spam reporting. For more information, see [Supported events](../develop/event-based-activation.md#supported-events) and [Implement an integrated spam-reporting add-in](../outlook/spam-reporting.md).
-- Verify that your client supports the minimum requirement set needed. The integrated spam reporting feature was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). See the [Supported Events](../develop/event-based-activation.md#supported-events) for details about build numbers and requirement sets for event-based activation.
+- Verify that your client supports the minimum requirement set needed. The integrated spam reporting feature was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.14). See the [Supported Events](../develop/event-based-activation.md#supported-events) for details about build numbers and requirement sets for event-based activation.
 - Review the expected behavior and limitations of the feature.
 
   - [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations)

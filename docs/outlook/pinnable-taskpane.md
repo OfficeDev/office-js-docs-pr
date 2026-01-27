@@ -13,7 +13,7 @@ The [task pane](../design/add-in-commands.md#types-of-add-in-commands) UX shape 
 However, by default, if a user has an add-in task pane open for a message in the Reading Pane, and then selects a new message, the task pane is automatically closed. For a heavily-used add-in, the user may prefer to keep that pane open, eliminating the need to reactivate the add-in on each message. With pinnable task panes, your add-in can give the user that option.
 
 > [!NOTE]
-> Although the pinnable task pane feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
+> Although the pinnable task pane feature was introduced in [requirement set 1.5](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.5), it's currently only available to Microsoft 365 subscribers using the following:
 >
 > - Modern Outlook on the web
 > - [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)

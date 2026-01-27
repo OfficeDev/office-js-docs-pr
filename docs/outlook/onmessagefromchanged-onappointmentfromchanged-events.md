@@ -17,7 +17,7 @@ Applying the correct signature to messages when using multiple Exchange accounts
 The following sections walk you through how to develop an event-based add-in that handles the `OnMessageFromChanged` event to automatically update a message's signature when the mail account in the **From** field is changed.
 
 > [!NOTE]
-> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events were introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). For information about client support for these events, see [Supported clients and platforms](#supported-clients-and-platforms).
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events were introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.13). For information about client support for these events, see [Supported clients and platforms](#supported-clients-and-platforms).
 
 ## Supported clients and platforms
 

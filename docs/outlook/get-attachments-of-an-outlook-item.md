@@ -12,9 +12,9 @@ The Office JavaScript API includes APIs to get attachments and their contents fr
 
 | API | Supported Outlook modes | Minimum requirement set |
 | ---- | ---- | ---- |
-| [Office.context.mailbox.item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) | Read | [1.1](/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1) |
-| [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) | Compose | [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) |
-| [Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) | Read<br/>Compose | [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) |
+| [Office.context.mailbox.item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) | Read | [1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.1) |
+| [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) | Compose | [1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.8) |
+| [Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) | Read<br/>Compose | [1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.8) |
 
 If the Outlook client in which the add-in is running doesn't support the needed minimum requirement set, you can get an attachment and its contents directly from Exchange instead. Select the tab for the applicable Exchange environment.
 
