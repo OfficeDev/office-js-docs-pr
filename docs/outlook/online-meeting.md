@@ -369,8 +369,6 @@ In this section, learn how your add-in script can update a user's meeting to inc
     const newBody = '<br>' +
         '<a href="https://contoso.com/meeting?id=123456789" target="_blank">Join Contoso meeting</a>' +
         '<br><br>' +
-        '<a href="https://contoso.com/chat?id=123456789" target="_blank">Chat with meeting participants</a>' +
-        '<br><br>' +
         'Phone Dial-in: +1(123)456-7890' +
         '<br><br>' +
         'Meeting ID: 123 456 789' +
@@ -476,11 +474,11 @@ The meeting attendee's UI varies depending on the Outlook client.
 
 ## Implement the Join and Chat buttons
 
-While you can include URLs in the meeting body to join the meeting or chat with meeting participants, the **Join** and **Chat** buttons only appear in the meeting UI if:
+The **Join** and **Chat** buttons only appear in the meeting UI if:
 
 - The online-meeting add-in is published to Microsoft Marketplace. Line-of-business add-ins aren't supported.
 - The add-in is registered.
-- The registered add-in is running in Outlook on the web, on Mac, on Android, on iOS, and in the new Outlook on Windows.
+- The meeting participant is using Outlook on the web, on Mac, on Android, on iOS, or the new Outlook on Windows.
 - **Chat button only**: The chat URL in the meeting body must be appended with the `owa-chat=1` query parameter.
 
 ### Register your online-meeting template
@@ -496,25 +494,12 @@ To register your online-meeting add-in, once you've published your add-in to Mic
 
 :::image type="content" source="../images/outlook-request-to-register-online-meeting-template.png" alt-text="A new GitHub issue screen with Contoso sample content.":::
 
-### Update the chat URL in the meeting body
+### Add support for the Chat button
 
-Once your online-meeting add-in is registered, update the chat URL in your JavaScript code to include the `owa-chat=1` query parameter. The following example updates the `newBody` variable from the earlier sample.
+To add support for the **Chat** button, in your JavaScript code, you must include a URL in the meeting body that includes the `owa-chat=1` query parameter. The following is an example.
 
 ```javascript
-// Updates the chat URL to include the owa-chat=1 query parameter.
-const newBody = '<br>' +
-    '<a href="https://contoso.com/meeting?id=123456789" target="_blank">Join Contoso meeting</a>' +
-    '<br><br>' +
-    '<a href="https://contoso.com/chat?id=123456789&owa-chat=1" target="_blank">Chat with meeting participants</a>' +
-    '<br><br>' +
-    'Phone Dial-in: +1(123)456-7890' +
-    '<br><br>' +
-    'Meeting ID: 123 456 789' +
-    '<br><br>' +
-    'Want to test your video connection?' +
-    '<br><br>' +
-    '<a href="https://contoso.com/testmeeting" target="_blank">Join test meeting</a>' +
-    '<br><br>';
+'<a href="https://contoso.com/chat?id=123456789&owa-chat=1" target="_blank">Chat with meeting participants</a>'
 ```
 
 ## Automatically provide post-meeting resources and updates to attendees
