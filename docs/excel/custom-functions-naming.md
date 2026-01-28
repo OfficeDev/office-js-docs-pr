@@ -16,8 +16,6 @@ A custom function is identified by an `id` and a `name` in the JSON metadata.
 - `id`: Unique identifier used in code.
 - `name`: Display name shown to users. It can be localized.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 A function `name` can differ from the `id` for localization. If you don't need localization, it's best to use the same value for both.
 
 A function's `name` and `id` share some similar rules.

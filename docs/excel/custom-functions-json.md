@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 
 As described in the [custom functions overview](custom-functions-overview.md) article, a custom functions project must include both a JSON metadata file and a script (either JavaScript or TypeScript) file to register a function, making it available for use. Custom functions are registered when the user runs the add-in for the first time and after that are available to the same user in all workbooks.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 We recommend using JSON autogeneration when possible instead of creating your own JSON file. Autogeneration is less prone to user error and the `yo office` scaffolded files already include this. For more information on JSDoc tags and the JSON autogeneration process, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
 
 However, you can make a custom functions project from scratch. This process requires you to:
