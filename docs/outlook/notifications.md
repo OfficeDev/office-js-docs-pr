@@ -18,7 +18,7 @@ Notification messages are supported on messages and appointments in both read an
 
 :::image type="content" source="../images/outlook-notification.png" alt-text="An insight notification displayed in an appointment in compose mode.":::
 
-To manage a notification on a mail item, call [Office.context.mailbox.item.notificationMessages](/javascript/api/requirement-sets/outlook/requirement-set-1.3/office.context.mailbox.item#properties) in your add-in's JavaScript code. This property returns a [NotificationMessages](/javascript/api/outlook/office.notificationmessages) object with methods to add, remove, get, or replace notifications. The following code shows how to use these methods to manage your add-in's notifications.
+To manage a notification on a mail item, call `notificationMessages` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-notificationmessages-member), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-notificationmessages-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-notificationmessages-member), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-notificationmessages-member)) in your add-in's JavaScript code. This property returns a [NotificationMessages](/javascript/api/outlook/office.notificationmessages) object with methods to add, remove, get, or replace notifications. The following code shows how to use these methods to manage your add-in's notifications.
 
 ```javascript
 const notificationMessages = Office.context.mailbox.item.notificationMessages;

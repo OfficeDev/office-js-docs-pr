@@ -593,7 +593,7 @@ If you implemented the optional steps to customize a dialog button or override t
 > - The `sendAsync` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.15). Learn more about its supported clients and platforms.
 > - The `sendAsync` method is available for preview in Outlook on Mac starting in Version 16.105 (Build 25121117). To test the method, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
-To further streamline a user's experience when recommending changes to the mail items they're sending, call the [sendAsync](/javascript/api/requirement-sets/outlook/requirement-set-1.15/office.context.mailbox.item?view=outlook-js-1.15&preserve-view=true#methods) method in your task pane or function command code.
+To further streamline a user's experience when recommending changes to the mail items they're sending, call the `sendAsync` method ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sendasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-sendasync-member(1))) in your task pane or function command code.
 
 1. In **taskpane.js**, replace the `addAttachment` function with the following code.
 
@@ -622,7 +622,7 @@ To further streamline a user's experience when recommending changes to the mail 
 
     > [!TIP]
     > - Any code implemented to run when `asyncResult.status` is `Office.AsyncResultStatus.Success` or after the `sendAsync` method isn't guaranteed to be processed. This is because the item may have already been sent and the add-in has completed processing. We recommend processing other operations before calling `sendAsync`.
-    > - The `sendAsync` implementation varies between a task pane and function command implementation. For guidance, see the [sendAsync](/javascript/api/requirement-sets/outlook/requirement-set-1.15/office.context.mailbox.item?view=outlook-js-1.15&preserve-view=true#methods) reference documentation.
+    > - The `sendAsync` implementation varies between a task pane and function command implementation. For guidance, see the `sendAsync` reference documentation ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sendasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-sendasync-member(1))).
 
 1. Save your changes.
 1. In **taskpane.html**, update the label of the `add-attachment` button.
