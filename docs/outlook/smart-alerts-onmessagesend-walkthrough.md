@@ -13,7 +13,7 @@ Never miss attaching an important document or photo to your message ever again. 
 The following sections walk you through how to develop an event-based add-in that implements [Smart Alerts](onmessagesend-onappointmentsend-events.md) to handle the `OnMessageSend` event. By the end of this walkthrough, your add-in will automatically check for an attached document or picture mentioned in the message and alert you if it's missing before the message is sent.
 
 > [!NOTE]
-> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms) and the specific sections that describe the features you want to implement.
+> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms) and the specific sections that describe the features you want to implement.
 
 ## Set up your environment
 
@@ -326,14 +326,14 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 >   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
 >   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 > - In classic Outlook on Windows, when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
-> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 > - The `errorMessageMarkdown` property is available for preview in Outlook on Mac starting in Version 16.103 (Build 25102433). To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 ## Customize the text and functionality of a button in the dialog (optional)
 
 > [!NOTE]
 >
-> - Support to customize a button in the Smart Alerts dialog and program it to open a task pane was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.14). The ability to program a button to run a function was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - Support to customize a button in the Smart Alerts dialog and program it to open a task pane was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14). The ability to program a button to run a function was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 > - The ability to program a dialog button to run a function is available to preview in Outlook on Mac starting in Version 16.105 (Build 25121117). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. To provide the user with further guidance on how to meet the conditions of your add-in, you can customize the text of a button in the dialog and program it to open a task pane or run a function.
@@ -417,7 +417,7 @@ In this sample, the dialog button is modified to open a task pane.
 
 > [!NOTE]
 >
-> Support to override the send mode option at runtime was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> Support to override the send mode option at runtime was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 There may be instances when you want your add-in to implement different send mode options. For example, you may want your add-in to enforce the **block** option on mail items that don't meet the information protection policies of your organization, but only have it apply the **prompt user** option to provide a recommendation if a user adds the incorrect recipient.
 
@@ -590,7 +590,7 @@ If you implemented the optional steps to customize a dialog button or override t
 
 > [!NOTE]
 >
-> - The `sendAsync` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.15). Learn more about its supported clients and platforms.
+> - The `sendAsync` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its supported clients and platforms.
 > - The `sendAsync` method is available for preview in Outlook on Mac starting in Version 16.105 (Build 25121117). To test the method, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 To further streamline a user's experience when recommending changes to the mail items they're sending, call the `sendAsync` method ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sendasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-sendasync-member(1))) in your task pane or function command code.

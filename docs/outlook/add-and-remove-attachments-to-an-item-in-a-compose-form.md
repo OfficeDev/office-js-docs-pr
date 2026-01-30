@@ -17,7 +17,7 @@ Attach a file or Outlook item to a compose form by using the method that's appro
 - `addFileAttachmentAsync`([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-addfileattachmentasync-member(1))): Attach a file.
 
     > [!NOTE]
-    > The `addFileAttachmentAsync` method was introduced in [requirement set 1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.1) for Outlook on Windows (classic) and on Mac. Support for `addFileAttachmentAsync` in Outlook on the web and new Outlook on Windows was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.8).
+    > The `addFileAttachmentAsync` method was introduced in [requirement set 1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-1) for Outlook on Windows (classic) and on Mac. Support for `addFileAttachmentAsync` in Outlook on the web and new Outlook on Windows was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8).
 
 - `addFileAttachmentFromBase64Async` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-addfileattachmentfrombase64async-member(1))): Attach a file using its Base64-encoded string.
 - `addItemAttachmentAsync` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-additemattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-additemattachmentasync-member(1))): Attach an Outlook item.
@@ -147,7 +147,7 @@ function addItemAttachment(itemId) {
 
 ## Get attachments
 
-The following APIs to get attachments in compose mode are available from [requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.8).
+The following APIs to get attachments in compose mode are available from [requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8).
 
 - `getAttachmentsAsync`: [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getattachmentsasync-member(1))
 - `getAttachmentContentAsync`: [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getattachmentcontentasync-member(1))

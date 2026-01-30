@@ -96,7 +96,7 @@ The following sections describe each notification type, including its [propertie
         **Minimum supported requirement set**
     :::column-end:::
     :::column span="3":::
-        [1.3](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.3)
+        [1.3](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -139,7 +139,7 @@ The following sections describe each notification type, including its [propertie
         **Minimum supported requirement set**
     :::column-end:::
     :::column span="3":::
-        [1.3](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.3)
+        [1.3](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -183,7 +183,7 @@ The following sections describe each notification type, including its [propertie
         **Minimum supported requirement set**
     :::column-end:::
     :::column span="3":::
-        [1.10](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.10)
+        [1.10](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-10)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -223,7 +223,7 @@ The following sections describe each notification type, including its [propertie
         **Minimum supported requirement set**
     :::column-end:::
     :::column span="3":::
-        [1.3](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.3)
+        [1.3](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3)
     :::column-end:::
 :::row-end:::
 :::row:::

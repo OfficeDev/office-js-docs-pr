@@ -21,7 +21,7 @@ The following table compares the two location APIs to help you choose the right 
 
 | Feature | `enhancedLocation` API | `location` API |
 |---------|----------------|------------------------|
-| **Minimum requirement set** | [1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.8) | [1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.1) |
+| **Minimum requirement set** | [1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8) | [1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-1) |
 | **Recommended use** | Use the [enhancedLocation API](#use-the-enhancedlocation-api) to better identify and manage locations, especially if you need to determine the [location type](/javascript/api/outlook/office.mailboxenums.locationtype). | Use the [location API](#use-the-location-api) if Outlook clients don't support requirement set 1.8 or later or if you only need basic string-based location management. |
 | **Supported input and output types** | [Office.LocationIdentifier](/javascript/api/outlook/office.locationidentifier) | String |
 | **Supported operations** | <ul><li>Get</li><li>Set</li><li>Remove</li></ul> | <ul><li>Get</li><li>Set</li></ul> |

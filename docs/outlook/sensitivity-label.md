@@ -17,7 +17,7 @@ You can use the Office JavaScript API to implement sensitivity label solutions i
 - Add a header or footer to a message or appointment based on its sensitivity label to comply with business and legal policies.
 
 > [!NOTE]
-> Support for the sensitivity label feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1.13). For information about client support for this feature, see [Supported clients and platforms](#supported-clients-and-platforms).
+> Support for the sensitivity label feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13). For information about client support for this feature, see [Supported clients and platforms](#supported-clients-and-platforms).
 
 ## Prerequisites
 
