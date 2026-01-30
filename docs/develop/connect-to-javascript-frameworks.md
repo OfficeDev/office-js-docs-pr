@@ -89,7 +89,9 @@ Office.onReady(() => {
 ```typescript
 // src/main.ts
 Office.onReady(() => {
-  platformBrowserDynamic().bootstrapModule(AppModule);
+  platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch(err => console.error(err));
 });
 ```
 
@@ -207,10 +209,15 @@ Office.context.ui.displayDialogAsync(
   'https://localhost:3000/dialog-route',
   { height: 50, width: 50 },
   (result) => {
-    const dialog = result.value;
-    dialog.addEventHandler(Office.EventType.DialogMessageReceived, (arg) => {
-      // Handle message from dialog.
-    });
+    if (result.status === Office.AsyncResultStatus.Succeeded) {
+      const dialog = result.value;
+      dialog.addEventHandler(Office.EventType.DialogMessageReceived, (arg) => {
+        // Handle message from dialog.
+      });
+    } else {
+      // Handle error opening the dialog.
+      console.error(result.error);
+    }
   }
 );
 
@@ -278,18 +285,18 @@ Modern JavaScript frameworks typically use build tools like Webpack, Vite, Rollu
 - Load Office.js from the CDN by using a `<script>` tag in your HTML.
 - Configure your bundler to treat `Office` as a global variable.
 
-#### Example: Vite configuration
+#### Example: TypeScript configuration with Vite
 
-If you use Vite with TypeScript, you might need to configure globals:
+If you use Vite with TypeScript, you typically don't need special Vite configuration for Office.js. The `@types/office-js` package provides the necessary type definitions. However, if you need to ensure the Office.js types are available, verify your `tsconfig.json`:
 
-```typescript
-// vite.config.ts
-export default {
-  // Office is loaded globally from CDN.
-  define: {
-    'Office': 'Office'
+```json
+// tsconfig.json
+{
+  "compilerOptions": {
+    "types": ["office-js"]
+    // ... your other compiler options ...
   }
-};
+}
 ```
 
 #### Example: Webpack configuration
