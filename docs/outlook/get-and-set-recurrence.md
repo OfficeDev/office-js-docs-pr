@@ -196,7 +196,7 @@ const recurrenceType = recurrence.recurrenceType;
 
 ## Identify when the recurrence pattern changes
 
-There may be scenarios where you want your add-in to detect and handle changes to the recurrence pattern of a series. For example, you'd like to update the appointment's location if the series is extended. To implement this, you must create a handler for the [RecurrenceChanged](/javascript/api/office/office.eventtype) event. To add an event handler for the `RecurrenceChanged` event, call [Office.context.mailbox.item.addHandlerAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods). When a change is detected, the event handler receives an argument of type [Office.RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs), which provides the updated recurrence object.
+There may be scenarios where you want your add-in to detect and handle changes to the recurrence pattern of a series. For example, you'd like to update the appointment's location if the series is extended. To implement this, you must create a handler for the [RecurrenceChanged](/javascript/api/office/office.eventtype) event. To add an event handler for the `RecurrenceChanged` event, call `addHandlerAsync` ([AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-addhandlerasync-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-addhandlerasync-member(1))). When a change is detected, the event handler receives an argument of type [Office.RecurrenceChangedEventArgs](/javascript/api/outlook/office.recurrencechangedeventargs), which provides the updated recurrence object.
 
 The following example shows how to register an event handler for the `RecurrenceChanged` event.
 
@@ -239,7 +239,7 @@ To learn more about Script Lab, see [Explore Office JavaScript API using Script 
 - [Get or set the location when composing an appointment in Outlook](get-or-set-the-location-of-an-appointment.md)
 
 [getAsync link]: /javascript/api/outlook/office.recurrence#getAsync_options__callback_
-[item.recurrence link]: /javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties
+[item.recurrence link]: /javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-recurrence-member
 [setAsync link]: /javascript/api/outlook/office.recurrence#setAsync_recurrencePattern__options__callback_
 
 [dayOfMonth link]: /javascript/api/outlook/office.recurrenceproperties#dayOfMonth

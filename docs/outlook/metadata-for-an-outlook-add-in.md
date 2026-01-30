@@ -120,7 +120,7 @@ These add-in-specific, item-specific custom properties can only be accessed by u
 
 ### Using custom properties
 
-Before you can use custom properties, you must load them by calling the [loadCustomPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method. After you've created the property bag, you can use the [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) and [get](/javascript/api/outlook/office.customproperties) methods to add and retrieve custom properties. You must use the [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) method to save any changes that you make to the property bag.
+Before you can use custom properties, you must load them by calling the `loadCustomPropertiesAsync` method ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-loadcustompropertiesasync-member(1)), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-loadcustompropertiesasync-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-loadcustompropertiesasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-loadcustompropertiesasync-member(1))). After you've created the property bag, you can use the [set](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-set-member(1)) and [get](/javascript/api/outlook/office.customproperties) methods to add and retrieve custom properties. You must use the [saveAsync](/javascript/api/outlook/office.customproperties#outlook-office-customproperties-saveasync-member(1)) method to save any changes that you make to the property bag.
 
  > [!NOTE]
  > When using custom properties in Outlook add-ins, keep in mind that:
@@ -162,7 +162,7 @@ For other examples that get single-value MAPI-based extended properties, see [Ge
 
 #### Exchange on-premises
 
-In Exchange on-premises environments, your mail add-in can get the `CustomProperties` MAPI-based extended property using the EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation. Access `GetItem` on the server side by using a callback token, or on the client side by using the [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method. In the `GetItem` request, specify the `CustomProperties` MAPI-based property in its property set using the details provided in [How custom properties are stored on an item](#how-custom-properties-are-stored-on-an-item).
+In Exchange on-premises environments, your mail add-in can get the `CustomProperties` MAPI-based extended property using the EWS [GetItem](/exchange/client-developer/web-service-reference/getitem-operation) operation. Access `GetItem` on the server side by using a callback token, or on the client side by using the [mailbox.makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1)) method. In the `GetItem` request, specify the `CustomProperties` MAPI-based property in its property set using the details provided in [How custom properties are stored on an item](#how-custom-properties-are-stored-on-an-item).
 
 The following example shows how to get an item and its custom properties.
 

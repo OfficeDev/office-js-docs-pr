@@ -368,7 +368,7 @@ To modify the text of the dialog button or assign it a task pane or function, yo
   > [!TIP]
   > When you configure a button in the Smart Alerts dialog to run a function, a button for the implemented add-in command is also added to the ribbon or action bar of the Outlook client. Use the `contextData` option to distinguish when a user runs the function from the Smart Alerts dialog.
   >
-  > To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) in the JavaScript implementation of your task pane or function command.
+  > To retrieve the value of the `contextData` option, you must call `getInitializationContextAsync` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getinitializationcontextasync-member(1)), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getinitializationcontextasync-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getinitializationcontextasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getinitializationcontextasync-member(1))) in the JavaScript implementation of your task pane or function command.
 
 In this sample, the dialog button is modified to open a task pane.
 

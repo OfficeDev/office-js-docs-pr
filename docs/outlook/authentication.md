@@ -72,7 +72,7 @@ Callback tokens provide access to the user's mailbox from your server back-end, 
 
 - Needs access to the user's mailbox from your server back-end.
 
-Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) methods. The level of access is controlled by the permissions specified in the add-in manifest.
+Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getcallbacktokenasync-member(1)) methods. The level of access is controlled by the permissions specified in the add-in manifest.
 
 ## See also
 

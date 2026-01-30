@@ -14,8 +14,8 @@ Learn how to build an Outlook add-in that effectively manages appointment locati
 
 There are two APIs you can use to manage an appointment's locations.
 
-- [item.enhancedLocation](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-- [item.location](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
+- `item.enhancedLocation`: [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-enhancedlocation-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-enhancedlocation-member)
+- `item.location`: [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-location-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-location-member)
 
 The following table compares the two location APIs to help you choose the right approach.
 

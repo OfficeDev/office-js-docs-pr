@@ -21,12 +21,14 @@ In this article, you'll learn how to:
 Different mail item types support different recipient properties. The following table shows which properties are available for messages and appointments.
 
 | Mail item type | Recipient properties |
-|----------------|----------------------|
-| **Message** | <ul><li>[item.bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)</li><li>[item.cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)</li><li>[item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)</li></ul> |
-| **Appointment** | <ul><li>[item.optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)</li><li>[item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)</li></ul>
+| -------------- | -------------------- |
+| **Message Compose** | <ul><li>[item.bcc](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-bcc-member)</li><li>[item.cc](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-cc-member)</li><li>[item.to](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-to-member)</li></ul> |
+| **Message Read** | <ul><li>[item.cc](/javascript/api/outlook/office.messageread#outlook-office-messageread-cc-member)</li><li>[item.to](/javascript/api/outlook/office.messageread#outlook-office-messageread-to-member)</li></ul> |
+| **Appointment Compose** | <ul><li>[item.optionalAttendees](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-optionalattendees-member)</li><li>[item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-requiredattendees-member)</li></ul> |
+| **Appointment Read** | <ul><li>[item.optionalAttendees](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-optionalattendees-member)</li><li>[item.requiredAttendees](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-requiredattendees-member)</li></ul> |
 
 > [!TIP]
-> If your add-in operates on both messages and appointments, we recommend calling [Office.context.mailbox.item.itemType](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) to help identify between the two mail item types. This way, your add-in can access the appropriate recipient properties.
+> If your add-in operates on both messages and appointments, we recommend calling `itemType` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-itemtype-member), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-itemtype-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-itemtype-member), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-itemtype-member)) to help identify between the two mail item types. This way, your add-in can access the appropriate recipient properties.
 
 ## Try it out
 
