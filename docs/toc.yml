@@ -109,6 +109,8 @@
       - name: Initialize your add-in
         href: develop/initialize-add-in.md
         displayName: manifest
+      - name: Connect Office.js to any framework
+        href: develop/connect-to-javascript-frameworks.md
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
         displayName: manifest
@@ -346,8 +348,6 @@
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
-      - name: Develop add-ins with Angular
-        href: develop/add-ins-with-angular2.md
     - name: Special requirements for add-ins on the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
