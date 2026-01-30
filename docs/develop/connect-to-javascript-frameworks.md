@@ -62,11 +62,7 @@ For more information about referencing Office.js, including preview APIs and alt
 
 ## Initialize your framework after Office.onReady
 
-The key to integrating Office.js with any framework is to initialize your application inside the `Office.onReady()` callback. This approach ensures Office.js is fully initialized before your framework starts rendering.
-
-### Why this approach matters
-
-Office.js needs to:
+The key to integrating Office.js with any framework is to initialize your application inside the `Office.onReady()` callback. This approach ensures Office.js is fully initialized before your framework starts rendering. This is important because Office.js needs to:
 
 - Download and cache API library files from the CDN.
 - Initialize the Office runtime environment.
@@ -172,7 +168,7 @@ Office.onReady((info: Office.OfficeInfo) => {
 
 For more information, see [Referencing the Office JavaScript API library](referencing-the-javascript-api-for-office-library-from-its-cdn.md#enabling-intellisense-for-a-typescript-project).
 
-## Important considerations
+## Other considerations
 
 ### Loading indicators
 
@@ -225,7 +221,7 @@ Office.onReady(() => {
 });
 ```
 
-## History API workaround
+### History API workaround
 
 Office.js replaces the default [Window.history](https://developer.mozilla.org/docs/Web/API/History) methods `replaceState` and `pushState` with `null`. If your framework or router depends on these methods (common in React Router, Vue Router, Angular Router, and others), you need to cache and restore them.
 
