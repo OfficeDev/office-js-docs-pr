@@ -1,16 +1,22 @@
 ---
-title: Connect Office.js to any framework
+title: Connect Office.js to any JavaScript framework
 description: Learn how to integrate Office.js with any JavaScript framework including React, Angular, Vue, Svelte, and others.
-ms.date: 01/29/2026
+ms.date: 01/30/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
 
-# Connect Office.js to any framework
+# Connect Office.js to any JavaScript framework
 
-Office.js is framework-agnostic and works seamlessly with any JavaScript framework or library. Whether you're building with React, Angular, Vue, Svelte, or any other framework, the integration pattern is the same: ensure Office.js initializes before your application renders.
+Office.js is framework-agnostic and works seamlessly with any client-side JavaScript framework or library. Whether you're building with React, Angular, Vue, Svelte, or any other framework, the integration pattern is the same: ensure Office.js initializes before your application renders.
 
-This article explains the universal patterns for integrating Office.js with JavaScript frameworks, important considerations, and provides examples across multiple frameworks.
+> [!NOTE]
+> You can also use server-side frameworks such as ASP.NET, PHP, and Java to build Office Add-ins, but this article doesn't cover them. This article focuses specifically on client-side JavaScript frameworks that run in the browser.
+
+This article explains the universal patterns for integrating Office.js with client-side JavaScript frameworks, important considerations, and provides examples across multiple frameworks.
+
+> [!TIP]
+> This article is designed for developers creating Office Add-ins from scratch using their preferred JavaScript framework, or integrating Office.js into an existing framework project. If you're using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) or [Microsoft 365 Agents Toolkit](../develop/teams-toolkit-overview.md), these tools already provide the correct Office.js configuration.
 
 ## Prerequisites
 
@@ -23,8 +29,8 @@ This article explains the universal patterns for integrating Office.js with Java
 Regardless of which framework you choose, use the following pattern.
 
 1. Reference Office.js from the CDN in your HTML `<head>`.
-1. Wait for `Office.onReady()` to complete.
-1. Initialize your framework application.
+1. Call `Office.onReady()` and wait for it to complete.
+1. Initialize your framework after Office.js is ready.
 
 ```typescript
 // Universal pattern - works with any framework.
@@ -62,7 +68,7 @@ For more information about referencing Office.js, including preview APIs and alt
 
 ## Initialize your framework after Office.onReady
 
-The key to integrating Office.js with any framework is to initialize your application inside the `Office.onReady()` callback. This approach ensures Office.js is fully initialized before your framework starts rendering. This is important because Office.js needs to:
+The key to integrating Office.js with any framework is to initialize your application inside the `Office.onReady()` callback. This approach ensures Office.js is fully initialized before your framework starts rendering. This initialization is important because Office.js needs to:
 
 - Download and cache API library files from the CDN.
 - Initialize the Office runtime environment.
@@ -131,22 +137,35 @@ Office.onReady((info) => {
 After Office.js initializes (when `Office.onReady()` finishes), you can call Office APIs anywhere in your add-in. Use your framework's lifecycle hooks or event handlers to call Office APIs when needed.
 
 ```typescript
-// Example: Call Office APIs in a component lifecycle hook
-// React: useEffect(() => { ... }, [])
-// Angular: ngOnInit() { ... }
-// Vue: onMounted(() => { ... })
-// Svelte: onMount(() => { ... })
+// React example: Call an Office JS API in the useEffect lifecycle hook.
+import { useEffect, useState } from 'react';
 
-async function loadData() {
-  await Excel.run(async (context) => {
-    const range = context.workbook.getSelectedRange();
-    range.load('values');
-    await context.sync();
+function MyComponent() {
+  const [data, setData] = useState('');
 
-    // Update your component state with the data.
-    const value = range.values[0][0];
-  });
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  async function loadData() {
+    await Excel.run(async (context) => {
+      const range = context.workbook.getSelectedRange();
+      range.load('values');
+      await context.sync();
+
+      // Update component state with the data from Excel.
+      const value = range.values[0][0];
+      setData(value);
+    });
+  }
+
+  return <div>Selected cell: {data}</div>;
 }
+
+// Similar patterns for other frameworks:
+// Angular: ngOnInit() { this.loadData(); }
+// Vue: onMounted(() => { loadData(); })
+// Svelte: onMount(() => { loadData(); })
 ```
 
 ## TypeScript support
@@ -260,7 +279,9 @@ Add this code to your HTML file, wrapping the Office.js script tag:
 
 ### Testing outside Office applications
 
-When you develop and test your UI, you might want to open your add-in in a regular browser (outside of an Office application). In this scenario, `Office.onReady()` still executes, but it resolves with `null` for both the host and platform properties.
+You can develop and test your add-in's UI by using browser developer tools without sideloading into Office. This approach enables faster iteration during development and makes it easier to debug your UI components.
+
+When you open your add-in in a regular browser (outside of an Office application), `Office.onReady()` still executes, but it resolves with `null` for both the host and platform properties.
 
 ```typescript
 Office.onReady((info) => {
@@ -274,8 +295,6 @@ Office.onReady((info) => {
   initializeYourFramework();
 });
 ```
-
-By using this approach, you can develop and test your add-in's UI by using browser developer tools without sideloading into Office.
 
 ### Build tools and bundlers
 
@@ -346,14 +365,20 @@ import { NgZone } from '@angular/core';
 
 constructor(private zone: NgZone) {}
 
-async loadData() {
+async loadDataFromExcel() {
+  let cellValue: string;
+
+  // Make Office API call
   await Excel.run(async (context) => {
-    // Office API call...
+    const range = context.workbook.getSelectedRange();
+    range.load('values');
+    await context.sync();
+    cellValue = range.values[0][0];
   });
 
+  // Update Angular component state inside zone
   this.zone.run(() => {
-    // Update component state here.
-    this.myData = newValue;
+    this.myData = cellValue;
   });
 }
 ```
