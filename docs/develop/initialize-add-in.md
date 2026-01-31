@@ -32,7 +32,7 @@ However, an Office Add-in can't successfully call any Office JavaScript APIs unt
 For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
 
 > [!TIP]
-> Using a JavaScript framework like React, Angular, or Vue? See [Connect Office.js to any framework](connect-to-javascript-frameworks.md) for framework-specific integration guidance.
+> Using a JavaScript framework like React, Angular, or Vue? See [Connect Office.js to any JavaScript framework](connect-to-javascript-frameworks.md) for framework-specific integration guidance.
 
 ## Initialize with Office.onReady()
 

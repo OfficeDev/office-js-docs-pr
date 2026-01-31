@@ -109,7 +109,7 @@
       - name: Initialize your add-in
         href: develop/initialize-add-in.md
         displayName: manifest
-      - name: Connect Office.js to any framework
+      - name: Connect Office.js to any JavaScript framework
         href: develop/connect-to-javascript-frameworks.md
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
