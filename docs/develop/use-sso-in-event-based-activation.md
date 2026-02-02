@@ -1,7 +1,7 @@
 ---
 title: Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Office Add-in
 description: Learn how to use SSO or CORS in an add-in that implements event-based activation or integrated spam reporting.
-ms.date: 07/08/2025
+ms.date: 02/02/2026
 ms.localizationpriority: medium
 ---
 
@@ -39,6 +39,6 @@ After you configure the well-known URI, if your add-in implements SSO, you can t
 
 ## See also
 
-- [Authenticate a user with a single-sign-on token in an Outlook add-in](../outlook/authenticate-a-user-with-an-sso-token.md)
+- [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md)
 - [Activate add-ins with events](../develop/event-based-activation.md)
 - [Implement an integrated spam-reporting add-in](../outlook/spam-reporting.md)

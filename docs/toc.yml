@@ -893,18 +893,16 @@
       items:
       - name: Overview
         href: outlook/authentication.md
-      - name: Authenticate with SSO token
-        href: outlook/authenticate-a-user-with-an-sso-token.md
       - name: SSO and CORS in event-based or spam-reporting add-ins
         href: develop/use-sso-in-event-based-activation.md
-      - name: Authenticate with an identity token
-        href: outlook/authenticate-a-user-with-an-identity-token.md
-      - name: Validate an identity token
-        href: outlook/validate-an-identity-token.md
-      - name: Inside the identity token
-        href: outlook/inside-the-identity-token.md
-      - name: "Scenario: Implement single sign-on"
-        href: outlook/implement-sso-in-outlook-add-in.md      
+      - name: On-premises Exchange server authentication
+        items:
+        - name: Authenticate with an identity token
+          href: outlook/authenticate-a-user-with-an-identity-token.md
+        - name: Validate an identity token
+          href: outlook/validate-an-identity-token.md
+        - name: Inside the identity token
+          href: outlook/inside-the-identity-token.md
     - name: Testing and tips
       items:
       - name: Overview
