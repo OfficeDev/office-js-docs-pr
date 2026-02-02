@@ -100,6 +100,9 @@ function userSignedIn() {
 }
 ```
 
+> [!NOTE]
+> If you're using a JavaScript framework, each dialog creates a new execution context with a separate framework instance. For more information about dialog behavior with frameworks, see [Dialog API and component lifecycle](connect-to-javascript-frameworks.md#dialog-api-and-component-lifecycle).
+
 The next example shows how to return a JSON string containing profile information.
 
 ```javascript

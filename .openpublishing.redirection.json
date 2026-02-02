@@ -1413,6 +1413,10 @@
         {
             "source_path": "docs/outlook/authenticate-a-user-with-an-sso-token.md",
             "redirect_url": "/office/dev/add-ins/develop/sso-in-office-add-ins"
+        },
+        {
+            "source_path": "docs/develop/add-ins-with-angular2.md",
+            "redirect_url": "/office/dev/add-ins/develop/connect-to-javascript-frameworks"
         }
     ]
 }
