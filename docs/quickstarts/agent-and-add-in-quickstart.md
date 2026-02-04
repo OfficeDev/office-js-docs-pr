@@ -68,9 +68,9 @@ You can start working with either the add-in or the Copilot agent. If both have 
 
 ### Start the agent
 
-1. Select the dynamic access button for Copilot chat on the surface of the open document.
+1. Select the dynamic action button for Copilot chat on the surface of the open document.
 
-    :::image type="content" source="../images/copilot-dynamic-access-button.png" alt-text="The dynamic access button for Copilot: a round button with the Copilot symbol. There is no text on the button.":::
+    :::image type="content" source="../images/copilot-dynamic-action-button.png" alt-text="The dynamic action button for Copilot: a round button with the Copilot symbol. There is no text on the button.":::
 
 1. In the **Copilot** pane, select the hamburger control.
 1. It may take a minute for the pane to completely rerender. When it does, there is a list of agents and **Add-in Skill + Agent for Add-in + Agent Actions** should be in the list. 
