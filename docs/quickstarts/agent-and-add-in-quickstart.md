@@ -68,7 +68,7 @@ You can start working with either the add-in or the Copilot agent. If both have 
 
 ### Start the agent
 
-1. Select the dynamic action button for Copilot chat on the surface of the open document.
+1. Select the dynamic action button for Copilot Chat on the surface of the open document.
 
     :::image type="content" source="../images/copilot-dynamic-action-button.png" alt-text="The dynamic action button for Copilot: a round button with the Copilot symbol. There is no text on the button.":::
 
