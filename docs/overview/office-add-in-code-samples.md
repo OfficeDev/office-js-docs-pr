@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 02/03/2026
+ms.date: 02/05/2026
 ms.localizationpriority: high
 ---
 
@@ -13,11 +13,16 @@ These code samples are written to help you learn how to use various features whe
 
 The following samples show how to build the simplest Office Add-in with only a manifest, HTML web page, and a logo. These components are the fundamental parts of an Office Add-in. For additional getting started information, see our [quick starts](../quickstarts/excel-quickstart-jquery.md) and [tutorials](/search/?terms=tutorial&scope=Office%20Add-ins).
 
+### Task pane add-ins
+
 - [Excel "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/excel-hello-world)
 - [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world)
 - [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
 - [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
 
+### Content add-ins
+
+- [Excel "Hello world" content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/excel-content-hello-world)
 - [PowerPoint "Hello world" content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world)
 
 ## Blazor WebAssembly

@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 02/03/2026
+ms.date: 02/05/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -83,7 +83,7 @@ The following is an example of a `"contentRuntimes"` property.
 
 For a sample that implements a content add-in, see [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in) on GitHub.
 
-To create your own content add-in, see the [Excel content add-in quick start](../quickstarts/excel-quickstart-content.md) and [PowerPoint content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world).
+To create your own content add-in, see [Excel content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/excel-content-hello-world) and [PowerPoint content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world), following the instructions in the "Configure a localhost web server and run the sample from localhost" section.
 
 ## Support considerations
 
