@@ -38,6 +38,11 @@ Using this method, your add-in prompts the user to sign in to the service using 
 
 ## Exchange on-premises flows
 
+[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
+
+> [!NOTE]
+> Most functionality in an Exchange user identity or callback token can also be achieved by using the [Microsoft Graph mail API](/graph/outlook-mail-concept-overview).
+
 ### Exchange user identity token
 
 [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
