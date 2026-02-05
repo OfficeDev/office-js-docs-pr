@@ -24,7 +24,7 @@ Also refer to the following NAA samples for Outlook.
 
 ## Legacy Office single sign-on using the on-behalf-of (OBO) flow
 
-You can also use the legacy Office.js `getAccessToken` API to enable SSO in your Outlook add-in. However this is a legacy pattern that should only be used if you are maintaining an existing add-in, or need to support older Outlook clients on platforms without NAA.  SSO using the OBO flow is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about support, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
+You can also use the legacy Office.js `getAccessToken` API to enable SSO in your Outlook add-in. However, this is a legacy pattern that should only be used if you're maintaining an existing add-in or need to support older Outlook clients on platforms without NAA. SSO using the OBO flow is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about support, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).
 
 For a more detailed overview, see the [full overview of the SSO authentication method](../develop/sso-in-office-add-ins.md).
 
