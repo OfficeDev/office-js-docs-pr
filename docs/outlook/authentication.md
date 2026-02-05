@@ -32,9 +32,7 @@ For a sample add-in that uses the SSO token, see [Outlook Add-in SSO](https://gi
 
 ## Access tokens obtained via OAuth2 flows
 
-Add-ins can also access services from Microsoft and others that support OAuth2 for authorization. Consider using OAuth2 tokens if your add-in:
-
-- Needs access to a service outside of your control.
+Add-ins can also access services from Microsoft and others that support OAuth2 for authorization. Consider using OAuth2 tokens if your add-in needs access to a service outside of your control.
 
 Using this method, your add-in prompts the user to sign-in to the service either by using the [displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)) method to initialize the OAuth2 flow. For more information, see [Authenticate and authorize with the Office dialog API](../develop/auth-with-office-dialog-api.md).
 
