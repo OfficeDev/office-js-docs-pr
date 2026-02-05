@@ -60,9 +60,7 @@ Your add-in can call [getUserIdentityTokenAsync](/javascript/api/outlook/office.
 > [!NOTE]
 > Most functionality in the Exchange callback token can also be achieved by using the [Microsoft Graph mail API](/graph/outlook-mail-concept-overview).
 
-Callback tokens provide access to the user's mailbox from your server back-end using [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange). Consider using callback tokens if your add-in:
-
-- Needs access to the user's mailbox from your server back-end.
+Callback tokens provide access to the user's mailbox from your server back-end using [Exchange Web Services (EWS)](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange). Consider using callback tokens if your add-in needs access to the user's mailbox from your server back-end.
 
 Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) methods. The level of access is controlled by the permissions specified in the add-in manifest.
 
