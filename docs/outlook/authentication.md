@@ -16,7 +16,7 @@ Single sign-on (SSO) improves the user experience by allowing users to sign in o
 
 To enable your Outlook add-in to use NAA, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md). For more information about support, see [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets).
 
-Also refer to the following NAA samples for Outlook.
+### NAA samples for Outlook
 
 - [Outlook add-in with SSO using nested app authentication](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA)
 - [Send identity claims to resources using nested app authentication (NAA) and SSO](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO-NAA-Identity)
@@ -44,11 +44,6 @@ Using this method, your add-in prompts the user to sign in to the service using 
 > Most functionality in an Exchange user identity or callback token can also be achieved by using the [Microsoft Graph mail API](/graph/outlook-mail-concept-overview).
 
 ### Exchange user identity token
-
-[!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
-
-> [!NOTE]
-> Most functionality in the Exchange user identity token can also be achieved by using the [Microsoft Graph mail API](/graph/outlook-mail-concept-overview).
 
 Exchange user identity tokens provide a way for your add-in to establish the identity of the user. By verifying the user's identity, you can then perform a one-time authentication into your back-end system, then accept the user identity token as an authorization for future requests. Use the Exchange user identity token:
 
