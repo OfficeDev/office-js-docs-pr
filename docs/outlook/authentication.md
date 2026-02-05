@@ -14,7 +14,7 @@ Your Outlook add-in can access information from anywhere on the Internet, whethe
 
 Single sign-on (SSO) improves the user experience by allowing users to sign in once to Office. Users aren’t required to sign in again when interacting with the add-in. Nested App Authentication (NAA) enables SSO for Office Add-ins running in the context of native Office applications. NAA makes handling SSO simpler for your add-in code. NAA enables you to make Microsoft Graph calls from your add-in client code as an SPA without the need for a middle-tier server. There’s no need to use Office.js APIs as NAA is provided by the MSAL.js library.
 
-To enable your Outlook add-in to use NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md). For more information about support, see [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets).
+To enable your Outlook add-in to use NAA, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md). For more information about support, see [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets).
 
 Also refer to the following NAA samples for Outlook.
 
@@ -71,5 +71,5 @@ Add-ins obtain callback tokens using one of the [getCallbackTokenAsync](/javascr
 ## See also
 
 - [Nested app auth requirement set](/javascript/api/requirement-sets/common/nested-app-auth-requirement-sets)
-- [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md)
+- [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md)
 - [Nested app authentication and Outlook legacy tokens deprecation FAQ](faq-nested-app-auth-outlook-legacy-tokens.md)
