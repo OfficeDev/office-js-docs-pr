@@ -1409,6 +1409,14 @@
         {
             "source_path": "docs/develop/add-ins-with-angular2.md",
             "redirect_url": "/office/dev/add-ins/develop/connect-to-javascript-frameworks"
+        },
+        {
+            "source_path": "docs/quickstarts/powerpoint-quickstart-content.md",
+            "redirect_url": "/office/dev/add-ins/design/content-add-ins"
+        },
+        {
+            "source_path": "docs/quickstarts/excel-quickstart-content.md",
+            "redirect_url": "/office/dev/add-ins/design/content-add-ins"
         }
     ]
 }

@@ -320,24 +320,14 @@
         - name: Quick starts
           items:
           - name: Excel
-            items:
-            - name: Task pane
-              href: quickstarts/excel-quickstart-vs.md
-              displayName: Excel, Visual Studio
-            - name: Content
-              href: quickstarts/excel-quickstart-content.md
-              displayName: Excel, Visual Studio
+            href: quickstarts/excel-quickstart-vs.md
+            displayName: Excel, Visual Studio
           - name: Outlook
             href: quickstarts/outlook-quickstart-vs.md
             displayName: Outlook, Visual Studio
           - name: PowerPoint 
-            items:
-            - name: Task pane
-              href: quickstarts/powerpoint-quickstart-vs.md
-              displayName: PowerPoint, Visual Studio
-            - name: Content
-              href: quickstarts/powerpoint-quickstart-content.md
-              displayName: PowerPoint, Visual Studio
+            href: quickstarts/powerpoint-quickstart-vs.md
+            displayName: PowerPoint, Visual Studio
           - name: Word
             href: quickstarts/word-quickstart-vs.md
             displayName: Word, Visual Studio
@@ -484,9 +474,6 @@
       displayName: Excel
     - name: Task pane (React)
       href: quickstarts/excel-quickstart-react.md
-      displayName: Excel
-    - name: Content
-      href: quickstarts/excel-quickstart-content.md
       displayName: Excel
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.md
@@ -933,13 +920,8 @@
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
   - name: Build your first PowerPoint add-in
-    items:
-    - name: Task pane
-      href: quickstarts/powerpoint-quickstart-yo.md
-      displayName: PowerPoint
-    - name: Content
-      href: quickstarts/powerpoint-quickstart-content.md
-      displayName: PowerPoint
+    href: quickstarts/powerpoint-quickstart-yo.md
+    displayName: PowerPoint
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial-yo.md
     displayName: PowerPoint
