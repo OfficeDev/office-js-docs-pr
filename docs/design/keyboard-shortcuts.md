@@ -18,16 +18,16 @@ There are three steps to add keyboard shortcuts to an add-in.
 
 ## Prerequisites
 
-Keyboard shortcuts are currently only supported in the following platforms and build of **Excel** and **Word**.
+Keyboard shortcuts are supported in the following platforms and build of **Excel**, **PowerPoint**, **Word**.
 
 - Office on the web
 - Office on Windows
   - **Excel**: Version 2102 (Build 13801.20632) and later
-  - **PowerPoint**: Version TBD (Build TBD) and later
+  - **PowerPoint**: Version 2601 (Build 19628.20150) and later
   - **Word**: Version 2408 (Build 17928.20114) and later
 - Office on Mac
   - **Excel**: Version 16.55 (21111400) and later
-  - **PowerPoint**: Version TBD (Build TBD) and later
+  - **PowerPoint**: Version 16.105.2 (26012530) and later
   - **Word**: Version 16.88 (24081116) and later
 
 Additionally, keyboard shortcuts only work on platforms that support the following requirement sets. For information about requirement sets and how to work with them, see [Specify Office applications and API requirements](../develop/specify-office-hosts-and-api-requirements.md).
@@ -256,7 +256,12 @@ When using custom keyboard shortcuts on the web, some keyboard shortcuts that ar
 - <kbd>Ctrl</kbd>+<kbd>T</kbd>
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>
 - <kbd>Ctrl</kbd>+<kbd>W</kbd>
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd>
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>
+- <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>
 - <kbd>Ctrl</kbd>+<kbd>PgUp</kbd>/<kbd>PgDn</kbd>
+- <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd>
+- <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>
 
 ### Avoid key combinations in use by other add-ins
 
@@ -271,6 +276,9 @@ In the case of a conflict, the user will see a dialog box the first time they at
 
 The user can select which action the keyboard shortcut will take. After making the selection, the preference is saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the **Reset Office Add-ins shortcut preferences** command from the **Tell me** search box. Invoking the command clears all of the user's add-in shortcut preferences and the user will again be prompted with the conflict dialog box the next time they attempt to use a conflicting shortcut.
 
+> [!NOTE]
+> In PowerPoint, if a user chooses the shortcut defined by PowerPoint in the conflict dialog, then selects **OK**, the shortcut won't run immediately. The user must press the key combination again after the dialog closes for the PowerPoint shortcut to take effect.
+
 ![The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action.](../images/add-in-reset-shortcuts-action.png)
 
 For the best user experience, we recommend that you minimize keyboard shortcut conflicts with these good practices.
@@ -280,6 +288,12 @@ For the best user experience, we recommend that you minimize keyboard shortcut c
   - [Keyboard shortcuts in Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
   - [Keyboard shortcuts in PowerPoint](https://support.microsoft.com/office/ebb3d20e-dcd4-444f-a38e-bb5c5ed180f4)
   - [Keyboard shortcuts in Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
+- In Office on the web, don't use the following shortcuts as your add-in's custom shortcuts.
+  - <kbd>Ctrl</kbd>+<kbd>X</kbd> (Cut)
+  - <kbd>Ctrl</kbd>+<kbd>C</kbd> (Copy)
+  - <kbd>Ctrl</kbd>+<kbd>V</kbd> (Paste)
+
+  These shortcuts can't be overridden. Only the host application's implementation of these shortcuts works.
 - When the keyboard focus is inside the add-in UI, <kbd>Ctrl</kbd>+<kbd>Space</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F10</kbd> won't work as these are essential accessibility shortcuts.
 - On a Windows or Mac computer, if the **Reset Office Add-ins shortcut preferences** command isn't available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
 
