@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 02/05/2026
+ms.date: 02/06/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -81,9 +81,14 @@ The following is an example of a `"contentRuntimes"` property.
 
 ---
 
-For a sample that implements a content add-in, see [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in) on GitHub.
+## Samples on GitHub
 
-To create your own content add-in, see [Excel content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/excel-content-hello-world) and [PowerPoint content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world), following the instructions in the "Configure a localhost web server and run the sample from localhost" section.
+There are content add-in code samples available in the Office-Add-in-samples GitHub repository. You can use any of them as the basis for your own add-in project. Several of them also give you the option to try the add-in without running it locally.
+
+- [Excel hello-world content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/excel-content-hello-world)
+- [PowerPoint hello-world content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world)
+- [Excel data-visualization content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-content-data-visualization)
+- [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in)
 
 ## Support considerations
 
