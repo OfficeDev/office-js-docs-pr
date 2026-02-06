@@ -87,7 +87,7 @@ Also, it's not recommended that you call `item.close()` in the on-send event han
 
 ### Mailbox type/mode limitations
 
-On-send functionality is only supported for user mailboxes in Outlook on the web, Windows (new and classic), and Mac. In addition to situations where add-ins don't activate as noted in the [Mailbox items available to add-ins](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins) section of the Outlook add-ins overview page, the functionality is not currently supported for offline mode where that mode is available.
+On-send functionality is only supported for user mailboxes in Outlook on the web, Windows (new and classic), and Mac. In addition to situations where add-ins don't activate as noted in the [Add-in activation limitations](outlook-add-ins-overview.md#add-in-activation-limitations) section of the Outlook add-ins overview page, the functionality is not currently supported for offline mode where that mode is available.
 
 In cases where Outlook add-ins don't activate, the on-send add-in won't run and the message will be sent.
 

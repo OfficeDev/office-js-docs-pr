@@ -25,7 +25,7 @@ In this article, you'll walk through the process of building a Project task pane
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `Project`
 
-![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-project.png)
+:::image type="content" source="../images/yo-office-project.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -64,7 +64,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. At the bottom of the task pane, choose the **Run** link to rename the selected task and add notes to the selected task.
 
-    ![The Project application with the task pane add-in loaded.](../images/project-quickstart-addin-1.png)
+    :::image type="content" source="../images/project-quickstart-addin-1.png" alt-text="The Project application with the task pane add-in loaded.":::
 
 1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 

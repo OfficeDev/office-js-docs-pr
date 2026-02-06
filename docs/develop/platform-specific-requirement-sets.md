@@ -2,7 +2,7 @@
 title: Understanding platform-specific requirement sets
 description: Understand and learn how to use platform-specific requirement sets.
 ms.topic: how-to
-ms.date: 11/19/2024
+ms.date: 10/27/2025
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ However, platform-specific requirement sets provide support for a subset of the 
 
 ## Current platform-specific requirement sets
 
-At present, platform-specific requirement sets are available in Excel and Word. Excel includes an online-only requirement set. Word includes online-only and desktop-only requirement sets. For the full list, see [Special requirement sets](/javascript/api/overview#special-requirement-sets).
+At present, platform-specific requirement sets are available in Excel and Word. Excel and Word include both online-only and desktop-only requirement sets. For the full list, see [Special requirement sets](/javascript/api/overview#special-requirement-sets).
 
 Note that in Outlook, platform-specific behavior may be found in extension points. For example, [MobileOnlineMeetingCommandSurface](/javascript/api/manifest/extensionpoint#mobileonlinemeetingcommandsurface) and [MobileLogEventAppointmentAttendee](/javascript/api/manifest/extensionpoint#mobilelogeventappointmentattendee) are only available to add-ins running in Outlook on Android and on iOS.
 

@@ -43,7 +43,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-![Range with a two-level, two-dimension outline.](../images/excel-outline.png)
+:::image type="content" source="../images/excel-outline.png" alt-text="Range with a two-level, two-dimension outline.":::
 
 ## Remove grouping from rows or columns of a range
 

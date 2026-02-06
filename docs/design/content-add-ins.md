@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 09/11/2025
+ms.date: 02/05/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -12,7 +12,7 @@ Content add-ins are surfaces that can be embedded directly into Excel or PowerPo
 
 *Figure 1. Typical layout for content add-ins*
 
-![Typical layout for content add-ins in an Office application.](../images/overview-with-app-content.png)
+:::image type="content" source="../images/overview-with-app-content.png" alt-text="Typical layout for content add-ins in an Office application.":::
 
 ## Best practices
 
@@ -31,13 +31,13 @@ For Windows, the personality menu measures 12x32 pixels, as shown.
 
 *Figure 2. Personality menu on Windows*
 
-![12x32-pixel personality menu on Windows desktop.](../images/personality-menu-win.png)
+:::image type="content" source="../images/personality-menu-win.png" alt-text="12x32-pixel personality menu on Windows desktop.":::
 
 For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from the right and 6 pixels from the top, which increases the occupied space to 34x32 pixels, as shown.
 
 *Figure 3. Personality menu on Mac*
 
-![34x32-pixel personality menu on Mac desktop.](../images/personality-menu-mac.png)
+:::image type="content" source="../images/personality-menu-mac.png" alt-text="34x32-pixel personality menu on Mac desktop.":::
 
 ## Implementation
 
@@ -83,7 +83,7 @@ The following is an example of a `"contentRuntimes"` property.
 
 For a sample that implements a content add-in, see [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in) on GitHub.
 
-To create your own content add-in, see the [Excel content add-in quick start](../quickstarts/excel-quickstart-content.md) and [PowerPoint content add-in quick start](../quickstarts/powerpoint-quickstart-content.md).
+To create your own content add-in, see [Excel content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/excel-content-hello-world) and [PowerPoint content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world), following the instructions in the "Configure a localhost web server and run the sample from localhost" section.
 
 ## Support considerations
 

@@ -24,7 +24,7 @@ This tutorial walks you through the steps of identifying and sharing common code
 
 The following diagram shows how the shared code library works for migration. Common code is refactored into a new shared code library. The code can remain written in its original language, such as C# or VB. This means you can continue using the code in the existing VSTO Add-in by creating a project reference. When you create the Office Add-in, it will also use the shared code library by calling into it through REST APIs.
 
-![Diagram of VSTO Add-in and Office Add-in using a shared code library.](../images/vsto-migration-shared-code-library.png)
+:::image type="content" source="../images/vsto-migration-shared-code-library.png" alt-text="Diagram of VSTO Add-in and Office Add-in using a shared code library.":::
 
 Skills and techniques in this tutorial:
 
@@ -63,7 +63,7 @@ This tutorial uses the [VSTO Add-in shared library for Office Add-in](https://gi
 
 The add-in is a custom task pane for Excel. You can select any cell with text, and then choose the **Show unicode** button. In the **Result** section, the add-in  displays a list of each character in the text along with its corresponding Unicode number.
 
-![The Cell Analyzer VSTO add-in running in Excel with the "Show unicode" button and empty Result section.](../images/pnp-cell-analyzer-vsto-add-in.png)
+:::image type="content" source="../images/pnp-cell-analyzer-vsto-add-in.png" alt-text="The Cell Analyzer VSTO add-in running in Excel with the 'Show unicode' button and empty Result section.":::
 
 ## Analyze types of code in the VSTO Add-in
 

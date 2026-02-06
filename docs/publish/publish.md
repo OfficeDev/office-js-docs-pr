@@ -19,7 +19,7 @@ The following table summarizes the primary publication methods that can be used 
 |Method|Use|
 |:---------|:------------|
 |[Sideloading](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing)|As part of your development process, to test your add-in running on Windows, iPad, Mac, or in a browser. (Not for production add-ins.) |
-|[Microsoft Marketplace](#Microsoft Marketplace)|To distribute your add-in publicly to users.|
+|[Microsoft Marketplace](#microsoft-marketplace)|To distribute your add-in publicly to users.|
 |[Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) in the Microsoft 365 admin center|To distribute your add-in to users in your organization.|
 
 ### Production deployment methods
