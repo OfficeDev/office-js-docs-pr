@@ -17,10 +17,13 @@ You can configure your Office Add-in to run all of its code in a single [shared 
 If you're starting a new project, use the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md) to create an Excel, PowerPoint, or Word add-in project.
 
 > [!TIP]
-> If you're using the Yeoman generator to create custom functions in Excel, select the following options:
+> If you're using the Yeoman generator to create custom functions in Excel with a shared runtime, select the following options:
 >
 > - **Project type**: `Excel Custom Functions using a Shared Runtime`
-> - **Script type**: `JavaScript`
+> - **Manifest type**: Choose either `unified manifest for Microsoft 365 (preview)` or `add-in only manifest` based on your needs
+> - **Script type**: `JavaScript` or `TypeScript`
+>
+> For more information on configuring custom functions with the unified manifest, see [Configure custom functions with the unified manifest](../excel/custom-functions-unified-manifest.md).
 
 If your add-in uses an add-in only manifest, you can also use the steps in this article to update a Visual Studio project to use the shared runtime. However, you may need to update the XML schemas for the manifest. For more information, see [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md#add-in-only-manifest-schema-validation-errors-in-visual-studio-projects).
 

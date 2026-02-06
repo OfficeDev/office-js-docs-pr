@@ -46,6 +46,31 @@ Fix conflicts by renaming your function or uninstalling the other add-in. For te
 - For streaming functions, add `STREAM` to the name or include a note in the description.
 - Use a short vendor prefix in your function names to avoid conflicts with other add-ins. For example, use `CONTOSO_GETPRICE` or `CONTOSO_TAX_CALC`.
 
+## Namespace configuration
+
+The namespace for your custom functions is configured in the manifest file. The configuration approach depends on which manifest type you're using.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+In the unified manifest, configure the namespace in the `customFunctions.namespace` object:
+
+```json
+"customFunctions": {
+  "namespace": {
+    "id": "CONTOSO",
+    "name": "CONTOSO"
+  }
+}
+```
+
+The `id` property is used internally and must remain stable, while the `name` property is the display name users see in Excel and can be localized.
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+In the add-in only manifest, specify the namespace using the `<Namespace>` element in the `<ExtensionPoint>` section. The namespace value should follow the naming guidelines described in this article.
+
+---
+
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## Naming constraints quick reference

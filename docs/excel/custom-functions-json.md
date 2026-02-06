@@ -22,11 +22,46 @@ The following image explains the differences between using `yo office` scaffold 
 :::image type="content" source="../images/custom-functions-json.png" alt-text="Image of differences between using the Yeoman generator for Office Add-ins and writing your own JSON.":::
 
 > [!NOTE]
-> Remember to connect your manifest to the JSON file you create, through the `<Resources>` section in your add-in only manifest file if you do not use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md).
+> Remember to connect your manifest to the JSON file you create. In the unified manifest, use the `customFunctions.metadataUrl` property. In the add-in only manifest, use the `<Resources>` section. If you use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), this connection is configured automatically.
 
 ## Authoring metadata and connecting to the manifest
 
 Create a JSON file in your project and provide all the details about your functions in it, such as the function's parameters. See the [following metadata example](#json-metadata-example) and [the metadata reference](#metadata-reference) for a complete list of function properties.
+
+The way you connect your manifest file to your JSON metadata file depends on which manifest type you're using.
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+In the unified manifest, reference your JSON metadata file using the `customFunctions.metadataUrl` property within the `extensions` array:
+
+```json
+{
+  "extensions": [
+    {
+      "requirements": {
+        "scopes": ["workbook"],
+        "capabilities": [
+          {
+            "name": "CustomFunctionsRuntime",
+            "minVersion": "1.1"
+          }
+        ]
+      },
+      "customFunctions": {
+        "namespace": {
+          "id": "CONTOSO",
+          "name": "CONTOSO"
+        },
+        "metadataUrl": "https://subdomain.contoso.com/config/customfunctions.json"
+      }
+    }
+  ]
+}
+```
+
+For complete configuration details, see [Configure custom functions with the unified manifest](custom-functions-unified-manifest.md).
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 Ensure your add-in only manifest file references your JSON file in the `<Resources>` section, similar to the following example.
 
@@ -42,6 +77,8 @@ Ensure your add-in only manifest file references your JSON file in the `<Resourc
     </bt:ShortStrings>
 </Resources>
 ```
+
+---
 
 ## JSON metadata example
 

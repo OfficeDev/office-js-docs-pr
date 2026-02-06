@@ -10,8 +10,6 @@ ms.localizationpriority: medium
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
 
 ## Debugging custom functions

@@ -23,6 +23,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
     - **Choose a project type:** `Excel Custom Functions using a Shared Runtime`
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `My custom functions add-in`
+    - **Which manifest?** `unified manifest for Microsoft 365 (preview)`
 
     :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="The Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
@@ -60,7 +61,7 @@ The command to test your add-in in Excel on Windows or Mac depends on when the p
 
 ## Try out a prebuilt custom function
 
-The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
+The custom functions project that you created by using the Yeoman generator contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.json** file in the root directory of the project specifies that all custom functions belong to the `CONTOSO` namespace.
 
 In your Excel workbook, try out the `ADD` custom function by completing the following steps.
 
@@ -90,6 +91,7 @@ Congratulations, you've successfully created a custom function in an Excel add-i
 ## See also
 
 - [Custom functions overview](../excel/custom-functions-overview.md)
+- [Configure custom functions with the unified manifest](../excel/custom-functions-unified-manifest.md)
 - [Custom functions metadata](../excel/custom-functions-json.md)
 - [Runtime for Excel custom functions](../excel/custom-functions-runtime.md)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)
