@@ -277,7 +277,7 @@ In the case of a conflict, the user will see a dialog box the first time they at
 The user can select which action the keyboard shortcut will take. After making the selection, the preference is saved for future uses of the same shortcut. The shortcut preferences are saved per user, per platform. If the user wishes to change their preferences, they can invoke the **Reset Office Add-ins shortcut preferences** command from the **Tell me** search box. Invoking the command clears all of the user's add-in shortcut preferences and the user will again be prompted with the conflict dialog box the next time they attempt to use a conflicting shortcut.
 
 > [!NOTE]
-> In PowerPoint, if a user chooses the shortcut defined by PowerPoint in the conflict dialog, then selects **OK**, the shortcut won't run immediately. The user must press the key combination again after the dialog closes for the PowerPoint shortcut to take effect.
+> In PowerPoint, if a user chooses the action defined by PowerPoint in the conflict dialog, then selects **OK**, the action won't run immediately. The user must press the key combination again after the dialog closes for the action to take effect.
 
 ![The Tell me search box in Excel showing the reset Office Add-in shortcut preferences action.](../images/add-in-reset-shortcuts-action.png)
 
