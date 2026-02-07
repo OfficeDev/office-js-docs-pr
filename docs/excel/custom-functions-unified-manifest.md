@@ -21,7 +21,10 @@ For an introduction to custom functions, see [Create custom functions in Excel](
 
 - Familiarity with custom functions. See [Custom functions overview](custom-functions-overview.md).
 - Familiarity with the unified manifest. See [Office Add-ins with the unified manifest for Microsoft 365](../develop/unified-manifest-overview.md).
-- Office version 2304 (Build 16320.00000) or later for unified manifest support.
+- Office version 2304 (Build 16320) or later for unified manifest support.
+
+> [!NOTE]
+> If you create your add-in project with the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) and select the unified manifest option, the generator automatically creates a properly configured manifest.json file for you. The information in this article helps you understand and customize the manifest that the generator creates.
 
 ## Custom functions in the unified manifest
 
@@ -32,6 +35,8 @@ The unified manifest uses the `customFunctions` extension property to configure 
 3. **Runtime configuration**: Specifies how custom functions execute.
 
 ## Configure the customFunctions extension
+
+The following steps show you how to manually configure or customize the unified manifest for custom functions. If you used the Yeoman generator to create your project, these configurations are already in place, but you can customize them as needed.
 
 ### Step 1: Define the extension requirements
 

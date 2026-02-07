@@ -637,9 +637,6 @@
     - name: Overview
       href: excel/custom-functions-overview.md
       displayName: Excel, Custom Functions
-    - name: Configure with unified manifest
-      href: excel/custom-functions-unified-manifest.md
-      displayName: Excel, Custom Functions
     - name: Tutorials
       items:
       - name: Build your first custom functions add-in
@@ -704,6 +701,9 @@
       displayName: Excel, Custom Functions
     - name: Web requests
       href: excel/custom-functions-web-reqs.md
+      displayName: Excel, Custom Functions
+    - name: Configure with unified manifest
+      href: excel/custom-functions-unified-manifest.md
       displayName: Excel, Custom Functions
     - name: Custom functions without a shared runtime
       items: 
