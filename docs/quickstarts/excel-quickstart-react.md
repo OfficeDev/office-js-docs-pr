@@ -1,7 +1,7 @@
 ---
 title: Use React to build an Excel task pane add-in
 description: Learn how to build a simple Excel task pane add-in by using the Office JS API and React.
-ms.date: 12/11/2025
+ms.date: 02/06/2026
 ms.service: excel
 ms.localizationpriority: high
 ---

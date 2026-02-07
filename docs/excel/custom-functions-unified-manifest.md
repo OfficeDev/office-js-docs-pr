@@ -1,7 +1,7 @@
 ---
 title: Configure custom functions with the unified manifest for Microsoft 365
 description: Learn how to configure Excel custom functions using the unified manifest for Microsoft 365, including namespace configuration, metadata references, and runtime setup.
-ms.date: 02/05/2026
+ms.date: 02/06/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
