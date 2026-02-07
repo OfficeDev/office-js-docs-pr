@@ -43,7 +43,7 @@ Cell value conditional formatting applies a user-defined format based on the res
 
 The following example shows red font coloring applied to any value in the range less than zero.
 
-![A range with negative numbers in red.](../images/excel-conditional-format-cell-value.png)
+:::image type="content" source="../images/excel-conditional-format-cell-value.png" alt-text="A range with negative numbers in red.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -71,7 +71,7 @@ Color scale conditional formatting applies a color gradient across the data rang
 
 The following example shows a range being colored blue to yellow to red. Note that `minimum` and `maximum` are the lowest and highest values respectively and use `null` formulas. `midpoint` is using the `percentage` type with a formula of `"=50"` so the yellowest cell is the mean value.
 
-![A range with the low number in blue, average number in yellow, and high number is red, with gradients for between values.](../images/excel-conditional-format-color-scale.png)
+:::image type="content" source="../images/excel-conditional-format-color-scale.png" alt-text="A range with the low number in blue, average number in yellow, and high number is red, with gradients for between values.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -115,7 +115,7 @@ Custom conditional formatting applies a user-defined format to the cells based o
 
 The following example colors the fonts green of cells with higher values than the cell to their left.
 
-![A range with green numbers for places the preceding column's value in that row is lower.](../images/excel-conditional-format-custom.png)
+:::image type="content" source="../images/excel-conditional-format-custom.png" alt-text="A range with green numbers for places the preceding column's value in that row is lower.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -140,7 +140,7 @@ Data bar conditional formatting adds data bars to the cells. By default, the min
 
 The following example formats the range with data bars filling left-to-right.
 
-![A range with databars behind the values in cells.](../images/excel-conditional-format-databar.png)
+:::image type="content" source="../images/excel-conditional-format-databar.png" alt-text="A range with databars behind the values in cells.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -162,7 +162,7 @@ Icon set conditional formatting uses Excel [Icons](/javascript/api/excel/excel.i
 
 The following example shows a three-triangle icon set applied across the range.
 
-![A range with green upward triangles for values above 1000, yellow lines for values between 700 and 1000, and red downward triangles for lower values.](../images/excel-conditional-format-iconset.png)
+:::image type="content" source="../images/excel-conditional-format-iconset.png" alt-text="A range with green upward triangles for values above 1000, yellow lines for values between 700 and 1000, and red downward triangles for lower values.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -207,7 +207,7 @@ Preset conditional formatting applies a user-defined format to the range based o
 
 The following example colors the font white wherever a cell's value is at least one standard deviation above the range's average.
 
-![A range with white font cells where the values are at least one standard deviation above average.](../images/excel-conditional-format-preset.png)
+:::image type="content" source="../images/excel-conditional-format-preset.png" alt-text="A range with white font cells where the values are at least one standard deviation above average.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -233,7 +233,7 @@ Text comparison conditional formatting uses string comparisons as the condition.
 
 The following example formats the font color red when a cell's text contains "Delayed".
 
-![A range with cells containing "Delayed" in red.](../images/excel-conditional-format-text.png)
+:::image type="content" source="../images/excel-conditional-format-text.png" alt-text="A range with cells containing 'Delayed' in red.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -260,7 +260,7 @@ Top/bottom conditional formatting applies a format to the highest or lowest valu
 
 The following example applies a green highlight to the highest value cell in the range.
 
-![A range with the highest number highlighted in green.](../images/excel-conditional-format-topbottom.png)
+:::image type="content" source="../images/excel-conditional-format-topbottom.png" alt-text="A range with the highest number highlighted in green.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -321,7 +321,7 @@ You can apply multiple conditional formats to a range. If the formats have confl
 
 The following example shows a conflicting font color choice between the two formats. Negative numbers will get a bold font, but NOT a red font, because priority goes to the format that gives them a blue font.
 
-![A range with low numbers bolded and in red, negative numbers in blue with green backgrounds.](../images/excel-conditional-format-priority.png)
+:::image type="content" source="../images/excel-conditional-format-priority.png" alt-text="A range with low numbers bolded and in red, negative numbers in blue with green backgrounds.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -355,7 +355,7 @@ The `stopIfTrue` property of `ConditionalFormat` prevents lower priority conditi
 
 The following example shows two conditional formats being added to a range. Negative numbers will have a blue font with a light green background, regardless of whether the other format condition is true.
 
-![A range with low numbers bolded and in red, unless they are negative, in which case they are not bolded, blue, and have a green background.](../images/excel-conditional-format-stopiftrue.png)
+:::image type="content" source="../images/excel-conditional-format-stopiftrue.png" alt-text="A range with low numbers bolded and in red, unless they are negative, in which case they are not bolded, blue, and have a green background.":::
 
 ```js
 await Excel.run(async (context) => {

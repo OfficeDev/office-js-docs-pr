@@ -2,28 +2,29 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 09/16/2025
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
 # Convert an add-in to use the unified manifest for Microsoft 365
 
-To add Teams capabilities or a Copilot extension to an add-in that uses the add-in only manifest, or to just future proof the add-in, you need to convert it to use the unified manifest for Microsoft 365.
+To upgrade an add-in that uses the add-in only manifest to a full App for Microsoft 365 to which you can add Teams capabilities or a Copilot extension, you need to convert it to use the unified manifest for Microsoft 365.
 
    [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
 
-There are three basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
+There are four basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
 
 - Ensure that your manifest is ready to convert.
 - Convert the XML-formatted add-in only manifest itself to the JSON format of the unified manifest.
-- Package the new manifest and two icon image files (described later) into a zip file for sideloading or deployment. *Depending on how you sideload the converted add-in, this task may be done for you automatically.*
+- Edit the newly created unified manifest.
+- Package the new manifest and two icon image files (described later) into an app package (zip) file for sideloading or deployment. *Depending on how you sideload the converted add-in, this task may be done for you automatically.*
 
 [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 > [!NOTE]
 >
 > - Add-ins that use the unified manifest can be sideloaded only on Office Version 2304 (Build 16320.20000) or later.
-> - Projects created in Visual Studio, as distinct from Visual Studio Code, can't be converted at this time.
+> - Visual Studio doesn't support the unified manifest for Office Add-ins. Projects that were created in Visual Studio shouldn't be converted.
 > - If you [created the project with Teams Toolkit or Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or with the "unified manifest" option in the [Office Yeoman Generator](yeoman-generator-overview.md), it already uses the unified manifest.
 
 ## Ensure that your manifest is ready to convert
@@ -86,11 +87,14 @@ Review and change, as needed, manifest values in light of the following effects 
 - The first 4000 characters of `<Description>` becomes the value of [`"description.full"`](/microsoft-365/extensibility/schema/root-description#full) in the unified manifest.
 - The first 32 characters of the `<ProviderName>` becomes the value of [`"developer.name"`](/microsoft-365/extensibility/schema/root-developer#name) in the unified manifest.
 
+> [!NOTE]
+> If any of these elements have child `<Override>` elements, be sure to adjust the localized strings as needed.
+
 ### Ensure conformity of custom functions configuration
 
-If your add-in has custom functions, then it includes a JSON configuration file. Some requirements for this file weren't always enforced by Office or Microsoft Marketplace in the past, but they are all enforced when the add-in has a unified manifest. Before you convert the manifest, ensure that this JSON file conforms to all requirements. For more information, see [Custom functions naming and localization](../excel/custom-functions-naming.md) and [Manually create JSON metadata for custom functions](../excel/custom-functions-json.md)
+If your add-in has custom functions, then it includes a JSON configuration file. Some requirements for this file weren't always enforced by Office or Microsoft Marketplace in the past, but they are all enforced when the add-in has a unified manifest. Before you convert the manifest, ensure that this JSON file conforms to all requirements. For more information, see [Custom functions naming and localization](../excel/custom-functions-naming.md) and [Manually create JSON metadata for custom functions](../excel/custom-functions-json.md).
 
-In particualar, note that [all function names and function ids must have at least 3 characters](../excel/custom-functions-naming.md#custom-functions-naming-guidelines) and that [each function object must have a "result" property](../excel/custom-functions-json.md#metadata-reference). 
+In particular, note that [all function names and function ids must have at least 3 characters](../excel/custom-functions-naming.md#custom-functions-naming-guidelines) and that [each function object must have a "result" property](../excel/custom-functions-json.md#metadata-reference). 
 
 ### Verify that the modified add-in only manifest works
 
@@ -108,7 +112,7 @@ There are several ways to carry out the remaining tasks, depending on the IDE an
 - [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-the-yeoman-generator-for-office-add-ins-yo-office)
 
 > [!NOTE]
-> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md) 
+> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md). 
 
 ### Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")
 
@@ -119,24 +123,40 @@ If the project was created with the Yeoman generator for Office Add-ins, convert
     ```command&nbsp;line
     npx office-addin-project convert -m <relative-path-to-XML-manifest>
     ```
-
-1. Run `npm install`.
-1. To sideload the add-in, see [Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)](../testing/sideload-add-in-with-unified-manifest.md#sideload-add-ins-created-with-the-yeoman-generator-for-office-add-ins-yo-office).
+1. Carry out the steps in [Edit the new unified manifest](#edit-the-new-unified-manifest).
 
 ### Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)
 
 If your project wasn't created with Yo Office, use the office-addin-manifest-converter tool.
 
-In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named **MyManifest.xml**, the unified manifest is created at **.\MyManifest\MyManifest.json**. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
+1. In the root of the project, open a command prompt or bash shell and run the following command. This command puts the unified manifest in a subfolder with the same name as the filename stem of the original add-in only manifest. For example, if the manifest is named **MyManifest.xml**, the unified manifest is created at **.\MyManifest\MyManifest.json**. For more details about this command, see [Office-Addin-Manifest-Converter](https://www.npmjs.com/package/office-addin-manifest-converter).
 
-```command&nbsp;line
-npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
-```
+   ```command&nbsp;line
+   npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
+   ```
+1. Carry out the steps in [Edit the new unified manifest](#edit-the-new-unified-manifest).
+
+## Edit the new unified manifest
+
+1. Open the unified manifest file.
+1. Navigate to the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property and ensure there are child `"privacyUrl"` and `"termsOfUseUrl"` properties. These properties must have appropriate values with a localhost domain.
+1. You can now [sideload the add-in](#sideload-the-add-in).
+
+## Sideload the add-in
+
+The sideloading process depends on how the project was created.
+
+### Sideload an add-in that was created with the Yeoman generator for Office Add-ins
+
+1. Run `npm install`.
+1. To sideload the add-in, see [Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)](../testing/sideload-add-in-with-unified-manifest.md#sideload-add-ins-created-with-the-yeoman-generator-for-office-add-ins-yo-office). The app package zip file is created for you as part of this process.
+
+### Sideload NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins
 
 Once you have the unified manifest created, there are two ways to create the zip file and sideload it. For more information, see [Sideload other NodeJS and npm projects](../testing/sideload-add-in-with-unified-manifest.md#sideload-other-nodejs-and-npm-projects).
 
 > [!NOTE]
-> If the original add-in only manifest used any `<Override>` elements to localize strings in the manifest, then the conversion process produces JSON string files for each localized language. These files must also be included in the zip file, and they must be at the relative path indicated in the [`"localizationInfo.additionalLanguages.file"`](/microsoft-365/extensibility/schema/root-localization-info-additional-languages#file) property.
+> If the original add-in only manifest used any `<Override>` elements to localize strings in the manifest, then the conversion process produces JSON string files for each localized language. These files must also be included in the app package zip file, and they must be at the relative path indicated in the [`"localizationInfo.additionalLanguages.file"`](/microsoft-365/extensibility/schema/root-localization-info-additional-languages#file) property.
 
 ## Next steps
 

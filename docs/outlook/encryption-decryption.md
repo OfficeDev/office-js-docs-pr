@@ -1,7 +1,7 @@
 ---
 title: Create an encryption Outlook add-in (preview)
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
-ms.date: 10/09/2025
+ms.date: 01/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -30,6 +30,10 @@ The following table provides an overview of the encryption and decryption workfl
 | Add-in decrypts the message | You must implement your own decryption protocol in the `OnMessageRead` event handler. While your add-in decrypts the message and its attachments, a notification is shown to the user to alert them that their message is being processed by the add-in. This notification is automatically shown by an add-in that handles the `OnMessageRead` event, so that you don't have to manually create one. |
 | Recipient views the decrypted message and its attachments, if any | Once the decryption operation is complete, a notification is automatically shown to the user to alert them that the add-in has finished processing the message. In your `OnMessageRead` handler, call the [event.completed](/javascript/api/outlook/office.mailboxevent?view=outlook-js-preview&preserve-view=true#outlook-office-mailboxevent-completed-member(1)) method and pass it a [MessageDecryptEventCompletedOptions](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true) object. With the `MessageDecryptEventCompletedOptions` object, you can specify whether to display the decrypted content to the recipient. For more information, see [Implement event handling](#implement-event-handling). |
 
+## Try out a completed add-in
+
+To immediately see a completed encryption add-in in action, try out the [Encrypt and decrypt messages in Outlook sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-decrypt-messages).
+
 ## Implement decryption using event-based activation
 
 You must implement your own encryption and decryption protocols. The add-in must also be configured to handle the `OnMessageRead` event to conveniently determine when your add-in can decrypt a message and display the decrypted contents. To implement the `OnMessageRead` event, you must:
@@ -39,7 +43,7 @@ You must implement your own encryption and decryption protocols. The add-in must
 
 ### Supported environments
 
-The `OnMessageRead` event is supported on the [Message Read](read-scenario.md) surface. Support varies by client and Exchange environment, as shown in the following table.
+The `OnMessageRead` event is supported on the Message Read surface. Support varies by client and Exchange environment, as shown in the following table.
 
 | Client | Exchange Online | Exchange Subscription Edition (SE) | Exchange Server 2019 | Exchange Server 2016 |
 | ------ | --------------- | ---------------------------------- | -------------------- | -------------------- |
@@ -148,10 +152,6 @@ function onMessageReadHandler(event) {
     const decryptedPdfFile = "JVBERi0xLjQKJeLjz9MKNCAwIG9i...";
     const pdfFileName = "Fabrikam_Report_202509";
 
-    // Decrypted content and properties of a mail item.
-    const decryptedEmailFile = "VGhpcyBpcyBhIHRleHQgZmlsZS4=...";
-    const emailFileName = "Fabrikam_Report_202508.eml";
-
     // Decrypted properties of a cloud attachment.
     const cloudFilePath = "https://contosostorage.com/reports/weekly_forecast.xlsx";
     const cloudFileName = "weekly_forecast.xlsx";
@@ -162,26 +162,20 @@ function onMessageReadHandler(event) {
     const imageContentId = "image001.png@01DC1DD9.1A4AA300";
 
     const decryptedAttachments = [
-      {
-        attachmentType: Office.MailboxEnums.AttachmentType.File,
+        {
+            attachmentType: Office.MailboxEnums.AttachmentType.File,
             content: decryptedPdfFile,
             isInline: false,
             name: pdfFileName
         },
         {
-          attachmentType: Office.MailboxEnums.AttachmentType.Item,
-            content: decryptedEmailFile,
-            isInline: false,
-            name: emailFileName
-        },
-        {
-          attachmentType: Office.MailboxEnums.AttachmentType.Cloud,
+            attachmentType: Office.MailboxEnums.AttachmentType.Cloud,
             isInline: false,
             name: cloudFileName,
             path: cloudFilePath
         },
         {
-          attachmentType: Office.MailboxEnums.AttachmentType.File,
+            attachmentType: Office.MailboxEnums.AttachmentType.File,
             content: decryptedImageFile,
             contentId: imageContentId,
             isInline: true,
@@ -211,7 +205,7 @@ Office.actions.associate("onMessageReadHandler", onMessageReadHandler);
 ## Behavior and limitations
 
 - Be aware of the behaviors and limitations of event-based add-ins. To learn more, see [Activate add-ins with events](../develop/event-based-activation.md#behavior-and-limitations).
-- Since each add-in uses its own encryption protocol, a message can only be decrypted by the same add-in that encrypted it. When a user doesn't have the required add-in installed to decrypt a message, a notification isn't shown to them. To guide the user through the decryption process, customize a placeholder message for the body of the encrypted message. The placeholder message can include information on how to install your add-in. To set the message body during the encryption process, call [Office.context.mailbox.item.body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(2)).
+- Since each add-in uses its own encryption protocol, a message can only be decrypted by the same add-in that encrypted it. When a user doesn't have the required add-in installed to decrypt a message, a notification alerts them that the message is encrypted. To guide the user through the decryption process, customize a placeholder message for the body of the encrypted message. The placeholder message can include information on how to install your add-in. To set the message body during the encryption process, call [Office.context.mailbox.item.body.setAsync](/javascript/api/outlook/office.body#outlook-office-body-setasync-member(2)).
 
     :::image type="content" source="../images/outlook-encryption-placeholder-message.png" alt-text="A sample placeholder message of an encrypted message.":::
 
@@ -219,6 +213,7 @@ Office.actions.associate("onMessageReadHandler", onMessageReadHandler);
 - An encrypted message must first be decrypted before a user can reply or forward it. A user can't reply or forward an encrypted message while it's being decrypted.
 - If a user navigates to another mail item while an encrypted message is being decrypted, the decryption process stops running. The user must select or open the message again to activate the decryption process.
 - When replying to or forwarding encrypted messages, drafts are saved unencrypted in the **Drafts** folder.
+- The `attachments` property of the `event.completed` method doesn't currently support attachments of type `Office.MailboxEnums.AttachmentType.Item`.
 
 ### Decryption notifications
 
@@ -226,15 +221,17 @@ Add-ins that handle the `OnMessageRead` event automatically display notification
 
 | Notification | Scenario |
 | ------------ | -------- |
-| \<Add-in name\> is unavailable and can't process your message at this time | Applies to classic Outlook on Windows only. This notification is shown when the add-in fails to load because an error prevented the add-in from loading or the user's client or machine is offline. |
-| \<Add-in name\> failed to process your message | An error was encountered while the add-in was decrypting the message. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageRead` event. |
-| \<Add-in name\> is processing your message | The add-in is handling the `OnMessageRead` event to decrypt the message. |
-| \<Add-in name\> has finished processing your message | The add-in successfully decrypted the contents of the message. The user can now view the message and its attachments. |
-| \<Add-in name\> is taking longer than expected to process your message | The add-in has been running for more than five seconds, but less than five minutes. |
-| \<Add-in name\> timed out. To retry, select another email and then return to this message | The add-in times out after running for five minutes. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageRead` event. |
+| \<Add-in name\> is unavailable and can't process your message at this time. | Applies to classic Outlook on Windows only. This notification is shown when the add-in fails to load because an error prevented the add-in from loading or the user's client or machine is offline. |
+| \<Add-in name\> failed to process your message. | An error was encountered while the add-in was decrypting the message. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageRead` event. |
+| \<Add-in name\> add-in is decrypting your message. | The add-in is handling the `OnMessageRead` event to decrypt the message. |
+| This message is encrypted by \<add-in name\> add-in. | This notification is shown to recipients who don't have the necessary encryption add-in installed. To provide guidance on how to decrypt the message, include a placeholder message in the body of the encrypted message. For more information, see [Behavior and limitations](#behavior-and-limitations). |
+| \<Add-in name\> add-in has decrypted your message. | The add-in successfully decrypted the contents of the message. The user can now view the message and its attachments. |
+| \<Add-in name\> is taking longer than expected to process your message. | The add-in has been running for more than five seconds, but less than five minutes. |
+| \<Add-in name\> timed out. To retry, select another email and then return to this message. | The add-in times out after running for five minutes. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageRead` event. |
 
 ## See also
 
+- [Sample: Encrypt and decrypt messages in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-decrypt-messages)
 - [Privacy and security for Office Add-ins](../concepts/privacy-and-security.md)
 - [Activate add-ins with events](../develop/event-based-activation.md)
 - [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)

@@ -1,7 +1,7 @@
 ﻿---
 title: Get and set the recurrence of appointments
 description: This topic shows you how to use the Office JavaScript API to get and set various recurrence properties of an appointment using an Outlook add-in.
-ms.date: 06/17/2024
+ms.date: 12/02/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ Sometimes you need to create and update a recurring appointment, such as a weekl
 
 ## Recurrence patterns
 
-The recurrence pattern of an appointment is made up of a [recurrence type](/javascript/api/outlook/office.mailboxenums.recurrencetype) (such as daily or weekly recurrence) and its applicable [recurrence properties](/javascript/api/outlook/office.recurrenceproperties) (for example, the day of the month the appointment occurs).
+The recurrence pattern of an appointment consists of a [recurrence type](/javascript/api/outlook/office.mailboxenums.recurrencetype) (such as daily or weekly recurrence) and its applicable [recurrence properties](/javascript/api/outlook/office.recurrenceproperties) (for example, the day of the month the appointment occurs).
 
 :::image type="content" source="../images/outlook-recurrence-dialog.png" alt-text="A sample Appointment Recurrence dialog in Outlook.":::
 
@@ -30,7 +30,7 @@ The following table lists the available recurrence types, their configurable pro
 |`yearly`|<ul><li>[`interval`][interval link]</li><li>[`dayOfMonth`][dayOfMonth link]</li><li>[`dayOfWeek`][dayOfWeek link]</li><li>[`weekNumber`][weekNumber link]</li><li>[`month`][month link]</li></ul>|<ul><li>An appointment occurs on day *dayOfMonth* of *month* every *interval* years. For example, an appointment occurs on the ***seventh*** day of ***September*** every ***four*** years.</li><li>An appointment occurs on the *weekNumber* *dayOfWeek* of *month* every *interval* years. For example, an appointment occurs on the ***first*** ***Thursday*** of ***September*** every ***two*** years.</li></ul>|
 
 > [!TIP]
-> You can also use the [`firstDayOfWeek`][firstDayOfWeek link] property with the `weekly` recurrence type. The specified day will start the list of days displayed in the recurrence dialog.
+> You can also use the [`firstDayOfWeek`][firstDayOfWeek link] property with the `weekly` recurrence type. The specified day starts the list of days displayed in the recurrence dialog.
 
 ## Access the recurrence pattern
 
@@ -51,7 +51,7 @@ As shown in the following table, how you access the recurrence pattern and what 
 
 ## Set recurrence as the organizer
 
-Along with the recurrence pattern, you also need to determine the start and end dates and times of your appointment series. The [SeriesTime][SeriesTime link] object is used to manage that information.
+Along with the recurrence pattern, you also need to determine the start and end dates and times of your appointment series. Use the [SeriesTime][SeriesTime link] object to manage that information.
 
 The appointment organizer can specify the recurrence pattern for an appointment series in compose mode only. In the following example, the appointment series is set to occur from 10:30 AM to 11:00 AM PST every Tuesday and Thursday during the period November 2, 2019 to December 2, 2019.
 
@@ -80,7 +80,7 @@ Office.context.mailbox.item.recurrence.setAsync(pattern, (asyncResult) => {
 
 ## Change recurrence as the organizer
 
-In the following example, the appointment organizer gets the [Recurrence](/javascript/api/outlook/office.recurrence) object of an appointment series, then sets a new recurrence duration. This is done in compose mode.
+In the following example, the appointment organizer gets the [Recurrence](/javascript/api/outlook/office.recurrence) object of an appointment series, then sets a new recurrence duration. This action is done in compose mode.
 
 ```javascript
 Office.context.mailbox.item.recurrence.getAsync((asyncResult) => {
@@ -99,7 +99,7 @@ Office.context.mailbox.item.recurrence.getAsync((asyncResult) => {
 
 ## Get recurrence as the organizer
 
-In the following example, the appointment organizer gets the `Recurrence` object of an appointment to determine whether it's a recurring series. This is done in compose mode.
+In the following example, the appointment organizer gets the `Recurrence` object of an appointment to determine whether it's a recurring series. This action is done in compose mode.
 
 ```javascript
 Office.context.mailbox.item.recurrence.getAsync((asyncResult) => {
@@ -116,7 +116,7 @@ Office.context.mailbox.item.recurrence.getAsync((asyncResult) => {
 The following example shows the results of the `getAsync` call that retrieves the recurrence of a series.
 
 > [!NOTE]
-> In this example, `seriesTimeObject` is a placeholder for the JSON representing the `recurrence.seriesTime` property. You should use the [SeriesTime][SeriesTime link] methods to get the recurrence date and time properties.
+> In this example, `seriesTimeObject` is a placeholder for the JSON representing the `recurrence.seriesTime` property. Use the [SeriesTime][SeriesTime link] methods to get the recurrence date and time properties.
 
 ```json
 {
@@ -125,10 +125,12 @@ The following example shows the results of the `getAsync` call that retrieves th
         "interval": 1,
         "days": ["tue","thu"],
         "firstDayOfWeek": "sun"},
-    "seriesTime": {seriesTimeObject},
+    "seriesTime": { seriesTimeObject },
     "recurrenceTimeZone": {
         "name": "Pacific Standard Time",
-        "offset": -480}}
+        "offset": -480
+    }
+}
 ```
 
 ## Get recurrence as an attendee
@@ -152,7 +154,7 @@ function outputRecurrence(item) {
 The following example shows the value of the `item.recurrence` property of an appointment series.
 
 > [!NOTE]
-> In this example, `seriesTimeObject` is a placeholder for the JSON representing the `recurrence.seriesTime` property. You should use the [SeriesTime][SeriesTime link] methods to get the recurrence date and time properties.
+> In this example, `seriesTimeObject` is a placeholder for the JSON representing the `recurrence.seriesTime` property. Use the [SeriesTime][SeriesTime link] methods to get the recurrence date and time properties.
 
 ```json
 {
@@ -161,15 +163,17 @@ The following example shows the value of the `item.recurrence` property of an ap
         "interval": 1,
         "days": ["tue","thu"],
         "firstDayOfWeek": "sun"},
-    "seriesTime": {seriesTimeObject},
+    "seriesTime": { seriesTimeObject },
     "recurrenceTimeZone": {
         "name": "Pacific Standard Time",
-        "offset": -480}}
+        "offset": -480
+    }
+}
 ```
 
 ## Get the recurrence details
 
-After you've retrieved the recurrence object (either from the `getAsync` callback or from `item.recurrence`), you can get specific properties of the recurrence. For example, get the start and end dates and times of the series by using the [SeriesTime][SeriesTime link] methods on the `recurrence.seriesTime` property.
+After you retrieve the recurrence object (either from the `getAsync` callback or from `item.recurrence`), you can get specific properties of the recurrence. For example, get the start and end dates and times of the series by using the [SeriesTime][SeriesTime link] methods on the `recurrence.seriesTime` property.
 
 ```javascript
 // Get the date and time information of the series.

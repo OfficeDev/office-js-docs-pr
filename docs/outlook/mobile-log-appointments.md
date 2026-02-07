@@ -867,13 +867,13 @@ If you'd like your users to undo logging or delete the logged appointment notes 
 
 As a meeting attendee, you should see a screen similar to the following image when you open a meeting.
 
-![The Log button on an appointment screen on Android.](../images/outlook-android-log-appointment-details.jpg)
+:::image type="content" source="../images/outlook-android-log-appointment-details.jpg" alt-text="The Log button on an appointment screen on Android.":::
 
 ### UI: View the appointment log
 
 After successfully logging the appointment notes, the button should now be labeled **View** instead of **Log**. You should see a screen similar to the following image.
 
-![The View button on an appointment screen on Android.](../images/outlook-android-view-appointment-log.jpg)
+:::image type="content" source="../images/outlook-android-view-appointment-log.jpg" alt-text="The View button on an appointment screen on Android.":::
 
 ## Available APIs
 

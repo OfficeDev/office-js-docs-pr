@@ -1,13 +1,13 @@
 ﻿---
 title: Understanding Outlook add-in permissions
 description: Outlook add-ins specify the required permission level in their manifest, which include restricted, read item, read/write item, or read/write mailbox. 
-ms.date: 10/17/2024
+ms.date: 12/02/2025
 ms.localizationpriority: medium
 ---
 
 # Understanding Outlook add-in permissions
 
-Outlook add-ins specify the required permission level in their manifest. There are four available levels.
+Outlook add-ins specify the required permission level in their manifest. Four levels are available.
 
 |Permission level</br>canonical name|add-in only manifest name|unified manifest for Microsoft 365 name|Summary description|
 |:-----|:-----|:-----|:-----|
@@ -23,10 +23,10 @@ Permissions are declared in the manifest. The markup varies depending on the typ
 
 > [!NOTE]
 >
-> - There's a supplementary permission needed for add-ins that use the append-on-send feature. With the add-in only manifest, specify the permission in the [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) element. For details, see [Implement append-on-send in your Outlook add-in](../outlook/append-on-send.md). With the unified manifest, specify this permission with the name **Mailbox.AppendOnSend.User** in an additional object in the `"authorization.permissions.resourceSpecific"` array.
-> - There's a supplementary permission needed for add-ins that use shared folders. With the add-in only manifest, specify the permission by setting the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`. For details, see [Implement shared folders and shared mailbox scenarios in an Outlook add-in](../outlook/delegate-access.md). With the unified manifest, specify this permission with the name **Mailbox.SharedFolder** in an additional object in the `"authorization.permissions.resourceSpecific"` array.
+> - Add-ins that use the append-on-send feature need a supplementary permission. With the add-in only manifest, specify the permission in the [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) element. For details, see [Implement append-on-send in your Outlook add-in](../outlook/append-on-send.md). With the unified manifest, specify this permission with the name **Mailbox.AppendOnSend.User** in an additional object in the `"authorization.permissions.resourceSpecific"` array.
+> - Add-ins that use shared folders need a supplementary permission. With the add-in only manifest, specify the permission by setting the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`. For details, see [Implement shared folders and shared mailbox scenarios in an Outlook add-in](../outlook/delegate-access.md). With the unified manifest, specify this permission with the name **Mailbox.SharedFolder** in an additional object in the `"authorization.permissions.resourceSpecific"` array.
 
-The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item** and **restricted**, **read/write item** includes **read item** and **restricted**, and the **read item** permission includes **restricted**.
+The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item**, and **restricted**; **read/write item** includes **read item** and **restricted**; and **read item** includes **restricted**.
 
 You can see the permissions requested by a mail add-in before installing it from [Microsoft Marketplace](https://marketplace.microsoft.com). You can also see the required permissions of installed add-ins in the Exchange Admin Center.
 
@@ -45,7 +45,7 @@ Access any properties and methods that do **not** pertain to specific informatio
 
 - Use the [ItemHasAttachment](/javascript/api/manifest/rule#itemhasattachment-rule) or [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule.
 
-- Access the members in the following list that pertain to the information of the user or item. Attempting to access members in this list will return **null** and result in an error message which states that Outlook requires the mail add-in to have elevated permission.
+- Access the members in the following list that pertain to the information of the user or item. Attempting to access members in this list returns **null** and results in an error message which states that Outlook requires the mail add-in to have elevated permission.
 
   - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
   - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
@@ -119,7 +119,7 @@ The **read item** permission is the next level of permission in the permissions 
 
 ## read/write item permission
 
-Specify **read/write item** permission in the manifest to request this permission. Mail add-ins activated in compose forms that use write methods (**Message.to.addAsync** or **Message.to.setAsync**) must use at least this level of permission.
+Specify the **read/write item** permission in the manifest to request this permission. Mail add-ins activated in compose forms that use write methods (**Message.to.addAsync** or **Message.to.setAsync**) must use at least this level of permission.
 
 ### Can do
 

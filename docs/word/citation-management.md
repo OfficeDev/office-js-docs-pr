@@ -12,7 +12,7 @@ Citation management is an important aspect of documents, particularly in academi
 
 This article features a sample add-in that manages citations in a Word document. The add-in displays the references loaded from a .bib file that the user selects to cite in their document.
 
-![The citation management add-in task pane.](../images/word-citation-management.png)
+:::image type="content" source="../images/word-citation-management.png" alt-text="The citation management add-in task pane.":::
 
 ## Prerequisites
 

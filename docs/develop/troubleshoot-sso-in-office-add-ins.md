@@ -1,13 +1,16 @@
 ﻿---
-title: Troubleshoot error messages for single sign-on (SSO)
+title: Troubleshoot error messages for legacy Office single sign-on (SSO)
 description: Guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and handle special conditions or errors.
-ms.date: 06/24/2025
+ms.date: 01/12/2026
 ms.localizationpriority: medium
 ---
 
-# Troubleshoot error messages for single sign-on (SSO)
+# Troubleshoot error messages for legacy Office single sign-on (SSO)
 
-This article provides some guidance about how to troubleshoot problems with single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
+This article provides some guidance about how to troubleshoot problems with legacy Office single sign-on (SSO) in Office Add-ins, and how to make your SSO-enabled add-in robustly handle special conditions or errors.
+
+> [!NOTE]
+> This article describes legacy Office single sign-on (SSO). For a modern authentication experience with support across a wider range of platforms, use the Microsoft Authentication Library (MSAL) with nested app authentication (NAA). For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
 
 > [!NOTE]
 > The Single Sign-on API is currently supported for Word, Excel, Outlook, and PowerPoint. For more information about where the Single Sign-on API is currently supported, see [IdentityAPI requirement sets](/javascript/api/requirement-sets/common/identity-api-requirement-sets).

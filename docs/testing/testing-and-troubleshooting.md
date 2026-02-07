@@ -1,4 +1,4 @@
-﻿---
+---
 title: Troubleshoot user errors with Office Add-ins
 description: Learn how to troubleshoot user errors in Office Add-ins.
 ms.topic: troubleshooting-problem-resolution
@@ -63,7 +63,7 @@ When using an Office Add-in, the user is asked to allow a dialog box to be displ
 
 "The security settings in your browser prevent us from creating a dialog box. Try a different browser, or configure your browser so that [URL] and the domain shown in your address bar are in the same security zone."
 
-![The dialog box error message showing the previously stated text.](../images/dialog-prevented.png)
+:::image type="content" source="../images/dialog-prevented.png" alt-text="The dialog box error message showing the previously stated text.":::
 
 |Affected browsers|Affected platforms|
 |:--------------------|:---------------------|

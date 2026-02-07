@@ -1,4 +1,4 @@
-﻿---
+---
 title: Privacy and security for Office Add-ins
 description: Learn about the privacy and security aspects of the Office Add-ins platform.
 ms.date: 07/24/2025
@@ -38,11 +38,11 @@ In supported clients for desktop and tablet devices, such as Excel on Windows, a
 
 On Windows desktops, Protected Mode in Internet Explorer must be enabled for the Restricted Site Zone. This is typically enabled by default. If it is disabled, an [error will occur](/office/troubleshoot/office-suite-issues/apps-for-office-not-start) when you try to launch an add-in.
 
-![Diagram of the Office Add-ins runtime environment on Windows desktop and tablet clients.](../images/dk2-agave-overview-02.png)
+:::image type="content" source="../images/dk2-agave-overview-02.png" alt-text="Diagram of the Office Add-ins runtime environment on Windows desktop and tablet clients.":::
 
 On a macOS desktop, the add-in web page is hosted inside a sandboxed WebKit runtime host process which helps provide similar level of security and performance protection.
 
-![Diagram of the Office Add-ins runtime environment on macOS desktop clients.](../images/dk2-agave-overview-mac-02.png)
+:::image type="content" source="../images/dk2-agave-overview-mac-02.png" alt-text="Diagram of the Office Add-ins runtime environment on macOS desktop clients.":::
 
 The Office Add-ins runtime manages interprocess communication, the translation of JavaScript API calls and events into native ones, as well as UI remoting support to enable the add-in to be rendered inside the document, in a task pane, or adjacent to an email message, meeting request, or appointment.
 
@@ -50,7 +50,7 @@ The Office Add-ins runtime manages interprocess communication, the translation o
 
 In supported web clients, Office Add-ins are hosted in an **iframe** that runs using the HTML5 **sandbox** attribute. ActiveX components or navigating the main page of the web client are not allowed. Office Add-ins support is enabled in the web clients by the integration of the JavaScript API for Office. In a similar way to the desktop client applications, the JavaScript API manages the add-in lifecycle and interoperability between the add-in and the web client. This interoperability is implemented by using a special cross-frame post message communication infrastructure. The same JavaScript library (Office.js) that is used on desktop clients is available to interact with the web client. The following figure shows the infrastructure that supports add-ins in Office running in the browser, and the relevant components (the web client, **iframe**, Office Add-ins runtime, and JavaScript API for Office) required to support them.
 
-![Diagram of the infrastructure that supports Office Add-ins in Office on the web clients.](../images/dk2-agave-overview-03.png)
+:::image type="content" source="../images/dk2-agave-overview-03.png" alt-text="Diagram of the infrastructure that supports Office Add-ins in Office on the web clients.":::
 
 ## Add-in integrity in Microsoft Marketplace
 

@@ -23,7 +23,7 @@ This will download and cache the Office JavaScript API files the first time your
 
 ## Office.js-specific web API behavior
 
-Office.js replaces the default [Window.history](https://developer.mozilla.org/docs/Web/API/History) methods of `replaceState` and `pushState` with `null`. This is done to [support older Microsoft webviews and Office versions](support-ie-11.md). If your add-in relies on these methods and doesn't need to run on Office versions that use the Internet Explorer 11 browser control, replace the Office.js library reference with the following workaround.
+Office.js replaces the default [Window.history](https://developer.mozilla.org/docs/Web/API/History) methods of `replaceState` and `pushState` with `null`. If your add-in relies on these methods, replace the Office.js library reference with the following workaround.
 
 ```HTML
 <script type="text/javascript">

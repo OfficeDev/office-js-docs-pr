@@ -52,7 +52,7 @@ The following list identifies, for each tool, how to uninstall but doesn't descr
 To remove a ghost add-in, you need to remove the artifacts that were created when it was last sideloaded, remove its local registration, and for Outlook add-ins remove its registration in Exchange.
 
 > [!TIP]
-> There's a fast way to remove a ghost add-in on Windows computers if the add-in was installed with the Teams Toolkit CLI. Try this first, and if it works, you can skip the remainder of this section.
+> There's a fast way to remove a ghost add-in on Windows computers if the add-in was installed with the Teams Toolkit CLI or the Agents Toolkit CLI. Try this first, and if it works, you can skip the remainder of this section.
 >
 > 1. Obtain the add-in's title ID from the Registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId**. (The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Agents Toolkit CLI.)
 > 1. Run the following command in a command prompt, bash shell, or terminal. Replace "{title ID}" with the title ID of the add-in including the "U_" prefix; for example, `U_90d141c6-cf4f-40ee-b714-9df9ea593f39`.

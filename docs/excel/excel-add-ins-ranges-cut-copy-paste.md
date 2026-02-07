@@ -69,11 +69,11 @@ await Excel.run(async (context) => {
 
 ### Data before range is copied and pasted
 
-![Data in Excel before range's copy method has been run.](../images/excel-range-copyfrom-skipblanks-before.png)
+:::image type="content" source="../images/excel-range-copyfrom-skipblanks-before.png" alt-text="Data in Excel before range's copy method has been run.":::
 
 ### Data after range is copied and pasted
 
-![Data in Excel after range's copy method has been run.](../images/excel-range-copyfrom-skipblanks-after.png)
+:::image type="content" source="../images/excel-range-copyfrom-skipblanks-after.png" alt-text="Data in Excel after range's copy method has been run.":::
 
 ## Cut and paste (move) cells
 

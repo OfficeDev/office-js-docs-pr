@@ -13,7 +13,7 @@ You can use PowerPoint add-ins to build engaging solutions for your users' prese
 
 - Use **task pane add-ins** to bring in reference information or insert data into the presentation via a service. For example, see the [Pexels - Free Stock Photos](https://appsource.microsoft.com/product/office/wa104379997) add-in, which you can use to add professional photos to your presentation. To create your own task pane add-in, you can start with [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md).
 
-- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which injects interactive diagrams from LucidChart into your deck. To create your own content add-in, start with [Build your first PowerPoint content add-in](../quickstarts/powerpoint-quickstart-content.md).
+- Use **content add-ins** to add dynamic HTML5 content to your presentations. For example, see the [LucidChart Diagrams for PowerPoint](https://appsource.microsoft.com/product/office/wa104380117) add-in, which injects interactive diagrams from LucidChart into your deck. To create your own content add-in, start with [Build your first PowerPoint content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world).
 
 ## PowerPoint add-in scenarios
 
@@ -230,8 +230,8 @@ function activeViewHandler(eventArgs) {
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 - PowerPoint quick starts
-  - [Build your first PowerPoint content add-in](../quickstarts/powerpoint-quickstart-content.md)
   - [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md)
+  - [Create a PowerPoint content add-in that displays slide details](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world)
 - [PowerPoint Code Samples](https://developer.microsoft.com/microsoft-365/gallery/?filterBy=Samples,PowerPoint)
 - [How to save add-in state and settings per document for content and task pane add-ins](../develop/persisting-add-in-state-and-settings.md#how-to-save-add-in-state-and-settings-per-document-for-content-and-task-pane-add-ins)
 - [Read and write data to the active selection in a document or spreadsheet](../develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: Learn how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
 ms.date: 07/16/2025
@@ -72,19 +72,19 @@ Office Developer Tools for Visual Studio includes a template for task pane add-i
 
     *Figure 1. Create an Office Add-in*
 
-    ![Create an Office Add-in.](../images/pj15-hello-project-o-data-creating-app.png)
+    :::image type="content" source="../images/pj15-hello-project-o-data-creating-app.png" alt-text="Create an Office Add-in.":::
 
 1. In the **Choose the add-in type** dialog box, select **Task pane** and choose **Next** (see the next screenshot).
 
     *Figure 2. Choosing the type of add-in to create*
 
-    ![Choose the type of add-in to create.](../images/pj15-hello-project-o-data-choose-project.png)
+    :::image type="content" source="../images/pj15-hello-project-o-data-choose-project.png" alt-text="Choose the type of add-in to create.":::
 
 1. In the **Choose the host applications** dialog box, clear all check boxes except the **Project** check box (see the next screenshot) and choose **Finish**.
 
     *Figure 3. Choosing the host application*
 
-    ![Choose Project as the only host application.](../images/create-office-add-in.png)
+    :::image type="content" source="../images/create-office-add-in.png" alt-text="Choose Project as the only host application.":::
 
     Visual Studio creates the **HelloProjectOdata** project and the **HelloProjectODataWeb** project.
 
@@ -92,7 +92,7 @@ The **AddIn** folder (see the next screenshot) contains the App.css file for cus
 
 *Figure 4. View the default web project files in Solution Explorer*
 
-![View the web project files in the Solution Explorer.](../images/pj15-hello-project-o-data-initial-solution-explorer.png)
+:::image type="content" source="../images/pj15-hello-project-o-data-initial-solution-explorer.png" alt-text="View the web project files in the Solution Explorer.":::
 
 The manifest for the **HelloProjectOData** project is the HelloProjectOData.xml file. You can optionally modify the manifest to add a description of the add-in, a reference to an icon, information for additional languages, and other settings. Procedure 3 simply modifies the add-in display name and description, and adds an icon.
 
@@ -114,7 +114,7 @@ The following steps show how to add an icon file to the Visual Studio solution.
 
 1. To be displayed in the **Office Add-ins** drop-down list, the icon must be 32 x 32 pixels. Use your own 32 x 32 icon; or, copy the following image to a file named **NewIcon.png**, and then add that file to the `HelloProjectODataWeb\Images` folder.
 
-    ![Icon for the HelloProjectOData app.](../images/pj15-hello-project-data-new-icon.jpg)
+    :::image type="content" source="../images/pj15-hello-project-data-new-icon.jpg" alt-text="Icon for the HelloProjectOData app.":::
 
 1. In the HelloProjectOData.xml, add an `<IconUrl>` element below the `<Description>` element, where the value of the icon URL is the relative path to the 32x32 icon file. For example, add the following line: `<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />`. The HelloProjectOData.xml file now contains the following (your `<Id>` value will be different):
 
@@ -560,7 +560,7 @@ Basic tests should include the following:
 
     *Figure 5. Start the HelloProjectOData add-in*
 
-    ![Test the HelloProjectOData app.](../images/pj15-hello-project-data-test-the-app.png)
+    :::image type="content" source="../images/pj15-hello-project-data-test-the-app.png" alt-text="Test the HelloProjectOData app.":::
 
 1. In the **Hello ProjectData** task pane, select **Get ProjectData Endpoint**. The **projectDataEndPoint** line should show the URL of the **ProjectData** service, and the **Compare All Projects** button should be enabled (see Figure 6).
 
@@ -568,7 +568,7 @@ Basic tests should include the following:
 
     *Figure 6. View results of the REST query*
 
-    ![View results of the REST query.](../images/pj15-hello-project-data-rest-results.png)
+    :::image type="content" source="../images/pj15-hello-project-data-rest-results.png" alt-text="View results of the REST query.":::
 
 1. Examine the output in the text box. It should show the document path, REST query, status information, and JSON results from the calls to `ajax` and `parseODataResult`. The output helps you understand, create, and debug code in the `parseODataResult` function such as `projCost += Number(res.d.results[i].ProjectCost);`.
 
@@ -624,7 +624,7 @@ Basic tests should include the following:
 
    *Figure 7. Use the add-in without a Project web app connection*
 
-   ![Use the app without a Project Web App connection.](../images/pj15-hello-project-data-no-connection.png)
+   :::image type="content" source="../images/pj15-hello-project-data-no-connection.png" alt-text="Use the app without a Project Web App connection.":::
 
 1. Stop debugging and press <kbd>F5</kbd> again. Log on to Project Web App and create a project that contains cost and work data. You can save the project, but don't publish it.
 
@@ -632,7 +632,7 @@ Basic tests should include the following:
 
    *Figure 8. Compare an unpublished project with other projects*
 
-   ![Compare an unpublished project with others.](../images/pj15-hello-project-data-not-published.png)
+   :::image type="content" source="../images/pj15-hello-project-data-not-published.png" alt-text="Compare an unpublished project with others.":::
 
 Even if your add-in works correctly in the previous tests, there are other tests that should be run. For example:
 

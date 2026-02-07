@@ -1,7 +1,7 @@
-﻿---
+---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 03/21/2025
+ms.date: 11/06/2025
 ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -18,7 +18,7 @@ Script Lab is a free tool for anyone to learn how to develop Office Add-ins. Scr
 > [Get Script Lab for Outlook](https://appsource.microsoft.com/product/office/wa200001603)
 
 See Script Lab in action in this one-minute YouTube video.
-[![Preview video showing Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+[:::image type="content" source="../images/screenshot-wide-youtube.png" alt-text="Preview video showing Script Lab running in Excel, Word, and PowerPoint.":::](https://aka.ms/scriptlabvideo)
 
 ## What is Script Lab?
 
@@ -35,7 +35,7 @@ Script Lab offers a number of features to help you prototype add-in functionalit
 
 Get started quickly with a collection of built-in sample snippets that show how to complete tasks with the API. Run the samples to instantly see the result in the task pane or document, examine the samples to learn how the API works, and even use samples to prototype your own add-in.
 
-![Samples.](../images/script-lab-samples.jpg)
+:::image type="content" source="../images/script-lab-samples.jpg" alt-text="Samples.":::
 
 ### Code and style
 
@@ -64,9 +64,6 @@ Script Lab for Outlook is available on the following clients.
 - Outlook on the web when using Chrome, Microsoft Edge, or Safari browsers
 - Outlook on Windows\*
 - Outlook on Mac
-
-> [!IMPORTANT]
-> \* Script Lab no longer works with combinations of platform and Office version that use the Trident (Internet Explorer) webview to host add-ins. This includes perpetual versions of Office through Office 2019. For more information, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 ## Limitations
 

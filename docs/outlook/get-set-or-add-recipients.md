@@ -1,12 +1,12 @@
 ﻿---
-title: Get, set, or add recipients when composing an appointment or message in Outlook
+title: Get, set, or add recipients to an appointment or message in Outlook
 description: Learn how to get, set, or add recipients to a message or appointment in an Outlook add-in.
-ms.date: 10/02/2025
+ms.date: 10/30/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Get, set, or add recipients when composing an appointment or message in Outlook
+# Get, set, or add recipients to an appointment or message in Outlook
 
 Easily identify and manage recipients of a message or appointment with the Office JavaScript API.
 
@@ -319,7 +319,6 @@ function addAttendees() {
 
 ## See also
 
-- [Create Outlook add-ins for compose forms](compose-scenario.md)
 - [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
 - [Get or set the subject when composing an appointment or message in Outlook](get-or-set-the-subject.md)
 - [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md)

@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins to Office on the web
 description: Test your Office Add-in in Office on the web by sideloading.
-ms.date: 07/29/2025
+ms.date: 12/03/2025
 ms.localizationpriority: medium
 ---
 
@@ -80,12 +80,9 @@ This method doesn't use the command line and can be accomplished using commands 
 
 1. **Browse** to the add-in manifest file, and then select **Upload**.
 
-    ![The upload add-in dialog with buttons for browse, upload, and cancel.](../images/upload-add-in.png)
+    :::image type="content" source="../images/upload-add-in.png" alt-text="The upload add-in dialog with buttons for browse, upload, and cancel.":::
 
 1. Verify that your add-in is installed. For example, if it has an add-in command, it should appear on either the ribbon or the context menu. If it's a task pane add-in that has no add-in commands, the task pane should appear.
-
-> [!NOTE]
-> To test your Office Add-in with EdgeHTML (Microsoft Edge Legacy), an additional configuration step is required. In a Windows Command Prompt, run the following line: `npx office-addin-dev-settings appcontainer EdgeWebView --loopback --yes`. This isn't required when Office is using the Chromium-based Edge WebView2. For more information, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 [!INCLUDE[Office settings tool not supported on Mac](../includes/tool-nonsupport-mac-note.md)]
 
@@ -101,7 +98,7 @@ This method doesn't use the command line and can be accomplished using commands 
 
 If you ran the `npm start` command and your add-in was automatically sideloaded, then run `npm stop` when you're ready to stop the dev server and uninstall your add-in.
 
-Otherwise, to remove an add-in sideloaded to Office on the web, simply clear your browser's cache. If you make changes to your add-in's manifest (for example, update file names of icons or text of add-in commands), you may need to clear your browser's cache and then re-sideload the add-in using the updated manifest. Doing so allows Office on the web to render the add-in as it's described by the updated manifest.
+Otherwise, to remove a sideloaded add-in, see [Uninstall add-ins under development](uninstall-add-in.md).
 
 ## See also
 

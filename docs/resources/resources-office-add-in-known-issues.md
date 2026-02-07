@@ -1,23 +1,90 @@
-﻿---
+---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 10/01/2025
+ms.date: 01/16/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated October 1st, 2025_
+_Last updated January 16, 2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
-## Active issues in Office Add-ins
+## Active issues in Office add-ins
+
+### Outlook for MAC: Signatures not inserted using add-ins and user with smart alert add-ins not able to send email.
+
+A disruption in Launch Event processing caused the following issues:
+Signatures were not stamped on outgoing emails
+Users with Smart Alerts add-ins were unable to send emails in some cases
+
+#### STATUS 
+
+Resolved. This issue was caused by a temporary configuration issue during a backend change management update for Launch events support. For a subset of users having launch event add-ins, this resulted in add‑ins not initializing as expected, which in turn blocked sending emails. The configuration has now been corrected.
+
+Note: Because these settings are cached locally and sync asynchronously, some users may need to restart Outlook more than once to pick up the updated configuration.
+
+Tracking ID: 734492427
+
+#### START TIME 
+
+Thursday, Jan 15 2026 5:45am PST
+
+#### RESOLUTION TIME
+
+The fix was released Thursday, Jan 15 2026 7:00am PST
+
+### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel.
+
+While inserting images via an add-in, customers in targeted releases using New Outlook for Windows with offline mode enabled report seeing broken images with 5xx errors.
+
+#### STATUS 
+
+A recent update to support offline mode in New Outlook for Windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
+
+Tracking ID: 713714633
+
+#### START TIME 
+
+Friday, Oct 31 2025
+
+#### RESOLUTION TIME
+
+The fix was released Nov 26, 2025
+### Outlook: Outlook add-ins disappearing from ribbon
+
+Customers are reporting their Outlook add-ins are missing from the ribbon and are also reporting difficulties deploying them in some tenants. 
+
+#### STATUS
+
+A fix is been released to affected tenants. 
+ 
+#### START TIME
+
+Nov 17 2025 5:38pm PST
+
+### Outlook: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
+
+#### STATUS
+
+We've determined that a recent update to an authentication component of attachment logging introduced a regression which is resulting in impact. We're reverting this update to resolve the issue.
+
+Tracking ID: 706911563
+
+#### IMPACT
+
+Some users may experience delays of up to ten seconds loading images in Exchange Online. This section will be updated as our investigation continues.
+
+#### START TIME
+
+Monday, November 3, 2025, at 4:31 PM UTC
 
 ### Outlook: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
 
 We're currently investigating reports from Outlook users who are experiencing loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send messages while the images are not yet loaded results in the following dialog box.
 
-![Outlook images still loading error message.](../images/outlook-images-still-loading-error.png)
+:::image type="content" source="../images/outlook-images-still-loading-error.png" alt-text="Outlook images still loading error message.":::
 
 Tracking ID: 678890927
 
@@ -39,7 +106,7 @@ Options:
 
 Numerous customers report that after updating Office from 2505 to 2507 their add-in will not load and an error is displayed "You don't have permission to use this add-in. Contact your system administrator." Any add-in may reproduce this issue; it is not specific to a single add-in.
 
- ![Excel web add-in permissions error message.](../images/excel-web-add-in-permission-error.png)
+ :::image type="content" source="../images/excel-web-add-in-permission-error.png" alt-text="Excel web add-in permissions error message.":::
 
 Tracking ID: 667052546
 
