@@ -63,7 +63,7 @@ In the unified manifest, configure the namespace in the `customFunctions.namespa
 }
 ```
 
-The `id` property is used internally and must remain stable, while the `name` property is the display name users see in Excel and can be localized.
+The `id` property is used internally and must remain stable, while the `name` property is the display name that users see in Excel and can be localized.
 
 # [Add-in only manifest](#tab/xmlmanifest)
 

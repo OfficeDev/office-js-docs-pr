@@ -63,7 +63,7 @@ For complete configuration details, see [Configure custom functions with the uni
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
-Ensure your add-in only manifest file references your JSON file in the `<Resources>` section, similar to the following example.
+Ensure that your add-in only manifest file references your JSON file in the `<Resources>` section, similar to the following example.
 
 ```json
 <Resources>
