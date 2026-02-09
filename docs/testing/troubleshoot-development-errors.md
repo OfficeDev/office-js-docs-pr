@@ -48,7 +48,7 @@ The browser may be caching these files. To prevent this, turn off client-side ca
 - Pragma: "no-cache"
 - Expires: "-1"
 
-For an example of doing this in an Node.JS Express server, see [this app.js file](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/Complete/app.js). For an example in an ASP.NET project, see [this cshtml file](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Office-Add-in-ASPNET-SSO/Complete/Office-Add-in-ASPNETCore-WebAPI/Views/Shared/_Layout.cshtml).
+For an example of doing this in an Node.JS Express server, see [this app.js file](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO/app.js). For an example in an ASP.NET project, see [this cshtml file](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/auth/Office-Add-in-ASPNET-SSO/Office-Add-in-ASPNETCore-WebAPI/Views/Shared/_Layout.cshtml).
 
 If your add-in is hosted in Internet Information Server (IIS), you could also add the following to the web.config.
 
