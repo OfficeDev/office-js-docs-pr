@@ -17,7 +17,7 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 - Update on add-in reliability.
 - Update on the unified manifest for Word, Excel, and PowerPoint.
 - Update on add-in actions for Copilot agents.
-- Upcoming Add-in Ribbon Updates in the New Outlook.
+- Upcoming add-in ribbon updates in the new Outlook on Windows.
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
