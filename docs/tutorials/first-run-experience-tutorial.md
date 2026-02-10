@@ -1,7 +1,7 @@
 ---
 title: First-run experience tutorial
 description: Learn how to implement a first-run experience for your Office Add-in.
-ms.date: 08/12/2025
+ms.date: 02/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ Implementing a first-run experience helps onboard users and highlights your add-
 
 - How to add a first-run UI to your add-in.
 - How to use [browser local storage](../develop/persisting-add-in-state-and-settings.md#browser-storage) to persist user state.
-- How to update your add-in's HTML, JavaScript, and CSS files to support the first-run experience.
+- How to update your add-in's HTML, TypeScript or JavaScript, and CSS files to support the first-run experience.
 
 ## Overview
 
@@ -30,7 +30,7 @@ This tutorial provides instructions and screenshots for Excel but you can use a 
 Follow these steps to implement the first-run experience:
 
 1. **Update the HTML**: Add a container for the first-run experience.
-2. **Update the JavaScript**: Check local storage and display the first-run UI if needed.
+2. **Update the TypeScript or JavaScript**: Check local storage and display the first-run UI if needed.
 3. **Update the CSS**: Ensure the new UI is styled consistently.
 4. **Test your add-in**: Verify the first-run experience works as expected.
 
@@ -92,11 +92,11 @@ Be clear about the area of the UI that will be part of the first-run experience.
 
 1. If you selected an Office application besides Excel, update the first `<p>` element with more appropriate instructions.
 
-### Update the JavaScript file
+### Update the TypeScript or JavaScript file
 
-Update the JavaScript file to display the first-run experience if this is the first time the user is running the add-in.
+Update the TypeScript or JavaScript file to display the first-run experience if this is the first time the user is running the add-in.
 
-1. Open the **taskpane.js** file. Replace the `Office.onReady` statement with the following code, then save the file. Some notes about this code:
+1. Open the **taskpane.ts** or **taskpane.js** file. Replace the `Office.onReady` statement with the following code, then save the file. Some notes about this code:
 
     - It checks local storage for a key called "showedFRE". If the key doesn't exist, then show the first-run experience.
     - It adds a new function called `showFirstRunExperience` that displays the "first-run-experience" `<div>` added to the HTML. This function also adds the "showedFRE" item to local storage.
@@ -118,7 +118,7 @@ Update the JavaScript file to display the first-run experience if this is the fi
     
     async function showFirstRunExperience() {
       document.getElementById("first-run-experience").style.display = "flex";
-      localStorage.setItem("showedFRE", true);
+      localStorage.setItem("showedFRE", "true");
     }  
     ```
 
