@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 02/05/2026
+ms.date: 02/06/2026
 ms.localizationpriority: high
 ---
 
@@ -43,7 +43,8 @@ If your development background is in building VSTO Add-ins, the following sample
 | [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | Create a custom contextual tab on the ribbon in the Office UI. The sample creates a table, and when the user moves the focus inside the table, the custom tab is displayed. When the user moves outside the table, the custom tab is hidden. |
 | [Custom function sample using web worker](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/web-worker) | Use web workers in custom functions to prevent blocking the UI of your Office Add-in. |
 | [Use storage techniques to access data from an Office Add-in when offline](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin) | Implement localStorage to enable limited functionality for your Office Add-in when a user experiences lost connection. |
-| [Custom function batching pattern](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching)| Batch multiple calls into a single call to reduce the number of network calls to a remote service.|
+| [Custom function batching pattern](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/Batching) | Batch multiple calls into a single call to reduce the number of network calls to a remote service. |
+| [Data visualization in a content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-content-data-visualization) | Create an Excel content add-in that includes data visualization. |
 
 ## Outlook
 
