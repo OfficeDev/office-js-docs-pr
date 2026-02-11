@@ -129,7 +129,7 @@ Select the tab based on the host and manifest type you chose.
 1. If you selected an Office application besides Excel, then:
 
    - Update the condition of the first `if` statement to check for your chosen [Office.HostType](/javascript/api/office/office.hosttype).
-   - Change the `"run"` event handler from `runExcel` to `runPowerPoint` or `runWord` accordingly. The application-specific `run`* function should already exist in the file.
+   - Change the `"run"` event handler from `runExcel` to `runPowerPoint` or `runWord` accordingly. The application-specific run function (for example, `runExcel`, `runPowerPoint`, or `runWord`) should already exist in the file.
 
 1. Save your changes.
 
