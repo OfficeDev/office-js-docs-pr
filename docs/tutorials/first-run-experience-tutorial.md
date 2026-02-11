@@ -99,8 +99,8 @@ Update the TypeScript or JavaScript file to display the first-run experience if 
 1. If you chose Excel, PowerPoint, or Word with the unified manifest for Microsoft 365, then do the following before proceeding. Otherwise, go to the next step.
 
    1. Open the respective *application-name*.ts file in the ./src/taskpane folder. For example, if you used Excel, that's **./src/taskpane/excel.ts**.
-   1. Copy all the contents of that file then replace all the contents of the **taskpane.ts**.
    1. Rename the application-specific function (for example, `runExcel`, `runPowerPoint`, or `runWord`) to `run`.
+   1. Copy all the contents of that file then replace all the contents of the **taskpane.ts**.
    1. Delete the *application-name*.ts file (for example, **excel.ts**).
 
 1. Open the **taskpane.ts** or **taskpane.js** file. Replace the `Office.onReady` statement with the following code. Some notes about this code:
