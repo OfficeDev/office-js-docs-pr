@@ -64,8 +64,7 @@ sections:
           url: /office/dev/add-ins/quickstarts/powerpoint-quickstart?tabs=yeomangenerator
         - componentType: link
           text: Another powerpoint link
-          url: /training/paths/copilot-power-platform/
- 
+          url: /training/paths/copilot-power-platform/ 
     - componentType: card
       title: "Outlook"
       summary: Build Outlook add-ins for the new Outlook for Windows.
@@ -84,22 +83,19 @@ sections:
     blocks:
     - componentType: card
       title: "Script Lab"
-      summary: Use Security Copilot to bring the full power of OpenAI architecture to defend your organization at machine speed and scale.
+      summary: Script lab is an Office JavaScript API tool for anyone who wants to learn about writing Office Add-ins for Word, Excel, PowerPoint, or Outlook.
       imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-microsoft-security.png
       links: 
         - componentType: link
           text: Explore Script Lab
           url: https://aka.ms/getscriptlab
-        - componentType: link
-          text: Microsoft Security Copilot training
-          url: /training/paths/security-copilot-and-ai/
     - componentType: card
       title: "Office Scripts"
       summary: Use Office Scripts in Excel on the web to automate your common tasks. Learn how to create and edit Office Scripts and get started automating today.
       imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-microsoft-fabric.png
       links: 
         - componentType: link
-          text: Automate tasks with Office Scripts
+          text: Explore Office Scripts
           url: /office/dev/scripts/overview/excel
     - componentType: card
       title: "Fluent UI"
