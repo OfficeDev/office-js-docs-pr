@@ -96,44 +96,12 @@ Be clear about the area of the UI that will be part of the first-run experience.
 
 Update the TypeScript or JavaScript file to display the first-run experience if this is the first time the user is running the add-in.
 
-Select the tab based on the host and manifest type you chose.
+1. If you chose Excel, PowerPoint, or Word with the unified manifest for Microsoft 365, then do the following before proceeding. Otherwise, go to the next step.
 
-# [Excel, PowerPoint, or Word with unified manifest for Microsoft 365 (preview)](#tab/wxpjsonmanifest)
-
-1. Open the respective *application-name*.ts file in the ./src/taskpane folder. For example, if you used Excel, that's **./src/taskpane/excel.ts**. Replace the `Office.onReady` statement with the following code. Some notes about this code:
-
-    - It checks local storage for a key called "showedFRE". If the key doesn't exist, then show the first-run experience.
-    - It adds a new function called `showFirstRunExperience` that displays the "first-run-experience" `<div>` added to the HTML. This function also adds the "showedFRE" item to local storage.
-
-    ```typescript
-    Office.onReady((info) => {
-      if (info.host === Office.HostType.Excel) {
-        document.getElementById("sideload-msg").style.display = "none";
-        document.getElementById("app-body").style.display = "flex";
-
-        // showedFRE is created and set to "true" when you call showFirstRunExperience().
-        if (!localStorage.getItem("showedFRE")) {
-          showFirstRunExperience();
-        }
-    
-        document.getElementById("run").onclick = runExcel;
-      }
-    });
-    
-    function showFirstRunExperience() {
-      document.getElementById("first-run-experience").style.display = "flex";
-      localStorage.setItem("showedFRE", "true");
-    }  
-    ```
-
-1. If you selected an Office application besides Excel, then:
-
-   - Update the condition of the first `if` statement to check for your chosen [Office.HostType](/javascript/api/office/office.hosttype).
-   - Change the `"run"` event handler from `runExcel` to `runPowerPoint` or `runWord` accordingly. The application-specific run function (for example, `runExcel`, `runPowerPoint`, or `runWord`) should already exist in the file.
-
-1. Save your changes.
-
-# [Other](#tab/other)
+   1. Open the respective *application-name*.ts file in the ./src/taskpane folder. For example, if you used Excel, that's **./src/taskpane/excel.ts**.
+   1. Copy all the contents of that file then replace all the contents of the **taskpane.ts**.
+   1. Rename the application-specific function (for example, `runExcel`, `runPowerPoint`, or `runWord`) to `run`.
+   1. Delete the *application-name*.ts file (for example, **excel.ts**).
 
 1. Open the **taskpane.ts** or **taskpane.js** file. Replace the `Office.onReady` statement with the following code. Some notes about this code:
 
@@ -164,8 +132,6 @@ Select the tab based on the host and manifest type you chose.
 1. If you selected an Office application besides Excel, update the condition of the first `if` statement to check for your chosen [Office.HostType](/javascript/api/office/office.hosttype).
 
 1. Save your changes.
-
----
 
 ### Update the CSS file
 
