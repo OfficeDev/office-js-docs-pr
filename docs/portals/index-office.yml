@@ -31,8 +31,8 @@ sections:
   - componentType: cards
     isShadowless: false
     backgroundColor: alternating-grey
-    title: Explore libraries and training
-    summary: Find content by app.
+    title: Choose which app you want to develop for
+    summary: Find content by app
     blocks:
 
     - componentType: card
@@ -77,10 +77,14 @@ sections:
           text: Build your first Outlook add-in
           url: office/dev/add-ins/quickstarts/outlook-quickstart-yo
 
+# Featured tools
   - componentType: cards
     isShadowless: false
     backgroundColor: alternating-grey
+    title: Try out our developer tools
+    summary: Find tools
     blocks:
+
     - componentType: card
       title: "Script Lab"
       summary: Script lab is an Office JavaScript API tool for anyone who wants to learn about writing Office Add-ins for Word, Excel, PowerPoint, or Outlook.
@@ -114,13 +118,12 @@ sections:
           text: Learn more
           url: https://www.visualstudio.com/vs/office-tools/
 
-
-
-  # Copilot Documentation
+  # More resources
   - componentType: grid
     title: More Office Developer resources
-    summary: Curious about which Copilot to use and how to get started? Access the resources to understand Copilot use cases, the fundamentals, how to deploy, and how to extend in your own environments as a technical professional.
+    summary: Find more resources
     blocks:
+    
       - componentType: summary-card
         title: Microsoft Developer Tools repository on GitHub
         summary: Find a variety of code samples for Office Add-in development on the Microsoft 365 platform.
