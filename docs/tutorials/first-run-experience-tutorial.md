@@ -120,7 +120,7 @@ Select the tab based on the host and manifest type you chose.
       }
     });
     
-    async function showFirstRunExperience() {
+    function showFirstRunExperience() {
       document.getElementById("first-run-experience").style.display = "flex";
       localStorage.setItem("showedFRE", "true");
     }  
@@ -155,7 +155,7 @@ Select the tab based on the host and manifest type you chose.
       }
     });
     
-    async function showFirstRunExperience() {
+    function showFirstRunExperience() {
       document.getElementById("first-run-experience").style.display = "flex";
       localStorage.setItem("showedFRE", "true");
     }  
