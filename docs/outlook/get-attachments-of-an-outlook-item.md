@@ -30,7 +30,7 @@ Each step is covered in the following sections.
 
 ## Get an access token
 
-Microsoft Graph provides access to users' Outlook mail data. Before your add-in can obtain data from Microsoft Graph, it must first get an access token for authorization. To get an access token, use nested app authentication (NAA). To learn more about NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+Microsoft Graph provides access to users' Outlook mail data. Before your add-in can obtain data from Microsoft Graph, it must first get an access token for authorization. To get an access token, use nested app authentication (NAA). To learn more about NAA, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 ## Get the item ID of the mail item
 
