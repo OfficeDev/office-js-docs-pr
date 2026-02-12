@@ -1,40 +1,35 @@
-### YamlMime: Hub
+### YamlMime:Marketing
 title: Office Extensibility learning hub
+brand: office
 metadata:
-  title: 'Learn how to create Office Add-ins | Microsoft Learn'
+  title: Learn how to create Office Add-ins
   description: Use the Office JavaScript API to extend functionality for Word, Excel, PowerPoint, and Outlook. Find documentation, training, blogs, samples, and more. 
   ms.service: microsoft-365
   keywords: what is office-js, excel add-ins, word add-ins, powerpoint add-ins, outlook add-ins, Office Add-ins documentation
   ms.topic: marketing-hub
   ms.author: lindalu
   author: lindalu
-  ms.date: 01/19/2026
-  ms.update-cycle: 180-days
+  ms.date: 02/11/2026
   ms.collection: office
-  brand: office
-sections:
-  # Intro
-  # Hero with background image - default transform
-  - componentType: hero-product
-    supertitle: Microsoft Learn
-    title: Office Extensibility learning hub for Developers
-  # size: small
-    summary: |+
-     Use the Office JavaScript API to extend functionality for Word, Excel, PowerPoint, and Outlook.
-    heroImage:
-     componentType: hero-image
-     lightImageSrc: /docs/images/office-add-ins-hero-859x557.webp
-     darkImageSrc: /docs/images/office-add-ins-hero-859x557.webp
 
+sections:
+  # Main banner
+  - componentType: hero
+    textColor: light
+    title: Office Extensibility for developers
+    supertitle: Developer hub
+    summary: Everything for Office Developers in one place.
+    size: small
+    background:
+      componentType: image
+      src: /docs/images/portals/office-extensibility-banner.png
+      alt: Office Extensibility banner image
 
 # Start your Journey here
   - componentType: cards
-    isShadowless: false
     backgroundColor: alternating-grey
-    title: Choose which app you want to develop for
-    summary: Find content by app
+    title: Start your journey here
     blocks:
-
     - componentType: card
       title: "Word"
       summary: Use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Word across multiple platforms, including on the web, Windows, Mac, and iPad.
@@ -75,20 +70,17 @@ sections:
           url: /office/dev/add-ins/outlook/one-outlook
         - componentType: link
           text: Build your first Outlook add-in
-          url: office/dev/add-ins/quickstarts/outlook-quickstart-yo
+          url: /office/dev/add-ins/quickstarts/outlook-quickstart-yo
 
 # Featured tools
   - componentType: cards
-    isShadowless: false
     backgroundColor: alternating-grey
-    title: Try out our developer tools
-    summary: Find tools
+    title: Developer tools
     blocks:
-
     - componentType: card
       title: "Script Lab"
       summary: Script lab is an Office JavaScript API tool for anyone who wants to learn about writing Office Add-ins for Word, Excel, PowerPoint, or Outlook.
-      imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-microsoft-security.png
+      imageUrl: /docs/images/portals/i-love-robots.png
       links: 
         - componentType: link
           text: Explore Script Lab
@@ -96,7 +88,7 @@ sections:
     - componentType: card
       title: "Office Scripts"
       summary: Use Office Scripts in Excel on the web to automate your common tasks. Learn how to create and edit Office Scripts and get started automating today.
-      imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-microsoft-fabric.png
+      imageUrl: /docs/images/portals/play-button-macro.png
       links: 
         - componentType: link
           text: Explore Office Scripts
@@ -104,15 +96,15 @@ sections:
     - componentType: card
       title: "Fluent UI"
       summary: Use the official front-end framework for building experiences that fit seamlessly into Microsoft 365.
-      imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-azure.png
+      imageUrl: /docs/images/portals/sextant.png
       links: 
         - componentType: link
           text: Explore Fluent UI
-          url: https://developer.microsoft.com/en-us/fluentui/
+          url: https://developer.microsoft.com/fluentui/
     - componentType: card
       title: "Developer Tools"
       summary: Use our developer tools to build solutions for consumer and professional markets.
-      imageUrl: /copilot/media/copilot/copilot-learning-hub/copilot-in-github.png
+      imageUrl: /docs/images/portals/hands-on.png
       links: 
         - componentType: link
           text: Learn more
@@ -121,38 +113,61 @@ sections:
   # More resources
   - componentType: grid
     title: More Office Developer resources
-    summary: Find more resources
+    backgroundColor: medium
     blocks:
-    
-      - componentType: summary-card
+      - componentType: icon-card
         title: Microsoft Developer Tools repository on GitHub
-        summary: Find a variety of code samples for Office Add-in development on the Microsoft 365 platform.
+        summary: Find a variety of code samples for Office Add-in development
         url: https://github.com/OfficeDev/Office-Add-in-samples
-      - componentType: summary-card
+        icon:
+          componentType: image
+          src: /docs/images/portals/github.png
+      - componentType: icon-card
         title: Community Calls
         summary: Learn from others how to build apps on Microsoft 365 & Power Platform.
         url: https://aka.ms/M365DevCalls
-      - componentType: summary-card
+        icon:
+          componentType: image
+          src: /docs/images/portals/calendar.png
+      - componentType: icon-card
         title: Microsoft 365 Developer Blog
         summary: A developer platform for building collaborative apps for hybrid work.
         url: https://devblogs.microsoft.com/microsoft365dev
-      - componentType: summary-card
+        icon:
+          componentType: image
+          src: /docs/images/portals/blog.png
+      - componentType: icon-card
         title: Microsoft Q&A forum
         summary: Ask experts questions about your custom Office solutions.
         url: https://learn.microsoft.com/en-us/answers/tags/321/m365-office-development-routing-development-other
-      - componentType: summary-card
+        icon:
+          componentType: image
+          src: /docs/images/portals/question.png        
+      - componentType: icon-card
         title: Request a feature
         summary: Office Add-ins developer feedback on Tech Community.
         url: https://techcommunity.microsoft.com/tag/office%20add-ins%20development?nodeId=board%3AMicrosoft365DeveloperPlatform
-      - componentType: summary-card
+        icon:
+          componentType: image
+          src: /docs/images/portals/idea.png
+      - componentType: icon-card
         title: Get the Office Add-ins Development Kit
         summary: Set up your environment, create Office Add-ins, debug the code, and view more samples using Visual Studio Code.
         url: /office/dev/add-ins/develop/development-kit-overview?tabs=vscode
-      - componentType: summary-card
+        icon:
+          componentType: image
+          src: /docs/images/portals/puzzle.png
+      - componentType: icon-card
         title: Bring your Office solutions to market
         summary: Submit your Office app to Microsoft AppSource to make it available to millions of consumers and businesses.
         url: /office/dev/store/submit-to-appsource-via-partner-center
-      - componentType: summary-card
+        icon:
+          componentType: image
+          src: /docs/images/portals/partner.png
+      - componentType: icon-card
         title: Join the M365 Developer Program
         summary: Current Visual Studio Professional or Enterprise subscribers and members of qualifying programs can set up a free Microsoft 365 E5 developer subscription to use for development.
         url: /office/developer-program/microsoft-365-developer-program-faq
+        icon:
+          componentType: image
+          src: /docs/images/portals/insiders.png
