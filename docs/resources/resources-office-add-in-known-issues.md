@@ -160,6 +160,22 @@ Options:
 1. When you make the initial `requestCreateControls` call, include the enabled/disabled state, if known. Instead of making two calls one right after the other, do it in one call.
 1. Roll back Office from version 2508 to 2507.
 
+### Microsoft Marketplace: Issues installing add-ins from the Marketplace
+
+Some users may experience failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see 50x server-related error.
+
+#### STATUS 
+
+We're actively investigating this issue with highest priority.
+
+#### IMPACT
+
+Users may be unable to install add-ins from the Marketplace during the impact window.
+
+#### START TIME 
+
+Sunday, Feb 8 2026
+
 ## Recently resolved issues in Office Add-ins
 
 ### Excel: RichApi.Error code 0x8002802B known as hrNotFound is occurring more frequently when not expected
