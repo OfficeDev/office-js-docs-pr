@@ -1,7 +1,7 @@
 ---
 title: First-run experience tutorial
 description: Learn how to implement a first-run experience for your Office Add-in.
-ms.date: 02/10/2026
+ms.date: 02/11/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -96,7 +96,14 @@ Be clear about the area of the UI that will be part of the first-run experience.
 
 Update the TypeScript or JavaScript file to display the first-run experience if this is the first time the user is running the add-in.
 
-1. Open the **taskpane.ts** or **taskpane.js** file. Replace the `Office.onReady` statement with the following code, then save the file. Some notes about this code:
+1. If you chose Excel, PowerPoint, or Word with the unified manifest for Microsoft 365, then do the following before proceeding. Otherwise, go to the next step.
+
+   1. Open the respective *application-name*.ts file in the ./src/taskpane folder. For example, if you used Excel, that's **./src/taskpane/excel.ts**.
+   1. Rename the application-specific function (for example, `runExcel`, `runPowerPoint`, or `runWord`) to `run`.
+   1. Copy all the contents of that file then replace all the contents of the **taskpane.ts**.
+   1. Delete the *application-name*.ts file (for example, **excel.ts**).
+
+1. Open the **taskpane.ts** or **taskpane.js** file. Replace the `Office.onReady` statement with the following code. Some notes about this code:
 
     - It checks local storage for a key called "showedFRE". If the key doesn't exist, then show the first-run experience.
     - It adds a new function called `showFirstRunExperience` that displays the "first-run-experience" `<div>` added to the HTML. This function also adds the "showedFRE" item to local storage.
@@ -116,13 +123,15 @@ Update the TypeScript or JavaScript file to display the first-run experience if 
       }
     });
     
-    async function showFirstRunExperience() {
+    function showFirstRunExperience() {
       document.getElementById("first-run-experience").style.display = "flex";
       localStorage.setItem("showedFRE", "true");
     }  
     ```
 
 1. If you selected an Office application besides Excel, update the condition of the first `if` statement to check for your chosen [Office.HostType](/javascript/api/office/office.hosttype).
+
+1. Save your changes.
 
 ### Update the CSS file
 

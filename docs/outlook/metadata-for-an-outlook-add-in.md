@@ -158,7 +158,7 @@ GET https://graph.microsoft.com/v1.0/me/events?$filter=singleValueExtendedProper
 For other examples that get single-value MAPI-based extended properties, see [Get singleValueLegacyExtendedProperty](/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0&preserve-view=true).
 
 > [!TIP]
-> To learn how to obtain an access code to Microsoft Graph, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+> To learn how to obtain an access code to Microsoft Graph, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 #### Exchange on-premises
 
@@ -258,5 +258,5 @@ To learn how to create and manage a SessionData object, get the [Script Lab for 
 ## See also
 
 - [MAPI Property Overview](/office/client-developer/outlook/mapi/mapi-property-overview)
-- [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md)
+- [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md)
 - [Get and set internet headers on a message in an Outlook add-in](internet-headers.md)
