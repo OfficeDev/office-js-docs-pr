@@ -162,7 +162,7 @@ Options:
 
 ### Microsoft Marketplace: Issues installing add-ins from the Marketplace
 
-Some users may experience failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see 50x server-related error.
+Some users may experience failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see a 50x server-related error.
 
 #### STATUS 
 
