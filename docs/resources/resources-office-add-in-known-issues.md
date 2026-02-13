@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 01/16/2026
+ms.date: 02/13/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 02/12/2026_
+_Last updated 02/13/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
@@ -165,17 +165,17 @@ Options:
 
 Some users may experience failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see a 50x server-related error.
 
-#### STATUS 
+#### STATUS
 
-We're actively investigating this issue with highest priority.
+The issue is now resolved with the exception of CSPP hosts. If you're experiencing issues with CSPP hosts, we recommend contacting your CSPP technical contact with information so that they can help the team troubleshoot.
 
-#### IMPACT
-
-Users may be unable to install add-ins from the Marketplace during the impact window.
-
-#### START TIME 
+#### START TIME
 
 Sunday, 02/08/2026
+
+#### RESOLUTION TIME
+
+Friday, 02/13/2026 (for non-CSPP hosts)
 
 ## Recently resolved issues in Office Add-ins
 
