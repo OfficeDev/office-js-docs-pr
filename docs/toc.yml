@@ -702,6 +702,9 @@
     - name: Web requests
       href: excel/custom-functions-web-reqs.md
       displayName: Excel, Custom Functions
+    - name: Configure with unified manifest
+      href: excel/custom-functions-unified-manifest.md
+      displayName: Excel, Custom Functions
     - name: Custom functions without a shared runtime
       items: 
         - name: Authentication

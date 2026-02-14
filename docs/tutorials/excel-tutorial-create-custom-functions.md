@@ -1,7 +1,7 @@
 ---
 title: Excel custom functions tutorial
 description: In this tutorial, you will create an Excel add-in that contains a custom function that can perform calculations, request web data, or stream web data.
-ms.date: 12/26/2024
+ms.date: 02/06/2026
 ms.service: excel
 #Customer intent: As an add-in developer, I want to create custom functions in Excel to increase user productivity. 
 ms.localizationpriority: high
@@ -34,6 +34,7 @@ In this tutorial, you will:
     - **Choose a project type:** `Excel Custom Functions using a Shared Runtime`
     - **Choose a script type:** `JavaScript`
     - **What do you want to name your add-in?** `My custom functions add-in`
+    - **Which manifest?** `unified manifest for Microsoft 365 (preview)`
 
     :::image type="content" source="../images/yo-office-excel-cf-quickstart.png" alt-text="The Yeoman Office Add-in generator command line interface prompts for custom functions projects.":::
 
@@ -74,7 +75,7 @@ To test your add-in in Excel on the web, run the following command. When you run
 
 ## Try out a prebuilt custom function
 
-The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.xml** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
+The custom functions project that you created contains some prebuilt custom functions, defined within the **./src/functions/functions.js** file. The **./manifest.json** file specifies that all custom functions belong to the `CONTOSO` namespace. You'll use the CONTOSO namespace to access the custom functions in Excel.
 
 Next, try out the `ADD` custom function by completing the following steps.
 
@@ -151,7 +152,7 @@ Integrating data from the Web is a great way to extend Excel through custom func
 
 1. Choose **Browse...** and navigate to the root directory of the project that the Yeoman generator created.
 
-1. Select the file **manifest.xml** and choose **Open**, then choose **Upload**.
+1. Select the file **manifest.json** and choose **Open**, then choose **Upload**.
 
 1. Try out the new function. In cell **B1**, type the text **=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")** and press <kbd>Enter</kbd>. You should see that the result in cell **B1** is the current number of stars given to the [Excel-Custom-Functions Github repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 

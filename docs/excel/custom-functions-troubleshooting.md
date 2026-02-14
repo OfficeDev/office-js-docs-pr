@@ -1,5 +1,5 @@
 ---
-ms.date: 08/26/2025
+ms.date: 02/06/2026
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.topic: troubleshooting
@@ -10,9 +10,7 @@ ms.localizationpriority: medium
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
-To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel's native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
+To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel native error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
 
 ## Debugging custom functions
 
@@ -28,7 +26,7 @@ If you're testing your add-in in Office on Windows, you should [enable runtime l
 
 Excel has a number of built-in error messages which are returned to a cell if there is calculation error. Custom functions only use the following error messages: `#NULL!`, `#DIV/0!`, `#VALUE!`, `#REF!`, `#NAME?`, `#NUM!`, `#N/A`, and `#BUSY!`.
 
-Generally, these errors correspond to the errors you might already be familiar with in Excel. The are only a few exceptions specific to custom functions, listed here:
+Generally, these errors correspond to the errors you might already be familiar with in Excel. There are only a few exceptions specific to custom functions, listed here:
 
 - A `#NAME?` error generally means there has been an issue registering your functions. For additional information, see [Custom functions showing #NAME? error](#custom-functions-showing-name-error).
 - A `#N/A` error is also maybe a sign that that function while registered could not be run. This is typically due to a missing `CustomFunctions.associate` command.
