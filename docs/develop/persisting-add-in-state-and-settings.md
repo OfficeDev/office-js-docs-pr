@@ -1,42 +1,42 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 10/16/2025
+ms.date: 01/06/2026
 ms.localizationpriority: medium
 ---
 
 # Persist add-in state and settings
 
-Office Add-ins are essentially web applications running in the stateless environment of a browser iframe or a webview control. (For brevity hereafter, this article uses "browser control" to mean "browser or webview control".) When in use, your add-in may need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in may have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To do that, you can:
+Office Add-ins are essentially web applications running in the stateless environment of a browser iframe or a webview control. For brevity, this article uses "browser control" to mean "browser or webview control". When in use, your add-in might need to persist data to maintain the continuity of certain operations or features across sessions. For example, your add-in might have custom settings or other values that it needs to save and reload the next time it's initialized, such as a user's preferred view or default location. To persist data, you can:
 
 - [Use techniques provided by the underlying browser control](#browser-storage).
 - [Use the application-specific Office JavaScript APIs for Excel, Word, and Outlook that store data](#application-specific-settings-and-persistence).
 
-If you need to persist state across documents, such as tracking user preferences across any documents they open, you'll need to use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
+If you need to persist state across documents, such as tracking user preferences across any documents they open, use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
 
 ## Browser storage
 
-Persist data across add-in instances with tools from the underlying browser control, such as browser cookies or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
+Persist data across add-in instances by using tools from the underlying browser control, such as browser cookies or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
 
-Some browsers or the user's browser settings may block browser-based storage techniques. You should test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
+Some browsers or the user's browser settings might block browser-based storage techniques. Test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
 ### Storage partitioning
 
-As a best practice, any private data should be stored in partitioned `localStorage`. [Office.context.partitionKey](/javascript/api/office/office.context#office-office-context-partitionkey-member) provides a key for use with local storage. This ensures that data stored in local storage is only available in the same context. 
+Store any private data in partitioned `localStorage`. Use [Office.context.partitionKey](/javascript/api/office/office.context#office-office-context-partitionkey-member) as a key for local storage. This approach ensures that data stored in local storage is only available in the same context.
 
 > [!NOTE]
 > The partition key is undefined in environments without partitioning, such as the webview controls for Office on Windows. Where it is defined, the partition key is a hash of the following two domains.
-> 
+>
 > - The domain that the top-level browser window is at, such as `excel.cloud.microsoft` in the case of Excel on the web.
 > - The domain of the add-in, such as `myAddin.contoso.com`.
-> 
-> So, each of the following would be a different partition:
-> 
+>
+> So, each of the following combinations creates a different partition:
+>
 > - `excel.cloud.microsoft` + `myAddin.contoso.com`
 > - `word.cloud.microsoft` + `myAddin.contoso.com`
 > - `word.cloud.microsoft` + `myOtherAddin.contoso.com`
 
-The following example shows how to use the partition key with `localStorage`. 
+The following example shows how to use the partition key with `localStorage`.
 
 ```js
 // Store the value "Hello" in local storage with the key "myKey1".
@@ -74,11 +74,11 @@ function getFromLocalStorage(key: string) {
 }
 ```
 
-Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). Similar to the Office key-based partitioning, data stored by storage APIs, such as local storage, is only available to contexts with the same origin and the same top-level site.
+Starting in version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). Similar to the Office key-based partitioning, data stored by storage APIs, such as local storage, is only available to contexts with the same origin and the same top-level site.
 
 ## Application-specific settings and persistence
 
-Excel, Word, and Outlook provide application-specific APIs to save settings and other data. Use these instead of the [Common APIs mentioned later in this article](#common-api-settings-and-persistence) so that your add-in follows consistent patterns and is optimized for the targeted application.
+Excel, Word, and Outlook provide application-specific APIs to save settings and other data. Use these APIs instead of the [Common APIs mentioned later in this article](#common-api-settings-and-persistence) so that your add-in follows consistent patterns and is optimized for the targeted application.
 
 ### Settings in Excel and Word
 
@@ -148,7 +148,7 @@ await Excel.run(async (context) => {
 ```
 
 > [!TIP]
-> In Excel, custom properties can also be set at the worksheet level with the [Worksheet.customProperties](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-customproperties-member) property. These are similar to document-level custom properties, except that the same key can be repeated across different worksheets.
+> In Excel, custom properties can also be set at the worksheet level with the [Worksheet.customProperties](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-customproperties-member) property. These properties are similar to document-level custom properties, except that the same key can be repeated across different worksheets.
 
 ### How to save settings in an Outlook add-in
 
@@ -156,7 +156,7 @@ For information about how to save settings in an Outlook add-in, see [Get and se
 
 ## Common API settings and persistence
 
-The [Common APIs](understanding-the-javascript-api-for-office.md#api-models) provide objects to save add-in state across sessions. The saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them. Internally, the data accessed with the `Settings`, `CustomProperties`, or `RoamingSettings` objects is stored as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`, and the stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
+The [Common APIs](understanding-the-javascript-api-for-office.md#api-models) provide objects to save add-in state across sessions. The saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them. Internally, the `Settings`, `CustomProperties`, and `RoamingSettings` objects store data as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`. The stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
 
 This example of the property bag structure contains three defined **string** values named `firstName`,  `location`, and  `defaultView`.
 
@@ -168,16 +168,16 @@ This example of the property bag structure contains three defined **string** val
 }
 ```
 
-After the settings property bag is saved during the previous add-in session, it can be loaded when the add-in is initialized or at any point after that during the add-in's current session. During the session, the settings are managed in entirely in memory using the `get`, `set`, and `remove` methods of the object that corresponds to the kind of settings you're creating (**Settings**, **CustomProperties**, or **RoamingSettings**).
+After the settings property bag is saved during a previous add-in session, the add-in can load the settings when the add-in initializes or at any point after that during the add-in's current session. During the session, the add-in manages the settings entirely in memory by using the `get`, `set`, and `remove` methods of the object that corresponds to the kind of settings you're creating (**Settings**, **CustomProperties**, or **RoamingSettings**).
 
 > [!IMPORTANT]
-> To persist any additions, updates, or deletions made during the add-in's current session to the storage location, you must call the `saveAsync` method of the corresponding object used to work with that kind of settings. The `get`, `set`, and `remove` methods operate only on the in-memory copy of the settings property bag. If your add-in is closed without calling `saveAsync`, any changes made to settings during that session will be lost.
+> To persist any additions, updates, or deletions made during the add-in's current session to the storage location, call the `saveAsync` method of the corresponding object used to work with that kind of settings. The `get`, `set`, and `remove` methods operate only on the in-memory copy of the settings property bag. If your add-in is closed without calling `saveAsync`, the changes to settings during that session are lost.
 
 ### How to save add-in state and settings per document for content and task pane add-ins
 
-To persist state or custom settings of a content or task pane add-in for Word, Excel, or PowerPoint, use the [Settings](/javascript/api/office/office.settings) object and its methods. The property bag created with the methods of the `Settings` object are available only to the instance of the content or task pane add-in that created it, and only from the document in which it is saved.
+To persist state or custom settings of a content or task pane add-in for Word, Excel, or PowerPoint, use the [Settings](/javascript/api/office/office.settings) object and its methods. The property bag you create by using the methods of the `Settings` object is available only to the instance of the content or task pane add-in that created it, and only from the document in which you save it.
 
-The `Settings` object is automatically loaded as part of the [Document](/javascript/api/office/office.document) object, and is available when the task pane or content add-in is activated. After the `Document` object is instantiated, you can access the `Settings` object with the [settings](/javascript/api/office/office.document#office-office-document-settings-member) property of the `Document` object. During the lifetime of the session, you can use the `Settings.get`, `Settings.set`, and `Settings.remove` methods to read, write, or remove persisted settings and add-in state from the in-memory copy of the property bag.
+The `Settings` object automatically loads as part of the [Document](/javascript/api/office/office.document) object and is available when the task pane or content add-in is activated. After you instantiate the `Document` object, you can access the `Settings` object by using the [settings](/javascript/api/office/office.document#office-office-document-settings-member) property of the `Document` object. During the lifetime of the session, use the `Settings.get`, `Settings.set`, and `Settings.remove` methods to read, write, or remove persisted settings and add-in state from the in-memory copy of the property bag.
 
 Because the set and remove methods operate against only the in-memory copy of the settings property bag, to save new or changed settings back to the document the add-in is associated with, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method.
 
@@ -189,7 +189,7 @@ The following code example shows how to use the [Settings.set](/javascript/api/o
 Office.context.document.settings.set('themeColor', 'green');
 ```
 
-The setting with the specified name is created if it doesn't already exist, or its value is updated if it does exist. Use the `Settings.saveAsync` method to persist the new or updated settings to the document.
+The setting with the specified name is created if it doesn't already exist, or its value is updated if it exists. Use the `Settings.saveAsync` method to persist the new or updated settings to the document.
 
 #### Get the value of a setting
 
@@ -214,11 +214,11 @@ The following example shows how to use the [Settings.remove](/javascript/api/off
 Office.context.document.settings.remove('themeColor');
 ```
 
-Nothing will happen if the setting doesn't exist. Use the `Settings.saveAsync` method to persist removal of the setting from the document.
+Nothing happens if the setting doesn't exist. Use the `Settings.saveAsync` method to persist removal of the setting from the document.
 
 #### Save your settings
 
-To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, you must call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method to store them in the document. The only parameter of the `saveAsync` method is *callback*, which is a callback function with a single parameter.
+To save any additions, changes, or deletions your add-in made to the in-memory copy of the settings property bag during the current session, call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method to store them in the document. The only parameter of the `saveAsync` method is *callback*, which is a callback function with a single parameter.
 
 ```js
 Office.context.document.settings.saveAsync(function (asyncResult) {
@@ -234,11 +234,11 @@ function write(message){
 }
 ```
 
-The anonymous function passed into the `saveAsync` method as the *callback* parameter is executed when the operation is completed. The *asyncResult* parameter of the callback provides access to an `AsyncResult` object that contains the status of the operation. In the example, the function checks the `AsyncResult.status` property to see if the save operation succeeded or failed, and then displays the result in the add-in's page.
+The anonymous function passed into the `saveAsync` method as the *callback* parameter runs when the operation is completed. The *asyncResult* parameter of the callback provides access to an `AsyncResult` object that contains the status of the operation. In the example, the function checks the `AsyncResult.status` property to see if the save operation succeeded or failed, and then displays the result in the add-in's page.
 
 ### How to save custom XML to the document
 
-A custom XML part is an available storage option for when you want to store information that has a structured character or need the data to be accessible across instances of your add-in. Note that data stored this way can also be accessed by other add-ins. You can persist custom XML markup in a task pane add-in for Word (and for Excel and Word using application-specific API as mentioned in the previous paragraph). In Word, you can use the [CustomXmlPart](/javascript/api/office/office.customxmlpart) object and its methods. The following code creates a custom XML part and displays its ID and then its content in divs on the page. Note that there must be an `xmlns` attribute in the XML string.
+Use a custom XML part to store information that has a structured character or when you need the data to be accessible across instances of your add-in. Other add-ins can also access data stored this way. You can persist custom XML markup in a task pane add-in for Word (and for Excel and Word using application-specific API as mentioned in the previous paragraph). In Word, you can use the [CustomXmlPart](/javascript/api/office/office.customxmlpart) object and its methods. The following code creates a custom XML part and displays its ID and then its content in divs on the page. The XML string must include an `xmlns` attribute.
 
 ```js
 function createCustomXmlPart() {
@@ -256,7 +256,7 @@ function createCustomXmlPart() {
 }
 ```
 
-To retrieve a custom XML part, use the [getByIdAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-getbyidasync-member(1)) method, but the ID is a GUID that is generated when the XML part is created, so you can't know when coding what the ID is. For that reason, it's a good practice when creating an XML part to immediately store the ID of the XML part as a setting and give it a memorable key. The following method shows how to do this.
+To retrieve a custom XML part, use the [getByIdAsync](/javascript/api/office/office.customxmlparts#office-office-customxmlparts-getbyidasync-member(1)) method. The ID is a GUID that's generated when you create the XML part, so you don't know the ID when coding. For that reason, store the ID of the XML part as a setting and give it a memorable key when creating an XML part. The following method shows how to do this.
 
  ```js
 function createCustomXmlPartAndStoreId() {
@@ -286,7 +286,6 @@ function getReviewers() {
     );
 }
 ```
-
 
 ## See also
 
