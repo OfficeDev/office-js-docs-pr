@@ -1,7 +1,7 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 01/06/2026
+ms.date: 02/18/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -363,7 +363,7 @@ In this section, learn how your add-in script can update a user's meeting to inc
 
 1. Replace the entire content of the **commands.js** file with the following JavaScript.
 
-    ```js
+    ```javascript
     // 1. Construct online meeting details.
     // Not shown: How to get the meeting organizer's ID and other details from your service.
     const newBody = '<br>' +
@@ -470,15 +470,16 @@ The meeting attendee's UI varies depending on the Outlook client.
 [:::image type="content" source="../images/outlook-android-join-online-meeting-view-1.png" alt-text="The join-meeting screen in Outlook on Android.":::](../images/outlook-android-join-online-meeting-view-1-expanded.png#lightbox)
 
 > [!NOTE]
-> Your online-meeting add-in must meet certain requirements to include the **Join** button in Outlook on the web, on Mac, on Android, on iOS, and in the new Outlook on Windows. For more information, see [Implement the Join button](#implement-the-join-button).
+> Your online-meeting add-in must meet certain requirements to include the **Join** and **Chat** buttons in Outlook on the web, on Mac, on Android, on iOS, and in the new Outlook on Windows. The **Join** and **Chat** buttons aren't supported in classic Outlook on Windows. For more information, see [Implement the Join and Chat buttons](#implement-the-join-and-chat-buttons).
 
-## Implement the Join button
+## Implement the Join and Chat buttons
 
-The **Join** button only appears in meetings if:
+The **Join** and **Chat** buttons only appear in the meeting UI if:
 
 - The online-meeting add-in is published to Microsoft Marketplace. Line-of-business add-ins aren't supported.
 - The add-in is registered.
-- The registered add-in is running in Outlook on the web, on Mac, on Android, on iOS, and in the new Outlook on Windows.
+- The meeting participant is using Outlook on the web, on Mac, on Android, on iOS, or the new Outlook on Windows.
+- **Chat button only**: The chat URL in the meeting body must be appended with the `owa-chat=1` query parameter.
 
 ### Register your online-meeting template
 
@@ -492,6 +493,14 @@ To register your online-meeting add-in, once you've published your add-in to Mic
 1. Click **Submit new issue**.
 
 :::image type="content" source="../images/outlook-request-to-register-online-meeting-template.png" alt-text="A new GitHub issue screen with Contoso sample content.":::
+
+### Add support for the Chat button
+
+To add support for the **Chat** button, in your JavaScript code, you must include a URL in the meeting body that includes the `owa-chat=1` query parameter. The following is an example.
+
+```javascript
+'<a href="https://contoso.com/chat?id=123456789&owa-chat=1" target="_blank">Chat with meeting participants</a>'
+```
 
 ## Automatically provide post-meeting resources and updates to attendees
 
