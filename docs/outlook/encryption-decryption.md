@@ -58,7 +58,7 @@ The `OnMessageRead` event is supported on the Message Read surface. Support vari
 
 To preview the decryption APIs in classic Outlook on Windows, join the [Microsoft 365 Insider program](https://aka.ms/MSFT365InsiderProgram), then choose the Beta Channel in the Outlook client. Your client must be on Version 2510 (Build 19312.20000) or later.
 
-Classic Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry. This will enable you to test [preview features](/javascript/api/requirement-sets/outlook/preview-requirement-set/outlook-requirement-set-preview) in your event handlers in classic Outlook on Windows.
+Classic Outlook on Windows includes a local copy of the production and beta versions of Office.js instead of loading from the content delivery network (CDN). By default, the local production copy of the API is referenced. To reference the local beta copy of the API, you must configure your computer's registry. This will enable you to test [preview features](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview) in your event handlers in classic Outlook on Windows.
 
 1. In the registry, navigate to `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Outlook\Options\WebExt\Developer`. If the key doesn't exist, create it.
 

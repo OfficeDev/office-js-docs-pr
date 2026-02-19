@@ -14,13 +14,13 @@ The Office JavaScript API provides several APIs to manage an item's attachments 
 
 Attach a file or Outlook item to a compose form by using the method that's appropriate for the type of attachment.
 
-- [addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file.
+- `addFileAttachmentAsync`([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-addfileattachmentasync-member(1))): Attach a file.
 
     > [!NOTE]
-    > The `addFileAttachmentAsync` method was introduced in [requirement set 1.1](/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1) for Outlook on Windows (classic) and on Mac. Support for `addFileAttachmentAsync` in Outlook on the web and new Outlook on Windows was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8).
+    > The `addFileAttachmentAsync` method was introduced in [requirement set 1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-1) for Outlook on Windows (classic) and on Mac. Support for `addFileAttachmentAsync` in Outlook on the web and new Outlook on Windows was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8).
 
-- [addFileAttachmentFromBase64Async](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach a file using its Base64-encoded string.
-- [addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods): Attach an Outlook item.
+- `addFileAttachmentFromBase64Async` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-addfileattachmentfrombase64async-member(1))): Attach a file using its Base64-encoded string.
+- `addItemAttachmentAsync` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-additemattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-additemattachmentasync-member(1))): Attach an Outlook item.
 
 These are asynchronous methods, which means execution can go on without waiting for the action to complete. Depending on the original location and size of the attachment being added, the asynchronous call may take a while to complete.
 
@@ -110,7 +110,7 @@ Office.context.mailbox.item.addFileAttachmentFromBase64Async(base64String, "samp
 
 ### Attach an Outlook item
 
-To attach an Outlook item (for example, email, calendar, or contact item) to a message or appointment in a compose form, specify the Exchange Web Services (EWS) ID of the item and use the `addItemAttachmentAsync` method. To get the EWS ID of the item, use the [item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) property.
+To attach an Outlook item (for example, email, calendar, or contact item) to a message or appointment in a compose form, specify the Exchange Web Services (EWS) ID of the item and use the `addItemAttachmentAsync` method. To get the EWS ID of the item, use the `item.itemId` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-itemid-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-itemid-member)) property.
 
 The following JavaScript function, `addItemAttachment`, extends an earlier example, and adds an item as an attachment to the email or appointment being composed. The function takes the EWS ID of the item to be attached as an argument. If attaching succeeds, it gets the attachment ID for further processing.
 
@@ -147,17 +147,17 @@ function addItemAttachment(itemId) {
 
 ## Get attachments
 
-The following APIs to get attachments in compose mode are available from [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8).
+The following APIs to get attachments in compose mode are available from [requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8).
 
-- [getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
-- [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+- `getAttachmentsAsync`: [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getattachmentsasync-member(1))
+- `getAttachmentContentAsync`: [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getattachmentcontentasync-member(1))
 
-Use the [getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method to get the attachments of the message or appointment being composed.
+Use the `getAttachmentsAsync` method to get the attachments of the message or appointment being composed.
 
 > [!NOTE]
 > In Outlook on the web and the new Outlook on Windows, users can select the **Upload and share** option to upload an attachment to OneDrive and include a link to the file in the mail item. However, since only a link is included, `getAttachmentsAsync` doesn't return this type of attachment.
 
-To get an attachment's content, use the [getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method. The supported formats are listed in the [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) enum.
+To get an attachment's content, use the `getAttachmentContentAsync` method. The supported formats are listed in the [AttachmentContentFormat](/javascript/api/outlook/office.mailboxenums.attachmentcontentformat) enum.
 
 You should provide a callback function to check for the status and any error by using the `AsyncResult` output parameter object. You can also pass any additional parameters to the callback function by using the optional `asyncContext` parameter.
 
@@ -202,7 +202,7 @@ function handleAttachmentsCallback(result) {
 
 ## Remove an attachment
 
-To remove a file or item attachment from a message or appointment item in a compose form, specify the corresponding attachment ID in the [removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) method.
+To remove a file or item attachment from a message or appointment item in a compose form, specify the corresponding attachment ID in the `removeAttachmentAsync` method ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-removeattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-removeattachmentasync-member(1))).
 
 > [!IMPORTANT]
 > If you're using requirement set 1.7 or earlier, you should only remove attachments that the same add-in has added in the same session.

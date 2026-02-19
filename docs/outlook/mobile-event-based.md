@@ -321,7 +321,7 @@ As you develop an event-based add-in for Outlook mobile, be mindful of the follo
 
 ## Additional supported APIs
 
-Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), to further extend the capability of your event-based add-in in Outlook mobile, additional APIs from later requirement sets are now supported in compose mode.
+Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-5), to further extend the capability of your event-based add-in in Outlook mobile, additional APIs from later requirement sets are now supported in compose mode.
 
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))
 - [Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))
