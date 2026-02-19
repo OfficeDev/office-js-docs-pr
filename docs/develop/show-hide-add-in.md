@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # Show or hide the task pane of your Office Add-in
 
 > [!IMPORTANT]
-> As of February 23rd, 2026, the `showTaskPane` method no longer applies to add-ins published in the Microsoft Marketplace. Calls to `showTaskPane` are ignored and won't open the task pane. The `showTaskPane` method only applies to add-ins that are centrally deployed or sideloaded.
+> As of February 23rd, 2026, the `showAsTaskpane` method no longer applies to add-ins published in the Microsoft Marketplace. Calls to `showAsTaskpane` are ignored and won't open the task pane. The `showAsTaskpane` method only applies to add-ins that are centrally deployed or sideloaded.
 
 [!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
