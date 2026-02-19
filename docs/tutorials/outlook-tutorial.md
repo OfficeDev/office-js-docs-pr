@@ -1,7 +1,7 @@
 ﻿---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: In this tutorial, you will build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 12/09/2025
+ms.date: 02/19/2026
 ms.service: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -30,7 +30,7 @@ In this tutorial, you will:
 
 - [Visual Studio Code (VS Code)](https://code.visualstudio.com/) or your preferred code editor.
 
-- Outlook on the web, [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), or Outlook 2016 or later on Windows (connected to a Microsoft 365 account).
+- Outlook on the web, [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627), or classic Outlook on Windows (connected to a Microsoft 365 account).
 
 - A [GitHub](https://www.github.com) account.
 
@@ -486,13 +486,16 @@ You must reinstall the add-in for the manifest changes to take effect.
 
 After you've reinstalled the add-in, you can verify that it installed successfully by checking for the commands **Display gist list** and **Insert default gist** in a compose message window. Note that nothing will happen if you select either of these items, because you haven't yet finished building this add-in.
 
-- If you're running this add-in in Outlook 2016 or later on Windows, you should see two new buttons on the ribbon of the compose message window: **Display gist list** and **Insert default gist**.
+- If you're running this add-in in classic Outlook on Windows, you should see two new buttons on the ribbon of the compose message window: **Display gist list** and **Insert default gist**.
 
   :::image type="content" source="../images/add-in-buttons-in-windows.png" alt-text="The add-in buttons as they appear in classic Outlook on Windows.":::
 
 - If you're running this add-in in Outlook on the web or new Outlook on Windows, select **Apps** from the ribbon of the compose message window, then select **Git the gist** to see the **Display gist list** and **Insert default gist** options.
 
   :::image type="content" source="../images/add-in-buttons-in-owa.png" alt-text="The message compose form in Outlook on the web with the add-in button and pop-up menu highlighted.":::
+
+> [!TIP]
+> For guidance on how to locate your add-in on the ribbon, see [Use add-ins in Outlook](https://support.microsoft.com/office/1ee261f9-49bf-4ba6-b3e2-2ba7bcab64c8).
 
 ## Implement a first-run experience
 
