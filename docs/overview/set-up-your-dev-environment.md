@@ -1,7 +1,7 @@
 ﻿---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 01/15/2026
+ms.date: 02/19/2026
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
