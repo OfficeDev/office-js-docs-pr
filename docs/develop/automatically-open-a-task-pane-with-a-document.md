@@ -2,7 +2,7 @@
 title: Automatically open a task pane with a document
 description: Learn how to configure an Office Add-in to open automatically when a document opens.
 ms.topic: how-to
-ms.date: 09/22/2025
+ms.date: 02/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -24,6 +24,9 @@ With the autoopen feature, you can explicitly define or allow the user to define
 
 ## Support and availability
 
+> [!IMPORTANT]
+> As of February 23, 2026, the autoopen feature is no longer supported for add-ins published in the Microsoft Marketplace. The autoopen feature is supported only for add-ins that are centrally deployed or sideloaded. Content add-ins in Microsoft Marketplace that are saved with a document still prompt users to install when they open the document. They also autoopen after installation.
+
 The autoopen feature is currently supported in the following products and platforms.
 
 |Products|Platforms|
@@ -40,10 +43,6 @@ Apply the following best practices when you use the autoopen feature.
 - Allow users to turn on or turn off the autoopen feature. Include an option in your UI for users to choose to no longer automatically open the add-in task pane.  
 - Use requirement set detection to determine whether the autoopen feature is available, and provide a fallback behavior if it isn't.
 - Don't use the autoopen feature to artificially increase usage of your add-in. If it doesn't make sense for your add-in to open automatically with certain documents, this feature can annoy users.
-
-    > [!NOTE]
-    > If Microsoft detects abuse of the autoopen feature, your add-in might be rejected from Microsoft Marketplace.
-
 - Don't use this feature to pin multiple task panes. You can only set one pane of your add-in to open automatically with a document.  
 
 ## Implement the autoopen feature

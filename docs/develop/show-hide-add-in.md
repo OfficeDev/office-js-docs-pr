@@ -1,14 +1,17 @@
 ---
 title: Show or hide the task pane of your Office Add-in
 description: Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.
-ms.date: 02/12/2025
+ms.date: 02/19/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Show or hide the task pane of your Office Add-in
 
-[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
+> [!IMPORTANT]
+> As of February 23rd, 2026, the `showTaskPane` method no longer applies to add-ins published in the Microsoft Marketplace. Calls to `showTaskPane` are ignored and won't open the task pane. The `showTaskPane` method only applies to add-ins that are centrally deployed or sideloaded.
+
+[!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
 You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` method.
 
