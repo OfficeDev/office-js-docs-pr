@@ -43,10 +43,7 @@ This guide assumes that you know how to use a command-line tool.
 
 ### Install a code editor
 
-You can use any code editor or IDE that supports client-side development to build your web part, such as:
-
-- [Visual Studio Code](https://code.visualstudio.com/) (recommended)
-- [Webstorm](https://www.jetbrains.com/webstorm)
+You can use any code editor or IDE that supports client-side development to build your web part, such as [Visual Studio Code](https://code.visualstudio.com/) (recommended).
 
 ### Install the Yeoman generator &mdash; Yo Office
 
