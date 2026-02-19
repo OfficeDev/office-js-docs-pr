@@ -567,7 +567,7 @@ The following APIs are available for this feature.
   - [Office.context.mailbox.item.requiredAttendees](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-requiredattendees-member) ([Recipients](/javascript/api/outlook/office.recipients?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.start](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-start-member) ([Time](/javascript/api/outlook/office.time?view=outlook-js-preview&preserve-view=true))
   - [Office.context.mailbox.item.subject](/javascript/api/outlook/office.appointmentcompose?view=outlook-js-preview&preserve-view=true#outlook-office-appointmentcompose-subject-member) ([Subject](/javascript/api/outlook/office.subject?view=outlook-js-preview&preserve-view=true))
-  - [Office.context.roamingSettings](/javascript/api/outlook/office.context#office-office-context-roamingsettings-member) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings))
+  - [Office.context.roamingSettings](/javascript/api/office/office.context#office-office-context-roamingsettings-member) ([RoamingSettings](/javascript/api/outlook/office.roamingsettings))
 - Handle auth flow
   - [Dialog APIs](../develop/dialog-api-in-office-add-ins.md)
 

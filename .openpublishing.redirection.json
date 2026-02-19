@@ -62,7 +62,7 @@
         },
         {
             "source_path": "docs/reference/outlook-api-reference-latest.md",
-            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.15"
+            "redirect_url": "/javascript/api/outlook?view=outlook-js-1.15&preserve-view=true"
         },
         {
             "source_path": "docs/reference/powerpoint-api-reference.md",
@@ -501,75 +501,75 @@
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-preview"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-preview&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-preview"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-preview&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.8"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.8&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.8"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.8&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.7"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.7&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.7"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.7&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.6"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.6&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.6"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.6&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.5"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.5&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.5"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.5&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.4"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.4&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.4"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.4&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.3"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.3&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.3"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.3&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.2"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.2&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.2"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.2&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.diagnostics.md",
-            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.1"
+            "redirect_url": "/javascript/api/outlook/office.diagnostics?view=outlook-js-1.1&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.userprofile.md",
-            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.1"
+            "redirect_url": "/javascript/api/outlook/office.userprofile?view=outlook-js-1.1&preserve-view=true"
         },
         {
             "source_path": "docs/excel/custom-functions-data-types-overview.md",
@@ -1017,19 +1017,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-1"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-1"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.1&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-1"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.1&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.1/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-1"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.1&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.1/outlook-requirement-set-1.1.md",
@@ -1037,19 +1037,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-2"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-2"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.2&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-2"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.2&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.2/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-2"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.2&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.2/outlook-requirement-set-1.2.md",
@@ -1057,19 +1057,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.3&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.3&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.3/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.3&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.3/outlook-requirement-set-1.3.md",
@@ -1077,19 +1077,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-4"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-4"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.4&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-4"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.4&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.4/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-4"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.4&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.4/outlook-requirement-set-1.4.md",
@@ -1097,19 +1097,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-5"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-5"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.5&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-5"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.5&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.5/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-5"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.5&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.5/outlook-requirement-set-1.5.md",
@@ -1117,19 +1117,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-6"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-6"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.6&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-6"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.6&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.6/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-6"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.6&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.6/outlook-requirement-set-1.6.md",
@@ -1137,19 +1137,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-7"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-7"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.7&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-7"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.7&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.7/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-7"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.7&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.7/outlook-requirement-set-1.7.md",
@@ -1157,19 +1157,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.8&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.8&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.8/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.8&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.8/outlook-requirement-set-1.8.md",
@@ -1177,19 +1177,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.9/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-9"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.9/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-9"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.9&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.9/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-9"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.9&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.9/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-9"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.9&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.9/outlook-requirement-set-1.9.md",
@@ -1197,19 +1197,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.10/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-10"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.10/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-10"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.10&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.10/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-10"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.10&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.10/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-10"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.10&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.10/outlook-requirement-set-1.10.md",
@@ -1217,19 +1217,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.11/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-11"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.11/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-11"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-1.11&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.11/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-11"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-1.11&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.11/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-11"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-1.11&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/requirement-set-1.11/outlook-requirement-set-1.11.md",
@@ -1237,19 +1237,19 @@
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.item.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview"
+            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-item-object-model"
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.mailbox.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview"
+            "redirect_url": "/javascript/api/outlook/office.mailbox?view=outlook-js-preview&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/office.context.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview"
+            "redirect_url": "/javascript/api/outlook/office.context?view=outlook-js-preview&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/office.md",
-            "redirect_url": "/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview"
+            "redirect_url": "/javascript/api/outlook/office?view=outlook-js-preview&preserve-view=true"
         },
         {
             "source_path": "docs/reference/objectmodel/preview-requirement-set/outlook-requirement-set-preview.md",
