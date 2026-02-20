@@ -2,7 +2,7 @@
 title: Troubleshoot development errors with Office Add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 02/12/2025
+ms.date: 02/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -127,17 +127,6 @@ If this occurs, you can update the XSD files that Visual Studio uses to the late
 1. Restart Visual Studio to pick up the new XSD file changes.
 
 You can repeat the previous process for any additional schemas that are out-of-date.
-
-## When working offline, no Office APIs work
-
-When you're loading the Office JavaScript Library from a local copy instead of from the CDN, the APIs may stop working if the library isn't up-to-date. If you have been away from a project for a while, reinstall the library to get the latest version. The process varies according to your IDE. Choose one of the following options based on your environment.
-
-- **Visual Studio**: Follow these steps to update the NuGet package.
-    1. Choose **Tools** > **NuGet Package Manager** > **Manage Nuget Packages for Solution**.
-    1. Choose the **Updates** tab.
-    1. Select "Microsoft.Office.js". Ensure the package source is from nuget.org.
-    1. In the left pane, choose **Install** and complete the package update process.
-- **Any other IDE**: Get the latest npm packages [@microsoft/office-js](https://www.npmjs.com/package/@microsoft/office-js) and [@types/office-js](https://www.npmjs.com/package/@types/office-js).
 
 ## See also
 
