@@ -329,34 +329,23 @@ The following example shows accessible navigation markup.
 Use this guide to select the appropriate navigation pattern for your add-in.
 
 1. **How many top-level sections does your add-in have?**
-   - 1-2 sections → No persistent navigation needed; use ribbon commands and simple content.
-   - 2-4 sections → **Tab Bar** (if equal importance) or **Command Bar with menu** (if hierarchical).
-   - 4-7 sections → **Command Bar with hamburger menu** or **Vertical Nav** (icon-only).
-   - 8+ sections → Reconsider information architecture; you might need to consolidate.
+   - 1-2 sections: No persistent navigation needed; use ribbon commands and simple content.
+   - 2-4 sections: **Tab Bar** (if equal importance) or **Command Bar with menu** (if hierarchical).
+   - 4-7 sections: **Command Bar with hamburger menu** or **Vertical Nav** (icon-only).
+   - 8+ sections: Reconsider information architecture and consolidate.
 
 1. **Do users frequently switch between sections?**
-   - Yes → **Tab Bar** (keep all options visible).
-   - No → **Command Bar with menu** (save space).
+   - Yes: **Tab Bar** (keep all options visible).
+   - No: **Command Bar with menu** (save space).
 
 1. **Does your add-in have multistep workflows?**
-   - Yes → Use **Back Button** and **Progress Indicator** for linear flows.
-   - No → Use direct navigation (tabs or menu).
+   - Yes: Use **Back Button** and **Progress Indicator** for linear flows.
+   - No: Use direct navigation (tabs or menu).
 
-1. **Do you need to coordinate with ribbon commands?**
-   - Yes → Plan **deep linking** from ribbon to specific task pane views.
+1. **Does your add-in have more than one point of entry from the ribbon?**
+   - Yes: Plan **deep linking** from ribbon to specific task pane views.
+   - No: Task pane can be independent of the ribbon.
    - Consider **Contextual Tabs** (Excel only) for context-specific commands.
-
-1. **What's your narrowest supported platform?**
-   - 320 px (Outlook web) → **Command Bar with compact menu** or **Icon-only vertical nav**.
-   - 350 px or more (Excel, Word, PowerPoint) → More flexibility; **Tab Bar** possible with 3-4 tabs.
-
-## Examples and samples
-
-For working examples of navigation patterns, see:
-
-- [Excel Add-in WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends) - Tab-based navigation
-- [Outlook Add-in samples](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook) - Command bar patterns
-- [PnP Office Add-ins patterns and practices](https://github.com/OfficeDev/PnP-OfficeAddins) - Various navigation implementations
 
 ## See also
 
