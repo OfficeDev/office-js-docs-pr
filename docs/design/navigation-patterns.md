@@ -276,7 +276,7 @@ For complete details on using dialogs, including code examples and API reference
 
 ## Content add-in navigation
 
-[Content add-ins](../develop/content-add-ins.md) are embedded directly in Excel, PowerPoint, or Word documents and have different navigation constraints than task panes. All UI is within the embedded content boundary, and users can resize the content add-in. Use simple navigation patterns such as single-page layouts or minimal tabs. For complex content add-ins, consider using a companion task pane for settings.
+[Content add-ins](content-add-ins.md) are embedded directly in Excel, PowerPoint, or Word documents and have different navigation constraints than task panes. All UI is within the embedded content boundary, and users can resize the content add-in. Use simple navigation patterns such as single-page layouts or minimal tabs. For complex content add-ins, consider using a companion task pane for settings.
 
 ## Platform-specific navigation considerations
 
