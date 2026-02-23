@@ -16,7 +16,7 @@ We suggest that you use a four-step process to validate the identity token and o
 
 ## Extract the JSON Web Token
 
-The token returned from [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) is an encoded string representation of the token. In this form, per RFC 7519, all JWTs have three parts, separated by a period. The format is as follows.
+The token returned from [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getuseridentitytokenasync-member(1)) is an encoded string representation of the token. In this form, per RFC 7519, all JWTs have three parts, separated by a period. The format is as follows.
 
 ```json
 {header}.{payload}.{signature}
