@@ -231,19 +231,19 @@ Office.onReady(() => {
 Enable ribbon buttons to open the task pane to specific views. This pattern is especially important when you have multiple ribbon commands that should each open different sections of your task pane.
 
 ```javascript
-// Call this function from your ribbon command handler (function command).
-function openSettings(event) {
-  localStorage.setItem('openToView', 'settings');
-  Office.addin.showAsTaskpane();
+// Call this function from your async ribbon command handler (function command).
+async function openSettings(event) {
+  localStorage.setItem('navigationTarget', 'settings');
+  await Office.addin.showAsTaskpane();
   event.completed();
 }
 
 // In your task pane startup, check for the target view and navigate accordingly.
 Office.onReady(() => {
-  const targetView = localStorage.getItem('openToView');
+  const targetView = localStorage.getItem('navigationTarget');
   if (targetView) {
     navigateTo(targetView);
-    localStorage.removeItem('openToView');
+    localStorage.removeItem('navigationTarget');
   }
 });
 ```
