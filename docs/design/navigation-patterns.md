@@ -60,9 +60,9 @@ Use task pane navigation for:
 When a user clicks a ribbon command that opens the task pane, deep link to the relevant view. Use `Office.addin.showAsTaskpane()` to programmatically show the task pane, and then navigate to the appropriate view based on which ribbon command was clicked.
 
 ```javascript
-// In your ribbon command handler, set the navigation target before showing task pane.
+// In your async ribbon command handler, set the navigation target before showing task pane.
 localStorage.setItem('navigationTarget', 'settings');
-Office.addin.showAsTaskpane();
+await Office.addin.showAsTaskpane();
 
 // In your task pane startup, navigate to the target view.
 const target = localStorage.getItem('navigationTarget');
