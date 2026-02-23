@@ -19,7 +19,7 @@ When designing navigation for Office Add-ins, consider the following constraints
 - **Narrow task pane width**: Task panes range from 320 px (Outlook on the web) to 350 px (Excel), limiting horizontal navigation space. For detailed task pane dimensions and variants, see [Task panes in Office Add-ins](task-pane-add-ins.md).
 - **Personality menu obstruction**: The Office personality menu can block top-right UI elements. For exact dimensions and positioning, see [Task panes in Office Add-ins](task-pane-add-ins.md#personality-menu).
 - **Ribbon integration**: Navigation must coordinate between ribbon commands and task pane state. See [Add-in commands](add-in-commands.md) for ribbon integration details.
-- **Multiplatform variations**: Navigation UI might need to adapt for Web, Windows, Mac, and mobile platforms.
+- **Multiplatform variations**: Navigation UI might need to adapt for web, Windows, Mac, and mobile platforms.
 - **Side-by-side context**: Users focus on their document, not your add-in, so navigation must be immediately clear.
 - **Multiple containers**: Add-ins might use task panes, dialogs, and content add-ins with different navigation models. See [Office UI elements](interface-elements.md) for an overview.
 
@@ -57,7 +57,7 @@ Use task pane navigation for:
 
 ### Coordinating ribbon and task pane state
 
-When a user clicks a ribbon command that opens the task pane, deep link to the relevant view. Use `Office.addin.showAsTaskpane()` to programmatically show the task pane, and then navigate to the appropriate view based on which ribbon command was clicked.
+When a user selects a ribbon command that opens the task pane, deep link to the relevant view. Use `Office.addin.showAsTaskpane()` to programmatically show the task pane, and then navigate to the appropriate view based on which ribbon command was selected.
 
 ```javascript
 // In your async ribbon command handler, set the navigation target before showing task pane.
@@ -83,7 +83,7 @@ For Excel add-ins, [contextual tabs](contextual-tabs.md) provide ribbon commands
 
 - Reduce ribbon clutter by showing commands only when relevant.
 - Provide quick actions on selected content without changing the task pane state.
-- Coordinate with the task pane - contextual tab commands can trigger task pane navigation changes.
+- Coordinate with the task pane to trigger task pane navigation changes.
 
 **Example:** A data visualization add-in might show a contextual tab when a chart is selected, with a "Format Chart" button that opens the task pane to chart formatting options.
 
@@ -93,7 +93,7 @@ The following patterns work within the constrained space of an Office task pane.
 
 ### Command bar
 
-The [CommandBar](https://react.fluentui.dev/?path=/docs/components-commandbar--default) is a surface at the top of the task pane that houses commands and navigation controls. It typically appears immediately below the add-in name.
+The command bar is a surface at the top of the task pane that houses commands and navigation controls. It typically appears immediately below the add-in name.
 
 :::image type="content" source="../images/add-in-command-bar.png" alt-text="Illustration showing a command bar within an Office desktop application task pane. This example shows a command bar immediately below the add-in name that includes a hamburger menu and search.":::
 
@@ -118,23 +118,23 @@ The tab bar navigates with buttons that use vertically stacked text and icons. T
 
 Use a tab bar when:
 
-- Your add-in has 2-4 primary sections of equal importance.
+- Your add-in has two to four primary sections of equal importance.
 - Users frequently switch between sections.
 - Each section has distinct, non-overlapping content.
 
 Because task panes have a narrow width, design tab bars with the following considerations.
 
-- **Width**: Limit to 3-4 tabs maximum in task panes.
-  - 2 tabs: ~160-185px each.
-  - 3 tabs: ~106-123px each.
-  - 4 tabs: ~80-92px each.
-- **Truncation risk** - Use short tab labels (one or two words, max twelve characters) to prevent truncation.
+- **Width** - Limit to three to four tabs.
+  - Two tabs: ~160-185px each.
+  - Three tabs: ~106-123px each.
+  - Four tabs: ~80-92px each.
+- **Truncation risk** - Use short tab labels (one or two words, up to twelve characters) to prevent truncation.
 - **Icon + text** - Stack the icon above text to reduce width. Use 20x20px icons.
 - **Responsive behavior** - On very narrow views (mobile web), consider switching to a command bar.
 
-To retain the Office look and feel, consider using [Fluent UI React Pivot](https://react.fluentui.dev/?path=/docs/components-pivot--default) components. For accessibility, make sure the active tab is visually distinct and use `aria-current="page"` on the active tab.
+For accessibility, make sure the active tab is visually distinct and use `aria-current="page"` on the active tab.
 
-### Back Button
+### Back button
 
 The back button allows users to navigate backward through a linear workflow or return from detail views to list views.
 
@@ -169,9 +169,9 @@ Reserve 48 to 64 px for icon-only navigation, or 120 to 160 px for icon and labe
 
 Consider using [Fluent UI React Nav](https://react.fluentui.dev/?path=/docs/components-nav--default) components to retain the Office look and feel. Highlight the active or selected navigation item and support keyboard navigation (Tab, Arrow keys) for accessibility.
 
-## Multi-step workflows and wizards
+## Multistep workflows and wizards
 
-For linear, multistep processes (onboarding, setup, configuration), use these patterns:
+For linear, multistep processes (onboarding, setup, configuration), use the following patterns.
 
 ### Stepped progress indicator
 
@@ -179,11 +179,11 @@ Show users where they are in a multistep process with a visual progress indicato
 
 Use a simple horizontal progress bar (20-40 px height) to save vertical space. Place **Previous** and **Next** buttons in a fixed footer so they're always accessible.
 
-Limit wizards to 3-5 steps maximum. Allow users to skip optional steps and provide a **Cancel** or **Exit** option to return to the main add-in. Save progress automatically so users can resume if they close the task pane.
+Limit wizards to three to five steps. Allow users to skip optional steps and provide a **Cancel** or **Exit** option to return to the main add-in page. Save progress automatically so users can resume if they close the task pane.
 
 ### Accordion navigation (collapsible sections)
 
-To conserve space in the task pane, use expandable and collapsible sections that show content in place when clicked.
+To conserve space in the task pane, use expandable and collapsible sections that show content in place when selected.
 
 Use accordion navigation when:
 
@@ -276,7 +276,7 @@ For complete details on using dialogs, including code examples and API reference
 
 ## Content add-in navigation
 
-[Content add-ins](content-add-ins.md) are embedded directly in Excel, PowerPoint, or Word documents and have different navigation constraints than task panes. All UI is within the embedded content boundary, and users can resize the content add-in. Use simple navigation patterns such as single-page layouts or minimal tabs. For complex content add-ins, consider using a companion task pane for settings.
+[Content add-ins](content-add-ins.md) are embedded directly in Excel or PowerPoint documents and have different navigation constraints than task panes. All UI is within the embedded content boundary, and users can resize the content add-in. Use simple navigation patterns such as single-page layouts or minimal tabs.
 
 ## Platform-specific navigation considerations
 
@@ -288,9 +288,9 @@ Office on the web has the narrowest task panes. Test your navigation at 320 px w
 
 Office on Windows and Mac supports slightly wider task panes, up to 350 px. Test keyboard navigation by using Tab, arrow keys, and standard shortcuts (such as Ctrl+F for search) to make sure your navigation is accessible. Reserve the top-right 40x40 px space to avoid the personality menu.
 
-### Outlook mobile (iOS/Android)
+### Outlook on mobile devices (iOS/Android)
 
-Outlook mobile has even more constrained space than Office on the web. Use single-level navigation or a simple command bar and prioritize features ruthlessly. Make all tappable elements at least 44x44 px for touch accessibility.
+Outlook on mobile devices has even more constrained space than Office on the web. For guidance on how to design add-ins for mobile devices, see [Design add-ins for Outlook on mobile devices](../outlook/outlook-addin-design.md).
 
 ### Platform detection and adaptive navigation
 
@@ -329,10 +329,10 @@ The following example shows accessible navigation markup.
 Use this guide to select the appropriate navigation pattern for your add-in.
 
 1. **How many top-level sections does your add-in have?**
-   - 1-2 sections: No persistent navigation needed; use ribbon commands and simple content.
-   - 2-4 sections: **Tab Bar** (if equal importance) or **Command Bar with menu** (if hierarchical).
-   - 4-7 sections: **Command Bar with hamburger menu** or **Vertical Nav** (icon-only).
-   - 8+ sections: Reconsider information architecture and consolidate.
+   - One to two sections: No persistent navigation needed; use ribbon commands and simple content.
+   - Two to four sections: **Tab Bar** (if equal importance) or **Command Bar with menu** (if hierarchical).
+   - Four to seven sections: **Command Bar with hamburger menu**.
+   - Eight or more sections: Reconsider information architecture and consolidate.
 
 1. **Do users frequently switch between sections?**
    - Yes: **Tab Bar** (keep all options visible).
@@ -345,7 +345,7 @@ Use this guide to select the appropriate navigation pattern for your add-in.
 1. **Does your add-in have more than one point of entry from the ribbon?**
    - Yes: Plan **deep linking** from ribbon to specific task pane views.
    - No: Task pane can be independent of the ribbon.
-   - Consider **Contextual Tabs** (Excel only) for context-specific commands.
+   - **Excel only**: Consider **Contextual Tabs** for context-specific commands.
 
 ## See also
 
