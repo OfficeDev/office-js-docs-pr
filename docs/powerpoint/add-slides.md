@@ -1,19 +1,19 @@
 ---
-title: Add and delete slides in PowerPoint
-description: Learn how to add and delete slides and specify the master and layout of new slides.
-ms.date: 12/14/2021
+title: Add and delete slides using a PowerPoint add-in
+description: Learn how to use an add-in to add and delete slides and specify the master and layout of new slides.
+ms.date: 02/23/2026
 ms.localizationpriority: medium
 ---
 
-# Add and delete slides in PowerPoint
+# Add and delete slides using a PowerPoint add-in
 
-A PowerPoint add-in can add slides to the presentation and optionally specify which slide master, and which layout of the master, is used for the new slide. The add-in can also delete slides.
+A PowerPoint add-in can add slides to the presentation and optionally specify which slide master, and which layout of the master, is used for the new slide. An add-in can also delete slides.
 
 The APIs for adding slides are primarily used in scenarios where the IDs of the slide masters and layouts in the presentation are known at coding time or can be found in a data source at runtime. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as the names or images of slide masters and layouts) with the IDs of the slide masters and layouts. The APIs can also be used in scenarios where the user can insert slides that use the default slide master and the master's default layout, and in scenarios where the user can select an existing slide and create a new one with the same slide master and layout (but not the same content). See [Selecting which slide master and layout to use](#select-which-slide-master-and-layout-to-use) for more information about this.
 
 ## Add a slide with SlideCollection.add
 
-Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-add-member(1)) method. The following is a simple example in which a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation. The following is an example.
+Add slides with the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-add-member(1)) method. The following is an example where a slide that uses the presentation's default slide master and the first layout of that master is added. The method always adds new slides to the end of the presentation.
 
 ```javascript
 async function addSlide() {
@@ -49,7 +49,7 @@ async function addSlide() {
 }
 ```
 
-There is no practical way that users can discover the ID or creation ID of a slide master or layout. For this reason, you can really only use the `AddSlideOptions` parameter when either you know the IDs at coding time or your add-in can discover them at runtime. Because users can't be expected to memorize the IDs, you also need a way to enable the user to select slides, perhaps by name or by an image, and then correlate each title or image with the slide's ID.
+There's no practical way that users can discover the ID or creation ID of a slide master or layout. For this reason, you can really only use the `AddSlideOptions` parameter when either you know the IDs at coding time or your add-in can discover them at runtime. Because users can't be expected to memorize the IDs, you also need a way to enable the user to select slides, perhaps by name or by an image, and then correlate each title or image with the slide's ID.
 
 Accordingly, the `AddSlideOptions` parameter is primarily used in scenarios in which the add-in is designed to work with a specific set of slide masters and layouts whose IDs are known. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as slide master and layout names or images) with the corresponding IDs or creation IDs.
 
@@ -83,7 +83,7 @@ If your add-in can be used in scenarios where the new slide should use the same 
     }
     ```
 
-2. Call your new function inside the [PowerPoint.run()](/javascript/api/powerpoint#PowerPoint_run_batch_) of the main function that adds the slide. The following is an example.
+1. Call your new function inside the [PowerPoint.run()](/javascript/api/powerpoint#powerpoint-powerpoint-run-function(1)) of the main function that adds the slide. The following is an example.
 
     ```javascript
     async function addSlideWithMatchingLayout() {
@@ -110,7 +110,7 @@ If your add-in can be used in scenarios where the new slide should use the same 
 
 ## Delete slides
 
-Delete a slide by getting a reference to the [Slide](/javascript/api/powerpoint/powerpoint.slide) object that represents the slide and call the `Slide.delete` method. The following is an example in which the 4th slide is deleted.
+Delete a slide by getting a reference to the [Slide](/javascript/api/powerpoint/powerpoint.slide) object that represents the slide then calling the [Slide.delete](/javascript/api/powerpoint/powerpoint.slide#powerpoint-powerpoint-slide-delete-member(1)) method. The following is an example where the 4th slide is deleted.
 
 ```javascript
 async function deleteSlide() {
