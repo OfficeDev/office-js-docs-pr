@@ -1,6 +1,6 @@
 ---
 title: Tag PowerPoint slides and shapes to tailor presentations
-description: Attach custom tags to PowerPoint files, slides, and shapes to automate audience-specific content and batch workflows.
+description: Attach custom tags to presentations, slides, and shapes to automate audience-specific content and batch workflows.
 ms.date: 02/24/2026
 ms.localizationpriority: medium
 ---
