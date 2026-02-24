@@ -1,13 +1,18 @@
 ---
-title: Use custom tags on presentations, slides, and shapes in PowerPoint
-description: Learn how to use tags for custom metadata about presentations, slides, and shapes.
-ms.date: 12/14/2021
+title: Tag PowerPoint slides and shapes to tailor presentations
+description: Attach custom tags to presentations, slides, and shapes to automate audience-specific content and batch workflows.
+ms.date: 02/24/2026
 ms.localizationpriority: medium
 ---
 
-# Use custom tags for presentations, slides, and shapes in PowerPoint
 
-An add-in can attach custom metadata, in the form of key-value pairs, called "tags", to presentations, specific slides, and specific shapes on a slide.
+# Tag PowerPoint slides and shapes to tailor presentations
+
+Want to automatically tailor slides for different audiences? Use tags to mark and programmatically filter presentations, slides, and individual shapes.
+
+- Attach simple key-value tags to presentations, slides, or shapes.
+- Use tags to automate audience-specific content (for example, remove slides tagged "Premium" for non-premium audiences).
+- Copy the sample snippets below and run them in your add-in to try it.
 
 There are two main scenarios for using tags:
 
@@ -51,7 +56,7 @@ async function updateTag() {
 }
 ```
 
-To delete a tag, call the `delete` method on it's parent `TagsCollection` object and pass the key of the tag as the parameter. For an example, see [Set custom metadata on the presentation](#set-custom-metadata-on-the-presentation).
+To delete a tag, call the `delete` method on its parent `TagsCollection` object and pass the key of the tag as the parameter. For an example, see [Set custom metadata on the presentation](#set-custom-metadata-on-the-presentation).
 
 ### Use tags to selectively process slides and shapes
 
@@ -75,7 +80,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
     }
     ```
 
-2. The following code creates a method to get the index of the selected slide. About this code, note:
+1. The following code creates a method to get the index of the selected slide. About this code, note:
 
     - It uses the [Office.context.document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) method of the Common JavaScript APIs.
     - The call to `getSelectedDataAsync` is embedded in a promise-returning function. For more information about why and how to do this, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
@@ -101,7 +106,7 @@ Consider the following scenario: Contoso Consulting has a presentation they show
     }
     ```
 
-3. The following code creates a function to delete slides that are tagged for premium customers. About this code, note:
+1. The following code creates a function to delete slides that are tagged for premium customers. About this code, note:
 
     - Because the `key` and `value` properties of the tags are going to be read after the `context.sync`, they must be loaded first.
 
@@ -130,9 +135,9 @@ Consider the following scenario: Contoso Consulting has a presentation they show
 
 ## Set custom metadata on the presentation
 
-Add-ins can also apply tags to the presentation as a whole. This enables you to use tags for document-level metadata similar to how the [CustomProperty](/javascript/api/word/word.customproperty)class is used in Word. But unlike the Word `CustomProperty` class, the value of a PowerPoint tag can only be of type `string`.
+Add-ins can also apply tags to the presentation as a whole. This enables you to use tags for document-level metadata similar to how the [CustomProperty](/javascript/api/word/word.customproperty) class is used in Word. But unlike the Word `CustomProperty` class, the value of a PowerPoint tag can only be of type `string`.
 
-The following code is an example of adding a tag to a presentation. 
+The following code is an example of adding a tag to a presentation.
 
 ```javascript
 async function addPresentationTag() {
@@ -157,3 +162,11 @@ async function deletePresentationTag() {
   });
 }
 ```
+
+## Considerations
+
+- **Uppercase keys**: PowerPoint stores tag keys as uppercase. For best results, add, delete, and compare keys in uppercase (for example, `slide.tags.add("CUSTOMER_TYPE", "Premium")` stores the key as `CUSTOMER_TYPE`).
+- **Values are strings**: Tag values must be strings. For non-string data, use `JSON.stringify()` when saving and `JSON.parse()` when reading.
+- **Load before read**: Before accessing a tag's `key` or `value`, call `slides.load("tags/key, tags/value")` (or the equivalent collection) and `await context.sync()` so the properties are available.
+- **Indexes are 1-based in the UI**: `Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange)` returns 1-based slide indexes; subtract 1 for `slides.getItemAt(...)`.
+- **Document changes are immediate**: Deleting slides or tags modifies the file. Confirm with users or work on a copy when performing batch deletes.
