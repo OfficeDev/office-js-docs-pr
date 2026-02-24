@@ -57,7 +57,7 @@ Use task pane navigation for:
 
 ### Coordinating ribbon and task pane state
 
-If your ribbon button simply opens the task pane to its default view, configure it as a `ShowTaskpane` action in your manifest. However, if you have multiple ribbon buttons that should each open the task pane to different views, use function commands with `Office.addin.showAsTaskpane()` to deep link programmatically. This approach requires a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+If your ribbon button simply opens the task pane to its default view, configure it as an `openPage` (unified manifest for Microsoft 365) or `ShowTaskpane` (add-in only manifest) action in your manifest. However, if you have multiple ribbon buttons that should each open the task pane to different views, use function commands with `Office.addin.showAsTaskpane()` to deep link programmatically. This approach requires a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
 The following example shows how to deep link to different views based on which ribbon command was selected.
 
@@ -184,9 +184,7 @@ In narrow panes, allow only one section to be open at a time to avoid excessive 
 
 Don't use accordion navigation for primary navigation (use tabs or vertical navigation instead) or frequently toggled content (which causes excessive clicking).
 
-## Navigation state management
-
-### Preserving state across sessions
+## Preserving state across sessions
 
 Users might close and reopen the task pane multiple times during a work session. Preserve navigation state to reduce friction by saving the current view, selected tab, or navigation context.
 
@@ -262,13 +260,13 @@ Outlook on mobile devices has even more constrained space than Office on the web
 Detect the platform and adapt your navigation accordingly. Use `Office.context.platform` to determine the current platform and adjust your navigation layout.
 
 ```javascript
-// Detect platform and adapt navigation
+// Detect platform and adapt navigation.
 if (Office.context.platform === Office.PlatformType.OfficeOnline) {
-  // Use more compact navigation for web
+  // Use more compact navigation for web.
   useCompactNavigation();
 } else if (Office.context.platform === Office.PlatformType.iOS ||
            Office.context.platform === Office.PlatformType.Android) {
-  // Use touch-optimized navigation
+  // Use touch-optimized navigation.
   useMobileNavigation();
 }
 ```
@@ -309,7 +307,7 @@ Use this guide to select the appropriate navigation pattern for your add-in.
 
 1. **Does your add-in have more than one point of entry from the ribbon?**
    - Yes: Use function commands with a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to **deep link** from ribbon to specific task pane views.
-   - No: Use a standard `ShowTaskpane` action in your manifest.
+   - No: Use a standard `openPage` (unified manifest for Microsoft 365) or `ShowTaskpane` (add-in only manifest) action in your manifest.
    - **Excel only**: Consider **Contextual Tabs** for context-specific commands.
 
 ## See also
