@@ -57,10 +57,12 @@ Use task pane navigation for:
 
 ### Coordinating ribbon and task pane state
 
-When a user selects a ribbon command that opens the task pane, deep link to the relevant view. Use `Office.addin.showAsTaskpane()` to programmatically show the task pane, and then navigate to the appropriate view based on which ribbon command was selected.
+If your ribbon button simply opens the task pane to its default view, configure it as a `ShowTaskpane` action in your manifest. However, if you have multiple ribbon buttons that should each open the task pane to different views, use function commands with `Office.addin.showAsTaskpane()` to deep link programmatically. This approach requires a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
+
+The following example shows how to deep link to different views based on which ribbon command was selected.
 
 ```javascript
-// In your async ribbon command handler, set the navigation target before showing task pane.
+// In your async ribbon command handler (function command), set the navigation target before showing task pane.
 localStorage.setItem('navigationTarget', 'settings');
 await Office.addin.showAsTaskpane();
 
@@ -146,28 +148,15 @@ Use a back button when:
 - You have multistep workflows, such as wizard-like flows with sequential steps (such as Setup → Configure → Confirm).
 - You have modal detail views, such as temporary views that users exit to return to main content.
 
-Position the back button in the top-left corner, immediately below the add-in name, within the title/header area. Make it at least 32x32px, but 44x44px is recommended for better touch accessibility. In narrow task panes, show the current location as text next to the back button instead of a full breadcrumb trail. For example, `[← Back] Display Options` (minimal) or `[← Back] Settings > Display Options` (if space allows). Consider including a home or close icon to allow users to exit multistep flows entirely.
-
-Don't use a back button for tab-based navigation (tabs should be persistent), undo operations (use explicit Undo commands), or browser-like history (add-ins don't have page-based navigation).
-
-To implement a back button, use browser `history.pushState()`. This enables browser back button functionality. Include keyboard shortcuts (Alt+Left Arrow or Escape) for accessibility. Make the back button visually distinct from other navigation elements.
+Position the back button in the top-left corner, immediately below the add-in name, within the title/header area. Make it at least 32x32px, but 44x44px is recommended for better touch accessibility. In narrow task panes, show the current location as text next to the back button instead of a full breadcrumb trail. For example, `[← Back] Display Options` (minimal) or `[← Back] Settings > Display Options` (if space allows). Consider including a home or close icon to allow users to exit multistep flows entirely. Include keyboard shortcuts (Alt+Left Arrow or Escape) for accessibility. Make the back button visually distinct from other navigation elements.
 
 > [!NOTE]
 > Breadcrumbs aren't recommended for most add-ins. They consume valuable vertical space and often truncate in narrow task panes.
 
-### Vertical navigation (nav bar)
+Don't use a back button for tab-based navigation (tabs should be persistent), undo operations (use explicit Undo commands), or browser-like history (add-ins don't have page-based navigation).
 
-A persistent vertical list of navigation links, typically on the left side of the task pane.
-
-Use vertical navigation when:
-
-- Your add-in has five or more top-level sections.
-- Users need to see all navigation options at once.
-- You want to emphasize a hierarchy (parent/child navigation items).
-
-Reserve 48 to 64 px for icon-only navigation, or 120 to 160 px for icon and label navigation. This leaves 160 to 250 px for content in the 320 to 350 px task pane, so using icon-only navigation with tooltips is recommended to maximize content space. Consider a collapsed (icon-only) state by default with an option to expand. Keep navigation fixed while content scrolls, or include navigation in the scroll container if you have many items. Avoid more than one level of nesting due to space constraints.
-
-Consider using [Fluent UI React Nav](https://react.fluentui.dev/?path=/docs/components-nav--default) components to retain the Office look and feel. Highlight the active or selected navigation item and support keyboard navigation (Tab, Arrow keys) for accessibility.
+> [!IMPORTANT]
+> If you want to enable browser back button functionality with `history.pushState()`, note that Office.js replaces the default `Window.history` methods of `replaceState` and `pushState` with `null`. See [Office.js-specific web API behavior](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md#officejs-specific-web-api-behavior) for details and workarounds.
 
 ## Multistep workflows and wizards
 
@@ -225,30 +214,6 @@ Office.onReady(() => {
 
 > [!NOTE]
 > To learn more about persisting add-in state and settings, including best practices for using `Office.context.document.settings`, `localStorage`, and storage partitioning, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md).
-
-### Deep linking from ribbon commands
-
-Enable ribbon buttons to open the task pane to specific views. This pattern is especially important when you have multiple ribbon commands that should each open different sections of your task pane.
-
-```javascript
-// Call this function from your async ribbon command handler (function command).
-async function openSettings(event) {
-  localStorage.setItem('navigationTarget', 'settings');
-  await Office.addin.showAsTaskpane();
-  event.completed();
-}
-
-// In your task pane startup, check for the target view and navigate accordingly.
-Office.onReady(() => {
-  const targetView = localStorage.getItem('navigationTarget');
-  if (targetView) {
-    navigateTo(targetView);
-    localStorage.removeItem('navigationTarget');
-  }
-});
-```
-
-For more information about creating function commands in your manifest, see [Create add-in commands](../develop/create-addin-commands.md).
 
 ## Multi-container navigation flows
 
@@ -343,8 +308,8 @@ Use this guide to select the appropriate navigation pattern for your add-in.
    - No: Use direct navigation (tabs or menu).
 
 1. **Does your add-in have more than one point of entry from the ribbon?**
-   - Yes: Plan **deep linking** from ribbon to specific task pane views.
-   - No: Task pane can be independent of the ribbon.
+   - Yes: Use function commands with a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to **deep link** from ribbon to specific task pane views.
+   - No: Use a standard `ShowTaskpane` action in your manifest.
    - **Excel only**: Consider **Contextual Tabs** for context-specific commands.
 
 ## See also
