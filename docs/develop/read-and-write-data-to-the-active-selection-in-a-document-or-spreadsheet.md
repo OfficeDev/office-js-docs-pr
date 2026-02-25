@@ -112,7 +112,7 @@ async function example() {
 }
 ```
 
-For more information, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions)
+For more information, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
 
 ## Detect changes in the selection
 
