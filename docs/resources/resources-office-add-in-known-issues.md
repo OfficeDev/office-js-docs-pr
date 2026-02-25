@@ -1,57 +1,17 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 02/13/2026
+ms.date: 02/25/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 02/13/2026_
+_Last updated 02/25/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 ## Active issues in Office add-ins
-
-### Outlook for MAC: Signatures not inserted using add-ins and user with smart alert add-ins not able to send email.
-
-A disruption in Launch Event processing caused the following issues:
-Signatures were not stamped on outgoing emails
-Users with Smart Alerts add-ins were unable to send emails in some cases
-
-#### STATUS
-
-Resolved. This issue was caused by a temporary configuration issue during a backend change management update for Launch events support. For a subset of users having launch event add-ins, this resulted in add‑ins not initializing as expected, which in turn blocked sending emails. The configuration has now been corrected.
-
-Note: Because these settings are cached locally and sync asynchronously, some users may need to restart Outlook more than once to pick up the updated configuration.
-
-Tracking ID: 734492427
-
-#### START TIME
-
-Thursday, 01/15/2026 5:45am PST
-
-#### RESOLUTION TIME
-
-The fix was released Thursday, 01/15/2026 7:00am PST
-
-### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel.
-
-While inserting images via an add-in, customers in targeted releases using New Outlook for Windows with offline mode enabled report seeing broken images with 5xx errors.
-
-#### STATUS
-
-A recent update to support offline mode in New Outlook for Windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
-
-Tracking ID: 713714633
-
-#### START TIME
-
-Friday, 10/31/2025
-
-#### RESOLUTION TIME
-
-The fix was released 11/26/2025
 
 ### Outlook: Outlook add-ins disappearing from ribbon
 
@@ -161,22 +121,6 @@ Options:
 1. When you make the initial `requestCreateControls` call, include the enabled/disabled state, if known. Instead of making two calls one right after the other, do it in one call.
 1. Roll back Office from version 2508 to 2507.
 
-### Microsoft Marketplace: Issues installing add-ins from the Marketplace
-
-Some users may experience failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see a 50x server-related error.
-
-#### STATUS
-
-The issue is now resolved with the exception of CSPP hosts. If you're experiencing issues with CSPP hosts, we recommend contacting your CSPP technical contact with information so that they can help the team troubleshoot.
-
-#### START TIME
-
-Sunday, 02/08/2026
-
-#### RESOLUTION TIME
-
-Friday, 02/13/2026 (for non-CSPP hosts)
-
 ## Recently resolved issues in Office Add-ins
 
 ### Excel: RichApi.Error code 0x8002802B known as hrNotFound is occurring more frequently when not expected
@@ -193,6 +137,63 @@ Date fixed: 09/26/2025
 
 Users should upgrade Excel to 2508 (19127.20264) or later for the fix.
 
+### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel
+
+While inserting images via an add-in, customers in targeted releases using the new Outlook for Windows with offline mode enabled report seeing broken images with 5xx errors.
+
+#### STATUS
+
+A recent update to support offline mode in the new Outlook for Windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
+
+Tracking ID: 713714633
+
+#### START TIME
+
+Friday, 10/31/2025
+
+#### RESOLUTION TIME
+
+The fix was released 11/26/2025
+
+### Outlook for Mac: Signatures not inserted using add-ins and user with Smart Alerts add-ins not able to send email
+
+A disruption in processing `LaunchEvent` caused the following issues:
+
+- Signatures were not stamped on outgoing emails.
+- Users with Smart Alerts add-ins were unable to send emails in some cases.
+
+#### STATUS
+
+Resolved. This issue was caused by a temporary configuration issue during a backend change management update for event-based activation support. For a subset of users having event-based add-ins, this resulted in add‑ins not initializing as expected, which in turn blocked sending emails. The configuration has now been corrected.
+
+Note: Because these settings are cached locally and sync asynchronously, some users may need to restart Outlook more than once to pick up the updated configuration.
+
+Tracking ID: 734492427
+
+#### START TIME
+
+Thursday, 01/15/2026 5:45am PST
+
+#### RESOLUTION TIME
+
+The fix was released Thursday, 01/15/2026 7:00am PST
+
+### Microsoft Marketplace: Issues installing add-ins from the Marketplace
+
+Some users may experience failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see a 50x server-related error.
+
+#### STATUS
+
+The issue is now resolved.
+
+#### START TIME
+
+Sunday, 02/08/2026
+
+#### RESOLUTION TIME
+
+Friday, 02/13/2026
+
 ### See also
 
-- For more information about resolved issues in Office Add-ins, see the [Office-js closed issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed).
+For more information about resolved issues in Office Add-ins, see the [Office-js closed issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed).
