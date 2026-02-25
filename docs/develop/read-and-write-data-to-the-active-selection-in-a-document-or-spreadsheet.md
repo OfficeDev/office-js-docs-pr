@@ -165,4 +165,4 @@ The  `myHandler` function name that is passed as the second parameter, _handler_
 
 ## Next steps
 
-For persistent data across sessions, see [Bind to regions in a document or spreadsheet](bind-to-regions-in-a-document-or-spreadsheet.md). Other useful topics: authentication, shared runtime, and application-specific examples.
+For persistent data across sessions, see [Bind to regions in a document or spreadsheet](bind-to-regions-in-a-document-or-spreadsheet.md). Other useful topics: [authentication](overview-authn-authz.md), [runtimes](../testing/runtimes.md), and [application-specific examples](../overview/office-add-in-code-samples.md).
