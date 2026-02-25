@@ -1,13 +1,19 @@
 ---
-title: Add and delete slides using a PowerPoint add-in
-description: Learn how to use an add-in to add and delete slides and specify the master and layout of new slides.
-ms.date: 02/23/2026
+title: Add and delete PowerPoint slides programmatically
+description: Use a PowerPoint add-in to add slides, specify master and layout, and delete slides.
+ms.date: 02/24/2026
 ms.localizationpriority: medium
 ---
 
-# Add and delete slides using a PowerPoint add-in
 
-A PowerPoint add-in can add slides to the presentation and optionally specify which slide master, and which layout of the master, is used for the new slide. An add-in can also delete slides.
+# Add and delete PowerPoint slides programmatically
+
+Quickly add and remove slides from a PowerPoint presentation using an add-in.
+
+- Add slides programmatically with `SlideCollection.add()` and control master and layout when needed.
+- Match an existing slide's master or layout, or choose specific `slideMasterId` and `layoutId` at runtime.
+- Delete slides by reference or index; always include `await context.sync()` after changes.
+- Estimated time: Try the short examples in ~2–5 minutes.
 
 The APIs for adding slides are primarily used in scenarios where the IDs of the slide masters and layouts in the presentation are known at coding time or can be found in a data source at runtime. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as the names or images of slide masters and layouts) with the IDs of the slide masters and layouts. The APIs can also be used in scenarios where the user can insert slides that use the default slide master and the master's default layout, and in scenarios where the user can select an existing slide and create a new one with the same slide master and layout (but not the same content). See [Selecting which slide master and layout to use](#select-which-slide-master-and-layout-to-use) for more information about this.
 
@@ -124,3 +130,11 @@ async function deleteSlide() {
     });
 }
 ```
+
+## Considerations
+
+- **Master/layout IDs are opaque**: `slideMasterId` and `layoutId` are ID strings (often long numeric tokens). There's no UI for users to discover them, so your add-in should map friendly names or thumbnails to IDs at runtime.
+- **Index differences**: `Office.context.document.getSelectedDataAsync(Office.CoercionType.SlideRange)` returns 1-based slide indexes. `slides.getItemAt(...)` is 0-based—subtract 1 when using the value.
+- **Call `context.sync()` after mutations**: Adding or deleting slides takes effect on the document; always include `await context.sync()` after calling `add()` or `delete()` to ensure changes are applied.
+- **Layout must belong to master**: If you supply both `slideMasterId` and `layoutId`, the layout must belong to that master or an error is thrown.
+- **Work on copies for bulk changes**: Deleting slides is immediate. Consider prompting users or operating on a copy when performing batch deletes.

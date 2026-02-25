@@ -12,7 +12,7 @@ Want to automatically tailor slides for different audiences? Use tags to mark an
 
 - Attach simple key-value tags to presentations, slides, or shapes.
 - Use tags to automate audience-specific content (for example, remove slides tagged "Premium" for non-premium audiences).
-- Copy the sample snippets below and run them in your add-in to try it.
+- Copy the sample snippets and run them in your add-in to try it.
 
 There are two main scenarios for using tags:
 
