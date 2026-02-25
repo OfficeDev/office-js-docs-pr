@@ -26,7 +26,7 @@ The following example shows how to get data from a selection in a document by us
 
 ```js
 Office.context.document.getSelectedDataAsync(Office.CoercionType.Text, function (asyncResult) {
-    if (asyncResult.status == Office.AsyncResultStatus.Failed) {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
         // Failure handling: Show the error message in the UI.
         write('Action failed. Error: ' + asyncResult.error.message);
     }
@@ -59,7 +59,7 @@ The following example shows how to set the selection to show "Hello World!".
 
 ```js
 Office.context.document.setSelectedDataAsync("Hello World!", function (asyncResult) {
-    if (asyncResult.status == Office.AsyncResultStatus.Failed) {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
         // Show the error message if the call fails.
         write(asyncResult.error.message);
     }
@@ -82,7 +82,7 @@ The anonymous function passed into the [setSelectedDataAsync](/javascript/api/of
 If you prefer async/await, use a small Promise wrapper around the callback APIs. Example wrappers:
 
 ```js
-function getSelectedDataAsyncAsync(coercionType) {
+function getSelectedDataAsyncWithPromise(coercionType) {
     return new Promise((resolve, reject) => {
         Office.context.document.getSelectedDataAsync(coercionType, (result) => {
             if (result.status === Office.AsyncResultStatus.Failed) reject(result.error);
@@ -91,7 +91,7 @@ function getSelectedDataAsyncAsync(coercionType) {
     });
 }
 
-function setSelectedDataAsyncAsync(data) {
+function setSelectedDataAsyncWithPromise(data) {
     return new Promise((resolve, reject) => {
         Office.context.document.setSelectedDataAsync(data, (result) => {
             if (result.status === Office.AsyncResultStatus.Failed) reject(result.error);
@@ -103,16 +103,16 @@ function setSelectedDataAsyncAsync(data) {
 // Usage with async/await.
 async function example() {
     try {
-        const text = await getSelectedDataAsyncAsync(Office.CoercionType.Text);
+        const text = await getSelectedDataAsyncWithPromise(Office.CoercionType.Text);
         console.log('Selected:', text);
-        await setSelectedDataAsyncAsync(text + ' (processed)');
+        await setSelectedDataAsyncWithPromise(text + ' (processed)');
     } catch (err) {
         console.error(err.message || err);
     }
 }
 ```
 
-For more information, see [Wrap Common APIs in promise-returning functions](../develop/asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
+For more information, see [Wrap Common APIs in promise-returning functions](asynchronous-programming-in-office-add-ins.md#wrap-common-apis-in-promise-returning-functions).
 
 ## Detect changes in the selection
 
