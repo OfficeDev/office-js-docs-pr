@@ -123,37 +123,21 @@ Options:
 
 ## Recently resolved issues in Office Add-ins
 
-### Excel: RichApi.Error code 0x8002802B known as hrNotFound is occurring more frequently when not expected
+### Microsoft Marketplace: Issues installing add-ins from the Marketplace
 
-Date reported: 09/17/2025
-
-Users might experience failures when executing Excel grid operations initiated through add-in commands on the ribbon or context menu. This issue occurs primarily when users have Custom Functions.
-
-Platform affected: Windows Desktop
+Some users may experience failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see a 50x server-related error.
 
 #### STATUS
 
-Date fixed: 09/26/2025
-
-Users should upgrade Excel to 2508 (19127.20264) or later for the fix.
-
-### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel
-
-While inserting images via an add-in, customers in targeted releases using the new Outlook for Windows with offline mode enabled report seeing broken images with 5xx errors.
-
-#### STATUS
-
-A recent update to support offline mode in the new Outlook for Windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
-
-Tracking ID: 713714633
+The issue is now resolved.
 
 #### START TIME
 
-Friday, 10/31/2025
+Sunday, 02/08/2026
 
 #### RESOLUTION TIME
 
-The fix was released 11/26/2025
+Friday, 02/13/2026
 
 ### Outlook for Mac: Signatures not inserted using add-ins and user with Smart Alerts add-ins not able to send email
 
@@ -178,21 +162,37 @@ Thursday, 01/15/2026 5:45am PST
 
 The fix was released Thursday, 01/15/2026 7:00am PST
 
-### Microsoft Marketplace: Issues installing add-ins from the Marketplace
+### New Outlook for Windows: Images inserted by add-ins were broken for customers with offline mode enabled in the targeted release channel
 
-Some users may experience failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see a 50x server-related error.
+While inserting images via an add-in, customers in targeted releases using the new Outlook for Windows with offline mode enabled report seeing broken images with 5xx errors.
 
 #### STATUS
 
-The issue is now resolved.
+A recent update to support offline mode in the new Outlook for Windows introduced a regression which resulted in add-in added images, while composing a mail, to be broken. We've reverted this update to resolve the issue.
+
+Tracking ID: 713714633
 
 #### START TIME
 
-Sunday, 02/08/2026
+Friday, 10/31/2025
 
 #### RESOLUTION TIME
 
-Friday, 02/13/2026
+The fix was released 11/26/2025
+
+### Excel: RichApi.Error code 0x8002802B known as hrNotFound is occurring more frequently when not expected
+
+Date reported: 09/17/2025
+
+Users might experience failures when executing Excel grid operations initiated through add-in commands on the ribbon or context menu. This issue occurs primarily when users have Custom Functions.
+
+Platform affected: Windows Desktop
+
+#### STATUS
+
+Date fixed: 09/26/2025
+
+Users should upgrade Excel to 2508 (19127.20264) or later for the fix.
 
 ### See also
 
