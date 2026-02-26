@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements with the unified manifest
 description: Learn how to specify in the unified manifest the Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 02/12/2025
+ms.date: 02/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -99,22 +99,25 @@ Use the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requ
 The following code example shows how to configure an add-in that is installable in all Office application and platform combinations that support the following:
 
 - `TableBindings` requirement set, which has a minimum version of "1.1".
-- `OOXML` requirement set, which has a minimum version of "1.1".
+- `OoxmlCoercion` requirement set, which has a minimum version of "1.1".
+
+> [!NOTE]
+> The `"minVersion"` property is optional. If it is not present, Office assumes version "1.1".
 
 ```json
 "extensions": [
     {
         "requirements": {
-            "capabilities": [ 
-                {
-                    "name": "TableBindings",
-                    "minVersion": "1.1"
-                },
-                {
-                    "name": "OOXML",
-                    "minVersion": "1.1"
-                }
-            ],
+        "capabilities": [ 
+            {
+                "name": "TableBindings",
+                "minVersion": "1.1"
+            },
+            {
+                "name": "OoxmlCoercion",
+                "minVersion": "1.1"
+            }
+        ],
         },
         ...
     }
@@ -126,7 +129,7 @@ The following code example shows how to configure an add-in that is installable 
 
 ### Specify the form factors on which your add-in can be installed
 
-For an Outlook add-in, you can specify whether the add-in should be installable on desktop (includes tablets) or mobile form factors. To configure this, use the `"extensions.requirements.formFactors"` property. The following example show how to make the Outlook add-in installable on both form factors.
+For an Outlook add-in, you can specify whether the add-in should be installable on desktop (includes tablets) or mobile form factors. To configure this, use the `"extensions.requirements.formFactors"` property. The following example show how to make the add-in installable on only desktop devices.
 
 ```json
 "extensions": [
@@ -134,8 +137,7 @@ For an Outlook add-in, you can specify whether the add-in should be installable 
         "requirements": {
             ...
             "formFactors": [
-                "desktop",
-                "mobile"
+                "desktop"
             ]
         },
         ...
