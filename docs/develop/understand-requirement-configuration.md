@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Understand the logic of API requirement configuration
 
-You can limit to some degree which Office client applications and versions your add-in can be installed on. You can also prevent some features of the add-in from being available on certain client applications and versions. You do this by specifying in the manifest certain requirements that have to be met by an Office client before it can install the add-in, and before certain features are available. 
+You can limit which Office client applications and versions your add-in can be installed on. You can also prevent some features of the add-in from being available on certain client applications and versions. You do this by specifying in the manifest certain requirements that have to be met by an Office client before it can install the add-in, and before certain features are available. 
 
 > [!TIP]
 > The logic of requirements configuration in the manifest is the same whether your are limiting the installability of the add-in or the availability of its features, but you should be familiar with the difference between these two kinds of limitation tasks before you read this article. Start with [How to use the "requirements" property in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md). For concision, this article uses terms like "limit the add-in/feature" to mean either limit where the add-in can be installed or limit where a feature is available. 
@@ -83,7 +83,7 @@ Keep in mind the following points about how Office interprets the `"capabilities
 
 - If you want the add-in/feature available in all any Office client (other than those that are blocked by a scope or form factor requirement), regardless of what Office.js APIs it supports, don't include a `"capabilities"` property. It should only be used when you want to *limit* the add-in/feature to clients that support certain requirement sets.
 - The Office client must support *all* of the requirement sets in the array in order for the the add-in/feature to be available.
-- It may be helpful to think of the array as a set of "AND" conditions. Your manifest is saying to the user's Office client, "Allow this add-in/feature only if you support are **Mailbox 1.10** *and* **DialogApi 1.2**."
+- It may be helpful to think of the array as a set of "AND" conditions. Your manifest is saying to the user's Office client, "Allow this add-in/feature only if you support **Mailbox 1.10** *and* **DialogApi 1.2**."
 - If there is no `"maxVersion"` child of the capability object, then Office interprets the `"minVersion"` as meaning "this version *or later*". 
 - If there is a `"maxVersion"`, but no `"minVersion"`, then Office interprets the `"maxVersion"` as meaning "this version *or earlier*". For all requirement sets, "1.1" is the earliest version.
 - If both a `"maxVersion"` and `"minVersion"` are present, then Office interprets the two properties as a unit meaning "only versions in this range (inclusive)". For example, the following JSON limits the add-in/feature to Office versions that support versions 1.6 through 1.16 of the **ExcelApi** requirement set. 
@@ -106,15 +106,15 @@ For guidance, see [Understanding platform-specific requirement sets](platform-sp
 
 ## Combine types of limitations
 
-A `"requirements"` object can include two or all three kinds of child properties. When it does, the Office add-in/feature is limited to Office clients that meet *all* of the specified requirements. For example, the following JSON ensures that the add-in/feature is available only in Excel, only versions that support **ExcelApi 1.3**, and only on desktop form factors.
+A `"requirements"` object can include two or all three kinds of child properties. When it does, the Office add-in/feature is limited to Office clients that meet *all* of the specified requirements. For example, the following JSON ensures that the add-in/feature is available only in Outlook, only versions that support **Mailbox 1.12**, and only on desktop form factors.
 
 ```json
 "requirements": {
-    "scopes": [ "workbook" ],
+    "scopes": [ "mail" ],
     "capabilities": [
         {
-            "name": "ExcelApi",
-            "minVersion": "1.3"
+            "name": "Mailbox",
+            "minVersion": "1.12"
         }
     ],
     "formFactors": [ "desktop" ]
@@ -122,7 +122,7 @@ A `"requirements"` object can include two or all three kinds of child properties
 ```
 
 > [!NOTE]
-> Adding any combination of "mail", "document", or "presentation" to the `"scopes"` array in this example would *not* make the add-in/feature available on Outlook, Word, or PowerPoint, because none of those applications support the **ExcelApi** requirement set. 
+> Adding any combination of "workbook", "document", or "presentation" to the `"scopes"` array in this example would *not* make the add-in/feature available on Excel, Word, or PowerPoint, because none of those applications support the **Mailbox** requirement set. 
 
 ## Limit installation of add-ins that support multiple Office applications
 
@@ -173,7 +173,7 @@ For a concrete example, let's extend the scenario to specify that the add-in imp
 
 - The add-in has custom ribbon buttons in both Outlook and Excel that trigger a function command in a commands.js file.
 - To support the function command, the manifest has an `"extensions.runtimes.actions.actionId"` property whose value is "doSomething". 
-- The `Office.onReady` method in the commands.js file tests the [Office.context.host](/javascript/api/office/office.context#office-office-context-host-member) and branches depending on whether it is Outlook or Excel. If it is Outlook, then it calls [Office.Action.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) to link "doSomething" to a function named `doSomethingInOutlook`. If the host is Excel, it calls `associate` to link "doSomething" to a function named `doSomethingInExcel`.
+- The `Office.onReady` method in the commands.js file tests the [Office.context.host](/javascript/api/office/office.context#office-office-context-host-member) and branches depending on whether it is Outlook or Excel. If it is Outlook, it calls [Office.Action.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) to link "doSomething" to a function named `doSomethingInOutlook`. If the host is Excel, it calls `associate` to link "doSomething" to a function named `doSomethingInExcel`.
 - To implement the ribbon buttons, the manifest initially has a single ribbon object in a ["ribbons"](/microsoft-365/extensibility/schema/extension-ribbons-array) array. And this ribbon object has a control with an ["actionId"](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#actionid) property set to "doSomething".
 
 It is this last characteristic that needs to be changed to achieve the two goals. The following is the strategy. 
@@ -204,14 +204,14 @@ The `"ribbons"`array should now look similar to the following.
         "requirements": {
             "capabilities": [
                 {
-                    "name": "WordApi",
-                    "minVersion": "1.4"
+                    "name": "ExcelApi",
+                    "minVersion": "1.10"
                 }
             ]
         },                
 
             
-        --- Other children of the Word ribbon object here.
+        --- Other children of the Excel ribbon object here.
         --- These might be identical to the Outlook ribbon object above.
     }
 ],
