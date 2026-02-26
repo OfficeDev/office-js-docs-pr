@@ -10,13 +10,13 @@ ms.localizationpriority: medium
 
 You can limit which Office client applications and versions your add-in can be installed on. You can also prevent some features of the add-in from being available on certain client applications and versions. You do this by specifying in the manifest certain requirements that have to be met by an Office client before it can install the add-in, and before certain features are available. 
 
-> [!TIP]
+> [!IMPORTANT]
 > The logic of requirements configuration in the manifest is the same whether your are limiting the installability of the add-in or the availability of its features, but you should be familiar with the difference between these two kinds of limitation tasks before you read this article. Start with [How to use the "requirements" property in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md). For concision, this article uses terms like "limit the add-in/feature" to mean either limit where the add-in can be installed or limit where a feature is available. 
 
 > [!NOTE]
-> This article is mainly addressed to developers creating add-ins that use the [unified manifest for Microsoft 365](unified-manifest-overview.md). If your add-in uses the add-in only manifest, see the section [Apply this guidance to the add-in only manifest](#apply-this-guidance-to-the-add-in-only-manifest).
+> The practical examples in is article use the [unified manifest for Microsoft 365](unified-manifest-overview.md). If your add-in uses the add-in only manifest, see the section [Apply this guidance to the add-in only manifest](#apply-this-guidance-to-the-add-in-only-manifest).
 
-There are four ways that you can limit the add-in, discussed in the following sections.
+There are three ways that you can limit the add-in/feature, discussed in the following sections. But see also [Limit by platform at runtime](#limit-by-platform-at-runtime).
 
 ## Limit by Office application
 
@@ -99,10 +99,6 @@ Keep in mind the following points about how Office interprets the `"capabilities
         ]
     }
     ```
-
-## Limit by platform
-
-For guidance, see [Understanding platform-specific requirement sets](platform-specific-requirement-sets.md).
 
 ## Combine types of limitations
 
@@ -256,15 +252,20 @@ Just as with the unified manifest, it is possible to inadvertently create a mani
 > [!NOTE]
 > Limiting a feature by requirement set is less fine-grained in the add-in only manifest than in the unified manifest. With the unified manifest you can have separate `"requirements"` properties in each child property of `"extensions"`, but in the add-in only manifest you can have just one `<Requirements>` child in the `<VersionOverrides>` element, and it applies to all features configured in that `<VersionOverrides>`. For more information, see [Specify requirements in a VersionOverrides element](specify-office-hosts-and-api-requirements.md#specify-requirements-in-a-versionoverrides-element). 
 
-### Limit by platform with the add-in only manifest
-
-For guidance, see [Understanding platform-specific requirement sets](platform-specific-requirement-sets.md).
-
 ### Limit by form factor with the add-in only manifest
 
 When the add-in only manifest is used, the desktop form factor is always supported in all add-ins, and the mobile form factor is possible only for Outlook add-ins. 
 
 For an Outlook add-in, the presence or absence of a [MobileFormFactor](/javascript/api/manifest/mobileformfactor) element, as a child of a `<VersionOverrides><Hosts><Host>` element, determines whether the add-in is available in mobile devices. See [Host](/javascript/api/manifest/host) for more information.
+
+## Limit by platform at runtime
+
+You can't limit an add-in/feature by platform (Windows, web, Mac, iOS, Android, etc.) using the techniques of this article. There is no `"platform"` property in the `"requirements"` object in the unified manifest and no `<Platforms>` element child of the `<Requirements>` element in the add-in only manifest. Although there are some requirement sets that are only supported on one platform, they are not allowed in the `"capabilities"` property or the `<Sets>` element. The closest you can come is to design the add-in so that it checks at runtime for the platform and if it is a platform on which you don't want the add-in to support, show a message to the user that the a add-in won't work on their version of Office and suggest which platform the user should switch to. There are actually two ways to do a runtime check. 
+
+- Check the [Office.context.platform](/javascript/api/office/office.context#office-office-context-platform-member) property.
+- Call the [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#method-details) method and pass the name of a platform-specific requirement set.
+
+For guidance, see [Understanding platform-specific requirement sets](platform-specific-requirement-sets.md) and [Check for API availability at runtime](specify-api-requirements-runtime.md).
 
 ## See also
 
