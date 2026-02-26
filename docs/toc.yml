@@ -103,7 +103,7 @@
         - name: Understand and use platform-specific requirement sets
           href: develop/platform-specific-requirement-sets.md
         - name: Understand the logic of API requirement configuration
-          href: develop/requirement-configuration.md
+          href: develop/understand-requirement-configuration.md
         - name: Check for API availability at runtime
           href: develop/specify-api-requirements-runtime.md
       - name: Load sequence of an Office Add-in

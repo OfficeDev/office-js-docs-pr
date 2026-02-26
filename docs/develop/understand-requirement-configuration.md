@@ -37,10 +37,10 @@ Keep in mind the following points about how Office interprets the `"scopes"` arr
 
 ## Limit by form factor
 
-To limit to the add-in/feature to either desktop devices or mobile devices, use the [`"requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formFactors) property. 
+You can limit Outlook add-ins by form factor. To limit to the add-in/feature to desktop devices (includes tablets) or to mobile devices, use the [`"requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formFactors) property. 
 
 > [!NOTE]
-> The possible values of the `"formFactors"` array are "desktop" and "mobile". These are *types of devices*, not platforms. Each of these values includes multiple platforms: the "desktop" form factor includes Windows, Mac, web, and new Outlook, while the "mobile" form factor includes iPad, iOS, Android, and Universal (WinRT) devices.
+> The possible values of the `"formFactors"` array are "desktop" and "mobile". 
 
 For example, the following JSON limits the add-in to desktop devices.
 
@@ -51,10 +51,7 @@ For example, the following JSON limits the add-in to desktop devices.
 }
 ```
 
-Keep in mind the following points about how Office interprets the `"formFactors"` array.
-
-- Include the form factor where you want the add-in/feature to be available. To block availability in a form factor, leave it out of the array.
-- If you want the add-in/feature available in all form factors, don't include a `"formFactors"` property. It should only be used when you want to *limit* the add-in/feature to just one of the two form factors. Including all both possible values is functionally equivalent to having no `"formFactors"` property at all.
+If the `"formFactors"` element is not present, then the add-in/feature is available in both types of form factors. Including all both possible values is functionally equivalent to having no `"formFactors"` property at all. So use the property only when you want to make it on available on just one form factor.
 
 ## Limit by requirement set support
 
