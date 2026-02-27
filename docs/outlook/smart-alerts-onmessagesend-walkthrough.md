@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 01/13/2026
+ms.date: 02/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -178,7 +178,7 @@ To configure the manifest, select the tab for the type of manifest you are using
                 <LaunchEvents>
                   <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="SoftBlock" />
                 </LaunchEvents>
-                <!-- Identify the runtime to be used (also referenced by the Runtime element). -->
+                <!-- Identifies the runtime to be used. The resid value must match that of the Runtime element that represents the browser runtime. -->
                 <SourceLocation resid="WebViewRuntime.Url"/>
               </ExtensionPoint>
             </DesktopFormFactor>

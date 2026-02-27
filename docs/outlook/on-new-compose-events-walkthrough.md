@@ -1,7 +1,7 @@
 ---
 title: Automatically set the subject of a new message or appointment
 description: Learn how to implement an event-based add-in that automatically sets the subject of a new message or appointment.
-ms.date: 01/13/2026
+ms.date: 02/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -205,7 +205,7 @@ In event-based add-ins, classic Outlook on Windows uses a JavaScript file, while
               <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
               <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="onNewAppointmentComposeHandler"/>
             </LaunchEvents>
-            <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
+            <!-- Identifies the runtime to be used. The resid value must match that of the Runtime element that represents the browser runtime. -->
             <SourceLocation resid="WebViewRuntime.Url"/>
           </ExtensionPoint>
         </DesktopFormFactor>
