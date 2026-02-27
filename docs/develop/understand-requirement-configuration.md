@@ -14,13 +14,13 @@ You can limit which Office client applications and versions your add-in can be i
 > The logic of requirements configuration in the manifest is the same whether your are limiting the installability of the add-in or the availability of its features, but you should be familiar with the difference between these two kinds of limitation tasks before you read this article. Start with [How to use the "requirements" property in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md). For concision, this article uses terms like "limit the add-in/feature" to mean either limit where the add-in can be installed or limit where a feature is available. 
 
 > [!NOTE]
-> The practical examples in is article use the [unified manifest for Microsoft 365](unified-manifest-overview.md). If your add-in uses the add-in only manifest, see the section [Apply this guidance to the add-in only manifest](#apply-this-guidance-to-the-add-in-only-manifest).
+> The practical examples in this article use the [unified manifest for Microsoft 365](unified-manifest-overview.md). If your add-in uses the add-in only manifest, see the section [Apply this guidance to the add-in only manifest](#apply-this-guidance-to-the-add-in-only-manifest).
 
 There are three ways that you can limit the add-in/feature, discussed in the following sections. But see also [Limit by platform at runtime](#limit-by-platform-at-runtime).
 
 ## Limit by Office application
 
-To limit to the add-in/feature to a proper subset of Excel, Outlook, PowerPoint, or Word, use the [`"requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes) property. (OneNote and Project add-ins cannot use the unified manifest. To work with them, see the section [Apply this guidance to the add-in only manifest](#apply-this-guidance-to-the-add-in-only-manifest).) For example, the following JSON limits the add-in to Outlook and Excel.
+To limit to the add-in/feature to a proper subset of Excel, Outlook, PowerPoint, or Word, use the [`"requirements.scopes"`](/microsoft-365/extensibility/schema/requirements-extension-element#scopes-1) property. (OneNote and Project add-ins can't use the unified manifest. To work with them, see the section [Apply this guidance to the add-in only manifest](#apply-this-guidance-to-the-add-in-only-manifest).) For example, the following JSON limits the add-in to Outlook and Excel.
 
 ```json
 "requirements": {
@@ -37,7 +37,7 @@ Keep in mind the following points about how Office interprets the `"scopes"` arr
 
 ## Limit by form factor
 
-You can limit Outlook add-ins by form factor. To limit to the add-in/feature to desktop devices (includes tablets) or to mobile devices, use the [`"requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formFactors) property. 
+You can limit Outlook add-ins by form factor. To limit to the add-in/feature to desktop devices (includes tablets) or to mobile devices, use the [`"requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) property. 
 
 > [!NOTE]
 > The possible values of the `"formFactors"` array are "desktop" and "mobile". 
@@ -51,7 +51,7 @@ For example, the following JSON limits the add-in to desktop devices.
 }
 ```
 
-If the `"formFactors"` element is not present, then the add-in/feature is available in both types of form factors. Including all both possible values is functionally equivalent to having no `"formFactors"` property at all. So use the property only when you want to make it on available on just one form factor.
+If the `"formFactors"` element isn't present, then the add-in/feature is available in both types of form factors. Including all possible values is functionally equivalent to having no `"formFactors"` property at all. So use the property only when you want to make it only available on just one form factor.
 
 ## Limit by requirement set support
 
@@ -81,7 +81,7 @@ To limit the add-in/feature to Office clients that support certain requirement s
 
 Keep in mind the following points about how Office interprets the `"capabilities"` array.
 
-- If you want the add-in/feature available in all any Office client (other than those that are blocked by a scope or form factor requirement), regardless of what Office.js APIs it supports, don't include a `"capabilities"` property. It should only be used when you want to *limit* the add-in/feature to clients that support certain requirement sets.
+- If you want the add-in/feature available in any Office client (other than those that are blocked by a scope or form factor requirement), regardless of what Office.js APIs it supports, don't include a `"capabilities"` property. It should only be used when you want to *limit* the add-in/feature to clients that support certain requirement sets.
 - The Office client must support *all* of the requirement sets in the array in order for the the add-in/feature to be available.
 - It may be helpful to think of the array as a set of "AND" conditions. Your manifest is saying to the user's Office client, "Allow this add-in/feature only if you support **Mailbox 1.10** *and* **DialogApi 1.2**."
 - If there is no `"maxVersion"` child of the capability object, then Office interprets the `"minVersion"` as meaning "this version *or later*". 
@@ -102,7 +102,7 @@ Keep in mind the following points about how Office interprets the `"capabilities
 
 ## Combine types of limitations
 
-A `"requirements"` object can include two or all three kinds of child properties. When it does, the Office add-in/feature is limited to Office clients that meet *all* of the specified requirements. For example, the following JSON ensures that the add-in/feature is available only in Outlook, only versions that support **Mailbox 1.12**, and only on desktop form factors.
+A `"requirements"` object can include two or all three kinds of child properties. When it does, the Office add-in/feature is limited to Office clients that meet *all* of the specified requirements. For example, the following JSON ensures that the add-in/feature is available only in Outlook, only in versions that support **Mailbox 1.12** or later, and only on desktop form factors.
 
 ```json
 "requirements": {
@@ -163,16 +163,16 @@ But the add-in's functionality in Outlook uses APIs in the **Mailbox 1.11** requ
 
 But this configuration ensures that the add-in/feature won't be available on *any* version of Office because **Mailbox** is supported only in Outlook and **ExcelApi** is supported only in Excel. So, there is no Office application that supports both. 
 
-To achieve the two goals of making the add-in installable on (1) Outlook, but available only Outlook versions that support **Mailbox 1.11**, and (2) Excel, but available only Excel versions that support **ExcelApi 1.10**, the capability objects must be moved out of the `"extensions.requirements"` object into one or more of the child `"extensions.{FEATURE}.requirements"` objects, where {FEATURE} is a child of `"extensions"`, such as `"runtimes"` or `"ribbons"`, etc. 
+To achieve the two goals of making the add-in installable on (1) Outlook, but available only in Outlook versions that support **Mailbox 1.11**, and (2) Excel, but available only in Excel versions that support **ExcelApi 1.10**, the "capabilities" objects must be moved out of the `"extensions.requirements"` object into one or more of the child `"extensions.{FEATURE}.requirements"` objects, where {FEATURE} is a child of `"extensions"`, such as `"runtimes"` or `"ribbons"`.
 
 For a concrete example, let's extend the scenario to specify that the add-in implements function commands following the guidance in [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md). Specifically, the add-in has the following characteristics.
 
-- The add-in has custom ribbon buttons in both Outlook and Excel that trigger a function command in a commands.js file.
+- The add-in has custom ribbon buttons in both Outlook and Excel that trigger a function command in a **commands.js** file.
 - To support the function command, the manifest has an `"extensions.runtimes.actions.actionId"` property whose value is "doSomething". 
-- The `Office.onReady` method in the commands.js file tests the [Office.context.host](/javascript/api/office/office.context#office-office-context-host-member) and branches depending on whether it is Outlook or Excel. If it is Outlook, it calls [Office.Action.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) to link "doSomething" to a function named `doSomethingInOutlook`. If the host is Excel, it calls `associate` to link "doSomething" to a function named `doSomethingInExcel`.
+- The `Office.onReady` method in the **commands.js** file tests the [Office.context.host](/javascript/api/office/office.context#office-office-context-host-member) and branches depending on whether it's Outlook or Excel. If it's Outlook, it calls [Office.Action.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) to link "doSomething" to a function named `doSomethingInOutlook`. If the host is Excel, it calls `associate` to link "doSomething" to a function named `doSomethingInExcel`.
 - To implement the ribbon buttons, the manifest initially has a single ribbon object in a ["ribbons"](/microsoft-365/extensibility/schema/extension-ribbons-array) array. And this ribbon object has a control with an ["actionId"](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#actionid) property set to "doSomething".
 
-It is this last characteristic that needs to be changed to achieve the two goals. The following is the strategy. 
+It's this last characteristic that needs to be changed to achieve the two goals. The following is the strategy. 
 
 1. Remove the entire `"capabilities"` array from `"extensions.requirements"` object, so that it again looks as it did in the first code block of this section.
 1. Copy the ribbon object, so that there are now two ribbon objects in the `"ribbons"` array.
@@ -188,7 +188,7 @@ The `"ribbons"`array should now look similar to the following.
             "capabilities": [
                 {
                     "name": "Mailbox",
-                    "minVersion": "1.10"
+                    "minVersion": "1.11"
                 }
             ]
         },
@@ -219,7 +219,7 @@ These changes have the desired effects:
 - The ribbon control is only be available on Outlook versions that support **Mailbox 1.11** and on Excel versions that support **ExcelApi 1.10**.
 
 > [!NOTE]
-> The problem described in this section isn't limited to when two or more application-specific requirement sets are specified. There can be combinations of *common* requirement sets that create the same danger that the manifest configuration makes the add-in/feature unavailable in *any* Office client. For example, the **CustomXmlParts** requirement set is supported only in Word, and the **ActiveView** requirement set is supported only in PowerPoint. An add-in that is intended to be available on Word versions that support **CustomXmlParts** and on PowerPoint versions that support **ActiveView**, would need to be configured using the technique described this section: duplicating one or more child elements of `"extensions"` and giving each its own `"requirements.capabilities"`. 
+> The problem described in this section isn't limited to when two or more application-specific requirement sets are specified. There can be combinations of *common* requirement sets that create the same danger that the manifest configuration makes the add-in/feature unavailable in *any* Office client. For example, the **CustomXmlParts** requirement set is supported only in Word, and the **ActiveView** requirement set is supported only in PowerPoint. An add-in that's intended to be available on Word versions that support **CustomXmlParts** and on PowerPoint versions that support **ActiveView** would need to be configured using the technique described in this section: duplicating one or more child elements of `"extensions"` and giving each its own `"requirements.capabilities"`. 
 
 ## Apply this guidance to the add-in only manifest
 
@@ -230,9 +230,9 @@ The logic of how Office processes requirement configuration in the add-in only m
 
 ### Limit by Office application in the add-in only manifest
 
-Outlook add-ins and task pane add-ins for all non-Outlook add-ins each have there own manifest schemas, so an Outlook add-in cannot be combined with any other Office application in the same add-in. Content add-ins also have their own manifest schema and are supported only in Excel and PowerPoint. The remainder of this section is about limiting by application *within* the categories of task pane add-in and content add-in. 
+Outlook add-ins and task pane add-ins for all non-Outlook add-ins each have their own manifest schemas, so an Outlook add-in can't be combined with any other Office application in the same add-in. Content add-ins also have their own manifest schema and are supported only in Excel and PowerPoint. The remainder of this section is about limiting by application *within* the categories of task pane add-in and content add-in. 
 
-The equivalent of the `"scopes"` property is the [Hosts](/javascript/api/manifest/hosts) element. Just as there can be a `"requirements.scopes"` as either a direct child of `"extensions"` or a child of one the other child properties of `"extensions"`, so too there can be a `<Hosts>` element in the either root of the add-in only manifest or in a child `<VersionOverrides>`. 
+The equivalent of the `"scopes"` property is the [Hosts](/javascript/api/manifest/hosts) element. Just as there can be a `"requirements.scopes"` as either a direct child of `"extensions"` or a child of one the other child properties of `"extensions"`, so too there can be a `<Hosts>` element in either the root of the add-in only manifest or in a child `<VersionOverrides>`. 
 
 Having no `<Hosts>` element at all means that the add-in/feature is available in all the possible Office applications, which are Excel and PowerPoint for content add-ins and all applications except Outlook for task pane add-ins. So include a `<Hosts>` element when you want to limit the availability of the add-in/feature. 
 
@@ -240,9 +240,9 @@ Having no `<Hosts>` element at all means that the add-in/feature is available in
 
 The equivalent of the `"capabilities"` property is the [Sets](/javascript/api/manifest/sets) element. It, too, can be in either the base manifest or in a child `<VersionOverrides>`.
 
-Having no `<Sets>` element at all means that the add-in/feature is available in all the versions Office applications regardless of what requirement sets they support. So include a `<Sets>` element when you want to limit the availability of the add-in/feature.
+Having no `<Sets>` element at all means that the add-in/feature is available in all the versions of Office applications regardless of what requirement sets they support. So include a `<Sets>` element when you want to limit the availability of the add-in/feature.
 
-Just as with the unified manifest, it is possible to inadvertently create a manifest which blocks the add-in/feature for *all* Office clients. (See [Limit installation of add-ins that support multiple Office applications](#limit-installation-of-add-ins-that-support-multiple-office-applications) for a description of the problem.) For example, including [Set](/javascript/api/manifest/set) elements for both **WordApi 1.4** and **ExcelApi 1.10** would have this effect. The solution is parallel to the solution for the unified manifest. In this scenario take these steps:
+Just as with the unified manifest, it's possible to inadvertently create a manifest which blocks the add-in/feature for *all* Office clients. (See [Limit installation of add-ins that support multiple Office applications](#limit-installation-of-add-ins-that-support-multiple-office-applications) for a description of the problem.) For example, including [Set](/javascript/api/manifest/set) elements for both **WordApi 1.4** and **ExcelApi 1.10** would have this effect. The solution is parallel to the solution for the unified manifest. In this scenario take these steps.
 
 1. Remove the problematic `<Set>` elements from the base manifest.
 1. Copy the `<VersionOverrides>` element so there are now two of them.
@@ -260,7 +260,7 @@ For an Outlook add-in, the presence or absence of a [MobileFormFactor](/javascri
 
 ## Limit by platform at runtime
 
-You can't limit an add-in/feature by platform (Windows, web, Mac, iOS, Android, etc.) using the techniques of this article. There is no `"platform"` property in the `"requirements"` object in the unified manifest and no `<Platforms>` element child of the `<Requirements>` element in the add-in only manifest. Although there are some requirement sets that are only supported on one platform, they are not allowed in the `"capabilities"` property or the `<Sets>` element. The closest you can come is to design the add-in so that it checks at runtime for the platform and if it is a platform on which you don't want the add-in to support, show a message to the user that the a add-in won't work on their version of Office and suggest which platform the user should switch to. There are actually two ways to do a runtime check. 
+You can't limit an add-in/feature by platform (Windows, web, Mac, iOS, or Android) using the techniques of this article. There's no `"platform"` property in the `"requirements"` object in the unified manifest and no `<Platforms>` element child of the `<Requirements>` element in the add-in only manifest. Although there are some requirement sets that are only supported on one platform, they aren't allowed in the `"capabilities"` property or the `<Sets>` element. The closest you can come is to design the add-in so that it checks at runtime for the platform. If it's a platform on which you don't want the add-in to support, show a message to the user that the add-in won't work on their version of Office and suggest which platform the user should switch to. There are actually two ways to do a runtime check. 
 
 - Check the [Office.context.platform](/javascript/api/office/office.context#office-office-context-platform-member) property.
 - Call the [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#method-details) method and pass the name of a platform-specific requirement set.
