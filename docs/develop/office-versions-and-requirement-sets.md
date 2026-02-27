@@ -16,12 +16,18 @@ There are many versions of Office on several platforms, and they don't all suppo
 
 ## How to check your Office version
 
-To identify the Office version, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office appears in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000).
+### Office on Windows
+
+To identify the Office on Windows version, from within an Office application, select the **File** menu, and then choose **Account**. The version of Office appears in the **Product Information** section. For example, the following screenshot indicates Office Version 1802 (Build 9026.1000).
 
 :::image type="content" source="../images/office-version.png" alt-text="A mock-up of the Product Information section of the Account page in Excel on Windows. There is a subsection titled About Excel and below this is text reading 'Version 1802 (Build 9026.1-000 Click-to-run)'":::
 
 > [!NOTE]
 > If your version of Office is different from this image, see [What version of Outlook do I have?](https://support.microsoft.com/office/b3a9568c-edb5-42b9-9825-d48d82b2257c) or [About Office: What version of Office am I using?](https://support.microsoft.com/topic/932788b8-a3ce-44bf-bb09-e334518b8b19) to understand how to get this information for your version.
+
+### Office on Mac
+
+To identify the Office on Mac version, follow the guidance at [About Office: What version of Office am I using?](https://support.microsoft.com/en-us/office/about-office-what-version-of-office-am-i-using-932788b8-a3ce-44bf-bb09-e334518b8b19#osversion=macos).
 
 ## Deployment
 
