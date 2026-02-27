@@ -1,7 +1,7 @@
 ---
 title: 'Sample: Manage citations through your Word add-in'
 description: Learn how to create an add-in that manages citations in a Word document.
-ms.date: 11/28/2023
+ms.date: 02/26/2026
 ms.topic: sample
 ms.localizationpriority: medium
 ---
@@ -20,10 +20,6 @@ This article features a sample add-in that manages citations in a Word document.
 - Office connected to a Microsoft 365 subscription (including Office on the web).
 - [Node.js](https://nodejs.org/) version 16 or greater.
 - npm version 8 or greater.
-
-## Run the sample code
-
-The sample code for this article is named [Manage citations in a Word document](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-citation-management). To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-citation-management).
 
 ## Key steps in the sample
 
@@ -60,6 +56,10 @@ Alternatively, provide various style options then allow the user to choose. If s
 ### Replace bibtexParseJs
 
 Replace the .bib file parser [@orcid/bibtexParseJs](https://github.com/ORCID/bibtexParseJs#readme) with your own or another available parser, especially if this option doesn't provide the functionality you need for your solution.
+
+## Run the sample code
+
+The sample code for this article is named [Manage citations in a Word document](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-citation-management). To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-citation-management).
 
 ## See also
 
