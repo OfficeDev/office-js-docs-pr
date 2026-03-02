@@ -249,6 +249,9 @@ Use the following guidelines to create custom key combinations for your add-ins.
 
 ### Browser shortcuts that can't be overridden
 
+> [!NOTE]
+> In Office on the web, custom keyboard shortcuts don't work when the task pane has focus. Keyboard shortcuts are only triggered when focus is on the document, presentation, or spreadsheet.
+
 When using custom keyboard shortcuts on the web, some keyboard shortcuts that are used by the browser can't be overridden by add-ins. The following list is a work in progress. If you discover other combinations that can't be overridden, please let us know by using the feedback tool at the bottom of this page.
 
 - <kbd>Ctrl</kbd>+<kbd>N</kbd>
