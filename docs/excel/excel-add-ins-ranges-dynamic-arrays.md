@@ -1,19 +1,33 @@
 ---
 title: Handle dynamic arrays and range spilling using the Excel JavaScript API
 description: Learn how to handle dynamic arrays and range spilling with the Excel JavaScript API.
-ms.date: 02/17/2022
+ms.date: 03/03/2026
 ms.localizationpriority: medium
 ---
 
 # Handle dynamic arrays and spilling using the Excel JavaScript API
 
-This article provides a code sample that handles dynamic arrays and range spilling using the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
+This article provides code samples that handle dynamic arrays and range spilling using the Excel JavaScript API. Dynamic arrays are Excel features that allow formulas to return multiple values automatically. Understanding how to work with spilled ranges programmatically enables your add-in to interact with these dynamic results effectively.
+
+For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
+
+## Key points
+
+- Dynamic array formulas automatically spill results into neighboring cells.
+- Use `getSpillingToRange` to find all cells filled by a dynamic array formula.
+- Use `getSpillParent` to find the original cell containing the formula that created a spilled value.
+- Both methods have `OrNullObject` versions that return `null` instead of throwing errors when no spill exists.
+- Only single-cell ranges can call `getSpillParent`. Calling it on multi-cell ranges throws an error.
 
 ## Dynamic arrays
 
-Some Excel formulas return [Dynamic arrays](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531). These fill the values of multiple cells outside of the formula's original cell. This value overflow is referred to as a "spill". Your add-in can find the range used for a spill with the [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) method. There is also a [*OrNullObject version](../develop/application-specific-api-model.md#ornullobject-methods-and-properties), `Range.getSpillingToRangeOrNullObject`.
+Some Excel formulas return [dynamic arrays](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531). These formulas automatically fill values into multiple cells beyond the original formula cell. This expansion is called "spilling". Common dynamic array formulas include `FILTER`, `SORT`, `UNIQUE`, `SEQUENCE`, and simple array references like `=A1:D1`.
 
-The following sample shows a basic formula that copies the contents of a range into a cell, which spills into neighboring cells. The add-in then logs the range that contains the spill.
+When a formula spills, Excel automatically populates neighboring cells with the results. Your add-in can programmatically discover which cells contain these spilled values using the [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) method. If you need to handle cases where a cell might not contain a spilling formula, use the [*OrNullObject version](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject`, which returns `null` instead of throwing an error.
+
+### Get the spill range from a formula
+
+The following code sample sets a formula that returns a dynamic array, then retrieves and logs the range that contains all the spilled values.
 
 ```js
 await Excel.run(async (context) => {
@@ -35,12 +49,85 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Range spilling
+## Find the source of spilled values
 
-Find the cell responsible for spilling into a given cell by using the [Range.getSpillParent](/javascript/api/excel/excel.range#excel-excel-range-getspillparent-member(1)) method. Note that `getSpillParent` only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells will result in an error being thrown (or a null range being returned for `Range.getSpillParentOrNullObject`).
+When working with a cell that contains a spilled value, you can trace back to the original formula cell using the [Range.getSpillParent](/javascript/api/excel/excel.range#excel-excel-range-getspillparent-member(1)) method. This is useful when you need to identify which formula is responsible for populating a particular cell.
+
+The `getSpillParent` method only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells throws an error. Use `Range.getSpillParentOrNullObject` to return `null` instead of throwing an error when the cell doesn't contain a spilled value.
+
+### Get the formula cell from a spilled value
+
+The following code sample shows how to find the parent cell of a spilled value. When you select a cell that contains a spilled value and run this code, it identifies and highlights the original formula cell.
+
+```js
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Get a cell that contains a spilled value.
+    let spilledCell = sheet.getRange("H4");
+
+    // Get the parent cell whose formula is spilling into spilledCell.
+    let spillParentRange = spilledCell.getSpillParent();
+    spillParentRange.load("address");
+
+    await context.sync();
+
+    // This will log the address of the cell containing the formula.
+    console.log(`The spill parent of H4 is ${spillParentRange.address}.`);
+});
+```
+
+## Practical scenarios
+
+Dynamic arrays are commonly used in scenarios where you need to work with filtered or transformed data. Here are some practical examples.
+
+### Detect spill errors
+
+When a formula tries to spill but neighboring cells contain data, Excel displays a `#SPILL!` error. Your add-in can detect and handle these situations.
+
+```js
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
+    let formulaCell = sheet.getRange("A1");
+
+    // Try to get the spilling range.
+    let spillRange = formulaCell.getSpillingToRangeOrNullObject();
+    spillRange.load("address");
+    await context.sync();
+
+    if (spillRange.isNullObject) {
+        console.log("No spill detected. The cell may not contain a dynamic array formula or encountered a spill error.");
+    } else {
+        console.log(`Formula spilled into range: ${spillRange.address}`);
+    }
+});
+```
+
+### Work with dynamic array results
+
+Retrieve the entire spilled range and then apply formatting or perform calculations on it.
+
+```js
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+
+    // Cell with dynamic array formula.
+    let formulaCell = sheet.getRange("F1");
+    formulaCell.formulas = [["=FILTER(A1:C10, B1:B10>100)"]];
+
+    // Get the spilled range and apply formatting.
+    let spillRange = formulaCell.getSpillingToRange();
+    spillRange.format.fill.color = "#E8F4EA";
+    spillRange.format.font.bold = true;
+
+    await context.sync();
+});
+```
 
 ## See also
 
+- [Dynamic array formulas in Excel](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
 - [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md)
 - [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)
