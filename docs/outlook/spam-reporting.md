@@ -1,7 +1,7 @@
 ﻿---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 01/13/2026
+ms.date: 02/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -185,6 +185,7 @@ Configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1
       > [!NOTE]
       > Depending on the Outlook client, the custom text specified in the `<MoreInfoText>` element appears before the URL that's provided in the `<MoreInfoUrl>` element or as link text for the URL. For more information, see [MoreInfoText](/javascript/api/manifest/moreinfo#moreinfotext).
     - A "Don't show me this message again" checkbox to prevent the preprocessing dialog from appearing again. To learn how to implement this option, see [Suppress the preprocessing dialog](#suppress-the-preprocessing-dialog).
+  - Ensure that the `resid` value of the [SourceLocation](/javascript/api/manifest/customfunctionssourcelocation) element matches the `resid` value of the `<Runtime>` element that specifies the HTML file.
 
 The following is an example of a `<VersionOverrides>` node configured for spam reporting.
 
@@ -247,7 +248,7 @@ The following is an example of a `<VersionOverrides>` node configured for spam r
                       <MoreInfoUrl resid="MoreInfo.Url"/>
                     </MoreInfo>
                   </PreProcessingDialog>
-                 <!-- Identifies the runtime to be used. This is also referenced by the Runtime element. -->
+                  <!-- Identifies the runtime to be used. The resid value must match that of the Runtime element that represents the browser runtime. -->
                   <SourceLocation resid="WebViewRuntime.Url"/>
                 </ReportPhishingCustomization> 
               </ExtensionPoint>
