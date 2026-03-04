@@ -1,15 +1,10 @@
 ﻿---
 title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 11/27/2025
+ms.date: 03/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-
-<!-- 
-  This article is deliberately left out of the Office Add-ins TOC because 
-  it will be moving over to the M365 doc set as soon as that is up and running. 
--->
 
 # Specify Office Add-in requirements in the unified manifest for Microsoft 365
 

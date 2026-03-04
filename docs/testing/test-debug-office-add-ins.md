@@ -1,7 +1,7 @@
 ﻿---
 title: Test Office Add-ins
 description: Learn how to test your Office Add-in.
-ms.date: 11/27/2025
+ms.date: 03/16/2026
 ms.localizationpriority: high
 ---
 
