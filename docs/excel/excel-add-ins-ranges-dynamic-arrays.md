@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Handle dynamic arrays and spilling using the Excel JavaScript API
 
-This article provides code samples that handle dynamic arrays and range spilling using the Excel JavaScript API. A dynamic array is an Excel feature that allows formulas to return multiple values automatically. Understanding how to work with spilled ranges programmatically enables your add-in to interact with these dynamic results effectively.
+This article provides code samples that handle dynamic arrays and range spilling using the Excel JavaScript API. A [dynamic array](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531) is an Excel feature that allows formulas to return multiple values automatically. Understanding how to work with spilled ranges programmatically enables your add-in to interact with these dynamic results effectively.
 
 For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
@@ -21,7 +21,7 @@ For the complete list of properties and methods that the `Range` object supports
 
 ## Dynamic arrays
 
-Some Excel formulas return [dynamic arrays](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531). These formulas automatically fill values into multiple cells beyond the original formula cell. This expansion is called "spilling". Common dynamic array formulas include `FILTER`, `SORT`, `UNIQUE`, `SEQUENCE`, and simple array references like `=A1:D1`.
+Dynamic array formulas automatically fill values into multiple cells beyond the original formula cell. This expansion is called "spilling". Common dynamic array formulas include `FILTER`, `SORT`, `UNIQUE`, `SEQUENCE`, and simple array references like `=A1:D1`.
 
 When a formula spills, Excel automatically populates neighboring cells with the results. Your add-in can programmatically discover which cells contain these spilled values using the [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) method.
 

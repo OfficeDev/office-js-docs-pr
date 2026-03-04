@@ -16,9 +16,8 @@ For the complete list of properties and methods that the `Range` object supports
 ## Key points
 
 - Use `copyFrom` to replicate Excel's copy and paste behavior programmatically.
-- Use `moveTo` to cut and paste (move) cells to a new location.
 - The `copyType` parameter controls what gets copied: formulas, values, formats, or all.
-- Set `skipBlanks` to `true` to preserve existing data in destination cells that correspond to blank source cells.
+- Use `moveTo` to cut and paste (move) cells to a new location.
 - Both methods work within a worksheet or across worksheets in the same workbook.
 
 > [!TIP]
@@ -97,7 +96,7 @@ await Excel.run(async (context) => {
 
 ### Copy only values
 
-Copying only values is useful when you want to duplicate the results of formulas without copying the formulas themselves. This is equivalent to using **Paste Special** > **Values** in the Excel UI.
+Only copying values is useful when you want to duplicate the results of formulas without copying the formulas themselves. This is equivalent to using **Paste Special** > **Values** in the Excel UI.
 
 ```js
 await Excel.run(async (context) => {
