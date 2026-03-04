@@ -85,6 +85,7 @@ await Excel.run(async (context) => {
     let range = sheet.getRange("B2:E2");
 
     range.format.font.bold = true;
+    range.format.font.italic = true;
     range.format.font.size = 14;
     range.format.font.name = "Arial";
 
@@ -101,8 +102,8 @@ await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
     let range = sheet.getRange("A1:E1");
 
-    range.format.horizontalAlignment = "Center";
-    range.format.verticalAlignment = "Center";
+    range.format.horizontalAlignment = Excel.HorizontalAlignment.center;
+    range.format.verticalAlignment = Excel.VerticalAlignment.center;
 
     await context.sync();
 });
