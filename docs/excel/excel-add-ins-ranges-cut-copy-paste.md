@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Cut, copy, and paste ranges using the Excel JavaScript API
 
-This article provides code samples that cut, copy, and paste ranges using the Excel JavaScript API. These operations are fundamental to many Excel add-in scenarios, from duplicating templates to reorganizing data. Understanding how to use `copyFrom` and `moveTo` methods programmatically enables your add-in to replicate the familiar Excel clipboard operations users know.
+This article provides code samples that cut, copy, and paste ranges using the Excel JavaScript API. These operations are fundamental to many Excel add-in scenarios, from duplicating templates to reorganizing data. The `copyFrom` and `moveTo` methods enable your add-in to replicate the familiar Excel clipboard operations users know.
 
 For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 

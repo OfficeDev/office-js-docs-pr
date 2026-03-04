@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Handle dynamic arrays and spilling using the Excel JavaScript API
 
-This article provides code samples that handle dynamic arrays and range spilling using the Excel JavaScript API. Dynamic arrays are Excel features that allow formulas to return multiple values automatically. Understanding how to work with spilled ranges programmatically enables your add-in to interact with these dynamic results effectively.
+This article provides code samples that handle dynamic arrays and range spilling using the Excel JavaScript API. A dynamic array is an Excel feature that allows formulas to return multiple values automatically. Understanding how to work with spilled ranges programmatically enables your add-in to interact with these dynamic results effectively.
 
 For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 
@@ -25,7 +25,7 @@ Some Excel formulas return [dynamic arrays](https://support.microsoft.com/office
 
 When a formula spills, Excel automatically populates neighboring cells with the results. Your add-in can programmatically discover which cells contain these spilled values using the [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) method.
 
-To handle cases where a cell might not contain a spilled formula, use the [*OrNullObject version](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject`. This returns the spilled range when one exists. If no spilled range exists, it returns an object whose `isNullObject` property is set to `true`. Your code can then evaluate this property to determine whether the spill range exists.
+To handle cases where a cell might not contain a spilled formula, use the [*OrNullObject version](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject`. This returns the spilled range when one exists. If no spilled range exists, it returns an object whose `isNullObject` property is set to `true`. Your code then evaluates this property to determine whether the spill range exists.
 
 ### Get the spill range from a formula
 

@@ -26,7 +26,7 @@ Group rows or columns of a range together to create an [outline](https://support
 
 An outline can have a hierarchy, where smaller groups are nested under larger groups. This allows the outline to be viewed at different levels. Changing the visible outline level can be done programmatically through the [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showoutlinelevels-member(1)) method. Excel supports up to eight levels of outline groups.
 
-When you group a range, Excel adds outline controls (the plus and minus buttons) outside the grouped range. By default, the control appears on the row or column after the grouped range. For example, if you group rows 4-9, the control appears on row 10. When users click the minus button, rows 4-9 collapse; when they click the plus button, those rows expand again.
+When you group a range, Excel adds outline controls (the plus and minus buttons) outside the grouped range. By default, the control appears on the row or column after the grouped range. For example, if you group rows 4-9, the control appears on row 10. When users click the minus button, rows 4-9 collapse. When they click the plus button, those rows expand again.
 
 ### Create a multi-level outline
 
