@@ -19,7 +19,6 @@ For the complete list of properties and methods that the `Range` object supports
 - Use `moveTo` to cut and paste (move) cells to a new location.
 - The `copyType` parameter controls what gets copied: formulas, values, formats, or all.
 - Set `skipBlanks` to `true` to preserve existing data in destination cells that correspond to blank source cells.
-- Set `transpose` to `true` to flip rows and columns when copying.
 - Both methods work within a worksheet or across worksheets in the same workbook.
 
 > [!TIP]
@@ -128,42 +127,6 @@ await Excel.run(async (context) => {
 });
 ```
 
-### Transpose data when copying
-
-The `transpose` parameter is useful for converting rows to columns or vice versa, common when reformatting data layouts.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
-
-    // Copy and transpose: a horizontal range becomes vertical.
-    // A1:E1 (1 row, 5 columns) becomes A3:A7 (5 rows, 1 column).
-    sheet.getRange("A3").copyFrom("A1:E1",
-        Excel.RangeCopyType.all,
-        false, // skipBlanks
-        true); // transpose
-
-    await context.sync();
-});
-```
-
-### Copy between worksheets
-
-The `copyFrom` method works across different worksheets in the same workbook, making it easy to duplicate data or templates.
-
-```js
-await Excel.run(async (context) => {
-    let sourceSheet = context.workbook.worksheets.getItem("Template");
-    let targetSheet = context.workbook.worksheets.getItem("Data");
-
-    // Copy a range from the Template sheet to the Data sheet.
-    let sourceRange = sourceSheet.getRange("A1:E10");
-    targetSheet.getRange("A1").copyFrom(sourceRange);
-
-    await context.sync();
-});
-```
-
 ## Cut and paste (move) cells
 
 The [Range.moveTo](/javascript/api/excel/excel.range#excel-excel-range-moveto-member(1)) method moves cells to a new location in the workbook. This cell movement behavior works the same as when cells are moved by [dragging the range border](https://support.microsoft.com/office/803d65eb-6a3e-4534-8c6f-ff12d1c4139e) or when taking the **Cut** and **Paste** actions. Both the formatting and values of the range are moved to the location specified as the `destinationRange` parameter.
@@ -181,22 +144,6 @@ await Excel.run(async (context) => {
 
     // Move the cells "A1:E1" to "G1" (which fills the range "G1:K1").
     sheet.getRange("A1:E1").moveTo("G1");
-    await context.sync();
-});
-```
-
-### Move data between worksheets
-
-The `moveTo` method also works across worksheets, allowing you to reorganize data across different sheets in the workbook.
-
-```js
-await Excel.run(async (context) => {
-    let sourceSheet = context.workbook.worksheets.getItem("OldData");
-    let targetSheet = context.workbook.worksheets.getItem("Archive");
-
-    // Move archived records from OldData sheet to Archive sheet.
-    sourceSheet.getRange("A10:E20").moveTo(targetSheet.getRange("A1"));
-
     await context.sync();
 });
 ```

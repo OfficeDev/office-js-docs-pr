@@ -76,22 +76,6 @@ await Excel.run(async (context) => {
 });
 ```
 
-### Group columns for data organization
-
-Group columns to hide detailed breakdowns while showing summary columns. This is useful for financial reports where you want to show totals by default.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
-
-    // Group columns B-E (monthly details) under column F (quarterly total).
-    // The outline control appears on column F.
-    sheet.getRange("B:E").group(Excel.GroupOption.byColumns);
-
-    await context.sync();
-});
-```
-
 ## Control outline visibility levels
 
 After creating a multi-level outline, programmatically expand or collapse specific levels using `Worksheet.showOutlineLevels`. This is useful for presenting data at different detail levels.
@@ -113,40 +97,6 @@ await Excel.run(async (context) => {
 ## Remove grouping from rows or columns of a range
 
 To ungroup a row or column group, use the [Range.ungroup](/javascript/api/excel/excel.range#excel-excel-range-ungroup-member(1)) method. This removes the outermost level from the outline. If multiple groups of the same row or column type are at the same level within the specified range, all of those groups are ungrouped.
-
-The following code sample removes row grouping from a previously grouped range.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
-
-    // Ungroup rows 4-9, removing the outermost grouping level.
-    sheet.getRange("4:9").ungroup(Excel.GroupOption.byRows);
-
-    await context.sync();
-});
-```
-
-## Practical scenario: Financial reports with collapsible sections
-
-Create a financial statement where users can expand categories to see line-item details.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("IncomeStatement");
-
-    // Group revenue line items (rows 3-7) under Revenue total (row 8).
-    sheet.getRange("3:7").group(Excel.GroupOption.byRows);
-
-    // Group expense line items (rows 10-15) under Expenses total (row 16).
-    sheet.getRange("10:15").group(Excel.GroupOption.byRows);
-
-    // Start with collapsed view showing only totals.
-    sheet.showOutlineLevels(1, 1);
-
-    await context.sync();
-});
-```
 
 ## See also
 

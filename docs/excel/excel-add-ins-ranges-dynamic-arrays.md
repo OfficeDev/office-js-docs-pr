@@ -77,53 +77,6 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Practical scenarios
-
-Dynamic arrays are commonly used in scenarios where you need to work with filtered or transformed data. Here are some practical examples.
-
-### Detect spill errors
-
-When a formula tries to spill but neighboring cells contain data, Excel displays a `#SPILL!` error. Your add-in can detect and handle these situations.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getActiveWorksheet();
-    let formulaCell = sheet.getRange("A1");
-
-    // Try to get the spilling range.
-    let spillRange = formulaCell.getSpillingToRangeOrNullObject();
-    spillRange.load("address");
-    await context.sync();
-
-    if (spillRange.isNullObject) {
-        console.log("No spill detected. The cell may not contain a dynamic array formula or encountered a spill error.");
-    } else {
-        console.log(`Formula spilled into range: ${spillRange.address}`);
-    }
-});
-```
-
-### Work with dynamic array results
-
-Retrieve the entire spilled range and then apply formatting or perform calculations on it.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
-
-    // Cell with dynamic array formula.
-    let formulaCell = sheet.getRange("F1");
-    formulaCell.formulas = [["=FILTER(A1:C10, B1:B10>100)"]];
-
-    // Get the spilled range and apply formatting.
-    let spillRange = formulaCell.getSpillingToRange();
-    spillRange.format.fill.color = "#E8F4EA";
-    spillRange.format.font.bold = true;
-
-    await context.sync();
-});
-```
-
 ## See also
 
 - [Dynamic array formulas in Excel](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531)
