@@ -45,7 +45,7 @@ landingContent:
             url: ../publish/publish.md
 
   # Card (optional)
-  - title: Key Office Add-ins concepts
+  - title: Learn key Office Add-ins concepts
     linkLists:
       - linkListType: overview
         links:
@@ -59,6 +59,20 @@ landingContent:
             url: ../design/add-in-design.md
           - text: Develop Office Add-ins
             url: ../develop/develop-overview.md
+
+  # Card
+  - title: Explore top Outlook scenarios
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Automate workflows with event-based activation
+            url: ../develop/event-based-activation.md
+          - text: Validate and protect messages with Smart Alerts
+            url: onmessagesend-onappointmentsend-events.md
+          - text: Report spam or phishing emails
+            url: spam-reporting.md
+          - text: Seamlessly encrypt and decrypt messages (preview)
+            url: encryption-decryption.md
 
   # Card
   - title: Resources

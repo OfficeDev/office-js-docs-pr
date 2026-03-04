@@ -102,6 +102,8 @@
           href: develop/specify-office-hosts-and-api-requirements.md
         - name: Understand and use platform-specific requirement sets
           href: develop/platform-specific-requirement-sets.md
+        - name: Understand the logic of API requirement configuration
+          href: develop/understand-requirement-configuration.md
         - name: Check for API availability at runtime
           href: develop/specify-api-requirements-runtime.md
       - name: Load sequence of an Office Add-in
@@ -109,6 +111,8 @@
       - name: Initialize your add-in
         href: develop/initialize-add-in.md
         displayName: manifest
+      - name: Connect Office.js to any JavaScript framework
+        href: develop/connect-to-javascript-frameworks.md
       - name: Automatically open a task pane with a document
         href: develop/automatically-open-a-task-pane-with-a-document.md
         displayName: manifest
@@ -130,6 +134,8 @@
         items: 
         - name: Office Add-ins with the unified manifest for Microsoft 365
           href: develop/unified-manifest-overview.md
+        - name: How to use the "requirements" property in the unified manifest for Microsoft 365
+          href: develop/requirements-property-unified-manifest.md
         - name: Compare the add-in only manifest with the unified manifest for Microsoft 365
           href: develop/json-manifest-overview.md
         - name: Convert an add-in to use the unified manifest for Microsoft 365
@@ -163,28 +169,8 @@
       items:
       - name: Overview
         href: develop/overview-authn-authz.md
-      - name: Single sign-on with on-behalf-of flow
-        items:
-        - name: Enable SSO using on-behalf-of flow
-          href: develop/sso-in-office-add-ins.md
-        - name: Quick start
-          href: quickstarts/sso-quickstart.md
-        - name: Register with Microsoft identity platform
-          href: develop/register-sso-add-in-aad-v2.md
-        - name: Get the identity token
-          href: develop/use-sso-to-get-office-signed-in-user-token.md
-        - name: Authorize to Microsoft Graph
-          href: develop/authorize-to-microsoft-graph.md
-        - name: Create an SSO add-in using ASP.NET
-          href: develop/create-sso-office-add-ins-aspnet.md
-        - name: Create an SSO add-in using Node.js
-          href: develop/create-sso-office-add-ins-nodejs.md
-        - name: Troubleshoot error messages
-          href: develop/troubleshoot-sso-in-office-add-ins.md
-      - name: Enable SSO using nested app authentication
+      - name: Enable single sign-on
         href: develop/enable-nested-app-authentication-in-your-add-in.md
-      - name: Nested app authentication FAQ 
-        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
       - name: Office dialog API
         href: develop/auth-with-office-dialog-api.md      
       - name: Identity providers
@@ -193,6 +179,20 @@
         href: develop/authorize-to-microsoft-graph-without-sso.md
       - name: Automatically save passwords in WebView2
         href: develop/auth-save-passwords.md
+      - name: Nested app authentication FAQ 
+        href: outlook/faq-nested-app-auth-outlook-legacy-tokens.md
+      - name: Office legacy single sign-on
+        items:
+        - name: Enable SSO using on-behalf-of flow
+          href: develop/sso-in-office-add-ins.md
+        - name: Register with Microsoft identity platform
+          href: develop/register-sso-add-in-aad-v2.md
+        - name: Get the identity token
+          href: develop/use-sso-to-get-office-signed-in-user-token.md
+        - name: Authorize to Microsoft Graph
+          href: develop/authorize-to-microsoft-graph.md
+        - name: Troubleshoot error messages
+          href: develop/troubleshoot-sso-in-office-add-ins.md
     - name: UI and UX
       items:
       - name: Overview
@@ -257,6 +257,8 @@
             href: develop/create-addin-commands.md
           - name: Create add-in commands with the unified manifest for Microsoft 365
             href: develop/create-addin-commands-unified-manifest.md
+          - name: Find the IDs of built-in Office ribbon tabs
+            href: develop/built-in-ui-ids.md
           - name: Create custom contextual tabs
             href: design/contextual-tabs.md
           - name: Change the availability of add-in commands
@@ -320,24 +322,14 @@
         - name: Quick starts
           items:
           - name: Excel
-            items:
-            - name: Task pane
-              href: quickstarts/excel-quickstart-vs.md
-              displayName: Excel, Visual Studio
-            - name: Content
-              href: quickstarts/excel-quickstart-content.md
-              displayName: Excel, Visual Studio
+            href: quickstarts/excel-quickstart-vs.md
+            displayName: Excel, Visual Studio
           - name: Outlook
             href: quickstarts/outlook-quickstart-vs.md
             displayName: Outlook, Visual Studio
           - name: PowerPoint 
-            items:
-            - name: Task pane
-              href: quickstarts/powerpoint-quickstart-vs.md
-              displayName: PowerPoint, Visual Studio
-            - name: Content
-              href: quickstarts/powerpoint-quickstart-content.md
-              displayName: PowerPoint, Visual Studio
+            href: quickstarts/powerpoint-quickstart-vs.md
+            displayName: PowerPoint, Visual Studio
           - name: Word
             href: quickstarts/word-quickstart-vs.md
             displayName: Word, Visual Studio
@@ -348,8 +340,6 @@
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
-      - name: Develop add-ins with Angular
-        href: develop/add-ins-with-angular2.md
     - name: Special requirements for add-ins on the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
@@ -486,9 +476,6 @@
       displayName: Excel
     - name: Task pane (React)
       href: quickstarts/excel-quickstart-react.md
-      displayName: Excel
-    - name: Content
-      href: quickstarts/excel-quickstart-content.md
       displayName: Excel
   - name: Excel add-in tutorial
     href: tutorials/excel-tutorial.md
@@ -681,6 +668,9 @@
     - name: Manually create JSON metadata
       href: excel/custom-functions-json.md
       displayName: Excel, Custom Functions
+    - name: Manage function visibility
+      href: excel/custom-functions-visibility.md
+      displayName: Excel, Custom Functions
     - name: Custom enums
       href: excel/custom-functions-custom-enums.md
       displayName: Excel, Custom Functions
@@ -692,6 +682,12 @@
       displayName: Excel, Custom Functions
     - name: Work with formula value preview
       href: excel/custom-functions-formula-value-preview.md
+      displayName: Excel, Custom Functions
+    - name: Synchronous custom functions
+      href: excel/custom-functions-synchronous.md
+      displayName: Excel, Custom Functions
+    - name: LAMBDA functions
+      href: excel/custom-functions-lambdas.md
       displayName: Excel, Custom Functions
     - name: Batch custom function remote calls
       href: excel/custom-functions-batching.md
@@ -762,8 +758,6 @@
     displayName: Outlook
   - name: Develop Outlook add-ins for the new Outlook on Windows
     href: outlook/one-outlook.md
-  - name: Outlook add-in design guidelines
-    href: outlook/outlook-addin-design.md
   - name: Outlook JavaScript API
     displayName: Outlook
     items:
@@ -785,6 +779,9 @@
         displayName: outlook, add-ins, mobile
       - name: Add support for Outlook on mobile devices
         href: outlook/add-mobile-support.md
+        displayName: outlook, add-ins, mobile
+      - name: Outlook add-in design guidelines
+        href: outlook/outlook-addin-design.md
         displayName: outlook, add-ins, mobile
       - name: Outlook JavaScript API support on mobile devices
         href: outlook/outlook-mobile-apis.md
@@ -885,18 +882,16 @@
       items:
       - name: Overview
         href: outlook/authentication.md
-      - name: Authenticate with SSO token
-        href: outlook/authenticate-a-user-with-an-sso-token.md
       - name: SSO and CORS in event-based or spam-reporting add-ins
         href: develop/use-sso-in-event-based-activation.md
-      - name: Authenticate with an identity token
-        href: outlook/authenticate-a-user-with-an-identity-token.md
-      - name: Validate an identity token
-        href: outlook/validate-an-identity-token.md
-      - name: Inside the identity token
-        href: outlook/inside-the-identity-token.md
-      - name: "Scenario: Implement single sign-on"
-        href: outlook/implement-sso-in-outlook-add-in.md      
+      - name: On-premises Exchange server authentication
+        items:
+        - name: Authenticate with an identity token
+          href: outlook/authenticate-a-user-with-an-identity-token.md
+        - name: Validate an identity token
+          href: outlook/validate-an-identity-token.md
+        - name: Inside the identity token
+          href: outlook/inside-the-identity-token.md
     - name: Testing and tips
       items:
       - name: Overview
@@ -925,13 +920,8 @@
     href: powerpoint/powerpoint-add-ins.md
     displayName: PowerPoint
   - name: Build your first PowerPoint add-in
-    items:
-    - name: Task pane
-      href: quickstarts/powerpoint-quickstart-yo.md
-      displayName: PowerPoint
-    - name: Content
-      href: quickstarts/powerpoint-quickstart-content.md
-      displayName: PowerPoint
+    href: quickstarts/powerpoint-quickstart-yo.md
+    displayName: PowerPoint
   - name: PowerPoint add-in tutorial
     href: tutorials/powerpoint-tutorial-yo.md
     displayName: PowerPoint

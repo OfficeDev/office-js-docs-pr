@@ -28,11 +28,11 @@ await Excel.run(async (context) => {
 
 ### Data before range is inserted
 
-![Data in Excel before range is inserted.](../images/excel-ranges-start.png)
+:::image type="content" source="../images/excel-ranges-start.png" alt-text="Data in Excel before range is inserted.":::
 
 ### Data after range is inserted
 
-![Data in Excel after range is inserted.](../images/excel-ranges-after-insert.png)
+:::image type="content" source="../images/excel-ranges-after-insert.png" alt-text="Data in Excel after range is inserted.":::
 
 ## See also
 

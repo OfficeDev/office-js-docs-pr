@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 
 In some scenarios, a custom function that doesn't use a [shared runtime](../testing/runtimes.md#shared-runtime) will need to authenticate the user in order to access protected resources. Custom functions that don't use a shared runtime run in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). Because of this, if the add-in has a task pane, you'll need to pass data back and forth between the JavaScript-only runtime and the HTML-supporting runtime used by the task pane. You do this by using the [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) object and a special Dialog API.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 ## OfficeRuntime.storage object
@@ -37,7 +35,7 @@ The following diagram outlines this basic process. The dotted line indicates tha
 1. Your custom function then sets this access token to an item in the `OfficeRuntime.storage`.
 1. Your add-in's task pane accesses the token from `OfficeRuntime.storage`.
 
-![Diagram of custom function using dialog API to get access token, and then share token with task pane through the OfficeRuntime.storage API.](../images/authentication-diagram.png "Authentication diagram.")
+:::image type="content" source="../images/authentication-diagram.png" alt-text="Diagram of custom function using dialog API to get access token, and then share token with task pane through the OfficeRuntime.storage API.":::
 
 ## Storing the token
 

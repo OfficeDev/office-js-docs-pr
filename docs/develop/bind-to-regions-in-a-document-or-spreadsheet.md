@@ -105,7 +105,7 @@ The anonymous function passed as the third _callback_ parameter runs when the bi
 
 The following screenshot shows the built-in range selection prompt in Excel.
 
-![The Select Data dialog.](../images/agave-api-overview-excel-selection-ui.png)
+:::image type="content" source="../images/agave-api-overview-excel-selection-ui.png" alt-text="The Select Data dialog.":::
 
 ## Add a binding to a named item
 

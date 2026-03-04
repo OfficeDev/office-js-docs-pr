@@ -49,7 +49,7 @@ New developer features, including those still in preview, are delivered first to
 
 When the installation process finishes, you'll have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under the About section, you'll see the version and build number, along with Current Channel (Preview). The Microsoft 365 Insider section is displayed or hidden for business customers depending on their company's settings.
 
-![Product information, including the version number, build, and channel.](../images/microsoft-365-insider.png)
+:::image type="content" source="../images/microsoft-365-insider.png" alt-text="Product information, including the version number, build, and channel.":::
 
 ## Minimum Office builds for Office JavaScript API requirement sets
 

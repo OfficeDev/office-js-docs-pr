@@ -1,7 +1,7 @@
 ---
 title: Drag and drop messages and attachments into the task pane
 description: Learn how to enable drag and drop of messages and file attachments into the task pane of your Outlook add-in.
-ms.date: 10/28/2025
+ms.date: 11/27/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -83,6 +83,7 @@ To learn more about Script Lab, see [Explore Office JavaScript API using Script 
 # [Windows (classic) and Mac](#tab/desktop)
 
 In Outlook on Windows (classic) and on Mac, use the [HTML Drag and Drop API](https://developer.mozilla.org/docs/Web/API/HTML_Drag_and_Drop_API) to handle the [DragEvent](https://developer.mozilla.org/docs/Web/API/DragEvent) DOM event. With the `DragEvent` object, you can identify when a user drags an item over the task pane, when they drop the item into the task pane, and what data is associated with the item. When a message is dragged and dropped into a task pane, its format varies depending on the Outlook client.
+
 - **Windows (classic)**: Dropped as a .msg file.
 - **Mac**: Dropped as a .eml file.
 
@@ -90,6 +91,44 @@ Attachments that are dropped into a task pane retain their current format. For a
 
 > [!TIP]
 > In classic Outlook on Windows, if you need the Base64-encoded .eml format to process a message, call [Office.context.mailbox.item.getAsFileAsync](/javascript/api/outlook/office.messageread#outlook-office-messageread-getasfileasync-member(1)).
+
+The following is an example of how to implement the HTML Drag and Drop API in your add-in.
+
+```javascript
+/*
+The JavaScript code assumes that a file drop zone is configured in the HTML for the add-in's task pane. The following is an example.
+<div id="dropZone" style="width:100%;height:200px;border:2px dashed #0078d4;display:flex;align-items:center;justify-content:center;">Drag and drop messages or attachments here</div>
+*/
+const dropZone = document.getElementById("dropZone");
+
+// Allow files to be dragged to the task pane.
+dropZone.addEventListener("dragover", (event) => {
+  event.preventDefault();
+  dropZone.style.backgroundColor = "#e6f2ff";
+});
+
+dropZone.addEventListener("dragleave", () => {
+  dropZone.style.backgroundColor = "white";
+});
+
+// Handle files dropped into the task pane.
+dropZone.addEventListener("drop", async (event) => {
+  event.preventDefault();
+  dropZone.style.backgroundColor = "white";
+
+  const items = event.dataTransfer.items;
+  for (const item of items) {
+    if (item.kind === "file") {
+      const file = item.getAsFile();
+      if (file) {
+        console.log(`Dropped file: ${file.name}, type: ${file.type}`);
+
+        // Perform your file operations here.
+      }
+    }
+  }
+});
+```
 
 ---
 
@@ -100,8 +139,8 @@ Attachments that are dropped into a task pane retain their current format. For a
 The following file types are supported by the drag-and-drop feature.
 
 - **Messages**: Messages in the .eml or .msg format. Additionally, the following types of encrypted messages are also supported.
-    - Messages encrypted using the S/MIME (Secure/Multipurpose Internet Mail Extensions) protocol.
-    - Messages protected by Information Rights Management (IRM) with a sensitivity label that has the **Allow programmatic access** custom policy option set to `true`.
+  - Messages encrypted using the S/MIME (Secure/Multipurpose Internet Mail Extensions) protocol.
+  - Messages protected by Information Rights Management (IRM) with a sensitivity label that has the **Allow programmatic access** custom policy option set to `true`.
 - **Attachments**: File types supported by Outlook. For guidance, see [Blocked attachments in Outlook](https://support.microsoft.com/office/434752e1-02d3-4e90-9124-8b81e49a8519).
 
 > [!TIP]

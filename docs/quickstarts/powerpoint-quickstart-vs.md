@@ -18,13 +18,13 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 1. In Visual Studio, choose **Create a new project**.
 
-2. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
+1. Using the search box, enter **add-in**. Choose **PowerPoint Web Add-in**, then select **Next**.
 
-3. Name your project and select **Create**.
+1. Name your project and select **Create**.
 
-4. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
+1. In the **Create Office Add-in** dialog window, choose **Add new functionalities to PowerPoint**, and then choose **Finish** to create the project.
 
-5. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
+1. Visual Studio creates a solution and its two projects appear in **Solution Explorer**. The **Home.html** file opens in Visual Studio.
 
 ## Explore the Visual Studio solution
 
@@ -54,7 +54,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
     </body>
     ```
 
-2. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
+1. Open the file **Home.js** in the root of the web application project. This file specifies the script for the add-in. Replace the entire contents with the following code and save the file.
 
     ```js
     'use strict';
@@ -100,7 +100,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
     })();
     ```
 
-3. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
+1. Open the file **Home.css** in the root of the web application project. This file specifies the custom styles for the add-in. Replace the entire contents with the following code and save the file.
 
     ```css
     #content-header {
@@ -133,13 +133,13 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 1. Open the add-in only manifest file in the add-in project. This file defines the add-in's settings and capabilities.
 
-2. The `ProviderName` element has a placeholder value. Replace it with your name.
+1. The `ProviderName` element has a placeholder value. Replace it with your name.
 
-3. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
+1. The `DefaultValue` attribute of the `DisplayName` element has a placeholder. Replace it with **My Office Add-in**.
 
-4. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for PowerPoint**.
+1. The `DefaultValue` attribute of the `Description` element has a placeholder. Replace it with **A task pane add-in for PowerPoint**.
 
-5. Save the file.
+1. Save the file.
 
     ```xml
     ...
@@ -155,17 +155,17 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 1. Using Visual Studio, test the newly created PowerPoint add-in by pressing <kbd>F5</kbd> or choosing the **Start** button to launch PowerPoint with the **Show Taskpane** add-in button displayed on the ribbon. The add-in will be hosted locally on IIS.
 
-2. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
+1. In PowerPoint, insert a new blank slide, choose the **Home** tab, and then choose the **Show Taskpane** button on the ribbon to open the add-in task pane.
 
-    ![PowerPoint with the Show Taskpane ribbon button highlighted.](../images/powerpoint_quickstart_addin_1.png)
+    :::image type="content" source="../images/powerpoint-quickstart-add-in-1.png" alt-text="PowerPoint with the Show Taskpane ribbon button highlighted.":::
 
-3. In the task pane, choose the **Insert Image** button to add an image to the selected slide.
+1. In the task pane, choose the **Insert Image** button to add an image to the selected slide.
 
-    ![PowerPoint with an image of a dog displayed on the slide.](../images/powerpoint_quickstart_addin_2.png)
+    :::image type="content" source="../images/powerpoint-quickstart-add-in-2.png" alt-text="PowerPoint with an image of a dog displayed on the slide.":::
 
-4. In the task pane, choose the **Insert Text** button to add text to the selected slide.
+1. In the task pane, choose the **Insert Text** button to add text to the selected slide.
 
-    ![PowerPoint with an image of a dog and the text 'Hello World` on the slide.](../images/powerpoint_quickstart_addin_3.png)
+    :::image type="content" source="../images/powerpoint-quickstart-add-in-3.png" alt-text="PowerPoint with an image of a dog and the text Hello World on the slide.":::
 
 [!include[Console tool note](../includes/console-tool-note.md)]
 

@@ -1,8 +1,9 @@
 ﻿---
 title: Word add-ins overview
 description: Learn the basics of Word add-ins.
-ms.date: 05/29/2025
+ms.date: 02/25/2026
 ms.topic: overview
+ms.update-cycle: 1095-days
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---

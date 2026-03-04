@@ -2,7 +2,7 @@
 title: Managing trust options for Office Add-ins
 description: How to disable trust prompts for users without installed add-ins and how to use group policies for protocol handler trust in the registry when launching add-ins.
 ms.topic: how-to
-ms.date: 09/24/2025
+ms.date: 02/23/2026
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,6 @@ When you share documents that contain add-in metadata, users without the require
 The following scenarios trigger trust prompts when the required add-in isn't installed.
 
 - Documents with custom functions that use a [shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
-- Documents configured to [automatically open a task pane](../develop/automatically-open-a-task-pane-with-a-document.md).
 - Documents configured to [load add-ins when opened](../develop/run-code-on-document-open.md).
 
 You can prevent these prompts from appearing for users who don't have your add-in installed. Disable trust prompts in your document by setting the [Settings.set](/javascript/api/office/office.settings#office-office-settings-set-member(1)) method to set the `"Office.DisableTrustUX"` setting to `true`.

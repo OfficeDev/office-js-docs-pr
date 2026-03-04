@@ -14,7 +14,7 @@ Office Add-ins running on Windows can debug against the Edge runtime directly in
 
 This debugging mode is dynamic, allowing you to set breakpoints while code is running. See changes in your code immediately while the debugger is attached, all without losing your debugging session. Your code changes also persist, so you see the results of multiple changes to your code. The following image shows this extension in action.
 
-![Office Add-in Debugger Extension debugging a section of Excel add-ins.](../images/vs-debugger-extension-for-office-addins.jpg)
+:::image type="content" source="../images/vs-debugger-extension-for-office-addins.jpg" alt-text="Office Add-in Debugger Extension debugging a section of Excel add-ins.":::
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ These instructions assume you have experience using the command line, understand
    > [!IMPORTANT]
    > If your project was created with older versions of Yo Office, you may see the following error dialog box about 10 - 30 seconds after you start debugging (at which point you may have already gone on to another step in this procedure) and it may be hidden behind the dialog box described in the next step.
    >
-   > ![Error that says Configured debug type edge is not supported.](../images/configured-debug-type-error.jpg)
+   > :::image type="content" source="../images/configured-debug-type-error.jpg" alt-text="Error that says Configured debug type edge is not supported.":::
    >
    > Complete the tasks in the [Appendix](#appendix) and then restart this procedure.
 
@@ -63,7 +63,7 @@ These instructions assume you have experience using the command line, understand
 
 1. You're now able to set breakpoints in your project's code and debug. To set breakpoints in Visual Studio Code, hover next to a line of code and select the red circle that appears.
 
-   ![Red circle appears on a line of code in Visual Studio Code.](../images/set-breakpoint.jpg)
+   :::image type="content" source="../images/set-breakpoint.jpg" alt-text="Red circle appears on a line of code in Visual Studio Code.":::
 
 1. Run functionality in your add-in that calls the lines with breakpoints. You'll see that breakpoints have been hit and you can inspect local variables.
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: Requirements for running Office Add-ins
 description: Learn about the client and server requirements that an end user needs to run Office Add-ins.
 ms.date: 11/06/2025
@@ -87,11 +87,11 @@ Specifically for Outlook running on smartphones and non-Windows tablet devices, 
 >
 > **modern**
 >
-> ![The section of the modern Outlook toolbar that says 'Outlook' in blue and white.](../images/outlook-on-the-web-new-toolbar.png)
+> :::image type="content" source="../images/outlook-on-the-web-new-toolbar.png" alt-text="The section of the modern Outlook toolbar that says 'Outlook' in blue and white.":::
 >
 > **classic**
 >
-> ![The classic Outlook toolbar that says 'Office 365' and 'Outlook' in black and white.](../images/outlook-on-the-web-classic-toolbar.png)
+> :::image type="content" source="../images/outlook-on-the-web-classic-toolbar.png" alt-text="The classic Outlook toolbar that says 'Office 365' and 'Outlook' in black and white.":::
 
 ## See also
 

@@ -24,7 +24,7 @@ While you'll likely use the Excel JavaScript API to develop the majority of func
 
 The following image illustrates when you might use the Excel JavaScript API or the Common APIs.
 
-![Differences between the Excel JS API and Common APIs.](../images/excel-js-api-common-api.png)
+:::image type="content" source="../images/excel-js-api-common-api.png" alt-text="Differences between the Excel JS API and Common APIs.":::
 
 ## Excel-specific object model
 
@@ -90,7 +90,7 @@ await Excel.run(async (context) => {
 
 This sample creates the following data in the current worksheet.
 
-![A sales record showing value rows, a formula column, and formatted headers.](../images/excel-overview-range-sample.png)
+:::image type="content" source="../images/excel-overview-range-sample.png" alt-text="A sales record showing value rows, a formula column, and formatted headers.":::
 
 For more information, see [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md).
 
@@ -114,7 +114,7 @@ await Excel.run(async (context) => {
 
 Using this sample code on the worksheet with the previous data creates the following table.
 
-![A table made from the previous sales record.](../images/excel-overview-table-sample.png)
+:::image type="content" source="../images/excel-overview-table-sample.png" alt-text="A table made from the previous sales record.":::
 
 For more information, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).
 
@@ -135,7 +135,7 @@ await Excel.run(async (context) => {
 
 Running this sample on the worksheet with the previous table creates the following chart.
 
-![A column chart showing quantities of three items from the previous sales record.](../images/excel-overview-chart-sample.png)
+:::image type="content" source="../images/excel-overview-chart-sample.png" alt-text="A column chart showing quantities of three items from the previous sales record.":::
 
 For more information, see [Work with charts using the Excel JavaScript API](excel-add-ins-charts.md).
 

@@ -5,10 +5,10 @@ summary: With Word add-ins, you can use familiar web technologies such as HTML, 
 
 metadata:
   title: Word add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
+  description: Landing page that lists resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: word #Required
   ms.topic: landing-page # Required
-  ms.date: 04/03/2024 #Required; mm/dd/yyyy format.
+  ms.date: 02/25/2026 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -35,6 +35,8 @@ landingContent:
             url: ../reference/overview/word-add-ins-reference-overview.md
           - text: Test and debug a Word add-in
             url: ../testing/test-debug-office-add-ins.md
+          - text: Troubleshoot a Word add-in
+            url: word-add-ins-troubleshooting.md
           - text: Deploy and publish a Word add-in
             url: ../publish/publish.md
       - linkListType: sample

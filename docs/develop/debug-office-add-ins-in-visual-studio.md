@@ -193,7 +193,7 @@ Next, Visual Studio does the following:
 
 1. After the tool is open, launch the add-in. The exact steps vary depending on the design of your add-in. Typically, you press a button to open a task pane. In Outlook, in the toolbar at the top of the window, select the **More apps** button, and then select your add-in from the callout that opens.
 
-   ![The More apps button and the callout that it opens with the add-in's name and icon visible along with other app icons.](../images/outlook-more-apps-button.png)
+   :::image type="content" source="../images/outlook-more-apps-button.png" alt-text="The More apps button and the callout that it opens with the add-in's name and icon visible along with other app icons.":::
 
 1. Set breakpoints and step through code by following the instructions in the article [Debug add-ins using developer tools in Microsoft Edge](../testing/debug-add-ins-using-devtools-edge-chromium.md).
 

@@ -16,7 +16,7 @@ This article describes the different permission levels that you declare in your 
 
 A five-level JavaScript API access-permissions model provides the basis for privacy and security for users of your add-ins. The following figure shows the five levels of API permissions you can declare in your add-in's manifest.
 
-![Levels of permissions for add-ins.](../images/office15-app-sdk-task-pane-app-permission.png)
+:::image type="content" source="../images/office15-app-sdk-task-pane-app-permission.png" alt-text="Levels of permissions for add-ins.":::
 
 These permissions specify the subset of the API that the add-in [runtime](../testing/runtimes.md) allows your add-in to use when a user inserts, and then activates (trusts) your add-in. To declare the permission level your add-in requires, specify one of the permission values in the manifest. The markup varies depending on the type of manifest.
 

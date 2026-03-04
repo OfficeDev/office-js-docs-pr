@@ -46,7 +46,7 @@ The basic technique is to precede the variable (or parameter, and so on) with a 
 let subsetRange;
 ```
 
-![Excerpt of IntelliSense for `subsetRange` variable.](../images/intellisense-vs22-var.png)
+:::image type="content" source="../images/intellisense-vs22-var.png" alt-text="Excerpt of IntelliSense for `subsetRange` variable.":::
 
 ### Parameter
 
@@ -57,7 +57,7 @@ function myFunc(paragraphs){
 }
 ```
 
-![Excerpt of IntelliSense for `paras` parameter (`paragraphs` parameter in JavaScript example).](../images/intellisense-vs17-param.png)
+:::image type="content" source="../images/intellisense-vs17-param.png" alt-text="Excerpt of IntelliSense for `paras` parameter (`paragraphs` parameter in JavaScript example).":::
 
 ### Return value
 
@@ -68,7 +68,7 @@ function myFunc() {
 }
 ```
 
-![Excerpt of IntelliSense for `myFunc()` return value.](../images/intellisense-vs17-return.png)
+:::image type="content" source="../images/intellisense-vs17-return.png" alt-text="Excerpt of IntelliSense for `myFunc()` return value.":::
 
 ### Complex types
 
@@ -81,7 +81,7 @@ function myFunc() {
 }
 ```
 
-![IntelliSense for complex type declaration of `let myVar;` for example.](../images/intellisense-vs22-complex-type.png)
+:::image type="content" source="../images/intellisense-vs22-complex-type.png" alt-text="IntelliSense for complex type declaration of `let myVar;` for example.":::
 
 ## See also
 
