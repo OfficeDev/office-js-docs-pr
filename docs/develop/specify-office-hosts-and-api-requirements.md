@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements with the add-in only manifest
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 02/12/2025
+ms.date: 02/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -106,7 +106,7 @@ If the Office application or platform doesn't support the requirement sets or AP
 The following code example shows how to configure an add-in that is installable in all Office applications that support the following:
 
 - `TableBindings` requirement set, which has a minimum version of "1.1".
-- `OOXML` requirement set, which has a minimum version of "1.1".
+- `OoxmlCoercion` requirement set, which has a minimum version of "1.1".
 - `Document.getSelectedDataAsync` method.
 
 ```XML
@@ -115,7 +115,7 @@ The following code example shows how to configure an add-in that is installable 
   <Requirements>
      <Sets DefaultMinVersion="1.1">
         <Set Name="TableBindings" MinVersion="1.1"/>
-        <Set Name="OOXML" MinVersion="1.1"/>
+        <Set Name="OoxmlCoercion" MinVersion="1.1"/>
      </Sets>
      <Methods>
         <Method Name="Document.getSelectedDataAsync"/>
