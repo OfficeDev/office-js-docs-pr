@@ -53,7 +53,7 @@ await Excel.run(async (context) => {
 
 When working with a cell that contains a spilled value, you can trace back to the original formula cell using the [Range.getSpillParent](/javascript/api/excel/excel.range#excel-excel-range-getspillparent-member(1)) method. This is useful when you need to identify which formula is responsible for populating a particular cell.
 
-The `getSpillParent` method only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells throws an error. Use `Range.getSpillParentOrNullObject` to avoid throwing an error. For more information, see [*OrNullObject methods and properties](./develop/application-specific-api-model.md#ornullobject-methods-and-properties).
+The `getSpillParent` method only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells throws an error. Use `Range.getSpillParentOrNullObject` to avoid throwing an error. For more information, see [*OrNullObject methods and properties](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 
 ### Get the formula cell from a spilled value
 
