@@ -64,7 +64,7 @@ The `skipBlanks` parameter sets whether blank cells are copied into the destinat
 
 #### `transpose` parameter
 
-The `transpose` parameter determines whether the data is transposed, meaning its rows and columns are switched, into the source location. A transposed range is flipped along the main diagonal, so rows **1**, **2**, and **3** will become columns **A**, **B**, and **C**.
+The `transpose` parameter determines whether the data is transposed, meaning its rows and columns are switched, into the destination. A transposed range is flipped along the main diagonal, so rows **1**, **2**, and **3** will become columns **A**, **B**, and **C**.
 
 ### Copy with skipBlanks
 

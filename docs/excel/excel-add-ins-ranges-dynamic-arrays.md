@@ -16,14 +16,14 @@ For the complete list of properties and methods that the `Range` object supports
 - Dynamic array formulas automatically spill results into neighboring cells.
 - Use `getSpillingToRange` to find all cells filled by a dynamic array formula.
 - Use `getSpillParent` to find the original cell containing the formula that created a spilled value.
-- Both methods have `OrNullObject` versions that return `null` instead of throwing errors when no spill exists.
+- Both methods have `*OrNullObject` versions to avoid throwing errors when no spill exists.
 - Only single-cell ranges can call `getSpillParent`. Calling it on multi-cell ranges throws an error.
 
 ## Dynamic arrays
 
 Some Excel formulas return [dynamic arrays](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531). These formulas automatically fill values into multiple cells beyond the original formula cell. This expansion is called "spilling". Common dynamic array formulas include `FILTER`, `SORT`, `UNIQUE`, `SEQUENCE`, and simple array references like `=A1:D1`.
 
-When a formula spills, Excel automatically populates neighboring cells with the results. Your add-in can programmatically discover which cells contain these spilled values using the [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) method. If you need to handle cases where a cell might not contain a spilling formula, use the [*OrNullObject version](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject`, which returns `null` instead of throwing an error.
+When a formula spills, Excel automatically populates neighboring cells with the results. Your add-in can programmatically discover which cells contain these spilled values using the [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) method. To handle cases where a cell might not contain a spilling formula, use the [*OrNullObject version](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject`, which returns the specified item if it exists, or it returns an object whose `isNullObject` property is set to `true`. Your code can then evaluate this property to determine whether the object exists.
 
 ### Get the spill range from a formula
 
@@ -53,7 +53,7 @@ await Excel.run(async (context) => {
 
 When working with a cell that contains a spilled value, you can trace back to the original formula cell using the [Range.getSpillParent](/javascript/api/excel/excel.range#excel-excel-range-getspillparent-member(1)) method. This is useful when you need to identify which formula is responsible for populating a particular cell.
 
-The `getSpillParent` method only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells throws an error. Use `Range.getSpillParentOrNullObject` to return `null` instead of throwing an error when the cell doesn't contain a spilled value.
+The `getSpillParent` method only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells throws an error. Use `Range.getSpillParentOrNullObject` to avoid throwing an error. For more information, see [*OrNullObject methods and properties](./develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 
 ### Get the formula cell from a spilled value
 
