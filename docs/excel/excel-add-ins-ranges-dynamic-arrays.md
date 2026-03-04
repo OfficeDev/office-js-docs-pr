@@ -23,7 +23,9 @@ For the complete list of properties and methods that the `Range` object supports
 
 Some Excel formulas return [dynamic arrays](https://support.microsoft.com/office/205c6b06-03ba-4151-89a1-87a7eb36e531). These formulas automatically fill values into multiple cells beyond the original formula cell. This expansion is called "spilling". Common dynamic array formulas include `FILTER`, `SORT`, `UNIQUE`, `SEQUENCE`, and simple array references like `=A1:D1`.
 
-When a formula spills, Excel automatically populates neighboring cells with the results. Your add-in can programmatically discover which cells contain these spilled values using the [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) method. To handle cases where a cell might not contain a spilling formula, use the [*OrNullObject version](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject`, which returns the spill range when one exists, or returns an object whose `isNullObject` property is set to `true` when there is no spill range. Your code can then evaluate this property to determine whether the spill range exists.
+When a formula spills, Excel automatically populates neighboring cells with the results. Your add-in can programmatically discover which cells contain these spilled values using the [Range.getSpillingToRange](/javascript/api/excel/excel.range#excel-excel-range-getspillingtorange-member(1)) method.
+
+To handle cases where a cell might not contain a spilled formula, use the [*OrNullObject version](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) `Range.getSpillingToRangeOrNullObject`. This returns the spilled range when one exists. If no spilled range exists, it returns an object whose `isNullObject` property is set to `true`. Your code can then evaluate this property to determine whether the spill range exists.
 
 ### Get the spill range from a formula
 
@@ -53,11 +55,11 @@ await Excel.run(async (context) => {
 
 When working with a cell that contains a spilled value, you can trace back to the original formula cell using the [Range.getSpillParent](/javascript/api/excel/excel.range#excel-excel-range-getspillparent-member(1)) method. This is useful when you need to identify which formula is responsible for populating a particular cell.
 
-The `getSpillParent` method only works when the range object is a single cell. Calling `getSpillParent` on a range with multiple cells throws an error. Use `Range.getSpillParentOrNullObject` to avoid throwing an error. For more information, see [*OrNullObject methods and properties](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
+The `getSpillParent` method only works when the input range object is a single cell. Calling `getSpillParent` on a range with multiple cells throws an error. Use `Range.getSpillParentOrNullObject` to avoid an error. For more information about `*OrNullObject` methods, see [*OrNullObject methods and properties](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 
 ### Get the formula cell from a spilled value
 
-The following code sample shows how to find the parent cell of a spilled value. When you select a cell that contains a spilled value and run this code, it identifies and highlights the original formula cell.
+The following code sample shows how to find the parent cell of a spilled value. When you choose a cell that contains a spilled value and run this code, it returns the address of the spill parent.
 
 ```js
 await Excel.run(async (context) => {
@@ -66,13 +68,13 @@ await Excel.run(async (context) => {
     // Get a cell that contains a spilled value.
     let spilledCell = sheet.getRange("H4");
 
-    // Get the parent cell whose formula is spilling into spilledCell.
+    // Get the parent cell whose formula is spilling into `spilledCell`.
     let spillParentRange = spilledCell.getSpillParent();
     spillParentRange.load("address");
 
     await context.sync();
 
-    // This will log the address of the cell containing the formula.
+    // Log the address of the cell containing the formula.
     console.log(`The spill parent of H4 is ${spillParentRange.address}.`);
 });
 ```

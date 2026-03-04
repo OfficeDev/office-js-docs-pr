@@ -97,7 +97,7 @@ await Excel.run(async (context) => {
 
 ### Copy only values
 
-Copying only values is useful when you want to duplicate the results of formulas without copying the formulas themselves. This is equivalent to using **Paste Special > Values** in the Excel UI.
+Copying only values is useful when you want to duplicate the results of formulas without copying the formulas themselves. This is equivalent to using **Paste Special** > **Values** in the Excel UI.
 
 ```js
 await Excel.run(async (context) => {
@@ -113,7 +113,7 @@ await Excel.run(async (context) => {
 
 ### Copy only formatting
 
-Copying only formatting allows you to apply a formatting template to different data. This is equivalent to using **Paste Special > Formats** in the Excel UI.
+Copying only formatting allows you to apply a formatting template to different data. This is equivalent to using **Paste Special** > **Formats** in the Excel UI.
 
 ```js
 await Excel.run(async (context) => {

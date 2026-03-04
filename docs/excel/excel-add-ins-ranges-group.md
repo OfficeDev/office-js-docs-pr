@@ -17,12 +17,12 @@ For the complete list of properties and methods that the `Range` object supports
 - Use `Range.ungroup` to remove grouping from rows or columns.
 - Outlines support up to eight levels of hierarchy for nested groups.
 - Use `Worksheet.showOutlineLevels` to programmatically expand or collapse outline levels.
-- Grouped ranges don't include the control row or column; only the content that is collapsed.
+- Grouped ranges don't include the control row or column, only the content that is collapsed.
 - Groups can be nested to create multi-level hierarchies for complex data organization.
 
-## Group rows or columns of a range for an outline
+## Group rows or columns for an outline
 
-Rows or columns of a range can be grouped together to create an [outline](https://support.microsoft.com/office/08ce98c4-0063-4d42-8ac7-8278c49e9aff). These groups can be collapsed and expanded to hide and show the corresponding cells. This makes quick analysis of top-line data easier. Use [Range.group](/javascript/api/excel/excel.range#excel-excel-range-group-member(1)) to create these outline groups.
+Group rows or columns of a range together to create an [outline](https://support.microsoft.com/office/08ce98c4-0063-4d42-8ac7-8278c49e9aff). These groups can be collapsed and expanded to hide and show the corresponding cells. This makes quick analysis of top-line data easier. Use [Range.group](/javascript/api/excel/excel.range#excel-excel-range-group-member(1)) to create these outline groups.
 
 An outline can have a hierarchy, where smaller groups are nested under larger groups. This allows the outline to be viewed at different levels. Changing the visible outline level can be done programmatically through the [Worksheet.showOutlineLevels](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-showoutlinelevels-member(1)) method. Excel supports up to eight levels of outline groups.
 
