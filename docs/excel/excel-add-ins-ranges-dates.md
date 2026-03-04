@@ -72,22 +72,6 @@ await Excel.run(async (context) => {
 
 Your add-in needs to format the ranges to display dates in a human-readable form. Excel uses number format codes to control date display. For example, `"[$-409]m/d/yy h:mm AM/PM;@"` displays "12/3/18 3:57 PM". For more information about date and time number formats, see "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
 
-The following code sample shows how to set a date with a specific display format.
-
-```js
-await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
-
-    // Set cell A1 to today's date with format "March 15, 2026"
-    let dateRange = sheet.getRange("A1");
-    let today = moment();
-    dateRange.values = [[today.toOADate()]];
-    dateRange.numberFormat = [["mmmm d, yyyy"]];
-
-    await context.sync();
-});
-```
-
 ## See also
 
 - [Review guidelines for customizing a number format](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)
