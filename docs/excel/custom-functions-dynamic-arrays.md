@@ -115,10 +115,6 @@ Dynamic arrays are useful for processing and transforming input data. The follow
  * @returns {any[][]} A dynamic array showing numbers and their squares.
  */
 function calculateSquares(numbers) {
-  if (!Array.isArray(numbers)) {
-    numbers = [[numbers]];
-  }
-
   // Create header row.
   const result = [['Number', 'Square']];
 

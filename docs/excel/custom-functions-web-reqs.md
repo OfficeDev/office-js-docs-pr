@@ -150,7 +150,7 @@ The following example shows a streaming function that fetches stock prices from 
  * @param {CustomFunctions.StreamingInvocation<number>} invocation
  */
 function stockPrice(ticker, invocation) {
-  const updateInterval = 10000; // Update every 10 seconds
+  const updateInterval = 10000; // Update every 10 seconds.
 
   const timer = setInterval(() => {
     // Replace with your actual API endpoint.
@@ -160,7 +160,10 @@ function stockPrice(ticker, invocation) {
         invocation.setResult(data.price);
       })
       .catch(error => {
-        invocation.setResult("#ERROR: " + error.message);
+        // Return the #N/A error if stock price is unavailable.
+        invocation.setResult(
+          new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable)
+        );
       });
   }, updateInterval);
 
@@ -225,7 +228,10 @@ function streamWebSocket(symbol, invocation) {
   };
 
   ws.onerror = (error) => {
-    invocation.setResult("#ERROR: Connection failed");
+    // Return the #N/A error connection fails.
+    invocation.setResult(
+      new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable)
+    );
   };
 
   invocation.onCanceled = () => {
