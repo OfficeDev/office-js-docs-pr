@@ -58,7 +58,7 @@ When you specify a blank value for a property (such as two quotation marks with 
 
 - If you specify a blank value for the `values` property of a range, the content of the range is cleared.
 - If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.
-- If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.
+- If you specify a blank value for the `formulas` property and `formulasLocals` property, the formula values are cleared.
 
 The following code sample shows clearing values from a range.
 
@@ -83,7 +83,7 @@ range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
 ```
 
 ```js
-range.formula = [['', '', '=Rand()']];
+range.formulas = [['', '', '=Rand()']];
 ```
 
 ## See also

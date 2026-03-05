@@ -1,6 +1,6 @@
 ---
 title: Overview of data types in Excel add-ins
-description: Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entities, arrays within entities, and enhanced errors as data types.
+description: Data types in the Excel JavaScript API enable Office Add-in developers to work with formatted number values, web images, entities and linked entities, and enhanced errors as data types.
 ms.date: 03/03/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
@@ -28,7 +28,7 @@ Explore data types with the following resources.
 
 1. Learn data types basics in the [Excel data types core concepts](excel-data-types-concepts.md) article.
 1. Install [Script Lab](../overview/explore-with-script-lab.md) in Excel and explore the **Data types** section in our **Samples** library.
-1. Learn how to extend Excel beyond a 2-dimensional grid with the [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md) and [Use cards with cell value types](excel-data-types-entity-card.md) articles.
+1. Learn how to extend Excel beyond a 2-dimensional grid with the [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md) and [Use cards with cell value data types](excel-data-types-entity-card.md) articles.
 1. Try the [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) sample in our [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) repository.
 1. Learn how to [create your own linked entities](excel-data-types-linked-entity-cell-values.md).
 
