@@ -228,7 +228,7 @@ function streamWebSocket(symbol, invocation) {
   };
 
   ws.onerror = (error) => {
-    // Return the #N/A error connection fails.
+    // Return the #N/A error if connection fails.
     invocation.setResult(
       new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable)
     );
