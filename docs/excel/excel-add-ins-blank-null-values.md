@@ -33,7 +33,7 @@ range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 
 ## null input for a property
 
-`null` isn't a valid input for single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.
+`null` isn't a valid input for a single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.
 
 ```js
 range.values = null; // This is not a valid snippet. 
@@ -76,7 +76,7 @@ await Excel.run(async (context) => {
 
 ## Blank property values in the response
 
-For read operations, a blank property value in the response (such as two quotation marks with no space in-between `''`) indicates that cell contains no data or value. In the first following example, the first and last cell in the range contain no data. In the second example, the first two cells in the range do not contain a formula.
+For read operations, a blank property value in the response (such as two quotation marks with no space in-between `''`) indicates that cell contains no data or value. In the first example below, the first and last cell in the range contain no data. In the second example, the first two cells in the range do not contain a formula.
 
 ```js
 range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
