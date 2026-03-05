@@ -73,7 +73,7 @@ To override this behavior in desktop platforms, add each domain you want to open
 
 ## Client and platform support
 
-Add-ins that use the unified manifest can't be installed on all platforms. We're working hard to bring support to all platforms. In the meantime, to take advantage of the possibilities unlocked by the unified manifest, but still provide an add-in to users on unsupported platforms, you must create and deploy two versions of the add-in; one that uses the unified manifest and one that uses the add-in only manifest. For guidance about managing the two versions, see [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins).
+Add-ins that use the unified manifest can't be installed on all platforms. We're working hard to bring support to all platforms. In the meantime, to take advantage of the possibilities unlocked by the unified manifest, but still provide an add-in to users on unsupported platforms, you must create and deploy two versions of the add-in; one that uses the unified manifest and one that uses the add-in only manifest. For guidance about managing the two versions, see [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins.md).
 
 
 The following tables lists which Office platforms support add-ins that use the unified manifest.
