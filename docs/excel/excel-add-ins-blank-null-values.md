@@ -1,14 +1,24 @@
 ---
 title: Blank and null values in Excel add-ins
-description: Learn how to work with blank an null values in Excel object model methods and properties.
-ms.date: 09/03/2020
+description: Learn how to work with blank and null values with the Excel JavaScript API.
+ms.date: 03/03/2026
 ms.localizationpriority: medium
 ---
-
 
 # Blank and null values in Excel add-ins
 
 `null` and empty strings have special implications in the Excel JavaScript APIs. They're used to represent empty cells, no formatting, or default values. This section details the use of `null` and empty string when getting and setting properties.
+
+> [!TIP]
+> For information about Excel JavaScript API methods that check for null objects instead of throwing `ItemNotFound` exceptions, see [*OrNullObject methods and properties](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
+
+## Key points
+
+- Use `null` in 2-D arrays to leave specific cells unchanged while updating others.
+- `null` isn't valid for single properties like `range.values` or `range.format.fill.color`.
+- Properties return `null` when a range contains multiple different values (like different font colors).
+- Empty strings (`''`) clear or reset property values.
+- Empty strings in responses indicate cells contain no data.
 
 ## null input in 2-D Array
 
@@ -23,13 +33,13 @@ range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 
 ## null input for a property
 
-`null` is not a valid input for single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.
+`null` isn't a valid input for single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.
 
 ```js
 range.values = null; // This is not a valid snippet. 
 ```
 
-Likewise, the following code snippet is not valid, as `null` is not a valid value for the `color` property.
+Likewise, the following code snippet isn't valid, as `null` isn't a valid value for the `color` property.
 
 ```js
 range.format.fill.color =  null;  // This is not a valid snippet. 
@@ -37,22 +47,36 @@ range.format.fill.color =  null;  // This is not a valid snippet.
 
 ## null property values in the response
 
-Formatting properties such as `size` and `color` will contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:
+Formatting properties such as `size` and `color` contain `null` values in the response when different values exist in the specified range. For example, if you retrieve a range and load its `format.font.color` property:
 
-* If all cells in the range have the same font color, `range.format.font.color` specifies that color.
-* If multiple font colors are present within the range, `range.format.font.color` is `null`.
+- If all cells in the range have the same font color, then `range.format.font.color` specifies that color.
+- If multiple font colors are present within the range, then `range.format.font.color` is `null`.
 
 ## Blank input for a property
 
-When you specify a blank value for a property (i.e., two quotation marks with no space in-between `''`), it will be interpreted as an instruction to clear or reset the property. For example:
+When you specify a blank value for a property (such as two quotation marks with no space in-between `''`), it's interpreted as an instruction to clear or reset the property. For example:
 
-* If you specify a blank value for the `values` property of a range, the content of the range is cleared.
-* If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.
-* If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.
+- If you specify a blank value for the `values` property of a range, the content of the range is cleared.
+- If you specify a blank value for the `numberFormat` property, the number format is reset to `General`.
+- If you specify a blank value for the `formula` property and `formulaLocale` property, the formula values are cleared.
+
+The following code sample shows clearing values from a range.
+
+```js
+await Excel.run(async (context) => {
+    let sheet = context.workbook.worksheets.getItem("Sample");
+    let range = sheet.getRange("A1:D1");
+
+    // Clear the values in the range.
+    range.values = [['', '', '', '']];
+
+    await context.sync();
+});
+```
 
 ## Blank property values in the response
 
-For read operations, a blank property value in the response (i.e., two quotation marks with no space in-between `''`) indicates that cell contains no data or value. In the first example below, the first and last cell in the range contain no data. In the second example, the first two cells in the range do not contain a formula.
+For read operations, a blank property value in the response (such as two quotation marks with no space in-between `''`) indicates that cell contains no data or value. In the first following example, the first and last cell in the range contain no data. In the second example, the first two cells in the range do not contain a formula.
 
 ```js
 range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
@@ -61,3 +85,10 @@ range.values = [['', 'some', 'data', 'in', 'other', 'cells', '']];
 ```js
 range.formula = [['', '', '=Rand()']];
 ```
+
+## See also
+
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md)
+- [Set range format using the Excel JavaScript API](excel-add-ins-ranges-set-format.md)
