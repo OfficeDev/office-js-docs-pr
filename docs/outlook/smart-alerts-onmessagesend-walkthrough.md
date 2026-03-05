@@ -1,7 +1,7 @@
-﻿---
+---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 11/20/2025
+ms.date: 02/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ Never miss attaching an important document or photo to your message ever again. 
 The following sections walk you through how to develop an event-based add-in that implements [Smart Alerts](onmessagesend-onappointmentsend-events.md) to handle the `OnMessageSend` event. By the end of this walkthrough, your add-in will automatically check for an attached document or picture mentioned in the message and alert you if it's missing before the message is sent.
 
 > [!NOTE]
-> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms) and the specific sections that describe the features you want to implement.
+> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms) and the specific sections that describe the features you want to implement.
 
 ## Set up your environment
 
@@ -178,7 +178,7 @@ To configure the manifest, select the tab for the type of manifest you are using
                 <LaunchEvents>
                   <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="SoftBlock" />
                 </LaunchEvents>
-                <!-- Identify the runtime to be used (also referenced by the Runtime element). -->
+                <!-- Identifies the runtime to be used. The resid value must match that of the Runtime element that represents the browser runtime. -->
                 <SourceLocation resid="WebViewRuntime.Url"/>
               </ExtensionPoint>
             </DesktopFormFactor>
@@ -326,14 +326,15 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 >   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
 >   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 > - In classic Outlook on Windows, when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
-> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 > - The `errorMessageMarkdown` property is available for preview in Outlook on Mac starting in Version 16.103 (Build 25102433). To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 ## Customize the text and functionality of a button in the dialog (optional)
 
 > [!NOTE]
 >
-> Support to customize a button in the Smart Alerts dialog and program it to open a task pane was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). The ability to program a button to run a function was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - Support to customize a button in the Smart Alerts dialog and program it to open a task pane was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14). The ability to program a button to run a function was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The ability to program a dialog button to run a function is available to preview in Outlook on Mac starting in Version 16.105 (Build 25121117). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. To provide the user with further guidance on how to meet the conditions of your add-in, you can customize the text of a button in the dialog and program it to open a task pane or run a function.
 
@@ -341,11 +342,16 @@ The button you can customize depends on the Outlook client and version on which 
 
 | Client | Customizable dialog button | Specifications |
 | --- | --- | --- |
-| **Windows (classic)**<br>[Supported Mailbox 1.14 versions](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#version-support-for-requirement-sets-in-classic-outlook-on-windows) prior to Version 2412 (Build 18324.20000)<br><br>**Mac**<br>Version 16.100 (25072537) | **Don't Send** | The text and functionality of the **Don't Send** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Don't Send** button appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog.<br><br>![Smart Alerts dialog with the Don't Send button.](../images/outlook-smart-alerts-dont-send.png) |
-| **Web browser**<br><br>**Windows (new)**<br><br>**Windows (classic)**<br>Version 2412 (Build 18324.20000) or later | **Take Action** | The text and functionality of the **Take Action** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Take Action** button only appears in the Smart Alerts dialog when you configure a task pane or function to run from the dialog. When the **Take Action** button is present, the **Don't Send** button is used to cancel the mail item being sent. The text and functionality of the **Don't Send** button can't be customized.<br><br>![Smart Alerts dialog with the Take Action button.](../images/outlook-smart-alerts-take-action.png) |
+| **Windows (classic)**<br>[Supported Mailbox 1.14 versions](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#version-support-for-requirement-sets-in-classic-outlook-on-windows) prior to Version 2412 (Build 18324.20000)<br><br>**Mac**<br>Version 16.100 (25072537) | **Don't Send** | The text and functionality of the **Don't Send** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Don't Send** button appears in the dialog no matter what send mode option you select. By default, selecting **Don't Send** cancels the send operation and closes the dialog.<br><br>:::image type="content" source="../images/outlook-smart-alerts-dont-send.png" alt-text="Smart Alerts dialog with the Don't Send button."::: |
+| **Web browser**<br><br>**Windows (new)**<br><br>**Windows (classic)**<br>Version 2412 (Build 18324.20000) or later<br><br>**Mac**<br>in preview starting in Version 16.105 (Build 25121117) | **Take Action** | The text and functionality of the **Take Action** button can be customized. Customizable functionality includes opening a task pane or running a function.<br><br>The **Take Action** button only appears in the Smart Alerts dialog when you configure a task pane or function to run from the dialog. When the **Take Action** button is present, the **Don't Send** button is used to cancel the mail item being sent. The text and functionality of the **Don't Send** button can't be customized.<br><br>:::image type="content" source="../images/outlook-smart-alerts-take-action.png" alt-text="Smart Alerts dialog with the Take Action button."::: |
 
 > [!NOTE]
-> In classic Outlook on Windows, if you customized the text and functionality of the **Don't Send** button in your Smart Alerts add-in prior to Version 2412 (Build 18324.20000), no additional action is needed to implement the **Take Action** button in the latest supported versions. The default or customized **Take Action** button will automatically appear the next time a user receives a Smart Alerts dialog. Although no implementation changes are needed, we recommend notifying users of this updated experience.
+> If you've already customized the text and functionality of the **Don't Send** button in your Smart Alerts add-in for the following Outlook clients and versions, no additional action is needed to implement the **Take Action** button in the latest supported versions.
+>
+> - Classic Outlook on Windows prior to Version 2412 (Build 18324.20000)
+> - Outlook on Mac prior to Version 16.105 (Build 25121117)
+>
+> The default or customized **Take Action** button will automatically appear the next time a user receives a Smart Alerts dialog. Although no implementation changes are needed, we recommend notifying users of this updated experience.
 >
 > If you only customized the text of the **Don't Send** button in earlier supported versions, your custom text won't appear in the latest versions that support the **Take Action** implementation.
 
@@ -362,7 +368,7 @@ To modify the text of the dialog button or assign it a task pane or function, yo
   > [!TIP]
   > When you configure a button in the Smart Alerts dialog to run a function, a button for the implemented add-in command is also added to the ribbon or action bar of the Outlook client. Use the `contextData` option to distinguish when a user runs the function from the Smart Alerts dialog.
   >
-  > To retrieve the value of the `contextData` option, you must call [Office.context.mailbox.item.getInitializationContextAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) in the JavaScript implementation of your task pane or function command.
+  > To retrieve the value of the `contextData` option, you must call `getInitializationContextAsync` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getinitializationcontextasync-member(1)), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getinitializationcontextasync-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getinitializationcontextasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getinitializationcontextasync-member(1))) in the JavaScript implementation of your task pane or function command.
 
 In this sample, the dialog button is modified to open a task pane.
 
@@ -411,7 +417,7 @@ In this sample, the dialog button is modified to open a task pane.
 
 > [!NOTE]
 >
-> Support to override the send mode option at runtime was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> Support to override the send mode option at runtime was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 
 There may be instances when you want your add-in to implement different send mode options. For example, you may want your add-in to enforce the **block** option on mail items that don't meet the information protection policies of your organization, but only have it apply the **prompt user** option to provide a recommendation if a user adds the incorrect recipient.
 
@@ -464,9 +470,9 @@ To override the send mode option at runtime, you must set the [sendModeOverride]
 If you implemented the optional steps to customize a dialog button or override the send mode option in this walkthrough, you also need to configure the task pane.
 
 > [!NOTE]
-> In Outlook on the web, new Outlook on Windows, supported versions of classic Outlook on Windows prior to Version 2412 (Build 18324.20000), and Outlook on Mac, you can customize the text of the **Don't Send** button without implementing a task pane or function command. Although the task pane is needed in this sample, it isn't a requirement to be able to customize the button text or override the send mode option in these clients.
+> In Outlook on the web, new Outlook on Windows, supported versions of classic Outlook on Windows prior to Version 2412 (Build 18324.20000), and supported versions of Outlook on Mac prior to Version 16.105 (Build 25121117), you can customize the text of the **Don't Send** button without implementing a task pane or function command. Although the task pane is needed in this sample, it isn't a requirement to be able to customize the button text or override the send mode option in these clients.
 >
-> In classic Outlook on Windows starting in Version 2412 (Build 18324.20000), you must implement a task pane or function command to customize the **Take Action** button. This is because the **Take Action** button only appears in the Smart Alerts dialog when a task pane or function command is implemented in the add-in.
+> In classic Outlook on Windows starting in Version 2412 (Build 18324.20000) and in Outlook on Mac starting in Version 16.105 (Build 25121117), you must implement a task pane or function command to customize the **Take Action** button. This is because the **Take Action** button only appears in the Smart Alerts dialog when a task pane or function command is implemented in the add-in.
 
 1. Navigate to the **./src/taskpane** folder, then open **taskpane.html**.
 1. Select the entire `<body>` node (including its open and close tags) and replace it with the following code.
@@ -583,9 +589,11 @@ If you implemented the optional steps to customize a dialog button or override t
 ### Programmatically send the item from the task pane (optional)
 
 > [!NOTE]
-> The `sendAsync` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its supported clients and platforms.
+>
+> - The `sendAsync` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its supported clients and platforms.
+> - The `sendAsync` method is available for preview in Outlook on Mac starting in Version 16.105 (Build 25121117). To test the method, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
-To further streamline a user's experience when recommending changes to the mail items they're sending, call the [sendAsync](/javascript/api/requirement-sets/outlook/requirement-set-1.15/office.context.mailbox.item?view=outlook-js-1.15&preserve-view=true#methods) method in your task pane or function command code.
+To further streamline a user's experience when recommending changes to the mail items they're sending, call the `sendAsync` method ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sendasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-sendasync-member(1))) in your task pane or function command code.
 
 1. In **taskpane.js**, replace the `addAttachment` function with the following code.
 
@@ -614,7 +622,7 @@ To further streamline a user's experience when recommending changes to the mail 
 
     > [!TIP]
     > - Any code implemented to run when `asyncResult.status` is `Office.AsyncResultStatus.Success` or after the `sendAsync` method isn't guaranteed to be processed. This is because the item may have already been sent and the add-in has completed processing. We recommend processing other operations before calling `sendAsync`.
-    > - The `sendAsync` implementation varies between a task pane and function command implementation. For guidance, see the [sendAsync](/javascript/api/requirement-sets/outlook/requirement-set-1.15/office.context.mailbox.item?view=outlook-js-1.15&preserve-view=true#methods) reference documentation.
+    > - The `sendAsync` implementation varies between a task pane and function command implementation. For guidance, see the `sendAsync` reference documentation ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sendasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-sendasync-member(1))).
 
 1. Save your changes.
 1. In **taskpane.html**, update the label of the `add-attachment` button.
@@ -678,26 +686,26 @@ To further streamline a user's experience when recommending changes to the mail 
 
     - Default **Don't Send** button.
 
-        ![Dialog requesting the user to add an attachment to the message.](../images/outlook-win-smart-alerts.png)
+        :::image type="content" source="../images/outlook-win-smart-alerts.png" alt-text="Dialog requesting the user to add an attachment to the message.":::
 
     - Default **Take Action** button.
 
-        ![Dialog with a Take Action button that opens a task pane.](../images/outlook-win-smart-alerts-take-action.png)
+        :::image type="content" source="../images/outlook-win-smart-alerts-take-action.png" alt-text="Dialog with a Take Action button that opens a task pane.":::
 
-    - Customized **Add an attachment** button. Applies to Outlook on the web, new Outlook on Windows, and classic Outlook on Windows (starting in Version 2412 (Build 18324.20000)).
+    - Customized **Add an attachment** button. Applies to Outlook on the web, on Mac (in preview starting in Version 16.105 (Build 25121117)), new Outlook on Windows, and classic Outlook on Windows (starting in Version 2412 (Build 18324.20000)).
 
-        ![Dialog with a customized Take Action button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-take-action.png)
+        :::image type="content" source="../images/outlook-smart-alerts-custom-take-action.png" alt-text="Dialog with a customized Take Action button requesting the user to add an attachment to the message.":::
 
-    - Customized **Add an attachment** button. Applies to classic Outlook on Windows prior to Version 2412 (Build 18324.20000).
+    - Customized **Add an attachment** button. Applies to classic Outlook on Windows prior to Version 2412 (Build 18324.20000) and Outlook on Mac prior to Version 16.105 (Build 25121117).
 
-        ![Dialog with a customized Don't Send button requesting the user to add an attachment to the message.](../images/outlook-smart-alerts-custom-button.png)
+        :::image type="content" source="../images/outlook-smart-alerts-custom-button.png" alt-text="Dialog with a customized Don't Send button requesting the user to add an attachment to the message.":::
 
     > [!NOTE]
     > In supported versions of classic Outlook on Windows prior to Version 2410 (Build 18031.15000), if you assign a task pane to the **Don't Send** button, closing the dialog also opens the specified task pane.
 
 1. Add an attachment to your message. If you implemented the optional step to customize a dialog button, use the task pane to add an attachment.
 
-    ![Task pane with an option to add an attachment.](../images/outlook-smart-alerts-task-pane.png)
+    :::image type="content" source="../images/outlook-smart-alerts-task-pane.png" alt-text="Task pane with an option to add an attachment.":::
 
 1. Send the message. If you implemented the optional step to programmatically send the message from the task pane, the message will send when you select **Add and send**. There should be no alert this time.
 
@@ -717,13 +725,13 @@ If you implemented the optional step to override the send mode option at runtime
 1. Send the message. A dialog appears recommending to attach a copy of the image to the message.
 1. Select **Send Anyway** to send the message as is, or select **Attach a copy** to include a copy before sending the message.
 
-    - Applies to Outlook on the web, new Outlook on Windows, and classic Outlook on Windows (starting in Version 2412 (Build 18324.20000)).
+    - Applies to Outlook on the web, on Mac (in preview starting in Version 16.105 (Build 25121117)), new Outlook on Windows, and classic Outlook on Windows (starting in Version 2412 (Build 18324.20000)).
 
-        ![Customized Smart Alerts dialog with the Send Anyway option available at runtime.](../images/outlook-smart-alerts-custom-button-and-override.png)
+        :::image type="content" source="../images/outlook-smart-alerts-custom-button-and-override.png" alt-text="Customized Smart Alerts dialog with the Send Anyway option available at runtime.":::
 
-    - Applies to classic Outlook on Windows prior to Version 2412 (Build 18324.20000).
+    - Applies to classic Outlook on Windows prior to Version 2412 (Build 18324.20000) and Outlook on Mac prior to Version 16.105 (Build 25121117).
 
-        ![Smart Alerts dialog with the Send Anyway option available at runtime in classic Outlook on Windows prior to Version 2412 (Build 18324.20000).](../images/outlook-smart-alerts-send-mode-override.png)
+        :::image type="content" source="../images/outlook-smart-alerts-send-mode-override.png" alt-text="Smart Alerts dialog with the Send Anyway option available at runtime in classic Outlook on Windows prior to Version 2412 (Build 18324.20000).":::
 
 > [!IMPORTANT]
 > If a Smart Alerts add-in that implements the override feature can't complete processing an event due to an error or is unavailable when the event occurs, it uses the send mode option specified in the manifest.

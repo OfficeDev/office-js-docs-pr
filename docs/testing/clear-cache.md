@@ -127,11 +127,11 @@ To clear the Office cache on Windows 10 when the add-in is running in Microsoft 
 
 6. On the **Network** tab of the new window, select **Clear cache**.
 
-    ![Microsoft Edge DevTools with the Clear cache button highlighted.](../images/edge-devtools-clear-cache.png)
+    :::image type="content" source="../images/edge-devtools-clear-cache.png" alt-text="Microsoft Edge DevTools with the Clear cache button highlighted.":::
 
 7. If completing these steps doesn't produce the desired result, try selecting **Always refresh from server**.
 
-    ![Microsoft Edge DevTools with the Always refresh from server button highlighted.](../images/edge-devtools-refresh-from-server.png)
+    :::image type="content" source="../images/edge-devtools-refresh-from-server.png" alt-text="Microsoft Edge DevTools with the Always refresh from server button highlighted.":::
 
 ## Clear the Office cache on Mac
 
@@ -150,7 +150,7 @@ To clear the web cache in Excel, PowerPoint, and Word, use the personality menu 
 
 From the add-in's task pane, choose the personality menu. Then, choose **Clear Web Cache**.
 
-![The "Clear web cache" option on the personality menu of an add-in's task pane.](../images/mac-clear-cache-menu.png)
+:::image type="content" source="../images/mac-clear-cache-menu.png" alt-text="The 'Clear web cache' option on the personality menu of an add-in's task pane.":::
 
 ### Clear the web and Wef caches
 

@@ -4,7 +4,7 @@ description: Learn how to publish updates to an Office Add-in to use Microsoft G
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: how-to 
-ms.date: 12/18/2024
+ms.date: 12/15/2025
 ---
 
 # Publish an add-in that requires admin consent for Microsoft Graph scopes
@@ -55,7 +55,7 @@ https://login.microsoftonline.com/organizations/v2.0/adminconsent?client_id=63e6
 
 ## Get admin consent via the unified manifest
 
-You can also get admin consent as an automatic part of the deployment workflow when your add-in is deployed. To do this, add the `webApplicationInfo` property to your unified manifest. Then the admin deploys the updated manifest, either through central deployment, or from an update through Microsoft Marketplace. When the admin deploys the updated manifest, they are automatically prompted to consent to the scopes required by the add-in. If they don't consent, the updated add-in will not deploy.
+You can also get admin consent as an automatic part of the deployment workflow when your add-in is deployed. To do this, add the `webApplicationInfo` property to your unified manifest. Then the admin deploys the updated manifest, either through central deployment, or from an update through Microsoft Marketplace. When the admin deploys the updated manifest, they are automatically prompted to consent to the scopes required by the add-in. The admin can then choose to consent to static scopes declared in the add-in's app registration.
 
 ### Add Graph scopes to app registration
 

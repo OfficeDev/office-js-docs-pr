@@ -16,7 +16,7 @@ We recommend that you use [Fluent UI](../design/add-in-design.md) to create the 
 
 Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figure.
 
-![Line chart with title, axes, legend, and plot area labeled.](../images/excel-charts-visualization.png)
+:::image type="content" source="../images/excel-charts-visualization.png" alt-text="Line chart with title, axes, legend, and plot area labeled.":::
 
 ### Chart titles
 
@@ -65,7 +65,7 @@ Light grays are most effective for gridlines. Explore the following Fluent UI ne
 
 The following image shows a data visualization with gridlines.
 
-![Data visualization of line chart with gridlines.](../images/data-visualization.png)
+:::image type="content" source="../images/data-visualization.png" alt-text="Data visualization of line chart with gridlines.":::
 
 ### Legends
 

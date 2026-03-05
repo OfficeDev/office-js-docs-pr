@@ -23,7 +23,7 @@ In this article, you'll walk through the process of building a OneNote task pane
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `OneNote`
 
-![The prompts and answers for the Yeoman generator in a command line interface.](../images/yo-office-onenote.png)
+:::image type="content" source="../images/yo-office-onenote.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -88,7 +88,7 @@ try {
 
     The following image shows the **MY ADD-INS** tab for consumer notebooks.
 
-    ![The Office Add-ins dialog showing the MY ADD-INS tab.](../images/onenote-office-add-ins-dialog.png)
+    :::image type="content" source="../images/onenote-office-add-ins-dialog.png" alt-text="The Office Add-ins dialog showing the MY ADD-INS tab.":::
 
 1. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
 
@@ -96,7 +96,7 @@ try {
 
 1. At the bottom of the task pane, choose the **Run** link to set the page title and add an outline to the body of the page.
 
-    ![The add-in built from this walkthrough, where the Show Taskpane ribbon button was used to open the task pane in OneNote.](../images/onenote-first-add-in-4.png)
+    :::image type="content" source="../images/onenote-first-add-in-4.png" alt-text="The add-in built from this walkthrough, where the Show Taskpane ribbon button was used to open the task pane in OneNote.":::
 
 1. When you want to stop the local web server and uninstall the add-in, follow these instructions:
 

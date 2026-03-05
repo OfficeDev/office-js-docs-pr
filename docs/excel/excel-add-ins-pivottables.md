@@ -38,7 +38,7 @@ The [PivotTable](/javascript/api/excel/excel.pivottable) is the central object f
 
 Let's look at how these relationships apply to some example data. The following data describes fruit sales from various farms. It will be the example throughout this article.
 
-![A collection of fruit sales of different types from different farms.](../images/excel-pivots-raw-data.png)
+:::image type="content" source="../images/excel-pivots-raw-data.png" alt-text="A collection of fruit sales of different types from different farms.":::
 
 This fruit farm sales data will be used to make a PivotTable. Each column, such as **Types**, is a `PivotHierarchy`. The **Types** hierarchy contains the **Types** field. The **Types** field contains the items **Apple**, **Kiwi**, **Lemon**, **Lime**, and **Orange**.
 
@@ -56,7 +56,7 @@ Filter hierarchies include or exclude data from the pivot based on values within
 
 Here is the farm data again, alongside a PivotTable. The PivotTable is using **Farm** and **Type** as the row hierarchies, **Crates Sold at Farm** and **Crates Sold Wholesale** as the data hierarchies (with the default aggregation function of sum), and **Classification** as a filter hierarchy (with **Organic** selected).
 
-![A selection of fruit sales data next to a PivotTable with row, data, and filter hierarchies.](../images/excel-pivot-table-and-data.png)
+:::image type="content" source="../images/excel-pivot-table-and-data.png" alt-text="A selection of fruit sales data next to a PivotTable with row, data, and filter hierarchies.":::
 
 This PivotTable could be generated through the JavaScript API or through the Excel UI. Both options allow for further manipulation through add-ins.
 
@@ -121,7 +121,7 @@ await Excel.run(async (context) => {
 
 Rows and columns define how data is grouped. Adding the **Farm** column groups all the sales around each farm. Adding the **Type** and **Classification** rows further breaks down the data based on what fruit was sold and whether it was organic or not.
 
-![A PivotTable with a Farm column and Type and Classification rows.](../images/excel-pivots-table-rows-and-columns.png)
+:::image type="content" source="../images/excel-pivots-table-rows-and-columns.png" alt-text="A PivotTable with a Farm column and Type and Classification rows.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -155,7 +155,7 @@ Data hierarchies fill the PivotTable with information to combine based on the ro
 
 In the example, both **Farm** and **Type** are rows, with the crate sales as the data.
 
-![A PivotTable showing the total sales of different fruit based on the farm they came from.](../images/excel-pivots-data-hierarchy.png)
+:::image type="content" source="../images/excel-pivots-data-hierarchy.png" alt-text="A PivotTable showing the total sales of different fruit based on the farm they came from.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -180,7 +180,7 @@ A [PivotLayout](/javascript/api/excel/excel.pivotlayout) defines the placement o
 
 The following diagram shows which layout function calls correspond to which ranges of the PivotTable.
 
-![A diagram showing which sections of a PivotTable are returned by the layout's get range functions.](../images/excel-pivots-layout-breakdown.png)
+:::image type="content" source="../images/excel-pivots-layout-breakdown.png" alt-text="A diagram showing which sections of a PivotTable are returned by the layout's get range functions.":::
 
 ### Get data from the PivotTable
 
@@ -213,11 +213,11 @@ The following examples use the outline and tabular styles, respectively. The cod
 
 #### Outline layout
 
-![A PivotTable using the outline layout.](../images/excel-pivots-outline-layout.png)
+:::image type="content" source="../images/excel-pivots-outline-layout.png" alt-text="A PivotTable using the outline layout.":::
 
 #### Tabular layout
 
-![A PivotTable using the tabular layout.](../images/excel-pivots-tabular-layout.png)
+:::image type="content" source="../images/excel-pivots-tabular-layout.png" alt-text="A PivotTable using the tabular layout.":::
 
 #### PivotLayout type switch code sample
 
@@ -415,7 +415,7 @@ await Excel.run(async (context) => {
 
 [Slicers](/javascript/api/excel/excel.slicer) allow data to be filtered from an Excel PivotTable or table. A slicer uses values from a specified column or PivotField to filter corresponding rows. These values are stored as [SlicerItem](/javascript/api/excel/excel.sliceritem) objects in the `Slicer`. Your add-in can adjust these filters, as can users ([through the Excel UI](https://support.microsoft.com/office/249f966b-a9d5-4b0f-b31a-12651785d29d)). The slicer sits on top of the worksheet in the drawing layer, as shown in the following screenshot.
 
-![A slicer filtering data on a PivotTable.](../images/excel-slicer.png)
+:::image type="content" source="../images/excel-slicer.png" alt-text="A slicer filtering data on a PivotTable.":::
 
 > [!NOTE]
 > The techniques described in this section focus on how to use slicers connected to PivotTables. The same techniques also apply to using slicers connected to tables.
@@ -534,7 +534,7 @@ The following example sets the calculation on the **Sum of Crates Sold at Farm**
 We still want the granularity to extend to the fruit type level, so we'll use the **Type** row hierarchy and its underlying field.
 The example also has **Farm** as the first row hierarchy, so the farm total entries display the percentage each farm is responsible for producing as well.
 
-![A PivotTable showing the percentages of fruit sales relative to the grand total for both individual farms and individual fruit types within each farm.](../images/excel-pivots-showas-percentage.png)
+:::image type="content" source="../images/excel-pivots-showas-percentage.png" alt-text="A PivotTable showing the percentages of fruit sales relative to the grand total for both individual farms and individual fruit types within each farm.":::
 
 ```js
 await Excel.run(async (context) => {
@@ -558,7 +558,7 @@ The previous example set the calculation to the column, relative to the field of
 The following example shows the `differenceFrom` calculation. It displays the difference of the farm crate sales data hierarchy entries relative to those of **A Farms**.
 The `baseField` is **Farm**, so we see the differences between the other farms, as well as breakdowns for each type of like fruit (**Type** is also a row hierarchy in this example).
 
-![A PivotTable showing the differences of fruit sales between "A Farms" and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If "A Farms" did not sell a particular type of fruit, "#N/A" is displayed.](../images/excel-pivots-showas-differencefrom.png)
+:::image type="content" source="../images/excel-pivots-showas-differencefrom.png" alt-text="A PivotTable showing the differences of fruit sales between 'A Farms' and the others. This shows both the difference in total fruit sales of the farms and the sales of types of fruit. If 'A Farms' did not sell a particular type of fruit, '#N/A' is displayed.":::
 
 ```js
 await Excel.run(async (context) => {

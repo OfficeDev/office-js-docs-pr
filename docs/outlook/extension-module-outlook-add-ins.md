@@ -23,20 +23,20 @@ To create and run module extension add-ins, you must:
 
 To open a module extension, navigate to the Outlook navigation bar, select **More Apps**, then choose the module extension add-in.
 
-![Available modules and module extension add-ins in the More Apps flyout.](../images/outlook-updated-navigation-bar.png)
+:::image type="content" source="../images/outlook-updated-navigation-bar.png" alt-text="Available modules and module extension add-ins in the More Apps flyout.":::
 
 > [!TIP]
 > In older versions of classic Outlook on Windows, the navigation bar appears at the bottom of the window. Access to a module extension varies depending on the layout of the navigation bar and the number of available module extensions.
 >
 > - If the user has compact navigation selected, the navigation bar has an icon that shows an extension is loaded.
 >
->   ![Icons of the modules and add-ins displayed in a compact navigation bar.](../images/outlook-module-navigationbar-compact.png)
+>   :::image type="content" source="../images/outlook-module-navigationbar-compact.png" alt-text="Icons of the modules and add-ins displayed in a compact navigation bar.":::
 > - If the user isn't using compact navigation, the navigation bar will display the name of the add-in.
 >
->   ![The names of the modules and add-ins shown in an expanded navigation bar.](../images/outlook-module-navigationbar-one.png)
+>   :::image type="content" source="../images/outlook-module-navigationbar-one.png" alt-text="The names of the modules and add-ins shown in an expanded navigation bar.":::
 > - If more than one add-in is loaded, the **Add-ins** options is displayed in the navigation bar. Select **Add-ins**, then choose the add-in you want to use.
 >
->   ![The Add-ins option displayed in the navigation bar if more than one add-in is loaded.](../images/outlook-module-navigationbar-more.png)
+>   :::image type="content" source="../images/outlook-module-navigationbar-more.png" alt-text="The Add-ins option displayed in the navigation bar if more than one add-in is loaded.":::
 
 ## Configure a module extension
 
@@ -44,7 +44,7 @@ When you select a module extension add-in, Outlook replaces the built-in module 
 
 To test and learn how to configure a module extension, see the [Office Add-ins module extension sample](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ModuleExtension).
 
-![The user interface of a sample module extension.](../images/outlook-module-extension.png)
+:::image type="content" source="../images/outlook-module-extension.png" alt-text="The user interface of a sample module extension.":::
 
 ## Example
 

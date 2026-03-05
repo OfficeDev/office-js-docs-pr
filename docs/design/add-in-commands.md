@@ -1,4 +1,4 @@
-﻿---
+---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
 ms.date: 09/30/2025
@@ -49,7 +49,7 @@ In Office on the web, if you're using the single-line or simplified ribbon layou
 
 The following shows an example of add-in commands in a custom group on the **Data** tab of the Excel ribbon.
 
-![Sample add-in commands highlighted in the Excel ribbon.](../images/add-in-commands-1.png)
+:::image type="content" source="../images/add-in-commands-1.png" alt-text="Sample add-in commands highlighted in the Excel ribbon.":::
 
 ### Outlook
 
@@ -59,7 +59,7 @@ For Outlook, when you want an add-in command on a built-in ribbon tab, rather th
 
 A dropdown menu add-in command defines a static list of items. The menu can be any mix of items that execute a function or that open a task pane. Submenus aren't supported.
 
-![A button that drops down a menu on the Outlook ribbon.](../images/commands-menu-button-1.png)
+:::image type="content" source="../images/commands-menu-button-1.png" alt-text="A button that drops down a menu on the Outlook ribbon.":::
 
 ### Grouped add-in commands on the ribbon
 

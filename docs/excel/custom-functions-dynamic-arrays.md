@@ -11,7 +11,7 @@ You can return multiple results from your custom function which will be returned
 
 The following image shows how the `SORT` function spills down into neighboring cells. Your custom function can also return multiple results like this.
 
-![Screen shot of the `SORT` function displaying multiple results down into multiple cells.](../images/dynamic-array-spill.png)
+:::image type="content" source="../images/dynamic-array-spill.png" alt-text="Screen shot of the `SORT` function displaying multiple results down into multiple cells.":::
 
 To create a custom function that is a dynamic array formula, it must return a two-dimensional array of values. If the results spill into neighboring cells that already have values, the formula will display a `#SPILL!` error.
 

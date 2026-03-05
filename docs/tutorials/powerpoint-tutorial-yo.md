@@ -1,7 +1,7 @@
 ---
 title: PowerPoint add-in tutorial
 description: "In this tutorial, you'll build a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides."
-ms.date: 11/20/2024
+ms.date: 12/11/2025
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
@@ -32,14 +32,33 @@ In this tutorial, you'll create a PowerPoint task pane add-in that:
 
 ### Create the add-in project
 
+Decide the type of manifest that you'd like to use, either the **unified manifest for Microsoft 365** or the **add-in only manifest**. To learn more about them, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+
+# [Unified manifest for Microsoft 365 (preview)](#tab/jsonmanifest)
+
+> [!NOTE]
+> Using the unified manifest for Microsoft 365 with PowerPoint add-ins is in public developer preview. The unified manifest for Microsoft 365 shouldn't be used in production PowerPoint add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
+
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-- **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `JavaScript`
+- **Choose a project type:** `Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `PowerPoint`
 
-:::image type="content" source="../images/yo-office-powerpoint-xml-manifest.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface.":::
+:::image type="content" source="../images/yo-office-powerpoint-json-manifest-preview.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the unified manifest is selected.":::
+
+# [Add-in only manifest](#tab/xmlmanifest)
+
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
+
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `TypeScript`
+- **What do you want to name your add-in?** `My Office Add-in`
+- **Which Office client application would you like to support?** `PowerPoint`
+
+:::image type="content" source="../images/yo-office-powerpoint-xml-manifest-ts.png" alt-text="The prompts and answers for the Yeoman generator in a command line interface when the add-in only manifest is selected.":::
+
+---
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -107,7 +126,7 @@ Complete the following steps to add code that inserts an image into a slide.
     <button class="ms-Button" id="insert-image">Insert Image</button><br/><br/>
     ```
 
-1. Open the file **./src/taskpane/taskpane.js**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. Replace the entire contents with the following code and save the file.
+1. Open the file **./src/taskpane/taskpane.ts**. This file contains the Office JavaScript API code that facilitates interaction between the task pane and the Office client application. Replace the entire contents with the following code and save the file.
 
     ```js
     /*
@@ -157,19 +176,19 @@ Complete the following steps to add code that inserts an image into a slide.
     }
     ```
 
-1. In the **taskpane.js** file above the `Office.onReady` function call near the top of the file, replace `TODO1` with the following code. This code imports the variable that you defined previously in the file **./base64Image.js**.
+1. In the **taskpane.ts** file above the `Office.onReady` function call near the top of the file, replace `TODO1` with the following code. This code imports the variable that you defined previously in the file **./base64Image.js**.
 
     ```js
     import { base64Image } from "../../base64Image";
     ```
 
-1. In the **taskpane.js** file, replace `TODO2` with the following code to assign the event handler for the **Insert Image** button.
+1. In the **taskpane.ts** file, replace `TODO2` with the following code to assign the event handler for the **Insert Image** button.
 
     ```js
     document.getElementById("insert-image").onclick = () => clearMessage(insertImage);
     ```
 
-1. In the **taskpane.js** file, replace `TODO3` with the following code to define the `insertImage` function. This function uses the Office JavaScript API to insert the image into the document. Note:
+1. In the **taskpane.ts** file, replace `TODO3` with the following code to define the `insertImage` function. This function uses the Office JavaScript API to insert the image into the document. Note:
 
     - The `coercionType` option that's specified as the second parameter of the `setSelectedDataAsync` request indicates the type of data being inserted.
 
@@ -294,13 +313,13 @@ Complete the following steps to add code that inserts text into the title slide 
     <button class="ms-Button" id="insert-text">Insert Text</button><br/><br/>
     ```
 
-1. In the **taskpane.js** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
+1. In the **taskpane.ts** file, replace `TODO4` with the following code to assign the event handler for the **Insert Text** button.
 
     ```js
     document.getElementById("insert-text").onclick = () => clearMessage(insertText);
     ```
 
-1. In the **taskpane.js** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
+1. In the **taskpane.ts** file, replace `TODO5` with the following code to define the `insertText` function. This function inserts text into the current slide.
 
     ```js
     function insertText() {
@@ -367,13 +386,13 @@ Complete the following steps to add code that retrieves metadata for the selecte
     <button class="ms-Button" id="get-slide-metadata">Get Slide Metadata</button><br/><br/>
     ```
 
-1. In the **taskpane.js** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
+1. In the **taskpane.ts** file, replace `TODO6` with the following code to assign the event handler for the **Get Slide Metadata** button.
 
     ```js
     document.getElementById("get-slide-metadata").onclick = () => clearMessage(getSlideMetadata);
     ```
 
-1. In the **taskpane.js** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slides and writes it to the Message section in the add-in task pane.
+1. In the **taskpane.ts** file, replace `TODO7` with the following code to define the `getSlideMetadata` function. This function retrieves metadata for the selected slides and writes it to the Message section in the add-in task pane.
 
     ```js
     function getSlideMetadata() {
@@ -440,7 +459,7 @@ Complete the following steps to add code that navigates between the slides of a 
     <button class="ms-Button" id="go-to-last-slide">Go to Last Slide</button><br/><br/>
     ```
 
-1. In the **taskpane.js** file, replace `TODO8` with the following code to assign the event handlers for the **Add Slides** and four navigation buttons.
+1. In the **taskpane.ts** file, replace `TODO8` with the following code to assign the event handlers for the **Add Slides** and four navigation buttons.
 
     ```js
     document.getElementById("add-slides").onclick = () => tryCatch(addSlides);
@@ -450,7 +469,7 @@ Complete the following steps to add code that navigates between the slides of a 
     document.getElementById("go-to-last-slide").onclick = () => clearMessage(goToLastSlide);
     ```
 
-1. In the **taskpane.js** file, replace `TODO9` with the following code to define the `addSlides` and navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
+1. In the **taskpane.ts** file, replace `TODO9` with the following code to define the `addSlides` and navigation functions. Each of these functions uses the `goToByIdAsync` method to select a slide based upon its position in the document (first, last, previous, and next).
 
     ```js
     async function addSlides() {

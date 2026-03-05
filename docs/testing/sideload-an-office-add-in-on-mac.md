@@ -41,7 +41,7 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 1. Copy your add-in's manifest file to this `wef` folder.
 
-    ![Wef folder in Office on Mac.](../images/all-my-files.png)
+    :::image type="content" source="../images/all-my-files.png" alt-text="Wef folder in Office on Mac.":::
 
 1. Open Word (or restart Word if it's already running), then open a document.
 
@@ -49,7 +49,7 @@ To see how your add-in will run on Office on Mac, you can sideload your add-in's
 
 1. Verify that your add-in is displayed in Word.
 
-    ![Office Add-in displayed in Office on Mac.](../images/lorem-ipsum-wikipedia.png)
+    :::image type="content" source="../images/lorem-ipsum-wikipedia.png" alt-text="Office Add-in displayed in Office on Mac.":::
 
 ## Remove a sideloaded add-in
 

@@ -35,7 +35,7 @@ You'll use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator
 
 The following is an example.
 
-![The Yeoman generator in a command line interface with the prompts and answers.](../images/yo-office-word-react.png)
+:::image type="content" source="../images/yo-office-word-react.png" alt-text="The Yeoman generator in a command line interface with the prompts and answers.":::
 
 After you complete the wizard, the generator creates the project and installs supporting Node components.
 
@@ -95,7 +95,7 @@ The add-in project that you've created with the Yeoman generator contains sample
 
 1. Enter text into the text box and then select **Insert text**.
 
-    ![Custom text inserted into the document after selecting the Insert button from the add-in task pane.](../images/word-task-pane-react-component.png)
+    :::image type="content" source="../images/word-task-pane-react-component.png" alt-text="Custom text inserted into the document after selecting the Insert button from the add-in task pane.":::
 
 1. When you're ready to stop the dev server and uninstall the add-in, run the following command.
 

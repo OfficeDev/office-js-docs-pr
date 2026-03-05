@@ -1,20 +1,22 @@
 ﻿---
 title: Publish your add-in using Visual Studio
-description: How to deploy your web project and package your add-in by using Visual Studio 2019.
-ms.date: 01/23/2023
+description: How to deploy your web project and package your add-in by using Visual Studio.
+ms.date: 01/07/2026
 ms.localizationpriority: medium
 ---
 
 # Publish your add-in using Visual Studio
 
-Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2019.
+Your Office Add-in package contains an XML [manifest file](../develop/add-in-manifests.md) that you'll use to publish the add-in. You'll have to publish the web application files of your project separately. This article describes how to deploy your web project and package your add-in by using Visual Studio 2019 or later.
+
+[!INCLUDE [Deprecation warning for add-in projects in Visual Studio](../includes/vs-deprecation.md)]
 
 > [!NOTE]
 > For information about publishing an Office Add-in that you created using the Yeoman generator and developed with Visual Studio Code or any other editor, see [Publish an add-in developed with Visual Studio Code](publish-add-in-vs-code.md).
 
-## To deploy your web project using Visual Studio 2019
+## To deploy your web project using Visual Studio
 
-Complete the following steps to deploy your web project using Visual Studio 2019.
+Complete the following steps to deploy your web project using Visual Studio 2019 or later.
 
 1. From the **Build** tab, choose **Publish [Name of your add-in]**.
 
@@ -25,9 +27,9 @@ Complete the following steps to deploy your web project using Visual Studio 2019
 
 3. For more information about deployment steps for each publish target option, see [First look at deployment in Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components?view=vs-2019&preserve-view=true).
 
-## To package and publish your add-in using IIS, FTP, or Web Deploy using Visual Studio 2019
+## To package and publish your add-in using IIS, FTP, or Web Deploy using Visual Studio
 
-Complete the following steps to package your add-in using Visual Studio 2019.
+Complete the following steps to package your add-in using Visual Studio 2019 or later.
 
 1. From the **Build** tab, choose **Publish [Name of your add-in]**.
 2. In the **Pick a publish target** window, choose **IIS, FTP, etc**, and select **Configure**. Next, select **Publish**.

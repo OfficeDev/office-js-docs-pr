@@ -1,4 +1,4 @@
-﻿---
+---
 title: Best practices for developing Office Add-ins
 description: Apply the best practices when developing Office Add-ins.
 ms.topic: best-practice
@@ -39,11 +39,11 @@ New users are still deciding whether to use or abandon your add-in after downloa
 
 - **Provide helpful guidance.** Include teaching UI to guide users and make the experience feel personal.
 
-  ![A "Do" versus "Don't" comparison on how to guide your users to use the UI. The "Do" example shows an add-in that includes a button users can click to get started. The "Don't" example shows an add-in with no introductory steps or buttons.](../images/contoso-part-catalog-do-dont.png)
+  :::image type="content" source="../images/contoso-part-catalog-do-dont.png" alt-text="A 'Do' versus 'Don't' comparison on how to guide your users to use the UI. The 'Do' example shows an add-in that includes a button users can click to get started. The 'Don't' example shows an add-in with no introductory steps or buttons.":::
 
 - **Show users what to expect.** If your content add-in binds to data in the user's document, include sample data or a template to show users the expected data format.
 
-  ![A "Do" versus "Don't" comparison on including an option to insert sample data in your add-in. The "Do" example shows an add-in that includes a button users can click to insert sample data. The "Don't" example shows an add-in without sample data or buttons.](../images/add-in-title.png)
+  :::image type="content" source="../images/add-in-title.png" alt-text="A 'Do' versus 'Don't' comparison on including an option to insert sample data in your add-in. The 'Do' example shows an add-in that includes a button users can click to insert sample data. The 'Don't' example shows an add-in without sample data or buttons.":::
 
 - **Offer free trials.** If your add-in requires a subscription, make some functionality available without one.
 

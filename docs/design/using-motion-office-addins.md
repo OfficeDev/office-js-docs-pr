@@ -25,7 +25,7 @@ Standard elements used in an add-in can incorporate motion to help focus the use
 |Identify key elements in the add-in that should have motion. Commonly animated elements in an add-in are panels, overlays, modals, tool tips, menus, and teaching call outs.| Don't overwhelm the user by animating every element. Avoid applying multiple motions that attempt to lead or focus the user on many elements at once. |
 |Use simple, subtle motion that behaves in expected ways. Consider the origin of your triggering element. Use motion to create a link between the action and the resulting UI. | Don't create wait time for a motion. Motion in add-ins should not hinder task completion.|
 
-![GIF that shows a panel opening with minimal moving elements beside a GIF that shows a panel opening with many moving elements.](../images/add-in-motion-purpose.gif)
+:::image type="content" source="../images/add-in-motion-purpose.gif" alt-text="GIF that shows a panel opening with minimal moving elements beside a GIF that shows a panel opening with many moving elements.":::
 
 ## Use expected motions
 
@@ -44,7 +44,7 @@ Use it to fit seamlessly in your add-in. It will help you create experiences tha
 |Ensure that there is a consistent application of motion across like elements.| Don't use different motions to animate the same component or object.|
 |Create consistency with use of direction in animation. For example, a panel that opens from the right should close to the right.|Don't animate an element using multiple directions.
 
-![GIF that shows a modal opening in an expected manner beside a GIF that shows a modal opening in an unexpected manner.](../images/add-in-motion-expected.gif)
+:::image type="content" source="../images/add-in-motion-expected.gif" alt-text="GIF that shows a modal opening in an expected manner beside a GIF that shows a modal opening in an unexpected manner.":::
 
 ## Avoid out of character motion for an element
 
@@ -57,7 +57,7 @@ Consider the size of the HTML canvas (task pane, dialog box, or content add-in) 
 | Use recommended motion durations. | Don't use exaggerated animations. Avoid creating experiences that embellish and distract your customers.
 | Follow recommended easing curves. |Don't move elements in a jerky or disjointed manner. Avoid anticipations, bounces, rubber band, or other effects that emulate natural world physics.|
 
-![GIF that shows tiles loading using a gentle fade-in beside a GIF that shows tiles loading with bounce.](../images/add-in-motion-character.gif)
+:::image type="content" source="../images/add-in-motion-character.gif" alt-text="GIF that shows tiles loading using a gentle fade-in beside a GIF that shows tiles loading with bounce.":::
 
 ## See also
 
