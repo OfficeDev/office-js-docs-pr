@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 
 One of the ways that custom functions enhances Excel's power is by receiving data from locations other than the workbook, such as the web or a server (through [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API)). You can request external data through an API like [`Fetch`](https://developer.mozilla.org/docs/Web/API/Fetch_API) or by using `XmlHttpRequest` [(XHR)](https://developer.mozilla.org/docs/Web/API/XMLHttpRequest), a standard web API that issues HTTP requests to interact with servers.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 :::image type="content" source="../images/custom-functions-web-api.gif" alt-text="GIF of a custom function which streams the time from an API.":::
 
 ## Functions that return data from external sources

@@ -1,7 +1,7 @@
 ---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
-ms.date: 11/11/2024
+ms.date: 01/22/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -11,8 +11,6 @@ ms.localizationpriority: high
 Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
 [!include[Excel custom functions definition](../includes/excel-custom-functions-definition.md)]
-
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 The following animated image shows your workbook calling a function you've created with JavaScript or TypeScript. In this example, the custom function `=MYFUNCTION.SPHEREVOLUME` calculates the volume of a sphere.
 
@@ -86,6 +84,12 @@ To see a full working manifest from a sample add-in, see the manifest in the [on
 Excel on the web and on Windows connected to a Microsoft 365 subscription allow end users to coauthor in Excel. If an end user's workbook uses a custom function, that end user's coauthoring colleague is prompted to load the corresponding custom functions add-in. Once both users have loaded the add-in, the custom function shares results through coauthoring.
 
 For more information on coauthoring, see [About coauthoring in Excel](/office/vba/excel/concepts/about-coauthoring-in-excel).
+
+## Supported platforms
+
+Excel custom functions are supported by most Office client applications. Excel custom functions aren't currently supported in **Office on iPad** or **volume-licensed perpetual versions of Office 2021 or earlier on Windows**. For more information, see [Custom functions requirement sets](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets).
+
+[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
 
 ## Next steps
 

@@ -12,7 +12,7 @@ Programmatically manage the start and end time of appointments to streamline mee
 
 The Office JavaScript API provides asynchronous methods ([Time.getAsync](/javascript/api/outlook/office.time#outlook-office-time-getasync-member(1)) and [Time.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))) to get and set the start or end time of an appointment being composed. These asynchronous methods are available only to compose add-ins. To use these methods, make sure you have set up the add-in only manifest of the add-in appropriately for Outlook to activate the add-in in compose forms.
 
-The [start](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) and [end](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) properties are available for appointments in both compose and read forms. In read form, you can access the properties directly from the parent object, as in:
+The `start` ([AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-start-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-start-member)) and `end` ([AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-end-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-end-member)) properties are available for appointments in both compose and read forms. In read form, you can access the properties directly from the parent object, as in:
 
 ```js
 Office.context.mailbox.item.start;

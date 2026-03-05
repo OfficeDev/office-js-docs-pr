@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 
 Custom functions are configurable with many different parameter options.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 ## Optional parameters
 
 When a user invokes a function in Excel, optional parameters appear in brackets. In the following sample, the add function can optionally add a third number. This function appears as `=CONTOSO.ADD(first, second, [third])` in Excel.

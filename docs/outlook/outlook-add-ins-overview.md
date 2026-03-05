@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 10/30/2025
+ms.date: 02/26/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -53,6 +53,7 @@ An add-in defines how it integrates with Outlook and the context in which it's a
 ### Extension points
 
 Extension points define where an add-in integrates with Outlook. Add-ins can activate and run on messages and appointments in read and compose mode. The following are specific scenarios.
+
 - Composing a new message, meeting request, or appointment.
 - Viewing a message, meeting request, meeting response, or meeting cancellation.
 - Viewing or editing an existing appointment, or meeting item in which the user is the organizer.
@@ -75,6 +76,8 @@ Add-ins can integrate with Outlook in the following ways.
 
 - Add-ins can perform tasks when a specific event occurs. For more information, see [Activate add-ins with events](../develop/event-based-activation.md).
 
+- Add-ins can be invoked from an [actionable message](/outlook/actionable-messages/invoke-add-in).
+
 - Add-ins can link off regular expression matches in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
 
     [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
@@ -96,7 +99,7 @@ Outlook add-ins activate when the user is composing or reading a message or appo
 - In a [group mailbox](/microsoft-365/admin/create-groups/compare-groups?view=o365-worldwide&preserve-view=true#shared-mailboxes), in a shared mailbox\*, in another user's mailbox\*, in an [archive mailbox](/purview/archive-mailboxes), or in a public folder.
 
   > [!IMPORTANT]
-  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). To learn more, see [Implement shared folders and shared mailbox scenarios](delegate-access.md).
+  > \* Support for delegate access scenarios (for example, folders shared from another user's mailbox) was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13). To learn more, see [Implement shared folders and shared mailbox scenarios](delegate-access.md).
 
 - Using a custom form.
 

@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Microsoft 365 Agents Toolkit
 description: Learn how to create Office Add-in projects using Microsoft 365 Agents Toolkit.
-ms.date: 08/13/2025
+ms.date: 01/15/2026
 ms.localizationpriority: high
 ---
 
@@ -10,9 +10,6 @@ ms.localizationpriority: high
 A primary tool for developing Microsoft 365 apps and agents, including Office Add-ins, is Microsoft 365 Agents Toolkit.
 
 Add-ins created with Agents Toolkit use the [unified manifest for Microsoft 365](unified-manifest-overview.md).
-
-> [!TIP]
-> There's another Visual Studio Code extension that creates Office Add-ins that use the add-in only manifest. See [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
 
    [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 

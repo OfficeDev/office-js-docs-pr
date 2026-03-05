@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 
 Custom functions that don't use a shared runtime rely on a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). This runtime is optimized for fast calculation but has fewer APIs available.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 This JavaScript-only runtime provides access to APIs in the `OfficeRuntime` namespace that can be used by custom functions and the task pane (which runs in a different runtime) to store data.

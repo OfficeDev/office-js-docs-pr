@@ -59,11 +59,11 @@ Be mindful of the following when you use regular expressions.
 
 In the JavaScript code of your add-in, you can obtain matches to a regular expression by using the following methods on the current item.
 
-- [getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns matches in the current item for all regular expressions specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
+- `getRegExMatches` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getregexmatches-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getregexmatches-member(1))) returns matches in the current item for all regular expressions specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
 
-- [getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns matches in the current item for the identified regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
+- `getRegExMatchesByName` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getregexmatchesbyname-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getregexmatchesbyname-member(1))) returns matches in the current item for the identified regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
 
-- [getSelectedRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) returns highlighted matches in the current item for the regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
+- `getSelectedRegExMatches` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getselectedregexmatches-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getselectedregexmatches-member(1))) returns highlighted matches in the current item for the regular expression specified in an `ItemHasRegularExpressionMatch` rule of the add-in.
 
 When the regular expressions are evaluated, the matches are returned to your add-in in an array object. For `getRegExMatches`, that object has the identifier of the name of the regular expression.
 
