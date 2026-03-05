@@ -208,7 +208,7 @@ The following code sample shows a streaming function that uses WebSockets to rec
 /**
  * Streams real-time data via WebSocket.
  * @customfunction
- * @param {string} symbol Data symbol to monitor
+ * @param {string} symbol Data symbol to monitor.
  * @param {CustomFunctions.StreamingInvocation<string>} invocation
  */
 function streamWebSocket(symbol, invocation) {
@@ -247,4 +247,4 @@ function streamWebSocket(symbol, invocation) {
 - [Return multiple results from your custom function](custom-functions-dynamic-arrays.md)
 - [Volatile values in functions](custom-functions-volatile.md)
 - [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-- [Custom functions overview](custom-functions-overview.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
