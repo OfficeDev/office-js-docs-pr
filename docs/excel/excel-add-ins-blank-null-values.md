@@ -1,6 +1,6 @@
 ---
 title: Blank and null values in Excel add-ins
-description: Learn how to work with blank and null values with the Excel JavaScript API.
+description: Learn how to work with blank and null values in the Excel JavaScript API.
 ms.date: 03/03/2026
 ms.localizationpriority: medium
 ---
@@ -33,7 +33,7 @@ range.numberFormat = [[null, null, null, 'm/d/yyyy;@']];
 
 ## null input for a property
 
-`null` isn't a valid input for a single property. For example, the following code snippet is not valid, as the `values` property of the range cannot be set to `null`.
+`null` isn't a valid input for a single property. For example, the following code snippet isn't valid, as the `values` property of the range cannot be set to `null`.
 
 ```js
 range.values = null; // This is not a valid snippet. 
