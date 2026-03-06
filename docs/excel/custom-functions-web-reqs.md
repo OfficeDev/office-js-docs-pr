@@ -34,7 +34,7 @@ In the following code sample, the `webRequest` function reaches out to a hypothe
 
 When developing your own functions, consider performing an action if the web request doesn't complete in a timely manner or [batching up multiple API requests](custom-functions-batching.md).
 
-```JS
+```javascript
 /**
  * Requests the names of the people currently on the International Space Station.
  * Note: This function requests data from a hypothetical URL. In practice, replace the URL with a data source for your scenario.
@@ -62,7 +62,7 @@ function webRequest() {
 
 In the following code sample, the `getStarCount` function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript `Promise`. When data is obtained from the web call, the promise is resolved which returns the data to the cell.
 
-```TS
+```typescript
 /**
  * Gets the star count for a given Github organization or user and repository.
  * @customfunction
@@ -118,7 +118,7 @@ The following code sample is a custom function that adds a number to the result 
 - The `onCanceled` callback defines the function that runs when the function is canceled.
 - Streaming isn't necessarily tied to making a web request. In this case, the function isn't making a web request but is still getting data at set intervals, so it requires the use of the streaming `invocation` parameter.
 
-```JS
+```javascript
 /**
  * Increments a value once a second.
  * @customfunction INC increment
@@ -142,7 +142,7 @@ function increment(incrementBy, invocation) {
 
 The following example shows a streaming function that fetches stock prices from a web service every 10 seconds.
 
-```JS
+```javascript
 /**
  * Streams stock price updates.
  * @customfunction
@@ -207,7 +207,7 @@ Within a custom function, you can use [WebSockets](https://developer.mozilla.org
 
 The following code sample shows a streaming function that uses WebSockets to receive real-time updates.
 
-```js
+```javascript
 /**
  * Streams real-time data via WebSocket.
  * @customfunction
