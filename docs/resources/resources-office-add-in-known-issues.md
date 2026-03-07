@@ -13,7 +13,7 @@ This article provides information about current known issues with Office Add-ins
 
 ## Active issues in Office add-ins
 
-<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
+<!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
 ### Intermittent failure to load or deploy Office Add-ins due to Exchange authentication changes
 
@@ -40,7 +40,11 @@ As part of ongoing Exchange Web Services (EWS) security improvements, Microsoft 
 
 No customer action was required. Microsoft applied targeted mitigations to restore compatibility while a longer-term fix is validated. Customers who continue to experience issues are advised to contact Microsoft Support for assistance.
 
-<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
+#### See also
+
+For more information, see [Deprecation of Exchange Web Services (EWS) in Exchange Online](https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online).
+
+<!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
 ### Outlook: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
 
@@ -58,7 +62,7 @@ Some users may experience delays of up to ten seconds loading images in Exchange
 
 Monday, 11/03/2025, at 4:31 PM UTC
 
-<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
+<!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
 ### Outlook: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
 
@@ -82,7 +86,7 @@ Options:
 1. Wait for images to load before sending the file.
 1. Switch to classic Outlook for Windows or Outlook for Mac.
 2. 
-<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
+<!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
 ### Centrally deployed add-in error "You don't have permission to use this add-in"
 
@@ -121,7 +125,7 @@ IT admins can force the add-ins to refresh by creating the following registry ke
 Key: `HKCU\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\ClearInstalledExtensions`
 Value: `DWORD = 1`
 
-<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
+<!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
 ### Excel: Increased frequency of RichApi.Error: Error code: 0xF5320001
 
