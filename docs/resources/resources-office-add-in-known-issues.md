@@ -1,29 +1,46 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 02/25/2026
+ms.date: 03/07/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 02/25/2026_
+_Last updated 03/07/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 ## Active issues in Office add-ins
 
-### Outlook: Outlook add-ins disappearing from ribbon
+<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-Customers are reporting their Outlook add-ins are missing from the ribbon and are also reporting difficulties deploying them in some tenants.
+### Intermittent failure to load or deploy Office Add-ins due to Exchange authentication changes
 
-#### STATUS
+Some users experience issues where Office add-ins failed to load, appeared missing, or could not be deployed through the Microsoft 365 admin center. In affected scenarios, add-ins were visible in the admin experience or store but did not render or appear correctly in Outlook or other Office clients.
 
-A fix is been released to affected tenants.
+#### Details
 
-#### START TIME
+Date reported: Feb 25, 2026
+Reported by: Microsoft Support / Customer Reports
+Impacted add-ins: Admin-deployed and organization-scoped Office add-ins (including third‑party add-ins)
+Severity level: Medium
+Current atatus: Open
+Affected platforms/clients: Office clients, Microsoft 365 admin center (centralized deployment experience)
 
-11/17/2025 5:38pm PST
+#### User impact
+
+Intermittent authentication failures cause Office add-ins to appear missing or fail to deploy. This primarily affects tenants impacted by recent Exchange Web Services (EWS) security enforcement changes.
+
+#### Root cause
+
+As part of ongoing Exchange Web Services (EWS) security improvements, Microsoft enforced stricter authentication requirements that no longer allow certain legacy authentication methods. Some add-in service calls were still relying on these legacy paths, causing add-in metadata retrieval requests to be rejected. As a result, affected add-ins could not be loaded or displayed correctly for users.
+
+#### Mitigation/Work-around
+
+No customer action was required. Microsoft applied targeted mitigations to restore compatibility while a longer-term fix is validated. Customers who continue to experience issues are advised to contact Microsoft Support for assistance.
+
+<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
 ### Outlook: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
 
@@ -40,6 +57,8 @@ Some users may experience delays of up to ten seconds loading images in Exchange
 #### START TIME
 
 Monday, 11/03/2025, at 4:31 PM UTC
+
+<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
 ### Outlook: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
 
@@ -62,6 +81,8 @@ Options:
 1. Remove inline images from signature.
 1. Wait for images to load before sending the file.
 1. Switch to classic Outlook for Windows or Outlook for Mac.
+2. 
+<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
 ### Centrally deployed add-in error "You don't have permission to use this add-in"
 
@@ -100,6 +121,8 @@ IT admins can force the add-ins to refresh by creating the following registry ke
 Key: `HKCU\Software\Microsoft\Office\16.0\WEF\TrustedCatalogs\ClearInstalledExtensions`
 Value: `DWORD = 1`
 
+<!-- ----------------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
+
 ### Excel: Increased frequency of RichApi.Error: Error code: 0xF5320001
 
 Date reported: 09/04/2025
@@ -120,6 +143,8 @@ Options:
 
 1. When you make the initial `requestCreateControls` call, include the enabled/disabled state, if known. Instead of making two calls one right after the other, do it in one call.
 1. Roll back Office from version 2508 to 2507.
+
+<!-- -----------------Move RESOLVED issues to the top of this section. After 1 month, delete from this section.------------------------ -->
 
 ## Recently resolved issues in Office Add-ins
 
