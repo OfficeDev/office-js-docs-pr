@@ -15,7 +15,7 @@ This article provides information about current known issues with Office Add-ins
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
-### Outlook: Users unable to access the My Templates add-in in Exchange Online across all Outlook clients
+### OUTLOOK ISSUE: Users unable to access the My Templates add-in in Exchange Online across all Outlook clients
 
 Users report that **My Templates** add-in is missing and undiscoverable across all Outlook surfaces. The add-in subscription exists on affected mailboxes and Centralized Deployment returns it correctly, but MetaOS/Exchange client discovery fails to surface it to end users. Users cannot find it in the toolbar, ribbon, **Add Apps** search, All Apps, Integrated Apps in Admin Center, or via PowerShell Get-App in some cases. The issue manifests as a service-side discovery/authentication regression — not an admin misconfiguration or CD failure.
 
@@ -85,7 +85,7 @@ Re-enabling the add-in via PowerShell or the Admin Center does not guarantee res
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
 
-### Intermittent failure to load or deploy Office Add-ins due to Exchange authentication changes
+### ISSUE: Intermittent failure to load or deploy Office Add-ins due to Exchange authentication changes
 
 Some users experience issues where Office add-ins failed to load, appeared missing, or could not be deployed through the Microsoft 365 admin center. In affected scenarios, add-ins were visible in the admin experience or store but did not render or appear correctly in Outlook or other Office clients.
 
@@ -121,7 +121,7 @@ For more information, see [Deprecation of Exchange Web Services (EWS) in Exchang
 
 <!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-### Outlook: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
+### OUTLOOK ISSUE: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
 
 #### STATUS
 
@@ -139,7 +139,7 @@ Monday, 11/03/2025, at 4:31 PM UTC
 
 <!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-### Outlook: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
+### OUTLOOK ISSUE: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
 
 We're currently investigating reports from Outlook users who are experiencing loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send messages while the images are not yet loaded results in the following dialog box.
 
@@ -163,7 +163,7 @@ Options:
  
 <!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-### Centrally deployed add-in error "You don't have permission to use this add-in"
+### ISSUE: Centrally deployed add-in error "You don't have permission to use this add-in"
 
 Numerous customers report that after updating Office from 2505 to 2507 their add-in will not load and an error is displayed "You don't have permission to use this add-in. Contact your system administrator." Any add-in may reproduce this issue; it is not specific to a single add-in.
 
@@ -202,7 +202,7 @@ Value: `DWORD = 1`
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-### Excel: Increased frequency of RichApi.Error: Error code: 0xF5320001
+### EXCEL ISSUE: Increased frequency of RichApi.Error: Error code: 0xF5320001
 
 Date reported: 09/04/2025
 
