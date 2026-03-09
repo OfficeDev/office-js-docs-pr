@@ -17,7 +17,7 @@ This article provides information about current known issues with Office Add-ins
 
 ### OUTLOOK ISSUE: Users unable to access the My Templates add-in in Exchange Online across all Outlook clients
 
-Users report that **My Templates** add-in is missing and undiscoverable across all Outlook surfaces. The add-in subscription exists on affected mailboxes and Centralized Deployment returns it correctly, but MetaOS/Exchange client discovery fails to surface it to end users. Users cannot find it in the toolbar, ribbon, **Add Apps** search, All Apps, Integrated Apps in Admin Center, or via PowerShell Get-App in some cases. The issue manifests as a service-side discovery/authentication regression — not an admin misconfiguration or CD failure.
+Users report that **My Templates** add-in is missing and undiscoverable across all Outlook surfaces. The add-in subscription exists on affected mailboxes and Centralized Deployment returns it correctly, but client-side discovery within Outlook and Exchange services fails to surface the add-in to end users. Users cannot find it in the toolbar, ribbon, **Add Apps** search, All Apps, Integrated Apps in Admin Center, or via PowerShell Get-App in some cases. The issue presents as a service-side discovery or authentication regression, rather than an admin configuration or Centralized Deployment failure.
 
 #### Status
 
