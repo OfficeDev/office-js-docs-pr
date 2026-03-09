@@ -15,15 +15,15 @@ This article provides information about current known issues with Office Add-ins
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
-### Users unable to access the My Templates add-in in Exchange Online across all Outlook clients
+### Outlook: Users unable to access the My Templates add-in in Exchange Online across all Outlook clients
 
 Users report that **My Templates** add-in is missing and undiscoverable across all Outlook surfaces. The add-in subscription exists on affected mailboxes and Centralized Deployment returns it correctly, but MetaOS/Exchange client discovery fails to surface it to end users. Users cannot find it in the toolbar, ribbon, **Add Apps** search, All Apps, Integrated Apps in Admin Center, or via PowerShell Get-App in some cases. The issue manifests as a service-side discovery/authentication regression — not an admin misconfiguration or CD failure.
 
-#### STATUS
+#### Status
 
 A fix candidate has been merged via PR but rollout may take approximately 3 weeks for worldwide saturation. Engineering continues to investigate the persistent gap between rollback and full recovery.
 
-#### DETAILS 
+#### Details 
 
 Date reported: Jan 21, 2026
 
@@ -39,7 +39,7 @@ Current status: Open, active investigation as of March 9, 2026; rollback of root
 
 Affected platforms/clients: Outlook Classic (Desktop, Windows),  New Outlook (Desktop, Windows), Outlook on the web, Outlook mobile
 
-#### USER IMPACT
+#### User impact
 
 Widespread, multi-tenant impact. Confirmed scope includes:
 
@@ -49,14 +49,14 @@ Widespread, multi-tenant impact. Confirmed scope includes:
 - Impact is tenant-wide in most cases (all users in the tenant affected, not just a subset)
 - SpikePSI signals showed 39–59 unique tenants impacted at various peak points across Feb 2026
 
-#### ROOT CAUSE
+#### Root cause
 
 Partially identified. Engineering has confirmed two contributing factors:
 
 1. Primary (current active incident): A recent backend change switching authentication from Exchange Web Services (EWS) to REST for the My Templates add-in caused access errors. The REST auth change was rolled back on March 3, 2026, producing a significant drop in errors — but full remediation has not been achieved. The subscription is present on the mailbox, but MetaOS is not returning the add-in to clients.
 2. Historical/recurring root cause: A prior wave (Oct–Dec 2025, IcM 707237433) was caused by an Agave backend deployment task failure linked to Admin API changes migrating to Virtual Account (VA) tokens, which caused cache corruption in user mailboxes. That wave was resolved via rollback + cache resets on December 26, 2025 — but some tenants never fully recovered.
 
-#### WORK-AROUND/STEPS TO MITIGATE
+#### Work-around / steps to mitigate
 
 No reliable universal workaround exists. The following steps have been attempted by support teams with limited/inconsistent success:
 
@@ -76,7 +76,7 @@ No reliable universal workaround exists. The following steps have been attempted
 1. **Submit in-app feedback with diagnostic logs** — Go to **Help** > **Feedback** > **Report a Problem in Outlook** and share the Session ID / User ID with support so engineering can pull diagnostics.
 1. **Reference the public support article** — See [My Templates are missing from Outlook](/office/my-templates-are-missing-from-outlook-34967a7a-7a80-4d72-bb45-a43ecdc93678) and track Service Incident EX1238375 for more status updates.
 
-#### NOTES TO ADMINS
+#### Notes to admins
 
 Re-enabling the add-in via PowerShell or the Admin Center does not guarantee resolution while the service-side issue is active. Engineering is working on a fix and will post updates to the Service Health Dashboard (SHD).
 
