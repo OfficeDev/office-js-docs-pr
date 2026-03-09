@@ -48,7 +48,7 @@ Thank you to [@stepper and the Stack Overflow community](https://stackoverflow.c
 
 ## API versioning and backward compatibility
 
-In the previous HTML snippet, the `/1/` in front of `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the Office JavaScript API maintains backward compatibility, the latest release continues to support API members that were introduced earlier in version 1.
+In the previous HTML snippet, the `/1/` preceding `office.js` in the CDN URL specifies the latest incremental release within version 1 of Office.js. Because the Office JavaScript API maintains backward compatibility, the latest release continues to support API members that were introduced earlier in version 1.
 
 If you plan to publish your Office Add-in to the Microsoft Marketplace, you must use this CDN reference. Use local references only for internal, development, and debugging scenarios.
 

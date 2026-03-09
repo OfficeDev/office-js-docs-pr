@@ -39,9 +39,9 @@ These government clouds remain internet-connected, but they severely restrict th
 - **GCC High**: `https://appsforoffice.gcch.cdn.office.net/appsforoffice/lib/1/hosted/office.js`
 - **DOD**: `https://appsforoffice.dod.cdn.office.net/appsforoffice/lib/1/hosted/office.js`
 
-### Airgapped Sovereign Clouds
+### Air-gapped Sovereign Clouds
 
-These government clouds are essentially disconnected from the public internet entirely. You must custom-provision any resource that you'd normally access from public resources inside these cloud environments. In the GCCH and DOD clouds mentioned previously, you need to provision your services and resources inside the cloud. You can make firewall exceptions that allow access to public services and resources. However, this bypass isn't possible in airgapped clouds. As with the GCCH and DOD clouds, there's a Microsoft Office CDN inside each cloud environment that hosts required resources such as the Office.js library. You need to work closely with customer tenant administrators to determine the best way to provide your services and resources in a way that conforms to the strict access requirements for airgapped Sovereign Clouds.
+These government clouds are essentially disconnected from the public internet entirely. You must custom-provision any resource that you'd normally access from public resources inside these cloud environments. In the GCCH and DOD clouds mentioned previously, you need to provision your services and resources inside the cloud. You can make firewall exceptions that allow access to public services and resources. However, this bypass isn't possible in air-gapped clouds. As with the GCCH and DOD clouds, there's a Microsoft Office CDN inside each cloud environment that hosts required resources such as the Office.js library. You need to work closely with customer tenant administrators to determine the best way to provide your services and resources in a way that conforms to the strict access requirements for air-gapped Sovereign Clouds.
 
 ### Office 365 operated by 21Vianet
 

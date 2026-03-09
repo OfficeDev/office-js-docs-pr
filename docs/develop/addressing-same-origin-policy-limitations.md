@@ -24,9 +24,9 @@ To learn more about cross-origin resource sharing, see the many resources availa
 > [!NOTE]
 > If your add-in uses event-based activation or integrated spam reporting in Outlook, you must also configure a well-known URI to enable CORS or SSO. For details, see [Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Office Add-in](use-sso-in-event-based-activation.md).
 
-## Build your own proxy using IFRAME and POST MESSAGE (Cross-Window Messaging)
+## Build your own proxy using `iframe` and `postMessage` (cross-window messaging)
 
-For an example of how to build your own proxy by using IFRAME and POST MESSAGE, see [Cross-Window Messaging](https://johnresig.com/blog/cross-window-messaging/).
+For an example of how to build your own proxy by using `iframe` and `postMessage`, see [Cross-Window Messaging](https://johnresig.com/blog/cross-window-messaging/).
 
 ## Use JSONP for anonymous access
 

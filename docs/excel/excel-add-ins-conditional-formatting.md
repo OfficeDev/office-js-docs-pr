@@ -31,7 +31,7 @@ The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/
 > [!NOTE]
 > Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [\*OrNullObject methods](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) section.
 
-You can set only one format type for the ConditionalFormat object. The `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value, determines the format type. Set `type` when you add a conditional format to a range.
+You can set only one format type for the `ConditionalFormat` object. The `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value, determines the format type. Set `type` when you add a conditional format to a range.
 
 ## Create conditional formatting rules
 
