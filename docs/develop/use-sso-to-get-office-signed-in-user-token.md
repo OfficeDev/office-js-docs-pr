@@ -29,19 +29,21 @@ To use SSO with Office, you need to create an app registration in the Azure port
 
     - Set **Name** to `Office-Add-in-SSO`.
     - Set **Supported account types** to **Any Entra ID Tenant + Personal Microsoft accounts**.
-    - Set **Redirect URI** to use the platform **Web** and the URI to `https://localhost:[port]/dialog.html`. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+    - Set **Redirect URI** to use the platform **Web** and the URI to `https://localhost:[port]/dialog.html`. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file.
     - Choose **Register**.
 
-1. On the **Office-Add-in-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
+1. On the **Office-Add-in-SSO** page, copy and save the value for the **Application (client) ID**. You'll use it in later procedures.
 
     > [!NOTE]
     > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It's also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
 1. Select **Expose an API** under **Manage**. Select the **Add** link. This will generate the Application ID URI in the form `api://[app-id-guid]`, where `[app-id-guid]` is the **Application (client) ID**.
 
-1. In the generated ID, insert `localhost:[port]/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+1. In the generated ID, insert `localhost:[port]/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file.
 
     When you're finished, the entire ID should have the form `api://localhost:[port]/[app-id-guid]`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+
+1. Select the **Save** button to save the updated Application ID URI.
 
 1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the `<Scope>` name.
 
@@ -106,7 +108,7 @@ The project is created in a new folder named **sso-display-user-info**.
     </WebApplicationInfo>
    ```
 
-1. Replace `[port]` with the correct port number for your project. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+1. Replace `[port]` with the correct port number for your project. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file.
 1. Replace both `[application-id]` placeholders with the actual application ID from your app registration.
 1. Save the file.
 
@@ -169,6 +171,7 @@ The final step is to get the ID token by calling `getAccessToken`.
       try {
         let userTokenEncoded = await OfficeRuntime.auth.getAccessToken({
           allowSignInPrompt: true,
+          allowConsentPrompt: true,
         });
         let userToken = jwt_decode(userTokenEncoded);
         document.getElementById("userInfo").innerHTML =
@@ -210,7 +213,7 @@ The add-in will display the name, email, and ID of the account you signed in wit
 
 ## Stop the add-in
 
-Run `npm stop` from the command line.
+Run `npm run stop` from the command line.
 
 ---
 
