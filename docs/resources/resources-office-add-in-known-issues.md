@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 03/07/2026
+ms.date: 03/09/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 03/07/2026_
+_Last updated 03/09/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
@@ -22,10 +22,15 @@ Some users experience issues where Office add-ins failed to load, appeared missi
 #### Details
 
 Date reported: Feb 25, 2026
+
 Reported by: Microsoft Support / Customer Reports
+
 Impacted add-ins: Admin-deployed and organization-scoped Office add-ins (including third‑party add-ins)
+
 Severity level: Medium
-Current atatus: Open
+
+Current status: Open, mitigation has begun rolling out.
+
 Affected platforms/clients: Office clients, Microsoft 365 admin center (centralized deployment experience)
 
 #### User impact
