@@ -47,7 +47,7 @@ No customer action was required. Microsoft applied targeted mitigations to resto
 
 #### See also
 
-For more information, see [Deprecation of Exchange Web Services (EWS) in Exchange Online](https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online).
+For more information, see [Deprecation of Exchange Web Services (EWS) in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online).
 
 <!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
