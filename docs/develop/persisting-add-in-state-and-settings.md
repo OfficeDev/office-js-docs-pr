@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 10/16/2025
+ms.date: 03/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -13,6 +13,9 @@ Office Add-ins are essentially web applications running in the stateless environ
 - [Use the application-specific Office JavaScript APIs for Excel, Word, and Outlook that store data](#application-specific-settings-and-persistence).
 
 If you need to persist state across documents, such as tracking user preferences across any documents they open, you'll need to use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
+
+> [!NOTE]
+> This article applies only to persisting state across multiple sessions of the same document. Don't use cookies or localStorage to persist or share state across Office apps (for example, saving data in Word and attempting to read it in Excel). Cross‑app persistence is not supported and is not guaranteed to work on any platform.
 
 ## Browser storage
 
