@@ -21,40 +21,28 @@ Users report that **My Templates** add-in is missing and undiscoverable across a
 
 #### Status
 
-A fix candidate has been merged via PR but rollout may take approximately 3 weeks for worldwide saturation. Engineering continues to investigate the persistent gap between rollback and full recovery.
+We're currently working on a fix.
 
 #### Details 
 
-Date reported: Jan 21, 2026
-
-Incident: Service Incident EX1238375
-
-Reported by: Microsoft Support / Customer Reports
+Start date: Jan 21, 2026
 
 Impacted add-ins: My Templates (primary); Viva Insights (confirmed also impacted as of March 3, 2026); other default add-ins (Bing Maps, Unsubscribe, Common Actions) intermittently affected.
 
 Severity level: High
 
-Current status: Open, active investigation as of March 9, 2026; rollback of root-cause change completed March 3 but did not fully resolve impact; next reconvene scheduled March 10, 2026 at 11:30 AM PT
-
 Affected platforms/clients: Outlook Classic (Desktop, Windows),  New Outlook (Desktop, Windows), Outlook on the web, Outlook mobile
 
 #### User impact
 
-Widespread, multi-tenant impact. Confirmed scope includes:
-
-- Multiple scale units/forests (e.g., namprd13 confirmed; others expanding via Post Expansion Requests)
-- At least 9+ confirmed tenants initially; list has grown significantly
-- Specific S500 customer Cummins (~75,000 users) impacted since October 2025 with no sustained resolution
-- Impact is tenant-wide in most cases (all users in the tenant affected, not just a subset)
-- SpikePSI signals showed 39–59 unique tenants impacted at various peak points across Feb 2026
+Widespread, multi-tenant impact. Impact is tenant-wide in most cases.
 
 #### Root cause
 
 Partially identified. Engineering has confirmed two contributing factors:
 
 1. Primary (current active incident): A recent backend change switching authentication from Exchange Web Services (EWS) to REST for the My Templates add-in caused access errors. The REST auth change was rolled back on March 3, 2026, producing a significant drop in errors — but full remediation has not been achieved. The subscription is present on the mailbox, but MetaOS is not returning the add-in to clients.
-2. Historical/recurring root cause: A prior wave (Oct–Dec 2025, IcM 707237433) was caused by an Agave backend deployment task failure linked to Admin API changes migrating to Virtual Account (VA) tokens, which caused cache corruption in user mailboxes. That wave was resolved via rollback + cache resets on December 26, 2025 — but some tenants never fully recovered.
+2. Historical/recurring root cause: A prior wave was resolved via rollback + cache resets in December 2025 — but some tenants never fully recovered.
 
 #### Work-around / steps to mitigate
 
