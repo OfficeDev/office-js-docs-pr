@@ -21,7 +21,7 @@ Users report that **My Templates** add-in is missing and undiscoverable across a
 
 #### Status
 
-A fix candidate has been merged via PR but rollout may take approximately 3 weeks for worldwide saturation. Engineering continues to investigate the persistent gap between rollback and full recovery.
+We're currently working on a fix.
 
 #### Details 
 
@@ -34,8 +34,6 @@ Reported by: Microsoft Support / Customer Reports
 Impacted add-ins: My Templates (primary); Viva Insights (confirmed also impacted as of March 3, 2026); other default add-ins (Bing Maps, Unsubscribe, Common Actions) intermittently affected.
 
 Severity level: High
-
-Current status: Open, active investigation as of March 9, 2026; rollback of root-cause change completed March 3 but did not fully resolve impact; next reconvene scheduled March 10, 2026 at 11:30 AM PT
 
 Affected platforms/clients: Outlook Classic (Desktop, Windows),  New Outlook (Desktop, Windows), Outlook on the web, Outlook mobile
 
