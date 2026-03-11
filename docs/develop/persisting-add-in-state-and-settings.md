@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 01/06/2026
+ms.date: 03/11/2026
 ms.localizationpriority: medium
 ---
 
