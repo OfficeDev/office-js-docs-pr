@@ -62,7 +62,7 @@ No reliable universal workaround exists. The following steps have been attempted
    ```
 1. **Refresh the Outlook client** — In some cases, a page refresh or Outlook restart after a MOS3 sync call triggered the add-in to reappear temporarily.
 1. **Submit in-app feedback with diagnostic logs** — Go to **Help** > **Feedback** > **Report a Problem in Outlook** and share the Session ID / User ID with support so engineering can pull diagnostics.
-1. **Reference the public support article** — See [My Templates are missing from Outlook](https://support.microsoft.com/office/34967a7a-7a80-4d72-bb45-a43ecdc93678) and track Service Incident EX1238375 for more status updates.
+1. **Reference the public support article** — See [My Templates are missing from Outlook](https://support.microsoft.com/office/34967a7a-7a80-4d72-bb45-a43ecdc93678).
 
 #### Notes to admins
 
