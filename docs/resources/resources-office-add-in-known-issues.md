@@ -41,7 +41,7 @@ Widespread, multi-tenant impact. Impact is tenant-wide in most cases.
 
 Partially identified. Engineering has confirmed two contributing factors:
 
-1. A recent backend change that switched authentication from Exchange Web Services (EWS) to REST for the My Templates add-in caused access errors. The REST auth change was rolled back on March 3, 2026, producing a significant drop in errors — but full remediation has not been achieved. The subscription is present on the mailbox, but add-in information is not returned to clients.
+1. A recent backend change that switched authentication from Exchange Web Services (EWS) to REST for the My Templates add-in caused access errors. The REST auth change was rolled back on March 3, 2026. This produced a significant drop in errors, but full remediation has not been achieved. The subscription is present on the mailbox, but add-in information is not returned to clients.
 2. Historical/recurring root cause: A prior wave was resolved via rollback + cache resets in December 2025 — but some tenants never fully recovered.
 
 #### Work-around / steps to mitigate
