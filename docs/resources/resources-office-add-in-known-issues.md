@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 03/09/2026
+ms.date: 03/11/2026
 ms.localizationpriority: medium
 ---
 
@@ -23,7 +23,7 @@ Users report that **My Templates** add-in is missing and undiscoverable across a
 
 We're currently working on a fix.
 
-#### Details 
+#### Details
 
 Start date: Jan 21, 2026
 
@@ -41,7 +41,7 @@ Widespread, multi-tenant impact. Impact is tenant-wide in most cases.
 
 Partially identified. Engineering has confirmed two contributing factors:
 
-1. Primary (current active incident): A recent backend change switching authentication from Exchange Web Services (EWS) to REST for the My Templates add-in caused access errors. The REST auth change was rolled back on March 3, 2026, producing a significant drop in errors — but full remediation has not been achieved. The subscription is present on the mailbox, but MetaOS is not returning the add-in to clients.
+1. A recent backend change that switched authentication from Exchange Web Services (EWS) to REST for the My Templates add-in caused access errors. The REST auth change was rolled back on March 3, 2026. This produced a significant drop in errors, but full remediation has not been achieved. The subscription is present on the mailbox, but add-in information is not returned to clients.
 2. Historical/recurring root cause: A prior wave was resolved via rollback + cache resets in December 2025 — but some tenants never fully recovered.
 
 #### Work-around / steps to mitigate
@@ -60,18 +60,15 @@ No reliable universal workaround exists. The following steps have been attempted
    Get-App -Identity a216ceed-7791-4635-a752-5a4ac0a5eb93
 
    ```
-1. **Refresh the Outlook client** — In some cases, a page refresh or Outlook restart after a MOS3 sync call triggered the add-in to reappear temporarily.
+1. **Refresh the Outlook client** — In some cases, a page refresh or Outlook restart triggered the add-in to reappear temporarily.
 1. **Submit in-app feedback with diagnostic logs** — Go to **Help** > **Feedback** > **Report a Problem in Outlook** and share the Session ID / User ID with support so engineering can pull diagnostics.
-1. **Reference the public support article** — See [My Templates are missing from Outlook](https://support.microsoft.com/office/34967a7a-7a80-4d72-bb45-a43ecdc93678) and track Service Incident EX1238375 for more status updates.
+1. **Reference the public support article** — See [My Templates are missing from Outlook](https://support.microsoft.com/office/34967a7a-7a80-4d72-bb45-a43ecdc93678).
 
 #### Notes to admins
 
 Re-enabling the add-in via PowerShell or the Admin Center does not guarantee resolution while the service-side issue is active. Engineering is working on a fix and will post updates to the Service Health Dashboard (SHD).
 
-
-
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
-
 
 ### ISSUE: Intermittent failure to load or deploy Office Add-ins due to Exchange authentication changes
 
