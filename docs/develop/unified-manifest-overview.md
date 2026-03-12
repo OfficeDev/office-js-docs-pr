@@ -17,7 +17,7 @@ This article introduces the unified app manifest for Microsoft 365. It assumes t
 
 Microsoft is making a number of improvements to the Microsoft 365 developer platform. These improvements provide more consistency in the development, deployment, installation, and administration of all types of apps for Microsoft 365, including Office Add-ins. These changes are compatible with existing add-ins.
 
-One important improvement is the ability to create a single unit of distribution for multiple types of apps for Microsoft 365 by using a single manifest and app package. For example an Office add-in can be combined with a custom Teams tab into a single app for Microsoft 365. 
+One important improvement is the ability to create a single unit of distribution for multiple types of apps for Microsoft 365 by using a single manifest and app package. For example, an Office Add-in can be combined with a custom Teams tab into a single app for Microsoft 365. 
 
 > [!TIP]
 > Ready to get started with the unified manifest? Begin with [Build an Outlook add-in with the unified manifest for Microsoft 365](../quickstarts/outlook-quickstart-json-manifest.md).

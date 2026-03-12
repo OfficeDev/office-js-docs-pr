@@ -27,7 +27,7 @@ Office on the web no longer opens in Internet Explorer or Microsoft Edge Legacy 
 You can use sideloading to install an Office Add-in for testing without having to first put it in an add-in catalog. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. The following articles each describe how to sideload Office Add-ins on a specific platform or within a specific product.
 
 > [!NOTE]
-> Office Add-ins that use the unified manifest for Microsoft 365 are not supported on all platforms. For more information, see see [Outlook API requirement set client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).  
+> Office Add-ins that use the unified manifest for Microsoft 365 are not supported on all platforms. For more information, see [Outlook API requirement set client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).  
 
 - [Sideload Office Add-ins in Office on the web](sideload-office-add-ins-for-testing.md)
 - [Sideload Office Add-ins on Windows](test-debug-non-local-server.md)
