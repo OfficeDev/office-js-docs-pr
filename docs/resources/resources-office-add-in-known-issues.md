@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 03/09/2026
+ms.date: 03/11/2026
 ms.localizationpriority: medium
 ---
 
@@ -15,7 +15,62 @@ This article provides information about current known issues with Office Add-ins
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
-### Intermittent failure to load or deploy Office Add-ins due to Exchange authentication changes
+### OUTLOOK ISSUE: Users unable to access the My Templates add-in in Exchange Online across all Outlook clients
+
+Users report that **My Templates** add-in is missing and undiscoverable across all Outlook surfaces. The add-in subscription exists on affected mailboxes and Centralized Deployment returns it correctly, but client-side discovery within Outlook and Exchange services fails to surface the add-in to end users. Users cannot find it in the toolbar, ribbon, **Add Apps** search, All Apps, Integrated Apps in Admin Center, or via PowerShell Get-App in some cases. The issue presents as a service-side discovery or authentication regression, rather than an admin configuration or Centralized Deployment failure.
+
+#### Status
+
+We're currently working on a fix.
+
+#### Details
+
+Start date: Jan 21, 2026
+
+Impacted add-ins: My Templates (primary); Viva Insights (confirmed also impacted as of March 3, 2026); other default add-ins (Bing Maps, Unsubscribe, Common Actions) intermittently affected.
+
+Severity level: High
+
+Affected platforms/clients: Outlook Classic (Desktop, Windows),  New Outlook (Desktop, Windows), Outlook on the web, Outlook mobile
+
+#### User impact
+
+Widespread, multi-tenant impact. Impact is tenant-wide in most cases.
+
+#### Root cause
+
+Partially identified. Engineering has confirmed two contributing factors:
+
+1. A recent backend change that switched authentication from Exchange Web Services (EWS) to REST for the My Templates add-in caused access errors. The REST auth change was rolled back on March 3, 2026. This produced a significant drop in errors, but full remediation has not been achieved. The subscription is present on the mailbox, but add-in information is not returned to clients.
+2. Historical/recurring root cause: A prior wave was resolved via rollback + cache resets in December 2025 — but some tenants never fully recovered.
+
+#### Work-around / steps to mitigate
+
+No reliable universal workaround exists. The following steps have been attempted by support teams with limited/inconsistent success:
+
+1. **Global Admin PowerShell — re-enable the add-in org-wide** (may take up to 72 hours to reflect; some tenants encounter 401 errors):
+   ```PowerShell
+
+   Set-App -Identity a216ceed-7791-4635-a752-5a4ac0a5eb93 -OrganizationApp -Enabled $true
+
+   ```
+1. **Verify the add-in status**:
+   ```PowerShell
+
+   Get-App -Identity a216ceed-7791-4635-a752-5a4ac0a5eb93
+
+   ```
+1. **Refresh the Outlook client** — In some cases, a page refresh or Outlook restart triggered the add-in to reappear temporarily.
+1. **Submit in-app feedback with diagnostic logs** — Go to **Help** > **Feedback** > **Report a Problem in Outlook** and share the Session ID / User ID with support so engineering can pull diagnostics.
+1. **Reference the public support article** — See [My Templates are missing from Outlook](https://support.microsoft.com/office/34967a7a-7a80-4d72-bb45-a43ecdc93678).
+
+#### Notes to admins
+
+Re-enabling the add-in via PowerShell or the Admin Center does not guarantee resolution while the service-side issue is active. Engineering is working on a fix and will post updates to the Service Health Dashboard (SHD).
+
+<!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
+
+### ISSUE: Intermittent failure to load or deploy Office Add-ins due to Exchange authentication changes
 
 Some users experience issues where Office add-ins failed to load, appeared missing, or could not be deployed through the Microsoft 365 admin center. In affected scenarios, add-ins were visible in the admin experience or store but did not render or appear correctly in Outlook or other Office clients.
 
@@ -51,7 +106,7 @@ For more information, see [Deprecation of Exchange Web Services (EWS) in Exchang
 
 <!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-### Outlook: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
+### OUTLOOK ISSUE: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
 
 #### STATUS
 
@@ -69,7 +124,7 @@ Monday, 11/03/2025, at 4:31 PM UTC
 
 <!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-### Outlook: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
+### OUTLOOK ISSUE: Delays loading inline images in email signatures in the new Outlook for Windows and Outlook for the web
 
 We're currently investigating reports from Outlook users who are experiencing loading delays of inline images in email signatures when using the new Outlook for Windows and Outlook for the web. Our findings indicate that this is a server-side performance issue that affects rendering of all inline images. Attempting to send messages while the images are not yet loaded results in the following dialog box.
 
@@ -90,10 +145,10 @@ Options:
 1. Remove inline images from signature.
 1. Wait for images to load before sending the file.
 1. Switch to classic Outlook for Windows or Outlook for Mac.
-2. 
+ 
 <!-- ----------------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-### Centrally deployed add-in error "You don't have permission to use this add-in"
+### ISSUE: Centrally deployed add-in error "You don't have permission to use this add-in"
 
 Numerous customers report that after updating Office from 2505 to 2507 their add-in will not load and an error is displayed "You don't have permission to use this add-in. Contact your system administrator." Any add-in may reproduce this issue; it is not specific to a single add-in.
 
@@ -132,7 +187,7 @@ Value: `DWORD = 1`
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------------- -->
 
-### Excel: Increased frequency of RichApi.Error: Error code: 0xF5320001
+### EXCEL ISSUE: Increased frequency of RichApi.Error: Error code: 0xF5320001
 
 Date reported: 09/04/2025
 
