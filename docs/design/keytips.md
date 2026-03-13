@@ -31,10 +31,11 @@ Custom KeyTips are supported in the following Office applications and platforms.
 | PowerPoint | Supported | Supported | Supported |
 | Word | Supported | Supported | Supported |
 
-//TODO - Minimum supported version, if applicable
-
 > [!NOTE]
-> In Office on Mac, KeyTips are turned off by default. Users must turn on KeyTips in their Office settings to use the KeyTips defined for your add-in. For more information, see [Enabling KeyTips in Office for Mac](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/keytips-now-available-in-office-for-mac/4226638).
+>
+> - For Office on Windows, custom KeyTips require Version 2603 (Build 19822.20000) or later.
+> - For Office on Mac, KeyTips require Version 16.107 (Build 26030819) or later.
+> - In Office on Mac, KeyTips are turned off by default. Users must turn on KeyTips in their Office settings to use the KeyTips defined for your add-in. For more information, see [Enabling KeyTips in Office for Mac](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/keytips-now-available-in-office-for-mac/4226638).
 
 ## Supported surfaces and controls
 
