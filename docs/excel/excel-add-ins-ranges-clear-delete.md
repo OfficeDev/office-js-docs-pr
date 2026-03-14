@@ -49,7 +49,7 @@ Selectively clear only certain aspects of a range using the `applyTo` parameter.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
 
     // Clear only the contents, keeping formatting intact.
     sheet.getRange("A1:A5").clear(Excel.ClearApplyTo.contents);

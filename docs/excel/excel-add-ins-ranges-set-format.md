@@ -81,7 +81,7 @@ Set various font properties including bold, italic, size, and font name.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    let sheet = context.workbook.worksheets.getActiveWorksheet();
     let range = sheet.getRange("B2:E2");
 
     range.format.font.bold = true;

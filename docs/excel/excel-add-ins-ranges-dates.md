@@ -14,7 +14,7 @@ This article provides code samples that show how to work with dates using the Ex
 ## Key points
 
 - Excel stores dates as sequential serial numbers (OADate format), not JavaScript Date objects.
-- Use the Moment-MSDate plug-in to convert between JavaScript dates and Excel's date format.
+- Use the Moment-MSDate library to convert between JavaScript dates and Excel's date format.
 - Set `numberFormat` to display dates in human-readable formats.
 - The Moment.js library provides helpful date manipulation and formatting capabilities.
 
