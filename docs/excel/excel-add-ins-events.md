@@ -1,13 +1,21 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: A list of events for Excel JavaScript objects. This includes information on using event handlers and the associated patterns.
-ms.date: 05/19/2023
+ms.date: 03/03/2026
 ms.localizationpriority: medium
 ---
 
 # Work with Events using the Excel JavaScript API
 
 This article describes important concepts related to working with events in Excel and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API.
+
+## Key points
+
+- Excel fires event notifications when specific changes occur in the workbook.
+- Register event handlers using the `add` method on event objects like `worksheet.onChanged`.
+- Remove event handlers using the `remove` method with the same `RequestContext`.
+- Event handlers don't persist across sessions and are destroyed when the add-in refreshes or closes.
+- Disable events temporarily using `context.runtime.enableEvents` to improve performance during batch operations.
 
 ## Events in Excel
 
@@ -163,3 +171,6 @@ await Excel.run(async (context) => {
 ## See also
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
+- [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md)
+- [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md)

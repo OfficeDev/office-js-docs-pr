@@ -1,7 +1,7 @@
 ---
 title: 'Sample: Import a Word document template with a Word add-in'
 description: Learn how to create a Word add-in that imports a template in a Word document.
-ms.date: 03/08/2024
+ms.date: 02/26/2026
 ms.topic: sample
 ms.localizationpriority: medium
 ---
@@ -17,12 +17,6 @@ This article features a sample add-in that imports a .docx file to use as a temp
 ## Prerequisites
 
 - Office connected to a Microsoft 365 subscription (including Office on the web).
-
-## Run the sample code
-
-The sample code for this article is named [Import templates in a Word document](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-import-template). To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-import-template).
-
-:::image type="content" source="../images/word-import-template-applied.png" alt-text="The imported template.":::
 
 ## Key steps in the sample
 
@@ -52,6 +46,12 @@ You can use [content controls](/javascript/api/word/word.contentcontrol), [field
 ### Personalize templates
 
 Allow users to personalize or refine templates. For templates that may be useful to others (on their team, in their company, etc.), users can upload to a shared location.
+
+## Run the sample code
+
+The sample code for this article is named [Import templates in a Word document](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-import-template). To run the sample, follow the instructions in the [readme](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-import-template).
+
+:::image type="content" source="../images/word-import-template-applied.png" alt-text="The imported template.":::
 
 ## See also
 

@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 
 In some scenarios, a custom function that doesn't use a [shared runtime](../testing/runtimes.md#shared-runtime) will need to authenticate the user in order to access protected resources. Custom functions that don't use a shared runtime run in a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime). Because of this, if the add-in has a task pane, you'll need to pass data back and forth between the JavaScript-only runtime and the HTML-supporting runtime used by the task pane. You do this by using the [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage) object and a special Dialog API.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
 ## OfficeRuntime.storage object

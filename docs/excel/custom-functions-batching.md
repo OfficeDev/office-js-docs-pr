@@ -20,8 +20,6 @@ To set up batching for your custom functions you'll need to write three main sec
 2. A [function to make the remote request](#make-the-remote-request) when the batch is ready.
 3. [Server code to respond to the batch request](#process-the-batch-call-on-the-remote-service), calculate all of the operation results, and return the values.
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 ## Create the batching pattern in this article
 
 In the following sections, you'll learn how to construct the code one example at a time. It's recommended you create a brand-new custom functions project using the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) generator. To create a new project, see [Get started developing Excel custom functions](../quickstarts/excel-custom-functions-quickstart.md). You can use TypeScript or JavaScript.

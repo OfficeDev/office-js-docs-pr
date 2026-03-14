@@ -1,7 +1,7 @@
 ﻿---
 title: Implement an integrated spam-reporting add-in
 description: Learn how to implement an integrated spam-reporting add-in in Outlook.
-ms.date: 01/13/2026
+ms.date: 02/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ The integrated spam-reporting feature eases the task of developing individual ad
 - Enable an organization's security operations center (SOC) or IT administrators to easily perform spam and phishing simulations for educational purposes.
 
 > [!NOTE]
-> Integrated spam reporting was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14). Additional functionality was also added to subsequent requirement sets. To verify that an Outlook client supports these features, see [Supported clients](#supported-clients) and the relevant sections of this article for the features you want to implement.
+> Integrated spam reporting was introduced in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14). Additional functionality was also added to subsequent requirement sets. To verify that an Outlook client supports these features, see [Supported clients](#supported-clients) and the relevant sections of this article for the features you want to implement.
 
 ## Supported clients
 
@@ -185,6 +185,7 @@ Configure the [VersionOverridesV1_1](/javascript/api/manifest/versionoverrides-1
       > [!NOTE]
       > Depending on the Outlook client, the custom text specified in the `<MoreInfoText>` element appears before the URL that's provided in the `<MoreInfoUrl>` element or as link text for the URL. For more information, see [MoreInfoText](/javascript/api/manifest/moreinfo#moreinfotext).
     - A "Don't show me this message again" checkbox to prevent the preprocessing dialog from appearing again. To learn how to implement this option, see [Suppress the preprocessing dialog](#suppress-the-preprocessing-dialog).
+  - Ensure that the `resid` value of the [SourceLocation](/javascript/api/manifest/customfunctionssourcelocation) element matches the `resid` value of the `<Runtime>` element that specifies the HTML file.
 
 The following is an example of a `<VersionOverrides>` node configured for spam reporting.
 
@@ -247,7 +248,7 @@ The following is an example of a `<VersionOverrides>` node configured for spam r
                       <MoreInfoUrl resid="MoreInfo.Url"/>
                     </MoreInfo>
                   </PreProcessingDialog>
-                 <!-- Identifies the runtime to be used. This is also referenced by the Runtime element. -->
+                  <!-- Identifies the runtime to be used. The resid value must match that of the Runtime element that represents the browser runtime. -->
                   <SourceLocation resid="WebViewRuntime.Url"/>
                 </ReportPhishingCustomization> 
               </ExtensionPoint>
@@ -468,7 +469,7 @@ The following is a sample post-processing dialog shown to the user once the add-
 
 > [!NOTE]
 >
-> - The "Don't show me this message again" option was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The "Don't show me this message again" option was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 > - The "Don't show me this message again" option is available for preview in Outlook on Mac starting in Version 16.103 (Build 25101816). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 Depending on your scenario, you might not need a user to provide additional information about a message they're reporting. If the preprocessing dialog of your spam-reporting add-in only provides information to the user, you can choose to include a "Don't show me this message again" option in the dialog.
@@ -555,7 +556,7 @@ The preprocessing dialog will appear the next time a message is reported.
 
 > [!NOTE]
 >
-> - The option to implement opening a task pane from the `event.completed` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The option to implement opening a task pane from the `event.completed` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 > - This feature is available for preview in Outlook on Mac starting in Version 16.103 (Build 25101816). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 Instead of a post-processing dialog, you can implement a task pane to open after a user reports a message. For example, you can use the task pane to show additional information based on the user's input in the preprocessing dialog. Similar to the post-processing dialog, the task pane is implemented through the add-in's `event.completed` call.

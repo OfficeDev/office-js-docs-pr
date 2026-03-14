@@ -31,6 +31,9 @@ However, an Office Add-in can't successfully call any Office JavaScript APIs unt
 
 For more details about the sequence of events when an add-in is initialized, see [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md).
 
+> [!TIP]
+> Using a JavaScript framework like React, Angular, or Vue? See [Connect Office.js to any JavaScript framework](connect-to-javascript-frameworks.md) for framework-specific integration guidance.
+
 ## Initialize with Office.onReady()
 
 `Office.onReady()` is an asynchronous function that returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) object while it checks to see if the Office.js library is loaded. When the library is loaded, it resolves the Promise as an object that specifies the Office client application with an `Office.HostType` enum value (`Excel`, `Word`, etc.) and the platform with an `Office.PlatformType` enum value (`PC`, `Mac`, `OfficeOnline`, etc.). The Promise resolves immediately if the library is already loaded when `Office.onReady()` is called.

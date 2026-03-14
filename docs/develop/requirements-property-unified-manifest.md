@@ -1,17 +1,12 @@
 ﻿---
-title: Specify Office Add-in requirements in the unified manifest for Microsoft 365
+title: How to use the "requirements" property in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 04/18/2025
+ms.date: 02/26/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-<!-- 
-  This article is deliberately left out of the Office Add-ins TOC because 
-  it will be moving over to the M365 doc set as soon as that is up and running. 
--->
-
-# Specify Office Add-in requirements in the unified manifest for Microsoft 365
+# How to use the "requirements" property in the unified manifest for Microsoft 365
 
 There are several "requirements" properties in the [unified manifest for Microsoft 365](/office/dev/add-ins/develop/unified-manifest-overview). The [extensions.requirements](#extensionsrequirements) property controls the Office applications and versions on which the add-in can be installed. Other "requirements" properties are used to selectively suppress some features of an add-in on specific Office applications or versions where those features would be unneeded or unsupported. For more information, see [Filter features](#filter-features).
 
@@ -45,6 +40,9 @@ You can have more than one capability object. The following example shows how to
     }
 ]
 ```
+
+> [!IMPORTANT]
+> Be sure you understand the logic of how Office processes requirements. It is possible to inadvertantly configure the manifest so that your add-in can't be installed on *any* version of *any* Office application. We strongly recommend that you read [Understand the logic of API requirement configuration](understand-requirement-configuration.md).
 
 ## Filter features
 

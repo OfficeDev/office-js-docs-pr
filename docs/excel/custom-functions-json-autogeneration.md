@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 
 When an Excel custom function is written in JavaScript or TypeScript, [JSDoc tags](https://jsdoc.app/) are used to provide extra information about the custom function. We provide a [Webpack](https://webpack.js.org/) plugin that uses these JSDoc tags to automatically create the JSON metadata file at build time. Using the plugin saves you from the effort of [manually editing the JSON metadata file](custom-functions-json.md).
 
-[!include[Excel custom functions note](../includes/excel-custom-functions-note.md)]
-
 ## CustomFunctionsMetadataPlugin
 
 The plugin is [CustomFunctionsMetadataPlugin](https://github.com/OfficeDev/Office-Addin-Scripts/blob/master/packages/custom-functions-metadata-plugin/README.md). To install and configure it, use the following steps.
@@ -260,9 +258,9 @@ The following example shows an ADD function that adds two or three numbers, with
 /**
  * A function which sums two, or optionally three, numbers.
  * @customfunction ADDNUMBERS
- * @param firstNumber {number} First number to add.
- * @param secondNumber {number} Second number to add.
- * @param [thirdNumber] {number} Optional third number you wish to add.
+ * @param {number} firstNumber - First number to add.
+ * @param {number} secondNumber - Second number to add.
+ * @param {number} [thirdNumber] - Optional third number you wish to add.
  * ...
  */
 ```
@@ -292,8 +290,8 @@ The following example shows the `add` function that adds two numbers.
 /**
  * Adds two numbers.
  * @customfunction 
- * @param first First number
- * @param second Second number
+ * @param first - First number
+ * @param second - Second number
  * @returns The sum of the two numbers.
  */
 function add(first: number, second: number): number {
@@ -315,9 +313,9 @@ The following sample shows how to use the `invocation` parameter in combination 
 /**
  * Return the address of the cell that invoked the custom function. 
  * @customfunction
- * @param {number} first First parameter.
- * @param {number} second Second parameter.
- * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @param {number} first - First parameter.
+ * @param {number} second - Second parameter.
+ * @param {CustomFunctions.Invocation} invocation - Invocation object. 
  * @requiresAddress 
  */
 function getAddress(first, second, invocation) {
@@ -342,10 +340,10 @@ The following sample shows how to use the `invocation` parameter in combination 
 /**
  * Return the addresses of three parameters. 
  * @customfunction
- * @param {string} firstParameter First parameter.
- * @param {string} secondParameter Second parameter.
- * @param {string} thirdParameter Third parameter.
- * @param {CustomFunctions.Invocation} invocation Invocation object. 
+ * @param {string} firstParameter - First parameter.
+ * @param {string} secondParameter - Second parameter.
+ * @param {string} thirdParameter - Third parameter.
+ * @param {CustomFunctions.Invocation} invocation - Invocation object. 
  * @returns {string[][]} The addresses of the parameters, as a 2-dimensional array.
  * @requiresParameterAddresses
  */
@@ -375,8 +373,8 @@ The following example shows the `add` function that uses the `@returns` tag.
 /**
  * Adds two numbers.
  * @customfunction 
- * @param first First number
- * @param second Second number
+ * @param first - First number
+ * @param second - Second number
  * @returns The sum of the two numbers.
  */
 function add(first: number, second: number): number {

@@ -1,7 +1,7 @@
 ﻿---
 title: Add headers when a document opens
 description: Learn how to develop a Word add-in that implements event-based activation to add headers when a document is opened.
-ms.date: 07/02/2025
+ms.date: 02/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -27,6 +27,7 @@ To enable an event-based add-in, you must configure the following elements in th
 - In the [Runtimes](/javascript/api/manifest/runtimes) element, make a new [Override element for Runtime](/javascript/api/manifest/override#override-element-for-runtime). Override the "javascript" type and reference the JavaScript file containing the function you want to trigger with the event.
 - In the [DesktopFormFactor](/javascript/api/manifest/desktopformfactor) element, add a [FunctionFile](/javascript/api/manifest/functionfile) element for the JavaScript file with the event handler.
 - In the [ExtensionPoint](/javascript/api/manifest/extensionpoint) element, set the `xsi:type` to `LaunchEvent`. This enables the event-based activation feature in your add-in.
+- In the [SourceLocation](/javascript/api/manifest/customfunctionssourcelocation) element of the **\<ExtensionPoint\>** element, set the `resid` value to match that of the [Runtime](/javascript/api/manifest/runtime) element that references the HTML file.
 - In the [LaunchEvent](/javascript/api/manifest/launchevent) element, set the `Type` to `OnDocumentOpened` and specify the JavaScript function name of the event handler in the `FunctionName` attribute.
 
 Use the following sample manifest code to update your project.

@@ -29,7 +29,7 @@ The Yeoman generator for Office Add-ins can be used to create a Node.js Office A
 - Word
 - Excel custom functions
 
-Create your project using HTML, CSS and JavaScript (or TypeScript), or using React. If you choose React, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the generator, see [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
+Create your project using HTML, CSS and JavaScript (or TypeScript), or using React. If you choose React, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the generator, see [Yeoman generator for Office Add-ins](yeoman-generator-overview.md). For more information about integrating Office.js with JavaScript frameworks, see [Connect Office.js to any JavaScript framework](connect-to-javascript-frameworks.md).
 
 ### Visual Studio
 
