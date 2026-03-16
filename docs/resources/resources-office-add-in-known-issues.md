@@ -1,17 +1,35 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 03/11/2026
+ms.date: 03/12/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 03/09/2026_
+_Last updated 03/12/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 ## Active issues in Office add-ins
+
+<!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
+
+### OUTLOOK ISSUE: PIM-enabled tenants are unable to deploy or manage Outlook add-ins via centralized deployment
+
+When using Azure AD Privileged Identity Management (PIM) to activate admin roles, there is a regression where PIM-enabled admin roles are not correctly honored. During centralized deployment, role-based access control (RBAC) authorization fails and leads to false permission denials during add‑in deployment and management flows.
+
+#### STATUS
+
+Open; tracking id: 11126536
+
+#### IMPACT
+
+Admins are unable to deploy Outlook add-ins via central deployment when using PIM-enabled admin roles.
+
+#### WORKAROUND
+
+Don't use PIM-enabled roles if you are blocked by this issue.
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
