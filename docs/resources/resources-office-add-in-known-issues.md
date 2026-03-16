@@ -21,7 +21,7 @@ When using Azure AD Privileged Identity Management (PIM) to activate admin roles
 
 #### STATUS
 
-We're currently working on a fix.
+Open; tracking id: 11126536
 
 #### IMPACT
 
