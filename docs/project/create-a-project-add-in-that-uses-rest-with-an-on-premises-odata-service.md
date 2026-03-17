@@ -48,22 +48,14 @@ This article describes how to build a task pane add-in for Project Professional 
 
 ## Create the add-in project
 
-Because the Yeoman generator for Office Add-ins doesn't have a dedicated Project task pane template with full scaffolding, use the manifest-only option and then create the web application files manually.
+[!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
-1. Run the following command to create an add-in project by using the Yeoman generator.
+- **Choose a project type:** `Office Add-in Task Pane project`
+- **Choose a script type:** `JavaScript`
+- **What do you want to name your add-in?** `HelloProjectOData`
+- **Which Office client application would you like to support?** `Project`
 
-    ```command&nbsp;line
-    yo office
-    ```
-
-    > [!NOTE]
-    > When you run the `yo office` command, you might receive prompts about the data collection policies of Yeoman and the Office Add-in CLI tools. Use the information that's provided to respond to the prompts as you see fit.
-
-    When prompted, provide the following information to create your add-in project.
-
-    - **Choose a project type:** `Office Add-in project containing the manifest only`
-    - **What do you want to name your add-in?** `HelloProjectOData`
-    - **Which Office client application would you like to support?** `Project`
+After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 1. Go to the project folder.
 
@@ -71,39 +63,13 @@ Because the Yeoman generator for Office Add-ins doesn't have a dedicated Project
     cd HelloProjectOData
     ```
 
-## Set up the project structure
+## Update the code
 
-The manifest-only project contains a `manifest.xml` file. You need to create the web application files that provide the add-in UI and functionality.
+The add-in project that you created by using the Yeoman generator contains sample code for a basic task pane add-in. To build the OData comparison functionality, replace the contents of the generated task pane files.
 
-### Create the file structure
+### Update the HTML
 
-1. Create the following folder structure in the project root.
-
-    ```command&nbsp;line
-    mkdir src
-    mkdir src\taskpane
-    ```
-
-1. Create the following files in the `src\taskpane` folder. The following sections provide the contents for each file:
-
-    - `taskpane.html` - The HTML markup for the task pane.
-    - `taskpane.css` - The CSS styles for the task pane.
-    - `taskpane.js` - The JavaScript code that interacts with the Office application and the OData service.
-
-### Update the manifest
-
-Open the `manifest.xml` file and make the following changes.
-
-1. Change the `<Description>` value to `Compares cost and work data in the active project with averages for all projects`.
-1. Verify that the `<SourceLocation>` element points to your task pane HTML file. Update it to:
-
-    ```xml
-    <SourceLocation DefaultValue="https://localhost:3000/src/taskpane/taskpane.html" />
-    ```
-
-### Create the HTML content
-
-Create the `src\taskpane\taskpane.html` file with the following content. The task pane provides two buttons and a comparison table:
+Open the file `./src/taskpane/taskpane.html` and replace its entire contents with the following markup. The task pane provides two buttons and a comparison table:
 
 - **Get ProjectData Endpoint** gets the OData service URL from the active Project Web App connection.
 - **Compare All Projects** queries the OData service and displays average values alongside the current project values.
@@ -172,80 +138,9 @@ Create the `src\taskpane\taskpane.html` file with the following content. The tas
 </html>
 ```
 
-### Create the CSS styles
+### Update the JavaScript
 
-Create the file `src\taskpane\taskpane.css` with the following content.
-
-```css
-body {
-    font-size: 11pt;
-}
-
-h1 {
-    font-size: 22pt;
-}
-
-h2 {
-    font-size: 16pt;
-}
-
-.rest {
-    font-family: 'Courier New';
-    font-size: 0.9em;
-}
-
-.button-wide {
-    width: 210px;
-    margin-top: 2px;
-}
-
-.button-narrow {
-    width: 80px;
-    margin-top: 2px;
-}
-
-.infoTable {
-    text-align: center;
-    vertical-align: middle;
-}
-
-.heading_leftCol {
-    width: 20px;
-    height: 20px;
-}
-
-.heading_midCol {
-    width: 100px;
-    height: 20px;
-    font-size: medium;
-    font-weight: bold;
-}
-
-.heading_rightCol {
-    width: 101px;
-    height: 20px;
-    font-size: medium;
-    font-weight: bold;
-}
-
-.row_leftCol {
-    width: 20px;
-    font-size: small;
-    font-weight: bold;
-}
-
-.row_midCol {
-    width: 100px;
-}
-
-.row_rightCol {
-    width: 101px;
-}
-```
-
-### Create the JavaScript code
-
-Create the file `src\taskpane\taskpane.js` with the following content. The code is explained in more detail below.
+Open the file `./src/taskpane/taskpane.js` and replace its entire contents with the following code. The code is explained in more detail in the [Understand the code](#understand-the-code) section.
 
 ```js
 const PROJDATA = "/_api/ProjectData";
@@ -442,55 +337,29 @@ The `parseODataResult` function calculates average values of cost and work data 
 - **Red**: The current project value is unfavorable.
 - **Blue NA**: The current project isn't published to Project Server.
 
-## Serve the add-in locally
+## Try it out
 
-To serve your add-in files, you need a local web server. You can use any HTTP server you prefer. The following steps use the `http-server` npm package as an example.
+1. Start the local web server and sideload your add-in by running the following command from the root directory of your project.
 
-1. Install a development server.
-
-    ```command&nbsp;line
-    npm install --save-dev http-server
-    ```
-
-1. Generate development certificates for HTTPS.
-
-    ```command&nbsp;line
-    npx office-addin-dev-certs install
-    ```
-
-    Accept the prompt to install the certificate. The process stores the certificates in your user profile directory at `%USERPROFILE%\.office-addin-dev-certs\`.
-
-1. Add the following script to the `package.json` file's `"scripts"` section. This script references the certificate location where `office-addin-dev-certs` stores them.
-
-    ```json
-    "start": "http-server . --ssl --cert \"%USERPROFILE%\\.office-addin-dev-certs\\localhost.crt\" --key \"%USERPROFILE%\\.office-addin-dev-certs\\localhost.key\" -p 3000"
-    ```
-
-1. Start the local server.
+    [!INCLUDE [alert use https](../includes/alert-use-https.md)]
 
     ```command&nbsp;line
     npm start
     ```
 
-## Test the add-in
+    If your add-in doesn't automatically sideload, follow the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to manually sideload it in Project.
 
-To test the **HelloProjectOData** add-in, you must install Project Professional on your development computer. To enable different test scenarios, make sure you can choose whether Project opens for files on the local computer or connects with Project Web App.
+1. In Project Professional, make sure you're connected to a Project Web App instance. On the **File** tab, choose the **Info** tab in the Backstage view, and then choose **Manage Accounts**. In the **When starting** section, select **Choose an account**.
 
-1. In Project Professional, on the **File** tab, choose the **Info** tab in the Backstage view, and then choose **Manage Accounts**.
-
-1. In the **Project web app Accounts** dialog box, the **Available accounts** list can have multiple Project Web App accounts in addition to the local **Computer** account. In the **When starting** section, select **Choose an account**.
-
-### Sideload the add-in
-
-1. Follow the instructions in [Sideload Office Add-ins on Windows](../testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md) to sideload the add-in in Project by using the manifest file.
-
-### Run through test scenarios
+### Test scenarios
 
 1. **Test with a published project**: Connect with Project Web App and open a published project that contains cost and work data. On the **PROJECT** tab of the ribbon, in the **Office Add-ins** drop-down list, select **Hello ProjectData**. Select **Get ProjectData Endpoint**, and then select **Compare All Projects**. Verify that the add-in displays the endpoint and correctly displays the cost and work data in the comparison table.
 
 1. **Test without a Project Web App connection**: Open a local .mpp file without connecting to Project Web App. Open the **Hello ProjectData** task pane and select **Get ProjectData Endpoint**. The add-in should show a "No connection!" error, and the **Compare All Projects** button should remain disabled.
 
 1. **Test with an unpublished project**: Connect to Project Web App and create a project with cost and work data. Save the project but don't publish it. Open the **Hello ProjectData** task pane and compare projects. You should see a blue **NA** for fields in the **Current** column.
+
+1. [!include[Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-dev-add-in.md)]
 
 > [!NOTE]
 > There are limits to the amount of data that one query of the **ProjectData** service can return. The amount of data varies by entity. For example, the `Projects` entity set has a default limit of 100 projects per query. For a production add-in, modify the code to enable queries of more than 100 projects. For more information, see [Next steps](#next-steps) and [Querying OData feeds for Project reporting data](/previous-versions/office/project-odata/jj163048(v=office.15)).
