@@ -24,13 +24,13 @@ See also: [ribbon, ribbon button](#ribbon-ribbon-button).
 
 ## add-in only manifest
 
-An **add-in only manifest** is an XML file that defines how an Office Add-in integrates with Office applications. It specifies the add-in's settings, capabilities, and UI entry points. The add-in only manifest is the original manifest format for Office Add-ins and doesn't support combining with other Microsoft 365 extensions. To learn more, see [Office Add-ins manifest](../develop/add-in-manifests.md) and [Add-in only manifest for Office Add-ins](../develop/xml-manifest-overview.md).
+An **add-in only manifest** is an XML file that defines how an Office Add-in integrates with Office applications. It specifies the add-in's settings, capabilities, and UI entry points. The add-in only manifest is the original manifest format for Office Add-ins and doesn't support combining with other Microsoft 365 extensions. To learn more, see [Office Add-ins manifest](../develop/add-in-manifests.md) and [Office Add-ins with the add-in only manifest](../develop/xml-manifest-overview.md).
 
 See also: [unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365).
 
 ## append-on-send, prepend-on-send
 
-**Append-on-send** and **prepend-on-send** are Outlook add-in features that automatically add content to the end or beginning of a message body when the user sends it. By using these features, add-ins can insert disclaimers, signatures, or other content without requiring the user to take any action. To learn more, see [Implement append-on-send in your Outlook add-in](../outlook/append-on-send.md).
+**Append-on-send** and **prepend-on-send** are Outlook add-in features that automatically add content to the end or beginning of a message body when the user sends it. By using these features, add-ins can insert disclaimers, signatures, or other content without requiring the user to take any action. To learn more, see [Prepend or append content to a message or appointment body on send](../outlook/append-on-send.md).
 
 ## application
 
@@ -52,9 +52,9 @@ See also: [Microsoft Marketplace](#microsoft-marketplace), [Partner Center](#par
 
 ## Centralized Deployment
 
-**Centralized Deployment** is the recommended method for Microsoft 365 administrators to deploy Office Add-ins to users and groups within their organization. Through the Microsoft 365 admin center, administrators can assign add-ins to specific users, groups, or the entire organization without requiring each user to install individually. To learn more, see [Publish Office Add-ins](../publish/publish.md).
+**Centralized Deployment** is used by Microsoft 365 administrators to deploy Office Add-ins that use the [add-in only manifest](#add-in-only-manifest) to users and groups within their organization. Through the Microsoft 365 admin center, administrators can assign add-ins to specific users, groups, or the entire organization without requiring each user to install individually. To learn more, see [Deploy and publish Office Add-ins](../publish/publish.md).
 
-See also: [sideloading](#sideloading).
+See also: [integrated apps portal](#integrated-apps-portal), [sideloading](#sideloading).
 
 ## client
 
@@ -80,7 +80,7 @@ See also: [application-specific API](#application-specific-api).
 
 ## compose mode, read mode
 
-**Compose mode** is the state in Outlook when a user is creating or editing a message or appointment. **Read mode** is the state when a user is viewing a received message or appointment. Outlook add-ins can specify different behavior depending on the current mode. To learn more, see [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md).
+**Compose mode** is the state in Outlook when a user is creating or editing a message or appointment. **Read mode** is the state when a user is viewing a received message or appointment. Outlook add-ins can specify different behavior depending on the current mode. To learn more, see the "Extension points" section of [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md#extension-points).
 
 ## content add-in
 
@@ -122,7 +122,7 @@ See also: [custom function](#custom-function), [custom functions runtime](#custo
 
 ## delegate access, shared mailbox
 
-**Delegate access** is an Outlook scenario where one user manages another user's mailbox or calendar. A **shared mailbox** is a mailbox that multiple users can access for sending and receiving email from a common address (for example, info@contoso.com). Outlook add-ins require specific API support to work correctly in these shared scenarios. To learn more, see [Enable shared folders and shared mailbox scenarios in an Outlook add-in](../outlook/delegate-access.md).
+**Delegate access** is an Outlook scenario where one user manages another user's mailbox or calendar. A **shared mailbox** is a mailbox that multiple users can access for sending and receiving email from a common address (for example, info@contoso.com). Outlook add-ins require specific API support to work correctly in these shared scenarios. To learn more, see [Implement shared folders and shared mailbox scenarios in an Outlook add-in](../outlook/delegate-access.md).
 
 ## Entra ID
 
@@ -156,11 +156,16 @@ See also: [application](#application), [client](#client), [Office application, O
 
 ## Information Rights Management (IRM)
 
-**Information Rights Management** (**IRM**) is an Office feature that protects documents and email messages from unauthorized access, forwarding, printing, or copying. IRM-protected content might restrict the functionality available to Office Add-ins.
+**Information Rights Management** (**IRM**) is an Office feature that protects documents and email messages from unauthorized access, forwarding, printing, or copying. IRM-protected content might restrict the functionality available to Office Add-ins. To learn more, see [Mail items protected by IRM](../outlook/outlook-add-ins-overview.md#mail-items-protected-by-irm).
 
+## Integrated apps portal
+
+The **integrated apps portal** in the Microsoft 365 admin center is the primary method for Microsoft 365 administrators to deploy Office Add-ins to users and groups within their organization. Through the integrated apps portal, administrators can assign add-ins to specific users, groups, or the entire organization without requiring each user to install individually. For more information, see [Integrated apps portal in the Microsoft 365 admin center](../publish/publish.md#integrated-apps-portal-in-the-microsoft-365-admin-center)
+
+See also: [Microsoft 365 admin center](#microsoft-365-admin-center), [sideloading](#sideloading)
 ## JavaScript-only runtime
 
-A **JavaScript-only runtime** is a lightweight runtime environment that includes a JavaScript engine but no HTML rendering engine, DOM, localStorage, or cookies. Use it to run custom functions in Excel, and it might be used for function commands. To learn more, see [Runtimes in Office Add-ins](../testing/runtimes.md#javascript-only-runtime).
+A **JavaScript-only runtime** is a lightweight runtime environment that includes a JavaScript engine but no HTML rendering engine, DOM, localStorage, or cookies. Use it to run event-based tasks, custom functions in Excel, and integrated spam reporting in Outlook. To learn more, see [Runtimes in Office Add-ins](../testing/runtimes.md#javascript-only-runtime).
 
 See also: [custom functions runtime](#custom-functions-runtime), [runtime](#runtime), [shared runtime](#shared-runtime).
 
@@ -178,11 +183,11 @@ See also: [perpetual](#perpetual), [volume-licensed, volume-licensed perpetual, 
 
 ## Microsoft 365 admin center
 
-Tenant administrators use the **Microsoft 365 admin center** web portal to manage users, licenses, and organizational settings. In the context of Office Add-ins, administrators use the admin center to deploy add-ins to users and groups through [Centralized Deployment](#centralized-deployment).
+Tenant administrators use the **Microsoft 365 admin center** web portal to manage users, licenses, and organizational settings. In the context of Office Add-ins, administrators use the admin center to deploy add-ins to users and groups through the [integrated apps portal](#integrated-apps-portal) or [Centralized Deployment](#centralized-deployment). For more information, see [Publish Office Add-ins](../publish/publish.md).
 
 ## Microsoft 365 Agents Toolkit
 
-The **Microsoft 365 Agents Toolkit** (formerly Teams Toolkit) is a VS Code extension for creating and managing Microsoft 365 extensions, including Office Add-ins. It supports the unified manifest format. To learn more, see [Microsoft 365 Agents Toolkit overview for Office Add-in developers](../develop/agents-toolkit-overview.md).
+The **Microsoft 365 Agents Toolkit** (formerly Teams Toolkit) is a VS Code extension for creating and managing Microsoft 365 extensions, including Office Add-ins. It supports the unified manifest format. To learn more, see [Create Office Add-in projects with Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md).
 
 See also: [unified manifest for Microsoft 365](#unified-manifest-for-microsoft-365), [Yeoman generator, Yo Office](#yeoman-generator-yo-office).
 
@@ -194,17 +199,17 @@ See also: [Partner Center](#partner-center).
 
 ## Microsoft Graph
 
-**Microsoft Graph** is a unified REST API that provides access to data and intelligence across Microsoft 365 services, including Outlook mail, OneDrive files, Teams conversations, and more. Office Add-ins commonly call Microsoft Graph to access user data beyond what the Office application exposes directly. To learn more, see [Authorize to Microsoft Graph from an Office Add-in](../develop/authorize-to-microsoft-graph.md).
+**Microsoft Graph** is a unified REST API that provides access to data and intelligence across Microsoft 365 services, including Outlook mail, OneDrive files, Teams conversations, and more. Office Add-ins commonly call Microsoft Graph to access user data beyond what the Office application exposes directly. To learn more, see [Authorize to Microsoft Graph from an Office Add-in](../develop/authorize-to-microsoft-graph-without-sso.md).
 
 ## nested app authentication (NAA)
 
-**Nested app authentication** (**NAA**) is the recommended authentication pattern for Office Add-ins. NAA uses the MSAL.js library with a nested app protocol to obtain access tokens, enabling single sign-on across platforms. NAA replaces the legacy `getAccessToken` SSO approach. To learn more, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
+**Nested app authentication** (**NAA**) is the recommended authentication pattern for Office Add-ins. NAA uses the MSAL.js library with a nested app protocol to obtain access tokens, enabling single sign-on across platforms. NAA replaces the legacy `getAccessToken` SSO approach. To learn more, see [Enable single sign-on in an Office Add-in with nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 See also: [Entra ID](#entra-id), [single sign-on (SSO)](#single-sign-on-sso).
 
 ## new Outlook on Windows, classic Outlook on Windows
 
-**New Outlook on Windows** is the modern Outlook client for Windows based on web technologies, offering closer parity with Outlook on the web. **Classic Outlook on Windows** is the legacy Win32 Outlook application. The two clients have different add-in feature support, so the documentation distinguishes between them when noting platform availability.
+**New Outlook on Windows** is the modern Outlook client for Windows based on web technologies, offering closer parity with Outlook on the web. **Classic Outlook on Windows** is the legacy Outlook application on Windows. Depending on the scenario, the two clients may have different add-in feature support, so the documentation distinguishes between them when noting platform availability. To learn more, see [Develop Outlook add-ins for the new Outlook on Windows](../outlook/one-outlook.md).
 
 See also: [Office desktop application, Office desktop client, desktop client, desktop](#office-desktop-application-office-desktop-client-desktop-client-desktop).
 
@@ -234,13 +239,13 @@ See also: [application-specific API](#application-specific-api), [Common API](#c
 
 ## Office on the web
 
-**Office on the web** refers to the browser-based versions of Office applications (Excel, Word, PowerPoint, Outlook, and OneNote) that you access through a web browser. Office on the web is one of the primary platforms that support Office Add-ins, alongside Windows, Mac, and iPad.
+**Office on the web** refers to the browser-based versions of Office applications (Excel, Word, PowerPoint, Outlook, and OneNote) that you access through a web browser. Office on the web is one of the primary platforms that support Office Add-ins, alongside Windows, Mac, mobile, and iPad.
 
 See also: [platform](#platform).
 
 ## on-behalf-of flow (OBO)
 
-The **on-behalf-of flow** (**OBO**) is an OAuth 2.0 authentication pattern where a server-side component exchanges a user's token for a new token with different permissions or scopes. Office Add-ins use this flow when the add-in's backend service needs to call Microsoft Graph or other APIs on behalf of the signed-in user. To learn more, see [Authorize to Microsoft Graph from an Office Add-in](../develop/authorize-to-microsoft-graph.md).
+The **on-behalf-of flow** (**OBO**) is a legacy OAuth 2.0 authentication pattern where a server-side component exchanges a user's token for a new token with different permissions or scopes. To learn more, see [Authorize to Microsoft Graph with legacy Office SSO](../develop/authorize-to-microsoft-graph.md). For a modern authentication experience, use the Microsoft Authentication Library (MSAL) with [nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md) (NAA).
 
 See also: [nested app authentication (NAA)](#nested-app-authentication-naa), [single sign-on (SSO)](#single-sign-on-sso).
 
@@ -276,7 +281,7 @@ See also: [load and sync pattern](#load-and-sync-pattern), [RequestContext](#req
 
 ## quick start
 
-A **quick start** is a high-level description of key skills and knowledge required for the basic operation of a particular program. In the Office Add-ins documentation, a quick start is an introduction to developing an add-in for a particular application, such as Outlook. A quick start contains a series of steps that an add-in developer can complete in about 5 minutes, resulting in a functioning add-in and functional development environment.
+A **quick start** is a high-level description of key skills and knowledge required for the basic operation of a particular program. In the Office Add-ins documentation, a quick start is an introduction to developing an add-in for a particular application, such as Outlook. A quick start contains a series of steps that an add-in developer can complete in about five minutes, resulting in a functioning add-in and functional development environment.
 
 See also: [tutorial](#tutorial).
 
@@ -310,11 +315,11 @@ See also: [custom functions runtime](#custom-functions-runtime), [shared runtime
 
 ## Script Lab
 
-**Script Lab** is a free Office Add-in available for Excel, Word, and PowerPoint that you can use to write and run Office.js code snippets directly within the Office application. It's a useful tool for learning the Office JavaScript APIs and prototyping add-in functionality. To learn more, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+**Script Lab** is a free Office Add-in available for Excel, Outlook, Word, and PowerPoint that you can use to write and run Office.js code snippets directly within the Office application. It's a useful tool for learning the Office JavaScript APIs and prototyping add-in functionality. To learn more, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
 
 ## sensitivity label
 
-A **sensitivity label** is a classification marking applied to Office documents or Outlook email messages indicating their confidentiality level, such as Public, Internal, or Confidential. Add-ins can read sensitivity labels and enforce policies based on the applied label.
+A **sensitivity label** is a classification marking applied to Office documents or Outlook email messages indicating their confidentiality level, such as Public, Internal, or Confidential. Add-ins can read sensitivity labels and enforce policies based on the applied label. To learn how to manage sensitivity labels in Outlook, see [Manage the sensitivity label of your message or appointment in compose mode](../outlook/sensitivity-label.md).
 
 ## setless API
 
@@ -330,25 +335,25 @@ See also: [custom functions runtime](#custom-functions-runtime), [runtime](#runt
 
 ## SharePoint app catalog
 
-A **SharePoint app catalog** is a special SharePoint site collection that you use to distribute Office Add-ins within your organization. Administrators upload add-in only manifest files to the catalog, making the add-ins available to users in the organization without publishing to Microsoft Marketplace. To learn more, see [Publish Office Add-ins](../publish/publish.md).
+A **SharePoint app catalog** is a special SharePoint site collection that you use to distribute Office Add-ins within your organization. Administrators upload add-in only manifest files to the catalog, making the add-ins available to users in the organization without publishing to Microsoft Marketplace. To learn more, see [SharePoint app catalog deployment](../publish/publish.md#sharepoint-app-catalog-deployment).
 
 See also: [AppSource](#appsource), [Centralized Deployment](#centralized-deployment).
 
 ## sideloading
 
-**Sideloading** is the process of installing an Office Add-in directly for testing purposes without going through Centralized Deployment or AppSource. Developers sideload add-ins during development to test functionality in Office applications. The sideloading method varies by platform. To learn more, see [Sideload Office Add-ins for testing](../testing/sideload-office-add-ins-for-testing.md).
+**Sideloading** is the process of installing an Office Add-in directly for testing purposes without going through Microsoft Marketplace or the integrated apps portal. Developers sideload add-ins during development to test functionality in Office applications. The sideloading method varies by platform. To learn more, see [Sideload an Office Add-in for testing](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 
-See also: [Centralized Deployment](#centralized-deployment).
+See also: [Centralized Deployment](#centralized-deployment), [integrated apps portal](#integrated-apps-portal).
 
 ## single sign-on (SSO)
 
-**Single sign-on** (**SSO**) allows an Office Add-in to authenticate the user by using their existing Office login credentials, eliminating the need for a separate sign-in step. SSO in Office Add-ins uses Microsoft Entra ID tokens to authorize access to Microsoft Graph and other services. The recommended implementation uses [nested app authentication (NAA)](#nested-app-authentication-naa). To learn more, see [Enable single sign-on for Office Add-ins](../develop/sso-in-office-add-ins.md).
+**Single sign-on** (**SSO**) allows an Office Add-in to authenticate the user by using their existing Office login credentials, eliminating the need for a separate sign-in step. SSO in Office Add-ins uses Microsoft Entra ID tokens to authorize access to Microsoft Graph and other services. The recommended implementation uses [nested app authentication (NAA)](#nested-app-authentication-naa). To learn more, see [Enable single sign-on in an Office Add-in with nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 See also: [Entra ID](#entra-id), [nested app authentication (NAA)](#nested-app-authentication-naa).
 
 ## Smart Alerts
 
-**Smart Alerts** is an Outlook feature that uses event-based activation to run add-in code when a user sends a message or appointment. The add-in can validate message properties, such as required fields, categories, or attachments, and optionally block the send if conditions aren't met. To learn more, see [Use Smart Alerts and the OnMessageSend and OnAppointmentSend events in your Outlook add-in](../outlook/smart-alerts-onmessagesend-walkthrough.md).
+**Smart Alerts** is an Outlook feature that uses event-based activation to run add-in code when a user sends a message or appointment. The add-in can validate message properties, such as required fields, categories, or attachments, and optionally block the send if conditions aren't met. To learn more, see [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](../outlook/onmessagesend-onappointmentsend-events.md).
 
 See also: [event-based activation](#event-based-activation).
 
@@ -420,7 +425,7 @@ See also: [Office cache](#office-cache), [web cache](#web-cache).
 
 ## XLL
 
-An **XLL** add-in is an Excel add-in file that provides user-defined functions and has the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that only Excel can open. You must write XLL add-in files in C or C++. Custom functions are the modern equivalent of XLL user-defined functions. Custom functions offer support across platforms and are backwards compatible with XLL files. To learn more, see [Extend custom functions with XLL user-defined functions](/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf).
+An **XLL** add-in is an Excel add-in file that provides user-defined functions and has the file extension **.xll**. An XLL file is a type of dynamic link library (DLL) file that only Excel can open. You must write XLL add-in files in C or C++. Custom functions are the modern equivalent of XLL user-defined functions. Custom functions offer support across platforms and are backwards compatible with XLL files. To learn more, see [Extend custom functions with XLL add-ins](/office/dev/add-ins/excel/make-custom-functions-compatible-with-xll-udf).
 
 See also: [custom function](#custom-function).
 
