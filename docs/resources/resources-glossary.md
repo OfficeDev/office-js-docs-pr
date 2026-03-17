@@ -40,7 +40,7 @@ See also: [client](#client), [host](#host), [Office application, Office client](
 
 ## application-specific API
 
-Application-specific APIs provide strongly typed objects that interact with objects that are native to a specific Office application. For example, you call the Excel JavaScript APIs for access to worksheets, ranges, tables, charts, and more. Application-specific APIs are currently available for Excel, OneNote, PowerPoint, Visio, and Word. To learn more, see [Application-specific API model](../develop/application-specific-api-model.md).
+Application-specific APIs provide strongly-typed objects that interact with objects that are native to a specific Office application. For example, you call the Excel JavaScript APIs for access to worksheets, ranges, tables, charts, and more. Application-specific APIs are currently available for Excel, OneNote, PowerPoint, Visio, and Word. To learn more, see [Application-specific API model](../develop/application-specific-api-model.md).
 
 See also: [Common API](#common-api).
 
@@ -72,7 +72,7 @@ See also: [add-in](#add-in), [VSTO add-in](#vsto-add-in), [VBA](#vba).
 
 Use Common APIs to access features such as UI, dialogs, and client settings that are common across multiple Office applications. This API model uses [callbacks](https://developer.mozilla.org/docs/Glossary/Callback_function), which you use to specify only one operation in each request sent to the Office application.
 
-Common APIs where introduced in Office.js with Office 2013. Some Common APIs are legacy APIs from the early 2010s. Excel, PowerPoint, and Word all have Common API functionality, but most of this functionality is replaced or superseded by the application-specific API model. Use the application-specific APIs when possible.
+Common APIs were introduced in Office.js with Office 2013. Some Common APIs are legacy APIs from the early 2010s. Excel, PowerPoint, and Word all have Common API functionality, but most of this functionality is replaced or superseded by the application-specific API model. Use the application-specific APIs when possible.
 
 Other Common APIs, such as the Common APIs related to Outlook, UI, and authentication, are the modern and preferred APIs for these purposes. For details about the Common API object model, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
@@ -320,7 +320,7 @@ A **sensitivity label** is a classification marking applied to Office documents 
 
 An API in the Office JavaScript Library that isn't included in any requirement set.
 
-See also [requirement set](#requirement-set).
+See also: [requirement set](#requirement-set).
 
 ## shared runtime
 
