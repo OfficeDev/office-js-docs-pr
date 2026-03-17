@@ -163,6 +163,7 @@ See also: [application](#application), [client](#client), [Office application, O
 The **integrated apps portal** in the Microsoft 365 admin center is the primary method for Microsoft 365 administrators to deploy Office Add-ins to users and groups within their organization. Through the integrated apps portal, administrators can assign add-ins to specific users, groups, or the entire organization without requiring each user to install individually. For more information, see [Integrated apps portal in the Microsoft 365 admin center](../publish/publish.md#integrated-apps-portal-in-the-microsoft-365-admin-center).
 
 See also: [Microsoft 365 admin center](#microsoft-365-admin-center), [sideloading](#sideloading).
+
 ## JavaScript-only runtime
 
 A **JavaScript-only runtime** is a lightweight runtime environment that includes a JavaScript engine but no HTML rendering engine, DOM, localStorage, or cookies. Use it to run event-based tasks, custom functions in Excel, and integrated spam reporting in Outlook. To learn more, see [Runtimes in Office Add-ins](../testing/runtimes.md#javascript-only-runtime).
