@@ -40,9 +40,6 @@ Here are the primary ways project managers use Project add-ins:
 
 **Real-time data display**: Show live data from other systems alongside your project plan, helping you make informed decisions without switching applications.
 
-> [!TIP]
-> For a detailed example of Project Server integration, see [Create a Project add-in that uses REST with an on-premises Project Server OData service](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
-
 ## Build your Project add-in
 
 Project add-ins use the Office JavaScript API to interact with Project data and integrate with external services. While there's no Project-specific JavaScript API, you can use the [Common API](/javascript/api/office) to create add-ins.
@@ -95,4 +92,3 @@ Ready to being building your first Project add-in? Build an add-in in minutes by
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 - [Developing Office Add-ins](../develop/develop-overview.md)
-- [Create a Project add-in that uses REST with an on-premises Project Server OData service](create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)

@@ -125,6 +125,10 @@
             "redirect_url": "/office/dev/add-ins/quickstarts/project-quickstart"
         },
         {
+            "source_path": "docs/project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md",
+            "redirect_url": "/office/dev/add-ins/project/project-add-ins"
+        },
+        {
             "source_path": "docs/word/word-add-ins.md",
             "redirect_url": "/office/dev/add-ins/quickstarts/word-quickstart"
         },
