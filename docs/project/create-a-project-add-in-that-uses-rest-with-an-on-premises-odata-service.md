@@ -1,7 +1,7 @@
 ---
 title: Create a Project add-in that uses REST with an on-premises Project Server OData service
 description: Learn how to build a task pane add-in for Project Professional that compares cost and work data in the active project with the averages for all projects in the current Project Web App instance.
-ms.date: 03/17/2026
+ms.date: 03/18/2026
 ms.localizationpriority: medium
 ---
 
@@ -104,11 +104,11 @@ Open the file `./src/taskpane/taskpane.html` and replace its entire contents wit
         </div>
     </div>
     <div id="corpInfo">
-        <table class="infoTable" aria-readonly="True" style="width: 100%;">
+        <table class="infoTable" style="width: 100%;">
             <tr>
-                <td class="heading_leftCol"></td>
-                <td class="heading_midCol"><strong>Average</strong></td>
-                <td class="heading_rightCol"><strong>Current</strong></td>
+                <th scope="col" class="heading_leftCol"></th>
+                <th scope="col" class="heading_midCol">Average</th>
+                <th scope="col" class="heading_rightCol">Current</th>
             </tr>
             <tr>
                 <td class="row_leftCol"><strong>Project Cost</strong></td>
@@ -170,7 +170,6 @@ function setOdataUrl() {
 
                 if (_pwa.substring(0, 4) === "http") {
                     _odataUrl = _pwa + PROJDATA;
-                    document.getElementById("compareProjects").removeAttribute("disabled");
                     getProjectGuid();
                 } else {
                     _odataUrl = "No connection!";
@@ -192,6 +191,8 @@ function getProjectGuid() {
         function (asyncResult) {
             if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
                 _projectUid = asyncResult.value.fieldValue;
+                // Enable the Compare All Projects button now that we have the project GUID.
+                document.getElementById("compareProjects").removeAttribute("disabled");
             } else {
                 showError(asyncResult.error.name, asyncResult.error.message);
             }
@@ -226,14 +227,18 @@ function retrieveOData() {
                 "\r\nStatus: " + status +
                 "\r\nResponseText:\r\n" + responseText;
 
-            // Parse and display the JSON response.
-            parseODataResult(responseText, _projectUid);
-
             // Write the document name, response header, status, and JSON to the odataText control.
             const odataText = document.getElementById("odataText");
             odataText.textContent = _docUrl;
             odataText.textContent += "\r\nREST query:\r\n" + restUrl;
             odataText.textContent += message;
+
+            // Only parse and display the JSON response if the request succeeded.
+            if (response.ok) {
+                parseODataResult(responseText, _projectUid);
+            } else {
+                showError("HTTP Error " + status, "The request failed. Check the response text for details.");
+            }
         });
     })
     .catch(function (error) {
@@ -327,7 +332,7 @@ The **Get ProjectData Endpoint** button calls `setOdataUrl`, which uses the [get
 When the user selects **Compare All Projects**, the `retrieveOData` function builds a REST query URL and calls the **ProjectData** OData service by using the Fetch API. The REST query filters out administrative projects and selects cost, work, and percent complete fields.
 
 > [!NOTE]
-> This code works with an on-premises installation of Project Server. For Project on the web, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
+> This code makes a cross-origin request because the add-in runs from `https://localhost:3000` but fetches data from your Project Server domain. For on-premises Project Server installations, you must configure CORS (Cross-Origin Resource Sharing) on the server to allow requests from your add-in's origin. Additionally, because the code uses `credentials: "include"`, the server must explicitly allow credentials and cannot use a wildcard (`*`) origin in the `Access-Control-Allow-Origin` header. For Project on the web, you can use OAuth for token-based authentication. For more information, see [Addressing same-origin policy limitations in Office Add-ins](../develop/addressing-same-origin-policy-limitations.md).
 
 ### parseODataResult
 
@@ -376,7 +381,7 @@ For production use, consider the following improvements.
 
 - Rewrite the `retrieveOData` function to enable queries of more than 100 projects. For example, you could get the number of projects with a `~/ProjectData/Projects()/$count` query and use the *$skip* operator and *$top* operator in the REST query for project data. Run multiple queries in a loop and then average the data from each query. Each query for project data would be of the form:
 
-  `~/ProjectData/Projects()?skip=[numSkipped]&$top=100&$filter=[filter]&$select=[field1,field2, ...]`
+  `~/ProjectData/Projects()?$skip=[numSkipped]&$top=100&$filter=[filter]&$select=[field1,field2, ...]`
 
   For more information, see [OData system query options using the REST endpoint](/previous-versions/dynamicscrm-2015/developers-guide/gg309461(v=crm.7)). You can also use the [Set-SPProjectOdataConfiguration](/powershell/module/microsoft.sharepoint.powershell/set-spprojectodataconfiguration) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](/previous-versions/office/project-odata/jj163015(v=office.15)).
 
