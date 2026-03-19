@@ -29,10 +29,10 @@ Here are the primary ways project managers use Project add-ins:
 
 **Custom workflows**: Build approval processes and status update workflows that integrate with external systems while keeping Project as the central planning tool.
 
+**SharePoint connectivity**: Connect with SharePoint libraries, lists, and workflows. Access project templates, document libraries, and team collaboration spaces directly from Project.
+
 > [!NOTE]
 > Project add-ins have limited built-in data query capabilities. The Common API for Project primarily supports task and resource selection events. Advanced data integration scenarios that were previously enabled by the ProjectData OData service (removed in Project Server Subscription Edition) are no longer available through the Office JavaScript API.
-
-**SharePoint connectivity**: Connect with SharePoint libraries, lists, and workflows. Access project templates, document libraries, and team collaboration spaces directly from Project.
 
 ### Data visualization and reporting
 
