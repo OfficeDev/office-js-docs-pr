@@ -22,8 +22,8 @@ sections:
     size: small
     background:
       componentType: image
-      src: /docs/images/portals/office-extensibility-banner.png
-      alt: Office Extensibility banner image
+      src: /docs/images/office-developer-hero.png
+      alt: Office Extensibility hero image
 
 # Start your Journey here
   - componentType: cards
@@ -80,7 +80,7 @@ sections:
     - componentType: card
       title: "Script Lab"
       summary: Script lab is an Office JavaScript API tool for anyone who wants to learn about writing Office Add-ins for Word, Excel, PowerPoint, or Outlook.
-      imageUrl: /docs/images/portals/i-love-robots.png
+      imageUrl: /docs/images/i-love-robots.png
       links: 
         - componentType: link
           text: Explore Script Lab
@@ -88,7 +88,7 @@ sections:
     - componentType: card
       title: "Office Scripts"
       summary: Use Office Scripts in Excel on the web to automate your common tasks. Learn how to create and edit Office Scripts and get started automating today.
-      imageUrl: /docs/images/portals/play-button-macro.png
+      imageUrl: /docs/images/play-button-macro.png
       links: 
         - componentType: link
           text: Explore Office Scripts
@@ -96,7 +96,7 @@ sections:
     - componentType: card
       title: "Fluent UI"
       summary: Use the official front-end framework for building experiences that fit seamlessly into Microsoft 365.
-      imageUrl: /docs/images/portals/sextant.png
+      imageUrl: /docs/images/sextant.png
       links: 
         - componentType: link
           text: Explore Fluent UI
@@ -104,7 +104,7 @@ sections:
     - componentType: card
       title: "Developer Tools"
       summary: Use our developer tools to build solutions for consumer and professional markets.
-      imageUrl: /docs/images/portals/hands-on.png
+      imageUrl: /docs/images/hands-on.png
       links: 
         - componentType: link
           text: Learn more
@@ -121,53 +121,53 @@ sections:
         url: https://github.com/OfficeDev/Office-Add-in-samples
         icon:
           componentType: image
-          src: /docs/images/portals/github.png
+          src: /docs/images/github.png
       - componentType: icon-card
         title: Community Calls
         summary: Learn from others how to build apps on Microsoft 365 & Power Platform.
         url: https://aka.ms/M365DevCalls
         icon:
           componentType: image
-          src: /docs/images/portals/calendar.png
+          src: /docs/images/calendar.png
       - componentType: icon-card
         title: Microsoft 365 Developer Blog
         summary: A developer platform for building collaborative apps for hybrid work.
         url: https://devblogs.microsoft.com/microsoft365dev
         icon:
           componentType: image
-          src: /docs/images/portals/blog.png
+          src: /docs/images/blog.png
       - componentType: icon-card
         title: Microsoft Q&A forum
         summary: Ask experts questions about your custom Office solutions.
         url: https://learn.microsoft.com/en-us/answers/tags/321/m365-office-development-routing-development-other
         icon:
           componentType: image
-          src: /docs/images/portals/question.png        
+          src: /docs/images/question.png        
       - componentType: icon-card
         title: Request a feature
         summary: Office Add-ins developer feedback on Tech Community.
         url: https://techcommunity.microsoft.com/tag/office%20add-ins%20development?nodeId=board%3AMicrosoft365DeveloperPlatform
         icon:
           componentType: image
-          src: /docs/images/portals/idea.png
+          src: /docs/images/idea.png
       - componentType: icon-card
         title: Get the Office Add-ins Development Kit
         summary: Set up your environment, create Office Add-ins, debug the code, and view more samples using Visual Studio Code.
         url: /office/dev/add-ins/develop/development-kit-overview?tabs=vscode
         icon:
           componentType: image
-          src: /docs/images/portals/puzzle.png
+          src: /docs/images/puzzle.png
       - componentType: icon-card
         title: Bring your Office solutions to market
         summary: Submit your Office app to Microsoft AppSource to make it available to millions of consumers and businesses.
         url: /office/dev/store/submit-to-appsource-via-partner-center
         icon:
           componentType: image
-          src: /docs/images/portals/partner.png
+          src: /docs/images/partner.png
       - componentType: icon-card
         title: Join the M365 Developer Program
         summary: Current Visual Studio Professional or Enterprise subscribers and members of qualifying programs can set up a free Microsoft 365 E5 developer subscription to use for development.
         url: /office/developer-program/microsoft-365-developer-program-faq
         icon:
           componentType: image
-          src: /docs/images/portals/insiders.png
+          src: /docs/images/insiders.jpg
