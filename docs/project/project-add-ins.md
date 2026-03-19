@@ -1,7 +1,7 @@
 ﻿---
 title: Task pane add-ins for Project
 description: Learn about task pane add-ins for Project.
-ms.date: 09/16/2025
+ms.date: 03/19/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -14,7 +14,10 @@ Build custom task pane add-ins to extend Project with web integrations and strea
 For an introduction to Office Add-ins, see [Office Add-ins platform overview](../overview/office-add-ins.md).
 
 > [!NOTE]
-> Project Professional supports task pane add-ins that can access Project on the web, on-premises Project Server installations, and SharePoint (both on-premises and online). Project Standard doesn't support direct integration with Project Server data or SharePoint task lists synchronized with Project Server.
+> Project Professional supports task pane add-ins. Project Standard also supports task pane add-ins but with more limited capabilities.
+>
+> [!IMPORTANT]
+> Project Server Subscription Edition (the current supported on-premises version) has removed several integration features available in earlier versions, including the ProjectData OData service. Project Online is retiring on September 30, 2026. For current Project add-in capabilities, see the [Common API documentation](/javascript/api/office).
 
 ## Project add-in scenarios
 
@@ -24,31 +27,23 @@ Here are the primary ways project managers use Project add-ins:
 
 ### External system integration
 
-**Enterprise data connections**: Connect Project with external systems like ERP applications, timesheet systems, or accounting software. Pull relevant data into Project or push project updates to other business systems.
+**Custom workflows**: Build approval processes and status update workflows that integrate with external systems while keeping Project as the central planning tool.
 
-**Custom workflows**: Build approval processes and status update workflows that span multiple systems while keeping Project as the central planning tool.
-
-### Project Server and SharePoint integration
-
-**Project Server data access**: Use Project Server's REST APIs and OData services to access portfolio data, resource information, and reporting data. Integrate selected task or resource information with broader organizational project data.
-
-**SharePoint connectivity**: Connect with SharePoint libraries, lists, and workflows. Access project templates, document libraries, and team collaboration spaces directly from Project.
-
-### Data visualization and reporting
-
-**Custom dashboards**: Create specialized views of project data by combining Project information with external data sources. Build reports and visualizations tailored to your organization's needs.
-
-**Real-time data display**: Show live data from other systems alongside your project plan, helping you make informed decisions without switching applications.
+> [!NOTE]
+> Project add-ins have limited built-in data query capabilities. The Common API for Project primarily supports task and resource selection events. Advanced data integration scenarios that were previously enabled by the ProjectData OData service (removed in Project Server Subscription Edition) are no longer available through the Office JavaScript API.
 
 ## Build your Project add-in
 
 Project add-ins use the Office JavaScript API to interact with Project data and integrate with external services. While there's no Project-specific JavaScript API, you can use the [Common API](/javascript/api/office) to create add-ins.
 
+> [!NOTE]
+> The Common API support for Project is limited compared to other Office applications. It primarily provides access to task, resource, and view selection events, along with basic project field data. Complex data queries, reporting, and aggregation scenarios require alternative approaches outside of the Office JavaScript API.
+
 ### Development approach
 
 You have flexibility in how you build your Project add-in:
 
-- **Simple approach**: Create an HTML webpage with JavaScript, CSS, and REST queries using any text editor.
+- **Simple approach**: Create an HTML webpage with JavaScript, and CSS using any text editor.
 - **Framework-based**: Use modern web frameworks like React, Angular, or Vue.js for more complex user interfaces.
 - **Server-side**: Build with ASP.NET, Node.js, PHP, or other server technologies for backend integration.
 
@@ -82,7 +77,7 @@ Each distribution method has different benefits depending on your target audienc
 
 ## Get started
 
-Ready to being building your first Project add-in? Build an add-in in minutes by following with this quick start.
+Ready to begin building your first Project add-in? Build an add-in in minutes by following this quick start.
 
 > [!div class="nextstepaction"]
 > [Get started with your first Project add-in](../quickstarts/project-quickstart.md)
