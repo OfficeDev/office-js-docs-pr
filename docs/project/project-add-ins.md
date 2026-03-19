@@ -32,6 +32,14 @@ Here are the primary ways project managers use Project add-ins:
 > [!NOTE]
 > Project add-ins have limited built-in data query capabilities. The Common API for Project primarily supports task and resource selection events. Advanced data integration scenarios that were previously enabled by the ProjectData OData service (removed in Project Server Subscription Edition) are no longer available through the Office JavaScript API.
 
+**SharePoint connectivity**: Connect with SharePoint libraries, lists, and workflows. Access project templates, document libraries, and team collaboration spaces directly from Project.
+
+### Data visualization and reporting
+
+**Custom dashboards**: Create specialized views of project data by combining Project information with external data sources. Build reports and visualizations tailored to your organization's needs.
+
+**Real-time data display**: Show live data from other systems alongside your project plan, helping you make informed decisions without switching applications.
+
 ## Build your Project add-in
 
 Project add-ins use the Office JavaScript API to interact with Project data and integrate with external services. While there's no Project-specific JavaScript API, you can use the [Common API](/javascript/api/office) to create add-ins.
