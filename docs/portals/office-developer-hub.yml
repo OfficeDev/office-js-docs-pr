@@ -33,7 +33,7 @@ sections:
     - componentType: card
       title: "Word"
       summary: Use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Word across multiple platforms, including on the web, Windows, Mac, and iPad.
-      imageUrl: docs/images/Word_220.webp
+      imageUrl: https://raw.githubusercontent.com/OfficeDev/office-js-docs-pr/fcf5d1edd770e3bd643bf33b980790fd76072009/docs/images/Word_220.webp
       links: 
         - componentType: link
           text: Extend Word across multiple platforms
