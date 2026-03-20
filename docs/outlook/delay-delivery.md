@@ -1,7 +1,7 @@
 ﻿---
 title: Manage the delivery date and time of a message
 description: Learn how to schedule message delivery with the Office JavaScript API.
-ms.date: 10/02/2025
+ms.date: 10/30/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 Learn to build an Outlook add-in that schedules and sends messages even when the Outlook client is closed or the device is turned off. With the Office JavaScript API, your users can conveniently schedule email marketing campaigns or time messages for delivery during colleagues' or customers' business hours.
 
 > [!NOTE]
-> Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Try it out
 
@@ -78,4 +78,6 @@ The `item.delayDeliveryTime.setAsync` behavior differs from a message scheduled 
 
 ## See also
 
-- [Create Outlook add-ins for compose forms](compose-scenario.md)
+- [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md)
+- [Get, set, or add recipients to an appointment or message in Outlook](get-set-or-add-recipients.md)
+- [Get or set the subject when composing an appointment or message in Outlook](get-or-set-the-subject.md)

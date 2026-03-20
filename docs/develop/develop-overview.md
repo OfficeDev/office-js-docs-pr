@@ -1,8 +1,8 @@
-﻿---
+---
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 10/08/2025
+ms.date: 01/15/2026
 ms.localizationpriority: high
 ---
 
@@ -15,7 +15,7 @@ All Office Add-ins are built upon the Office Add-ins platform. For any add-in yo
 
 ## Create an Office Add-in
 
-You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), Visual Studio, Microsoft 365 Agents Toolkit, or the [Office Add-ins Development Kit](development-kit-overview.md).
+You can create an Office Add-in by using the [Yeoman generator for Office Add-ins](#yeoman-generator), [Visual Studio](#visual-studio), or [Microsoft 365 Agents Toolkit](#agents-toolkit).
 
 ### Yeoman generator
 
@@ -29,19 +29,17 @@ The Yeoman generator for Office Add-ins can be used to create a Node.js Office A
 - Word
 - Excel custom functions
 
-Create your project using HTML, CSS and JavaScript (or TypeScript), or using React. If you choose React, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the generator, see [Yeoman generator for Office Add-ins](yeoman-generator-overview.md).
+Create your project using HTML, CSS and JavaScript (or TypeScript), or using React. If you choose React, you can choose between JavaScript and Typescript as well. For more information about creating add-ins with the generator, see [Yeoman generator for Office Add-ins](yeoman-generator-overview.md). For more information about integrating Office.js with JavaScript frameworks, see [Connect Office.js to any JavaScript framework](connect-to-javascript-frameworks.md).
 
 ### Visual Studio
+
+[!INCLUDE [Deprecation warning for add-in projects in Visual Studio](../includes/vs-deprecation.md)]
 
 Visual Studio can be used to create Office Add-ins for Excel, Outlook, Word, and PowerPoint. An Office Add-in project gets created as part of a Visual Studio solution and uses HTML, CSS, and JavaScript. For more information about creating add-ins with Visual Studio, see [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 ### Agents Toolkit
 
 The Agents Toolkit can be used to create almost any kind of Microsoft 365 extension. For details about creating an add-in, see [Create Office Add-in projects with Microsoft 365 Agents Toolkit](agents-toolkit-overview.md).
-
-### Office Add-ins Development Kit
-
-The Office Add-ins Development Kit is an extension for Visual Studio Code. It lets you create new add-in projects and load samples directly from the IDE. Download the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=msoffice.microsoft-office-add-in-debugger) or learn more in the article [Create Office Add-in projects using Office Add-ins Development Kit for Visual Studio Code](development-kit-overview.md).
 
 ## Understand the two parts of an Office Add-in
 
@@ -90,7 +88,7 @@ Script Lab is an add-in that enables you to explore the Office JavaScript API an
 
 The following one-minute video shows Script Lab in action.
 
-[![Short video that shows Script Lab running in Excel, Word, and PowerPoint.](../images/screenshot-wide-youtube.png 'Script Lab preview video')](https://aka.ms/scriptlabvideo)
+[:::image type="content" source="../images/screenshot-wide-youtube.png" alt-text="Short video that shows Script Lab running in Excel, Word, and PowerPoint.":::](https://aka.ms/scriptlabvideo)
 
 For more information about Script Lab, see [Explore Office JavaScript APIs using Script Lab](../overview/explore-with-script-lab.md).
 
@@ -100,11 +98,13 @@ An Office Add-in can extend the Office UI by using add-in commands and HTML cont
 
 - [Add-in commands](../design/add-in-commands.md) can be used to add a custom tab, custom buttons and menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click (or select and hold) text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
 
+- Custom [Copilot agents](../design/agent-and-add-in-overview.md) (currently in preview) provide a natural language interface to run functions that call the [Office JavaScript API Library](#access-the-office-javascript-api-library).
+
 - HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../develop/dialog-api-in-office-add-ins.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web pages typically do, like call external web services, facilitate user authentication, and more.
 
 The following image shows an add-in command on the ribbon, a task pane to the right of the document, and a dialog box or content add-in over the document.
 
-![Diagram showing add-in commands on the ribbon, a task pane, and a dialog box / content add-in in an Office document.](../images/add-in-ui-elements.png)
+:::image type="content" source="../images/add-in-ui-elements.png" alt-text="Diagram showing add-in commands on the ribbon, a task pane, and a dialog box / content add-in in an Office document.":::
 
 For more information about extending the Office UI and designing the add-in's UX, see [Office UI elements for Office Add-ins](../design/interface-elements.md).
 

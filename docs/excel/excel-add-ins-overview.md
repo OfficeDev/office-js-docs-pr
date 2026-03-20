@@ -1,4 +1,4 @@
-﻿---
+---
 title: Excel add-ins overview
 description: Excel add-in allow you to extend Excel application functionality across multiple platforms including Windows, Mac, iPad, and in a browser.
 ms.date: 03/21/2023
@@ -57,7 +57,7 @@ In addition to interacting with the content in the workbook, Excel add-ins can a
 
 Add-in commands are UI elements that extend the Excel UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu in Excel. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane.
 
-![Add-in commands in Excel.](../images/excel-add-in-commands-script-lab.png)
+:::image type="content" source="../images/excel-add-in-commands-script-lab.png" alt-text="Add-in commands in Excel.":::
 
 For more information about command capabilities, supported platforms, and best practices for developing add-in commands, see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md).
 
@@ -65,7 +65,7 @@ For more information about command capabilities, supported platforms, and best p
 
 Task panes are interface surfaces that typically appear on the right side of the window within Excel. Task panes give users access to interface controls that run code to modify the Excel document or display data from a data source.
 
-![Task pane add-in in Excel.](../images/excel-add-in-task-pane-insights.png)
+:::image type="content" source="../images/excel-add-in-task-pane-insights.png" alt-text="Task pane add-in in Excel.":::
 
 For more information about task panes, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md). For a sample that implements a task pane in Excel, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
 
@@ -73,7 +73,7 @@ For more information about task panes, see [Task panes in Office Add-ins](../des
 
 Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
 
-![Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.](../images/SphereVolumeNew.gif)
+:::image type="content" source="../images/SphereVolumeNew.gif" alt-text="Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.":::
 
 For more information about custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
 
@@ -81,7 +81,7 @@ For more information about custom functions, see [Create custom functions in Exc
 
 Dialog boxes are surfaces that float above the active Excel application window. You can use dialog boxes for tasks such as displaying sign-in pages that can't be opened directly in a task pane, requesting that the user confirm an action, or hosting videos that might be too small if confined to a task pane. To open dialog boxes in your Excel add-in, use the [Dialog API](/javascript/api/office/office.ui).
 
-![Add-in dialog box in Excel.](../images/excel-add-in-dialog-choose-number.png)
+:::image type="content" source="../images/excel-add-in-dialog-choose-number.png" alt-text="Add-in dialog box in Excel.":::
 
 For more information about dialog boxes and the Dialog API, see [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
@@ -89,7 +89,7 @@ For more information about dialog boxes and the Dialog API, see [Use the Dialog 
 
 Content add-ins are surfaces that you can embed directly into Excel documents. You can use content add-ins to embed rich, web-based objects such as charts, data visualizations, or media into a worksheet or to give users access to interface controls that run code to modify the Excel document or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.
 
-![Content add-in in Excel.](../images/excel-add-in-content-map.png)
+:::image type="content" source="../images/excel-add-in-content-map.png" alt-text="Content add-in in Excel.":::
 
 For more information about content add-ins, see [Content Office Add-ins](../design/content-add-ins.md). For a sample that implements a content add-in in Excel, see [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in) in GitHub.
 

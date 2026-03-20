@@ -1,7 +1,7 @@
 ---
 title: Data visualization style guidelines for Office Add-ins
 description: Get some good practices for how to visualize data in an Office Add-in.
-ms.date: 06/27/2023
+ms.date: 10/29/2025
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -16,7 +16,7 @@ We recommend that you use [Fluent UI](../design/add-in-design.md) to create the 
 
 Data visualizations share a general framework and common visual and interactive elements, including titles, labels, and data plots, as shown in the following figure.
 
-![Line chart with title, axes, legend, and plot area labeled.](../images/excel-charts-visualization.png)
+:::image type="content" source="../images/excel-charts-visualization.png" alt-text="Line chart with title, axes, legend, and plot area labeled.":::
 
 ### Chart titles
 
@@ -65,7 +65,7 @@ Light grays are most effective for gridlines. Explore the following Fluent UI ne
 
 The following image shows a data visualization with gridlines.
 
-![Data visualization of line chart with gridlines.](../images/data-visualization.png)
+:::image type="content" source="../images/data-visualization.png" alt-text="Data visualization of line chart with gridlines.":::
 
 ### Legends
 

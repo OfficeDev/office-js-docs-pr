@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins prompts for GitHub Copilot
 description: An Office Add-ins prompt library to use with GitHub Copilot.
-ms.date: 06/04/2024
+ms.date: 12/17/2025
 ms.localizationpriority: medium
 ---
 
@@ -136,7 +136,7 @@ the Word JavaScript API.
 ### Insert table into a document
 
 ```code
-Insert a table named "Sample table" with sample data in the 
+Insert a table named *"Sample table"* with sample data in the 
 document using the Word JavaScript API.
 ```
 

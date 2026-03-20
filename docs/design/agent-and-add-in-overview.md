@@ -1,7 +1,7 @@
 ---
 title: Combine Copilot Agents with Office Add-ins (preview)
 description: Get an overview of why and how to combine a Copilot agent with an Office Add-in.
-ms.date: 07/30/2025
+ms.date: 11/11/2025
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -121,8 +121,8 @@ The agent configuration file includes instructions for the agent and specifies o
 
 ```json
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.4/schema.json",
-    "version": "v1.4",
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
+    "version": "v1.5",
     "name": "Excel Add-in + Agent",
     "description": "Agent for working with Excel cells.",
     "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
@@ -141,9 +141,7 @@ The agent configuration file includes instructions for the agent and specifies o
 }
 ```
 
-[!INCLUDE [Validation warning about missing 'auth' property](../includes/auth-property-warning-note.md)]
-
-The reference documentation for declarative agents is at [Declarative agent schema 1.4 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.4).
+The reference documentation for declarative agents is at [Declarative agent schema 1.5 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.5).
 
 ### Copilot API plug-in configuration
 
@@ -154,7 +152,8 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
 - The `"responding.instructions"` property only provides *guidance* to Copilot about how to respond. It doesn't put any limits or structural requirements on the response.
 - The `"runtimes.run_for_functions"` array must include either the same string as `"functions.name"` or a wildcard string that matches it.
 - The `"runtimes.spec.local_endpoint"` property specifies that the JavaScript function that is associated with the "fillcolor" string is available in an Office Add-in, rather than in some REST endpoint.
--The `"runtimes.spec.allowed_host"` property specifies that the agent should only be visible in Excel.
+- The `"runtimes.spec.allowed_host"` property specifies that the agent should only be visible in Excel.
+- The `"runtimes.auth.type"` property is always "None" for Office Add-in agents.
 
 ```json
 {
@@ -206,7 +205,10 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
                 "local_endpoint": "Microsoft.Office.Addin",
                 "allowed_host": ["workbook"]
             },
-            "run_for_functions": ["fillcolor"]
+            "run_for_functions": ["fillcolor"],
+            "auth": {
+                "type": "None"
+            }
         }
     ]
 }

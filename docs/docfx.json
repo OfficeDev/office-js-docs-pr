@@ -41,7 +41,7 @@
       "ms.suite": "office",
       "ms.author": "o365devx",
       "author": "o365devx",
-      "ms.topic": "conceptual",
+      "ms.topic": "article",
       "ms.service": "microsoft-365",
       "ms.subservice": "add-ins",
       "feedback_system": "OpenSource",
@@ -77,6 +77,11 @@
       "ms.custom": {
         "quickstarts/*.md": "scenarios:getting-started; languages:JavaScript,TypeScript",
         "tutorials/*.md": "scenarios:getting-started; languages:JavaScript,TypeScript"
+      },
+      "ms.update-cycle": {
+        "onenote/*.md": "1825-days",
+        "project/*.md": "1825-days",
+        "visio/*.md": "1825-days"
       }
     },
     "template": [],

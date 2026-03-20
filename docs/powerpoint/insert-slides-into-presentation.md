@@ -1,24 +1,44 @@
 ---
-title: Insert slides in a PowerPoint presentation
-description: Learn how to insert slides from one presentation into another.
-ms.date: 03/07/2021
+title: Insert slides from another PowerPoint presentation using Office Add-ins
+description: Learn how to programmatically insert slides from one PowerPoint presentation into another using JavaScript APIs, with control over formatting and slide selection.
+ms.date: 12/18/2025
 ms.localizationpriority: medium
 ---
 
-# Insert slides in a PowerPoint presentation
+# Insert slides from another PowerPoint presentation
 
-A PowerPoint add-in can insert slides from one presentation into the current presentation by using PowerPoint's application-specific JavaScript library. You can control whether the inserted slides keep the formatting of the source presentation or the formatting of the target presentation.
+Learn how to build PowerPoint add-ins that programmatically insert slides from one presentation into another, giving users customized slide management capabilities directly within PowerPoint.
 
-The slide insertion APIs are primarily used in presentation template scenarios: There are a small number of known presentations which serve as pools of slides that can be inserted by the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as slide titles or images) with slide IDs. The APIs can also be used in scenarios where the user can insert slides from any arbitrary presentation, but in that scenario the user is effectively limited to inserting *all* the slides from the source presentation. See [Selecting which slides to insert](#selecting-which-slides-to-insert) for more information about this.
+## Overview
 
-There are two steps to inserting slides from one presentation into another.
+PowerPoint add-ins can insert slides from one presentation into the current presentation using PowerPoint's application-specific JavaScript library. You have control over which slides to insert, where to place them, and whether the inserted slides keep the source presentation's formatting or adopt the target presentation's theme.
+
+This capability is particularly valuable for:
+
+- **Presentation templates**: Create add-ins that let users quickly assemble presentations from pre-approved slide libraries.
+- **Content reuse**: Enable teams to share and reuse slides across multiple presentations.
+- **Automated workflows**: Build solutions that dynamically combine slides based on business logic.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- A basic understanding of [Office Add-ins development](../overview/office-add-ins.md).
+- Familiarity with the [PowerPoint JavaScript API](../reference/overview/powerpoint-add-ins-reference-overview.md).
+- Knowledge of JavaScript/TypeScript and async programming patterns.
+
+The slide insertion APIs are primarily used in presentation template scenarios where, for example, there are a small number of known presentations which serve as pools of slides that can be inserted by the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as slide titles or images) with slide IDs. The APIs can also be used in scenarios where the user can insert slides from any arbitrary presentation, but in that scenario the user is effectively limited to inserting *all* the slides from the source presentation. See [Selecting which slides to insert](#selecting-which-slides-to-insert) for more information about this.
+
+## How to insert slides: Step-by-step process
+
+Inserting slides from one presentation into another involves two main steps:
 
 1. Convert the source presentation file (.pptx) into a Base64-formatted string.
-1. Use the `insertSlidesFromBase64` method to insert one or more slides from the Base64 file into the current presentation.
+1. Use the `insertSlidesFromBase64` method to insert one or more slides from the Base64-encoded file into the current presentation.
 
-## Convert the source presentation to Base64
+## Step 1: Convert the source presentation to Base64 encoding
 
-There are many ways to convert a file to Base64. Which programming language and library you use, and whether to convert on the server-side of your add-in or the client-side is determined by your scenario. Most commonly, you'll do the conversion in JavaScript on the client-side by using a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) object. The following example shows this practice.
+There are many ways to convert a file to Base64 encoding. Which programming language and library you use, and whether to convert on the server-side of your add-in or the client-side is determined by your scenario. Most commonly, you'll do the conversion in JavaScript on the client-side by using a [FileReader](https://developer.mozilla.org/docs/Web/API/FileReader) object. The following example shows this practice.
 
 1. Begin by getting a reference to the source PowerPoint file. In this example, we will use an `<input>` control of type `file` to prompt the user to choose a file. Add the following markup to the add-in page.
 
@@ -33,20 +53,20 @@ There are many ways to convert a file to Base64. Which programming language and 
 
     This markup adds the UI in the following screenshot to the page.
 
-    ![An HTML file type input control preceded by an instructional sentence reading "Select a PowerPoint presentation from which to insert slides". The control consists of a button labelled "Choose file" followed by the sentence "No file chosen".](../images/powerpoint-html-file-input-control.png)
+    :::image type="content" source="../images/powerpoint-html-file-input-control.png" alt-text="An HTML file type input control preceded by an instructional sentence reading 'Select a PowerPoint presentation from which to insert slides'. The control consists of a button labelled 'Choose file' followed by the sentence 'No file chosen'.":::
 
     > [!NOTE]
     > There are many other ways to get a PowerPoint file. For example, if the file is stored on OneDrive or SharePoint, you can use Microsoft Graph to download it. For more information, see [Working with files in Microsoft Graph](/graph/api/resources/onedrive) and [Access Files with Microsoft Graph](/training/modules/msgraph-access-file-data/).
 
-2. Add the following code to the add-in's JavaScript to assign a function to the input control's `change` event. (You create the `storeFileAsBase64` function in the next step.)
+1. Add the following code to the add-in's JavaScript to assign a function to the input control's `change` event. (You create the `storeFileAsBase64` function in the next step.)
 
     ```javascript
     $("#file").on("change", storeFileAsBase64);
     ```
 
-3. Add the following code. Note the following about this code.
+1. Add the following code. Note the following about this code.
 
-    - The `reader.readAsDataURL` method converts the file to Base64 and stores it in the `reader.result` property. When the method completes, it triggers the `onload` event handler.
+    - The `reader.readAsDataURL` method converts the file to Base64 encoding and stores it in the `reader.result` property. When the method completes, it triggers the `onload` event handler.
     - The `onload` event handler trims metadata off of the encoded file and stores the encoded string in a global variable.
     - The Base64-encoded string is stored globally because it will be read by another function that you create in a later step.
 
@@ -68,7 +88,7 @@ There are many ways to convert a file to Base64. Which programming language and 
     }
     ```
 
-## Insert slides with insertSlidesFromBase64
+## Step 2: Insert slides with insertSlidesFromBase64
 
 Your add-in inserts slides from another PowerPoint presentation into the current presentation with the [Presentation.insertSlidesFromBase64](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1)) method. The following is a simple example in which all of the slides from the source presentation are inserted at the beginning of the current presentation and the inserted slides keep the formatting of the source file. Note that `chosenFileBase64` is a global variable that holds a Base64-encoded version of a PowerPoint presentation file.
 
@@ -81,21 +101,19 @@ async function insertAllSlides() {
 }
 ```
 
-You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting , by passing an [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
+You can control some aspects of the insertion result, including where the slides are inserted and whether they get the source or target formatting, by passing an [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.insertslideoptions) object as a second parameter to `insertSlidesFromBase64`. The following is an example. About this code, note:
 
-- There are two possible values for the `formatting` property: "UseDestinationTheme" and "KeepSourceFormatting". Optionally, you can use the `InsertSlideFormatting` enum, (e.g., `PowerPoint.InsertSlideFormatting.useDestinationTheme`).
+- There are two possible values for the `formatting` property: "UseDestinationTheme" and "KeepSourceFormatting". Optionally, you can use the `InsertSlideFormatting` enum (e.g., `PowerPoint.InsertSlideFormatting.useDestinationTheme`).
 - The function will insert the slides from the source presentation immediately after the slide specified by the `targetSlideId` property. The value of this property is a string of one of three possible forms: ***nnn*#**, **#*mmmmmmmmm***, or ***nnn*#*mmmmmmmmm***, where *nnn* is the slide's ID (typically 3 digits) and *mmmmmmmmm* is the slide's creation ID (typically 9 digits). Some examples are `267#763315295`, `267#`, and `#763315295`.
 
 ```javascript
 async function insertSlidesDestinationFormatting() {
   await PowerPoint.run(async function(context) {
-    context.presentation
-    .insertSlidesFromBase64(chosenFileBase64,
-                            {
+    const insertSlideOptions: PowerPoint.InsertSlideOptions = {
                                 formatting: "UseDestinationTheme",
                                 targetSlideId: "267#"
-                            }
-                          );
+    };
+    context.presentation.insertSlidesFromBase64(chosenFileBase64, insertSlideOptions);
     await context.sync();
   });
 }
@@ -132,11 +150,12 @@ Of course, you typically won't know at coding time the ID or creation ID of the 
         await PowerPoint.run(async function(context) {
 
             const selectedSlideID = await getSelectedSlideID();
-
-            context.presentation.insertSlidesFromBase64(chosenFileBase64, {
+            const insertSlideOptions: PowerPoint.InsertSlideOptions = {
                 formatting: "UseDestinationTheme",
                 targetSlideId: selectedSlideID + "#"
-            });
+            };
+
+            context.presentation.insertSlidesFromBase64(chosenFileBase64, insertSlideOptions);
 
             await context.sync();
         });
@@ -151,11 +170,12 @@ You can also use the [InsertSlideOptions](/javascript/api/powerpoint/powerpoint.
 async function insertAfterSelectedSlide() {
     await PowerPoint.run(async function(context) {
         const selectedSlideID = await getSelectedSlideID();
-        context.presentation.insertSlidesFromBase64(chosenFileBase64, {
+        const insertSlideOptions: PowerPoint.InsertSlideOptions = {
             formatting: "UseDestinationTheme",
             targetSlideId: selectedSlideID + "#",
             sourceSlideIds: ["267#763315295", "256#", "#926310875", "1270#"]
-        });
+        };
+        context.presentation.insertSlidesFromBase64(chosenFileBase64, insertSlideOptions);
 
         await context.sync();
     });
@@ -165,6 +185,22 @@ async function insertAfterSelectedSlide() {
 > [!NOTE]
 > The slides will be inserted in the same relative order in which they appear in the source presentation, regardless of the order in which they appear in the array.
 
-There is no practical way that users can discover the ID or creation ID of a slide in the source presentation. For this reason, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
+There's no practical way that users can discover the ID or creation ID of a slide in the source presentation. For this reason, you can really only use the `sourceSlideIds` property when either you know the source IDs at coding time or your add-in can retrieve them at runtime from some data source. Because users cannot be expected to memorize slide IDs, you also need a way to enable the user to select slides, perhaps by title or by an image, and then correlate each title or image with the slide's ID.
 
 Accordingly, the `sourceSlideIds` property is primarily used in presentation template scenarios: The add-in is designed to work with a specific set of presentations that serve as pools of slides that can be inserted. In such a scenario, either you or the customer must create and maintain a data source that correlates a selection criterion (such as titles or images) with slide IDs or slide creation IDs that has been constructed from the set of possible source presentations.
+
+## Try it out
+
+Try the following interactive sample using the [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862).
+
+- Insert slides from other presentation
+
+To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+
+## See also
+
+- [PowerPoint JavaScript API reference](/javascript/api/powerpoint)
+- [Presentation.insertSlidesFromBase64 method](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-insertslidesfrombase64-member(1))
+- [Office Add-ins development overview](../overview/office-add-ins.md)
+- [Working with files in Microsoft Graph](/graph/api/resources/onedrive)
+- [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)

@@ -30,7 +30,7 @@ To locate only the direct precedent cells of a formula, use [Range.getDirectPrec
 
 The following screenshot shows the result of selecting the **Trace Precedents** button in the Excel UI. This button draws an arrow from precedent cells to the selected cell. The selected cell, **E3**, contains the formula "=C3 * D3", so both **C3** and **D3** are precedent cells. Unlike the Excel UI button, the `getPrecedents` and `getDirectPrecedents` methods don't draw arrows.
 
-![Arrow tracing precedent cells in the Excel UI.](../images/excel-ranges-trace-precedents.png)
+:::image type="content" source="../images/excel-ranges-trace-precedents.png" alt-text="Arrow tracing precedent cells in the Excel UI.":::
 
 > [!IMPORTANT]
 > The `getPrecedents` and `getDirectPrecedents` methods don't retrieve precedent cells across workbooks.
@@ -84,7 +84,7 @@ To locate only the direct dependent cells of a formula, use [Range.getDirectDepe
 
 The following screenshot shows the result of selecting the **Trace Dependents** button in the Excel UI. This button draws an arrow from the selected cell to dependent cells. The selected cell, **D3**, has cell **E3** as a dependent. **E3** contains the formula "=C3 * D3". Unlike the Excel UI button, the `getDependents` and `getDirectDependents` methods don't draw arrows.
 
-![Arrow tracing dependent cells in the Excel UI.](../images/excel-ranges-trace-dependents.png)
+:::image type="content" source="../images/excel-ranges-trace-dependents.png" alt-text="Arrow tracing dependent cells in the Excel UI.":::
 
 > [!IMPORTANT]
 > The `getDependents` and `getDirectDependents` methods don't retrieve dependent cells across workbooks.

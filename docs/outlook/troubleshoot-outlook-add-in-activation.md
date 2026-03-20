@@ -32,7 +32,7 @@ If you also use the classic Outlook on Mac client, resource usage limits apply t
 
 ## Does the tested item support Outlook add-ins? Is the selected item delivered by a version of Exchange Server that is at least Exchange 2016?
 
-If your Outlook add-in is a read add-in and is supposed to be activated when the user is viewing a message (including email messages, meeting requests, responses, and cancellations) or appointment, even though these items generally support add-ins, there are exceptions. Check if the selected item is one of those [listed where Outlook add-ins don't activate](outlook-add-ins-overview.md#mailbox-items-available-to-add-ins).
+If your Outlook add-in is a read add-in and is supposed to be activated when the user is viewing a message (including email messages, meeting requests, responses, and cancellations) or appointment, even though these items generally support add-ins, there are exceptions. Check if the selected item is one of those [listed where Outlook add-ins don't activate](outlook-add-ins-overview.md#add-in-activation-limitations).
 
 Also, because appointments are always saved in Rich Text Format, an [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule that specifies a **PropertyName** value of **BodyAsHTML** wouldn't activate an add-in on an appointment or message that's saved in plain text or Rich Text Format.
 
@@ -52,7 +52,7 @@ If an add-in doesn't activate for any items, the manifest might not have been in
 
 The following figure shows a summary of the steps to verify whether Outlook has a valid version of the manifest.
 
-![Flow chart to check manifest.](../images/troubleshoot-manifest-flow.png)
+:::image type="content" source="../images/troubleshoot-manifest-flow.png" alt-text="Flow chart to check manifest.":::
 
 The following procedure describes the details.
 

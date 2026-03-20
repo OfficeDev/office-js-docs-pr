@@ -14,7 +14,7 @@ You can use the Visio JavaScript APIs to embed Visio diagrams in *classic* Share
 
 An embedded Visio diagram is stored in a SharePoint document library and displayed on a SharePoint page. To embed a Visio diagram, display it in an HTML `<iframe>` element. Then use Visio JavaScript APIs to programmatically work with the embedded diagram.
 
-![Visio diagram in iframe on SharePoint page along with script editor web part.](../images/visio-api-block-diagram.png)
+:::image type="content" source="../images/visio-api-block-diagram.png" alt-text="Visio diagram in iframe on SharePoint page along with script editor web part.":::
 
 You can use the Visio JavaScript APIs to:
 
@@ -194,7 +194,7 @@ function getSelectedShapeText() {
 
 After that, all you need is the URL of a Visio diagram that you want to work with. Upload the Visio diagram to SharePoint Online and open it in Visio on the web. From there, open the Embed dialog and use the Embed URL in the above example.
 
-![Copy Visio file URL from Embed dialog.](../images/Visio-embed-url.png)
+:::image type="content" source="../images/Visio-embed-url.png" alt-text="Copy Visio file URL from Embed dialog.":::
 
 If you're using Visio on the web in Edit mode, open the Embed dialog by choosing **File** > **Share** > **Embed**. If you're using Visio on the web in View mode, open the Embed dialog by choosing '...' and then **Embed**.
 

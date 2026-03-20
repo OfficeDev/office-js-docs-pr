@@ -11,7 +11,7 @@ ms.localizationpriority: high
 The [Yeoman Generator for Office Add-ins](https://github.com/OfficeDev/generator-office) (also called "Yo Office") is an interactive Node.js-based command line tool that creates Office Add-in development projects. These projects are Node.js-based. When you want the server-side code of the add-in to be in a .NET-based language (such as C# or VB.Net) or you want the add-in hosted in Internet Information Server (IIS), [use Visual Studio to create the add-in](develop-add-ins-visual-studio.md).
 
 > [!NOTE]
-> Office add-ins can also be created with the [Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or the [Office Add-in Development Kit](development-kit-overview.md). 
+> Office add-ins can also be created with the [Microsoft 365 Agents Toolkit](agents-toolkit-overview.md) or the [Office Add-in Development Kit](development-kit-overview.md).
 
 The projects that the tool creates have the following characteristics.
 
@@ -22,7 +22,7 @@ The projects that the tool creates have the following characteristics.
 - By default, all dependencies are installed by the tool, but you can postpone the installation with a command line argument.
 - They include a complete add-in manifest.
 - They have a "Hello World"-level add-in that is ready run as soon as the tool has finished.
-- They include a polyfill and a transpiler that is configured to transpile TypeScript, and recent versions of JavaScript, to ES5 JavaScript. These features ensure that the add-in is supported in all webview runtimes that Office Add-ins might run in, including Trident (Internet Explorer).
+- They include a transpiler to transpile TypeScript to ES5 JavaScript, and a polyfill to enable ES5 JavaScript to use features from later versions of JavaScript. Together, they provide backward compatibility with legacy webviews such as Trident (Internet Explorer), although Microsoft doesn't support development of add-ins for versions of Office that use these old webviews.
 
 > [!TIP]
 > If you want to deviate from these choices significantly, such as using a different task runner or a different server, we recommend that when you run the tool you choose the [Manifest-only option](#manifest-only-option).
@@ -55,7 +55,7 @@ The first question asks you to choose between several types of projects. The opt
 - **Office Add-in Task Pane project supporting Nested App Auth single sign-on (preview)**
 - **Office Add-in project containing the manifest only**
 
-![The prompt for project type, and the possible answers, in the Yeoman generator.](../images/yo-office-project-type-prompt.png)
+:::image type="content" source="../images/yo-office-project-type-prompt.png" alt-text="The prompt for project type, and the possible answers, in the Yeoman generator.":::
 
 > [!NOTE]
 > - The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
@@ -63,15 +63,15 @@ The first question asks you to choose between several types of projects. The opt
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
 
-![The Yo Office interface after the user chose "Office Add-in Task Pane project" to the preceding question. It shows the prompt for language, and the possible answers, TypeScript and JavaScript, in the Yeoman generator.](../images/yo-office-language-prompt.png)
+:::image type="content" source="../images/yo-office-language-prompt.png" alt-text="The Yo Office interface after the user chose 'Office Add-in Task Pane project' to the preceding question. It shows the prompt for language, and the possible answers, TypeScript and JavaScript, in the Yeoman generator.":::
 
 You're then prompted to give the add-in a name. The name you specify will be used in the add-in's manifest, but you can change it later. This is also the folder name for the project.
 
-![The Yo Office interface after the user chose TypeScript to the previous question. It shows the prompt for the add-in name in the Yeoman generator.](../images/yo-office-name-prompt.png)
+:::image type="content" source="../images/yo-office-name-prompt.png" alt-text="The Yo Office interface after the user chose TypeScript to the previous question. It shows the prompt for the add-in name in the Yeoman generator.":::
 
 You're then prompted to choose which Office application the add-in should run in. There are six possible applications to choose from: **Excel**, **OneNote**, **Outlook**, **PowerPoint**, **Project**, and **Word**. You must choose just one, but you can change the manifest later to support the additional Office applications. The exception is Outlook. A manifest that supports Outlook cannot support any other Office application.
 
-![The Yo Office interface after the user named the project "Contoso Add-in". It shows the prompt for Office application, and the possible answers, in the Yeoman generator.](../images/yo-office-host-prompt.png)
+:::image type="content" source="../images/yo-office-host-prompt.png" alt-text="The Yo Office interface after the user named the project 'Contoso Add-in'. It shows the prompt for Office application, and the possible answers, in the Yeoman generator.":::
 
 If you choose **Outlook** as the Office application, you get an additional question asking you which type of manifest you want to use. We recommend that you choose **unified manifest for Microsoft 365** unless your add-in will include an extensibility feature that isn't yet supported by the unified manifest.
 

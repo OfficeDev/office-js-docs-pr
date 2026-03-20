@@ -2,7 +2,7 @@
 title: Import an add-in project to Microsoft 365 Agents Toolkit
 description: Learn how to import an add-in project to Microsoft 365 Agents Toolkit.
 ms.topic: how-to
-ms.date: 10/10/2025
+ms.date: 11/06/2025
 ms.localizationpriority: medium
 ---
 
@@ -38,7 +38,7 @@ There are four tasks to using the importation feature.
 - [Prepare the existing manifest](#prepare-the-existing-manifest)
 - [Import the project](#import-the-project)
 - [Verify that the add-in can be sideloaded](#verify-that-the-add-in-can-be-sideloaded)
-- [Post importation: Adjust the project structure as needed](#post-importation-adjust-the-project-structure-and-settings-as-needed)
+- [Make post-importation adjustments](#make-post-importation-adjustments)
 
 ### Prepare the existing manifest
 
@@ -74,9 +74,18 @@ Sideload the add-in using the instructions at [Sideload with Microsoft 365 Agent
 
 If you encounter problems, as a troubleshooting step, try [sideloading with a system prompt, bash shell, or terminal](../testing/sideload-add-in-with-unified-manifest.md#sideload-with-a-system-prompt-bash-shell-or-terminal). If you can, then the problem is isolated to the toolkit.
 
-It's possible that sideloading problems are the result of a file and folder structure, or configuration settings, that are different from what Agents Toolkit normally expects. See the section [Post importation: Adjust the project structure and settings as needed](#post-importation-adjust-the-project-structure-and-settings-as-needed).
+It's possible that sideloading problems are the result of a file and folder structure, or configuration settings, that are different from what Agents Toolkit normally expects. See [Adjust the project structure and settings as needed](#adjust-the-project-structure-and-settings-as-needed).
 
-### Post importation: Adjust the project structure and settings as needed
+### Make post-importation adjustments
+
+After you import your add-in project, perform the following tasks.
+
+#### Edit the manifest
+
+1. Open the unified manifest file.
+1. Navigate to the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property. Ensure that there are child `"privacyUrl"` and `"termsOfUseUrl"` properties and that they have appropriate values.
+
+#### Adjust the project structure and settings as needed
 
 The importation process creates some folders and files that Visual Studio Code or Agents Toolkit need, but it doesn't reorganize your source files; such as HTML, JavaScript, and CSS files. It also doesn't change the content of any files in the project, including tool configuration files. We recommend that you change your project to match the pattern of projects that are created in Agents Toolkit. As you work, keep the following points in mind.
 
@@ -105,7 +114,7 @@ The importation process creates some folders and files that Visual Studio Code o
 
 As an alternative to using the toolkit's importation feature, you can create a brand new add-in project in the toolkit and move files from the existing project into it and make changes to other files. The following are the tasks that you need to carry out.
 
-1. If the existing project uses the add-in only manifest, convert it. See [Convert an add-in to use the unified manifest for Microsoft 365](convert-xml-to-json-manifest.md).
+1. If the existing project uses the add-in only manifest, convert it and ensure that the old project sideloads with the new manifest. For detailed guidance, see [Convert an add-in to use the unified manifest for Microsoft 365](convert-xml-to-json-manifest.md).
 1. Create a new add-in project in Agents Toolkit. For each choice the toolkit asks you to make, such as the choice between JavaScript and TypeScript, make the choice that best matches your existing add-in. See [Create Office Add-in projects with Microsoft 365 Agents Toolkit](agents-toolkit-overview.md).
 1. Replace the manifest in the new project's **\appPackage** folder with your converted manifest.
 

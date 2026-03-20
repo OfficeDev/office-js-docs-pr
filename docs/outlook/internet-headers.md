@@ -24,13 +24,13 @@ In Exchange on-premises environments, while there's a way for you to set the int
 
 ## Purpose of the internet headers API
 
-Introduced in [Mailbox requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), the internet headers APIs enable developers to:
+Introduced in [Mailbox requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8), the internet headers APIs enable developers to:
 
 - Stamp information on an email that persists after it leaves Exchange across all clients.
 - Read information on an email that persisted after the email left Exchange across all clients in mail read scenarios.
 - Access the entire MIME header of the email.
 
-![Diagram of internet headers. Text: User 1 sends email. Add-in manages custom internet headers while user is composing email. User 2 receives the email. Add-in gets internet headers from received email then parses and uses custom headers.](../images/outlook-internet-headers.png)
+:::image type="content" source="../images/outlook-internet-headers.png" alt-text="Diagram of internet headers. Text: User 1 sends email. Add-in manages custom internet headers while user is composing email. User 2 receives the email. Add-in gets internet headers from received email then parses and uses custom headers.":::
 
 ## Supported clients
 

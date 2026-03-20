@@ -1,13 +1,16 @@
 ﻿---
-title: Register an Office Add-in that uses SSO with the Microsoft identity platform
-description: Learn how to register an Office Add-in with the Microsoft identity platform to use SSO with Word, Excel, PowerPoint, and Outlook.
-ms.date: 04/18/2023
+title: Register an Office Add-in that uses legacy Office SSO with the Microsoft identity platform
+description: Learn how to register an Office Add-in with the Microsoft identity platform to use legacy Office SSO with Word, Excel, PowerPoint, and Outlook.
+ms.date: 05/25/2025
 ms.localizationpriority: medium
 ---
 
-# Register an Office Add-in that uses single sign-on (SSO) with the Microsoft identity platform
+# Register an Office Add-in that uses legacy Office SSO with the Microsoft identity platform
 
-This article explains how to register an Office Add-in with the Microsoft identity platform so that you can use SSO. Register the add-in when you begin developing it so that when you progress to testing or production, you can change the existing registration or create separate registrations for development, testing, and production versions of the add-in.
+> [!NOTE]
+> This article describes legacy Office single sign-on (SSO). For a modern authentication experience with support across a wider range of platforms, use the Microsoft Authentication Library (MSAL) with nested app authentication (NAA). For more information, see [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md).
+
+This article explains how to register an Office Add-in with the Microsoft identity platform so that you can use legacy Office SSO. Register the add-in when you begin developing it so that when you progress to testing or production, you can change the existing registration or create separate registrations for development, testing, and production versions of the add-in.
 
 The following table itemizes the information that you need to carry out this procedure and the corresponding placeholders that appear in the instructions.
 

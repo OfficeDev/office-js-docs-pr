@@ -1,7 +1,7 @@
-﻿---
+---
 title: Prepend or append content to a message or appointment body on send
 description: Learn how to prepend or append content to a message or appointment body when the mail item is sent.
-ms.date: 08/01/2025
+ms.date: 11/18/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ The prepend-on-send and append-on-send features enable your Outlook add-in to in
 In this walkthrough, you'll develop an add-in that prepends a header and appends a disclaimer when a message is sent.
 
 > [!NOTE]
-> Support for the append-on-send feature was introduced in [requirement set 1.9](/javascript/api/requirement-sets/outlook/requirement-set-1.9/outlook-requirement-set-1.9), while support for the prepend-on-send feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
+> Support for the append-on-send feature was introduced in [requirement set 1.9](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-9), while support for the prepend-on-send feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
 
 ## Set up your environment
 
@@ -65,13 +65,11 @@ The following shows how to configure your unified manifest to enable the prepend
         "actions": [
             {
                 "id": "prependHeaderOnSend",
-                "type": "executeFunction",
-                "displayName": "prependHeaderOnSend"
+                "type": "executeFunction"
             },
             {
                 "id": "appendDisclaimerOnSend",
-                "type": "executeFunction",
-                "displayName": "appendDisclaimerOnSend"
+                "type": "executeFunction"
             }
         ]
     }
@@ -427,7 +425,7 @@ In this section, you'll implement the JavaScript code to append a sample company
 
 1. Send the message, then open it from your **Inbox** or **Sent Items** folder to view the inserted content.
 
-    ![A sample of a sent message with the Contoso header prepended and the disclaimer appended to its body.](../images/outlook-prepend-append-on-send.png)
+    :::image type="content" source="../images/outlook-prepend-append-on-send.png" alt-text="A sample of a sent message with the Contoso header prepended and the disclaimer appended to its body.":::
 
     > [!TIP]
     > Because content is only prepended or appended once the message is sent, the sender will only be able to view the added content from their **Inbox** or **Sent Items** folder. If you require the sender to view the added content before the message is sent, see [Insert data in the body when composing an appointment or message in Outlook](insert-data-in-the-body.md).

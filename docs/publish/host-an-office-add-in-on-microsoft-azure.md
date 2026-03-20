@@ -1,7 +1,7 @@
 ﻿---
 title: Stage an Office Add-in on Microsoft Azure with Visual Studio
 description: Learn how to deploy an add-in web app to Azure and sideload the add-in for testing in an Office client application using Visual Studio.
-ms.date: 05/19/2025
+ms.date: 01/07/2026
 ms.localizationpriority: medium
 ---
 
@@ -9,9 +9,13 @@ ms.localizationpriority: medium
 
 The simplest Office Add-in is made up of an manifest file and an HTML page. The manifest file describes the add-in's characteristics, such as its name, what Office desktop clients it can run in, and the URL for the add-in's HTML page. The HTML page is contained in a web app that users interact with when they install and run your add-in within an Office client application. You can host the web app of an Office Add-in on any web hosting platform, including Azure.
 
-This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/test-debug-non-local-server.md) for testing in an Office client application using Visual Studio. For information about publishing an Office Add-in that you created using Visual Studio Code to Azure, see [Publish an add-in using Visual Studio Code and Azure](publish-add-in-vs-code.md).
+This article describes how to deploy an add-in web app to Azure and [sideload the add-in](../testing/test-debug-non-local-server.md) for testing in an Office client application using Visual Studio. 
 
-> [!IMPORTANT]
+[!INCLUDE [Deprecation warning for add-in projects in Visual Studio](../includes/vs-deprecation.md)]
+
+For information about publishing an Office Add-in that you created using Visual Studio Code to Azure, see [Publish an add-in using Visual Studio Code and Azure](publish-add-in-vs-code.md).
+
+> [!NOTE]
 > The process described in this article doesn't apply to Outlook Add-ins or to add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md). 
 > 
 > - For instructions about staging add-ins for Outlook on Azure with Visual Studio, see [Stage an Outlook Add-in on Microsoft Azure with Visual Studio](stage-outlook-add-in-azure.md).
@@ -19,10 +23,10 @@ This article describes how to deploy an add-in web app to Azure and [sideload th
 
 ## Prerequisites
 
-1. Install [Visual Studio 2022](https://www.visualstudio.com/downloads) and choose to include the **Azure development** workload.
+1. Install [Visual Studio 2022](https://www.visualstudio.com/downloads) or later and choose to include the **Azure development** workload.
 
     > [!NOTE]
-    > If you've previously installed Visual Studio 2022, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed.
+    > If you've previously installed Visual Studio, [use the Visual Studio Installer](/visualstudio/install/modify-visual-studio) to ensure that the **Azure development** workload is installed.
 
 1. Install Office.
 

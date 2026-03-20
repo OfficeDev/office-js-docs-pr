@@ -1,7 +1,7 @@
 ﻿---
 title: Activate your Outlook add-in on multiple messages
 description: Learn how to activate your Outlook add-in when multiple messages are selected.
-ms.date: 07/15/2025
+ms.date: 11/11/2025
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ With the item multi-select feature, your Outlook add-in can now activate and per
 The following sections show how to configure your add-in to retrieve the subject line and sender's email address of multiple messages in read mode.
 
 > [!NOTE]
-> Support for the item multi-select feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13), with additional item properties now available in subsequent requirement sets. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for the item multi-select feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13), with additional item properties now available in subsequent requirement sets. See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 
 ## Set up your environment
 
@@ -74,7 +74,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md) to c
                 {
                     "id": "TaskPaneRuntimeShow",
                     "type": "openPage",
-                    "pinnable": false,
+                    "pinnable": true,
                     "view": "dashboard",
                     "supportsNoItemContext": true,
                     "multiselect": true
@@ -136,7 +136,7 @@ To enable your add-in to activate on multiple selected messages, you must add th
                                         </Icon>
                                         <Action xsi:type="ShowTaskpane">
                                             <SourceLocation resid="Taskpane.Url"/>
-                                            <SupportsPinning>false</SupportsPinning>
+                                            <SupportsPinning>true</SupportsPinning>
                                             <SupportsNoItemContext>true</SupportsNoItemContext>
                                             <!-- Enables your add-in to activate on multiple selected messages. -->
                                             <SupportsMultiSelect>true</SupportsMultiSelect>
@@ -245,7 +245,7 @@ Now that you've registered an event handler, your add-in can now get properties 
 
     > [!TIP]
     >
-    > - The `loadItemByIdAsync` and `unloadAsync` methods were introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+    > - The `loadItemByIdAsync` and `unloadAsync` methods were introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
     > - Before you use the `loadItemByIdAsync` method, determine if you can already access the properties you need using `getSelectedItemsAsync`. If you can, you don't need to call `loadItemByIdAsync`.
 
 The following example implements the `getSelectedItemsAsync` and `loadItemByIdAsync` methods to get the subject line and sender's email address from each selected message.
@@ -382,9 +382,7 @@ Item multi-select supports [Conversations view](https://support.microsoft.com/of
 
 ### Task pane pinning in multi-select add-ins
 
-In Outlook on the web, on Mac, and in new Outlook on Windows, when the task pane of a multi-select add-in is opened, it's automatically pinned to the Outlook client. It remains pinned even when a user switches to a different mail item or selects the **pin** icon from the task pane. The task pane can only be closed by selecting the **Close** button from the task pane.
-
-Conversely, in classic Outlook on Windows, the task pane isn't automatically pinned and closes when a user switches to a different mail item.
+[!INCLUDE [outlook-multi-select-pinning](../includes/outlook-multi-select-pinning.md)]
 
 ## Next steps
 
@@ -393,6 +391,5 @@ Now that you've enabled your add-in to operate on multiple selected messages, yo
 ## See also
 
 - [Office Add-in manifests](../develop/add-in-manifests.md)
-- [Call web services from an Outlook add-in](web-services.md)
 - [Overview of Microsoft Graph](/graph/overview)
 - [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)

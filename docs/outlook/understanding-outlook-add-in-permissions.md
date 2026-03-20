@@ -1,20 +1,20 @@
 ﻿---
 title: Understanding Outlook add-in permissions
 description: Outlook add-ins specify the required permission level in their manifest, which include restricted, read item, read/write item, or read/write mailbox. 
-ms.date: 10/17/2024
+ms.date: 12/02/2025
 ms.localizationpriority: medium
 ---
 
 # Understanding Outlook add-in permissions
 
-Outlook add-ins specify the required permission level in their manifest. There are four available levels.
+Outlook add-ins specify the required permission level in their manifest. Four levels are available.
 
 |Permission level</br>canonical name|add-in only manifest name|unified manifest for Microsoft 365 name|Summary description|
 |:-----|:-----|:-----|:-----|
 |**restricted**|Restricted|MailboxItem.Restricted.User|Allows access to properties and methods that don't pertain to specific information about the user or mail item.|
 |**read item**|ReadItem|MailboxItem.Read.User|In addition to what is allowed in **restricted**, it allows:<ul><li>regular expressions</li><li>Outlook add-in API read access</li><li>getting the item properties and the callback token</li><li>writing custom properties</li></ul>|
 |**read/write item**|ReadWriteItem|MailboxItem.ReadWrite.User|In addition to what is allowed in **read item**, it allows:<ul><li>full Outlook add-in API access except `makeEwsRequestAsync`</li><li>setting the item properties</li></ul>|
-|**read/write mailbox**|ReadWriteMailbox|Mailbox.ReadWrite.User|In addition to what is allowed in **read/write item**, it allows:<ul><li>creating, reading, writing items and folders</li><li>sending items</li><li>calling [makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)</li></ul>|
+|**read/write mailbox**|ReadWriteMailbox|Mailbox.ReadWrite.User|In addition to what is allowed in **read/write item**, it allows:<ul><li>creating, reading, writing items and folders</li><li>sending items</li><li>calling [makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1))</li></ul>|
 
 Permissions are declared in the manifest. The markup varies depending on the type of manifest.
 
@@ -23,10 +23,10 @@ Permissions are declared in the manifest. The markup varies depending on the typ
 
 > [!NOTE]
 >
-> - There's a supplementary permission needed for add-ins that use the append-on-send feature. With the add-in only manifest, specify the permission in the [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) element. For details, see [Implement append-on-send in your Outlook add-in](../outlook/append-on-send.md). With the unified manifest, specify this permission with the name **Mailbox.AppendOnSend.User** in an additional object in the `"authorization.permissions.resourceSpecific"` array.
-> - There's a supplementary permission needed for add-ins that use shared folders. With the add-in only manifest, specify the permission by setting the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`. For details, see [Implement shared folders and shared mailbox scenarios in an Outlook add-in](../outlook/delegate-access.md). With the unified manifest, specify this permission with the name **Mailbox.SharedFolder** in an additional object in the `"authorization.permissions.resourceSpecific"` array.
+> - Add-ins that use the append-on-send feature need a supplementary permission. With the add-in only manifest, specify the permission in the [ExtendedPermissions](/javascript/api/manifest/extendedpermissions) element. For details, see [Implement append-on-send in your Outlook add-in](../outlook/append-on-send.md). With the unified manifest, specify this permission with the name **Mailbox.AppendOnSend.User** in an additional object in the `"authorization.permissions.resourceSpecific"` array.
+> - Add-ins that use shared folders need a supplementary permission. With the add-in only manifest, specify the permission by setting the [SupportsSharedFolders](/javascript/api/manifest/supportssharedfolders) element to `true`. For details, see [Implement shared folders and shared mailbox scenarios in an Outlook add-in](../outlook/delegate-access.md). With the unified manifest, specify this permission with the name **Mailbox.SharedFolder** in an additional object in the `"authorization.permissions.resourceSpecific"` array.
 
-The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item** and **restricted**, **read/write item** includes **read item** and **restricted**, and the **read item** permission includes **restricted**.
+The four levels of permissions are cumulative: the **read/write mailbox** permission includes the permissions of **read/write item**, **read item**, and **restricted**; **read/write item** includes **read item** and **restricted**; and **read item** includes **restricted**.
 
 You can see the permissions requested by a mail add-in before installing it from [Microsoft Marketplace](https://marketplace.microsoft.com). You can also see the required permissions of installed add-ins in the Exchange Admin Center.
 
@@ -45,27 +45,27 @@ Access any properties and methods that do **not** pertain to specific informatio
 
 - Use the [ItemHasAttachment](/javascript/api/manifest/rule#itemhasattachment-rule) or [ItemHasRegularExpressionMatch](/javascript/api/manifest/rule#itemhasregularexpressionmatch-rule) rule.
 
-- Access the members in the following list that pertain to the information of the user or item. Attempting to access members in this list will return **null** and result in an error message which states that Outlook requires the mail add-in to have elevated permission.
+- Access the members in the following list that pertain to the information of the user or item. Attempting to access members in this list returns **null** and results in an error message which states that Outlook requires the mail add-in to have elevated permission.
 
-  - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
-  - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
-  - [item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.bcc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.body](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.cc](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.from](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.getRegExMatches](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
-  - [item.getRegExMatchesByName](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
-  - [item.optionalAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.organizer](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
-  - [item.requiredAttendees](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.sender](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties)
-  - [mailbox.getCallbackTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
-  - [mailbox.getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
-  - [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
-  - [mailbox.userProfile](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#properties)
+  - item.addFileAttachmentAsync ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-addfileattachmentasync-member(1)))
+  - item.addItemAttachmentAsync ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-additemattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-additemattachmentasync-member(1)))
+  - item.attachments ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-attachments-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-attachments-member))
+  - item.bcc ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-bcc-member))
+  - item.body ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-body-member), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-body-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-body-member), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-body-member))
+  - item.cc ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-cc-member), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-cc-member))
+  - item.from ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-from-member), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-from-member))
+  - item.getRegExMatches ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getregexmatches-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getregexmatches-member(1)))
+  - item.getRegExMatchesByName ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getregexmatchesbyname-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getregexmatchesbyname-member(1)))
+  - item.optionalAttendees ([AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-optionalattendees-member), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-optionalattendees-member))
+  - item.organizer ([AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-organizer-member), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-organizer-member))
+  - item.removeAttachmentAsync ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-removeattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-removeattachmentasync-member(1)))
+  - item.requiredAttendees ([AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-requiredattendees-member), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-requiredattendees-member))
+  - [item.sender](/javascript/api/outlook/office.messageread#outlook-office-messageread-sender-member)
+  - item.to ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-to-member), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-to-member))
+  - [mailbox.getCallbackTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getcallbacktokenasync-member(1))
+  - [mailbox.getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getuseridentitytokenasync-member(1))
+  - [mailbox.makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1))
+  - [mailbox.userProfile](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-userprofile-member)
   - [Body](/javascript/api/outlook/office.body) and all its child members
   - [Location](/javascript/api/outlook/office.location) and all its child members
   - [Recipients](/javascript/api/outlook/office.recipients) and all its child members
@@ -78,7 +78,7 @@ The **read item** permission is the next level of permission in the permissions 
 
 ### Can do
 
-- Read all the properties of the current item in a read or compose form. For example, [item.to](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) in a read form and [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) in a compose form.
+- Read all the properties of the current item in a read or compose form. For example, [item.to](/javascript/api/outlook/office.messageread#outlook-office-messageread-to-member) in a read form and [item.to.getAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member(1)) in a compose form.
 
 - In Exchange on-premises environments, get a callback token to get the full mail item with Exchange Web Services (EWS).
 
@@ -95,9 +95,9 @@ The **read item** permission is the next level of permission in the permissions 
   - Get the current calendar event item using the Outlook REST API.
 
 - Use any of the following APIs.
-  - [mailbox.makeEwsRequestAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods)
-  - [item.addFileAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
-  - [item.addItemAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - [mailbox.makeEwsRequestAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-makeewsrequestasync-member(1))
+  - `item.addFileAttachmentAsync` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-addfileattachmentasync-member(1)))
+  - `item.addItemAttachmentAsync` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-additemattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-additemattachmentasync-member(1)))
   - [item.bcc.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.bcc.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.body.prependAsync](/javascript/api/outlook/office.body#outlook-office-body-prependasync-member(1))
@@ -109,7 +109,7 @@ The **read item** permission is the next level of permission in the permissions 
   - [item.location.setAsync](/javascript/api/outlook/office.location#outlook-office-location-setasync-member(1))
   - [item.optionalAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.optionalAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
-  - [item.removeAttachmentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods)
+  - `item.removeAttachmentAsync` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-removeattachmentasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-removeattachmentasync-member(1)))
   - [item.requiredAttendees.addAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-addasync-member(1))
   - [item.requiredAttendees.setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1))
   - [item.start.setAsync](/javascript/api/outlook/office.time#outlook-office-time-setasync-member(1))
@@ -119,7 +119,7 @@ The **read item** permission is the next level of permission in the permissions 
 
 ## read/write item permission
 
-Specify **read/write item** permission in the manifest to request this permission. Mail add-ins activated in compose forms that use write methods (**Message.to.addAsync** or **Message.to.setAsync**) must use at least this level of permission.
+Specify the **read/write item** permission in the manifest to request this permission. Mail add-ins activated in compose forms that use write methods (**Message.to.addAsync** or **Message.to.setAsync**) must use at least this level of permission.
 
 ### Can do
 

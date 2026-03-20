@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements with the add-in only manifest
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 02/12/2025
+ms.date: 02/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -84,7 +84,7 @@ To simplify the process of specifying the APIs that your add-in needs, Office gr
 
 Requirement sets are versioned. For example, the APIs that support [Dialog Boxes](../develop/dialog-api-in-office-add-ins.md) are in the requirement set DialogApi 1.1. When additional APIs that enable messaging from a task pane to a dialog were released, they were grouped into DialogApi 1.2, along with all the APIs in DialogApi 1.1. *Each version of a requirement set is a superset of all earlier versions.*
 
-Requirement set support varies by Office application, the version of the Office application, and the platform on which it is running. For example, DialogApi 1.2 isn't supported on volume-licensed perpetual versions of Office before Office 2021, but DialogApi 1.1 is supported on all perpetual versions back to Office 2016. You want your add-in to be installable on every combination of platform and Office version that supports the APIs that it uses, so you should always specify in the manifest the *minimum* version of each requirement set that your add-in requires. Details about how to do this are later in this article.
+Requirement set support varies by Office application, the version of the Office application, and the platform on which it is running. For example, ExcelApi 1.17 isn't supported on volume-licensed perpetual versions of Office before Office 2024 but ExcelApi 1.14 is supported back to Office 2021. You want your add-in to be installable on every combination of platform and Office version that supports the APIs that it uses, so you should always specify in the manifest the *minimum* version of each requirement set that your add-in requires. Details about how to do this are later in this article.
 
 > [!TIP]
 > For more information about requirement set versioning, see [Office requirement sets availability](office-versions-and-requirement-sets.md#office-requirement-sets-availability), and for the complete lists of requirement sets and information about the APIs in each, start with [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets). The reference topics for most Office.js APIs also specify the requirement set they belong to (if any).
@@ -106,7 +106,7 @@ If the Office application or platform doesn't support the requirement sets or AP
 The following code example shows how to configure an add-in that is installable in all Office applications that support the following:
 
 - `TableBindings` requirement set, which has a minimum version of "1.1".
-- `OOXML` requirement set, which has a minimum version of "1.1".
+- `OoxmlCoercion` requirement set, which has a minimum version of "1.1".
 - `Document.getSelectedDataAsync` method.
 
 ```XML
@@ -115,7 +115,7 @@ The following code example shows how to configure an add-in that is installable 
   <Requirements>
      <Sets DefaultMinVersion="1.1">
         <Set Name="TableBindings" MinVersion="1.1"/>
-        <Set Name="OOXML" MinVersion="1.1"/>
+        <Set Name="OoxmlCoercion" MinVersion="1.1"/>
      </Sets>
      <Methods>
         <Method Name="Document.getSelectedDataAsync"/>
