@@ -104,7 +104,7 @@ sections:
     - componentType: card
       title: "Developer Tools"
       summary: Use our developer tools to build solutions for consumer and professional markets.
-      imageUrl: /office/dev/add-ins/images/developer-tools-scenario.png
+      imageUrl: /office/dev/add-ins/images/developer-tools-scenario.jpg
       links: 
         - componentType: link
           text: Learn more
@@ -170,4 +170,4 @@ sections:
         url: /office/developer-program/microsoft-365-developer-program-faq
         icon:
           componentType: image
-          src: /office/dev/add-ins/images/m365-developer-program-72x72.jpg
+          src: /office/dev/add-ins/images/m365-developer-program-72x72.png
