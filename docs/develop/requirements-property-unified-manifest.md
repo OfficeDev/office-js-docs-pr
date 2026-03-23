@@ -1,7 +1,7 @@
 ﻿---
 title: How to use the "requirements" property in the unified manifest for Microsoft 365
 description: Learn how to use requirements to configure on which host and platforms an add-in can be installed and which features are available.
-ms.date: 03/16/2026
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
