@@ -2,7 +2,7 @@
 title: Compare the add-in only manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the add-in only manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 10/21/2025
+ms.date: 03/23/2026
 ms.localizationpriority: high
 ---
 
