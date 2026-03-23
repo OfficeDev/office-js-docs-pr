@@ -1,17 +1,49 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 03/18/2026
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 03/12/2026_
+_Last updated 03/23/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 ## Active issues in Office add-ins
+
+<!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
+
+### ISSUE: Users can't find or restore an add-in deployed via optional deployment
+
+When an Office Add-in is deployed using the optional deployment method, individual users can choose to remove the add-in from the ribbon, and restore it later if they want to use it again. However there is a regression where in some cases a user can't restore the add-in.
+
+#### STATUS
+
+Open; tracking id: TBD
+
+#### IMPACT
+
+Users are unable to restore an add-in to the ribbon after they remove it. Even if the admin chooses to redeploy the add-in to all users, it may not appear.
+
+#### WORKAROUND
+
+Create a Microsoft 365 group to implement optional deployment. This works for Integrated Apps on both XML manifest and unified manifest (JSON) Office Add-ins.
+
+1. Create a Microsoft 365 group for a specific group of users who will use the add-in. For more information, see [Create a Microsoft 365 group](/microsoft-365/admin/create-groups/create-groups).
+    1. Specify a group name such as "My Add-in users".
+    1. On the Members page, choose the name of one or more people who will be designated as members of the group. These people will have optional access to the add-in on their ribbon and can add or remove it.
+1. Go to the Microsoft 365 admin center and update the deployment for the add-in as follows.
+    1. Apply to **Specific users/groups**. Use the name of the Microsoft 365 group you created previously.
+    1. Choose the deployment type of **Fixed (Default)**.
+
+Once the deployment is complete, anyone in the Microsoft 365 group can remove the add-in from the ribbon by leaving the group. If they want to restore the add-in later, they join the group.
+
+For more information about the previous deployment steps, see:
+- [User and group assignments](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+- [Deploy Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-deployment-of-add-ins)
+
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
