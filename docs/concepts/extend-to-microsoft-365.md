@@ -1,7 +1,7 @@
 ---
 title: Extend your solution to other parts of Microsoft 365
 description: Learn how an Office Add-ins can be combined with other extensions into an app for Microsoft 365
-ms.date: 01/17/2026
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
