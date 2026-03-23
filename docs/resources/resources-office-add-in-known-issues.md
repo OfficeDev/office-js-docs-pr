@@ -1,17 +1,26 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 03/18/2026
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 03/12/2026_
+_Last updated 03/23/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 ## Active issues in Office add-ins
+
+### ISSUE: Intermittent failure to load or deploy Office Add-ins
+
+Some users are experiencing issues where Office Add-ins appear missing when deployed through the Microsoft 365 Admin Center. In affected scenarios, add-ins are visible in the admin experience but do not render or appear correctly in Office & Outlook clients.  
+
+#### STATUS
+
+Start date: Mar 23, 2026. We are currently investigating the cause.  
+
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
