@@ -1,7 +1,7 @@
 ﻿---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
-ms.date: 12/11/2025
+ms.date: 03/12/2026
 ms.service: excel
 #Customer intent: As a developer, I want to build a Excel add-in that can interact with content in a Excel document.
 ms.localizationpriority: high
@@ -511,22 +511,20 @@ The steps vary depending on the type of manifest.
 1. Find the **[`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true)** array and replace the existing commands runtime object with the following:
 
     ```json
-    "runtimes": [
-        {
-            "id": "CommandsRuntime",
-            "type": "general",
-            "code": {
-                "page": "https://localhost:3000/commands.html"
-            },
-            "lifetime": "short",
-            "actions": [
-                {
-                    "id": <!--TODO1: Set the action ID -->,
-                    "type": "executeFunction"
-                }
-            ]
-        }
-    ]
+    {
+        "id": "CommandsRuntime",
+        "type": "general",
+        "code": {
+            "page": "https://localhost:3000/commands.html"
+        },
+        "lifetime": "short",
+        "actions": [
+            {
+                "id": <!--TODO1: Set the action ID -->,
+                "type": "executeFunction"
+            }
+        ]
+    }
     ```
 
 1. Find `TODO1` and replace it with **`"toggleProtection"`**. This matches the `id` for the JavaScript function you create in a later step.
@@ -549,60 +547,38 @@ The steps vary depending on the type of manifest.
 
 #### Configure the UI for the ribbon button
 
-1. After the **`"extensions.runtimes"`** array, replace the existing **[`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons)** array with the following:
+1. After the **`"extensions.runtimes"`** array, in the existing **[`"ribbons"`](/microsoft-365/extensibility/schema/element-extensions#ribbons)** array, replace the control with ID "ActionButton" with the following:
 
     ```json
-    "ribbons": [
-        {
-            "contexts": [
-                "default"
-            ],
-            "tabs": [
-                {
-                    "builtInTabID": <!--TODO1: Set the tab ID -->,
-                    "groups": [
-                        {
-                            "id": "worksheetProtectionGroup",
-                            "label": "Contoso Add-in",
-                            "controls": [    
-                                {
-                                    "id": "toggleProtectionButton",
-                                    "type": "button",
-                                    "label": <!--TODO2: Label the button -->,
-                                    "icons": [
-                                        {
-                                            "size": 16,
-                                            "url": "https://localhost:3000/assets/icon-16.png"
-                                        },
-                                        {
-                                            "size": 32,
-                                            "url": "https://localhost:3000/assets/icon-32.png"
-                                        },
-                                        {
-                                            "size": 80,
-                                            "url": "https://localhost:3000/assets/icon-80.png"
-                                        }
-                                    ],
-                                    "supertip": {
-                                        "title": "Toggle worksheet protection",
-                                        "description": "Enables or disables worksheet protection."
-                                    },
-                                    "actionId": <!--TODO3: Set the action ID -->
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
+    {
+        "id": <!--TODO1: Label the button -->,
+        "type": "button",
+        "label": "Toggle worksheet protection",
+        "icons": [
+            {
+                "size": 16,
+                "url": "https://localhost:3000/assets/icon-16.png"
+            },
+            {
+                "size": 32,
+                "url": "https://localhost:3000/assets/icon-32.png"
+            },
+            {
+                "size": 80,
+                "url": "https://localhost:3000/assets/icon-80.png"
+            }
+        ],
+        "supertip": {
+            "title": "Toggle worksheet protection",
+            "description": "Enables or disables worksheet protection."
+        },
+        "actionId": <!--TODO2: Set the action ID -->
+    }
     ```
 
-1. Find `TODO1` and replace it with **"TabHome"**. This ensures that the new button displays in the Home tab in Excel. For other available tab IDs, see [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).
+1. Find `TODO1` and replace it with **`"Toggle worksheet protection"`**. This is the label for your button in the Excel ribbon.
 
-1. Find `TODO2` and replace it with **"Toggle worksheet protection"**. This is the label for your button in the Excel ribbon.
-
-1. Find `TODO3` and replace it with **`"toggleProtection"`**. This value must match the **[`"runtimes.actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id)** value.
+1. Find `TODO2` and replace it with **`"toggleProtection"`**. This value must match the **[`"runtimes.actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id)** value.
 
 1. Save the file.
 

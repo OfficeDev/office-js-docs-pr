@@ -1,5 +1,5 @@
 ---
-ms.date: 04/13/2023
+ms.date: 03/03/2026
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel.
 title: Receive and handle data with custom functions
 ms.localizationpriority: medium
@@ -11,20 +11,30 @@ One of the ways that custom functions enhances Excel's power is by receiving dat
 
 :::image type="content" source="../images/custom-functions-web-api.gif" alt-text="GIF of a custom function which streams the time from an API.":::
 
+## Key points
+
+- Return a JavaScript `Promise` from functions that fetch external data.
+- Use streaming functions to continuously update cell values without user interaction.
+- Streaming functions use the `@streaming` tag and `CustomFunctions.StreamingInvocation` parameter.
+- The `onCanceled` callback handles cleanup when a function is canceled.
+- WebSockets enable real-time data updates from servers with persistent connections.
+
 ## Functions that return data from external sources
 
-If a custom function retrieves data from an external source such as the web, it must:
+Custom functions that retrieve data from external sources such as REST APIs or web services are asynchronous by nature. Excel needs to wait for the data to arrive before displaying results in the cell. To handle this, your function must:
 
 1. Return a [JavaScript `Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) to Excel.
 2. Resolve the `Promise` with the final value using the callback function.
+
+Excel automatically waits for the promise to resolve before displaying the result in the cell. This pattern works for one-time data requests. For continuous updates, use streaming functions instead.
 
 ### Fetch example
 
 In the following code sample, the `webRequest` function reaches out to a hypothetical external API that tracks the number of people currently on the International Space Station. The function returns a JavaScript `Promise` and uses `fetch` to request information from the hypothetical API. The resulting data is transformed into JSON and the `names` property is converted into a string, which is used to resolve the promise.
 
-When developing your own functions, you may want to perform an action if the web request does not complete in a timely manner or consider [batching up multiple API requests](custom-functions-batching.md).
+When developing your own functions, consider performing an action if the web request doesn't complete in a timely manner or [batching up multiple API requests](custom-functions-batching.md).
 
-```JS
+```javascript
 /**
  * Requests the names of the people currently on the International Space Station.
  * Note: This function requests data from a hypothetical URL. In practice, replace the URL with a data source for your scenario.
@@ -52,7 +62,7 @@ function webRequest() {
 
 In the following code sample, the `getStarCount` function calls the Github API to discover the amount of stars given to a particular user's repository. This is an asynchronous function which returns a JavaScript `Promise`. When data is obtained from the web call, the promise is resolved which returns the data to the cell.
 
-```TS
+```typescript
 /**
  * Gets the star count for a given Github organization or user and repository.
  * @customfunction
@@ -90,25 +100,29 @@ async function getStarCount(userName: string, repoName: string) {
 
 ## Make a streaming function
 
-Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything. This can be useful to check live data from a service online, like the function in [the custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
+Streaming custom functions enable you to output data to cells that updates repeatedly, without requiring a user to explicitly refresh anything. This is useful for displaying live data from services, such as stock prices, sensor readings, or real-time analytics, like the function in [the custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md).
 
 To declare a streaming function, you can use either of the following two options.
 
 - The `@streaming` JSDoc tag.
 - The `CustomFunctions.StreamingInvocation` invocation parameter.
 
+Streaming functions differ from regular asynchronous functions in that they can call `setResult` multiple times to update the cell value continuously, rather than returning a single result.
+
+### Basic streaming example
+
 The following code sample is a custom function that adds a number to the result every second. Note the following about this code.
 
 - Excel displays each new value automatically using the `setResult` method.
-- The second input parameter, `invocation`, is not displayed to end users in Excel when they select the function from the autocomplete menu.
+- The second input parameter, `invocation`, isn't displayed to end users in Excel when they select the function from the autocomplete menu.
 - The `onCanceled` callback defines the function that runs when the function is canceled.
 - Streaming isn't necessarily tied to making a web request. In this case, the function isn't making a web request but is still getting data at set intervals, so it requires the use of the streaming `invocation` parameter.
 
-```JS
+```javascript
 /**
  * Increments a value once a second.
  * @customfunction INC increment
- * @param {number} incrementBy Amount to increment
+ * @param {number} incrementBy Amount to increment.
  * @param {CustomFunctions.StreamingInvocation<number>} invocation
  */
 function increment(incrementBy, invocation) {
@@ -124,18 +138,53 @@ function increment(incrementBy, invocation) {
 }
 ```
 
+### Streaming data from a web service
+
+The following example shows a streaming function that fetches stock prices from a web service every 10 seconds.
+
+```javascript
+/**
+ * Streams stock price updates.
+ * @customfunction
+ * @param {string} ticker Stock ticker symbol.
+ * @param {CustomFunctions.StreamingInvocation<number>} invocation
+ */
+function stockPrice(ticker, invocation) {
+  const updateInterval = 10000; // Update every 10 seconds.
+
+  const timer = setInterval(() => {
+    // Replace with your actual API endpoint.
+    fetch(`https://api.example.com/stock/${ticker}`)
+      .then(response => response.json())
+      .then(data => {
+        invocation.setResult(data.price);
+      })
+      .catch(error => {
+        // Return the #N/A error if stock price is unavailable.
+        invocation.setResult(
+          new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable)
+        );
+      });
+  }, updateInterval);
+
+  invocation.onCanceled = () => {
+    clearInterval(timer);
+  };
+}
+```
+
 > [!NOTE]
 > For an example of how to return a dynamic spill array from a streaming function, see [Return multiple results from your custom function: Code samples](custom-functions-dynamic-arrays.md#code-samples).
 
 ## Cancel a function
 
-Excel cancels the execution of a function in the following situations.
+Excel automatically cancels the execution of a function in the following situations.
 
 - When the user edits or deletes a cell that references the function.
 - When one of the arguments (inputs) for the function changes. In this case, a new function call is triggered following the cancellation.
 - When the user triggers recalculation manually. In this case, a new function call is triggered following the cancellation.
 
-You can also consider setting a default streaming value to handle cases when a request is made but you are offline.
+Proper cleanup in the `onCanceled` callback is important to prevent unnecessary network requests. Always clear timers, close connections, and abort pending requests when a function is canceled. You can also consider setting a default streaming value to handle cases when a request is made but you are offline.
 
 > [!NOTE]
 > There is also a category of functions called cancelable functions which use the `@cancelable` JSDoc tag. Cancelable functions allow a web request to be terminated in the middle of the request.
@@ -152,21 +201,42 @@ See [Invocation parameter](custom-functions-parameter-options.md#invocation-para
 
 ## Receiving data via WebSockets
 
-Within a custom function, you can use [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API) to exchange data over a persistent connection with a server. Using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
+Within a custom function, you can use [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API) to exchange data over a persistent connection with a server. WebSockets are useful for real-time data that updates frequently, such as financial tickers, chat messages, or sensor data. Using WebSockets, your custom function can open a connection with a server and then automatically receive messages from the server when certain events occur, without having to explicitly poll the server for data.
 
-### WebSockets example
+### WebSocket streaming example
 
-The following code sample establishes a WebSocket connection and then logs each incoming message from the server.
+The following code sample shows a streaming function that uses WebSockets to receive real-time updates.
 
-```js
-let ws = new WebSocket('wss://bundles.office.com');
+```javascript
+/**
+ * Streams real-time data via WebSocket.
+ * @customfunction
+ * @param {string} symbol Data symbol to monitor.
+ * @param {CustomFunctions.StreamingInvocation<string>} invocation
+ */
+function streamWebSocket(symbol, invocation) {
+  const ws = new WebSocket('wss://example.com/data');
 
-ws.onmessage(message) {
-    console.log(`Received: ${message}`);
-}
+  ws.onopen = () => {
+    // Subscribe to updates for the specified symbol.
+    ws.send(JSON.stringify({ subscribe: symbol }));
+  };
 
-ws.onerror(error){
-    console.err(`Failed: ${error}`);
+  ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    invocation.setResult(data.value);
+  };
+
+  ws.onerror = (error) => {
+    // Return the #N/A error if connection fails.
+    invocation.setResult(
+      new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable)
+    );
+  };
+
+  invocation.onCanceled = () => {
+    ws.close();
+  };
 }
 ```
 
@@ -177,8 +247,10 @@ ws.onerror(error){
 
 ## See also
 
+- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
+- [Custom functions parameter options](custom-functions-parameter-options.md)
+- [Batch custom function calls for a remote service](custom-functions-batching.md)
+- [Return multiple results from your custom function](custom-functions-dynamic-arrays.md)
 - [Volatile values in functions](custom-functions-volatile.md)
 - [Create JSON metadata for custom functions](custom-functions-json-autogeneration.md)
-- [Manually create JSON metadata for custom functions](custom-functions-json.md)
 - [Create custom functions in Excel](custom-functions-overview.md)
-- [Excel custom functions tutorial](../tutorials/excel-tutorial-create-custom-functions.md)
