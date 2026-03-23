@@ -109,11 +109,7 @@ Some users experience issues where Office add-ins failed to load, appeared missi
 
 ### START DATE
 
-Date reported: 02/25/2026
-
-### DETAILS
-
-Reported by: Microsoft Support / Customer Reports
+Reported by: Microsoft Support / Customer Reports on: 02/25/2026
 
 ### DETAILS
 
@@ -323,4 +319,7 @@ Date fixed: 09/26/2025
 
 #### SEE ALSO
 
-For more information about resolved issues in Office Add-ins, see the [Office-js closed issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed).
+
+[Fixes or workaround for recent issues in classic Outlook for Windows](https://support.microsoft.com/office/fixes-or-workarounds-for-recent-issues-in-classic-outlook-for-windows-ecf61305-f84f-4e13-bb73-95a214ac1230)
+[Office-js resolved issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed)
+[Deprecation of Exchange Web Services (EWS) in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online)
