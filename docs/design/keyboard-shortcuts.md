@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 03/16/2026
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -393,7 +393,7 @@ Office.actions.replaceShortcuts(userCustomShortcuts)
         console.log("Successfully registered shortcut.");
     })
     .catch((error) => {
-        if (error.code == "InvalidOperation") {
+        if (error.code === OfficeExtension.ErrorCodes.invalidArgument) {
             console.log("ActionId doesn't exist or shortcut combination is invalid.");
         }
     });
