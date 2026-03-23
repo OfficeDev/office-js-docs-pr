@@ -532,7 +532,7 @@
         - name: Cards for cell value types
           href: excel/excel-data-types-entity-card.md
           displayName: Excel
-        - name: Linked Entity values
+        - name: Linked entity values
           href: excel/excel-data-types-linked-entity-cell-values.md
           displayName: Excel
         - name: Add reference methods for dot function notation

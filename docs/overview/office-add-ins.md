@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 03/16/2026
+ms.date: 03/23/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -9,7 +9,7 @@ ms.localizationpriority: high
 
 # Office Add-ins platform overview
 
-Use the Office Add-ins platform to build apps and agents that extend Office applications and interact with content in Office documents. With Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Outlook, Excel, Word, PowerPoint, OneNote, and Project. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser. When you build an add-in, you're also building an app for Microsoft 365, that is, an extensions of Microsoft 365. Apps for Microsoft 365 share a common manifest schema and packaging format, and unified distribution and management processes and tools. This system enables add-ins to be combined with other kinds of apps for Microsoft 365 in a single package that's installable as a unit.
+Use the Office Add-ins platform to build solutions that extend Office applications and interact with content in Office documents. By using Office Add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Outlook, Excel, Word, PowerPoint, OneNote, and Project. Your solution can run in Office across multiple platforms, including Windows, Mac, iPad, and in a browser.
 
 > [!IMPORTANT]
 > An add-in can have either of two types of manifests. This article is written on the assumption that the add-in is using the type that's recommended for most scenarios: the unified manifest for Microsoft 365. For more information about the two types, see [Office Add-ins manifest](../develop/add-in-manifests.md).
@@ -50,13 +50,13 @@ For a detailed overview of the manifest, see [Office Add-ins with the unified ap
 
 ### Web app
 
-The most basic Office Add-in consists of a static HTML page that is displayed inside an Office application, but that doesn't interact with either the Office document or any other Internet resource. However, to create an experience that interacts with Office documents or allows the user to interact with online resources from an Office client application, you can use any technologies, both client and server side, that your hosting provider supports (such as ASP.NET, PHP, or Node.js). To interact with Office clients and documents, you use the Office.js JavaScript APIs.
+The most basic Office Add-in consists of a static HTML page that displays inside an Office application but doesn't interact with either the Office document or any other Internet resource. However, to create an experience that interacts with Office documents or allows the user to interact with online resources from an Office client application, you can use any technologies, both client and server side, that your hosting provider supports (such as ASP.NET, PHP, or Node.js). To interact with Office clients and documents, use the Office.js JavaScript APIs.
 
 :::image type="content" source="../images/about-addins-componentshelloworldoffice.png" alt-text="Components of a Hello World add-in.":::
 
 ## Extending and interacting with Office clients
 
-Office Add-ins can do the following within an Office client application.
+Within an Office client application, Office Add-ins can do the following tasks:
 
 - Extend functionality
 
@@ -66,7 +66,7 @@ Office Add-ins can do the following within an Office client application.
 
 ### Extend Office functionality
 
-You can add new functionality to Office applications via the following:
+You can add new functionality to Office applications through the following features:
 
 - Custom ribbon buttons and menu commands (collectively called "add-in commands").
 
@@ -90,7 +90,7 @@ You can use task panes in addition to add-in commands to enable users to interac
 
 ### Extend Outlook functionality
 
-Users can run Outlook add-ins when they view, reply, or create emails, meeting requests, meeting responses, meeting cancellations, or appointments. Outlook add-ins can do the following:
+Users can run Outlook add-ins when they view, reply, or create emails, meeting requests, meeting responses, meeting cancellations, or appointments. Outlook add-ins can do the following tasks:
 
 - Extend the Office app ribbon.
 - Display contextually next to an Outlook item when you're viewing or composing it.
@@ -117,7 +117,7 @@ The Office JavaScript APIs contain objects and members for building add-ins and 
 
 ## Code samples
 
-Learn how to build the simplest Office Add-in with only a manifest, HTML web page, and a logo. The following samples will help you get started in the Office application you're interested in.
+Learn how to build the simplest Office Add-in with only a manifest, an HTML web page, and a logo. The following samples help you get started in the Office application you're interested in.
 
 - [Excel "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/excel-hello-world)
 - [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world)
