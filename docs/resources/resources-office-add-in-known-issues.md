@@ -179,7 +179,7 @@ Options:
 1. Remove inline images from signature.
 1. Wait for images to load before sending the file.
 1. Switch to classic Outlook for Windows or Outlook for Mac.
- 
+
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
@@ -205,7 +205,7 @@ A fix is being deployed.
 
 ### WORKAROUND
 
-**Option 1: Refresh admin-managed add-ins**
+#### Option 1: Refresh admin-managed add-ins
 
 1. Select **Home** > **Add-ins** in the ribbon.
 1. Select **More add-ins**.
@@ -213,7 +213,7 @@ A fix is being deployed.
 1. Select the **Refresh** button in top right.
 1. The add-in should reappear. Open it to reload the add-in.
 
-**Option 2: Forced admin refresh**
+#### Option 2: Forced admin refresh
 
 IT admins can force the add-ins to refresh by creating the following registry key.
 
@@ -318,7 +318,6 @@ Date fixed: 09/26/2025
 ***
 
 #### SEE ALSO
-
 
 [Fixes or workaround for recent issues in classic Outlook for Windows](https://support.microsoft.com/office/fixes-or-workarounds-for-recent-issues-in-classic-outlook-for-windows-ecf61305-f84f-4e13-bb73-95a214ac1230)
 [Office-js resolved issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed)
