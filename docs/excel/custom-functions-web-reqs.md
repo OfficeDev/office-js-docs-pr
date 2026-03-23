@@ -188,7 +188,7 @@ Excel automatically cancels the execution of a function in the following situati
 > The ordering between the cancellation of the old function call and the new invocation is **not guaranteed**. When the arguments of a function change, the new invocation may fire before, after, or at the same time as the `onCanceled` callback for the old call. Your add-in code should not depend on `onCanceled` firing before the next invocation. Design your `onCanceled` handler so it performs cleanup correctly regardless of whether the new invocation has already started.
 
 > [!NOTE]
-> Excel treats calls to a streaming function with distinct sets of arguments as different streams. If multiple formulas reference the same streaming function with the same arguments, Excel reuses the existing stream rather than creating a new one. When a cell is edited to change a streaming function's arguments, Excel treats the old and new parameter sets as distinct streams.
+> Excel treats calls to a streaming function with distinct sets of arguments as different streams. If multiple formulas reference the same streaming function with the same arguments, Excel reuses the existing stream rather than creating a new one. When a cell is edited to change the arguments of a streaming function, Excel treats the old and new parameter sets as distinct streams.
 
 Proper cleanup in the `onCanceled` callback is important to prevent unnecessary network requests. Always clear timers, close connections, and abort pending requests when a function is canceled. You can also consider setting a default streaming value to handle cases when a request is made but you are offline.
 
