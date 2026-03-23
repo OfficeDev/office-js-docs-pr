@@ -1,7 +1,7 @@
 ---
 title: App package for Microsoft 365
 description:  Learn how add-ins use the app package for Microsoft 365, for packaging, publishing, and management.
-ms.date: 12/10/2025
+ms.date: 03/23/2026
 ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high

@@ -1,7 +1,7 @@
 ---
 title: Sideload Office Add-ins that use the unified manifest for Microsoft 365
 description: Test your Office Add-in on Windows by sideloading.
-ms.date: 12/10/2025
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
