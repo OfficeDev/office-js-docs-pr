@@ -2,7 +2,7 @@
 title: Office Add-ins manifest
 description: Get an overview of the Office Add-in manifest and its uses.
 ms.topic: overview
-ms.date: 10/10/2025
+ms.date: 03/23/2026
 ms.localizationpriority: high
 ---
 

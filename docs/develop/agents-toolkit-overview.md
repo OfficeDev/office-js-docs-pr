@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Microsoft 365 Agents Toolkit
 description: Learn how to create Office Add-in projects using Microsoft 365 Agents Toolkit.
-ms.date: 01/15/2026
+ms.date: 03/23/2026
 ms.localizationpriority: high
 ---
 
