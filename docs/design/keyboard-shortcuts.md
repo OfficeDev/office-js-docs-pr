@@ -45,9 +45,6 @@ The process to define custom keyboard shortcuts for your add-in varies depending
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
-> [!NOTE]
-> Implementing keyboard shortcuts with the unified app manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema/?view=m365-app-prev&preserve-view=true).
-
 If your add-in uses the unified app manifest for Microsoft 365, custom keyboard shortcuts and their actions are defined in the manifest.
 
 1. In your add-in project, open the **manifest.json** file.
