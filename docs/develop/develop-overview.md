@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 01/15/2026
+ms.date: 03/23/2026
 ms.localizationpriority: high
 ---
 
@@ -45,9 +45,12 @@ The Agents Toolkit can be used to create almost any kind of Microsoft 365 extens
 
 An Office Add-in consists of two parts.
 
-- The add-in manifest that defines the settings and capabilities of the add-in.
+- An app package whose main constituent is an add-in manifest that defines the settings and capabilities of the add-in. The package is the unit of publishing and sideloading. 
 
-- The web application that defines the UI and functionality of add-in components such as task panes, content add-ins, and dialog boxes.
+  > [!NOTE]
+  > An add-in can have either of two types of manifests: the unified manifest for Microsoft 365 or the add-in only manifest. Everything said in this article about the manifest applies to both types. But note that if the add-in only manifest is used, then there is no app package: the manifest file is the unit of publishing and sideloading. For more information about the two types, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+
+- The web application that defines the UI and functionality of add-in components such as task panes, content add-ins, dialog boxes, or Copilot agents.
 
 The web application uses the Office JavaScript API to interact with content in the Office document where the add-in is running. Your add-in can also do other things that web applications typically do, like call external web services, facilitate user authentication, and more.
 
@@ -61,7 +64,6 @@ An Office Add-in's manifest defines the settings and capabilities of the add-in.
 - How the add-in integrates with Office, including any custom UI that the add-in creates (for example, a custom tab or custom ribbon buttons).
 - Location of images that the add-in uses for branding and command iconography.
 - Dimensions of the add-in (for example, dimensions for content add-ins, requested height for Outlook add-ins).
-- Rules that specify when the add-in activates in the context of a message or appointment (for Outlook add-ins only).
 - Keyboard shortcuts (for Excel and Word add-ins only).
 
 For detailed information about the manifest, see [Office Add-ins manifest](add-in-manifests.md).
@@ -107,6 +109,9 @@ The following image shows an add-in command on the ribbon, a task pane to the ri
 :::image type="content" source="../images/add-in-ui-elements.png" alt-text="Diagram showing add-in commands on the ribbon, a task pane, and a dialog box / content add-in in an Office document.":::
 
 For more information about extending the Office UI and designing the add-in's UX, see [Office UI elements for Office Add-ins](../design/interface-elements.md).
+
+> [!NOTE]
+> It isn't necessary for an add-in to have any custom UI. An add-in can consist of only a custom Copilot agent that interacts with an Office document in response to natural language instructions given in Copilot chat.
 
 ## Next steps
 
