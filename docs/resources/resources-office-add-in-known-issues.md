@@ -29,13 +29,17 @@ Date reported: 03/23/2026
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
-## ISSUE: PIM-enabled tenants are unable to deploy or manage Office Add-ins via centralized deployment
+## OUTLOOK ISSUE: PIM-enabled tenants are unable to deploy or manage Office Add-ins via centralized deployment
 
 When using Azure AD Privileged Identity Management (PIM) to activate admin roles, there is a regression where PIM-enabled admin roles are not correctly honored. During centralized deployment, role-based access control (RBAC) authorization fails and leads to false permission denials during add‑in deployment and management flows.
 
 ### STATUS
 
-Open; tracking id: 11126536
+Under investigation. ADO tracking id: 11126536 (internal)
+
+### START DATE
+
+Opened: 02/05/2026
 
 ### IMPACT
 
