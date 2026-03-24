@@ -2,7 +2,7 @@
 title: Automatically open a task pane when an add-in is installed
 description: Learn how to configure an Office Add-in to open automatically when it's installed.
 ms.topic: how-to
-ms.date: 02/12/2025
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
@@ -35,8 +35,6 @@ The new behavior is as follows:
 The process for specifying the default task pane depends on the type of manifest the add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 To specify the default task pane, find the runtime object in the [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes) array whose [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property is set to the URL of the page that you want to be the default. Ensure that the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array in this same runtime object has at least one action whose `"type"` value is `"openPage"`. Add a `"view"` property to this action object and set it to `"Office.AutoShowTaskpaneWithDocument"`. You can only set this value on one action object and it must be an action of type `"openPage"`. If you set this value on multiple actions, the first occurrence of the value will be recognized as the default and the others will be ignored.
 

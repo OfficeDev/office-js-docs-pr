@@ -1,7 +1,7 @@
 ---
 title: Get the whole document from an add-in for PowerPoint or Word
 description: Learn to get the whole document from a PowerPoint or Word add-in.
-ms.date: 02/12/2025
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -44,9 +44,6 @@ The manifest file for an Office Add-in provides important information about the 
 In a text editor, add the following code to the manifest file. If you're using a Visual Studio project, select the "Add-in only manifest" option.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-> [!NOTE]
-> The unified manifest is generally available for production Outlook add-ins. It's available only for preview in Excel, PowerPoint, and Word add-ins.
 
 ```json
 {

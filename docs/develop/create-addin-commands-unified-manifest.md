@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the unified manifest for Microsoft 365
 description: Configure the unified manifest for Microsoft 365 to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 05/19/2025
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,8 +10,6 @@ ms.localizationpriority: medium
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
 This article describes how to configure the [Unified manifest for Microsoft 365](unified-manifest-overview.md) to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 > [!TIP]
 > Instructions for creating add-in commands with the add-in only manifest are in [Create add-in commands with the add-in only manifest](create-addin-commands.md).

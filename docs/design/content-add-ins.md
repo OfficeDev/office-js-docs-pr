@@ -1,7 +1,7 @@
 ---
 title: Content Office Add-ins
 description: Content add-ins are surfaces that can be embedded directly into Excel or PowerPoint documents that give users access to interface controls that run code to modify documents or display data from a data source.
-ms.date: 02/06/2026
+ms.date: 03/23/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -44,9 +44,6 @@ For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from
 There are minor differences in the manifests between content add-ins and add-ins that use task panes. Open the tab for the type of manifest you're using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-> [!NOTE]
-> The unified manifest is available in Excel, PowerPoint, and Word as a developer preview. For Outlook, it's generally available and can be used in production add-ins.
 
 Configure the manifest with the following steps.
 

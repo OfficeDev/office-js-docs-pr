@@ -1,7 +1,7 @@
 ﻿---
 title: Integrate built-in Office buttons into custom control groups and tabs
 description: Learn how to include built-in Office buttons in your custom command groups and tabs on the Office ribbon.
-ms.date: 06/10/2025
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -20,8 +20,6 @@ You can insert built-in Office buttons into your custom control groups on the Of
 Open the tab for the type of manifest your add-in uses for the details of the manifest markup.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 ## Insert a built-in control group into a custom tab
 
