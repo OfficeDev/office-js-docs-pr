@@ -91,7 +91,7 @@ The following table shows a mapping of *some* high-level child properties of the
 | [`"alternates"`](/microsoft-365/extensibility/schema/element-extensions#alternates) | Specifies backwards compatibility with an equivalent COM add-in, XLL, or both. | `<EquivalentAddins>` | See the [EquivalentAddins - See also](/javascript/api/manifest/equivalentaddins#see-also) for background information. |
 | [`"runtimes"`](/microsoft-365/extensibility/schema/element-extensions#runtimes)  | Configures the [embedded runtimes](../testing/runtimes.md) that the add-in uses, including various kinds of add-ins that have little or no UI, such as custom function-only add-ins and [function commands](../design/add-in-commands.md#types-of-add-in-commands). | `<Runtimes>`. `<FunctionFile>`, and `<ExtensionPoint>` (of type CustomFunctions) |*None.* |
 | [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) | Configures an event handler for a specified event. | `<ExtensionPoint>` (of type LaunchEvent) |*None.* |
-| [`"keyboardShortcuts"`](/microsoft-365/extensibility/schema/element-extensions#keyboardshortcuts) (developer preview) | Defines custom keyboard shortcuts or key combinations to run specific actions. | `<ExtendedOverrides>` | *None.* |
+| [`"keyboardShortcuts"`](/microsoft-365/extensibility/schema/element-extensions#keyboardshortcuts) | Defines custom keyboard shortcuts or key combinations to run specific actions. | `<ExtendedOverrides>` | *None.* |
 
 #### `"ribbons"` table
 
