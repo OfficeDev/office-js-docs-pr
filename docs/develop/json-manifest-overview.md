@@ -2,15 +2,13 @@
 title: Compare the add-in only manifest with the unified manifest for Microsoft 365
 description: Get a comparison of the add-in only manifest with the unified manifest for Microsoft 365.
 ms.topic: overview
-ms.date: 09/02/2025
+ms.date: 03/23/2026
 ms.localizationpriority: high
 ---
 
 # Compare the add-in only manifest with the unified manifest for Microsoft 365
 
 This article is intended to help readers who are familiar with the add-in only manifest understand the unified manifest by comparing the two. Readers should also see [Office Add-ins with the unified manifest for Microsoft 365](unified-manifest-overview.md).
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 ## Schemas and general points
 

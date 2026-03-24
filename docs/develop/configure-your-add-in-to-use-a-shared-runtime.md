@@ -2,7 +2,7 @@
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 03/16/2026
 ms.localizationpriority: high
 ---
 
@@ -29,9 +29,6 @@ If your add-in uses an add-in only manifest, you can also use the steps in this 
 Follow these steps to configure a new or existing project to use a shared runtime. These steps assume you have generated your project using the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md). Select the tab for the type of manifest your add-in is using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-> [!NOTE]
-> Implementing a shared runtime with the unified manifest for Microsoft 365 is in public developer preview. This shouldn't be used in production add-ins. We invite you to try it out in test or development environments. For more information, see the [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 1. Open your add-in project in Visual Studio Code.
 1. Open the **manifest.json** file.

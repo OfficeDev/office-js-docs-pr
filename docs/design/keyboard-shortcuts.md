@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 03/12/2026
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -120,7 +120,7 @@ If your add-in uses the unified app manifest for Microsoft 365, custom keyboard 
     ```
 
 > [!NOTE]
-> If you've defined keyboard shortcuts for an add-in that uses the unified manifest and want to publish it to [Microsoft Marketplace](../publish/publish-office-add-ins-to-appsource.md), you must specify JSON resource files for the custom shortcuts and their localized strings (if applicable) in the manifest. These resource files are used for backward compatibility on platforms that don't directly support the unified manifest. To learn how to configure this in your manifest, see [Support backward compatibility for add-ins with a unified manifest in Microsoft Marketplace](#support-backward-compatibility-for-add-ins-with-a-unified-manifest-in-microsoft-marketplace).
+> If you've defined keyboard shortcuts for an add-in that uses the unified manifest and want to publish it to [Microsoft Marketplace](../publish/publish-office-add-ins-to-appsource.md), you must specify JSON resource files for the custom shortcuts and their localized strings (if applicable) in the manifest. These resource files are used on [platforms that don't support the unified manifest](../develop/unified-manifest-overview.md#client-and-platform-support). To learn how to configure this in your manifest, see [Support backward compatibility for add-ins with a unified manifest in Microsoft Marketplace](#support-backward-compatibility-for-add-ins-with-a-unified-manifest-in-microsoft-marketplace).
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
@@ -291,10 +291,10 @@ Guidance on how to localize your keyboard shortcuts varies depending on the type
 
 # [Unified app manifest for Microsoft 365](#tab/jsonmanifest)
 
-To learn how to localize your custom keyboard shortcuts with the unified app manifest for Microsoft 365, see [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization).
+To learn how to localize your custom keyboard shortcuts with the unified manifest for Microsoft 365, see [Localize strings in your app manifest](/microsoftteams/platform/concepts/build-and-test/apps-localization).
 
 > [!NOTE]
-> If you've defined keyboard shortcuts for an add-in that uses the unified manifest and want to publish it to [Microsoft Marketplace](../publish/publish-office-add-ins-to-appsource.md), you must specify JSON resource files for the custom shortcuts and their localized strings (if applicable) in the manifest. These resource files are used for backward compatibility on platforms that don't directly support the unified manifest. To learn how to configure this in your manifest, see [Support backward compatibility for add-ins with a unified manifest in Microsoft Marketplace](#support-backward-compatibility-for-add-ins-with-a-unified-manifest-in-microsoft-marketplace).
+> If you've defined keyboard shortcuts for an add-in that uses the unified manifest and want to publish it to [Microsoft Marketplace](../publish/publish-office-add-ins-to-appsource.md), you must specify JSON resource files for the custom shortcuts and their localized strings (if applicable) in the manifest. These resource files are used on [platforms that don't support the unified manifest](../develop/unified-manifest-overview.md#client-and-platform-support). To learn how to configure this in your manifest, see [Support backward compatibility for add-ins with a unified manifest in Microsoft Marketplace](#support-backward-compatibility-for-add-ins-with-a-unified-manifest-in-microsoft-marketplace).
 
 # [Add-in only manifest](#tab/xmlmanifest)
 
@@ -452,7 +452,7 @@ if (host === Office.HostType.Excel) {
 
 ## Support backward compatibility for add-ins with a unified manifest in Microsoft Marketplace
 
-To publish an add-in that uses the unified manifest and implements custom keyboard shortcuts to Microsoft Marketplace, you must specify JSON resource files for the shortcuts and their localized strings (if applicable) in the manifest. This ensures your add-in's keyboard shortcuts and its localized resources work on platforms that don't directly support the unified manifest (for information on supported clients and platforms, see [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support)).
+To publish an add-in that uses the unified manifest and implements custom keyboard shortcuts to Microsoft Marketplace, you must specify JSON resource files for the shortcuts and their localized strings (if applicable) in the manifest. This ensures your add-in's keyboard shortcuts and its localized resources work on platforms that don't support the unified manifest. For information on supported clients and platforms, see [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 ### Create JSON resource files
 
