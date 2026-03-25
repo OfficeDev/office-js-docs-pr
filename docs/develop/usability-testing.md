@@ -111,7 +111,7 @@ Don't assume that your user is on the screen they're supposed to be on at any gi
 
 When designing tasks for your usability test, keep the following Office Add-in-specific considerations in mind.
 
-- **Task pane space constraints**: Ask participants to complete tasks without resizing the task pane. This constraint tests whether your UI works at the compact default dimensions provided by each host application. For default sizes, see [Task pane add-ins](../design/task-pane-add-ins.md).
+- **Task pane space constraints**: Ask participants to complete tasks without resizing the task pane. This constraint tests whether your UI works at the compact default dimensions provided by each host application. Not all users will realize they can resize the task pane before passing judgement on your add-in. For default sizes, see [Task pane add-ins](../design/task-pane-add-ins.md).
 - **Context switching**: Design tasks that require users to work in both the document and the add-in. Observe whether users can move between the task pane and the document without losing their place or getting confused about which UI is active.
 - **Performance with data operations**: If your add-in reads or writes large amounts of data, include tasks that exercise these operations. Office clients monitor add-in resource usage and automatically restart add-ins that are unresponsive for more than five seconds. A test participant who encounters this behavior might reveal important performance issues. For more information, see [Resource limits and performance optimization](../concepts/resource-limits-and-performance-optimization.md).
 - **Installation and sign-in flows**: If your test uses a live add-in, allocate time in your task plan for the participant to install the add-in and complete any required authentication. Dialogs opened by the add-in (such as for sign-in) are nonmodal, so participants might be uncertain about where to direct their attention.
@@ -151,9 +151,9 @@ This step involves making sense of the data you collected. While watching the te
 
 A single participant encountering a usability problem isn't enough reason to change the design. Two or more participants encountering the same problem suggests that other users in the general population will also encounter that problem.
 
-Be careful about how you use your data to draw conclusions. Don't try to make the data fit a certain narrative. Be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind. User behavior frequently defies designer expectations.
-
 When analyzing results from cross-platform tests, separate your findings by platform. An issue that occurs only on one platform might indicate a rendering difference in the webview control rather than a fundamental design problem. Pay particular attention to layout problems in the task pane, since default sizes vary by host application and platform.
+
+Be careful about how you use your data to draw conclusions. Don't try to make the data fit a certain narrative. Be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind. User behavior frequently defies designer expectations.
 
 ## See also
 
