@@ -5,11 +5,14 @@ ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
-# Active issues in Office add-ins
+# Office Add-ins known issues
 
 _Last updated 03/23/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
 
 ## ISSUE: Intermittent failure to load or deploy Office Add-ins
 
