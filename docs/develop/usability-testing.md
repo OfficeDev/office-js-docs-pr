@@ -75,7 +75,7 @@ For example, if you want to find participants who are familiar with GitHub, to f
  d. BitBucket  [*May select*]  
  e. CloudForge  [*May select*]  
 
-If you're planning to test a live build of your add-in, the following questions can screen for users who can complete this requirement.
+If you're planning to test a live build of your add-in, the following questions can screen for users who can meet this requirement.
 
 **This test requires you to have the latest version of Microsoft PowerPoint. Do you have the latest version of PowerPoint?**  
  a. Yes [*Must select*]  
@@ -111,7 +111,7 @@ Don't assume that your user is on the screen they're supposed to be on at any gi
 
 When designing tasks for your usability test, keep the following Office Add-in-specific considerations in mind.
 
-- **Task pane space constraints**: Ask participants to complete tasks without resizing the task pane. This constraint tests whether your UI works at the compact default dimensions provided by each host application. Not all users will realize they can resize the task pane before passing judgement on your add-in. For default sizes, see [Task pane add-ins](../design/task-pane-add-ins.md).
+- **Task pane space constraints**: Ask participants to complete tasks without resizing the task pane. This constraint tests whether your UI works at the compact default dimensions provided by each host application. Not all users will realize they can resize the task pane before passing judgment on your add-in. For default sizes, see [Task pane add-ins](../design/task-pane-add-ins.md).
 - **Context switching**: Design tasks that require users to work in both the document and the add-in. Observe whether users can move between the task pane and the document without losing their place or getting confused about which UI is active.
 - **Performance with data operations**: If your add-in reads or writes large amounts of data, include tasks that exercise these operations. Office clients monitor add-in resource usage and automatically restart add-ins that are unresponsive for more than five seconds. A test participant who encounters this behavior might reveal important performance issues. For more information, see [Resource limits and performance optimization](../concepts/resource-limits-and-performance-optimization.md).
 - **Installation and sign-in flows**: If your test uses a live add-in, allocate time in your task plan for the participant to install the add-in and complete any required authentication. Dialogs opened by the add-in (such as for sign-in) are nonmodal, so participants might be uncertain about where to direct their attention.
@@ -143,7 +143,7 @@ It can be tricky to get the prototype and your task/question list right. Users m
 
 ## 8. Run the test
 
-After you order your test, you get email notifications when participants complete it. Unless you target a specific group of participants, the tests usually complete within a few hours.
+After you order your test, you get email notifications when participants complete it. Unless you target a specific group of participants, the tests are usually completed within a few hours.
 
 ## 9. Analyze results
 
