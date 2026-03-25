@@ -53,6 +53,9 @@ function createFormattedNumber(value, format) {
 
 The following code sample shows a custom function that takes an [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) data type as an input. If the `attribute` parameter is set to `text`, then the function returns the `text` property of the entity value. Otherwise, the function returns the `basicValue` property of the entity value.
 
+> [!IMPORTANT]
+> If your custom function returns an `EntityCellValue` that contains nested entities, the `referencedValues` array must only be defined on the root-level entity. Defining `referencedValues` on a nested entity causes Excel to return a **#VALUE!** error with no JavaScript exception or detailed diagnostics. Use [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue) indices in nested entities to point to the root entity's `referencedValues` array instead. For more information, see [Entity values](excel-data-types-concepts.md#entity-values).
+
 ```js
 /**
  * Accept an entity value data type as a function input.
