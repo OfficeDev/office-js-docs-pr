@@ -1,7 +1,7 @@
 ﻿---
 title: Usability testing for Office Add-ins
 description: Learn how to test your add-in design with real users.
-ms.date: 01/13/2025
+ms.date: 03/25/2026
 ms.localizationpriority: medium
 ---
 
@@ -19,8 +19,8 @@ These testing services help you to streamline test plan creation and remove the 
 
 You need only five participants to uncover most usability issues in your design. Incorporate small tests regularly throughout your development cycle to ensure that your product is user-centered.
 
-> [!NOTE]
-> We recommend that you test the usability of your add-in across multiple platforms. To [publish your add-in to Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
+> [!IMPORTANT]
+> Test the usability of your add-in across multiple platforms. To [publish your add-in to Microsoft Marketplace](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center), it must work on all [platforms that support the methods that you define](/javascript/api/requirement-sets).
 
 ## 1. Sign up for a testing service
 
@@ -28,7 +28,7 @@ For more information, see [Selecting an Online Tool for Unmoderated Remote User 
 
 ## 2. Develop your research questions
 
-Research questions define the objectives of your research and guide your test plan. Your questions will help you identify participants to recruit and the tasks they'll perform. Understand when you need specific observations or broad input.
+Research questions define the objectives of your research and guide your test plan. Your questions help you identify participants to recruit and the tasks they'll perform. Understand when you need specific observations or broad input.
 
 ### Specific question examples
 
@@ -45,19 +45,22 @@ Research questions define the objectives of your research and guide your test pl
 
 It's important to get data on the entire user journey – from discovering your add-in, to installing and using it. Consider research questions that address the following aspects of the add-in user experience.
 
-- Finding your add-in in Microsoft Marketplace
-- Choosing to install your add-in
-- First-run experience
-- Ribbon commands
-- Add-in UI
-- How the add-in interacts with the document space of the Office application
-- How much control the user has over any content insertion flows
+- **Finding your add-in in Microsoft Marketplace**: Can users discover your add-in through search? Is the listing description clear enough to convey what the add-in does?
+- **Choosing to install your add-in**: Do users hesitate when asked to grant permissions? Do they understand what the add-in will be able to do?
+- **First-run experience**: Does the first-run experience guide users to realize immediate value? Can users skip or revisit it as needed? For design patterns, see [First-run experience patterns](../design/first-run-experience-patterns.md).
+- **Ribbon commands**: Can users find your add-in commands on the ribbon? In Office on the web with the simplified ribbon layout, only the add-in's command icon is shown, not the add-in name. When ribbon space is limited, command groups might collapse to small icons or a dropdown menu. Test whether users can still locate and use your commands in these states. For more information, see [Add-in commands](../design/add-in-commands.md).
+- **Task pane usability**: Task pane default sizes are compact and vary by host application. Test whether your layout works at these default dimensions. Users can resize the task pane, so verify that your UI adapts responsively. For layout guidance, see [Task pane add-ins](../design/task-pane-add-ins.md).
+- **Dialog boxes**: If your add-in uses the Dialog API, test whether users understand the relationship between the dialog and the task pane. Dialogs are nonmodal, meaning users can continue interacting with the document and task pane while the dialog is open. Verify that this behavior doesn't confuse users. For more information, see [Use the Office dialog API](dialog-api-in-office-add-ins.md).
+- **Document interaction and data binding**: When your add-in inserts content into the document, do users understand where it's placed? If your add-in uses [data bindings](bind-to-regions-in-a-document-or-spreadsheet.md), test whether users understand that a persistent relationship exists between the add-in and specific regions of the document.
+- **Content insertion control**: How much control does the user have over content insertion flows? Can they preview, undo, or modify inserted content?
+- **Keyboard shortcuts**: If your add-in defines custom [keyboard shortcuts](../design/keyboard-shortcuts.md), test whether users can discover and remember them. Some browser shortcuts can't be overridden when your add-in runs in Office on the web, and keyboard shortcut support varies by platform.
+- **Cross-platform consistency**: Your add-in runs in different webview controls across desktop platforms: WebView2 on Windows, Safari (WKWebView) on Mac and iOS, and Chrome on Android. Visual rendering and behavior can differ. For example, scroll bars in WebView2 are hidden by default until hovered over, which might affect discoverability of scrollable content in your task pane. For more information, see [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md).
 
 For more information, see [Gathering factual responses vs. subjective data](https://help.usertesting.com/hc/articles/11880238504221).
 
 ## 3. Identify participants to target
 
-Remote testing services can give you control over many characteristics of your test participants. Think carefully about what kinds of users you want to target. In your early stages of data collection, it might be better to recruit a wide variety of participants to identify more obvious usability issues. Later, you might choose to target groups like advanced Office users, particular occupations, or specific age ranges.
+Remote testing services can give you control over many characteristics of your test participants. Think carefully about what kinds of users you want to target. In your early stages of data collection, it might be better to recruit a wide variety of participants to identify more obvious usability issues. Later, you might choose to target groups like advanced Office users, particular occupations, or specific age ranges. Be sure to get users across all the platforms that you support, since usability can vary between platforms for the same add-in design.
 
 ## 4. Create the participant screener
 
@@ -72,7 +75,7 @@ For example, if you want to find participants who are familiar with GitHub, to f
  d. BitBucket  [*May select*]  
  e. CloudForge  [*May select*]  
 
-If you're planning to test a live build of your add-in, the following questions can screen for users who will be able to do this.
+If you're planning to test a live build of your add-in, the following questions can screen for users who can meet this requirement.
 
 **This test requires you to have the latest version of Microsoft PowerPoint. Do you have the latest version of PowerPoint?**  
  a. Yes [*Must select*]  
@@ -83,31 +86,49 @@ If you're planning to test a live build of your add-in, the following questions 
  a. Yes [*Must select*]  
  b. No [*Reject*]  
 
+To test cross-platform behavior, include a screener question that identifies the participant's platform.
+
+**Which version of Office do you primarily use?**  
+ a. Office on Windows (desktop)  
+ b. Office on Mac (desktop)  
+ c. Office on the web (browser)  
+ d. Office on iPad  
+ e. None of the above [*Reject*]  
+
 For more information, see [Screener Questions Best Practices](https://help.usertesting.com/hc/articles/11880418598557).
 
 ## 5. Create tasks and questions for participants
 
-Try to prioritize what you want tested so that you can limit the number of tasks and questions for the participant. Some services pay participants only for a set amount of time, so you want to make sure not to go over.
+Prioritize what you want tested so that you can limit the number of tasks and questions for the participant. Some services pay participants only for a set amount of time, so you want to make sure you don't go over.
 
-Try to observe participant behaviors instead of asking about them, whenever possible. If you need to ask about behaviors, ask about what participants have done in the past, rather than what they would expect to do in a situation. This tends to give more reliable results.
+Try to observe participant behaviors instead of asking about them, whenever possible. If you need to ask about behaviors, ask about what participants have done in the past, rather than what they would expect to do in a situation. This approach tends to give more reliable results.
 
 The main challenge in unmoderated testing is making sure your participants understand your tasks and scenarios. Your directions should be *clear and concise*. Inevitably, if there's potential for confusion, someone will be confused.
 
-Don't assume that your user will be on the screen they're supposed to be on at any given point during the test. Consider telling them what screen they need to be on to start the next task.
+Don't assume that your user is on the screen they're supposed to be on at any given point during the test. Consider telling them what screen they need to be on to start the next task.
+
+### Add-in-specific task considerations
+
+When designing tasks for your usability test, keep the following Office Add-in-specific considerations in mind.
+
+- **Task pane space constraints**: Ask participants to complete tasks without resizing the task pane. This constraint tests whether your UI works at the compact default dimensions provided by each host application. Not all users will realize they can resize the task pane before passing judgment on your add-in. For default sizes, see [Task pane add-ins](../design/task-pane-add-ins.md).
+- **Context switching**: Design tasks that require users to work in both the document and the add-in. Observe whether users can move between the task pane and the document without losing their place or getting confused about which UI is active.
+- **Performance with data operations**: If your add-in reads or writes large amounts of data, include tasks that exercise these operations. Office clients monitor add-in resource usage and automatically restart add-ins that are unresponsive for more than five seconds. A test participant who encounters this behavior might reveal important performance issues. For more information, see [Resource limits and performance optimization](../concepts/resource-limits-and-performance-optimization.md).
+- **Installation and sign-in flows**: If your test uses a live add-in, allocate time in your task plan for the participant to install the add-in and complete any required authentication. Dialogs opened by the add-in (such as for sign-in) are nonmodal, so participants might be uncertain about where to direct their attention.
 
 For more information, see [Writing Great Tasks](https://help.usertesting.com/hc/articles/11880303389213).
 
 ## 6. Create a prototype to match the tasks and questions
 
-You can either test your live add-in, or you can test a prototype. Keep in mind that if you want to test the live add-in, you need to screen for participants that have the latest version of Office, are willing to install the add-in, and are willing to sign up for an account (unless you have logon credentials to provide them.) You'll then need to make sure that they successfully install your add-in.
+You can test either your live add-in or a prototype. Keep in mind that if you want to test the live add-in, you need to screen participants who have the latest version of Office, are willing to install the add-in, and are willing to sign up for an account (unless you have logon credentials to provide them). You also need to make sure that they successfully install your add-in.
 
-On average, it takes about 5 minutes to walk users through how to install an add-in. The following is an example of clear, concise installation steps. Adjust the steps based on the specifics of your test.
+On average, it takes about five minutes to walk users through how to install an add-in. The following example shows clear, concise installation steps. Adjust the steps based on the specifics of your test.
 
 **Please install the (insert your add-in name here) add-in for PowerPoint, using the following instructions.**
 
 1. Open Microsoft PowerPoint.
-1. Select **Blank Presentation.**
-1. Select **Home** > **Add-ins**, then select **Get Add-ins**.
+1. Select **Blank Presentation**.
+1. Select **Home** > **Add-ins**, and then select **Get Add-ins**.
 1. In the popup window, choose **Store**.
 1. Type (Add-in name) in the search box.
 1. Choose (Add-in name).
@@ -118,22 +139,24 @@ You can test a prototype at any level of interaction and visual fidelity. For mo
 
 ## 7. Run a pilot test
 
-It can be tricky to get the prototype and your task/question list right. Users might be confused by tasks, or might get lost in your prototype. You should run a pilot test with 1-3 users to work out the inevitable issues with the test format. This will help to ensure that your questions are clear, that the prototype is set up correctly, and that you're capturing the type of data you're looking for.
+It can be tricky to get the prototype and your task/question list right. Users might be confused by tasks, or might get lost in your prototype. Run a pilot test with one to three users to work out the inevitable issues with the test format. This process helps ensure that your questions are clear, that the prototype is set up correctly, and that you're capturing the type of data you're looking for.
 
 ## 8. Run the test
 
-After you order your test, you'll get email notifications when participants complete it. Unless you've targeted a specific group of participants, the tests are usually completed within a few hours.
+After you order your test, you get email notifications when participants complete it. Unless you target a specific group of participants, the tests are usually completed within a few hours.
 
 ## 9. Analyze results
 
-This is the part where you try to make sense of the data you've collected. While watching the test videos, record notes about problems and successes the user has. Avoid trying to interpret the meaning of the data until you have viewed all the results.
+This step involves making sense of the data you collected. While watching the test videos, record notes about problems and successes the user encounters. Avoid trying to interpret the meaning of the data until you view all the results.
 
-A single participant having a usability issue isn't enough to warrant making a change to the design. Two or more participants encountering the same issue suggests that other users in the general population will also encounter that issue.
+A single participant encountering a usability problem isn't enough reason to change the design. Two or more participants encountering the same problem suggests that other users in the general population will also encounter that problem.
 
-In general, be careful about how you use your data to draw conclusions. Don't fall into the trap of trying to make the data fit a certain narrative; be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind; user behavior frequently defies designer's expectations.
+When analyzing results from cross-platform tests, separate your findings by platform. An issue that occurs only on one platform might indicate a rendering difference in the webview control rather than a fundamental design problem. Pay particular attention to layout problems in the task pane, since default sizes vary by host application and platform.
+
+Be careful about how you use your data to draw conclusions. Don't try to make the data fit a certain narrative. Be honest about what the data actually proves, disproves, or simply fails to provide any insight about. Keep an open mind. User behavior frequently defies designer expectations.
 
 ## See also
 
 - [How to Conduct Usability Testing](https://whatpixel.com/howto-conduct-usability-testing/)  
 - [Best Practices for UserTesting](https://help.usertesting.com/hc/articles/11880426022813)  
-- [Minimizing Bias](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)  
+- [Minimizing Bias](https://downloads.usertesting.com/white_papers/TipSheet_MinimizingBias.pdf)
