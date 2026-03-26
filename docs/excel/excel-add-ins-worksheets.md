@@ -350,7 +350,7 @@ If you perform a top-to-bottom sort on "**Q1**" (the values in "**B**"), the `Wo
 
 :::image type="content" source="../images/excel-sort-event-after-row.png" alt-text="Table data in Excel after a top-to-bottom sort. The rows that moved are highlighted.":::
 
-If you perform a left-to-right sort on "**Quinces**" (the values in "**4**") on the original data, the `WorksheetColumnsSortedEventArgs.address` property returns the following highlighted columns.
+If you perform a left-to-right sort on "**Quinces**" (the values in "**4**") on the original data, the `WorksheetColumnSortedEventArgs.address` property returns the following highlighted columns.
 
 :::image type="content" source="../images/excel-sort-event-after-column.png" alt-text="Table data in Excel after a left-to-right sort. The columns that moved are highlighted.":::
 
