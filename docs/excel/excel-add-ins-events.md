@@ -172,7 +172,7 @@ await Excel.run(async (context) => {
 
 ### `onRowHiddenChanged` doesn't fire for advanced filters
 
-The `onRowHiddenChanged` event doesn't fire when rows are hidden or shown as a result of applying an [advanced filter](https://support.microsoft.com/office/4c9222fe-8529-4cd7-a898-3f16abdff32b). It fires correctly for standard worksheet filters and manual row hide/unhide operations.
+The `onRowHiddenChanged` event doesn't fire when rows are hidden or shown as a result of applying an [advanced filter](https://support.microsoft.com/office/4c9222fe-8529-4cd7-a898-3f16abdff32b). It fires correctly for standard worksheet filters and manual row hide or show operations.
 
 As a workaround, poll the `rowHidden` property on a set of rows at a regular interval to detect visibility changes caused by advanced filters. The following code sample demonstrates this approach.
 

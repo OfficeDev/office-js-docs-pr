@@ -119,7 +119,7 @@ const myEntity: Excel.EntityCellValue = {
 > 
 > - The `referencedValues` array is only supported on the **root-level** entity in a cell value tree.
 > - Nested entities (entities used as property values within another entity) must **not** define their own `referencedValues`.
-> - If a nested entity includes a `referencedValues` array, Excel returns a `GeneralException` error or a **#VALUE!** error in a custom function.
+> - If a nested entity includes a `referencedValues` array, the JavaScript Excel API throws a `GeneralException` error in add-in or script code, or Excel displays a **#VALUE!** error when the value is produced by a custom function.
 > 
 > To reference values from a nested entity, use [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue) indices that point to the root entity's `referencedValues` array.
 
