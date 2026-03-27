@@ -69,6 +69,9 @@
     - name: Manage both a unified manifest and an add-in only manifest version of your add-in
       href: concepts/duplicate-legacy-metaos-add-ins.md
       displayName: Excel, Word, PowerPoint, Outlook
+    - name: Extend your solution to other parts of Microsoft 365
+      href: concepts/extend-to-microsoft-365.md
+      displayName: Excel, Word, PowerPoint, Outlook, Copilot, Teams
   - name: Develop
     items:
     - name: Overview
@@ -126,9 +129,11 @@
         displayName: event-based activation
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
-    - name: Manifest
+    - name: App package and manifest
       items:
-      - name: Overview
+      - name: App package for Microsoft 365
+        href: overview/app-package-for-microsoft-365.md      
+      - name: Manifest overview
         href: develop/add-in-manifests.md
       - name: Unified manifest for Microsoft 365
         items: 
@@ -970,9 +975,6 @@
     displayName: Project
   - name: Build your first Project add-in
     href: quickstarts/project-quickstart.md
-    displayName: Project
-  - name: Create a Project add-in that uses REST with an on-premises OData service
-    href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
     displayName: Project
 
 - name: Visio

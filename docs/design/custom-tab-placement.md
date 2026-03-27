@@ -1,7 +1,7 @@
 ﻿---
 title: Position a custom tab on the ribbon
 description: Learn how to control where a custom tab appears on the Office ribbon and whether it has focus by default.
-ms.date: 02/12/2025
+ms.date: 03/23/2026
 ms-topic: how-to
 ms.localizationpriority: medium
 ---
@@ -22,8 +22,6 @@ You can specify where you want your add-in's custom tab to appear on the Office 
 By default, a custom tab is added to the end of the ribbon. However, you can specify where you want a custom tab to appear by identifying which built-in Office tab you want it to be next to and specifying whether it should be on the left or right side of the built-in tab. Open the tab for the type of manifest your add-in uses for the details of the manifest markup.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 To position your custom tab, include a [`"position"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item-position) property in the [`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array#tabs) object. Set the `"position.builtInTabId"` property to the ID of the built-in tab that you want your custom tab to be next to. (See [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).) Set the `"position.align"` property to either `"before"` (left) or `"after"` (right).
 

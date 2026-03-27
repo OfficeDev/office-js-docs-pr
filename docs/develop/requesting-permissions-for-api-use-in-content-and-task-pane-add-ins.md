@@ -1,7 +1,7 @@
 ---
 title: Requesting permissions for API use in add-ins
 description: Learn about different permission levels to declare in the manifest of an add-in to specify the level of JavaScript API access.
-ms.date: 06/17/2025
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
@@ -35,8 +35,6 @@ These permissions specify the subset of the API that the add-in [runtime](../tes
       }  
    },
    ```
-
-   [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 - **Add-in only manifest**: Use the [Permissions](/javascript/api/manifest/permissions) element of the manifest. The following example requests the **write document** permission, which allows only methods that can write to (but not read) the document.
 

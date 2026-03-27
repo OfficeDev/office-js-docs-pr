@@ -1,7 +1,7 @@
 ﻿---
 title: Enable and Disable Add-in Commands
 description: Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.
-ms.date: 03/11/2025
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -52,8 +52,6 @@ By default, a custom button or menu item on the ribbon is available for use when
 - [Add-in only manifest](#add-in-only-manifest)
 
 #### Unified manifest for Microsoft 365
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 Just add an [`"enabled"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item#enabled) property with the value `false` to the control or menu item object. The following shows the basic structure.
 
