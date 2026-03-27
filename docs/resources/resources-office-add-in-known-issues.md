@@ -38,7 +38,7 @@ Date reported: 03/23/2026
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
-### ISSUE: Users can't find or restore an add-in deployed via optional deployment
+## ISSUE: Users can't find or restore an add-in deployed via optional deployment
 
 When an Office Add-in is deployed using the optional deployment method, individual users can choose to remove the add-in from the ribbon, and restore it later if they want to use it again. However there is a regression where in some cases a user can't restore the add-in.
 
