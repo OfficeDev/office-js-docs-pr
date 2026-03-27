@@ -1,30 +1,71 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 03/23/2026
+ms.date: 03/27/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 03/23/2026_
+_Last updated 03/27/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
-## ISSUE: Intermittent failure to load or deploy Office Add-ins
+## ISSUE: Missing Office Add-Ins deployed via Centralized Deployment
 
-Some users are experiencing issues where Office Add-ins appear missing when deployed through the Microsoft 365 Admin Center. In affected scenarios, add-ins are visible in the admin experience but do not render or appear correctly in Office & Outlook clients.  
+Following a recent service flight rollback affecting Exchange Web Services (EWS), deployment and acquisition of Office Add-ins currently depend on EWS being enabled. If this setting is turned off at either the organization or mailbox level, Office Add-ins may fail to appear or install successfully.
 
 ### STATUS
 
-We are currently investigating the cause.  
+Open, we are currently investigating the issue. Tracking ID: EX1255397 and EX1259460
+
+### WORKAROUND
+
+To ensure add-ins function correctly, verify that EWS access is enabled by running the following Exchange Online PowerShell command:
+
+`Set-OrganizationConfig -EwsEnabled:$true`
+
+If EWS access is restricted through application access policies or mailbox-level configuration (for example, `EwsEnabled` is set to `$false`), these settings may prevent Office Add-ins from being shown to users.
+
+For additional guidance on managing EWS access in Exchange Online, please refer to: [Control access to EWS in Exchange](/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange).
 
 ### START DATE
 
-Date reported: 03/23/2026 
+Date reported: 03/23/2026
+
+<!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
+
+## ISSUE: Users can't find or restore an add-in deployed via optional deployment
+
+When an Office Add-in is deployed using the optional deployment method, individual users can choose to remove the add-in from the ribbon, and restore it later if they want to use it again. However there is a regression where in some cases a user can't restore the add-in.
+
+#### STATUS
+
+Open; tracking ID: ICM21000000950868
+
+#### IMPACT
+
+Users are unable to restore an add-in to the ribbon after they remove it. Even if the admin chooses to redeploy the add-in to all users, it may not appear.
+
+#### WORKAROUND
+
+Create a Microsoft 365 group to implement optional deployment. This works for Integrated Apps on both XML manifest and unified manifest (JSON) Office Add-ins.
+
+1. Create a Microsoft 365 group for a specific group of users who will use the add-in. For more information, see [Create a Microsoft 365 group](/microsoft-365/admin/create-groups/create-groups).
+    1. Specify a group name such as "My Add-in users".
+    1. On the Members page, choose the name of one or more people who will be designated as members of the group. These people will have optional access to the add-in on their ribbon and can add or remove it.
+1. Go to the Microsoft 365 admin center and update the deployment for the add-in as follows.
+    1. Apply to **Specific users/groups**. Use the name of the Microsoft 365 group you created previously.
+    1. Choose the deployment type of **Fixed (Default)**.
+
+Once the deployment is complete, anyone in the Microsoft 365 group can remove the add-in from the ribbon by leaving the group. If they want to restore the add-in later, they join the group.
+
+For more information about the previous deployment steps, see:
+- [User and group assignments](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps)
+- [Deploy Office Add-ins in the Microsoft 365 admin center](/microsoft-365/admin/manage/manage-deployment-of-add-ins)
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
