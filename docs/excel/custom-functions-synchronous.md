@@ -81,11 +81,8 @@ export async function getCellValue(address, invocation) {
 }
 ```
 
-## Office Add-in samples
-
-Explore the following Office Add-in samples to get started with synchronous custom functions in Excel - 
-
-- [Excel custom functions sync](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-custom-functions-sync): A simple example for getting started with synchronous custom functions.
+> [!TIP]
+> To explore synchronous custom functions in a complete custom functions add-in, see [Create Synchronous Custom Functions in Excel (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-custom-functions-sync) in our Office Add-ins code samples repository.
 
 ## See also
 
