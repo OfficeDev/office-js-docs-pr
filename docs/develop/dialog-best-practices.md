@@ -77,7 +77,7 @@ Your add-in should always handle error 12009 gracefully. Here are some recommend
         } else {
           // Dialog opened successfully.
           const dialog = asyncResult.value;
-          // ... handle dialog events
+          // ... Handle dialog events here.
         }
       }
     );
@@ -85,21 +85,7 @@ Your add-in should always handle error 12009 gracefully. Here are some recommend
 
 - Provide an alternative workflow when possible. If your add-in can function with reduced capabilities when the dialog is blocked, offer that alternative to the user.
 
-    ```javascript
-    if (asyncResult.error.code === 12009) {
-      const userChoice = confirm(
-        "This feature requires a dialog to sign you in. " +
-        "Would you like to try again? Click 'Cancel' to continue with limited features."
-      );
-      if (userChoice) {
-        // User wants to retry - show instructions.
-        showRetryInstructions();
-      } else {
-        // Provide limited functionality without authentication.
-        continueWithoutAuth();
-      }
-    }
-    ```
+    
 
 #### Disabling the prompt
 
@@ -213,7 +199,7 @@ So, if you pass a route to the `displayDialogAsync` method, you don't really hav
 
 #### Microsoft recommendations
 
-Instead of passing a client-side route to the `displayDialogAsync` method, use one of the following approaches:
+Instead of passing a client-side route to the `displayDialogAsync` method, use one of the following approaches.
 
 - If the code that you want to run in the dialog box is sufficiently complex, create two different SPAs explicitly; that is, have two SPAs in different folders of the same domain. One SPA runs in the dialog box and the other in the dialog box's host page where `displayDialogAsync` was called.
 - In most scenarios, only simple logic is needed in the dialog box. In such cases, your project is greatly simplified by hosting a single HTML page, with embedded or referenced JavaScript, in the domain of your SPA. Pass the URL of the page to the `displayDialogAsync` method. While this approach means that you deviate from the literal idea of a single-page app, you don't really have a single instance of an SPA when you use the Office Dialog API.
