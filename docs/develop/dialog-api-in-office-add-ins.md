@@ -399,7 +399,7 @@ For example, your code could use the [Office.onReady or Office.initialize functi
 
 ## Close the dialog box
 
-You can add a button to the dialog box that closes it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button is clicked. The following example shows how to implement this functionality.
+You can add a button to the dialog box that closes it. To do this, the click event handler for the button should use `messageParent` to tell the host page that the button was clicked. The following example shows how to implement this functionality.
 
 ```javascript
 function closeButtonClick() {
@@ -433,7 +433,7 @@ Don't use the standard browser `window.open()` method to open dialogs or pop-up 
 
 Always use the Office Dialog API instead. The Office Dialog API (`Office.context.ui.displayDialogAsync`) is specifically designed to work consistently across all Office platforms and runtime environments. It provides reliable dialog functionality that works whether your add-in is running in a browser, a webview control, or an iframe.
 
-To open external URLs in a separate browser window (not for authentication or data exchange with your add-in), use the `Office.context.ui.openBrowserWindow()` method instead.
+To open external URLs in a separate browser window (not for authentication or data exchange with your add-in), use the `Office.context.ui.openBrowserWindow(url)` method instead, where `url` is typically an HTTPS URL.
 
 ## Code samples
 
