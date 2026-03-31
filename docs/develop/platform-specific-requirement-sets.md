@@ -44,6 +44,8 @@ The following sections describe where you can specify your minimum requirement s
 
 When you note a requirement set in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element#capabilities) property of the unified manifest (or the [Set element](/javascript/api/manifest/set) of the add-in only manifest), you're indicating the minimum set of APIs that your add-in needs. Combined with supported Office host applications and other information, this determines whether or not your add-in activates in an Office client.
 
+Keep in mind that in the case where the APIs become supported cross-platform, you'll need to update your add-in manifest to add a cross-platform requirement set and remove the platform-specific requirement set. If your add-in is available in Microsoft Marketplace, you'll need to resubmit it for validation.
+
 However, it's currently invalid to specify any platform-specific requirement set as an activation requirement in the manifest. This applies to all desktop-only requirement sets (ExcelApiDesktop, WordApiDesktop), online-only requirement sets (ExcelApiOnline, WordApiOnline), and HiddenDocument requirement sets (WordApiHiddenDocument). For details on each type, see [Exceptions](#exceptions). Use the [runtime check approach](#code) described in the following section instead.
 
 > [!TIP]
