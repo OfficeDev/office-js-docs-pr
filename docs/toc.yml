@@ -547,6 +547,9 @@
     - name: Events
       href: excel/excel-add-ins-events.md
       displayName: Excel
+    - name: Find strings
+      href: excel/excel-add-ins-ranges-string-match.md
+      displayName: Excel
     - name: Notes
       href: excel/excel-add-ins-notes.md
       displayName: Excel
@@ -587,9 +590,6 @@
         displayName: Excel
       - name: Read or write to a large range
         href: excel/excel-add-ins-ranges-large.md
-        displayName: Excel
-      - name: Find a cell using string matching
-        href: excel/excel-add-ins-ranges-string-match.md
         displayName: Excel
       - name: Work with dates using the Moment-MSDate plug-in
         href: excel/excel-add-ins-ranges-dates.md
