@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 03/27/2026
+ms.date: 04/01/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 03/27/2026_
+_Last updated 04/01/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
@@ -20,7 +20,7 @@ Following a recent service flight rollback affecting Exchange Web Services (EWS)
 
 ### STATUS
 
-Open, we are currently investigating the issue. Tracking ID: EX1255397 and EX1259460
+Mitigated. Tracking ID: EX1255397 and EX1259460
 
 ### WORKAROUND
 
