@@ -100,7 +100,7 @@ Use the **block** option if the add-in's conditions are mandatory, even if the a
 
 ### No custom error message is specified in the event.completed call
 
-When a message or appointment doesn't meet an add-in's conditions, a Smart Alerts dialog is shown to the user. You can customize the message in the dialog by specifying it in the [errorMessage](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessage-member) property of the add-in's `event.completed` call. The `errorMessage` property is optional. If you don't specify a custom message in the property, the following default message is shown instead: "<Add-in name> is preventing this email from being sent."
+When a message or appointment doesn't meet an add-in's conditions, a Smart Alerts dialog is shown to the user. You can customize the message in the dialog by specifying it in the [errorMessage](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessage-member) property of the add-in's `event.completed` call. The `errorMessage` property is optional. If you don't specify a custom message in the property, the following default message is shown instead: "\<Add-in name> is preventing this email from being sent."
 
 :::image type="content" source="../images/outlook-smart-alerts-no-error-message.png" alt-text="Default message shown in the Smart Alerts dialog when no custom error message is specified in the event.completed call.":::
 
