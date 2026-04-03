@@ -56,13 +56,13 @@ To import a snippet into Script Lab, select **Import** from the menu and paste i
 Script Lab is supported for Excel, Word, and PowerPoint on the following clients.
 
 - Office on the web
-- Office on Windows\*
+- Office on Windows
 - Office on Mac
 
 Script Lab for Outlook is available on the following clients.
 
 - Outlook on the web when using Chrome, Microsoft Edge, or Safari browsers
-- Outlook on Windows\*
+- Outlook on Windows
 - Outlook on Mac
 
 ## Limitations
