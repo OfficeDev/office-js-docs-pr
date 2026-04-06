@@ -1,7 +1,7 @@
 ---
 title: Microsoft Office Add-ins community call
 description: The monthly Microsoft Office Add-ins community call agenda, schedule, and resources.
-ms.date: 02/12/2026
+ms.date: 04/06/2026
 ms.localizationpriority: medium
 ---
 
@@ -12,9 +12,9 @@ The Microsoft Office Add-ins community call is a monthly call where you can lear
 > [!IMPORTANT]
 > We have changed the schedule to 7:00 AM Pacific Time. If you still have the old calendar invite that starts at 8:00 AM Pacific Time, please remove it and download the latest one at <https://aka.ms/officeaddinscommunitycall>.
 
-## Agenda for March 11th, 2026 call
+## Agenda for April 8th, 2026 call
 
-The agenda for the March 11th Office Add-ins community call will be posted the week before the call.
+- Blazor-based Office Add-ins for Word and Excel.
 
 > [!NOTE]
 > For us to improve our community call experience and better understand our audience, we invite you to fill out this survey: [Office Add-ins Developer Community Survey](https://forms.office.com/r/YNDtW8wQ6U).
