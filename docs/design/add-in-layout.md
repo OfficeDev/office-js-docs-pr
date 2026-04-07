@@ -32,7 +32,7 @@ Follow these guidelines when you design your add-in layouts.
 ### Responsiveness and consistency
 
 - Keep layouts consistent across screens. Unexpected changes look like visual bugs and reduce user trust.
-- Create responsive experiences that adapt to the width and height of the HTML container.
+- Create responsive experiences that adapt to the width and height of the HTML container. Consider using a [CSS flexbox](https://developer.mozilla.org/docs/Learn_web_development/Core/CSS_layout/Flexbox) layout to organize your add-in's UI elements.
 
 ### Simplicity
 
