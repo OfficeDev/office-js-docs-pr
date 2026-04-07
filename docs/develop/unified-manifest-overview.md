@@ -82,7 +82,7 @@ The following tables lists which Office platforms support add-ins that use the u
 | ----- | ----- |
 | Office on the web | Yes |
 | Office on Windows (Version 2304 (Build 16320.00000) or later) connected to a Microsoft 365 subscription | Yes |
-| Office on Mac (Version 16.103 (25101427)) | Yes |
+| Office on Mac (Version 16.103 (25101427) or later) | Yes |
 | [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes |
 | Office on Windows (prior to Version 2304 (Build 16320.00000)) connected to a Microsoft 365 subscription | No |
 | Office on Windows (perpetual versions) | No |
