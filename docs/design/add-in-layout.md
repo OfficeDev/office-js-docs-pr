@@ -4,6 +4,7 @@ description: Learn how to design consistent, responsive layouts for task panes, 
 ms.date: 04/06/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Layout guidelines for Office Add-ins

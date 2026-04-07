@@ -4,6 +4,7 @@ description: Learn how to make your Office Add-in accessible to all users, inclu
 ms.date: 04/06/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Accessibility guidelines for Office Add-ins

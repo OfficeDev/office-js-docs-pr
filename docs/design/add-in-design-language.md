@@ -4,6 +4,7 @@ description: Learn how to use the Office design language and Fluent UI to create
 ms.date: 04/06/2026
 ms.topic: overview
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Office Add-in design language
