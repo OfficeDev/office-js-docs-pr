@@ -22,7 +22,7 @@ The Web Content Accessibility Guidelines (WCAG) are the international standards 
 Your add-in should support keyboard, touch, and mouse input so that every user can interact with it regardless of their device or abilities.
 
 - Ensure that users can complete all operations by using only the keyboard. Users should be able to reach every actionable element on the page by using a combination of <kbd>Tab</kbd> and the arrow keys.
-- On mobile devices, provide useful audio feedback when users operate controls by touch.
+- On mobile devices, your add-in should provide useful audio feedback when users operate controls by touch.
 - Provide helpful labels for all interactive controls.
 
 For more design and UI resources, see [Accessibility in Windows apps](/windows/apps/design/accessibility/accessibility).
@@ -31,7 +31,7 @@ For more design and UI resources, see [Accessibility in Windows apps](/windows/a
 
 Predictable behavior and clear feedback help all users understand what's happening in your add-in.
 
-- Don't rely on a single attribute — such as color, size, shape, location, orientation, or sound — to convey meaning in your UI.
+- Don't rely on a single attribute &mdash; such as color, size, shape, location, orientation, or sound &mdash; to convey meaning in your UI.
 - Avoid unexpected changes of context, such as moving focus to a different UI element without user action.
 - Provide a way to verify, confirm, or reverse all binding actions.
 - Provide a way to pause or stop media, such as audio and video.
