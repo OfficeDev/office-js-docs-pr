@@ -1,7 +1,7 @@
 ---
 title: Add a Copilot agent to an add-in
 description: Learn how to add a Copilot agent to an add-in.
-ms.date: 11/11/2025
+ms.date: 04/07/2026
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: medium
@@ -171,8 +171,8 @@ The runtime object should look similar to the following. There may be other prop
 
    ```json
    {
-        "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
-        "version": "v1.5",
+        "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+        "version": "v1.6",
         "name": "Excel Add-in + Agent",
         "description": "Agent for working with Excel cells.",
         "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
@@ -201,8 +201,8 @@ The runtime object should look similar to the following. There may be other prop
 
    ```json
    {
-        "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.3/schema.json",
-        "schema_version": "v2.3",
+        "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+        "schema_version": "v2.4",
         "name_for_human": "Excel Add-in + Agent",
         "description_for_human": "Add-in Actions in Agents",
         "namespace": "addinfunction",
@@ -258,7 +258,7 @@ The runtime object should look similar to the following. There may be other prop
     }
    ```
 
-1. *With some exceptions noted later, replace the property values with new values that are appropriate for your add-in.* For more information about these properties, see [API plugin manifest schema 2.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.3).
+1. *With some exceptions noted later, replace the property values with new values that are appropriate for your add-in.* For more information about these properties, see [API plugin manifest schema 2.4 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.4).
 
    As you work, keep the following points in mind.
 
