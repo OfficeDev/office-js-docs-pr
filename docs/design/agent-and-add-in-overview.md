@@ -1,7 +1,7 @@
 ---
 title: Combine Copilot Agents with Office Add-ins (preview)
 description: Get an overview of why and how to combine a Copilot agent with an Office Add-in.
-ms.date: 04/07/2026
+ms.date: 04/09/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ---
