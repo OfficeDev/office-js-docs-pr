@@ -82,7 +82,8 @@ There are two parts of the manifest that you configure. First, create an action 
             "id": "CommandsRuntime",
             "type": "general",
             "code": {
-                "page": "https://localhost:3000/commands.html"
+                "page": "https://localhost:3000/commands.html",
+                "script": "https://localhost:3000/commands.js"
             },
             "lifetime": "short",
             "actions": [
