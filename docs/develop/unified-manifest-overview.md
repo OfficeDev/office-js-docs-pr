@@ -78,6 +78,9 @@ Add-ins that use the unified manifest can't be installed on all platforms. We're
 
 The following tables lists which Office platforms support add-ins that use the unified manifest.
 
+> [!NOTE]
+> In the following table, "Office" refers to Excel, Outlook, PowerPoint, and Word. OneNote, Project, and Visio don't support the unified manifest.
+
 | Client/platform | Supports add-ins with the unified manifest|
 | ----- | ----- |
 | Office on the web | Yes |
