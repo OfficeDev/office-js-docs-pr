@@ -1,7 +1,7 @@
 ---
 title: Add a Copilot agent to an add-in
 description: Learn how to add a Copilot agent to an add-in.
-ms.date: 04/07/2026
+ms.date: 04/09/2026
 ms.topic: how-to
 ms.service: microsoft-365
 ms.localizationpriority: medium
@@ -129,7 +129,8 @@ The runtime object should look similar to the following. There may be other prop
         "id": "CommandsRuntime",
         "type": "general",
         "code": {
-            "page": "https://localhost:3000/commands.html"
+            "page": "https://localhost:3000/commands.html",
+            "script": "https://localhost:3000/commands.js"
         },
         "lifetime": "short",
         "actions": [

@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 04/07/2026
+ms.date: 04/09/2026
 ms.localizationpriority: high
 ---
 
@@ -78,15 +78,19 @@ Add-ins that use the unified manifest can't be installed on all platforms. We're
 
 The following tables lists which Office platforms support add-ins that use the unified manifest.
 
+> [!NOTE]
+> In the following table, "Office" refers to Excel, Outlook, PowerPoint, and Word. OneNote, Project, and Visio don't support the unified manifest.
+
 | Client/platform | Supports add-ins with the unified manifest|
 | ----- | ----- |
 | Office on the web | Yes |
 | Office on Windows (Version 2304 (Build 16320.00000) or later) connected to a Microsoft 365 subscription | Yes |
-| Office on Mac (Version 16.103 (25101427) or later) | Yes |
+| Excel, PowerPoint, and Word on Mac (Version 16.103 (25101427) or later) | Yes |
 | [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes |
 | Office on Windows (prior to Version 2304 (Build 16320.00000)) connected to a Microsoft 365 subscription | No |
 | Office on Windows (perpetual versions) | No |
-| Office on Mac (prior to Version 16.103 (25101427)) | No |
+| Outlook on Mac | No |
+| Excel, PowerPoint, and Word on Mac (prior to Version 16.103 (25101427)) | No |
 | Office on mobile | No |
 
 ## Sample unified manifest
