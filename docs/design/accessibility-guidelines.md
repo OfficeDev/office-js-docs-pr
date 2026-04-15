@@ -1,7 +1,7 @@
 ---
 title: Accessibility guidelines for Office Add-ins
 description: Learn how to make your Office Add-in accessible to all users, including keyboard navigation, screen reader support, high contrast, and WCAG compliance.
-ms.date: 04/06/2026
+ms.date: 04/15/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
 ai-usage: ai-assisted
@@ -35,7 +35,7 @@ Predictable behavior and clear feedback help all users understand what's happeni
 - Don’t rely on sound alone to alert users to important information.
 - Don’t rely on color, shape, size, or visual location alone to convey meaning or instructions.
 - Don’t require complex gestures (drag, multi‑touch, timed motion) without providing simpler alternatives.
-- [Manage focus](/windows/apps/design/accessibility/focus) carefully. Don’t move focus to a different element unless the user initiates the change.
+- [Manage focus](/windows/apps/develop/input/focus-navigation) carefully. Don’t move focus to a different element unless the user initiates the change.
 - Provide a way to verify, confirm, or reverse all binding actions.
 - Don't impose a time limit for user action.
 
@@ -45,7 +45,7 @@ Clear visual design and sufficient contrast ensure that users with low vision or
 
 - Avoid unexpected color changes.
 - Provide meaningful, timely descriptions for UI elements, titles, headings, inputs, and errors. Ensure that control names clearly describe the intent of the control.
-- Verify that your UI elements render correctly in Windows [high contrast themes](/windows/apps/design/accessibility/high-contrast).
+- Verify that your UI elements render correctly in Windows [high contrast themes](/windows/apps/design/accessibility/high-contrast-themes).
 - Follow [WCAG color contrast guidelines](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum). Aim for a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text.
 
 ## Content and media
@@ -110,7 +110,7 @@ Assistive technologies and international accessibility guidelines change over ti
 ## See also
 
 - [Overview of accessibility in Windows apps](/windows/apps/design/accessibility/accessibility-overview)
-- [WebView2 accessibility considerations](/microsoft-edge/webview2/concepts/accessibility)
+- [WebView2 accessibility APIs](/microsoft-edge/webview2/concepts/overview-features-apis)
 - [Accessibility in the Store](/windows/apps/design/accessibility/accessibility-in-the-store)
 - [Developing for Web Accessibility](https://www.w3.org/WAI/tips/developing/)
 - [Accessibility Fundamentals learning path](/training/paths/accessibility-fundamental/)
