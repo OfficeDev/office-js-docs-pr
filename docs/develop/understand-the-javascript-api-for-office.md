@@ -1,16 +1,16 @@
 ---
-title: Understanding the Office JavaScript API
+title: Understand the Office JavaScript API
 description: An introduction to the Office JavaScript API.
 ms.topic: overview
-ms.date: 05/18/2023
+ms.date: 04/16/2026
 ms.localizationpriority: high
 ---
 
-# Understanding the Office JavaScript API
+# Understand the Office JavaScript API
 
 An Office Add-in can use the Office JavaScript APIs to interact with content in the Office document where the add-in is running.
 
-## Accessing the Office JavaScript API library
+## Access the Office JavaScript API library
 
 [!include[information about accessing the Office JS API library](../includes/office-js-access-library.md)]
 

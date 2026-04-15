@@ -44,7 +44,7 @@ These permissions specify the subset of the API that the add-in [runtime](../tes
 
 As a best practice, you should request permissions based on the principle of *least privilege*. That is, you should request permission to access only the minimum subset of the API that your add-in requires to function correctly. For example, if your add-in needs only to read data in a user's document for its features, you should request no more than the **read document** permission.
 
-The following table describes the subsets of the [Common and Application-specific JavaScript APIs](understanding-the-javascript-api-for-office.md#api-models) that are enabled by each permission level.
+The following table describes the subsets of the [Common and Application-specific JavaScript APIs](understand-the-javascript-api-for-office.md#api-models) that are enabled by each permission level.
 
 |Permission canonical name|Add-in only manifest name|Unified manifest name|Enabled subset of the Application-specific APIs|Enabled subset of the Common APIs|
 |:-----|:-----|:-----|:-----|:-----|

@@ -80,7 +80,7 @@ You can't explicitly specify the Office versions and builds or the platforms on 
 
 ### Requirement sets
 
-To simplify the process of specifying the APIs that your add-in needs, Office groups most APIs together in [requirement sets](office-versions-and-requirement-sets.md). The APIs in the [Common API Object Model](understanding-the-javascript-api-for-office.md#api-models) are grouped by the development feature that they support. For example, all the APIs connected to table bindings are in the requirement set called "TableBindings 1.1". The APIs in the [Application specific object models](understanding-the-javascript-api-for-office.md#api-models) are grouped by when they were released for use in production add-ins.
+To simplify the process of specifying the APIs that your add-in needs, Office groups most APIs together in [requirement sets](office-versions-and-requirement-sets.md). The APIs in the [Common API Object Model](understand-the-javascript-api-for-office.md#api-models) are grouped by the development feature that they support. For example, all the APIs connected to table bindings are in the requirement set called "TableBindings 1.1". The APIs in the [Application specific object models](understand-the-javascript-api-for-office.md#api-models) are grouped by when they were released for use in production add-ins.
 
 Requirement sets are versioned. For example, the APIs that support [Dialog Boxes](../develop/dialog-api-in-office-add-ins.md) are in the requirement set DialogApi 1.1. When additional APIs that enable messaging from a task pane to a dialog were released, they were grouped into DialogApi 1.2, along with all the APIs in DialogApi 1.1. *Each version of a requirement set is a superset of all earlier versions.*
 
