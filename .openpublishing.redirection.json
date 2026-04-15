@@ -4,7 +4,7 @@
           "source_path": "docs/develop/understanding-the-javascript-api-for-office.md",
           "redirect_url": "/office/dev/add-ins/develop/understand-the-javascript-api-for-office",
           "redirect_document_id": false
-        }
+        },
         {
             "source_path": "docs/develop/teams-toolkit-overview.md",
             "redirect_url": "/office/dev/add-ins/develop/agents-toolkit-overview"
