@@ -19,7 +19,7 @@ Including a Microsoft 365 Copilot agent in an Office Add-in provides two benefit
 - Copilot becomes a natural language interface for the add-in's functionality.
 - The agent can pass parameters to the JavaScript it invokes, which isn't possible when a [function command](add-in-commands.md#types-of-add-in-commands) is invoked from a button or menu item.
 
-You can also think of an Office Add-in as a skill in a Copilot agent. Because Office Add-ins use the [Office JavaScript Library](../develop/understanding-the-javascript-api-for-office.md) to perform read and write operations on Office documents, these operations become actions in the Copilot agent.
+You can also think of an Office Add-in as a skill in a Copilot agent. Because Office Add-ins use the [Office JavaScript Library](../develop/understand-the-javascript-api-for-office.md) to perform read and write operations on Office documents, these operations become actions in the Copilot agent.
 
 ## Scenarios
 
