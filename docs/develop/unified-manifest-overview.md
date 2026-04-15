@@ -349,7 +349,7 @@ The following is an example of a unified app manifest for an add-in. It doesn't 
                   ]
                 }
               ],
-              "customMobileRibbonGroups" [
+              "customMobileRibbonGroups": [
                 {
                   "id": "myMobileGroup",
                   "label": "Contoso Actions",
