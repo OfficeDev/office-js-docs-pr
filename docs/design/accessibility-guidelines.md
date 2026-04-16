@@ -36,7 +36,7 @@ Predictable behavior and clear feedback help all users understand what's happeni
 - Don't rely on sound alone to alert users to important information.
 - Don't rely on color, shape, size, or visual location alone to convey meaning or instructions.
 - Don't require complex gestures (drag, multi‑touch, timed motion) without providing simpler alternatives.
-- [Manage focus](/windows/apps/develop/input/focus-navigation) carefully. Don’t move focus to a different element unless the user initiates the change.
+- Manage focus carefully. Don't move focus to a different element unless the user initiates the change. For guidance, see [Navigation patterns for Office Add-ins](navigation-patterns.md).
 - Provide a way to verify, confirm, or reverse all binding actions.
 - Don't impose a time limit for user action.
 
