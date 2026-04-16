@@ -52,7 +52,7 @@ Clear visual design and sufficient contrast ensure that users with low vision or
 ## Content and media
 
 - Provide text alternatives for all meaningful non‑text content (for example, images, icons, SVGs, charts, and custom controls). 
-- Don’t put meaningful text inside images unless an equivalent text alternative is provided.
+- Don't put meaningful text inside images unless an equivalent text alternative is provided.
 - Provide transcripts for audio‑only content.
 - Provide synchronized captions for prerecorded or live video with audio.
 - Provide alternatives to sound as a means to alert users, such as visual cues or vibrations.
