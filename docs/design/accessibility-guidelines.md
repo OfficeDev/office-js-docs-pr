@@ -97,7 +97,7 @@ Confirm that:
 
 ### Test interaction patterns
 
-Evaluate user flows &mdash; not just individual controls &mdash; to ensure that:
+Evaluate user flows&mdash;not just individual controls&mdash;to ensure that:
 
 - Dragging or gesture-based interactions have a keyboard-accessible alternative.
 - Time-limited interactions can be paused, extended, or disabled.
