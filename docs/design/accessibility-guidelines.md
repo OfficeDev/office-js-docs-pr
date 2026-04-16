@@ -49,7 +49,7 @@ Clear visual design and sufficient contrast ensure that users with low vision or
 - Verify that your UI elements render correctly in Windows [high contrast themes](/windows/apps/design/accessibility/high-contrast-themes).
 - Follow [WCAG color contrast guidelines](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum). Aim for a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text.
 
-## Content and media
+## Ensure content and media are accessible
 
 - Provide text alternatives for all meaningful non‑text content (for example, images, icons, SVGs, charts, and custom controls). 
 - Don't put meaningful text inside images unless an equivalent text alternative is provided.
