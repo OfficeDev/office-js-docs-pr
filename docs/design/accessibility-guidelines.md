@@ -64,7 +64,7 @@ Regular [accessibility testing](/windows/apps/design/accessibility/accessibility
 
 ### Integrate automated checks
 
-Automated tools can detect many issues, but they don’t evaluate how well your add-in works with assistive technologies.
+Automated tools can detect many issues, but they don't evaluate how well your add-in works with assistive technologies.
 
 - Run [Accessibility Insights](https://accessibilityinsights.io/) as part of your build or CI pipeline to identify common accessibility issues early.
 - Use automated checks to validate:
