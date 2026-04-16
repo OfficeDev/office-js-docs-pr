@@ -102,7 +102,7 @@ Evaluate user flows &mdash; not just individual controls &mdash; to ensure that:
 - Dragging or gesture-based interactions have a keyboard-accessible alternative.
 - Time-limited interactions can be paused, extended, or disabled.
 - Alerts and notifications are conveyed without relying on sound alone.
-- Authentication and input methods do not depend on memory, vision, or timed responses.
+- Authentication and input methods don't depend on memory, vision, or timed responses.
 
 ### Re-test as standards evolve
 
