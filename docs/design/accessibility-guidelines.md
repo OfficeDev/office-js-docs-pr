@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Accessibility guidelines for Office Add-ins
 
-Accessible add-ins work for everyone &mdash; people who use screen readers, navigate by keyboard, rely on high contrast, or interact through touch. Building with accessibility in mind from the start improves usability for all your users and expands the market for your solutions.
+Accessible add-ins work for everyone&mdash;people who use screen readers, navigate by keyboard, rely on high contrast, or interact through touch. Building with accessibility in mind from the start improves usability for all your users and expands the market for your solutions.
 
 The Web Content Accessibility Guidelines (WCAG) are the international standards that define what's needed for your add-in to be accessible. We recommend you become familiar with them before you start building.
 
