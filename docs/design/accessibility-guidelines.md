@@ -110,7 +110,6 @@ Assistive technologies and international accessibility guidelines change over ti
 
 ## See also
 
-- [Overview of accessibility in Windows apps](/windows/apps/design/accessibility/accessibility-overview)
 - [WebView2 accessibility APIs](/microsoft-edge/webview2/concepts/overview-features-apis)
 - [Accessibility in the Store](/windows/apps/design/accessibility/accessibility-in-the-store)
 - [Developing for Web Accessibility](https://www.w3.org/WAI/tips/developing/)
