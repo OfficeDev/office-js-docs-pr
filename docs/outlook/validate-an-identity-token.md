@@ -1,5 +1,5 @@
 ---
-title: Validate an Outlook add-in identity token
+title: Validate an Exchange add-in identity token
 description: Learn how to validate an Exchange user identity token in your Outlook add-in, including claim checking, signature verification, domain validation, and computing a unique user identifier.
 ms.date: 04/14/2026
 ms.topic: how-to
