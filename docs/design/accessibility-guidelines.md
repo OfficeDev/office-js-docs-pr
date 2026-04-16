@@ -33,9 +33,9 @@ Your add-in should support keyboard, touch, and mouse input so that every user c
 
 Predictable behavior and clear feedback help all users understand what's happening in your add-in.
 
-- Don’t rely on sound alone to alert users to important information.
-- Don’t rely on color, shape, size, or visual location alone to convey meaning or instructions.
-- Don’t require complex gestures (drag, multi‑touch, timed motion) without providing simpler alternatives.
+- Don't rely on sound alone to alert users to important information.
+- Don't rely on color, shape, size, or visual location alone to convey meaning or instructions.
+- Don't require complex gestures (drag, multi‑touch, timed motion) without providing simpler alternatives.
 - [Manage focus](/windows/apps/develop/input/focus-navigation) carefully. Don’t move focus to a different element unless the user initiates the change.
 - Provide a way to verify, confirm, or reverse all binding actions.
 - Don't impose a time limit for user action.
