@@ -46,7 +46,7 @@ Clear visual design and sufficient contrast ensure that users with low vision or
 
 - Avoid unexpected color changes.
 - Provide meaningful, timely descriptions for UI elements, titles, headings, inputs, and errors. Ensure that control names clearly describe the intent of the control.
-- Verify that your UI elements render correctly in Windows [high contrast themes](/windows/apps/design/accessibility/high-contrast-themes).
+- Verify that your UI elements render correctly in all four Windows built-in contrast themes: Aquatic, Desert, Dusk, and Night sky. To test, go to **Windows Settings** > **Accessibility** > **Contrast themes**, choose each one, and check that all text, buttons, links, and other UI elements in your add-in are visible and have sufficient contrast.
 - Follow [WCAG color contrast guidelines](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum). Aim for a contrast ratio of at least 4.5:1 for normal text and 3:1 for large text.
 
 ## Ensure content and media are accessible
