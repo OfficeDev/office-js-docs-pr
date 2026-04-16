@@ -13,7 +13,8 @@ Accessible add-ins work for everyone &mdash; people who use screen readers, navi
 
 The Web Content Accessibility Guidelines (WCAG) are the international standards that define what's needed for your add-in to be accessible. We recommend you become familiar with them before you start building.
 
-- [Web Content Accessibility Guidelines (WCAG) 3.0](https://www.w3.org/TR/WCAG22/)
+- [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/)
+- [Web Content Accessibility Guidelines (WCAG) 3.0 (Preview)](https://www.w3.org/TR/WCAG22/)
 - [WCAG standards and resources](/compliance/regulatory/offering-wcag-2-1)
 - [W3C WAI tutorials](https://www.w3.org/WAI/tutorials/)
 - [Web accessibility principles and guidelines](/training/modules/web-accessibility-principles-guidelines/) training module on Microsoft Learn (17 minute overview)
