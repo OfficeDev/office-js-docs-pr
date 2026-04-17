@@ -159,7 +159,7 @@ For information about how to save settings in an Outlook add-in, see [Get and se
 
 ## Common API settings and persistence
 
-The [Common APIs](understanding-the-javascript-api-for-office.md#api-models) provide objects to save add-in state across sessions. The saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them. Internally, the `Settings`, `CustomProperties`, and `RoamingSettings` objects store data as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`. The stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
+The [Common APIs](understand-the-javascript-api-for-office.md#api-models) provide objects to save add-in state across sessions. The saved settings values are associated with the [Id](/javascript/api/manifest/id) of the add-in that created them. Internally, the `Settings`, `CustomProperties`, and `RoamingSettings` objects store data as a serialized JavaScript Object Notation (JSON) object that contains name/value pairs. The name (key) for each value must be a `string`. The stored value can be a JavaScript `string`, `number`, `date`, or `object`, but not a **function**.
 
 This example of the property bag structure contains three defined **string** values named `firstName`,  `location`, and  `defaultView`.
 
@@ -292,7 +292,7 @@ function getReviewers() {
 
 ## See also
 
-- [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
+- [Understanding the Office JavaScript API](understand-the-javascript-api-for-office.md)
 - [Outlook add-ins](../outlook/outlook-add-ins-overview.md)
 - [Get and set add-in metadata for an Outlook add-in](../outlook/metadata-for-an-outlook-add-in.md)
 - [Get and set internet headers on a message in an Outlook add-in](../outlook/internet-headers.md)
