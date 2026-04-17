@@ -15,7 +15,7 @@ Your Outlook add-in can send you an Exchange user identity token, but before you
 To validate the identity token and get the user's unique identifier, follow these four steps:
 
 1. Extract the JWT from a Base64-encoded URL string.
-1. Verify the token is well-formed, that it's for your Outlook add-in, that it hasn't expired, and that you can extract a valid authentication metadata document URL.
+1. Verify that the token is well-formed, that it's for your Outlook add-in, that it hasn't expired, and that you can extract a valid authentication metadata document URL.
 1. Retrieve the authentication metadata document from the Exchange server and validate the token signature.
 1. Compute a unique identifier by concatenating the user's Exchange ID with the authentication metadata document URL.
 
