@@ -1,18 +1,44 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 04/01/2026
+ms.date: 04/20/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 04/01/2026_
+_Last updated 04/20/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
+
+## ISSUE: Unable to remove Office Add-Ins using the Integrated apps portal
+
+In some cases, the Microsoft 365 administrator may see an error when attempting to remove an Office Add-in via the Integrated apps portal.
+
+### STATUS
+
+Investigating. Tracking ID: 
+
+### WORKAROUND
+
+To remove the add-in using the Office Add-ins advanced management UI:
+
+1. Sign in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
+1. From the left navigation bar, select **... Show all**, then select **Settings** > **Integrated apps**.
+1. Near the top of the page, select **Add-ins** from the advanced management options.
+1. Select the add-in you want to remove.
+1. At the bottom of the pane, select **Remove add-in**.
+1. When prompted to confirm, select **Remove**.
+
+### START DATE
+
+Date reported: 02/11/2026
+
+<!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
+
 
 ## ISSUE: Missing Office Add-Ins deployed via Centralized Deployment
 
