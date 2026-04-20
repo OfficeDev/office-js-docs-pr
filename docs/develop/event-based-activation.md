@@ -77,7 +77,7 @@ Support for this feature in Outlook was introduced in [requirement set 1.10](/ja
 > [!NOTE]
 > <sup>1</sup> Event-based add-ins in classic Outlook on Windows require a minimum of Windows 10 Version 1903 (Build 18362) or Windows Server 2019 Version 1903 to run.
 >
-> <sup>2</sup> Add-ins that use the unified manifest for Microsoft 365 aren't supported in Outlook on mobile devices. To make your add-in available on mobile platforms, you must create a second version that uses the add-in only manifest. For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
+> <sup>2</sup> Add-ins that use the unified manifest for Microsoft 365 aren't supported in Outlook on Mac and on mobile devices. To make your add-in available on Mac and on mobile platforms, you must create a second version that uses the add-in only manifest. For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
 >
 > <sup>3</sup> For more information, see [Implement event-based activation in Outlook mobile add-ins](../outlook/mobile-event-based.md).
 >
@@ -117,6 +117,12 @@ When developing an event-based add-in to run on a Windows client, be mindful of 
   Note that a large JavaScript bundle may cause issues with the performance of your add-in. We recommend preprocessing heavy operations, so that they're not included in your event-handling code.
 - When the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's client version, to the event handlers instead.
 - In Outlook, when composing a message initiated by a [return email link](https://support.microsoft.com/office/86cea017-8f4e-4f20-85aa-0683779ccb0a) (`mailto` link), retrieving the recipients from the To, Cc, or Bcc field in the `OnNewMessageCompose` event handler may return an empty array. This happens if Outlook hasn't completed resolving the email addresses of the recipients by the time the `OnNewMessageCompose` event occurs. To work around this, check for recipients in the `OnMessageRecipientsChanged` event handler instead.
+
+### Event-based add-in limitations in Excel, PowerPoint, and Word
+
+The following platforms or features are not yet supported.
+
+- Office on Mac
 
 ### Event-based add-in limitations in Outlook on the web and the new Outlook on Windows
 

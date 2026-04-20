@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 The process of sideloading an add-in that uses the [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) varies depending on the tool you want to use and on how the add-in project was created.
 
 > [!NOTE]
-> An add-in that uses the unified manifest can be sideloaded on Office on Windows, Version 2304 (Build 16320.20000) or later and on Excel, PowerPoint, and Word on Mac (Version 16.103 (25101427) or later). Sideloading on Windows has the effect of sideloading to Office on the web too. Currently, it can't be sideloaded on iPad or on Outlook on Mac.
+> An add-in that uses the unified manifest can be sideloaded on Office on Windows, Version 2304 (Build 16320.20000) or later and on Excel, PowerPoint, and Word on Mac, Version 16.103 (25101427) or later. Sideloading on Windows has the effect of sideloading to Office on the web too. Currently, it can't be sideloaded on iPad or on Outlook on Mac.
 
 ## Sideload add-ins created with the Yeoman generator for Office Add-ins (Yo Office)
 
