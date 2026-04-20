@@ -20,7 +20,7 @@ In some cases, the Microsoft 365 administrator may see an error when attempting 
 
 ### STATUS
 
-Investigating. Tracking ID: 
+Investigating.
 
 ### WORKAROUND
 
