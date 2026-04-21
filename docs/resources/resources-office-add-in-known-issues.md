@@ -35,7 +35,7 @@ To remove the add-in using the Office Add-ins advanced management UI:
 
 ### START DATE
 
-Date reported: 02/11/2026
+Date reported: 04/20/2026
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
