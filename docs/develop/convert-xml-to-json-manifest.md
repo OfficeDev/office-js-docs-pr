@@ -92,6 +92,9 @@ Review and change, as needed, manifest values in light of the following effects 
 
 If your add-in has custom functions, then it includes a JSON configuration file. Some requirements for this file weren't always enforced by Office or Microsoft Marketplace in the past, but they are all enforced when the add-in has a unified manifest. Before you convert the manifest, ensure that this JSON file conforms to all requirements. For more information, see [Custom functions naming and localization](../excel/custom-functions-naming.md) and [Manually create JSON metadata for custom functions](../excel/custom-functions-json.md).
 
+> [!NOTE]
+> Support for custom functions with the unified manifest is in preview.
+
 In particular, note that [all function names and function ids must have at least 3 characters](../excel/custom-functions-naming.md#custom-functions-naming-guidelines) and that [each function object must have a "result" property](../excel/custom-functions-json.md#metadata-reference). 
 
 ### Verify that the modified add-in only manifest works
@@ -139,6 +142,9 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 1. Open the unified manifest file.
 1. Navigate to the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property and ensure there are child `"privacyUrl"` and `"termsOfUseUrl"` properties. These properties must have appropriate values with a localhost domain.
 1. You can now [sideload the add-in](#sideload-the-add-in).
+
+> [!IMPORTANT]
+> Support for custom functions with the unified manifest is in preview, and currently neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) add the needed custom function support to the unified manifest. We're working hard to update the tools. In the meantime, you must add the [`"extensions.runtimes.customFunctions'`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) manually. Use your add-in only manifest as the source of data to populate the [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) object.
 
 ## Sideload the add-in
 
