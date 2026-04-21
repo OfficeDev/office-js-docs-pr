@@ -12,8 +12,6 @@ The manifest is a configuration file that tells Office how your add-in should be
 
 For an introduction to custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
 
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-
 > [!TIP]
 > For instructions on configuring custom functions with the add-in only manifest, see [Create custom functions in Excel](custom-functions-overview.md) and [Manually create JSON metadata for custom functions](custom-functions-json.md).
 
