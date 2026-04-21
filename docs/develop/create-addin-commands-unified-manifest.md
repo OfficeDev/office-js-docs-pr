@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the unified manifest for Microsoft 365
 description: Configure the unified manifest for Microsoft 365 to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 05/19/2025
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,8 +10,6 @@ ms.localizationpriority: medium
 Add-in commands provide an easy way to customize the default Office user interface (UI) with specified UI elements that perform actions. For an introduction to add-in commands, see [Add-in commands](../design/add-in-commands.md).
 
 This article describes how to configure the [Unified manifest for Microsoft 365](unified-manifest-overview.md) to define add-in commands and how to create the code for [function commands](../design/add-in-commands.md#types-of-add-in-commands).
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 > [!TIP]
 > Instructions for creating add-in commands with the add-in only manifest are in [Create add-in commands with the add-in only manifest](create-addin-commands.md).
@@ -35,7 +33,7 @@ The following subsections explain how to include a [task pane command](../design
 
 1. Open the unified manifest and find the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array.
 1. Ensure that there is a runtime object that has an [`"actions.type"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#type) property with the value `"openPage"`. This type of runtime opens a task pane.
-1. Ensure that the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) array contains an object that specifies a [Requirement Set](office-versions-and-requirement-sets.md) that supports add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
+1. Ensure that the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) array contains an object that specifies a [Requirement Set](office-versions-and-requirement-sets.md) that supports add-in commands. For Outlook the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3). For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
 1. Ensure that the `"id"` of the runtime object has a descriptive name such as `"TaskPaneRuntime"`.
 1. Ensure that the [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property of the runtime object is set to the URL of the page that should open in the task pane, such as `"https://localhost:3000/taskpane.html"`.
@@ -260,7 +258,7 @@ The following subsections explain how to include a [function command](../design/
 
 1. Open the unified manifest and find the `"extensions.runtimes"` array.
 1. Ensure that there is a runtime object that has a `"actions.type"` property with the value `"executeFunction"`.
-1. Ensure that the `"requirements.capabilities"` array contains objects that specify any [Requirement Sets](office-versions-and-requirement-sets.md) that are needed to support the APIs add-in commands. For Outlook, the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/requirement-set-1.3/outlook-requirement-set-1.3). But if your function command calls that API that is part of later **Mailbox** requirement set, such as **Mailbox 1.5**, then you need to specify the later version (e.g., "1.5") as the `"minVersion"` value. For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
+1. Ensure that the `"requirements.capabilities"` array contains objects that specify any [Requirement Sets](office-versions-and-requirement-sets.md) that are needed to support the APIs add-in commands. For Outlook, the minimum requirement set for add-in commands is [Mailbox 1.3](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-3). But if your function command calls that API that is part of later **Mailbox** requirement set, such as **Mailbox 1.5**, then you need to specify the later version (e.g., "1.5") as the `"minVersion"` value. For other Office host applications, the minimum requirement set for add-in commands is [AddinCommands 1.1](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets).
 
 1. Ensure that the `"id"` of the runtime object has a descriptive name such as "CommandsRuntime".
 1. Ensure that the [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property of the runtime object is set to the URL of the UI-less HTML page that loads your function file, such as `"https://localhost:3000/commands.html"`.

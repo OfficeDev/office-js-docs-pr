@@ -1,7 +1,7 @@
 ﻿---
 title: Create custom contextual tabs in Office Add-ins
 description: Learn how to add custom contextual tabs to your Office Add-in.
-ms.date: 06/30/2025
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -166,7 +166,10 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 
     - The `id` and `type` properties are mandatory.
     - The value of `type` can be either `"ExecuteFunction"` or `"ShowTaskpane"`.
-    - The `functionName` property is only used when the value of `type` is `ExecuteFunction`. It's the name of a function defined in the FunctionFile. For more information about the FunctionFile, see [Basic concepts for add-in commands](add-in-commands.md).
+    - The `functionName` property is only used when the value of `type` is `ExecuteFunction`. Its value is the name of a function defined in the source code file referenced in the add-in's manifest. The location of the source code file depends on the type of manifest your add-in uses.
+
+      - **Unified manifest for Microsoft 365**: Located in the [`"extensions.runtimes.code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property.
+      - **Add-in only manifest**: Located in the [\<FunctionFile\>](/javascript/api/manifest/functionfile) element.
     - In a later step, you'll map this action to a button on the contextual tab.
 
     ```json
@@ -221,8 +224,12 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 
     - Both the properties are required.
     - The `size` property unit of measure is pixels. Icons are always square, so the number is both the height and the width.
-    - The `sourceLocation` property specifies the full URL to the icon. Its value must match the URL specified in the `<Image>` element of the `<Resources>` section of your manifest (see [Specify the icons for your contextual tab](#specify-the-icons-for-your-contextual-tab)).
+    - The `sourceLocation` property specifies the full URL to the icon. Its value must match the URL specified in the add-in's manifest. The location of the icon URL depends on the type of manifest your add-in uses.
 
+      - **Unified manifest for Microsoft 365**: Located in the [`"icons"`](/microsoft-365/extensibility/schema/extension-ribbons-custom-tab-groups-item#icons) property of the applicable `"extensions.ribbons.tabs.groups"` object.
+      - **Add-in only manifest**: Located in the [\<Image\>](/javascript/api/manifest/image) element of the [\<Resources\>](/javascript/api/manifest/resources) section.
+
+      For guidance, see [Specify the icons for your contextual tab](#specify-the-icons-for-your-contextual-tab).
     > [!IMPORTANT]
     > Just as you typically must change the URLs in the add-in's manifest when you move from development to production, you must also change the URLs in your contextual tabs JSON.
 
@@ -629,8 +636,6 @@ Some combinations of platform, Office application, and Office build don't suppor
 The add-in's manifest provides a way to create a fallback experience in an add-in that implements custom contextual tabs when the add-in is running on an application or platform that doesn't support custom contextual tabs. The strategy is to define a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then you use special manifest markup to enable the custom core tab to be visible all the time on platform and version combinations that don't support custom contextual tabs. The process depends on which type of manifest your add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-[!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
 
 Begin by defining a custom core tab (that is, *noncontextual* custom tab) in the manifest that duplicates the ribbon customizations of the custom contextual tabs in your add-in. Then, mark any control groups, or individual controls, or menu items that shouldn't be visible on platforms that support contextual tabs. You mark a group, control, or menu item object by adding an `"overriddenByRibbonApi"` property to it and setting its value to `true`. The effect of doing so is the following:
 

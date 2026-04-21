@@ -1,25 +1,48 @@
 ---
 title: Layout guidelines for Office Add-ins
-description: Get guidelines for how to layout a task pane or dialog in an Office Add-in.
-ms.date: 08/18/2023
+description: Learn how to design consistent, responsive layouts for task panes, content areas, and dialogs in Office Add-ins, including margin, grid, and alignment best practices.
+ms.date: 04/06/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Layout
+# Layout guidelines for Office Add-ins
 
-Each HTML container embedded in Office will have a layout. These layouts are the main screens of your add-in. In them you'll create experiences that enable customers to initiate actions, modify settings, view, scroll, or navigate content. Design your add-in with a consistent layouts across screens to guarantee continuity of experience. If you have an existing website that your customers are familiar with using, consider reusing layouts from your existing web pages. Adapt them to fit harmoniously within Office HTML containers.
+A well-designed layout helps users navigate your add-in quickly and complete tasks with confidence. Every HTML container embedded in Office — whether a task pane, content area, or dialog — represents a screen in your add-in, and consistent layouts across those screens create a seamless experience.
 
-For guidelines on layout, see [Task pane](task-pane-add-ins.md), [Content](content-add-ins.md). For more information about how to assemble [Fluent UI React](../quickstarts/fluent-react-quickstart.md), or [Office UI Fabric JS](fabric-core.md), components into common layouts and user experience flows, see [UX design patterns templates](ux-design-pattern-templates.md).
+If you already have a website your customers know, consider reusing its layouts. Adapt them to fit within Office HTML containers so the add-in feels like a natural part of the Office environment.
 
-Apply the following general guidelines for layouts.
+For detailed guidance on specific container types, see [Task pane add-ins](task-pane-add-ins.md) and [Content add-ins](content-add-ins.md). To learn how to assemble [Fluent UI React](../quickstarts/fluent-react-quickstart.md) or [Fluent UI (Fabric Core)](fabric-core.md) components into common layouts and user experience flows, see [UX design pattern templates](ux-design-pattern-templates.md).
 
-- Avoid narrow or wide margins on your HTML containers. 20 pixels is a great default.
-- Align elements intentionally. Extra indents and new points of alignment should aid visual hierarchy.
-- Office interfaces are on a 4px grid. Aim to keep your padding between elements at multiples of 4.
-- Overcrowding your interface can lead to confusion and inhibit ease of use with touch interactions.
-- Keep layouts consistent across screens. Unexpected layout changes look like visual bugs that contribute to a lack of confidence and trust with your solution.
-- Follow common layout patterns. Conventions help users understand how to use an interface.
-- Avoid redundant elements like branding or commands.
-- Consolidate controls and views to avoid requiring too much mouse movement.
-- Create responsive experiences that adapt to HTML container widths and heights.
+## General layout guidelines
+
+Follow these guidelines when you design your add-in layouts.
+
+### Margins and spacing
+
+- Use 20 pixels as the default margin for HTML containers. Avoid margins that are too narrow or too wide.
+- Keep padding between elements at multiples of 4 pixels. Office interfaces use a 4 px grid.
+
+### Alignment and visual hierarchy
+
+- Align elements intentionally. Extra indents and new alignment points should reinforce the visual hierarchy, not create clutter.
+- Follow common layout patterns. Conventions help users understand how to use an interface without extra effort.
+
+### Responsiveness and consistency
+
+- Keep layouts consistent across screens. Unexpected changes look like visual bugs and reduce user trust.
+- Create responsive experiences that adapt to the width and height of the HTML container. Consider using a [CSS flexbox](https://developer.mozilla.org/docs/Learn_web_development/Core/CSS_layout/Flexbox) layout to organize your add-in's UI elements.
+
+### Simplicity
+
+- Avoid overcrowding the interface. Dense layouts cause confusion and make touch interactions harder.
+- Avoid redundant elements like duplicate branding or commands.
+- Consolidate controls and views to minimize unnecessary mouse movement.
+
+## See also
+
+- [Task pane add-ins](task-pane-add-ins.md)
+- [Content add-ins](content-add-ins.md)
+- [UX design pattern templates](ux-design-pattern-templates.md)
+- [Office Add-in design language](add-in-design-language.md)

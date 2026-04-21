@@ -1,7 +1,7 @@
 ---
 title: Using the application-specific API model
 description: Learn about the promise-based API model for Excel, OneNote, PowerPoint, Visio, and Word add-ins.
-ms.date: 02/12/2025
+ms.date: 03/20/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,18 +10,18 @@ ms.localizationpriority: medium
 This article describes how to use the API model for building add-ins in Excel, OneNote, PowerPoint, Visio, and Word. It introduces core concepts that are fundamental to using the promise-based APIs.
 
 > [!NOTE]
-> This model isn't supported by Outlook or Project clients. Use the [Common API model](office-javascript-api-object-model.md) to work with those applications. For full platform availability notes, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
+> Outlook and Project clients don't support this model. Use the [Common API model](office-javascript-api-object-model.md) to work with those applications. For full platform availability notes, see [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets).
 
 > [!TIP]
-> The examples in this page use the Excel JavaScript APIs, but the concepts also apply to OneNote, PowerPoint, Visio, and Word JavaScript APIs. For complete code samples that show how you could use these and other concepts in various Office applications, see [Office Add-in code samples](../overview/office-add-in-code-samples.md).
+> The examples in this article use the Excel JavaScript APIs, but the concepts also apply to OneNote, PowerPoint, Visio, and Word JavaScript APIs. For complete code samples that show how you could use these and other concepts in various Office applications, see [Office Add-in code samples](../overview/office-add-in-code-samples.md).
 
 ## Asynchronous nature of the promise-based APIs
 
-Office Add-ins are websites which appear inside a webview control within Office applications, such as Excel. This control is embedded within the Office application on desktop-based platforms, such as Office on Windows, and runs inside an HTML iframe in Office on the web. Due to performance considerations, the Office.js APIs cannot interact synchronously with the Office applications across all platforms. Therefore, the `sync()` API call in Office.js returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Office application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `run()` and `sync()` APIs.
+Office Add-ins are websites that appear inside a webview control within Office applications, such as Excel. This control is embedded within the Office application on desktop-based platforms, such as Office on Windows, and runs inside an HTML iframe in Office on the web. Due to performance considerations, the Office.js APIs can't interact synchronously with the Office applications across all platforms. Therefore, the `sync()` API call in Office.js returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) that is resolved when the Office application completes the requested read or write actions. Also, you can queue up multiple actions, such as setting properties or invoking methods, and run them as a batch of commands with a single call to `sync()`, rather than sending a separate request for each action. The following sections describe how to accomplish this using the `run()` and `sync()` APIs.
 
 ## *.run function
 
-`Excel.run`, `OneNote.run`, `PowerPoint.run`, and `Word.run` execute a function that specifies the actions to perform against Excel, Word, and OneNote. `*.run` automatically creates a request context that you can use to interact with Office objects. When `*.run` completes, a promise is resolved, and any objects that were allocated at runtime are automatically released.
+`Excel.run`, `OneNote.run`, `PowerPoint.run`, and `Word.run` execute a function that specifies the actions to perform against Excel, Word, and OneNote. `*.run` automatically creates a request context that you can use to interact with Office objects. When `*.run` completes, it resolves a promise and automatically releases any objects that were allocated at runtime.
 
 The following example shows how to use `Excel.run`. The same pattern is also used with OneNote, PowerPoint, Visio, and Word.
 
@@ -40,7 +40,7 @@ Excel.run(function (context) {
 
 ## Request context
 
-The Office application and your add-in run in different processes. Since they use different runtime environments, add-ins require a `RequestContext` object in order to connect your add-in to objects in Office such as worksheets, ranges, paragraphs, and tables. This `RequestContext` object is provided as an argument when calling `*.run`.
+The Office application and your add-in run in different processes. Since they use different runtime environments, your add-in needs a `RequestContext` object to connect to Office objects such as worksheets, ranges, paragraphs, and tables. You provide this `RequestContext` object as an argument when calling `*.run`.
 
 ## Proxy objects
 
@@ -101,11 +101,11 @@ await Excel.run(async (context) => {
 
 In the previous example, `selectedRange` is set and its `address` property is loaded when `context.sync()` is called.
 
-Since `sync()` is an asynchronous operation, you should always return the `Promise` object to ensure the `sync()` operation completes before the script continues to run. If you're using TypeScript or ES6+ JavaScript, you can `await` the `context.sync()` call instead of returning the promise.
+Because `sync()` is an asynchronous operation, always return the `Promise` object to ensure the `sync()` operation completes before the script continues to run. If you're using TypeScript or ES6+ JavaScript, you can `await` the `context.sync()` call instead of returning the promise.
 
 #### Performance tip: Minimize the number of sync calls
 
-In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to `sync()` by queueing up as many changes as possible before calling it. For more information about optimizing performance with `sync()`, see [Avoid using the context.sync method in loops](../concepts/correlated-objects-pattern.md).
+In the Excel JavaScript API, `sync()` is the only asynchronous operation, and it can be slow under some circumstances, especially for Excel on the web. To optimize performance, minimize the number of calls to `sync()` by queueing up as many changes as possible before calling it. For more information about optimizing performance by using `sync()`, see [Avoid using the context.sync method in loops](../concepts/correlated-objects-pattern.md).
 
 ### load()
 
@@ -130,7 +130,7 @@ await Excel.run(async (context) => {
 > [!NOTE]
 > If you're only calling methods or setting properties on a proxy object, you don't need to call the `load()` method. The `load()` method is only required when you want to read properties on a proxy object.
 
-Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which will run the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
+Just like requests to set properties or invoke methods on proxy objects, requests to load properties on proxy objects get added to the queue of pending commands on the request context, which runs the next time you call the `sync()` method. You can queue up as many `load()` calls on the request context as necessary.
 
 #### Scalar and navigation properties
 
@@ -144,7 +144,7 @@ someRange.load("format/font/name")
 
 You can also set the scalar properties of a navigation property by traversing the path. For example, you could set the font size for an `Excel.Range` by using `someRange.format.font.size = 10;`. You don't need to load the property before you set it.
 
-Please be aware that some of the properties under an object may have the same name as another object. For example, `format` is a property under the `Excel.Range` object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this is equivalent to `range.format.load()` (an undesirable empty `load()` statement). To avoid this, your code should only load the "leaf nodes" in an object tree.
+Some of the properties under an object might have the same name as another object. For example, `format` is a property under the `Excel.Range` object, but `format` itself is an object as well. So, if you make a call such as `range.load("format")`, this call is equivalent to `range.format.load()` (an undesirable empty `load()` statement). To avoid this problem, your code should only load the "leaf nodes" in an object tree.
 
 #### Load from a collection
 
@@ -167,7 +167,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-You normally don't include the `items` property of the collection in the `load` arguments. All the items are loaded if you load any item properties. However, if you will be looping over the items in the collection, but don't need to load any particular property of the items, you need to `load` the `items` property.
+You normally don't include the `items` property of the collection in the `load` arguments. All the items are loaded if you load any item properties. However, if you're looping over the items in the collection but don't need to load any particular property of the items, you need to `load` the `items` property.
 
 The following sample code shows the `name` property being set for every chart in the "Sample" worksheet.
 
@@ -188,16 +188,16 @@ await Excel.run(async (context) => {
 
 #### Calling `load` without parameters (not recommended)
 
-If you call the `load()` method on an object (or collection) without specifying any parameters, all scalar properties of the object or the collection's objects will be loaded. Loading unneeded data will slow down your add-in. You should always explicitly specify which properties to load.
+If you call the `load()` method on an object or collection without specifying any parameters, you load all scalar properties of the object or the collection's objects. Loading unneeded data slows down your add-in. Always explicitly specify which properties to load.
 
 > [!IMPORTANT]
-> The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, some properties are not returned by `load` without explicitly requesting them. The following properties are excluded from such load operations.
+> The amount of data returned by a parameter-less `load` statement can exceed the size limits of the service. To reduce the risks to older add-ins, the service doesn't return some properties by `load` without explicitly requesting them. The following properties are excluded from such load operations.
 >
 > - `Excel.Range.numberFormatCategories`
 
 ### ClientResult
 
-Methods in the promise-based APIs that return primitive types have a similar pattern to the `load`/`sync` paradigm. As an example, `Excel.TableCollection.getCount` gets the number of tables in the collection. `getCount` returns a `ClientResult<number>`, meaning the `value` property in the returned [`ClientResult`](/javascript/api/office/officeextension.clientresult) is a number. Your script can't access that value until `context.sync()` is called.
+Methods in the promise-based APIs that return primitive types follow a pattern similar to the `load`/`sync` paradigm. For example, `Excel.TableCollection.getCount` retrieves the number of tables in the collection. `getCount` returns a `ClientResult<number>`, which means the `value` property in the returned [`ClientResult`](/javascript/api/office/officeextension.clientresult) is a number. Your script can't access that value until `context.sync()` is called.
 
 The following code gets the total number of tables in an Excel workbook and logs that number to the console.
 
@@ -214,9 +214,9 @@ console.log (tableCount.value);
 
 ### set()
 
-Setting properties on an object with nested navigation properties can be cumbersome. As an alternative to setting individual properties using navigation paths as described above, you can use the `object.set()` method that is available on objects in the promise-based JavaScript APIs. With this method, you can set multiple properties of an object at once by passing either another object of the same Office.js type or a JavaScript object with properties that are structured like the properties of the object on which the method is called.
+Setting properties on an object with nested navigation properties can be cumbersome. As an alternative to setting individual properties by using navigation paths, as described earlier, you can use the `object.set()` method that's available on objects in the promise-based JavaScript APIs. By using this method, you can set multiple properties of an object at once by passing in either another object of the same Office.js type or a JavaScript object with properties that are structured like the properties of the object on which the method is called.
 
-The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the `Range` object. This example assumes that there is data in range **B2:E2**.
+The following code sample sets several format properties of a range by calling the `set()` method and passing in a JavaScript object with property names and types that mirror the structure of properties in the `Range` object. This example assumes that there's data in range **B2:E2**.
 
 ```js
 await Excel.run(async (context) => {
@@ -248,7 +248,7 @@ Some properties cannot be set, despite being writable. These properties are part
 sheet.pageLayout.zoom = { scale: 200 };
 ```
 
-In the previous example, you would ***not*** be able to directly assign `zoom` a value: `sheet.pageLayout.zoom.scale = 200;`. That statement throws an error because `zoom` is not loaded. Even if `zoom` were to be loaded, the set of scale will not take effect. All context operations happen on `zoom`, refreshing the proxy object in the add-in and overwriting locally set values.
+In the preceding example, you ***can't*** directly assign `zoom` a value: `sheet.pageLayout.zoom.scale = 200;`. That statement throws an error because `zoom` isn't loaded. Even if `zoom` were loaded, the set of scale wouldn't take effect. All context operations happen on `zoom`, refreshing the proxy object in the add-in and overwriting locally set values.
 
 This behavior differs from [navigational properties](application-specific-api-model.md#scalar-and-navigation-properties) like [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). Properties of `format` can be set using object navigation, as shown here.
 
@@ -264,14 +264,14 @@ You can identify a property that cannot have its subproperties directly set by c
 
 ## &#42;OrNullObject methods and properties
 
-Some accessor methods and properties throw an exception when the desired object doesn't exist. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that isn't in the workbook, the `getItem()` method throws an `ItemNotFound` exception. The application-specific libraries provide a way for your code to test for the existence of document entities without requiring exception handling code. This is accomplished by using the `*OrNullObject` variations of methods and properties. These variations return an object whose `isNullObject` property is set to `true`, if the specified item doesn't exist, rather than throwing an exception.
+Some accessor methods and properties throw an exception when the desired object doesn't exist. For example, if you attempt to get an Excel worksheet by specifying a worksheet name that isn't in the workbook, the `getItem()` method throws an `ItemNotFound` exception. The application-specific libraries provide a way for your code to test for the existence of document entities without requiring exception handling code. This approach uses the `*OrNullObject` variations of methods and properties. These variations return an object whose `isNullObject` property is set to `true` if the specified item doesn't exist, rather than throwing an exception.
 
 For example, you can call the `getItemOrNullObject()` method on a collection such as **Worksheets** to retrieve an item from the collection. The `getItemOrNullObject()` method returns the specified item if it exists; otherwise, it returns an object whose `isNullObject` property is set to `true`. Your code can then evaluate this property to determine whether the object exists.
 
 > [!NOTE]
-> The `*OrNullObject` variations do not ever return the JavaScript value `null`. They return ordinary Office proxy objects. If the the entity that the object represents does not exist then the `isNullObject` property of the object is set to `true`. Do not test the returned object for nullity or falsity. It is never `null`, `false`, or `undefined`.
+> The `*OrNullObject` variations never return the JavaScript value `null`. They return ordinary Office proxy objects. If the entity that the object represents doesn't exist, the `isNullObject` property of the object is set to `true`. Don't test the returned object for nullity or falsity. It's never `null`, `false`, or `undefined`.
 
-The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If a worksheet with that name does not exist, a new sheet is created. Note that the code does not load the `isNullObject` property. Office automatically loads this property when `context.sync` is called, so you do not need to explicitly load it with something like `dataSheet.load('isNullObject')`.
+The following code sample attempts to retrieve an Excel worksheet named "Data" by using the `getItemOrNullObject()` method. If a worksheet with that name doesn't exist, the code creates a new sheet. Note that the code doesn't load the `isNullObject` property. Office automatically loads this property when `context.sync` is called, so you don't need to explicitly load it with something like `dataSheet.load('isNullObject')`.
 
 ```js
 await Excel.run(async (context) => {

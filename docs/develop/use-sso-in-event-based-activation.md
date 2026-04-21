@@ -1,7 +1,7 @@
 ---
 title: Use single sign-on (SSO) or cross-origin resource sharing (CORS) in your event-based or spam-reporting Office Add-in
 description: Learn how to use SSO or CORS in an add-in that implements event-based activation or integrated spam reporting.
-ms.date: 07/08/2025
+ms.date: 02/02/2026
 ms.localizationpriority: medium
 ---
 
@@ -35,10 +35,10 @@ The origin refers to a pattern of scheme + subdomain + domain + port. The name o
 After you configure the well-known URI, if your add-in implements SSO, you can then call the [getAccessToken() API](/javascript/api/office-runtime/officeruntime.auth) to get an access token with the user's identity.
 
 > [!IMPORTANT]
-> While `OfficeRuntime.auth.getAccessToken` and `Office.auth.getAccessToken` perform the same functionality of retrieving an access token, we recommend calling `OfficeRuntime.auth.getAccessToken` in your event-based or spam-reporting add-in. This API is supported in all client versions that support event-based activation, integrated spam reporting, and SSO. On the other hand, `Office.auth.getAccessToken` is only supported in classic Outlook on Windows starting from Version 2111 (Build 14701.20000).
+> `Office.auth.getAccessToken` is only supported in classic Outlook on Windows starting from Version 2111 (Build 14701.20000). If you need to use legacy Office SSO in older versions of Outlook, call `OfficeRuntime.auth.getAccessToken` in your event-based or spam-reporting add-in. This API provides the same functionality and is supported in all client versions that support event-based activation, integrated spam reporting, and legacy Office SSO.
 
 ## See also
 
-- [Authenticate a user with a single-sign-on token in an Outlook add-in](../outlook/authenticate-a-user-with-an-sso-token.md)
+- [Enable single sign-on in an Office Add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md)
 - [Activate add-ins with events](../develop/event-based-activation.md)
 - [Implement an integrated spam-reporting add-in](../outlook/spam-reporting.md)

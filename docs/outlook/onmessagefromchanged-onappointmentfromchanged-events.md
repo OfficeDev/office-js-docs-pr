@@ -1,7 +1,7 @@
 ﻿---
 title: Automatically update your signature when switching between Exchange accounts
 description: Learn how to automatically update your signature when switching between Exchange accounts through the OnMessageFromChanged and OnAppointmentFromChanged events in your event-based activation Outlook add-in.
-ms.date: 12/16/2025
+ms.date: 02/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ Applying the correct signature to messages when using multiple Exchange accounts
 The following sections walk you through how to develop an event-based add-in that handles the `OnMessageFromChanged` event to automatically update a message's signature when the mail account in the **From** field is changed.
 
 > [!NOTE]
-> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events were introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). For information about client support for these events, see [Supported clients and platforms](#supported-clients-and-platforms).
+> The `OnMessageFromChanged` and `OnAppointmentFromChanged` events were introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13). For information about client support for these events, see [Supported clients and platforms](#supported-clients-and-platforms).
 
 ## Supported clients and platforms
 
@@ -242,7 +242,7 @@ In addition to the `OnMessageFromChanged` event, the `OnNewMessageCompose` event
                  <LaunchEvent Type="OnNewMessageCompose" FunctionName="onNewMessageComposeHandler"/>
                  <LaunchEvent Type="OnMessageFromChanged" FunctionName="onMessageFromChangedHandler"/>
                </LaunchEvents>
-               <!-- Identifies the runtime to be used (also referenced by the <Runtime> element). -->
+                <!-- Identifies the runtime to be used. The resid value must match that of the Runtime element that represents the browser runtime. -->
                <SourceLocation resid="WebViewRuntime.Url"/>
              </ExtensionPoint>
            </MobileFormFactor>

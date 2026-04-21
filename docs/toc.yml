@@ -69,6 +69,9 @@
     - name: Manage both a unified manifest and an add-in only manifest version of your add-in
       href: concepts/duplicate-legacy-metaos-add-ins.md
       displayName: Excel, Word, PowerPoint, Outlook
+    - name: Extend your solution to other parts of Microsoft 365
+      href: concepts/extend-to-microsoft-365.md
+      displayName: Excel, Word, PowerPoint, Outlook, Copilot, Teams
   - name: Develop
     items:
     - name: Overview
@@ -76,8 +79,8 @@
       displayName: Excel, Word, OneNote, Project, PowerPoint, Outlook
     - name: API reference
       href: reference/javascript-api-for-office.md
-    - name: Understanding the Office JavaScript API
-      href: develop/understanding-the-javascript-api-for-office.md
+    - name: Understand the Office JavaScript API
+      href: develop/understand-the-javascript-api-for-office.md
     - name: Using the application-specific API model
       href: develop/application-specific-api-model.md
     - name: Using the Common API model
@@ -102,6 +105,8 @@
           href: develop/specify-office-hosts-and-api-requirements.md
         - name: Understand and use platform-specific requirement sets
           href: develop/platform-specific-requirement-sets.md
+        - name: Understand the logic of API requirement configuration
+          href: develop/understand-requirement-configuration.md
         - name: Check for API availability at runtime
           href: develop/specify-api-requirements-runtime.md
       - name: Load sequence of an Office Add-in
@@ -124,15 +129,17 @@
         displayName: event-based activation
       - name: Run code on document open
         href: develop/run-code-on-document-open.md
-    - name: Manifest
+    - name: App package and manifest
       items:
-      - name: Overview
+      - name: App package for Microsoft 365
+        href: overview/app-package-for-microsoft-365.md      
+      - name: Manifest overview
         href: develop/add-in-manifests.md
       - name: Unified manifest for Microsoft 365
         items: 
         - name: Office Add-ins with the unified manifest for Microsoft 365
           href: develop/unified-manifest-overview.md
-        - name: Specify Office Add-in requirements in the unified manifest for Microsoft 365
+        - name: How to use the "requirements" property in the unified manifest for Microsoft 365
           href: develop/requirements-property-unified-manifest.md
         - name: Compare the add-in only manifest with the unified manifest for Microsoft 365
           href: develop/json-manifest-overview.md
@@ -528,7 +535,7 @@
         - name: Cards for cell value types
           href: excel/excel-data-types-entity-card.md
           displayName: Excel
-        - name: Linked Entity values
+        - name: Linked entity values
           href: excel/excel-data-types-linked-entity-cell-values.md
           displayName: Excel
         - name: Add reference methods for dot function notation
@@ -539,6 +546,9 @@
       displayName: Excel
     - name: Events
       href: excel/excel-add-ins-events.md
+      displayName: Excel
+    - name: Find strings
+      href: excel/excel-add-ins-ranges-string-match.md
       displayName: Excel
     - name: Notes
       href: excel/excel-add-ins-notes.md
@@ -580,9 +590,6 @@
         displayName: Excel
       - name: Read or write to a large range
         href: excel/excel-add-ins-ranges-large.md
-        displayName: Excel
-      - name: Find a cell using string matching
-        href: excel/excel-add-ins-ranges-string-match.md
         displayName: Excel
       - name: Work with dates using the Moment-MSDate plug-in
         href: excel/excel-add-ins-ranges-dates.md
@@ -883,18 +890,16 @@
       items:
       - name: Overview
         href: outlook/authentication.md
-      - name: Authenticate with SSO token
-        href: outlook/authenticate-a-user-with-an-sso-token.md
       - name: SSO and CORS in event-based or spam-reporting add-ins
         href: develop/use-sso-in-event-based-activation.md
-      - name: Authenticate with an identity token
-        href: outlook/authenticate-a-user-with-an-identity-token.md
-      - name: Validate an identity token
-        href: outlook/validate-an-identity-token.md
-      - name: Inside the identity token
-        href: outlook/inside-the-identity-token.md
-      - name: "Scenario: Implement single sign-on"
-        href: outlook/implement-sso-in-outlook-add-in.md      
+      - name: On-premises Exchange server authentication
+        items:
+        - name: Authenticate with an identity token
+          href: outlook/authenticate-a-user-with-an-identity-token.md
+        - name: Validate an identity token
+          href: outlook/validate-an-identity-token.md
+        - name: Inside the identity token
+          href: outlook/inside-the-identity-token.md
     - name: Testing and tips
       items:
       - name: Overview
@@ -973,9 +978,6 @@
     displayName: Project
   - name: Build your first Project add-in
     href: quickstarts/project-quickstart.md
-    displayName: Project
-  - name: Create a Project add-in that uses REST with an on-premises OData service
-    href: project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md
     displayName: Project
 
 - name: Visio

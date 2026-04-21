@@ -1,7 +1,7 @@
 ﻿---
 title: Implement shared folders and shared mailbox scenarios in an Outlook add-in
 description: Discusses how to configure Outlook add-in support for shared folders (also known as delegate access) and shared mailboxes.
-ms.date: 09/11/2025
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 This article describes how to implement shared folders (also known as delegate access) and shared mailbox scenarios in your Outlook add-in, including which permissions the Office JavaScript API supports.
 
 > [!NOTE]
-> Shared folder support was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). For information about client support for these features, see [Supported clients and platforms](#supported-clients-and-platforms).
+> Shared folder support was introduced in [requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8), while shared mailbox support was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13). For information about client support for these features, see [Supported clients and platforms](#supported-clients-and-platforms).
 
 ## Supported clients and platforms
 
@@ -106,7 +106,7 @@ To implement shared folder and shared mailbox scenarios in your add-in, you must
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 > [!NOTE]
-> Add-ins that use the unified manifest for Microsoft 365 aren't directly supported in Outlook on Mac. To run this type of add-in in Outlook on Mac, the add-in must first be published to [Microsoft Marketplace](https://marketplace.microsoft.com/) then deployed in the [Microsoft 365 Admin Center](../publish/publish.md). For more information, see [Support for add-ins with the unified manifest for Microsoft 365](compare-outlook-add-in-support-in-outlook-for-mac.md#support-for-add-ins-with-the-unified-manifest-for-microsoft-365).
+> Add-ins that use the unified manifest for Microsoft 365 aren't supported in Outlook on Mac. We're working hard to provide support on Mac. In the meantime, to support Macs, you need to create a version of your add-in that uses the add-in only manifest and then deploy and maintain both versions. For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 Add an additional object to the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) array. Set its `"name"` property to `"Mailbox.SharedFolder"` and its `"type"` property to `"Delegated"`.
 
@@ -155,7 +155,7 @@ Under the parent `<DesktopFormFactor>` element, set the [SupportsSharedFolders](
 
 ## Identify if a folder or mailbox is shared
 
-Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call [Office.context.mailbox.item.getSharedPropertiesAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) on a message or appointment in compose or read mode. If the item is in a shared folder or shared mailbox, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
+Before you can run operations in a shared folder or shared mailbox, you must first identify whether the current folder or mailbox is shared. To determine this, call `getSharedPropertiesAsync` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getsharedpropertiesasync-member(1)), [MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getsharedpropertiesasync-member(1)), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getsharedpropertiesasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getsharedpropertiesasync-member(1))) on a message or appointment in compose or read mode. If the item is in a shared folder or shared mailbox, the method returns a [SharedProperties](/javascript/api/outlook/office.sharedproperties) object that provides the user's permissions, the owner's email address, the REST API's base URL, and the location of the target mailbox.
 
 > [!NOTE]
 > In Outlook on the web and on Windows (new and classic), depending on how the shared folder or mailbox is accessed, the `getSharedPropertiesAsync` method may require certain conditions to be met in Message Compose mode. For more information, see the "Message Compose mode" section in [Limitations](#message-compose-mode).
@@ -214,7 +214,7 @@ To use Microsoft Graph services, an add-in must configure the **read/write mailb
 To implement your shared folder and shared mailbox scenarios, use Microsoft Graph to access additional mailbox information and resources. For example, you can use Microsoft Graph to [get the contents of an Outlook message that's attached to a message](/graph/outlook-get-mime-message#get-mime-content-of-an-outlook-message-attached-to-an-outlook-item-or-group-post) in a mailbox where a user has delegate access. For guidance on how to use Microsoft Graph, see [Overview of Microsoft Graph](/graph/overview) and [Outlook mail API in Microsoft Graph](/graph/outlook-mail-concept-overview).
 
 > [!TIP]
-> To access Microsoft Graph APIs from your add-in, use MSAL.js nested app authentication (NAA). To learn more, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+> To access Microsoft Graph APIs from your add-in, use MSAL.js nested app authentication (NAA). To learn more, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 ## Add-in support in shared folder and shared mailbox scenarios
 

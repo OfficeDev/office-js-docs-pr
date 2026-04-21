@@ -1,7 +1,7 @@
 ---
 title: Combine Copilot Agents with Office Add-ins (preview)
 description: Get an overview of why and how to combine a Copilot agent with an Office Add-in.
-ms.date: 11/11/2025
+ms.date: 04/09/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -19,7 +19,7 @@ Including a Microsoft 365 Copilot agent in an Office Add-in provides two benefit
 - Copilot becomes a natural language interface for the add-in's functionality.
 - The agent can pass parameters to the JavaScript it invokes, which isn't possible when a [function command](add-in-commands.md#types-of-add-in-commands) is invoked from a button or menu item.
 
-You can also think of an Office Add-in as a skill in a Copilot agent. Because Office Add-ins use the [Office JavaScript Library](../develop/understanding-the-javascript-api-for-office.md) to perform read and write operations on Office documents, these operations become actions in the Copilot agent.
+You can also think of an Office Add-in as a skill in a Copilot agent. Because Office Add-ins use the [Office JavaScript Library](../develop/understand-the-javascript-api-for-office.md) to perform read and write operations on Office documents, these operations become actions in the Copilot agent.
 
 ## Scenarios
 
@@ -50,7 +50,6 @@ An add-in can be configured to be *only* a skill in a Copilot agent. It doesn't 
 > [!NOTE]
 >
 > - Currently, only Excel, PowerPoint, and Word add-ins can be configured as a skill in Copilot. We're working to support Outlook.
-> - Copilot agents aren't currently supported in Office on Mac.
 > - An add-in must use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) to be configured as a skill in Copilot.
 > - A [content add-in](content-add-ins.md) cannot be a skill in Copilot.
 
@@ -83,7 +82,8 @@ There are two parts of the manifest that you configure. First, create an action 
             "id": "CommandsRuntime",
             "type": "general",
             "code": {
-                "page": "https://localhost:3000/commands.html"
+                "page": "https://localhost:3000/commands.html",
+                "script": "https://localhost:3000/commands.js"
             },
             "lifetime": "short",
             "actions": [
@@ -121,8 +121,8 @@ The agent configuration file includes instructions for the agent and specifies o
 
 ```json
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.5/schema.json",
-    "version": "v1.5",
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
+    "version": "v1.6",
     "name": "Excel Add-in + Agent",
     "description": "Agent for working with Excel cells.",
     "instructions": "You are an agent for working with an add-in. You can work with any cells, not just a well-formatted table.",
@@ -141,7 +141,7 @@ The agent configuration file includes instructions for the agent and specifies o
 }
 ```
 
-The reference documentation for declarative agents is at [Declarative agent schema 1.5 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.5).
+The reference documentation for declarative agents is at [Declarative agent schema 1.6 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.6).
 
 ### Copilot API plug-in configuration
 
@@ -157,8 +157,8 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
 
 ```json
 {
-    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.3/schema.json",
-    "schema_version": "v2.3",
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.4/schema.json",
+    "schema_version": "v2.4",
     "name_for_human": "Excel Add-in + Agent",
     "description_for_human": "Add-in Actions in Agents",
     "namespace": "addinfunction",
@@ -214,7 +214,7 @@ The API plug-in configuration file specifies the "functions" of the plug-in in t
 }
 ```
 
-The reference documentation for API plug-ins is at [API plugin manifest schema 2.3 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.3).
+The reference documentation for API plug-ins is at [API plugin manifest schema 2.4 for Microsoft 365 Copilot](/microsoft-365-copilot/extensibility/api-plugin-manifest-2.4).
 
 ## Create the JavaScript functions
 

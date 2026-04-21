@@ -1,13 +1,21 @@
 ---
 title: Work with Events using the Excel JavaScript API
 description: A list of events for Excel JavaScript objects. This includes information on using event handlers and the associated patterns.
-ms.date: 05/19/2023
+ms.date: 03/03/2026
 ms.localizationpriority: medium
 ---
 
 # Work with Events using the Excel JavaScript API
 
 This article describes important concepts related to working with events in Excel and provides code samples that show how to register event handlers, handle events, and remove event handlers using the Excel JavaScript API.
+
+## Key points
+
+- Excel fires event notifications when specific changes occur in the workbook.
+- Register event handlers using the `add` method on event objects like `worksheet.onChanged`.
+- Remove event handlers using the `remove` method with the same `RequestContext`.
+- Event handlers don't persist across sessions and are destroyed when the add-in refreshes or closes.
+- Disable events temporarily using `context.runtime.enableEvents` to improve performance during batch operations.
 
 ## Events in Excel
 
@@ -30,7 +38,7 @@ Each time certain types of changes occur in an Excel workbook, an event notifica
 | `onMoved` | Occurs when a worksheet is moved within a workbook. | [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-onmoved-member) |
 | `onNameChanged` | Occurs when the worksheet name is changed. | [**Worksheet**](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onnamechanged-member), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-onnamechanged-member )|
 | `onProtectionChanged` | Occurs when the worksheet protection state is changed. | [**Worksheet**](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onprotectionchanged-member), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-onprotectionchanged-member) |
-| `onRowHiddenChanged` | Occurs when the row-hidden state changes on a specific worksheet. | [**Worksheet**](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onrowhiddenchanged-member), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-onrowhiddenchanged-member) |
+| `onRowHiddenChanged` | Occurs when the row-hidden state changes on a specific worksheet. This event doesn't fire when rows are hidden or shown by [advanced filters](https://support.microsoft.com/office/4c9222fe-8529-4cd7-a898-3f16abdff32b). See [Known limitations](#known-limitations). | [**Worksheet**](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onrowhiddenchanged-member), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-onrowhiddenchanged-member) |
 | `onRowSorted` | Occurs when one or more rows have been sorted. This happens as the result of a top-to-bottom sort operation. | [**Worksheet**](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onrowsorted-member), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-onrowsorted-member) |
 | `onSelectionChanged` | Occurs when the active cell or selected range is changed. | [**Binding**](/javascript/api/excel/excel.binding#excel-excel-binding-onselectionchanged-member), [**Table**](/javascript/api/excel/excel.table#excel-excel-table-onselectionchanged-member), [**Workbook**](/javascript/api/excel/excel.workbook#excel-excel-workbook-onselectionchanged-member), [**Worksheet**](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onselectionchanged-member), [**WorksheetCollection**](/javascript/api/excel/excel.worksheetcollection#excel-excel-worksheetcollection-onselectionchanged-member) |
 | `onSettingsChanged` | Occurs when the Settings in the document are changed. | [**SettingCollection**](/javascript/api/excel/excel.settingcollection#excel-excel-settingcollection-onsettingschanged-member) |
@@ -160,6 +168,119 @@ await Excel.run(async (context) => {
 });
 ```
 
+## Known limitations
+
+### `onRowHiddenChanged` doesn't fire for advanced filters
+
+The `onRowHiddenChanged` event doesn't fire when rows are hidden or shown as a result of applying an [advanced filter](https://support.microsoft.com/office/4c9222fe-8529-4cd7-a898-3f16abdff32b). It fires correctly for standard worksheet filters and manual row hide or show operations.
+
+As a workaround, poll the `rowHidden` property on a set of rows at a regular interval to detect visibility changes caused by advanced filters. The following code sample demonstrates this approach.
+
+```js
+// Global variables to manage the polling mechanism.
+let pollTimer = null;
+const rowHiddenSnapshot = new Map(); // Stores previous row visibility states.
+
+async function startTracking() {
+    // Prevent multiple timers from running simultaneously.
+    if (pollTimer) {
+        console.log("Already tracking.");
+        return;
+    }
+
+    console.log("Starting row visibility tracking...");
+    // Poll every 500ms - adjust this interval based on your performance needs.
+    pollTimer = window.setInterval(() => {
+        pollRowHiddenDiff();
+    }, 500);
+}
+
+function stopTracking() {
+    // Clean up the polling mechanism.
+    if (pollTimer) {
+        clearInterval(pollTimer);
+        pollTimer = null;
+        rowHiddenSnapshot.clear(); // Clear the snapshot to free memory.
+        console.log("Stopped tracking.");
+    }
+}
+
+async function pollRowHiddenDiff() {
+    try {
+        await Excel.run(async (context) => {
+            // Get the active worksheet and its used range.
+            const sheet = context.workbook.worksheets.getActiveWorksheet();
+            const usedRange = sheet.getUsedRange();
+            usedRange.load("rowIndex,rowCount"); // Load properties we need.
+            await context.sync();
+
+            // Get the starting row (0-based) and limit the number of rows to check.
+            const startRow = usedRange.rowIndex;
+            const maxRows = Math.min(usedRange.rowCount, 200); // Limit to 200 rows for performance.
+
+            // Build an array of row ranges to check.
+            const rows = [];
+            for (let i = 0; i < maxRows; i++) {
+                // Convert to 1-based row number for Excel range addressing.
+                const row1Based = startRow + i + 1;
+                // Create a range for the entire row (e.g., "5:5" for row 5).
+                const row = sheet.getRange(`${row1Based}:${row1Based}`);
+                row.load("rowHidden"); // Load the rowHidden property.
+                rows.push(row);
+            }
+
+            // Sync to get all the rowHidden values.
+            await context.sync();
+
+            // Arrays to track which rows changed visibility.
+            const hidden = [];
+            const unhidden = [];
+
+            // Compare current visibility state with previous snapshot.
+            for (let i = 0; i < rows.length; i++) {
+                const rowIndex = startRow + i; // 0-based row index for internal tracking.
+                const current = rows[i].rowHidden; // Current visibility state.
+                const previous = rowHiddenSnapshot.get(rowIndex); // Previous state from snapshot.
+
+                // If this is the first time we're checking this row, just store its state.
+                if (previous === undefined) {
+                    rowHiddenSnapshot.set(rowIndex, current);
+                    continue;
+                }
+
+                // If the visibility state changed, record it and update the snapshot.
+                if (previous !== current) {
+                    rowHiddenSnapshot.set(rowIndex, current);
+                    // Convert to 1-based row numbers for user-friendly logging.
+                    if (current) {
+                        hidden.push(rowIndex + 1); // Row became hidden.
+                    } else {
+                        unhidden.push(rowIndex + 1); // Row became visible.
+                    }
+                }
+            }
+
+            // Log any detected changes.
+            if (hidden.length || unhidden.length) {
+                console.log("Row visibility changed:", { hidden, unhidden });
+            }
+        });
+    } catch (error) {
+        // Handle errors gracefully to prevent polling from stopping.
+        console.error("Error during row visibility polling:", error);
+        
+        // If the error is severe (e.g., worksheet deleted), consider stopping tracking.
+        if (error.code === "ItemNotFound") {
+            console.log("Worksheet no longer exists, stopping tracking.");
+            stopTracking();
+        }
+    }
+}
+```
+
 ## See also
 
 - [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
+- [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md)
+- [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md)

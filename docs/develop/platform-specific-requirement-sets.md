@@ -2,7 +2,7 @@
 title: Understanding platform-specific requirement sets
 description: Understand and learn how to use platform-specific requirement sets.
 ms.topic: how-to
-ms.date: 10/27/2025
+ms.date: 02/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -42,11 +42,14 @@ The following sections describe where you can specify your minimum requirement s
 
 ### Manifest
 
-When you note a requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest, you're indicating the minimum set of APIs that your add-in needs. Combined with supported Office host applications and other information, this determines whether or not your add-in activates in an Office client.
+When you note a requirement set in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element#capabilities) property of the unified manifest (or the [Set element](/javascript/api/manifest/set) of the add-in only manifest), you're indicating the minimum set of APIs that your add-in needs. Combined with supported Office host applications and other information, this determines whether or not your add-in activates in an Office client.
 
 When you declare a platform-specific requirement set, your add-in activates only when it's run in Office on that platform. For example, if you have the WordApiDesktop 1.1 requirement set in your manifest, your add-in will only activate in Word on Windows and on Mac.
 
 Keep in mind that in the case where the APIs become supported cross-platform, you'll need to update your add-in manifest to add a cross-platform requirement set and remove the platform-specific requirement set. If your add-in is available in Microsoft Marketplace, you'll need to resubmit it for validation.
+
+> [!TIP]
+> For information about how Office interprets requirements, see [Understand the logic of API requirement configuration](understand-requirement-configuration.md).
 
 ### Code
 
@@ -86,7 +89,7 @@ The following are exceptions to the approach described.
 
 ### Online-only requirement sets
 
-An online-only requirement set is a superset of the latest numbered requirement set. For each Office application with an online-only requirement set, `1.1` is the only version. It's invalid to specify an online-only requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
+An online-only requirement set is a superset of the latest numbered requirement set. For each Office application with an online-only requirement set, `1.1` is the only version. It's invalid to specify an online-only requirement set in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element#capabilities) property of the unified manifest (or the [Set element](/javascript/api/manifest/set) of the add-in only manifest).
 
 To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, add code similar to the following:
 
@@ -120,7 +123,7 @@ if (Office.context.requirements.isSetSupported("WordApiHiddenDocument", "1.5")) 
 
 ## See also
 
-- [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
+- [Understanding the Office JavaScript API](understand-the-javascript-api-for-office.md)
 - [Office versions and requirement sets](office-versions-and-requirement-sets.md)
 - [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
