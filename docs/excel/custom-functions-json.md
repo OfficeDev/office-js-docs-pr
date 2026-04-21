@@ -63,7 +63,6 @@ In the unified manifest, reference your JSON metadata file using the `customFunc
 
 Ensure that your add-in only manifest file references your JSON file in the `<Resources>` section, similar to the following example.
 
-```json
 <Resources>
     <bt:Urls>
         <bt:Url id="JSON-URL" DefaultValue="https://subdomain.contoso.com/config/customfunctions.json"/>
