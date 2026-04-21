@@ -247,7 +247,7 @@ Just as with the unified manifest, it's possible to inadvertently create a manif
 1. Remove the problematic `<Set>` elements from the base manifest.
 1. Copy the `<VersionOverrides>` element so there are now two of them.
 1. In the first `<VersionOverrides>` have a `<Hosts>` element that specifies only "Document" and a `<Sets><Set>` that specifies only **WordApi 1.4**.
-1. In the first `<VersionOverrides>` have a `<Hosts>` element that specifies only "Workbook" and a `<Sets><Set>` that specifies only **ExcelApi 1.10**.
+1. In the second `<VersionOverrides>` have a `<Hosts>` element that specifies only "Workbook" and a `<Sets><Set>` that specifies only **ExcelApi 1.10**.
 
 > [!NOTE]
 > Limiting a feature by requirement set is less fine-grained in the add-in only manifest than in the unified manifest. With the unified manifest you can have separate `"requirements"` properties in each child property of `"extensions"`, but in the add-in only manifest you can have just one `<Requirements>` child in the `<VersionOverrides>` element, and it applies to all features configured in that `<VersionOverrides>`. For more information, see [Specify requirements in a VersionOverrides element](specify-office-hosts-and-api-requirements.md#specify-requirements-in-a-versionoverrides-element). 

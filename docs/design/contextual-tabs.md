@@ -1,7 +1,7 @@
 ﻿---
 title: Create custom contextual tabs in Office Add-ins
 description: Learn how to add custom contextual tabs to your Office Add-in.
-ms.date: 03/23/2026
+ms.date: 04/21/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -31,11 +31,11 @@ Additionally, custom contextual tabs only work on platforms that support the fol
 
 ## Behavior of custom contextual tabs
 
-The user experience for custom contextual tabs follows the pattern of built-in Office contextual tabs. The following are the basic principles for the placement custom contextual tabs.
+The user experience for custom contextual tabs follows the pattern of built-in Office contextual tabs. The following are the basic principles for the placement of custom contextual tabs.
 
 - When a custom contextual tab is visible, it appears on the right end of the ribbon.
 - If one or more built-in contextual tabs and one or more custom contextual tabs from add-ins are visible at the same time, the custom contextual tabs are always to the right of all of the built-in contextual tabs.
-- If your add-in has more than one contextual tab and there are contexts in which more than one is visible, they appear in the order in which they are defined in your add-in. (The direction is the same direction as the Office language; that is, is left-to-right in left-to-right languages, but right-to-left in right-to-left languages.) See [Define the groups and controls that appear on the tab](#define-the-groups-and-controls-that-appear-on-the-tab) for details about how you define them.
+- If your add-in has more than one contextual tab and there are contexts in which more than one is visible, they appear in the order in which they are defined in your add-in. (The direction is the same direction as the Office language; that is, left-to-right in left-to-right languages, but right-to-left in right-to-left languages.) See [Define the groups and controls that appear on the tab](#define-the-groups-and-controls-that-appear-on-the-tab) for details about how you define them.
 - If more than one add-in has a contextual tab that's visible in a specific context, then they appear in the order in which the add-ins were launched.
 - Custom *contextual* tabs, unlike custom core tabs, aren't added permanently to the Office application's ribbon. They're present only in Office documents on which your add-in is running.
 
@@ -99,11 +99,11 @@ The following is an example.
                                 },
                                 {
                                     "size": 32,
-                                    "url": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+                                    "url": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton32x32.png"
                                 },
                                 {
                                     "size": 80,
-                                    "url": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton16x16.png"
+                                    "url": "https://cdn.contoso.com/addins/datainsertion/Images/WriteDataButton80x80.png"
                                 }
                             ],
                             ...
@@ -257,7 +257,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
     - `label` is a user-friendly string to serve as the label of the button.
     - `superTip` represents a rich form of tool tip. Both the `title` and `description` properties are required.
     - `icon` specifies the icons for the button. The previous remarks about the group icon apply here too.
-    - `enabled` (optional) specifies whether the button is enabled when the contextual tab appears starts up. The default if not present is `true`.
+    - `enabled` (optional) specifies whether the button is enabled when the contextual tab first appears. The default if not present is `true`.
 
     ```json
     {
@@ -290,7 +290,7 @@ We'll construct an example of a contextual tabs JSON blob step-by-step. The full
 The following is the complete example of the JSON blob.
 
 ```json
-`{
+{
   "actions": [
     {
       "id": "executeWriteData",
@@ -351,7 +351,7 @@ The following is the complete example of the JSON blob.
       ]
     }
   ]
-}`
+}
 ```
 
 ## Register the contextual tab with Office with requestCreateControls
@@ -396,7 +396,7 @@ Office.onReady(async () => {
 
 Next, define the handlers. The following is a simple example of a `showDataTab`, but see [Handling the HostRestartNeeded error](#handle-the-hostrestartneeded-error) later in this article for a more robust version of the function. About this code, note:
 
-- Office controls when it updates the state of the ribbon. The  [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)) method queues a request to update. The method will resolve the `Promise` object as soon as it has queued the request, not when the ribbon actually updates.
+- Office controls when it updates the state of the ribbon. The [Office.ribbon.requestUpdate](/javascript/api/office/office.ribbon?view=common-js&preserve-view=true#office-office-ribbon-requestupdate-member(1)) method queues a request to update. The method will resolve the `Promise` object as soon as it has queued the request, not when the ribbon actually updates.
 - The parameter for the `requestUpdate` method is a [RibbonUpdaterData](/javascript/api/office/office.ribbonupdaterdata) object that (1) specifies the tab by its ID *exactly as specified in the JSON* and (2) specifies visibility of the tab.
 - If you have more than one custom contextual tab that should be visible in the same context, you simply add additional tab objects to the `tabs` array.
 
@@ -414,7 +414,7 @@ async function showDataTab() {
 
 The handler to hide the tab is nearly identical, except that it sets the `visible` property back to `false`.
 
-The Office JavaScript library also provides several interfaces (types) to make it easier to construct the`RibbonUpdateData` object. The following is the `showDataTab` function in TypeScript and it makes use of these types.
+The Office JavaScript library also provides several interfaces (types) to make it easier to construct the `RibbonUpdateData` object. The following is the `showDataTab` function in TypeScript and it makes use of these types.
 
 ```typescript
 const showDataTab = async () => {
@@ -449,7 +449,7 @@ function myContextChanges() {
                         ]
                     }
                 ]
-            ]}
+            }
         ]
     });
 }
@@ -486,13 +486,12 @@ function myContextChanges() {
 To open your task pane from a button on a custom contextual tab, create an action in the JSON with a `type` of `ShowTaskpane`. Then define a button with the `actionId` property set to the `id` of the action. This opens the default task pane specified in your manifest.
 
 ```json
-`{
+{
   "actions": [
     {
       "id": "openChartsTaskpane",
       "type": "ShowTaskpane",
-      "title": "Work with Charts",
-      "supportPinning": false
+      "title": "Work with Charts"
     }
   ],
   "tabs": [
@@ -515,7 +514,7 @@ To open your task pane from a button on a custom contextual tab, create an actio
       ]
     }
   ]
-}`
+}
 ```
 
 To open any task pane that's not the default task pane, specify a `sourceLocation` property in the definition of the action. In the following example, a second task pane is opened from a different button.
@@ -526,19 +525,17 @@ To open any task pane that's not the default task pane, specify a `sourceLocatio
 > - No more than one task pane can use the shared runtime, so no more than one action of type `ShowTaskpane` can omit the `sourceLocation` property.
 
 ```json
-`{
+{
   "actions": [
     {
       "id": "openChartsTaskpane",
       "type": "ShowTaskpane",
-      "title": "Work with Charts",
-      "supportPinning": false
+      "title": "Work with Charts"
     },
     {
       "id": "openTablesTaskpane",
       "type": "ShowTaskpane",
       "title": "Work with Tables",
-      "supportPinning": false
       "sourceLocation": "https://MyDomain.com/myPage.html"
     }
   ],
@@ -570,7 +567,7 @@ To open any task pane that's not the default task pane, specify a `sourceLocatio
       ]
     }
   ]
-}`
+}
 ```
 
 ## Localize the JSON text
