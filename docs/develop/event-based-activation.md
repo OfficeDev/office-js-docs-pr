@@ -1,7 +1,7 @@
 ---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 03/23/2026
+ms.date: 04/21/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -123,7 +123,6 @@ When developing an event-based add-in to run on a Windows client, be mindful of 
 The following platforms or features are not yet supported.
 
 - Office on Mac
-- The unified manifest for Microsoft 365
 
 ### Event-based add-in limitations in Outlook on the web and the new Outlook on Windows
 
