@@ -1,5 +1,5 @@
 ---
-ms.date: 02/06/2026
+ms.date: 04/20/2026
 description: Troubleshoot common problems with Excel custom functions.
 title: Troubleshoot custom functions
 ms.topic: troubleshooting
