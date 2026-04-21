@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 When developing custom functions, you may encounter errors in the product while creating and testing your functions.
 
-To resolve issues, you can [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
+To resolve issues, [enable runtime logging to capture errors](#enable-runtime-logging) and refer to [Excel error messages](#check-for-excel-error-messages). Also, check for common mistakes such as [leaving promises unresolved](#ensure-promises-return).
 
 ## Debugging custom functions
 

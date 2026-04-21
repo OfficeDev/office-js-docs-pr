@@ -71,16 +71,6 @@ function add(first, second){
 
 The manifest file for an add-in that defines custom functions configures the namespace, specifies file locations, and defines the runtime. Select the tab for the manifest type you're using.
 
-# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-The unified manifest for an add-in that defines custom functions (**./manifest.json** in the project) does several things.
-
-- Defines the namespace for your custom functions using the `customFunctions.namespace` object. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
-- Uses the `customFunctions` extension to specify metadata about custom functions, including the JSON metadata file location via the `metadataUrl` property.
-- Configures the runtime for custom functions using the `runtimes` array with an `actions.type` property set to `"executeFunction"`.
-
-For a detailed configuration guide, see [Configure custom functions with the unified manifest](custom-functions-unified-manifest.md).
-
 # [Add-in only manifest](#tab/xmlmanifest)
 
 The add-in only manifest file for an add-in that defines custom functions (**./manifest.xml** in the project that the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) creates) does several things.
@@ -92,6 +82,16 @@ The add-in only manifest file for an add-in that defines custom functions (**./m
 To see a full working manifest from a sample add-in, see the manifest in [one of our Office Add-in samples GitHub repositories](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
 ---
+
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
+The unified manifest for an add-in that defines custom functions (**./manifest.json** in the project) does several things.
+
+- Defines the namespace for your custom functions using the `customFunctions.namespace` object. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.
+- Uses the `customFunctions` extension to specify metadata about custom functions, including the JSON metadata file location via the `metadataUrl` property.
+- Configures the runtime for custom functions using the `runtimes` array with an `actions.type` property set to `"executeFunction"`.
+
+To see a full working manifest from a sample add-in, see the manifest in [one of our Office Add-in samples GitHub repositories](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-scenario/manifest.json).
 
 [!include[manifest guidance](../includes/manifest-guidance.md)]
 
