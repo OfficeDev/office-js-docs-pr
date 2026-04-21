@@ -144,7 +144,7 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 1. You can now [sideload the add-in](#sideload-the-add-in).
 
 > [!IMPORTANT]
-> Support for custom functions with the unified manifest is in preview, and currently neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) add the needed custom function support to the unified manifest. We're working hard to update the tools. In the meantime, you must add the [`"extensions.runtimes.customFunctions'`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) manually. Use your add-in only manifest as the source of data to populate the [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) object.
+> Support for custom functions with the unified manifest is in preview, and currently neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) add the needed custom function support to the unified manifest. We're working hard to update the tools. In the meantime, you must add the [`"extensions.runtimes.customFunctions"`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) manually. Use your add-in only manifest as the source of data to populate the [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) object.
 
 ## Sideload the add-in
 
