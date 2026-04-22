@@ -31,8 +31,8 @@ Follow these steps to configure a new or existing project to use a shared runtim
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open your add-in project in Visual Studio Code.
-1. Open the **manifest.json** file.
-1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup.
+1. Open the **manifest.json** file. 
+1. Replace the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array with the following JSON. Note the following about this markup.
     - The [SharedRuntime 1.1 requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets#sharedruntime-api-11) is specified in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) object. This configures your add-in to run in a shared runtime on supported clients. For a list of clients that support the SharedRuntime 1.1 requirement set, see [Shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
     - The `"id"` of the runtime is set to the descriptive name `"SharedRuntime"`.
     - The `"lifetime"` property is set to `"long"`, so that your add-in can take advantage of features, such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions. If you set the property to `"short"` in this example, your add-in will start when one of your ribbon buttons is pressed, but it may shut down after your ribbon handler is done running. Similarly, your add-in will start when the task pane is opened, but it may shut down when the task pane is closed.
@@ -41,6 +41,10 @@ Follow these steps to configure a new or existing project to use a shared runtim
     "runtimes": [
         "requirements": {
             "capabilities": [
+                { 
+                    "name": "AddinCommands", 
+                    "minVersion": "1.1" 
+                },
                 {
                     "name": "SharedRuntime",
                     "minVersion": "1.1"
@@ -54,7 +58,14 @@ Follow these steps to configure a new or existing project to use a shared runtim
         },
         "lifetime": "long",
         "actions": [
-            ...
+          {
+            "id": "TaskPaneRuntimeShow",
+            "type": "openPage",
+          },
+          {
+            "id": "action",
+            "type": "executeFunction",
+          }
         ]
     ]
     ```
