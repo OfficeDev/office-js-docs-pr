@@ -39,6 +39,7 @@ Follow these steps to configure a new or existing project to use a shared runtim
 
     ```json
     "runtimes": [
+      {
         "requirements": {
             "capabilities": [
                 { 
@@ -60,13 +61,14 @@ Follow these steps to configure a new or existing project to use a shared runtim
         "actions": [
           {
             "id": "TaskPaneRuntimeShow",
-            "type": "openPage",
+            "type": "openPage"
           },
           {
             "id": "action",
-            "type": "executeFunction",
+            "type": "executeFunction"
           }
         ]
+      }
     ]
     ```
 
