@@ -240,7 +240,7 @@ Use the following guidelines to create custom key combinations for your add-ins.
 - When two characters are linked to the same physical key on a standard keyboard, then they're synonyms in a custom keyboard shortcut. For example, <kbd>Alt</kbd>+<kbd>a</kbd> and <kbd>Alt</kbd>+<kbd>A</kbd> are the same shortcut, as well as <kbd>Ctrl</kbd>+<kbd>-</kbd> and <kbd>Ctrl</kbd>+<kbd>\_</kbd> ("-" and "_" are linked to the same physical key).
 
 > [!NOTE]
-> Custom keyboard shortcuts must be pressed simultaneously. KeyTips, also known as sequential key shortcuts (for example, <kbd>Alt</kbd>+<kbd>H</kbd>, <kbd>H</kbd>), aren't supported in Office Add-ins.
+> Custom keyboard shortcuts must be pressed simultaneously. [KeyTips](https://support.microsoft.com/office/954cd3f7-2f77-4983-978d-c09b20e31f0e), also known as sequential key shortcuts (for example, <kbd>Alt</kbd>+<kbd>H</kbd>, <kbd>H</kbd>), can be used to access add-ins from the ribbon in Office on the web, on Windows, and on Mac. However, these KeyTips are automatically assigned by the host app (for example, <kbd>Alt</kbd>+<kbd>Y\<number\></kbd>) and can't be defined in the manifest.
 
 ### Browser shortcuts that can't be overridden
 
