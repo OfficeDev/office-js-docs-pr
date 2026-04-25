@@ -1,7 +1,7 @@
 ---
-title: Validate an Outlook add-in identity token
-description: Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect.
-ms.date: 03/21/2024
+title: Validate an Exchange add-in identity token
+description: Learn how to validate an Exchange user identity token in your Outlook add-in, including claim checking, signature verification, domain validation, and computing a unique user identifier.
+ms.date: 04/14/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -10,9 +10,14 @@ ms.localizationpriority: medium
 
 [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
-Your Outlook add-in can send you an Exchange user identity token, but before you trust the request you must validate the token to ensure that it came from the Exchange server that you expect. Exchange user identity tokens are JSON Web Tokens (JWT). The steps required to validate a JWT are described in [RFC 7519 JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt).
+Your Outlook add-in can send you an Exchange user identity token, but before you trust the request, validate the token to confirm it came from the Exchange server you expect. Exchange user identity tokens are JSON Web Tokens (JWT) as defined in [RFC 7519](https://www.rfc-editor.org/rfc/rfc7519.txt).
 
-We suggest that you use a four-step process to validate the identity token and obtain the user's unique identifier. First, extract the JSON Web Token (JWT) from a Base64-encoded URL string. Second, make sure that the token is well-formed, that it is for your Outlook add-in, that it has not expired, and that you can extract a valid URL for the authentication metadata document. Next, retrieve the authentication metadata document from the Exchange server and validate the signature attached to the identity token. Finally, compute a unique identifier for the user by concatenating the user's Exchange ID with the URL of the authentication metadata document.
+To validate the identity token and get the user's unique identifier, follow these four steps:
+
+1. Extract the JWT from a Base64-encoded URL string.
+1. Verify that the token is well-formed, that it's for your Outlook add-in, that it hasn't expired, and that you can extract a valid authentication metadata document URL.
+1. Retrieve the authentication metadata document from the Exchange server and validate the token signature.
+1. Compute a unique identifier by concatenating the user's Exchange ID with the authentication metadata document URL.
 
 ## Extract the JSON Web Token
 
@@ -38,8 +43,8 @@ To validate the token contents, you should check the following:
   - `x5t` claim is present.
 
 - Check the payload and verify that the:
-  - `amurl` claim inside the `appctx` is set to the location of an authorized token signing key manifest file. For example, the expected `amurl` value for Microsoft 365 is https://outlook.office365.com:443/autodiscover/metadata/json/1. See the next section [Verify the domain](#verify-the-domain) for additional information.
-  - Current time is between the times specified in the `nbf` and `exp` claims. The `nbf` claim specifies the earliest time that the token is considered valid, and the `exp` claim specifies the expiration time for the token. It is recommended to allow for some variation in clock settings between servers.
+  - `amurl` claim inside the `appctx` is set to the location of an authorized token signing key manifest file. For example, the expected `amurl` value for Microsoft 365 is `https://outlook.office365.com:443/autodiscover/metadata/json/1`. See the next section [Verify the domain](#verify-the-domain) for additional information.
+  - Current time is between the times specified in the `nbf` and `exp` claims. The `nbf` claim specifies the earliest time that the token is considered valid, and the `exp` claim specifies the expiration time for the token. Allow for some variation in clock settings between servers.
   - `aud` claim is the expected URL for your add-in.
   - `version` claim inside the `appctx` claim is set to `ExIdTok.V1`.
 
@@ -47,11 +52,11 @@ To validate the token contents, you should check the following:
 
 When implementing the verification logic described in the previous section, you must also require that the domain of the `amurl` claim matches the Autodiscover domain for the user. To do so, you'll need to use or implement [Autodiscover for Exchange](/exchange/client-developer/exchange-web-services/autodiscover-for-exchange).
 
-- For Exchange Online, confirm that the `amurl` is a well-known domain (https://outlook.office365.com:443/autodiscover/metadata/json/1), or belongs to a geo-specific or specialty cloud ([Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)).
+- For Exchange Online, confirm that the `amurl` is a well-known domain (`https://outlook.office365.com:443/autodiscover/metadata/json/1`), or belongs to a geo-specific or specialty cloud ([Office 365 URLs and IP address ranges](/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide&preserve-view=true)).
 
 - If your add-in service has a preexisting configuration with the user's tenant, then you can establish if this `amurl` is trusted.
 
-- For an [Exchange hybrid deployment](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true), use OAuth-based Autodiscover to verify the domain expected for the user. However, while the user will need to authenticate as part of the Autodiscover flow, your add-in should never collect the user's credentials and do basic authentication.
+- For an [Exchange hybrid deployment](/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide&preserve-view=true), use OAuth-based Autodiscover to verify the domain expected for the user. However, while the user needs to authenticate as part of the Autodiscover flow, your add-in should never collect the user's credentials and do basic authentication.
 
 If your add-in can't verify the `amurl` using any of these options, you may choose to have your add-in shut down gracefully with an appropriate notification to the user if authentication is necessary for the add-in's workflow.
 
@@ -108,18 +113,18 @@ After you have the correct public key, verify the signature. The signed data is 
 
 ## Compute the unique ID for an Exchange account
 
-Create a unique identifier for an Exchange account by concatenating the authentication metadata document URL with the Exchange identifier for the account. When you have this unique identifier, use it to create a single sign-on (SSO) system for your Outlook add-in web service. For details about using the unique identifier for SSO, see [Authenticate a user with an identity token for Exchange](authenticate-a-user-with-an-identity-token.md).
+Create a unique identifier for an Exchange account by concatenating the authentication metadata document URL with the Exchange identifier for the account. When you have this unique identifier, use it to create a single sign-on (SSO) system for your Outlook add-in web service. For details about using the unique identifier for SSO, see [Authenticate a user with an identity token in an add-in](authenticate-a-user-with-an-identity-token.md).
 
 ## Use a library to validate the token
 
-There are a number of libraries that can do general JWT parsing and validation. Microsoft provides the `System.IdentityModel.Tokens.Jwt` library that can be used to validate Exchange user identity tokens.
+Several libraries can parse and validate JWTs. Microsoft provides the `System.IdentityModel.Tokens.Jwt` library for validating Exchange user identity tokens.
 
 > [!IMPORTANT]
 > We no longer recommend the Exchange Web Services Managed API because the Microsoft.Exchange.WebServices.Auth.dll, though still available, is now obsolete and relies on unsupported libraries like Microsoft.IdentityModel.Extensions.dll.
 
 ### System.IdentityModel.Tokens.Jwt
 
-The [System.IdentityModels.Tokens.Jwt](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt) library can parse the token and also perform the validation, though you will need to parse the `appctx` claim yourself and retrieve the public signing key.
+The [System.IdentityModel.Tokens.Jwt](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt) library can parse the token and perform the validation, though you'll need to parse the `appctx` claim yourself and retrieve the public signing key.
 
 ```cs
 // Load the encoded token
@@ -166,8 +171,6 @@ catch (SecurityTokenValidationException ex)
 }
 ```
 
-<br/>
-
 The `ExchangeAppContext` class is defined as follows:
 
 ```cs
@@ -201,5 +204,7 @@ For an example that uses this library to validate Exchange tokens and has an imp
 
 ## See also
 
+- [Inside the Exchange identity token in an Outlook add-in](inside-the-identity-token.md)
+- [Authenticate a user with an identity token in an add-in](authenticate-a-user-with-an-identity-token.md)
 - [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
 - [Outlook-Add-in-JavaScript-ValidateIdentityToken](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ValidateIdentityToken)
