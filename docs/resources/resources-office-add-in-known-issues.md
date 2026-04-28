@@ -14,27 +14,6 @@ This article provides information about current known issues with Office Add-ins
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
-## RESOLVED: Classic Outlook on Windows: Installed add-ins are missing
-
-Users were unable to find their installed add-ins in classic Outlook on Windows.
-
-### STATUS
-
-Resolved. Users must restart their Outlook client to load their add-ins. Multiple restarts may be needed.
-
-Tracking IDs: 784225604, 781077848
-
-### START DATE
-
-Wednesday, 04/22/2026
-
-### RESOLUTION DATE
-
-Thursday, 04/23/2026
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
 ## ISSUE: Unable to remove Office Add-Ins using the Integrated apps portal
 
 In some cases, the Microsoft 365 administrator may see an error when attempting to remove an Office Add-in via the Integrated apps portal.
@@ -340,6 +319,27 @@ Options:
 <!-- --------RESOLVED SECTION: Move resolved issues to the top of this section. Delete after 90 days.-------- -->
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. ADD "RESOLVED:" to H2---------------------------------------------------->
+***
+
+## RESOLVED: Classic Outlook on Windows: Installed add-ins are missing
+
+Users were unable to find their installed add-ins in classic Outlook on Windows.
+
+### STATUS
+
+Resolved. Users must restart their Outlook client to load their add-ins. Multiple restarts may be needed.
+
+Tracking IDs: 784225604, 781077848
+
+### START DATE
+
+Wednesday, 04/22/2026
+
+### RESOLUTION DATE
+
+Thursday, 04/23/2026
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
 ## RESOLVED: Microsoft Marketplace: Issues installing add-ins from the Marketplace
