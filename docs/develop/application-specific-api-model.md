@@ -1,7 +1,7 @@
 ---
 title: Using the application-specific API model
 description: Learn about the promise-based API model for Excel, OneNote, PowerPoint, Visio, and Word add-ins.
-ms.date: 03/20/2026
+ms.date: 04/28/2026
 ms.localizationpriority: medium
 ---
 
@@ -86,7 +86,7 @@ worksheet.getRange("A1").set({
 
 ### sync()
 
-Calling the `sync()` method on the request context synchronizes the state between proxy objects and objects in the Office document. The `sync()` method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The `sync()` method executes asynchronously and returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the `sync()` method completes.
+When you call the `sync()` method on the request context, it synchronizes the state between proxy objects and objects in the Office document. The `sync()` method runs any commands that are queued on the request context and retrieves values for any properties that should be loaded on the proxy objects. The `sync()` method executes asynchronously and returns a [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise), which is resolved when the `sync()` method completes.
 
 The following example shows a batch function that defines a local JavaScript proxy object (`selectedRange`), loads a property of that object, and then uses the JavaScript promises pattern to call `context.sync()` to synchronize the state between proxy objects and objects in the Excel document.
 
@@ -102,6 +102,9 @@ await Excel.run(async (context) => {
 In the previous example, `selectedRange` is set and its `address` property is loaded when `context.sync()` is called.
 
 Because `sync()` is an asynchronous operation, always return the `Promise` object to ensure the `sync()` operation completes before the script continues to run. If you're using TypeScript or ES6+ JavaScript, you can `await` the `context.sync()` call instead of returning the promise.
+
+> [!NOTE]
+> `run` functions call `sync()` implicitly before they resolve their returned promise. However, it's a best practice to call `sync()` explicitly in the `run` function to handle any errors from the batch. This also helps prevent errors that could be introduced by adding additional calls to the Office document that assume a prior `sync()` call has been made.
 
 #### Performance tip: Minimize the number of sync calls
 
@@ -239,7 +242,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-### Some properties cannot be set directly
+### Some properties can't be set directly
 
 Some properties cannot be set, despite being writable. These properties are part of a parent property that must be set as a single object. This is because that parent property relies on the subproperties having specific, logical relationships. These parent properties must be set using object literal notation to set the entire object, instead of setting that object's individual subproperties. One example of this is found in [PageLayout](/javascript/api/excel/excel.pagelayout). The `zoom` property must be set with a single [PageLayoutZoomOptions](/javascript/api/excel/excel.pagelayoutzoomoptions) object, as shown here.
 
@@ -250,14 +253,14 @@ sheet.pageLayout.zoom = { scale: 200 };
 
 In the preceding example, you ***can't*** directly assign `zoom` a value: `sheet.pageLayout.zoom.scale = 200;`. That statement throws an error because `zoom` isn't loaded. Even if `zoom` were loaded, the set of scale wouldn't take effect. All context operations happen on `zoom`, refreshing the proxy object in the add-in and overwriting locally set values.
 
-This behavior differs from [navigational properties](application-specific-api-model.md#scalar-and-navigation-properties) like [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). Properties of `format` can be set using object navigation, as shown here.
+This behavior differs from [navigational properties](application-specific-api-model.md#scalar-and-navigation-properties) like [Range.format](/javascript/api/excel/excel.range#excel-excel-range-format-member). You can set properties of `format` by using object navigation, as shown in the following code.
 
 ```js
 // This will set the font size on the range during the next `content.sync()`.
 range.format.font.size = 10;
 ```
 
-You can identify a property that cannot have its subproperties directly set by checking its read-only modifier. All read-only properties can have their non-read-only subproperties directly set. Writeable properties like `PageLayout.zoom` must be set with an object at that level. In summary:
+You can identify a property that can't have its subproperties directly set by checking its read-only modifier. All read-only properties can have their non-read-only subproperties directly set. Writable properties like `PageLayout.zoom` must be set with an object at that level. In summary:
 
 - Read-only property: Subproperties can be set through navigation.
 - Writable property: Subproperties cannot be set through navigation (must be set as part of the initial parent object assignment).
@@ -292,7 +295,7 @@ await Excel.run(async (context) => {
 
 Undo is partially supported by the application-specific Office JavaScript APIs. This means that users may be able to revert changes made by add-ins through the undo command. If a particular API doesn't support undo, the application's undo stack is cleared. This means that you won't be able to undo the effects of that API or anything prior to calling that API.
 
-API support for undo is continuing to expand but is currently incomplete. We advise against designing your add-in in such a way that it relies on undo support.
+API support for undo is continuing to expand but is currently incomplete. Don't design your add-in in such a way that it relies on undo support.
 
 ## See also
 
