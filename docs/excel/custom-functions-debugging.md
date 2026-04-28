@@ -1,7 +1,7 @@
 ---
 title: Custom functions debugging in a non-shared runtime
 description: Debug Excel custom functions that don't use a shared runtime.
-ms.date: 11/06/2025
+ms.date: 04/21/2026
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -28,7 +28,7 @@ The process of debugging a custom function for add-ins that don't use a shared r
 
 ## Use the browser developer tools to debug custom functions in Excel on the web
 
-Use the browser developer tools to debug custom functions that don't use a shared runtime in Excel on the web. The following steps work for Windows and macOS.
+Use the browser developer tools to debug custom functions that don't use a shared runtime in Excel on the web. The following steps apply to custom functions add-ins with the add-in only manifest (**manifest.xml**). Use these steps on Windows or macOS.
 
 ### Run your add-in from Visual Studio Code
 
@@ -40,9 +40,9 @@ Use the browser developer tools to debug custom functions that don't use a share
 
 1. Open [Office on the web](https://office.live.com/).
 1. Open a new Excel workbook.
-1. Select **Home** > **Add-ins**, then select **More Settings**.
+1. Select **Home** > **Add-ins**, then select **Advanced...**.
 1. On the **Office Add-ins** dialog, select **Upload My Add-in**.
-1. **Browse** to the add-in manifest file, and then select **Upload**.
+1. **Browse** to the add-in **manifest.xml** file, and then select **Upload**.
   
     :::image type="content" source="../images/upload-add-in.png" alt-text="The upload add-in dialog with buttons for browse, upload, and cancel.":::
 
@@ -51,7 +51,7 @@ Use the browser developer tools to debug custom functions that don't use a share
 
 ### Start debugging
 
-1. Open your browser's developer tools. In Chrome and most browsers, press F12 to open the developer tools.
+1. Open your browser's developer tools. In Chrome and most browsers, use <kbd>F12</kbd> to open the developer tools.
 1. In developer tools, open your source code script file using <kbd>Cmd</kbd>+<kbd>P</kbd> or <kbd>Ctrl</kbd>+<kbd>P</kbd> (**functions.js** or **functions.ts**).
 1. [Set a breakpoint](https://code.visualstudio.com/Docs/editor/debugging#_breakpoints) in the custom function source code.
 
@@ -74,7 +74,7 @@ If you don't use VS Code, run your add-in from the command line using tools such
   
     If your add-in doesn't sideload in the document, follow the steps in [Sideload your add-in](#sideload-your-add-in). Then continue to the next section to start debugging.
   
-1. Open your browser's developer tools. In Chrome and most browsers, press F12 to open the developer tools.
+1. Open your browser's developer tools. In Chrome and most browsers, use <kbd>F12</kbd> to open the developer tools.
 1. In developer tools, open your source code script file (**functions.js** or **functions.ts**). Your custom functions code may be located near the end of the file.
 1. In the custom function source code, apply a breakpoint by selecting a line of code.
 
