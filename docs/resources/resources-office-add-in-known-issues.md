@@ -329,15 +329,17 @@ Users were unable to find their installed add-ins in classic Outlook on Windows.
 
 Resolved. Users must restart their Outlook client to load their add-ins. Multiple restarts may be needed.
 
+Impacted versions: Version 2603 (Build 19822.20114) and later
+
 Tracking IDs: 784225604, 781077848
 
 ### START DATE
 
-Wednesday, 04/22/2026
+Tuesday, 03/24/2026
 
 ### RESOLUTION DATE
 
-Thursday, 04/23/2026
+Wednesday, 04/22/2026
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
