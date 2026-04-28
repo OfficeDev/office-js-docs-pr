@@ -1,7 +1,7 @@
 ---
 title: Test your Outlook add-in on mobile devices
 description: Learn how to run and test your Outlook add-in on mobile device platforms, such as Android and iOS.
-ms.date: 04/23/2026
+ms.date: 04/28/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -57,7 +57,10 @@ If you need to troubleshoot your add-in during testing, try the following steps.
 - Verify that the manifest includes the required mobile configuration in the manifest. For information on supporting add-in commands on mobile, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 - Confirm that the scenario is supported on mobile. For more information on supported modes and APIs, see [What makes a good scenario for Outlook mobile add-ins?](outlook-mobile-addins.md#what-makes-a-good-scenario-for-outlook-mobile-add-ins) and [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
 - Ensure that the endpoint hosting the add-in is running and reachable from the mobile device.
-- **For iOS**: If you need to inspect network traffic on iOS, use Fiddler. For an example workflow, see [Using Fiddler with Apple iOS devices](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices).
+- Use your preferred web debugging tool to send logs from your mobile device to an accessible endpoint for analysis.
+
+    > [!NOTE]
+    > Microsoft Edge DevTools isn't supported in Outlook on mobile devices.
 
 ## See also
 
