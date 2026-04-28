@@ -335,11 +335,11 @@ Tracking IDs: 784225604, 781077848
 
 ### START DATE
 
-Tuesday, 03/24/2026
+Date reported: Tuesday, 04/14/2026
 
 ### RESOLUTION DATE
 
-Wednesday, 04/22/2026
+Date fixed: Wednesday, 04/22/2026
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
