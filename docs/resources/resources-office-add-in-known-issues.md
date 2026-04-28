@@ -323,13 +323,13 @@ Options:
 
 ## RESOLVED: Classic Outlook on Windows: Installed add-ins are missing
 
-Users were unable to find their installed add-ins in classic Outlook on Windows.
+Some users were unable to find their installed add-ins in classic Outlook on Windows.
+
+Impacted versions: Version 2603 (Build 19822.20114) and later
 
 ### STATUS
 
-Resolved. Users must restart their Outlook client to load their add-ins. Multiple restarts may be needed.
-
-Impacted versions: Version 2603 (Build 19822.20114) and later
+Resolved. Affected users must restart their Outlook client to load their add-ins. Multiple restarts may be needed.
 
 Tracking IDs: 784225604, 781077848
 
