@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Testing an Outlook add-in on a mobile device requires a slightly different workflow than testing on the web or desktop. You don't sideload the add-in directly in Outlook on Android or on iOS. Instead, you first sideload it in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) or classic), or on Mac, then validate the mobile experience on the devices you support.
 
-Use the guidance in this article to set up a testing environment for mobile support and test an add-in on Outlook on mobile.
+Use the guidance in this article to set up a testing environment for mobile support and test an add-in in Outlook on mobile.
 
 ## Before you begin
 
@@ -33,7 +33,7 @@ To make an add-in available in Outlook on mobile, sideload it to the same mailbo
 
 1. Sideload the add-in by following [Sideload Outlook add-ins for testing](sideload-outlook-add-ins-for-testing.md).
 1. Sign in to the Outlook app on your mobile device with the same Microsoft 365 or Outlook.com account that you used to sideload the add-in.
-1. Open a supported item, such as a message in read mode, that matches the activation scenario in your manifest.
+1. Open a supported item that matches the activation scenario in your manifest, such as a message in read mode.
 1. Locate and open the add-in to test it. To locate an add-in from a message in Read mode, select **More options** (three vertical dots), then choose the add-in you want to test.
 
     :::image type="content" source="../images/outlook-mobile-add-ins.png" alt-text="The 'More options' menu that displays the installed add-ins.":::
