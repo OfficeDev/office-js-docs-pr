@@ -18,7 +18,7 @@ This article features a sample add-in that manages citations in a Word document.
 
 - [Visual Studio Code](https://code.visualstudio.com/Download).
 - Office connected to a Microsoft 365 subscription (including Office on the web).
-- [Node.js](https://nodejs.org/) version 18 or later.
+- [Node.js](https://nodejs.org/) (the latest LTS version).
 - npm version 8 or greater.
 
 ## Key steps in the sample
