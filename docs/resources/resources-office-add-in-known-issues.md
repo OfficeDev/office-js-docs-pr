@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 04/20/2026
+ms.date: 04/28/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 04/20/2026_
+_Last updated 04/28/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
@@ -319,6 +319,29 @@ Options:
 <!-- --------RESOLVED SECTION: Move resolved issues to the top of this section. Delete after 90 days.-------- -->
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. ADD "RESOLVED:" to H2---------------------------------------------------->
+***
+
+## RESOLVED: Classic Outlook on Windows: Installed add-ins are missing
+
+Some users were unable to find their installed add-ins in classic Outlook on Windows.
+
+Impacted versions: Version 2603 (Build 19822.20114) and later
+
+### STATUS
+
+Resolved. Affected users must restart their Outlook client to load their add-ins. Multiple restarts may be needed.
+
+Tracking IDs: 784225604, 781077848
+
+### START DATE
+
+Date reported: Tuesday, 04/14/2026
+
+### RESOLUTION DATE
+
+Date fixed: Wednesday, 04/22/2026
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
 ## RESOLVED: Microsoft Marketplace: Issues installing add-ins from the Marketplace
