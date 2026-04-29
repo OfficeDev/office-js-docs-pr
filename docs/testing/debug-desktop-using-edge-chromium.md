@@ -19,7 +19,7 @@ This debugging mode is dynamic, allowing you to set breakpoints while code is ru
 ## Prerequisites
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Node.js (the latest LTS version)](https://nodejs.org/)
+- [Node.js (the latest Active LTS version)](https://nodejs.org/en/download)
 - Windows 10, 11
 - A combination of platform and Office application that supports Microsoft Edge with WebView2 as explained in [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md). If your version of Office from a Microsoft 365 subscription is earlier than Version 2101, you'll need to install WebView2. For instructions to install WebView2, see [Microsoft Edge WebView2 / Embed web content ... with Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2/).
 
