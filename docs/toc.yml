@@ -791,6 +791,9 @@
       - name: Outlook JavaScript API support on mobile devices
         href: outlook/outlook-mobile-apis.md
         displayName: outlook, add-ins, mobile
+      - name: Test your Outlook add-in on mobile devices
+        href: outlook/test-mobile-add-ins.md
+        displayName: outlook, add-ins, mobile, test
       - name: Log appointment notes on mobile
         href: outlook/mobile-log-appointments.md
         displayName: outlook, add-ins, mobile
