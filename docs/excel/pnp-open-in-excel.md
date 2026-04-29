@@ -1,7 +1,7 @@
 ﻿---
 title: Create an Excel workbook from a web site with an auto-open task pane
 description: Create an Excel workbook from your web page with data and configure a custom Office Add-in task pane that automatically opens.
-ms.date: 01/14/2026
+ms.date: 04/29/2026
 ms.topic: sample
 ms.localizationpriority: medium
 ---
@@ -20,7 +20,7 @@ Microsoft partners who implemented this pattern have seen increased customer sat
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) version 16 or later.
+- [Node.js](https://nodejs.org/) version 18 or later.
 - [Visual Studio Code](https://code.visualstudio.com/Download).
 - A Microsoft 365 account. You can get one if you qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 - At least a few files and folders stored on OneDrive for Business in your Microsoft 365 subscription.

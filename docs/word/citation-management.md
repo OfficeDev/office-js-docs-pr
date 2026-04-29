@@ -1,7 +1,7 @@
 ---
 title: 'Sample: Manage citations through your Word add-in'
 description: Learn how to create an add-in that manages citations in a Word document.
-ms.date: 02/26/2026
+ms.date: 04/29/2026
 ms.topic: sample
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ This article features a sample add-in that manages citations in a Word document.
 
 - [Visual Studio Code](https://code.visualstudio.com/Download).
 - Office connected to a Microsoft 365 subscription (including Office on the web).
-- [Node.js](https://nodejs.org/) version 16 or greater.
+- [Node.js](https://nodejs.org/) version 18 or later.
 - npm version 8 or greater.
 
 ## Key steps in the sample
