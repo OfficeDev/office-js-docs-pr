@@ -1,4 +1,4 @@
-- Node.js (the latest LTS version). Visit the [Node.js site](https://nodejs.org) to download and install the right version for your operating system.
+- Node.js (the latest Active LTS version). Visit the [Node.js site](https://nodejs.org/en/download) to download and install the right version for your operating system.
 
 - The latest version of Yeoman and the Yeoman generator for Office Add-ins. To install these tools globally, run the following command via the command prompt.
 
