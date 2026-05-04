@@ -2,7 +2,7 @@
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
-ms.date: 04/23/2026
+ms.date: 05/04/2026
 ms.localizationpriority: high
 ---
 
@@ -31,7 +31,7 @@ Follow these steps to configure a new or existing project to use a shared runtim
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
 1. Open your add-in project in Visual Studio Code.
-1. Open the **manifest.json** file. 
+1. Open the **manifest.json** file.
 1. Replace the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array with the following JSON. Note the following about this markup.
     - The [SharedRuntime 1.1 requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets#sharedruntime-api-11) is specified in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) object. This configures your add-in to run in a shared runtime on supported clients. For a list of clients that support the SharedRuntime 1.1 requirement set, see [Shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
     - The `"id"` of the runtime is set to the descriptive name `"SharedRuntime"`.
