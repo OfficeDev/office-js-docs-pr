@@ -12,10 +12,10 @@ After you publish your add-in, you should keep it up to date with any important 
 
 ## Choose your scenario
 
-- **I need to release a new version.**: See [Update your add-in](#update-your-add-in).
-- **An API in the Office JavaScript Library was deprecated; will it break my code?**: See [Deprecation policy](#deprecation-policy).
-- **My add-in broke after a platform update.**: See [App Assure](#app-assure).
-- **I need to update npm/Yeoman dependencies.**: See [Keep your add-in secure](#keep-your-add-in-secure).
+- **I need to release a new version.** See [Update your add-in](#update-your-add-in).
+- **An API in the Office JavaScript Library was deprecated; will it break my code?** See [Deprecation policy](#deprecation-policy).
+- **My add-in broke after a platform update.** See [App Assure](#app-assure).
+- **I need to update npm/Yeoman dependencies.** See [Keep your add-in secure](#keep-your-add-in-secure).
 
 ## Breaking changes in Office.js
 
@@ -27,9 +27,9 @@ We strive to avoid making breaking changes to the API surface and behavior. Howe
 
 ### Deprecation policy
 
-Tools may be deprecated when something better is available, and APIs in the Office JavaScript Library (Office.js) that are generally available (GA) may be deprecated. Microsoft makes a best effort to declare deprecations at least 24 months in advance. Deprecation doesn't necessarily mean the feature or API will be removed and unusable by developers. But after 24 months, Microsoft will no longer support the tool or API, and the tool *may* be retired and the API *may* removed from the GA version of Office.js.
+Tools may be deprecated when something better is available, and APIs in the Office JavaScript Library (Office.js) that are generally available (GA) may be deprecated when their task is better done with newer APIs. Microsoft makes a best effort to declare deprecations at least 24 months in advance. Deprecation doesn't necessarily mean the feature or API will be removed and unusable by developers. But after 24 months, Microsoft will no longer support the tool or API, and the tool *may* be retired and the API *may* removed from the GA version of Office.js.
 
-When an API is marked as deprecated, we strongly recommend that you migrate to the latest version as soon as possible. In some cases, we'll announce that new applications must start to use the new APIs a short time after the original APIs are deprecated. In those cases, only active applications that currently use the deprecated APIs can continue to use them.
+When an API is marked as deprecated, we strongly recommend that you migrate to the replacement APIs as soon as possible. In some cases, we'll announce that new applications must start to use the new APIs a short time after the original APIs are deprecated. In those cases, only active applications that currently use the deprecated APIs can continue to use them.
 
 > [!IMPORTANT]
 > The 24-month deprecation period will be accelerated if waiting that long poses a security risk for your add-in or Microsoft.
@@ -53,16 +53,16 @@ When you update your add-in, there are two pieces to consider: the web applicati
 
 ### Update the web application
 
-Updates to your web application don't require any action from your users. Upload new HTML, CSS, code, and other files to your web application and CDNs and your users will automatically start seeing the new features.
+Updates to your web application don't require any action from your users. Upload new HTML, CSS, code, and other files to your web application and CDNs and your users will automatically start seeing the new features. Some add-in artifacts, such as button icons, are cached when the add-in is first installed. Users may not see updated icons initially. If users are confused at seeing the older icons, closing and reopening the Office application should cause the newest version of th artifacts to be downloaded. If that doesn't happen, you can instruct them in how to close all Office applications and then [clear the Office cache](clear-cache.md). Doing so will remove the cached artifacts from all of their installed add-ins, but they are downloaded again the next time the Office application launches, so the only effect of this is a very slight delay in the icons appearing.  
 
 ### Update the app package files
 
 Changes to the manifest or other files in the app package do require users to update. If you have published your add-in to Microsoft Marketplace, you will need to update your submission. More information about that process is found in the article [Update an existing offer](/partner-center/marketplace-offers/update-existing-offer).
 
-Whenever you make a change to the manifest, you must raise the version number of the manifest. (This includes changes to URLs that point to supplementary configuration files in the app package, such as Copilot configuration files.)
+Whenever you make a change to the manifest, or to any file in the app package, you must raise the version number of the manifest. (This includes changes to URLs in the manifest that point to supplementary configuration files in the app package, such as Copilot configuration files.)
 
 - If the add-in uses the unified manifest, see [version property](/microsoft-365/extensibility/schema/root#version).
-- If the add-in uses the add-in only manifest, see [Version element](/javascript/api/manifest/version).
+- If the add-in uses the add-in only manifest (in which case there is no app package), see [Version element](/javascript/api/manifest/version).
 
 If your add-in is deployed by one or more admins to their organizations, some manifest changes require the admin to consent to the updates. Users are blocked from the add-in until consent is granted. The following manifest changes require the admin to consent again.
 
@@ -81,8 +81,8 @@ This guidance also applies to copies of samples taken from the [Office Add-in co
 
 ## Troubleshooting
 
-- **My users can't access the updated add-in.**: Check that manifest version was incremented and Marketplace submission updated.
-- **Admin consent dialogs aren't appearing.**: Ensure that permissions/scopes/events actually changed. Test in your development tenant.
+- **My users can't access the updated add-in.** Check that manifest version was incremented and Marketplace submission updated.
+- **Admin consent dialogs aren't appearing.** Ensure that permissions/scopes/events actually changed. Test in your development tenant.
 
 ## Community engagement
 

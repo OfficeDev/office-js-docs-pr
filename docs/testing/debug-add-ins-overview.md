@@ -58,7 +58,7 @@ Debugging on Windows depends on your IDE.
 
    [!INCLUDE [Deprecation warning for add-in projects in Visual Studio](../includes/vs-deprecation.md)]
 
-- **Any other IDE** (or you don't want to debug inside your IDE): Debug with the Webview2 debugging tools. See [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md)
+- **Any other IDE** (or you don't want to debug inside your IDE): Debug with the Webview2 debugging tools. See [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md).
 
 ### Debug on Mac
 
