@@ -53,7 +53,7 @@ When you update your add-in, there are two pieces to consider: the web applicati
 
 ### Update the web application
 
-Updates to your web application don't require any action from your users. Upload new HTML, CSS, code, and other files to your web application and CDNs and your users will automatically start seeing the new features. Some add-in artifacts, such as button icons, are cached when the add-in is first installed. Users may not see updated icons initially. If users are confused at seeing the older icons, closing and reopening the Office application should cause the newest version of th artifacts to be downloaded. If that doesn't happen, you can instruct them in how to close all Office applications and then [clear the Office cache](clear-cache.md). Doing so will remove the cached artifacts from all of their installed add-ins, but they are downloaded again the next time the Office application launches, so the only effect of this is a very slight delay in the icons appearing.  
+Updates to your web application don't require any action from your users. Upload new HTML, CSS, code, and other files to your web application and CDNs and your users will automatically start seeing the new features. Some add-in artifacts, such as button icons, are cached when the add-in is first installed. Users may not see updated icons initially. If users are confused at seeing the older icons, closing and reopening the Office application should cause the newest version of th artifacts to be downloaded. If that doesn't happen, you can instruct them in how to close all Office applications and then [clear the Office cache](../testing/clear-cache.md). Doing so will remove the cached artifacts from all of their installed add-ins, but they are downloaded again the next time the Office application launches, so the only effect of this is a very slight delay in the icons appearing.  
 
 ### Update the app package files
 
@@ -92,4 +92,4 @@ To stay informed of new features and evolving best practices through our monthly
 
 ## See also
 
-- [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins)
+- [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins.md)
