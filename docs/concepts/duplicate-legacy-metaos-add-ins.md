@@ -62,25 +62,25 @@ Use the following steps.
 1. If the old add-in isn't distributed through Microsoft Marketplace, then give the `"hide"` object a [`"customOfficeAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-custom-office-addin) property.
 1. Give the `"customOfficeAddin"` object an `"officeAddinId"` property with the GUID of the old add-in as its value. The following is an example.
 
-    ```json
-    "extensions": [
-        ...
-        {
-            ...
-            "alternates": [
-                ...
-                {
-                    ...
-                    "hide": {
-                        "customOfficeAddin": {
-                            "officeAddinId": "b5a2794d-4aa5-4023-a84b-c60a3cbd33d4"
-                        }
-                    }
-                }
-            ]
-        }
-    ]
-    ```
+   ```json
+   "extensions": [
+       ...
+       {
+           ...
+           "alternates": [
+               ...
+               {
+                   ...
+                   "hide": {
+                       "customOfficeAddin": {
+                           "officeAddinId": "b5a2794d-4aa5-4023-a84b-c60a3cbd33d4"
+                       }
+                   }
+               }
+           ]
+       }
+   ]
+   ```
 
 Don't remove the existing add-in from Microsoft Marketplace or the Microsoft 365 Admin Center, or earlier versions of Office will no longer be able to use your add-in.
 
