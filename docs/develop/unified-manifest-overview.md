@@ -88,11 +88,8 @@ The following tables lists which Office platforms support add-ins that use the u
 | [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes |
 | Excel, PowerPoint, and Word on Windows (Version 2501 (18407.20002) or later) connected to a Microsoft 365 subscription | Yes |
 | Excel, PowerPoint, and Word on Mac (Version 16.103 (25101427) or later) | Yes |
-| Outlook on Windows (classic) (prior to Version 2307 (Build 16626.20132)) connected to a Microsoft 365 subscription | No |
-| Excel, PowerPoint, and Word on Windows (prior to Version 2501 (18407.20002)) connected to a Microsoft 365 subscription | No |
 | Office on Windows (perpetual versions) | No |
 | Outlook on Mac | No |
-| Excel, PowerPoint, and Word on Mac (prior to Version 16.103 (25101427)) | No |
 | Office on mobile | No |
 
 ## Sample unified manifest
