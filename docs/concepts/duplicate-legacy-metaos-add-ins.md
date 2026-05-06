@@ -28,36 +28,36 @@ Use the following steps.
 1. If the existing add-in is marketed through Microsoft Marketplace, give the `"hide"` object a [`"storeOfficeAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide#storeofficeaddin) property. Otherwise, skip to step 6.
 1. Give the `"storeOfficeAddin"` object two properties:
 
-    - An `"officeAddinId"` with the GUID of the old add-in as its value.
-    - An `"assetId"` with the Microsoft Marketplace asset ID as its value.
+   - An `"officeAddinId"` with the GUID of the old add-in as its value.
+   - An `"assetId"` with the Microsoft Marketplace asset ID as its value.
 
-    The following is an example:
+   The following is an example:
 
-    ```json
-    "extensions": [
-        ...
-        {
-            ...
-            "alternates": [
-                ...
-                {
-                    ...
-                    "hide": {
-                        "storeOfficeAddin": {
-                            "officeAddinId": "b5a2794d-4aa5-4023-a84b-c60a3cbd33d4",
-                            "assetId": "WA999999999"
-                        }
-                    }
-                }
-            ]
-        }
-    ]
-    ```
+   ```json
+   "extensions": [
+       ...
+       {
+           ...
+           "alternates": [
+               ...
+               {
+                   ...
+                   "hide": {
+                       "storeOfficeAddin": {
+                           "officeAddinId": "b5a2794d-4aa5-4023-a84b-c60a3cbd33d4",
+                           "assetId": "WA999999999"
+                       }
+                   }
+               }
+           ]
+       }
+   ]
+   ```
 
-    > [!NOTE]
-    > 
-    > - If the asset ID of the add-in that you have linked in your unified manifest doesn't match an existing offer published by your seller account, the unified manifest submission will fail. You'll need to update the manifest to use the correct add-in asset ID and re-submit the unified manifest.
-    > - An existing add-in can only be hidden by a single unified manifest. At this time, you may not use multiple unified manifests to hide the same add-in. If you try to hide an already linked add-in using a different unified manifest, the submission will fail. You'll need to remove the linking and re-submit the unified manifest.
+   > [!NOTE]
+   > 
+   > - If the asset ID of the add-in that you have linked in your unified manifest doesn't match an existing offer published by your seller account, the unified manifest submission will fail. You'll need to update the manifest to use the correct add-in asset ID and re-submit the unified manifest.
+   > - An existing add-in can only be hidden by a single unified manifest. At this time, you may not use multiple unified manifests to hide the same add-in. If you try to hide an already linked add-in using a different unified manifest, the submission will fail. You'll need to remove the linking and re-submit the unified manifest.
 
 1. If the old add-in isn't distributed through Microsoft Marketplace, then give the `"hide"` object a [`"customOfficeAddin"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-hide-custom-office-addin) property.
 1. Give the `"customOfficeAddin"` object an `"officeAddinId"` property with the GUID of the old add-in as its value. The following is an example.
