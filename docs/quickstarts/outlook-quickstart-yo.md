@@ -1,15 +1,15 @@
 ---
 title: Build your first Outlook add-in
-description: Learn how to build a simple Outlook task pane add-in by using the Office JS API.
-ms.date: 02/18/2025
+description: Learn how to build an Outlook task pane add-in that reads message properties using the Office JS API.
+ms.date: 05/06/2026
 ms.service: outlook
 ms.localizationpriority: high
-ms.custom: required-for-compliance # Indicates that this page is linked to in a legal document. 
+ms.custom: required-for-compliance # Indicates that this page is linked to in a legal document.
 ---
 
 # Build your first Outlook add-in
 
-In this article, you'll walk through the process of building an Outlook task pane add-in using Yo Office that displays at least one property of a selected message.
+Build a task pane add-in for Outlook that reads the subject from a selected message. This quickstart uses the Yeoman generator for Office Add-ins (Yo Office) to scaffold the project, so you can focus on writing Office JavaScript API code right away.
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ In this article, you'll walk through the process of building an Outlook task pan
 
     :::image type="content" source="../images/yo-office-outlook-json-manifest-javascript.png" alt-text="The prompts and answers for the Yeoman generator when task pane, JavaScript, Outlook, and unified manifest are chosen.":::
 
-    After you complete the wizard, the generator will create the project and install supporting Node components.
+    After you complete the wizard, the generator creates the project and installs supporting Node components.
 
 1. Navigate to the root folder of the web application project.
 
@@ -70,7 +70,7 @@ The Yeoman generator creates a project in a folder with the project name that yo
 
     - **Outlook on the web** and **new Outlook on Windows**: From the action bar of the message, select **Apps**. Then, select **My Office Add-in** > **Show Taskpane**.
     - **Classic Outlook on Windows**: Select the **Home** tab (or the **Message** tab if you opened the message in a new window). Then, select **Show Taskpane** from the ribbon.
-    - **Outlook on Mac**: Select **My Office Add-in** from the ribbon, then select **Show Taskpane**. You may need to select the ellipsis button (`...`)  from the ribbon to view your add-ins.
+    - **Outlook on Mac**: Select **My Office Add-in** from the ribbon, then select **Show Taskpane**. You may need to select the ellipsis button (`...`) from the ribbon to view your add-ins.
 
     The following screenshots show how the add-in appears in classic Outlook on Windows.
 

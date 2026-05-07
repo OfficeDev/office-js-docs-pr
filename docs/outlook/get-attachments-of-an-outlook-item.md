@@ -1,14 +1,14 @@
 ---
 title: Get an Outlook item's attachments from Exchange
-description: Learn how your Outlook add-in can directly get attachments and their contents from Exchange Online or Exchange Server.
-ms.date: 10/29/2024
+description: Learn how to use Office JavaScript API attachment methods and Microsoft Graph to get attachments from Outlook messages and appointments.
+ms.date: 05/06/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Get an Outlook item's attachments from Exchange
 
-The Office JavaScript API includes APIs to get attachments and their contents from messages and appointments in Outlook. The following table lists these attachment APIs, the Outlook modes they operate in, and the minimum Mailbox requirement set they need to operate.
+Use the Office JavaScript API to get attachments from Outlook messages and appointments in both read and compose mode. The following table lists the available attachment APIs, the Outlook modes they support, and the minimum Mailbox requirement set required.
 
 | API | Supported Outlook modes | Minimum requirement set |
 | ---- | ---- | ---- |
@@ -125,7 +125,7 @@ function attachmentTokenCallback(asyncResult) {
 
 The remote service that your add-in calls defines the specifics of how you should send the attachment information to the service. In this example, the remote service is a Web API application created by using Visual Studio. The remote service expects the attachment information in a JSON object.
 
-The [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) property is used to provide the URL of Exchange Web Services (EWS) on the Exchange server that hosts the mailbox. This URL is then used by the remote service to call the [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) method or the [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS operation in a later step.
+The [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-ewsurl-member) property is used to provide the URL of Exchange Web Services (EWS) on the Exchange server that hosts the mailbox. This URL is then used by the remote service to call the [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) method or the [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS operation in a later step.
 
  The following code initializes an object that contains the attachment information.
 
@@ -468,7 +468,7 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 ## See also
 
 - [Manage an item's attachments in a compose form in Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
-- [Office Add-in sample: Single Sign-On(SSO) in an Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Office Add-in sample: Single Sign-On (SSO) in an Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Use the Microsoft Graph API](/graph/use-the-api)
 - [Explore the EWS Managed API, EWS, and web services in Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Get started with EWS Managed API client applications](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)

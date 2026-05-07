@@ -1,34 +1,35 @@
 ---
-title: Get and set internet headers
-description: How to get and set internet headers on a message in an Outlook add-in.
-ms.date: 02/11/2025
+title: Get and set internet headers on a message in an Outlook add-in
+description: Learn how to use the internet headers API in Outlook add-ins to persist custom data on email messages across all clients, and how to read those headers from received messages.
+ms.date: 05/06/2026
 ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Get and set internet headers on a message in an Outlook add-in
 
-## Background
+Internet headers let your Outlook add-in attach custom key-value data to an outgoing message that persists after the message leaves Exchange. Unlike item-level custom properties, internet headers travel with the email, so recipients' add-ins can read them. This article shows how to set internet headers while composing a message and how to read them from a received message.
 
-A common requirement in Outlook add-ins development is to store custom properties associated with an add-in at different levels. At present, custom properties are stored at the item or mailbox level.
+## Why use internet headers
 
-- Item level - For properties that apply to a specific item that need to be accessed during subsequent Outlook sessions, use the [CustomProperties](/javascript/api/outlook/office.customproperties) object. For example, store a customer code associated with the person who sent the email. If properties for a specific item are only needed during the current compose session, use the [SessionData](/javascript/api/outlook/office.sessiondata) object.
-- Mailbox level - For properties that apply to all the mail items in the user's mailbox, use the [RoamingSettings](/javascript/api/outlook/office.roamingsettings) object. For example, store a user's preference to show the temperature in a particular scale.
+Outlook add-ins can store custom data at different scopes.
 
-These types of properties aren't preserved after the item leaves the Exchange server, so the email recipients can't get any properties set on the item. Therefore, developers can't access those settings or other Multipurpose Internet Mail Extensions (MIME) properties to enable better read scenarios.
+- **Item level**: Use [CustomProperties](/javascript/api/outlook/office.customproperties) for values tied to one item across sessions or [SessionData](/javascript/api/outlook/office.sessiondata) for values needed only during the current compose session.
+- **Mailbox level**: Use [RoamingSettings](/javascript/api/outlook/office.roamingsettings) for values that apply across the user's mailbox.
 
-In Exchange on-premises environments, while there's a way for you to set the internet headers through Exchange Web Services (EWS) requests, in some scenarios, making an EWS request won't work. For example, in Compose mode on Outlook desktop, the item ID isn't synced on `saveAsync` in cached mode.
+These options don't persist on the message after it leaves Exchange, so recipients can't read those values. Internet headers address this limitation.
+
+Introduced in [Mailbox requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8), internet headers APIs let you:
+
+- Stamp information on an email that persists after it leaves Exchange across clients.
+- Read persisted information from an email in read scenarios across clients.
+- Access the full MIME header of the email.
+
+In Exchange on-premises environments, you can set internet headers through Exchange Web Services (EWS) requests. However, some scenarios can fail. For example, in compose mode on Outlook desktop, the item ID isn't synced on `saveAsync` in cached mode.
 
 > [!TIP]
-> To learn more about using these options, see [Get and set add-in metadata for an Outlook add-in](metadata-for-an-outlook-add-in.md).
-
-## Purpose of the internet headers API
-
-Introduced in [Mailbox requirement set 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8), the internet headers APIs enable developers to:
-
-- Stamp information on an email that persists after it leaves Exchange across all clients.
-- Read information on an email that persisted after the email left Exchange across all clients in mail read scenarios.
-- Access the entire MIME header of the email.
+> To learn more about these options, see [Get and set add-in metadata for an Outlook add-in](metadata-for-an-outlook-add-in.md).
 
 :::image type="content" source="../images/outlook-internet-headers.png" alt-text="Diagram of internet headers. Text: User 1 sends email. Add-in manages custom internet headers while user is composing email. User 2 receives the email. Add-in gets internet headers from received email then parses and uses custom headers.":::
 
@@ -148,3 +149,4 @@ Apply the following guidelines when you create internet headers in your add-in.
 ## See also
 
 - [Get and set add-in metadata for an Outlook add-in](metadata-for-an-outlook-add-in.md)
+- [Limits for activation and API usage in Outlook add-ins](limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
