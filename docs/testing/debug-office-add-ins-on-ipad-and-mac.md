@@ -54,4 +54,4 @@ Add-ins are often cached in Office on Mac for performance reasons. For guidance 
 - [Debug Office Add-ins](debug-add-ins-overview.md)
 - [Troubleshoot development errors](troubleshoot-development-errors.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
-- [Clear the office cache](clear-cache.md)
+- [Clear the Office cache](clear-cache.md)

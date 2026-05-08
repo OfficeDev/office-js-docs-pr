@@ -89,5 +89,5 @@ The debug versions are found at the following CDN locations.
 - [Test Office Add-ins](test-debug-office-add-ins.md)
 - [Troubleshoot development errors](troubleshoot-development-errors.md)
 - [Debug your add-in with runtime logging](runtime-logging.md)
-- [Clear the office cache](clear-cache.md)
+- [Clear the Office cache](clear-cache.md)
 - [Runtimes in Office Add-ins](runtimes.md)

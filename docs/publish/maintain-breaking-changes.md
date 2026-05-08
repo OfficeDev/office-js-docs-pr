@@ -1,8 +1,8 @@
 ﻿---
 title: Update and maintain your Office Add-in
-description: Understand Microsoft's commitments to compatibility, and learn how to update your add-in, handle breaking changes in office.js, and version your manifest.
+description: Understand Microsoft's commitments to compatibility, and learn how to update your add-in, handle breaking changes in Office.js, and version your manifest.
 ms.topic: best-practice
-ms.date: 05/07/2025
+ms.date: 05/07/2026
 ms.localizationpriority: medium
 ---
 
@@ -53,7 +53,7 @@ When you update your add-in, there are two pieces to consider: the web applicati
 
 ### Update the web application
 
-Updates to your web application don't require any action from your users. Upload new HTML, CSS, code, and other files to your web application and CDNs and your users will automatically start seeing the new features. Some add-in artifacts, such as button icons, are cached when the add-in is first installed. Users may not see updated icons initially. If users are confused at seeing the older icons, closing and reopening the Office application should cause the newest version of th artifacts to be downloaded. If that doesn't happen, you can instruct them in how to close all Office applications and then [clear the Office cache](../testing/clear-cache.md). Doing so will remove the cached artifacts from all of their installed add-ins, but they are downloaded again the next time the Office application launches, so the only effect of this is a very slight delay in the icons appearing.  
+Updates to your web application don't require any action from your users. Upload new HTML, CSS, code, and other files to your web application and CDNs and your users will automatically start seeing the new features. Some add-in artifacts, such as button icons, are cached when the add-in is first installed. Users may not see updated icons initially. If users are confused at seeing the older icons, closing and reopening the Office application should cause the newest version of the artifacts to be downloaded. If that doesn't happen, you can instruct them on how to close all Office applications and then [clear the Office cache](../testing/clear-cache.md). Doing so will remove the cached artifacts from all of their installed add-ins, but they are downloaded again the next time the Office application launches, so the only effect of this is a very slight delay in the icons appearing.  
 
 ### Update the app package files
 
@@ -88,7 +88,7 @@ This guidance also applies to copies of samples taken from the [Office Add-in co
 
 As updates are proposed for the Microsoft 365 Developer Platform, we will be listening for feedback. Please report concerns, potential consequences, or other questions to the channels listed in [Office Add-ins additional resources](../resources/resources-links-help.md).
 
-To stay informed of new features and evolving best practices through our monthly [Office Add-ins Community Call](../overview/office-add-ins-community-call.md).
+Stay informed of new features and evolving best practices through our monthly [Office Add-ins Community Call](../overview/office-add-ins-community-call.md).
 
 ## See also
 

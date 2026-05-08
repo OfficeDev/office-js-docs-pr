@@ -34,7 +34,7 @@ This article refers to sideloading Excel, PowerPoint, and Word add-ins that use 
     - For PowerPoint: `/Users/<username>/Library/Containers/com.microsoft.Powerpoint/Data/Documents/wef`
 
         > [!NOTE]
-        > The remaining steps describe how to sideload a Word add-in. but they apply to Excel and PowerPoint too.
+        > The remaining steps describe how to sideload a Word add-in, but they apply to Excel and PowerPoint too.
 
 1. Copy your add-in's manifest file to this `wef` folder.
 
@@ -58,5 +58,5 @@ You can remove a previously sideloaded add-in by clearing the Office cache on yo
 
 - [Sideload Office Add-ins on iPad for testing](sideload-an-office-add-in-on-ipad.md)
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
-- [Clear the office cache](clear-cache.md)
+- [Clear the Office cache](clear-cache.md)
 - [Troubleshoot development errors](troubleshoot-development-errors.md)
