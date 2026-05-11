@@ -9,7 +9,7 @@ ms.custom: required-for-compliance # Indicates that this page is linked to in a 
 
 # Build your first Outlook add-in
 
-Build a task pane add-in for Outlook that reads the subject from a selected message. This quickstart uses the Yeoman generator for Office Add-ins (Yo Office) to scaffold the project, so you can focus on writing Office JavaScript API code right away.
+Build a task pane add-in for Outlook that reads the subject from a selected message. This quick start uses the Yeoman generator for Office Add-ins (Yo Office) to scaffold the project, so you can focus on writing Office JavaScript API code right away.
 
 ## Prerequisites
 
