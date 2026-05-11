@@ -461,7 +461,7 @@
       href: publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md
     - name: Guidance for deploying on government clouds
       href: publish/government-cloud-guidance.md
-    - name: Maintain your Office Add-in
+    - name: Update and maintain your Office Add-in
       href: publish/maintain-breaking-changes.md
     - name: Trust custom protocol handlers to launch add-ins
       href: publish/manage-trust-options.md

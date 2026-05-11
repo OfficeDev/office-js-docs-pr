@@ -1,15 +1,55 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 04/28/2026
+ms.date: 05/08/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 04/28/2026_
+_Last updated 05/08/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## ISSUE: Office Add-in update failures and activation issues
+
+There's an issue affecting some customers where Office Add-ins failed to update through the Store, preventing the add-in from loading successfully. Customers may have encountered errors during the Office Add-in update process, followed by the add-in being unavailable.
+
+### STATUS
+
+#### Mitigated
+
+The underlying asset delivery issue has been addressed and failures related to missing content have decreased. 
+
+#### Rolling out
+
+Updates to improve add-in delivery reliability are currently being deployed broadly. 
+
+#### Ongoing investigation
+
+We are continuing to work with dependent services to address remaining issues in the store-based update experience. 
+
+### WORKAROUND
+
+While fixes are rolling out, the following actions may help resolve the issue:
+
+- Restart the Office application.
+- Wait and retry the update after some time.
+
+These steps may allow the add-in update to complete successfully in cases where propagation or retries are required.
+
+#### Recommended Actions
+
+- Retry updating the add-in if the issue was encountered previously.
+- Ensure the Office application is on a supported and up-to-date version.
+- If the issue persists, collect and share diagnostic information (such as session logs or network traces) with support.
+
+### START DATE
+
+Date reported: 04/17/2026
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
