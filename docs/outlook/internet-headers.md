@@ -1,7 +1,7 @@
 ---
 title: Get and set internet headers on a message in an Outlook add-in
 description: Learn how to use the internet headers API in Outlook add-ins to persist custom data on email messages across all clients, and how to read those headers from received messages.
-ms.date: 05/06/2026
+ms.date: 05/12/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted

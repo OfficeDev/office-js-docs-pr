@@ -1,7 +1,7 @@
 ﻿---
 title: Outlook add-in APIs
 description: Learn how to load the Office.js library, specify Mailbox requirement sets, declare permissions, and work with the Mailbox object in your Outlook add-in.
-ms.date: 05/06/2026
+ms.date: 05/12/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ai-usage: ai-assisted

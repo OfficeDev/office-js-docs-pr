@@ -1,7 +1,7 @@
 ---
 title: Module extension Outlook add-ins
 description: Learn how to create a module extension add-in that adds a custom panel to the Outlook navigation bar, alongside modules like Mail, Calendar, and Tasks.
-ms.date: 05/06/2026
+ms.date: 05/12/2026
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

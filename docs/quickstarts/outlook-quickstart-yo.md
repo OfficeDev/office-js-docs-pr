@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in
 description: Learn how to build an Outlook task pane add-in that reads message properties using the Office JS API.
-ms.date: 05/06/2026
+ms.date: 05/12/2026
 ms.service: outlook
 ms.localizationpriority: high
 ms.custom: required-for-compliance # Indicates that this page is linked to in a legal document.

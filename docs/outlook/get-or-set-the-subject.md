@@ -1,7 +1,7 @@
 ---
 title: Get or set the subject in an Outlook add-in
 description: Learn how to use subject.getAsync and subject.setAsync to read or update the subject line of a message or appointment in an Outlook compose add-in.
-ms.date: 05/06/2026
+ms.date: 05/12/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---

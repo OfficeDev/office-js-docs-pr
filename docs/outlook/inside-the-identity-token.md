@@ -1,7 +1,7 @@
 ﻿---
 title: Exchange identity token structure in an Outlook add-in
 description: Learn the structure of the Exchange user identity token (its header, payload, and signature) and what claims each part contains.
-ms.date: 05/06/2026
+ms.date: 05/12/2026
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

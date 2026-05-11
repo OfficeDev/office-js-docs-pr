@@ -1,7 +1,7 @@
 ---
 title: Get an Outlook item's attachments from Exchange
 description: Learn how to use Office JavaScript API attachment methods and Microsoft Graph to get attachments from Outlook messages and appointments.
-ms.date: 05/06/2026
+ms.date: 05/12/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
