@@ -1,7 +1,7 @@
 ---
 title: Install the latest version of Office
 description: Information about how to opt in to getting the latest builds of Office.
-ms.date: 09/24/2024
+ms.date: 03/20/2026
 ms.localizationpriority: medium
 ---
 
@@ -21,7 +21,7 @@ New developer features, including those still in preview, are delivered first to
 ## Get the latest build of Office
 
 1. Download the [Office Deployment Tool](https://www.microsoft.com/download/details.aspx?id=49117).
-1. Run the tool. This extracts a **setup.exe** and configuration files.
+1. Run the tool. This action extracts a **setup.exe** and configuration files.
 1. Create a new file named **configuration.xml** and add the following XML.
 
     ```xml
@@ -47,7 +47,7 @@ New developer features, including those still in preview, are delivered first to
 > [!NOTE]
 > The command might take a long time to run without indicating progress.
 
-When the installation process finishes, you'll have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under the About section, you'll see the version and build number, along with Current Channel (Preview). The Microsoft 365 Insider section is displayed or hidden for business customers depending on their company's settings.
+When the installation process finishes, you have the latest Office applications installed. To verify that you have the latest build, go to **File** > **Account** from any Office application. Under the About section, you see the version and build number, along with Current Channel (Preview). The Microsoft 365 Insider section is displayed or hidden for business customers depending on their company's settings.
 
 :::image type="content" source="../images/microsoft-365-insider.png" alt-text="Product information, including the version number, build, and channel.":::
 

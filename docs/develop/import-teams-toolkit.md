@@ -2,7 +2,7 @@
 title: Import an add-in project to Microsoft 365 Agents Toolkit
 description: Learn how to import an add-in project to Microsoft 365 Agents Toolkit.
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 04/21/2026
 ms.localizationpriority: medium
 ---
 
@@ -22,7 +22,7 @@ However, we can make some general recommendations.
 >
 > - This article doesn't apply to add-in projects that were created with Visual Studio. Such projects are based on the ASP.NET web application framework and are designed to run on Internet Information Server (IIS). Converting such a project to work in Agents Toolkit would significantly more difficult and is out-of-scope for this article.
 > - Add-in projects in Agents Toolkit must use the [unified manifest for Microsoft 365](unified-manifest-overview.md). If your add-in project uses a feature that isn't yet supported with the unified manifest, then you can't import it to Agents Toolkit unless you first redesign it so that it doesn't use unsupported features.
-> - Currently, add-ins that use the unified manifest can't be sideloaded on a Mac. If your development computer is a Mac, don't import your project into Agents Toolkit until sideloading on the Mac is supported.
+> - Currently, Outlook add-ins that use the unified manifest can't be sideloaded on a Mac. If your development computer is a Mac, don't import an Outlook add-in project into Agents Toolkit until sideloading on the Mac is supported.
 
 There are two basic strategies available.
 

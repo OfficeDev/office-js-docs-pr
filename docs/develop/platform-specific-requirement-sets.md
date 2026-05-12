@@ -123,7 +123,7 @@ if (Office.context.requirements.isSetSupported("WordApiHiddenDocument", "1.5")) 
 
 ## See also
 
-- [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
+- [Understanding the Office JavaScript API](understand-the-javascript-api-for-office.md)
 - [Office versions and requirement sets](office-versions-and-requirement-sets.md)
 - [Specify Office applications and API requirements](specify-office-hosts-and-api-requirements.md)
 - [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)

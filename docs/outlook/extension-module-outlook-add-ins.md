@@ -1,13 +1,14 @@
 ---
 title: Module extension Outlook add-ins
-description: Create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
-ms.date: 02/27/2025
+description: Learn how to create a module extension add-in that adds a custom panel to the Outlook navigation bar, alongside modules like Mail, Calendar, and Tasks.
+ms.date: 05/12/2026
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Module extension Outlook add-ins
 
-Module extension add-ins appear in the Outlook navigation bar, right alongside mail, tasks, and calendars. A module extension isn't limited to using mail and appointment information. You can create applications that run inside Outlook to make it easy for your users to access business information and productivity tools without ever leaving Outlook.
+A module extension add-in lets you surface a custom panel in the Outlook navigation bar, alongside modules like Mail, Calendar, and Tasks. Unlike standard message or appointment add-ins, a module extension isn't tied to a specific mail item. You can use it to embed business tools or external data within Outlook so your users don't need to switch applications.
 
 > [!TIP]
 > Module extensions are only supported in classic Outlook on Windows. To provide a more modern solution that's available on various platforms, create [personal tab apps that open in Outlook](/microsoftteams/platform/m365-apps/extend-m365-teams-personal-tab) instead. With personal tab apps, your users will have access to business critical data and productivity tools not just in Outlook, but across Microsoft 365 applications, including Microsoft Teams, and various platforms.
@@ -16,7 +17,7 @@ Module extension add-ins appear in the Outlook navigation bar, right alongside m
 
 To create and run module extension add-ins, you must:
 
-- Develop the add-in using an add-in only manifest. The [Unified manifest for Microsoft 365](../develop/json-manifest-overview.md) doesn't support module extensions.
+- Develop the add-in using an add-in only manifest. The [unified manifest for Microsoft 365](../develop/json-manifest-overview.md) doesn't support module extensions.
 - Run the add-in in classic Outlook on Windows (Outlook 2016 or later).
 
 ## Open a module extension
@@ -31,10 +32,10 @@ To open a module extension, navigate to the Outlook navigation bar, select **Mor
 > - If the user has compact navigation selected, the navigation bar has an icon that shows an extension is loaded.
 >
 >   :::image type="content" source="../images/outlook-module-navigationbar-compact.png" alt-text="Icons of the modules and add-ins displayed in a compact navigation bar.":::
-> - If the user isn't using compact navigation, the navigation bar will display the name of the add-in.
+> - If the user isn't using compact navigation, the navigation bar displays the name of the add-in.
 >
 >   :::image type="content" source="../images/outlook-module-navigationbar-one.png" alt-text="The names of the modules and add-ins shown in an expanded navigation bar.":::
-> - If more than one add-in is loaded, the **Add-ins** options is displayed in the navigation bar. Select **Add-ins**, then choose the add-in you want to use.
+> - If multiple add-ins are loaded, the **Add-ins** option is displayed in the navigation bar. Select **Add-ins**, then choose the add-in you want to use.
 >
 >   :::image type="content" source="../images/outlook-module-navigationbar-more.png" alt-text="The Add-ins option displayed in the navigation bar if more than one add-in is loaded.":::
 
@@ -48,7 +49,10 @@ To test and learn how to configure a module extension, see the [Office Add-ins m
 
 ## Example
 
-The following is a section of a manifest file that defines a module extension.
+The following is a section of a manifest file that defines a module extension. Key elements include:
+
+- `<ExtensionPoint xsi:type="Module">`: Declares the add-in as a module extension and sets the URL of the page that Outlook renders when the user opens it.
+- `<CommandSurface>`: Defines a custom tab on the Outlook ribbon with a button that triggers a function command.
 
 ```xml
 

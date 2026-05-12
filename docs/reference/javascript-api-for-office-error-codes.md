@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 This article documents the error messages you might encounter while using the Common API model. These error codes don't apply to application-specific APIs, such as the Excel JavaScript API or the Word JavaScript API.
 
-See [API models](../develop/understanding-the-javascript-api-for-office.md#api-models) to learn more about the differences between the Common API and application-specific API models.
+See [API models](../develop/understand-the-javascript-api-for-office.md#api-models) to learn more about the differences between the Common API and application-specific API models.
 
 ## Error codes
 
@@ -138,7 +138,7 @@ The following table summarizes binding behavior in Word.
 ## See also
 
 - [Office Add-ins development lifecycle](../overview/office-add-ins.md)
-- [Understanding the Office JavaScript API](../develop/understanding-the-javascript-api-for-office.md)
+- [Understanding the Office JavaScript API](../develop/understand-the-javascript-api-for-office.md)
 - [Error handling with the application-specific JavaScript APIs](../testing/application-specific-api-error-handling.md)
 - [Troubleshoot error messages for single sign-on (SSO)](../develop/troubleshoot-sso-in-office-add-ins.md)
 - [Troubleshoot development errors with Office Add-ins](../testing/troubleshoot-development-errors.md)

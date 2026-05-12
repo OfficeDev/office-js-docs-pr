@@ -22,7 +22,7 @@ For all government cloud (sovereign cloud) environments, the public Microsoft 36
 
 - The Office Add-in manifest that describes the solution and its source location as applicable to the particular government cloud deployment is obtained from the partner and ingested for deployment to the appropriate users via the Admin Portal.
 
-[Centralized deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) of add-ins outside of the store is still supported.
+[Centralized deployment](/microsoft-365/admin/manage/centralized-deployment-of-add-ins) of add-ins outside of the store is still supported for the sovereign clouds explicitely listed below.
 
 In addition to requirements applicable to all sovereign clouds, each sovereign cloud environment has its own considerations that might affect Office Add-ins targeting the environment. The following sections describe these requirements and recommendations.
 

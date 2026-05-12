@@ -1,7 +1,7 @@
 ---
 title: Understand the logic of API requirement configuration
 description: Learn how Office processes API requirements specified in the manifest.
-ms.date: 02/26/2026
+ms.date: 04/29/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -247,7 +247,7 @@ Just as with the unified manifest, it's possible to inadvertently create a manif
 1. Remove the problematic `<Set>` elements from the base manifest.
 1. Copy the `<VersionOverrides>` element so there are now two of them.
 1. In the first `<VersionOverrides>` have a `<Hosts>` element that specifies only "Document" and a `<Sets><Set>` that specifies only **WordApi 1.4**.
-1. In the first `<VersionOverrides>` have a `<Hosts>` element that specifies only "Workbook" and a `<Sets><Set>` that specifies only **ExcelApi 1.10**.
+1. In the second `<VersionOverrides>` have a `<Hosts>` element that specifies only "Workbook" and a `<Sets><Set>` that specifies only **ExcelApi 1.10**.
 
 > [!NOTE]
 > Limiting a feature by requirement set is less fine-grained in the add-in only manifest than in the unified manifest. With the unified manifest you can have separate `"requirements"` properties in each child property of `"extensions"`, but in the add-in only manifest you can have just one `<Requirements>` child in the `<VersionOverrides>` element, and it applies to all features configured in that `<VersionOverrides>`. For more information, see [Specify requirements in a VersionOverrides element](specify-office-hosts-and-api-requirements.md#specify-requirements-in-a-versionoverrides-element). 
@@ -260,12 +260,15 @@ For an Outlook add-in, the presence or absence of a [MobileFormFactor](/javascri
 
 ## Limit by platform at runtime
 
-You can't limit an add-in/feature by platform (Windows, web, Mac, iOS, or Android) using the techniques of this article. There's no `"platform"` property in the `"requirements"` object in the unified manifest and no `<Platforms>` element child of the `<Requirements>` element in the add-in only manifest. Although there are some requirement sets that are only supported on one platform, they aren't allowed in the `"capabilities"` property or the `<Sets>` element. The closest you can come is to design the add-in so that it checks at runtime for the platform. If it's a platform on which you don't want the add-in to support, show a message to the user that the add-in won't work on their version of Office and suggest which platform the user should switch to. There are actually two ways to do a runtime check. 
+You can't limit an add-in/feature by platform (Windows, web, Mac, iOS, or Android) using the techniques of this article. There's no `"platform"` property in the `"requirements"` object in the unified manifest and no `<Platforms>` element child of the `<Requirements>` element in the add-in only manifest. Although there are some requirement sets that are only supported on one platform, they aren't allowed in the `"capabilities"` property or the `<Sets>` element. For add-ins that are deployed by Microsoft 365 Administrators in the [Integrated apps portal](../publish/publish.md), there's a workaround. Design the add-in so that it checks at runtime for the platform. If it's a platform which you don't want the add-in to support, show a message to the user that the add-in won't work on their version of Office and suggest which platform the user should switch to. There are actually two ways to do a runtime check. 
 
 - Check the [Office.context.platform](/javascript/api/office/office.context#office-office-context-platform-member) property.
 - Call the [Office.context.requirements.isSetSupported](/javascript/api/office/office.requirementsetsupport#method-details) method and pass the name of a platform-specific requirement set.
 
 For guidance, see [Understanding platform-specific requirement sets](platform-specific-requirement-sets.md) and [Check for API availability at runtime](specify-api-requirements-runtime.md).
+
+> [!IMPORTANT]
+> This workaround isn't permitted in add-ins that are submitted to [Microsoft Marketplace](https://marketplace.microsoft.com). Your add-in *must* work meaningfully (not with merely a graceful failure message) on all combinations of platform and Office application that conform to the requirement set, form factor, and Office application hosts restrictions explicitly defined in the manifest. See [Commercial marketplace certification policy 1120.3](/legal/marketplace/certification-policies#11203-functionality).
 
 ## See also
 

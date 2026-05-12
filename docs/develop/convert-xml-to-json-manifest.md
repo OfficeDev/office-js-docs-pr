@@ -2,15 +2,13 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 04/22/2026
 ms.localizationpriority: medium
 ---
 
 # Convert an add-in to use the unified manifest for Microsoft 365
 
 To upgrade an add-in that uses the add-in only manifest to a full App for Microsoft 365 to which you can add Teams capabilities or a Copilot extension, you need to convert it to use the unified manifest for Microsoft 365.
-
-   [!INCLUDE [Unified manifest support note for Office applications](../includes/unified-manifest-support-note.md)]
 
 There are four basic tasks to converting an add-in project from the add-in only manifest to the unified manifest.
 
@@ -94,7 +92,10 @@ Review and change, as needed, manifest values in light of the following effects 
 
 If your add-in has custom functions, then it includes a JSON configuration file. Some requirements for this file weren't always enforced by Office or Microsoft Marketplace in the past, but they are all enforced when the add-in has a unified manifest. Before you convert the manifest, ensure that this JSON file conforms to all requirements. For more information, see [Custom functions naming and localization](../excel/custom-functions-naming.md) and [Manually create JSON metadata for custom functions](../excel/custom-functions-json.md).
 
-In particular, note that [all function names and function ids must have at least 3 characters](../excel/custom-functions-naming.md#custom-functions-naming-guidelines) and that [each function object must have a "result" property](../excel/custom-functions-json.md#metadata-reference). 
+In particular, note that [all function names and function ids must have at least 3 characters](../excel/custom-functions-naming.md#custom-functions-naming-guidelines) and that [each function object must have a "result" property](../excel/custom-functions-json.md#metadata-reference).
+
+> [!NOTE]
+> Support for custom functions with the unified manifest is in preview.
 
 ### Verify that the modified add-in only manifest works
 
@@ -141,6 +142,9 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 1. Open the unified manifest file.
 1. Navigate to the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property and ensure there are child `"privacyUrl"` and `"termsOfUseUrl"` properties. These properties must have appropriate values with a localhost domain.
 1. You can now [sideload the add-in](#sideload-the-add-in).
+
+> [!IMPORTANT]
+> Support for custom functions with the unified manifest is in preview, and currently neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) add the needed custom function support to the unified manifest. We're working hard to update the tools. In the meantime, you must add the [`"extensions.runtimes.customFunctions"`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) manually. Use your add-in only manifest as the source of data to populate the [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) object.
 
 ## Sideload the add-in
 
