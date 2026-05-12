@@ -1,7 +1,7 @@
 ---
 title: Work with dates using the Excel JavaScript API
 description: Use the Moment-MSDate plug-in with the Excel JavaScript API to work with dates.
-ms.date: 03/03/2026
+ms.date: 05/12/2026
 ms.localizationpriority: medium
 ---
 
@@ -17,10 +17,27 @@ This article provides code samples that show how to work with dates using the Ex
 - Use the Moment-MSDate library to convert between JavaScript dates and Excel's date format.
 - Set `numberFormat` to display dates in human-readable formats.
 - The Moment.js library provides helpful date manipulation and formatting capabilities.
+- JavaScript `Date` objects account for time zones, but Excel's OADate format doesn't. This difference can cause dates to shift unexpectedly across time zone boundaries.
 
 ## Use the Moment-MSDate plug-in to work with dates
 
 Excel stores dates as sequential serial numbers called OADate (OLE Automation Date) format. For example, January 1, 2000 is stored as 36526. This format differs from JavaScript Date objects, making date operations challenging. The [Moment JavaScript library](https://momentjs.com/) provides a way to use dates and timestamps. The [Moment-MSDate plug-in](https://www.npmjs.com/package/moment-msdate) converts between `Moment` objects and Excel's OADate format. This is the same format the [NOW function](https://support.microsoft.com/office/3337fd29-145a-4347-b2e6-20c904739c46) returns.
+
+### Setup and installation
+
+To use the Moment-MSDate library for dates in your Excel add-in, install the library via npm.
+
+```bash
+npm install moment-msdate
+```
+
+Then import it in your add-in code.
+
+```js
+import moment from 'moment-msdate';
+```
+
+The Moment-MSDate library is a plug-in for the Moment.js library and enables conversion between Moment objects and Excel's OADate format. It works in all modern Office clients including Office on Web, Windows, Mac, and iPad.
 
 ### Set a date value in a cell
 
@@ -68,9 +85,23 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Format dates for display
+### Format dates for display
 
 Your add-in needs to format the ranges to display dates in a human-readable form. Excel uses number format codes to control date display. For example, `"[$-409]m/d/yy h:mm AM/PM;@"` displays "12/3/18 3:57 PM". For more information about date and time number formats, see "Guidelines for date and time formats" in the [Review guidelines for customizing a number format](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5) article.
+
+### Time zone considerations
+
+A critical difference between JavaScript and Excel's date handling involves time zones.
+
+- **JavaScript Date objects** store dates relative to the user's local time zone. When you create a new `Date()`, it includes time zone information.
+- **Excel's OADate format** is a simple serial number with no time zone information. It represents a date and time value independent of any time zone.
+
+This mismatch can cause unexpected date shifts, especially when dates cross midnight in different time zones. For example:
+
+- A date created in UTC time might appear one day earlier or later when opened in a different time zone.
+- Reading a date value from Excel and converting it to JavaScript might shift the date depending on the user's local time zone.
+
+**Best practice**: Always be explicit about which time zone you're working with. If your add-in works with dates across multiple time zones, use Moment.js timezone support (via [moment-timezone](https://momentjs.com/timezone/)) to manage conversions explicitly.
 
 ## See also
 
