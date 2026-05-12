@@ -390,4 +390,4 @@ async loadDataFromExcel() {
 - [Referencing the Office JavaScript API library](referencing-the-javascript-api-for-office-library-from-its-cdn.md)
 - [Office Dialog API](dialog-api-in-office-add-ins.md)
 - [Debug the initialize and onReady functions](../testing/debug-initialize-onready.md)
-- [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
+- [Understanding the Office JavaScript API](understand-the-javascript-api-for-office.md)

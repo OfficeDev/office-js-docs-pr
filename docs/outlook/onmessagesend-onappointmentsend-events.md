@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 12/04/2025
+ms.date: 04/03/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ The `OnMessageSend` and `OnAppointmentSend` events take advantage of Smart Alert
 Smart Alerts is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, debug your add-in, and more, see [Activate add-ins with events](../develop/event-based-activation.md).
 
 > [!NOTE]
-> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](#supported-clients-and-platforms) and the specific sections in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) that describe the features you want to implement.
+> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](#supported-clients-and-platforms) and the specific sections in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) that describe the features you want to implement.
 
 ## Supported clients and platforms
 
@@ -63,7 +63,7 @@ The following table lists the available send mode options.
 |**block**|`Block`|block|
 
 > [!TIP]
-> Starting in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/requirement-set-1.14/outlook-requirement-set-1.14), your add-in can now override its send mode option at runtime. To learn more, see [Override the send mode option at runtime (optional)](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional).
+> Starting in [Mailbox requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14), your add-in can now override its send mode option at runtime. To learn more, see [Override the send mode option at runtime (optional)](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional).
 
 #### prompt user
 
@@ -97,6 +97,12 @@ The item isn't sent if any of the following situations occur.
 :::image type="content" source="../images/outlook-smart-alerts-soft-hard-block.png" alt-text="The block dialog with the Don't Send option.":::
 
 Use the **block** option if the add-in's conditions are mandatory, even if the add-in is unavailable. For example, the **block** option is ideal when users are required to apply a sensitivity label to a message or appointment before it can be sent.
+
+### Custom error message isn't specified in the event.completed call
+
+When a message or appointment doesn't meet an add-in's conditions, a Smart Alerts dialog is shown to the user. You can customize the message in the dialog by specifying it in the [errorMessage](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessage-member) property of the add-in's `event.completed` call. The `errorMessage` property is optional. If you don't specify a custom message in the property, the following default message is shown instead: "\<Add-in name> is preventing this email from being sent."
+
+:::image type="content" source="../images/outlook-smart-alerts-no-error-message.png" alt-text="Default message shown in the Smart Alerts dialog when no custom error message is specified in the event.completed call.":::
 
 ### Add-in is unavailable
 
@@ -340,7 +346,7 @@ In addition to these constraints, be mindful of the following:
 
 > [!NOTE]
 >
-> - Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/requirement-set-1.15/outlook-requirement-set-1.15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - Support for Markdown in a Smart Alerts dialog was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
 > - The `errorMessageMarkdown` option of the `event.completed` call is available for preview in Outlook on Mac starting in Version 16.103 (Build 25102433). To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
 You can use Markdown to format the message of a Smart Alerts dialog through the `errorMessageMarkdown` option of the `event.completed` call. However, only the following elements are supported.
@@ -433,7 +439,7 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 
 |Attribute|Smart Alerts|On-send|
 |-----|-----|-----|
-|**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/requirement-set-1.12/outlook-requirement-set-1.12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8)|
+|**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8)|
 |**Supported Outlook clients**|<ul><li>Windows (new and classic)</li><li>Web browser (modern UI)</li><li>Mac (new UI)</li></ul>|<ul><li>Windows (new and classic)</li><li>Web browser (modern and classic UI)</li><li>Mac (new and classic UI)</li></ul>|
 |**Supported manifest types**|<ul><li>Unified manifest for Microsoft 365</li><li>Add-in only manifest</li></ul>|Add-in only manifest|
 |**Supported events**|**Add-in only manifest**<ul><li>`OnMessageSend`</li><li>`OnAppointmentSend`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>`"messageSending"`</li><li>`"appointmentSending"`</li></ul>|`ItemSend`|

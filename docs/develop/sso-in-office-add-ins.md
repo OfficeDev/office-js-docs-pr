@@ -1,7 +1,7 @@
 ---
 title: Enable legacy Office single sign-on (SSO) legacy in an Office Add-in
 description: Learn how to use Office.js legacy API for SSO.
-ms.date: 12/15/2025
+ms.date: 02/02/2026
 ms.localizationpriority: high
 ---
 
@@ -44,8 +44,6 @@ If you're working with an Outlook add-in, be sure to enable Modern Authenticatio
 You should *not* rely on SSO as your add-in's only method of authentication. You should implement an alternate authentication system that your add-in can fall back to in certain error situations. For example, if your add-in is loaded on an older version of Office that does not support SSO, the `getAccessToken` call will fail.
 
 For Excel, Word, and PowerPoint add-ins you will typically want to fall back to using the Microsoft identity platform. For more information, see [Authenticate with the Microsoft identity platform](overview-authn-authz.md#authenticate-with-the-microsoft-identity-platform).
-
-For Outlook add-ins, there is a recommended fallback system. For more information, see [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md).
 
 You can also use a system of user tables and authentication, or you can leverage one of the social login providers. For more information about how to do this with an Office Add-in, see [Authorize external services in your Office Add-in](auth-external-add-ins.md).
 
@@ -254,10 +252,6 @@ The following is a typical decoded payload of an access token. For information a
     ver: "2.0"
 }
 ```
-
-## Using legacy Office SSO with an Outlook add-in
-
-There are some small, but important differences in using SSO in an Outlook add-in from using it in an Excel, PowerPoint, or Word add-in. Be sure to read [Authenticate a user with a single sign-on token in an Outlook add-in](../outlook/authenticate-a-user-with-an-sso-token.md) and [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md).
 
 [!INCLUDE [chrome-tracking-prevention](../includes/chrome-tracking-prevention.md)]
 

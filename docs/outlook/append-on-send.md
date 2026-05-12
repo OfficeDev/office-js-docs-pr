@@ -17,7 +17,7 @@ The prepend-on-send and append-on-send features enable your Outlook add-in to in
 In this walkthrough, you'll develop an add-in that prepends a header and appends a disclaimer when a message is sent.
 
 > [!NOTE]
-> Support for the append-on-send feature was introduced in [requirement set 1.9](/javascript/api/requirement-sets/outlook/requirement-set-1.9/outlook-requirement-set-1.9), while support for the prepend-on-send feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
+> Support for the append-on-send feature was introduced in [requirement set 1.9](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-9), while support for the prepend-on-send feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support these requirement sets.
 
 ## Set up your environment
 

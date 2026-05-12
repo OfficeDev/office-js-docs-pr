@@ -1,7 +1,7 @@
 ---
 title: Debug event-based or spam-reporting add-ins
 description: Learn how to debug your Office Add-ins that implement event-based activation or integrated spam reporting.
-ms.date: 07/15/2025
+ms.date: 05/07/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -186,7 +186,7 @@ To prevent the **Debug Event-based handler** dialog from popping up and stop deb
 
 Event-based add-ins that run in Office on Mac use the browser runtime. Because of this, you can debug your add-in using Safari Web Inspector.
 
-1. To use the Safari Web Inspector in Office, follow the steps in [Debugging with Safari Web Inspector on a Mac](debug-office-add-ins-on-ipad-and-mac.md#debugging-with-safari-web-inspector-on-a-mac).
+1. To use the Safari Web Inspector in Office, follow the steps in [Debug with Safari Web Inspector](debug-office-add-ins-on-ipad-and-mac.md#debug-with-safari-web-inspector).
 1. Open Office, then [sideload your add-in](../testing/test-debug-office-add-ins.md#sideload-an-office-add-in-for-testing).
 1. Perform an action that will initiate the event your add-in handles. For example, create a new message to initiate the `OnNewMessageCompose` event. This opens an empty Developer Window. The name of your add-in appears in the title bar of the window.
 1. Right-click (or select and hold) anywhere in the Developer Window, then select **Inspect Element**. This opens the Inspector, where you can set breakpoints and debug your add-in.

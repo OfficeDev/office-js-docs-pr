@@ -1,14 +1,14 @@
 ---
 title: Build your first OneNote task pane add-in
 description: Learn how to build a simple OneNote task pane add-in by using the Office JS API.
-ms.date: 12/11/2023
+ms.date: 03/06/2026
 ms.service: onenote
 ms.localizationpriority: high
 ---
 
 # Build your first OneNote task pane add-in
 
-In this article, you'll walk through the process of building a OneNote task pane add-in.
+In this article, you walk through the process of building a OneNote task pane add-in.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ In this article, you'll walk through the process of building a OneNote task pane
 [!include[Yeoman generator create project guidance](../includes/yo-office-command-guidance.md)]
 
 - **Choose a project type:** `Office Add-in Task Pane project`
-- **Choose a script type:** `Javascript`
+- **Choose a script type:** `JavaScript`
 - **What do you want to name your add-in?** `My Office Add-in`
 - **Which Office client application would you like to support?** `OneNote`
 
@@ -90,7 +90,7 @@ try {
 
     :::image type="content" source="../images/onenote-office-add-ins-dialog.png" alt-text="The Office Add-ins dialog showing the MY ADD-INS tab.":::
 
-1. In the Upload Add-in dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
+1. In the **Upload Add-in** dialog, browse to **manifest.xml** in your project folder, and then choose **Upload**.
 
 1. From the **Home** tab, choose the **Show Taskpane** button on the ribbon. The add-in task pane opens in an iFrame next to the OneNote page.
 
@@ -110,7 +110,7 @@ try {
 
 ## Next steps
 
-Congratulations, you've successfully created a OneNote task pane add-in! Next, learn more about the core concepts of building OneNote add-ins.
+Congratulations, you created a OneNote task pane add-in! Next, learn more about the core concepts of building OneNote add-ins.
 
 > [!div class="nextstepaction"]
 > [OneNote JavaScript API programming overview](../onenote/onenote-add-ins-programming-overview.md)

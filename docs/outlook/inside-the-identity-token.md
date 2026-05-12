@@ -1,19 +1,18 @@
 ﻿---
-title: Inside the Exchange identity token in an Outlook add-in
-description: Learn about the contents of an Exchange user identity token generated from an Outlook add-in.
-ms.date: 04/12/2024
+title: Exchange identity token structure in an Outlook add-in
+description: Learn the structure of the Exchange user identity token (its header, payload, and signature) and what claims each part contains.
+ms.date: 05/12/2026
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Inside the Exchange identity token
 
 [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
-The Exchange user identity token returned by the [getUserIdentityTokenAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) method provides a way for your add-in code to include the user's identity with calls to your back-end service. This article will discuss the format and contents of the token.
+When your Outlook add-in calls [getUserIdentityTokenAsync](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-getuseridentitytokenasync-member(1)) to identify users in calls to your back-end service, Exchange returns a signed JSON Web Token (JWT). This article describes the structure of that token, including its header, payload, and signature, and the claims each part contains.
 
-An Exchange user identity token is a base-64 URL-encoded string that is signed by the Exchange server that sent it. The token is not encrypted, and the public key that you use to validate the signature is stored on the Exchange server that issued the token. The token has three parts: a header, a payload, and a signature. In the token string, the parts are separated by a period character (`.`) to make it easy for you to split the token.
-
-Exchange uses a the JSON Web Token (JWT) format for the identity token. For information about JWT tokens, see [RFC 7519 JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt).
+The token is a Base64 URL-encoded string. It isn't encrypted; the public key used to validate the signature is stored on the Exchange server that issued it. The header, payload, and signature are separated by a period character (`.`). For information about the JWT format, see [RFC 7519 JSON Web Token (JWT)](https://www.rfc-editor.org/rfc/rfc7519.txt).
 
 ## Identity token header
 
@@ -27,8 +26,6 @@ The header provides information about the format and signature information of th
 }
 ```
 
-<br/>
- 
 The following table describes the parts of the token header.
 
 | Claim | Value | Description |
@@ -57,14 +54,12 @@ The payload contains the authentication claims that identify the email account a
 }
 ```
 
-<br/>
- 
 The following table lists the parts of the identity token payload.
 
 | Claim | Description |
 |:-----|:-----|
-| `aud` | The URL of the add-in that requested the token. A token is only valid if it is sent from the add-in that is running in the client's webview control. The URL of the add-in is specified in the manifest. The markup depends on the type of manifest.</br></br>**Add-in only manifest:** If the add-in uses the Office Add-ins manifests schema v1.1, this URL is the URL specified in the first `<SourceLocation>` element, under the form type `ItemRead` or `ItemEdit`, whichever occurs first as part of the [FormSettings](/javascript/api/manifest/formsettings) element in the add-in manifest.</br></br>**Unified manifest for Microsoft 365:** The URL is specified in the `"extensions.audienceClaimUrl"` property. |
-| `iss` | A unique identifier for the Exchange server that issued the token. All tokens issued by this Exchange server will have the same identifier. |
+| `aud` | The URL of the add-in that requested the token. A token is valid only if it's sent from the add-in that is running in the client's webview control. The URL of the add-in is specified in the manifest. The markup depends on the type of manifest.<ul><li>**Add-in only manifest**: If the add-in uses the Office Add-ins manifests schema v1.1, this URL is the URL specified in the first `<SourceLocation>` element, under the form type `ItemRead` or `ItemEdit`, whichever occurs first as part of the [FormSettings](/javascript/api/manifest/formsettings) element in the add-in manifest.</li><li>**Unified manifest for Microsoft 365**: The URL is specified in the `"extensions.audienceClaimUrl"` property.</li></ul> |
+| `iss` | A unique identifier for the Exchange server that issued the token. All tokens issued by this Exchange server have the same identifier. |
 | `nbf` | The date and time that the token is valid starting from. The value is the number of seconds since January 1, 1970. |
 | `exp` | The date and time that the token is valid until. The value is the number of seconds since January 1, 1970. |
 | `appctxsender` | A unique identifier for the Exchange server that sent the application context. |
@@ -77,7 +72,7 @@ The information in the appctx claim provides you with the unique identifier for 
 |:-----|:-----|
 | `msexchuid` | A unique identifier associated with the email account and the Exchange server. |
 | `version` | The version number of the token. For all tokens provided by Exchange, the value is `ExIdTok.V1`. |
-| `amurl` | The URL of the authentication metadata document that contains the public key of the X.509 certificate that was used to sign the token.<br/><br/>For more information about how to use the authentication metadata document, see [Validate an Exchange identity token](validate-an-identity-token.md). |
+| `amurl` | The URL of the authentication metadata document that contains the public key of the X.509 certificate that was used to sign the token.<br><br>For more information about how to use the authentication metadata document, see [Validate an Exchange identity token](validate-an-identity-token.md). |
 
 ## Identity token signature
 
@@ -86,3 +81,8 @@ The signature is created by hashing the header and payload sections with the alg
 ## See also
 
 For an example that parses the Exchange user identity token, see [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer).
+
+- [Authentication options in Outlook add-ins](authentication.md)
+- [Authenticate a user with an identity token in an add-in](authenticate-a-user-with-an-identity-token.md)
+- [Validate an Outlook add-in identity token](validate-an-identity-token.md)
+- [Nested app authentication FAQ](faq-nested-app-auth-outlook-legacy-tokens.md)

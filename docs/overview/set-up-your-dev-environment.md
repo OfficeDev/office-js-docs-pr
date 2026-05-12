@@ -1,7 +1,7 @@
 ﻿---
 title: Set up your development environment
 description:  Set up your developer environment to build Office Add-ins.
-ms.date: 01/15/2026
+ms.date: 02/19/2026
 ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
 ---
@@ -43,11 +43,7 @@ This guide assumes that you know how to use a command-line tool.
 
 ### Install a code editor
 
-You can use any code editor or IDE that supports client-side development to build your web part, such as:
-
-- [Visual Studio Code](https://code.visualstudio.com/) (recommended)
-- [Atom](https://atom.io)
-- [Webstorm](https://www.jetbrains.com/webstorm)
+You can use any code editor or IDE that supports client-side development to build your web part, such as [Visual Studio Code](https://code.visualstudio.com/).
 
 ### Install the Yeoman generator &mdash; Yo Office
 

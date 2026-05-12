@@ -1,20 +1,20 @@
 ---
 title: Get an Outlook item's attachments from Exchange
-description: Learn how your Outlook add-in can directly get attachments and their contents from Exchange Online or Exchange Server.
-ms.date: 10/29/2024
+description: Learn how to use Office JavaScript API attachment methods and Microsoft Graph to get attachments from Outlook messages and appointments.
+ms.date: 05/12/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Get an Outlook item's attachments from Exchange
 
-The Office JavaScript API includes APIs to get attachments and their contents from messages and appointments in Outlook. The following table lists these attachment APIs, the Outlook modes they operate in, and the minimum Mailbox requirement set they need to operate.
+Use the Office JavaScript API to get attachments from Outlook messages and appointments in both read and compose mode. The following table lists the available attachment APIs, the Outlook modes they support, and the minimum Mailbox requirement set required.
 
 | API | Supported Outlook modes | Minimum requirement set |
 | ---- | ---- | ---- |
-| [Office.context.mailbox.item.attachments](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties) | Read | [1.1](/javascript/api/requirement-sets/outlook/requirement-set-1.1/outlook-requirement-set-1.1) |
-| [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) | Compose | [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) |
-| [Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) | Read<br/>Compose | [1.8](/javascript/api/requirement-sets/outlook/requirement-set-1.8/outlook-requirement-set-1.8) |
+| `Office.context.mailbox.item.attachments` | <ul><li>[MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-attachments-member)</li><li>[AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-attachments-member)</li></ul> | [1.1](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-1) |
+| `Office.context.mailbox.item.getAttachmentsAsync` | <ul><li>[MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1))</li><li>[AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getattachmentsasync-member(1))</li></ul> | [1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8) |
+| `Office.context.mailbox.item.getAttachmentContentAsync` | <ul><li>[MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-getattachmentcontentasync-member(1))</li><li>[MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1))</li><li>[AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-getattachmentcontentasync-member(1))</li><li>[AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getattachmentcontentasync-member(1))</li></ul> | [1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8) |
 
 If the Outlook client in which the add-in is running doesn't support the needed minimum requirement set, you can get an attachment and its contents directly from Exchange instead. Select the tab for the applicable Exchange environment.
 
@@ -30,13 +30,13 @@ Each step is covered in the following sections.
 
 ## Get an access token
 
-Microsoft Graph provides access to users' Outlook mail data. Before your add-in can obtain data from Microsoft Graph, it must first get an access token for authorization. To get an access token, use nested app authentication (NAA). To learn more about NAA, see [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md).
+Microsoft Graph provides access to users' Outlook mail data. Before your add-in can obtain data from Microsoft Graph, it must first get an access token for authorization. To get an access token, use nested app authentication (NAA). To learn more about NAA, see [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md).
 
 ## Get the item ID of the mail item
 
 To get information about an attachment using Microsoft Graph, you need the item ID of the message or appointment that includes the attachment. Use the applicable Office JavaScript API to get the item ID.
 
-- **Read mode**: Call [Office.context.mailbox.item.itemId](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#properties). On non-mobile Outlook clients, because this property returns an ID formatted for Exchange Web Services (EWS), you must use the [Office.context.mailbox.convertToRestId](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttorestid-member(1)) method to convert the ID into a REST format that Microsoft Graph can use.
+- **Read mode**: Call `itemId` ([MessageRead](/javascript/api/outlook/office.messageread#outlook-office-messageread-itemid-member), [AppointmentRead](/javascript/api/outlook/office.appointmentread#outlook-office-appointmentread-itemid-member)). On non-mobile Outlook clients, because this property returns an ID formatted for Exchange Web Services (EWS), you must use the [Office.context.mailbox.convertToRestId](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttorestid-member(1)) method to convert the ID into a REST format that Microsoft Graph can use.
 
     ```javascript
     // Get the item ID of the current mail item in read mode and convert it into a REST format.
@@ -45,7 +45,7 @@ To get information about an attachment using Microsoft Graph, you need the item 
     ```
 
 - **Compose mode**: The method to get the item ID varies depending on whether the mail item has been saved as a draft.
-  - If the item has been saved, call [Office.context.mailbox.item.getItemIdAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods).
+  - If the item has been saved, call `getItemIdAsync` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getitemidasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-getitemidasync-member(1))).
 
     ```javascript
     // Get the item ID of the current mail item being composed.
@@ -62,7 +62,7 @@ To get information about an attachment using Microsoft Graph, you need the item 
     > [!TIP]
     > The `getItemIdAsync` method was introduced in Mailbox requirement set 1.8. If the Outlook client in which your add-in is running doesn't support Mailbox 1.8, use `Office.context.mailbox.item.saveAsync` instead as this method was introduced in Mailbox 1.3.
 
-  - If the item hasn't been saved yet, call [Office.context.mailbox.item.saveAsync](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox.item#methods) to initiate the save and get the item ID.
+  - If the item hasn't been saved yet, call `saveAsync` ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-saveasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-saveasync-member(1))) to initiate the save and get the item ID.
 
     ```javascript
     // Save the current mail item being composed to get its ID.
@@ -100,7 +100,7 @@ Each step is covered in detail in the following sections using code from the [Ou
 
 ## Get a callback token
 
-The [Office.context.mailbox](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox) object provides the `getCallbackTokenAsync` method to get a token that the remote server can use to authenticate with the Exchange server. The following code shows a function in an add-in that starts the asynchronous request to get the callback token, and the callback function that gets the response. The callback token is stored in the service request object that is defined in the next section.
+The [Office.context.mailbox](/javascript/api/outlook/office.mailbox) object provides the `getCallbackTokenAsync` method to get a token that the remote server can use to authenticate with the Exchange server. The following code shows a function in an add-in that starts the asynchronous request to get the callback token, and the callback function that gets the response. The callback token is stored in the service request object that is defined in the next section.
 
 ```js
 function getAttachmentToken() {
@@ -125,7 +125,7 @@ function attachmentTokenCallback(asyncResult) {
 
 The remote service that your add-in calls defines the specifics of how you should send the attachment information to the service. In this example, the remote service is a Web API application created by using Visual Studio. The remote service expects the attachment information in a JSON object.
 
-The [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.entities) property is used to provide the URL of Exchange Web Services (EWS) on the Exchange server that hosts the mailbox. This URL is then used by the remote service to call the [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) method or the [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS operation in a later step.
+The [Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-ewsurl-member) property is used to provide the URL of Exchange Web Services (EWS) on the Exchange server that hosts the mailbox. This URL is then used by the remote service to call the [ExchangeService.GetAttachments](/exchange/client-developer/exchange-web-services/how-to-get-attachments-by-using-ews-in-exchange) method or the [GetAttachment](/exchange/client-developer/web-service-reference/getattachment-operation) EWS operation in a later step.
 
  The following code initializes an object that contains the attachment information.
 
@@ -468,7 +468,7 @@ private string ProcessXmlResponse(XElement responseEnvelope)
 ## See also
 
 - [Manage an item's attachments in a compose form in Outlook](add-and-remove-attachments-to-an-item-in-a-compose-form.md)
-- [Office Add-in sample: Single Sign-On(SSO) in an Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
+- [Office Add-in sample: Single Sign-On (SSO) in an Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Outlook-Add-in-SSO)
 - [Use the Microsoft Graph API](/graph/use-the-api)
 - [Explore the EWS Managed API, EWS, and web services in Exchange](/exchange/client-developer/exchange-web-services/explore-the-ews-managed-api-ews-and-web-services-in-exchange)
 - [Get started with EWS Managed API client applications](/exchange/client-developer/exchange-web-services/get-started-with-ews-managed-api-client-applications)

@@ -1,7 +1,7 @@
 ﻿---
 title: Use legacy Office SSO to get the identity of the signed-in user
 description: Call the getAccessToken API to get the ID token with name, email, and additional information about the signed-in user.
-ms.date: 12/15/2025
+ms.date: 02/25/2026
 ms.localizationpriority: medium
 ---
 
@@ -28,24 +28,22 @@ To use SSO with Office, you need to create an app registration in the Azure port
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
     - Set **Name** to `Office-Add-in-SSO`.
-    - Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)**.
-    - Set the application type to **Web** and then set **Redirect URI** to `https://localhost:[port]/dialog.html`. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+    - Set **Supported account types** to **Any Entra ID Tenant + Personal Microsoft accounts**.
+    - Set **Redirect URI** to use the platform **Web** and the URI to `https://localhost:[port]/dialog.html`. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file.
     - Choose **Register**.
 
-1. On the **Office-Add-in-SSO** page, copy and save the values for the **Application (client) ID** and the **Directory (tenant) ID**. You'll use both of them in later procedures.
+1. On the **Office-Add-in-SSO** page, copy and save the value for the **Application (client) ID**. You'll use it in later procedures.
 
     > [!NOTE]
     > This **Application (client) ID** is the "audience" value when other applications, such as the Office client application (e.g., PowerPoint, Word, Excel), seek authorized access to the application. It's also the "client ID" of the application when it, in turn, seeks authorized access to Microsoft Graph.
 
-1. Select **Authentication** under **Manage**. In the **Implicit grant** section, enable the checkboxes for both **Access token** and **ID token**.
+1. Select **Expose an API** under **Manage**. Select the **Add** link. This will generate the Application ID URI in the form `api://[app-id-guid]`, where `[app-id-guid]` is the **Application (client) ID**.
 
-1. Select **Save** at the top of the form.
-
-1. Select **Expose an API** under **Manage**. Select the **Set** link. This will generate the Application ID URI in the form `api://[app-id-guid]`, where `[app-id-guid]` is the **Application (client) ID**.
-
-1. In the generated ID, insert `localhost:[port]/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+1. In the generated ID, insert `localhost:[port]/` (note the forward slash "/" appended to the end) between the double forward slashes and the GUID. Replace `[port]` with the correct port number for your web application. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file.
 
     When you're finished, the entire ID should have the form `api://localhost:[port]/[app-id-guid]`; for example `api://localhost:44355/c6c1f32b-5e55-4997-881a-753cc1d563b7`.
+
+1. Select the **Save** button to save the updated Application ID URI.
 
 1. Select the **Add a scope** button. In the panel that opens, enter `access_as_user` as the `<Scope>` name.
 
@@ -76,38 +74,11 @@ To use SSO with Office, you need to create an app registration in the Azure port
     > - `93d53678-613d-4013-afc1-62e9e444a0a5` (Office on the web)
     > - `bc59ab01-8403-45c6-8796-ac3ef710b3e3` (Outlook on the web)
 
-1. Select the **Add a client application** button and then, in the panel that opens, set the `[app-id-guid]` to the Application (client) ID and check the box for `api://localhost:44355/[app-id-guid]/access_as_user`.
+1. In **Authorized scopes**, select the `api://<fully-qualified-domain-name>/<app-id>/access_as_user` checkbox.
 
 1. Select **Add application**.
 
-1. Select **API permissions** under **Manage** and select **Add a permission**. On the panel that opens, choose **Microsoft Graph** and then choose **Delegated permissions**.
-
-1. Use the **Select permissions** search box to search for the permissions your add-in needs. Search for and select the **profile** permission. The `profile` permission is required for the Office application to get a token to your add-in web application.
-
-   - profile
-
-   > [!NOTE]
-   > The `User.Read` permission may already be listed by default. It's a good practice not to ask for permissions that aren't needed, so we recommend that you uncheck the box for this permission if your add-in doesn't actually need it.
-
-1. Select the **Add permissions** button at the bottom of the panel.
-
-1. On the same page, choose the **Grant admin consent for \<tenant-name\>** button, and then select **Yes** for the confirmation that appears.
-
 ## Create the Office Add-in
-
-# [Visual Studio 2019](#tab/vs2019)
-
-1. Start Visual Studio 2019 and choose to **Create a new project**.
-1. Search for and select the **Excel Web Add-in** project template. Then choose **Next**. Note: SSO works with any Office application, but Excel is the application being used with this article.
-1. Enter a project name, such as **sso-display-user-info**, and choose **Create**. You can leave the other fields at default values.
-1. In the **Choose the add-in type** dialog box, select **Add new functionality to Excel**, and choose **Finish**.
-
-The project is created and will contain two projects in the solution.
-
-- **sso-display-user-info**: Contains the manifest and details for sideloading the add-in to Excel.
-- **sso-display-user-infoWeb**: The ASP.NET project that hosts the web pages for the add-in.
-
-# [Yo Office](#tab/yooffice)
 
 Be sure you have [Set up your development environment](../overview/set-up-your-dev-environment.md).
 
@@ -119,19 +90,9 @@ Be sure you have [Set up your development environment](../overview/set-up-your-d
 
 The project is created in a new folder named **sso-display-user-info**.
 
----
-
 ## Configure the manifest
 
-# [Visual Studio 2019](#tab/vs2019)
-
-In **Solution Explorer**, open **sso-display-user-info** > **sso-display-user-infoManifest** > **sso-display-user-info.xml**.
-
-# [Yo Office](#tab/yooffice)
-
-In Visual Studio Code, open the **manifest.xml** file.
-
----
+1. In Visual Studio Code, open the **sso-display-user-info** folder and then the **manifest.xml** file.
 
 1. Near the bottom of the manifest is a closing `</Resources>` element. Insert the following XML just below the `</Resources>` element but before the closing `</VersionOverrides>` element. For Office applications other than Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_0">` section. For Outlook, add the markup to the end of the `<VersionOverrides ... xsi:type="VersionOverridesV1_1">` section.
 
@@ -147,7 +108,7 @@ In Visual Studio Code, open the **manifest.xml** file.
     </WebApplicationInfo>
    ```
 
-1. Replace `[port]` with the correct port number for your project. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file. If you created the add-in with Visual Studio 2019, the port is found in the **SSL URL** property of the web project.
+1. Replace `[port]` with the correct port number for your project. If you created the add-in using Yo Office, the port number is typically 3000 and found in the package.json file.
 1. Replace both `[application-id]` placeholders with the actual application ID from your app registration.
 1. Save the file.
 
@@ -163,53 +124,14 @@ The XML you inserted contains the following elements and information.
 
 You can call the `getAccessToken` API to get the ID token from Office. First, let's add the jwt-decode package to make it easier to decode and view the ID token.
 
-# [Visual Studio 2019](#tab/vs2019)
-
-1. Open the Visual Studio solution.
-1. On the menu, choose **Tools** > **NuGet Package Manager** > **Package Manager Console**.
-1. Enter the following command in the **Package Manager Console**.
-
-    `Install-Package jwt-decode -Projectname sso-display-user-infoWeb`
-
-# [Yo Office](#tab/yooffice)
-
 1. From a terminal/console window go to the root folder for your add-in project.
 1. Enter the following command
 
     `npm install jwt-decode`
 
----
-
 ## Add UI to the task pane
 
 Modify the task pane so that it can display the user information you'll get from the ID token.
-
-# [Visual Studio 2019](#tab/vs2019)
-
-1. Open the Home.html file.
-1. Add the following script tag to the `<head>` section of the page. This will include the jwt-decode package was added earlier.
-
-    ```html
-    <script src="Scripts/jwt-decode-2.2.0.js" type="text/javascript"></script>
-    ```
-
-1. Replace the `<body>` section with the following HTML.
-
-    ```html
-    <body>
-      <h1>Welcome</h1>
-      <p>
-        Sign in to Office, then choose the <b>Get ID Token</b> button to see your
-        ID token information.
-      </p>
-      <button id="getIDToken">Get ID Token</button>
-      <div>
-        <span id="userInfo"></span>
-      </div>
-    </body>
-    ```
-
-# [Yo Office](#tab/yooffice)
 
 1. Open the **src/taskpane/taskpane.html** file.
 1. Replace the `<body>` section with the following HTML.
@@ -228,59 +150,10 @@ Modify the task pane so that it can display the user information you'll get from
     </body>
     ```
 
----
-
 ## Call the getAccessToken API
 
 The final step is to get the ID token by calling `getAccessToken`.
 
-# [Visual Studio 2019](#tab/vs2019)
-
-1. Open the **Home.js** file.
-1. Replace the entire contents of the file with the following code.
-
-    ```javascript
-    (function () {
-      "use strict";
-
-      // The initialize function must be run each time a new page is loaded.
-      Office.initialize = function (reason) {
-        $(document).ready(function () {
-          $("#getIDToken").on("click", getIDToken);
-        });
-      };
-
-      async function getIDToken() {
-        try {
-          let userTokenEncoded = await OfficeRuntime.auth.getAccessToken({
-            allowSignInPrompt: true,
-          });
-          let userToken = jwt_decode(userTokenEncoded);
-          document.getElementById("userInfo").innerHTML =
-            "name: " +
-            userToken.name +
-            "<br>email: " +
-            userToken.preferred_username +
-            "<br>id: " +
-            userToken.oid;
-          console.log(userToken);
-        } catch (error) {
-          document.getElementById("userInfo").innerHTML =
-            "An error occurred. <br>Name: " +
-            error.name +
-            "<br>Code: " +
-            error.code +
-            "<br>Message: " +
-            error.message;
-          console.log(error);
-        }
-      }
-    })();
-    ```
-
-1. Save the file.
-
-# [Yo Office](#tab/yooffice)
 
 1. Open the **src/taskpane/taskpane.js** file.
 1. Replace the entire contents of the file with the following code.
@@ -298,6 +171,7 @@ The final step is to get the ID token by calling `getAccessToken`.
       try {
         let userTokenEncoded = await OfficeRuntime.auth.getAccessToken({
           allowSignInPrompt: true,
+          allowConsentPrompt: true,
         });
         let userToken = jwt_decode(userTokenEncoded);
         document.getElementById("userInfo").innerHTML =
@@ -323,19 +197,10 @@ The final step is to get the ID token by calling `getAccessToken`.
 
 1. Save the file.
 
----
 
 ## Run the add-in
 
-# [Visual Studio 2019](#tab/vs2019)
-
-Choose **Debug** > **Start Debugging**, or press <kbd>F5</kbd>.
-
-# [Yo Office](#tab/yooffice)
-
 Run `npm start` from the command line.
-
----
 
 1. When Excel starts, sign in to Office with the same tenant account you used to create the app registration.
 1. On the **Home** ribbon, choose **Show Taskpane** to open the add-in.
@@ -348,13 +213,7 @@ The add-in will display the name, email, and ID of the account you signed in wit
 
 ## Stop the add-in
 
-# [Visual Studio 2019](#tab/vs2019)
-
-Choose **Stop Debugging**, or press <kbd>Shift</kbd>+<kbd>F5</kbd>.
-
-# [Yo Office](#tab/yooffice)
-
-Run `npm stop` from the command line.
+Run `npm run stop` from the command line.
 
 ---
 

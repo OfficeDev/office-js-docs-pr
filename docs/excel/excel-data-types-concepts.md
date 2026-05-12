@@ -114,6 +114,15 @@ const myEntity: Excel.EntityCellValue = {
 };
 ```
 
+> [!IMPORTANT]
+> An entity value can define a `referencedValues` array that stores additional cell values. These values are referenced by index from within the entity's `properties`.
+> 
+> - The `referencedValues` array is only supported on the **root-level** entity in a cell value tree.
+> - Nested entities (entities used as property values within another entity) must **not** define their own `referencedValues`.
+> - If a nested entity includes a `referencedValues` array, the JavaScript Excel API throws a `GeneralException` error in add-in or script code, or Excel displays a **#VALUE!** error when the value is produced by a custom function.
+> 
+> To reference values from a nested entity, use [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue) indices that point to the root entity's `referencedValues` array.
+
 To explore entity data types, start by going to [Script Lab](../overview/explore-with-script-lab.md) in Excel and opening the [Data types: Create entity cards from data in a table](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-values.yaml) snippet in our **Samples** library. The [Data types: Entity values with references](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-references.yaml) and [Data types: Entity value attribution properties](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/20-data-types/data-types-entity-attribution.yaml) snippets offer a deeper look at entity features.
 
 ### Linked entity cell values

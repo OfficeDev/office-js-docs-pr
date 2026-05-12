@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements with the unified manifest
 description: Learn how to specify in the unified manifest the Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 02/12/2025
+ms.date: 02/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -80,7 +80,7 @@ You can't explicitly specify the Office versions and builds or the platforms on 
 
 ### Requirement sets
 
-To simplify the process of specifying the APIs that your add-in needs, Office groups most APIs together in [requirement sets](office-versions-and-requirement-sets.md). The APIs in the [Common API Object Model](understanding-the-javascript-api-for-office.md#api-models) are grouped by the development feature that they support. For example, all the APIs connected to table bindings are in the requirement set called "TableBindings 1.1". The APIs in the [Application specific object models](understanding-the-javascript-api-for-office.md#api-models) are grouped by when they were released for use in production add-ins.
+To simplify the process of specifying the APIs that your add-in needs, Office groups most APIs together in [requirement sets](office-versions-and-requirement-sets.md). The APIs in the [Common API Object Model](understand-the-javascript-api-for-office.md#api-models) are grouped by the development feature that they support. For example, all the APIs connected to table bindings are in the requirement set called "TableBindings 1.1". The APIs in the [Application specific object models](understand-the-javascript-api-for-office.md#api-models) are grouped by when they were released for use in production add-ins.
 
 Requirement sets are versioned. For example, the APIs that support [Dialog Boxes](../develop/dialog-api-in-office-add-ins.md) are in the requirement set DialogApi 1.1. When additional APIs that enable messaging from a task pane to a dialog were released, they were grouped into DialogApi 1.2, along with all the APIs in DialogApi 1.1. *Each version of a requirement set is a superset of all earlier versions.*
 
@@ -99,7 +99,10 @@ Use the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requ
 The following code example shows how to configure an add-in that is installable in all Office application and platform combinations that support the following:
 
 - `TableBindings` requirement set, which has a minimum version of "1.1".
-- `OOXML` requirement set, which has a minimum version of "1.1".
+- `OoxmlCoercion` requirement set, which has a minimum version of "1.1".
+
+> [!NOTE]
+> The `"minVersion"` property is optional. If it isn't present, Office assumes version "1.1".
 
 ```json
 "extensions": [
@@ -111,7 +114,7 @@ The following code example shows how to configure an add-in that is installable 
                     "minVersion": "1.1"
                 },
                 {
-                    "name": "OOXML",
+                    "name": "OoxmlCoercion",
                     "minVersion": "1.1"
                 }
             ],
@@ -122,11 +125,11 @@ The following code example shows how to configure an add-in that is installable 
 ```
 
 > [!TIP]
-> For more information and another example of using the `"extensions.requirements"` property, see the `"extensions.requirements"` section in [Specify Office Add-in requirements in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md#extensionsrequirements).
+> For more information and another example of using the `"extensions.requirements"` property, see the `"extensions.requirements"` section in [How to use the "requirements" property in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md#extensionsrequirements).
 
 ### Specify the form factors on which your add-in can be installed
 
-For an Outlook add-in, you can specify whether the add-in should be installable on desktop (includes tablets) or mobile form factors. To configure this, use the `"extensions.requirements.formFactors"` property. The following example show how to make the Outlook add-in installable on both form factors.
+For an Outlook add-in, you can specify whether the add-in should be installable on desktop (includes tablets) or mobile form factors. To configure this, use the `"extensions.requirements.formFactors"` property. The following example shows how to make the add-in installable on only desktop devices.
 
 ```json
 "extensions": [
@@ -134,8 +137,7 @@ For an Outlook add-in, you can specify whether the add-in should be installable 
         "requirements": {
             ...
             "formFactors": [
-                "desktop",
-                "mobile"
+                "desktop"
             ]
         },
         ...
@@ -156,10 +158,10 @@ If your add-in uses a specific extensibility feature for some of its functionali
 You implement this design differently depending on how the extensibility feature is implemented:
 
 - For features implemented entirely with JavaScript, see [Check for API availability at runtime](specify-api-requirements-runtime.md).
-- For features that require you to configure the manifest, see the "Filter features" section of [Specify Office Add-in requirements in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md#filter-features).
+- For features that require you to configure the manifest, see the "Filter features" section of [How to use the "requirements" property in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md#filter-features).
 
 ## See also
 
 - [Office Add-ins manifest](add-in-manifests.md)
 - [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
-- [Specify Office Add-in requirements in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md)
+- [How to use the "requirements" property in the unified manifest for Microsoft 365](requirements-property-unified-manifest.md)

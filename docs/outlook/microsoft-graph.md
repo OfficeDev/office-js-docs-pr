@@ -37,4 +37,4 @@ For more information on the Microsoft Graph API and its components, see [Use the
 - [Microsoft Graph REST API v1.0 endpoint reference](/graph/api/overview)
 - [Outlook mail API overview](/graph/outlook-mail-concept-overview)
 - [Use the Outlook mail REST API](/graph/api/resources/mail-api-overview)
-- [Enable SSO in an Office Add-in using nested app authentication (preview)](../develop/enable-nested-app-authentication-in-your-add-in.md)
+- [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md)

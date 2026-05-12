@@ -77,6 +77,11 @@
       "ms.custom": {
         "quickstarts/*.md": "scenarios:getting-started; languages:JavaScript,TypeScript",
         "tutorials/*.md": "scenarios:getting-started; languages:JavaScript,TypeScript"
+      },
+      "ms.update-cycle": {
+        "onenote/*.md": "1825-days",
+        "project/*.md": "1825-days",
+        "visio/*.md": "1825-days"
       }
     },
     "template": [],

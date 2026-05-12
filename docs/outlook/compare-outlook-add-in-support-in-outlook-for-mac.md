@@ -1,7 +1,7 @@
 ---
 title: Compare Outlook add-in support in Outlook on Mac
 description: Learn how add-in support in Outlook on Mac compares with other Outlook clients.
-ms.date: 08/13/2025
+ms.date: 03/23/2026
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ For more information, see [Deploy and install Outlook add-ins for testing](testi
 | Area | Outlook on the web, Windows (new and classic), and mobile devices | Outlook on Mac |
 |:-----|:-----|:-----|
 | Supported versions of office.js| All APIs in Office.js. | All APIs in Office.js.<br><br>**NOTE**: In Outlook on Mac, only Version 16.35 (20030802) or later supports saving a meeting. Otherwise, the `saveAsync` method fails when called from a meeting in compose mode. See [Cannot save a meeting as a draft in Outlook for Mac by using Office JS API](https://support.microsoft.com/help/4505745) for a workaround. |
-| Instances of a recurring appointment series | <ul><li>Can get the item ID and other properties of a master appointment or appointment instance of a recurring series.</li><li>Can use [mailbox.displayAppointmentForm](/javascript/api/requirement-sets/outlook/preview-requirement-set/office.context.mailbox#methods) to display an instance or the master of a recurring series.</li></ul> | <ul><li>Can get the item ID and other properties of the master appointment, but not those of an instance of a recurring series.</li><li>Can display the master appointment of a recurring series. Without the item ID, cannot display an instance of a recurring series.</li></ul> |
+| Instances of a recurring appointment series | <ul><li>Can get the item ID and other properties of a master appointment or appointment instance of a recurring series.</li><li>Can use [mailbox.displayAppointmentForm](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-displayappointmentform-member(1)) to display an instance or the master of a recurring series.</li></ul> | <ul><li>Can get the item ID and other properties of the master appointment, but not those of an instance of a recurring series.</li><li>Can display the master appointment of a recurring series. Without the item ID, cannot display an instance of a recurring series.</li></ul> |
 | Recipient type of an appointment attendee | Can use [EmailAddressDetails.recipientType](/javascript/api/outlook/office.emailaddressdetails#outlook-office-emailaddressdetails-recipienttype-member) to identify the recipient type of an attendee. | `EmailAddressDetails.recipientType` returns `undefined` for appointment attendees. |
 | Version string of the client application | The format of the version string returned by [diagnostics.hostVersion](/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-hostversion-member) depends on the Outlook client. <ul><li>Outlook on Windows: Returns the version of the Outlook client. For example, `16.0.4454.1002`.</li><li>Outlook on the web and new Outlook on Windows: Returns the version of the Exchange Server. For example, `15.0.918.2`</li></ul> |The `diagnostics.hostVersion` call returns the version of the Outlook client. For example, `16.0 (140325)`.|
 | Custom properties of an item | If the network goes down, an add-in can still access cached custom properties. | Because Outlook on Mac does not cache custom properties, if the network goes down, add-ins would not be able to access them. |
@@ -40,7 +40,7 @@ You can determine which UI version you're on, as follows:
 
 ## Support for add-ins with the unified manifest for Microsoft 365
 
-Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't directly supported in Outlook on Mac. To run this type of add-in, it must first be published to [Microsoft Marketplace](https://marketplace.microsoft.com/) then deployed in the [Microsoft 365 admin center](../publish/publish.md#integrated-apps-portal-in-the-microsoft-365-admin-center). An add-in only manifest is then generated from the unified manifest, which enables the add-in to be installed in Outlook on Mac.
+Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't supported in Outlook on Mac. We're working hard to provide that support. In the meantime, if your customer base includes users on the Mac, you need to create a version of your add-in that uses the add-in only manifest and support them both.
 
 > [!NOTE]
 > Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can be deployed in the [Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) of the Microsoft 365 admin center, but they won't be installable in Outlook on Mac.

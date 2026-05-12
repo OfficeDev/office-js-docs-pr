@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 With a simple manifest configuration, you can create Outlook add-ins for the Message Read surface that activate a task pane without the Reading Pane enabled or a message first selected from the mailbox. This feature is called "no item context". Follow the walkthrough to learn more and unlock additional capabilities for your add-in. For example, you can enable your users to access content from different data sources, such as OneDrive or a customer relationship management (CRM) system, directly from their Outlook client.
 
 > [!NOTE]
-> Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/requirement-set-1.13/outlook-requirement-set-1.13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
+> Support for this feature was introduced in [requirement set 1.13](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-13). See [clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#requirement-sets-supported-by-exchange-servers-and-outlook-clients) that support this requirement set.
 >
 > Although Outlook on the web and [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) support requirement set 1.13, an add-in won't activate if the Reading Pane is hidden or a message isn't selected. For more information, see [Feature support in Outlook on the web and new Outlook on Windows](#feature-support-in-outlook-on-the-web-and-new-outlook-on-windows).
 

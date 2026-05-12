@@ -22,7 +22,7 @@ The following table specifies which browser is used for the various platforms an
 |iOS|any|Safari with WKWebView|
 |Android|any|Chrome|
 
-\* WebView2 is installed with Office by default for [supported versions of Office](https://support.microsoft.com/office/818c68bc-d5e5-47e5-b52f-ddf636cf8e16).
+\* WebView2 is installed with Office by default for [supported versions of Office](https://support.microsoft.com/office/system-requirements/end-of-support-for-office-2016-and-office-2019).
 
 > [!IMPORTANT]
 > [Conditional Access](/azure/active-directory/conditional-access/overview) isn't supported for Office Add-ins on iOS or Android. Those add-ins use the Safari-based WKWebView or the Android-based WebView, not an Edge-based browser control.

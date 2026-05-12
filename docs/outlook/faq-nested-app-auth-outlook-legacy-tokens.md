@@ -105,7 +105,7 @@ There is a known issue where MSAL sometimes doesn't refresh the ID token after i
 You can determine if the signed-in user has an Exchange Online account or on-premise Exchange account by using the [Office.UserProfile.accountType](/javascript/api/outlook/office.userprofile) property. If the account type property value is **enterprise**, then the mailbox is on an on-premises Exchange server. Note that volume-licensed perpetual Outlook 2016 doesn’t support the **accountType** property. To work around this, call the [ResolveNames](/exchange/client-developer/web-service-reference/resolvenames-operation) operation in Exchange Web Service (EWS) in the Exchange on-premise server to get the recipient types.
 
 > [!NOTE]
-> Outlook 2016 and Outlook 2019 are no longer supported. For more information, see [End of support for Office 2016 and Office 2019](https://support.microsoft.com/office/818c68bc-d5e5-47e5-b52f-ddf636cf8e16).
+> Outlook 2016 and Outlook 2019 are no longer supported. For more information, see [End of support for Office 2016 and Office 2019](https://support.microsoft.com/office/system-requirements/end-of-support-for-office-2016-and-office-2019).
 
 The **accountType** property requires mailbox requirement set 1.6. On older Outlook clients you’ll need to use the Autodiscover service as follows.
 

@@ -1,7 +1,7 @@
 ---
 title: Sideload Outlook add-ins for testing
 description: Use sideloading to install an Outlook add-in for testing without having to first put it in an add-in catalog.
-ms.date: 05/19/2025
+ms.date: 04/28/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ Sideload your Outlook add-in for testing in Outlook on the web, on Windows ([new
 The sideloading process differs depending on the type of manifest your add-in uses. Select the tab for the applicable manifest. For more information on Office Add-in manifests, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 > [!IMPORTANT]
-> If your Outlook add-in supports mobile, sideload the manifest using the instructions in this article for your Outlook client on the web, on Windows, or on Mac, then follow the guidance in [Testing your add-ins on mobile](outlook-mobile-addins.md#testing-your-add-ins-on-mobile).
+> Add-ins can't be directly sideloaded in Outlook on mobile devices. To test an add-in in Outlook on mobile, automatically or manually sideload it in Outlook on the web, on Windows (new or classic), or on Mac. For guidance on testing add-ins in Outlook on mobile, see [Test your Outlook add-in on mobile devices](test-mobile-add-ins.md).
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
@@ -109,4 +109,4 @@ To learn how to access a sideloaded add-in in your Outlook client, see [Use add-
 
 ## See also
 
-- [Add-ins for Outlook on mobile devices](outlook-mobile-addins.md)
+- [Test your Outlook add-in on mobile devices](test-mobile-add-ins.md)

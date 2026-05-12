@@ -1,7 +1,7 @@
 ﻿---
 title: Authorize to Microsoft Graph with legacy Office SSO
 description: Learn how users of an Office Add-in can use legacy Office single sign-on (SSO) to fetch data from Microsoft Graph.
-ms.date: 05/25/2025
+ms.date: 02/02/2026
 ms.localizationpriority: medium
 ---
 
@@ -55,7 +55,6 @@ For examples of detailed walkthroughs and scenarios, see:
 
 * [Create a Node.js Office Add-in that uses single sign-on](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-NodeJS-SSO)
 * [Create an ASP.NET Office Add-in that uses single sign-on](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/auth/Office-Add-in-ASPNET-SSO)
-* [Scenario: Implement single sign-on to your service in an Outlook add-in](../outlook/implement-sso-in-outlook-add-in.md)
 
 ## Distributing legacy Office SSO-enabled add-ins in Microsoft Marketplace
 

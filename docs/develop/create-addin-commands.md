@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the add-in only manifest
 description: Configure an add-in only manifest to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or menus, and perform actions.
-ms.date: 02/28/2025
+ms.date: 03/20/2026
 ms.localizationpriority: medium
 ---
 
@@ -14,13 +14,13 @@ This article describes how to edit your add-in only manifest to define add-in co
 > [!TIP]
 > For instructions on how to create add-in commands with the unified manifest for Microsoft 365, see [Create add-in commands with the unified manifest for Microsoft 365](create-addin-commands-unified-manifest.md).
 
-The following diagram shows the hierarchy of elements used to define add-in commands. These elements are described in more detail in this article.
+The following diagram shows the hierarchy of elements used to define add-in commands. This article describes these elements in more detail.
 
 :::image type="content" source="../images/version-overrides.png" alt-text="Overview of add-in commands elements in the manifest. The top node here is VersionOverrides with children Hosts and Resources. Under Hosts are Host then DesktopFormFactor. Under DesktopFormFactor are FunctionFile and ExtensionPoint. Under ExtensionPoint are CustomTab or OfficeTab and Office Menu. Under CustomTab or Office Tab are Group then Control then Action. Under Office Menu are Control then Action. Under Resources (child of VersionOverrides) are Images, Urls, ShortStrings, and LongStrings.":::
 
 ## Sample commands
 
-All the task pane add-ins created by [Yo Office](yeoman-generator-overview.md) have add-in commands. They contain an add-in command (button) to show the task pane. Generate these projects by following one of the quick starts, such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Ensure that you have read [Add-in commands](../design/add-in-commands.md) to understand command capabilities.
+All the task pane add-ins created by [Yo Office](yeoman-generator-overview.md) have add-in commands. They contain an add-in command (button) to show the task pane. Generate these projects by following one of the quick starts, such as [Build an Excel task pane add-in](../quickstarts/excel-quickstart-jquery.md). Make sure you read [Add-in commands](../design/add-in-commands.md) to understand command capabilities.
 
 ## Important parts of an add-in command
 
@@ -105,7 +105,7 @@ The following is an example of the `<FunctionFile>` element.
 
 #### Outlook notifications
 
-When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). The processing for the notifications must also be defined in a separate HTML file that is specified in the `FunctionFile` node of the manifest.
+When an add-in needs to provide status updates, such as progress indicators or error messages, it must do so through the [notification APIs](/javascript/api/outlook/office.notificationmessages). You must also define the processing for the notifications in a separate HTML file that the manifest's `FunctionFile` node specifies.
 
 ### Step 4: Add ExtensionPoint elements
 
@@ -197,12 +197,12 @@ A [button control](/javascript/api/manifest/control-button) performs a single ac
 
 #### Menu controls
 
-A [menu control](/javascript/api/manifest/control-menu) can be used with either **PrimaryCommandSurface** or **ContextMenu**, and defines:
+You can use a [menu control](/javascript/api/manifest/control-menu) with either **PrimaryCommandSurface** or **ContextMenu**. It defines:
   
 - A root-level menu item.
 - A list of submenu items.
 
-When used with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the button is selected, the submenu displays as a drop-down list. When used with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either run a JavaScript or TypeScript function or show a task pane. Only one level of submenus is supported at this time.
+When you use it with **PrimaryCommandSurface**, the root menu item displays as a button on the ribbon. When the user selects the button, the submenu displays as a drop-down list. When you use it with **ContextMenu**, a menu item with a submenu is inserted on the context menu. In both cases, individual submenu items can either run a JavaScript or TypeScript function or show a task pane. Only one level of submenus is supported at this time.
 
 The following example shows how to define a menu item with two submenu items. The first submenu item shows a task pane, and the second submenu item runs a JavaScript function. In the `<Control>` element:
 
@@ -261,8 +261,8 @@ The following example shows how to define a menu item with two submenu items. Th
 
 The following code shows a function that's invoked by a button or menu item control whose `<Action>` element's **xsi:type** is set to **ExecuteFunction**. Note the following about the code.
 
-- The [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) call tells Office which function to run when a button or menu item is selected. The value passed to its **actionId** parameter must match the value specified in the [`<FunctionName>` element](/javascript/api/manifest/action#functionname) of the manifest. You must have an `Office.actions.associate` call for every function command defined in the manifest.
-- The [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) call signals that you've successfully handled the event. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain on the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
+- The [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) call tells Office which function to run when a user selects a button or menu item. The value passed to its **actionId** parameter must match the value specified in the [`<FunctionName>` element](/javascript/api/manifest/action#functionname) of the manifest. You must have an `Office.actions.associate` call for every function command defined in the manifest.
+- The [event.completed](/javascript/api/office/office.addincommands.event#office-office-addincommands-event-completed-member(1)) call signals that your code handled the event successfully. When a function is called multiple times, such as multiple clicks on the same add-in command, all events are automatically queued. The first event runs automatically, while the other events remain in the queue. When your function calls `event.completed`, the next queued call to that function runs. You must implement `event.completed`, otherwise your function won't run.
 
 ```js
 // Initialize the Office Add-in.
@@ -348,7 +348,7 @@ Add-in commands are available in the following Outlook versions.
 
 Support for add-in commands in Exchange 2016 requires [Cumulative Update 5](https://support.microsoft.com/topic/d67d7693-96a4-fb6e-b60b-e64984e267bd).
 
-If your add-in uses an add-in only manifest, then add-in commands are only available for add-ins that don't use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](/javascript/api/manifest/rule) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
+If your add-in uses an add-in only manifest, add-in commands are only available for add-ins that don't use [ItemHasAttachment, ItemHasKnownEntity, or ItemHasRegularExpressionMatch rules](/javascript/api/manifest/rule) to limit the types of items they activate on. However, [contextual add-ins](../outlook/contextual-outlook-add-ins.md) can present different commands depending on whether the currently selected item is a message or appointment, and can choose to appear in read or compose scenarios. Using add-in commands if possible is a [best practice](../concepts/add-in-development-best-practices.md).
 
 ## See also
 

@@ -1,13 +1,13 @@
 ---
 title: Sideload Office Add-ins on iPad for testing
 description: Test your Office Add-in on iPad by sideloading.
-ms.date: 02/12/2025
+ms.date: 03/20/2026
 ms.localizationpriority: medium
 ---
 
 # Sideload Office Add-ins on iPad for testing
 
-To see how your add-in will run in Office on iOS, you can sideload your add-in's manifest onto an iPad using iTunes. This action won't enable you to set breakpoints and debug your add-in's code while it's running, but you can see how it behaves and verify that the UI is usable and rendering appropriately.
+To see how your add-in runs in Office on iOS, sideload your add-in's manifest onto an iPad by using iTunes. This action doesn't enable you to set breakpoints and debug your add-in's code while it's running, but you can see how it behaves and verify that the UI is usable and rendering appropriately.
 
 [!INCLUDE [Unified manifest note about platform sideloading restrictions](../includes/unified-manifest-sideload-restrictions-note.md)]
 
@@ -18,7 +18,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 - A Windows or Mac computer with [iTunes](https://www.apple.com/itunes/download/) installed.
   > [!IMPORTANT]
-  > If you're running macOS Catalina, [iTunes is no longer available](https://support.apple.com/119585), so you should follow the instructions in the section [Sideload an add-in on Excel or Word on iPad using macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) later in this article.
+  > If you're running macOS Catalina, [iTunes is no longer available](https://support.apple.com/119585), so follow the instructions in the section [Sideload an add-in on Excel or Word on iPad using macOS Catalina](#sideload-an-add-in-on-excel-or-word-on-ipad-using-macos-catalina) later in this article.
 
 - An iPad running iOS 8.2 or later with [Excel](https://apps.apple.com/app/microsoft-excel/id586683407) or [Word](https://apps.apple.com/app/microsoft-word/id586447913) installed, and a sync cable.
 
@@ -54,9 +54,9 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 1. In Finder, under **Locations**, choose the **iPad** icon below the menu bar.
 
-1. On the top of the Finder window, click on **Files**, and then locate **Excel** or **Word**.
+1. At the top of the Finder window, select **Files**, and then locate **Excel** or **Word**.
 
-1. From a different Finder window, drag and drop the manifest.xml file of the add-in you want to side load onto the **Excel** or **Word** file in the first Finder window.
+1. From a different Finder window, drag and drop the manifest.xml file of the add-in you want to sideload onto the **Excel** or **Word** file in the first Finder window.
 
 1. Open the Excel or Word app on your iPad. If the Excel or Word app is already running, choose the **Home** button, and then close and restart the app.
 
@@ -66,7 +66,7 @@ To see how your add-in will run in Office on iOS, you can sideload your add-in's
 
 ## Remove a sideloaded add-in
 
-You can remove a previously sideloaded add-in by clearing the Office cache on your computer. Details on how to clear the cache for each platform and application can be found in the article [Clear the Office cache](clear-cache.md).
+You can remove a previously sideloaded add-in by clearing the Office cache on your computer. For details on how to clear the cache for each platform and application, see [Clear the Office cache](clear-cache.md).
 
 ## See also
 

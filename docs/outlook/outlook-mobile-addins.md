@@ -1,7 +1,7 @@
 ---
 title: Add-ins for Outlook on mobile devices
 description: Outlook mobile add-ins are supported on all Microsoft 365 business accounts and Outlook.com accounts.
-ms.date: 12/02/2025
+ms.date: 04/28/2026
 ms.localizationpriority: medium
 ---
 
@@ -55,6 +55,10 @@ Outlook mobile add-ins are supported on all Microsoft 365 business accounts and 
   
   To learn more, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 
+- Add-ins are only supported in Outlook on mobile with a Microsoft 365 or Outlook.com account.
+
+  [!INCLUDE [outlook-mobile-on-premises](../includes/outlook-mobile-on-premises.md)]
+
 ## What makes a good scenario for Outlook mobile add-ins?
 
 Remember that the average Outlook session length on a phone is much shorter than on a PC. That means your add-in must be fast, and the scenario must allow the user to get in, get out, and get on with their email workflow.
@@ -67,23 +71,10 @@ Here are examples of scenarios that make sense in Outlook mobile.
 
 ## Support for add-ins with the unified manifest for Microsoft 365
 
-Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't directly supported in Outlook on mobile devices. To run this type of add-in, it must first be published to [Microsoft Marketplace](https://marketplace.microsoft.com/) then deployed in the [Microsoft 365 admin center](../publish/publish.md#integrated-apps-portal-in-the-microsoft-365-admin-center). An add-in only manifest is then generated from the unified manifest, which enables the add-in to be installed in Outlook mobile.
+Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't supported in Outlook on mobile devices. We're working hard to provide support in mobile devices. In the meantime, to support these platforms, you need to create a version of your add-in that uses the add-in only manifest and then deploy and maintain both versions. For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 > [!NOTE]
 > Custom add-ins or line-of-business (LOB) add-ins that use the unified manifest can be deployed in the [Integrated apps portal](/microsoft-365/admin/manage/test-and-deploy-microsoft-365-apps) of the Microsoft 365 admin center, but they won't be installable in Outlook mobile.
-
-For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
-
-## Testing your add-ins on mobile
-
-To test an add-in on Outlook mobile, first [sideload an add-in](sideload-outlook-add-ins-for-testing.md) using a Microsoft 365 or Outlook.com account in Outlook on the web, on Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) or classic), or on Mac. Make sure your manifest is properly formatted to contain `MobileFormFactor` or it won't load in Outlook mobile.
-
-After your add-in is working, make sure to test it on different screen sizes, including phones and tablets. You should make sure it meets [accessibility guidelines](../design/accessibility-guidelines.md) for contrast, font size, and color, as well as being usable with a screen reader such as VoiceOver on iOS or TalkBack on Android.
-
-Troubleshooting on mobile can be hard since you may not have the tools you're used to. However, one option for troubleshooting on iOS is to use Fiddler (check out [this tutorial on using it with an iOS device](https://www.telerik.com/blogs/using-fiddler-with-apple-ios-devices)).
-
-> [!NOTE]
-> Modern Outlook on the web on iPhone and Android smartphones is no longer required or available for testing Outlook add-ins. Additionally, add-ins aren't supported in Outlook on Android, on iOS, and modern mobile web with on-premises Exchange accounts. Certain iOS devices still support add-ins when using on-premises Exchange accounts with classic Outlook on the web. For information about supported devices, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md#client-requirements-non-windows-smartphone-and-tablet).
 
 ## Next steps
 
@@ -92,4 +83,4 @@ Learn how to:
 - [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
 - [Implement supported Outlook JavaScript APIs](outlook-mobile-apis.md).
 - [Design a great mobile experience for your add-in](outlook-addin-design.md).
-- [Get an access token and call Outlook REST APIs](use-rest-api.md) from your add-in.
+- [Test your Outlook add-in on mobile devices](test-mobile-add-ins.md).

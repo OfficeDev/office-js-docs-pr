@@ -1,14 +1,17 @@
 ---
 title: Show or hide the task pane of your Office Add-in
 description: Learn how to programmatically hide or show the user interface of an add-in while it runs continuously.
-ms.date: 02/12/2025
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
 # Show or hide the task pane of your Office Add-in
 
-[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
+> [!IMPORTANT]
+> As of February 23rd, 2026, the `showAsTaskpane` method no longer applies to add-ins published in the Microsoft Marketplace. Calls to `showAsTaskpane` are ignored and won't open the task pane. The `showAsTaskpane` method only applies to add-ins that are centrally deployed or sideloaded.
+
+[!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
 
 You can show the task pane of your Office Add-in by calling the `Office.addin.showAsTaskpane()` method.
 
@@ -38,10 +41,7 @@ The previous code is a handler that is registered for the [Office.Worksheet.onDe
 
 When you call `Office.addin.showAsTaskpane()`, Office will display in a task pane the file that you specified in the manifest. The configuration depends on what type of manifest you're using. 
 
-- **Unified manifest for Microsoft 365**: The URL of the file is assigned as the value of a "runtimes.code.page" property of the runtime object which has an action object of type "openPage".
-
-   [!include[Unified manifest host application support note](../includes/unified-manifest-support-note.md)]
-   
+- **Unified manifest for Microsoft 365**: The URL of the file is assigned as the value of a "runtimes.code.page" property of the runtime object which has an action object of type "openPage".  
 - **Add-in only manifest**: The URL of the file is assigned as the resource ID (`resid`) value of the task pane. This `resid` value can be assigned or changed by opening your manifest file and locating `<SourceLocation>` inside the `<Action xsi:type="ShowTaskpane">` element.
 
 (See [Configure your Office Add-in to use a shared runtime](configure-your-add-in-to-use-a-shared-runtime.md) for additional details.)

@@ -155,5 +155,5 @@ For information about debugging the `Office.initialize` and `Office.onReady()` f
 
 ## See also
 
-- [Understanding the Office JavaScript API](understanding-the-javascript-api-for-office.md)
+- [Understanding the Office JavaScript API](understand-the-javascript-api-for-office.md)
 - [Loading the DOM and runtime environment](loading-the-dom-and-runtime-environment.md)

@@ -1,7 +1,7 @@
 ﻿---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 10/28/2025
+ms.date: 03/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -39,7 +39,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 >
 > - When developing an event-based add-in to run in Outlook on Android and on iOS, note that the unified manifest for Microsoft 365 can only be used if the add-in handles certain events. To learn which events are supported, see [Supported events and clients](#supported-events-and-clients).
 >
-> - Add-ins that use the unified manifest for Microsoft 365 aren't directly supported in Outlook on mobile devices. To run this type of add-in on mobile platforms, the add-in must first be published to [Microsoft Marketplace](https://marketplace.microsoft.com/) then deployed in the [Microsoft 365 Admin Center](../publish/publish.md). For more information, see [Support for add-ins with the unified manifest for Microsoft 365](outlook-mobile-addins.md#support-for-add-ins-with-the-unified-manifest-for-microsoft-365).
+> - Add-ins that use the unified manifest for Microsoft 365 aren't supported in Outlook on mobile devices. We're working hard to provide support in mobile devices. In the meantime, to support these platforms, you need to create a version of your add-in that uses the add-in only manifest and then deploy and maintain both versions. For more information, see the "Client and platform support" section of [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 1. Configure the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) property just as you would for setting up a function command. For details, see [Configure the runtime for the function command](../develop/create-addin-commands-unified-manifest.md#configure-the-runtime-for-the-function-command).
 
@@ -321,7 +321,7 @@ As you develop an event-based add-in for Outlook mobile, be mindful of the follo
 
 ## Additional supported APIs
 
-Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javascript/api/requirement-sets/outlook/requirement-set-1.5/outlook-requirement-set-1.5), to further extend the capability of your event-based add-in in Outlook mobile, additional APIs from later requirement sets are now supported in compose mode.
+Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-5), to further extend the capability of your event-based add-in in Outlook mobile, additional APIs from later requirement sets are now supported in compose mode.
 
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))
 - [Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))

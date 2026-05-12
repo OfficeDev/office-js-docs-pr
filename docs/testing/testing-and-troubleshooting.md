@@ -24,6 +24,14 @@ The following table lists common error messages that users might encounter and s
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to **Tools** > **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
 
+## Errors in an ADD-IN INFORMATION box
+
+Several kinds of errors can appear in an **ADD-IN INFORMATION** box at the top of the task pane when an add-in launches. The following is an example.
+
+:::image type="content" source="../images/add-in-information-box.png" alt-text="A box at the top of the task pane with the title Add-in Information. Below this is the text 'Microsoft 365 has been configured to prevent individual acquisition and execution of Office Store Add-ins'. Below the text is a button labelled Close.":::
+
+These are usually not problems with the add-in, but with how add-ins have been configured in the user's Microsoft 365 tenancy. The user needs to contact their Microsoft 365 administrator. For more information about these errors, see [Errors when Office add-ins start](/troubleshoot/microsoft-365-apps/office-suite-issues/errors-when-office-add-ins-start).
+
 ## When installing an add-in, you see "Error loading add-ins" in the status bar
 
 1. Close Office.
