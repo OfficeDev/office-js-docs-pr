@@ -17,7 +17,7 @@ This article provides code samples that show how to work with dates using the Ex
 - Use the Moment-MSDate library to convert between JavaScript dates and Excel's date format.
 - Set `numberFormat` to display dates in human-readable formats.
 - The Moment.js library provides helpful date manipulation and formatting capabilities.
-- JavaScript `Date` objects account for time zones, but Excel's OADate format doesn't. This difference can cause dates to shift unexpectedly across time zone boundaries.
+- JavaScript `Date` objects store an absolute timestamp, but local-time and UTC parsing or formatting can produce different displayed values. Because Excel's OADate format doesn't store time zone information, dates can shift unexpectedly across time zone boundaries.
 
 ## Use the Moment-MSDate plug-in to work with dates
 
@@ -25,7 +25,7 @@ Excel stores dates as sequential serial numbers called OADate (OLE Automation Da
 
 ### Setup and installation
 
-To use the Moment-MSDate library for dates in your Excel add-in, install the library via npm.
+To use the Moment-MSDate library for dates in your Excel add-in, install the library through npm.
 
 ```bash
 npm install moment-msdate
@@ -93,7 +93,7 @@ Your add-in needs to format the ranges to display dates in a human-readable form
 
 A critical difference between JavaScript and Excel's date handling involves time zones.
 
-- **JavaScript Date objects** store dates relative to the user's local time zone. When you create a new `Date()`, it includes time zone information.
+- **JavaScript Date objects** store an absolute timestamp. Time zone differences appear when values are parsed or formatted with local-time versus UTC methods.
 - **Excel's OADate format** is a simple serial number with no time zone information. It represents a date and time value independent of any time zone.
 
 This mismatch can cause unexpected date shifts, especially when dates cross midnight in different time zones. For example:
