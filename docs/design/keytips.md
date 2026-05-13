@@ -14,11 +14,7 @@ KeyTips, also known as sequential key shortcuts or access keys, provide an effic
 - Support keyboard-only navigation for accessibility.
 
 > [!TIP]
-> The keyboard command to access KeyTips varies depending on the platform. To familiarize yourself with KeyTips, see the "Ribbon keyboard shortcuts" section for your platform in the following articles.
->
-> - [Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
-> - [PowerPoint](https://support.microsoft.com/office/ebb3d20e-dcd4-444f-a38e-bb5c5ed180f4)
-> - [Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
+> The keyboard command to access KeyTips varies depending on the platform. To familiarize yourself with KeyTips, see [Use the keyboard to work with the ribbon](https://support.microsoft.com/office/954cd3f7-2f77-4983-978d-c09b20e31f0e).
 
 ## Supported Office applications and platforms
 
@@ -35,7 +31,7 @@ Custom KeyTips are supported in the following Office applications and platforms.
 >
 > - For Office on Windows, custom KeyTips require Version 2603 (Build 19822.20000) or later.
 > - For Office on Mac, KeyTips require Version 16.107 (Build 26030819) or later.
-> - In Office on Mac, KeyTips are turned off by default. Users must turn on KeyTips in their Office settings to use the KeyTips defined for your add-in. For more information, see [Enabling KeyTips in Office for Mac](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/keytips-now-available-in-office-for-mac/4226638).
+> - In Office on Mac, KeyTips are turned off by default. Users must turn on KeyTips in their Office settings to use the KeyTips defined for your add-in. For more information, see [Use the keyboard to work with the ribbon](https://support.microsoft.com/office/954cd3f7-2f77-4983-978d-c09b20e31f0e#picktab=mac).
 
 ## Supported surfaces and controls
 
@@ -213,7 +209,11 @@ Custom KeyTips are defined in your add-in's manifest. The following example cust
 The Microsoft 365 host application checks for KeyTip conflicts between add-ins and built-in commands. If the host application detects a conflict, it automatically assigns a fallback KeyTip using the <kbd>Y</kbd> prefix followed by a number, such as <kbd>Y1</kbd>, <kbd>Y2</kbd>, or <kbd>Y3</kbd>. These fallback KeyTips ensure that each command remains uniquely accessible by keyboard.
 
 > [!TIP]
-> Choose custom KeyTips that are unlikely to overlap with built-in ribbon commands. For a list of built-in KeyTips for each Microsoft 365 host application, see the articles referenced earlier in this article.
+> Choose custom KeyTips that are unlikely to overlap with built-in ribbon commands. For a list of built-in KeyTips for each Microsoft 365 host application, see the following articles.
+>
+> - [Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
+> - [PowerPoint](https://support.microsoft.com/office/ebb3d20e-dcd4-444f-a38e-bb5c5ed180f4)
+> - [Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
 
 ## Behavior and limitations
 
@@ -223,6 +223,7 @@ When implementing KeyTips for your add-in, be aware of the following behaviors a
 - Custom KeyTips support up to three uppercase alphanumeric characters.
 - Custom KeyTips won't work in earlier versions of Office applications that don't support KeyTips. In these earlier versions, users will see the default KeyTips assigned to the add-in instead.
 - User can't modify the add-in's KeyTips.
+- In Office on the web, the <kbd>X</kbd> key is reserved and can't be used as a custom KeyTip.
 
 ## See also
 
