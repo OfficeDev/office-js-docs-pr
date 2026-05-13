@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 05/08/2026
+ms.date: 05/12/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 05/08/2026_
+_Last updated 05/12/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
@@ -245,6 +245,27 @@ No customer action was required. Microsoft applied targeted mitigations to resto
 ### SEE ALSO
 
 For more information, see [Deprecation of Exchange Web Services (EWS) in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online).
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## OUTLOOK ISSUE: Base64-encoded images become corrupted when forwarding messages from a shared mailbox with Cached Exchange Mode turned off
+
+In classic Outlook on Windows, when Cached Exchange Mode is turned off, Base64-encoded images in a message may become corrupted when a user forwards the message from a shared mailbox.
+
+Clients affected: Classic Outlook on Windows
+
+### STATUS
+
+We're currently working on a fix.
+
+### START DATE
+
+Date reported: 11/3/2025
+
+### WORKAROUND
+
+If possible, turn on Cached Exchange Mode when sending emails with Base64-encoded images from a shared mailbox. For guidance, see [Turn on Cached Exchange Mode](https://support.microsoft.com/office/7885af08-9a60-4ec3-850a-e221c1ed0c1c). Alternatively, include the Base64-encoded image as a file attachment instead.
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
