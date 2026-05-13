@@ -41,9 +41,9 @@ KeyTips can be defined for the add-in's controls and the ribbon tab in which the
 | ----- | ----- | ----- | ----- |
 | Built-in Office tabs | Supported | Supported | Supported |
 | Custom tab | Supported | Supported | Supported |
-| Contextual tab | Supported | Not available | Not available |
+| Contextual tab | Not available | Not available | Not available |
 | Buttons | Supported | Supported | Supported |
-| Menu items | Supported | Supported | Supported |
+| Menu items | Not available | Not available | Not available |
 
 ## Configure the manifest
 
