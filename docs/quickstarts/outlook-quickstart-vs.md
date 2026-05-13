@@ -145,12 +145,15 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ## Try it out
 
+> [!NOTE]
+> Due to the retirement of Exchange Web Services (EWS) for Exchange Online starting in October 2026 ([See Exchange Team Blog](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361)), F5 debugging will no longer work for Outlook Web Add-ins targeting Exchange Online. You will need to manually sideload the add-in to Exchange and attach the debugger yourself. [For instructions, See Sideload Outlook Add-ins](../outlook/sideload-outlook-add-ins-for-testing?tabs=xmlmanifest)
+
 1. Using Visual Studio, test the newly created Outlook add-in by pressing <kbd>F5</kbd> or choosing the **Start** button. The add-in will be hosted locally on IIS.
 
 1. In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account), then choose **Connect**. When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.
 
     > [!NOTE]
-    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in or you receive an error that you are unauthorized, Basic authentication may be turned off for accounts on your Microsoft 365 tenant. To test this add-in, try signing in again after setting the **Use multi-factor auth** property to **True** in the Deployment section of the Web Add-in project properties dialog, or sign in using a [Microsoft account](https://account.microsoft.com/account) instead.
+    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in or you receive an error that you are unauthorized, Basic authentication may be turned off for accounts on your Microsoft 365 tenant. To test this add-in, try signing in again after setting the **Use multi-factor auth** property to **True** in the Deployment section of the Web Add-in project properties dialog, or sign in using a [Microsoft account](https://account.microsoft.com/account) instead.  A similar error will also occur after EWS has been retired.
 
 1. Your mailbox opens in Outlook on the web. Select or open a message.
 
