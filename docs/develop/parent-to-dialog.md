@@ -20,10 +20,9 @@ For the recommended approach using `messageChild`, see [Pass information to the 
 
 | Consideration | Local storage | Query parameters |
 | --- | --- | --- |
-| **Data size** | Suitable for larger payloads | Best for small values |
-| **Timing** | Available anytime after the dialog opens | Available only on initial load |
-| **Persistence across navigation** | Persists until explicitly cleared | Lost if the dialog redirects |
-| **Same-origin requirement** | Host page and dialog must share the same origin | Host page and dialog must share the same origin |
+| **Data size** | Suitable for larger payloads. | Best for small values. |
+| **Data availability** | Available anytime after the dialog opens. | Available in the URL when the dialog loads.<br><br>**Tip**: Save the values to variables to read them while the dialog remains open. |
+| **Persistence across navigation** | Persists until explicitly cleared. | Lost if the dialog redirects. |
 
 ## Use local storage
 
