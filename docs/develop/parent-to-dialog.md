@@ -1,24 +1,32 @@
 ---
-title: Alternative ways of passing messages to a dialog box from its host page
-description: Learn workarounds to use when the messageChild method isn't supported.
-ms.date: 03/06/2026
+title: Pass data to a dialog box using local storage or query parameters
+description: Use local storage or URL query parameters to pass data from a host page to a dialog box in your Office Add-in when the messageChild API isn't available.
+ms.date: 05/14/2026
 ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Alternative ways of passing messages to a dialog box from its host page
+# Pass data to a dialog box using local storage or query parameters
 
-The recommended way to pass data and messages from a parent page to a child dialog is by using the `messageChild` method, as described in [Use the Office dialog API in your Office Add-ins](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box). If your add-in runs on a platform or host that doesn't support the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), you can use two other ways to pass information to the dialog.
+If your add-in runs on a platform or host that doesn't support the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), you can't use the [`messageChild`](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) method to send data from a host page to a dialog box. Instead, use one of the following approaches.
 
-- Store the information somewhere accessible to both the host window and dialog. The two windows don't share a common session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property), but *if they have the same domain* (including port number, if any), they share a common [local storage](https://www.w3schools.com/html/html5_webstorage.asp).
+- **Local storage** - Write data to [`window.localStorage`](https://developer.mozilla.org/docs/Web/API/Window/localStorage) in the host page before opening the dialog. Both windows can access the same local storage if they share the same domain, including port number.
+- **Query parameters** - Append key-value pairs to the URL you pass to [`displayDialogAsync`](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)). The dialog reads the values when it opens.
 
-  [!INCLUDE [browser-security-updates](../includes/browser-security-updates.md)]
+For the recommended approach using `messageChild`, see [Pass information to the dialog box](dialog-api-in-office-add-ins.md#pass-information-to-the-dialog-box).
 
-- Add query parameters to the URL that is passed to `displayDialogAsync`.
+## Choose an approach
+
+| Consideration | Local storage | Query parameters |
+| --- | --- | --- |
+| **Data size** | Suitable for larger payloads. | Best for small values. |
+| **Data availability** | Available anytime after the dialog opens. | Available in the URL when the dialog loads.<br><br>**Tip**: Save the values to variables to read them while the dialog remains open. |
+| **Persistence across navigation** | Persists until explicitly cleared. | Lost if the dialog redirects. |
 
 ## Use local storage
 
-To use local storage, call the `setItem` method of the `window.localStorage` object in the host page before the `displayDialogAsync` call, as shown in the following example.
+Call the `setItem` method of the `window.localStorage` object in the host page before the `displayDialogAsync` call, as shown in the following example.
 
 ```js
 localStorage.setItem("clientID", "15963ac5-314f-4d9b-b5a1-ccb2f1aea248");
@@ -32,11 +40,11 @@ const clientID = localStorage.getItem("clientID");
 // const clientID = localStorage.clientID;
 ```
 
+[!INCLUDE [browser-security-updates](../includes/browser-security-updates.md)]
+
 ## Use query parameters
 
-Use this approach for small values that are needed only when the dialog initially opens.
-
-In the host page, add query parameters to the URL passed to `displayDialogAsync`.
+Append key-value pairs to the URL you pass to `displayDialogAsync`. This approach works best for small values that the dialog needs only when it first opens.
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html?clientID=15963ac5-314f-4d9b-b5a1-ccb2f1aea248');
@@ -47,12 +55,12 @@ For a sample that uses this technique, see [Insert Excel charts using Microsoft 
 Code in your dialog box can parse the URL and read the parameter value.
 
 > [!IMPORTANT]
-> Office automatically adds a query parameter named `_host_info` to the URL that it passes to `displayDialogAsync`. It appends this parameter after your custom query parameters, if any. It doesn't append `_host_info` to any subsequent URLs that the dialog box navigates to. Microsoft might change the content of this value, or remove it entirely, in the future, so your code shouldn't read it. Office adds the same value to the dialog box's session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property). Again, *your code should neither read nor write to this value*.
+> Office automatically adds a query parameter called `_host_info` to the URL passed to `displayDialogAsync`. It appends this parameter after your custom query parameters, if any. It doesn't append `_host_info` to any subsequent URLs that the dialog box navigates to. Microsoft might change the content of this value, or remove it entirely, in the future, so your code shouldn't read it. Office adds the same value to the dialog box's session storage (the [Window.sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) property). Again, *your code should neither read nor write to this value*.
 
 ## Troubleshoot common issues
 
 - If local storage appears empty in the dialog, verify the host page and dialog use the exact same origin.
-- If a query parameter value is missing, confirm it is present in the initial URL passed to `displayDialogAsync`.
+- If a query parameter value is missing, confirm it's present in the initial URL passed to `displayDialogAsync`.
 - If data is needed after redirects in the dialog flow, use local storage or server state instead of relying only on query parameters.
 
 ## See also
