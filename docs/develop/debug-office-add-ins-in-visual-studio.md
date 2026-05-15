@@ -101,9 +101,6 @@ Next, Visual Studio does the following:
 
 #### Use the built-in Visual Studio debugger to debug on the desktop
 
-> [!IMPORTANT]
-> Due to the retirement of Exchange Web Services (EWS) for Exchange Online starting in October 2026 ([See Exchange Team Blog](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361)), F5 debugging will no longer work for Outlook Web Add-ins targeting Exchange Online. You will need to manually sideload the add-in to Outlook. [For instructions, See Sideload Outlook Add-ins](./outlook/sideload-outlook-add-ins-for-testing?tabs=xmlmanifest#sideload-manually) 
-
 1. Set breakpoints, as needed, in the source JavaScript or TypeScript files. You can do this either before or after you start the add-in as described in the earlier section [Start the add-in project](#start-the-add-in-project). If setting a breakpoint causes the Internet Information Services (IIS) server to shut down, restart debugging after you have set your breakpoints.
 
 1. When the add-in is running, use the add-in's UI to run the code that contains your breakpoints. 
