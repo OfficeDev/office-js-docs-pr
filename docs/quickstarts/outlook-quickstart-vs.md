@@ -145,8 +145,8 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ## Try it out
 
-> [!NOTE]
-> Due to the retirement of Exchange Web Services (EWS) for Exchange Online starting in October 2026 ([See Exchange Team Blog](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361)), F5 debugging will no longer work for Outlook Web Add-ins targeting Exchange Online. You will need to manually sideload the add-in to Exchange and attach the debugger yourself. [For instructions, See Sideload Outlook Add-ins](../outlook/sideload-outlook-add-ins-for-testing?tabs=xmlmanifest)
+> [!IMPORTANT]
+> Due to the retirement of Exchange Web Services (EWS) for Exchange Online starting in October 2026 ([See Exchange Team Blog](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361)), F5 debugging will no longer work for Outlook Web Add-ins targeting Exchange Online. You will need to manually sideload the add-in to Outlook. For instructions, see [Sideload Outlook Add-ins](../outlook/sideload-outlook-add-ins-for-testing?tabs=xmlmanifest#sideload-manually) and [Sideload an add-in on the web when using Visual Studio](../testing/sideload-office-add-ins-for-testing#sideload-an-add-in-on-the-web-when-using-visual-studio). These steps also cover updating the manifest before sideloading.
 
 1. Using Visual Studio, test the newly created Outlook add-in by pressing <kbd>F5</kbd> or choosing the **Start** button. The add-in will be hosted locally on IIS.
 
