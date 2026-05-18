@@ -10,11 +10,9 @@ ms.date: 05/18/2026
 
 If your add-in prompts users to sign in, Microsoft Edge WebView2 can offer to save credentials and fill them the next time users sign in. This article shows the minimum HTML and JavaScript pattern to trigger the WebView2 save-password prompt in Office Add-ins on Windows.
 
-## Implement password saving
+## Sign-in flow
 
-1. Add username and password input fields to your sign-in page.
-1. Sign in the user with your preferred authentication library.
-1. Redirect after sign-in completes.
+First, create a sign-in form in your add-in's HTML page. The form should include username and password fields, and a button to submit the credentials. Use the standard HTML credential fields: `type="text"` for the username and `type="password"` for the password. The example is the minimum HTML you need.
 
 ```html
 <div>
