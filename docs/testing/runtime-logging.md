@@ -1,23 +1,26 @@
 ---
 title: Debug your add-in with runtime logging
 description: Learn how to use runtime logging to debug your add-in.
-ms.date: 11/06/2025
+ms.date: 05/18/2026
 ms.localizationpriority: medium
 ---
 
 # Debug your add-in with runtime logging
 
-You can use runtime logging to debug your add-in's manifest as well as several installation errors. This feature can help you identify and fix issues with your manifest that are not detected by XSD schema validation, such as a mismatch between resource IDs. Runtime logging is particularly  useful for debugging add-ins that implement add-in commands and Excel custom functions.
+Use runtime logging to debug your add-in's manifest and several installation errors. This feature helps you identify and fix problems with your manifest that XSD schema validation doesn't catch, such as a mismatch between resource IDs. Runtime logging is especially helpful for debugging add-ins that implement add-in commands and Excel custom functions.
+
+> [!NOTE]
+> Runtime logging captures **host-level diagnostics**, such as manifest parsing results, add-in loading errors, and initialization conditions. It does **not** capture your JavaScript `console.log()` output. For general JavaScript debugging, use the developer tools for your platform. See [Debug add-ins using developer tools in Microsoft Edge](debug-add-ins-using-devtools-edge-chromium.md).
 
 > [!IMPORTANT]
-> Runtime Logging affects performance. Turn it on only when you need to debug issues with your add-in manifest.
+> Runtime logging affects performance. Turn it on only when you need to debug problems with your add-in manifest.
 
 ## Use runtime logging from the command line
 
-Enabling runtime logging from the command line is the fastest way to use this logging tool.
+The fastest way to use this logging tool is to enable runtime logging from the command line.
 
 > [!IMPORTANT]
-> The office-addin-dev-settings tool is not supported on Mac. See the section [Runtime logging on Mac](#runtime-logging-on-mac) for Mac-specific instructions.
+> The office-addin-dev-settings tool isn't supported on Mac. For Mac-specific instructions, see the section [Runtime logging on Mac](#runtime-logging-on-mac).
 
 - To enable runtime logging:
 
@@ -25,11 +28,16 @@ Enabling runtime logging from the command line is the fastest way to use this lo
     npx office-addin-dev-settings runtime-log --enable
     ```
 
-- To enable runtime logging only for a specific file, use the same command with a filename:
+- To enable runtime logging and write output to a custom file path:
 
     ```command&nbsp;line
-    npx office-addin-dev-settings runtime-log --enable [filename.txt]
+    npx office-addin-dev-settings runtime-log --enable <path\to\output.txt>
     ```
+
+    Replace `<path\to\output.txt>` with the path where you want the log written, such as `C:\temp\addin_debug.txt`. This argument only sets the **output file location**. It doesn't filter which add-ins are logged. Runtime logging always applies to all add-ins loaded in the Office runtime on that machine.
+
+    > [!NOTE]
+    > When you run `--enable` without a filename, Office writes the log to a default location set in the Windows registry. Specifying a filename changes *where* the log is written, not *what* is logged.
 
 - To disable runtime logging:
 
@@ -57,7 +65,7 @@ Enabling runtime logging from the command line is the fastest way to use this lo
     defaults write <bundle id> CEFRuntimeLoggingFile -string <file_name>
     ```
 
-    `<bundle id>` identifies which the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log will be written.
+    `<bundle id>` identifies the host for which to enable runtime logging. `<file_name>` is the name of the text file to which the log is written.
 
     Set `<bundle id>` to one of the following values to enable runtime logging for the corresponding application.
 
@@ -74,7 +82,7 @@ open ~/library/Containers/com.microsoft.Word/Data/runtime_logs.txt
 ```
 
 > [!NOTE]
-> You'll need to restart Office after running the `defaults` command to enable runtime logging.
+> You need to restart Office after running the `defaults` command to enable runtime logging.
 
 To turn off runtime logging, use the `defaults delete` command:
 
@@ -82,7 +90,7 @@ To turn off runtime logging, use the `defaults delete` command:
 defaults delete <bundle id> CEFRuntimeLoggingFile
 ```
 
-The following example will turn off runtime logging for Word.
+The following example turns off runtime logging for Word.
 
 ```command&nbsp;line
 defaults delete com.microsoft.Word CEFRuntimeLoggingFile
@@ -95,9 +103,12 @@ To use runtime logging to troubleshoot issues loading an add-in:
 1. [Sideload your add-in](sideload-office-add-ins-for-testing.md) for testing.
 
     > [!NOTE]
-    > We recommend that you sideload only the add-in that you are testing to minimize the number of messages in the log file.
+    > To minimize the number of messages in the log file, sideload only the add-in that you're testing.
 
 1. If nothing happens and you don't see your add-in (and it's not appearing in the add-ins dialog box), open the log file.
+
+    > [!NOTE]
+    > An empty or nearly empty log file is expected when your add-in loads without host-level errors. Runtime logging only records manifest and loading diagnostics. It doesn't contain entries if your add-in loads correctly. If you're looking for JavaScript `console.log()` output, use the developer tools for your platform instead.
 
 1. Search the log file for your add-in ID, which you define in your manifest. In the log file, this ID is labeled `SolutionId`.
 
@@ -107,7 +118,7 @@ You might see messages in the log file that are confusing or that are classified
 
 - The message `Medium Current host not in add-in's host list` followed by `Unexpected Parsed manifest targeting different host` is incorrectly classified as an error.
 
-- If you see the message `Unexpected Add-in is missing required manifest fields    DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you are debugging.
+- If you see the message `Unexpected Add-in is missing required manifest fields    DisplayName` and it doesn't contain a SolutionId, the error is most likely not related to the add-in you're debugging.
 
 - Any `Monitorable` messages are expected errors from a system point of view. Sometimes they indicate an issue with your manifest, such as a misspelled element that was skipped but didn't cause the manifest to fail.
 
