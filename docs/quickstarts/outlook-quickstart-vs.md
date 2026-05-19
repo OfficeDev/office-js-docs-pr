@@ -1,7 +1,7 @@
 ---
 title: Build your first Outlook add-in with Visual Studio
 description: Learn how to build a simple Outlook task pane add-in by using the Office JS API and a Visual Studio template.
-ms.date: 12/02/2025
+ms.date: 05/19/2026
 ms.service: outlook
 ms.localizationpriority: high
 ---
@@ -145,12 +145,15 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ## Try it out
 
+> [!IMPORTANT]
+> Due to the retirement of Exchange Web Services (EWS) for Exchange Online starting in October 2026 (see the [Exchange Team Blog](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361)), F5 debugging will no longer work for Outlook web add-ins targeting Exchange Online. You'll need to manually sideload the add-in to Outlook. For instructions, see [Sideload Outlook Add-ins](../outlook/sideload-outlook-add-ins-for-testing.md?tabs=xmlmanifest#sideload-manually) and [Sideload an add-in on the web when using Visual Studio](../testing/sideload-office-add-ins-for-testing.md#sideload-an-add-in-on-the-web-when-using-visual-studio). These steps also cover updating the manifest before sideloading.
+
 1. Using Visual Studio, test the newly created Outlook add-in by pressing <kbd>F5</kbd> or choosing the **Start** button. The add-in will be hosted locally on IIS.
 
 1. In the **Connect to Exchange email account** dialog box, enter the email address and password for your [Microsoft account](https://account.microsoft.com/account), then choose **Connect**. When the Outlook.com login page opens in a browser, sign in to your email account with the same credentials as you entered previously.
 
     > [!NOTE]
-    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in or you receive an error that you are unauthorized, Basic authentication may be turned off for accounts on your Microsoft 365 tenant. To test this add-in, try signing in again after setting the **Use multi-factor auth** property to **True** in the Deployment section of the Web Add-in project properties dialog, or sign in using a [Microsoft account](https://account.microsoft.com/account) instead.
+    > If the **Connect to Exchange email account** dialog box repeatedly prompts you to sign in or you receive an error that you are unauthorized, Basic authentication may be turned off for accounts on your Microsoft 365 tenant. To test this add-in, try signing in again after setting the **Use multi-factor auth** property to **True** in the Deployment section of the Web Add-in project properties dialog, or sign in using a [Microsoft account](https://account.microsoft.com/account) instead. A similar error will occur after EWS has been retired.
 
 1. Your mailbox opens in Outlook on the web. Select or open a message.
 
