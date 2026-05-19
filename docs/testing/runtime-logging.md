@@ -37,7 +37,7 @@ The fastest way to use this logging tool is to enable runtime logging from the c
     Replace `<path\to\output.txt>` with the path where you want the log written, such as `C:\temp\addin_debug.txt`. This argument only sets the **output file location**. It doesn't filter which add-ins are logged. Runtime logging always applies to all add-ins loaded in the Office runtime on that machine.
 
     > [!NOTE]
-    > When you run `--enable` without a filename, Office writes the log to a default location set in the Windows registry. Specifying a filename changes *where* the log is written, not *what* is logged.
+    > When you run `--enable` without a filename, Office writes the log to a default location. Specifying a filename changes *where* the log is written, not *what* is logged.
 
 - To disable runtime logging:
 
