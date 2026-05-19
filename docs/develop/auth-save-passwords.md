@@ -50,7 +50,7 @@ async function btnSignIn() {
 
 ## What users see
 
-When users enter credentials in your add-in and the add-in redirects to a new page, WebView2 asks whether they want to save the username and password. The next time your add-in prompts for credentials, WebView2 can fill in the saved account information.
+When users enter credentials in your add-in and the add-in redirects to a new page, WebView2 asks whether they want to save the username and password. The next time your add-in prompts for credentials, WebView2 fills in the saved account information.
 
 :::image type="content" source="../images/edge-webview2-automatic-save-passwords.png" alt-text="The dialog from WebView2 prompting the user if they want to save their username and password.":::
 
