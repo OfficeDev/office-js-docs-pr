@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 03/23/2026
+ms.date: 05/21/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,6 +24,7 @@ Keyboard shortcuts are supported in the following platforms and build of **Excel
 - Office on Windows
   - **Excel**: Version 2102 (Build 13801.20632) and later
   - **PowerPoint**: Version 2601 (Build 19628.20150) and later
+  - **PowerPoint (Monthly Enterprise Channel)**: Version 2604 (Build 19929.20172) and later
   - **Word**: Version 2408 (Build 17928.20114) and later
 - Office on Mac
   - **Excel**: Version 16.55 (21111400) and later
