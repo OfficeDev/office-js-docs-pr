@@ -101,7 +101,7 @@ The following is an example of a `<VersionOverrides>` node that implements the `
           <ExtensionPoint xsi:type="LaunchEvent">
             <LaunchEvents>
               <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="SoftBlock"/>
-              <LaunchEvent Type="OnMessageDecrypt" FunctionName="OnMessageDecryptHandler" HeaderName="contoso-encrypted"/>
+              <LaunchEvent Type="OnMessageDecrypt" FunctionName="onMessageDecryptHandler" HeaderName="contoso-encrypted"/>
             </LaunchEvents>
             <!-- Identifies the runtime to be used (also referenced by the Runtime element). -->
             <SourceLocation resid="WebViewRuntime.Url"/>
@@ -137,7 +137,7 @@ The `OnMessageDecrypt` event handler is used to run the decryption operation and
 The following is an example of an `OnMessageDecrypt` event handler.
 
 ```javascript
-function OnMessageDecryptHandler(event) {
+function onMessageDecryptHandler(event) {
     // Your code to decrypt the contents of a message would appear here.
     ...
 
@@ -192,7 +192,7 @@ function OnMessageDecryptHandler(event) {
 }
 
 // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
-Office.actions.associate("OnMessageDecryptHandler", OnMessageDecryptHandler);
+Office.actions.associate("onMessageDecryptHandler", onMessageDecryptHandler);
 ```
 
 > [!TIP]
