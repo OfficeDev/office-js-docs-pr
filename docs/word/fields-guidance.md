@@ -1,21 +1,27 @@
 ---
-title: Use fields in your Word add-in
-description: Learn to use fields in your Word add-in.
-ms.date: 03/18/2025
+title: Add and manage fields in Word add-ins
+description: Use the Word JavaScript API to add, read, update, and delete fields in your Word add-in.
+ms.date: 05/21/2026
 ms.localizationpriority: medium
+ms.topic: how-to
 ---
 
 # Use fields in your Word add-in
 
-A [field](https://support.microsoft.com/office/c429bbb0-8669-48a7-bd24-bab6ba6b06bb) in a Word document is a placeholder. It allows you to provide instructions for the content instead of the content itself. You can use fields to create and format a Word template. Word documents support a number of [field types](https://support.microsoft.com/office/1ad6d91a-55a7-4a8d-b535-cf7888659a51), many with associated parameters for configuring the field. However, Word on the web generally doesn't support adding or editing fields through the UI. For more information, see [Field codes in Word for the web](https://support.microsoft.com/office/d8f46094-13c3-4966-98c3-259748f3caf1).
+A [field](https://support.microsoft.com/office/c429bbb0-8669-48a7-bd24-bab6ba6b06bb) in Word is a placeholder that displays instructions, generated content, or document metadata instead of fixed text. Use fields when you want a document to update itself, such as a template with a date, a link, or a table of contents.
 
-Starting from the WordApi 1.5 requirement set, Word JavaScript APIs allow you to manage fields in your Word add-in. In all platforms, you can get existing fields. You can insert, update, and delete fields in platforms that support those capabilities.
+Word documents support several [field types](https://support.microsoft.com/office/1ad6d91a-55a7-4a8d-b535-cf7888659a51), and many accept parameters that control how the field behaves. Word on the web generally doesn't support adding or editing fields through the UI. For more information, see [Field codes in Word for the web](https://support.microsoft.com/office/d8f46094-13c3-4966-98c3-259748f3caf1). In all platforms, you can get existing fields. In supported platforms, you can insert, update, and delete fields.
 
-The following sections discuss several of the most frequently used field types: Addin, Date, Hyperlink, and TOC (Table of Contents).
+This article demonstrates how to use these common field types:
+
+- **[Addin](#addin-field)**: Insert an Addin field to store hidden add-in data.
+- **[Date](#date-field)**: Insert a Date field to generate a current date value.
+- **[Hyperlink](#hyperlink-field)**: Insert a Hyperlink field to point to a web page or location in the document.
+- **[TOC (Table of Contents)](#toc-table-of-contents-field)**: Insert a TOC field to build a table of contents from headings.
 
 ## Addin field
 
-The Addin field is meant to store add-in data that's hidden from the Word user interface, regardless of whether fields in the document are set to show or hide its content. The Addin field isn't available in the Word UI's **Field** dialog box. Use the API to insert the Addin field type and set the field's data.
+The Addin field stores add-in data that's hidden from the Word user interface, even when fields in the document are set to show or hide their content. The Addin field isn't available in the Word UI's **Field** dialog box. Use the API to insert the Addin field type and set the field's data.
 
 The following code sample shows how to insert an Addin field before the cursor location or your selection in the Word document.
 
@@ -75,7 +81,7 @@ async function getFirstAddinFieldAndSetData() {
 
 ## Date field
 
-The Date field inserts the current date according to the format you specify. You can toggle between displaying the date or the field code by setting the `showCodes` field property to `false` or `true` respectively.
+The Date field inserts the current date in the format you specify. You can toggle between displaying the date or the field code by setting the `showCodes` field property to `false` or `true`, respectively.
 
 The following code sample shows how to insert a Date field before the cursor location or your selection in the Word document.
 
@@ -103,14 +109,14 @@ async function rangeInsertDateField() {
 }
 ```
 
-### Further reading
+### Further reading for the Date field
 
 - [Manage Fields code sample](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/50-document/manage-fields.yaml)
 - [Field codes: Date field](https://support.microsoft.com/office/d0c7e1f1-a66a-4b02-a3f4-1a1c56891306)
 
 ## Hyperlink field
 
-The Hyperlink field inserts the address of either a location in the same document or an external location such as a webpage. When the user selects it, they're navigated to the specified location. You can toggle between displaying the hyperlink address or the field code by setting the `showCodes` field property to `false` or `true` respectively.
+The Hyperlink field inserts the address of a location in the same document or an external location such as a web page. When the user selects it, they're taken to the specified location. You can toggle between displaying the hyperlink address or the field code by setting the `showCodes` field property to `false` or `true`, respectively.
 
 The following code sample shows how to insert a Hyperlink field before the cursor location or your selection in the Word document.
 
@@ -138,13 +144,13 @@ async function rangeInsertHyperlinkField() {
 }
 ```
 
-### Further reading
+### Further reading for the Hyperlink field
 
 - [Field codes: Hyperlink field](https://support.microsoft.com/office/864f8577-eb2a-4e55-8c90-40631748ef53)
 
 ## TOC (Table of Contents) field
 
-The TOC field inserts a table of contents, which lists certain areas of a document, like headings. You can toggle between displaying the table of contents or the field code by setting the `showCodes` field property to `false` or `true` respectively.
+The TOC field inserts a table of contents that lists document sections such as headings. You can toggle between displaying the table of contents or the field code by setting the `showCodes` field property to `false` or `true`, respectively.
 
 The following code sample shows how to insert a TOC field at the cursor location or replace your current selection in the Word document.
 
@@ -192,7 +198,7 @@ async function setup() {
 }
 ```
 
-### Further reading
+### Further reading for the TOC field
 
 - [Field codes: TOC (Table of Contents) field](https://support.microsoft.com/office/1f538bc4-60e6-4854-9f64-67754d78d05c)
 
