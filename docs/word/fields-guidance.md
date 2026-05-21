@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Use fields in your Word add-in
 
-A [field](https://support.microsoft.com/office/c429bbb0-8669-48a7-bd24-bab6ba6b06bb) in Word is a placeholder that displays instructions, generated content, or document metadata instead of fixed text. Use fields when you want a document to update itself, such as a template with a date, a link, or a table of contents.
+Word [fields](https://support.microsoft.com/office/c429bbb0-8669-48a7-bd24-bab6ba6b06bb) are codes that display generated or computed content, such as document metadata, dates, links, or a table of contents, instead of fixed text. Use fields when you want a document to update its content automatically, such as a template with a date, a link, or a table of contents.
 
 Word documents support several [field types](https://support.microsoft.com/office/1ad6d91a-55a7-4a8d-b535-cf7888659a51), and many accept parameters that control how the field behaves. Word on the web generally doesn't support adding or editing fields through the UI. For more information, see [Field codes in Word for the web](https://support.microsoft.com/office/d8f46094-13c3-4966-98c3-259748f3caf1). In all platforms, you can get existing fields. In supported platforms, you can insert, update, and delete fields.
 
