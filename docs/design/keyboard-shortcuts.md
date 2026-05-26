@@ -1,7 +1,7 @@
 ---
 title: Custom keyboard shortcuts in Office Add-ins
 description: Learn how to add custom keyboard shortcuts, also known as key combinations, to your Office Add-in.
-ms.date: 05/21/2026
+ms.date: 05/26/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -252,6 +252,9 @@ Use the following guidelines to create custom key combinations for your add-ins.
 
 When using custom keyboard shortcuts on the web, some keyboard shortcuts that are used by the browser can't be overridden by add-ins. The following list is a work in progress. If you discover other combinations that can't be overridden, please let us know by using the feedback tool at the bottom of this page.
 
+- <kbd>Ctrl</kbd>+<kbd>X</kbd>
+- <kbd>Ctrl</kbd>+<kbd>C</kbd>
+- <kbd>Ctrl</kbd>+<kbd>V</kbd>
 - <kbd>Ctrl</kbd>+<kbd>N</kbd>
 - <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd>
 - <kbd>Ctrl</kbd>+<kbd>T</kbd>
@@ -289,12 +292,6 @@ For the best user experience, we recommend that you minimize keyboard shortcut c
   - [Keyboard shortcuts in Excel](https://support.microsoft.com/office/1798d9d5-842a-42b8-9c99-9b7213f0040f)
   - [Keyboard shortcuts in PowerPoint](https://support.microsoft.com/office/ebb3d20e-dcd4-444f-a38e-bb5c5ed180f4)
   - [Keyboard shortcuts in Word](https://support.microsoft.com/office/95ef89dd-7142-4b50-afb2-f762f663ceb2)
-- In Office on the web, don't use the following shortcuts as your add-in's custom shortcuts.
-  - <kbd>Ctrl</kbd>+<kbd>X</kbd> (Cut)
-  - <kbd>Ctrl</kbd>+<kbd>C</kbd> (Copy)
-  - <kbd>Ctrl</kbd>+<kbd>V</kbd> (Paste)
-
-  These shortcuts can't be overridden. Only the host application's implementation of these shortcuts works.
 - When the keyboard focus is inside the add-in UI, <kbd>Ctrl</kbd>+<kbd>Space</kbd> and <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F10</kbd> won't work as these are essential accessibility shortcuts.
 - On a Windows or Mac computer, if the **Reset Office Add-ins shortcut preferences** command isn't available on the search menu, the user can manually add the command to the ribbon by customizing the ribbon through the context menu.
 
