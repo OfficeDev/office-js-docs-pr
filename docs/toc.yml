@@ -306,7 +306,7 @@
       - name: Keyboard shortcuts
         href: design/keyboard-shortcuts.md
       - name: KeyTips
-        href: design/add-custom-keytips.md
+        href: design/add-custom-key-tips.md
       - name: Localization
         href: develop/localization.md
     - name: Frameworks, IDEs, and other tools
