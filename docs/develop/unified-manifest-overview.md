@@ -79,7 +79,7 @@ Add-ins that use the unified manifest can't be installed on all platforms. We're
 The following tables lists which Office platforms support add-ins that use the unified manifest.
 
 > [!NOTE]
-> Add-ins for OneNote, Project, and Visio don't support the unified manifest.
+> Add-ins for OneNote and Project don't support the unified manifest.
 
 | Client/platform | Supports add-ins with the unified manifest|
 | ----- | ----- |
