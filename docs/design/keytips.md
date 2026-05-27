@@ -1,7 +1,7 @@
 ---
 title: Custom KeyTips for Office Add-ins
 description: Learn how to add custom KeyTips, also known as sequential key shortcuts or access keys, to your Office Add-in.
-ms.date: 02/26/2026
+ms.date: 05/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ Custom KeyTips are supported in the following Office applications and platforms.
 
 > [!NOTE]
 >
-> - For Office on Windows, custom KeyTips require Version 2603 (Build 19822.20000) or later.
+> - For Office on Windows, custom KeyTips require Version 2603 (Build 19822.20000) or later. To verify the version of the host application, call [Office.context.diagnostics.version](/javascript/api/office/office.contextinformation#office-office-contextinformation-version-member).
 > - For Office on Mac, KeyTips require Version 16.107 (Build 26030819) or later.
 > - In Office on Mac, KeyTips are turned off by default. Users must turn on KeyTips in their Office settings to use the KeyTips defined for your add-in. For more information, see [Use the keyboard to work with the ribbon](https://support.microsoft.com/office/954cd3f7-2f77-4983-978d-c09b20e31f0e#picktab=mac).
 
@@ -52,13 +52,11 @@ KeyTips can be defined for the add-in's controls and the ribbon tab in which the
 
 Custom KeyTips are defined in your add-in's manifest. The following example customizes KeyTips to access the add-in and its actions from the built-in Home tab of Excel, PowerPoint, or Word. Note the following about this markup.
 
-- The `"keytip"` property defines the custom KeyTip. It's specified for the following tabs and controls.
+- The `"keytip"` property defines the custom KeyTip. It supports up to three uppercase alphanumeric characters ("A-Z", "0-9"). The `"keytip"` property is specified for the following tabs and controls.
   - The Home tab on the ribbon ([`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item?view=m365-app-prev&preserve-view=true) object whose `"builtInTabId"` property is set to `"TabHome"`). For guidance on built-in Office ribbon tabs and their IDs, see [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).
   - The custom contextual tab (`"extensions.ribbons.tabs"` object whose `"id"` property is set to `"CustomTab"`).
   - The add-in's button on the ribbon ([`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item?view=m365-app-prev&preserve-view=true) object).
   - The add-in's menu items on the ribbon ([`"extensions.ribbons.tabs.groups.controls.items"`](/microsoft-365/extensibility/schema/extension-common-custom-control-menu-item?view=m365-app-prev&preserve-view=true)).
-- KeyTips support up to three uppercase alphanumeric characters ("A-Z", "0-9").
-- KeyTips must be unique across tabs and controls.
 
 ```json
 {
@@ -220,7 +218,7 @@ The Microsoft 365 host application checks for KeyTip conflicts between add-ins a
 When implementing KeyTips for your add-in, be aware of the following behaviors and limitations.
 
 - Custom KeyTips are only supported in an add-in that uses a unified manifest. If your add-in uses an add-in only manifest, you must convert it to a unified manifest to configure KeyTips. For guidance on converting your manifest, see [Convert an add-in to use the unified manifest for Microsoft 365](../develop/convert-xml-to-json-manifest.md).
-- Custom KeyTips support up to three uppercase alphanumeric characters.
+- Custom KeyTips support up to three uppercase alphanumeric characters and must be unique across tabs and controls.
 - Custom KeyTips won't work in earlier versions of Office applications that don't support KeyTips. In these earlier versions, users will see the default KeyTips assigned to the add-in instead.
 - User can't modify the add-in's KeyTips.
 - In Office on the web, the <kbd>X</kbd> key is reserved and can't be used as a custom KeyTip.

@@ -305,6 +305,8 @@
             href: develop/show-hide-add-in.md
       - name: Keyboard shortcuts
         href: design/keyboard-shortcuts.md
+      - name: KeyTips
+        href: design/keytips.md
       - name: Localization
         href: develop/localization.md
     - name: Frameworks, IDEs, and other tools
