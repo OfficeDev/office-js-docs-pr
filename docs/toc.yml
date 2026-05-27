@@ -309,8 +309,6 @@
         href: develop/localization.md
     - name: Frameworks, IDEs, and other tools
       items:
-      - name: Create add-ins with the Office Add-ins Development Kit
-        href: develop/development-kit-overview.md
       - name: Create add-ins with the Yeoman Generator
         href: develop/yeoman-generator-overview.md
       - name: Create add-ins with the Microsoft 365 Agents Toolkit

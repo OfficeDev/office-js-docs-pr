@@ -1,7 +1,7 @@
 ---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 05/14/2026
+ms.date: 05/26/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -74,6 +74,7 @@ Support for this feature in Outlook was introduced in [requirement set 1.10](/ja
 |`OnMessageReadWithCustomAttachment`|Not available|On opening a message that contains a specific attachment type in read mode.|[Preview](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview)<sup>4</sup><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
 |`OnMessageReadWithCustomHeader`|Not available|On opening a message that contains a specific internet header name in read mode.|[Preview](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview)<sup>4</sup><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
 |`OnMessageRead` (preview)|Not available|On matching the header of an encrypted message to the header key in an add-in's manifest. To learn more, see [Create an encryption Outlook add-in](../outlook/encryption-decryption.md).|[Preview](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview)<ul><li>Windows (classic<sup>1</sup>)</li></ul>|
+|`OnMessageDecrypt` (preview)|Not available|On matching the header of an encrypted message to the header key in an add-in's manifest. To learn more, see [Create an encryption Outlook add-in](../outlook/encryption-decryption.md).|[Preview](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview)<ul><li>Windows (classic<sup>1</sup>)</li></ul>|
 |`OnAttachmentAction` (preview)|Not available|On opening, saving, or downloading attachments from a message.<br><br>Event-specific data object: [AttachmentActionEventArgs](/javascript/api/outlook/office.attachmentactioneventargs?view=outlook-js-preview&preserve-view=true)<br><br>To learn more, see [Check an attachment before it's opened, saved, or downloaded (preview)](../outlook/onattachmentaction-event.md).|[Preview](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview)<ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627))</li></ul>|
 
 > [!NOTE]

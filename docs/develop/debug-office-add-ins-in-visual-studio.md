@@ -1,7 +1,7 @@
 ---
 title: Debug Office Add-ins in Visual Studio
 description: Use Visual Studio to debug Office Add-ins in the Office desktop client on Windows.
-ms.date: 11/06/2025
+ms.date: 05/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -68,6 +68,9 @@ The following table describes the properties of the web application project that
 This section describes how to start and debug an add-in in desktop Office on Windows; that is, when the **Start Action** property of the add-in project is set to **Office Desktop Client**.
 
 ### Start the add-in project
+
+> [!IMPORTANT]
+> Due to the retirement of Exchange Web Services (EWS) for Exchange Online starting in October 2026 (see the [Exchange Team Blog](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361)), F5 debugging will no longer work for Outlook web add-ins targeting Exchange Online. You'll need to manually sideload the add-in to Outlook. For instructions, see [Sideload Outlook Add-ins](../outlook/sideload-outlook-add-ins-for-testing.md?tabs=xmlmanifest#sideload-manually) and [Sideload an add-in on the web when using Visual Studio](../testing/sideload-office-add-ins-for-testing.md#sideload-an-add-in-on-the-web-when-using-visual-studio). These steps also cover updating the manifest before sideloading.
 
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button. Visual Studio automatically builds the solution and starts the Office host application.
 

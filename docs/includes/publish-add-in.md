@@ -1,5 +1,8 @@
 An Office Add-in includes two basic components: a manifest file and your own web application. The manifest defines various settings, including how your add-in integrates with Office clients. Your web application serves the HTML, JavaScript, and other files that provide the add-in's functionality and UI.
 
+> [!NOTE]
+> For add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md), the manifest file and other files are zipped into a package file, which is the unit of sideloading and installing. If the add-in only manifest is used, then the manifest file itself is sideloaded or installed.
+
 While you're developing your add-in, you can run the add-in on your local web server (`localhost`), but when you're ready to publish it for other users to access, you'll need to deploy the web application to a web server or web hosting service (for example, Microsoft Azure) and update the manifest to specify the URL of the deployed application.
 
 When your add-in is working as desired and you're ready to publish it for other users to access, complete the following steps.

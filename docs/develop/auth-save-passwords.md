@@ -1,27 +1,32 @@
 ---
-title: Automatically save passwords in Microsoft Edge WebView2
-description: Learn how to enable WebView2 to save passwords when users sign in using your add-in.
+title: Automatically save passwords in Office Add-ins with WebView2
+description: Configure an Office Add-in running in WebView2 to prompt users to save credentials after sign-in.
+ms.topic: how-to
 ms.localizationpriority: medium
-ms.date: 03/10/2025
+ms.date: 05/18/2026
 ---
 
 # Enable automatic password saving in Microsoft Edge WebView2
 
-Most browsers can automatically save passwords on behalf of the user when they sign in. This helps users manage passwords in a secure environment. Microsoft Edge WebView2 also supports automatic password saving. When your add-in is loaded in Microsoft Office on Windows, Webview2 hosts your add-in. To enable automatic password saving, add HTML input controls for the username and password, as shown in the following HTML.
+If your add-in prompts users to sign in, Microsoft Edge WebView2 can offer to save credentials and fill them the next time users sign in. This article shows the minimum HTML and JavaScript pattern to trigger the WebView2 save-password prompt in Office Add-ins on Windows.
+
+## Sign-in flow
+
+First, create a sign-in form in your add-in's HTML page. The form should include username and password fields, and a button to submit the credentials. Use the standard HTML credential fields: `type="text"` for the username and `type="password"` for the password. The example is the minimum HTML you need.
 
 ```html
 <div>
-    <label for="username">Username:</label><br/>
-    <input type="text" id="username" name="username" /><br/>
-    
-    <label for="password">Password:</label><br/>
-    <input type="password" id="password" name="password" /><br/>
-    
-    <button id="btn" type="button">Sign in</button>
+  <label for="username">Username:</label>><br/>
+  <input type="text" id="username" name="username" />><br/>
+
+  <label for="password">Password:</label>><br/>
+  <input type="password" id="password" name="password" />><br/>
+
+  <button id="btn" type="button">Sign in</button>
 </div>
 ```
 
-In the button click event handler for the sign-in button, call the authentication library of your choice to sign in the user. Once the sign-in is complete, redirect to a new web page. When WebView2 sees the redirect, and the username and password, it prompts the user to offer to automatically save the credentials. The following code shows how to handle the sign-in button click event.
+In the sign-in button's click event handler, call an authentication library to sign in the user. After sign-in completes, redirect to a new page. When WebView2 detects the redirect and credential fields, it can prompt users to save credentials.
 
 ```javascript
 async function btnSignIn() {
@@ -43,15 +48,19 @@ async function btnSignIn() {
 }
 ```
 
-## How the user manages passwords
+## What users see
 
-When the user enters a new password in your add-in, and your add-in redirects to a new web page, WebView2 asks the user if they want to save their username and password. The next time your add-in prompts for credentials, WebView2 automatically enters the user's account information.
+When users enter credentials in your add-in and the add-in redirects to a new page, WebView2 asks whether they want to save the username and password. The next time your add-in prompts for credentials, WebView2 fills in the saved account information.
 
 :::image type="content" source="../images/edge-webview2-automatic-save-passwords.png" alt-text="The dialog from WebView2 prompting the user if they want to save their username and password.":::
 
-Users remove saved passwords by deleting The WebView2 local cache folder at `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\webview2\`. If your add-in relies on automatically saving passwords, you should document this folder location so users can remove their passwords.
+## Remove saved credentials
+
+Users can remove saved passwords by deleting the WebView2 local cache folder at `%LOCALAPPDATA%\Microsoft\Office\16.0\Wef\webview2\`. If your add-in relies on automatic password saving, document this folder location so users can remove saved credentials.
 
 ## Related content
 
 - [Microsoft Edge WebView2](https://developer.microsoft.com/microsoft-edge/webview2)
 - [Browsers and webview controls used by Office Add-ins](../concepts/browsers-used-by-office-web-add-ins.md)
+- [Authorization with non-Microsoft identity providers](auth-external-add-ins.md)
+- [Enable single sign-on in an Office add-in with nested app authentication](enable-nested-app-authentication-in-your-add-in.md)
