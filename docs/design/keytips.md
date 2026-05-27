@@ -29,9 +29,12 @@ Custom KeyTips are supported in the following Office applications and platforms.
 
 > [!NOTE]
 >
-> - For Office on Windows, custom KeyTips require Version 2603 (Build 19822.20000) or later. To verify the version of the host application, call [Office.context.diagnostics.version](/javascript/api/office/office.contextinformation#office-office-contextinformation-version-member).
-> - For Office on Mac, KeyTips require Version 16.107 (Build 26030819) or later.
-> - In Office on Mac, KeyTips are turned off by default. Users must turn on KeyTips in their Office settings to use the KeyTips defined for your add-in. For more information, see [Use the keyboard to work with the ribbon](https://support.microsoft.com/office/954cd3f7-2f77-4983-978d-c09b20e31f0e#picktab=mac).
+> Custom KeyTips are supported in Office on Windows and on Mac in specific host versions.
+>
+> - **Windows**: Version 2603 (Build 19822.20000) or later
+> - **Mac**: Version 16.107 (Build 26030819) or later
+>
+> To verify the version of the host application, call [Office.context.diagnostics.version](/javascript/api/office/office.contextinformation#office-office-contextinformation-version-member).
 
 ## Supported surfaces and controls
 
@@ -46,9 +49,6 @@ KeyTips can be defined for the add-in's controls and the ribbon tab in which the
 | Menu items | Not available | Not available | Not available |
 
 ## Configure the manifest
-
-> [!IMPORTANT]
-> Custom KeyTips are only supported with the unified manifest for Microsoft 365. If your add-in uses the add-in only manifest, you must migrate to the unified manifest to use KeyTips. For more information, see [Office Add-ins with the unified app manifest for Microsoft 365](../develop/unified-manifest-overview.md).
 
 Custom KeyTips are defined in your add-in's manifest. The following example customizes KeyTips to access the add-in and its actions from the built-in Home tab of Excel, PowerPoint, or Word. Note the following about this markup.
 
@@ -222,6 +222,7 @@ When implementing KeyTips for your add-in, be aware of the following behaviors a
 - Custom KeyTips won't work in earlier versions of Office applications that don't support KeyTips. In these earlier versions, users will see the default KeyTips assigned to the add-in instead.
 - User can't modify the add-in's KeyTips.
 - In Office on the web, the <kbd>X</kbd> key is reserved and can't be used as a custom KeyTip.
+- In Office on Mac, KeyTips are turned off by default. Users must turn on KeyTips in their Office settings to use the KeyTips defined for your add-in. For more information, see [Use the keyboard to work with the ribbon](https://support.microsoft.com/office/954cd3f7-2f77-4983-978d-c09b20e31f0e#picktab=mac).
 
 ## See also
 
