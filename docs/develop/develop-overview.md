@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 03/23/2026
+ms.date: 05/26/2026
 ms.localizationpriority: high
 ---
 
@@ -64,7 +64,7 @@ An Office Add-in's manifest defines the settings and capabilities of the add-in.
 - How the add-in integrates with Office, including any custom UI that the add-in creates (for example, a custom tab or custom ribbon buttons).
 - Location of images that the add-in uses for branding and command iconography.
 - Dimensions of the add-in (for example, dimensions for content add-ins, requested height for Outlook add-ins).
-- Keyboard shortcuts (for Excel and Word add-ins only).
+- Keyboard shortcuts (for Excel, PowerPoint, and Word add-ins only).
 
 For detailed information about the manifest, see [Office Add-ins manifest](add-in-manifests.md).
 
