@@ -2,7 +2,7 @@
 title: Configure your Office Add-in to use a shared runtime
 description: Configure your Office Add-in to use a shared runtime to support additional ribbon, task pane, and custom function features.
 ms.topic: how-to
-ms.date: 05/04/2026
+ms.date: 05/26/2026
 ms.localizationpriority: high
 ---
 
@@ -236,7 +236,7 @@ Configuring a shared runtime enables the following scenarios.
   - [Change the availability of add-in commands](../design/disable-add-in-commands.md)
   - [Run code in your Office Add-in when the document opens](run-code-on-document-open.md)
   - [Show or hide the task pane of your Office Add-in](show-hide-add-in.md)
-  - [Add custom keyboard shortcuts to your Office Add-ins](../design/keyboard-shortcuts.md) (supported in Excel and Word add-ins only)
+  - [Add custom keyboard shortcuts to your Office Add-ins](../design/keyboard-shortcuts.md) (supported in Excel, PowerPoint, and Word add-ins)
 - The following are available for Excel add-ins only.
   - [Create custom contextual tabs in Office Add-ins](../design/contextual-tabs.md)
   - Custom functions will have full CORS support.

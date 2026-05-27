@@ -1,7 +1,7 @@
 ﻿---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 03/23/2026
+ms.date: 05/28/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -23,7 +23,7 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 | ----- | ----- | ----- | ----- |
 | `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0 and later)</li><li>iOS (Version 4.2352.0 and later)</li></ul> |
 | `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0 and later)</li><li>iOS (Version 4.2425.0 and later)</li></ul> |
-| `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul>|
+| `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul> |
 
 ## Set up your environment
 
@@ -314,7 +314,8 @@ As you develop an event-based add-in for Outlook mobile, be mindful of the follo
 
 - Because event-based add-ins are expected to be short-running and lightweight, an add-in is allowed to run for a maximum of 60 seconds from the time it activates. To signal that your add-in has completed processing an event, your event handler must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. The add-in operation also ends when the user closes the compose window or sends the message.
 - Only one add-in can run at a time. If multiple event-based add-ins are installed on a user's account, they will run sequentially.
-- If you tap and hold the Outlook icon on your mobile device, then select **New mail** to create a new message, an event-based add-in that handles the `OnNewMessageCompose` event may take a few seconds to initialize and complete processing the event.  
+- If you tap and hold the Outlook icon on your mobile device, then select **New mail** to create a new message, an event-based add-in that handles the `OnNewMessageCompose` event may take a few seconds to initialize and complete processing the event.
+- The `OnNewMessageCompose` event doesn't occur when a new message is created using the **Share** option on iOS.
 - When using an event-based add-in that handles the `OnNewMessageCompose` event, if there are no changes made to a new message being composed, a draft won't be saved. This applies even if the add-in adds a signature using the [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1)) method.
 - In an event-based add-in that manages signatures when the `OnNewMessageCompose` event occurs, if you select **Reply** from the bottom of a message, the add-in activates and adds the signature to the message. However, the signature won't be visible in the current view. To view your message with the added signature, expand the compose window to full screen.
 - To enhance your add-in's functionality, you can use supported APIs from later requirement sets in compose mode. For more information, see [Additional supported APIs](#additional-supported-apis).
