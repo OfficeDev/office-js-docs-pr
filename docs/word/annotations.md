@@ -1,7 +1,7 @@
 ---
 title: Use annotations in your Word add-in
-description: Learn to use annotations in your Word add-in.
-ms.date: 04/29/2025
+description: Insert, read, accept, reject, and remove Word annotations in your Office Add-in by using the Word JavaScript API.
+ms.date: 05/21/2026
 ms.localizationpriority: medium
 ms.topic: how-to
 ---
@@ -10,11 +10,15 @@ ms.topic: how-to
 
 **Includes community contributions from:** [Abdulhadi Jarad](https://github.com/abdulhadi-jarad)
 
-You can use annotations to provide feedback about grammar or other aspects of content in a Word document. The user may see colorful underlining that indicates there's an issue or other information. If the user hovers over the affected content, a popup dialog is displayed that shows them what the issue is and possible actions they can take.
+Use annotations to show writing feedback directly in a Word document, such as grammar guidance or suggested improvements. Word highlights affected text and can show a popup with suggested actions when the user points to the annotation.
 
-APIs for working with annotations were introduced in the [WordApi 1.7 requirement set](/javascript/api/requirement-sets/word/word-api-1-7-requirement-set) and expanded in the [WordApi 1.8 requirement set](/javascript/api/requirement-sets/word/word-api-1-8-requirement-set) as part of supporting writing assistance scenarios like checking spelling and grammar or providing suggestions to improve writing.
+This article shows how to:
 
-In this article, we show how your add-in can insert feedback and critiques using annotations in a document and allow the user to react to them.
+1. [Register annotation events](#register-annotation-events) so your add-in can respond to user actions.
+1. [Add critiques](#insert-annotations) to the current paragraph.
+1. [Inspect annotation state and critique details](#get-annotations).
+1. [Apply or dismiss suggestions](#accept-an-annotation) and [Reject an annotation](#reject-an-annotation).
+1. [Remove annotations](#delete-annotations) when you no longer need them.
 
 > [!IMPORTANT]
 > These annotations aren't persisted in the document. This means that when the document is reopened, the annotations need to be regenerated. However, if the user accepts suggested changes, the changes will persist as long as the user saves them before closing the document.
@@ -44,9 +48,9 @@ The following are the key annotation APIs.
 
 ## Use annotation APIs
 
-The following sections show how to work with annotation APIs. These examples are based on the [Manage annotations](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/50-document/manage-annotations.yaml) code sample.
+The following sections show how to work with annotation APIs. The examples are based on the [Manage annotations code sample](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/50-document/manage-annotations.yaml).
 
-Your add-in code should use the feedback or critique results from your service run against the user's content in the document to manage annotations more dynamically.
+Use the feedback or critique results from your service to manage annotations dynamically based on the user's document content.
 
 ## Register annotation events
 
@@ -341,7 +345,7 @@ async function deleteAnnotations() {
 
 ## Deregister annotation events
 
-The following code shows how to deregister the event handlers using their event contexts you tracked in the `eventContext` variable.
+The following code shows how to deregister event handlers by using the event contexts tracked in the `eventContexts` variable.
 
 ```typescript
 async function deregisterEventHandlers() {
