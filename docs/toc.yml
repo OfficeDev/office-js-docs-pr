@@ -821,7 +821,7 @@
         href: outlook/onmessagefromchanged-onappointmentfromchanged-events.md
         displayName: event-based activation
       - name: Check an attachment before it's opened, saved, or downloaded (preview)
-        href: outlook/onattachmentaction-event.md
+        href: outlook/on-attachment-action-event.md
         displayName: event-based activation, preview
     - name: Create an encryption add-in
       href: outlook/encryption-decryption.md
