@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 KeyTips, also known as sequential key shortcuts or access keys, provide an efficient keyboard navigation method for your add-in's users. Unlike simultaneous keyboard shortcuts (such as Ctrl+S) that are used to run operations within an add-in, KeyTips are pressed in sequence to quickly access options from the Office ribbon. KeyTips help users:
 
-- Quickly navigate the ribbon and access actions more efficiently.
+- Quickly navigate the ribbon and access actions.
 - Support keyboard-only navigation for accessibility.
 
 > [!TIP]
@@ -20,7 +20,7 @@ KeyTips, also known as sequential key shortcuts or access keys, provide an effic
 
 Custom KeyTips are supported in the following Office applications and platforms.
 
-| Office app | Office on the web | Office on Windows | Office on Mac |
+| Office application | Office on the web | Office on Windows | Office on Mac |
 | ----- | ----- | ----- | ----- |
 | Excel | Supported | Supported | Supported |
 | Outlook | Not supported | Not supported | Not supported |
