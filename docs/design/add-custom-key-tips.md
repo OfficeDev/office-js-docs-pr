@@ -1,7 +1,7 @@
 ---
 title: Custom KeyTips for Office Add-ins
 description: Learn how to add custom KeyTips, also known as sequential key shortcuts or access keys, to your Office Add-in.
-ms.date: 05/27/2026
+ms.date: 05/28/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -48,6 +48,10 @@ KeyTips can be defined for the add-in's controls and the ribbon tab in which the
 | Custom tab | Supported | Supported | Supported |
 | Menus | Supported | Supported | Supported |
 | Menu items | Not available | Not available | Not available |
+
+## Try out a completed add-in
+
+To immediately test custom KeyTips in an Office Add-in, try out the [Define KeyTips for the ribbon controls of an Office Add-in sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keytips).
 
 ## Configure the manifest
 
@@ -199,3 +203,4 @@ When implementing KeyTips for your add-in, be aware of the following behaviors a
 
 - [Add custom keyboard shortcuts to your Office Add-ins](keyboard-shortcuts.md)
 - [Accessibility guidelines for Office Add-ins](accessibility-guidelines.md)
+- [Sample: Define KeyTips for the ribbon controls of an Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keytips)
