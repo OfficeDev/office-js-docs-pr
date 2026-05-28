@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Add custom KeyTips to your Office Add-ins
 
-KeyTips, also known as sequential key shortcuts or access keys, provide an efficient keyboard navigation method for your add-in's users. Unlike simultaneous keyboard shortcuts (such as Ctrl+S) that are used to run operations within an add-in, KeyTips are pressed in sequence to quickly access options from the Office ribbon. KeyTips help users:
+KeyTips, also known as sequential key shortcuts or access keys, provide an efficient keyboard navigation method for your add-in's users. Unlike simultaneous keyboard shortcuts (such as <kbd>Ctrl</kbd>+<kbd>S</kbd>) that are used to run operations within an add-in, KeyTips are pressed in sequence to quickly access options from the Office ribbon. KeyTips help users:
 
 - Quickly navigate the ribbon and access actions.
 - Support keyboard-only navigation for accessibility.
@@ -43,20 +43,21 @@ KeyTips can be defined for the add-in's controls and the ribbon tab in which the
 | Tab type | Excel | PowerPoint | Word |
 | ----- | ----- | ----- | ----- |
 | Built-in Office tabs | Supported | Supported | Supported |
-| Custom tab | Supported | Supported | Supported |
-| Contextual tab | Not available | Not available | Not available |
 | Buttons | Supported | Supported | Supported |
+| Contextual tab | Not available | Not available | Not available |
+| Custom tab | Supported | Supported | Supported |
+| Menus | Supported | Supported | Supported |
 | Menu items | Not available | Not available | Not available |
 
 ## Configure the manifest
 
-Custom KeyTips are defined in your add-in's manifest. The following example customizes KeyTips to access the add-in and its actions from the built-in Home tab of Excel, PowerPoint, or Word. Note the following about this markup.
+Custom KeyTips are defined in your add-in's manifest. The following example customizes KeyTips to access the add-in and its actions from the built-in Home tab and a custom tab. Note the following about this markup.
 
-- The `"keytip"` property defines the custom KeyTip. It supports up to three uppercase alphanumeric characters ("A-Z", "0-9"). The `"keytip"` property is specified for the following tabs and controls.
-  - The Home tab on the ribbon ([`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item?view=m365-app-prev&preserve-view=true) object whose `"builtInTabId"` property is set to `"TabHome"`). For guidance on built-in Office ribbon tabs and their IDs, see [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).
-  - The custom contextual tab (`"extensions.ribbons.tabs"` object whose `"id"` property is set to `"CustomTab"`).
-  - The add-in's button on the ribbon ([`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item?view=m365-app-prev&preserve-view=true) object).
-  - The add-in's menu items on the ribbon ([`"extensions.ribbons.tabs.groups.controls.items"`](/microsoft-365/extensibility/schema/extension-common-custom-control-menu-item?view=m365-app-prev&preserve-view=true)).
+- The `"keytip"` property defines the key sequence users press to activate a custom KeyTip. It supports up to three uppercase alphanumeric characters ("A-Z", "0-9"). The `"keytip"` property is specified for the following tabs and controls.
+  - The Home tab on the ribbon ([`"extensions.ribbons.tabs"`](/microsoft-365/extensibility/schema/extension-ribbons-array-tabs-item) object whose `"builtInTabId"` property is set to `"TabHome"`). For guidance on built-in Office ribbon tabs and their IDs, see [Find the IDs of built-in Office ribbon tabs](../develop/built-in-ui-ids.md).
+  - The custom tab (`"extensions.ribbons.tabs"` object whose `"id"` property is set to `"CustomTab"`).
+  - The add-in's button on the ribbon ([`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item) object whose `"type"` property is set to `"button"`).
+  - The add-in's menu control on the ribbon ([`"extensions.ribbons.tabs.groups.controls"`](/microsoft-365/extensibility/schema/extension-common-custom-group-controls-item) object whose `"type"` property is set to `"menu"`).
 
 ```json
 {
@@ -102,59 +103,29 @@ Custom KeyTips are defined in your add-in's manifest. The following example cust
                                         {
                                             "id": "DataMenu",
                                             "type": "menu",
-                                            ...
-                                            "items": [
+                                            "label": "Manage Data",
+                                            "icons": [
                                                 {
-                                                    "id": "InsertData1",
-                                                    "type": "menuItem",
-                                                    "label": "Type 1",
-                                                    "icons": [
-                                                        {
-                                                            "size": 16,
-                                                            "url": "https://localhost:3000/assets/icon-16.png"
-                                                        },
-                                                        {
-                                                            "size": 32,
-                                                            "url": "https://localhost:3000/assets/icon-32.png"
-                                                        },
-                                                        {
-                                                            "size": 80,
-                                                            "url": "https://localhost:3000/assets/icon-80.png"
-                                                        }
-                                                    ],
-                                                    "supertip": {
-                                                        "title": "Insert data type 1",
-                                                        "description": "Insert data type 1."
-                                                    },
-                                                    "actionId": "insertDataType1",
-                                                    "keytip": "D1"
+                                                    "size": 16,
+                                                    "url": "https://localhost:3000/assets/icon-16.png"
                                                 },
                                                 {
-                                                    "id": "InsertData2",
-                                                    "type": "menuItem",
-                                                    "label": "Type 2",
-                                                    "icons": [
-                                                        {
-                                                            "size": 16,
-                                                            "url": "https://localhost:3000/assets/icon-16.png"
-                                                        },
-                                                        {
-                                                            "size": 32,
-                                                            "url": "https://localhost:3000/assets/icon-32.png"
-                                                        },
-                                                        {
-                                                            "size": 80,
-                                                            "url": "https://localhost:3000/assets/icon-80.png"
-                                                        }
-                                                    ],
-                                                    "supertip": {
-                                                        "title": "Insert data type 2",
-                                                        "description": "Insert data type 2."
-                                                    },
-                                                    "actionId": "insertDataType2",
-                                                    "keytip": "D2"
+                                                    "size": 32,
+                                                    "url": "https://localhost:3000/assets/icon-32.png"
+                                                },
+                                                {
+                                                    "size": 80,
+                                                    "url": "https://localhost:3000/assets/icon-80.png"
                                                 }
-                                            ]
+                                            ],
+                                            "supertip": {
+                                                "title": "Manage Data",
+                                                "description": "Options to manage data."
+                                            },
+                                            "items": [
+                                                ...
+                                            ],
+                                            "keytip": "MD"
                                         }
                                     ]
                                 }
