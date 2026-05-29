@@ -1,13 +1,42 @@
 ---
-title: Work with shapes using the PowerPoint JavaScript API
-description: Learn how to add, remove, and format shapes on PowerPoint slides.
-ms.date: 05/06/2025
+title: Create and format shapes in PowerPoint add-ins
+description: Learn how to create, move, resize, group, and delete shapes in PowerPoint by using the JavaScript API.
+ms.topic: how-to
+ms.date: 05/29/2026
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Work with shapes using the PowerPoint JavaScript API
+# Create and format shapes in PowerPoint add-ins
 
-This article describes how to use geometric shapes, lines, and text boxes in conjunction with the [Shape](/javascript/api/powerpoint/powerpoint.shape) and [ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection) APIs.
+Use the PowerPoint JavaScript API to create, format, move, group, and delete shapes on slides.
+
+This article focuses on geometric shapes, lines, and text boxes by using [Shape](/javascript/api/powerpoint/powerpoint.shape) and [ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection).
+
+If you're new to PowerPoint add-ins, start with [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md), then review [PowerPoint JavaScript object model in Office Add-ins](core-concepts.md).
+
+## Quick example: create and format a shape
+
+The following example creates a geometric shape, positions it, and sets fill and text formatting.
+
+```javascript
+await PowerPoint.run(async (context) => {
+    const shapes = context.presentation.getSelectedSlides().getItemAt(0).shapes;
+    const rectangle = shapes.addGeometricShape(PowerPoint.GeometricShapeType.rectangle);
+
+    rectangle.left = 80;
+    rectangle.top = 80;
+    rectangle.width = 220;
+    rectangle.height = 100;
+    rectangle.name = "StatusCard";
+
+    rectangle.fill.setSolidColor("lightblue");
+    rectangle.textFrame.textRange.text = "Q2 complete";
+    rectangle.textFrame.textRange.font.bold = true;
+
+    await context.sync();
+});
+```
 
 ## Create shapes
 
@@ -55,7 +84,7 @@ await PowerPoint.run(async (context) => {
 
 ### Text boxes
 
-A text box is created with the [addTextBox](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) that can specify the initial size of the text box and its position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
+A text box is created with the [ShapeCollection.addTextBox()](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) that can specify the initial size of the text box and its position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
 
 The following code sample shows how to create a text box on the first slide.
 
@@ -75,7 +104,23 @@ await PowerPoint.run(async (context) => {
 
 ## Move and resize shapes
 
-Shapes sit on top of the slide. Their placement is defined by the `left` and `top` properties. These act as margins from slide's respective edges, measured in points, with `left: 0` and `top: 0` being the upper-left corner. The shape size is specified by the `height` and `width` properties. Your code can move or resize the shape by resetting these properties. (These properties have a slightly different meaning when the shape is a line. See [Lines](#lines).)
+Shapes sit on top of the slide. Their placement is defined by the `left` and `top` properties. These act as margins from the slide's edges, measured in points, with `left: 0` and `top: 0` being the upper-left corner. The shape size is specified by the `height` and `width` properties. Your code can move or resize the shape by resetting these properties. (These properties have a slightly different meaning when the shape is a line. See [Lines](#lines).)
+
+The following code sample moves and resizes a shape.
+
+```javascript
+await PowerPoint.run(async (context) => {
+    const slide = context.presentation.getSelectedSlides().getItemAt(0);
+    const shape = slide.shapes.getItem("StatusCard");
+
+    shape.left = 120;
+    shape.top = 150;
+    shape.width = 300;
+    shape.height = 120;
+
+    await context.sync();
+});
+```
 
 ## Text in shapes
 
@@ -110,7 +155,7 @@ In PowerPoint, you can group several shapes and treat them like a single shape. 
 
 To group shapes with the JavaScript API, use [ShapeCollection.addGroup](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addgroup-member(1)).
 
-The following code sample shows how to group existing shapes of type [GeometricShape](/javascript/api/powerpoint/powerpoint.shapetype) found on the current slide.
+The following code sample shows how to group existing shapes of type [ShapeType.geometricShape](/javascript/api/powerpoint/powerpoint.shapetype) found on the current slide.
 
 ```typescript
 // Groups the geometric shapes on the current slide.
@@ -184,7 +229,7 @@ await PowerPoint.run(async (context) => {
     // Load all the shapes in the collection without loading their properties.
     shapes.load("items/$none");
     await context.sync();
-        
+
     shapes.items.forEach(function (shape) {
         shape.delete();
     });
@@ -194,6 +239,10 @@ await PowerPoint.run(async (context) => {
 
 ## See also
 
+- [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md)
+- [PowerPoint JavaScript object model in Office Add-ins](core-concepts.md)
+- [Tutorial: Create a PowerPoint task pane add-in](../tutorials/powerpoint-tutorial-yo.md)
 - [Work with tables using the PowerPoint JavaScript API](work-with-tables.md)
 - [Bind to shapes in a PowerPoint presentation](bind-shapes-in-presentation.md)
+- [PowerPoint JavaScript API reference](/javascript/api/powerpoint)
 - [Group or ungroup shapes, pictures, or other objects](https://support.microsoft.com/office/a7374c35-20fe-4e0a-9637-7de7d844724b)
