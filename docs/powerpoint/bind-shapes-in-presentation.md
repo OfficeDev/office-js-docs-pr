@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Bind and refresh shapes in a PowerPoint presentation
 
-Use shape bindings when your add-in needs to find and update the same shape later, such as refreshing a chart image from an external data source.
+Use shape bindings when your add-in needs to find and update the same shape later, such as refreshing a number from an external data source.
 
 A binding creates a stable identifier for a shape. Your add-in can use that identifier to get the shape again, update it, and handle cases where the shape was deleted.
 
@@ -135,7 +135,7 @@ async function loadBindings() {
 }
 ```
 
-## Error handling when you delete a binding or shape
+## Error handling when a binding or shape is deleted
 
 When you delete a shape, PowerPoint also removes its associated binding from the binding collection. Any references to that binding or shape can fail when you call methods or access properties. Handle these error scenarios if your add-in stores `Binding` or `Shape` objects.
 

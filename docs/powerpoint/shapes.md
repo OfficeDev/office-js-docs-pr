@@ -13,8 +13,6 @@ Use the PowerPoint JavaScript API to create, format, move, group, and delete sha
 
 This article focuses on geometric shapes, lines, and text boxes by using [Shape](/javascript/api/powerpoint/powerpoint.shape) and [ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection).
 
-If you're new to PowerPoint add-ins, start with [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md), then review [PowerPoint JavaScript object model in Office Add-ins](core-concepts.md).
-
 ## Quick example: create and format a shape
 
 The following example creates a geometric shape, positions it, and sets fill and text formatting.
