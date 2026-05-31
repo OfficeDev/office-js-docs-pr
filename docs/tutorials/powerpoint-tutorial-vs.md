@@ -1,15 +1,18 @@
 ---
-title: PowerPoint add-in tutorial using Visual Studio
-description: "In this tutorial, you'll use Visual Studio to build a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides."
-ms.date: 01/16/2025
+title: "Tutorial: Build a PowerPoint add-in with Visual Studio"
+description: "Build a PowerPoint task pane add-in in Visual Studio that inserts images and text, reads slide metadata, adds slides, and navigates through a presentation."
+ms.date: 05/19/2026
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
+ai-usage: ai-assisted
 ---
 
-# Tutorial: Create a PowerPoint task pane add-in with Visual Studio
+# Tutorial: Build a PowerPoint add-in with Visual Studio
 
-In this tutorial, you'll create a PowerPoint task pane add-in that:
+If you want to learn Office Add-ins by building something practical, this tutorial walks you through creating a PowerPoint task pane add-in in Visual Studio.
+
+In about 20 minutes, you'll build an add-in that can:
 
 > [!div class="checklist"]
 >
@@ -18,7 +21,6 @@ In this tutorial, you'll create a PowerPoint task pane add-in that:
 > - Gets slide metadata
 > - Adds new slides
 > - Navigates between slides
-
 > [!TIP]
 > If you want a completed version of this tutorial, visit the [Office Add-ins samples repo on GitHub](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/tutorials/powerpoint-tutorial).
 
@@ -32,7 +34,7 @@ In this tutorial, you'll create a PowerPoint task pane add-in that:
 - Office connected to a Microsoft 365 subscription (including Office on the web).
 
     > [!NOTE]
-    > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription to use for development through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram); for details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
+    > If you don't already have Office, you might qualify for a Microsoft 365 E5 developer subscription through the [Microsoft 365 Developer Program](https://aka.ms/m365devprogram). For details, see the [FAQ](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-). Alternatively, you can [sign up for a 1-month free trial](https://www.microsoft.com/microsoft-365/try) or [purchase a Microsoft 365 plan](https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-g).
 
 ## Create your add-in project
 
@@ -64,7 +66,7 @@ Complete the following steps to create a PowerPoint add-in project using Visual 
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-### Update code
+### Add starter markup and script
 
 Edit the add-in code as follows to create the framework that you'll use to implement add-in functionality in subsequent steps of this tutorial.
 
@@ -630,11 +632,10 @@ Complete the following steps to add code that navigates between the slides of a 
 
 ## Next steps
 
-In this tutorial, you created a PowerPoint add-in that inserts an image, inserts text, gets slide metadata, and navigates between slides. To learn more about building PowerPoint add-ins, continue to the following articles.
+You now have a working PowerPoint add-in that inserts images and text, reads slide metadata, and navigates slides. Continue with these articles to deepen your PowerPoint add-in development skills.
 
 > [!div class="nextstepaction"]
 > [PowerPoint add-ins overview](../powerpoint/powerpoint-add-ins.md)
-
 > [!div class="nextstepaction"]
 > [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md)
 
