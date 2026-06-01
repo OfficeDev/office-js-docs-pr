@@ -1,7 +1,7 @@
 ---
 title: Custom functions quick start
 description: Developing custom functions in Excel quick start guide.
-ms.date: 08/22/2024
+ms.date: 04/20/2026
 ms.service: excel
 ms.localizationpriority: high
 ---
@@ -28,7 +28,7 @@ To start, you'll use the Yeoman generator to create the custom functions project
 
     The Yeoman generator will create the project files and install supporting Node components.
 
-1. The Yeoman generator will give you some instructions in your command line about what to do with the project, but ignore them and continue to follow our instructions. Navigate to the root folder of the project.
+1. The Yeoman generator gives you instructions in your command line about the project, but you should continue to follow the instructions in this article. Navigate to the root folder of the project.
 
     ```command&nbsp;line
     cd "My custom functions add-in"
