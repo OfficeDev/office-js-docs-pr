@@ -73,6 +73,8 @@ The manifest file for an add-in that defines custom functions configures the nam
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
+[!include[manifest guidance](../includes/excel-custom-functions-unified-manifest-preview.md)]
+
 The unified manifest for an add-in that defines custom functions (**./manifest.json** in the project) does several things.
 
 - Defines the namespace for your custom functions using the `customFunctions.namespace` object. A namespace prepends itself to your custom functions to help customers identify your functions as part of your add-in.

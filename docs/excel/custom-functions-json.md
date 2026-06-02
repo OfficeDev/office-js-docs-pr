@@ -32,6 +32,8 @@ The way you connect your manifest file to your JSON metadata file depends on whi
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
+[!include[manifest guidance](../includes/excel-custom-functions-unified-manifest-preview.md)]
+
 In the unified manifest, reference your JSON metadata file using the `customFunctions.metadataUrl` property within the `extensions` array:
 
 ```json
