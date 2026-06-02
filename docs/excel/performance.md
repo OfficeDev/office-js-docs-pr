@@ -1,7 +1,7 @@
 ---
 title: Excel JavaScript API performance optimization
 description: Optimize Excel add-in performance using the Excel JavaScript API with batching, fewer objects, and reduced payload size.
-ms.date: 09/19/2025
+ms.date: 06/02/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -35,7 +35,7 @@ If you need to update a large range (such as to assign values and then recalcula
 
 See the [Application Object](/javascript/api/excel/excel.application) reference documentation for information about how to use the `suspendApiCalculationUntilNextSync()` API to suspend and reactivate calculations in a very convenient way. The following code demonstrates how to suspend calculation temporarily.
 
-```js
+```ts
 await Excel.run(async (context) => {
     let app = context.workbook.application;
     let sheet = context.workbook.worksheets.getItem("sheet1");
@@ -194,7 +194,7 @@ async function run() {
     
     // This sample attempts to process too many ranges at once. 
     for (let row = 1; row < 10000; row++) {
-      let range = sheet.getRangeByIndexes(row, 1, 1, 1);
+      let range = worksheet.getRangeByIndexes(row, 1, 1, 1);
       range.values = [["1"]];
     }
     await context.sync(); 

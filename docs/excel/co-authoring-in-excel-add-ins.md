@@ -1,7 +1,7 @@
 ---
 title: Coauthoring in Excel add-ins
 description: Learn how to handle coauthoring scenarios in Excel add-ins to prevent stale data, synchronization conflicts, and merge issues.
-ms.date: 12/15/2025
+ms.date: 06/02/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -245,4 +245,4 @@ For the `Range.values` approach to work reliably:
 - [How AutoSave impacts add-ins and macros (VBA)](/office/vba/library-reference/concepts/how-autosave-impacts-addins-and-macros)
 - [Working with Events using the Excel JavaScript API](../excel/excel-add-ins-events.md)
 - [Excel JavaScript API performance optimization](../excel/performance.md)
-- [Bindings in Excel add-ins](../excel/excel-add-ins-ranges-advanced.md#work-with-bindings-using-the-excel-javascript-api)
+- [Bind to regions in a document or spreadsheet](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)
