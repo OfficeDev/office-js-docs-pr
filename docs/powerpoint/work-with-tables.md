@@ -323,11 +323,11 @@ The previous sample creates a table with three custom column widths, and one cus
 
 ## Specify merged areas
 
-A merged area is two or more cells combined so that they share a single value and format. In appearance, the merged area spans multiple rows or columns. You index a merged area by its upper-left table cell location (row, column) when setting its value or format. Always use the upper-left cell of the merged area to set the value and formatting. All other cells in the merged area must be empty strings with no formatting applied.
+A merged area is two or more cells combined so that they share a single value and format. In appearance, the merged area spans multiple rows or columns. Index a merged area by its upper-left table cell location (row, column) when setting its value or format. Always use the upper-left cell of the merged area to set the value and formatting. All other cells in the merged area must be empty strings with no formatting applied.
 
 To specify a merged area, provide the upper-left location where the area starts (row, column) and the length of the area in rows and columns. The following diagram shows an example of these values for a merged area that is 3 rows by 2 columns in size. Note that merged areas can't overlap.
 
-Use the [TableAddOptions.mergedAreas](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-mergedareas-member) property to specify one or more merged areas. The following code sample shows how to create a table with two merged areas. About the code sample, note the following points:
+Use the [TableAddOptions.mergedAreas](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-mergedareas-member) property to specify one or more merged areas. The following code sample shows how to create a table with two merged areas. About the code sample, note the following points.
 
 - The `values` property must only specify the value for the upper-left corner of the merged area. All other cell values in the merged area must specify empty strings ("").
 

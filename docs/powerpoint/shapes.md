@@ -13,7 +13,7 @@ Use the PowerPoint JavaScript API to create, format, move, group, and delete sha
 
 This article focuses on geometric shapes, lines, and text boxes by using [Shape](/javascript/api/powerpoint/powerpoint.shape) and [ShapeCollection](/javascript/api/powerpoint/powerpoint.shapecollection).
 
-## Quick example: create and format a shape
+## Quick example: Create and format a shape
 
 The following example creates a geometric shape, positions it, and sets fill and text formatting.
 
@@ -82,7 +82,7 @@ await PowerPoint.run(async (context) => {
 
 ### Text boxes
 
-A text box is created with the [ShapeCollection.addTextBox()](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) method. The first parameter is the text that should appear in the box initially. There is an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) that can specify the initial size of the text box and its position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
+A text box is created with the [ShapeCollection.addTextBox()](/javascript/api/powerpoint/powerpoint.shapecollection#powerpoint-powerpoint-shapecollection-addtextbox-member(1)) method. The first parameter is the text that should appear in the box initially. There's an optional second parameter of type [ShapeAddOptions](/javascript/api/powerpoint/powerpoint.shapeaddoptions) that can specify the initial size of the text box and its position relative to the top and left sides of the slide. Or these properties can be set after the shape is created.
 
 The following code sample shows how to create a text box on the first slide.
 

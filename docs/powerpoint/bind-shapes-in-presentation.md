@@ -23,7 +23,7 @@ The following image shows how an add-in might bind to two shapes on a slide. Eac
 
 ## Scenario: Sync shapes with a data source
 
-A common scenario is keeping presentation visuals up to date from a data source. Instead of manually replacing images, an add-in can retrieve the latest data, convert it to a Base64 image, and update the correct shape by using its binding ID.
+A common scenario is keeping presentation visuals up to date from a data source. Instead of manually replacing images, an add-in can retrieve the latest data, convert it to a Base64-encoded image, and update the correct shape by using its binding ID.
 
 In a general implementation, consider two components for binding a shape in PowerPoint and updating it with a new image from a data source.
 
