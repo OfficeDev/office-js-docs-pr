@@ -2,6 +2,7 @@
 title: Work with notes using the Excel JavaScript API
 description: Information on using the APIs to add, remove, and edit notes.
 ms.date: 06/26/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

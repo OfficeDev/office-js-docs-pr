@@ -1,5 +1,6 @@
 ---
 ms.date: 01/14/2020
+ms.topic: concept-article
 description: Learn to implement volatile and offline streaming custom functions.
 title: Volatile values in functions
 ms.localizationpriority: medium

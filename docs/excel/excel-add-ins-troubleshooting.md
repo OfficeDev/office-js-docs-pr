@@ -2,7 +2,7 @@
 title: Troubleshoot Excel add-ins
 description: 'Diagnose and resolve common Excel add-in errors: workbook focus changes, API limitations, and known issues.'
 ms.date: 09/22/2025
-ms.topic: troubleshooting-error-codes
+ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 

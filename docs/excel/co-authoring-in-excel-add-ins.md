@@ -2,6 +2,7 @@
 title: Coauthoring in Excel add-ins
 description: Learn how to handle coauthoring scenarios in Excel add-ins to prevent stale data, synchronization conflicts, and merge issues.
 ms.date: 12/15/2025
+ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 

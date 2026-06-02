@@ -2,6 +2,7 @@
 title: Set the format of a range using the Excel JavaScript API
 description: Learn how to use the Excel JavaScript API to set the format of a range.
 ms.date: 03/03/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

@@ -2,6 +2,7 @@
 title: Authentication for custom functions without a shared runtime
 description: Authenticate users using custom functions that don't use a shared runtime.
 ms.date: 02/10/2024
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

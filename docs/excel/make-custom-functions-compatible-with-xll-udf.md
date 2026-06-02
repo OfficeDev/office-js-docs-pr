@@ -2,6 +2,7 @@
 title: Extend custom functions with XLL add-ins
 description: Enable compatibility with Excel XLL add-ins that have equivalent functionality to your custom functions.
 ms.date: 07/29/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
