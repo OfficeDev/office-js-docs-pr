@@ -52,7 +52,7 @@ The namespace for your custom functions is configured in the manifest file. The 
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
-[!include[manifest guidance](../includes/excel-custom-functions-unified-manifest-preview.md)]
+[!include[unified manifest preview note](../includes/excel-custom-functions-unified-manifest-preview.md)]
 
 In the unified manifest, configure the namespace in the `customFunctions.namespace` object:
 
