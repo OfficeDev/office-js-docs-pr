@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Custom functions debugging in a non-shared runtime
 
-This article covers debugging only for custom functions with the **[add-in only manifest](../develop/add-in-manifests.md)** that **don't use a [shared runtime](../testing/runtimes.md#shared-runtime)**. For unified manifest and shared runtime scenarios, see [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md).
+This article covers debugging only for custom functions that use the **[add-in only manifest](../develop/add-in-manifests.md)** and **don't use a [shared runtime](../testing/runtimes.md#shared-runtime)**. For unified manifest or shared runtime scenarios, see [Overview of debugging Office Add-ins](../testing/debug-add-ins-overview.md).
 
 [!include[Shared runtime note](../includes/shared-runtime-note.md)]
 
