@@ -2,6 +2,7 @@
 title: Find strings in an Excel worksheet using the JavaScript API
 description: Learn how to find the first match, find all matches, handle missing results, and control partial and case-sensitive searches using the Excel JavaScript API.
 ms.date: 03/26/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

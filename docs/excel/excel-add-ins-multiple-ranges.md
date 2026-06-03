@@ -2,6 +2,7 @@
 title: Work with multiple ranges simultaneously in Excel add-ins
 description: Learn how the Excel JavaScript library enables your add-in to perform operations, and set properties, on multiple ranges simultaneously.
 ms.date: 09/22/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

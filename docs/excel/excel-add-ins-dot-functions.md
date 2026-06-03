@@ -2,6 +2,7 @@
 title: Add reference methods to cell values
 description: Learn how to add reference methods to cell values.
 ms.date: 11/04/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

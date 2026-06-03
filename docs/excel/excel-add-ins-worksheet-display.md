@@ -2,6 +2,7 @@
 title: Adjust worksheet display settings
 description: How to adjust some worksheet display settings to make reports easier to read.
 ms.date: 04/03/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

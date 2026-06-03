@@ -2,6 +2,7 @@
 title: Options for Excel custom functions
 description: Learn how to use different parameters within your custom functions, such as Excel ranges, optional parameters, invocation context, and more.
 ms.date: 08/18/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

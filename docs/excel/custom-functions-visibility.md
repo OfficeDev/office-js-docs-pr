@@ -2,6 +2,7 @@
 title: Manage custom function visibility
 description: Show or hide custom functions from the Excel UI.
 ms.date: 11/25/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

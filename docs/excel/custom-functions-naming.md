@@ -2,6 +2,7 @@
 title: Naming and localization for custom functions in Excel
 description: Learn requirements for names of Excel custom functions and how to localize custom functions.
 ms.date: 04/20/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
