@@ -1,37 +1,41 @@
 ---
-title: Bind to shapes in a PowerPoint presentation
-description: Learn how to bind shapes and access them from your add-in to keep them up to date.
+title: Bind and refresh shapes in PowerPoint add-ins
+description: Learn how to bind PowerPoint shapes to stable IDs so your add-in can refresh, load, and delete shape references reliably.
 ms.topic: how-to
-ms.date: 04/30/2025
+ms.date: 05/29/2026
 ms.localizationpriority: medium
 ---
 
-# Bind to shapes in a PowerPoint presentation
+# Bind and refresh shapes in a PowerPoint presentation
 
-Your PowerPoint add-in can bind to shapes to consistently access them through an identifier. The add-in establishes a binding by calling [BindingCollection.add](/javascript/api/powerpoint/powerpoint.bindingcollection#powerpoint-powerpoint-bindingcollection-add-member(1)) and assigning a unique identifier. Use the identifier at any time to reference the shape and access its properties. Creating bindings provides the following value to your add-in.
+Use shape bindings when your add-in needs to find and update the same shape later, such as refreshing a number from an external data source.
 
-- Establishes a relationship between the add-in and the shape in the document. Bindings are persisted in the document and can be accessed at a later time.
-- Enables access to shape properties to read or update, without requiring the user to select any shapes.
+A binding creates a stable identifier for a shape. Your add-in can use that identifier to get the shape again, update it, and handle cases where the shape was deleted.
 
-The following image shows how an add-in might bind to two shapes on a slide. Each shape has a binding ID created by the add-in: `star` and `pie`. Using the binding ID, the add-in can access the desired shape to update properties.
+Bindings provide two key benefits:
+
+- They establish a relationship between the add-in and the shape in the document. The document persists bindings, so you can access them later.
+- They enable access to shape properties for reading or updating, without requiring the user to select any shapes.
+
+The following image shows how an add-in might bind to two shapes on a slide. Each shape has a binding ID created by the add-in: `star` and `pie`. By using the binding ID, the add-in can access the desired shape to update its properties.
 
 :::image type="content" source="../images/powerpoint-bind-shapes.png" alt-text="Binding to a star shape with the ID 'star' and binding to a pie chart with the ID 'pie'.":::
 
-## Scenario: Use bindings to sync with a data source
+## Scenario: Sync shapes with a data source
 
-A common scenario for using bindings is to keep shapes up to date with a data source. Often when creating a presentation, users copy and paste images from the data source into the presentation. Over time, to keep the images up to date, they will manually copy and paste the latest images from the data source. An add-in can help automate this process by retrieving up-to-date images from the data source on the user’s behalf. When a shape fill needs updating, the add-in uses the binding to find the correct shape and update the shape fill with the newer image.
+A common scenario is keeping presentation visuals up to date from a data source. Instead of manually replacing images, an add-in can retrieve the latest data, convert it to a Base64-encoded image, and update the correct shape by using its binding ID.
 
-In a general implementation, there are two components to consider for binding a shape in PowerPoint and updating it with a new image from a data source.
+In a general implementation, consider two components for binding a shape in PowerPoint and updating it with a new image from a data source.
 
-1. **The data source**. This is any source of data or asset library such as Microsoft SharePoint or Microsoft OneDrive.  
+1. **The data source**. This is any source of data or asset library such as Microsoft SharePoint or Microsoft OneDrive.
 1. **The PowerPoint add-in**. The add-in gets data from the data source based on what the user needs. It converts the data to a Base64-encoded image. This is the only fill type the bound shape can accept. It inserts a shape upon the user’s request and binds it with a unique identifier. Then it fills the shape with the Base64 image based on the original data source. Shapes are updated upon the user’s request and the add-in uses the binding identifier to find the shape and update the image with the last saved Base64 image.
 
 > [!NOTE]
-> You decide the implementation details of how to sync updates from the data source and how to get or create images. This article only describes how to use the Office JS APIs in your add-in to bind a shape and update it with latest images.
+> You decide the implementation details for syncing updates and creating images. This article focuses on using the Office.js APIs to bind shapes and refresh them.
 
 ## Create a bound shape in PowerPoint
 
-Use the `PowerPoint.BindingCollection.add()` method for the presentation to create a binding which refers to a particular shape.
+Use [BindingCollection.add](/javascript/api/powerpoint/powerpoint.bindingcollection#powerpoint-powerpoint-bindingcollection-add-member(1)) to create a binding that refers to a specific shape.
 
 :::image type="content" source="../images/powerpoint-steps-to-bind-shape.png" alt-text="Add-in creates a Base64-encoded image from data source, then creates the shape from the image and adds a unique ID.":::
 
@@ -41,7 +45,7 @@ The following sample shows how to create a shape on the first selected slide.
 await PowerPoint.run(async (context) => {
     const slides = context.presentation.getSelectedSlides();
 
-    // Insert new shape on first selected slide. 
+    // Insert new shape on first selected slide.
     const myShape = slides
         .getItemAt(0)
         .shapes.addGeometricShape(PowerPoint.GeometricShapeType.rectangle, {
@@ -51,20 +55,22 @@ await PowerPoint.run(async (context) => {
             height: 200
         });
 
-    // Fill shape with a Base64-encoded image. 
-    // Note: The image is typically created from a data source request. 
+    // Fill shape with a Base64-encoded image.
+    // Note: The image is typically created from a data source request.
     const productsImage = "...Base64 image data...";
     myShape.fill.setImage(productsImage);
+
+    await context.sync();
 });
 ```
 
-Call `BindingCollection.add` to add the binding to the bindings collection in PowerPoint. The following sample shows how to add a new binding for a shape to the bindings collection.
+Call `BindingCollection.add` to add the shape to the PowerPoint bindings collection. The following sample continues from the previous sample and adds a new binding for `myShape`.
 
 ```javascript
-// Create a binding ID to track the shape for later updates. 
-const bindingId = "productChart"; 
-// Create binding by adding the new shape to the bindings collection. 
-context.presentation.bindings.add(myShape, PowerPoint.BindingType.shape, bindingId); 
+// Create a binding ID to track the shape for later updates.
+const bindingId = "productChart";
+// Create a binding by adding the shape to the bindings collection.
+context.presentation.bindings.add(myShape, PowerPoint.BindingType.shape, bindingId);
 ```
 
 ## Refresh a bound shape with updated data
@@ -75,12 +81,12 @@ After there's an update to the image data, refresh the shape image by finding it
 async function updateBinding(bindingId, image) {
     await PowerPoint.run(async (context) => {
         try {
-            // Get the shape based on binding ID. 
+            // Get the shape based on binding ID.
             const myShape = context.presentation.bindings
                 .getItem(bindingId)
                 .getShape();
 
-            // Update the shape to latest image. 
+            // Update the shape to latest image.
             myShape.fill.setImage(image);
             await context.sync();
 
@@ -88,7 +94,7 @@ async function updateBinding(bindingId, image) {
             console.error(err);
         }
     });
-} 
+}
 ```
 
 ## Delete a binding
@@ -98,7 +104,7 @@ The following sample shows how to delete a binding by deleting it from the bindi
 ```javascript
 async function deleteBinding(bindingId) {
     await PowerPoint.run(async (context) => {
-        context.presentation.bindings.getItemAt(bindingId).delete();
+        context.presentation.bindings.getItem(bindingId).delete();
         await context.sync();
     });
 }
@@ -112,13 +118,13 @@ When a user opens a presentation and your add-in first loads, you can load all t
 async function loadBindings() {
     await PowerPoint.run(async (context) => {
         try {
-            let myBindings = context.presentation.bindings;
+            const myBindings = context.presentation.bindings;
             myBindings.load("items");
             await context.sync();
 
             // Log all binding IDs to console.
             if (myBindings.items.length > 0) {
-                myBindings.items.forEach(async (binding) => {
+                myBindings.items.forEach((binding) => {
                     console.log(binding.id);
                 });
             }
@@ -131,15 +137,15 @@ async function loadBindings() {
 
 ## Error handling when a binding or shape is deleted
 
-When a shape is deleted, its associated binding is also removed from the PowerPoint binding collection. Any object references you have to the binding, or shape, will return errors if you access any properties or methods on those objects. Be sure to handle potential error scenarios for a deleted shape if your add-in keeps Binding or Shape objects.
+When you delete a shape, PowerPoint also removes its associated binding from the binding collection. Any references to that binding or shape can fail when you call methods or access properties. Handle these error scenarios if your add-in stores `Binding` or `Shape` objects.
 
-The following code shows one approach to error handling when a binding object references a deleted binding. Use a try/catch statement and then call a function to reload all binding and shape references when an error occurs.  
+The following code shows one approach to error handling when a binding object references a deleted binding. Use a try/catch statement and then call a function to reload all binding and shape references when an error occurs.
 
 ```javascript
 async function getShapeFromBindingID(id) {
     await PowerPoint.run(async (context) => {
         try {
-            const binding = context.presentation.bindings.getItemAt(id);
+            const binding = context.presentation.bindings.getItem(id);
             const shape = binding.getShape();
 
             await context.sync();
@@ -154,7 +160,11 @@ async function getShapeFromBindingID(id) {
 
 ## See also
 
-When maintaining freshness on shapes, you may also want to check the zOrder. See the [zOrderPosition](/javascript/api/powerpoint/powerpoint.shape) property for more information.
+When maintaining visual freshness, you might also want to check shape layering by using [Shape.zOrderPosition](/javascript/api/powerpoint/powerpoint.shape).
 
-- [Work with shapes using the PowerPoint JavaScript API](shapes.md)
+- [Create and format shapes in PowerPoint add-ins](shapes.md)
+- [PowerPoint JavaScript object model in Office Add-ins](core-concepts.md)
+- [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md)
+- [Tutorial: Create a PowerPoint task pane add-in](../tutorials/powerpoint-tutorial-yo.md)
 - [Bind to regions in a document or spreadsheet](../develop/bind-to-regions-in-a-document-or-spreadsheet.md)
+- [PowerPoint JavaScript API reference](/javascript/api/powerpoint)
