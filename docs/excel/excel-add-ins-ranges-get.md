@@ -2,6 +2,7 @@
 title: Get a range using the Excel JavaScript API
 description: Learn how to retrieve a range using the Excel JavaScript API.
 ms.date: 02/17/2022
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

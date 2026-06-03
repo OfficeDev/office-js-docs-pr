@@ -2,6 +2,7 @@
 title: Use custom functions as LAMBDA parameters
 description: Use custom functions as LAMBDA function parameters for specific Excel functions.
 ms.date: 12/05/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

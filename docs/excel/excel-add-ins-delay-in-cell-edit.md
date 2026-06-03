@@ -2,6 +2,7 @@
 title: Delay execution while cell is being edited
 description: Defer an Excel.run batch until the user leaves cell edit mode instead of failing with an error.
 ms.date: 09/19/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

@@ -2,6 +2,7 @@
 title: Add checkboxes using the Excel JavaScript API
 description: Learn how to add checkboxes using the Excel JavaScript API.
 ms.date: 04/08/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

@@ -2,6 +2,7 @@
 title: Work with worksheets using the Excel JavaScript API
 description: Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.
 ms.date: 03/26/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

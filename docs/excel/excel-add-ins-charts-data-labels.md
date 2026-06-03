@@ -2,6 +2,7 @@
 title: Work with data labels in charts using the Excel JavaScript API
 description: Code samples demonstrating chart data label tasks using the Excel JavaScript API.
 ms.date: 04/14/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Add properties to basic cell values
 description: Add properties to basic cell values.
-ms.topic: how-to #Required; leave this attribute/value as-is
+ms.topic: how-to
 ms.date: 05/12/2025
 ms.localizationpriority: medium
 ---

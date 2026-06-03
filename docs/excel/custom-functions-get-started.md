@@ -1,7 +1,7 @@
 ---
 description: Tips and best practices for Excel custom functions in your Office Add-ins.
 title: Best practices for custom functions in Excel
-ms.date: 06/22/2025
+ms.date: 06/02/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -133,10 +133,7 @@ To display a message in the add-in task pane that notifies users of a delay, mak
 1. In **function.js**, import the `showNotification` function.
 
     ```js
-    export function showNotification(message){
-      const label = document.getElementById("item-subject");
-      label.innerHTML = message;
-    }
+    import { showNotification } from "./taskpane.js";
     ```
 
 1. In **function.js**, call `showNotification` when running the calculation that may include a delay.

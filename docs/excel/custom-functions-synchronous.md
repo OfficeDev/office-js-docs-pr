@@ -2,6 +2,7 @@
 title: Synchronous custom functions
 description: Use synchronous custom functions to support evaluation and conditional format processes in Excel.
 ms.date: 01/05/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

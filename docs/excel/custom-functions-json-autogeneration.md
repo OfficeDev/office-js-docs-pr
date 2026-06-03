@@ -2,6 +2,7 @@
 title: Autogenerate JSON metadata for custom functions
 description: Use JSDoc tags to dynamically create your custom functions JSON metadata.
 ms.date: 01/05/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

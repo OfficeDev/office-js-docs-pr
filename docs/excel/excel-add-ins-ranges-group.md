@@ -2,6 +2,7 @@
 title: Group ranges using the Excel JavaScript API
 description: Learn how to group rows or columns of a range together to create an outline using the Excel JavaScript API.
 ms.date: 03/03/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

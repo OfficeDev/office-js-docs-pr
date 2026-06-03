@@ -1,5 +1,6 @@
 ---
 ms.date: 03/03/2026
+ms.topic: how-to
 description: Request, stream, and cancel streaming of external data to your workbook with custom functions in Excel.
 title: Receive and handle data with custom functions
 ms.localizationpriority: medium

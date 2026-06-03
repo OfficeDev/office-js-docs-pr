@@ -2,6 +2,7 @@
 title: Use cards for cell values with the Excel JavaScript API
 description: Learn how to create cards for cell value data types in your Excel add-in.
 ms.date: 02/12/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

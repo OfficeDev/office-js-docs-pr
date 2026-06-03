@@ -2,6 +2,7 @@
 title: Blank and null values in Excel add-ins
 description: Learn how to work with blank and null values in the Excel JavaScript API.
 ms.date: 03/03/2026
+ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 
