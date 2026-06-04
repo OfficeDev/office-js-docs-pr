@@ -125,7 +125,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-`protect()` also accepts an optional password string. Use it when you want users to enter a password before they can change workbook structure. For worksheet-level protection, see [Data protection](excel-add-ins-worksheets.md#data-protection). For Excel's built-in protection experience, see [Protect a workbook](https://support.microsoft.com/office/7e365a4d-3e89-4616-84ca-1931257c1517).
+`protect()` also accepts an optional password string. Use it when you want users to enter a password before they can change workbook structure. For worksheet-level protection, see [Data protection](excel-add-ins-worksheets.md#protect-worksheet-data). For Excel's built-in protection experience, see [Protect a workbook](https://support.microsoft.com/office/7e365a4d-3e89-4616-84ca-1931257c1517).
 
 ## Access document properties
 

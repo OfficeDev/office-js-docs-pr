@@ -37,7 +37,7 @@ A [Comment](/javascript/api/excel/excel.comment) object represents the full thre
 Use `CommentCollection.add` to start a threaded conversation on a cell. The method accepts up to three parameters:
 
 - `cellAddress`: The cell where you add the comment. This parameter can be a string or a [Range](/javascript/api/excel/excel.range) object. The range must be a single cell.
-- `content`: The comment text. Use a string for plain text comments. Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments that include [mentions](#add-mentions).
+- `content`: The comment text. Use a string for plain text comments. Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments that include [mentions](#mention-users).
 - `contentType`: A [ContentType](/javascript/api/excel/excel.contenttype) value that specifies the content type. The default is `ContentType.plain`.
 
 The following sample starts a review thread on cell **A2**. Note that comments that your add-in creates are attributed to the current user.

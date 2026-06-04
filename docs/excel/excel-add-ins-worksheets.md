@@ -468,7 +468,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-You can also apply an `AutoFilter` to individual tables. For more information, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md#autofilter).
+You can also apply an `AutoFilter` to individual tables. For more information, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md#filter-a-table-with-autofilter).
 
 ## Protect worksheet data
 
