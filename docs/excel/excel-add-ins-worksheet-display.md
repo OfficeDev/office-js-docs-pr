@@ -15,7 +15,7 @@ Use worksheet display settings to make dashboards, reports, and printouts easier
 
 - Use `Worksheet.horizontalPageBreaks` and `Worksheet.verticalPageBreaks` to control manual page breaks.
 - Use `Worksheet.pageLayout` to control print settings such as centering, title rows, and print area.
-- Use preview worksheet properties to show or hide data type icons, gridlines, and headings.
+- Use worksheet properties to show or hide data type icons, gridlines, and headings.
 - Changes to worksheet display settings are saved with the worksheet.
 
 ## Configure page layout and print settings
