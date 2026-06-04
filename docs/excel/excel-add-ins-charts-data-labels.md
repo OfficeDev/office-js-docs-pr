@@ -48,7 +48,7 @@ async function setup() {
 }
 
 async function createChart(context: Excel.RequestContext) {
-    const worksheet = context.workbook.worksheets.getActiveWorksheet();
+    const worksheet = context.workbook.worksheets.getItem("Sample");
     const chart = worksheet.charts.add(
         Excel.ChartType.lineMarkers,
         worksheet.getRange("A1:E7"),
