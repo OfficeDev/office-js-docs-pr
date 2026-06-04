@@ -2,7 +2,7 @@
 title: Get Excel worksheet ranges using the JavaScript API
 description: Learn how to get Excel worksheet ranges by address, named range, user selection, used range, or the entire worksheet with the Excel JavaScript API.
 ms.date: 06/04/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

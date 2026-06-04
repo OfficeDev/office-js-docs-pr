@@ -2,7 +2,7 @@
 title: Format Excel chart data labels with JavaScript
 description: Learn how to add, position, format, and customize Excel chart data labels, leader lines, and callouts with the Excel JavaScript API.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

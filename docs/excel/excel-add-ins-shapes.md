@@ -2,7 +2,7 @@
 title: Create and manage shapes in Excel add-ins
 description: Learn how to create, position, format, group, export, and delete shapes in Excel worksheets by using the Excel JavaScript API.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

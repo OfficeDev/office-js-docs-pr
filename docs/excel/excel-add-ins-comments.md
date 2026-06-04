@@ -2,7 +2,7 @@
 title: Manage comments in Excel add-ins with Excel JavaScript API
 description: Learn how to add, reply to, edit, resolve, and monitor threaded comments in Excel workbooks by using the Excel JavaScript API.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

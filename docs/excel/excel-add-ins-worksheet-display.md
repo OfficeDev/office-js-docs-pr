@@ -2,7 +2,7 @@
 title: Control worksheet display settings
 description: Learn how to use the Excel JavaScript API to control page layout, data type icons, gridlines, and headings in a worksheet.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ai-usage: ai-assisted
 ms.localizationpriority: medium
 ---

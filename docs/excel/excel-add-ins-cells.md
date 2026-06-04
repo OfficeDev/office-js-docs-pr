@@ -2,7 +2,7 @@
 title: Work with Excel cells by using Range objects
 description: Learn how Excel cells map to `Range` objects in Office Add-ins, how to target one cell or a block of cells, and when to use `RangeAreas`.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: concept-article
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

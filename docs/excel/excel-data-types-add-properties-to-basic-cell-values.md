@@ -2,7 +2,7 @@
 title: Add properties to Excel basic cell values
 description: Learn how to add properties to string, double, and Boolean cell values in Excel add-ins so formulas keep working and users can view extra details.
 ai-usage: ai-assisted
-ms.topic: how-to #Required; leave this attribute/value as-is
+ms.topic: how-to
 ms.date: 06/03/2026
 ms.localizationpriority: medium
 ---

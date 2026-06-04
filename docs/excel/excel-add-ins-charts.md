@@ -2,7 +2,7 @@
 title: Create and customize Excel charts with JavaScript
 description: Learn how to create Excel charts, add series, format titles and axes, add trendlines and data tables, and export chart images with the JavaScript API.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

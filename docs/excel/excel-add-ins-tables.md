@@ -2,7 +2,7 @@
 title: Create, read, and filter Excel tables with JavaScript
 description: Learn how to create, resize, read, sort, filter, and format Excel tables with the Excel JavaScript API.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

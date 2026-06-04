@@ -2,7 +2,7 @@
 title: Set or get Excel range values, text, and formulas
 description: Learn when to use `Range.values`, `Range.text`, and `Range.formulas` to write or read Excel worksheet data in an Office Add-in.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

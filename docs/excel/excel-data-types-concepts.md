@@ -2,7 +2,7 @@
 title: Use Excel JavaScript API data types
 description: Learn when to use `valuesAsJson`, formatted numbers, entity values, linked entities, web images, and enhanced errors in Excel add-ins.
 ms.date: 06/03/2026
-ms.topic: overview
+ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ai-usage: ai-assisted
 ms.localizationpriority: high

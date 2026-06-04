@@ -3,7 +3,7 @@ title: Excel JavaScript API overview
 description: Find Excel JavaScript API articles for ranges, tables, charts, events, custom functions, and Script Lab samples.
 ms.date: 06/03/2026
 ms.service: excel
-ms.topic: reference
+ms.topic: overview
 ms.localizationpriority: high
 ai-usage: ai-assisted
 ---

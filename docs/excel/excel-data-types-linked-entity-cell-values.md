@@ -608,9 +608,9 @@ await Excel.run(async (context) => {
 });
 
 async function onLinkedEntityDomainRefreshed(eventArgs: Excel.LinkedEntityDataDomainRefreshCompletedEventArgs): Promise<any> {
-    console.log("Linked entity domain refreshed: " + eventArgs.id);
-    console.log("Refresh status: " + eventArgs.refreshed);
-    console.log("Refresh error: " + eventArgs.errors);
+    console.log(`Linked entity domain refreshed: ${eventArgs.id}`);
+    console.log(`Refresh status: ${eventArgs.refreshed}`);
+    console.log(`Refresh error: ${eventArgs.errors}`);
     return null;
 }
 ```

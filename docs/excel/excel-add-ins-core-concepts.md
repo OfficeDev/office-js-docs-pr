@@ -2,7 +2,7 @@
 title: Core Excel object model concepts
 description: Learn how workbooks, worksheets, ranges, tables, and charts relate in the Excel JavaScript API so you can read, write, and visualize workbook data.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: concept-article
 ms.localizationpriority: high
 ai-usage: ai-assisted
 ---

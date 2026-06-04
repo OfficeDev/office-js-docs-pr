@@ -2,7 +2,7 @@
 title: Apply conditional formatting with Excel JavaScript API
 description: Create, change, prioritize, and clear conditional formatting rules in Excel add-ins by using the Excel JavaScript API.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

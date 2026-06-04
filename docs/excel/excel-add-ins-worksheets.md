@@ -371,7 +371,7 @@ await Excel.run(async (context) => {
     // This will fire whenever a row has been moved as the result of a sort action.
     sheet.onRowSorted.add(async (event) => {
         await Excel.run(async (context) => {
-            console.log("Row sorted: " + event.address);
+            console.log(`Row sorted: ${event.address}`);
             let sheet = context.workbook.worksheets.getActiveWorksheet();
 
             // Clear formatting for section, then highlight the sorted area.
@@ -522,9 +522,9 @@ async function checkProtection(event) {
         let source = event.source;
 
         // Print the event properties to the console.
-        console.log("Protection status changed. Protection status is now: " + protectionStatus);
-        console.log("    ID of changed worksheet: " + worksheetId);
-        console.log("    Source of change event: " + source);
+        console.log(`Protection status changed. Protection status is now: ${protectionStatus}`);
+        console.log(`    ID of changed worksheet: ${worksheetId}`);
+        console.log(`    Source of change event: ${source}`);
     });
 }
 ```

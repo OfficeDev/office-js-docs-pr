@@ -2,7 +2,7 @@
 title: Select or get the current Excel range with JavaScript
 description: Learn how to select the current Excel range, read the active selection, and extend a selection to the edge of used data in an Office Add-in.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---

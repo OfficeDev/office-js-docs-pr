@@ -2,7 +2,7 @@
 title: Manage Excel range checkboxes with the JavaScript API
 description: Add, select, clear, and remove checkboxes in Excel ranges that contain Boolean values by using the Excel JavaScript API.
 ms.date: 06/03/2026
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---
