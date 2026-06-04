@@ -99,10 +99,11 @@ async function addPropertyToNumber() {
     // Only apply this property to a double.
     if (cellValue.basicType === Excel.RangeValueType.double) {
       cellValue.properties = {
-          Precision: {
-              type: Excel.CellValueType.double,
-              basicValue: 4
-          }
+        ...(cellValue.properties ?? {}),
+        Precision: {
+          type: Excel.CellValueType.double,
+          basicValue: 4
+        }
       };
 
       range.valuesAsJson = [[cellValue]];

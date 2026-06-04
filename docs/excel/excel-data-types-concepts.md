@@ -150,7 +150,7 @@ Linked entity cell values offer the following advantages over regular entity val
 - Linked entity cell values can nest, and Excel doesn't retrieve nested linked entities until the user or worksheet references them. This behavior helps reduce file size and improve workbook performance.
 - Excel uses a cache so different cells can reference the same linked entity cell value. This also helps workbook performance.
 
-For implementation details, see [Create linked entity cell values](excel-data-types-linked-entity-cell-values.md).
+For implementation details, see [Create linked entity data types in Excel add-ins](excel-data-types-linked-entity-cell-values.md).
 
 ## Web image values
 

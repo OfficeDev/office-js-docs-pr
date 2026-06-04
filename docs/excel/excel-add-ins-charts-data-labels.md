@@ -18,7 +18,14 @@ In [Script Lab](https://aka.ms/getscriptlab) or a sample add-in, run the followi
 ```js
 async function setup() {
     await Excel.run(async (context) => {
-        context.workbook.worksheets.getItemOrNullObject("Sample").delete();
+        const existingSheet = context.workbook.worksheets.getItemOrNullObject("Sample");
+        await context.sync();
+
+        if (!existingSheet.isNullObject) {
+            existingSheet.delete();
+            await context.sync();
+        }
+
         const sheet = context.workbook.worksheets.add("Sample");
 
         const salesTable = sheet.tables.add("A1:E1", true);
