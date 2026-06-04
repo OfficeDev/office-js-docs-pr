@@ -28,9 +28,9 @@ Excel add-ins typically start with the workbook and work to more specific elemen
 
 If you're new to the Excel object model, start with these common tasks:
 
-- [Set and get range values, text, or formulas](excel-add-ins-ranges-set-get-values.md)
-- [Work with tables](excel-add-ins-tables.md)
-- [Work with worksheets](excel-add-ins-worksheets.md)
+- [Set or get Excel range values, text, and formulas](excel-add-ins-ranges-set-get-values.md)
+- [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
+- [Manage Excel worksheets with the JavaScript API](excel-add-ins-worksheets.md)
 
 ## Work with ranges
 
@@ -90,7 +90,7 @@ This sample creates the following data in the active worksheet.
 
 :::image type="content" source="../images/excel-overview-range-sample.png" alt-text="A sales record showing value rows, a formula column, and formatted headers.":::
 
-For more information, see [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md).
+For more information, see [Set or get Excel range values, text, and formulas](excel-add-ins-ranges-set-get-values.md).
 
 ## Turn ranges into tables and charts
 
@@ -114,7 +114,7 @@ When you run this code on the worksheet with the previous data, Excel creates th
 
 :::image type="content" source="../images/excel-overview-table-sample.png" alt-text="A table made from the previous sales record.":::
 
-For more information, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md).
+For more information, see [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md).
 
 ### Create a chart from a range
 
@@ -133,7 +133,7 @@ When you run this code on the worksheet with the previous table, Excel creates t
 
 :::image type="content" source="../images/excel-overview-chart-sample.png" alt-text="A column chart showing quantities of three items from the previous sales record.":::
 
-For more information, see [Work with charts using the Excel JavaScript API](excel-add-ins-charts.md).
+For more information, see [Create and customize charts with the Excel JavaScript API](excel-add-ins-charts.md).
 
 ## Know when to use Common APIs
 
@@ -150,11 +150,11 @@ The following image shows when you might use the Excel JavaScript API instead of
 
 ## See also
 
-- [Overview of Excel add-ins](excel-add-ins-overview.md)
+- [Build Excel add-ins for Excel](excel-add-ins-overview.md)
 - [Build your first Excel add-in](../quickstarts/excel-quickstart-jquery.md)
-- [Work with worksheets](excel-add-ins-worksheets.md)
-- [Set and get range values, text, or formulas](excel-add-ins-ranges-set-get-values.md)
-- [Work with tables](excel-add-ins-tables.md)
+- [Manage Excel worksheets with the JavaScript API](excel-add-ins-worksheets.md)
+- [Set or get Excel range values, text, and formulas](excel-add-ins-ranges-set-get-values.md)
+- [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
 - [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Optimize Excel JavaScript API performance](performance.md)
-- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)

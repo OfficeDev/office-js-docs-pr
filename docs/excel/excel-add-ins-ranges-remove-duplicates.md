@@ -57,7 +57,7 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with Excel cells by using Range objects](excel-add-ins-cells.md)
 - [Cut, copy, and paste ranges using the Excel JavaScript API](excel-add-ins-ranges-cut-copy-paste.md)
 - [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)

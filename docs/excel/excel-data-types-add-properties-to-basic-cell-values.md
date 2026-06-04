@@ -14,8 +14,8 @@ Use properties on a basic cell value when you want a cell to keep its original `
 This article shows how to create a basic value with properties, update an existing value, format number values, and add nested data types.
 
 - Start with [Overview of data types in Excel add-ins](excel-data-types-overview.md) if you're new to Excel data types.
-- Review the JSON schema in [Excel JavaScript API data types core concepts](excel-data-types-concepts.md).
-- Use [Create linked entity cell values](excel-data-types-linked-entity-cell-values.md) when your data comes from an external source and should refresh independently.
+- Review the JSON schema in [Use data types in Excel add-ins](excel-data-types-concepts.md).
+- Use [Create linked entity data types in Excel add-ins](excel-data-types-linked-entity-cell-values.md) when your data comes from an external source and should refresh independently.
 
 The following example shows the number `14.67` with added fields named `Drinks`, `Food`, `Tax`, and `Tip`.
 
@@ -239,6 +239,6 @@ On Excel versions older than Office 2016, the value appears in the cell with no 
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
-- [Excel JavaScript API data types core concepts](excel-data-types-concepts.md)
+- [Use data types in Excel add-ins](excel-data-types-concepts.md)
 - [Use cards with cell value data types](excel-data-types-entity-card.md)
-- [Create linked entity cell values](excel-data-types-linked-entity-cell-values.md)
+- [Create linked entity data types in Excel add-ins](excel-data-types-linked-entity-cell-values.md)

@@ -23,7 +23,7 @@ In this article, you'll learn how to:
 Before you start, review these related articles:
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
-- [Excel data types core concepts](excel-data-types-concepts.md)
+- [Use data types in Excel add-ins](excel-data-types-concepts.md)
 - [Use cards with cell value data types](excel-data-types-entity-card.md)
 - [Add properties to Excel basic cell values](excel-data-types-add-properties-to-basic-cell-values.md)
 
@@ -672,7 +672,7 @@ If someone opens a worksheet with linked entity cell values on an older version 
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
-- [Excel data types core concepts](excel-data-types-concepts.md)
+- [Use data types in Excel add-ins](excel-data-types-concepts.md)
 - [Use cards with cell value data types](excel-data-types-entity-card.md)
 - [Add properties to Excel basic cell values](excel-data-types-add-properties-to-basic-cell-values.md)
 - [Custom functions and data types](custom-functions-data-types-concepts.md)

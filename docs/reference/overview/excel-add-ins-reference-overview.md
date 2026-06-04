@@ -23,8 +23,8 @@ Most Excel add-in functionality uses the Excel JavaScript API. For shared Office
 
 If you're getting started with the Excel object model, use these articles first:
 
-- [Excel JavaScript object model in Office Add-ins](../../excel/excel-add-ins-core-concepts.md) explains the main workbook objects and how they relate to one another.
-- [Excel add-ins overview](../../excel/excel-add-ins-overview.md) explains what you can build and how Excel add-ins fit into the Office Add-ins platform.
+- [Core Excel object model concepts for Office Add-ins](../../excel/excel-add-ins-core-concepts.md) explains the main workbook objects and how they relate to one another.
+- [Build Excel add-ins for Excel](../../excel/excel-add-ins-overview.md) explains what you can build and how Excel add-ins fit into the Office Add-ins platform.
 - [Excel add-in tutorial](../../tutorials/excel-tutorial.md) gives you hands-on practice using the Excel JavaScript API in a working add-in.
 - [Script Lab](../../overview/explore-with-script-lab.md) lets you run built-in Excel samples, inspect the code, and prototype API calls quickly.
 

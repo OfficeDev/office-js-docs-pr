@@ -239,5 +239,5 @@ These parameters control image size while keeping the chart proportionally scale
 
 - [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [Get Excel worksheet ranges with the JavaScript API](excel-add-ins-ranges-get.md)
-- [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md)
-- [Work with data labels in charts using the Excel JavaScript API](excel-add-ins-charts-data-labels.md)
+- [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
+- [Format chart data labels with the Excel JavaScript API](excel-add-ins-charts-data-labels.md)

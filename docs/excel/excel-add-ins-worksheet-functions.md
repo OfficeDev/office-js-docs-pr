@@ -440,7 +440,7 @@ The Excel JavaScript API supports the following built-in Excel worksheet functio
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [Create custom functions in Excel](custom-functions-overview.md)
 - [Functions Class (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
 - [Workbook functions object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member)

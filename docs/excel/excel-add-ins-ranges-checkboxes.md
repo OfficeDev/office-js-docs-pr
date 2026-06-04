@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 Use checkboxes in Excel ranges when your add-in needs a clear yes-or-no experience, such as a task list, review tracker, or approval table. This article shows how to add checkboxes to a range, select or clear them, and remove them when you want to return to plain Boolean values.
 
-Checkboxes only display for cells that contain Boolean values such as `true` and `false`. If you need to prepare the worksheet first, see [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md).
+Checkboxes only display for cells that contain Boolean values such as `true` and `false`. If you need to prepare the worksheet first, see [Set or get Excel range values, text, and formulas](excel-add-ins-ranges-set-get-values.md).
 
 > [!NOTE]
 > To try the code snippets in this article in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Checkboxes](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/42-range/range-cell-control.yaml) in the **Samples** library.
@@ -86,8 +86,8 @@ To remove the values along with the checkboxes, use [`Range.clearOrResetContents
 
 ## See also
 
-- [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md)
-- [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md)
-- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
+- [Set or get Excel range values, text, and formulas](excel-add-ins-ranges-set-get-values.md)
+- [Work with Excel cells by using Range objects](excel-add-ins-cells.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [Explore Office JavaScript API snippets with Script Lab](../overview/explore-with-script-lab.md)

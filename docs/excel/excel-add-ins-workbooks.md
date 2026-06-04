@@ -11,7 +11,7 @@ ai-usage: ai-assisted
 
 The `Workbook` object is the top-level object for most Excel operations. Use it when your add-in needs to read the current selection, create or copy workbooks, manage workbook settings, or save changes. This article shows common workbook tasks and the [Application](/javascript/api/excel/excel.application) APIs that support workbook-level behavior.
 
-In an Excel add-in, `Workbook` is the main entry point for workbook data and structure. It gives you access to worksheets, tables, PivotTables, and other workbook content. If you need to work with individual sheets, see [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md).
+In an Excel add-in, `Workbook` is the main entry point for workbook data and structure. It gives you access to worksheets, tables, PivotTables, and other workbook content. If you need to work with individual sheets, see [Manage Excel worksheets with the JavaScript API](excel-add-ins-worksheets.md).
 
 ## Get the active cell or selected range
 
@@ -277,8 +277,8 @@ context.workbook.close(Excel.CloseBehavior.save);
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Manage Excel worksheets with the JavaScript API](excel-add-ins-worksheets.md)
 - [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
 - [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md)
 - [Performance optimization using the Excel JavaScript API](performance.md)

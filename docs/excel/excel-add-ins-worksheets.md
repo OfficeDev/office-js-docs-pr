@@ -21,7 +21,7 @@ In this article, you'll learn how to:
 - Read a cell, find text, filter data, and manage protection.
 - Detect worksheet, formula, sort, and protection changes.
 
-If you need workbook-level tasks, see [Manage Excel workbooks with the Excel JavaScript API](excel-add-ins-workbooks.md). If you need to work with the worksheet layout, see [Manage worksheet display settings](excel-add-ins-worksheet-display.md).
+If you need workbook-level tasks, see [Manage Excel workbooks with the Excel JavaScript API](excel-add-ins-workbooks.md). If you need to work with the worksheet layout, see [Control worksheet display settings with the Excel JavaScript API](excel-add-ins-worksheet-display.md).
 
 ## Get worksheets
 
@@ -531,4 +531,4 @@ async function checkProtection(event) {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)

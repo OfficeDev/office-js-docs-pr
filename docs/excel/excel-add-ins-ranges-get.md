@@ -68,7 +68,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-For more selection tasks, such as programmatically moving the selection or extending it to the edge of the used range, see [Select or get the current Excel range](excel-add-ins-ranges-set-get.md).
+For more selection tasks, such as programmatically moving the selection or extending it to the edge of the used range, see [Select or get the current Excel range with the JavaScript API](excel-add-ins-ranges-set-get.md).
 
 ## Get the used range
 
@@ -104,8 +104,8 @@ await Excel.run(async (context) => {
 
 ## Related articles
 
-- [Core Excel object model concepts](excel-add-ins-core-concepts.md)
-- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
-- [Set and get the selected range using the Excel JavaScript API](excel-add-ins-ranges-set-get.md)
-- [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with Excel cells by using Range objects](excel-add-ins-cells.md)
+- [Select or get the current Excel range with the JavaScript API](excel-add-ins-ranges-set-get.md)
+- [Set or get Excel range values, text, and formulas](excel-add-ins-ranges-set-get-values.md)
 - [Find special cells within a range using the Excel JavaScript API](excel-add-ins-ranges-special-cells.md)

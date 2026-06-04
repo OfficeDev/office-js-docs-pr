@@ -311,9 +311,9 @@ await Excel.run(async (context) => {
 
 ## Related articles
 
-- [Core Excel object model concepts](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [Get Excel worksheet ranges with the JavaScript API](excel-add-ins-ranges-get.md)
-- [Set and get the selected range using the Excel JavaScript API](excel-add-ins-ranges-set-get.md)
+- [Select or get the current Excel range with the JavaScript API](excel-add-ins-ranges-set-get.md)
 - [Set range format using the Excel JavaScript API](excel-add-ins-ranges-set-format.md)
 - [Blank and null values in Excel add-ins](excel-add-ins-blank-null-values.md)
-- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Work with Excel cells by using Range objects](excel-add-ins-cells.md)

@@ -277,6 +277,6 @@ await Excel.run(async (context) => {
 ## See also
 
 - [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
-- [Work with charts using the Excel JavaScript API](excel-add-ins-charts.md)
-- [Fundamental programming concepts with the Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md)
+- [Manage Excel worksheets with the JavaScript API](excel-add-ins-worksheets.md)
+- [Create and customize charts with the Excel JavaScript API](excel-add-ins-charts.md)
+- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)

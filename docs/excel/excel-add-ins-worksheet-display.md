@@ -122,6 +122,6 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Manage Excel worksheets with the JavaScript API](excel-add-ins-worksheets.md)
 - [Set range format using the Excel JavaScript API](excel-add-ins-ranges-set-format.md)

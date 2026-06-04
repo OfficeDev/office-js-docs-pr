@@ -599,5 +599,5 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API Reference](/javascript/api/excel)

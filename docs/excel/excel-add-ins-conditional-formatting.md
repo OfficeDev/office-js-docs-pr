@@ -410,7 +410,7 @@ await Excel.run(async (context) => {
 
 - [Set range format using the Excel JavaScript API](excel-add-ins-ranges-set-format.md)
 - [Add data validation to Excel ranges](excel-add-ins-data-validation.md)
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [ConditionalFormat object reference](/javascript/api/excel/excel.conditionalformat)
 - [Add, change, or clear conditional formats](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
 - [Use a formula to apply conditional formatting in Excel](https://support.microsoft.com/office/use-a-formula-to-apply-conditional-formatting-in-excel-for-mac-34093090-235b-4476-a7ce-1da7880c750f)

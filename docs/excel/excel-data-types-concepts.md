@@ -101,7 +101,7 @@ For example, a bill total can include related fields such as **Drinks**, **Food*
 
 :::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screenshot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
 
-For the complete walkthrough, see [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md).
+For the complete walkthrough, see [Add properties to Excel basic cell values](excel-data-types-add-properties-to-basic-cell-values.md).
 
 ## Entity values
 
@@ -204,9 +204,9 @@ To learn more, open [**Script Lab**](../overview/explore-with-script-lab.md) and
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
-- [Create linked entity cell values](excel-data-types-linked-entity-cell-values.md)
-- [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md)
+- [Create linked entity data types in Excel add-ins](excel-data-types-linked-entity-cell-values.md)
+- [Add properties to Excel basic cell values](excel-data-types-add-properties-to-basic-cell-values.md)
 - [Use cards with entity value data types](excel-data-types-entity-card.md)
 - [Use data types with custom functions in Excel](custom-functions-data-types-concepts.md)
 - [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
-- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)

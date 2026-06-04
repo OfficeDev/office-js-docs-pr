@@ -242,5 +242,5 @@ This screenshot shows the anchor for the third data label moved up and left from
 ## See also
 
 - [Create and customize charts with the Excel JavaScript API](excel-add-ins-charts.md)
-- [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md)
+- [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
 - [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)

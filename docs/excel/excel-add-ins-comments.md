@@ -289,7 +289,7 @@ async function commentDeleted(event) {
 ## See also
 
 - [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with workbooks using the Excel JavaScript API](excel-add-ins-workbooks.md)
+- [Manage Excel workbooks with the Excel JavaScript API](excel-add-ins-workbooks.md)
 - [Work with Events using the Excel JavaScript API](excel-add-ins-events.md)
 - [Work with notes using the Excel JavaScript API](excel-add-ins-notes.md)
 - [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md)
