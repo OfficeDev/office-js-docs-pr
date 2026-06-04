@@ -1,84 +1,93 @@
 ---
-title: Add checkboxes using the Excel JavaScript API
-description: Learn how to add checkboxes using the Excel JavaScript API.
-ms.date: 04/08/2025
-ms.topic: how-to
+title: Manage Excel range checkboxes with the JavaScript API
+description: Add, select, clear, and remove checkboxes in Excel ranges that contain Boolean values by using the Excel JavaScript API.
+ms.date: 06/03/2026
+ms.topic: article
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Add checkboxes using the Excel JavaScript API
+# Manage checkboxes in Excel ranges with the JavaScript API
 
-This article provides code samples that add, edit, and remove checkboxes from a range with the Excel JavaScript API. For the complete list of properties and methods that the `Range` object supports, see [Excel.Range class](/javascript/api/excel/excel.range).
+Use checkboxes in Excel ranges when your add-in needs a clear yes-or-no experience, such as a task list, review tracker, or approval table. This article shows how to add checkboxes to a range, select or clear them, and remove them when you want to return to plain Boolean values.
 
-To use checkboxes, make sure that your range contains Boolean values, like **TRUE** or **FALSE**. Only Boolean values can be replaced with checkboxes using the Excel JavaScript API.
+Checkboxes only display for cells that contain Boolean values such as `true` and `false`. If you need to prepare the worksheet first, see [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md).
 
-The following screenshot shows an example of checkboxes in a table. The table lists a variety of items, and the checkboxes indicate whether or not the items are types of fruit.
+> [!NOTE]
+> To try the code snippets in this article in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Checkboxes](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/42-range/range-cell-control.yaml) in the **Samples** library.
+
+## Checkbox workflow
+
+- Store Boolean values in the target cells.
+- Set [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) to `Excel.CellControlType.checkbox`.
+- Write `true` or `false` to change the checkbox state.
+- Set `Range.control` to `Excel.CellControlType.empty` to remove the checkboxes.
+
+The following screenshot shows checkboxes in a table. The table lists items, and the checkboxes show whether each item is a type of fruit.
 
 :::image type="content" source="../images/excel-range-checkbox-table.png" alt-text="A table with checkboxes in the second column.":::
 
-> [!NOTE]
-> To experiment with the code snippets in this article in a complete sample, open [Script Lab](../overview/explore-with-script-lab.md) in Excel and select [Checkboxes](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/excel/42-range/range-cell-control.yaml) in our **Samples** library.
+## Add checkboxes to a range
 
-## Add checkboxes
-
-To add checkboxes to a range, use the [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) property to access the [`CellControl`](/javascript/api/excel/excel.cellcontrol) type, and set the `CellControlType` enum value to `checkbox`. Only Boolean values, like **TRUE** or **FALSE**, display as checkboxes in your range. The following code sample shows how to add checkboxes to the **Analysis** column of a table named **FruitTable**.
+In this example, the **Analysis** column of the **FruitTable** table already contains Boolean values. Setting `range.control` to `Excel.CellControlType.checkbox` turns those values into interactive checkboxes.
 
 ```js
 await Excel.run(async (context) => {
-    // This code sample shows how to add checkboxes to a table.
     const sheet = context.workbook.worksheets.getActiveWorksheet();
 
-    // Get the "Analysis" column in the table, without the header.
+    // Get the Analysis column in the table, without the header.
     const range = sheet.tables.getItem("FruitTable").columns.getItem("Analysis").getDataBodyRange();
 
     // Change the Boolean values in the range to checkboxes.
     range.control = {
-      type: Excel.CellControlType.checkbox
+        type: Excel.CellControlType.checkbox
     };
+
     await context.sync();
 });
 ```
 
-## Change the value of a checkbox
+## Select or clear a checkbox
 
-To select or clear a checkbox with the Excel JavaScript API, change the Boolean value in that cell. Use `Range.values` to change the value of a cell. The following code sample shows how to set the value of a cell to **TRUE**. Note that if the cell doesn't already display a checkbox, then the code sample simply changes the Boolean value of the cell.
+After a cell is configured as a checkbox, write a Boolean value to that cell to select or clear it. In the following example, writing `true` to cell **B3** selects the checkbox. Write `false` to clear it. If **B3** is not already configured as a checkbox, the cell stores the Boolean value without showing a checkbox.
 
 ```js
 await Excel.run(async (context) => {
-    // This code sample shows how to change the value of cell B3.
     const sheet = context.workbook.worksheets.getActiveWorksheet();
     const range = sheet.getRange("B3");
 
-    range.values = [["TRUE"]];
+    range.values = [[true]];
+
     await context.sync();
 });
 ```
 
 ## Remove checkboxes
 
-To remove checkboxes from a range and return the values to simple Booleans, use the [`Range.control`](/javascript/api/excel/excel.range#excel-excel-range-control-member) property to access the [`CellControl`](/javascript/api/excel/excel.cellcontrol) type, and set the `CellControlType` enum value to `empty`. The following code sample shows how to remove checkboxes from the **Analysis** column of a table named **FruitTable**.
+Set `Range.control` to `Excel.CellControlType.empty` to remove the checkbox UI from a range and keep the underlying Boolean values. The following example removes checkboxes from the **Analysis** column of the **FruitTable** table.
 
 ```js
 await Excel.run(async (context) => {
-    // This code sample shows how to remove checkboxes from a table.
     const sheet = context.workbook.worksheets.getActiveWorksheet();
 
-    // Get the "Analysis" column in the table, without the header.
+    // Get the Analysis column in the table, without the header.
     const range = sheet.tables.getItem("FruitTable").columns.getItem("Analysis").getDataBodyRange();
 
     // Change the checkboxes to Boolean values.
     range.control = {
-      type: Excel.CellControlType.empty
+        type: Excel.CellControlType.empty
     };
+
     await context.sync();
 });
 ```
 
-> [!NOTE]
-> To remove all content from a range, use the [`Range.clearOrResetContents`](/javascript/api/excel/excel.range#excel-excel-range-clearorresetcontents-member(1)) method.
+To remove the values along with the checkboxes, use [`Range.clearOrResetContents`](/javascript/api/excel/excel.range#excel-excel-range-clearorresetcontents-member(1)).
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md)
+- [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md)
 - [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
-- [Insert a range using the Excel JavaScript API](excel-add-ins-ranges-insert.md)
+- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Explore Office JavaScript API snippets with Script Lab](../overview/explore-with-script-lab.md)
