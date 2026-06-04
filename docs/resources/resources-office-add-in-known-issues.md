@@ -1,15 +1,66 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 05/12/2026
+ms.date: 06/04/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 05/12/2026_
+_Last updated 06/04/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## ISSUE: Some centrally deployed Office Add-ins may disappear or fail to load
+
+Some customers may experience issues where centrally deployed Office Add-ins are missing, unavailable, or fail to load across Office clients. In affected cases, previously installed add-ins may no longer appear in the ribbon or add-in management experience.
+
+#### STATUS
+
+Investigating.
+
+Engineering teams are actively investigating reports affecting multiple third-party and organization-deployed add-ins.
+
+#### DETAILS
+
+Impacted add-ins:
+
+- SAP Analytics Cloud for Excel
+- Other centrally deployed and organization-managed Office Add-ins
+
+Affected platforms/clients:
+
+- Excel desktop
+- Excel on the web
+- Additional Office clients in some environments
+
+#### USER IMPACT
+
+Users may experience one or more of the following:
+
+- Add-ins disappearing from the ribbon
+- Failure to load organization-deployed add-ins
+- Errors indicating the add-in is unavailable or inaccessible
+- Add-ins not appearing even though deployment remains assigned by the administrator
+
+#### WORKAROUND
+
+The following actions may help in some scenarios:
+
+- Restart the Office application.
+- Refresh admin-managed add-ins from the add-ins pane.
+- Wait and retry after some time while mitigations continue to roll out.
+- Verify the user has access to required Microsoft 365 and Exchange Online services.
+- If your organization restricts Exchange Web Services (EWS), verify required access settings are enabled.
+
+If the issue persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
+
+#### START DATE
+
+Date reported: 06/04/2026
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
