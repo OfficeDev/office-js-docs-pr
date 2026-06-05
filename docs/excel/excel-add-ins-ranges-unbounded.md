@@ -2,6 +2,7 @@
 title: Read or write to an unbounded range using the Excel JavaScript API
 description: Understand what unbounded ranges are, why cell-level operations return null or fail, and how to safely work with entire rows or columns by narrowing scope.
 ms.date: 09/22/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

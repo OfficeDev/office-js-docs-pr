@@ -2,6 +2,7 @@
 title: Undo capabilities with the Excel JavaScript API
 description: Learn how to preserve the undo stack in your Excel add-ins.
 ms.date: 09/09/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

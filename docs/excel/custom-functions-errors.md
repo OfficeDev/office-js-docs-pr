@@ -2,6 +2,7 @@
 title: Handle and return errors from your custom function
 description: 'Return meaningful Excel errors (like #VALUE! and #N/A) from custom functions and map exceptions to user-friendly messages.'
 ms.date: 10/22/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

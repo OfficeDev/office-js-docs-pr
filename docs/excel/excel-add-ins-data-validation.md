@@ -2,6 +2,7 @@
 title: Add data validation to Excel ranges
 description: Use the Excel JavaScript API to programmatically apply and manage data validation rules for ranges, tables, and structured inputs.
 ms.date: 09/19/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

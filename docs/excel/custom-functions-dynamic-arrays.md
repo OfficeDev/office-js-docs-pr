@@ -1,5 +1,6 @@
 ---
 ms.date: 03/03/2026
+ms.topic: how-to
 description: Return multiple results from your custom function in an Excel add-in.
 title: Return multiple results from your custom function
 ms.localizationpriority: medium

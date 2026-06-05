@@ -1,5 +1,6 @@
 ---
 ms.date: 10/22/2025
+ms.topic: concept-article
 description: Understand Excel custom functions that don't use a shared runtime and their specific JavaScript-only runtime.
 title: JavaScript-only runtime for custom functions
 ms.localizationpriority: medium

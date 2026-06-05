@@ -2,6 +2,7 @@
 title: Work with formula value preview mode in your custom functions
 description: Work with formula value preview mode in your custom functions
 ms.date: 05/15/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

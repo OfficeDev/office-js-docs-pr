@@ -2,6 +2,7 @@
 title: Work with Events using the Excel JavaScript API
 description: A list of events for Excel JavaScript objects. This includes information on using event handlers and the associated patterns.
 ms.date: 03/03/2026
+ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 
