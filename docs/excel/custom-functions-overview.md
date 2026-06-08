@@ -93,9 +93,9 @@ The add-in only manifest file for an add-in that defines custom functions (**./m
 
 To see a full working manifest from a sample add-in, see the manifest in [one of our Office Add-in samples GitHub repositories](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-shared-runtime-global-state/manifest.xml).
 
-[!include[manifest guidance](../includes/manifest-guidance.md)]
-
 ---
+
+[!include[manifest guidance](../includes/manifest-guidance.md)]
 
 ## Coauthoring
 
