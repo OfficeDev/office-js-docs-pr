@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 07/07/2025
+ms.date: 06/09/2026
 ms.localizationpriority: high
 ---
 
@@ -116,3 +116,7 @@ For detailed reference about the command line parameters, see the readme for the
 ## Troubleshooting
 
 If you encounter problems using the tool, your first step should be to reinstall it to be sure that you have the latest version. (See [Prerequisites](#prerequisites) for details.) If doing so doesn't fix the problem, search the [issues of the GitHub repo for the tool](https://github.com/OfficeDev/generator-office/issues) to see if anyone else has encountered the same problem and found a solution. If no one has, [create a new issue](https://github.com/OfficeDev/generator-office/issues/new?assignees=&labels=needs+triage&template=bug_report.md&title=).
+
+## Next steps
+
+Now that you've learned how to create an add-in project, learn how to develop, test, and publish it. Start with [Office Add-in development lifecycle](../overview/core-concepts-office-add-ins.md).
