@@ -16,11 +16,11 @@ First, create a sign-in form in your add-in's HTML page. The form should include
 
 ```html
 <div>
-  <label for="username">Username:</label>><br/>
-  <input type="text" id="username" name="username" />><br/>
+  <label for="username">Username:</label><br/>
+  <input type="text" id="username" name="username" /><br/>
 
-  <label for="password">Password:</label>><br/>
-  <input type="password" id="password" name="password" />><br/>
+  <label for="password">Password:</label><br/>
+  <input type="password" id="password" name="password" /><br/>
 
   <button id="btn" type="button">Sign in</button>
 </div>
