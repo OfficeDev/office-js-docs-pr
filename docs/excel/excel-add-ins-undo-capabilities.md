@@ -138,4 +138,4 @@ Most Excel JavaScript APIs do support undo actions. However, see the following t
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)

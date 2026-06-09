@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 You can specify card modal windows in the Excel UI for various cell value data types. Cards can display additional information beyond what's already visible in a cell, such as related images, product category information, and data attributions.
 
 > [!NOTE]
-> This article expands on information described in the [Excel data types core concepts](excel-data-types-concepts.md) article. We recommend reading that article before learning about cards for cell values.
+> This article expands on information described in the [Use data types in Excel add-ins](excel-data-types-concepts.md) article. We recommend reading that article before learning about cards for cell values.
 
 Cards are supported for the following cell value types.
 
@@ -266,6 +266,6 @@ Try out the [Create and explore data types in Excel](https://github.com/OfficeDe
 ## See also
 
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
-- [Excel data types core concepts](excel-data-types-concepts.md)
+- [Use data types in Excel add-ins](excel-data-types-concepts.md)
 - [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
-- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)

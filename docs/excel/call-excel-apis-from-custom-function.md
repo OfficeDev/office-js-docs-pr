@@ -57,7 +57,7 @@ Your custom functions add-in can read information from cells outside the cell ru
 
 ## Next steps
 
-- [Fundamental programming concepts with the Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)
 
 ## See also
 

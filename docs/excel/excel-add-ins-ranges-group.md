@@ -102,8 +102,8 @@ To ungroup a row or column group, use the [Range.ungroup](/javascript/api/excel/
 ## See also
 
 - [Outline (group) data in a worksheet](https://support.microsoft.com/office/08ce98c4-0063-4d42-8ac7-8278c49e9aff)
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
-- [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
-- [Get a range using the Excel JavaScript API](excel-add-ins-ranges-get.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with Excel cells by using Range objects](excel-add-ins-cells.md)
+- [Manage Excel worksheets with the JavaScript API](excel-add-ins-worksheets.md)
+- [Get Excel worksheet ranges with the JavaScript API](excel-add-ins-ranges-get.md)
 - [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)

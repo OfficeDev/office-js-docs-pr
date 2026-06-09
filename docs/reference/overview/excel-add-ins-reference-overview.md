@@ -1,56 +1,62 @@
 ---
 title: Excel JavaScript API overview
-description: Learn more about the Excel JavaScript API.
-ms.date: 02/23/2022
+description: Find Excel JavaScript API articles for ranges, tables, charts, events, custom functions, and Script Lab samples.
+ms.date: 06/03/2026
 ms.service: excel
+ms.topic: overview
 ms.localizationpriority: high
+ai-usage: ai-assisted
 ---
 
 # Excel JavaScript API overview
 
-An Excel add-in interacts with objects in Excel by using the Office JavaScript API, which includes two JavaScript object models:
+Start here to find the core object model articles, feature-specific how-to content, Script Lab samples, and the full [Excel JavaScript API reference](/javascript/api/excel).
 
-* **Excel JavaScript API**: These are the [application-specific APIs](../../develop/application-specific-api-model.md) for Excel. Introduced with Office 2016, the [Excel JavaScript API](/javascript/api/excel) provides strongly-typed objects that you can use to access worksheets, ranges, tables, charts, and more.
+Excel add-ins use two Office JavaScript API models:
 
-* **Common APIs**: Introduced with Office 2013, the [Common API](/javascript/api/office) can be used to access features such as UI, dialogs, and client settings that are common across multiple types of Office applications.
+- **Excel JavaScript API**: These are the [application-specific APIs](../../develop/application-specific-api-model.md) for Excel. They provide strongly typed objects that let you work with worksheets, ranges, tables, charts, and other workbook features.
+- **Common APIs**: The [Common API](/javascript/api/office) provides shared Office features such as UI, dialogs, and client settings.
 
-This section of the documentation focuses on the Excel JavaScript API, which you'll use to develop the majority of functionality in add-ins that target Excel on the web or Excel 2016 or later. For information about the Common API, see [Common JavaScript API object model](../../develop/office-javascript-api-object-model.md).
+Most Excel add-in functionality uses the Excel JavaScript API. For shared Office features, see [Common JavaScript API object model](../../develop/office-javascript-api-object-model.md).
 
-## Learn object model concepts
+## Starting points
 
-See [Excel JavaScript object model in Office Add-ins](../../excel/excel-add-ins-core-concepts.md) for information about important object model concepts.
+If you're getting started with the Excel object model, use these articles first:
 
-For hands-on experience using the Excel JavaScript API to access objects in Excel, complete the [Excel add-in tutorial](../../tutorials/excel-tutorial.md).
+- [Core Excel object model concepts for Office Add-ins](../../excel/excel-add-ins-core-concepts.md) explains the main workbook objects and how they relate to one another.
+- [Build Excel add-ins for Excel](../../excel/excel-add-ins-overview.md) explains what you can build and how Excel add-ins fit into the Office Add-ins platform.
+- [Excel add-in tutorial](../../tutorials/excel-tutorial.md) gives you hands-on practice using the Excel JavaScript API in a working add-in.
+- [Script Lab](../../overview/explore-with-script-lab.md) lets you run built-in Excel samples, inspect the code, and prototype API calls quickly.
 
-## Learn API capabilities
+## Browse Excel API capabilities
 
-Each major Excel API feature has an article or set of articles exploring what that feature can do and the relevant object model.
+Use the following articles to learn about the main Excel API feature areas:
 
-* [Charts](../../excel/excel-add-ins-charts.md)
-* [Comments](../../excel/excel-add-ins-comments.md)
-* [Conditional formatting](../../excel/excel-add-ins-conditional-formatting.md)
-* [Custom functions](../../excel/custom-functions-overview.md)
-* [Data validation](../../excel/excel-add-ins-data-validation.md)
-* [Data types](../../excel/excel-data-types-overview.md)
-* [Events](../../excel/excel-add-ins-events.md)
-* [PivotTables](../../excel/excel-add-ins-pivottables.md)
-* [Ranges](../../excel/excel-add-ins-ranges-get.md) and [Cells](../../excel/excel-add-ins-cells.md)
-* [RangeAreas (Multiple ranges)](../../excel/excel-add-ins-multiple-ranges.md)
-* [Shapes](../../excel/excel-add-ins-shapes.md)
-* [Tables](../../excel/excel-add-ins-tables.md)
-* [Workbooks and Application-level APIs](../../excel/excel-add-ins-workbooks.md)
-* [Worksheets](../../excel/excel-add-ins-worksheets.md)
+- [Charts](../../excel/excel-add-ins-charts.md)
+- [Comments](../../excel/excel-add-ins-comments.md)
+- [Conditional formatting](../../excel/excel-add-ins-conditional-formatting.md)
+- [Custom functions](../../excel/custom-functions-overview.md)
+- [Data types](../../excel/excel-data-types-overview.md)
+- [Data validation](../../excel/excel-add-ins-data-validation.md)
+- [Events](../../excel/excel-add-ins-events.md)
+- [PivotTables](../../excel/excel-add-ins-pivottables.md)
+- [Ranges](../../excel/excel-add-ins-ranges-get.md) and [cells](../../excel/excel-add-ins-cells.md)
+- [RangeAreas (multiple ranges)](../../excel/excel-add-ins-multiple-ranges.md)
+- [Shapes](../../excel/excel-add-ins-shapes.md)
+- [Tables](../../excel/excel-add-ins-tables.md)
+- [Workbooks and application-level APIs](../../excel/excel-add-ins-workbooks.md)
+- [Worksheets](../../excel/excel-add-ins-worksheets.md)
 
-For detailed information about the Excel JavaScript API object model, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
+For complete API details, see the [Excel JavaScript API reference documentation](/javascript/api/excel).
 
-## Try out code samples in Script Lab
+## Try API samples in Script Lab
 
-Use [Script Lab](../../overview/explore-with-script-lab.md) to get started quickly with a collection of built-in samples that show how to complete tasks with the API. You can run the samples in Script Lab to instantly see the result in the task pane or worksheet, examine the samples to learn how the API works, and even use samples to prototype your own add-in.
+If you want to test an API before you build it into an add-in, use [Script Lab](../../overview/explore-with-script-lab.md). Script Lab includes ready-to-run samples that show common Excel tasks, so you can see results in the workbook, review the code, and adapt the sample for your scenario.
 
 ## See also
 
-* [Excel add-ins documentation](../../excel/index.yml)
-* [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
-* [Excel JavaScript API reference](/javascript/api/excel)
-* [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
-* [Using the application-specific API model](../../develop/application-specific-api-model.md)
+- [Excel add-ins documentation](../../excel/index.yml)
+- [Excel add-ins overview](../../excel/excel-add-ins-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)
+- [Office client application and platform availability for Office Add-ins](/javascript/api/requirement-sets)
+- [Using the application-specific API model](../../develop/application-specific-api-model.md)

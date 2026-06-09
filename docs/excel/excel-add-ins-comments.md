@@ -1,327 +1,296 @@
 ---
-title: Work with comments using the Excel JavaScript API
-description: Information on using the APIs to add, remove, and edit comments and comment threads.
-ms.date: 04/07/2025
+title: Manage comments in Excel add-ins with Excel JavaScript API
+description: Learn how to add, reply to, edit, resolve, and monitor threaded comments in Excel workbooks by using the Excel JavaScript API.
+ms.date: 06/03/2026
 ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Work with comments using the Excel JavaScript API
+# Manage comments in Excel add-ins by using the Excel JavaScript API
 
-This article describes how to add, read, modify, and remove comments in a workbook with the Excel JavaScript API. You can learn more about the comment feature from the [Insert comments and notes in Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article.
+This article shows how to create threaded comments on specific cells, reply to them, edit or delete them, resolve conversations, read author metadata, add mentions, and respond to comment events by using the Excel JavaScript API.
 
-In the Excel JavaScript API, a comment includes both the single initial comment and the connected threaded discussion. It is tied to an individual cell. Anyone viewing the workbook with sufficient permissions can reply to a comment. A [Comment](/javascript/api/excel/excel.comment) object stores those replies as [CommentReply](/javascript/api/excel/excel.commentreply) objects. You should consider a comment to be a thread and that a thread must have a special entry as the starting point.
+In the Excel JavaScript API, a comment is a thread that starts with one comment and can include replies. Each thread is tied to a single cell. If you need legacy note behavior instead of threaded discussions, see [Work with notes using the Excel JavaScript API](excel-add-ins-notes.md).
 
-:::image type="content" source="../images/excel-comments.png" alt-text="An Excel comment, labelled 'Comment' with two replies, labelled 'Comment.replies[0]' and 'Comment.replies[1]'.":::
+## What you can do with comments
 
-Comments within a workbook are tracked by the `Workbook.comments` property. This includes comments created by users and also comments created by your add-in. The `Workbook.comments` property is a [CommentCollection](/javascript/api/excel/excel.commentcollection) object that contains a collection of [Comment](/javascript/api/excel/excel.comment) objects. Comments are also accessible at the [Worksheet](/javascript/api/excel/excel.worksheet) level. The samples in this article work with comments at the workbook level, but they can be easily modified to use the `Worksheet.comments` property.
+Use the Excel comment APIs to:
 
-> [!TIP]
-> To learn about adding and editing notes with the Excel JavaScript API, see [Work with notes using the Excel JavaScript API](excel-add-ins-notes.md).
+- Add a new comment thread to a cell.
+- Add, edit, and delete replies in an existing thread.
+- Resolve or reopen a thread.
+- Read author and creation metadata.
+- Create comments that include mentions.
+- Listen for comment add, change, and delete events.
 
-## Add comments
+## Understand the comment object model
 
-Use the `CommentCollection.add` method to add comments to a workbook. This method takes up to three parameters:
+The `Workbook.comments` property tracks comments in a workbook. This property returns a [CommentCollection](/javascript/api/excel/excel.commentcollection) that contains both user-created comments and comments created by your add-in. You can also access comments at the [Worksheet](/javascript/api/excel/excel.worksheet) level through the `Worksheet.comments` property.
 
-- `cellAddress`: The cell where the comment is added. This can either be a string or [Range](/javascript/api/excel/excel.range) object. The range must be a single cell.
-- `content`: The comment's content. Use a string for plain text comments. Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments with [mentions](#mentions).
-- `contentType`: A [ContentType](/javascript/api/excel/excel.contenttype) enum specifying type of content. The default value is `ContentType.plain`.
+A [Comment](/javascript/api/excel/excel.comment) object represents the full thread for a single cell. Replies in that thread are stored as [CommentReply](/javascript/api/excel/excel.commentreply) objects in the comment's `replies` collection.
 
-The following code sample adds a comment to cell **A2**.
+:::image type="content" source="../images/excel-comments.png" alt-text="An Excel comment, labeled 'Comment', with two replies, labeled 'Comment.replies[0]' and 'Comment.replies[1]'.":::
+
+## Add comment threads
+
+Use `CommentCollection.add` to start a threaded conversation on a cell. The method accepts up to three parameters:
+
+- `cellAddress`: The cell where you add the comment. This parameter can be a string or a [Range](/javascript/api/excel/excel.range) object. The range must be a single cell.
+- `content`: The comment text. Use a string for plain text comments. Use a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object for comments that include [mentions](#mention-users).
+- `contentType`: A [ContentType](/javascript/api/excel/excel.contenttype) value that specifies the content type. The default is `ContentType.plain`.
+
+The following sample starts a review thread on cell **A2**. Note that comments that your add-in creates are attributed to the current user.
 
 ```js
 await Excel.run(async (context) => {
-    // Add a comment to A2 on the "MyWorksheet" worksheet.
-    let comments = context.workbook.comments;
-
-    // Note that an InvalidArgument error will be thrown if multiple cells passed to `Comment.add`.
-    comments.add("MyWorksheet!A2", "TODO: add data.");
+    const comments = context.workbook.comments;
+    comments.add("MyWorksheet!A2", "Please confirm the Q2 revenue total.");
     await context.sync();
 });
 ```
 
 > [!NOTE]
-> Comments added by an add-in are attributed to the current user of that add-in.
+> An `InvalidArgument` error is thrown if the range contains multiple cells.
 
-### Add comment replies
+### Add replies to a comment thread
 
-A `Comment` object is a comment thread that contains zero or more replies. `Comment` objects have a `replies` property, which is a [CommentReplyCollection](/javascript/api/excel/excel.commentreplycollection) that contains [CommentReply](/javascript/api/excel/excel.commentreply) objects. To add a reply to a comment, use the `CommentReplyCollection.add` method, passing in the text of the reply. Replies are displayed in the order they are added. They are also attributed to the current user of the add-in.
+Use `CommentReplyCollection.add` when your add-in needs to continue an existing discussion. Replies are displayed in the order they're added and are also attributed to the current user.
 
-The following code sample adds a reply to the first comment in the workbook.
+The following sample adds a reply to the thread on cell **A2**.
 
 ```js
 await Excel.run(async (context) => {
-    // Get the first comment added to the workbook.
-    let comment = context.workbook.comments.getItemAt(0);
+    const comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
     comment.replies.add("Thanks for the reminder!");
     await context.sync();
 });
 ```
 
-## Edit comments
+## Edit comment threads
 
-To edit a comment or comment reply, set its `Comment.content` property or `CommentReply.content` property.
+Update `Comment.content` to change the first entry in a thread. Update `CommentReply.content` to change a specific reply.
+
+The following sample updates the main comment on cell **A2**.
 
 ```js
 await Excel.run(async (context) => {
-    // Edit the first comment in the workbook.
-    let comment = context.workbook.comments.getItemAt(0);
-    comment.content = "PLEASE add headers here.";
+    const comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
+    comment.content = "Please confirm the Q2 revenue total before we publish this workbook.";
     await context.sync();
 });
 ```
 
-### Edit comment replies
+### Edit a reply
 
-To edit a comment reply, set its `CommentReply.content` property.
+Use this pattern when your add-in needs to revise an earlier response in the thread.
 
 ```js
 await Excel.run(async (context) => {
-    // Edit the first comment reply on the first comment in the workbook.
-    let comment = context.workbook.comments.getItemAt(0);
-    let reply = comment.replies.getItemAt(0);
-    reply.content = "Never mind";
+    const comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
+    const reply = comment.replies.getItemAt(0);
+
+    reply.content = "Thanks. I rechecked the total and it is correct.";
     await context.sync();
 });
 ```
 
-## Delete comments
+## Delete comment threads
 
-To delete a comment use the `Comment.delete` method. Deleting a comment also deletes the replies associated with that comment.
+Use `Comment.delete()` to remove an entire thread from a cell. Deleting a comment also deletes all replies in that thread.
 
 ```js
 await Excel.run(async (context) => {
-    // Delete the comment thread at A2 on the "MyWorksheet" worksheet.
-    context.workbook.comments.getItemByCell("MyWorksheet!A2").delete();
+    const comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
+    comment.delete();
     await context.sync();
 });
 ```
 
-### Delete comment replies
+### Delete a reply
 
-To delete a comment reply, use the `CommentReply.delete` method.
+Use `CommentReply.delete()` when you need to remove a single reply but keep the rest of the thread.
 
 ```js
 await Excel.run(async (context) => {
-    // Delete the first comment reply from this worksheet's first comment.
-    let comment = context.workbook.comments.getItemAt(0);
-    comment.replies.getItemAt(0).delete();
+    const comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
+    const reply = comment.replies.getItemAt(0);
+
+    reply.delete();
     await context.sync();
 });
 ```
 
-## Resolve comment threads
+## Resolve and reopen comment threads
 
-A comment thread has a configurable boolean value, `resolved`, to indicate if it is resolved. A value of `true` means the comment thread is resolved. A value of `false` means the comment thread is either new or reopened.
+Use the `Comment.resolved` property to track whether a discussion still needs attention. Set the value to `true` to resolve the thread or to `false` to reopen it. `CommentReply.resolved` is read-only and always matches the state of the parent thread.
+
+The following sample resolves the thread on cell **A2**.
 
 ```js
 await Excel.run(async (context) => {
-    // Resolve the first comment thread in the workbook.
-    context.workbook.comments.getItemAt(0).resolved = true;
+    const comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
+    comment.resolved = true;
     await context.sync();
 });
 ```
 
-Comment replies have a read-only `resolved` property. Its value is always equal to that of the rest of the thread.
+## Read comment metadata
 
-## Comment metadata
+Each comment stores metadata such as the author and creation date. Comments created by your add-in are authored by the current user.
 
-Each comment contains metadata about its creation, such as the author and creation date. Comments created by your add-in are considered to be authored by the current user.
-
-The following sample shows how to display the author's email, author's name, and creation date of a comment at **A2**.
+The following sample logs the author email, author name, and creation date for the comment on cell **A2**.
 
 ```js
 await Excel.run(async (context) => {
-    // Get the comment at cell A2 in the "MyWorksheet" worksheet.
-    let comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
+    const comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
 
-    // Load and print the following values.
     comment.load(["authorEmail", "authorName", "creationDate"]);
     await context.sync();
-    
+
     console.log(`${comment.creationDate.toDateString()}: ${comment.authorName} (${comment.authorEmail})`);
 });
 ```
 
-### Comment reply metadata
+### Read reply metadata
 
-Comment replies store the same types of metadata as the initial comment.
-
-The following sample shows how to display the author's email, author's name, and creation date of the latest comment reply at **A2**.
+Replies store the same metadata as the initial comment. The following sample gets the latest reply in the thread on cell **A2** and logs its author information.
 
 ```js
 await Excel.run(async (context) => {
-    // Get the comment at cell A2 in the "MyWorksheet" worksheet.
-    let comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
-    let replyCount = comment.replies.getCount();
-    // Sync to get the current number of comment replies.
+    const comment = context.workbook.comments.getItemByCell("MyWorksheet!A2");
+    const replyCount = comment.replies.getCount();
     await context.sync();
 
-    // Get the last comment reply in the comment thread.
-    let reply = comment.replies.getItemAt(replyCount.value - 1);
+    if (replyCount.value === 0) {
+        console.log("The thread has no replies.");
+        return;
+    }
+
+    const reply = comment.replies.getItemAt(replyCount.value - 1);
     reply.load(["authorEmail", "authorName", "creationDate"]);
-
-    // Sync to load the reply metadata to print.
     await context.sync();
 
-    console.log(`Latest reply: ${reply.creationDate.toDateString()}: ${reply.authorName} ${reply.authorEmail})`);
-    await context.sync();
+    console.log(`Latest reply: ${reply.creationDate.toDateString()}: ${reply.authorName} (${reply.authorEmail})`);
 });
 ```
 
-## Mentions
+## Mention users
 
-[Mentions](https://support.microsoft.com/office/644bf689-31a0-4977-a4fb-afe01820c1fd) are used to tag colleagues in a comment. This sends them notifications with your comment's content. Your add-in can create these mentions on your behalf.
+Use mentions when your add-in needs to tag a colleague in a comment and trigger an email notification. To create a comment with mentions, call `CommentCollection.add` with a [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) object and set the `contentType` parameter to `ContentType.mention`.
 
-Comments with mentions need to be created with [CommentRichContent](/javascript/api/excel/excel.commentrichcontent) objects. Call `CommentCollection.add` with a `CommentRichContent` containing one or more mentions and specify `ContentType.mention` as the `contentType` parameter. The `content` string also needs to be formatted to insert the mention into the text. The format for a mention is: `<at id="{replyIndex}">{mentionName}</at>`.
+Format each mention in the `richContent` string as `<at id="{replyIndex}">{mentionName}</at>`.
 
-> [!NOTE]
-> Currently, only the mention's exact name can be used as the text of the mention link. Support for shortened versions of a name will be added later.
+Currently, only the mention's exact name can be used as the text of the mention link. Support for shortened versions of a name will be added later.
 
-The following example shows a comment with a single mention.
+The following sample adds a comment with a single mention to cell **A1**.
 
 ```js
 await Excel.run(async (context) => {
-    // Add an "@mention" for "Kate Kristensen" to cell A1 in the "MyWorksheet" worksheet.
-    let mention = {
+    const mention = {
         email: "kakri@contoso.com",
         id: 0,
         name: "Kate Kristensen"
     };
 
-    // This will tag the mention's name using the '@' syntax.
-    // They will be notified via email.
-    let commentBody = {
+    const commentBody = {
         mentions: [mention],
-        richContent: '<at id="0">' + mention.name + "</at> -  Can you take a look?"
+        richContent: `<at id="0">${mention.name}</at> Can you review the forecast?`
     };
 
-    // Note that an InvalidArgument error will be thrown if multiple cells passed to `comment.add`.
+    // An InvalidArgument error is thrown if the range contains multiple cells.
     context.workbook.comments.add("MyWorksheet!A1", commentBody, Excel.ContentType.mention);
     await context.sync();
 });
 ```
 
-## Comment events
+## Handle comment events
 
-Your add-in can listen for comment additions, changes, and deletions. [Comment events](/javascript/api/excel/excel.commentcollection#event-details) occur on the `CommentCollection` object. To listen for comment events, register the `onAdded`, `onChanged`, or `onDeleted` comment event handler. When a comment event is detected, use this event handler to retrieve data about the added, changed, or deleted comment. The `onChanged` event also handles comment reply additions, changes, and deletions.
+Use comment events when your add-in needs to react to discussions as users update a workbook. [Comment events](/javascript/api/excel/excel.commentcollection#event-details) occur on the `CommentCollection` object.
 
-Each comment event only triggers once when multiple additions, changes, or deletions are performed at the same time. All the [CommentAddedEventArgs](/javascript/api/excel/excel.commentaddedeventargs), [CommentChangedEventArgs](/javascript/api/excel/excel.commentchangedeventargs), and [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) objects contain arrays of comment IDs to map the event actions back to the comment collections.
+Register handlers for:
 
-See the [Work with Events using the Excel JavaScript API](excel-add-ins-events.md) article for additional information about registering event handlers, handling events, and removing event handlers.
+- `onAdded` when a new comment thread is created.
+- `onChanged` when a comment or reply is added, edited, deleted, resolved, or reopened.
+- `onDeleted` when a comment thread is deleted.
 
-### Comment addition events
+If one operation affects multiple comments, the event args contain multiple items in `commentDetails`. The following samples use the first item only for clarity. For general event guidance, see [Work with Events using the Excel JavaScript API](excel-add-ins-events.md).
 
-The `onAdded` event is triggered when one or more new comments are added to the comment collection. This event is *not* triggered when replies are added to a comment thread (see [Comment change events](#comment-change-events) to learn about comment reply events).
+### Handle comment addition events
 
-The following sample shows how to register the `onAdded` event handler and then use the `CommentAddedEventArgs` object to retrieve the `commentDetails` array of the added comment.
-
-> [!NOTE]
-> This sample only works when a single comment is added.
+The `onAdded` event fires when one or more comments are added to the collection. It doesn't fire when a reply is added to an existing thread.
 
 ```js
 await Excel.run(async (context) => {
-    let comments = context.workbook.worksheets.getActiveWorksheet().comments;
+    const comments = context.workbook.worksheets.getActiveWorksheet().comments;
 
-    // Register the onAdded comment event handler.
     comments.onAdded.add(commentAdded);
-
     await context.sync();
 });
 
-async function commentAdded() {
+async function commentAdded(event) {
     await Excel.run(async (context) => {
-        // Retrieve the added comment using the comment ID.
-        // Note: This method assumes only a single comment is added at a time. 
-        let addedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
-
-        // Load the added comment's data.
+        const addedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
         addedComment.load(["content", "authorName"]);
-
         await context.sync();
 
-        // Print out the added comment's data.
-        console.log(`A comment was added. ID: ${event.commentDetails[0].commentId}. Comment content:${addedComment.content}. Comment author:${addedComment.authorName}`);
-        await context.sync();
+        console.log(`A comment was added. ID: ${event.commentDetails[0].commentId}. Content: ${addedComment.content}. Author: ${addedComment.authorName}`);
     });
 }
 ```
 
-### Comment change events
+### Handle comment change events
 
-The `onChanged` comment event is triggered in the following scenarios.
+The `onChanged` event fires when:
 
 - A comment's content is updated.
 - A comment thread is resolved.
 - A comment thread is reopened.
 - A reply is added to a comment thread.
 - A reply is updated in a comment thread.
-- A reply is deleted in a comment thread.
-
-The following sample shows how to register the `onChanged` event handler and then use the `CommentChangedEventArgs` object to retrieve the `commentDetails` array of the changed comment.
-
-> [!NOTE]
-> This sample only works when a single comment is changed.
+- A reply is deleted from a comment thread.
 
 ```js
 await Excel.run(async (context) => {
-    let comments = context.workbook.worksheets.getActiveWorksheet().comments;
+    const comments = context.workbook.worksheets.getActiveWorksheet().comments;
 
-    // Register the onChanged comment event handler.
     comments.onChanged.add(commentChanged);
-
     await context.sync();
 });
 
-async function commentChanged() {
+async function commentChanged(event) {
     await Excel.run(async (context) => {
-        // Retrieve the changed comment using the comment ID.
-        // Note: This method assumes only a single comment is changed at a time. 
-        let changedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
-
-        // Load the changed comment's data.
+        const changedComment = context.workbook.comments.getItem(event.commentDetails[0].commentId);
         changedComment.load(["content", "authorName"]);
-
         await context.sync();
 
-        // Print out the changed comment's data.
-        console.log(`A comment was changed. ID: ${event.commentDetails[0].commentId}. Updated comment content: ${changedComment.content}. Comment author: ${changedComment.authorName}`);
-        await context.sync();
+        console.log(`A comment was changed. ID: ${event.commentDetails[0].commentId}. Content: ${changedComment.content}. Author: ${changedComment.authorName}`);
     });
 }
 ```
 
-### Comment deletion events
+### Handle comment deletion events
 
-The `onDeleted` event is triggered when a comment is deleted from the comment collection. Once a comment has been deleted, its metadata is no longer available. The [CommentDeletedEventArgs](/javascript/api/excel/excel.commentdeletedeventargs) object provides comment IDs, in case your add-in is managing individual comments.
-
-The following sample shows how to register the `onDeleted` event handler and then use the `CommentDeletedEventArgs` object to retrieve the `commentDetails` array of the deleted comment.
-
-> [!NOTE]
-> This sample only works when a single comment is deleted.
+The `onDeleted` event fires when a comment is deleted from the collection. After a comment is deleted, its metadata is no longer available. Use the IDs in `CommentDeletedEventArgs.commentDetails` if your add-in needs to track deleted threads.
 
 ```js
 await Excel.run(async (context) => {
-    let comments = context.workbook.worksheets.getActiveWorksheet().comments;
+    const comments = context.workbook.worksheets.getActiveWorksheet().comments;
 
-    // Register the onDeleted comment event handler.
     comments.onDeleted.add(commentDeleted);
-
     await context.sync();
 });
 
-async function commentDeleted() {
-    await Excel.run(async (context) => {
-        // Print out the deleted comment's ID.
-        // Note: This method assumes only a single comment is deleted at a time. 
-        console.log(`A comment was deleted. ID: ${event.commentDetails[0].commentId}`);
-    });
+async function commentDeleted(event) {
+    console.log(`A comment was deleted. ID: ${event.commentDetails[0].commentId}`);
 }
 ```
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with workbooks using the Excel JavaScript API](excel-add-ins-workbooks.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Manage Excel workbooks with the Excel JavaScript API](excel-add-ins-workbooks.md)
 - [Work with Events using the Excel JavaScript API](excel-add-ins-events.md)
+- [Work with notes using the Excel JavaScript API](excel-add-ins-notes.md)
+- [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md)
 - [Insert comments and notes in Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

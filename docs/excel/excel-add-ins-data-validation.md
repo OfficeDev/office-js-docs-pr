@@ -224,6 +224,6 @@ The range you clear doesn’t need to precisely match the range on which you add
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [DataValidation Object (JavaScript API for Excel)](/javascript/api/excel/excel.datavalidation)
 - [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range)
