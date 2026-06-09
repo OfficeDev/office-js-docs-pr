@@ -1,22 +1,30 @@
 ---
 title: Validate an Office Add-in's manifest
 description: Learn how to validate the manifest of an Office Add-in.
-ms.date: 05/19/2025
+ms.date: 06/09/2026
 ms.localizationpriority: medium
 ---
 
 # Validate an Office Add-in's manifest
 
-You should validate your add-in's manifest file to ensure that it's correct and complete. Validation can also identify issues that are causing the error "Your add-in manifest is not valid" when you attempt to sideload your add-in. This article describes multiple ways to validate the manifest file. Except as specified otherwise, they work for both the unified manifest for Microsoft 365 and the add-in only manifest.
+Validate your add-in manifest before sideloading or publishing to catch schema and configuration issues early. This helps prevent errors such as "Your add-in manifest is not valid."
+
+Unless noted otherwise, the methods in this article apply to both the unified manifest for Microsoft 365 and the add-in only manifest.
 
 > [!NOTE]
 > For details about using runtime logging to troubleshoot issues with your add-in's manifest, see [Debug your add-in with runtime logging](runtime-logging.md).
 
+## Choose a validation method
+
+- If your project was created with [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), use [Validate your manifest with the validate command](#validate-your-manifest-with-the-validate-command).
+- If your project wasn't created with Agents Toolkit or Yo Office, use [Validate your manifest with office-addin-manifest](#validate-your-manifest-with-office-addin-manifest).
+- If you're using Agents Toolkit with the unified manifest, use [Validate the manifest in the UI of Agents Toolkit](#validate-the-manifest-in-the-ui-of-agents-toolkit).
+
 ## Validate your manifest with the validate command
 
-If you used [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to create your add-in, you can validate your project's manifest file with the following command in the root directory of your project.
+If you used Agents Toolkit or Yo Office to create your add-in, you can validate your project's manifest file with the following command in the root directory of your project.
 
-```command&nbsp;line
+```bash
 npm run validate
 ```
 
@@ -24,7 +32,7 @@ npm run validate
 
 If you're having trouble with that command, try the following (replacing `MANIFEST_FILE` with the name of the manifest file).
 
-```command&nbsp;line
+```bash
 npx office-addin-manifest validate -p MANIFEST_FILE
 ```
 
@@ -36,20 +44,20 @@ If you didn't use [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overv
 
 1. Open a command prompt and install the validator with the following command.
 
-    ```command&nbsp;line
+    ```bash
     npm install -g office-addin-manifest
     ```
 
 1. Run the following command *in the folder of your project that contains the manifest file* (replacing `MANIFEST_FILE` with the name of the manifest file).
 
-    ```command&nbsp;line
+    ```bash
     office-addin-manifest validate MANIFEST_FILE
     ```
 
     > [!NOTE]
     > If this command isn't working, run the following command instead to force the use of the latest version of the office-addin-manifest tool (replacing `MANIFEST_FILE` with the name of the manifest file).
     >
-    > ```command&nbsp;line
+    > ```bash
     > npx office-addin-manifest validate MANIFEST_FILE
     > ```
 

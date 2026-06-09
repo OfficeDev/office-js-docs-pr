@@ -436,7 +436,7 @@
       href: publish/publish.md
     - name: Visual Studio Code
       items:
-      - name: Deploy an add-in that uses static content
+      - name: Publish an Office Add-in from Visual Studio Code to Azure
         href: publish/publish-add-in-vs-code.md
       - name: Deploy an add-in that uses SSO
         href: publish/deploy-office-add-in-sso-to-azure.md
