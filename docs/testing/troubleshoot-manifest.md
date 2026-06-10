@@ -16,7 +16,7 @@ Unless noted otherwise, the methods in this article apply to both the unified ma
 
 ## Choose a validation method
 
-- If your project was created with [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md) or [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md), use [Validate your manifest with the validate command](#validate-your-manifest-with-the-validate-command).
+- If your project was created with [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md) or [Yeoman generator for Office Add-ins (Yo Office)](../develop/yeoman-generator-overview.md), use [Validate your manifest with the validate command](#validate-your-manifest-with-the-validate-command).
 - If your project wasn't created with Agents Toolkit or Yo Office, use [Validate your manifest with office-addin-manifest](#validate-your-manifest-with-office-addin-manifest).
 - If you're using Agents Toolkit with the unified manifest, use [Validate the manifest in the UI of Agents Toolkit](#validate-the-manifest-in-the-ui-of-agents-toolkit).
 

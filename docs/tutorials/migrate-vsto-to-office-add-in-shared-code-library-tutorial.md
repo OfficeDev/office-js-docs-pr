@@ -1,16 +1,16 @@
 ---
-title: 'Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library'
-description: Tutorial on how to share code between a VSTO Add-in and an Office Add-in.
+title: 'Tutorial: Share code between both a VSTO add-in and an Office Add-in by using a shared code library'
+description: Tutorial on how to share code between a VSTO add-in and an Office Add-in.
 ms.date: 06/09/2026
 ms.service: microsoft-365
 ms.localizationpriority: high
 ---
 
-# Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library
+# Tutorial: Share code between both a VSTO add-in and an Office Add-in by using a shared code library
 
-Use this tutorial to keep your existing VSTO Add-in while building an equivalent Office Add-in for cross-platform clients. You'll move reusable business logic into a shared .NET library and call it from the Office Add-in through a REST API.
+Use this tutorial to keep your existing VSTO add-in while building an equivalent Office Add-in for cross-platform clients. You'll move reusable business logic into a shared .NET library and call it from the Office Add-in through a REST API.
 
-Visual Studio Tools for Office (VSTO) Add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO Add-ins on Mac, on the web, or on mobile platforms.
+Visual Studio Tools for Office (VSTO) add-ins are great for extending Office to provide solutions for your business or others. They've been around for a long time and there are thousands of solutions built with VSTO. However, they only run on Office on Windows. You can't run VSTO add-ins on Mac, on the web, or on mobile platforms.
 
 [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 
@@ -194,9 +194,9 @@ Now update the VSTO Add-in to use the class library. It's important for both add
 
 ## Create a REST API wrapper
 
-The VSTO Add-in can use the shared class library directly because they're both .NET projects. However, the Office Add-in can't use .NET directly because it uses JavaScript. Next, you create a REST API wrapper. This enables the Office Add-in to call a REST API, which then calls the shared class library.
+The VSTO add-in can use the shared class library directly because they're both .NET projects. However, the Office Add-in can't use .NET directly because it uses JavaScript. Next, create a REST API wrapper. This enables the Office Add-in to call a REST API, which then calls the shared class library.
 
-1. In **Solution Explorer**, right-click (or select and hold) the **Cell-Analyzer** project and choose **Add > New Project**.
+1. In **Solution Explorer**, right-click (or select and hold) the **Cell-Analyzer** project and choose **Add** > **New Project**.
 1. In the **Add a new project dialog**, choose **ASP.NET Core Web Application**, and choose **Next**.
 1. In the **Configure your new project** dialog, set the following fields.
     - Set the **Project name** to **CellAnalyzerRESTAPI**.
@@ -303,7 +303,7 @@ Two projects are created:
 
 1. In the preceding code, enter the **sslPort** number that you saved from the **launchSettings.json** file.
 
-In the preceding code, the returned string is processed to replace carriage return line feeds with `<br>` HTML tags. Sometimes, a return value that works in .NET for the VSTO Add-in needs to be adjusted on the Office Add-in side for presentation. In this case, the REST API and shared class library only return the string. The `showUnicode()` function formats it for display.
+In the preceding code, the returned string is processed to replace carriage return line feeds with `<br>` HTML tags. Sometimes, a return value that works in .NET for the VSTO add-in needs to be adjusted on the Office Add-in side for presentation. In this case, the REST API and shared class library only return the string. The `showUnicode()` function formats it for display.
 
 ### Allow CORS from the Office Add-in
 
