@@ -1,13 +1,13 @@
 ---
-title: Sideload Office Add-ins for testing from a network share
-description: Learn how to sideload an Office Add-in for testing from a network share.
-ms.date: 05/21/2025
+title: Sideload Office Add-ins on Windows from a network share
+description: Set up a shared folder catalog, trust it in Office, and sideload Office Add-ins for Windows testing.
+ms.date: 06/09/2026
 ms.localizationpriority: medium
 ---
 
-# Sideload Office Add-ins for testing from a network share
+# Sideload Office Add-ins on Windows from a network share
 
-You can test an Office Add-in in an Office client that's on Windows by publishing the manifest to a network file share (instructions follow). This deployment option is intended to be used when you've completed development and testing on a localhost and want to test the add-in from a non-local server or cloud account.
+Use a network share to test an Office Add-in in Office on Windows after localhost testing is complete. In this flow, you place the manifest in a shared folder, trust that folder in Office, and then install the add-in. This deployment option is intended to be used when you've completed development and testing on a localhost and want to test the add-in from a non-local server or cloud account.
 
 > [!IMPORTANT]
 > Deployment by network share isn't supported for production add-ins. This method has the following limitations.
@@ -32,7 +32,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 ## Share a folder
 
-1. In File Explorer on the Windows computer where you want to host your add-in, go to the parent folder, or drive letter, of the folder you want to use as your shared folder catalog.
+1. In File Explorer on the Windows computer where you want to host your add-in, go to the parent folder or drive of the folder that you want to use as your shared folder catalog.
 
 1. Open the context menu for the folder you want to use as your shared folder catalog (for example, right-click the folder) and choose **Properties**.
 
@@ -40,9 +40,9 @@ The following video walks you through the process of sideloading your add-in in 
 
     :::image type="content" source="../images/sideload-windows-properties-dialog.png" alt-text="Folder Properties dialog with the Sharing tab and Share button highlighted.":::
 
-1. Within the **Network access** dialog window, add yourself and any other users and/or groups with whom you want to share your add-in. You'll need at least **Read/Write** permission to the folder. After you've finished choosing people to share with, choose the **Share** button.
+1. In the **Network access** dialog window, add yourself and any other users or groups with whom you want to share your add-in. You need at least **Read/Write** permission to the folder. After you finish choosing people to share with, choose **Share**.
 
-1. When you see the **Your folder is shared** confirmation, make note of the full network path that's displayed immediately following the folder name. (You'll need to enter this value as the **Catalog Url** when you [specify the shared folder as a trusted catalog](#specify-the-shared-folder-as-a-trusted-catalog), as described in the next section of this article.) Choose the **Done** button to close the **Network access** dialog window.
+1. In the **Your folder is shared** confirmation, note the full network path shown after the folder name. You enter this value as **Catalog Url** when you [specify the shared folder as a trusted catalog](#specify-the-shared-folder-as-a-trusted-catalog). Choose **Done** to close the **Network access** dialog window.
 
    :::image type="content" source="../images/sideload-windows-network-access-dialog.png" alt-text="Network access dialog with the share path highlighted.":::
 
@@ -50,7 +50,7 @@ The following video walks you through the process of sideloading your add-in in 
 
 ## Specify the shared folder as a trusted catalog
 
-There are two options for how you specify this trust. Follow the instructions for the option that works better for your setup.
+There are two ways to configure this trust. Follow the option that fits your setup.
 
 - [Configure the trust manually.](#configure-the-trust-manually)
 - [Configure the trust with a Registry script.](#configure-the-trust-with-a-registry-script)
@@ -65,11 +65,11 @@ There are two options for how you specify this trust. Follow the instructions fo
 
 1. Choose **Trusted Add-in Catalogs**.
 
-1. In the **Catalog Url** box, enter the full network path to the folder that you [shared](#share-a-folder) previously. If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot.
+1. In the **Catalog Url** box, enter the full network path to the folder that you [shared](#share-a-folder). If you didn't note the full path earlier, get it from the folder's **Properties** dialog window, as shown in the following screenshot.
 
     :::image type="content" source="../images/sideload-windows-properties-dialog-2.png" alt-text="Folder Properties dialog with the Sharing tab and network path highlighted.":::
 
-1. After you've entered the full network path of the folder into the **Catalog Url** box, choose the **Add catalog** button.
+1. After you enter the folder path in **Catalog Url**, choose **Add catalog**.
 
 1. Select the **Show in Menu** check box for the newly-added item, and then choose the **OK** button to close the **Trust Center** dialog window.
 
@@ -81,7 +81,7 @@ There are two options for how you specify this trust. Follow the instructions fo
 
 ### Configure the trust with a Registry script
 
-1. In a text editor, create a file named **TrustNetworkShareCatalog.reg**.
+1. In a text editor, create a file named `TrustNetworkShareCatalog.reg`.
 
 1. Add the following content to the file.
 
@@ -94,9 +94,9 @@ There are two options for how you specify this trust. Follow the instructions fo
     "Flags"=dword:00000001
     ```
 
-1. Use one of the many online GUID generation tools, such as [GUID Generator](https://guidgenerator.com/), to generate a random GUID, and within the TrustNetworkShareCatalog.reg file, replace the string "-random-GUID-here-" *in both places* with the GUID. (The enclosing `{}` symbols should remain.)
+1. Use an online GUID generation tool, such as [GUID Generator](https://guidgenerator.com/), to generate a random GUID. In `TrustNetworkShareCatalog.reg`, replace the string `-random-GUID-here-` *in both places* with the GUID. Keep the enclosing `{}` symbols.
 
-1. Replace the `Url` value with the full network path to the folder that you [shared](#share-a-folder) previously. (Note that any `\` characters in the URL must be doubled.) If you failed to note the folder's full network path when you shared the folder, you can get it from the folder's **Properties** dialog window, as shown in the following screenshot.
+1. Replace the `Url` value with the full network path to the folder that you [shared](#share-a-folder). Any `\` characters in the URL must be doubled. If you didn't note the full path earlier, get it from the folder's **Properties** dialog window, as shown in the following screenshot.
 
     :::image type="content" source="../images/sideload-windows-properties-dialog-2.png" alt-text="Folder Properties dialog with the Sharing tab and network path highlighted.":::
 
@@ -113,14 +113,14 @@ There are two options for how you specify this trust. Follow the instructions fo
 
 1. Close *all* Office applications.
 
-1. Run the TrustNetworkShareCatalog.reg just as you would any executable, such as double-clicking it.
+1. Run `TrustNetworkShareCatalog.reg` just as you would any executable, such as by double-clicking it.
 
 ## Sideload your add-in
 
-1. Put the manifest XML file of any add-in that you're testing into the shared folder catalog. Note that you deploy the web application itself to a web server. Be sure to specify the URL in the `<SourceLocation>` element of the manifest file.
+1. Put the add-in manifest XML file in the shared folder catalog. Deploy the web application itself to a web server, and make sure the manifest's `<SourceLocation>` element points to that web app URL.
 
     > [!IMPORTANT]
-    > [!include[HTTPS guidance](../includes/https-guidance.md)]
+    > [!INCLUDE [HTTPS guidance](../includes/https-guidance.md)]
 
     > [!NOTE]
     > For Visual Studio projects, use the manifest built by the project in the `{projectfolder}\bin\Debug\OfficeAppManifests` folder.
