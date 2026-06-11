@@ -1,7 +1,7 @@
 ---
 title: Clear the Office cache
 description: Learn how to clear the Office cache on your computer.
-ms.date: 12/02/2025
+ms.date: 06/12/2026
 ms.localizationpriority: high
 ---
 
@@ -36,13 +36,13 @@ The following table outlines which Office cache types can be cleared on differen
 
 | Platform | Types of caches to clear | Options to clear the cache |
 | ----- | ----- | ----- |
-| Windows | Both the web and Wef caches. There's currently no option to clear one cache without clearing the other. | <ul><li>[Automatically clear the cache](#automatically-clear-the-cache)</li><li>[Manually clear the cache](#manually-clear-the-cache)</li><li>[Use the Microsoft Edge developer tools on Windows 10](#use-the-microsoft-edge-developer-tools-on-windows-10)</li></ul> |
+| Windows | Both the web and Wef caches. There's currently no option to clear one cache without clearing the other. | <ul><li>[Automatically clear the cache](#automatically-clear-the-cache)</li><li>[Use the office-addin-cacche tool](#use-the-office-addin-cache-tool)</li><li>[Manually clear the cache](#manually-clear-the-cache)</li></ul> |
 | Mac | <ul><li>Web</li><li>Both web and Wef caches</li></ul> | <ul><li>**Web**: [Use the personality menu to clear the web cache](#clear-the-web-cache)</li><li>**Web and Wef**: [Clear the web and Wef caches on Mac](#clear-the-web-and-wef-caches)</li></ul> |
 | iOS | <ul><li>Web</li></ul> | <ul><li>[Use JavaScript to clear the cache on iOS](#clear-the-office-cache-on-ios)</li></ul> |
 
 ## Clear the Office cache on Windows
 
-Depending on your Office host and operating system, you can automatically or manually clear both the web and Wef caches on a Windows computer.
+Depending on the Office applications that your add-in supports, you may be able to configure Office on Windows to automatically clear both the web and Wef caches whenever it starts. Alternatively, clear the cache with the [office-addin-cache](https://www.npmjs.com/package/office-addin-cache) tool or manually.
 
 > [!IMPORTANT]
 > On Windows, the automatic and manual options clear both the web and Wef caches. There's currently no option to clear one cache without clearing the other.
@@ -50,7 +50,7 @@ Depending on your Office host and operating system, you can automatically or man
 ### Automatically clear the cache
 
 > [!NOTE]
-> The automatic option is only supported for Excel, PowerPoint, and Word. Outlook only supports the [manual option](#manually-clear-the-cache-in-outlook).
+> The automatic option is only supported for Excel, PowerPoint, and Word. Outlook only supports the [tool](#use-the-office-addin-cache-tool) and [manual](#manually-clear-the-cache-in-outlook) options.
 
 This method is recommended for add-in development computers. If your Office on Windows version is 2108 or later, the following steps configure the Office cache to be cleared the next time Office is reopened.
 
@@ -58,6 +58,16 @@ This method is recommended for add-in development computers. If your Office on W
 1. Select the **Next time Office starts, clear all previously-started web add-ins cache** checkbox.
 1. Select **OK**.
 1. Restart Excel, PowerPoint, or Word.
+
+### Use the office-addin-cache tool
+
+To programmatically clear the cache, open a Command Prompt and run the following command. 
+
+```bash
+npx office-addin-cache clear
+```
+
+For information about options you can use with the command, see [office-addin-cache](https://www.npmjs.com/package/office-addin-cache).
 
 ### Manually clear the cache
 
@@ -108,31 +118,6 @@ To clear the cache in [new Outlook on Windows](https://support.microsoft.com/off
 
   :::image type="content" source="../images/devtools-clear-cache.png" alt-text="The 'Clear browser cache' option is selected in Microsoft Edge DevTools.":::
 
-### Use the Microsoft Edge developer tools on Windows 10
-
-To clear the Office cache on Windows 10 when the add-in is running in Microsoft Edge, use the Microsoft Edge DevTools.
-
-> [!NOTE]
-> To clear the Office cache using the following steps, your add-in must have a task pane. If your add-in is a UI-less add-in -- for example, one that uses the [on-send](../outlook/outlook-on-send-addins.md) feature -- you'll need to add a task pane to your add-in that uses the same domain for [SourceLocation](/javascript/api/manifest/sourcelocation), before you can use the following steps to clear the cache.
-
-1. Install the [Microsoft Edge DevTools](https://apps.microsoft.com/detail/9mzbfrmz0mnj).
-
-2. Open your add-in in the Office client.
-
-3. Run the Microsoft Edge DevTools.
-
-4. In the Microsoft Edge DevTools, open the **Local** tab. Your add-in will be listed by its name.
-
-5. Select the add-in name to attach the debugger to your add-in. A new Microsoft Edge DevTools window will open when the debugger attaches to your add-in.
-
-6. On the **Network** tab of the new window, select **Clear cache**.
-
-    :::image type="content" source="../images/edge-devtools-clear-cache.png" alt-text="Microsoft Edge DevTools with the Clear cache button highlighted.":::
-
-7. If completing these steps doesn't produce the desired result, try selecting **Always refresh from server**.
-
-    :::image type="content" source="../images/edge-devtools-refresh-from-server.png" alt-text="Microsoft Edge DevTools with the Always refresh from server button highlighted.":::
-
 ## Clear the Office cache on Mac
 
 You can choose to clear the web or both the web and Wef caches on Mac.
@@ -153,6 +138,20 @@ From the add-in's task pane, choose the personality menu. Then, choose **Clear W
 :::image type="content" source="../images/mac-clear-cache-menu.png" alt-text="The 'Clear web cache' option on the personality menu of an add-in's task pane.":::
 
 ### Clear the web and Wef caches
+
+Clear both the caches either manually or by using the office-addin-cache tool.
+
+#### Clear the Office cache on Mac by using the office-addin-cache tool
+
+To programmatically clear the cache, open **Terminal** and run the following command. 
+
+```bash
+npx office-addin-cache clear
+```
+
+For information about options you can use with the command, see [office-addin-cache](https://www.npmjs.com/package/office-addin-cache).
+
+#### Clear the Office cache on Mac manually
 
 To clear both the web and Wef caches on Mac, delete the contents of the `~/Library/Containers/com.Microsoft.OsfWebHost/Data/` and `~/Library/Containers/com.microsoft.{host}/Data/Documents/wef` folders. Replace `{host}` with the Office application, such as `Excel`.
 
