@@ -50,7 +50,7 @@ Depending on the Office applications that your add-in supports, you may be able 
 ### Automatically clear the cache
 
 > [!NOTE]
-> The automatic option is only supported for Excel, PowerPoint, and Word. Outlook only supports the [manual option](#manually-clear-the-cache-in-outlook).
+> The automatic option is only supported for Excel, PowerPoint, and Word. Outlook only supports the [tool](#use-the-office-addin-cache-tool) and [manual](#manually-clear-the-cache-in-outlook) options.
 
 This method is recommended for add-in development computers. If your Office on Windows version is 2108 or later, the following steps configure the Office cache to be cleared the next time Office is reopened.
 
@@ -141,9 +141,9 @@ From the add-in's task pane, choose the personality menu. Then, choose **Clear W
 
 Clear both the caches either manually or by using the office-addin-cache tool.
 
-#### Clear the Office cahce on Mac by using the office-addin-cache tool
+#### Clear the Office cache on Mac by using the office-addin-cache tool
 
-Open **Terminal** and use the same command as is used on Windows. For details, see [Use the office-addin-cacche tool](#use-the-office-addin-cache-tool)
+Open **Terminal** and use the same command as is used on Windows. For details, see [Use the office-addin-cacche tool](#use-the-office-addin-cache-tool).
 
 #### Clear the Office cache on Mac manually
 
