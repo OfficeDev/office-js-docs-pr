@@ -119,8 +119,8 @@ Next, add a MIME type for JSON files.
 1. Open a command line prompt and go to the root directory of your add-in project. Then run the following command to prepare all files for deployment.
 
   ```bash
-    npm run build
-    ```
+  npm run build
+  ```
 
     When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy.
 
