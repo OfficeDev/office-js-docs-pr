@@ -36,7 +36,7 @@ The following table outlines which Office cache types can be cleared on differen
 
 | Platform | Types of caches to clear | Options to clear the cache |
 | ----- | ----- | ----- |
-| Windows | Both the web and Wef caches. There's currently no option to clear one cache without clearing the other. | <ul><li>[Automatically clear the cache](#automatically-clear-the-cache)</li><li>[Use the office-addin-cacche tool](#use-the-office-addin-cache-tool)</li><li>[Manually clear the cache](#manually-clear-the-cache)</li><li>[Use the Microsoft Edge developer tools on Windows 10](#use-the-microsoft-edge-developer-tools-on-windows-10)</li></ul> |
+| Windows | Both the web and Wef caches. There's currently no option to clear one cache without clearing the other. | <ul><li>[Automatically clear the cache](#automatically-clear-the-cache)</li><li>[Use the office-addin-cacche tool](#use-the-office-addin-cache-tool)</li><li>[Manually clear the cache](#manually-clear-the-cache)</li></ul> |
 | Mac | <ul><li>Web</li><li>Both web and Wef caches</li></ul> | <ul><li>**Web**: [Use the personality menu to clear the web cache](#clear-the-web-cache)</li><li>**Web and Wef**: [Clear the web and Wef caches on Mac](#clear-the-web-and-wef-caches)</li></ul> |
 | iOS | <ul><li>Web</li></ul> | <ul><li>[Use JavaScript to clear the cache on iOS](#clear-the-office-cache-on-ios)</li></ul> |
 
