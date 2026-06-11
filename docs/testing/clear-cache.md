@@ -143,7 +143,13 @@ Clear both the caches either manually or by using the office-addin-cache tool.
 
 #### Clear the Office cache on Mac by using the office-addin-cache tool
 
-Open **Terminal** and use the same command as is used on Windows. For details, see [Use the office-addin-cacche tool](#use-the-office-addin-cache-tool).
+To programmatically clear the cache, open **Terminal** and run the following command. 
+
+```bash
+npx office-addin-cache clear
+```
+
+For information about options you can use with the command, see [office-addin-cache](https://www.npmjs.com/package/office-addin-cache).
 
 #### Clear the Office cache on Mac manually
 
