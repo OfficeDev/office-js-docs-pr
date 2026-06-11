@@ -118,11 +118,11 @@ Next, add a MIME type for JSON files.
 
 1. Open a command line prompt and go to the root directory of your add-in project. Then run the following command to prepare all files for deployment.
 
-  ```bash
-  npm run build
-  ```
+    ```bash
+    npm run build
+    ```
 
-    When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy.
+   When the build completes, the **dist** folder in the root directory of your add-in project will contain the files that you'll deploy.
 
 1. To deploy, in the VS Code **Explorer**, right-click (or select and hold) the **dist** folder and select **Deploy to Static Website via Azure Storage**. When prompted, select the storage account you created previously. If you already deployed the **dist** folder, you'll be prompted if you want to overwrite the files in the Azure storage with the latest changes.
 
