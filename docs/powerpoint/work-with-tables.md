@@ -126,9 +126,9 @@ options.specificCellProperties[1][1] = {
 await insertTableOnCurrentSlide(rowCount, columnCount, options);
 
 // Helper function to create a 2D array filled with empty and distinct objects.
-function createCellArray(rowCount: number, columnCount: number) {
-    // Using map() ensures each cell gets its own object reference.
-    return Array(rowCount).fill("").map(_ => Array(columnCount).fill("").map(_ => ({})));
+function createCellArray(rowCount: number, columnCount: number): PowerPoint.TableCellProperties[][] {
+    // Using Array.from() with a factory callback ensures each cell gets its own object reference.
+    return Array.from({ length: rowCount }, () => Array.from({ length: columnCount }, () => ({})));
 }
 ```
 
@@ -168,7 +168,7 @@ Use the [TableCellProperties.borders](/javascript/api/powerpoint/powerpoint.tabl
 ```javascript
 const columnCount = 3;
 const rowCount = 3;
-const specificCellProperties = createCellArray(rowCount, columnCount); /* Helper function defined earlier. */
+const specificCellProperties = createCellArray(rowCount, columnCount); // Helper function defined earlier.
 const options: PowerPoint.TableAddOptions = {
     values: [
         ["1", "2", "3"],
@@ -220,7 +220,7 @@ Use the [TableCellProperties.horizontalAlignment](/javascript/api/powerpoint/pow
 ```javascript
 const rowCount = 3;
 const columnCount = 3;
-const specificCellProperties = createCellArray(rowCount, columnCount); /* Helper function defined earlier. */
+const specificCellProperties = createCellArray(rowCount, columnCount); // Helper function defined earlier.
 const options: PowerPoint.TableAddOptions = {
     values: [
         ["Left aligned, top", "\n\n", ""],
