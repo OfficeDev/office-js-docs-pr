@@ -32,7 +32,7 @@ Use the following methods to create common shape types.
 
 Use `ShapeCollection.addGeometricShape` when your add-in needs a built-in shape, such as a rectangle, wave, or chevron. The method takes a [GeometricShapeType](/javascript/api/excel/excel.geometricshapetype) enum value.
 
-The following example creates a 150-by-150 pixel rectangle named **Square** and places it 100 pixels from the top-left corner of **MyWorksheet**.
+The following example creates a 150 x 150 pixel rectangle named **Square** and places it 100 pixels from the top-left corner of **MyWorksheet**.
 
 ```js
 await Excel.run(async (context) => {

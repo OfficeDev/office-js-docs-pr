@@ -198,7 +198,7 @@ await Excel.run(async (context) => {
         richContent: `<at id="0">${mention.name}</at> Can you review the forecast?`
     };
 
-    // An InvalidArgument error is thrown if the range contains multiple cells.
+    // An `InvalidArgument` error is thrown if the range contains multiple cells.
     context.workbook.comments.add("MyWorksheet!A1", commentBody, Excel.ContentType.mention);
     await context.sync();
 });
@@ -214,7 +214,7 @@ Register handlers for:
 - `onChanged` when a comment or reply is added, edited, deleted, resolved, or reopened.
 - `onDeleted` when a comment thread is deleted.
 
-If one operation affects multiple comments, the event args contain multiple items in `commentDetails`. The following samples use the first item only for clarity. For general event guidance, see [Work with Events using the Excel JavaScript API](excel-add-ins-events.md).
+If one operation affects multiple comments, the event arguments contain multiple items in `commentDetails`. The following samples use the first item only for clarity. For general event guidance, see [Work with Events using the Excel JavaScript API](excel-add-ins-events.md).
 
 ### Handle comment addition events
 
