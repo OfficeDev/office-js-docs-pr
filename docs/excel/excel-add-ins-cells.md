@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Work with Excel cells by using `Range` objects
 
-When your Excel add-in needs to read, write, or format a cell, work with a `Range` object. The Excel JavaScript API doesn't include a `Cell` class. Instead, one cell in the Excel UI maps to a `Range` that contains one cell. This article explains that mapping and shows a simple single-cell example.
+When your Excel add-in needs to read, write, or format a cell, work with a `Range` object. The Excel JavaScript API doesn't include a "Cell" class. Instead, one cell in the Excel UI maps to a `Range` that contains one cell. This article explains that mapping and shows a simple single-cell example.
 
 For the complete list of properties and methods that `Range` supports, see [Excel.Range class](/javascript/api/excel/excel.range).
 

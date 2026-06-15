@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 Use the `Worksheet` object when your add-in needs to organize workbook tabs, read cells from a specific sheet, react to worksheet events, or protect worksheet data. This article shows common worksheet tasks by using the Excel JavaScript API. For the complete API surface, see [Worksheet Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheetcollection).
 
 > [!NOTE]
-> This article applies only to regular worksheets. It doesn't apply to [chart sheets](https://support.microsoft.com/office/create-a-chart-from-start-to-finish-0baf399e-dd61-4e18-8a73-b3fd5d5680c2) or [macro sheets](https://support.microsoft.com/office/working-with-excel-4-0-macros-ba8924d4-e157-4bb2-8d76-2c07ff02e0b8).
+> This article applies only to regular worksheets. It doesn't apply to [chart sheets](https://support.microsoft.com/Excel/get-started/create-a-chart-from-start-to-finish) or [macro sheets](https://support.microsoft.com/Excel/working-with-excel-4-0-macros).
 
 In this article, you'll learn how to:
 

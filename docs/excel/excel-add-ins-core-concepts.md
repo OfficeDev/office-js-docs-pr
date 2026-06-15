@@ -38,9 +38,9 @@ A range is a group of contiguous cells in a workbook. Add-ins usually use A1-sty
 
 Ranges expose three core properties that most add-ins use right away:
 
-- `values` to read or write cell values
-- `formulas` to read or write formulas
-- `format` to change visual formatting
+- `values` to read or write cell values.
+- `formulas` to read or write formulas.
+- `format` to change visual formatting.
 
 [!include[Excel cells and ranges note](../includes/note-excel-cells-and-ranges.md)]
 

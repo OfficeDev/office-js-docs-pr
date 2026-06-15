@@ -9,7 +9,7 @@ ai-usage: ai-assisted
 
 # Apply conditional formatting to Excel ranges by using the Excel JavaScript API
 
-Use conditional formatting when your Excel add-in needs to flag delayed orders, highlight negative values, or visualize trends without changing cell values. This article shows how to create common rule types, update existing rules, control rule priority, and clear rules. For background on Excel's built-in conditional formatting experience, see [Add, change, or clear conditional formats](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f) and [Use a formula to apply conditional formatting in Excel](https://support.microsoft.com/office/use-a-formula-to-apply-conditional-formatting-in-excel-for-mac-34093090-235b-4476-a7ce-1da7880c750f). 
+Use conditional formatting when your Excel add-in needs to flag delayed orders, highlight negative values, or visualize trends without changing cell values. This article shows how to create common rule types, update existing rules, control rule priority, and clear rules. For background on Excel's built-in conditional formatting experience, see [Use conditional formatting to highlight information in Excel](https://support.microsoft.com/Excel/use-conditional-formatting-to-highlight-information-in-excel) and [Use a formula to apply conditional formatting in Excel](https://support.microsoft.com/Excel/use-a-formula-to-apply-conditional-formatting-in-excel-for-mac). 
 
 > [!TIP]
 > For related tasks, see [Set range format using the Excel JavaScript API](excel-add-ins-ranges-set-format.md) and [Add data validation to Excel ranges](excel-add-ins-data-validation.md).
@@ -413,4 +413,4 @@ await Excel.run(async (context) => {
 - [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [ConditionalFormat object reference](/javascript/api/excel/excel.conditionalformat)
 - [Add, change, or clear conditional formats](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
-- [Use a formula to apply conditional formatting in Excel](https://support.microsoft.com/office/use-a-formula-to-apply-conditional-formatting-in-excel-for-mac-34093090-235b-4476-a7ce-1da7880c750f)
+- [Use a formula to apply conditional formatting in Excel](https://support.microsoft.com/Excel/use-a-formula-to-apply-conditional-formatting-in-excel-for-mac)

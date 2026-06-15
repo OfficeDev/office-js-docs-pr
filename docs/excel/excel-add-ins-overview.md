@@ -12,7 +12,7 @@ ai-usage: ai-assisted
 
 Use an Excel add-in when you want to automate workbook tasks, connect workbook data to external services, add custom calculations, or guide users with a web-based experience in Excel. Excel add-ins run in Excel on the web, Windows, Mac, and iPad, so you can build one solution for multiple platforms.
 
-With the Office Add-ins platform and `Office.js`, you can:
+With the Office Add-ins platform and Office.js, you can:
 
 - Read and write workbook data, including worksheets, ranges, tables, charts, and named items.
 - Extend the **Ribbon** and **context menu** or add a task pane or content pane with web-based UI.
@@ -40,7 +40,7 @@ In addition to working with workbook content, Excel add-ins can add commands, sh
 
 ### Add-in commands
 
-Add-in commands extend the Excel UI and start actions in your add-in. You can add a button to the **Ribbon** or an item to a **context menu**. When users select a command, they can run JavaScript code or open a page from the add-in in a **task pane**.
+Add-in commands extend the Excel UI and start actions in your add-in. You can add a button to the **ribbon** or an item to a **context menu**. When users select a command, they can run JavaScript code or open a page from the add-in in a **task pane**.
 
 :::image type="content" source="../images/excel-add-in-commands-script-lab.png" alt-text="Add-in commands in Excel.":::
 
