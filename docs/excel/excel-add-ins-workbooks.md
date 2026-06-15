@@ -225,7 +225,7 @@ Use workbook activation events when your add-in needs to refresh data after the 
 To handle activation, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onActivated](/javascript/api/excel/excel.workbook#excel-excel-workbook-onactivated-member) event. The handler receives a [WorkbookActivatedEventArgs](/javascript/api/excel/excel.workbookactivatedeventargs) object.
 
 > [!IMPORTANT]
-> `onActivated` doesn't fire when a workbook is opened. It fires only when the user switches focus back to a workbook that is already open.
+> The `onActivated` event doesn't detect when a workbook is opened. This event only detects when a user switches focus back to an already open workbook.
 
 The following example registers an activation handler and logs the workbook name when activation occurs.
 
