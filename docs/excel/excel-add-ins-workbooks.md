@@ -266,7 +266,7 @@ context.workbook.save(Excel.SaveBehavior.prompt);
 
 ### Close a workbook
 
-Use `Workbook.close()` to close the workbook and any add-ins associated with it. The **Excel** application stays open. The optional `closeBehavior` parameter supports the following values.
+Use `Workbook.close()` to close the workbook and any add-ins associated with it. The Excel application stays open. The optional `closeBehavior` parameter supports the following values.
 
 - `Excel.CloseBehavior.save`: Save the workbook before closing it. If the file hasn't been saved before, Excel prompts for a name and location.
 - `Excel.CloseBehavior.skipSave`: Close the workbook immediately without saving changes.

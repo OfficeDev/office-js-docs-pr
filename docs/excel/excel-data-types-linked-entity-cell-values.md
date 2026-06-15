@@ -160,10 +160,10 @@ Office.onReady(async () => {
 
 There are two ways to insert a linked entity cell value into a worksheet cell.
 
-- Create a command button on the **Ribbon** or a button in the task pane. When the user selects the button, your code inserts a linked entity cell value.
+- Create a command button on the ribbon or a button in the task pane. When the user selects the button, your code inserts a linked entity cell value.
 - Create a custom function that returns a linked entity cell value.
 
-The following example inserts a new linked entity cell value into the selected cell. You can call this code from a **Ribbon** command or from a button in the task pane.
+The following example inserts a new linked entity cell value into the selected cell. You can call this code from a ribbon command or from a button in the task pane.
 
 Keep the following requirements in mind:
 

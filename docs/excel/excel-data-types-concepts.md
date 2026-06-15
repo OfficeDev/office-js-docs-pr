@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 # Use data types in Excel add-ins
 
-When your add-in needs more than strings, numbers, and booleans, use Excel data types. Data types let you return rich values such as formatted dates, entity cards, linked records, and web images while still supporting worksheet calculations.
+When your add-in needs more than strings, numbers, and booleans, use Excel data types. Data types let you return enhanced values such as formatted dates, entity cards, linked records, and web images while still supporting worksheet calculations.
 
 This article explains the `valuesAsJson` API that powers data types and shows when to use the main cell value types. For a feature overview, see [Overview of data types in Excel add-ins](excel-data-types-overview.md).
 
@@ -20,7 +20,7 @@ To try these concepts right away, open [**Script Lab**](../overview/explore-with
 
 The `valuesAsJson` property is the main API for reading and writing Excel data types. The singular `valueAsJson` property on [NamedItem](/javascript/api/excel/excel.nameditem) serves the same purpose for a single named item.
 
-`valuesAsJson` expands on properties such as [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). The `values` property only returns one of the four basic cell value types: string, number, boolean, or error. By contrast, `valuesAsJson` returns the richer JSON structure for those basic types and for data types such as formatted numbers, entities, and web images.
+`valuesAsJson` expands on properties such as [Range.values](/javascript/api/excel/excel.range#excel-excel-range-values-member). The `values` property only returns one of the four basic cell value types: string, number, boolean, or error. By contrast, `valuesAsJson` returns an expanded JSON structure for those basic types and for data types such as formatted numbers, entities, and web images.
 
 The following objects expose `valuesAsJson`.
 
@@ -105,7 +105,7 @@ For the complete walkthrough, see [Add properties to Excel basic cell values](ex
 
 ## Entity values
 
-Use an entity value when you want one cell to represent a rich business object. An [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) can store text, nested data types, and arrays, and Excel can display that data in an entity card.
+An [EntityCellValue](/javascript/api/excel/excel.entitycellvalue) can store text, nested data types, and arrays, and Excel can display that data in an entity card.
 
 The following sample shows the full JSON schema for an entity value that represents an invoice. The entity includes display text plus properties for an image, a due date, and a status value.
 
@@ -141,7 +141,7 @@ To explore entity data types, open [**Script Lab**](../overview/explore-with-scr
 
 ### Linked entity cell values
 
-[LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) represents an entity that's connected to an external data source. Use linked entities when you need rich cards for large or frequently updated data sets and you don't want to load all details into the workbook at once.
+[LinkedEntityCellValue](/javascript/api/excel/excel.linkedentitycellvalue) represents an entity that's connected to an external data source. Use linked entities when you need cards for large or frequently updated data sets and you don't want to load all details into the workbook at once.
 
 The [Stocks and Geography data domains](https://support.microsoft.com/office/excel-data-types-stocks-and-geography-61a33056-9935-484f-8ac8-f1a89e210877) available in the Excel UI are examples of linked entity cell values.
 
