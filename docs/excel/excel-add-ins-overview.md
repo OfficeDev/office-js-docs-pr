@@ -15,7 +15,7 @@ Use an Excel add-in when you want to automate workbook tasks, connect workbook d
 With the Office Add-ins platform and Office.js, you can:
 
 - Read and write workbook data, including worksheets, ranges, tables, charts, and named items.
-- Extend the **Ribbon** and **context menu** or add a task pane or content pane with web-based UI.
+- Extend the **ribbon** and **context menu** or add a task pane or content pane with web-based UI.
 - Add custom functions that users call from worksheet cells.
 - Open dialog boxes for sign-in, confirmation, and other focused tasks.
 
@@ -37,6 +37,9 @@ If you're new to Excel add-ins, start with the [Excel quickstart](../quickstarts
 ## What you can build with an Excel add-in
 
 In addition to working with workbook content, Excel add-ins can add commands, show task panes, define custom functions, open dialog boxes, and embed rich web content in a worksheet.
+
+> [!TIP]
+> Some of the terms in this article have specific meanings in the context of Office Add-ins. For definitions of these terms, see the [Office Add-ins glossary](../resources/resources-glossary.md).
 
 ### Add-in commands
 
@@ -94,7 +97,7 @@ The [manifest](../develop/add-in-manifests.md) is a configuration file that defi
 
 - The URL of the add-in's web application.
 - The add-in's display name, description, ID, version, and default locale.
-- How the add-in integrates with Excel, including custom UI such as **Ribbon** buttons and **context menu** items.
+- How the add-in integrates with Excel, including custom UI such as **ribbon** buttons and **context menu** items.
 - The permissions that the add-in requires, such as reading or writing document data.
 
 To make an Excel add-in available to users, publish its manifest to Microsoft Marketplace or to an add-ins catalog. For details about Marketplace publishing, see [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).

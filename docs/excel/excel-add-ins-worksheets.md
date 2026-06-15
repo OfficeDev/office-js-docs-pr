@@ -46,7 +46,8 @@ await Excel.run(async (context) => {
 });
 ```
 
-The `id` property of a worksheet uniquely identifies the worksheet in a given workbook. Its value stays the same even when you rename or move the worksheet. If you delete a worksheet from a workbook in Excel on Mac, the `id` of the deleted worksheet might be reassigned to a new worksheet that you create.
+> [!NOTE]
+> The `id` property of a worksheet uniquely identifies the worksheet in a given workbook. Its value stays the same even when you rename or move the worksheet. If you delete a worksheet from a workbook in Excel on Mac, the `id` of the deleted worksheet might be reassigned to a new worksheet that you create.
 
 ## Get the active worksheet
 
