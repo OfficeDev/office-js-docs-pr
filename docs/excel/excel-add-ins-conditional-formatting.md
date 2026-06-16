@@ -1,24 +1,29 @@
 ---
-title: Apply conditional formatting to ranges with the Excel JavaScript API
-description: Learn about conditional formatting in the context of Excel JavaScript add-ins.
-ms.date: 03/06/2026
+title: Apply conditional formatting with Excel JavaScript API
+description: Create, change, prioritize, and clear conditional formatting rules in Excel add-ins by using the Excel JavaScript API.
+ms.date: 06/03/2026
 ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Apply conditional formatting to Excel ranges
+# Apply conditional formatting to Excel ranges by using the Excel JavaScript API
 
-The Excel JavaScript Library provides APIs to apply conditional formatting to data ranges in your worksheets. This functionality makes large sets of data easy to visually parse. The formatting also dynamically updates based on changes within the range.
+Use conditional formatting when your Excel add-in needs to flag delayed orders, highlight negative values, or visualize trends without changing cell values. This article shows how to create common rule types, update existing rules, control rule priority, and clear rules. For background on Excel's built-in conditional formatting experience, see [Use conditional formatting to highlight information in Excel](https://support.microsoft.com/Excel/use-conditional-formatting-to-highlight-information-in-excel) and [Use a formula to apply conditional formatting in Excel](https://support.microsoft.com/Excel/use-a-formula-to-apply-conditional-formatting-in-excel-for-mac). 
 
-> [!NOTE]
-> This article covers conditional formatting in the context of Excel JavaScript add-ins. The following articles provide detailed information about the full conditional formatting capabilities within Excel.
->
-> - [Add, change, or clear conditional formats](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
-> - [Use formulas with conditional formatting](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
+> [!TIP]
+> For related tasks, see [Set range format using the Excel JavaScript API](excel-add-ins-ranges-set-format.md) and [Add data validation to Excel ranges](excel-add-ins-data-validation.md).
+
+## Key points
+
+- Use `Range.conditionalFormats` to create and manage conditional formatting rules for a range.
+- Each `ConditionalFormat` object can use only one rule type, such as `cellValue`, `colorScale`, or `iconSet`.
+- Use `priority` and `stopIfTrue` to control how multiple rules interact on the same range.
+- Use `clearFormat` or `clearAll` to remove formatting details or entire rules.
 
 ## Programmatic control of conditional formatting
 
-The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) objects that apply to the range. The `ConditionalFormat` object contains several properties that define the format to apply based on the [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype).
+The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/javascript/api/excel/excel.conditionalformat) objects that apply to the range. The `ConditionalFormat` object contains properties that define the format to apply based on the [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype).
 
 - `cellValue`
 - `colorScale`
@@ -29,14 +34,13 @@ The `Range.conditionalFormats` property is a collection of [ConditionalFormat](/
 - `textComparison`
 - `topBottom`
 
-> [!NOTE]
-> Each of these formatting properties has a corresponding `*OrNullObject` variant. Learn more about that pattern in the [\*OrNullObject methods](../develop/application-specific-api-model.md#ornullobject-methods-and-properties) section.
+Each of these formatting properties has a corresponding `*OrNullObject` variant. For more information about that pattern, see [*OrNullObject methods](../develop/application-specific-api-model.md#ornullobject-methods-and-properties).
 
-You can set only one format type for the `ConditionalFormat` object. The `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value, determines the format type. Set `type` when you add a conditional format to a range.
+You can set only one format type for a `ConditionalFormat` object. The `type` property, which is a [ConditionalFormatType](/javascript/api/excel/excel.conditionalformattype) enum value, determines the format type. Set `type` when you add a conditional format to a range.
 
-## Create conditional formatting rules
+## Create common conditional formatting rules
 
-Add conditional formats to a range by using `conditionalFormats.add`. After you add a conditional format, set the properties specific to that format. The following examples show how to create different formatting types.
+Add conditional formats to a range by using `conditionalFormats.add`. After you add a conditional format, set the properties specific to that format. The following scenarios show common rule types that you can adapt to your worksheet.
 
 ### [Cell value](/javascript/api/excel/excel.cellvalueconditionalformat)
 
@@ -70,7 +74,7 @@ Color scale conditional formatting applies a color gradient across the data rang
 - `formula` - A number or formula representing the endpoint. This value is `null` if `type` is `lowestValue` or `highestValue`.
 - `type` - How the formula should be evaluated. `highestValue` and `lowestValue` refer to values in the range being formatted.
 
-The following example shows a range being colored blue to yellow to red. Note that `minimum` and `maximum` are the lowest and highest values respectively and use `null` formulas. `midpoint` is using the `percentage` type with a formula of `"=50"` so the yellowest cell is the mean value.
+The following example shows a range being colored blue to yellow to red. Note that `minimum` and `maximum` are the lowest and highest values respectively and use `null` formulas. `midpoint` uses the `percentage` type with a formula of `"=50"` so the yellowest cell is the mean value.
 
 :::image type="content" source="../images/excel-conditional-format-color-scale.png" alt-text="A range with the low number in blue, average number in yellow, and high number is red, with gradients for between values.":::
 
@@ -292,10 +296,7 @@ The `ConditionalFormat` object offers multiple methods to change conditional for
 - [changeRuleToPresetCriteria](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletopresetcriteria-member(1))
 - [changeRuleToTopBottom](/javascript/api/excel/excel.conditionalformat#excel-excel-conditionalformat-changeruletotopbottom-member(1))
 
-The following example shows how to use the `changeRuleToPresetCriteria` method from the preceding list to change an existing conditional format rule to the preset criteria rule type.
-
-> [!NOTE]
-> The specified range must have an existing conditional format rule to use the change methods. If the specified range has no conditional format rule, the change methods don't apply a new rule.
+The following example shows how to use the `changeRuleToPresetCriteria` method from the preceding list to change an existing conditional format rule to the preset criteria rule type. The specified range must already have a conditional format rule. If the range has no rule, the change methods don't apply a new one.
 
 ```js
 await Excel.run(async (context) => {
@@ -407,7 +408,9 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
-- [ConditionalFormat Object (JavaScript API for Excel)](/javascript/api/excel/excel.conditionalformat)
+- [Set range format using the Excel JavaScript API](excel-add-ins-ranges-set-format.md)
+- [Add data validation to Excel ranges](excel-add-ins-data-validation.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [ConditionalFormat object reference](/javascript/api/excel/excel.conditionalformat)
 - [Add, change, or clear conditional formats](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
-- [Use formulas with conditional formatting](https://support.microsoft.com/office/fed60dfa-1d3f-4e13-9ecb-f1951ff89d7f)
+- [Use a formula to apply conditional formatting in Excel](https://support.microsoft.com/Excel/use-a-formula-to-apply-conditional-formatting-in-excel-for-mac)
