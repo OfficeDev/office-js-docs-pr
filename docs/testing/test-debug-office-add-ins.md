@@ -25,7 +25,7 @@ You can use sideloading to install an Office Add-in for testing without having t
 - [Sideload Excel, PowerPoint, and Word add-ins that use the unified manifest for Microsoft 365](sideload-add-in-with-unified-manifest.md)
 
    > [!NOTE]
-   > Office Add-ins that use the unified manifest for Microsoft 365 are not supported on all platforms. For more information, see [Outlook API requirement set client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+   > Office Add-ins that use the unified manifest for Microsoft 365 are not supported on all platforms. For more information, see [Unified manifest - Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 - Sideload add-ins that use the add-in only manifest:
 
