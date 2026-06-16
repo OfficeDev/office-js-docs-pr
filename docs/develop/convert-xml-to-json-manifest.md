@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 04/22/2026
+ms.date: 06/14/2026
 ms.localizationpriority: medium
 ---
 
@@ -140,6 +140,21 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 ## Edit the new unified manifest
 
 1. Open the unified manifest file.
+1. Update the `"$schema"` and `"manifestVersion"` properties at the top of the file to use either the latest released version or the preview version. The following are examples:
+
+   ```json
+   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.24/MicrosoftTeams.schema.json#",
+   "manifestVersion": "1.24",
+   ```
+
+   ```json
+   "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json#",
+   "manifestVersion": "devPreview",
+   ```
+
+   > [!NOTE]
+   > Treat these two property values as *case-sensitive*.
+
 1. Navigate to the [`"developer"`](/microsoft-365/extensibility/schema/root-developer) property and ensure there are child `"privacyUrl"` and `"termsOfUseUrl"` properties. These properties must have appropriate values with a localhost domain.
 1. You can now [sideload the add-in](#sideload-the-add-in).
 
