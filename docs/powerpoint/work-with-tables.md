@@ -2,7 +2,7 @@
 title: Work with tables using the PowerPoint JavaScript API
 description: Create and format PowerPoint tables in your add-in, including values, borders, alignment, merged cells, and cell text updates.
 ms.topic: how-to
-ms.date: 05/29/2026
+ms.date: 06/11/2026
 ms.localizationpriority: medium
 ---
 
@@ -106,8 +106,7 @@ Note that `specificCellProperties` must be a 2D array that exactly matches the t
 ```javascript
 const rowCount = 3;
 const columnCount = 4;
-// Compact syntax to create a 2D array filled with empty and distinct objects.
-const specificCellProperties = Array(rowCount).fill("").map(_ => Array(columnCount).fill("").map(_ => ({})));
+const specificCellProperties = createCellArray(rowCount, columnCount);
 const options: PowerPoint.TableAddOptions = {
     values: [
         ["1", "2", "", "4"],
@@ -125,6 +124,12 @@ options.specificCellProperties[1][1] = {
     fill: { color: "black" }
 };
 await insertTableOnCurrentSlide(rowCount, columnCount, options);
+
+// Helper function to create a 2D array filled with empty and distinct objects.
+function createCellArray(rowCount: number, columnCount: number): PowerPoint.TableCellProperties[][] {
+    // Using Array.from() with a factory callback ensures each cell gets its own object reference.
+    return Array.from({ length: rowCount }, () => Array.from({ length: columnCount }, () => ({})));
+}
 ```
 
 The previous sample creates a table with a specific format applied to the cell in row 1, column 1 as shown in the following image.
@@ -163,8 +168,7 @@ Use the [TableCellProperties.borders](/javascript/api/powerpoint/powerpoint.tabl
 ```javascript
 const columnCount = 3;
 const rowCount = 3;
-// Compact syntax to create a 2D array filled with empty and distinct objects.
-const specificCellProperties = Array(rowCount).fill(undefined).map(_ => Array(columnCount).fill(undefined).map(_ => ({})));
+const specificCellProperties = createCellArray(rowCount, columnCount); // Helper function defined earlier.
 const options: PowerPoint.TableAddOptions = {
     values: [
         ["1", "2", "3"],
@@ -216,8 +220,7 @@ Use the [TableCellProperties.horizontalAlignment](/javascript/api/powerpoint/pow
 ```javascript
 const rowCount = 3;
 const columnCount = 3;
-// Compact syntax to create a 2D array filled with empty and distinct objects.
-const specificCellProperties = Array(rowCount).fill("").map(_ => Array(columnCount).fill("").map(_ => ({})));
+const specificCellProperties = createCellArray(rowCount, columnCount); // Helper function defined earlier.
 const options: PowerPoint.TableAddOptions = {
     values: [
         ["Left aligned, top", "\n\n", ""],
