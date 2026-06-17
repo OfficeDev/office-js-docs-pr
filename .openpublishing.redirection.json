@@ -6,15 +6,15 @@
           "redirect_document_id": true
         },
         {
-            "source_path": "docs/develop/develop/agent-and-add-in.md",
+            "source_path": "docs/develop/agent-and-add-in.md",
             "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
         },
         {
-            "source_path": "docs/develop/quickstarts/agent-and-add-in-quickstart.md",
+            "source_path": "docs/quickstarts/agent-and-add-in-quickstart.md",
             "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
         },
         {
-            "source_path": "docs/develop/design/agent-and-add-in-overview.md",
+            "source_path": "docs/design/agent-and-add-in-overview.md",
             "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
         },
         {
