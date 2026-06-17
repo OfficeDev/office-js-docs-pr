@@ -281,7 +281,7 @@ async function pollRowHiddenDiff() {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with worksheets using the Excel JavaScript API](excel-add-ins-worksheets.md)
-- [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Manage Excel worksheets with the JavaScript API](excel-add-ins-worksheets.md)
+- [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
 - [Coauthoring in Excel add-ins](co-authoring-in-excel-add-ins.md)

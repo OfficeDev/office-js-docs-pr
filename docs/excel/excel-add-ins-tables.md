@@ -1,21 +1,21 @@
 ---
-title: Work with tables using the Excel JavaScript API
-description: Code samples that show how to perform common tasks with tables using the Excel JavaScript API.
-ms.date: 05/07/2026
+title: Create, read, and manage Excel tables with JavaScript
+description: Learn how to create, resize, read, sort, filter, and format Excel tables with the Excel JavaScript API.
+ms.date: 06/03/2026
 ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Work with tables using the Excel JavaScript API
+# Create, read, and manage tables with the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with tables by using the Excel JavaScript API. For the complete list of properties and methods that the `Table` and `TableCollection` objects support, see [Table Object (JavaScript API for Excel)](/javascript/api/excel/excel.table) and [TableCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.tablecollection).
+Use Excel tables when your add-in needs structured data that users can sort, filter, and format. This article shows how to create a table, add rows and columns, read table data, react to changes, and manage filters and formatting. For the full API surface, see [Table object](/javascript/api/excel/excel.table) and [TableCollection object](/javascript/api/excel/excel.tablecollection).
 
 ## Create a table
 
 The following code sample creates a table in the worksheet named **Sample**. The table has headers and contains four columns and seven rows of data.
 
-> [!NOTE]
-> To specify a name for a table, first create the table and then set its `name` property, as shown in the following example.
+To name a table, create it first and then set its `name` property, as the following example shows.
 
 ```js
 await Excel.run(async (context) => {
@@ -52,11 +52,10 @@ await Excel.run(async (context) => {
 
 The following code sample adds seven new rows to the table named **ExpensesTable** within the worksheet named **Sample**. The `index` parameter of the [`add`](/javascript/api/excel/excel.tablerowcollection#excel-excel-tablerowcollection-add-member(1)) method is set to `null`, which specifies that the rows are added after the existing rows in the table. The `alwaysInsert` parameter is set to `true`, which indicates that the new rows are inserted into the table, not below the table. The code then sets the width of the columns and height of the rows to best fit the current data in the table.
 
-> [!NOTE]
-> The `index` property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the index number of the row within the rows collection of the table. A `TableRow` object doesn't contain an `id` property that you can use as a unique key to identify the row.
+The `index` property of a [TableRow](/javascript/api/excel/excel.tablerow) object indicates the row position in the table's `rows` collection. A `TableRow` object doesn't have an `id` property, so use the row position when you need to identify a row.
 
 ```js
-// This code sample shows how to add rows to a table that already exists 
+// This code sample shows how to add rows to a table that already exists
 // on a worksheet named Sample.
 await Excel.run(async (context) => {
     let sheet = context.workbook.worksheets.getItem("Sample");
@@ -72,7 +71,7 @@ await Excel.run(async (context) => {
             ["1/25/2017", "BELLOWS COLLEGE", "Education", "$350"],
             ["1/28/2017", "TREY RESEARCH", "Other", "$135"],
             ["1/31/2017", "BEST FOR YOU ORGANICS COMPANY", "Groceries", "$97"]
-        ], 
+        ],
         true, // alwaysInsert, Specifies that the new rows be inserted into the table.
     );
 
@@ -91,8 +90,7 @@ await Excel.run(async (context) => {
 
 These examples show how to add a column to a table. The first example populates the new column with static values. The second example populates the new column with formulas.
 
-> [!NOTE]
-> The **index** property of a [TableColumn](/javascript/api/excel/excel.tablecolumn) object indicates the index number of the column within the columns collection of the table. The **id** property of a **TableColumn** object contains a unique key that identifies the column.
+The `index` property of a [TableColumn](/javascript/api/excel/excel.tablecolumn) object indicates the column position in the table's `columns` collection. The `id` property of a `TableColumn` object contains a unique key that identifies the column.
 
 ### Add a column that contains static values
 
@@ -180,9 +178,9 @@ await Excel.run(async (context) => {
 
 :::image type="content" source="../images/excel-tables-resize.png" alt-text="Table with multiple empty rows in Excel.":::
 
-## Update column name
+## Rename a column
 
-The following code sample updates the name of the first column in the table to **Purchase date**. The width of the columns and height of the rows are then set to best fit the current data in the table.
+The following code sample renames the first column in the table to **Purchase date**. The code then sets the width of the columns and height of the rows to best fit the current data in the table.
 
 ```js
 await Excel.run(async (context) => {
@@ -192,7 +190,7 @@ await Excel.run(async (context) => {
     expensesTable.columns.load("items");
 
     await context.sync();
-        
+
     expensesTable.columns.items[0].name = "Purchase date";
 
     sheet.getUsedRange().format.autofitColumns();
@@ -350,11 +348,11 @@ await Excel.run(async (context) => {
 
 ### Table data with no filters applied
 
-:::image type="content" source="../images/excel-tables-filters-clear.png" alt-text="Table data non-filtered in Excel.":::
+:::image type="content" source="../images/excel-tables-filters-clear.png" alt-text="Unfiltered table data in Excel.":::
 
-## Get the visible range from a filtered table
+## Get visible cells from a filtered table
 
-The following code sample gets a range that contains data only for cells that are currently visible within the specified table, and then writes the values of that range to the console. You can use the `getVisibleView()` method as shown in the following code to get the visible contents of a table whenever column filters are applied.
+The following code sample gets only the cells that are currently visible in the specified table and then writes those values to the console. Use the `getVisibleView()` method when your add-in needs the visible contents of a filtered table.
 
 ```js
 await Excel.run(async (context) => {
@@ -369,9 +367,9 @@ await Excel.run(async (context) => {
 });
 ```
 
-## AutoFilter
+## Filter a table with AutoFilter
 
-An add-in can use the table's [AutoFilter](/javascript/api/excel/excel.autofilter) object to filter data. An `AutoFilter` object is the entire filter structure of a table or range. All of the filter operations discussed earlier in this article are compatible with the auto-filter. The single access point makes it easier to access and manage multiple filters.
+Your add-in can use the table's [AutoFilter](/javascript/api/excel/excel.autofilter) object to filter data. An `AutoFilter` object represents the full filter state of a table or range. Because it gives you a single access point for filters, it can be easier to manage multiple filters together.
 
 The following code sample shows the same [data filtering as the earlier code sample](#apply-filters-to-a-table), but done entirely through the auto-filter.
 
@@ -506,4 +504,8 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Get Excel worksheet ranges with the JavaScript API](excel-add-ins-ranges-get.md)
+- [Add data validation to Excel ranges](excel-add-ins-data-validation.md)
+- [Create and customize charts with the Excel JavaScript API](excel-add-ins-charts.md)
+- [Performance optimization using the Excel JavaScript API](performance.md)
