@@ -1,7 +1,7 @@
 ﻿---
 title: Test Office Add-ins
 description: Learn how to test your Office Add-in.
-ms.date: 06/14/2026
+ms.date: 06/17/2026
 ms.localizationpriority: high
 ---
 
@@ -21,14 +21,20 @@ Add-ins are tested for Office on the web with all major modern browsers, includi
 
 You can use sideloading to install an Office Add-in for testing without having to first put it in an add-in catalog. The procedure for sideloading an add-in varies by platform, and in some cases, by product as well. The following articles each describe how to sideload Office Add-ins on a specific platform or within a specific product.
 
-> [!NOTE]
-> Office Add-ins that use the unified manifest for Microsoft 365 are not supported on all platforms. For more information, see [Outlook API requirement set client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).  
-
-- [Sideload Office Add-ins in Office on the web](sideload-office-add-ins-for-testing.md)
-- [Sideload Office Add-ins on Windows](test-debug-non-local-server.md)
-- [Sideload Office Add-ins on Mac](sideload-an-office-add-in-on-mac.md)
-- [Sideload Office Add-ins on iPad](sideload-an-office-add-in-on-ipad.md)
 - [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md)
+- [Sideload Excel, PowerPoint, and Word add-ins that use the unified manifest for Microsoft 365](sideload-add-in-with-unified-manifest.md)
+
+   > [!NOTE]
+   > Office Add-ins that use the unified manifest for Microsoft 365 are not supported on all platforms. For more information, see [Unified manifest - Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support).
+
+- Sideload add-ins that use the add-in only manifest:
+
+   - [Sideload Office Add-ins in Office on the web](sideload-office-add-ins-for-testing.md)
+   - [Sideload Office Add-ins on Windows from a network share](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md)
+   - [Sideload Office Add-ins on Mac](sideload-an-office-add-in-on-mac.md)
+   - [Sideload Office Add-ins on iPad](sideload-an-office-add-in-on-ipad.md)
+
+- [Sideload Office Add-ins on Windows with a non-local server](test-debug-non-local-server.md)
 
 ## Unit testing
 
