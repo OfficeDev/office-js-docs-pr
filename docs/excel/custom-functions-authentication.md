@@ -4,7 +4,6 @@ description: Learn how to authenticate users in Excel custom functions that run 
 ms.date: 06/17/2026
 ms.topic: how-to
 ms.localizationpriority: medium
-ai-usage: ai-assisted
 ---
 
 # Authentication for custom functions without a shared runtime
@@ -32,6 +31,61 @@ The following workflow is typical for custom functions that don't use a shared r
 
 Use the [Using OfficeRuntime.storage in custom functions](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/AsyncStorage) sample to test token storage and retrieval between custom functions and a task pane.
 
+## Dialog API
+
+If a token doesn't exist, you should use the `OfficeRuntime.dialog` API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored as an item in `OfficeRuntime.storage`.
+
+> [!NOTE]
+> The JavaScript-only runtime uses a dialog object that is slightly different from the dialog object in the browser runtime used by task panes. They're both referred to as the "Dialog API", but use [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) to authenticate users in the JavaScript-only runtime, *not* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
+
+### Dialog box API example
+
+In the following code sample, the function `getTokenViaDialog` uses the `OfficeRuntime.displayWebDialog` function to display a dialog box. This sample is provided to show the capabilities of the method, not demonstrate how to authenticate.
+
+```javascript
+/**
+ * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this isn't a sufficient example of authentication but is intended to show the capabilities of the displayWebDialog method.
+ * @param {string} url URL for a stored token.
+ */
+function getTokenViaDialog(url) {
+  return new Promise (function (resolve, reject) {
+    if (_dialogOpen) {
+      // Can only have one dialog box open at once. Wait for previous dialog box's token.
+      let timeout = 5;
+      let count = 0;
+      const intervalId = setInterval(function () {
+        count++;
+        if(_cachedToken) {
+          resolve(_cachedToken);
+          clearInterval(intervalId);
+        }
+        if(count >= timeout) {
+          reject("Timeout while waiting for token");
+          clearInterval(intervalId);
+        }
+      }, 1000);
+    } else {
+      _dialogOpen = true;
+      OfficeRuntime.displayWebDialog(url, {
+        height: '50%',
+        width: '50%',
+        onMessage: function (message, dialog) {
+          _cachedToken = message;
+          resolve(message);
+          dialog.close();
+          return;
+        },
+        onRuntimeError: function(error, dialog) {
+          reject(error);
+        },
+      }).catch(function (e) {
+        reject(e);
+      });
+    }
+  });
+}
+```
+
 ## OfficeRuntime.storage object
 
 The JavaScript-only runtime doesn't have a `localStorage` object available on the global window, where you typically store data. Instead, your code should share data between custom functions and task panes by using `OfficeRuntime.storage` to set and get data.
@@ -40,14 +94,7 @@ The JavaScript-only runtime doesn't have a `localStorage` object available on th
 
 When you need to authenticate from a custom function add-in that doesn't use a shared runtime, your code should check `OfficeRuntime.storage` to see if the access token was already acquired. If not, use [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) to authenticate the user, retrieve the access token, and then store the token in `OfficeRuntime.storage` for future use.
 
-## Dialog API
-
-If a token doesn't exist, you should use the `OfficeRuntime.dialog` API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored as an item in `OfficeRuntime.storage`.
-
-> [!NOTE]
-> The JavaScript-only runtime uses a dialog object that is slightly different from the dialog object in the browser runtime used by task panes. They're both referred to as the "Dialog API", but use [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) to authenticate users in the JavaScript-only runtime, *not* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
-
-## Storing the token
+### Storing the token
 
 The following examples show how to store and retrieve tokens by using `OfficeRuntime.storage`.
 
@@ -96,54 +143,6 @@ Avoid using the following locations to store data when developing custom functio
 
 - `localStorage`: custom functions that don't use a shared runtime don't have access to the global `window` object and therefore have no access to data stored in `localStorage`.
 - `Office.context.document.settings`: This location isn't secure, and anyone using the add-in can extract this information.
-
-## Dialog box API example
-
-In the following code sample, the function `getTokenViaDialog` uses the `OfficeRuntime.displayWebDialog` function to display a dialog box. This sample is provided to show the capabilities of the method, not demonstrate how to authenticate.
-
-```javascript
-/**
- * Function retrieves a cached token or opens a dialog box if there is no saved token. Note that this isn't a sufficient example of authentication but is intended to show the capabilities of the displayWebDialog method.
- * @param {string} url URL for a stored token.
- */
-function getTokenViaDialog(url) {
-  return new Promise (function (resolve, reject) {
-    if (_dialogOpen) {
-      // Can only have one dialog box open at once. Wait for previous dialog box's token.
-      let timeout = 5;
-      let count = 0;
-      const intervalId = setInterval(function () {
-        count++;
-        if(_cachedToken) {
-          resolve(_cachedToken);
-          clearInterval(intervalId);
-        }
-        if(count >= timeout) {
-          reject("Timeout while waiting for token");
-          clearInterval(intervalId);
-        }
-      }, 1000);
-    } else {
-      _dialogOpen = true;
-      OfficeRuntime.displayWebDialog(url, {
-        height: '50%',
-        width: '50%',
-        onMessage: function (message, dialog) {
-          _cachedToken = message;
-          resolve(message);
-          dialog.close();
-          return;
-        },
-        onRuntimeError: function(error, dialog) {
-          reject(error);
-        },
-      }).catch(function (e) {
-        reject(e);
-      });
-    }
-  });
-}
-```
 
 ## Next steps
 
