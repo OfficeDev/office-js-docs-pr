@@ -35,7 +35,6 @@ There are two types of add-in commands, based on the kind of action that the com
    > Function commands aren't the only way to run arbitrary JavaScript in an add-in. An add-in can also include:
    >
    > - Custom handlers for certain events, such as a user opening an new message pane in Outlook.
-   > - Custom [Copilot agents](agent-and-add-in-overview.md) that take actions in response to natural language requests from the add-in's users.
 
 ## Location of add-in commands
 

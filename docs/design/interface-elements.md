@@ -34,14 +34,10 @@ Use HTML containers to embed HTML-based UI code within Office clients. These web
 |[Content add-ins](content-add-ins.md)|Display custom UI embedded within Office documents. Use content add-ins to allow users to interact with your add-in directly within the Office document. For example, you might want to show external content such as videos or data visualizations from other sources. |
 |[Dialog boxes](../develop/dialog-api-in-office-add-ins.md)|Display custom UI in a dialog box that overlays the Office document. Use a dialog box for interactions that require focus and more real estate, and don't require a side-by-side interaction with the document.|
 
-## Custom Copilot agents (preview)
-
-Use custom [Copilot agents](../design/agent-and-add-in-overview.md) to provide a natural language interface for your add-in's functionality. Think of an Office Add-in as a skill in a Copilot agent. Because Office Add-ins use the Office JavaScript Library to perform read and write operations on Office documents, these operations become actions in the Copilot agent. The agent can pass parameters to the JavaScript it invokes, which isn't possible when a function command is invoked from a button or menu item. 
-
 ## See also
 
 - [Add-in commands for Excel, Word, and PowerPoint](add-in-commands.md)
 - [Task panes](task-pane-add-ins.md)
 - [Content add-ins](content-add-ins.md)
 - [Dialog boxes](../develop/dialog-api-in-office-add-ins.md)
-- [Copilot agents](../design/agent-and-add-in-overview.md)
+

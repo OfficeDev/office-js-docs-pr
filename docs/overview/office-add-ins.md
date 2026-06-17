@@ -101,10 +101,6 @@ Users can run Outlook add-ins when they view, reply, or create emails, meeting r
 
 For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md).
 
-### Carry out Copilot instructions (preview)
-
-You can create custom Copilot agents that enable your users to read and write to Office documents with natural language instructions entered in Copilot chat. For more information, see [Combine Copilot Agents with Office Add-ins (preview)](../design/agent-and-add-in-overview.md). 
-
 ### Create new objects in Office documents
 
 You can embed web-based objects, called content add-ins, within Excel and PowerPoint documents. With content add-ins, you can integrate rich, web-based data visualizations, media (such as a YouTube video player or a picture gallery), and other external content.
