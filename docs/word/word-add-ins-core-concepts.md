@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # Word JavaScript object model in Office Add-ins
 
-This article describes concepts that are fundamental to using the [Word JavaScript API](../reference/overview/word-add-ins-reference-overview.md) to build add-ins.
+This article describes concepts that are fundamental to using the [Word JavaScript API](/javascript/api/word) to build add-ins.
 
 ## Office.js APIs for Word
 
@@ -41,8 +41,7 @@ For the full set of objects supported by the Word JavaScript API, see [Word Java
 
 ## See also
 
-* [Word JavaScript API overview](../reference/overview/word-add-ins-reference-overview.md)
+* [Word JavaScript API reference](/javascript/api/word)
 * [Build your first Word add-in](../quickstarts/word-quickstart-yo.md)
 * [Word add-in tutorial](../tutorials/word-tutorial.md)
-* [Word JavaScript API reference](/javascript/api/word)
 * [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
