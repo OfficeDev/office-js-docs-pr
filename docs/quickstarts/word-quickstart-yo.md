@@ -105,5 +105,5 @@ Congratulations, you've successfully created a Word task pane add-in! Next, lear
 - [Develop Office Add-ins](../develop/develop-overview.md)
 - [Word add-ins overview](../word/word-add-ins-programming-overview.md)
 - [Word add-in code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Word)
-- [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)
+- [Word JavaScript API reference](/javascript/api/word)
 - [Using Visual Studio Code to publish](../publish/publish-add-in-vs-code.md#using-visual-studio-code-to-publish)

@@ -24,7 +24,7 @@ This capability is particularly valuable for:
 Before you begin, make sure you have:
 
 - A basic understanding of [Office Add-ins development](../overview/office-add-ins.md).
-- Familiarity with the [PowerPoint JavaScript API](../reference/overview/powerpoint-add-ins-reference-overview.md).
+- Familiarity with the [PowerPoint JavaScript API](core-concepts.md).
 - Knowledge of JavaScript/TypeScript and async programming patterns.
 
 The slide insertion APIs are primarily used in presentation template scenarios where, for example, there are a small number of known presentations which serve as pools of slides that can be inserted by the add-in. In such a scenario, either you or the customer must create and maintain a data source that correlates the selection criterion (such as slide titles or images) with slide IDs. The APIs can also be used in scenarios where the user can insert slides from any arbitrary presentation, but in that scenario the user is effectively limited to inserting *all* the slides from the source presentation. See [Selecting which slides to insert](#selecting-which-slides-to-insert) for more information about this.

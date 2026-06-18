@@ -32,7 +32,7 @@ landingContent:
       - linkListType: how-to-guide
         links:
           - text: Use the Word JavaScript API to interact with document content and metadata
-            url: ../reference/overview/word-add-ins-reference-overview.md
+            url: word-add-ins-core-concepts.md
           - text: Test and debug a Word add-in
             url: ../testing/test-debug-office-add-ins.md
           - text: Troubleshoot a Word add-in

@@ -255,7 +255,7 @@ Congratulations, you've successfully created a Word task pane add-in! Next, to l
 
 ### API reference and tools
 
-- [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)
+- [Word JavaScript API reference](/javascript/api/word)
 - [Develop Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md)
 
 ### Publishing and deployment

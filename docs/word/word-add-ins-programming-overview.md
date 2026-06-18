@@ -83,4 +83,4 @@ After you develop your add-in, you can [publish](../publish/publish.md) it to a 
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Word JavaScript API reference](../reference/overview/word-add-ins-reference-overview.md)
+- [Word JavaScript API reference](/javascript/api/word)

@@ -74,7 +74,7 @@ async function getPagesInSection() {
 
 See [Using the application-specific API model](../develop/application-specific-api-model.md) to learn more about the `load`/`sync` pattern and other common practices in the OneNote JavaScript APIs.
 
-You can find supported OneNote objects and operations in the [API reference](../reference/overview/onenote-add-ins-javascript-reference.md).
+You can find supported OneNote objects and operations in the [API reference](/javascript/api/onenote).
 
 #### OneNote JavaScript API requirement sets
 
@@ -126,5 +126,5 @@ The following diagram represents what's currently available in the OneNote JavaS
 
 - [Developing Office Add-ins](../develop/develop-overview.md)
 - [Build your first OneNote add-in](../quickstarts/onenote-quickstart.md)
-- [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
+- [OneNote JavaScript API reference](/javascript/api/onenote)
 - [Sample: Rubric grader task pane add-in for OneNote on the web](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)

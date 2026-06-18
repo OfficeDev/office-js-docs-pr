@@ -192,6 +192,6 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)
 - [Read or write to a large range using the Excel JavaScript API](excel-add-ins-ranges-large.md)
 - [Read or write to an unbounded range using the Excel JavaScript API](excel-add-ins-ranges-unbounded.md)

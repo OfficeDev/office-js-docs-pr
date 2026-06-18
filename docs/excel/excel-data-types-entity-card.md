@@ -268,4 +268,4 @@ Try out the [Create and explore data types in Excel](https://github.com/OfficeDe
 - [Overview of data types in Excel add-ins](excel-data-types-overview.md)
 - [Use data types in Excel add-ins](excel-data-types-concepts.md)
 - [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
-- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)

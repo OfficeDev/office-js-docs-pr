@@ -157,4 +157,4 @@ The following image shows when you might use the Excel JavaScript API instead of
 - [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
 - [Excel add-ins code samples](https://developer.microsoft.com/office/gallery/?filterBy=Samples,Excel)
 - [Optimize Excel JavaScript API performance](performance.md)
-- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)

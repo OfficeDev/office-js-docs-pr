@@ -480,13 +480,10 @@
   - name: Excel JavaScript API
     items:
     - name: Overview
-      href: reference/overview/excel-add-ins-reference-overview.md
+      href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
     - name: API reference
       href: reference/excel-api-reference.md
-      displayName: Excel
-    - name: Excel object model
-      href: excel/excel-add-ins-core-concepts.md
       displayName: Excel
     - name: Blank and null values in Excel add-ins
       href: excel/excel-add-ins-blank-null-values.md
@@ -724,17 +721,12 @@
   - name: Build your first OneNote add-in
     href: quickstarts/onenote-quickstart.md
     displayName: OneNote
-  - name: OneNote JavaScript API
-    items:
-    - name: Overview
-      href: reference/overview/onenote-add-ins-javascript-reference.md
-      displayName: OneNote
-    - name: API reference
-      href: reference/onenote-api-reference.md
-      displayName: OneNote
-    - name: Work with OneNote page content
-      href: onenote/onenote-add-ins-page-content.md
-      displayName: OneNote
+  - name: Work with OneNote page content
+    href: onenote/onenote-add-ins-page-content.md
+    displayName: OneNote
+  - name: API reference
+    href: reference/onenote-api-reference.md
+    displayName: OneNote
 
 - name: Outlook
   items:
@@ -924,14 +916,11 @@
     displayName: PowerPoint
   - name: JavaScript API for PowerPoint
     items:
-    - name: Overview
-      href: reference/overview/powerpoint-add-ins-reference-overview.md
+    - name: PowerPoint object model
+      href: powerpoint/core-concepts.md
       displayName: PowerPoint
     - name: API reference
       href: reference/powerpoint-api-reference.md
-      displayName: PowerPoint
-    - name: PowerPoint object model
-      href: powerpoint/core-concepts.md
       displayName: PowerPoint
     - name: Add and delete slides
       href: powerpoint/add-slides.md
@@ -1003,14 +992,11 @@
     displayName: Word
   - name: Word JavaScript API
     items:
-    - name: Overview
-      href: reference/overview/word-add-ins-reference-overview.md
+    - name: Word object model
+      href: word/word-add-ins-core-concepts.md
       displayName: Word
     - name: API reference
       href: reference/word-api-reference.md
-      displayName: Word
-    - name: Word object model
-      href: word/word-add-ins-core-concepts.md
       displayName: Word
     - name: Dictionary task pane add-ins
       href: word/dictionary-task-pane-add-ins.md
