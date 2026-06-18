@@ -1,7 +1,7 @@
 ---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 06/18/2026
+ms.date: 06/23/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---

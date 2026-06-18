@@ -1,7 +1,7 @@
 ---
 title: Create an encryption Outlook add-in
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
-ms.date: 06/18/2026
+ms.date: 06/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -46,7 +46,7 @@ The `OnMessageDecrypt` event is supported on the Message Read surface. Support v
 | ------ | --------------- | ---------------------------------- | -------------------- | -------------------- |
 | **Web browser** | Supported | Not available | Not available | Not available |
 | **Windows (new)** | Supported | Not available | Not available | Not available |
-| **Windows (classic)**<br>Version 2510 (Build 19312.20000) and later | Supported | Not available | Not available | Not available |
+| **Windows (classic)**<br>Version 2602 (Build 19725.20126) and later | Supported | Not available | Not available | Not available |
 | **Mac** | Not available | Not available | Not available | Not available |
 | **Android** | Not available | Not available | Not available | Not available |
 | **iOS** | Not available | Not available | Not available | Not available |
