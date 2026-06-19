@@ -1,9 +1,41 @@
 {
-    "redirections": [        
+    "redirections": [
+        {
+          "source_path": "docs/reference/overview/excel-add-ins-reference-overview.md",
+          "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts",
+          "redirect_document_id": true
+        },
+        {
+          "source_path": "docs/reference/overview/word-add-ins-reference-overview.md",
+          "redirect_url": "/office/dev/add-ins/word/word-add-ins-programming-overview",
+          "redirect_document_id": true
+        },
+        {
+          "source_path": "docs/reference/overview/powerpoint-add-ins-reference-overview.md",
+          "redirect_url": "/office/dev/add-ins/powerpoint/powerpoint-add-ins",
+          "redirect_document_id": true
+        },
+        {
+          "source_path": "docs/reference/overview/onenote-add-ins-javascript-reference.md",
+          "redirect_url": "/office/dev/add-ins/onenote/onenote-add-ins-programming-overview",
+          "redirect_document_id": true
+        },
         {
           "source_path": "docs/develop/understanding-the-javascript-api-for-office.md",
           "redirect_url": "/office/dev/add-ins/develop/understand-the-javascript-api-for-office",
           "redirect_document_id": true
+        },
+        {
+            "source_path": "docs/develop/agent-and-add-in.md",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
+        },
+        {
+            "source_path": "docs/quickstarts/agent-and-add-in-quickstart.md",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
+        },
+        {
+            "source_path": "docs/design/agent-and-add-in-overview.md",
+            "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
         },
         {
             "source_path": "docs/develop/development-kit-overview.md",
@@ -298,7 +330,7 @@
         {
             "source_path": "docs/excel/excel-add-ins-excel-add-ins-advanced-concepts.md",
             "redirect_url": "/office/dev/add-ins/excel/excel-add-ins-core-concepts",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path": "docs/access/access-web-app-add-ins.md",

@@ -761,7 +761,7 @@ When using templates with your app, whether the add-in will be resident in the t
 ### Core documentation
 
 - [Office JavaScript API](../reference/javascript-api-for-office.md)
-- [Word JavaScript API overview](../reference/overview/word-add-ins-reference-overview.md)
+- [Word JavaScript API reference](/javascript/api/word)
 - [Word add-ins programming overview](../word/word-add-ins-programming-overview.md)
 - [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md)
 

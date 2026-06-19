@@ -209,4 +209,4 @@ To learn more, open [**Script Lab**](../overview/explore-with-script-lab.md) and
 - [Use cards with entity value data types](excel-data-types-entity-card.md)
 - [Use data types with custom functions in Excel](custom-functions-data-types-concepts.md)
 - [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)
-- [Excel JavaScript API overview](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)

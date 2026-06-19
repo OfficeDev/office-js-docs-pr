@@ -2,7 +2,7 @@
 title: Develop Office Add-ins
 description: An introduction to developing Office Add-ins.
 ms.topic: overview
-ms.date: 05/26/2026
+ms.date: 06/17/2026
 ms.localizationpriority: high
 ---
 
@@ -99,8 +99,6 @@ For more information about Script Lab, see [Explore Office JavaScript APIs using
 An Office Add-in can extend the Office UI by using add-in commands and HTML containers such as task panes, content add-ins, or dialog boxes.
 
 - [Add-in commands](../design/add-in-commands.md) can be used to add a custom tab, custom buttons and menus to the default ribbon in Office, or to extend the default context menu that appears when users right-click (or select and hold) text in an Office document or an object in Excel. When users select an add-in command, they initiate the task that the add-in command specifies, such as running JavaScript code, opening a task pane, or launching a dialog box.
-
-- Custom [Copilot agents](../design/agent-and-add-in-overview.md) (currently in preview) provide a natural language interface to run functions that call the [Office JavaScript API Library](#access-the-office-javascript-api-library).
 
 - HTML containers like [task panes](../design/task-pane-add-ins.md), [content add-ins](../design/content-add-ins.md), and [dialog boxes](../develop/dialog-api-in-office-add-ins.md) can be used to display custom UI and expose additional functionality within an Office application. The content and functionality of each task pane, content add-in, or dialog box derives from a web page that you specify. Those web pages can use the Office JavaScript API to interact with content in the Office document where the add-in is running, and can also do other things that web pages typically do, like call external web services, facilitate user authentication, and more.
 
