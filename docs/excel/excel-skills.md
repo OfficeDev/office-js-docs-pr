@@ -1,5 +1,5 @@
 ---
-title: Create Copilot skills for Excel
+title: Create Copilot skills for Excel (preview)
 description: Learn how to create agent skills that call the Office JavaScript Library (Office.js) that can be plugged into Copilot agents in Excel.
 ms.date: 06/25/2026
 ms.topic: overview
@@ -7,9 +7,12 @@ ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
 
-# Create Copilot skills for Excel
+# Create Copilot skills for Excel (preview)
 
-You can create custom skills that use the Office JavaScript Library (Office.js) to accomplish complex tasks for AI agents.
+You can create custom skills to accomplish complex tasks for AI agents and Copilot for Excel. Optionally, these skills can use the Office JavaScript Library (Office.js).
+
+> [!NOTE]
+> Custom skills for Excel are in preview. Do not use them in a production skill. 
 
 The main guidance for creating skills is at [Build plugins for Copilot Cowork](/microsoft-365/copilot/cowork/cowork-plugin-development). The context of the article refers to Microsoft Cowork, but the guidance applies generally to all custom skills that can be plugged into an agent running in Copilot.
 
@@ -144,7 +147,7 @@ Start with the section [What you'll build](/microsoft-365/copilot/cowork/cowork-
    > [!NOTE]
    > Because the runtime isn't explicitly configured in an "extensions" element, there is no `"extensions.requirements.capabilities"` key in the manifest, so there is no way to limit the runtime to a version of Excel that supports a specific Requirement Set. It is unlikely, but theoretically possible, that a user's channel may have a version of Excel that doesn't support an API that is called in a script in the skill. The effect of such a call is undefined. 
 
-1. Because a skill plugin is an App for Microsoft 365 and is implemented with the unified manifest and package for Microsoft 365, you can include your custom skill in the same manifest and package as any other type of app for Microsoft 365 such as a Teams Tab or an Office Add-in. However, you can't share your Office.js code between the skill and one of these other apps because the skills scripts are in the app package, not hosted online. If you will need to duplicate code in two or more files if it needs to be run by both the skill and the other app.
+1. Because a skill plugin is an App for Microsoft 365 and is implemented with the unified manifest and package for Microsoft 365, you can include your custom skill in the same manifest and package as any other type of app for Microsoft 365 such as a Teams Tab or an Office Add-in. However, you can't share your Office.js code between the skill and one of these other apps because the skills scripts are in the app package, not hosted online. You must duplicate code in two or more files if it needs to be run by both the skill and the other app.
 
 ## Supplement to Step 7
 
