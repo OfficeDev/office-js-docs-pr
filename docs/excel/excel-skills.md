@@ -142,7 +142,7 @@ Start with the section [What you'll build](/microsoft-365/copilot/cowork/cowork-
 1. Although your skill calls APIs from Office.js, you don't need an `"extensions"` section in the manifest. Copilot in Excel automatically creates a runtime, loads Office.js and executes the scripts in your skill. 
 
    > [!NOTE]
-   > Because the runtime isn't explicitly configured in an "extensions" element, there is no `"extensions.requirements.capabilities"` key in the manifest, so there is no way to limit the runtime to a version of Excel that supports a specific Requirement Set. 
+   > Because the runtime isn't explicitly configured in an "extensions" element, there is no `"extensions.requirements.capabilities"` key in the manifest, so there is no way to limit the runtime to a version of Excel that supports a specific Requirement Set. It is unlikely, but theoretically possible, that a user's channel may have a version of Excel that doesn't support an API that is called in a script in the skill. The effect of such a call is undefined. 
 
 1. Because a skill plugin is an App for Microsoft 365 and is implemented with the unified manifest and package for Microsoft 365, you can include your custom skill in the same manifest and package as any other type of app for Microsoft 365 such as a Teams Tab or an Office Add-in. However, you can't share your Office.js code between the skill and one of these other apps because the skills scripts are in the app package, not hosted online. If you will need to duplicate code in two or more files if it needs to be run by both the skill and the other app.
 
