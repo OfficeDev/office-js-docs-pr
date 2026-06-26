@@ -95,7 +95,7 @@ A linked entity cell value is an instance created from a data domain. An example
 Since linked entity cell values are linked to the data domain, they can be refreshed. When you implement nested linked entity cell values, note the following behaviors that reduce file size to improve performance.
 
 - Nested linked entity cell values aren't retrieved unless the user requests them, such as by viewing the entity card.
-- Nested linked entity cell values aren’t saved with the worksheet unless the worksheet references them, such as a formula.
+- Nested linked entity cell values aren't saved with the worksheet unless the worksheet references them, such as a formula.
 
 ### Linked entity load service function
 
@@ -616,8 +616,7 @@ const suppliersDomainId = "suppliers";
 // Linked entity cell value constants
 const addinDomainServiceId = 268436224;
 
-// Map to track pending entity load requests and their resolvers
-const pendingEntityLoads: Map<string, (value: Excel.LinkedEntityCellValue) => void> = new Map();
+// Reuse pendingEntityLoads declared in the earlier event-handler snippet.
 
 /**
  * Custom function which acts as the "service" or the data provider for a `LinkedEntityDataDomain`, that is
@@ -640,7 +639,7 @@ async function contosoLoadService(request: any): Promise<any> {
         // Create promises for loading each entity in the request.
         // Promises are needed because the loadLinkedEntityCellValue method is asynchronous.
         // Instead of returning the values immediately, it triggers the onLinkedEntityCellValueLoaded event once the linked entity cell value completes loading.
-        const loadPromises: Promise<Excel.LinkedEntityCellValue | null>[] = [];
+        const loadPromises: Promise<Excel.LinkedEntityCellValue>[] = [];
 
         for (const linkedEntityRequest of parsedRequest.entities) {
             // Create a LinkedEntityId object from the request data.
@@ -653,7 +652,7 @@ async function contosoLoadService(request: any): Promise<any> {
 
             // Create a promise for this entity that will be resolved when the event handler receives the loaded entity.
             // The resolver (a callback function) is stored in pendingEntityLoads so the event handler can call it later.
-            const loadPromise = new Promise<Excel.LinkedEntityCellValue | null>((resolve) => {
+            const loadPromise = new Promise<Excel.LinkedEntityCellValue>((resolve) => {
                 const entityKey = `${linkedEntityId.entityId}_${linkedEntityId.domainId}`;
                 // Store the resolver callback in the map using a unique key based on the entity ID and domain ID.
                 // The event handler will retrieve this resolver when the entity finishes loading.
@@ -680,10 +679,6 @@ async function contosoLoadService(request: any): Promise<any> {
         // Add loaded entities to the result in the same order they were requested.
         // The order is preserved because Promise.all returns results in the same order as the input promises.
         for (const loadedEntity of loadedEntities) {
-            if (!loadedEntity) {
-                // Throw an error to signify to Excel that resolution/refresh of the requested linkedEntityId failed.
-                throw notAvailableError;
-            }
             result.entities.push(loadedEntity);
         }
 
@@ -786,7 +781,7 @@ async function onLinkedEntityDomainRefreshed(eventArgs: Excel.LinkedEntityDataDo
 
 When Excel calls your add-in to get data for a linked entity cell value, an error can occur. If Excel can't connect to your add-in at all, such as when the add-in isn't loaded, Excel displays the `#CONNECT!` error to the user.
 
-If your linked entity load service function encounters an error, it should throw the `CustomFunctions.ErrorCode.notAvailable` error. This causes Excel to show `#CONNECT!` to the user.
+If your linked entity load service function encounters an error, it should throw a `CustomFunctions.Error` with `CustomFunctions.ErrorCode.notAvailable`. This causes Excel to show `#CONNECT!` to the user.
 
 The following code shows how to handle an error in a linked entity load service function.
 
