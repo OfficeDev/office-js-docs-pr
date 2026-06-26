@@ -578,10 +578,10 @@ async function registerEvent() {
  * Extracts the loaded LinkedEntityCellValue and resolves the pending request.
  * @param event - The event object containing the loaded LinkedEntityCellValue.
  */
-async function handleLinkedEntityLoaded(event: Excel.LinkedEntityCellValueLoadedEventArgs) {
+function handleLinkedEntityLoaded(event: Excel.LinkedEntityCellValueLoadedEventArgs) {
     if (event.linkedEntityCellValue) {
-        // Create a unique key for this entity based on its ID.
-        const entityKey = `${event.linkedEntityCellValue.id.entityId}_${event.linkedEntityCellValue.id.domainId}`;
+        // Create a unique key for this entity based on entity ID, domain ID, service ID, and culture.
+        const entityKey = `${event.linkedEntityCellValue.id.entityId}_${event.linkedEntityCellValue.id.domainId}_${event.linkedEntityCellValue.id.serviceId}_${event.linkedEntityCellValue.id.culture}`;
         
         // Retrieve the resolver function that was stored in pendingEntityLoads.
         // The resolver is a callback from the load service function that waits for the entity to load.
@@ -652,9 +652,10 @@ async function contosoLoadService(request: any): Promise<any> {
 
             // Create a promise for this entity that will be resolved when the event handler receives the loaded entity.
             // The resolver (a callback function) is stored in pendingEntityLoads so the event handler can call it later.
-            const loadPromise = new Promise<Excel.LinkedEntityCellValue>((resolve) => {
-                const entityKey = `${linkedEntityId.entityId}_${linkedEntityId.domainId}`;
-                // Store the resolver callback in the map using a unique key based on the entity ID and domain ID.
+            // For production code, consider handling duplicate in-flight requests for the same linked entity key.
+            const loadPromise = new Promise<Excel.LinkedEntityCellValue>((resolve, reject) => {
+                const entityKey = `${linkedEntityId.entityId}_${linkedEntityId.domainId}_${linkedEntityId.serviceId}_${linkedEntityId.culture}`;
+                // Store the resolver callback in the map using a unique key based on entity ID, domain ID, service ID, and culture.
                 // The event handler will retrieve this resolver when the entity finishes loading.
                 pendingEntityLoads.set(entityKey, resolve);
 
@@ -664,6 +665,9 @@ async function contosoLoadService(request: any): Promise<any> {
                     const linkedEntityDataDomains = context.workbook.linkedEntityDataDomains;
                     linkedEntityDataDomains.loadLinkedEntityCellValue(linkedEntityId);
                     await context.sync();
+                }).catch((error) => {
+                    pendingEntityLoads.delete(entityKey);
+                    reject(error);
                 });
             });
 
