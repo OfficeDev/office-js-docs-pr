@@ -230,7 +230,7 @@ function getProductById(productID: string): any {
 The add-in must provide a linked entity load service function to handle requests from Excel when property values are needed for any linked entity cell values. The function is identified with the `@linkedEntityLoadService` JSDoc tag. Depending on the version of the Excel client in which the add-in is installed, to load the linked entity cell values, implement one of the following options in your linked entity load service function.
 
 - Create helper functions to create the `LinkedEntityCellValue` objects.
-- Register an event handler for the onLinkedEntityCellValueLoaded (//TODO - Link) event. Then, call loadLinkedEntityCellValue (//TODO - Link), passing the linked entity ID as a parameter. The `loadLinkedEntityCellValue` API is supported in ExcelApi 1.21 and later.
+- Register an event handler for the [onLinkedEntityCellValueLoaded](/javascript/api/excel/excel.linkedentitydatadomaincollection#excel-excel-linkedentitydatadomaincollection-onlinkedentitycellvalueloaded-member) event. Then, call [loadLinkedEntityCellValue](/javascript/api/excel/excel.linkedentitydatadomaincollection#excel-excel-linkedentitydatadomaincollection-loadlinkedentitycellvalue-member(1)), passing the linked entity ID as a parameter. The `loadLinkedEntityCellValue` API is supported in ExcelApi 1.21 and later.
 
 The following code examples show how to create a function that uses each of these implementations to handle data requests from Excel for the **Products**, **Categories**, and **Suppliers** data domains. Select the tab for your preferred implementation option.
 
@@ -549,9 +549,9 @@ function contosoLoadService(request: any): any {
 
 ### Register and create an event handler
 
-To identify when a linked entity cell value is loaded, you must register a function to handle the `onLinkedEntityCellValueLoaded` event. When the `loadLinkedEntityCellValue` method completes loading the linked entity cell value, the `onLinkedEntityCellValueLoaded` event occurs and a `LinkedEntityCellValueLoadedEventArgs` object is passed to the event handler. The `LinkedEntityCellValueLoadedEventArgs` object contains the loaded `LinkedEntityCellValue` that you can pass back to the load service function.
+To identify when a linked entity cell value is loaded, you must register a function to handle the `onLinkedEntityCellValueLoaded` event. When the `loadLinkedEntityCellValue` method completes loading the linked entity cell value, the `onLinkedEntityCellValueLoaded` event occurs and a [LinkedEntityCellValueLoadedEventArgs](/javascript/api/excel/excel.linkedentitycellvalueloadedeventargs) object is passed to the event handler. The `LinkedEntityCellValueLoadedEventArgs` object contains the loaded `LinkedEntityCellValue` that you can pass back to the load service function.
 
-The following code shows how to register the event handler and implement the handler function for the `onLinkedEntityCellValueLoaded` event.
+The following code shows how to register and implement the event handler for the `onLinkedEntityCellValueLoaded` event.
 
 ```typescript
 // Map to track pending entity load requests and their resolvers.
@@ -599,11 +599,12 @@ async function handleLinkedEntityLoaded(event: Excel.LinkedEntityCellValueLoaded
 
 ### Implement the load service function using the `loadLinkedEntityCellValue` API
 
-Once you register an event handler to identify when a linked entity cell value is loaded, the load service function can call the `loadLinkedEntityCellValue` method for each entity. Note the following about the code.
+Once you register and implement an event handler to identify when a linked entity cell value is loaded, call the `loadLinkedEntityCellValue` method for each entity in the load service function. Note the following about the code.
 
 - The function must be tagged with `@linkedEntityLoadService`, so that Excel knows where to send the [LinkedEntityLoadServiceRequest](/javascript/api/excel/excel.linkedentityloadservicerequest) object.
-- Because the `loadLinkedEntityCellValue` method requires a `LinkedEntityId` as a parameter, you must first create a `LinkedEntityId` object for each entity using the entity's ID and the domain ID from the `LinkedEntityLoadServiceRequest` object.
-- The `loadLinkedEntityCellValue` takes a `LinkedEntityId` object to load the linked entity cell value. Once the value is loaded, the `onLinkedEntityCellValueLoaded` event occurs and the `handleLinkedEntityLoaded` handler runs to get the linked entity cell value.
+- Because the `loadLinkedEntityCellValue` method requires a `LinkedEntityId` as a parameter, you must first create a `LinkedEntityId` object for each entity. To create a `LinkedEntityId` object, use the entity's ID and the domain ID from the `LinkedEntityLoadServiceRequest` object.
+- The `loadLinkedEntityCellValue` method is asynchronous and returns results via the `onLinkedEntityCellValueLoaded` event. To preserve the entity order in the `LinkedEntityLoadServiceResult` object so it matches the order in the `LinkedEntityLoadServiceRequest` object, the code uses promises and `Promise.all` to wait for each loaded value.
+- Once the linked entity cell value finishes loading, the `onLinkedEntityCellValueLoaded` event occurs and the `handleLinkedEntityLoaded` handler runs to get the linked entity cell value.
 - The load service function returns a [LinkedEntityLoadServiceResult](/javascript/api/excel/excel.linkedentityloadserviceresult) object back to Excel to resolve or refresh the linked entity cell values. Note that the load service function must return the loaded linked entity cell values in the same order as their entities in the `LinkedEntityLoadServiceRequest` object.
 
 ```typescript
