@@ -200,10 +200,10 @@ The following code sample shows how to insert a linked entity cell value by usin
 
 ```typescript
 /**
- * Custom function that shows how to insert a `LinkedEntityCellValue`.
+ * Custom function that shows how to insert a LinkedEntityCellValue.
  * @customfunction
  * @param {string} productID Unique ID of the product.
- * @return {any} `LinkedEntityCellValue` for the requested product, if found.
+ * @return {any} LinkedEntityCellValue for the requested product, if found.
  */
 function getProductById(productID: string): any {
     const product = getProduct(productID);
@@ -491,12 +491,12 @@ const addinDomainServiceId = 268436224;
 const defaultCulture = "en-US";
 
 /**
- * Custom function which acts as the "service" or the data provider for a `LinkedEntityDataDomain`, that is
- * called on demand by Excel to resolve and refresh `LinkedEntityCellValue`s of that `LinkedEntityDataDomain`.
+ * Custom function which acts as the "service" or the data provider for a LinkedEntityDataDomain, that is
+ * called on demand by Excel to resolve and refresh LinkedEntityCellValue's of that LinkedEntityDataDomain.
  * @customfunction
  * @linkedEntityLoadService
- * @param {any} request Request to resolve and refresh `LinkedEntityCellValue` objects.
- * @return {any} Resolved or refreshed `LinkedEntityCellValue` objects that were requested in the passed-in request.
+ * @param {any} request Request to resolve and refresh LinkedEntityCellValue objects.
+ * @return {any} Resolved or refreshed LinkedEntityCellValue objects that were requested in the passed-in request.
  */
 function contosoLoadService(request: any): any {
     const notAvailableError = new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
@@ -619,12 +619,12 @@ const addinDomainServiceId = 268436224;
 // Reuse pendingEntityLoads declared in the earlier event-handler snippet.
 
 /**
- * Custom function which acts as the "service" or the data provider for a `LinkedEntityDataDomain`, that is
- * called on demand by Excel to resolve and refresh `LinkedEntityCellValue`s of that `LinkedEntityDataDomain`.
+ * Custom function which acts as the "service" or the data provider for a LinkedEntityDataDomain, that is
+ * called on demand by Excel to resolve and refresh LinkedEntityCellValue's of that LinkedEntityDataDomain.
  * @customfunction
  * @linkedEntityLoadService
- * @param {any} request Request to resolve and refresh `LinkedEntityCellValue` objects.
- * @return {any} Resolved or refreshed `LinkedEntityCellValue` objects that were requested in the passed-in request.
+ * @param {any} request Request to resolve and refresh LinkedEntityCellValue objects.
+ * @return {any} Resolved or refreshed LinkedEntityCellValue objects that were requested in the passed-in request.
  */
 async function contosoLoadService(request: any): Promise<any> {
     const notAvailableError = new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
