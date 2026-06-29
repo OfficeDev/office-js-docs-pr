@@ -238,7 +238,7 @@ The following code examples show how to create a function that uses each of thes
 
 ### Create helper functions
 
-The following code sample shows the helper function to create a product linked entity cell value. This function is called by the `contosoLoadService` load service function to create a linked entity for a specific product ID. Notes on the following code.
+The following code sample shows the helper function to create a product linked entity cell value. This function is called by the `contosoLoadService` load service function to create a linked entity for a specific product ID. Note the following about the code.
 
 - It uses the same settings as the previous `insertProduct` example for the `type`, `id`, and `text` properties.
 - It includes additional properties specific to the **Products** data domain, such as `Product Name` and `Unit Price`.
@@ -492,11 +492,11 @@ const defaultCulture = "en-US";
 
 /**
  * Custom function which acts as the "service" or the data provider for a `LinkedEntityDataDomain`, that is
- * called on demand by Excel to resolve/refresh `LinkedEntityCellValue`s of that `LinkedEntityDataDomain`.
+ * called on demand by Excel to resolve and refresh `LinkedEntityCellValue`s of that `LinkedEntityDataDomain`.
  * @customfunction
  * @linkedEntityLoadService
- * @param {any} request Request to resolve/refresh `LinkedEntityCellValue` objects.
- * @return {any} Resolved/Refreshed `LinkedEntityCellValue` objects that were requested in the passed-in request.
+ * @param {any} request Request to resolve and refresh `LinkedEntityCellValue` objects.
+ * @return {any} Resolved or refreshed `LinkedEntityCellValue` objects that were requested in the passed-in request.
  */
 function contosoLoadService(request: any): any {
     const notAvailableError = new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
@@ -511,7 +511,7 @@ function contosoLoadService(request: any): any {
         // Identify the domainId of the request and call the corresponding function to create
         // linked entity cell values for that linked entity data domain.
         for (const { entityId } of parsedRequest.entities) {
-            var linkedEntityResult = null;
+            let linkedEntityResult = null;
             switch (parsedRequest.domainId) {
                 case productsDomainId: {
                     linkedEntityResult = makeProductLinkedEntity(entityId);
@@ -602,7 +602,7 @@ function handleLinkedEntityLoaded(event: Excel.LinkedEntityCellValueLoadedEventA
 Once you register and implement an event handler to identify when a linked entity cell value is loaded, call the `loadLinkedEntityCellValue` method for each entity in the load service function. Note the following about the code.
 
 - The function must be tagged with `@linkedEntityLoadService`, so that Excel knows where to send the [LinkedEntityLoadServiceRequest](/javascript/api/excel/excel.linkedentityloadservicerequest) object.
-- Because the `loadLinkedEntityCellValue` method requires a `LinkedEntityId` as a parameter, you must first create a `LinkedEntityId` object for each entity. To create a `LinkedEntityId` object, use the entity's ID and the domain ID from the `LinkedEntityLoadServiceRequest` object.
+- The `loadLinkedEntityCellValue` method requires a `LinkedEntityId` as a parameter. You must first create a `LinkedEntityId` object for each entity. To create a `LinkedEntityId` object, use the entity's ID and the domain ID from the `LinkedEntityLoadServiceRequest` object.
 - The `loadLinkedEntityCellValue` method is asynchronous and returns results via the `onLinkedEntityCellValueLoaded` event. To preserve the entity order in the `LinkedEntityLoadServiceResult` object so it matches the order in the `LinkedEntityLoadServiceRequest` object, the code uses promises and `Promise.all` to wait for each loaded value.
 - Once the linked entity cell value finishes loading, the `onLinkedEntityCellValueLoaded` event occurs and the `handleLinkedEntityLoaded` handler runs to get the linked entity cell value.
 - The load service function returns a [LinkedEntityLoadServiceResult](/javascript/api/excel/excel.linkedentityloadserviceresult) object back to Excel to resolve or refresh the linked entity cell values. Note that the load service function must return the loaded linked entity cell values in the same order as their entities in the `LinkedEntityLoadServiceRequest` object.
@@ -620,11 +620,11 @@ const addinDomainServiceId = 268436224;
 
 /**
  * Custom function which acts as the "service" or the data provider for a `LinkedEntityDataDomain`, that is
- * called on demand by Excel to resolve/refresh `LinkedEntityCellValue`s of that `LinkedEntityDataDomain`.
+ * called on demand by Excel to resolve and refresh `LinkedEntityCellValue`s of that `LinkedEntityDataDomain`.
  * @customfunction
  * @linkedEntityLoadService
- * @param {any} request Request to resolve/refresh `LinkedEntityCellValue` objects.
- * @return {any} Resolved/Refreshed `LinkedEntityCellValue` objects that were requested in the passed-in request.
+ * @param {any} request Request to resolve and refresh `LinkedEntityCellValue` objects.
+ * @return {any} Resolved or refreshed `LinkedEntityCellValue` objects that were requested in the passed-in request.
  */
 async function contosoLoadService(request: any): Promise<any> {
     const notAvailableError = new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable);
