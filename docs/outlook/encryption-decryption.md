@@ -1,7 +1,7 @@
 ---
 title: Create an encryption Outlook add-in
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
-ms.date: 06/30/2026
+ms.date: 06/23/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
