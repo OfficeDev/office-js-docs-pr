@@ -1,7 +1,7 @@
 ---
 title: Requesting permissions for API use in add-ins
 description: Learn about different permission levels to declare in the manifest of an add-in to specify the level of JavaScript API access.
-ms.date: 03/23/2026
+ms.date: 06/30/2026
 ms.localizationpriority: medium
 ---
 
@@ -28,9 +28,12 @@ These permissions specify the subset of the API that the add-in [runtime](../tes
 |**write document**|WriteDocument|Document.Write.User|
 |**read/write document**|ReadWriteDocument|Document.ReadWrite.User|
 
+> [!IMPORTANT]
+> If your add-in uses the [application-specific APIs](application-specific-api-model.md), declare the **read/write document** permission in the manifest. This requirement applies even when your code only reads data.
+
 ### Manifest declaration examples
 
-- **Unified manifest for Microsoft 365**: Use the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) property. The following example requests the **write document** permission, which allows only methods that can write to (but not read) the document.
+- **Unified manifest for Microsoft 365**: Use the [`"authorization.permissions.resourceSpecific"`](/microsoft-365/extensibility/schema/root-authorization-permissions#resourcespecific) property. The following example requests the **read/write document** permission.
 
    ```json
    "authorization": {
@@ -38,7 +41,7 @@ These permissions specify the subset of the API that the add-in [runtime](../tes
         "resourceSpecific": [
           ...
           {
-            "name": "Document.Write.User",
+            "name": "Document.ReadWrite.User",
             "type": "Delegated"
           },
         ]
@@ -46,28 +49,23 @@ These permissions specify the subset of the API that the add-in [runtime](../tes
    },
    ```
 
-- **Add-in only manifest**: Use the [Permissions](/javascript/api/manifest/permissions) element of the manifest. The following example requests the **write document** permission, which allows only methods that can write to (but not read) the document.
+- **Add-in only manifest**: Use the [Permissions](/javascript/api/manifest/permissions) element of the manifest. The following example requests the **read/write document** permission.
 
    ```XML
-   <Permissions>WriteDocument</Permissions>
+   <Permissions>ReadWriteDocument</Permissions>
    ```
 
 ## Permission levels
 
-As a best practice, you should request permissions based on the principle of *least privilege*. That is, you should request permission to access only the minimum subset of the API that your add-in requires to function correctly. For example, if your add-in needs only to read data in a user's document for its features, you should request no more than the **read document** permission.
+The following table describes the subsets of the [Common JavaScript APIs](understand-the-javascript-api-for-office.md#api-models) that are enabled by each permission level. The [application-specific APIs](application-specific-api-model.md) are not controlled by this table; they always require the **read/write document** permission, even when your add-in only reads data.
 
-> [!IMPORTANT]
-> The [application-specific APIs](application-specific-api-model.md) require the **read/write document** permissions. This is true even if you're only reading data.  
-
-The following table describes the subsets of the [Common and Application-specific JavaScript APIs](understand-the-javascript-api-for-office.md#api-models) that are enabled by each permission level.
-
-|Permission canonical name|Add-in only manifest name|Unified manifest name|Enabled subset of the Application-specific APIs|Enabled subset of the Common APIs|
-|:-----|:-----|:-----|:-----|:-----|
-|**restricted**|Restricted|Document.Restricted.User|None|The methods of the [Settings](/javascript/api/office/office.settings) object, and the [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) method. This is the minimum permission level that can be requested by an add-in.|
-|**read document**|ReadDocument|Document.Read.User|All and only APIs that read the document or its properties.|In addition to the API allowed by the **restricted** permission, adds access to the API members necessary to read the document and manage bindings.|
-|**read all document**|ReadAllDocument|Document.ReadAll.User|Same as **read document**.|In addition to the APIs allowed by the **restricted** and **read document** permissions, this level allows [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) and [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) methods.|
-|**write document**|WriteDocument|Document.Write.User|All and only APIs that write to the document or its properties.|In addition to the API allowed by the **restricted** permission, adds access to the following API members.<ul><li>The [Document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) method to write to the user's selection in the document.</li></ul>|
-|**read/write document**|ReadWriteDocument|Document.ReadWrite.User|All Application-specific APIs, including those that subscribe to events.|In addition to the API allowed by the **restricted**, **read document**, **read all document**, and **write document** permissions, includes access to all remaining API supported by add-ins, including methods for subscribing to events. You must declare the **read/write document** permission to access these additional API members:<ul><li><p>The [Binding.setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)) method for writing to bound regions of the document</li><li>The [TableBinding.addRowsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-addrowsasync-member(1)) method for adding rows to bound tables.</li><li>The [TableBinding.addColumnsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-addcolumnsasync-member(1)) method for adding columns to bound tables.</li><li>The [TableBinding.deleteAllDataValuesAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-deletealldatavaluesasync-member(1)) method for deleting all data in a bound table.</li><li>The [setFormatsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-setformatsasync-member(1)), [clearFormatsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-clearformatsasync-member(1)), and [setTableOptionsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-settableoptionsasync-member(1)) methods of the TableBinding object for setting formatting and options on bound tables.</li><li>All of the members of the [CustomXmlNode](/javascript/api/office/office.customxmlnode), [CustomXmlPart](/javascript/api/office/office.customxmlpart), [CustomXmlParts](/javascript/api/office/office.customxmlparts), and [CustomXmlPrefixMappings](/javascript/api/office/office.customxmlprefixmappings) objects</li><li>All of the methods for subscribing to the events supported by add-ins, specifically the `addHandlerAsync` and `removeHandlerAsync` methods of the [Binding](/javascript/api/office/office.binding), [CustomXmlPart](/javascript/api/office/office.customxmlpart), [Document](/javascript/api/office/office.document), [ProjectDocument](/javascript/api/office/office.document), and [Settings](/javascript/api/office/office.document#office-office-document-settings-member) objects.</li></ul>|
+|Permission canonical name|Add-in only manifest name|Unified manifest name|Enabled subset of the Common APIs|
+|:-----|:-----|:-----|:-----|
+|**restricted**|Restricted|Document.Restricted.User|The methods of the [Settings](/javascript/api/office/office.settings) object, and the [Document.getActiveViewAsync](/javascript/api/office/office.document#office-office-document-getactiveviewasync-member(1)) method. This is the minimum permission level that can be requested by an add-in.|
+|**read document**|ReadDocument|Document.Read.User|In addition to the API allowed by the **restricted** permission, adds access to the API members necessary to read the document and manage bindings.|
+|**read all document**|ReadAllDocument|Document.ReadAll.User|In addition to the APIs allowed by the **restricted** and **read document** permissions, this level allows [Document.getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)) and [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) methods.|
+|**write document**|WriteDocument|Document.Write.User|In addition to the API allowed by the **restricted** permission, adds access to the following API members.<ul><li>The [Document.setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)) method to write to the user's selection in the document.</li></ul>|
+|**read/write document**|ReadWriteDocument|Document.ReadWrite.User|In addition to the API allowed by the **restricted**, **read document**, **read all document**, and **write document** permissions, includes access to all remaining API supported by add-ins, including methods for subscribing to events. You must declare the **read/write document** permission to access these additional API members:<ul><li><p>The [Binding.setDataAsync](/javascript/api/office/office.binding#office-office-binding-setdataasync-member(1)) method for writing to bound regions of the document</li><li>The [TableBinding.addRowsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-addrowsasync-member(1)) method for adding rows to bound tables.</li><li>The [TableBinding.addColumnsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-addcolumnsasync-member(1)) method for adding columns to bound tables.</li><li>The [TableBinding.deleteAllDataValuesAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-deletealldatavaluesasync-member(1)) method for deleting all data in a bound table.</li><li>The [setFormatsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-setformatsasync-member(1)), [clearFormatsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-clearformatsasync-member(1)), and [setTableOptionsAsync](/javascript/api/office/office.tablebinding#office-office-tablebinding-settableoptionsasync-member(1)) methods of the TableBinding object for setting formatting and options on bound tables.</li><li>All of the members of the [CustomXmlNode](/javascript/api/office/office.customxmlnode), [CustomXmlPart](/javascript/api/office/office.customxmlpart), [CustomXmlParts](/javascript/api/office/office.customxmlparts), and [CustomXmlPrefixMappings](/javascript/api/office/office.customxmlprefixmappings) objects</li><li>All of the methods for subscribing to the events supported by add-ins, specifically the `addHandlerAsync` and `removeHandlerAsync` methods of the [Binding](/javascript/api/office/office.binding), [CustomXmlPart](/javascript/api/office/office.customxmlpart), [Document](/javascript/api/office/office.document), [ProjectDocument](/javascript/api/office/office.document), and [Settings](/javascript/api/office/office.document#office-office-document-settings-member) objects.</li></ul>|
 
 ## See also
 
