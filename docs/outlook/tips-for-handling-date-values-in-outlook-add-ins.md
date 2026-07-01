@@ -1,17 +1,19 @@
 ---
 title: Handle date values in Outlook add-ins
-description: The Office JavaScript API uses the JavaScript Date object for most of the storage and retrieval of dates and times. 
-ms.date: 04/17/2025
+description: Learn how to handle date and time values correctly in Outlook add-ins by managing time zone differences between Outlook clients using the Office JavaScript API methods.
+ms.date: 06/26/2026
 ms.localizationpriority: medium
 ---
 
 # Handle date values in Outlook add-ins
 
-The Office JavaScript API uses the JavaScript [Date](https://www.w3schools.com/jsref/jsref_obj_date.asp) object for most of the storage and retrieval of dates and times.
+When your Outlook add-in reads or displays dates and times, you need to handle a key platform difference: Outlook on the web, new Outlook on Windows, and mobile devices use the Exchange Admin Center (EAC) time zone, while classic Outlook on Windows and Mac use the client computer's operating system time zone. Without handling this difference, the same add-in can display inconsistent times depending on which Outlook client the user runs.
 
-The `Date` object provides methods such as [getUTCDate](https://www.w3schools.com/jsref/jsref_getutcdate.asp), [getUTCHour](https://www.w3schools.com/jsref/jsref_getutchours.asp), [getUTCMinutes](https://www.w3schools.com/jsref/jsref_getutcminutes.asp), and [toUTCString](https://www.w3schools.com/jsref/jsref_toutcstring.asp), which return the requested date or time value according to Universal Coordinated Time (UTC) time.
+The Office JavaScript API uses the JavaScript [Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date) object for most of the storage and retrieval of dates and times.
 
-It also provides other methods such as [getDate](https://www.w3schools.com/jsref/jsref_getutcdate.asp), [getHour](https://www.w3schools.com/jsref/jsref_getutchours.asp), [getMinutes](https://www.w3schools.com/jsref/jsref_getminutes.asp), and [toString](https://www.w3schools.com/jsref/jsref_tostring_date.asp), which return the requested date or time according to "local time".
+The `Date` object provides methods, such as [getUTCDate](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCDate), [getUTCHours](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCHours), [getUTCMinutes](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMinutes), and [toUTCString](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toUTCString), which return the requested date or time value according to Universal Coordinated Time (UTC) time.
+
+It also provides other methods such as [getDate](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate), [getHours](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours), [getMinutes](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes), and [toString](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date/toString), which return the requested date or time according to "local time".
 
 The concept of "local time" is largely determined by the browser and operating system on the client computer. For instance, on most browsers running on a Windows-based client computer, a JavaScript call to `getDate`, returns a date based on the time zone set in Windows on the client computer.
 
@@ -57,7 +59,7 @@ The following are the properties and methods in the Office JavaScript API that s
 
 ## Helper methods for date-related scenarios
 
-The local time for a user in Outlook on the web, on mobile devices, and in new Outlook on Windows can be different from that in Outlook on Windows (classic) and Outlook on Mac, but the JavaScript **Date** object supports converting to only the client computer time zone or UTC. To overcome this, the Office JavaScript API provides two helper methods: [Office.context.mailbox.convertToLocalClientTime](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttolocalclienttime-member(1)) and [Office.context.mailbox.convertToUtcClientTime](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttoutcclienttime-member(1)).
+The local time for a user in Outlook on the web, on mobile devices, and in new Outlook on Windows can be different from that in Outlook on Windows (classic) and Outlook on Mac, but the JavaScript `Date` object supports converting to only the client computer time zone or UTC. To overcome this, the Office JavaScript API provides two helper methods: [Office.context.mailbox.convertToLocalClientTime](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttolocalclienttime-member(1)) and [Office.context.mailbox.convertToUtcClientTime](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttoutcclienttime-member(1)).
 
 These helper methods take care of any need to handle date or time differently for the following two date-related scenarios in Outlook on the web, on Windows (new and classic), on Mac, and on mobile devices, thus reinforcing "write-once" for different clients of your add-in.
 
@@ -79,7 +81,7 @@ const myLocalDictionaryDate = Office.context.mailbox.convertToLocalClientTime(my
 
 // Display different parts of the dictionary date.
 document.write ("The item was created at " + myLocalDictionaryDate["hours"] + 
-    ":" + myLocalDictionaryDate["minutes"]);)
+    ":" + myLocalDictionaryDate["minutes"]);
 ```
 
 Note that `convertToLocalClientTime` takes care of the difference between Outlook on Windows (classic) or Outlook on Mac and Outlook on the web, on mobile devices, or new Outlook on Windows.
@@ -110,4 +112,5 @@ Note that `convertToUtcClientTime` takes care of the difference between Outlook 
 
 ## See also
 
-- [Deploy and install Outlook add-ins for testing](testing-and-tips.md)
+- [Get or set the time when composing an appointment in Outlook](get-or-set-the-time-of-an-appointment.md)
+- [Get and set the recurrence of appointments](get-and-set-recurrence.md)
