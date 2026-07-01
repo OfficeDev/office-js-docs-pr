@@ -51,7 +51,7 @@ Sometimes called an _application password_, a client secret is a string value yo
 1. Select **Add**. The new secret is created and the value is temporarily displayed.
 
 > [!IMPORTANT]
-> _Record the secret's value_ for use in your client application code. This secret value is _never displayed again_ after you leave this pane.
+> _Record the secret's value_ for use in your client application code. This secret value is _never displayed again_ after you leave this pane. For more information on proper handling of secrets, see [Public client and confidential client applications](/entra/identity-platform/msal-client-applications)
 
 ## Expose a web API
 
