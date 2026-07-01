@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Check an attachment before it's opened, saved, or downloaded (preview)
 
-Easily manage attachments securely before a user opens, saves, or downloads attachments from mail items. With the `OnAttachmentAction` event, automatically activate your add-in whenever a supported attachment action occurs in read mode to:
+Easily manage attachments securely before a user opens, saves, or downloads them from mail items. With the `OnAttachmentAction` event, automatically activate your add-in whenever a supported attachment action occurs in read mode to:
 
 - Log and audit attachment interactions for compliance workflows.
 - Verify that an attachment isn't a malicious file.
@@ -41,7 +41,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
 
 > [!NOTE]
 >
-> The `OnAttachmentAction` event is only supported in the add-in only manifest at this time. We're working to support the event in the unified manifest for Microsoft 365. To learn more about the manifest types, see [Office Add-ins manifest](../develop/add-in-manifests.md).
+> The `OnAttachmentAction` event is only supported in the add-in only manifest at this time. We're working to support the event in the unified manifest for Microsoft 365. To learn more about manifest types, see [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 1. In your add-in project, open the **manifest.xml** file.
 
@@ -65,7 +65,7 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
             <!-- Event-based activation happens in a lightweight runtime.-->
             <Runtimes>
               <!-- HTML file including reference to or inline JavaScript event handlers.
-                   This is used by Outlook on the web and on the new Mac UI, and new Outlook on Windows. -->
+                   This is used by Outlook on the web and the new Outlook on Windows. -->
               <Runtime resid="WebViewRuntime.Url" />
             </Runtimes>
             <DesktopFormFactor>
@@ -150,25 +150,22 @@ Complete the [Outlook quick start](../quickstarts/outlook-quickstart-yo.md), whi
 
 ## Implement the event handler
 
-The event handler specifies the operations you want your add-in to run when the `OnAttachmentAction` event occurs. The following steps shows how to implement a sample handler for the `OnAttachmentAction`.
+The event handler specifies the operations you want your add-in to run when the `OnAttachmentAction` event occurs. The following steps show how to implement a sample handler for the `OnAttachmentAction` event.
 
 1. Go to the **./src** directory of the project you created. Then, create a new folder named **launchevent**.
 1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
 1. In the **launchevent.js** file, add the following JavaScript code. Note the following about the code.
   
     - The [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) method must be called from your event-handling code. This ensures that the function name specified in the \<LaunchEvent> element of your manifest is mapped to its respective JavaScript counterpart.
-    - The `event` object the handler receives includes information about the attachment, such as its identifier. For information about the attachment details, see [Office.AttachmentActionEventArgs](/javascript/api/outlook/office.attachmentactioneventargs?view=outlook-js-preview&preserve-view=true).
+    - The `event` object that the handler receives includes information about the attachment, such as its identifier. For information about the attachment details, see [Office.AttachmentActionEventArgs](/javascript/api/outlook/office.attachmentactioneventargs?view=outlook-js-preview&preserve-view=true).
     - To signal that the add-in has completed processing an attachment, your event handler must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. Note that code included after the `event.completed` method isn't guaranteed to run.
-
-    //TODO - Verify event.type
 
     ```javascript
     function onAttachmentActionHandler(event) {
-      const event = event.type;
       const attachmentIds = event.attachmentIds;
 
       // Log details for diagnostics.
-      console.log(`Event: ${actionType}, attachment IDs: ${attachmentIds.join(", ")}`);
+      console.log(`attachment IDs: ${attachmentIds.join(", ")}`);
       console.log(`Number of attachments in event: ${attachmentIds.length}`);
 
       // Perform other operations on attachments here.
@@ -238,27 +235,32 @@ The event handler specifies the operations you want your add-in to run when the 
     - **New Outlook on Windows**: Follow the instructions in the "Debug your add-in" section of [Develop Outlook add-ins for the new Outlook on Windows](one-outlook.md#debug-your-add-in). Then, open the **Console** tab.
 1. Select the attachment to open it. Alternatively, select another supported attachment action, such as **Copy**, **Save**, or **Download**.
 
-    The `OnAttachmentAction` event occurs and details about the attachment is logged to the console.
+    The `OnAttachmentAction` event occurs and details about the attachment are logged to the console.
 
 1. [!INCLUDE [Instructions to stop web server and uninstall dev add-in](../includes/stop-uninstall-outlook-dev-add-in.md)]
 
 ## Event behavior and limitations
 
-Because the `OnAttachmentAction` event is part of the event-based activation feature, the same behavior and limitations apply. For a detailed description, see [Activate add-ins with events](../develop/event-based-activation.md#behavior-and-limitations). Additionally, be mindful of the following behaviors and constraints when implementing the `OnAttachmentAction` event.
+Because the `OnAttachmentAction` event is part of the event-based activation feature, the same behaviors and limitations apply. For a detailed description, see [Activate add-ins with events](../develop/event-based-activation.md#behavior-and-limitations). Additionally, be mindful of the following behaviors and constraints when implementing the `OnAttachmentAction` event.
 
 - The `OnAttachmentAction` event occurs on a message or appointment in read mode when an attachment is opened, copied, saved, or downloaded. The following actions aren't supported.
   - Dragging and dropping an attachment from a mail item.
   - Selecting the **View in OneDrive** or **Upload to OneDrive** option.
   - Previewing an attachment.
-- The `OnAttachmentAction` event occurs on the following attachment types.
-  - File attachments
-  - Outlook mail items
-  Inline and cloud attachments aren't supported.
-- The `OnAttachmentAction` event only occurs on attachments contained in a message or appointment formatted in HTML. The Rich Text Format (RTF) isn't currently supported.
-- When the event handler runs, a message bar is shown notifying the user that an add-in is processing their attachment.
 
-  //TODO - Screenshot
-- If the event-based add-in becomes unavailable (for example, there's an error preventing the add-in from loading), the user will be able to interact with the attachment.
+    > [!NOTE]
+    > In Outlook on the web, double-clicking an attachment opens the attachment in Preview mode.
+
+- The `OnAttachmentAction` event occurs on the following attachment types.
+  - File attachments.
+  - Outlook mail items.
+
+  Inline and cloud attachments aren't supported.
+- The `OnAttachmentAction` event only occurs on attachments contained in a message or appointment formatted in HTML. Rich Text Format (RTF) isn't currently supported.
+- When the event handler runs, a notification alerts the user that an add-in is processing the attachment. A **Skip** action is available on the notification so that the user can stop the handler and immediately continue with their attachment action. For the `OnAttachmentAction` event, the handler can block the attachment action for up to 15 seconds.
+- The attachment action proceeds when the event handler completes, is skipped, or times out.
+- If a user attempts to download an attachment while the event handler is running, the download only proceeds after the handler operation completes.
+- If the event-based add-in becomes unavailable (for example, there's an error preventing the add-in from loading), the user is still able to interact with the attachment.
 - If a user switches to another attachment or mail item while the event-based add-in is processing an attachment, the add-in stops running.
 
 ## See also
