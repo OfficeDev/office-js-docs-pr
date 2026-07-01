@@ -1,14 +1,16 @@
 ---
 title: Work with tables using the PowerPoint JavaScript API
-description: Learn how to create tables and control formatting using the PowerPoint JavaScript API.
+description: Create and format PowerPoint tables in your add-in, including values, borders, alignment, merged cells, and cell text updates.
 ms.topic: how-to
-ms.date: 05/02/2025
+ms.date: 06/11/2026
 ms.localizationpriority: medium
 ---
 
 # Work with tables using the PowerPoint JavaScript API
 
-This article provides code samples that show how to create tables and control formatting by using the PowerPoint JavaScript API.  
+Create PowerPoint tables in your add-in and control values, formatting, sizing, and merged areas by using the PowerPoint JavaScript API.
+
+Use this article when you want to generate tables programmatically at creation time. After you create a table, you can update cell text, but not formatting or table structure.
 
 ## Create an empty table
 
@@ -28,11 +30,11 @@ The previous sample doesn't specify any options, so the table defaults to format
 
 :::image type="content" source="../images/powerpoint-table-empty.png" alt-text="An empty PowerPoint table with blue and white cells.":::
 
-## Specify values  
+## Specify values
 
-You can populate the table with string values when you create it. To do this provide a 2-dimensional array of values in the [TableAddOptions](/javascript/api/powerpoint/powerpoint.tableaddoptions) object. The following code sample creates a table with string values from "1" to "12". Note the following:
+You can populate the table with string values when you create it. To do this, provide a 2-dimensional array of values in the [TableAddOptions](/javascript/api/powerpoint/powerpoint.tableaddoptions) object. The following code sample creates a table with string values from "1" to "12". Note the following:
 
-- An empty cell must be specified as an empty string "". If a value is undefined or missing, `addTable` throws an error.
+- You must specify an empty cell as an empty string "". If a value is undefined or missing, `addTable` throws an error.
 - The outer array contains a list of rows. Each row is an inner array containing a list of string cell values.
 - The function named `insertTableOnCurrentSlide` is used in other samples in this article.
 
@@ -66,13 +68,13 @@ The previous sample creates a table with values as shown in the following image.
 
 ## Specify cell formatting
 
-You can specify cell formatting when you create a table, including border style, fill style, font style, horizontal alignment, indent level, and vertical alignment. These formats are specified by the [TableCellProperties](/javascript/api/powerpoint/powerpoint.tablecellproperties) object.
+You can specify cell formatting when you create a table, including border style, fill style, font style, horizontal alignment, indent level, and vertical alignment. Use the [TableCellProperties](/javascript/api/powerpoint/powerpoint.tablecellproperties) object to specify these formats.
 
 ### Uniform cell formatting
 
-Uniform cell formatting applies to the entire table. For example, if you set the uniform font color to white, all table cells will use the white font. Uniform cell formatting is useful for controlling the default formatting you want on the entire table.
+Uniform cell formatting applies to the entire table. For example, if you set the uniform font color to white, all table cells use the white font. Use uniform cell formatting to control the default formatting you want on the entire table.
 
-Specify uniform cell formatting for the entire table using the [TableAddOptions.uniformCellProperties](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-uniformcellproperties-member) property. The following code sample shows how to set all table cells to dark slate blue fill color and bold white font.
+Set uniform cell formatting for the entire table by using the [TableAddOptions.uniformCellProperties](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-uniformcellproperties-member) property. The following code sample shows how to set all table cells to dark slate blue fill color and bold white font.
 
 ```javascript
 const rowCount = 3;
@@ -99,13 +101,12 @@ The previous sample creates a table as shown in the following image.
 
 Specific cell formatting applies to individual cells and overrides the uniform cell formatting, if any. Set individual cell formatting by using the [TableAddOptions.specificCellProperties](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-specificcellproperties-member) property. The following code sample shows how to set the fill color to black for the cell at row 1, column 1.
 
-Note the `specificCellProperties` must be a 2D array that matches the 2D size of the table exactly. The sample first creates the entire empty 2D array of objects. Then it sets the specific cell format at row 1, column 1, after the options object is created.
+Note that `specificCellProperties` must be a 2D array that exactly matches the table size. The sample first creates the entire empty 2D array of objects. Then it sets the specific cell format at row 1, column 1, after the options object is created.
 
 ```javascript
 const rowCount = 3;
 const columnCount = 4;
-// Compact syntax to create a 2D array filled with empty and distinct objects.
-const specificCellProperties = Array(rowCount).fill("").map(_ => Array(columnCount).fill("").map(_ => ({})));
+const specificCellProperties = createCellArray(rowCount, columnCount);
 const options: PowerPoint.TableAddOptions = {
     values: [
         ["1", "2", "", "4"],
@@ -124,6 +125,11 @@ options.specificCellProperties[1][1] = {
 };
 await insertTableOnCurrentSlide(rowCount, columnCount, options);
 
+// Helper function to create a 2D array filled with empty and distinct objects.
+function createCellArray(rowCount: number, columnCount: number): PowerPoint.TableCellProperties[][] {
+    // Using Array.from() with a factory callback ensures each cell gets its own object reference.
+    return Array.from({ length: rowCount }, () => Array.from({ length: columnCount }, () => ({})));
+}
 ```
 
 The previous sample creates a table with a specific format applied to the cell in row 1, column 1 as shown in the following image.
@@ -157,13 +163,12 @@ uniformCellProperties: {
 
 ## Borders
 
-Use the [TableCellProperties.borders](/javascript/api/powerpoint/powerpoint.tablecellproperties#powerpoint-powerpoint-tablecellproperties-borders-member) object to define borders for cells in the table. The following code sample shows how to set the borders of a cell in row 1 by column 1 to a red border with weight 3.
+Use the [TableCellProperties.borders](/javascript/api/powerpoint/powerpoint.tablecellproperties#powerpoint-powerpoint-tablecellproperties-borders-member) object to define borders for cells in the table. The following code sample shows how to set a red border with weight 3 for the cell at row 1, column 1.
 
 ```javascript
 const columnCount = 3;
 const rowCount = 3;
-// Compact syntax to create a 2D array filled with empty and distinct objects.
-const specificCellProperties = Array(rowCount).fill(undefined).map(_ => Array(columnCount).fill(undefined).map(_ => ({})));
+const specificCellProperties = createCellArray(rowCount, columnCount); // Helper function defined earlier.
 const options: PowerPoint.TableAddOptions = {
     values: [
         ["1", "2", "3"],
@@ -215,8 +220,7 @@ Use the [TableCellProperties.horizontalAlignment](/javascript/api/powerpoint/pow
 ```javascript
 const rowCount = 3;
 const columnCount = 3;
-// Compact syntax to create a 2D array filled with empty and distinct objects.
-const specificCellProperties = Array(rowCount).fill("").map(_ => Array(columnCount).fill("").map(_ => ({})));
+const specificCellProperties = createCellArray(rowCount, columnCount); // Helper function defined earlier.
 const options: PowerPoint.TableAddOptions = {
     values: [
         ["Left aligned, top", "\n\n", ""],
@@ -269,9 +273,9 @@ The previous sample creates a table with left/top, centered, and right/bottom te
 
 Specify row and column widths using the [TableAddOptions.rows](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-rows-member) and [TableAddOptions.columns](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-columns-member) properties. The `rows` property is an array of [TableRowProperties](/javascript/api/powerpoint/powerpoint.tablerowproperties) that you use to set each row's [rowHeight](/javascript/api/powerpoint/powerpoint.tablerowproperties#powerpoint-powerpoint-tablerowproperties-rowheight-member) property. Similarly, the `columns` property is an array of [TableColumnProperties](/javascript/api/powerpoint/powerpoint.tablecolumnproperties) you use to set each column's [columnWidth](/javascript/api/powerpoint/powerpoint.tablecolumnproperties#powerpoint-powerpoint-tablecolumnproperties-columnwidth-member) property. The width or height is set in points.
 
-The height or width that you set may not be honored by PowerPoint if it needs to fit the text. For example, if the text is too wide for a column, PowerPoint will increase the row height so that it can wrap the text to the next line. Similarly, the column width will increase if the specified size is smaller than a single character in the specified font size.
+PowerPoint might not honor the height or width that you set if it needs to fit the text. For example, if the text is too wide for a column, PowerPoint increases the row height so that it can wrap the text to the next line. Similarly, the column width increases if the specified size is smaller than a single character in the specified font size.
 
-The following code example shows how to set row height and column width for a new table. Note that the rows and columns properties must be set to an array of objects equal to their count.
+The following code example shows how to set row height and column width for a new table. Set the `rows` and `columns` properties to arrays of objects that match each count.
 
 ```javascript
 const columnCount = 3;
@@ -284,7 +288,7 @@ const options: PowerPoint.TableAddOptions = {
     ],
     // Initialize columns with an array of empty objects for each column.
     columns: Array(columnCount).fill("").map(_ => ({})),
-    rows: Array(columnCount).fill("").map(_ => ({})),
+    rows: Array(rowCount).fill("").map(_ => ({})),
     uniformCellProperties: {
         fill: { color: "lightcyan" },
         horizontalAlignment: PowerPoint.ParagraphHorizontalAlignment.center,
@@ -322,15 +326,15 @@ The previous sample creates a table with three custom column widths, and one cus
 
 ## Specify merged areas
 
-A merged area is two or more cells combined so that they share a single value and format. In appearance the merged area spans multiple rows or columns. A merged area is indexed by its upper left table cell location (row, column) when setting its value or format. The upper left cell of the merged area is always used to set the value and formatting. All other cells in the merged area must be empty strings with no formatting applied.
+A merged area is two or more cells combined so that they share a single value and format. In appearance, the merged area spans multiple rows or columns. Index a merged area by its upper-left table cell location (row, column) when setting its value or format. Always use the upper-left cell of the merged area to set the value and formatting. All other cells in the merged area must be empty strings with no formatting applied.
 
-To specify a merged area, provide the upper left location where the area starts (row, column) and the length of the area in rows and columns. The following diagram shows an example of these values for a merged area that is 3 rows by 2 columns in size. Note that merged areas can't overlap with each other.
+To specify a merged area, provide the upper-left location where the area starts (row, column) and the length of the area in rows and columns. The following diagram shows an example of these values for a merged area that is 3 rows by 2 columns in size. Note that merged areas can't overlap.
 
-Use the [TableAddOptions.mergedAreas](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-mergedareas-member) property to specify one or more merged areas. The following code sample shows how to create a table with two merged areas. About the code sample, note the following:
+Use the [TableAddOptions.mergedAreas](/javascript/api/powerpoint/powerpoint.tableaddoptions#powerpoint-powerpoint-tableaddoptions-mergedareas-member) property to specify one or more merged areas. The following code sample shows how to create a table with two merged areas. About the code sample, note the following points.
 
-- The values property must only specify the value for the upper left corner of the merged area. All other cell values in the merged area must specify empty strings ("").
+- The `values` property must only specify the value for the upper-left corner of the merged area. All other cell values in the merged area must specify empty strings ("").
 
-- Each merged area must specify the upper left corner location (row, column) and the length in cells of the merged area in terms of row count and column count.  
+- Each merged area must specify the upper-left corner location (row, column) and the length in cells of the merged area in terms of row count and column count.
 
 ```javascript
 const rowCount = 3;
@@ -383,7 +387,7 @@ The previous sample creates a table with two merged areas as shown in the follow
 
 ## Get and set table cell values
 
-After a table is created, you can get or set string values in the cells. Note that this is the only part of a table you can change. You can't change borders, fonts, widths, or other cell properties. If you need to update a table, delete it and recreate it. The following code sample shows how to find an existing table and set a new value for a cell in the table.
+After you create a table, you can get or set string values in the cells. This is the only part of a table you can change. You can't change borders, fonts, widths, or other cell properties. If you need to update formatting or structure, delete the table and recreate it. The following code sample shows how to find an existing table and set a new value for a cell.
 
 ```javascript
 await PowerPoint.run(async (context) => {
@@ -430,3 +434,10 @@ await PowerPoint.run(async (context) => {
     console.log(table.columnCount);
 });
 ```
+
+## See also
+
+- [PowerPoint JavaScript object model in Office Add-ins](core-concepts.md)
+- [Work with shapes using the PowerPoint JavaScript API](shapes.md)
+- [Bind to shapes in a PowerPoint presentation](bind-shapes-in-presentation.md)
+- [PowerPoint JavaScript API reference](/javascript/api/powerpoint)

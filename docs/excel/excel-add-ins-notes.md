@@ -2,6 +2,7 @@
 title: Work with notes using the Excel JavaScript API
 description: Information on using the APIs to add, remove, and edit notes.
 ms.date: 06/26/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -105,7 +106,7 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with workbooks using the Excel JavaScript API](excel-add-ins-workbooks.md)
-- [Work with comments using the Excel JavaScript API](excel-add-ins-comments.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Manage Excel workbooks with the Excel JavaScript API](excel-add-ins-workbooks.md)
+- [Manage comments in Excel add-ins by using the Excel JavaScript API](excel-add-ins-comments.md)
 - [Insert comments and notes in Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8)

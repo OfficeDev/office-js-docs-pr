@@ -1,27 +1,31 @@
 ---
-title: Work with charts using the Excel JavaScript API
-description: Code samples demonstrating chart tasks using the Excel JavaScript API.
-ms.date: 04/14/2025
+title: Create and customize Excel charts with JavaScript
+description: Learn how to create Excel charts, add series, format titles and axes, add trendlines and data tables, and export chart images with the JavaScript API.
+ms.date: 06/03/2026
+ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Work with charts using the Excel JavaScript API
+# Create and customize charts with the Excel JavaScript API
 
-This article provides code samples that show how to perform common tasks with charts using the Excel JavaScript API.
-For the complete list of properties and methods that the `Chart` and `ChartCollection` objects support, see [Chart Object (JavaScript API for Excel)](/javascript/api/excel/excel.chart) and [Chart Collection Object (JavaScript API for Excel)](/javascript/api/excel/excel.chartcollection).
+Use charts when your add-in needs to turn worksheet data into a visual summary. This article shows how to create a chart from a range, add a series, update titles and axes, control gridlines, add trendlines and a data table, and export the chart as an image.
 
-## Create a chart
+For the full API surface, see [Chart object](/javascript/api/excel/excel.chart) and [ChartCollection object](/javascript/api/excel/excel.chartcollection).
 
-The following code sample creates a chart in the worksheet named **Sample**. The chart is a **Line** chart that is based upon data in the range **A1:B13**.
+## Create a chart from a range
+
+Charts usually start with data that already exists in a range or table. In this example, the add-in creates a **Line** chart on the **Sample** worksheet from the range **A1:B13** and then applies a few common formatting settings.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
-    let dataRange = sheet.getRange("A1:B13");
-    let chart = sheet.charts.add(
-      Excel.ChartType.line, 
-      dataRange, 
-      Excel.ChartSeriesBy.auto);
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const dataRange = sheet.getRange("A1:B13");
+    const chart = sheet.charts.add(
+        Excel.ChartType.line,
+        dataRange,
+        Excel.ChartSeriesBy.auto
+    );
 
     chart.title.text = "Sales Data";
     chart.legend.position = Excel.ChartLegendPosition.right;
@@ -33,226 +37,207 @@ await Excel.run(async (context) => {
 });
 ```
 
-### New line chart
+After the code runs, the worksheet contains a new line chart.
 
 :::image type="content" source="../images/excel-charts-create-line.png" alt-text="New line chart in Excel.":::
 
-## Add a data series to a chart
+## Add a data series
 
-The following code sample adds a data series to the first chart in the worksheet. The new data series corresponds to the column named **2016** and is based upon data in the range **D2:D5**.
+Use an additional series when your add-in needs to compare a new column of values with the existing chart. In this example, the add-in adds the **2016** series from the range **D2:D5** to the first chart on the worksheet.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
-    let chart = sheet.charts.getItemAt(0);
-    let dataRange = sheet.getRange("D2:D5");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chart = sheet.charts.getItemAt(0);
+    const dataRange = sheet.getRange("D2:D5");
 
-    let newSeries = chart.series.add("2016");
+    const newSeries = chart.series.add("2016");
     newSeries.setValues(dataRange);
 
     await context.sync();
 });
 ```
 
-### Chart before the 2016 data series is added
+Before you add the series, the chart looks like this.
 
-:::image type="content" source="../images/excel-charts-data-series-before.png" alt-text="Chart in Excel before 2016 data series added.":::
+:::image type="content" source="../images/excel-charts-data-series-before.png" alt-text="Chart in Excel before the 2016 data series is added.":::
 
-### Chart after the 2016 data series is added
+After you add the series, the chart includes the new data.
 
-:::image type="content" source="../images/excel-charts-data-series-after.png" alt-text="Chart in Excel after 2016 data series added.":::
+:::image type="content" source="../images/excel-charts-data-series-after.png" alt-text="Chart in Excel after the 2016 data series is added.":::
 
-## Set chart title
+## Set the chart title
 
-The following code sample sets the title of the first chart in the worksheet to **Sales Data by Year**.
+A clear title helps users understand what the chart shows without inspecting the source data. The following example sets the title of the first chart on the worksheet to **Sales Data by Year**.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chart = sheet.charts.getItemAt(0);
 
-    let chart = sheet.charts.getItemAt(0);
     chart.title.text = "Sales Data by Year";
 
     await context.sync();
 });
 ```
 
-### Chart after title is set
+:::image type="content" source="../images/excel-charts-title-set.png" alt-text="Chart with a title in Excel.":::
 
-:::image type="content" source="../images/excel-charts-title-set.png" alt-text="Chart with title in Excel.":::
+## Format chart axes
 
-## Set properties of an axis in a chart
+Column, bar, and scatter charts use a category axis and a value axis. Use the axis title to explain what the categories represent, and use the display unit to make large values easier to scan.
 
-Charts that use the [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) such as column charts, bar charts, and scatter charts contain a category axis and a value axis. These examples show how to set the title and display unit of an axis in a chart.
+### Set an axis title
 
-### Set axis title
-
-The following code sample sets the title of the category axis for the first chart in the worksheet to **Product**.
+This example sets the category axis title of the first chart on the worksheet to **Product**.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chart = sheet.charts.getItemAt(0);
 
-    let chart = sheet.charts.getItemAt(0);
     chart.axes.categoryAxis.title.text = "Product";
 
     await context.sync();
 });
 ```
 
-### Chart after title of category axis is set
+:::image type="content" source="../images/excel-charts-axis-title-set.png" alt-text="Chart with an axis title in Excel.":::
 
-:::image type="content" source="../images/excel-charts-axis-title-set.png" alt-text="Chart with axis title in Excel.":::
+### Set the axis display unit
 
-### Set axis display unit
-
-The following code sample sets the display unit of the value axis for the first chart in the worksheet to **Hundreds**.
+This example changes the value axis to use the **Hundreds** display unit.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chart = sheet.charts.getItemAt(0);
 
-    let chart = sheet.charts.getItemAt(0);
     chart.axes.valueAxis.displayUnit = "Hundreds";
 
     await context.sync();
 });
 ```
 
-### Chart after display unit of value axis is set
+:::image type="content" source="../images/excel-charts-axis-display-unit-set.png" alt-text="Chart with the axis display unit set in Excel.":::
 
-:::image type="content" source="../images/excel-charts-axis-display-unit-set.png" alt-text="Chart with axis display unit in Excel.":::
+## Show or hide gridlines
 
-## Set visibility of gridlines in a chart
-
-The following code sample hides the major gridlines for the value axis of the first chart in the worksheet. You can show the major gridlines for the value axis of the chart, by setting `chart.axes.valueAxis.majorGridlines.visible` to `true`.
+Gridlines can help users estimate values, but they can also add visual noise. The following example hides the major gridlines on the value axis of the first chart on the worksheet. To show the gridlines again, set `chart.axes.valueAxis.majorGridlines.visible` to `true`.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chart = sheet.charts.getItemAt(0);
 
-    let chart = sheet.charts.getItemAt(0);
     chart.axes.valueAxis.majorGridlines.visible = false;
 
     await context.sync();
 });
 ```
 
-### Chart with gridlines hidden
-
 :::image type="content" source="../images/excel-charts-gridlines-removed.png" alt-text="Chart with gridlines hidden in Excel.":::
 
-## Chart trendlines
+## Add and update trendlines
 
-### Add a trendline
+Trendlines help users spot direction and smoothing in a data series. Use a moving average trendline to smooth short-term changes, or switch to a linear trendline when you want to emphasize the overall direction.
 
-The following code sample adds a moving average trendline to the first series in the first chart in the worksheet named **Sample**. The trendline shows a moving average over 5 periods.
+### Add a moving average trendline
+
+This example adds a moving average trendline with a 5-period window to the first series in the first chart on the **Sample** worksheet.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chart = sheet.charts.getItemAt(0);
+    const seriesCollection = chart.series;
 
-    let chart = sheet.charts.getItemAt(0);
-    let seriesCollection = chart.series;
     seriesCollection.getItemAt(0).trendlines.add("MovingAverage").movingAveragePeriod = 5;
 
     await context.sync();
 });
 ```
 
-#### Chart with moving average trendline
+:::image type="content" source="../images/excel-charts-create-trendline.png" alt-text="Chart with a moving average trendline in Excel.":::
 
-:::image type="content" source="../images/excel-charts-create-trendline.png" alt-text="Chart with moving average trendline in Excel.":::
+### Change a trendline to linear
 
-### Update a trendline
-
-The following code sample sets the trendline to type `Linear` for the first series in the first chart in the worksheet named **Sample**.
+This example changes the first trendline on the first series to type `Linear`.
 
 ```js
 await Excel.run(async (context) => {
-    let sheet = context.workbook.worksheets.getItem("Sample");
+    const sheet = context.workbook.worksheets.getItem("Sample");
+    const chart = sheet.charts.getItemAt(0);
+    const seriesCollection = chart.series;
+    const series = seriesCollection.getItemAt(0);
 
-    let chart = sheet.charts.getItemAt(0);
-    let seriesCollection = chart.series;
-    let series = seriesCollection.getItemAt(0);
     series.trendlines.getItem(0).type = "Linear";
 
     await context.sync();
 });
 ```
 
-#### Chart with linear trendline
-
-:::image type="content" source="../images/excel-charts-trendline-linear.png" alt-text="Chart with linear trendline in Excel.":::
+:::image type="content" source="../images/excel-charts-trendline-linear.png" alt-text="Chart with a linear trendline in Excel.":::
 
 ## Add and format a chart data table
 
-You can access the data table element of a chart with the [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#excel-excel-chart-getdatatableornullobject-member(1)) method. This method returns the [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) object. The `ChartDataTable` object has boolean formatting properties such as `visible`, `showLegendKey`, and `showHorizontalBorder`.
+Use a chart data table when users need both the visual chart and the source values in one place. Get the data table by using [`Chart.getDataTableOrNullObject`](/javascript/api/excel/excel.chart#excel-excel-chart-getdatatableornullobject-member(1)). Then use the returned [`ChartDataTable`](/javascript/api/excel/excel.chartdatatable) and [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) objects to control visibility, borders, and font settings.
 
-The `ChartDataTable.format` property returns the [`ChartDataTableFormat`](/javascript/api/excel/excel.chartdatatableformat) object, which allows you to further format and style the data table. The `ChartDataTableFormat` object offers `border`, `fill`, and `font` properties.
-
-The following code sample shows how to add a data table to a chart and then format that data table using the `ChartDataTable` and `ChartDataTableFormat` objects.
+The following example adds a data table to an existing chart on the **Sample** worksheet and applies simple formatting that matches a typical business chart.
 
 ```js
-// This code sample adds a data table to a chart that already exists on the worksheet, 
-// and then adjusts the display and format of that data table.
 await Excel.run(async (context) => {
-    // Retrieve the chart on the "Sample" worksheet.
-    let chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+    const chart = context.workbook.worksheets.getItem("Sample").charts.getItemAt(0);
+    const chartDataTable = chart.getDataTableOrNullObject();
 
-    // Get the chart data table object and load its properties.
-    let chartDataTable = chart.getDataTableOrNullObject();
-    chartDataTable.load();
-
-    // Set the display properties of the chart data table.
     chartDataTable.visible = true;
     chartDataTable.showLegendKey = true;
     chartDataTable.showHorizontalBorder = false;
     chartDataTable.showVerticalBorder = true;
     chartDataTable.showOutlineBorder = true;
 
-    // Retrieve the chart data table format object and set font and border properties. 
-    let chartDataTableFormat = chartDataTable.format;
-    chartDataTableFormat.font.color = "#B76E79";
-    chartDataTableFormat.font.name = "Comic Sans";
-    chartDataTableFormat.border.color = "blue";
+    const chartDataTableFormat = chartDataTable.format;
+    chartDataTableFormat.font.color = "#1F1F1F";
+    chartDataTableFormat.font.name = "Calibri";
+    chartDataTableFormat.border.color = "#4472C4";
 
     await context.sync();
 });
 ```
 
-The following screenshot shows the data table that the preceding code sample creates.
-
-:::image type="content" source="../images/excel-charts-data-table.png" alt-text="A chart with a data table, showcasing custom formatting of the data table.":::
+:::image type="content" source="../images/excel-charts-data-table.png" alt-text="Chart with a formatted data table in Excel.":::
 
 ## Export a chart as an image
 
-Charts can be rendered as images outside of Excel. `Chart.getImage` returns the chart as a Base64-encoded string representing the chart as a JPEG image. The following code shows how to get the image string and log it to the console.
+Use `Chart.getImage` when your add-in needs to reuse a chart outside Excel, such as in a web page, report, or message body. The method returns a Base64-encoded string that represents the chart as a JPEG image.
 
 ```js
 await Excel.run(async (context) => {
-    let chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
-    let imageAsString = chart.getImage();
+    const chart = context.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");
+    const imageAsString = chart.getImage();
+
     await context.sync();
-    
+
     console.log(imageAsString.value);
-    // Instead of logging, your add-in may use the Base64-encoded string to save the image as a file or insert it in HTML.
+    // Instead of logging the string, you can save it as a file or insert it into HTML.
 });
 ```
 
-`Chart.getImage` takes three optional parameters: width, height, and the fitting mode.
+`Chart.getImage` accepts three optional parameters: width, height, and fitting mode.
 
-```typescript
+```ts
 getImage(width?: number, height?: number, fittingMode?: Excel.ImageFittingMode): OfficeExtension.ClientResult<string>;
 ```
 
-These parameters determine the size of the image. Images are always proportionally scaled. The width and height parameters put upper or lower bounds on the scaled image. `ImageFittingMode` has three values with the following behaviors.
+These parameters control image size while keeping the chart proportionally scaled.
 
-- `Fill`: The image's minimum height or width is the specified height or width (whichever is reached first when scaling the image). This is the default behavior when no fitting mode is specified.
-- `Fit`: The image's maximum height or width is the specified height or width (whichever is reached first when scaling the image).
-- `FitAndCenter`: The image's maximum height or width is the specified height or width (whichever is reached first when scaling the image). The resulting image is centered relative to the other dimension.
+- `Fill`: The image's minimum height or width is the specified height or width, whichever limit is reached first during scaling. This is the default behavior.
+- `Fit`: The image's maximum height or width is the specified height or width, whichever limit is reached first during scaling.
+- `FitAndCenter`: The image's maximum height or width is the specified height or width, whichever limit is reached first during scaling. The resulting image is centered relative to the other dimension.
 
-## See also
+## Related articles
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with data labels in charts using the Excel JavaScript API](excel-add-ins-charts-data-labels.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Get Excel worksheet ranges with the JavaScript API](excel-add-ins-ranges-get.md)
+- [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
+- [Format chart data labels with the Excel JavaScript API](excel-add-ins-charts-data-labels.md)

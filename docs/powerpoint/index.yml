@@ -23,8 +23,8 @@ landingContent:
         links:
           - text: What are PowerPoint add-ins?
             url: powerpoint-add-ins.md
-          - text: JavaScript API for PowerPoint
-            url: ../reference/overview/powerpoint-add-ins-reference-overview.md
+          - text: PowerPoint JavaScript object model
+            url: core-concepts.md
       - linkListType: quickstart
         links:
           - text: Build your first PowerPoint add-in
@@ -33,8 +33,8 @@ landingContent:
             url: ../overview/explore-with-script-lab.md
       - linkListType: how-to-guide
         links:
-          - text: Use the PowerPoint JavaScript API to interact with presentation content and metadata
-            url: ../reference/overview/powerpoint-add-ins-reference-overview.md
+          - text: Insert slides into a presentation
+            url: insert-slides-into-presentation.md
           - text: Test and debug a PowerPoint add-in
             url: ../testing/test-debug-office-add-ins.md
           - text: Deploy and publish a PowerPoint add-in

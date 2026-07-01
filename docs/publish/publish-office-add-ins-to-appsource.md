@@ -118,7 +118,7 @@ We recommend that you join the [developer certification program](/microsoft-365-
 The following are the steps for updating your installation executable.
 
 1. [Check that user's Office version supports the add-ins (recommended)](#check-that-users-office-version-supports-web-add-ins-recommended)
-1. [Check for Microsoft Marketplace disablement (recommended)](#check-for-Microsoft Marketplace-disablement-recommended)
+1. [Check for Microsoft Marketplace disablement (recommended)](#check-for-microsoft-marketplace-disablement-recommended)
 1. [Create a registry key for the add-in (required)](#create-a-registry-key-for-the-add-in-required)
 1. [Include privacy terms in your terms & conditions (required for certified developers)](#include-privacy-terms-in-your-terms--conditions-required-for-certified-developers)
 

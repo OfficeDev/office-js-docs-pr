@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 09/30/2025
+ms.date: 06/17/2026
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -35,7 +35,6 @@ There are two types of add-in commands, based on the kind of action that the com
    > Function commands aren't the only way to run arbitrary JavaScript in an add-in. An add-in can also include:
    >
    > - Custom handlers for certain events, such as a user opening an new message pane in Outlook.
-   > - Custom [Copilot agents](agent-and-add-in-overview.md) that take actions in response to natural language requests from the add-in's users.
 
 ## Location of add-in commands
 

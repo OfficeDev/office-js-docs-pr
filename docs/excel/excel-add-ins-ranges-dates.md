@@ -2,6 +2,7 @@
 title: Work with dates using the Excel JavaScript API
 description: Use the Moment-MSDate plug-in with the Excel JavaScript API to work with dates.
 ms.date: 05/12/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -106,6 +107,6 @@ This mismatch can cause unexpected date shifts, especially when dates cross midn
 ## See also
 
 - [Review guidelines for customizing a number format](https://support.microsoft.com/office/c0a1d1fa-d3f4-4018-96b7-9c9354dd99f5)
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Set or get Excel range values, text, and formulas](excel-add-ins-ranges-set-get-values.md)
 - [Set range format using the Excel JavaScript API](excel-add-ins-ranges-set-format.md)

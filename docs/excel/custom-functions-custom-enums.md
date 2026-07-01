@@ -2,6 +2,7 @@
 title: Custom enums for custom functions
 description: Create custom enums to use with your custom functions.
 ms.date: 12/17/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

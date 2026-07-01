@@ -1,34 +1,44 @@
 ---
-title: Add properties to basic cell values
-description: Add properties to basic cell values.
-ms.topic: how-to #Required; leave this attribute/value as-is
-ms.date: 05/12/2025
+title: Add properties to Excel basic cell values
+description: Learn how to add properties to string, double, and Boolean cell values in Excel add-ins so formulas keep working and users can view extra details.
+ai-usage: ai-assisted
+ms.topic: how-to
+ms.date: 06/03/2026
 ms.localizationpriority: medium
 ---
 
-# Add properties to basic cell values
+# Add properties to Excel basic cell values
 
-Add properties to basic cell values in Excel to associate additional information with the values. Similar to [entity values](excel-data-types-linked-entity-cell-values.md), you can add properties to the **string**, **double**, and **Boolean** basic types. Each property is a key/value pair. The following example shows the number 14.67 (a double) that represents a bill with added fields named **Drinks**, **Food**, **Tax**, and **Tip**.
+Use properties on a basic cell value when you want a cell to keep its original `string`, `double`, or `Boolean` value and also expose extra details. For example, a restaurant bill can stay a number for calculations while also showing `Food`, `Drinks`, `Tax`, and `Tip` in the data type card and in formulas.
+
+This article shows how to create a basic value with properties, update an existing value, format number values, and add nested data types.
+
+- Start with [Overview of data types in Excel add-ins](excel-data-types-overview.md) if you're new to Excel data types.
+- Review the JSON schema in [Use data types in Excel add-ins](excel-data-types-concepts.md).
+- Use [Create linked entity data types in Excel add-ins](excel-data-types-linked-entity-cell-values.md) when your data comes from an external source and should refresh independently.
+
+The following example shows the number `14.67` with added fields named `Drinks`, `Food`, `Tax`, and `Tip`.
 
 :::image type="content" source="../images/data-type-basic-fields.png" alt-text="Screenshot of the drinks, food, tax, and tip fields shown for the selected cell value.":::
 
-If the user chooses to show the data type card, they'll see the values for the fields.
+When users open the data type card, they can see the extra fields.
 
 :::image type="content" source="../images/data-type-basic-data-type-card.png" alt-text="Data type card showing values for drinks, food, tax, and tip properties.":::
 
-Cell value properties can also be used in formulas.
+Basic values with properties can also be referenced in formulas by using dot notation.
 
 :::image type="content" source="../images/data-type-basic-dot-syntax.png" alt-text="Show user typing 'a1.' and Excel showing a menu with drinks, food, tax, and tip options.":::
 
 ## Create a cell value with properties
 
-To create a cell value and add properties to it, use `Range.valuesAsJson` to assign properties. The following code sample shows how to create a new number in cell **A1**. It adds the **Food**, **Drinks**, and additional properties describing a bill in a restaurant. It assigns a JSON description of the properties to `valuesAsJson`.
+Use `Range.valuesAsJson` to create a value and define its properties in one assignment. The following example writes a number to `A1` and adds bill details as properties.
 
 ```typescript
 async function createNumberProperties() {
   await Excel.run(async (context) => {
     const sheet = context.workbook.worksheets.getActiveWorksheet();
     const range = sheet.getRange("A1");
+
     range.valuesAsJson = [
       [
         {
@@ -60,6 +70,7 @@ async function createNumberProperties() {
         }
       ]
     ];
+
     await context.sync();
   });
 }
@@ -70,153 +81,164 @@ async function createNumberProperties() {
 
 ## Add properties to an existing value
 
-To add properties to an existing value, first get the value from the cell using `valuesAsJson`, then add a properties JSON object to it. The following example shows how to get the number value from cell **A1** and assign a property named **Precision** to it. Note that you should check the type of the value to ensure it's a **string**, **double**, or **Boolean** basic type.
+Use this pattern when a cell already contains a basic value and you want to enrich it without changing its underlying type. First, read the value by using `valuesAsJson`. Then verify that the value is a `string`, `double`, or `Boolean` before you add properties.
+
+The following example gets the number in `A1`, preserves any existing properties, and adds a `Precision` property.
 
 ```typescript
 async function addPropertyToNumber() {
-    await Excel.run(async (context) => {
-        let sheet = context.workbook.worksheets.getActiveWorksheet();
-        let range = sheet.getRange("A1");
-        range.load("valuesAsJson");
-        await context.sync();
-        let cellValue = range.valuesAsJson[0][0] as any;
+  await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    const range = sheet.getRange("A1");
 
-        // Only apply this property to a double.
-        if (cellValue.basicType === "Double") {
-            cellValue.properties = {
-                Precision: {
-                    type: Excel.CellValueType.double,
-                    basicValue: 4
-                }
-            };
-            range.valuesAsJson = [[cellValue]];
-            await context.sync();
+    range.load("valuesAsJson");
+    await context.sync();
+
+    const cellValue = range.valuesAsJson[0][0] as any;
+
+    // Only apply this property to a double.
+    if (cellValue.basicType === Excel.RangeValueType.double) {
+      cellValue.properties = {
+        ...(cellValue.properties ?? {}),
+        Precision: {
+          type: Excel.CellValueType.double,
+          basicValue: 4
         }
-    });
+      };
+
+      range.valuesAsJson = [[cellValue]];
+      await context.sync();
+    }
+  });
 }
 ```
 
-## Differences from entity values
+## Choose a basic value or an entity value
 
-Adding properties to **string**, **Boolean**, and **double** basic types is similar to adding properties to entity values. However there are differences.
+Adding properties to `string`, `Boolean`, and `double` basic types is similar to adding properties to entity values, but the behavior is different in a few important ways.
 
-- Basic types have a non-error fallback so that calculations can operate on them. For example, consider the formula **=SUM(A1:A3)** where **A1** is **1**, **A2** is **2**, and **A3** is **3**. **A1** is a double with properties, while **A2** and **A3** don't have properties. The sum returns the correct result of **6**. The formula wouldn't work if **A1** was an entity value.
-- When the value of a basic type is used in a calculation, the properties are excluded in the result. In the previous example of **=SUM(A1:A3)** where A1 is a double with properties, the result of **6** does not have any properties.
-- If no icon is specified for a basic type, the cell doesn't show any icon. But if an entity value doesn't specify an icon, it shows a default icon in the cell value.
+- Use a basic value with properties when formulas should continue to treat the cell as its underlying value. Basic types don't have error fallbacks, so calculations can always proceed. For example, `=SUM(A1:A3)` still returns `6` if `A1` is a double with properties and `A2` and `A3` are standard numbers.
+- When a calculation uses a basic value, the result includes the underlying value only. The result doesn't keep the source properties.
+- If you don't specify an icon for a basic value, the cell shows no icon. Entity values show a default icon when no icon is specified.
 
 ## Formatted number values
 
-You can apply number formatting to values of type `CellValueType.double`. Use the `numberFormat` property in the JSON schema to specify a number format. The following code sample shows the complete schema of a number value formatted as currency. The formatted number value in the code sample displays as **$24.00** in the Excel UI.
+You can apply number formatting to values of type `CellValueType.double` by using the `numberFormat` property. The following example creates a currency value and adds a descriptive property.
 
 ```typescript
-// This is an example of the complete JSON of a formatted number value with a property.
-// In this case, the number is formatted as currency.
 async function createCurrencyValue() {
-    await Excel.run(async (context) => {
-        const sheet = context.workbook.worksheets.getActiveWorksheet();
-        const range = sheet.getRange("A1");
-        range.valuesAsJson = [
-            [
-                {
-                    type: Excel.CellValueType.double,
-                    basicType: Excel.RangeValueType.double,
-                    basicValue: 24,
-                    numberFormat: "$0.00",
-                    properties: {
-                        Name: {
-                            type: Excel.CellValueType.string,
-                            basicValue: "dollar"
-                        }
-                    }
-                }
-            ]
-        ];
-        await context.sync();
-    });
+  await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    const range = sheet.getRange("A1");
+
+    range.valuesAsJson = [
+      [
+        {
+          type: Excel.CellValueType.double,
+          basicType: Excel.RangeValueType.double,
+          basicValue: 24,
+          numberFormat: "$0.00",
+          properties: {
+            Name: {
+              type: Excel.CellValueType.string,
+              basicValue: "Price"
+            }
+          }
+        }
+      ]
+    ];
+
+    await context.sync();
+  });
 }
 ```
 
-The number formatting is considered the default format. If the user, or other code, applies formatting to a cell containing a formatted number, the applied format overrides the number’s format.
+This number format is the default format for the value. If the user, or other code, applies a different format to the cell, that format overrides the value's `numberFormat`.
 
-## Card layout
+## Customize the card layout
 
-Cell values with properties have a default data type card that the user can view. You can provide a custom card layout to use instead of the default card layout to improve the user experience when viewing properties. To do this, add the **layouts** property to the JSON description.
+Basic values with properties use a default data type card. To show properties in a more helpful way, add the `layouts` property to the JSON description and define a custom card layout.
 
-For more information, see [Use cards with cell value data types](excel-data-types-entity-card.md).
+For layout options and examples, see [Use cards with cell value data types](excel-data-types-entity-card.md).
 
 ## Nested data types
 
-You can nest data types in a cell value, such as additional entity values, as well as **strings**, **doubles**, and **Booleans**. The following code sample shows how to create a cell value that represents the charge status on a computer battery. It contains a nested entity value that describes the computer properties for power consumption and charging status. The computer entity value also contains a nested string value that describes the computer’s power plan.
+You can nest other data types inside a basic value, including entity values and additional `string`, `double`, and `Boolean` values. The following example writes a computer battery charge value to `A1`, then adds a nested entity that describes the computer and its power settings.
 
 > [!IMPORTANT]
 > When nesting entity values, the `referencedValues` array is only supported on the root-level entity. Nested entities must not define their own `referencedValues`. If a nested entity includes `referencedValues`, Excel rejects the cell value and returns the **#VALUE!** error in that cell. To reference additional values from a nested entity, use [ReferenceCellValue](/javascript/api/excel/excel.referencecellvalue) indices that point to the root entity's `referencedValues` array. For more information, see [Entity values](excel-data-types-concepts.md#entity-values).
 
 ```typescript
 async function createNumberWithNestedEntity() {
-    await Excel.run(async (context) => {
-        const sheet = context.workbook.worksheets.getActiveWorksheet();
-        const range = sheet.getRange("A1");
-        range.valuesAsJson = [
-            [
-                {
-                    type: Excel.CellValueType.double,
-                    basicType: Excel.RangeValueType.double,
-                    layouts: {
-                        compact: {
-                            icon: "Battery10"
-                        }
-                    },
-                    basicValue: 0.7,
-                    numberFormat: "00%",
-                    properties: {
-                        Computer: {
-                            type: Excel.CellValueType.entity,
-                            text: "Laptop",
-                            properties: {
-                                "Power Consumption": {
-                                    type: Excel.CellValueType.double,
-                                    basicType: Excel.RangeValueType.double,
-                                    basicValue: 0.25,
-                                    numberFormat: "00%",
-                                    layouts: {
-                                        compact: {
-                                            icon: "Power"
-                                        }
-                                    },
-                                    properties: {
-                                        plan: {
-                                            type: Excel.CellValueType.string,
-                                            basicType: Excel.RangeValueType.string,
-                                            basicValue: "Balanced"
-                                        }
-                                    }
-                                },
-                                Charging: {
-                                    type: Excel.CellValueType.boolean,
-                                    basicType: Excel.RangeValueType.boolean,
-                                    basicValue: true
-                                }
-                            }
-                        }
+  await Excel.run(async (context) => {
+    const sheet = context.workbook.worksheets.getActiveWorksheet();
+    const range = sheet.getRange("A1");
+
+    range.valuesAsJson = [
+      [
+        {
+          type: Excel.CellValueType.double,
+          basicType: Excel.RangeValueType.double,
+          layouts: {
+            compact: {
+              icon: "Battery10"
+            }
+          },
+          basicValue: 0.7,
+          numberFormat: "00%",
+          properties: {
+            Computer: {
+              type: Excel.CellValueType.entity,
+              text: "Laptop",
+              properties: {
+                "Power Consumption": {
+                  type: Excel.CellValueType.double,
+                  basicType: Excel.RangeValueType.double,
+                  basicValue: 0.25,
+                  numberFormat: "00%",
+                  layouts: {
+                    compact: {
+                      icon: "Power"
                     }
+                  },
+                  properties: {
+                    Plan: {
+                      type: Excel.CellValueType.string,
+                      basicType: Excel.RangeValueType.string,
+                      basicValue: "Balanced"
+                    }
+                  }
+                },
+                Charging: {
+                  type: Excel.CellValueType.boolean,
+                  basicType: Excel.RangeValueType.boolean,
+                  basicValue: true
                 }
-            ]
-        ];
-        await context.sync();
-    });
+              }
+            }
+          }
+        }
+      ]
+    ];
+
+    await context.sync();
+  });
 }
 ```
 
-The following image shows the number value and the data type card for the nested laptop entity.
+The following image shows the value and the data type card for the nested laptop entity.
 
 :::image type="content" source="../images/data-type-basic-nested-entities.png" alt-text="Cell value in Excel showing battery charge at 70%, and the data type card showing the nested laptop entity with charging and power consumption property values.":::
 
 ## Compatibility
 
-On previous versions of Excel that don't support the data types feature, users see a warning of **Unavailable Data Type**. The value still displays in the cell and functions as expected with formulas and other Excel features. If the value is a formatted number, calculations use the `basicValue` in place of the formatted number.
+On previous versions of Excel that don't support the data types feature, users see an **Unavailable Data Type** warning. The value still appears in the cell and continues to work with formulas and other Excel features. If the value is a formatted number, calculations use the `basicValue` instead of the formatted number.
 
-On Excel versions older than Office 2016, the value is shown in the cell with no error and is indistinguishable from a basic value.
+On Excel versions older than Office 2016, the value appears in the cell with no error and is indistinguishable from a basic value.
 
 ## See also
 
-- [Excel JavaScript API data types core concepts](excel-data-types-concepts.md)
+- [Overview of data types in Excel add-ins](excel-data-types-overview.md)
+- [Use data types in Excel add-ins](excel-data-types-concepts.md)
+- [Use cards with cell value data types](excel-data-types-entity-card.md)
+- [Create linked entity data types in Excel add-ins](excel-data-types-linked-entity-cell-values.md)

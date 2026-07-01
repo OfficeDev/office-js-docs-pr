@@ -2,6 +2,7 @@
 title: Read or write to an unbounded range using the Excel JavaScript API
 description: Understand what unbounded ranges are, why cell-level operations return null or fail, and how to safely work with entire rows or columns by narrowing scope.
 ms.date: 09/22/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -49,7 +50,7 @@ range.values = [["Due Date"]]; // This throws an error.
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with Excel cells by using Range objects](excel-add-ins-cells.md)
 - [Read or write to a large range using the Excel JavaScript API](excel-add-ins-ranges-large.md)
 - [Work with multiple ranges simultaneously in Excel add-ins](excel-add-ins-multiple-ranges.md)

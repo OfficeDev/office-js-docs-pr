@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 03/23/2026
+ms.date: 06/17/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -100,10 +100,6 @@ Users can run Outlook add-ins when they view, reply, or create emails, meeting r
 > [!INCLUDE [Calendar add-ins not available in Teams](../includes/calendar-availability.md)]
 
 For an overview of Outlook add-ins, see [Outlook add-ins overview](../outlook/outlook-add-ins-overview.md).
-
-### Carry out Copilot instructions (preview)
-
-You can create custom Copilot agents that enable your users to read and write to Office documents with natural language instructions entered in Copilot chat. For more information, see [Combine Copilot Agents with Office Add-ins (preview)](../design/agent-and-add-in-overview.md). 
 
 ### Create new objects in Office documents
 

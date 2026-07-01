@@ -1,184 +1,193 @@
 ---
-title: Work with data labels in charts using the Excel JavaScript API
-description: Code samples demonstrating chart data label tasks using the Excel JavaScript API.
-ms.date: 04/14/2025
+title: Format Excel chart data labels with JavaScript
+description: Learn how to add, position, format, and customize Excel chart data labels, leader lines, and callouts with the Excel JavaScript API.
+ms.date: 06/03/2026
+ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
-# Work with data labels in charts using the Excel JavaScript API
+# Format chart data labels with the Excel JavaScript API
 
-Add data labels to Excel charts to provide a better visualization experience about important aspects of the chart. To learn more about data labels, see [Add or remove data labels in a chart](https://support.microsoft.com/office/add-or-remove-data-labels-in-a-chart-884bf2f1-2e29-454e-8b42-f467c9f4eb2d).
+Use data labels when your add-in needs to show values directly on a chart. This article shows how to create a sample chart, turn on labels for a series, format label text and shape, add leader lines, and create callouts. If you need help creating the underlying chart first, see [Create and customize charts with the Excel JavaScript API](excel-add-ins-charts.md). For Excel UI steps instead of Office Add-in code, see [Add or remove data labels in a chart](https://support.microsoft.com/office/add-or-remove-data-labels-in-a-chart-884bf2f1-2e29-454e-8b42-f467c9f4eb2d).
 
-The following code sample sets up the sample data and **Bicycle Part Production** chart used in this article.
+## Create the sample chart
 
-```javascript
+In [Script Lab](https://aka.ms/getscriptlab) or a sample add-in, run the following `setup` function. This function creates the **Sample** worksheet, populates a table, and adds the **Bicycle Part Production** chart that the rest of this article uses.
+
+```js
 async function setup() {
-  await Excel.run(async (context) => {
-    context.workbook.worksheets.getItemOrNullObject("Sample").delete();
-    const sheet = context.workbook.worksheets.add("Sample");
+    await Excel.run(async (context) => {
+        const existingSheet = context.workbook.worksheets.getItemOrNullObject("Sample");
+        await context.sync();
 
-    let salesTable = sheet.tables.add("A1:E1", true);
-    salesTable.name = "SalesTable";
+        if (!existingSheet.isNullObject) {
+            existingSheet.delete();
+            await context.sync();
+        }
 
-    salesTable.getHeaderRowRange().values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"]];
+        const sheet = context.workbook.worksheets.add("Sample");
 
-    salesTable.rows.add(null, [
-      ["Frames", 5000, 7000, 6544, 5377],
-      ["Saddles", 400, 323, 276, 1451],
-      ["Brake levers", 9000, 8766, 8456, 9812],
-      ["Chains", 1550, 1088, 692, 2553],
-      ["Mirrors", 225, 600, 923, 344],
-      ["Spokes", 6005, 7634, 4589, 8765]
-    ]);
+        const salesTable = sheet.tables.add("A1:E1", true);
+        salesTable.name = "SalesTable";
 
-    sheet.activate();
-    createChart(context);
-  });
+        salesTable.getHeaderRowRange().values = [["Product", "Qtr1", "Qtr2", "Qtr3", "Qtr4"]];
+
+        salesTable.rows.add(null, [
+            ["Frames", 5000, 7000, 6544, 5377],
+            ["Saddles", 400, 323, 276, 1451],
+            ["Brake levers", 9000, 8766, 8456, 9812],
+            ["Chains", 1550, 1088, 692, 2553],
+            ["Mirrors", 225, 600, 923, 344],
+            ["Spokes", 6005, 7634, 4589, 8765]
+        ]);
+
+        sheet.activate();
+        await createChart(context);
+    });
 }
 
 async function createChart(context: Excel.RequestContext) {
-  const worksheet = context.workbook.worksheets.getActiveWorksheet();
-  const chart = worksheet.charts.add(
-    Excel.ChartType.lineMarkers,
-    worksheet.getRange("A1:E7"),
-    Excel.ChartSeriesBy.rows
-  );
-  chart.axes.categoryAxis.setCategoryNames(worksheet.getRange("B1:E1"));
-  chart.name = "PartChart";
+    const worksheet = context.workbook.worksheets.getItem("Sample");
+    const chart = worksheet.charts.add(
+        Excel.ChartType.lineMarkers,
+        worksheet.getRange("A1:E7"),
+        Excel.ChartSeriesBy.rows
+    );
 
-  // Place the chart below sample data.
-  chart.top = 125;
-  chart.left = 5;
-  chart.height = 300;
-  chart.width = 450;
+    chart.axes.categoryAxis.setCategoryNames(worksheet.getRange("B1:E1"));
+    chart.name = "PartChart";
 
-  chart.title.text = "Bicycle Part Production";
-  chart.legend.position = "Bottom";
+    // Place the chart below the sample data.
+    chart.top = 125;
+    chart.left = 5;
+    chart.height = 300;
+    chart.width = 450;
 
-  await context.sync();
+    chart.title.text = "Bicycle Part Production";
+    chart.legend.position = "Bottom";
+
+    await context.sync();
 }
 ```
 
-This image shows how the chart should display after running the sample code.
+After the code runs, the worksheet contains a line chart. You add the data labels next.
 
 :::image type="content" source="../images/excel-data-labels-starter-chart.png" alt-text="Screenshot of basic line chart with no data labels, showing six different bicycle parts being produced over four quarters.":::
 
 ## Add data labels
 
-To add data labels to a chart, get the series of data points you want to change, and set the `hasDataLabels` property to `true`.
+Start by turning on data labels for the chart series that you want to highlight. This example gets the **Spokes** series, enables its labels, and positions them above each data point.
 
-```javascript
+```js
 async function addDataLabels() {
-  await Excel.run(async (context) => {
-    const worksheet = context.workbook.worksheets.getActiveWorksheet();
-    const chart = worksheet.charts.getItem("PartChart");
-    await context.sync();
+    await Excel.run(async (context) => {
+        const worksheet = context.workbook.worksheets.getActiveWorksheet();
+        const chart = worksheet.charts.getItem("PartChart");
+        const series = chart.series.getItemAt(5);
 
-    // Get spokes data series.
-    const series = chart.series.getItemAt(5);
+        series.hasDataLabels = true;
+        series.dataLabels.position = Excel.ChartDataLabelPosition.top;
 
-    // Turn on data labels and set location.
-    series.hasDataLabels = true;
-    series.dataLabels.position = Excel.ChartDataLabelPosition.top;
-    await context.sync();
-  });
+        await context.sync();
+    });
 }
 ```
 
+The chart now shows a label for each point in the **Spokes** series.
+
 :::image type="content" source="../images/excel-data-labels-chart.png" alt-text="Screenshot of chart showing data labels that display the amount for each data point.":::
 
-## Format data label size, shape, and text
+## Format label shape and text
 
-You can change attributes on data labels using the following APIs.
+You can customize data labels in several ways:
 
-- Change data label shapes by setting the [geometricShapeType](/javascript/api/excel/excel.chartdatalabel)  property.
-- Change height and width using the [setWidth and setHeight](/javascript/api/excel/excel.chartdatalabel) methods.
-- Change the text using the [text](/javascript/api/excel/excel.chartdatalabel) property.
-- Change the text formatting using the [format](/javascript/api/excel/excel.chartdatalabel) property. You can change the [border, fill, and font](/javascript/api/excel/excel.chartdatalabelformat) properties.
+- Set `geometricShapeType` to change the label shape.
+- Use `setWidth` and `setHeight` to resize labels.
+- Set `text` to replace the displayed value with custom text.
+- Use `format` to change the label's border, fill, and font.
 
-The following code sample shows how to set the shape type, height and width, and font formatting for the data labels.
+### Resize labels and set custom text
 
-```javascript
- await Excel.run(async (context) => {
-    const worksheet = context.workbook.worksheets.getActiveWorksheet();
-    const chart = worksheet.charts.getItem("PartChart");
-    const series = chart.series.getItemAt(5);
+This example changes the **Spokes** data labels to cube shapes, resizes them, and replaces the third label with custom text.
 
-    // Set geometric shape of data labels to cubes.
-    series.dataLabels.geometricShapeType = Excel.GeometricShapeType.cube;
-    series.points.load("count");
-    await context.sync();
-    let pointsLoaded = series.points.count;
-
-    // Change height, width, and font size of all data labels.
-    for (let j = 0; j < pointsLoaded; j++) {
-      series.points.getItemAt(j).dataLabel.setWidth(60);
-      series.points.getItemAt(j).dataLabel.setHeight(30);
-      series.points.getItemAt(j).dataLabel.format.font.size = 12;
-    }
-
-    // Set text of a data label.
-    series.points.getItemAt(2).dataLabel.setWidth(80);
-    series.points.getItemAt(2).dataLabel.setHeight(50);
-    series.points.getItemAt(2).dataLabel.text = "Spokes Qtr3: 4589 ↓";
-
-    await context.sync();
-});
-```
-
-In the following screenshot, the chart now includes *count* data labels for the **Spokes** data, with custom text at the third data point.
-
-:::image type="content" source="../images/excel-data-labels-chart-formats.png" alt-text="Screenshot of chart with data labels set to cubes, new size, and custom text in one of the data labels.":::
-
-You can also change the formatting of text in a data label. The following code sample shows how to use the [getSubstring](/javascript/api/excel/excel.chartdatalabel) method to get part of data label text and apply font formatting.
-
-```javascript
+```js
 await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();
     const chart = worksheet.charts.getItem("PartChart");
     const series = chart.series.getItemAt(5);
 
-    // Get the "Spokes" data label.
-    let label = series.points.getItemAt(2).dataLabel;
+    series.dataLabels.geometricShapeType = Excel.GeometricShapeType.cube;
+    series.points.load("count");
+    await context.sync();
+
+    const pointCount = series.points.count;
+
+    for (let i = 0; i < pointCount; i++) {
+        const label = series.points.getItemAt(i).dataLabel;
+        label.setWidth(60);
+        label.setHeight(30);
+        label.format.font.size = 12;
+    }
+
+    const thirdLabel = series.points.getItemAt(2).dataLabel;
+    thirdLabel.setWidth(80);
+    thirdLabel.setHeight(50);
+    thirdLabel.text = "Spokes Qtr3: 4589 ↓";
+
+    await context.sync();
+});
+```
+
+In the following screenshot, the chart includes custom-sized labels for **Spokes** and custom text for the third data point.
+
+:::image type="content" source="../images/excel-data-labels-chart-formats.png" alt-text="Screenshot of chart with data labels set to cubes, new size, and custom text in one of the data labels.":::
+
+### Format part of a label
+
+If you want to emphasize only part of a label, use the `getSubstring` method. The following example updates the border, highlights **Qtr3**, colors **Spokes** green, colors **4589** red, and moves the label upward.
+
+```js
+await Excel.run(async (context) => {
+    const worksheet = context.workbook.worksheets.getActiveWorksheet();
+    const chart = worksheet.charts.getItem("PartChart");
+    const series = chart.series.getItemAt(5);
+    const label = series.points.getItemAt(2).dataLabel;
+
     label.load();
     await context.sync();
 
-    // Change border weight of this label.
     label.format.border.weight = 2;
-    // Format "Qtr3" as bold and italicized. 
     label.getSubstring(7, 4).font.bold = true;
     label.getSubstring(7, 4).font.italic = true;
-    // Format "Spokes" as green.
     label.getSubstring(0, 6).font.color = "green";
-    // Format "4589" as red.
     label.getSubstring(12).font.color = "red";
-    // Move label up by 15 points.
     label.top = label.top - 15;
 
     await context.sync();
- });
+});
 ```
 
 :::image type="content" source="../images/excel-data-labels-chart-substring.png" alt-text="Screenshot of chart showing data label with Spokes set to green, 4589 set to red, and Qtr3 bold and italicized.":::
 
 ## Format leader lines
 
-Leader lines connect data labels to their respective data points and make it easier to see what they refer to in the chart. Turn leader lines on using the [showLeaderLines](/javascript/api/excel/excel.chartseries) property. You can set the format of leader lines with the [leaderLines.format](/javascript/api/excel/excel.chartleaderlines) property.
+Leader lines help readers connect a data label to its data point when the label sits away from the series. This example turns on leader lines for the **Spokes** series and formats them as orange dotted lines.
 
-```javascript
+```js
 await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();
     const chart = worksheet.charts.getItem("PartChart");
     const series = chart.series.getItemAt(5);
-    
-    // Show leader lines.
+
     series.showLeaderLines = true;
     await context.sync();
-    
-    // Format leader lines as dotted orange lines with weight 2.
+
     series.dataLabels.leaderLines.format.line.lineStyle = Excel.ChartLineStyle.dot;
     series.dataLabels.leaderLines.format.line.color = "orange";
     series.dataLabels.leaderLines.format.line.weight = 2;
+
+    await context.sync();
 });
 ```
 
@@ -186,52 +195,52 @@ await Excel.run(async (context) => {
 
 ## Create callouts
 
-A callout is a data label that connects to the data point using a bubble-shaped pointer. A callout has an anchor which can be moved from the data point to other locations on the chart.
+Use a callout when you want a label to point to a data value while leaving more room around the series itself. The following example changes the series labels to `Excel.GeometricShapeType.wedgeRectCallout` and turns off leader lines so the chart doesn't show two indicators for the same label.
 
-The following code sample shows how to change data labels in a series to use [Excel.GeometricShapeType.wedgeRectCallout](/javascript/api/excel/excel.geometricshapetype). Note that leader lines are turned off to avoid showing two indicators to the same data label.
-
-```javascript
- await Excel.run(async (context) => {
+```js
+await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();
     const chart = worksheet.charts.getItem("PartChart");
     const series = chart.series.getItemAt(5);
 
-    // Change to a wedge rectangle style callout.
     series.dataLabels.geometricShapeType = Excel.GeometricShapeType.wedgeRectCallout;
     series.showLeaderLines = false;
+
     await context.sync();
 });
 ```
 
 :::image type="content" source="../images/excel-data-labels-chart-callout.png" alt-text="Screenshot of chart with data labels formatted as callouts.":::
 
-The following code sample shows how to change the anchor location of a data label.
+You can also move the callout anchor. This example repositions the anchor for the third **Spokes** label.
 
-```javascript
+```js
 await Excel.run(async (context) => {
     const worksheet = context.workbook.worksheets.getActiveWorksheet();
     const chart = worksheet.charts.getItem("PartChart");
     const series = chart.series.getItemAt(5);
+    const label = series.points.getItemAt(2).dataLabel;
 
-    let label = series.points.getItemAt(2).dataLabel;
-    let point = series.points.getItemAt(2);
     label.load();
     await context.sync();
 
-    let anchor = label.getTailAnchor();
+    const anchor = label.getTailAnchor();
     anchor.load();
     await context.sync();
 
     anchor.top = anchor.top - 10;
     anchor.left = 40;
+
+    await context.sync();
 });
 ```
 
-This screenshot demonstrates how the anchor of the third data label is adjusted by the preceding code sample.
+This screenshot shows the anchor for the third data label moved up and left from the original data point.
 
 :::image type="content" source="../images/excel-data-labels-chart-anchor-change.png" alt-text="Screenshot of chart with anchor of Spokes data label moved up and left of the original data point location.":::
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with charts using the Excel JavaScript API](excel-add-ins-charts.md)
+- [Create and customize charts with the Excel JavaScript API](excel-add-ins-charts.md)
+- [Create, read, and manage tables with the Excel JavaScript API](excel-add-ins-tables.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)

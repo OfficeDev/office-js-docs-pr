@@ -2,7 +2,7 @@
 title: Uninstall add-ins under development
 description: Learn how to prevent incomplete uninstallation of add-ins you are developing and how to remove incompletely uninstalled add-ins under development.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 05/19/2025
+ms.date: 06/09/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Incompletely removed add-ins can leave artifacts on your computer, such as custom ribbon buttons or registry entries, during development. In this article, we call these "ghost add-ins".
 
-Outlook add-ins also might add these artifacts to other computers when you sign into Outlook on them with the same ID as you used to develop the add-in.  
+Outlook add-ins can also leave artifacts on other computers when you sign in to Outlook with the same ID that you used during development.
 
    > [!IMPORTANT]
    > When you sign into Outlook, it downloads from Exchange, and sideloads, all the Outlook add-in manifests that are associated with your ID, *including add-ins that you are developing on a different computer using the same ID*. For example, any custom ribbon buttons defined in the manifest will appear for the add-in.
@@ -41,9 +41,9 @@ The following list identifies, for each tool, how to uninstall but doesn't descr
 > Some of these tools don't close the Office application that opened automatically. In that case, close the application manually immediately after ending the session.
 
 - **Yeoman generator for Office Add-ins (Yo Office)**: Use the `npm stop` script at the same command line where you started the session with `npm start`. For more information, see the various articles in the **Get started** and **Quick starts** sections and [Remove a sideloaded add-in](sideload-office-add-ins-for-testing.md).
-- **Microsoft 365 Agents Toolkit for Visual Studio Code**: Select **Run** | **Stop Debugging** in Visual Studio Code. For more information, see the last step of [Create an Outlook Add-in project](../tutorials\outlook-tutorial.md#create-an-outlook-add-in-project) which also applies to non-Outlook add-ins.
-- **office-addin-debugging tool**: Use the `office-addin-debugging stop` command at the same command line where you started the session with `office-addin-debugging start`. For more information, see [Sideload with the Office-Addin-Debugging tool](../testing\sideload-add-in-with-unified-manifest.md#sideload-with-the-office-addin-debugging-tool).
-- **Microsoft 365 Agents Toolkit CLI**: Use the `atk uninstall` command at the same command line where you started the session with `atk install`. For more information, see [Sideload with Microsoft 365 Agents Toolkit CLI](../testing\sideload-add-in-with-unified-manifest.md#sideload-with-microsoft-365-agents-toolkit-cli-command-line-interface).
+- **Microsoft 365 Agents Toolkit for Visual Studio Code**: Select **Run** | **Stop Debugging** in Visual Studio Code. For more information, see the last step of [Create an Outlook Add-in project](../tutorials/outlook-tutorial.md#create-an-outlook-add-in-project), which also applies to non-Outlook add-ins.
+- **office-addin-debugging tool**: Use the `office-addin-debugging stop` command at the same command line where you started the session with `office-addin-debugging start`. For more information, see [Sideload with the Office-Addin-Debugging tool](sideload-add-in-with-unified-manifest.md#sideload-with-the-office-addin-debugging-tool).
+- **Microsoft 365 Agents Toolkit CLI**: Use the `atk uninstall` command at the same command line where you started the session with `atk install`. For more information, see [Sideload with Microsoft 365 Agents Toolkit CLI](sideload-add-in-with-unified-manifest.md#sideload-with-microsoft-365-agents-toolkit-cli-command-line-interface).
 - **Visual Studio**: Select **DEBUG** | **Stop debugging** in the menu, or press <kbd>Shift</kbd>+<kbd>F5</kbd>, or click the square red "stop" button on the debugging bar. Alternatively, closing the Office application also stops the session and uninstalls the add-in. For more information, see [First look at the Visual Studio debugger](/visualstudio/debugger/debugger-feature-tour).
 
 ## Remove a ghost add-in
@@ -56,7 +56,7 @@ To remove a ghost add-in, you need to remove the artifacts that were created whe
 > 1. Obtain the add-in's title ID from the Registry key **HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Wef\Developer\OutlookSideloadManifestPath\TitleId**. (The string "Outlook" is in the key name for historical reasons, but it applies to any add-in installed with the Agents Toolkit CLI.)
 > 1. Run the following command in a command prompt, bash shell, or terminal. Replace "{title ID}" with the title ID of the add-in including the "U_" prefix; for example, `U_90d141c6-cf4f-40ee-b714-9df9ea593f39`.
 >
->    ```command&nbsp;line
+>    ```bash
 >    atk uninstall --mode title-id --title-id {title ID} --interactive false
 >    ```
 
@@ -69,7 +69,7 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
 ### Remove the Exchange registration of a ghost Outlook add-in
 
-1. Log into Outlook with the same ID you used when you sideloaded the add-in.
+1. Sign in to Outlook with the same ID you used when you sideloaded the add-in.
 1. Open PowerShell as an Administrator.
 1. Run the following commands. Answer "Yes" to all confirmation prompts.
 
@@ -118,7 +118,7 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
    #### [Windows](#tab/windows)
 
    1. Open the **Registry Editor**.
-   1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer**. This key lists the add-ins that are currently sideloaded, or were sideloaded in the past and weren't fully uninstalled. The **Data** value for each entry is the path to the add-in's manifest. The **Name** value varies depending on which version of which tool was used to create and sideload the add-in. If Visual Studio was used, the name is typically is also the path to the manifest. For other tools, the name is typically the add-in's ID. When an Office application launches, it reloads all add-ins listed in this key (that support the Office application). Reloading may have no practical or discernable effect if the add-in's artifacts have been deleted from the cache, or the manifest no longer exists at the path, or the add-in's files aren't being served by a server.
+   1. Navigate to **Computer\HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\WEF\Developer**. This key lists the add-ins that are currently sideloaded, or were sideloaded in the past and weren't fully uninstalled. The **Data** value for each entry is the path to the add-in's manifest. The **Name** value varies depending on which version of which tool was used to create and sideload the add-in. If Visual Studio was used, the name is typically also the path to the manifest. For other tools, the name is typically the add-in's ID. When an Office application launches, it reloads all add-ins listed in this key (that support the Office application). Reloading may have no practical or discernible effect if the add-in's artifacts have been deleted from the cache, the manifest no longer exists at the path, or the add-in's files aren't being served by a server.
 
       Find the entry for the ghost add-in and delete it. If it is an Outlook add-in, then you have the ID from [removing the Exchange registration](#remove-the-exchange-registration-of-a-ghost-outlook-add-in). You can also use the path in the **Data** column to find the manifest to help identify the add-in the entry refers to and read the ID from the manifest. If any manifests listed in the **Data** column no longer exist at the specified path, then delete the entries for those manifests.
 

@@ -26,9 +26,9 @@ Data types expand Excel JavaScript API support beyond the four original data typ
 
 Explore data types with the following resources.
 
-1. Learn data types basics in the [Excel data types core concepts](excel-data-types-concepts.md) article.
+1. Learn data types basics in the [Use data types in Excel add-ins](excel-data-types-concepts.md) article.
 1. Install [Script Lab](../overview/explore-with-script-lab.md) in Excel and explore the **Data types** section in our **Samples** library.
-1. Learn how to extend Excel beyond a 2-dimensional grid with the [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md) and [Use cards with cell value data types](excel-data-types-entity-card.md) articles.
+1. Learn how to extend Excel beyond a 2-dimensional grid with the [Add properties to Excel basic cell values](excel-data-types-add-properties-to-basic-cell-values.md) and [Use cards with cell value data types](excel-data-types-entity-card.md) articles.
 1. Try the [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) sample in our [OfficeDev/Office-Add-in-samples](https://github.com/OfficeDev/Office-Add-in-samples) repository.
 1. Learn how to [create your own linked entities](excel-data-types-linked-entity-cell-values.md).
 
@@ -38,8 +38,8 @@ Data types enhance the power of custom functions. Custom functions accept data t
 
 ## See also
 
-- [Excel data types core concepts](excel-data-types-concepts.md)
-- [Add properties to basic cell values](excel-data-types-add-properties-to-basic-cell-values.md)
+- [Use data types in Excel add-ins](excel-data-types-concepts.md)
+- [Add properties to Excel basic cell values](excel-data-types-add-properties-to-basic-cell-values.md)
 - [Use cards with cell value data types](excel-data-types-entity-card.md)
 - [Custom functions and data types](custom-functions-data-types-concepts.md)
 - [Create and explore data types in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer)

@@ -260,7 +260,7 @@ Get the [Script Lab add-in](https://appsource.microsoft.com/product/office/wa104
 
 More information can be found in the following:
 
-- [Word JavaScript Reference API](../reference/overview/word-add-ins-reference-overview.md)
+- [Word JavaScript API reference](/javascript/api/word)
 - Related Word code samples available in [Script Lab](../overview/explore-with-script-lab.md):
   - [Search](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/word/25-paragraph/search.yaml)
   - [Get word count](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/word/25-paragraph/get-word-count.yaml)

@@ -2,6 +2,7 @@
 title: Call Excel JavaScript APIs from a custom function
 description: Learn which Excel JavaScript APIs you can call from your custom function.
 ms.date: 03/20/2023
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -56,7 +57,7 @@ Your custom functions add-in can read information from cells outside the cell ru
 
 ## Next steps
 
-- [Fundamental programming concepts with the Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)
 
 ## See also
 

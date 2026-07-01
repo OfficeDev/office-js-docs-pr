@@ -1,4 +1,4 @@
-﻿---
+---
 title: Excel add-in tutorial
 description: Build an Excel add-in that creates, populates, filters, and sorts a table, creates a chart, freezes a table header, protects a worksheet, and opens a dialog.
 ms.date: 03/23/2026
@@ -1069,7 +1069,7 @@ Open the file **webpack.config.js** in the root directory of the project and com
 In this tutorial, you've created an Excel task pane add-in that interacts with tables, charts, worksheets, and dialogs in an Excel workbook. To learn more about building Excel add-ins, continue to the following article.
 
 > [!div class="nextstepaction"]
-> [Excel add-ins overview](../excel/excel-add-ins-overview.md)
+> [Build Excel add-ins for Excel](../excel/excel-add-ins-overview.md)
 
 ## Code samples
 
@@ -1079,5 +1079,5 @@ In this tutorial, you've created an Excel task pane add-in that interacts with t
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
 - [Develop Office Add-ins](../develop/develop-overview.md)
-- [Excel JavaScript object model in Office Add-ins](../excel/excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](../excel/excel-add-ins-core-concepts.md)
 - [Office Add-ins code samples](https://github.com/OfficeDev/Office-Add-in-samples)

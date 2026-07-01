@@ -1,20 +1,31 @@
 ---
-title: Work with worksheets using the Excel JavaScript API
-description: Code samples that show how to perform common tasks with worksheets using the Excel JavaScript API.
-ms.date: 03/26/2026
+title: Manage Excel worksheets with the JavaScript API
+description: Learn how to get, activate, add, move, filter, protect, and monitor Excel worksheets by using the Excel JavaScript API.
+ms.date: 06/03/2026
 ms.localizationpriority: medium
+ms.topic: how-to
+ai-usage: ai-assisted
 ---
 
-# Work with worksheets using the Excel JavaScript API
+# Manage Excel worksheets with the JavaScript API
 
-This article provides code samples that show how to perform common tasks with worksheets by using the Excel JavaScript API. For the complete list of properties and methods that the `Worksheet` and `WorksheetCollection` objects support, see [Worksheet Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheetcollection).
+Use the `Worksheet` object when your add-in needs to organize workbook tabs, read cells from a specific sheet, react to worksheet events, or protect worksheet data. This article shows common worksheet tasks by using the Excel JavaScript API. For the complete API surface, see [Worksheet Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheet) and [WorksheetCollection Object (JavaScript API for Excel)](/javascript/api/excel/excel.worksheetcollection).
 
 > [!NOTE]
-> This article applies only to regular worksheets. It doesn't apply to "chart" sheets or "macro" sheets.
+> This article applies only to regular worksheets. It doesn't apply to [chart sheets](https://support.microsoft.com/Excel/get-started/create-a-chart-from-start-to-finish) or [macro sheets](https://support.microsoft.com/Excel/working-with-excel-4-0-macros).
+
+In this article, you'll learn how to:
+
+- Get the active worksheet or find worksheets by position.
+- Add, copy, rename, move, hide, or delete worksheets.
+- Read a cell, find text, filter data, and manage protection.
+- Detect worksheet, formula, sort, and protection changes.
+
+If you need workbook-level tasks, see [Manage Excel workbooks with the Excel JavaScript API](excel-add-ins-workbooks.md). If you need to work with the worksheet layout, see [Control worksheet display settings with the Excel JavaScript API](excel-add-ins-worksheet-display.md).
 
 ## Get worksheets
 
-The following code sample gets the collection of worksheets, loads the `name` property of each worksheet, and writes a message to the console.
+Use `context.workbook.worksheets` when your add-in needs the worksheet collection for the current workbook. The following example loads the `name` property of each worksheet and writes the results to the console.
 
 ```js
 await Excel.run(async (context) => {
@@ -22,7 +33,7 @@ await Excel.run(async (context) => {
     sheets.load("items/name");
 
     await context.sync();
-    
+
     if (sheets.items.length > 1) {
         console.log(`There are ${sheets.items.length} worksheets in the workbook:`);
     } else {
@@ -36,11 +47,11 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> The `id` property of a worksheet uniquely identifies the worksheet in a given workbook. Its value stays the same even when you rename or move the worksheet. When you delete a worksheet from a workbook in Excel on Mac, the `id` of the deleted worksheet might be reassigned to a new worksheet that you create.
+> The `id` property of a worksheet uniquely identifies the worksheet in a given workbook. Its value stays the same even when you rename or move the worksheet. If you delete a worksheet from a workbook in Excel on Mac, the `id` of the deleted worksheet might be reassigned to a new worksheet that you create.
 
 ## Get the active worksheet
 
-The following code sample gets the active worksheet, loads its `name` property, and writes a message to the console.
+Use `getActiveWorksheet()` when your add-in needs the sheet the user is currently working in. The following example loads the worksheet name and writes it to the console.
 
 ```js
 await Excel.run(async (context) => {
@@ -54,7 +65,7 @@ await Excel.run(async (context) => {
 
 ## Set the active worksheet
 
-The following code sample sets the active worksheet to the worksheet named **Sample**, loads its `name` property, and writes a message to the console. If there's no worksheet with that name, the `activate()` method throws an `ItemNotFound` error.
+Use `activate()` to switch the Excel UI to a specific worksheet. The following example activates the worksheet named **Sample**, then loads its `name` property and writes it to the console. If there's no worksheet with that name, the `activate()` method throws an `ItemNotFound` error.
 
 ```js
 await Excel.run(async (context) => {
@@ -187,7 +198,7 @@ await Excel.run(async (context) => {
 ```
 
 > [!NOTE]
-> You can't delete a worksheet with a visibility of "[Very Hidden](/javascript/api/excel/excel.sheetvisibility)" by using the `delete` method. If you want to delete the worksheet, you must first change the visibility.
+> You can't delete a worksheet with a visibility of [Very Hidden](/javascript/api/excel/excel.sheetvisibility) by using the `delete` method. To delete the worksheet, first change its visibility.
 
 ## Rename a worksheet
 
@@ -252,9 +263,9 @@ await Excel.run(async (context) => {
 });
 ```
 
-## Get a single cell within a worksheet
+## Get a cell in a worksheet
 
-The following code sample gets the cell that is located in row 2, column 5 of the worksheet named **Sample**, loads its `address` and `values` properties, and writes a message to the console. The values that you pass into the `getCell(row: number, column:number)` method are the zero-indexed row number and column number for the cell that you want to retrieve.
+Use `getCell(row, column)` when you know the zero-based row and column indexes. The following example gets row 2, column 5 from the worksheet named **Sample**, then loads the cell `address` and `values` properties.
 
 ```js
 await Excel.run(async (context) => {
@@ -290,7 +301,7 @@ function onWorksheetChanged(eventArgs) {
 
 ## Detect formula changes
 
-Your add-in can track changes to formulas in a worksheet. This feature is useful when a worksheet connects to an external database. When the formula changes in the worksheet, the event in this scenario triggers corresponding updates in the external database.
+Your add-in can track changes to formulas in a worksheet. This tracking is useful when worksheet formulas control data in another system, such as an external database. When a formula changes, your add-in can use the event to trigger a corresponding update.
 
 To detect changes to formulas, [register an event handler](excel-add-ins-events.md#register-an-event-handler) for the [onFormulaChanged](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-onformulachanged-member) event of a worksheet. Event handlers for the `onFormulaChanged` event receive a [WorksheetFormulaChangedEventArgs](/javascript/api/excel/excel.worksheetformulachangedeventargs) object when the event fires.
 
@@ -299,18 +310,17 @@ To detect changes to formulas, [register an event handler](excel-add-ins-events.
 
 The following code sample shows how to register the `onFormulaChanged` event handler, use the `WorksheetFormulaChangedEventArgs` object to retrieve the [formulaDetails](/javascript/api/excel/excel.worksheetformulachangedeventargs#excel-excel-worksheetformulachangedeventargs-formuladetails-member) array of the changed formula, and then print out details about the changed formula with the [FormulaChangedEventDetail](/javascript/api/excel/excel.formulachangedeventdetail) properties.
 
-> [!NOTE]
-> This code sample only works when a single formula is changed.
+This code sample assumes that only one formula changes at a time.
 
 ```js
 async function run() {
     await Excel.run(async (context) => {
         // Retrieve the worksheet named "Sample".
         let sheet = context.workbook.worksheets.getItem("Sample");
-    
+
         // Register the formula changed event handler for this worksheet.
         sheet.onFormulaChanged.add(formulaChangeHandler);
-    
+
         await context.sync();
     });
 }
@@ -318,17 +328,17 @@ async function run() {
 async function formulaChangeHandler(event) {
     await Excel.run(async (context) => {
         // Retrieve details about the formula change event.
-        // Note: This method assumes only a single formula is changed at a time. 
+        // Note: This method assumes only a single formula is changed at a time.
         let cellAddress = event.formulaDetails[0].cellAddress;
         let previousFormula = event.formulaDetails[0].previousFormula;
         let source = event.source;
-    
+
         // Print out the change event details.
         console.log(
-          `The formula in cell ${cellAddress} changed. 
-          The previous formula was: ${previousFormula}. 
+          `The formula in cell ${cellAddress} changed.
+          The previous formula was: ${previousFormula}.
           The source of the change was: ${source}.`
-        );         
+        );
     });
 }
 ```
@@ -337,8 +347,7 @@ async function formulaChangeHandler(event) {
 
 The `onColumnSorted` and `onRowSorted` events indicate when any worksheet data is sorted. These events connect to individual `Worksheet` objects and to the workbook's `WorkbookCollection`. They fire whether the sorting is done programmatically or manually through the Excel user interface.
 
-> [!NOTE]
-> The `onColumnSorted` event fires when columns are sorted as the result of a left-to-right sort operation. The `onRowSorted` event fires when rows are sorted as the result of a top-to-bottom sort operation. Sorting a table by using the drop-down menu on a column header results in an `onRowSorted` event. The event corresponds with what is moving, not what is being considered as the sorting criteria.
+The `onColumnSorted` event fires when columns are sorted as the result of a left-to-right sort operation. The `onRowSorted` event fires when rows are sorted as the result of a top-to-bottom sort operation. Sorting a table by using the drop-down menu on a column header results in an `onRowSorted` event. The event corresponds to what is moving, not to the sorting criteria.
 
 The `onColumnSorted` and `onRowSorted` events provide their callbacks with [WorksheetColumnSortedEventArgs](/javascript/api/excel/excel.worksheetcolumnsortedeventargs) or [WorksheetRowSortedEventArgs](/javascript/api/excel/excel.worksheetrowsortedeventargs), respectively. These objects give more details about the event. In particular, both `EventArgs` have an `address` property that represents the rows or columns moved as a result of the sort operation. The property includes any cell with sorted content, even if that cell's value wasn't part of the sorting criteria.
 
@@ -363,7 +372,7 @@ await Excel.run(async (context) => {
     // This will fire whenever a row has been moved as the result of a sort action.
     sheet.onRowSorted.add(async (event) => {
         await Excel.run(async (context) => {
-            console.log("Row sorted: " + event.address);
+            console.log(`Row sorted: ${event.address}`);
             let sheet = context.workbook.worksheets.getActiveWorksheet();
 
             // Clear formatting for section, then highlight the sorted area.
@@ -409,7 +418,7 @@ An [AutoFilter](/javascript/api/excel/excel.autofilter) applies data filters acr
 - `columnIndex`: The zero-based column index against which the filter criteria is evaluated.
 - `criteria`: A [FilterCriteria](/javascript/api/excel/excel.filtercriteria) object determining which rows should be filtered based on the column's cell.
 
-The first code sample shows how to add a filter to the worksheet's used range. This filter hides entries that aren't in the top 25%, based on the values in column **3**.
+The first code sample shows how to add a filter to the worksheet's used range. This filter hides entries that aren't in the top 25%, based on the values in column index `3` (the fourth column).
 
 ```js
 // This method adds a custom AutoFilter to the active worksheet
@@ -435,7 +444,7 @@ await Excel.run(async (context) => {
 });
 ```
 
-The following code sample shows how to use the `clearColumnCriteria` method to clear the auto-filter from only one column, while leaving the filter active on other columns.
+The following code sample shows how to use the `clearColumnCriteria` method to clear the auto-filter from only one column while leaving the filter active on other columns. This example clears the filter on column index `3`.
 
 ```js
 // This method clears the AutoFilter setting from one column.
@@ -460,11 +469,11 @@ await Excel.run(async (context) => {
 });
 ```
 
-You can also apply an `AutoFilter` to individual tables. For more information, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md#autofilter).
+You can also apply an `AutoFilter` to individual tables. For more information, see [Work with tables using the Excel JavaScript API](excel-add-ins-tables.md#filter-a-table-with-autofilter).
 
-## Data protection
+## Protect worksheet data
 
-Your add-in can control a user's ability to edit data in a worksheet. The worksheet's `protection` property is a [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) object with a `protect()` method. The following example shows a basic scenario toggling the complete protection of the active worksheet.
+Use the worksheet's `protection` property when your add-in needs to control whether users can edit worksheet data. The `protection` property is a [WorksheetProtection](/javascript/api/excel/excel.worksheetprotection) object with a `protect()` method. The following example shows a basic scenario that toggles protection for the active worksheet.
 
 ```js
 await Excel.run(async (context) => {
@@ -497,14 +506,14 @@ async function run() {
     await Excel.run(async (context) => {
         // Retrieve the worksheet named "Sample".
         let sheet = context.workbook.worksheets.getItem("Sample");
-    
+
         // Register the onProtectionChanged event handler.
         sheet.onProtectionChanged.add(checkProtection);
         await context.sync();
     });
 }
 
-// This function is an event handler that returns the protection state of a worksheet 
+// This function is an event handler that returns the protection state of a worksheet
 // and information about the changed worksheet.
 async function checkProtection(event) {
     await Excel.run(async (context) => {
@@ -514,13 +523,13 @@ async function checkProtection(event) {
         let source = event.source;
 
         // Print the event properties to the console.
-        console.log("Protection status changed. Protection status is now: " + protectionStatus);
-        console.log("    ID of changed worksheet: " + worksheetId);
-        console.log("    Source of change event: " + source);    
+        console.log(`Protection status changed. Protection status is now: ${protectionStatus}`);
+        console.log(`    ID of changed worksheet: ${worksheetId}`);
+        console.log(`    Source of change event: ${source}`);
     });
 }
 ```
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)

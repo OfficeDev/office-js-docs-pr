@@ -30,6 +30,7 @@
         "excel-js-1.18",
         "excel-js-1.19",
         "excel-js-1.20",
+        "excel-js-1.21",
         "excel-js-desktop-1.1",
         "excel-js-online",
         "onenote-js-1.1",
@@ -49,6 +50,7 @@
         "outlook-js-1.13",
         "outlook-js-1.14",
         "outlook-js-1.15",
+        "outlook-js-1.16",
         "powerpoint-js-preview",
         "powerpoint-js-1.1",
         "powerpoint-js-1.2",
@@ -117,12 +119,6 @@
       "path_to_root": "docs/reusable-content",
       "url": "https://github.com/MicrosoftDocs/reusable-content/",
       "branch": "main",
-      "branch_mapping": {}
-    },
-    {
-      "path_to_root": "docs/Outlook-Add-in-GifMe",
-      "url": "https://github.com/OfficeDev/Outlook-Add-in-GifMe",
-      "branch": "master",
       "branch_mapping": {}
     }
   ],

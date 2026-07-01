@@ -2,6 +2,7 @@
 title: Work with PivotTables using the Excel JavaScript API
 description: Learn how to create, configure, and filter PivotTables programmatically with the Excel JavaScript API.
 ms.date: 09/22/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -598,5 +599,5 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [Excel JavaScript API Reference](/javascript/api/excel)

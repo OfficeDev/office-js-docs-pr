@@ -2,6 +2,7 @@
 title: Work with multiple ranges simultaneously in Excel add-ins
 description: Learn how the Excel JavaScript library enables your add-in to perform operations, and set properties, on multiple ranges simultaneously.
 ms.date: 09/22/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -191,6 +192,6 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Fundamental programming concepts with the Excel JavaScript API](../reference/overview/excel-add-ins-reference-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)
 - [Read or write to a large range using the Excel JavaScript API](excel-add-ins-ranges-large.md)
 - [Read or write to an unbounded range using the Excel JavaScript API](excel-add-ins-ranges-unbounded.md)

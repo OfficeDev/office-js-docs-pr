@@ -1,13 +1,14 @@
 ﻿---
 title: Create notifications for your Outlook add-in
-description: Learn about the types of notification messages you can create for your Outlook add-in.
-ms.date: 05/29/2025
+description: Learn how to create and manage notification messages in Outlook add-ins, including how to use ErrorMessage, InformationalMessage, InsightMessage, and ProgressIndicator notification types.
+ms.date: 06/26/2026
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Create notifications for your Outlook add-in
 
-Implement notification messages for your Outlook add-in to keep your users informed about important events, feedback, or errors with minimal disruption to their workflow.
+Notification messages let your Outlook add-in surface status updates, errors, and actionable insights directly on a mail item without interrupting the user's workflow. There are four notification types: `ErrorMessage`, `InformationalMessage`, `InsightMessage`, and `ProgressIndicator`. Each type serves a different purpose and has different properties and supported platforms.
 
 > [!NOTE]
 > Support for the notifications API was introduced in Mailbox requirement set 1.3. Additional features were introduced in later requirement sets. To determine if your client supports these requirement sets, see [Outlook client support](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
@@ -67,6 +68,15 @@ A notification consists of a unique identifier, an icon, and a message. Dependin
 - [InformationalMessage](#informationalmessage)
 - [InsightMessage](#insightmessage)
 - [ProgressIndicator](#progressindicator)
+
+The following table summarizes the key differences.
+
+| Type | Use case | Persistence behavior | Custom icon | Available actions |
+|------|----------|----------|-------------|--------|
+| `ErrorMessage` | Alert for an error or failed operation | Until dismissed or user switches items | No | Dismiss |
+| `InformationalMessage` | Feedback or status update | Optional | Yes (classic Outlook on Windows only) | Dismiss |
+| `InsightMessage` | Recommendation with a custom action | None | Yes (classic Outlook on Windows only) | Custom + Dismiss |
+| `ProgressIndicator` | Ongoing operation progress | None | No | Dismiss |
 
 The following sections describe each notification type, including its [properties](/javascript/api/outlook/office.notificationmessagedetails) and supported platforms.
 

@@ -2,6 +2,7 @@
 title: Insert ranges using the Excel JavaScript API
 description: Learn how to insert a range of cells with the Excel JavaScript API.
 ms.date: 03/03/2026
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -45,8 +46,8 @@ await Excel.run(async (context) => {
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Work with cells using the Excel JavaScript API](excel-add-ins-cells.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Work with Excel cells by using Range objects](excel-add-ins-cells.md)
 - [Clear or delete ranges using the Excel JavaScript API](excel-add-ins-ranges-clear-delete.md)
-- [Set and get range values, text, or formulas using the Excel JavaScript API](excel-add-ins-ranges-set-get-values.md)
+- [Set or get Excel range values, text, and formulas](excel-add-ins-ranges-set-get-values.md)
 - [Cut, copy, and paste ranges using the Excel JavaScript API](excel-add-ins-ranges-cut-copy-paste.md)

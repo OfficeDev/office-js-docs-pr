@@ -57,6 +57,6 @@ Metadata such as title can still be queried for any page.
 ## See also
 
 - [OneNote JavaScript API programming overview](onenote-add-ins-programming-overview.md)
-- [OneNote JavaScript API reference](../reference/overview/onenote-add-ins-javascript-reference.md)
+- [OneNote JavaScript API reference](/javascript/api/onenote)
 - [Sample: Rubric grader task pane add-in for OneNote on the web](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/onenote-add-in-rubric-grader)
 - [Office Add-ins platform overview](../overview/office-add-ins.md)

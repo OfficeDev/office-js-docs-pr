@@ -2,6 +2,7 @@
 title: Add data validation to Excel ranges
 description: Use the Excel JavaScript API to programmatically apply and manage data validation rules for ranges, tables, and structured inputs.
 ms.date: 09/19/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -223,6 +224,6 @@ The range you clear doesn’t need to precisely match the range on which you add
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
 - [DataValidation Object (JavaScript API for Excel)](/javascript/api/excel/excel.datavalidation)
 - [Range Object (JavaScript API for Excel)](/javascript/api/excel/excel.range)

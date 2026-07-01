@@ -8,7 +8,7 @@ ms.localizationpriority: high
 
 # PowerPoint JavaScript object model in Office Add-ins
 
-This article describes concepts that are fundamental to using the [PowerPoint JavaScript API](../reference/overview/powerpoint-add-ins-reference-overview.md) to build add-ins.
+This article describes concepts that are fundamental to using the [PowerPoint JavaScript API](/javascript/api/powerpoint) to build add-ins.
 
 ## Office.js APIs for PowerPoint
 
@@ -35,8 +35,7 @@ For the full set of objects supported by the PowerPoint JavaScript API, see [Pow
 
 ## See also
 
-- [PowerPoint JavaScript API overview](../reference/overview/powerpoint-add-ins-reference-overview.md)
+- [PowerPoint JavaScript API reference](/javascript/api/powerpoint)
 - [Build your first PowerPoint add-in](../quickstarts/powerpoint-quickstart-yo.md)
 - [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial-yo.md)
-- [PowerPoint JavaScript API reference](/javascript/api/powerpoint)
 - [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)

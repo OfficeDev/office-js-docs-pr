@@ -1,78 +1,81 @@
 ---
-title: Calling built-in Excel worksheet functions using the Excel JavaScript API
-description: Learn how to call built-in Excel worksheet functions such as `VLOOKUP` and `SUM` using the Excel JavaScript API.
-ms.date: 02/17/2022
+title: Call Excel worksheet functions from your add-in
+description: Learn how to call built-in Excel worksheet functions from an Excel add-in, use nested formulas, and find the supported functions.
+ms.date: 06/03/2026
+ms.topic: how-to
+ai-usage: ai-assisted
 ms.localizationpriority: medium
 ---
 
-# Call built-in Excel worksheet functions
+# Call Excel worksheet functions from your add-in
 
-This article explains how to call built-in Excel worksheet functions such as `VLOOKUP` and `SUM` using the Excel JavaScript API. It also provides the full list of built-in Excel worksheet functions that can be called using the Excel JavaScript API.
+If your Excel add-in needs the same calculations that users run in cells, call Excel's built-in worksheet functions from the JavaScript API. Use [Workbook.functions](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member) to run functions such as `VLOOKUP` and `SUM`, return the result to your add-in, and combine functions in a single calculation. This article shows the basic pattern, two examples, and a list of supported functions.
 
 > [!NOTE]
-> For information about how to create *custom functions* in Excel using the Excel JavaScript API, see [Create custom functions in Excel](custom-functions-overview.md).
+> For information about creating custom functions with the Excel JavaScript API, see [Create custom functions in Excel](custom-functions-overview.md).
 
-## Calling a worksheet function
+## Call a worksheet function
 
-The following code snippet shows how to call a worksheet function, where `sampleFunction()` is a placeholder that should be replaced with the name of the function to call and the input parameters that the function requires. The `value` property of the `FunctionResult` object that's returned by a worksheet function contains the result of the specified function. As this example shows, you must `load` the `value` property of the `FunctionResult` object before you can read it. In this example, the result of the function is simply being written to the console.
+Use the `Workbook.functions` object to call a built-in worksheet function. Each function method (such as `sum`) returns a `FunctionResult` object. Load its `value` property before you read the result after `context.sync()`.
+
+The following example shows the basic pattern. Replace `sampleFunction()` with the function that you want to call and pass the parameters that the function requires.
 
 ```js
 await Excel.run(async (context) => {
-    let functionResult = context.workbook.functions.sampleFunction();
-    functionResult.load('value');
+    const functionResult = context.workbook.functions.sampleFunction();
+    functionResult.load("value");
 
     await context.sync();
-    console.log('Result of the function: ' + functionResult.value);
+    console.log(`Result of the function: ${functionResult.value}`);
 });
 ```
 
-> [!TIP]
-> See the [Supported worksheet functions](#supported-worksheet-functions) section of this article for a list of functions that can be called using the Excel JavaScript API.
+For the complete list of supported functions, see [Excel.Functions](#supported-worksheet-functions).
 
-## Sample data
+## Use the sample data
 
-The following image shows a table in an Excel worksheet that contains sales data for various types of tools over a three month period. Each number in the table represents the number of units sold for a specific tool in a specific month. The examples that follow will show how to apply built-in worksheet functions to this data.
+The following image shows sales data for different tools across three months. Each number represents the units sold for one tool in one month. The next examples use this data to show how built-in worksheet functions work in an add-in.
 
 :::image type="content" source="../images/worksheet-functions-chaining-results.jpg" alt-text="Sales data in Excel for Hammer, Wrench, and Saw in months November, December, and January.":::
 
-## Example 1: Single function
+## Example: Use `VLOOKUP` to find a value
 
-The following code sample applies the `VLOOKUP` function to the sample data described previously to identify the number of wrenches sold in November.
+This example uses `VLOOKUP` to find the number of wrenches sold in November. The code gets the source range, calls the function, loads the result, and then writes the value to the console.
 
 ```js
 await Excel.run(async (context) => {
-    let range = context.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
-    let unitSoldInNov = context.workbook.functions.vlookup("Wrench", range, 2, false);
-    unitSoldInNov.load('value');
+    const range = context.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
+    const unitsSoldInNov = context.workbook.functions.vlookup("Wrench", range, 2, false);
+    unitsSoldInNov.load("value");
 
     await context.sync();
-    console.log(' Number of wrenches sold in November = ' + unitSoldInNov.value);
+    console.log(`Number of wrenches sold in November = ${unitsSoldInNov.value}`);
 });
 ```
 
-## Example 2: Nested functions
+## Example: Nest `VLOOKUP` inside `SUM`
 
-The following code sample applies the `VLOOKUP` function to the sample data described previously to identify the number of wrenches sold in November and the number of wrenches sold in December, and then applies the `SUM` function to calculate the total number of wrenches sold during those two months.
+This example uses two `VLOOKUP` calls to find the number of wrenches sold in November and December. It then passes both results to `SUM` to calculate the total.
 
-As this example shows, when one or more function calls are nested within another function call, you only need to `load` the final result that you subsequently want to read (in this example, `sumOfTwoLookups`). Any intermediate results (in this example, the result of each `VLOOKUP` function) will be calculated and used to calculate the final result.
+When you nest function calls, load only the final result that you want to read. In this example, you load `sumOfTwoLookups`. Excel calculates the intermediate `VLOOKUP` results and uses them to calculate the final value.
 
 ```js
 await Excel.run(async (context) => {
-    let range = context.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
-    let sumOfTwoLookups = context.workbook.functions.sum(
+    const range = context.workbook.worksheets.getItem("Sheet1").getRange("A1:D4");
+    const sumOfTwoLookups = context.workbook.functions.sum(
         context.workbook.functions.vlookup("Wrench", range, 2, false),
         context.workbook.functions.vlookup("Wrench", range, 3, false)
     );
-    sumOfTwoLookups.load('value');
+    sumOfTwoLookups.load("value");
 
     await context.sync();
-    console.log(' Number of wrenches sold in November and December = ' + sumOfTwoLookups.value);
+    console.log(`Number of wrenches sold in November and December = ${sumOfTwoLookups.value}`);
 });
 ```
 
 ## Supported worksheet functions
 
-The following built-in Excel worksheet functions can be called using the Excel JavaScript API.
+The Excel JavaScript API supports the following built-in Excel worksheet functions.
 
 | Function | Description |
 |:---------------|:-----------|
@@ -437,6 +440,7 @@ The following built-in Excel worksheet functions can be called using the Excel J
 
 ## See also
 
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
+- [Core Excel object model concepts for Office Add-ins](excel-add-ins-core-concepts.md)
+- [Create custom functions in Excel](custom-functions-overview.md)
 - [Functions Class (JavaScript API for Excel)](/javascript/api/excel/excel.functions)
-- [Workbook Functions Object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member)
+- [Workbook functions object (JavaScript API for Excel)](/javascript/api/excel/excel.workbook#excel-excel-workbook-functions-member)

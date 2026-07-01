@@ -1,6 +1,6 @@
 ﻿---
 title: Use the Outlook REST APIs from an Outlook add-in
-description: Learn how to use the Outlook REST APIs from an Outlook add-in to get an access token.
+description: The Outlook REST API v2.0 endpoints are deprecated. Learn how to migrate to Microsoft Graph. For add-ins pending migration, this article covers getCallbackTokenAsync, item ID retrieval, and REST API calls.
 ms.date: 04/22/2025
 ms.topic: how-to
 ms.localizationpriority: medium
@@ -8,14 +8,7 @@ ms.localizationpriority: medium
 
 # Use the Outlook REST APIs from an Outlook add-in
 
-The [Office.context.mailbox.item](/javascript/api/outlook/office.item) namespace provides access to many of the common fields of messages and appointments. However, in some scenarios an add-in may need to access data that isn't exposed by the namespace. For example, the add-in may rely on custom properties set by an outside app, or it needs to search the user's mailbox for messages from the same sender. In these scenarios, the [Outlook REST APIs](/outlook/rest) is the recommended method to retrieve the information.
-
-> [!IMPORTANT]
-> **Outlook REST v2.0 and beta endpoints are deprecated**
->
-> The Outlook REST v2.0 and beta endpoints are now [deprecated](https://devblogs.microsoft.com/microsoft365dev/final-reminder-outlook-rest-api-v2-0-and-beta-endpoints-decommissioning/). However, privately released and Microsoft Marketplace-hosted add-ins are still able to use the REST service until [extended support ends for Outlook 2019 on October 14, 2025](/lifecycle/end-of-support/end-of-support-2025). Traffic from these add-ins is automatically identified for exemption. This exemption also applies to new add-ins developed after March 31, 2024.
->
-> Although add-ins are able to use the REST service until October 2025, we highly encourage you to migrate your add-ins to use [Microsoft Graph](microsoft-graph.md).
+The Outlook REST API v2.0 endpoints are deprecated. For new add-in development, use the [Microsoft Graph REST API](microsoft-graph.md) instead. This article covers the REST API approach for existing add-ins that haven't yet migrated to Microsoft Graph.
 
 ## Get an access token
 
@@ -118,5 +111,7 @@ function getCurrentItem(accessToken) {
 
 ## See also
 
-- [Add-in Command sample](https://github.com/OfficeDev/outlook-add-in-command-demo)
 - [Use the Microsoft Graph REST API from an Outlook add-in](microsoft-graph.md)
+- [Authentication and authorization in Outlook add-ins](authentication.md)
+- [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md)
+- [Add-in Command sample](https://github.com/OfficeDev/outlook-add-in-command-demo)

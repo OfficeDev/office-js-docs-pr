@@ -1,110 +1,114 @@
 ---
-title: Excel add-ins overview
-description: Excel add-in allow you to extend Excel application functionality across multiple platforms including Windows, Mac, iPad, and in a browser.
-ms.date: 03/21/2023
+title: Build Excel add-ins with Office Add-ins
+description: Learn what Excel add-ins are, what you can build, and where to start with the Excel JavaScript API, workbook automation, and custom functions.
+ms.date: 06/03/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ai-usage: ai-assisted
 ---
 
+# Build Excel add-ins for Excel
 
-# Excel add-ins overview
+Use an Excel add-in when you want to automate workbook tasks, connect workbook data to external services, add custom calculations, or guide users with a web-based experience in Excel. Excel add-ins run in Excel on the web, Windows, Mac, and iPad, so you can build one solution for multiple platforms.
 
-An Excel add-in allows you to extend Excel application functionality across multiple platforms including Windows, Mac, iPad, and in a browser. Use Excel add-ins within a workbook to:
+With the Office Add-ins platform and Office.js, you can:
 
-- Interact with Excel objects, read and write Excel data.
-- Extend functionality using web based task pane or content pane
-- Add custom ribbon buttons or contextual menu items
-- Add custom functions
-- Provide richer interaction using dialog window
+- Read and write workbook data, including worksheets, ranges, tables, charts, and named items.
+- Extend the **ribbon** and **context menu** or add a task pane or content pane with web-based UI.
+- Add custom functions that users call from worksheet cells.
+- Open dialog boxes for sign-in, confirmation, and other focused tasks.
 
-The Office Add-ins platform provides the framework and Office.js JavaScript APIs that enable you to create and run Excel add-ins. By using the Office Add-ins platform to create your Excel add-in, you'll get the following benefits.
-
-- **Cross-platform support**: Excel add-ins run in Office on the web, Windows, Mac, and iPad.
-- **Centralized deployment**: Admins can quickly and easily deploy Excel add-ins to users throughout an organization.
-- **Use of standard web technology**: Create your Excel add-in using familiar web technologies such as HTML, CSS, and JavaScript.
-- **Distribution via Microsoft Marketplace**: Share your Excel add-in with a broad audience by publishing it to [Microsoft Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=office).
+The platform also supports centralized deployment, standard web technologies such as HTML, CSS, and JavaScript, and publishing through the [Microsoft Marketplace](https://marketplace.microsoft.com/marketplace/apps?product=office).
 
 > [!NOTE]
-> Excel add-ins are different from COM and VSTO add-ins, which are earlier Office integration solutions that run only in Office on Windows. Unlike COM add-ins, Excel add-ins don't require you to install any code on a user's device, or within Excel.
+> Excel add-ins are different from COM and VSTO add-ins, which run only in Office on Windows. Excel add-ins don't require you to install code on a user's device or in Excel.
 
-## Components of an Excel add-in
+## Start with the most common Excel add-in tasks
 
-An Excel add-in includes two basic components: a web application and a configuration file, called a manifest file.
+If you're new to Excel add-ins, start with the [Excel quickstart](../quickstarts/excel-quickstart-jquery.md). Then use these articles to go deeper into the Excel object model and common workbook scenarios:
 
-The web application uses the [Office JavaScript API](../reference/javascript-api-for-office.md) to interact with objects in Excel, and can also facilitate interaction with online resources. For example, an add-in can perform any of the following tasks.
+- [Learn the Excel JavaScript object model](excel-add-ins-core-concepts.md).
+- [Work with worksheets](excel-add-ins-worksheets.md).
+- [Work with tables](excel-add-ins-tables.md).
+- [Work with charts](excel-add-ins-charts.md).
+- [Create custom functions](custom-functions-overview.md).
 
-- Create, read, update, and delete data in the workbook (worksheets, ranges, tables, charts, named items, and more).
-- Perform user authorization with an online service by using the standard OAuth 2.0 flow.
-- Issue API requests to Microsoft Graph or any other API.
+## What you can build with an Excel add-in
 
-The web application can be hosted on any web server, and can be built using client-side frameworks (such as Angular, React, jQuery) or server-side technologies (such as ASP.NET, Node.js, PHP).
+In addition to working with workbook content, Excel add-ins can add commands, show task panes, define custom functions, open dialog boxes, and embed rich web content in a worksheet.
 
-The [manifest](../develop/add-in-manifests.md) is a configuration file that defines how the add-in integrates with Office clients by specifying settings and capabilities such as:
-
-- The URL of the add-in's web application.
-- The add-in's display name, description, ID, version, and default locale.
-- How the add-in integrates with Excel, including any custom UI that the add-in creates (ribbon buttons, context menus, and so on).
-- Permissions that the add-in requires, such as reading and writing to the document.
-
-To enable end users to install and use an Excel add-in, you must publish its manifest either to Microsoft Marketplace or to an add-ins catalog. For details about publishing to Microsoft Marketplace, see [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
-
-## Capabilities of an Excel add-in
-
-In addition to interacting with the content in the workbook, Excel add-ins can add custom ribbon buttons or menu commands, insert task panes, add custom functions, open dialog boxes, and even embed rich, web-based objects such as charts or interactive visualizations within a worksheet.
+> [!TIP]
+> Some of the terms in this article have specific meanings in the context of Office Add-ins. For definitions of these terms, see the [Office Add-ins glossary](../resources/resources-glossary.md).
 
 ### Add-in commands
 
-Add-in commands are UI elements that extend the Excel UI and start actions in your add-in. You can use add-in commands to add a button on the ribbon or an item to a context menu in Excel. When users select an add-in command, they initiate actions such as running JavaScript code, or showing a page of the add-in in a task pane.
+Add-in commands extend the Excel UI and start actions in your add-in. You can add a button to the **ribbon** or an item to a **context menu**. When users select a command, they can run JavaScript code or open a page from the add-in in a **task pane**.
 
 :::image type="content" source="../images/excel-add-in-commands-script-lab.png" alt-text="Add-in commands in Excel.":::
 
-For more information about command capabilities, supported platforms, and best practices for developing add-in commands, see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md).
+For information about supported platforms and design guidance, see [Add-in commands for Excel, Word, and PowerPoint](../design/add-in-commands.md).
 
 ### Task panes
 
-Task panes are interface surfaces that typically appear on the right side of the window within Excel. Task panes give users access to interface controls that run code to modify the Excel document or display data from a data source.
+The **task pane** interface appears on the right side of the Excel window. It gives users controls that run code, update the workbook, or show data from another source.
 
 :::image type="content" source="../images/excel-add-in-task-pane-insights.png" alt-text="Task pane add-in in Excel.":::
 
-For more information about task panes, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md). For a sample that implements a task pane in Excel, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
+For more information, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md). For a working sample, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends).
 
 ### Custom functions
 
-Custom functions enable developers to add new functions to Excel by defining those functions in JavaScript as part of an add-in. Users within Excel can access custom functions just as they would any native function in Excel, such as `SUM()`.
+Custom functions let you define new worksheet functions in JavaScript as part of an add-in. Users can call them the same way they call built-in functions such as `SUM()`.
 
 :::image type="content" source="../images/SphereVolumeNew.gif" alt-text="Animated image showing an end user inserting the MYFUNCTION.SPHEREVOLUME custom function into a cell of an Excel worksheet.":::
 
-For more information about custom functions, see [Create custom functions in Excel](custom-functions-overview.md).
+For more information, see [Create custom functions in Excel](custom-functions-overview.md).
 
 ### Dialog boxes
 
-Dialog boxes are surfaces that float above the active Excel application window. You can use dialog boxes for tasks such as displaying sign-in pages that can't be opened directly in a task pane, requesting that the user confirm an action, or hosting videos that might be too small if confined to a task pane. To open dialog boxes in your Excel add-in, use the [Dialog API](/javascript/api/office/office.ui).
+Dialog boxes float above the active Excel window. Use them for sign-in flows that can't open directly in a **task pane**, to confirm an action, or to host content that needs more focused space. To open a dialog box in your add-in, use the [Dialog API](/javascript/api/office/office.ui).
 
 :::image type="content" source="../images/excel-add-in-dialog-choose-number.png" alt-text="Add-in dialog box in Excel.":::
 
-For more information about dialog boxes and the Dialog API, see [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
+To learn more, see [Use the Dialog API in your Office Add-ins](../develop/dialog-api-in-office-add-ins.md).
 
 ### Content add-ins
 
-Content add-ins are surfaces that you can embed directly into Excel documents. You can use content add-ins to embed rich, web-based objects such as charts, data visualizations, or media into a worksheet or to give users access to interface controls that run code to modify the Excel document or display data from a data source. Use content add-ins when you want to embed functionality directly into the document.
+A content add-in is embedded directly in a worksheet. Use one when you want users to interact with a chart, data visualization, media experience, or other web content in the document itself.
 
 :::image type="content" source="../images/excel-add-in-content-map.png" alt-text="Content add-in in Excel.":::
 
-For more information about content add-ins, see [Content Office Add-ins](../design/content-add-ins.md). For a sample that implements a content add-in in Excel, see [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in) in GitHub.
+To learn more, see [Content Office Add-ins](../design/content-add-ins.md). For a working sample, see [Excel content add-in: Humongous Insurance](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-content-add-in).
 
-## JavaScript APIs to interact with workbook content
+## What an Excel add-in includes
+
+An Excel add-in has two basic parts: a web application and a manifest.
+
+The web application uses the [Office JavaScript API](../reference/javascript-api-for-office.md) to work with objects in Excel and connect to online resources. For example, the web app can:
+
+- Create, read, update, and delete workbook data.
+- Authenticate users with an online service by using OAuth 2.0.
+- Send requests to Microsoft Graph or another web API.
+
+You can host the web app on any web server and build it with client-side frameworks such as Angular, React, or jQuery, or with server-side technologies such as ASP.NET, Node.js, or PHP.
+
+The [manifest](../develop/add-in-manifests.md) is a configuration file that defines how the add-in integrates with Office. It specifies settings and capabilities such as:
+
+- The URL of the add-in's web application.
+- The add-in's display name, description, ID, version, and default locale.
+- How the add-in integrates with Excel, including custom UI such as **ribbon** buttons and **context menu** items.
+- The permissions that the add-in requires, such as reading or writing document data.
+
+To make an Excel add-in available to users, publish its manifest to Microsoft Marketplace or to an add-ins catalog. For details about Marketplace publishing, see [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace-offers/submit-to-appsource-via-partner-center).
+
+## JavaScript APIs for workbook content
 
 [!include[The roles of the Common and application-specific APIs](../includes/excel-api-models.md)]
-
-## Next steps
-
-Get started by [creating your first Excel add-in](../quickstarts/excel-quickstart-jquery.md). Then, learn about the [core concepts](excel-add-ins-core-concepts.md) of building Excel add-ins.
 
 ## See also
 
 - [Office Add-ins platform overview](../overview/office-add-ins.md)
-- [Learn about Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-)
-- [Developing Office Add-ins](../develop/develop-overview.md)
-- [Excel JavaScript object model in Office Add-ins](excel-add-ins-core-concepts.md)
-- [Excel JavaScript API reference](../reference/overview/excel-add-ins-reference-overview.md)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Excel JavaScript API reference](/javascript/api/excel)
+- [Join the Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program-faq#who-qualifies-for-a-microsoft-365-e5-developer-subscription-)
