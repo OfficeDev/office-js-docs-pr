@@ -1,7 +1,7 @@
 ---
 title: Create an encryption Outlook add-in
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
-ms.date: 06/23/2026
+ms.date: 06/30/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -190,6 +190,63 @@ Office.actions.associate("onMessageDecryptHandler", onMessageDecryptHandler);
 >
 > To easily identify and provide these inline attachments during decryption, we recommend saving the content IDs of inline attachments to the message header during encryption. Call [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)) to get the [content ID](/javascript/api/outlook/office.attachmentdetailscompose#outlook-office-attachmentdetailscompose-contentid-member) of an inline attachment. Then, call [Office.context.mailbox.item.internetHeaders.setAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-setasync-member(1)) to save the ID to the header of the message.
 
+#### Decrypt Outlook item attachments (preview)
+
+Support for decrypting Outlook item attachments (`Office.MailboxEnums.AttachmentType.Item`), particularly email attachments, is available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds. To test this feature using the sample code in this article, update the `onMessageDecryptHandler` function with the following code.
+
+```javascript
+    // Decrypted content and properties of an email attachment.
+    const decryptedEmailFile = "VGhpcyBpcyBhIHRleHQgZmlsZS4=...";
+    const emailFileName = "Fabrikam_Report_202508.eml";
+
+    const decryptedAttachments = [
+        ...
+        {
+            attachmentType: Office.MailboxEnums.AttachmentType.Item,
+            content: decryptedEmailFile,
+            name: emailFileName
+        }
+    ];
+    ...
+```
+
+#### Customize error messages for the decryption operation (preview)
+
+Custom error messages for failed decryption operations are available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds.
+
+If the decryption operation fails, the `allowEvent` property of the `event.completed` call is set to `false`, and Outlook shows the following default notification to the user: "\<Add-in name\> failed to process your message." To specify a custom error message, set the [errorMessage](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-errormessage-member) property of your add-in's `event.completed` call. Your custom message is prefixed with "Error from \<add-in name\>:". If your custom message can't be shown, the default notification is shown instead.
+
+The following code sample shows how to specify a custom error message for your decryption add-in.
+
+```javascript
+event.completed({
+    allowEvent: false,
+    errorMessage: "This message couldn't be decrypted. Contact the Contoso IT team for further assistance."
+});
+```
+
+#### Manage distribution of decrypted content (preview)
+
+To help prevent unauthorized distribution of decrypted content, access control options are available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds.
+
+To limit printing, copying, or saving of decrypted content, include the [accessControls](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-accesscontrols-member) property of the `event.completed` call. Then, set the [allowPrint](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowprint-member), [allowCopyPaste](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowcopypaste-member), and [allowSave](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowsave-member) properties to `false`.
+
+To test this feature using the sample code in this article, update the `event.completed` call of the `onMessageDecryptHandler` function with the following code.
+
+```javascript
+    event.completed({
+        allowEvent: true,
+        emailBody: decryptedBody,
+        attachments: decryptedAttachments,
+        contextData: { messageType: "ReplyFromDecryptedMessage" },
+        accessControls: {
+            allowPrint: false,
+            allowCopyPaste: false,
+            allowSave: false
+        }
+    });
+```
+
 ## Behavior and limitations
 
 - Be aware of the behaviors and limitations of event-based add-ins. To learn more, see [Activate add-ins with events](../develop/event-based-activation.md#behavior-and-limitations).
@@ -201,7 +258,9 @@ Office.actions.associate("onMessageDecryptHandler", onMessageDecryptHandler);
 - An encrypted message must first be decrypted before a user can reply or forward it. A user can't reply or forward an encrypted message while it's being decrypted.
 - If a user navigates to another mail item while an encrypted message is being decrypted, the decryption process stops running. The user must select or open the message again to activate the decryption process.
 - When replying to or forwarding encrypted messages, drafts are saved unencrypted in the **Drafts** folder.
-- The `attachments` property of the `event.completed` method doesn't currently support attachments of type `Office.MailboxEnums.AttachmentType.Item`.
+- The `attachments` property of the `event.completed` method doesn't support attachments of type `Office.MailboxEnums.AttachmentType.Item`, except for preview in Outlook on the web and on Windows (new and classic). To learn more, see [Decrypt Outlook item attachments (preview)](#decrypt-outlook-item-attachments-preview).
+- Custom encryption add-ins can't encrypt messages that are already protected by DRM or S/MIME.
+- In Outlook on the web and the new Outlook on Windows, when encrypted messages are [grouped by conversation](https://support.microsoft.com/outlook/mail/view-email-messages-by-conversation-in-outlook), only the currently selected message from the conversation thread is decrypted. The other messages in the conversation thread remain encrypted until they're selected.
 
 ### Decryption notifications
 
@@ -216,6 +275,9 @@ Add-ins that handle the `OnMessageDecrypt` event automatically display notificat
 | \<Add-in name\> add-in has decrypted your message. | The add-in successfully decrypted the contents of the message. The user can now view the message and its attachments. |
 | \<Add-in name\> is taking longer than expected to process your message. | The add-in has been running for more than five seconds, but less than five minutes. |
 | \<Add-in name\> timed out. To retry, select another email and then return to this message. | The add-in times out after running for five minutes. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageDecrypt` event. |
+| \<Add-in name\> timed out. (preview) | The add-in times out after running for five minutes. This notification includes a **Retry** action so the recipient can retry the decryption operation without switching to another message. This retry feature is available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds. |
+| \<Add-in name\> can't process this message because it's protected by a built-in security feature. | The add-in tries to process a message that's already protected by DRM or S/MIME. |
+| Custom error message (preview) | An error was encountered while the add-in was decrypting the message. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageDecrypt` event. For guidance on how to customize an error message for the decryption operation, see [Customize error messages for the decryption operation (preview)](#customize-error-messages-for-the-decryption-operation-preview). |
 
 ## See also
 
