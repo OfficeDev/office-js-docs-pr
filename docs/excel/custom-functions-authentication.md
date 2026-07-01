@@ -19,8 +19,8 @@ Use [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runti
 The following workflow is typical for custom functions that don't use a shared runtime.
 
 1. A user runs a custom function in an Excel cell.
-1. The custom function uses `OfficeRuntime.dialog` to pass your user credentials to a website.
-1. This website then returns an access token to the page in the dialog.
+1. The custom function calls `OfficeRuntime.displayWebDialog` to open a sign-in page in a dialog, where the user enters their credentials.
+1. The sign-in page then returns an access token to the dialog.
 1. The dialog calls the [Office.ui.messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) function to send the access token to the custom function. For more information about this function, see [Send information from the dialog box to the host page](../develop/dialog-api-in-office-add-ins.md#send-information-from-the-dialog-box-to-the-host-page).
 1. The custom function then sets this access token to an item in the `OfficeRuntime.storage`.
 1. The add-in's task pane accesses the token from `OfficeRuntime.storage`.
@@ -33,7 +33,7 @@ Use the [Using OfficeRuntime.storage in custom functions](https://github.com/Off
 
 ## Dialog API
 
-If a token doesn't exist, you should use the `OfficeRuntime.dialog` API to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored as an item in `OfficeRuntime.storage`.
+If a token doesn't exist, you should use `OfficeRuntime.displayWebDialog` to ask the user to sign in. After a user enters their credentials, the resulting access token can be stored as an item in `OfficeRuntime.storage`.
 
 > [!NOTE]
 > The JavaScript-only runtime uses a dialog object that is slightly different from the dialog object in the browser runtime used by task panes. They're both referred to as the "Dialog API", but use [OfficeRuntime.displayWebDialog](/javascript/api/office-runtime#office-runtime-officeruntime-displaywebdialog-function(1)) to authenticate users in the JavaScript-only runtime, *not* [Office.ui.displayDialogAsync](/javascript/api/office/office.ui#office-office-ui-displaydialogasync-member(1)).
