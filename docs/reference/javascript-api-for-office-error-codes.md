@@ -1,7 +1,7 @@
 ---
 title: Office Common API error codes
 description: This article documents the error messages you might encounter while using the Office Common API.
-ms.date: 09/01/2022
+ms.date: 06/30/2026
 ms.localizationpriority: medium
 ---
 
