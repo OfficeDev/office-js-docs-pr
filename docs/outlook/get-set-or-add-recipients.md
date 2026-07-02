@@ -1,7 +1,7 @@
 ﻿---
 title: Get, set, or add recipients to an appointment or message in Outlook
 description: Learn how to get, set, or add recipients to a message or appointment in an Outlook add-in.
-ms.date: 07/02/2026
+ms.date: 07/07/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
