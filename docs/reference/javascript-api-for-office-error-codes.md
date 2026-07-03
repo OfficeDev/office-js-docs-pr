@@ -1,7 +1,7 @@
 ---
 title: Office Common API error codes
 description: This article documents the error messages you might encounter while using the Office Common API.
-ms.date: 09/01/2022
+ms.date: 06/30/2026
 ms.localizationpriority: medium
 ---
 
@@ -76,10 +76,13 @@ The following table lists the error codes, names, and messages displayed, and th
 |8021|Out of range|The column index value is out of the allowed range. Use a positive value (0 or higher) that's less than the number of columns.|The column index is more than the biggest column index of the table or less than 0.|
 |8022|Out of range|The value is out of the allowed range.|Some of the values in the format are out of the supported ranges.|
 |9016|Permission denied|Permission denied|Access is denied.|
+|9017|GenericTokenError|An internal error has occurred.|If the error details contain "InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information." then this error is caused by calling the `getCallbackTokenAsync` method for a Microsoft 365 online account. The `getCallbackTokenAsync` method is only supported for on-premise accounts.|
+|9018|GenericTokenError|An internal error has occurred.|If the error details contain "InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information." then this error is caused by calling the `getCallbackTokenAsync` method for a Microsoft 365 online account. The `getCallbackTokenAsync` method is only supported for on-premise accounts.|
 |9020|Generic Response Error|An internal error has occurred.|Refers to an internal error condition, which can occur for any number of reasons.|
 |9021|Save Error|Connection error occurred while trying to save the item on the server.|The item couldn't be saved. This could be due to a server connection error if using Online Mode in Outlook desktop, or due to an attempt to re-save a draft item that was deleted from the Exchange server.|
 |9022|Message In Different Store Error|The EWS ID cannot be retrieved because the message is saved in another store.|The EWS ID for the current message couldn't be retrieved as the message may have been moved or the sending mailbox may have changed.|
 |9041|Network error|The user is no longer connected to the network. Please check your network connection and try again.|The user no longer has network or internet access.|
+|9042|GenericTokenError|An internal error has occurred.|If the error details contain "InternalServerError: The Exchange server returned an error. Please look at the diagnostics object for more information." then this error is caused by calling the `getCallbackTokenAsync` method for a Microsoft 365 online account. The `getCallbackTokenAsync` method is only supported for on-premise accounts.|
 |9043|Attachment Type Not Supported|The attachment type is not supported.|The API doesn't support the attachment type. For example, `item.getAttachmentContentAsync` throws this error if the attachment is an embedded image in Rich Text Format, or if it's an item type other than an email or calendar item (such as a contact or task item).|
 |9057|Size Limit Exceeded|A maximum of 32KB is available for the settings of each add-in.|When updating roaming settings via Office.context.roamingSettings.set, the size cannot exceed 32KB. See [Office.RoamingSettings interface](/javascript/api/outlook/office.roamingsettings#outlook-office-roamingsettings-set-member(1)).
 |12002|*Not applicable*|*Not applicable*|One of the following:<br> - No page exists at the URL that was passed to `displayDialogAsync`.<br> - The page that was passed to `displayDialogAsync` loaded, but the dialog box was directed to a page that it cannot find or load, or it has been directed to a URL with invalid syntax. Thrown within the dialog and triggers a `DialogEventReceived` event in the host page.|
