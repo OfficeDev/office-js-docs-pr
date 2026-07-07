@@ -62,7 +62,7 @@ Outlook add-ins that use regular expressions and run in Outlook on Windows (clas
 Excel add-ins have important data transfer limits when interacting with the workbook.
 
 - Excel on the web has a payload size limit for requests and responses of **5MB**. `RichAPI.Error` will be thrown if that limit is exceeded.
-- A range is limited to **5,000,000** cells for read operations.
+- A range is limited to **5,000,000** cells for read operations. When a read exceeds this limit, the API might return `null` instead of throwing an error. For more information, see [Payload size limit best practices](../excel/performance.md#payload-size-limit-best-practices).
 
 If you expect user input will exceed these limits, check the data before calling `context.sync()`. Split the operation into smaller pieces as needed. Call `context.sync()` for each sub-operation to avoid those operations getting batched together again.
 

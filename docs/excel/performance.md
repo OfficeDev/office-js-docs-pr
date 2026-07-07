@@ -126,6 +126,9 @@ await Excel.run(async (context) => {
 
 The Excel JavaScript API has size limitations for API calls. **Excel on the web** limits requests and responses to **5 MB**. The API returns a `RichAPI.Error` error if this limit is exceeded. On all platforms, a range is limited to five million cells for get operations. Large ranges often exceed both limits.
 
+> [!NOTE]
+> When a get operation using `Range.values` exceeds the five-million-cell limit, the API doesn't always throw an error. In some cases, `Range.values` returns `null` instead. To avoid this, check the address of the range before you read `Range.values`. If the range exceeds the limit, read it in multiple smaller batches.
+
 The payload size of a request combines:
 
 - The number of API calls.
