@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 07/06/2026
+ms.date: 07/07/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 07/06/2026_
+_Last updated 07/07/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
@@ -22,7 +22,7 @@ Affected client version: Classic Outlook on Windows Version 2606 (Build 20131.20
 
 #### STATUS
 
-Investigating.
+The fix has been implemented and will be included in subsequent client updates.
 
 #### START DATE
 
