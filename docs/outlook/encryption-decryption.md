@@ -53,8 +53,87 @@ The `OnMessageDecrypt` event is supported on the Message Read surface. Support v
 
 ### Configure the manifest
 
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
 > [!NOTE]
-> The `OnMessageDecrypt` event can currently only be implemented with an add-in only manifest.
+> The `OnMessageDecrypt` event and `"extensions.autoRunEvents.events.options.headerName"` property are in preview with the unified manifest. Don't use the decryption feature with the unified manifest in a production add-in.
+
+In your add-in's **manifest.json** file, you must configure the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array) array and add the [`"extensions.autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array to enable event-based activation in your add-in.
+
+1. Add the following object to the `"extensions.runtimes"` array. Note the following about this markup.
+
+     - The `"id"` of the runtime is set to the descriptive name `"autorun_runtime"`.
+     - The `"code"` property has a child `"page"` property that is set to an HTML file and a child `"script"` property that is set to a JavaScript file. Office uses one of these values depending on the platform.
+         - Outlook on the web and the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+         - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
+         For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+     - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when the event is triggered and shuts down when the handler completes.
+     - [Actions](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) map JavaScript handlers to the `OnMessageSend` and `OnMessageDecrypt` events.
+
+    ```json
+    "runtimes": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "Mailbox",
+                        "minVersion": "1.16"
+                    }
+                ]
+            },
+            "id": "autorun_runtime",
+            "type": "general",
+            "code": {
+                "page": "https://localhost:3000/launchevents.html",
+                "script": "https://localhost:3000/launchevents.js"
+            },
+            "lifetime": "short",
+            "actions": [
+                {
+                    "id": "onMessageSendHandler",
+                    "type": "executeFunction"
+                },
+                {
+                    "id": "onMessageDecryptHandler",
+                    "type": "executeFunction"
+                }
+            ]
+        }
+    ],
+    ```
+
+1. Add the following `"autoRunEvents"` array as a property of the object in the `"extensions"` array. Note the following about this markup.
+
+   - An event object is created for each event that the add-in handles. In this sample, one event object is created for `OnMessageSend` (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](../develop/event-based-activation.md#supported-events)) and another for `OnMessageDecrypt`.
+   - To ensure that the appropriate handler runs when an event occurs, the function name provided in `"actionId"` must match the name used in the `"id"` property of the applicable object in the `"runtimes.actions"` array from an earlier step.
+   - The ["options"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options) property provides additional configuration for the `OnMessageSend` and `OnMessageDecrypt` events.
+       - For `OnMessageSend`, the ["sendMode"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options#sendmode) option specifies whether a user is able to send their message if it doesn't meet an add-in's conditions. In this sample, the `"softBlock"` option is specified. To learn more about send mode options, see the "Available send mode options" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#available-send-mode-options).
+       - For `OnMessageDecrypt`, the ["headerName"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options#headername) option specifies the internet header name used to identify whether a message was encrypted by the add-in. The same header is added to a message that's encrypted by the add-in.
+
+    ```json
+    "autoRunEvents": [
+        {
+            "events": [
+              {
+                  "type": "messageSending",
+                  "actionId": "onMessageSendHandler",
+                  "options": {
+                      "sendMode": "softBlock"
+                  }
+              },
+              {
+                  "type": "OnMessageDecrypt",
+                  "actionId": "onMessageDecryptHandler",
+                  "options": {
+                      "headerName": "contoso-encrypted"
+                  }
+              }
+            ]
+        }
+    ]
+    ```
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To activate your add-in on the `OnMessageDecrypt` event, you must configure the [\<VersionOverridesV1_1\>](/javascript/api/manifest/versionoverrides-1-1-mail) node of your add-in's **manifest.xml** file as follows.
 
@@ -108,6 +187,8 @@ The following is an example of a `<VersionOverrides>` node that implements the `
   </VersionOverrides>
 </VersionOverrides>
 ```
+
+---
 
 ### Implement event handling
 
