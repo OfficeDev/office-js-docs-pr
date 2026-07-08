@@ -1,22 +1,25 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 07/07/2026
+ms.date: 07/08/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 07/07/2026_
+_Last updated 07/08/2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
-## OUTLOOK ISSUE: Classic Outlook on Windows crashes when sending mail items through other applications
+## OUTLOOK ISSUE: Classic Outlook on Windows crashes when using signature add-ins
 
-Some users are reporting that classic Outlook on Windows crashes when sending mail items through applications other than Outlook. For example, using the **Send to** > **Mail recipient** option from a file in File Explorer.
+Some users are reporting that classic Outlook on Windows crashes when using signature add-ins in the following scenarios.
+
+- Sending mail items through applications other than Outlook. For example, using the **Send to** > **Mail recipient** option from a file in File Explorer.
+- Editing an existing calendar item where the user is an organizer.
 
 Affected client version: Classic Outlook on Windows Version 2606 (Build 20131.20090)
 
