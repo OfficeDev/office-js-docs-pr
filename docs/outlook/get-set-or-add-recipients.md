@@ -1,7 +1,7 @@
 ﻿---
 title: Get, set, or add recipients to an appointment or message in Outlook
 description: Learn how to get, set, or add recipients to a message or appointment in an Outlook add-in.
-ms.date: 10/30/2025
+ms.date: 07/07/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -154,22 +154,9 @@ function write(message) {
 > [!TIP]
 > To learn more about asynchronous calls, see [Asynchronous programming in Office Add-ins](../develop/asynchronous-programming-in-office-add-ins.md).
 
-#### Resolved recipients
-
-The `getAsync` method only returns recipients resolved by the Outlook client. A resolved recipient has the following characteristics.
-
-- If the recipient has a saved entry in the sender's address book, Outlook resolves the email address to the recipient's saved display name.
-- A Teams meeting status icon appears before the recipient's name or email address.
-- A semicolon appears after the recipient's name or email address.
-- The recipient's name or email address is underlined or enclosed in a box.
-
-To resolve an email address once it's added to a mail item, the sender must use the <kbd>Tab</kbd> key or select a suggested contact or email address from the auto-complete list.
-
-In Outlook on the web and on Windows (new and classic), if a user creates a new message by selecting a contact's email address link from a contact or profile card, they must first resolve the email address so that it can be included in the results of the `getAsync` call.
-
 ## Set recipients
 
-The [setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) method replaces all existing recipients with a new list. In the `setAsync` call, you must provide an array as the input argument for the `recipients` parameter in of the of the following formats.
+The [setAsync](/javascript/api/outlook/office.recipients#outlook-office-recipients-setasync-member(1)) method replaces all existing recipients with a new list. In the `setAsync` call, you must provide an array as the input argument for the `recipients` parameter in one of the following formats.
 
 - An array of SMTP address strings. For example, `["user@contoso.com", "team@contoso.com"]`.
 - An array of dictionaries, each containing a display name and email address. For example, `[{ displayName: "Megan Bowen", emailAddress: "megan@contoso.com" }]`.
@@ -318,6 +305,23 @@ function addAttendees() {
     }
 }
 ```
+
+## Resolved recipients
+
+All Outlook clients use regular expression rules to resolve or validate email addresses in recipient fields. A resolved recipient has the following characteristics.
+
+- The email address resolves to the recipient's saved display name if the recipient has a saved entry in the sender's address book.
+- A Teams meeting status icon is shown before the recipient's name or email address.
+- A semicolon is shown after the recipient's name or email address.
+- The recipient's name or email address is underlined or enclosed in a box.
+
+To resolve an email address in a recipient field, the sender must use the <kbd>Tab</kbd> key or select a suggested contact or email address from the auto-complete list. Addresses added using the `addAsync` or `setAsync` methods are automatically validated by the Outlook client.
+
+Be mindful of the following behaviors when calling the `getAsync`, `addAsync`, and `setAsync` methods.
+
+- The `getAsync` method only returns recipients resolved by the Outlook client.
+- In Outlook on the web and on Windows (new and classic), if a user creates a new message by selecting a contact's email address link from a contact or profile card, they must first resolve the email address so that it can be included in the results of the `getAsync` call.
+- In Outlook on the web and the new Outlook on Windows, `addAsync` and `setAsync` add both resolved and unresolved email addresses to recipient fields. However, unresolved email addresses prevent an item from being sent until they're resolved or successfully validated. If unresolved recipients are added by a Smart Alerts add-in to any recipient field, the send operation is blocked and an error notification is displayed. The error notification identifies the add-in that added the unresolved recipients and lists the affected email addresses. If a Smart Alerts dialog is shown after selecting **Send**, the error notification is displayed after the dialog is dismissed (by selecting **Send Anyway** or **Don't Send**, or by closing the dialog).
 
 ## See also
 

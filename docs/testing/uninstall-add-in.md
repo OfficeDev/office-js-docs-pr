@@ -75,7 +75,13 @@ If the ghost add-in is not an Outlook add-in, skip to the section [Remove the ad
 
    ```powershell
    Install-Module -Name ExchangeOnlineManagement -RequiredVersion 3.4.0
+   ```
+
+   ```powershell
    Set-ExecutionPolicy RemoteSigned
+   ```
+
+   ```powershell
    Connect-ExchangeOnline
    ```
 

@@ -1,7 +1,6 @@
 ---
 title: Development lifecycle overview
 description: Learn about the planning, developing, testing, and publishing lifecycle events.
-ms.author: lindalu
 ms.topic: overview
 ms.date: 06/11/2025
 ms.localizationpriority: high
