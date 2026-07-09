@@ -533,14 +533,14 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
     
     1. Backspace over the name to clear the chat. 
 
-1.  In the chat, ask the skill to find the table rows with an accelerating growth trend. Somewhere in your prompt, you must mention the full name of the skill in the form `@skill-name`. In this case, use `@accelerating-growth-trend-finder`. The following are examples.
+1. In the chat, ask the skill to find the table rows with an accelerating growth trend. Somewhere in your prompt, you must mention the full name of the skill in the form `@skill-name`. In this case, use `@accelerating-growth-trend-finder`. The following are examples.
 
     ```text
     @accelerating-growth-trend-finder, find rows in this workbook that show an accelerating growth trend.
     ```
 
     ```text
-   Find rows in this workbook that show an accelerating growth trend using @accelerating-growth-trend-finder.
+    Find rows in this workbook that show an accelerating growth trend using @accelerating-growth-trend-finder.
     ```
 
     Copilot should invoke the skill, run `find-accelerating-growth-trend-rows.js`, create charts of the matching rows, and report the matching worksheet row numbers to the chat, similar to the following two images. Copilot responses in the chat are non-deterministic, so you may see differences from what is the screenshot below and from one run of the tool to another.
@@ -559,7 +559,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
     1. Find the **Accelerating Growth Trends** add-in in the list of apps.
     1. Select the add-in to expand its row.
 
-        :::image type="content" source="../images/accelerating-growth-skill-teams-store-entry.png" alt-text="An expanded item from the list of apps and agents installed in Teams. The title is 'Acceleratinig Growth Trends'. Below the title is the description 'Recently used' and below that 'Personal app'. To the right of the item is a trash can icon.:::
+        :::image type="content" source="../images/accelerating-growth-skill-teams-store-entry.png" alt-text="An expanded item from the list of apps and agents installed in Teams. The title is 'Acceleratinig Growth Trends'. Below the title is the description 'Recently used' and below that 'Personal app'. To the right of the item is a trash can icon.":::
     
     1. Select the trash can icon and then select **Remove** in the prompt.
 
