@@ -13,7 +13,7 @@ ai-usage: ai-assisted
 In this tutorial, you create a Copilot skill for Excel that uses the APIs of the Office JavaScript Library (Office.js). The skill finds the first table on the first worksheet that has at least 12 columns and contains only numeric body data, then finds rows in that table whose data embodies an accelerating growth trend. For each matching row, it adds a chart of the rows data to the worksheet.
 
 > [!NOTE]
-> This tutorial assumes that you're familiar with [Create Copilot skills for Excel (preview)](excel-skills.md) and [Build plugins for Copilot Cowork](D:\copilotskills\scripts\plugin-development.md). Although the latter article is in the context of Cowork, the general packaging, manifest, icon, installation, and publishing guidance in that article also applies to Excel skills. This tutorial focuses on the Excel-specific pieces and uses the same plugin package model described in that article.
+> This tutorial assumes that you're familiar with [Create Copilot skills for Excel (preview)](excel-skills.md) and [Build plugins for Copilot Cowork](/microsoft-365/copilot/cowork/cowork-plugin-development). Although the latter article is in the context of Cowork, the general packaging, manifest, icon, installation, and publishing guidance in that article also applies to Excel skills. This tutorial focuses on the Excel-specific pieces and uses the same plugin package model described in that article.
 
 > [!NOTE]
 > Custom skills for Excel are in preview. Don't use them in a production Copilot extension.
@@ -60,7 +60,7 @@ The values are strictly increasing, and the size of the increases also strictly 
 
 ## Prerequisites
 
-Before you start, make sure you have the Microsoft 365 Agents Toolkit CLI as described in [Build plugins for Copilot Cowork](D:\copilotskills\scripts\plugin-development.md#step-7-test).
+Before you start, make sure you have the Microsoft 365 Agents Toolkit CLI as described in [Build plugins for Copilot Cowork - Step 7 Test](/microsoft-365/copilot/cowork/cowork-plugin-development#step-7-test).
 
 ## Task 1: Create the plugin folder
 
@@ -500,7 +500,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
 
 ## Task 9: Test in Excel
 
-1. Install the package by following the testing guidance in [Build plugins for Copilot Cowork](D:\copilotskills\scripts\plugin-development.md#step-7-test). 
+1. Install the package by following the testing guidance in [Build plugins for Copilot Cowork - Step 7 Test](/microsoft-365/copilot/cowork/cowork-plugin-development#step-7-test). 
 1. Create or open a workbook that has at least one table on the first worksheet that meets the following conditions. 
 
     - A header row.
@@ -529,7 +529,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
     1. The **All Skills** option in the drop down that opens will be disabled at first. Wait until it is enabled and then select it. 
     1. In the chat text box, start to type **@accelerating-growth-trend-finder**. The skill should appear in the list of skills.
 
-      :::image type="content" source="../images/accelerating-growth skill-lookup.png" alt-text="A Copilot window in which the "@" symbol followed by the first few letters of the skill name acceleratiing-growth-trend-finder appear. Below this is a dropdown list of skills in which acceleratiing-growth-trend-finder is the only skill listed.":::
+      :::image type="content" source="../images/accelerating-growth skill-lookup.png" alt-text="A Copilot window in which the '@' symbol followed by the first few letters of the skill name accelerating-growth-trend-finder appear. Below this is a dropdown list of skills in which accelerating-growth-trend-finder is the only skill listed.":::
     
     1. Backspace over the name to clear the chat. 
 
@@ -559,7 +559,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
     1. Find the **Accelerating Growth Trends** add-in in the list of apps.
     1. Select the add-in to expand its row.
 
-        :::image type="content" source="../images/accelerating-growth-skill-teams-store-entry.png" alt-text="An expanded item from the list of apps and agents installed in Teams. The title is 'Acceleratinig Growth Trends". Below the title is the description 'Recently used' and below that 'Personal app". To the right of the item is a trash can icon.:::
+        :::image type="content" source="../images/accelerating-growth-skill-teams-store-entry.png" alt-text="An expanded item from the list of apps and agents installed in Teams. The title is 'Acceleratinig Growth Trends'. Below the title is the description 'Recently used' and below that 'Personal app'. To the right of the item is a trash can icon.:::
     
     1. Select the trash can icon and then select **Remove** in the prompt.
 
@@ -568,8 +568,5 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
 | Problem | Likely cause | Fix |
 | --- | --- | --- |
 | The skill does not trigger. | The user request doesn't match the skill description, or the skill package isn't installed. | Reinstall the package. |
-2| Copilot says it cannot run the script. | The skill is running outside Excel. | Open the workbook in Excel and invoke the skill there. |
+| Copilot says it cannot run the script. | The skill is running outside Excel. | Open the workbook in Excel and invoke the skill there. |
 | The wrong table is analyzed. | An earlier table on the first worksheet also qualifies. | Move, rename, or adjust tables so the intended table is the first qualifying table. |
-
-
-

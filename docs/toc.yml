@@ -466,7 +466,7 @@
   - name: Create Copilot skills for Excel (preview)
     items: 
     - name: Overview of Copilot skills for Excel
-      href: excel/excel-skills-overview.md
+      href: excel/excel-skills.md
       displayName: Excel
     - name: Create a Copilot skill for Excel
       href: excel/excel-copilot-skill.md
