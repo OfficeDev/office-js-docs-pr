@@ -1,7 +1,7 @@
 ﻿---
 title: Implement event-based activation in Outlook mobile add-ins
 description: Learn how to develop an Outlook mobile add-in that implements event-based activation.
-ms.date: 05/28/2026
+ms.date: 07/14/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,6 +24,7 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 | `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0 and later)</li><li>iOS (Version 4.2352.0 and later)</li></ul> |
 | `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0 and later)</li><li>iOS (Version 4.2425.0 and later)</li></ul> |
 | `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul> |
+| `OnMessageSend` (preview) | messageSending | Occurs on sending a message. To learn more, see [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md). | <ul><li>iOS (Version 5.2623.0 and later)</li></ul> |
 
 ## Set up your environment
 
@@ -51,15 +52,6 @@ The steps for configuring the manifest depend on which type of manifest you sele
     ],
     ```
 
-1. In the [`"extensions.ribbons.requirements.formFactors"`](/microsoft-365/extensibility/schema/requirements-extension-element#formfactors) array, add `"mobile"` as an item. When you're finished, the array should look like the following.
-
-    ```json
-    "formFactors": [
-        "mobile",
-        <!-- Typically there will be other form factors listed. -->
-    ]
-    ```
-
 1. Add the following [`"autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array as a property of the object in the [`"extensions"`](/microsoft-365/extensibility/schema/root#extensions) array.
 
     ```json
@@ -70,6 +62,7 @@ The steps for configuring the manifest depend on which type of manifest you sele
 
 1. Add an object like the following to the `"autoRunEvents"` array. Note the following about this code:
 
+   - The `"formFactors"` array must contain the `"mobile"` item to enable event-based activation in Outlook on mobile.
    - The `"events"` property maps handlers to events.
    - The `"events.type"` must be one of the types listed at [Supported events and clients](#supported-events-and-clients).
    - The value of the `"events.actionId"` is the name of a function that you create in [Implement the event handler](#implement-the-event-handler).
@@ -86,6 +79,9 @@ The steps for configuring the manifest depend on which type of manifest you sele
               ],
               "scopes": [
                   "mail"
+              ],
+              "formFactors": [
+                  "mobile"
               ]
           },
           "events": [
@@ -318,6 +314,7 @@ As you develop an event-based add-in for Outlook mobile, be mindful of the follo
 - The `OnNewMessageCompose` event doesn't occur when a new message is created using the **Share** option on iOS.
 - When using an event-based add-in that handles the `OnNewMessageCompose` event, if there are no changes made to a new message being composed, a draft won't be saved. This applies even if the add-in adds a signature using the [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1)) method.
 - In an event-based add-in that manages signatures when the `OnNewMessageCompose` event occurs, if you select **Reply** from the bottom of a message, the add-in activates and adds the signature to the message. However, the signature won't be visible in the current view. To view your message with the added signature, expand the compose window to full screen.
+- An add-in that handles the `OnMessageSend` event introduces additional behaviors and limitations. For guidance, see the "Smart Alerts feature behavior and scenarios" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#smart-alerts-feature-behavior-and-scenarios).
 - To enhance your add-in's functionality, you can use supported APIs from later requirement sets in compose mode. For more information, see [Additional supported APIs](#additional-supported-apis).
 
 ## Additional supported APIs
@@ -325,10 +322,12 @@ As you develop an event-based add-in for Outlook mobile, be mindful of the follo
 Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-5), to further extend the capability of your event-based add-in in Outlook mobile, additional APIs from later requirement sets are now supported in compose mode.
 
 - [Office.context.mailbox.item.addFileAttachmentFromBase64Async](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1))
+- [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))
 - [Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))
 - [Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))
+- [Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1)) (preview on mobile)
+- [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)) (preview on mobile)
 - [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))
-- [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))
 - [Office.context.mailbox.item.sessionData](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sessiondata-member)
 
 To learn more about APIs that are supported in Outlook on mobile devices, see [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
@@ -343,3 +342,4 @@ For guidance on how to deploy your event-based add-in, see the "Deploy your add-
 - [Add-ins for Outlook on mobile devices](outlook-mobile-addins.md)
 - [Add mobile support to an Outlook add-in](add-mobile-support.md)
 - [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md)
+- [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)

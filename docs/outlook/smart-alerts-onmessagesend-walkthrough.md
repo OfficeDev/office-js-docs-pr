@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 02/27/2026
+ms.date: 07/14/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,9 @@ Never miss attaching an important document or photo to your message ever again. 
 The following sections walk you through how to develop an event-based add-in that implements [Smart Alerts](onmessagesend-onappointmentsend-events.md) to handle the `OnMessageSend` event. By the end of this walkthrough, your add-in will automatically check for an attached document or picture mentioned in the message and alert you if it's missing before the message is sent.
 
 > [!NOTE]
-> The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms) and the specific sections that describe the features you want to implement.
+>
+> - The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms) and the specific sections that describe the features you want to implement.
+> - Although Outlook on iOS only supports up to Mailbox requirement set 1.5, the `OnMessageSend` event is available for preview on this client starting in Version 5.2623.0. To learn more about this exception, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md) and [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
 
 ## Set up your environment
 
@@ -33,11 +35,11 @@ To configure the manifest, select the tab for the type of manifest you are using
 
 1. Add the following object to the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array. Note the following about this markup:
 
-   - Although the `OnMessageSend` event was introduced in requirement set 1.12, the `"minVersion"` is set to `"1.15"`. This supports the use of Smart Alerts enhancements that were introduced in later requirement sets.
+   - Although the `OnMessageSend` event was introduced in requirement set 1.12, the `"minVersion"` is set to `"1.15"`. This supports the use of Smart Alerts enhancements that were introduced in later requirement sets. In Outlook on iOS, even if the specified requirement set is beyond requirement set 1.5 (the minimum supported set on mobile devices), the add-in will appear and run since the `OnMessageSend` event is supported on this client.
    - The `"id"` of the runtime is set to the descriptive name `"autorun_runtime"`.
    - The `"code"` property has a child `"page"` property that is set to an HTML file and a child `"script"` property that is set to a JavaScript file. You'll create or edit these files in later steps. Office uses one of these values or the other depending on the platform.
        - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
-       - Outlook on the web, on Mac, and on [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+       - Outlook on the web, on Mac, on mobile, and on [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
      For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
    - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when the event is triggered and shuts down when the handler completes. (In certain rare cases, the runtime shuts down before the handler completes. See [Runtimes in Office Add-ins](../testing/runtimes.md).)
    - There is an action to run a handler for the `OnMessageSend` event. You'll create the handler function in a later step.
@@ -127,12 +129,13 @@ To configure the manifest, select the tab for the type of manifest you are using
             <!-- Event-based activation happens in a lightweight runtime.-->
             <Runtimes>
               <!-- HTML file including reference to or inline JavaScript event handlers.
-                   This is used by Outlook on the web and on Mac, and new Outlook on Windows. -->
+                   This is used by Outlook on the web, on Mac, on mobile, and the new Outlook on Windows. -->
               <Runtime resid="WebViewRuntime.Url">
                 <!-- JavaScript file containing event handlers. This is used by classic Outlook on Windows. -->
                 <Override type="javascript" resid="JSRuntime.Url"/>
               </Runtime>
             </Runtimes>
+            <!-- Defines the add-in for Outlook on Windows (new and classic), on Mac, and on the web. -->
             <DesktopFormFactor>
               <!-- Configure other command surface extension points for add-in command support, if needed. -->
               <FunctionFile resid="Commands.Url" />
@@ -173,7 +176,7 @@ To configure the manifest, select the tab for the type of manifest you are using
                   </Group>
                 </OfficeTab>
               </ExtensionPoint>
-              <!-- Enable launching the add-in on the included event. -->
+              <!-- Configures event-based activation. -->
               <ExtensionPoint xsi:type="LaunchEvent">
                 <LaunchEvents>
                   <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="SoftBlock" />
@@ -182,6 +185,17 @@ To configure the manifest, select the tab for the type of manifest you are using
                 <SourceLocation resid="WebViewRuntime.Url"/>
               </ExtensionPoint>
             </DesktopFormFactor>
+            <!-- Defines the add-in for Outlook on mobile. -->
+            <MobileFormFactor>
+              <!-- Configures event-based activation. -->
+              <ExtensionPoint xsi:type="LaunchEvent">
+                <LaunchEvents>
+                  <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="SoftBlock" />
+                </LaunchEvents>
+                <!-- Identifies the runtime to be used. The resid value must match that of the Runtime element that represents the browser runtime. -->
+                <SourceLocation resid="WebViewRuntime.Url"/>
+              </ExtensionPoint>
+            </MobileFormFactor>
           </Host>
         </Hosts>
         <Resources>
@@ -326,15 +340,17 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 >   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
 >   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
 > - In classic Outlook on Windows, when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
-> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support). Because the `errorMessageMarkdown` property isn't supported in Outlook on mobile, the client will use the message specified in the `errorMessage` property instead.
 > - The `errorMessageMarkdown` property is available for preview in Outlook on Mac starting in Version 16.103 (Build 25102433). To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
+> - The [Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1)) and [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)) methods are available for preview in Outlook on iOS starting in Version 5.2623.0. To learn more about APIs from later requirement sets that are supported in Outlook on mobile, see [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
 
 ## Customize the text and functionality of a button in the dialog (optional)
 
 > [!NOTE]
 >
 > - Support to customize a button in the Smart Alerts dialog and program it to open a task pane was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14). The ability to program a button to run a function was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
-> - The ability to program a dialog button to run a function is available to preview in Outlook on Mac starting in Version 16.105 (Build 25121117). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
+> - The ability to program a dialog button to run a function is available for preview in Outlook on Mac starting in Version 16.105 (Build 25121117). To test this feature, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
+> - The ability to customize the text and functionality of a button in the Smart Alerts dialog isn't supported in Outlook on mobile.
 
 If a mail item doesn't meet the conditions of a Smart Alerts add-in, a dialog is shown to the user to alert them that additional actions may be needed before an item can be sent. To provide the user with further guidance on how to meet the conditions of your add-in, you can customize the text of a button in the dialog and program it to open a task pane or run a function.
 
@@ -417,7 +433,8 @@ In this sample, the dialog button is modified to open a task pane.
 
 > [!NOTE]
 >
-> Support to override the send mode option at runtime was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - Support to override the send mode option at runtime was introduced in [requirement set 1.14](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-14). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support).
+> - The ability to override the send mode option isn't supported in Outlook on mobile.
 
 There may be instances when you want your add-in to implement different send mode options. For example, you may want your add-in to enforce the **block** option on mail items that don't meet the information protection policies of your organization, but only have it apply the **prompt user** option to provide a recommendation if a user adds the incorrect recipient.
 
@@ -592,6 +609,7 @@ If you implemented the optional steps to customize a dialog button or override t
 >
 > - The `sendAsync` method was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its supported clients and platforms.
 > - The `sendAsync` method is available for preview in Outlook on Mac starting in Version 16.105 (Build 25121117). To test the method, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
+> - The `sendAsync` method isn't supported in Outlook on mobile.
 
 To further streamline a user's experience when recommending changes to the mail items they're sending, call the `sendAsync` method ([MessageCompose](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sendasync-member(1)), [AppointmentCompose](/javascript/api/outlook/office.appointmentcompose#outlook-office-appointmentcompose-sendasync-member(1))) in your task pane or function command code.
 
@@ -679,7 +697,11 @@ To further streamline a user's experience when recommending changes to the mail 
     npm start
     ```
 
-    [!INCLUDE [outlook-manual-sideloading](../includes/outlook-manual-sideloading.md)]
+    > [!NOTE]
+    >
+    > - When you first use Yeoman generator to develop an Office Add-in, your default browser opens a window where you'll be prompted to sign in to your Microsoft 365 account. If a sign-in window doesn't appear and you encounter a sideloading or login timeout error, run `atk auth login m365` before running `npm start` again.
+    > - If your add-in wasn't automatically sideloaded, follow the instructions in [Sideload Outlook add-ins for testing](../outlook/sideload-outlook-add-ins-for-testing.md#sideload-manually) to manually sideload the add-in in Outlook.
+    > - To run your add-in in Outlook on mobile, your add-in must be hosted on an HTTPS endpoint that's reachable from the mobile device. For guidance, see [Test your Outlook add-in on mobile devices](test-mobile-add-ins.md).
 
 1. In your preferred Outlook client, create a new message and set the subject. In the body, add some text. For example, "Here's a picture of the proposed logo."
 1. Send the message. A dialog appears requesting you to add an attachment. Select **Don't Send**, **Take Action**, or **Add an attachment**. The options available to you depend on your Outlook client and whether you implemented the optional step to customize the dialog button.

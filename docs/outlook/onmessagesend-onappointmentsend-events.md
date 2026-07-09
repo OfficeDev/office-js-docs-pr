@@ -1,7 +1,7 @@
 ﻿---
 title: Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts
 description: Learn about the Smart Alerts implementation and how it handles the OnMessageSend and OnAppointmentSend events in your event-based Outlook add-in.
-ms.date: 04/03/2026
+ms.date: 07/14/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -26,10 +26,12 @@ The following table lists supported client-server combinations for the Smart Ale
 |**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|Yes|
 |**Mac**<br>Version 16.65 (22082700) or later|Yes|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|Not applicable|
-|**iOS**|Not applicable|Not applicable|Not applicable|Not applicable|
+|**iOS**<br>Version 5.2623.0 or later|In preview (`OnMessageSend` only)|Not applicable|Not applicable|Not applicable|
 
 > [!IMPORTANT]
-> Enhancements to the Smart Alerts feature were introduced in later requirement sets. Because of this, the minimum supported Outlook version and build may vary. The requirement sets and versions needed for a feature are mentioned in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) and applicable sections of this article.
+>
+> - Enhancements to the Smart Alerts feature were introduced in later requirement sets. Because of this, the minimum supported Outlook version and build may vary. The requirement sets and versions needed for a feature are mentioned in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) and applicable sections of this article.
+> - Although Outlook on iOS only supports up to Mailbox requirement set 1.5, the `OnMessageSend` event is available for preview on this client. To learn more about this exception, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md) and [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
 
 ## Try out Smart Alerts in an event-based add-in
 
@@ -40,6 +42,9 @@ To see Smart Alerts in action, try out the [walkthrough](smart-alerts-onmessages
 - [Open a task pane or run a function from the dialog](smart-alerts-onmessagesend-walkthrough.md#customize-the-text-and-functionality-of-a-button-in-the-dialog-optional)
 - [Override the send mode option at runtime](smart-alerts-onmessagesend-walkthrough.md#override-the-send-mode-option-at-runtime-optional)
 - [Programmatically send the mail item once it meets your add-in's conditions](smart-alerts-onmessagesend-walkthrough.md#programmatically-send-the-item-from-the-task-pane-optional)
+
+> [!NOTE]
+> Enhancements to the Smart Alerts feature aren't supported in Outlook on mobile devices.
 
 ## Smart Alerts feature behavior and scenarios
 
@@ -341,6 +346,7 @@ In addition to these constraints, be mindful of the following:
   - The icon next to the dialog message.
   - Dialogs that provide information on event processing and progress. For example, the text and options that appear in the timeout and long-running operation dialogs can't be changed.
 - In Outlook on the web and in new Outlook on Windows, the `OnAppointmentSend` event only occurs when a meeting is sent from a separate window. The event doesn't occur when a meeting is sent from an embedded meeting form or when a meeting is forwarded.
+- In Outlook on iOS, only the `OnMessageSend` event is supported.
 
 ### Limitations to formatting the dialog message using Markdown
 
@@ -440,7 +446,7 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 |Attribute|Smart Alerts|On-send|
 |-----|-----|-----|
 |**Minimum supported requirement set**|[Mailbox 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12)|[Mailbox 1.8](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-8)|
-|**Supported Outlook clients**|<ul><li>Windows (new and classic)</li><li>Web browser (modern UI)</li><li>Mac (new UI)</li></ul>|<ul><li>Windows (new and classic)</li><li>Web browser (modern and classic UI)</li><li>Mac (new and classic UI)</li></ul>|
+|**Supported Outlook clients**|<ul><li>Windows (new and classic)</li><li>Web browser (modern UI)</li><li>Mac (new UI)</li><li>iOS (`OnMessageSend` only)</li></ul>|<ul><li>Windows (new and classic)</li><li>Web browser (modern and classic UI)</li><li>Mac (new and classic UI)</li></ul>|
 |**Supported manifest types**|<ul><li>Unified manifest for Microsoft 365</li><li>Add-in only manifest</li></ul>|Add-in only manifest|
 |**Supported events**|**Add-in only manifest**<ul><li>`OnMessageSend`</li><li>`OnAppointmentSend`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>`"messageSending"`</li><li>`"appointmentSending"`</li></ul>|`ItemSend`|
 |**Manifest extension property**|**Add-in only manifest**<ul><li>`LaunchEvent`</li></ul><br>**Unified manifest for Microsoft 365**<ul><li>`"autoRunEvents"`</li></ul>|`Events`|
@@ -452,6 +458,8 @@ While Smart Alerts and the [on-send feature](outlook-on-send-addins.md) provide 
 ## See also
 
 - [Activate add-ins with events](../develop/event-based-activation.md)
+- [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md)
 - [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md)
+- [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Office Add-ins code sample: Office Add-ins code sample: Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories)
 - [Office Add-ins code sample: Verify the sensitivity label of a message](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-verify-sensitivity-label)
