@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 The `OnMessageSend` and `OnAppointmentSend` events take advantage of Smart Alerts, which allows you to run logic after a user selects **Send** in their Outlook message or appointment. With Smart Alerts, users of your add-in can take the opportunity to improve the content of their email, add a missing sensitivity label, or include an important recipient in a meeting invite.
 
-Smart Alerts is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, debug your add-in, and more, see [Activate add-ins with events](../develop/event-based-activation.md).
+Smart Alerts is available through the event-based activation feature. To understand how to configure your add-in to use this feature, use other available events, debug your add-in, and more, see [Activate add-ins with events](../develop/event-based-activation.md). For additional guidance on how to implement the event-based activation feature in Outlook on mobile devices, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md).
 
 > [!NOTE]
 > The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](#supported-clients-and-platforms) and the specific sections in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) that describe the features you want to implement.
@@ -44,7 +44,7 @@ To see Smart Alerts in action, try out the [walkthrough](smart-alerts-onmessages
 - [Programmatically send the mail item once it meets your add-in's conditions](smart-alerts-onmessagesend-walkthrough.md#programmatically-send-the-item-from-the-task-pane-optional)
 
 > [!NOTE]
-> Enhancements to the Smart Alerts feature aren't supported in Outlook on mobile devices.
+> Enhancements to the Smart Alerts feature aren't supported in Outlook on mobile.
 
 ## Smart Alerts feature behavior and scenarios
 
