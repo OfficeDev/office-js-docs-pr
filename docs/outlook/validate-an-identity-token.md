@@ -1,7 +1,7 @@
 ---
 title: Validate an Exchange add-in identity token
-description: Learn how to validate an Exchange user identity token in your Outlook add-in, including claim checking, signature verification, domain validation, and computing a unique user identifier.
-ms.date: 04/14/2026
+description: Learn how to validate an Exchange user identity token for your Outlook add-in, including claim checks, signature verification, domain validation, and unique user ID generation.
+ms.date: 07/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -31,7 +31,7 @@ The header and payload should be Base64-decoded to obtain a JSON representation 
 
 For more information about the contents of the token, see [Inside the Exchange identity token](inside-the-identity-token.md).
 
-After you have the three decoded components, you can proceed with validating the content of the token.
+After you have the three decoded components, validate the token contents.
 
 ## Validate token contents
 
@@ -62,7 +62,7 @@ If your add-in can't verify the `amurl` using any of these options, you may choo
 
 ## Validate the identity token signature
 
-After you know that the JWT contains the required claims, you can proceed with validating the token signature.
+After you confirm that the JWT contains the required claims, validate the token signature.
 
 ### Retrieve the public signing key
 
@@ -113,7 +113,7 @@ After you have the correct public key, verify the signature. The signed data is 
 
 ## Compute the unique ID for an Exchange account
 
-Create a unique identifier for an Exchange account by concatenating the authentication metadata document URL with the Exchange identifier for the account. When you have this unique identifier, use it to create a single sign-on (SSO) system for your Outlook add-in web service. For details about using the unique identifier for SSO, see [Authenticate a user with an identity token in an add-in](authenticate-a-user-with-an-identity-token.md).
+Create a unique identifier for an Exchange account by concatenating the authentication metadata document URL with the Exchange identifier for the account. Use this unique identifier to create a single sign-on (SSO) system for your Outlook add-in's web service. For details about using the unique identifier for SSO, see [Authenticate a user with an identity token in an add-in](authenticate-a-user-with-an-identity-token.md).
 
 ## Use a library to validate the token
 
@@ -124,7 +124,7 @@ Several libraries can parse and validate JWTs. Microsoft provides the `System.Id
 
 ### System.IdentityModel.Tokens.Jwt
 
-The [System.IdentityModel.Tokens.Jwt](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt) library can parse the token and perform the validation, though you'll need to parse the `appctx` claim yourself and retrieve the public signing key.
+The [System.IdentityModel.Tokens.Jwt](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt) library can parse the token and perform validation, but your code still needs to parse the `appctx` claim and retrieve the public signing key.
 
 ```cs
 // Load the encoded token

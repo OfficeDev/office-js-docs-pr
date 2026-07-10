@@ -1,14 +1,14 @@
 ---
 title: Troubleshoot user errors with Office Add-ins
-description: Learn how to troubleshoot user errors in Office Add-ins.
+description: Learn how to troubleshoot common user-facing errors in Office Add-ins, including loading, installation, dialog, and activation issues.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 06/23/2025
+ms.date: 07/10/2026
 ms.localizationpriority: medium
 ---
 
 # Troubleshoot user errors with Office Add-ins
 
-At times your users might encounter issues with Office Add-ins that you develop. For example, an add-in fails to load or is inaccessible. Use the information in this article to help resolve common issues that your users encounter with your Office Add-in.
+Use this article to troubleshoot common user-facing issues with Office Add-ins, such as add-ins that fail to load, can't be installed, or don't behave as expected.
 
 You can also use tools to intercept HTTP messages to identify and debug issues with your add-ins. Popular choices include [Fiddler](https://www.telerik.com/fiddler), [Charles](https://www.charlesproxy.com), and [Requestly](https://requestly.com/downloads).
 
@@ -18,7 +18,7 @@ The following table lists common error messages that users might encounter and s
 
 |Error message|Resolution|
 |:-----|:-----|
-|App error: Catalog could not be reached|Verify firewall settings."Catalog" refers to Microsoft Marketplace. This message indicates that the user cannot access Microsoft Marketplace.|
+|App error: Catalog could not be reached|Verify firewall settings. "Catalog" refers to Microsoft Marketplace. This message indicates that the user can't access Microsoft Marketplace.|
 |APP ERROR: This app could not be started. Close this dialog to ignore the problem or click "Restart" to try again.|Verify that the latest Office updates are installed, or update with the [Windows Installer](/officeupdates/office-updates-msi).|
 |Error: Access denied. `E_ACCESSDENIED (0x80070005)` | The antivirus software installed on the machine might prevent the host app from creating a WebView2 process. To resolve this issue, add an exemption or exclusion to the antivirus for the `.exe` files in the Office root folder (`C:\Program Files\Microsoft Office\root\Office16`) or for the entire Office root folder. If this does not fix the issue, add an exemption or exclusion for the WebView2 process (`C:\Program Files (x86)\Microsoft\EdgeWebView\Application[latest installed version]\msedgewebview2.exe`). |
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to **Tools** > **Compatibility View Settings**.|
@@ -55,12 +55,10 @@ We recommend that you uncheck these settings only to troubleshoot the issue. If 
 
 ## Add-in doesn't activate in Office
 
-If the add-in doesn't activate when the user performs the following steps.
+If the add-in doesn't activate after the user completes the following steps:
 
 1. Signs in with their Microsoft account in the Office application.
-
 1. Enables two-step verification for their Microsoft account.
-
 1. Verifies their identity when prompted when they try to insert an add-in.
 
 Verify that the latest Office updates are installed, or update with the [Windows Installer](/officeupdates/office-updates-msi).
@@ -91,8 +89,8 @@ To add a URL to your list of trusted sites:
 
 This issue occurs when the Dialog API is used in pop-up mode. To prevent this issue from occurring, use the [displayInFrame](/javascript/api/office/office.ui) flag. This requires that your page support display within an iframe. The following example shows how to use the flag.
 
-```js
-Office.context.ui.displayDialogAsync(startAddress, {displayInIFrame:true}, callback);
+```javascript
+Office.context.ui.displayDialogAsync(startAddress, { displayInIFrame: true }, callback);
 ```
 
 ## Add-in won't upgrade
