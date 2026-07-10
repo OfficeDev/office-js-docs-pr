@@ -8,7 +8,7 @@ ms.localizationpriority: high
 ai-usage: ai-assisted
 ---
 
-# Create a Copilot skill for Excel that finds use the Office JavaScript Library (preview)
+# Create a Copilot skill for Excel that uses the Office JavaScript Library (preview)
 
 In this tutorial, you create a Copilot skill for Excel that uses the APIs of the Office JavaScript Library (Office.js). The skill finds the first table on the first worksheet that has at least 12 columns and contains only numeric body data, then finds rows in that table whose data embodies an accelerating growth trend. For each matching row, it adds a chart of the rows data to the worksheet.
 
