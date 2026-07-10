@@ -4,7 +4,6 @@ description: Learn about the key components in the PowerPoint-specific JavaScrip
 ms.date: 07/10/2026
 ms.topic: concept-article
 ms.localizationpriority: high
-ai-usage: ai-assisted
 ---
 
 # PowerPoint JavaScript object model in Office Add-ins
