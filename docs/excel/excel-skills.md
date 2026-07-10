@@ -21,7 +21,7 @@ Start with the section [What you'll build](/microsoft-365/copilot/cowork/cowork-
 *This article provides only supplementary guidance for creating skills that use Office.js to interact with an Excel workbook.*
 
 > [!TIP]
-> Want to jump into coding? Try the tutorial [Create a Copilot skill for Excel that finds use the Office JavaScript Library (preview)](excel-copilot-skill.md).
+> Want to jump into coding? Try the tutorial [Create a Copilot skill for Excel that uses the Office JavaScript Library (preview)](excel-copilot-skill.md).
 
 ## Supplement to Step 1
 
