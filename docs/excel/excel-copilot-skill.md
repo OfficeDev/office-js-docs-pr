@@ -94,7 +94,7 @@ my-copilot-plugin-skills/
     > [!IMPORTANT]
     > The value of the `name` property must exactly match the name of the of the child folder directly under the `skills` folder.
 
-1. Below the frontmatter, add the following Markdown to orient Copilot to the purpose and resources of the skill. You create the two resource files in a latter step.
+1. Below the frontmatter, add the following Markdown to focus Copilot to the purpose and resources of the skill. You create the two resource files in a latter step.
 
     ```md
     # Accelerating growth trend finder
