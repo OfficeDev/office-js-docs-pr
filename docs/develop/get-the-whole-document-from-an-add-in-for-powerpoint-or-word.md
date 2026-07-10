@@ -167,7 +167,7 @@ Use the following procedure to create a simple user interface for the add-in tha
             <title>Publish presentation</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <script src="GetDoc_App.js"></script>
+            <script src="GetDoc_App.js" defer></script>
         </head>
         <body>
             <form>
@@ -194,7 +194,7 @@ Use the following procedure to create a simple user interface for the add-in tha
             <title>Publish document</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
-            <script src="GetDoc_App.js"></script>
+            <script src="GetDoc_App.js" defer></script>
         </head>
         <body>
             <form>
@@ -215,7 +215,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 1. Save the file as **GetDoc_App.html** using UTF-8 encoding to a network location or to a web server.
 
     > [!NOTE]
-    > Be sure that the add-in's `<head>` section contains a `<script>` tag with a valid link to the Office.js file.
+    > Be sure that the add-in's `<head>` section contains a `<script>` tag with a valid link to the Office.js file. The `defer` attribute on the `GetDoc_App.js` `<script>` tag ensures the DOM is fully loaded before the add-in's code runs, so elements like the **Submit** button are available.
 
 1. We'll use some CSS to give the add-in a simple yet modern and professional appearance. Use the following CSS to define the style of the add-in.
 
