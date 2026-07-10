@@ -27,13 +27,13 @@ my-copilot-plugin-skills/
 |-- manifest.json
 |-- color.png
 |-- outline.png
-`-- skills/
-    `-- accelerating-growth-trend-finder/
+|-- skills/
+    |-- accelerating-growth-trend-finder/
         |-- SKILL.md
         |-- resources/
         |   |-- workbook-data-guardrails.md
         |   |-- excel-vs-agent-execution.md
-        `-- scripts/
+        |-- scripts/
             |-- find-accelerating-growth-trend-rows.js
 ```
 
@@ -43,8 +43,8 @@ The Office.js script implements the workbook analysis and editing. The `SKILL.md
 
 For this skill, a row embodies an accelerating growth trend when both of the following are true:
 
-1. Each cell value, beginning with the second column, is higher than the value immediately to its left.
-1. Each increase, beginning with the increase from the second cell to the third cell, is larger than the preceding increase.
+- Each cell value, beginning with the second column, is higher than the value immediately to its left.
+- Each increase, beginning with the increase from the second cell to the third cell, is larger than the preceding increase.
 
 For example, the following row qualifies.
 
@@ -62,16 +62,16 @@ The values are strictly increasing, and the size of the increases also strictly 
 
 Before you start, make sure you have the Microsoft 365 Agents Toolkit CLI as described in [Build plugins for Copilot Cowork - Step 7 Test](/microsoft-365/copilot/cowork/cowork-plugin-development#step-7-test).
 
-## Task 1: Create the plugin folder
+## Task 1: Create the plugin folders
 
 Create the following folders:
 
 ```text
 my-copilot-plugin-skills/
-`-- skills/
-    `-- accelerating-growth-trend-finder/
-        `-- resources/
-        `-- scripts/
+-- skills/
+    -- accelerating-growth-trend-finder/
+        -- resources/
+        -- scripts/
 ```
 
 ## Task 2: Create SKILL.md
@@ -121,6 +121,7 @@ my-copilot-plugin-skills/
 
 1. Below the workflow, add the following sections that give instructions about the output. Note that Copilot recognizes when the JavaScript has ended in an error state and it can compose and report its own error message, such as "No qualifying table was found." But in scenarios where you need Copilot to report the exact error message returned by the code, you can instruct it do do so. The **Copilot chat output** section illustrates both strategies.
 
+    ```md
     ## Workbook output
 
     Let `scripts/find-accelerating-growth-trend-rows.js` create charts, but do not create new worksheets or formulas.
@@ -429,7 +430,7 @@ my-copilot-plugin-skills/
       "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.29/MicrosoftTeams.schema.json",
       "manifestVersion": "1.29",
       "version": "1.0.0",
-      "id": "8d88703c-0409-4e37-b561-bd48bad9fa50",
+      "id": "00000000-0000-0000-0000-000000000000",
       "developer": {
         "name": "Contoso",
         "websiteUrl": "https://www.contoso.com",
@@ -453,7 +454,7 @@ my-copilot-plugin-skills/
     ```
 
 1. Replace the string `1.29` in the first two lines with the number of the latest version of the Microsoft 365 unified manifest schema.
-1. Replace the placeholder GUID with a randomly generated GUID.
+1. Replace the placeholder "id" value with a randomly generated GUID.
 1. Replace developer URLs with values for your app.
 1. Add the following `"agentSkills"` to the root object.
 
@@ -470,12 +471,7 @@ my-copilot-plugin-skills/
 
 ## Task 7: Add icons
 
-Add the required package icons in the root folder `my-copilot-plugin-skills`.
-
-| File | Size | Purpose |
-| --- | --- | --- |
-| `color.png` | 192 x 192 px | Full-color app icon |
-| `outline.png` | 32 x 32 px | Outline app icon |
+Add the required package icons in the root folder `my-copilot-plugin-skills`. For details about the size requirements of the icons, see ["icons"](/microsoft-365/extensibility/schema/root-icons).
 
 > [!TIP]
 > To obtain the required files quickly, use Microsoft 365 Agent Toolkit to create any kind of App for Microsoft 365. The project that is created has the required `color.png` and `outline.png` in it, usually in a folder named `assets`. Copy them into the root of the skill project.
@@ -488,13 +484,13 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
 |-- manifest.json
 |-- color.png
 |-- outline.png
-`-- skills/
-    `-- accelerating-growth-trend-finder/
+|-- skills/
+    |-- accelerating-growth-trend-finder/
         |-- SKILL.md
         |-- resources/
             |-- workbook-data-guardrails.md
             |-- excel-vs-agent-execution.md
-        `-- scripts/
+        |-- scripts/
             |-- find-accelerating-growth-trend-rows.js
 ```
 
@@ -520,16 +516,15 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
     | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 | 110 | 120 |
     | 1 | 97 | 4018 | 22 | 98 | 506 | 83 | 0 | 5.7 | -7 | 11 | 5 |
 
-    The first row should be returned because both the values and increases strictly grow. The second row shouldn't be returned because the increases are constant. The third shouldn't be returned because the values don't strictly grow.
+    The first row meets the critera because both the values and increases strictly grow. The second row doesn't because the increases are constant. The third doesn't because the values don't strictly grow.
 
 1. Open Copilot in Excel.
-
-    1. Verify that your skill is installed with the following steps.
-    1. Select the **+** in the chat area.
+1. Verify that your skill is installed with the following steps.
+    1. Select the **+** icon in the chat area.
     1. The **All Skills** option in the drop down that opens will be disabled at first. Wait until it is enabled and then select it. 
     1. In the chat text box, start to type **@accelerating-growth-trend-finder**. The skill should appear in the list of skills.
 
-      :::image type="content" source="../images/accelerating-growth skill-lookup.png" alt-text="A Copilot window in which the '@' symbol followed by the first few letters of the skill name accelerating-growth-trend-finder appear. Below this is a dropdown list of skills in which accelerating-growth-trend-finder is the only skill listed.":::
+       :::image type="content" source="../images/accelerating-growth skill-lookup.png" alt-text="A Copilot window in which the '@' symbol followed by the first few letters of the skill name accelerating-growth-trend-finder appear. Below this is a dropdown list of skills in which accelerating-growth-trend-finder is the only skill listed.":::
     
     1. Backspace over the name to clear the chat. 
 
@@ -554,7 +549,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
 1. After each test session, uninstall the skill with the following steps. 
 
     1. Open Teams and be sure you're signed in with the same credentials you used to install the skill. 
-    1. On the Teams app bar, select the apps button &mdash; the plus sign in a box.
+    1. On the Teams app bar, select the apps button.
     1. On the **Apps** pane, select **Manage your apps**.
     1. Find the **Accelerating Growth Trends** add-in in the list of apps.
     1. Select the add-in to expand its row.
@@ -567,6 +562,6 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
 
 | Problem | Likely cause | Fix |
 | --- | --- | --- |
-| The skill does not trigger. | The user request doesn't match the skill description, or the skill package isn't installed. | Reinstall the package. |
+| The skill does not trigger. | The user request doesn't match the skill description, or the skill package isn't installed. | Go through the uninstall procedure and then reinstall the package. |
 | Copilot says it cannot run the script. | The skill is running outside Excel. | Open the workbook in Excel and invoke the skill there. |
 | The wrong table is analyzed. | An earlier table on the first worksheet also qualifies. | Move, rename, or adjust tables so the intended table is the first qualifying table. |
