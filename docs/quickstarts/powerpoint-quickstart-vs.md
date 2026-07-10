@@ -1,14 +1,15 @@
 ---
 title: Build your first PowerPoint task pane add-in with Visual Studio
-description: Learn how to build a simple PowerPoint task pane add-in by using the Office JS API and a Visual Studio template.
-ms.date: 06/20/2025
+description: Build a PowerPoint task pane add-in in Visual Studio that inserts an image and text into a slide with the click of a button.
+ms.date: 07/10/2026
 ms.service: powerpoint
 ms.localizationpriority: high
+ai-usage: ai-assisted
 ---
 
 # Build your first PowerPoint task pane add-in with Visual Studio
 
-In this article, you'll walk through the process of building a PowerPoint task pane add-in.
+If you're new to Office Add-ins, this quickstart is a fast way to build one. In about 5 minutes, you'll create a PowerPoint task pane add-in in Visual Studio that inserts an image and text into the selected slide.
 
 ## Prerequisites
 
@@ -30,7 +31,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-## Update the code
+## Add starter markup and script
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
@@ -171,7 +172,7 @@ In this article, you'll walk through the process of building a PowerPoint task p
 
 ## Next steps
 
-Congratulations, you've successfully created a PowerPoint task pane add-in! Next, learn more about the capabilities of a PowerPoint add-in and build a more complex add-in by following along with the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial-vs.md).
+You now have a working PowerPoint task pane add-in that inserts an image and text into a slide. To keep going, explore the capabilities of a PowerPoint add-in and build something more complex with the [PowerPoint add-in tutorial](../tutorials/powerpoint-tutorial-vs.md).
 
 [!include[The common troubleshooting section for all Visual Studio quick starts](../includes/quickstart-troubleshooting-vs.md)]
 
