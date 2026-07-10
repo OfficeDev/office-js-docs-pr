@@ -5,7 +5,6 @@ ms.date: 05/19/2026
 ms.service: powerpoint
 #Customer intent: As a developer, I want to build a PowerPoint add-in that can interact with content in a PowerPoint document.
 ms.localizationpriority: high
-ai-usage: ai-assisted
 ---
 
 # Tutorial: Build a PowerPoint add-in with Visual Studio
