@@ -4,7 +4,7 @@ description: Learn how to create an Excel Copilot skill that uses Office.js.
 ms.date: 07/10/2026
 ms.topic: tutorial
 ms.custom: scenarios:getting-started
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---
 
@@ -13,10 +13,8 @@ ai-usage: ai-assisted
 In this tutorial, you create a Copilot skill for Excel that uses the APIs of the Office JavaScript Library (Office.js). The skill finds the first table on the first worksheet that has at least 12 columns and contains only numeric body data, then finds rows in that table whose data embodies an accelerating growth trend. For each matching row, it adds a chart of the rows data to the worksheet.
 
 > [!NOTE]
-> This tutorial assumes that you're familiar with [Overview of Copilot skills for Excel (preview)](excel-skills.md) and [Build plugins for Copilot Cowork](/microsoft-365/copilot/cowork/cowork-plugin-development). Although the latter article is in the context of Cowork, the general packaging, manifest, icon, installation, and publishing guidance in that article also applies to Excel skills. This tutorial focuses on the Excel-specific pieces and uses the same plugin package model described in that article.
-
-> [!NOTE]
-> Custom skills for Excel are in preview. Don't use them in a production Copilot extension.
+> - This tutorial assumes that you're familiar with [Overview of Copilot skills for Excel (preview)](excel-skills.md) and [Build plugins for Copilot Cowork](/microsoft-365/copilot/cowork/cowork-plugin-development). Although the latter article is in the context of Cowork, the general packaging, manifest, icon, installation, and publishing guidance in that article also applies to Excel skills. This tutorial focuses on the Excel-specific pieces and uses the same plugin package model described in that article.
+> - Custom skills for Excel are in preview. Don't use them in a production Copilot extension.
 
 ## What you'll build
 
@@ -502,7 +500,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
     - Contains a header row.
     - Has at least 12 columns.
     - Contains only numeric values in the table body. (The header row can contain text.)
-    - Have at least the following rows.
+    - Has at least the following rows.
 
       - A row that meets both conditions for an accelerating growth trend, as defined earlier in [Accelerating growth trend definition](#accelerating-growth-trend-definition).
       - A row that meets the first condition, but not the second.
@@ -516,7 +514,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
     | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 | 110 | 120 |
     | 1 | 97 | 4018 | 22 | 98 | 506 | 83 | 0 | 5.7 | -7 | 11 | 5 |
 
-    The first row meets the critera because both the values and increases strictly grow. The second row doesn't because the increases are constant. The third doesn't because the values don't strictly grow.
+    The first row meets the criteria because both the values and increases strictly grow. The second row doesn't because the increases are constant. The third doesn't because the values don't strictly grow.
 
 1. Open Copilot in Excel.
 1. Verify that your skill is installed with the following steps.
@@ -546,6 +544,11 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
          At the top is the user's prompt that reads '@accelerating-growth-trend-finder, find rows in this workbook that show an accelerating growth trend.' Below this Copilot itemizes the four major steps it took with a description of each. In order, they are: '1. Checking workbook-analysis rules. Reviewing the skill guidance so the trend detection is applied to the current Excel table exactly as intended. 2. Preparing chart creation. The workbook qualifies for the requested Excel-based analysis, and the skill’s script will create charts for any matching rows; I’m checking chart guidance before making those workbook changes. 3. Finding accelerating rows. Running the workbook analysis on the first qualifying table and creating a chart for each row whose month-to-month increases get larger every time. 4. Creating matching-row charts. The script is ready; applying it to Sheet1 so the workbook shows the accelerating-growth row visually.' Below this description of steps, Copilot summarizes what it created with the text 'Created 1 chart for an accelerating growth trend.Source: Sheet1!Table1, row Sheet1!2 (Sheet1!B2:M2).'
       :::image-end:::
 
+1. Change the table so that it doesn't qualify; for example, reduce the number of columns to fewer than 12 or put non-numeric data in one of the table body cells.
+1. Repeat your prompt to Copilot. Copilot should compose its own error message and report it in the chat.
+1. Reverse your changes so that the table qualifies again.
+1. Remove any rows that have an accelerating growth trend. 
+1. Repeat the prompt to Copilot. Copilot should report the exact error message in your code: "No rows with an accelerating growth trend were found."
 1. After each test session, uninstall the skill with the following steps. 
 
     1. Open Teams and be sure you're signed in with the same credentials you used to install the skill. 
