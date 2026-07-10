@@ -1,7 +1,7 @@
 ---
 title: Overview of Copilot skills for Excel (preview)
 description: Learn how to create agent skills that call the Office JavaScript Library (Office.js) that can be plugged into Copilot agents in Excel.
-ms.date: 06/25/2026
+ms.date: 07/10/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
