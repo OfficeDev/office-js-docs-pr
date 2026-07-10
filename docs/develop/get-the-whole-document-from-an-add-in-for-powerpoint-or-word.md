@@ -1,9 +1,10 @@
 ---
 title: Get the whole document from an add-in for PowerPoint or Word
 description: Learn to get the whole document from a PowerPoint or Word add-in.
-ms.date: 03/23/2026
+ms.date: 07/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Get the whole document from an add-in for PowerPoint or Word
@@ -155,7 +156,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 
 1. In a new file in the text editor, add the HTML for your selected Office application.
 
-    ### [PowerPoint](#tab/powerpoint)
+   ### [PowerPoint](#tab/powerpoint)
 
     ```html
     <!DOCTYPE html>
@@ -165,7 +166,6 @@ Use the following procedure to create a simple user interface for the add-in tha
             <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
             <title>Publish presentation</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
-            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
             <script src="GetDoc_App.js"></script>
         </head>
@@ -183,7 +183,7 @@ Use the following procedure to create a simple user interface for the add-in tha
     </html>
     ```
 
-    ### [Word](#tab/word)
+   ### [Word](#tab/word)
 
     ```html
     <!DOCTYPE html>
@@ -193,7 +193,6 @@ Use the following procedure to create a simple user interface for the add-in tha
             <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
             <title>Publish document</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
-            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
             <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
             <script src="GetDoc_App.js"></script>
         </head>
@@ -216,7 +215,7 @@ Use the following procedure to create a simple user interface for the add-in tha
 1. Save the file as **GetDoc_App.html** using UTF-8 encoding to a network location or to a web server.
 
     > [!NOTE]
-    > Be sure that the **head** tags of the add-in contains a **script** tag with a valid link to the Office.js file.
+    > Be sure that the add-in's `<head>` section contains a `<script>` tag with a valid link to the Office.js file.
 
 1. We'll use some CSS to give the add-in a simple yet modern and professional appearance. Use the following CSS to define the style of the add-in.
 
@@ -247,35 +246,29 @@ Use the following procedure to create a simple user interface for the add-in tha
 
 ## Add the JavaScript to get the document
 
-In the code for the add-in, a handler to the [Office.initialize](/javascript/api/office#office-office-initialize-function(1)) event adds a handler to the click event of the **Submit** button on the form and informs the user that the add-in is ready.
+In the code for the add-in, the [Office.onReady](/javascript/api/office#office-office-onready-function(1)) function adds a handler to the click event of the **Submit** button on the form and informs the user that the add-in is ready.
 
-The following code example shows the event handler for the `Office.initialize` event along with a helper function, `updateStatus`, for writing to the status div.
+The following code example shows the `Office.onReady` call along with a helper function, `updateStatus`, for writing to the status div.
 
 ```js
-// The initialize or onReady function is required for all add-ins.
-Office.initialize = function (reason) {
+// The onReady function is required for all add-ins.
+Office.onReady(() => {
 
-    // Checks for the DOM to load using the jQuery ready method.
-    $(document).ready(function () {
+    // Run sendFile when the user chooses Submit.
+    document.getElementById("submit").addEventListener("click", sendFile);
 
-        // Run sendFile when Submit is clicked.
-        $('#submit').on("click", function () {
-            sendFile();
-        });
-
-        // Update status.
-        updateStatus("Ready to send file.");
-    });
-}
+    // Update status.
+    updateStatus("Ready to send file.");
+});
 
 // Create a function for writing to the status div.
 function updateStatus(message) {
-    var statusInfo = $('#status');
-    statusInfo[0].innerHTML += message + "<br/>";
+    const statusInfo = document.getElementById("status");
+    statusInfo.innerHTML += message + "<br>";
 }
 ```
 
-When you choose the **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) method. The `getFileAsync` method uses the asynchronous pattern, similar to other methods in the Office JavaScript API. It has one required parameter, _fileType_, and two optional parameters,  _options_ and _callback_.
+When you choose the **Submit** button in the UI, the add-in calls the `sendFile` function, which contains a call to the [Document.getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) method. The `getFileAsync` method uses the asynchronous pattern, similar to other methods in the Office JavaScript API. It has one required parameter, _fileType_, and two optional parameters, _options_ and _callback_.
 
 The _fileType_ parameter expects one of three constants from the [FileType](/javascript/api/office/office.filetype) enumeration: `Office.FileType.Compressed` ("compressed"), `Office.FileType.PDF` ("pdf"), or `Office.FileType.Text` ("text"). The current file type support for each platform is listed under the [Document.getFileType](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) remarks. When you pass in **Compressed** for the _fileType_ parameter, the `getFileAsync` method returns the current document as a PowerPoint presentation file (\*.pptx) or Word document file (\*.docx) by creating a temporary copy of the file on the local computer.
 
@@ -295,13 +288,13 @@ Use the following code to get the current PowerPoint or Word document as a `File
 function sendFile() {
     Office.context.document.getFileAsync("compressed",
         { sliceSize: 100000 },
-        function (result) {
+        (result) => {
 
             if (result.status === Office.AsyncResultStatus.Succeeded) {
 
                 // Get the File object from the result.
-                var myFile = result.value;
-                var state = {
+                const myFile = result.value;
+                const state = {
                     file: myFile,
                     counter: 0,
                     sliceCount: myFile.sliceCount
@@ -316,15 +309,15 @@ function sendFile() {
 }
 ```
 
-The local function `getSlice` makes a call to the `File.getSliceAsync` method to retrieve a slice from the `File` object. The `getSliceAsync` method returns a `Slice` object from the collection of slices. It has two required parameters, _sliceIndex_ and _callback_. The  _sliceIndex_ parameter takes an integer as an indexer into the collection of slices. Like other methods in the Office JavaScript API, the `getSliceAsync` method also takes a callback function as a parameter to handle the results from the method call.
+The local function `getSlice` makes a call to the `File.getSliceAsync` method to retrieve a slice from the `File` object. The `getSliceAsync` method returns a `Slice` object from the collection of slices. It has two required parameters, _sliceIndex_ and _callback_. The _sliceIndex_ parameter takes an integer as an indexer into the collection of slices. Like other methods in the Office JavaScript API, the `getSliceAsync` method also takes a callback function as a parameter to handle the results from the method call.
 
 The `Slice` object gives you access to the data contained in the file. Unless otherwise specified in the _options_ parameter of the `getFileAsync` method, the `Slice` object is 4 MB in size. The `Slice` object exposes three properties: [size](/javascript/api/office/office.slice#office-office-slice-size-member), [data](/javascript/api/office/office.slice#office-office-slice-data-member), and [index](/javascript/api/office/office.slice#office-office-slice-index-member). The `size` property gets the size, in bytes, of the slice. The `index` property gets an integer that represents the slice's position in the collection of slices.
 
 ```js
 // Get a slice from the file and then call sendSlice.
 function getSlice(state) {
-    state.file.getSliceAsync(state.counter, function (result) {
-        if (result.status == Office.AsyncResultStatus.Succeeded) {
+    state.file.getSliceAsync(state.counter, (result) => {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
             updateStatus("Sending piece " + (state.counter + 1) + " of " + state.sliceCount);
             sendSlice(result.value, state);
         } else {
@@ -347,25 +340,25 @@ Add the following code to send a slice to a web service.
 
 ```js
 function sendSlice(slice, state) {
-    var data = slice.data;
+    const data = slice.data;
 
     // If the slice contains data, create an HTTP request.
     if (data) {
 
         // Encode the slice data, a byte array, as a Base64 string.
-        // NOTE: The implementation of myEncodeBase64(input) function isn't
+        // NOTE: The implementation of the myEncodeBase64(input) function isn't
         // included with this example. For information about Base64 encoding with
         // JavaScript, see https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding.
-        var fileData = myEncodeBase64(data);
+        const fileData = myEncodeBase64(data);
 
         // Create a new HTTP request. You need to send the request
         // to a webpage that can receive a post.
-        var request = new XMLHttpRequest();
+        const request = new XMLHttpRequest();
 
         // Create a handler function to update the status
         // when the request has been sent.
-        request.onreadystatechange = function () {
-            if (request.readyState == 4) {
+        request.onreadystatechange = () => {
+            if (request.readyState === 4) {
 
                 updateStatus("Sent " + slice.size + " bytes.");
                 state.counter++;
@@ -376,7 +369,7 @@ function sendSlice(slice, state) {
                     closeFile(state);
                 }
             }
-        }
+        };
 
         request.open("POST", "[Your receiving page or service]");
         request.setRequestHeader("Slice-Number", slice.index);
@@ -393,7 +386,7 @@ As the name implies, the `File.closeAsync` method closes the connection to the d
 ```js
 function closeFile(state) {
     // Close the file when you're done with it.
-    state.file.closeAsync(function (result) {
+    state.file.closeAsync((result) => {
 
         // If the result returns as a success, the
         // file has been successfully closed.
@@ -414,39 +407,33 @@ The final JavaScript file could look like the following:
  * See LICENSE in the project root for license information.
  */
 
-// The initialize or onReady function is required for all add-ins.
-Office.initialize = function (reason) {
+// The onReady function is required for all add-ins.
+Office.onReady(() => {
 
-    // Checks for the DOM to load using the jQuery ready method.
-    $(document).ready(function () {
+    // Run sendFile when the user chooses Submit.
+    document.getElementById("submit").addEventListener("click", sendFile);
 
-        // Run sendFile when Submit is clicked.
-        $('#submit').on("click", function () {
-            sendFile();
-        });
-
-        // Update status.
-        updateStatus("Ready to send file.");
-    });
-}
+    // Update status.
+    updateStatus("Ready to send file.");
+});
 
 // Create a function for writing to the status div.
 function updateStatus(message) {
-    var statusInfo = $('#status');
-    statusInfo[0].innerHTML += message + "<br/>";
+    const statusInfo = document.getElementById("status");
+    statusInfo.innerHTML += message + "<br>";
 }
 
 // Get all of the content from a PowerPoint or Word document in 100-KB chunks of text.
 function sendFile() {
     Office.context.document.getFileAsync("compressed",
         { sliceSize: 100000 },
-        function (result) {
+        (result) => {
 
             if (result.status === Office.AsyncResultStatus.Succeeded) {
 
                 // Get the File object from the result.
-                var myFile = result.value;
-                var state = {
+                const myFile = result.value;
+                const state = {
                     file: myFile,
                     counter: 0,
                     sliceCount: myFile.sliceCount
@@ -462,8 +449,8 @@ function sendFile() {
 
 // Get a slice from the file and then call sendSlice.
 function getSlice(state) {
-    state.file.getSliceAsync(state.counter, function (result) {
-        if (result.status == Office.AsyncResultStatus.Succeeded) {
+    state.file.getSliceAsync(state.counter, (result) => {
+        if (result.status === Office.AsyncResultStatus.Succeeded) {
             updateStatus("Sending piece " + (state.counter + 1) + " of " + state.sliceCount);
             sendSlice(result.value, state);
         } else {
@@ -473,25 +460,25 @@ function getSlice(state) {
 }
 
 function sendSlice(slice, state) {
-    var data = slice.data;
+    const data = slice.data;
 
     // If the slice contains data, create an HTTP request.
     if (data) {
 
         // Encode the slice data, a byte array, as a Base64 string.
-        // NOTE: The implementation of myEncodeBase64(input) function isn't
+        // NOTE: The implementation of the myEncodeBase64(input) function isn't
         // included with this example. For information about Base64 encoding with
         // JavaScript, see https://developer.mozilla.org/docs/Web/JavaScript/Base64_encoding_and_decoding.
-        var fileData = myEncodeBase64(data);
+        const fileData = myEncodeBase64(data);
 
         // Create a new HTTP request. You need to send the request
         // to a webpage that can receive a post.
-        var request = new XMLHttpRequest();
+        const request = new XMLHttpRequest();
 
         // Create a handler function to update the status
         // when the request has been sent.
-        request.onreadystatechange = function () {
-            if (request.readyState == 4) {
+        request.onreadystatechange = () => {
+            if (request.readyState === 4) {
 
                 updateStatus("Sent " + slice.size + " bytes.");
                 state.counter++;
@@ -502,7 +489,7 @@ function sendSlice(slice, state) {
                     closeFile(state);
                 }
             }
-        }
+        };
 
         request.open("POST", "[Your receiving page or service]");
         request.setRequestHeader("Slice-Number", slice.index);
@@ -515,7 +502,7 @@ function sendSlice(slice, state) {
 
 function closeFile(state) {
     // Close the file when you're done with it.
-    state.file.closeAsync(function (result) {
+    state.file.closeAsync((result) => {
 
         // If the result returns as a success, the
         // file has been successfully closed.

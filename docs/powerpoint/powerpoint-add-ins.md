@@ -1,10 +1,11 @@
 ﻿---
 title: PowerPoint add-ins
 description: Learn how to use PowerPoint add-ins to build engaging solutions for presentations across platforms including Windows, iPad, Mac, and in a browser.
-ms.date: 06/05/2025
+ms.date: 07/10/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ai-usage: ai-assisted
 ---
 
 # PowerPoint add-ins
@@ -17,9 +18,18 @@ You can use PowerPoint add-ins to build engaging solutions for your users' prese
 
 ## PowerPoint add-in scenarios
 
-The code examples in this article demonstrate some basic tasks that can be useful when developing add-ins for PowerPoint.
+The following code examples demonstrate common tasks for building PowerPoint add-ins:
 
-## Add a new slide then navigate to it
+- [Add a new slide then navigate to it](#add-a-new-slide-then-navigate-to-it)
+- [Navigate to a particular slide in the presentation](#navigate-to-a-particular-slide-in-the-presentation)
+- [Navigate between slides in the presentation](#navigate-between-slides-in-the-presentation)
+- [Get the URL of the presentation](#get-the-url-of-the-presentation)
+- [Create a presentation](#create-a-presentation)
+- [Detect the presentation's active view and handle the ActiveViewChanged event](#detect-the-presentations-active-view-and-handle-the-activeviewchanged-event)
+
+To learn about the objects these examples use, see [PowerPoint JavaScript object model in Office Add-ins](core-concepts.md).
+
+### Add a new slide then navigate to it
 
 In the following code sample, the `addAndNavigateToNewSlide` function calls the [SlideCollection.add](/javascript/api/powerpoint/powerpoint.slidecollection#powerpoint-powerpoint-slidecollection-add-member(1)) method to add a new slide to the presentation. The function then calls the [Presentation.setSelectedSlides](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-setselectedslides-member(1)) method to navigate to the new slide.
 
@@ -44,7 +54,7 @@ async function addAndNavigateToNewSlide() {
 }
 ```
 
-## Navigate to a particular slide in the presentation
+### Navigate to a particular slide in the presentation
 
 In the following code sample, the `getSelectedSlides` function calls the [Presentation.getSelectedSlides](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-getselectedslides-member(1)) method to get the selected slides then logs their IDs. The function can then act on the current slide (or first slide from the selection).
 
@@ -76,7 +86,7 @@ async function getSelectedSlides() {
 }
 ```
 
-## Navigate between slides in the presentation
+### Navigate between slides in the presentation
 
 In the following code sample, the `goToSlideByIndex` function calls the `Presentation.setSelectedSlides` method to navigate to the first slide in the presentation, which has the index 0. The maximum slide index you can navigate to in this sample is `slideCountResult.value - 1`.
 
@@ -106,9 +116,9 @@ async function goToSlideByIndex() {
 }
 ```
 
-## Get the URL of the presentation
+### Get the URL of the presentation
 
-In the following code sample, the  `getFileUrl` function calls the [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getfilepropertiesasync-member(1)) method to get the URL of the presentation file.
+In the following code sample, the `getFileUrl` function calls the [Document.getFileProperties](/javascript/api/office/office.document#office-office-document-getfilepropertiesasync-member(1)) method to get the URL of the presentation file.
 
 ```js
 function getFileUrl() {
@@ -124,7 +134,7 @@ function getFileUrl() {
 }
 ```
 
-## Create a presentation
+### Create a presentation
 
 Your add-in can create a new presentation, separate from the PowerPoint instance in which the add-in is currently running. The PowerPoint namespace has the `createPresentation` method for this purpose. When this method is called, the new presentation is immediately opened and displayed in a new instance of PowerPoint. Your add-in remains open and running with the previous presentation.
 
@@ -152,7 +162,7 @@ reader.readAsDataURL(myFile.files[0]);
 
 To see a full code sample that includes an HTML implementation, see [Create presentation](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/prod/samples/powerpoint/document/create-presentation.yaml).
 
-## Detect the presentation's active view and handle the ActiveViewChanged event
+### Detect the presentation's active view and handle the ActiveViewChanged event
 
 If you're building a [content add-in](../design/content-add-ins.md), you'll need to get the presentation's active view and handle the [Document.ActiveViewChanged](/javascript/api/office/office.eventtype#fields) event as part of your [Office.onReady](/javascript/api/office#office-office-onready-function(1)) call.
 
@@ -228,7 +238,8 @@ function activeViewHandler(eventArgs) {
 ## See also
 
 - [Developing Office Add-ins](../develop/develop-overview.md)
-- [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
+- [PowerPoint JavaScript object model in Office Add-ins](core-concepts.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
 - PowerPoint quick starts
   - [Build your first PowerPoint task pane add-in](../quickstarts/powerpoint-quickstart-yo.md)
   - [Create a PowerPoint content add-in that displays slide details](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/hello-world/powerpoint-content-hello-world)
