@@ -1,23 +1,23 @@
 ﻿---
 title: Beginner's guide to Office Add-ins
-description:  A recommended path for beginners through the learning resources for Office Add-ins.
-ms.date: 06/25/2025
+description: A recommended learning path for beginners to build their first cross-platform Office Add-in.
+ms.date: 07/09/2026
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
 
-# Beginner's guide
+# Beginner's guide to Office Add-ins
 
-Want to get started building your own cross-platform Office extensions? The following steps show you what to read first, what tools to install, and recommended tutorials to complete.
+Want to build your own cross-platform Office Add-in but not sure where to start? This guide gives you a step-by-step path: what to read first, which tools to install, and the tutorials to complete to go from zero to your first working add-in.
 
 > [!NOTE]
 > If you're experienced in creating VSTO add-ins for Office, we recommend that you immediately turn to [VSTO add-in developer's guide](learning-path-transition.md), which is a superset of the information in this article.
 
 ## Step 0: Prerequisites
 
-- Office Add-ins are essentially web applications embedded in Office. So, you should first have a basic understanding of web applications and how they are hosted on the web. There's an enormous amount of information about this on the Internet, in books, and in online courses. A good way to start if you have no prior knowledge of web applications at all is to search for "What is a web app?" on Bing.
-- The primary programming language you'll use in creating Office Add-ins is JavaScript or TypeScript. You can think of TypeScript as a strongly-typed version of JavaScript. If you are not familiar with either of these languages, but you have experience with VBA, VB.Net, C#, you'll probably find TypeScript easier to learn. Again, there's a wealth of information about these languages on the Internet, in books, and in online courses.
+- **Web development basics.** Office Add-ins are essentially web applications embedded in Office. You should first have a basic understanding of web applications and how they're hosted on the web. There's an enormous amount of information about this on the internet, in books, and in online courses. If you have no prior knowledge of web applications at all, a good way to start is to search for "What is a web app?".
+- **JavaScript or TypeScript.** The primary programming language you use to create Office Add-ins is JavaScript or TypeScript. You can think of TypeScript as a strongly typed version of JavaScript. If you aren't familiar with either language but you have experience with VBA, VB.NET, or C#, you'll probably find TypeScript easier to learn. Again, there's a wealth of information about these languages on the internet, in books, and in online courses.
 
 ## Step 1: Begin with fundamentals
 
@@ -39,7 +39,7 @@ Next, create an add-in using one of our quick starts. For the purpose of learnin
 
 ## Step 4: Code
 
-You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial.md). You'll be using the Office JavaScript library and some JSON or XML in the add-in's manifest. There's no need to memorize anything, because you'll be getting more background about both in a later steps.
+You can't learn to drive by reading the owner's manual, so start coding with this [Excel tutorial](../tutorials/excel-tutorial.md). You'll use the Office JavaScript library and some JSON or XML in the add-in's manifest. There's no need to memorize anything, because you'll get more background about both in later steps.
 
 ## Step 5: Understand the JavaScript library
 
@@ -55,7 +55,7 @@ Get an understanding of the purposes of the add-in manifest and an introduction 
 
 If you plan to [publish your add-in to Microsoft Marketplace](../publish/publish.md), create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. Get this process going as soon as possible to avoid release delays.
 
-## Next Steps
+## Next steps
 
 Congratulations on finishing the beginner's learning path for Office Add-ins! Here are some suggestions for further exploration of our documentation:
 
@@ -69,11 +69,11 @@ Congratulations on finishing the beginner's learning path for Office Add-ins! He
 
 - Scenarios and other code samples:
 
-  - [Excel: Create a spreadsheet from your web page and embed your add-in](/office/dev/add-ins/excel/pnp-open-in-excel)
+  - [Excel: Create a spreadsheet from your web page and embed your add-in](../excel/pnp-open-in-excel.md)
   - [Outlook: Report spam or phishing emails](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-spam-reporting)
-  - [Word: Import a document template](/office/dev/add-ins/word/import-template)
-  - [Word: Manage citations](/office/dev/add-ins/word/citation-management)
-  - [Office Add-in code samples](/office/dev/add-ins/overview/office-add-in-code-samples)
+  - [Word: Import a document template](../word/import-template.md)
+  - [Word: Manage citations](../word/citation-management.md)
+  - [Office Add-in code samples](office-add-in-code-samples.md)
 
 - Other important subjects:
 
@@ -83,4 +83,4 @@ Congratulations on finishing the beginner's learning path for Office Add-ins! He
   - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
   - [Deploy and publish Office Add-ins](../publish/publish.md)
   - [Resources](../resources/resources-links-help.md)
-  - [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
+  - [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)
