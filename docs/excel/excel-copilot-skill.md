@@ -524,7 +524,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
     1. The **All Skills** option in the drop down that opens will be disabled at first. Wait until it is enabled and then select it. 
     1. In the chat text box, start to type **@accelerating-growth-trend-finder**. The skill should appear in the list of skills.
 
-       :::image type="content" source="../images/accelerating-growth skill-lookup.png" alt-text="A Copilot window in which the '@' symbol followed by the first few letters of the skill name accelerating-growth-trend-finder appear. Below this is a dropdown list of skills in which accelerating-growth-trend-finder is the only skill listed.":::
+       :::image type="content" source="../images/accelerating-growth-skill-lookup.png" alt-text="A Copilot window in which the '@' symbol followed by the first few letters of the skill name accelerating-growth-trend-finder appear. Below this is a dropdown list of skills in which accelerating-growth-trend-finder is the only skill listed.":::
     
     1. Backspace over the name to clear the chat. 
 
