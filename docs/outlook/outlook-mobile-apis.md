@@ -1,7 +1,7 @@
 ---
 title: Outlook JavaScript APIs supported in Outlook on mobile devices
 description: Learn which Outlook JavaScript APIs are supported in Outlook on mobile devices.
-ms.date: 08/06/2025
+ms.date: 07/14/2026
 ms.localizationpriority: medium
 ---
 
@@ -22,6 +22,8 @@ The following table lists a subset of APIs from requirement sets beyond 1.5 that
 |[Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))|Mailbox 1.10|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
 |[Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))|Mailbox 1.10|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
 |[Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))|Mailbox 1.7|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
+|[Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>iOS (Version 5.2623.0 and later)</li></ul>|
+|[Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>iOS (Version 5.2623.0 and later)</li></ul>|
 |[Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))|Mailbox 1.10|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2352.0 or later)</li><li>iOS (Version 4.2352.0 or later)</li></ul>|
 |[Office.context.mailbox.item.internetHeaders.getAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-getasync-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
 |[Office.context.mailbox.item.internetHeaders.removeAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-removeasync-member(1))|Mailbox 1.8|<ul><li>Message Compose</li></ul>|<ul><li>Android (Version 4.2405.0 or later)</li><li>iOS (Version 4.2405.0 or later)</li></ul>|
@@ -45,7 +47,7 @@ Although Outlook mobile supports up to requirement set 1.5, there are some APIs 
 
 |API|Minimum requirement set|Unsupported Outlook modes|
 |---|---|---|
-|[Office.context.officeTheme](/javascript/api/office/office.context?view=outlook-js-preview&preserve-view=true#office-office-context-officetheme-member)|Mailbox 1.14|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
+|[Office.context.officeTheme](/javascript/api/office/office.context#office-office-context-officetheme-member)|Mailbox 1.14|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.ewsUrl](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-ewsurl-member)|Mailbox 1.1|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.convertToEwsId](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttoewsid-member(1))|Mailbox 1.3|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|
 |[Office.context.mailbox.convertToRestId](/javascript/api/outlook/office.mailbox#outlook-office-mailbox-converttorestid-member(1))|Mailbox 1.3|<ul><li>Message Read</li><li>Message Compose</li><li>Appointment Attendee</li><li>Appointment Organizer</li></ul>|

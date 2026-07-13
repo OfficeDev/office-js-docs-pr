@@ -1,7 +1,7 @@
 ﻿---
 title: Troubleshoot event-based and spam-reporting add-ins
 description: Learn how to troubleshoot development errors in Office Add-ins that implement event-based activation or integrated spam reporting.
-ms.date: 10/14/2025
+ms.date: 07/14/2026
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -17,6 +17,7 @@ As you develop your [event-based](../develop/event-based-activation.md) or [spam
 - Review the expected behavior and limitations of the feature.
 
   - [Event-based activation behavior and limitations](../develop/event-based-activation.md#behavior-and-limitations)
+  - [Event-based activation behavior and limitations on mobile devices](../outlook/mobile-event-based.md#behavior-and-limitations)
   - [Smart Alerts behavior and scenarios](../outlook/onmessagesend-onappointmentsend-events.md#smart-alerts-feature-behavior-and-scenarios)
   - [Integrated spam-reporting behavior and limitations](../outlook/spam-reporting.md#review-feature-behavior-and-limitations)
 
