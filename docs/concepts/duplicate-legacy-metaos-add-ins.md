@@ -88,14 +88,11 @@ Don't remove the existing add-in from Microsoft Marketplace or the Microsoft 365
 
 Generally, add-ins that use the unified manifest can be installed only on certain versions of Microsoft 365 and certain platforms. For details, see [Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support).
 
-However, there are two exceptions which enable these add-ins to be installed on older versions of Microsoft 365 and on perpetual license versions of Office.
+However, there is an exception: if the user's Microsoft 365 administrator deploys the add-in for all users, then the add-in can be installed on older versions of Microsoft 365 and on perpetual license versions of Office.
 
-- The user's Microsoft 365 administrator deploys the add-in for all users.
-- The user installs the add-in on another Microsoft 365 client application that *does* support the unified manifest. This makes the add-in available on the same user's other Office clients, including older or perpetual license.
+If you have users on older or perpetual license versions for which this exception doesn't apply, then you will need to maintain both versions of the add-in. When all of your users are working with Office versions that support the unified manifest, you can remove the version with the add-in only manifest from deployment.
 
-If you have users on older or perpetual license versions for which these exceptions don't apply, then you will need to maintain both versions of the add-in. When all of your users are working with Office versions that support the unified manifest, you can remove the version with the add-in only manifest from deployment.
-
-There are also some scenarios where you might want to maintain both both versions of the add-in for an extended period. For example, there are two features of add-ins that aren't supported with the unified manifest because they're little used or deprecated. You may choose to maintain a version of your add-in that uses these features. The following are the features that aren't supported in the unified manifest.
+There are also some scenarios where you might want to maintain both versions of the add-in for an extended period. For example, there are two features of add-ins that aren't supported with the unified manifest because they're little used or deprecated. You may choose to maintain a version of your add-in that uses these features. The following are the features that aren't supported in the unified manifest.
 
 - [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. But you can provide a nearly identical experience using the unified manifest by [including a Teams Tab with your add-in in a single app](/microsoftteams/platform/m365-apps/combine-office-add-in-and-teams-app).
 - [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. But you can provide similar experiences using the unified manifest and [Event-based activation](../develop/event-based-activation.md).
