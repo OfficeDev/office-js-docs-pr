@@ -15,7 +15,7 @@ The following sections walk you through how to develop an event-based add-in tha
 > [!NOTE]
 >
 > - The `OnMessageSend` and `OnAppointmentSend` events were introduced in [requirement set 1.12](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-12). Additional functionality and customization options were also added to subsequent requirement sets. To verify that your Outlook client supports these events and features, see [Supported clients and platforms](onmessagesend-onappointmentsend-events.md#supported-clients-and-platforms) and the specific sections that describe the features you want to implement.
-> - Although Outlook on iOS only supports up to Mailbox requirement set 1.5, the `OnMessageSend` event is available for preview on this client starting in Version 5.2623.0. To learn more about this exception, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md) and [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
+> - Although Outlook on iOS only supports up to Mailbox requirement set 1.5, the `OnMessageSend` event is supported on this client starting in Version 5.2623.0. To learn more about this exception, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md) and [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
 
 ## Set up your environment
 
@@ -244,7 +244,17 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
 
 1. In the **./src/launchevent** folder, create a new file named **launchevent.js**.
 
-1. Open the file **./src/launchevent/launchevent.js** in your code editor and add the following JavaScript code.
+1. Open the file **./src/launchevent/launchevent.js** in your code editor and add the following JavaScript code. Note the following about the code.
+
+    - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
+        - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
+        - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
+    - In classic Outlook on Windows, imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
+    - In classic Outlook on Windows, when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
+    - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support). If the `errorMessageMarkdown` property isn't supported on the Outlook client, the message specified in the `errorMessage` property is used instead.
+
+        > [!NOTE]
+        > The `errorMessageMarkdown` property is available for preview in Outlook on Mac starting in Version 16.103 (Build 25102433). To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
 
     ```javascript
     /*
@@ -332,17 +342,6 @@ In this scenario, you'll add handling for sending a message. Your add-in will ch
     // IMPORTANT: To ensure your add-in is supported in Outlook, remember to map the event handler name specified in the manifest to its JavaScript counterpart.
     Office.actions.associate("onMessageSendHandler", onMessageSendHandler);
     ```
-
-> [!IMPORTANT]
->
-> - In classic Outlook on Windows, imports aren't currently supported in the JavaScript file where you implement the handling for event-based activation.
-> - To ensure your add-in runs as expected when an `OnMessageSend` or `OnAppointmentSend` event occurs, call `Office.actions.associate` in the JavaScript file where your handlers are implemented. This maps the event handler name specified in the manifest to its JavaScript counterpart. If this call isn't included in your JavaScript file and the send mode property of your manifest is set to **soft block** or isn't specified, your users will be blocked from sending messages or meetings. The location of the handler name in the manifest differs depending on the type of manifest your add-in uses.
->   - **Unified manifest for Microsoft 365**: The value specified in the [`"actionId"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events#actionid) property of the applicable [`"autoRunEvents.events"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events) object.
->   - **Add-in only manifest**: The function name specified in the applicable [LaunchEvent](/javascript/api/manifest/extensionpoint#launchevent) element.
-> - In classic Outlook on Windows, when the JavaScript function specified in the manifest to handle an event runs, code in `Office.onReady()` and `Office.initialize` isn't run. We recommend adding any startup logic needed by event handlers, such as checking the user's Outlook version, to the event handlers instead.
-> - The [errorMessageMarkdown](/javascript/api/outlook/office.smartalertseventcompletedoptions#outlook-office-smartalertseventcompletedoptions-errormessagemarkdown-member) property was introduced in [requirement set 1.15](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-15). Learn more about its [supported clients and platforms](/javascript/api/requirement-sets/outlook/outlook-api-requirement-sets#outlook-client-support). Because the `errorMessageMarkdown` property isn't supported in Outlook on mobile, the client will use the message specified in the `errorMessage` property instead.
-> - The `errorMessageMarkdown` property is available for preview in Outlook on Mac starting in Version 16.103 (Build 25102433). To test the property, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-macos/4401756) and select the **Beta Channel** option to access Office beta builds.
-> - The [Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1)) and [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)) methods are available for preview in Outlook on iOS starting in Version 5.2623.0. To learn more about APIs from later requirement sets that are supported in Outlook on mobile, see [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
 
 ## Customize the text and functionality of a button in the dialog (optional)
 

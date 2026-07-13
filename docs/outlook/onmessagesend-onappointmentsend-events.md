@@ -21,17 +21,17 @@ The following table lists supported client-server combinations for the Smart Ale
 
 |Client|Exchange Online|Exchange Server Subscription Edition (SE)|Exchange 2019 on-premises (Cumulative Update 12 or later)|Exchange 2016 on-premises (Cumulative Update 22 or later) |
 |-----|-----|-----|-----|-----|
-|**Web browser (modern UI)**|Yes|Not applicable|Not applicable|Not applicable|
-|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Yes|Not applicable|Not applicable|Not applicable|
-|**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Yes|Yes|Yes|Yes|
-|**Mac**<br>Version 16.65 (22082700) or later|Yes|Not applicable|Not applicable|Not applicable|
+|**Web browser (modern UI)**|Supported|Not applicable|Not applicable|Not applicable|
+|[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|Not applicable|Not applicable|Not applicable|
+|**Windows** (classic)<br>Version 2206 (Build 15330.20196) or later|Supported|Supported|Supported|Supported|
+|**Mac**<br>Version 16.65 (22082700) or later|Supported|Not applicable|Not applicable|Not applicable|
 |**Android**|Not applicable|Not applicable|Not applicable|Not applicable|
-|**iOS**<br>Version 5.2623.0 or later|In preview (`OnMessageSend` only)|Not applicable|Not applicable|Not applicable|
+|**iOS**<br>Version 5.2623.0 or later|Supported (`OnMessageSend` only)|Not applicable|Not applicable|Not applicable|
 
 > [!IMPORTANT]
 >
 > - Enhancements to the Smart Alerts feature were introduced in later requirement sets. Because of this, the minimum supported Outlook version and build may vary. The requirement sets and versions needed for a feature are mentioned in the [walkthrough](smart-alerts-onmessagesend-walkthrough.md) and applicable sections of this article.
-> - Although Outlook on iOS only supports up to Mailbox requirement set 1.5, the `OnMessageSend` event is available for preview on this client. To learn more about this exception, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md) and [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
+> - Although Outlook on iOS only supports up to Mailbox requirement set 1.5, the `OnMessageSend` event is supported on this client. To learn more about this exception, see [Implement event-based activation in Outlook mobile add-ins](mobile-event-based.md) and [Outlook JavaScript APIs supported in Outlook on mobile devices](outlook-mobile-apis.md).
 
 ## Try out Smart Alerts in an event-based add-in
 

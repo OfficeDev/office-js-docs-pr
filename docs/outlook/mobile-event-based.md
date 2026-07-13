@@ -24,7 +24,7 @@ To learn how to implement an event-based add-in for Outlook on the web, on Windo
 | `OnNewMessageCompose` | newMessageComposeCreated | Occurs on composing a new message (includes reply, reply all, and forward), but not on editing a draft. | <ul><li>Android (Version 4.2352.0 and later)</li><li>iOS (Version 4.2352.0 and later)</li></ul> |
 | `OnMessageRecipientsChanged` | messageRecipientsChanged | Occurs on adding or removing recipients while composing a message.<br><br>Event-specific data object: [RecipientsChangedEventArgs](/javascript/api/outlook/office.recipientschangedeventargs?view=outlook-js-1.11&preserve-view=true) | <ul><li>Android (Version 4.2425.0 and later)</li><li>iOS (Version 4.2425.0 and later)</li></ul> |
 | `OnMessageFromChanged` | messageFromChanged | Occurs on changing the mail account in the **From** field of a message being composed. To learn more, see  [Automatically update your signature when switching between Exchange accounts](onmessagefromchanged-onappointmentfromchanged-events.md). | <ul><li>Android (Version 4.2502.0 and later)</li><li>iOS (Version 4.2502.0 and later)</li></ul> |
-| `OnMessageSend` (preview) | messageSending | Occurs on sending a message. To learn more, see [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md). | <ul><li>iOS (Version 5.2623.0 and later)</li></ul> |
+| `OnMessageSend` | messageSending | Occurs on sending a message. To learn more, see [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md). | <ul><li>iOS (Version 5.2623.0 and later)</li></ul> |
 
 ## Set up your environment
 
@@ -325,8 +325,8 @@ Although Outlook mobile supports APIs up to [Mailbox requirement set 1.5](/javas
 - [Office.context.mailbox.item.body.setSignatureAsync](/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1))
 - [Office.context.mailbox.item.disableClientSignatureAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-disableclientsignatureasync-member(1))
 - [Office.context.mailbox.item.from.getAsync](/javascript/api/outlook/office.from#outlook-office-from-getasync-member(1))
-- [Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1)) (preview on mobile)
-- [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)) (preview on mobile)
+- [Office.context.mailbox.item.getAttachmentContentAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentcontentasync-member(1))
+- [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1))
 - [Office.context.mailbox.item.getComposeTypeAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getcomposetypeasync-member(1))
 - [Office.context.mailbox.item.sessionData](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-sessiondata-member)
 
