@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Authentication patterns
 
-Add-ins may require users to sign in or sign up to access features. Common authentication controls include username and password fields and buttons that start third-party credential flows. A simple, efficient authentication experience helps users get started quickly.
+Add-ins may require users to sign in or sign up to access features. Common authentication controls include username and password fields and buttons that start non-Microsoft credential flows. A simple, efficient authentication experience helps users get started quickly.
 
 ## Best practices
 

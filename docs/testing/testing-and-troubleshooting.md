@@ -55,7 +55,7 @@ We recommend that you uncheck these settings only to troubleshoot the issue. If 
 
 ## Add-in doesn't activate in Office
 
-If the add-in doesn't activate after the user completes the following steps:
+If the add-in doesn't activate after the user completes the following steps.
 
 1. Signs in with their Microsoft account in the Office application.
 1. Enables two-step verification for their Microsoft account.

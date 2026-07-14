@@ -451,11 +451,11 @@ To implement this, just make two small changes in the code sample in the previou
    const string hasPrivacyLinkStr = "HasPrivacyLink"; // Indicates that your installer has a privacy link.
    ```
 
-1. Just below the line `AddInNameKey.SetValue(assetIdStr, assetID);`, add the following lines:
+1. Just below the line `AddInNameKey.SetValue(assetIdStr, assetID);`, add the following lines.
 
    ```csharp
-    // Set this value if the privacy consent has been shown on the main app installation program. This is required for a silent installation of the web add-in.
-    addInKey.SetValue(hasPrivacyLinkStr, 1);
+   // Set this value if the privacy consent has been shown on the main app installation program. This is required for a silent installation of the web add-in.
+   addInKey.SetValue(hasPrivacyLinkStr, 1);
    ```
 
 #### The user's installation experience
