@@ -1,7 +1,7 @@
 ---
 title: Debug a function command with a non-shared runtime
-description: Learn how to debug function commands.
-ms.date: 06/17/2025
+description: Learn how to debug function commands in Office Add-ins that use a non-shared runtime.
+ms.date: 07/10/2026
 ms.localizationpriority: medium
 ---
 
