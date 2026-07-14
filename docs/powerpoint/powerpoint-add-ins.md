@@ -18,7 +18,7 @@ You can use PowerPoint add-ins to build engaging solutions for your users' prese
 
 ## PowerPoint add-in scenarios
 
-The following code examples demonstrate common tasks for building PowerPoint add-ins:
+The following code examples demonstrate common tasks for building PowerPoint add-ins.
 
 - [Add a new slide then navigate to it](#add-a-new-slide-then-navigate-to-it)
 - [Navigate to a particular slide in the presentation](#navigate-to-a-particular-slide-in-the-presentation)
