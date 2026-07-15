@@ -463,9 +463,14 @@
   - name: Overview
     href: excel/excel-add-ins-overview.md
     displayName: Excel
-  - name: Create Copilot skills for Excel
-    href: excel/excel-skills.md
-    displayName: Excel
+  - name: Create Copilot skills for Excel (preview)
+    items: 
+    - name: Overview of Copilot skills for Excel
+      href: excel/excel-skills.md
+      displayName: Excel
+    - name: Create a Copilot skill for Excel
+      href: excel/excel-copilot-skill.md
+      displayName: Excel
   - name: Build your first Excel add-in
     items:
     - name: Task pane

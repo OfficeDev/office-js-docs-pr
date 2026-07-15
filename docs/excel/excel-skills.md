@@ -1,13 +1,13 @@
 ---
-title: Create Copilot skills for Excel (preview)
+title: Overview of Copilot skills for Excel (preview)
 description: Learn how to create agent skills that call the Office JavaScript Library (Office.js) that can be plugged into Copilot agents in Excel.
-ms.date: 06/25/2026
+ms.date: 07/10/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
 ---
 
-# Create Copilot skills for Excel (preview)
+# Overview of Copilot skills for Excel (preview)
 
 You can create custom skills to accomplish complex tasks for AI agents and Copilot for Excel. Optionally, these skills can use the Office JavaScript Library (Office.js).
 
@@ -19,6 +19,9 @@ The main guidance for creating skills is at [Build plugins for Copilot Cowork](/
 Start with the section [What you'll build](/microsoft-365/copilot/cowork/cowork-plugin-development#what-youll-build) and then skip to [Build a plugin from scratch](/microsoft-365/copilot/cowork/cowork-plugin-development#build-a-plugin-from-scratch). 
 
 *This article provides only supplementary guidance for creating skills that use Office.js to interact with an Excel workbook.*
+
+> [!TIP]
+> Want to jump into coding? Try the tutorial [Create a Copilot skill for Excel that uses the Office JavaScript Library (preview)](excel-copilot-skill.md).
 
 ## Supplement to Step 1
 
@@ -158,7 +161,10 @@ It's important to cleanly uninstall the skill after each test session. Follow th
 1. Open Teams and be sure you're signed in with the same credentials you used to install the skill. 
 1. Select the apps button: the plus sign in a box.
 1. On the **Apps** pane, select **Manage your apps**.
-1. Find your add-in in the list of apps. It has the name specified in the **name** property of the YAML frontmatter in the `SKILL.md` file.
+1. Find your add-in in the list of apps. It has the name specified in the **name.short** property of the app manifest.
 1. Select the add-in from the list of apps to expand its row.
 1. Select the trash can icon and then select **Remove** in the prompt.
 
+## Next steps
+
+- [Create a Copilot skill for Excel that finds use the Office JavaScript Library (preview)](excel-copilot-skill.md).

@@ -1,25 +1,26 @@
 ﻿---
 title: VSTO add-in developer's guide to Office Web Add-ins
-description:  A recommended path for experienced VSTO add-in developers to learning resources for Office Web Add-ins.
-ms.date: 06/25/2025
+description: A recommended path for experienced VSTO add-in developers who are transitioning to Office Web Add-ins.
+ms.date: 07/10/2026
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
+ai-usage: ai-assisted
 ---
 
 # VSTO add-in developer's guide to Office Web Add-ins
 
-So, you've made some VSTO add-ins for Office applications that run on Windows and now you're exploring the new way of extending Office that will run on Windows, Mac, and the web browser version of the Office suite: Office Web Add-ins.
+You've built VSTO add-ins for Office on Windows, and now you're exploring Office Add-ins, which run on Windows, Mac, and Office on the web.
 
 [!INCLUDE [new-outlook-vsto-com-support](../includes/new-outlook-vsto-com-support.md)]
 
-Your understanding of the object models for the Excel, Word, and the other Office applications will be a huge help because the object models in Office Web Add-ins follow similar patterns. But there are going to be some challenges:
+Your understanding of the object models for Excel, Word, and other Office applications will help because Office Add-ins follow similar patterns. But there are some important differences:
 
 - You'll be working with a different language (either JavaScript or TypeScript) instead of C# or Visual Basic .NET. (There is also a way, described later, to reuse some of your existing code in a web add-in.)
 - Office Web Add-ins are deployed differently from VSTO add-ins.
 - Office Web Add-ins are web applications that run in a simplified webview control that is embedded in the Office application, so you need to gain a basic understanding of web applications and how they're hosted on web servers or cloud accounts.
 
-For these reasons, much of this article duplicates our [Beginner's guide to Office extensions](learning-path-beginner.md). What we've added are some learning resources to help VSTO add-in developers leverage their experience, and also help them reuse their existing code.
+For these reasons, much of this article overlaps with our [Beginner's guide to Office extensions](learning-path-beginner.md). This version adds resources for VSTO add-in developers to help you leverage your experience and reuse existing code.
 
 ## Step 0: Prerequisites
 
@@ -33,7 +34,7 @@ We know you're eager to start coding, but there are some things about Office Add
 - [Office Add-ins Platform Overview](office-add-ins.md): Find out what Office Web Add-ins are and how they differ from older ways of extending Office, such as VSTO add-ins.
 - [Develop Office Add-ins](../develop/develop-overview.md): Get an overview of Office Add-in development and lifecycle including tooling, creating an add-in UI, and using the JavaScript APIs to interact with the Office document.
 
-There are a lot of links in those articles, but if you're transitioning to Office Web Add-ins, we recommend that you come back here when you've read them and continue with the next section.
+There are many links in those articles. If you're transitioning to Office Web Add-ins, come back here after reading them and continue with the next section.
 
 ## Step 2: Install tools and create your first add-in
 
@@ -47,7 +48,7 @@ You can't learn to drive by reading the owner's manual, so start coding with thi
 
 Get the big picture of the Office JavaScript library with the article [Develop Office Add-ins](../develop/develop-overview.md).
 
-Then, explore the Office JavaScript APIs with the [Script Lab tool](explore-with-script-lab.md) -- a sandbox for running and exploring the APIs.
+Then, explore the Office JavaScript APIs with the [Script Lab tool](explore-with-script-lab.md), a sandbox for running and exploring the APIs.
 
 ### Special resource for VSTO add-in developers
 
@@ -55,37 +56,37 @@ This would be a good place to take a look at the sample add-in, [Excel Add-in Ja
 
 ## Step 5: Understand the manifest
 
-Get an understanding of the purposes of the web add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
+Get an understanding of the purposes of the Office Add-in manifest and an introduction to its XML markup or JSON in [Office Add-ins manifest](../develop/add-in-manifests.md).
 
 ## Step 6 (for VSTO developers only): Reuse your VSTO code
 
-You can reuse some of your VSTO add-in code in an Office web add-in by moving it to your web application's back end on the server and making it available to your JavaScript or TypeScript as a web API. For guidance, see [Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
+You can reuse some of your VSTO add-in code in an Office Add-in by moving it to your web application's back end on the server and making it available to JavaScript or TypeScript as a web API. For guidance, see [Tutorial: Share code between both a VSTO Add-in and an Office Add-in by using a shared code library](../tutorials/migrate-vsto-to-office-add-in-shared-code-library-tutorial.md).
 
 ## Step 7: Create a Partner Center account
 
 If you plan to [publish your add-in to Microsoft Marketplace](../publish/publish.md), create a [Partner Center account](/partner-center/marketplace-offers/open-a-developer-account). This could take some time. Get this process going as soon as possible to avoid release delays.
 
-## Next Steps
+## Next steps
 
 Congratulations on finishing the VSTO add-in developer's learning path for Office Web Add-ins! Here are some suggestions for further exploration of our documentation:
 
-- Tutorials or quick starts for other Office applications:
+### Tutorials or quick starts for other Office applications
 
-  - [Excel tutorial](../tutorials/excel-tutorial.md)
-  - [OneNote quick start](../quickstarts/onenote-quickstart.md)
-  - [Outlook tutorial](/outlook/add-ins/addin-tutorial)
-  - [Project quick start](../quickstarts/project-quickstart.md)
-  - [Word tutorial](../tutorials/word-tutorial.md)
+- [Excel tutorial](../tutorials/excel-tutorial.md)
+- [OneNote quick start](../quickstarts/onenote-quickstart.md)
+- [Outlook tutorial](/outlook/add-ins/addin-tutorial)
+- [Project quick start](../quickstarts/project-quickstart.md)
+- [Word tutorial](../tutorials/word-tutorial.md)
 
-    > [!NOTE]
-    > These tutorials use Yo Office as their tooling infrastructure, instead of Visual Studio and the Office development templates.
+> [!NOTE]
+> These tutorials use Yo Office as their tooling infrastructure, instead of Visual Studio and the Office development templates.
 
-- Other important subjects:
+### Other important subjects
 
-  - [Develop Office Add-ins](../develop/develop-overview.md)
-  - [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
-  - [Design Office Add-ins](../design/add-in-design.md)
-  - [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
-  - [Deploy and publish Office Add-ins](../publish/publish.md)
-  - [Resources](../resources/resources-links-help.md)
-  - [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
+- [Develop Office Add-ins](../develop/develop-overview.md)
+- [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md)
+- [Design Office Add-ins](../design/add-in-design.md)
+- [Test and debug Office Add-ins](../testing/test-debug-office-add-ins.md)
+- [Deploy and publish Office Add-ins](../publish/publish.md)
+- [Resources](../resources/resources-links-help.md)
+- [Learn about the Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program)

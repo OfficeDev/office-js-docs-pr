@@ -1,14 +1,15 @@
 ---
 title: Build your first Excel task pane add-in with Visual Studio
-description: Learn how to build a simple Excel task pane add-in by using the Office JS API and Visual Studio's templates.
-ms.date: 08/20/2024
+description: Build an Excel task pane add-in in Visual Studio that sets the color of the selected cells with the click of a button.
+ms.date: 07/10/2026
 ms.service: excel
 ms.localizationpriority: high
+ai-usage: ai-assisted
 ---
 
-# Build an Excel task pane add-in with Visual Studio
+# Build your first Excel task pane add-in with Visual Studio
 
-In this article, you'll walk through the process of building an Excel task pane add-in in Visual Studio.
+If you're new to Office Add-ins, this quickstart is a fast way to build one. In about 5 minutes, you'll create an Excel task pane add-in in Visual Studio that sets the fill color of the selected cells.
 
 ## Prerequisites
 
@@ -30,7 +31,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 [!include[Description of Visual Studio projects](../includes/quickstart-vs-solution.md)]
 
-## Update the code
+## Add starter markup and script
 
 1. **Home.html** specifies the HTML that will be rendered in the add-in's task pane. In **Home.html**, replace the `<body>` element with the following markup and save the file.
 
@@ -152,7 +153,7 @@ In this article, you'll walk through the process of building an Excel task pane 
 
 ## Next steps
 
-Congratulations, you've successfully created an Excel task pane add-in! Next, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
+You now have a working Excel task pane add-in that sets the fill color of the selected cells. To keep building your Office Add-ins skills, learn more about [developing Office Add-ins with Visual Studio](../develop/develop-add-ins-visual-studio.md).
 
 [!include[The common troubleshooting section for all Visual Studio quick starts](../includes/quickstart-troubleshooting-vs.md)]
 

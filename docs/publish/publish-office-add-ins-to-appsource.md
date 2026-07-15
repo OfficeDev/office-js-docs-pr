@@ -1,14 +1,14 @@
 ﻿---
 title: Publish your Office Add-in to Microsoft Marketplace
-description: Learn how to publish your Office Add-in to Microsoft Marketplace and install the add-in with a Windows app or COM/VSTO add-in.
+description: Learn how to publish your Office Add-in to Microsoft Marketplace and optionally include it with a Windows app or COM/VSTO add-in installation.
 ms.topic: concept-article
-ms.date: 06/06/2025
+ms.date: 07/10/2026
 CustomerIntent: As a developer, I want to publish my Office Add-in to Microsoft Marketplace so that customers can deploy and use my new add-in.
 ---
 
 # Publish your Office Add-in to Microsoft Marketplace
 
-Publish your Office Add-in to [Microsoft Marketplace](https://marketplace.microsoft.com/) to make it widely available to customers and businesses. Microsoft Marketplace is an online store that contains thousands of business applications and services built by industry-leading software providers. When you publish your add-in to Microsoft Marketplace, you also make it available in the in-product experience within Office.
+Publish your Office Add-in to [Microsoft Marketplace](https://marketplace.microsoft.com/) to make it available to customers and businesses. Publishing to Microsoft Marketplace also makes your add-in available in the in-product experience within Office.
 
 ## The publishing process
 
@@ -18,9 +18,9 @@ Before you proceed:
 - Ensure that your add-in adheres to the applicable [Microsoft Marketplace validation policies](/legal/marketplace/certification-policies).
 - Confirm that you're [ready to publish](/partner-center/marketplace-offers/checklist).
 
-When you're ready to include your solution in Microsoft Marketplace and within Office, submit it to Partner Center. Then, it goes through an approval and certification process. For complete details, see [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
+When you're ready to include your solution in Microsoft Marketplace and within Office, submit it through Partner Center. It then goes through approval and certification. For complete details, see [Make your solutions available in Microsoft Marketplace and within Office](/partner-center/marketplace/submit-to-appsource-via-partner-center).
 
-When your add-in is available in Microsoft Marketplace, there are two further steps you can take to make it more widely installed. 
+After your add-in is available in Microsoft Marketplace, there are two further steps you can take to make it more widely installed. 
 
 - [Provide an installation link](#provide-an-installation-link)
 - [Include the add-in in the installation of a Windows app or a COM or VSTO add-in](#include-the-add-in-in-the-installation-of-a-windows-app-or-comvsto-add-in)
@@ -106,7 +106,7 @@ The following are the basic steps:
 
 #### Join the certification program (recommended)
 
-We recommend that you join the [developer certification program](/microsoft-365-app-certification/docs/certification). Among other things, this enables your installation program to run smoother. For more information, see the following articles:
+We recommend that you join the [developer certification program](/microsoft-365-app-certification/docs/certification). Among other things, this enables your installation program to run more smoothly. For more information, see the following articles:
 
 - [Get Started in Partner Center for Microsoft 365, Teams, SaaS, and SharePoint apps](/microsoft-365-app-certification/docs/userguide)
 - [Microsoft 365 App Compliance Program](https://developer.microsoft.com/microsoft-365/app-compliance-program)
@@ -154,7 +154,7 @@ namespace SampleProject
             RegistryKey hklm = Registry.CurrentUser;
             string basePath = @"Software\Microsoft\Office";
             RegistryKey baseKey = Registry.CurrentUser.OpenSubKey(basePath);
-            string wxpName = "Word"; // Can be one of "Word", "Powerpoint", or "Excel".
+            string wxpName = "Word"; // Can be one of "Word", "PowerPoint", or "Excel".
             bool supportLocalComputer = false; // True means LOCAL_MACHINE support, false means CURRENT_USER support.
 
 
@@ -162,7 +162,7 @@ namespace SampleProject
             const int smallBuildNumber = 18227; // This is the minimum build that supports installation of a web add-in in the installation of a Windows app.
             if (supportLocalComputer)
             {
-              smallBuildNumber = 18730; // This is the minimum build that supports installation of a web add-in, for all users of the computer, in the installation of a Windows app.
+                smallBuildNumber = 18730; // This is the minimum build that supports installation of a web add-in, for all users of the computer, in the installation of a Windows app.
             }
             const int supportedBuildMajorNumber = 16; // 16 is the lowest major build of Office applications that supports web add-ins.
 
@@ -239,7 +239,7 @@ namespace SampleProject
         /// <summary>
         /// This function checks if the store is enabled.
         /// </summary>
-        /// <returns> Returns true if it store is enabled, false if store is disabled.</returns>
+        /// <returns> Returns true if the store is enabled, false if the store is disabled.</returns>
         private bool IsStoreEnabled()
         {
             RegistryKey hklm = Registry.CurrentUser;
@@ -264,7 +264,7 @@ namespace SampleProject
                 string maxVersionString = maxVersion.ToString();
 
                 // The StoreDisabled value is under this registry path.
-                string antoInstallPath = String.Format(@"Software\Microsoft\Office\{0}\Wef\AutoInstallAddins", maxVersionString);
+                string autoInstallPath = String.Format(@"Software\Microsoft\Office\{0}\Wef\AutoInstallAddins", maxVersionString);
                 RegistryKey autoInstallPathKey = Registry.CurrentUser.OpenSubKey(autoInstallPath);
 
                 if (autoInstallPathKey != null)
@@ -374,7 +374,7 @@ namespace SampleProject
                     return;
                 }
 
-                string wxpName = "Word";  // Can be "Word", "Powerpoint", or "Excel".
+                string wxpName = "Word";  // Can be "Word", "PowerPoint", or "Excel".
                 string assetID = "WA999999999"; // Microsoft Marketplace asset ID of your web add-in.
                 string appName = "ContosoAddin"; // Your web add-in name.
                 const int supportedBuildMajorNumber = 16;
@@ -451,11 +451,11 @@ To implement this, just make two small changes in the code sample in the previou
    const string hasPrivacyLinkStr = "HasPrivacyLink"; // Indicates that your installer has a privacy link.
    ```
 
-1. Just below the line `AddInNameKey.SetValue(assetIdStr, assetID);`, add the following lines:
+1. Just below the line `AddInNameKey.SetValue(assetIdStr, assetID);`, add the following lines.
 
    ```csharp
-   // Set this value if the Privacy Consent has been shown on the main app installation program, this is required for a silent installation of the web add-in.
-   AddInNameKey.SetValue(hasPrivacyLinkStr, 1);
+   // Set this value if the privacy consent has been shown on the main app installation program. This is required for a silent installation of the web add-in.
+   addInKey.SetValue(hasPrivacyLinkStr, 1);
    ```
 
 #### The user's installation experience

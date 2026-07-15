@@ -1,8 +1,8 @@
 ---
-title: Development lifecycle overview
-description: Learn about the planning, developing, testing, and publishing lifecycle events.
+title: Office Add-in development lifecycle overview
+description: Learn how to plan, develop, test, debug, publish, and reference Office Add-ins across the development lifecycle.
 ms.topic: overview
-ms.date: 06/11/2025
+ms.date: 07/10/2026
 ms.localizationpriority: high
 ---
 
@@ -18,7 +18,7 @@ For any add-in you build, you need to understand the following concepts.
 - Troubleshooting your add-in
 - Publishing your add-in
 
-For the best foundation for these common features and application-specific implementations, review the following documentation.
+Start with the following documentation for the core lifecycle stages and supporting reference material.
 
 :::row:::
    :::column span="":::
