@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 07/07/2026
+ms.date: 07/15/2026
 ms.localizationpriority: high
 ---
 
@@ -59,6 +59,7 @@ If your development background is in building VSTO Add-ins, the following sample
 | [Excel content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-content-add-in) | Embed a content add-in in the Excel grid. |
 | [Data visualization in a content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-content-data-visualization) | Create an Excel content add-in that includes data visualization. |
 | [Synchronous custom function sample](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-custom-functions-sync) (preview) | Use `@supportSync` to create a synchronous custom function that reads a cell value in tandem with Excel's calculation process. This feature is in public preview. |
+| [Skill for Copilot in Excel](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-copilot-skill) (preview) | Create a custom skill for Copilot in Excel that uses the Excel-specific APIs in the Office JavaScript library. This feature is in public preview.|
 
 ## Outlook
 
