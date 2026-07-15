@@ -8,7 +8,7 @@ metadata:
   description: Resources for learning about Outlook add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: outlook #Required
   ms.topic: landing-page # Required
-  ms.date: 10/10/2022 #Required; mm/dd/yyyy format.
+  ms.date: 07/15/2026 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -71,7 +71,7 @@ landingContent:
             url: onmessagesend-onappointmentsend-events.md
           - text: Report spam or phishing emails
             url: spam-reporting.md
-          - text: Seamlessly encrypt and decrypt messages (preview)
+          - text: Seamlessly encrypt and decrypt messages
             url: encryption-decryption.md
 
   # Card
