@@ -1,35 +1,15 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 07/08/2026
+ms.date: 07/16/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins known issues
 
-_Last updated 07/08/2026_
+_Last updated July 16, 2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
-## OUTLOOK ISSUE: Classic Outlook on Windows crashes when using signature add-ins
-
-Some users are reporting that classic Outlook on Windows crashes when using signature add-ins in the following scenarios.
-
-- Sending mail items through applications other than Outlook. For example, using the **Send to** > **Mail recipient** option from a file in File Explorer.
-- Editing an existing calendar item where the user is an organizer.
-
-Affected client version: Classic Outlook on Windows Version 2606 (Build 20131.20090)
-
-#### STATUS
-
-The fix has been implemented and will be included in subsequent client updates.
-
-#### START DATE
-
-Thursday, 07/02/2026
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
@@ -80,7 +60,7 @@ If the issue persists, contact Microsoft Support and include diagnostic informat
 
 #### START DATE
 
-Date reported: 06/04/2026
+Date reported: June 4, 2026
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
@@ -93,15 +73,15 @@ There's an issue affecting some customers where Office Add-ins failed to update 
 
 #### Mitigated
 
-The underlying asset delivery issue has been addressed and failures related to missing content have decreased. 
+The underlying asset delivery issue has been addressed and failures related to missing content have decreased.
 
 #### Rolling out
 
-Updates to improve add-in delivery reliability are currently being deployed broadly. 
+Updates to improve add-in delivery reliability are currently being deployed broadly.
 
 #### Ongoing investigation
 
-We are continuing to work with dependent services to address remaining issues in the store-based update experience. 
+We are continuing to work with dependent services to address remaining issues in the store-based update experience.
 
 ### WORKAROUND
 
@@ -120,7 +100,7 @@ These steps may allow the add-in update to complete successfully in cases where 
 
 ### START DATE
 
-Date reported: 04/17/2026
+Date reported: April 17, 2026
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
@@ -146,10 +126,9 @@ To remove the add-in using the Office Add-ins advanced management UI:
 
 ### START DATE
 
-Date reported: 04/20/2026
+Date reported: April 20, 2026
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
-
 
 ## ISSUE: Missing Office Add-Ins deployed via Centralized Deployment
 
@@ -171,7 +150,7 @@ For additional guidance on managing EWS access in Exchange Online, please refer 
 
 ### START DATE
 
-Date reported: 03/23/2026
+Date reported: March 23, 2026
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 
@@ -236,7 +215,7 @@ We're currently working on a fix.
 
 ### START DATE
 
-Date reported: 01/20/2026
+Date reported: January 20, 2026
 
 ### DETAILS
 
@@ -262,17 +241,21 @@ Partially identified. Engineering has confirmed two contributing factors:
 No reliable universal workaround exists. The following steps have been attempted by support teams with limited/inconsistent success:
 
 1. **Global Admin PowerShell — re-enable the add-in org-wide** (may take up to 72 hours to reflect; some tenants encounter 401 errors):
+
    ```PowerShell
 
    Set-App -Identity a216ceed-7791-4635-a752-5a4ac0a5eb93 -OrganizationApp -Enabled $true
 
    ```
+
 1. **Verify the add-in status**:
+
    ```PowerShell
 
    Get-App -Identity a216ceed-7791-4635-a752-5a4ac0a5eb93
 
    ```
+
 1. **Refresh the Outlook client** — In some cases, a page refresh or Outlook restart triggered the add-in to reappear temporarily.
 1. **Submit in-app feedback with diagnostic logs** — Go to **Help** > **Feedback** > **Report a Problem in Outlook** and share the Session ID / User ID with support so engineering can pull diagnostics.
 1. **Reference the public support article** — See [My Templates are missing from Outlook](https://support.microsoft.com/office/34967a7a-7a80-4d72-bb45-a43ecdc93678).
@@ -311,6 +294,7 @@ Intermittent authentication failures cause Office add-ins to appear missing or f
 As part of ongoing Exchange Web Services (EWS) security improvements, Microsoft enforced stricter authentication requirements that no longer allow certain legacy authentication methods. Some add-in service calls were still relying on these legacy paths, causing add-in metadata retrieval requests to be rejected. As a result, affected add-ins could not be loaded or displayed correctly for users.
 
 ### WORK AROUND (steps to mitigate)
+
 No customer action was required. Microsoft applied targeted mitigations to restore compatibility while a longer-term fix is validated. Customers who continue to experience issues are advised to contact Microsoft Support for assistance.
 
 ### SEE ALSO
@@ -332,7 +316,7 @@ We're currently working on a fix.
 
 ### START DATE
 
-Date reported: 11/3/2025
+Date reported: November 3, 2025
 
 ### WORKAROUND
 
@@ -355,7 +339,7 @@ Some users may experience delays of up to ten seconds loading images in Exchange
 
 ### START DATE
 
-Monday, 11/03/2025, at 4:31 PM UTC
+Monday, November 3, 2025, at 4:31 PM UTC
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
@@ -453,6 +437,30 @@ Options:
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. ADD "RESOLVED:" to H2---------------------------------------------------->
 ***
 
+## RESOLVED: OUTLOOK ISSUE: Classic Outlook on Windows crashes when using signature add-ins
+
+Some users reported that classic Outlook on Windows crashed when using signature add-ins in the following scenarios.
+
+- Sending mail items through applications other than Outlook. For example, using the **Send to** > **Mail recipient** option from a file in File Explorer.
+- Editing an existing calendar item where the user is an organizer.
+
+Affected client version: Classic Outlook on Windows Version 2606 (Build 20131.20090)
+
+#### STATUS
+
+The fix is included in Version 2606 (Build 20131.20142), Version 2607 (Build 20228.20056), and later. These versions are rolling out gradually and may not yet be available to all users. Users can update manually once the new version is available, or get the update automatically in a few days.
+
+#### START DATE
+
+Thursday, July 2, 2026
+
+#### RESOLUTION DATE
+
+Tuesday, July 14, 2026
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. ADD "RESOLVED:" to H2---------------------------------------------------->
+***
+
 ## RESOLVED: Classic Outlook on Windows: Installed add-ins are missing
 
 Some users were unable to find their installed add-ins in classic Outlook on Windows.
@@ -467,77 +475,11 @@ Tracking IDs: 784225604, 781077848
 
 ### START DATE
 
-Date reported: Tuesday, 04/14/2026
+Date reported: Tuesday, April 14, 2026
 
 ### RESOLUTION DATE
 
-Date fixed: Wednesday, 04/22/2026
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
-## RESOLVED: Microsoft Marketplace: Issues installing add-ins from the Marketplace
-
-Some users may experienced failures when installing add-ins from the Microsoft Marketplace. During the installation flow, the process may not complete successfully, and users may see a 50x server-related error.
-
-### STATUS
-
-The issue is now resolved.
-
-### START TIME
-
-Sunday, 02/08/2026
-
-### RESOLUTION TIME
-
-Friday, 02/13/2026
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. ADD "RESOLVED:" to H2---------------------------------------------------->
-***
-
-## RESOLVED: Outlook for Mac: Signatures not inserted using add-ins and user with Smart Alerts add-ins not able to send email
-
-A disruption in processing `LaunchEvent` caused the following issues:
-
-- Signatures were not stamped on outgoing emails.
-- Users with Smart Alerts add-ins were unable to send emails in some cases.
-
-### STATUS
-
-Resolved. This issue was caused by a temporary configuration issue during a backend change management update for event-based activation support. For a subset of users having event-based add-ins, this resulted in add‑ins not initializing as expected, which in turn blocked sending emails. The configuration has now been corrected.
-
-Note: Because these settings are cached locally and sync asynchronously, some users may need to restart Outlook more than once to pick up the updated configuration.
-
-Tracking ID: 734492427
-
-### START TIME
-
-Thursday, 01/15/2026 5:45am PST
-
-### RESOLUTION TIME
-
-The fix was released Thursday, 01/15/2026 7:00am PST
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. ADD "RESOLVED:" to H2---------------------------------------------------->
-***
-
-## RESOLVED: EXCEL: RichApi.Error code 0x8002802B known as hrNotFound is occurring more frequently when not expected
-
-Users experienced failures when executing Excel grid operations initiated through add-in commands on the ribbon or context menu. This issue occured primarily when users have Custom Functions.
-
-Platform affected: Windows Desktop
-
-### STATUS
-
-Users should upgrade Excel to 2508 (19127.20264) or later for the fix.
-
-### START DATE
-
-Date reported: SEP 17, 2025
-
-### RESOLUTION DATE
-
-Date fixed: 09/26/2025
+Date fixed: Wednesday, April 22, 2026
 
 <!------------LEAVE SEE ALSO---------------------------------------------------->
 ***
