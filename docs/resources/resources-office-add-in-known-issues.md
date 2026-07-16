@@ -448,12 +448,7 @@ Affected client version: Classic Outlook on Windows Version 2606 (Build 20131.20
 
 #### STATUS
 
-The fix is available in the following versions starting on July 14, 2026.
-
-- Current Channel: Version 2606 (Build 20131.20142)
-- Monthly Enterprise Channel: Version 2607 (Build 20228.20056)
-
-Users can choose to update immediately. Automatic updates to all users may take a few days.
+The fix is included in Version 2606 (Build 20131.20142), Version 2607 (Build 20228.20056), and later. These versions are rolling out gradually and may not yet be available to all users. Users can update manually once the version appears in their client.
 
 #### START DATE
 
