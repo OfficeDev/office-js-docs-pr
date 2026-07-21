@@ -273,7 +273,7 @@ Office.actions.associate("onMessageDecryptHandler", onMessageDecryptHandler);
 
 #### Decrypt Outlook item attachments (preview)
 
-Support for decrypting Outlook item attachments (`Office.MailboxEnums.AttachmentType.Item`), particularly email attachments, is available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds. To test this feature using the sample code in this article, update the `onMessageDecryptHandler` function with the following code.
+Support for decrypting Outlook item attachments (`Office.MailboxEnums.AttachmentType.Item`), particularly email attachments, is available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version 2606 (Build 20114.15110) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds. To test this feature using the sample code in this article, update the `onMessageDecryptHandler` function with the following code.
 
 ```javascript
     // Decrypted content and properties of an email attachment.
@@ -293,7 +293,7 @@ Support for decrypting Outlook item attachments (`Office.MailboxEnums.Attachment
 
 #### Customize error messages for the decryption operation (preview)
 
-Custom error messages for failed decryption operations are available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds.
+Custom error messages for failed decryption operations are available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version 2606 (Build 20114.15110) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds.
 
 If the decryption operation fails, the `allowEvent` property of the `event.completed` call is set to `false`, and Outlook shows the following default notification to the user: "\<Add-in name\> failed to process your message." To specify a custom error message, set the [errorMessage](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-errormessage-member) property of your add-in's `event.completed` call. Your custom message is prefixed with "Error from \<add-in name\>:". If your custom message can't be shown, the default notification is shown instead.
 
@@ -308,9 +308,9 @@ event.completed({
 
 #### Manage distribution of decrypted content (preview)
 
-To help prevent unauthorized distribution of decrypted content, access control options are available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds.
+To help prevent unauthorized distribution of decrypted content, access control options are available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version 2606 (Build 20114.15110) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds.
 
-To limit printing, copying, or saving of decrypted content, include the [accessControls](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-accesscontrols-member) property of the `event.completed` call. Then, set the [allowPrint](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowprint-member), [allowCopyPaste](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowcopypaste-member), and [allowSave](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowsave-member) properties to `false`.
+To limit printing, copying, or saving of decrypted content, include the [accessControls](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-accesscontrols-member) property of the `event.completed` call. Then, set the [allowPrint](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowprint-member), [allowCopyPaste](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowcopypaste-member), and [allowSave](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowsave-member) properties to `false`. If the `accessControls` property isn't specified, access controls default to `true`.
 
 To test this feature using the sample code in this article, update the `event.completed` call of the `onMessageDecryptHandler` function with the following code.
 
@@ -327,6 +327,11 @@ To test this feature using the sample code in this article, update the `event.co
         }
     });
 ```
+
+> [!NOTE]
+>
+> - In Outlook on the web, setting the `allowCopyPaste` property to `false` also prevents users from capturing their screen in the form of screenshots or recordings. The screen capture policy remains in effect until the user reloads the Outlook browser tab.
+> - In Outlook on the web and the new Outlook on Windows, setting the `allowCopyPaste` property to `true` allows the user to copy content by selecting **Copy** from the context menu or pressing <kbd>Ctrl</kbd>+<kbd>C</kbd>. However, if another access control is set to `false`, the context menu becomes unavailable. The user must use <kbd>Ctrl</kbd>+<kbd>C</kbd> instead.
 
 ## Behavior and limitations
 
@@ -356,7 +361,7 @@ Add-ins that handle the `OnMessageDecrypt` event automatically display notificat
 | \<Add-in name\> add-in has decrypted your message. | The add-in successfully decrypted the contents of the message. The user can now view the message and its attachments. |
 | \<Add-in name\> is taking longer than expected to process your message. | The add-in has been running for more than five seconds, but less than five minutes. |
 | \<Add-in name\> timed out. To retry, select another email and then return to this message. | The add-in times out after running for five minutes. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageDecrypt` event. |
-| \<Add-in name\> timed out. (preview) | The add-in times out after running for five minutes. This notification includes a **Retry** action so the recipient can retry the decryption operation without switching to another message. This retry feature is available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version //TODO or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds. |
+| \<Add-in name\> timed out. (preview) | The add-in times out after running for five minutes. This notification includes a **Retry** action so the recipient can retry the decryption operation without switching to another message. This retry feature is available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version 2606 (Build 20114.15110) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds. |
 | \<Add-in name\> can't process this message because it's protected by a built-in security feature. | The add-in tries to process a message that's already protected by DRM or S/MIME. |
 | Custom error message (preview) | An error was encountered while the add-in was decrypting the message. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageDecrypt` event. For guidance on how to customize an error message for the decryption operation, see [Customize error messages for the decryption operation (preview)](#customize-error-messages-for-the-decryption-operation-preview). |
 
