@@ -104,7 +104,7 @@ In your add-in's **manifest.json** file, you must configure the [`"extensions.ru
 
 1. Add the following `"autoRunEvents"` array as a property of the object in the `"extensions"` array. Note the following about this markup.
 
-   - An event object is created for each event that the add-in handles. In this sample, one event object is created for `OnMessageSend` (using the event's unified manifest name, `"messageSending"`, as described in the [supported events table](../develop/event-based-activation.md#supported-events)) and another for `OnMessageDecrypt`.
+   - An event object is created for each event that the add-in handles. In this sample, one event object is created for `OnMessageSend` and another for `OnMessageDecrypt`. Both events use their unified manifest event name, `"messageSending"` and `"messageDecrypt"`, as described in the [supported events table](../develop/event-based-activation.md#supported-events).
    - To ensure that the appropriate handler runs when an event occurs, the function name provided in `"actionId"` must match the name used in the `"id"` property of the applicable object in the `"runtimes.actions"` array from an earlier step.
    - The ["options"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options) property provides additional configuration for the `OnMessageSend` and `OnMessageDecrypt` events.
        - For `OnMessageSend`, the ["sendMode"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options#sendmode) option specifies whether a user is able to send their message if it doesn't meet an add-in's conditions. In this sample, the `"softBlock"` option is specified. To learn more about send mode options, see the "Available send mode options" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#available-send-mode-options).
@@ -122,7 +122,7 @@ In your add-in's **manifest.json** file, you must configure the [`"extensions.ru
                   }
               },
               {
-                  "type": "OnMessageDecrypt",
+                  "type": "messageDecrypt",
                   "actionId": "onMessageDecryptHandler",
                   "options": {
                       "headerName": "contoso-encrypted"
