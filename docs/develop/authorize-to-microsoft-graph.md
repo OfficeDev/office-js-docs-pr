@@ -1,7 +1,7 @@
 ﻿---
 title: Authorize to Microsoft Graph with legacy Office SSO
 description: Learn how users of an Office Add-in can use legacy Office single sign-on (SSO) to fetch data from Microsoft Graph.
-ms.date: 02/02/2026
+ms.date: 07/16/2026
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +16,10 @@ Users sign in to Office using either their personal Microsoft account or their M
 
 In addition to hosting the pages and JavaScript of the web application, the add-in must also host, at the same [fully qualified domain name](/windows/desktop/DNS/f-gly#_dns_fully_qualified_domain_name_fqdn__gly), one or more web APIs that will get an access token to Microsoft Graph and make requests to it.
 
-The add-in manifest contains a `<WebApplicationInfo>` element that provides important Azure app registration information to Office, including the permissions to Microsoft Graph that the add-in requires.
+The add-in manifest contains markup that provides important Azure app registration information to Office.
+
+- **Add-in only manifest**: The information is in the `<WebApplicationInfo>` element and it includes the permissions to Microsoft Graph that the add-in requires.
+- **Unified manifest for Microsoft 365**: The information is in the `"webApplicationInfo"` property. The value of this property doesn't include the permissions. When the unified manifest is used, Office gets the information it needs about permissions from the web application's registration in Microsoft Entra. 
 
 ### How it works at runtime
 
