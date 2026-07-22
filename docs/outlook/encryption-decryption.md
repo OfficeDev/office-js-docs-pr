@@ -347,6 +347,7 @@ To test this feature using the sample code in this article, update the `event.co
 - The `attachments` property of the `event.completed` method doesn't support attachments of type `Office.MailboxEnums.AttachmentType.Item`, except for preview in Outlook on the web and on Windows (new and classic). To learn more, see [Decrypt Outlook item attachments (preview)](#decrypt-outlook-item-attachments-preview).
 - Custom encryption add-ins can't encrypt messages that are already protected by DRM or S/MIME.
 - In Outlook on the web and the new Outlook on Windows, when encrypted messages are [grouped by conversation](https://support.microsoft.com/outlook/mail/view-email-messages-by-conversation-in-outlook), only the currently selected message from the conversation thread is decrypted. The other messages in the conversation thread remain encrypted until they're selected.
+- In Outlook on the web and the new Outlook on Windows, users can only download a decrypted message in the EML format. The option to download in the MSG format is unavailable.
 
 ### Decryption notifications
 
