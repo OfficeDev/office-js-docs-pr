@@ -1,7 +1,7 @@
 ---
 title: Create an encryption Outlook add-in
 description: Learn how to develop an Outlook add-in that encrypts and decrypts messages.
-ms.date: 06/23/2026
+ms.date: 06/30/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -53,8 +53,87 @@ The `OnMessageDecrypt` event is supported on the Message Read surface. Support v
 
 ### Configure the manifest
 
+# [Unified manifest for Microsoft 365](#tab/jsonmanifest)
+
 > [!NOTE]
-> The `OnMessageDecrypt` event can currently only be implemented with an add-in only manifest.
+> The `OnMessageDecrypt` event and `"extensions.autoRunEvents.events.options.headerName"` property are in preview with the unified manifest. Don't use the decryption feature with the unified manifest in a production add-in.
+
+In your add-in's **manifest.json** file, you must configure the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array) array and add the [`"extensions.autoRunEvents"`](/microsoft-365/extensibility/schema/element-extensions#autorunevents) array to enable event-based activation in your add-in.
+
+1. Add the following object to the `"extensions.runtimes"` array. Note the following about this markup.
+
+     - The `"id"` of the runtime is set to the descriptive name `"autorun_runtime"`.
+     - The `"code"` property has a child `"page"` property that is set to an HTML file and a child `"script"` property that is set to a JavaScript file. Office uses one of these values depending on the platform.
+         - Outlook on the web and the [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) execute the handler in a browser runtime, which loads an HTML file. That file, in turn, contains a `<script>` tag that loads the JavaScript file.
+         - Classic Outlook on Windows executes the event handler in a JavaScript-only runtime, which loads a JavaScript file directly.
+         For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+     - The `"lifetime"` property is set to `"short"`, which means that the runtime starts up when the event is triggered and shuts down when the handler completes.
+     - [Actions](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) map JavaScript handlers to the `OnMessageSend` and `OnMessageDecrypt` events.
+
+    ```json
+    "runtimes": [
+        {
+            "requirements": {
+                "capabilities": [
+                    {
+                        "name": "Mailbox",
+                        "minVersion": "1.16"
+                    }
+                ]
+            },
+            "id": "autorun_runtime",
+            "type": "general",
+            "code": {
+                "page": "https://localhost:3000/launchevents.html",
+                "script": "https://localhost:3000/launchevents.js"
+            },
+            "lifetime": "short",
+            "actions": [
+                {
+                    "id": "onMessageSendHandler",
+                    "type": "executeFunction"
+                },
+                {
+                    "id": "onMessageDecryptHandler",
+                    "type": "executeFunction"
+                }
+            ]
+        }
+    ],
+    ```
+
+1. Add the following `"autoRunEvents"` array as a property of the object in the `"extensions"` array. Note the following about this markup.
+
+   - An event object is created for each event that the add-in handles. In this sample, one event object is created for `OnMessageSend` and another for `OnMessageDecrypt`. Both events use their unified manifest event name, `"messageSending"` and `"messageDecrypt"`, as described in the [supported events table](../develop/event-based-activation.md#supported-events).
+   - To ensure that the appropriate handler runs when an event occurs, the function name provided in `"actionId"` must match the name used in the `"id"` property of the applicable object in the `"runtimes.actions"` array from an earlier step.
+   - The ["options"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options) property provides additional configuration for the `OnMessageSend` and `OnMessageDecrypt` events.
+       - For `OnMessageSend`, the ["sendMode"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options#sendmode) option specifies whether a user is able to send their message if it doesn't meet an add-in's conditions. In this sample, the `"softBlock"` option is specified. To learn more about send mode options, see the "Available send mode options" section of [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md#available-send-mode-options).
+       - For `OnMessageDecrypt`, the ["headerName"](/microsoft-365/extensibility/schema/extension-auto-run-events-array-events-options#headername) option specifies the internet header name used to identify whether a message was encrypted by the add-in. The same header is added to a message that's encrypted by the add-in.
+
+    ```json
+    "autoRunEvents": [
+        {
+            "events": [
+              {
+                  "type": "messageSending",
+                  "actionId": "onMessageSendHandler",
+                  "options": {
+                      "sendMode": "softBlock"
+                  }
+              },
+              {
+                  "type": "messageDecrypt",
+                  "actionId": "onMessageDecryptHandler",
+                  "options": {
+                      "headerName": "contoso-encrypted"
+                  }
+              }
+            ]
+        }
+    ]
+    ```
+
+# [Add-in only manifest](#tab/xmlmanifest)
 
 To activate your add-in on the `OnMessageDecrypt` event, you must configure the [\<VersionOverridesV1_1\>](/javascript/api/manifest/versionoverrides-1-1-mail) node of your add-in's **manifest.xml** file as follows.
 
@@ -108,6 +187,8 @@ The following is an example of a `<VersionOverrides>` node that implements the `
   </VersionOverrides>
 </VersionOverrides>
 ```
+
+---
 
 ### Implement event handling
 
@@ -190,6 +271,68 @@ Office.actions.associate("onMessageDecryptHandler", onMessageDecryptHandler);
 >
 > To easily identify and provide these inline attachments during decryption, we recommend saving the content IDs of inline attachments to the message header during encryption. Call [Office.context.mailbox.item.getAttachmentsAsync](/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)) to get the [content ID](/javascript/api/outlook/office.attachmentdetailscompose#outlook-office-attachmentdetailscompose-contentid-member) of an inline attachment. Then, call [Office.context.mailbox.item.internetHeaders.setAsync](/javascript/api/outlook/office.internetheaders#outlook-office-internetheaders-setasync-member(1)) to save the ID to the header of the message.
 
+#### Decrypt Outlook item attachments (preview)
+
+Support for decrypting Outlook item attachments (`Office.MailboxEnums.AttachmentType.Item`), particularly email attachments, is available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version 2606 (Build 20114.15110) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds. To test this feature using the sample code in this article, update the `onMessageDecryptHandler` function with the following code.
+
+```javascript
+    // Decrypted content and properties of an email attachment.
+    const decryptedEmailFile = "VGhpcyBpcyBhIHRleHQgZmlsZS4=...";
+    const emailFileName = "Fabrikam_Report_202508.eml";
+
+    const decryptedAttachments = [
+        ...
+        {
+            attachmentType: Office.MailboxEnums.AttachmentType.Item,
+            content: decryptedEmailFile,
+            name: emailFileName
+        }
+    ];
+    ...
+```
+
+#### Customize error messages for the decryption operation (preview)
+
+Custom error messages for failed decryption operations are available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version 2606 (Build 20114.15110) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds.
+
+If the decryption operation fails, the `allowEvent` property of the `event.completed` call is set to `false`, and Outlook shows the following default notification to the user: "\<Add-in name\> failed to process your message." To specify a custom error message, set the [errorMessage](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-errormessage-member) property of your add-in's `event.completed` call. Your custom message is prefixed with "Error from \<add-in name\>:". If your custom message can't be shown, the default notification is shown instead.
+
+The following code sample shows how to specify a custom error message for your decryption add-in.
+
+```javascript
+event.completed({
+    allowEvent: false,
+    errorMessage: "This message couldn't be decrypted. Contact the Contoso IT team for further assistance."
+});
+```
+
+#### Manage distribution of decrypted content (preview)
+
+To help prevent unauthorized distribution of decrypted content, access control options are available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version 2606 (Build 20114.15110) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds.
+
+To limit printing, copying, or saving of decrypted content, include the [accessControls](/javascript/api/outlook/office.messagedecrypteventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-messagedecrypteventcompletedoptions-accesscontrols-member) property of the `event.completed` call. Then, set the [allowPrint](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowprint-member), [allowCopyPaste](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowcopypaste-member), and [allowSave](/javascript/api/outlook/office.accesscontrols?view=outlook-js-preview&preserve-view=true#outlook-office-accesscontrols-allowsave-member) properties to `false`. If the `accessControls` property isn't specified, access controls default to `true`.
+
+To test this feature using the sample code in this article, update the `event.completed` call of the `onMessageDecryptHandler` function with the following code.
+
+```javascript
+    event.completed({
+        allowEvent: true,
+        emailBody: decryptedBody,
+        attachments: decryptedAttachments,
+        contextData: { messageType: "ReplyFromDecryptedMessage" },
+        accessControls: {
+            allowPrint: false,
+            allowCopyPaste: false,
+            allowSave: false
+        }
+    });
+```
+
+> [!NOTE]
+>
+> - In Outlook on the web, setting the `allowCopyPaste` property to `false` also prevents users from capturing their screen in the form of screenshots or recordings. The screen capture policy remains in effect until the user reloads the Outlook browser tab.
+> - In Outlook on the web and the new Outlook on Windows, setting the `allowCopyPaste` property to `true` allows the user to copy content by selecting **Copy** from the context menu or pressing <kbd>Ctrl</kbd>+<kbd>C</kbd>. However, if another access control is set to `false`, the context menu becomes unavailable. The user must use <kbd>Ctrl</kbd>+<kbd>C</kbd> instead.
+
 ## Behavior and limitations
 
 - Be aware of the behaviors and limitations of event-based add-ins. To learn more, see [Activate add-ins with events](../develop/event-based-activation.md#behavior-and-limitations).
@@ -201,7 +344,10 @@ Office.actions.associate("onMessageDecryptHandler", onMessageDecryptHandler);
 - An encrypted message must first be decrypted before a user can reply or forward it. A user can't reply or forward an encrypted message while it's being decrypted.
 - If a user navigates to another mail item while an encrypted message is being decrypted, the decryption process stops running. The user must select or open the message again to activate the decryption process.
 - When replying to or forwarding encrypted messages, drafts are saved unencrypted in the **Drafts** folder.
-- The `attachments` property of the `event.completed` method doesn't currently support attachments of type `Office.MailboxEnums.AttachmentType.Item`.
+- The `attachments` property of the `event.completed` method doesn't support attachments of type `Office.MailboxEnums.AttachmentType.Item`, except for preview in Outlook on the web and on Windows (new and classic). To learn more, see [Decrypt Outlook item attachments (preview)](#decrypt-outlook-item-attachments-preview).
+- Custom encryption add-ins can't encrypt messages that are already protected by DRM or S/MIME.
+- In Outlook on the web and the new Outlook on Windows, when encrypted messages are [grouped by conversation](https://support.microsoft.com/outlook/mail/view-email-messages-by-conversation-in-outlook), only the currently selected message from the conversation thread is decrypted. The other messages in the conversation thread remain encrypted until they're selected.
+- In Outlook on the web and the new Outlook on Windows, users can only download a decrypted message in the EML format. The option to download in the MSG format is unavailable.
 
 ### Decryption notifications
 
@@ -216,6 +362,9 @@ Add-ins that handle the `OnMessageDecrypt` event automatically display notificat
 | \<Add-in name\> add-in has decrypted your message. | The add-in successfully decrypted the contents of the message. The user can now view the message and its attachments. |
 | \<Add-in name\> is taking longer than expected to process your message. | The add-in has been running for more than five seconds, but less than five minutes. |
 | \<Add-in name\> timed out. To retry, select another email and then return to this message. | The add-in times out after running for five minutes. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageDecrypt` event. |
+| \<Add-in name\> timed out. (preview) | The add-in times out after running for five minutes. This notification includes a **Retry** action so the recipient can retry the decryption operation without switching to another message. This retry feature is available for preview in Outlook on the web and on Windows (new and classic). To preview this feature in classic Outlook on Windows, you must install Version 2606 (Build 20114.15110) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/join-the-microsoft-365-insider-program-on-windows/4401748) and select the **Beta Channel** option to access Office beta builds. |
+| \<Add-in name\> can't process this message because it's protected by a built-in security feature. | The add-in tries to process a message that's already protected by DRM or S/MIME. |
+| Custom error message (preview) | An error was encountered while the add-in was decrypting the message. To retry the decryption operation, the recipient must switch to another message, then open the encrypted message again to invoke the `OnMessageDecrypt` event. For guidance on how to customize an error message for the decryption operation, see [Customize error messages for the decryption operation (preview)](#customize-error-messages-for-the-decryption-operation-preview). |
 
 ## See also
 
