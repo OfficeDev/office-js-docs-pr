@@ -24,34 +24,28 @@ Project add-ins currently use common APIs because there isn't an application-spe
 :::row:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-excel.png" alt-text="Excel API reference" border="false":::
-        **Excel API reference**
-        [JavaScript APIs for building Excel add-ins](/javascript/api/excel)
+        <br>**Excel API reference**<br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-outlook.png" alt-text="Outlook API reference":::
-        **Outlook API reference**
-        [JavaScript APIs for building Outlook add-ins](/javascript/api/outlook)
+        <br>**Outlook API reference**<br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-word.png" alt-text="Word API reference" border="false":::
-        **Word API reference**
-        [JavaScript APIs for building Word add-ins](/javascript/api/word)
+        <br>**Word API reference**<br>[JavaScript APIs for building Word add-ins](/javascript/api/word)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-powerpoint.png" alt-text="PowerPoint API reference" border="false":::
-        **PowerPoint API reference**
-        [JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint)
+        <br>**PowerPoint API reference**<br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-onenote.png" alt-text="OneNote API reference" border="false":::
-        **OneNote API reference**
-        [JavaScript APIs for building OneNote add-ins](/javascript/api/onenote)
+        <br>**OneNote API reference**<br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote)
    :::column-end:::
    :::column span="":::
    :::image type="content" source="../images/m365-app-office.png" alt-text="Common API reference" border="false":::
-        **Common API reference**
-        [JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
+        <br>**Common API reference**<br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
    :::column-end:::
 :::row-end:::
