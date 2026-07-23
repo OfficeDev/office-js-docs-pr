@@ -1,21 +1,25 @@
 ---
 title: Office JavaScript API reference documentation
-description: Learn about the Office JavaScript APIs.
+description: Find the Office JavaScript API reference for each Office host and choose the right API model for your add-in.
 ms.topic: overview
-ms.date: 06/11/2025
+ms.date: 07/23/2026
 ms.localizationpriority: high
 ---
 
 # Office JavaScript API reference documentation
 
-An add-in can use the Office JavaScript APIs to interact with objects in Office client applications.
+Use this page to quickly find the Office JavaScript API reference for the Office host from which you're building an add-in.
 
-- **Application-specific** APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application.
-- **Common** APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple Office applications.
+## Choose the right API model
 
-You should use application-specific APIs whenever feasible, and use Common APIs only for scenarios that aren't supported by application-specific APIs. For more detailed information about these two API models, see [Develop Office Add-ins](../develop/develop-overview.md#api-models).
+- Use **application-specific** APIs when you're building for Excel, Outlook, PowerPoint, Word, or OneNote and need access to host-specific objects and features.
+- Use **common** APIs for cross-host features such as UI, dialogs, and client settings.
 
-## API reference
+Start with application-specific APIs whenever possible. Use common APIs for scenarios that application-specific APIs don't support. For more information about these API models, see [Develop Office Add-ins](../develop/develop-overview.md#api-models).
+
+Project add-ins currently use common APIs because there isn't an application-specific JavaScript API for Project.
+
+## API reference by host
 
 :::row:::
    :::column span="":::
@@ -45,5 +49,3 @@ You should use application-specific APIs whenever feasible, and use Common APIs 
         <br>**Common API reference**<br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
    :::column-end:::
 :::row-end:::
-
-**Note**: There's currently no application-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins.
