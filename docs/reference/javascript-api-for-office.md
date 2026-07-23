@@ -55,6 +55,3 @@ Project add-ins currently use common APIs because there isn't an application-spe
         [JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
    :::column-end:::
 :::row-end:::
-
-> [!NOTE]
-> There's currently no application-specific JavaScript API for Project. You'll use Common APIs to create Project add-ins.
