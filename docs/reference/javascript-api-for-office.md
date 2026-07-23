@@ -1,49 +1,60 @@
 ---
 title: Office JavaScript API reference documentation
-description: Learn about the Office JavaScript APIs.
+description: Find the Office JavaScript API reference for each Office host and choose the right API model for your add-in.
 ms.topic: overview
-ms.date: 06/11/2025
+ms.date: 07/23/2026
 ms.localizationpriority: high
 ---
 
 # Office JavaScript API reference documentation
 
-An add-in can use the Office JavaScript APIs to interact with objects in Office client applications.
+Use this page to quickly find the Office JavaScript API reference for the Office host from which you're building an add-in.
 
-- **Application-specific** APIs provide strongly-typed objects that can be used to interact with objects that are native to a specific Office application.
-- **Common** APIs can be used to access features such as UI, dialogs, and client settings that are common across multiple Office applications.
+## Choose the right API model
 
-You should use application-specific APIs whenever feasible, and use Common APIs only for scenarios that aren't supported by application-specific APIs. For more detailed information about these two API models, see [Develop Office Add-ins](../develop/develop-overview.md#api-models).
+- Use **application-specific** APIs when you're building for Excel, Outlook, PowerPoint, Word, or OneNote and need access to host-specific objects and features.
+- Use **common** APIs for cross-host features such as UI, dialogs, and client settings.
 
-## API reference
+Start with application-specific APIs whenever possible. Use common APIs for scenarios that application-specific APIs don't support. For more information about these API models, see [Develop Office Add-ins](../develop/develop-overview.md#api-models).
+
+Project add-ins currently use common APIs because there isn't an application-specific JavaScript API for Project.
+
+## API reference by host
 
 :::row:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-excel.png" alt-text="Excel API reference" border="false":::
-        <br>**Excel API reference**<br>[JavaScript APIs for building Excel add-ins](/javascript/api/excel)
+        **Excel API reference**
+        [JavaScript APIs for building Excel add-ins](/javascript/api/excel)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-outlook.png" alt-text="Outlook API reference":::
-        <br>**Outlook API reference**<br>[JavaScript APIs for building Outlook add-ins](/javascript/api/outlook)
+        **Outlook API reference**
+        [JavaScript APIs for building Outlook add-ins](/javascript/api/outlook)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-word.png" alt-text="Word API reference" border="false":::
-        <br>**Word API reference**<br>[JavaScript APIs for building Word add-ins](/javascript/api/word)
+        **Word API reference**
+        [JavaScript APIs for building Word add-ins](/javascript/api/word)
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-powerpoint.png" alt-text="PowerPoint API reference" border="false":::
-        <br>**PowerPoint API reference**<br>[JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint)
+        **PowerPoint API reference**
+        [JavaScript APIs for building PowerPoint add-ins](/javascript/api/powerpoint)
    :::column-end:::
    :::column span="":::
         :::image type="content" source="../images/m365-app-onenote.png" alt-text="OneNote API reference" border="false":::
-        <br>**OneNote API reference**<br>[JavaScript APIs for building OneNote add-ins](/javascript/api/onenote)
+        **OneNote API reference**
+        [JavaScript APIs for building OneNote add-ins](/javascript/api/onenote)
    :::column-end:::
    :::column span="":::
    :::image type="content" source="../images/m365-app-office.png" alt-text="Common API reference" border="false":::
-        <br>**Common API reference**<br>[JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
+        **Common API reference**
+        [JavaScript APIs that can be used by any Office Add-in](/javascript/api/office)
    :::column-end:::
 :::row-end:::
 
-**Note**: There's currently no application-specific JavaScript API for Project; you'll use Common APIs to create Project add-ins.
+> [!NOTE]
+> There's currently no application-specific JavaScript API for Project. You'll use Common APIs to create Project add-ins.
