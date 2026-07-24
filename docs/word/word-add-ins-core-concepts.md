@@ -16,7 +16,7 @@ A Word add-in interacts with objects in Word by using the Office JavaScript API.
 
 - **Word JavaScript API**: The [Word JavaScript API](/javascript/api/word) provides strongly typed objects that work with the document, ranges, tables, lists, formatting, and more. To learn how `Word.run`, proxy objects, and `context.sync()` work with the document, see [Using the application-specific API model](../develop/application-specific-api-model.md).
 
-- **Common APIs**: The [Common API](/javascript/api/office) gives access to features such as UI, dialogs, and client settings that are common across multiple Office applications. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
+- **Common API**: The [Common API](/javascript/api/office) gives access to features such as UI, dialogs, and client settings that are common across multiple Office applications. To learn more about using the Common API, see [Common JavaScript API object model](../develop/office-javascript-api-object-model.md).
 
 You'll likely use the Word JavaScript API to develop most of the functionality in add-ins that target Word. However, you might also use objects in the Common API for runtime information, requirement-set checks, dialogs, settings, selection APIs, bindings, and file access. For example:
 
@@ -27,7 +27,7 @@ You'll likely use the Word JavaScript API to develop most of the functionality i
 
 ## Start with the Word objects you use most
 
-In the Word object model, start with the document and move inward to the content you want to work with.
+To understand how the content that you want your add-in to work with fits in the Word object model, start with the document and move inward to the content you want to work with.
 
 | Object | Description |
 | -------- | ------------- |
