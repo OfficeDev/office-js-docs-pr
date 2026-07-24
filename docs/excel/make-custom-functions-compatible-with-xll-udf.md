@@ -1,7 +1,7 @@
 ---
 title: Extend custom functions with XLL add-ins
 description: Enable compatibility with Excel XLL add-ins that have equivalent functionality to your custom functions.
-ms.date: 06/03/2026
+ms.date: 07/24/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -24,8 +24,6 @@ To set the equivalent XLL add-in for your custom functions, specify the `FileNam
 The manifest configuration depends on what type of manifest the add-in uses.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-[!include[unified manifest preview note](../includes/excel-custom-functions-unified-manifest-preview.md)]
 
 The following example shows how to specify both a COM add-in and an XLL add-in as equivalents in a unified manifest. Often you specify both. For completeness, this example shows both equivalents in context. They're identified by their [`"alternates.prefer.comAddin.progId"`](/microsoft-365/extensibility/schema/extension-alternate-versions-array-prefer-com-addin#progid) and [`"alternates.prefer.xllCustomFunctions.fileName"`](/microsoft-365/extensibility/schema/extension-xll-custom-functions#filename) respectively. For more information on COM add-in compatibility, see [Make your Office Add-in compatible with an existing COM or VSTO add-in](../develop/make-office-add-in-compatible-with-existing-com-add-in.md).
 

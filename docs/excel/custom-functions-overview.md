@@ -1,7 +1,7 @@
 ---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
-ms.date: 06/08/2026
+ms.date: 07/24/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -72,8 +72,6 @@ function add(first, second){
 The manifest file for an add-in that defines custom functions configures the namespace, specifies file locations, and defines the runtime. Select the tab for the manifest type you're using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-[!include[unified manifest preview note](../includes/excel-custom-functions-unified-manifest-preview.md)]
 
 The unified manifest for an add-in that defines custom functions (**./manifest.json** in the project) does several things.
 
