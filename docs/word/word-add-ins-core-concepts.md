@@ -8,9 +8,9 @@ ms.localizationpriority: high
 
 # Word JavaScript object model in Office Add-ins
 
-To effectively read and edit Word documents with your add-in, you need to understand the Word JavaScript object model. This article explains how the main Word objects fit together so you can choose the right patterns.
+This article explains how the main Word JavaScript objects fit together so you can choose the right patterns.
 
-## Office.js APIs for Word
+## Office.js API for Word
 
 A Word add-in interacts with objects in Word by using the Office JavaScript API. There are two Office JavaScript object models:
 
@@ -25,7 +25,15 @@ You'll likely use the Word JavaScript API to develop most of the functionality i
 
 :::image type="content" source="../images/word-js-api-common-api.png" alt-text="Differences between the Word JS API and Common APIs.":::
 
-## Start with the Word objects you use most
+## Word-specific object model
+
+To understand the Word API, you need to understand how key components of a document relate to one another.
+
+- The document contains all the editable parts of a Word document and top-level properties.
+- The document has a body. A body contains paragraphs, content controls, ranges, tables, and inline pictures. The body gives access to specific parts of the document to read or write.
+- A range is a contiguous area of content, including text, whitespace, tables, and images. The [Word.Range](/javascript/api/word/word.range) object contains many of the text manipulation methods that add-ins use most often.
+
+### Start with the Word objects you use most
 
 In the Word object model, start with the document and move inward to the content you want to work with.
 
@@ -41,6 +49,8 @@ In the Word object model, start with the document and move inward to the content
 | [Window](/javascript/api/word/word.window) | The window that displays the document. Use it to work with the document's visible container. |
 | [Pane](/javascript/api/word/word.pane) | A pane within a window. Use it when your add-in needs to work with the visible area that surrounds the document content. |
 
+### Samples
+
 To explore these patterns in more depth, see the following related articles and samples:
 
 - [Sample: Import a Word document template with a Word add-in](import-template.md)
@@ -48,17 +58,7 @@ To explore these patterns in more depth, see the following related articles and 
 - [Work with events using the Word JavaScript API](word-add-ins-events.md)
 - [Use search options in your Word add-in to find text](search-option-guidance.md)
 
-## Word-specific object model
-
-To understand the Word APIs, you need to understand how key components of a document relate to one another.
-
-- The document contains sections, pages, and document-level entities such as settings and custom XML parts.
-- A section contains a body.
-- A body contains paragraphs, content controls, ranges, tables, and inline pictures.
-- A range is a contiguous area of content, including text, whitespace, tables, and images. The [Word.Range](/javascript/api/word/word.range) object contains many of the text manipulation methods that add-ins use most often.
-- A list contains numbered or bulleted paragraphs.
-- A window displays the document.
-- A window has panes. A pane surrounds the visible area of the document.
+### API Reference
 
 For the full set of objects supported by the Word JavaScript API, see [Word JavaScript API](/javascript/api/word).
 
