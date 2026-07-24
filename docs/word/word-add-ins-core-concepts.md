@@ -10,7 +10,7 @@ ms.localizationpriority: high
 
 This article explains how the main Word JavaScript objects fit together so you can choose the right patterns.
 
-## Office.js API for Word
+## Office.js APIs for Word
 
 A Word add-in interacts with objects in Word by using the Office JavaScript API. There are two Office JavaScript object models:
 
@@ -23,7 +23,7 @@ You'll likely use the Word JavaScript API to develop most of the functionality i
 - [Office.Context](/javascript/api/office/office.context): The `Context` object represents the add-in runtime environment. Use it to inspect details such as `contentLanguage`, `officeTheme`, `host`, and `platform`. You can also call `requirements.isSetSupported()` to check whether the current Word client supports a requirement set.
 - [Office.Document](/javascript/api/office/office.document): The `Office.Document` object provides the `getFileAsync()` method, which you can use to download the Word file where the add-in is running. This object is separate from the [Word.Document](/javascript/api/word/word.document) object.
 
-:::image type="content" source="../images/word-js-api-common-api.png" alt-text="Differences between the Word JS API and Common APIs.":::
+:::image type="content" source="../images/word-js-api-common-api.png" alt-text="Differences between the Word JS API and Common API.":::
 
 ## Word-specific object model
 
