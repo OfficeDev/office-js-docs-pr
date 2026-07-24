@@ -1,7 +1,7 @@
 ---
 title: Manually create JSON metadata for custom functions in Excel
 description: Define JSON metadata for custom functions in Excel and associate your function ID and name properties.
-ms.date: 04/20/2026
+ms.date: 07/24/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -32,8 +32,6 @@ Create a JSON file in your project and provide all the details about your functi
 The way you connect your manifest file to your JSON metadata file depends on which manifest type you're using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-[!include[unified manifest preview note](../includes/excel-custom-functions-unified-manifest-preview.md)]
 
 In the unified manifest, reference your JSON metadata file using the `customFunctions.metadataUrl` property within the `extensions` array:
 
