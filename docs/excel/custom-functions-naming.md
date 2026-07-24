@@ -1,7 +1,7 @@
 ---
 title: Naming and localization for custom functions in Excel
 description: Learn requirements for names of Excel custom functions and how to localize custom functions.
-ms.date: 04/20/2026
+ms.date: 07/24/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -52,8 +52,6 @@ Fix conflicts by renaming your function or uninstalling the other add-in. For te
 The namespace for your custom functions is configured in the manifest file. The configuration approach depends on which manifest type you're using.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
-
-[!include[unified manifest preview note](../includes/excel-custom-functions-unified-manifest-preview.md)]
 
 In the unified manifest, configure the namespace in the `customFunctions.namespace` object:
 
