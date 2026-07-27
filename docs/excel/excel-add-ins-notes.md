@@ -1,26 +1,38 @@
 ---
-title: Work with notes using the Excel JavaScript API
-description: Information on using the APIs to add, remove, and edit notes.
-ms.date: 06/26/2025
+title: Manage notes in Excel add-ins with Excel JavaScript API
+description: Learn how to add, show, edit, resize, and delete cell notes in Excel workbooks by using the Excel JavaScript API.
+ms.date: 07/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Work with notes using the Excel JavaScript API
+# Manage notes in Excel add-ins by using the Excel JavaScript API
 
-This article describes how to add, change, and remove notes in a workbook with the Excel JavaScript API. You can learn more about notes from the [Insert comments and notes in Excel](https://support.microsoft.com/office/bdcc9f5d-38e2-45b4-9a92-0b2b5c7bf6f8) article. For information about the differences between notes and comments, see [The difference between threaded comments and notes](https://support.microsoft.com/office/the-difference-between-threaded-comments-and-notes-75a51eec-4092-42ab-abf8-7669077b7be3).
+Use notes when you need simple, cell-based annotations in a workbook. This article shows how to add, show, edit, resize, and delete notes by using the Excel JavaScript API.
+
+If you need conversation threads with replies and mentions, see [Manage comments in Excel add-ins by using the Excel JavaScript API](excel-add-ins-comments.md). To compare the two note systems in Excel, see [The difference between threaded comments and notes](https://support.microsoft.com/office/the-difference-between-threaded-comments-and-notes-75a51eec-4092-42ab-abf8-7669077b7be3).
+
+## What you can do with notes
+
+Use the Excel note APIs to:
+
+- Add a note to a single cell.
+- Show or hide note content.
+- Update note text.
+- Change note size.
+- Delete a note.
 
 Notes are tied to an individual cell. Anyone viewing the workbook with sufficient permissions can view a note. Notes in a workbook are tracked by the `Workbook.notes` property. This includes notes created by users and also notes created by your add-in. The `Workbook.notes` property is a [NoteCollection](/javascript/api/excel/excel.notecollection) object that contains a collection of [Note](/javascript/api/excel/excel.note) objects. Notes are also accessible at the [Worksheet](/javascript/api/excel/excel.worksheet) level.
 
 > [!TIP]
-> To learn about adding and editing comments with the Excel JavaScript API, see [Work with comments using the Excel JavaScript API](excel-add-ins-comments.md).
+> To learn about threaded discussions, see [Manage comments in Excel add-ins by using the Excel JavaScript API](excel-add-ins-comments.md).
 
 ## Add a note
 
 Use the `NoteCollection.add` method to add notes to a workbook. This method takes two parameters:
 
-- `cellAddress`: The cell where the comment is added. This can either be a string or [Range](/javascript/api/excel/excel.range) object. The range must be a single cell.
-- `content`: The comment's content, as a string.
+- `cellAddress`: The cell where the note is added. This can either be a string or [Range](/javascript/api/excel/excel.range) object. The range must be a single cell.
+- `content`: The note content, as a string.
 
 The following code sample shows how to add a note to the selected cell in a worksheet.
 
@@ -45,10 +57,8 @@ await Excel.run(async (context) => {
     const sheet = context.workbook.worksheets.getActiveWorksheet();
     const firstNote = sheet.notes.getItem("A1");
 
-    firstNote.load();
-    await context.sync();
-
     firstNote.visible = true;
+    await context.sync();
 });
 ```
 
@@ -83,7 +93,7 @@ await Excel.run(async (context) => {
     const note = sheet.notes.getItemAt(0);
 
     note.width = 400;
-    note.height = 200;    
+    note.height = 200;
 
     await context.sync();
 });
