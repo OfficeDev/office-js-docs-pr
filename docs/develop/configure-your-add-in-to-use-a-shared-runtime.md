@@ -24,26 +24,27 @@ Configuring a shared runtime enables the following scenarios.
   - Custom functions have full CORS support.
   - Custom functions can call Office.js APIs to read spreadsheet document data.
 
-Additionally, any buttons that your add-in displays on the ribbon run in the same shared runtime. The following image shows how custom functions, the ribbon UI, and the task pane code all run in the same runtime.
-
-:::image type="content" source="../images/custom-functions-in-browser-runtime.png" alt-text="Diagram of a custom function, task pane, and ribbon buttons all running in a shared browser runtime in Excel.":::
-
 > [!NOTE]
-> The runtime in which the [Office Dialog](dialog-api-in-office-add-ins.md) runs is can't be configured to be shared. However, you can use the [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) and [messageChild](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) functions to instantly communicate between a dialog runtime and a shared runtime. Doing so creates an experience for the user that is the same as it would be if the dialog is running in the same shared runtime. (The function that opens the Office dialog can be passed a parameter that causes the dialog to use the same runtime as a parent task pane, but only when the add-in is running in Office on the web.) For more information, see [Use the Office dialog API in Office Add-ins](dialog-api-in-office-add-ins.md).
+> The runtime in which the [Office Dialog](dialog-api-in-office-add-ins.md) runs can't be shared, but that is not a significant limitation. Consider the following.
+>
+> - Use the [messageParent](/javascript/api/office/office.ui#office-office-ui-messageparent-member(1)) and [messageChild](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) functions to instantly communicate between a dialog runtime and a shared runtime. Doing so creates an experience for the user that is the same as it would be if the dialog is running in the same runtime.
+> - The function that opens the Office dialog can be passed a parameter that causes the dialog to use the same runtime as a parent task pane, but only when the add-in is running in Office on the web. 
+>
+> For more information, see [Use the Office dialog API in Office Add-ins](dialog-api-in-office-add-ins.md).
 
 [!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
-This article steps through the process of configuring an add-in to use a shared runtime. We recommend that you go through this process once before converting an existing add-in to use a shared runtime. 
+This article steps through the process of configuring an add-in to use a shared runtime.
 
 > [!TIP]
 > If the add-in was created with the option for an Excel custom function in either [Microsoft 365 Agents Toolkit](../develop/teams-toolkit-overview.md) or the [Yeoman generator for Office Add-ins](yeoman-generator-overview.md), then it is already configured to use a shared runtime.
 
 ## Create the add-in project
 
-To learn how to *convert* an add-in to use a shared runtime, start by creating an add-in project that isn't already configured to used a shared runtime to use as a continuing example. If you're starting a new project, use the Agents Toolkit to create a *task pane* project, not a custom function project. Instructions are in [Create Office Add-in projects with Microsoft 365 Agents Toolkit](agents-toolkit-overview.md).
+To learn how to *convert* an add-in to use a shared runtime, start by creating an add-in project that isn't already configured to used a shared runtime to use as a continuing example. Use the Agents Toolkit to create a *task pane* project, not a custom function project. Instructions are in [Create Office Add-in projects with Microsoft 365 Agents Toolkit](agents-toolkit-overview.md).
 
 > [!NOTE]
-> This article uses filenames that are in the continuing example and are common in Office add-ins; **taskpane**, **commands**, and **functions**. If you are configuring an existing add-in that uses different filenames, treat these filenames as placeholders. 
+> This article uses filenames that are in the continuing example, and are common in Office add-ins; **taskpane**, **commands**, and **functions**. If you are configuring an existing add-in that uses different filenames, treat these filenames as placeholders. 
 
 ## Configure the manifest
 
@@ -59,10 +60,10 @@ Follow these steps to configure a project to use a shared runtime. The continuin
 1. Replace the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array?view=m365-app-prev&preserve-view=true) array with the following JSON. Note the following about this markup.
     - The [SharedRuntime 1.1 requirement set](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets#sharedruntime-api-11) is specified in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element-capabilities) object. This configures your add-in to run in a shared runtime on supported clients. For a list of clients that support the SharedRuntime 1.1 requirement set, see [Shared runtime requirement sets](/javascript/api/requirement-sets/common/shared-runtime-requirement-sets).
     - The `"id"` of the runtime is set to the descriptive name `"SharedRuntime"`.
-    - The `"lifetime"` property is set to `"long"`. This is the setting that makes the add-in use a shared runtime, so that your add-in can take advantage of features, such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions. The default value of `"lifetime"` is `"short"`.
+    - The `"lifetime"` property is set to `"long"`. This is the setting that makes the add-in use a shared runtime. The default value of `"lifetime"` is `"short"`.
 
       > [!NOTE]
-      > If you are configuring an existing add-in use a shared runtime and it has more than one object in the `"runtimes"` array, only one runtime object may have its `"lifetime"` property is set to `"long"`.  
+      > If you are configuring an existing add-in to use a shared runtime, and it has more than one object in the `"runtimes"` array, only one runtime object may have its `"lifetime"` property is set to `"long"`.  
 
     ```json
     "runtimes": [
@@ -121,7 +122,7 @@ Follow these steps to configure a project to use a shared runtime. The continuin
 
 1. Find the `<VersionOverrides>` section and add the following `<Runtimes>` section. Note the following about this markup.
 
-    - The `lifetime` attribute is set to **long**. This is the setting that makes the add-in use a shared runtime, so that your add-in can take advantage of features, such as starting your add-in when the document opens, continuing to run code after the task pane is closed, or using CORS and DOM from custom functions. The default value of `lifetime` is **short**.
+    - The `lifetime` attribute is set to **long**. This is the setting that makes the add-in use a shared runtime. The default value of `lifetime` is **short**.
     - The `resid` value is **Taskpane.Url**, which references the **taskpane.html** file location specified in the `<bt:Urls>` section near the bottom of the **manifest.xml** file.
 
         > [!IMPORTANT]
@@ -210,7 +211,7 @@ In the continuing example, and probably in an existing add-in, the **webpack.con
 
 ## Test your Office Add-in changes
 
-Confirm that you're using the shared runtime correctly by using the following instructions.
+Confirm that you're using the shared runtime correctly with the following steps.
 
 1. Open the **taskpane.js** file.
 1. Comment out the existing code in the file and then add the following code. This code displays a count of how many times the task pane has been opened. Adding the `onVisibilityModeChanged` event is only supported in a shared runtime.
@@ -248,11 +249,12 @@ Each time you open the task pane, the count of how many times it has been opened
 
 When you're finished testing, follow best practices to stop the dev server and uninstall the add-in as described at [Use your tool's uninstall facility](../testing/uninstall-add-in.md#use-your-tools-uninstall-facility). Then restore the original code of **taskpane.js**. 
 
+## Good practice: avoid multiple task panes
 
+A shared runtime only supports one task pane, although that task pane can have more than one page. Implementing this practice depends on the type of manifest.
 
-### Multiple task panes
-
-Don't design your add-in to use multiple task panes if you are planning to use a shared runtime. A shared runtime only supports the use of one task pane. Note that any task pane without a `<TaskpaneID>` is considered a different task pane.
+- **Unified manifest for Microsoft 365**: In the runtime object that is configured with a `"long"` lifetime, none of the objects in the `"actions"` array should have a `"view"` property. 
+- **Add-in only manifest**: In the ancestor `<Host>` element that has a descendant `<Runtime>` element that is set to a `long` lifetime, none of the descendant `<Action>` elements should have a `<TaskpaneID>` child element.
 
 ## See also
 
