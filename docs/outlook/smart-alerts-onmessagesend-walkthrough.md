@@ -434,7 +434,10 @@ event.completed({
 If you specify the `preferredWidth` property, the task pane is locked at the specified width. Users must close and reopen the task pane to manually resize it.
 
 > [!TIP]
-> We recommend that the specified task pane width not exceed 40% of the Reading Pane surface.
+>
+> - We recommend that the specified task pane width not exceed 40% of the Reading Pane surface.
+>
+> - If your add-in uses the unified manifest, the task pane width can also be specified in the `"extensions.runtimes.actions.taskpane.preferredWidth"` property.
 
 ## Override the send mode option at runtime (optional)
 
