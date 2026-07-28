@@ -331,7 +331,7 @@ To test this feature using the sample code in this article, update the `event.co
 > [!NOTE]
 >
 > - In Outlook on the web, setting the `allowCopyPaste` property to `false` also prevents users from capturing their screen in the form of screenshots or recordings. The screen capture policy remains in effect until the user reloads the Outlook browser tab.
-> - In Outlook on the web and the new Outlook on Windows, setting the `allowCopyPaste` property to `true` allows the user to copy content by selecting **Copy** from the context menu or pressing <kbd>Ctrl</kbd>+<kbd>C</kbd>. However, if another access control is set to `false`, the context menu becomes unavailable. The user must use <kbd>Ctrl</kbd>+<kbd>C</kbd> instead.
+> - In Outlook on the web and the new Outlook on Windows, setting the `allowPrint` property to `false` disables the context menu (which provides options such as **Copy**, **Select all**, and **Print**). If the `allowCopyPaste` property is set to `true`, the user can still copy content by pressing <kbd>Ctrl</kbd>+<kbd>C</kbd>, but the **Copy** option in the context menu isn't available.
 
 ## Behavior and limitations
 
