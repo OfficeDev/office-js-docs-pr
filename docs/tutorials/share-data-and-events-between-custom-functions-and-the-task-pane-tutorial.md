@@ -1,29 +1,33 @@
 ---
 title: 'Tutorial: Share data and events between Excel custom functions and the task pane'
-description: Learn how to share data and events between custom functions and the task pane in Excel.
-ms.date: 03/20/2023
+description: Use a shared runtime to share global data between Excel custom functions and an add-in task pane.
+ms.date: 07/28/2026
 ms.service: excel
+ms.topic: tutorial
 ms.localizationpriority: high
+ai-usage: ai-assisted
 ---
 
 # Tutorial: Share data and events between Excel custom functions and the task pane
 
-Share global data and send events between the task pane and custom functions of your Excel add-in with a shared runtime.
+Use a shared runtime to share global data between your Excel add-in's custom functions and task pane. In this tutorial, you add functions and task pane controls that read and update the same variable.
 
-## Share a state between custom function and task pane code
+## Prerequisites
 
-The following instructions show how to share a global variable between custom function and task pane code. This tutorial assumes that you've completed the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md), with a **Excel Custom Functions using a Shared Runtime** project using the script type **JavaScript**. Use the add-in you created in that tutorial to complete the following instructions.
+Complete the [Excel custom functions tutorial](excel-tutorial-create-custom-functions.md) and use the add-in that you created. The project must use the **Excel Custom Functions using a Shared Runtime** project type and **JavaScript** script type.
+
+## Share state between custom function and task pane code
 
 ### Create custom functions to get or store shared state
 
-1. In Visual Studio Code open the file **src/functions/functions.js**.
-1. On line 1, insert the following code at the very top. This will initialize a global variable named **sharedState**.
+1. In Visual Studio Code, open `src/functions/functions.js`.
+1. At the beginning of the file, add the following code. This code initializes a global variable named `sharedState`.
 
     ```js
     window.sharedState = "empty";
     ```
 
-1. Add the following code to create a custom function that stores values to the **sharedState** variable.
+1. Add the following code to create a custom function that stores values to `sharedState`.
 
     ```js
     /**
@@ -38,7 +42,7 @@ The following instructions show how to share a global variable between custom fu
     }
     ```
 
-1. Add the following code to create a custom function that gets the current value of the **sharedState** variable.
+1. Add the following code to create a custom function that gets the current value of `sharedState`.
 
     ```js
     /**
@@ -55,10 +59,10 @@ The following instructions show how to share a global variable between custom fu
 
 ### Create task pane controls to work with global data
 
-1. Open the file **src/taskpane/taskpane.html**.
-1. After the closing `</main>` element, add the following HTML. The HTML creates two text boxes and buttons used to get or store global data.
+1. Open `src/taskpane/taskpane.html`.
+1. After the closing `</main>` element, add the following HTML to create controls that store and retrieve global data.
 
-    ```HTML
+    ```html
     <ol>
       <li>
         Enter a value to send to the custom function and select
@@ -87,9 +91,9 @@ The following instructions show how to share a global variable between custom fu
     </div>
     ```
 
-1. Before the closing `</body>` element, add the following script. This code will handle the button click events when the user wants to store or get global data.
+1. Before the closing `</body>` element, add the following script to handle the **Store** and **Get** button events.
 
-    ```HTML
+    ```html
     <script>
       function storeSharedValue() {
         let sharedValue = document.getElementById('storeBox').value;
@@ -105,24 +109,27 @@ The following instructions show how to share a global variable between custom fu
 1. Save the file.
 1. Build the project.
 
-   ```command line
-   npm run build
-   ```
+  ```command&nbsp;line
+  npm run build
+  ```
 
 ### Try sharing data between the custom functions and task pane
 
-- Start the project by using the following command.
+1. Start the project.
 
     ```command&nbsp;line
     npm run start
     ```
 
-Once Excel starts, you can use the task pane buttons to store or get shared data. Enter `=CONTOSO.GETVALUE()` into a cell for the custom function to retrieve the same shared data. Or use `=CONTOSO.STOREVALUE("new value")` to change the shared data to a new value.
+1. In the task pane, enter a value, and then select **Store**.
+1. In an Excel cell, enter `=CONTOSO.GETVALUE()` to retrieve the same value.
+1. In another cell, enter `=CONTOSO.STOREVALUE("new value")` to update the shared value.
+1. In the task pane, select **Get** to display the updated value.
 
 > [!NOTE]
-> Calling some Office APIs from custom functions using a shared runtime is possible. [See Call Microsoft Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md) for more details.
+> A shared runtime also enables custom functions to call some Office APIs. For more information, see [Call Microsoft Excel APIs from a custom function](../excel/call-excel-apis-from-custom-function.md).
 
-When you're ready to stop the dev server and uninstall the add-in, run the following command.
+When you're ready to stop the development server and uninstall the add-in, run the following command.
 
 ```command&nbsp;line
 npm run stop
