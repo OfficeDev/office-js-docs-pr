@@ -268,6 +268,8 @@
             href: design/contextual-tabs.md
           - name: Change the availability of add-in commands
             href: design/disable-add-in-commands.md
+          - name: Show or hide controls on a custom tab
+            href: design/show-hide-controls-custom-tab.md
           - name: Integrate built-in Office buttons into custom tabs
             href: design/built-in-button-integration.md
           - name: Position a custom tab on the ribbon

@@ -1,7 +1,7 @@
 ﻿---
 title: Enable and Disable Add-in Commands
 description: Learn how to change the enabled or disabled status of custom ribbon buttons and menu items in your Office Web Add-in.
-ms.date: 03/23/2026
+ms.date: 07/30/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -342,3 +342,4 @@ function disableChartFormat() {
 - [Add-in commands](add-in-commands.md)
 - [Create add-in commands with the add-in only manifest](../develop/create-addin-commands.md)
 - [Create custom contextual tabs in Office Add-ins](contextual-tabs.md)
+- [Show or hide add-in commands on a custom tab](show-hide-controls-custom-tab.md)

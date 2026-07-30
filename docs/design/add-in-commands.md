@@ -1,7 +1,7 @@
 ---
 title: Basic concepts for add-in commands
 description: Learn how to add custom ribbon buttons and menu items to Excel, Outlook, PowerPoint, and Word as part of an Office Add-in.
-ms.date: 06/17/2026
+ms.date: 07/30/2026
 ms.topic: overview
 ms.localizationpriority: high
 ---
@@ -100,6 +100,13 @@ You can specify whether the command is available when your add-in launches, and 
 
 > [!NOTE]
 > This feature isn't supported in all Office applications or scenarios. For more information, see [Change the availability of add-in commands](disable-add-in-commands.md).
+
+### Default visibility state
+
+You can specify whether buttons, groups, and menus on a custom tab are visible when your add-in launches and programmatically change their visibility.
+
+> [!NOTE]
+> This feature isn't supported in all Office applications or scenarios. For more information, see [Show or hide add-in commands on a custom tab](show-hide-controls-custom-tab.md).
 
 ### Position on the ribbon
 
