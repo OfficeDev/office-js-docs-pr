@@ -30,7 +30,7 @@ Impacted add-ins:
 - Letsignit
 - Other organization-managed Office Add-ins centrally deployed as Optional or Available
 
-Affected platforms/clients:
+Affected platforms and clients:
 
 - Excel desktop
 - Excel on the web
@@ -40,14 +40,14 @@ Affected platforms/clients:
 
 Users may experience one or more of the following:
 
-- Add-ins disappearing from the ribbon
-- Failure to load organization-deployed add-ins
+- Add-ins disappearing from the ribbon.
+- Failure to load organization-deployed add-ins.
 
 #### WORKAROUND
 
-IT Admins should change the deployment type of the affected add-ins to Fixed (Default)
+IT Admins should change the deployment type of the affected add-ins to Fixed (Default).
 
-If the issue persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
+If the problem persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
 
 #### START DATE
 
@@ -73,7 +73,7 @@ Impacted add-ins:
 - SAP Analytics Cloud for Excel
 - Other centrally deployed and organization-managed Office Add-ins
 
-Affected platforms/clients:
+Affected platforms and clients:
 
 - Excel desktop
 - Excel on the web
@@ -98,7 +98,7 @@ The following actions may help in some scenarios:
 - Verify the user has access to required Microsoft 365 and Exchange Online services.
 - If your organization restricts Exchange Web Services (EWS), verify required access settings are enabled.
 
-If the issue persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
+If the problem persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
 
 #### START DATE
 
