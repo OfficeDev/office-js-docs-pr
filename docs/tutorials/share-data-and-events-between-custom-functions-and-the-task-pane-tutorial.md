@@ -117,9 +117,9 @@ Complete the [Excel custom functions tutorial](excel-tutorial-create-custom-func
 
 1. Start the project.
 
-    ```command&nbsp;line
-    npm run start
-    ```
+  ```command&nbsp;line
+  npm run start
+  ```
 
 1. In the task pane, enter a value, and then select **Store**.
 1. In an Excel cell, enter `=CONTOSO.GETVALUE()` to retrieve the same value.
