@@ -21,7 +21,7 @@ By default, Excel runs a custom function during formula value preview. This beha
 
 The following `getHousePrice` custom function returns a mock price during preview. For a standard calculation, it calls the metered service and returns the actual price.
 
-```js
+```typescript
 /**
  * Get the listing price for a house on the market for the given address.
  * @customfunction

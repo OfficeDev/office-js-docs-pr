@@ -121,7 +121,7 @@ Integrating data from the web is a great way to extend Excel through custom func
         const jsonResponse = await response.json();
         return jsonResponse.stargazers_count;
       } catch (error) {
-        return error;
+        throw new CustomFunctions.Error(CustomFunctions.ErrorCode.notAvailable, String(error));
       }
     }
     ```
