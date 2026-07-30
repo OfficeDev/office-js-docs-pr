@@ -1,15 +1,57 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 07/16/2026
-ms.localizationpriority: medium
+ms.date: 07/30/2026
+ms.localizationpriority: high
 ---
 
 # Office Add-ins known issues
 
-_Last updated July 16, 2026_
+_Last updated July 30, 2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## ISSUE: Office Add-ins deployed as Optional or Available may be missing
+
+Some customers may experience issues where centrally deployed Office Add-ins deployed as Optional or Available are missing across Office clients. In affected cases, previously installed add-ins may no longer appear in the ribbon.
+
+#### STATUS
+
+Investigating.
+
+#### DETAILS
+
+Impacted add-ins:
+
+- CodeTwo
+- Letsignit
+- Other organization-managed Office Add-ins centrally deployed as Optional or Available
+
+Affected platforms and clients:
+
+- Excel desktop
+- Excel on the web
+- Additional Office clients in some environments
+
+#### USER IMPACT
+
+Users may experience one or more of the following:
+
+- Add-ins disappearing from the ribbon.
+- Failure to load organization-deployed add-ins.
+
+#### WORKAROUND
+
+IT Admins should change the deployment type of the affected add-ins to Fixed (Default).
+
+If the problem persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
+
+#### START DATE
+
+Date reported: July 28th, 2026
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
@@ -31,7 +73,7 @@ Impacted add-ins:
 - SAP Analytics Cloud for Excel
 - Other centrally deployed and organization-managed Office Add-ins
 
-Affected platforms/clients:
+Affected platforms and clients:
 
 - Excel desktop
 - Excel on the web
@@ -56,7 +98,7 @@ The following actions may help in some scenarios:
 - Verify the user has access to required Microsoft 365 and Exchange Online services.
 - If your organization restricts Exchange Web Services (EWS), verify required access settings are enabled.
 
-If the issue persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
+If the problem persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
 
 #### START DATE
 
@@ -484,7 +526,7 @@ Date fixed: Wednesday, April 22, 2026
 <!------------LEAVE SEE ALSO---------------------------------------------------->
 ***
 
-#### SEE ALSO
+### See Also
 
 [Fixes or workaround for recent issues in classic Outlook for Windows](https://support.microsoft.com/office/fixes-or-workarounds-for-recent-issues-in-classic-outlook-for-windows-ecf61305-f84f-4e13-bb73-95a214ac1230)
 [Office-js resolved issues in GitHub](https://github.com/OfficeDev/office-js/issues?q=is%3Aissue%20state%3Aclosed)
