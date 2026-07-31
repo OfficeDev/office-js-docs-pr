@@ -84,7 +84,7 @@ Next, try the `ADD` custom function by completing the following steps.
 
 1. In Excel, go to any cell and enter `=CONTOSO`. Notice that the autocomplete menu shows the list of all functions in the `CONTOSO` namespace.
 
-1. Enter `=CONTOSO.ADD(10,200)` in the cell, and then press <kbd>Enter</kbd>.
+1. Enter `=CONTOSO.ADD(10,200)` in the cell and then select <kbd>Enter</kbd>.
 
 The `ADD` custom function returns `210`.
 
@@ -144,7 +144,7 @@ Integrating data from the web is a great way to extend Excel through custom func
 
     :::image type="content" source="../images/excel-cf-select-add-in.png" alt-text="The My Add-ins dialog that shows active add-ins, with the My custom function add-in button highlighted.":::
 
-1. In cell **B1**, enter `=CONTOSO.GETSTARCOUNT("OfficeDev", "Office-Add-in-Samples")`, and then press <kbd>Enter</kbd>. The cell displays the current number of stars for the [Office-Add-in-Samples repository](https://github.com/OfficeDev/Office-Add-in-Samples).
+1. In cell **B1**, enter `=CONTOSO.GETSTARCOUNT("OfficeDev", "Office-Add-in-Samples")`, and then select <kbd>Enter</kbd>. The cell displays the current number of stars for the [Office-Add-in-Samples repository](https://github.com/OfficeDev/Office-Add-in-Samples).
 
 # [Excel on the web](#tab/excel-online)
 
@@ -156,7 +156,7 @@ Integrating data from the web is a great way to extend Excel through custom func
 
 1. Select the **manifest.xml** file and choose **Open**, and then choose **Upload**.
 
-1. In cell **B1**, enter `=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")`, and then press <kbd>Enter</kbd>. The cell shows the current number of stars for the [Excel-Custom-Functions repository](https://github.com/OfficeDev/Excel-Custom-Functions).
+1. In cell **B1**, enter `=CONTOSO.GETSTARCOUNT("OfficeDev", "Excel-Custom-Functions")`, and then select <kbd>Enter</kbd>. The cell shows the current number of stars for the [Excel-Custom-Functions repository](https://github.com/OfficeDev/Excel-Custom-Functions).
 
 ---
 
@@ -197,7 +197,7 @@ function clock(invocation) {
 }
 ```
 
-To try the streaming function, enter `=CONTOSO.CLOCK()` in cell **C1**, and then press <kbd>Enter</kbd>. The cell displays the current time and updates every second. You can use the same timer pattern with functions that request real-time data from the web.
+To try the streaming function, enter `=CONTOSO.CLOCK()` in cell **C1**, and then select <kbd>Enter</kbd>. The cell displays the current time and updates every second. You can use the same timer pattern with functions that request real-time data from the web.
 
 ## Troubleshooting
 
