@@ -78,7 +78,7 @@ To test your add-in in Excel on the web, run the following command. When you run
 
 ## Try a prebuilt custom function
 
-The project contains prebuilt custom functions in `./src/functions/functions.js`. The `./manifest.xml` file assigns them to the `CONTOSO` namespace, which you use to access the functions in Excel.
+The project contains prebuilt custom functions in **./src/functions/functions.js**. The **./manifest.xml** file assigns them to the `CONTOSO` namespace, which you use to access the functions in Excel.
 
 Next, try the `ADD` custom function by completing the following steps.
 
@@ -97,9 +97,9 @@ The `ADD` custom function returns `210`.
 
 Integrating data from the web is a great way to extend Excel through custom functions. Create a `getStarCount` custom function that retrieves the number of stars for a GitHub repository.
 
-1. In the **My custom functions add-in** project, open `./src/functions/functions.js` in your code editor.
+1. In the **My custom functions add-in** project, open **./src/functions/functions.js** in your code editor.
 
-1. In `functions.js`, add the following code.
+1. In **functions.js**, add the following code.
 
     ```js
     /**
@@ -169,7 +169,7 @@ The `getStarCount` function returns the number of stars at a specific moment. A 
 
 The following sample contains two functions. `currentTime` returns the current time as a string. The streaming `clock` function calls `invocation.setResult` to update the cell every second and uses `invocation.onCanceled` to stop the timer when Excel cancels the function.
 
-The **My custom functions add-in** project already contains these functions in `./src/functions/functions.js`.
+The **My custom functions add-in** project already contains these functions in **./src/functions/functions.js**.
 
 ```js
 /**

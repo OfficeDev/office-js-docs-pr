@@ -20,7 +20,7 @@ Complete the [Excel custom functions tutorial](excel-tutorial-create-custom-func
 
 ### Create custom functions to get or store shared state
 
-1. In Visual Studio Code, open `src/functions/functions.js`.
+1. In Visual Studio Code, open **src/functions/functions.js**.
 1. At the beginning of the file, add the following code. This code initializes a global variable named `sharedState`.
 
     ```js
@@ -59,7 +59,7 @@ Complete the [Excel custom functions tutorial](excel-tutorial-create-custom-func
 
 ### Create task pane controls to work with global data
 
-1. Open `src/taskpane/taskpane.html`.
+1. Open **src/taskpane/taskpane.html**.
 1. After the closing `</main>` element, add the following HTML to create controls that store and retrieve global data.
 
     ```html
