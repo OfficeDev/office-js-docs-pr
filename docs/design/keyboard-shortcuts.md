@@ -471,7 +471,7 @@ To publish an add-in that uses the unified manifest and implements custom keyboa
 
 ### Create JSON resource files
 
-For guidance on how to create a shortcuts JSON file, see [Create or edit the shortcuts JSON file](#create-or-edit-the-shortcuts-json-file). If your custom shortcuts are supplemented with localized strings, you must define resource tokens in your shortcuts JSON file and create a localization resource file. For guidance, see [Update the shortcuts JSON file](#update-the-shortcuts-json-file) and [Create a localization resource file](#create-a-localization-resource-file).
+For guidance on how to create a shortcuts JSON file, see [Create or edit the shortcuts JSON file](keyboard-shortcuts.md?tabs=xmlmanifest#create-or-edit-the-shortcuts-json-file). If your custom shortcuts are supplemented with localized strings, you must define resource tokens in your shortcuts JSON file and create a localization resource file. For guidance, see [Update the shortcuts JSON file](keyboard-shortcuts.md?tabs=xmlmanifest#update-the-shortcuts-json-file) and [Create a localization resource file](keyboard-shortcuts.md?tabs=xmlmanifest#create-a-localization-resource-file).
 
 ### Specify the JSON resource files in the manifest
 
