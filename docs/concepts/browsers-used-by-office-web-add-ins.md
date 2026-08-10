@@ -1,8 +1,8 @@
-﻿---
+---
 title: Browsers and webview controls used by Office Add-ins
 description: Specifies how the operating system and Office version determine what webview is used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 11/06/2025
+ms.date: 08/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +33,7 @@ The following table specifies which browser is used for the various platforms an
 
 By default, scroll bars in WebView2 are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://devdoc.net/web/developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style.html) property and it should be set to `scrollbar`.
 
-### Get errors trying to download a PDF file
+### Errors trying to download a PDF file
 
 Directly downloading blobs as PDF files in an add-in isn't supported with WebView2. The workaround is to create a simple web application that downloads blobs as PDF files. In your add-in, call the `Office.context.ui.openBrowserWindow(url)` method and pass the URL of the web application. This will open the web application in a browser window outside of Office.
 
