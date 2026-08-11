@@ -2,7 +2,7 @@
 title: Understanding platform-specific requirement sets
 description: Understand and learn how to use platform-specific requirement sets.
 ms.topic: how-to
-ms.date: 02/26/2026
+ms.date: 08/11/2026
 ms.localizationpriority: medium
 ---
 
@@ -42,11 +42,26 @@ The following sections describe where you can specify your minimum requirement s
 
 ### Manifest
 
-When you note a requirement set in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element#capabilities) property of the unified manifest (or the [Set element](/javascript/api/manifest/set) of the add-in only manifest), you're indicating the minimum set of APIs that your add-in needs. Combined with supported Office host applications and other information, this determines whether or not your add-in activates in an Office client.
+When you note a requirement set in the [`"requirements.capabilities"`](/microsoft-365/extensibility/schema/requirements-extension-element#capabilities) property of the unified manifest, you indicate the minimum set of APIs that your add-in needs. Combined with supported Office host applications and other information, this requirement set determines whether your add-in activates in an Office client.
 
-When you declare a platform-specific requirement set, your add-in activates only when it's run in Office on that platform. For example, if you have the WordApiDesktop 1.1 requirement set in your manifest, your add-in will only activate in Word on Windows and on Mac.
+When you declare a platform-specific requirement set, your add-in activates only when it runs in Office on that platform. For example, if you have the `WordApiDesktop 1.5` requirement set in your manifest, your add-in only activates in Word on Windows and on Mac. The following example shows how to specify the `WordApiDesktop 1.5` set in the unified manifest.
 
-Keep in mind that in the case where the APIs become supported cross-platform, you'll need to update your add-in manifest to add a cross-platform requirement set and remove the platform-specific requirement set. If your add-in is available in Microsoft Marketplace, you'll need to resubmit it for validation.
+```json
+"requirements": {
+  "scopes": ["document"],
+  "capabilities": [
+    {
+      "name": "WordApiDesktop",
+      "minVersion": "1.5"
+    }
+  ]
+}
+```
+
+> [!NOTE]
+> The [Set element](/javascript/api/manifest/set) of the add-in only manifest doesn't support platform-specific requirement sets. If you have an add-in only manifest, use a [runtime check](#code).
+
+Keep in mind that if the APIs become supported cross-platform, you need to update your add-in manifest to add a cross-platform requirement set and remove the platform-specific requirement set. If your add-in is available in Microsoft Marketplace, you need to resubmit it for validation.
 
 > [!TIP]
 > For information about how Office interprets requirements, see [Understand the logic of API requirement configuration](understand-requirement-configuration.md).
@@ -108,18 +123,6 @@ if (Office.context.requirements.isSetSupported("WordApiOnline", "1.1")) {
 When APIs in an online-only requirement set are supported cross-platform, they're added to the next released requirement set. After the new requirement set is made generally available, those APIs are *removed* from the online-only requirement set.
 
 Follow the guidance in the earlier [Code](#code) section to adjust your add-in implementation accordingly.
-
-### Desktop-only HiddenDocument requirement sets in Word
-
-It's important to note that while the HiddenDocument requirement sets in Word are desktop-only, it's invalid to specify a HiddenDocument requirement set in the [Set element](/javascript/api/manifest/set) of your add-in manifest.
-
-To check for APIs that are only supported in these requirement sets and to prevent your add-in from trying to run the code on unsupported platforms, add code similar to the following:
-
-```javascript
-if (Office.context.requirements.isSetSupported("WordApiHiddenDocument", "1.5")) {
-   // Any API exclusive to this WordApiHiddenDocument requirement set.
-}
-```
 
 ## See also
 
