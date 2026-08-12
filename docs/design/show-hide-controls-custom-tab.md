@@ -1,7 +1,7 @@
 ---
 title: Show or hide controls on a custom tab
 description: Learn how to programmatically show or hide buttons, menus, and groups on a custom ribbon tab in your Office Add-in.
-ms.date: 07/30/2026
+ms.date: 08/13/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
