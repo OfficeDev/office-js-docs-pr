@@ -14,7 +14,7 @@ In this tutorial, you create a Copilot skill for Excel that uses the APIs of the
 
 > [!NOTE]
 > - This tutorial assumes that you're familiar with [Overview of Copilot skills for Excel (preview)](excel-skills.md) and [Build plugins for Copilot Cowork](/microsoft-365/copilot/cowork/cowork-plugin-development). Although the latter article is in the context of Cowork, the general packaging, manifest, icon, installation, and publishing guidance in that article also applies to Excel skills. This tutorial focuses on the Excel-specific pieces and uses the same plugin package model described in that article.
-> - Custom skills for Excel are in preview and are available in only the **Beta** and **Current Channel (Preview)** channels. Don't use them in a production Copilot extension. 
+> - Custom skills for Excel are in preview and are available in only the **Beta** and **Current Channel (Preview)** channels, and require version 2608 (Build 20305.20002) or later. Don't use them in a production Copilot extension. 
 
 ## What you'll build
 
