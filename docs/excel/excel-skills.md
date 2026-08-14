@@ -1,7 +1,7 @@
 ---
 title: Overview of Copilot skills for Excel (preview)
 description: Learn how to create agent skills that call the Office JavaScript Library (Office.js) that can be plugged into Copilot agents in Excel.
-ms.date: 07/10/2026
+ms.date: 08/13/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -12,7 +12,7 @@ ms.localizationpriority: high
 You can create custom skills to accomplish complex tasks for AI agents and Copilot for Excel. Optionally, these skills can use the Office JavaScript Library (Office.js).
 
 > [!NOTE]
-> Custom skills for Excel are in preview. Do not use them in a production skill. 
+> Custom skills for Excel are in preview and require version 2608 (Build 20305.20002) or later. They are available in only the **Beta** and **Current Channel (Preview)** channels, through the [Microsoft 365 Insider Program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/microsoft-365-insider-handbook/4401152). Don't use them in a production Copilot extension.
 
 The main guidance for creating skills is at [Build plugins for Copilot Cowork](/microsoft-365/copilot/cowork/cowork-plugin-development). The context of the article refers to Microsoft Cowork, but the guidance applies generally to all custom skills that can be plugged into an agent running in Copilot.
 

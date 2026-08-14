@@ -1,7 +1,7 @@
 ---
 title: Create a Copilot skill for Excel that uses the Office JavaScript Library (preview)
 description: Learn how to create an Excel Copilot skill that uses Office.js.
-ms.date: 07/10/2026
+ms.date: 08/13/2026
 ms.topic: tutorial
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ In this tutorial, you create a Copilot skill for Excel that uses the APIs of the
 
 > [!NOTE]
 > - This tutorial assumes that you're familiar with [Overview of Copilot skills for Excel (preview)](excel-skills.md) and [Build plugins for Copilot Cowork](/microsoft-365/copilot/cowork/cowork-plugin-development). Although the latter article is in the context of Cowork, the general packaging, manifest, icon, installation, and publishing guidance in that article also applies to Excel skills. This tutorial focuses on the Excel-specific pieces and uses the same plugin package model described in that article.
-> - Custom skills for Excel are in preview. Don't use them in a production Copilot extension.
+> - Custom skills for Excel are in preview and require version 2608 (Build 20305.20002) or later. They are available in only the **Beta** and **Current Channel (Preview)** channels, through the [Microsoft 365 Insider Program](https://techcommunity.microsoft.com/kb/microsoft-365-insider-kb/microsoft-365-insider-handbook/4401152). Don't use them in a production Copilot extension.
 
 ## What you'll build
 
