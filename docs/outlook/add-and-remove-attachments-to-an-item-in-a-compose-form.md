@@ -1,7 +1,7 @@
 ---
 title: Add and remove attachments in an Outlook add-in
 description: Use various attachment APIs to manage the files or Outlook items attached to the item the user is composing.
-ms.date: 12/18/2025
+ms.date: 08/13/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -235,11 +235,158 @@ function removeAttachment(attachmentId) {
 ```
 
 > [!TIP]
-> The `removeAttachmentAsync` method doesn't remove inline attachments from a mail item. To remove an inline attachment, first get the item's body, then remove any references of the attachment from its contents. Use the [Office.Body](/javascript/api/outlook/office.body) APIs to get and set the body of an item.
+> The `removeAttachmentAsync` method doesn't remove inline attachments from a mail item. To remove an inline attachment, first get the item's body, then remove any references to the attachment from its contents. Use the [Office.Body](/javascript/api/outlook/office.body) APIs to get and set the body of an item. Alternatively, use the `deleteAsync` method described in [Manage inline pictures](#manage-inline-pictures). The `deleteAsync` method is available for preview in Outlook on the web and the new Outlook on Windows.
 
-## Identify inline images in the HTML body of a mail item
+## Manage inline pictures
 
-While you should call `getAttachmentsAsync` to identify the attachments of a mail item, there may be scenarios where you need to locate an inline image directly from the HTML body of a mail item. For example, you may need to determine the position of an inline image in the body of a message or remove an inline attachment from a message.
+> [!IMPORTANT]
+> The APIs and events described in this section are available for preview in Outlook on the web and the new Outlook on Windows. Preview APIs aren't intended for use in production add-ins.
+
+Use the `Body.pictures` property to manage inline pictures in the body of a message or appointment being composed. The property provides the following methods.
+
+- `getAllAsync`: Gets information about all inline pictures in the body.
+- `getByIdAsync`: Gets the inline picture associated with the specified identifier.
+- `getAsBase64Async`: Gets an inline picture as a Base64-encoded string.
+- `scrollToAsync`: Brings an inline picture into view in the body of the mail item and optionally selects it.
+- `deleteAsync`: Deletes an inline picture from the body.
+
+### Get inline pictures
+
+To get information about all inline pictures in the body of a mail item, call `getAllAsync`. The method returns an array of `Picture` objects. Each object contains details about a picture, such as its ID, size, name, and source type.
+
+```javascript
+Office.context.mailbox.item.body.pictures.getAllAsync((asyncResult) => {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.error(asyncResult.error.message);
+    return;
+  }
+
+  const inlinePictures = asyncResult.value;
+  inlinePictures.forEach((inlinePicture) => {
+    console.log(`ID: ${inlinePicture.id}`);
+    console.log(`Name: ${inlinePicture.name}`);
+    console.log(`Source type: ${inlinePicture.sourceType}`);
+  });
+});
+```
+
+### Get an inline picture by ID
+
+To get information about a specific inline picture, pass its unique identifier to `getByIdAsync`. The method returns a `Picture` object that contains the picture's properties.
+
+```javascript
+const pictureId = "64491806";
+Office.context.mailbox.item.body.pictures.getByIdAsync(pictureId, (asyncResult) => {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.error(asyncResult.error.message);
+    return;
+  }
+
+  const inlinePicture = asyncResult.value;
+  const sourceType = inlinePicture.sourceType;
+  if (sourceType === Office.MailboxEnums.PictureSourceType.Cid) {
+    console.log(`Content ID: ${inlinePicture.contentId}`);
+  }
+});
+```
+
+### Get the Base64-encoded content of an inline picture
+
+To get the Base64-encoded content of an inline picture, pass its unique identifier to `getAsBase64Async`. The following example displays the returned Base64-encoded string in an `<img>` element.
+
+```javascript
+Office.context.mailbox.item.body.pictures.getAsBase64Async(pictureId, (asyncResult) => {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.error(asyncResult.error.message);
+    return;
+  }
+
+  const image = new Image();
+  image.src = `data:image/jpeg;base64,${asyncResult.value}`;
+
+  const displayArea = document.getElementById("DisplayArea");
+  displayArea.replaceChildren(image);
+});
+```
+
+### Scroll to or select an inline picture
+
+To bring a particular inline picture into view, pass its ID to `scrollToAsync`. To also select the picture, set the `select` option to `true`.
+
+```javascript
+const pictureId = "64491806";
+Office.context.mailbox.item.body.pictures.scrollToAsync(
+  pictureId,
+  { select: true },
+  (asyncResult) => {
+    if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+      console.error(asyncResult.error.message);
+      return;
+    }
+
+    console.log("Scrolled to picture and selected it.");
+  }
+);
+```
+
+### Delete an inline picture
+
+To delete an inline picture from the body of a mail item, pass its ID to `deleteAsync`.
+
+```javascript
+const pictureId = "64491806";
+Office.context.mailbox.item.body.pictures.deleteAsync(pictureId, (asyncResult) => {
+  if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+    console.error(asyncResult.error.message);
+    return;
+  }
+
+  console.log(`Deleted inline picture: ${pictureId}`);
+});
+```
+
+### Handle changes to inline pictures
+
+Use the `PicturesChanged` event to detect when an inline picture is added to or removed from a message or appointment. Your add-in can respond to the event from a task pane or through event-based activation.
+
+#### Handle the event in a task pane
+
+In an add-in with a task pane, call `Office.context.mailbox.item.addHandlerAsync` to register an event handler for `Office.EventType.PicturesChanged`. When the event occurs, the handler receives an `Office.PicturesChangedEventArgs` argument that identifies the change type (addition or removal) and the IDs of the affected pictures.
+
+The following is an example.
+
+```javascript
+Office.onReady(() => {
+  Office.context.mailbox.item.addHandlerAsync(
+    Office.EventType.PicturesChanged,
+    onPicturesChanged,
+    (asyncResult) => {
+      if (asyncResult.status === Office.AsyncResultStatus.Failed) {
+        console.error(asyncResult.error.message);
+        return;
+      }
+
+      console.log("Added a handler for the PicturesChanged event.");
+    }
+  );
+});
+
+function onPicturesChanged(eventArgs) {
+  const changeType = eventArgs.changeType;
+  if (changeType === "added") {
+    const pictures = eventArgs.pictureIds;
+    // Run operations on added inline pictures here.
+  }
+}
+```
+
+#### Configure event-based activation
+
+To handle changes without requiring the task pane to be open, configure your manifest and code to handle the `OnPicturesChanged` event. For guidance on how to create an event-based add-in, see [Activate add-ins with events](https://learn.microsoft.com/office/dev/add-ins/develop/event-based-activation#outlook-events).
+
+## Identify inline pictures in the HTML body of a mail item
+
+While you should call `getAttachmentsAsync` to identify the attachments of a mail item, there may be scenarios where you need to locate an inline picture directly from the HTML body of a mail item. For example, you may need to determine the position of an inline picture in the body of a message.
 
 In the HTML body of a mail item, inline images are represented by a content ID (`cid`) in the `src` attribute of its corresponding `<img>` element. The `cid` matches the value returned by the [contentId](/javascript/api/outlook/office.attachmentdetailscompose#outlook-office-attachmentdetailscompose-contentid-member) property of an attachment when you call `getAttachmentsAsync`.
 

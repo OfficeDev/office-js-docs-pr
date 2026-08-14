@@ -834,7 +834,7 @@
       href: outlook/notifications.md
     - name: Get or set body
       href: outlook/insert-data-in-the-body.md
-    - name: Add and remove attachments
+    - name: Manage attachments in compose mode
       href: outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md
     - name: Get attachments from server
       href: outlook/get-attachments-of-an-outlook-item.md
