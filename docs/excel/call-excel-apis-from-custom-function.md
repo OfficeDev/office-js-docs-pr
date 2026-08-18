@@ -1,26 +1,27 @@
 ---
 title: Call Excel JavaScript APIs from a custom function
-description: Learn which Excel JavaScript APIs you can call from your custom function.
-ms.date: 03/20/2023
+description: Call Excel JavaScript APIs from a custom function to read workbook data safely by using a shared runtime and Excel.RequestContext.
+ms.date: 08/18/2026
 ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Call Excel JavaScript APIs from a custom function
 
-Call Excel JavaScript APIs from your custom functions to get range data and obtain more context for your calculations. Calling Excel JavaScript APIs through a custom function can be helpful when:
+Call Excel JavaScript APIs from a custom function when its calculation needs workbook data that isn't passed in as a parameter. For example, a custom function can read document properties, range values or formats, custom XML parts, or the workbook name.
 
-- A custom function needs to get information from Excel before calculation. This information might include document properties, range formats, custom XML parts, a workbook name, or other Excel-specific information.
-- A custom function will set the cell's number format for the return values after calculation.
+Keep these calls read-only. A custom function that changes other cells or the Excel environment can cause poor performance, timeouts, or infinite calculation loops.
 
-> [!IMPORTANT]
-> To call Excel JavaScript APIs from your custom function, you'll need to use a [shared runtime](../testing/runtimes.md#shared-runtime). Use the [Yeoman generator for Office Add-ins](../develop/yeoman-generator-overview.md) to install an **Excel Custom Functions using a Shared Runtime** project or see [Configure your Office Add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) to learn more.
+## Before you begin
 
-## Code sample
+Your add-in must use a [shared runtime](../testing/runtimes.md#shared-runtime) before a custom function can call Excel JavaScript APIs. Create an Excel custom functions project with [Microsoft 365 Agents Toolkit](../develop/agents-toolkit-overview.md), or [configure an existing add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md).
 
-To call Excel JavaScript APIs from a custom function, you first need a context. Use the [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) object to get a context. Then use the context to call the APIs you need in the workbook.
+## Get a value from the workbook
 
-The following code sample shows how to use `Excel.RequestContext` to get a value from a cell in the workbook. In this sample, the `address` parameter is passed into the Excel JavaScript API [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) method and must be entered as a string. For example, the custom function entered into the Excel UI must follow the pattern `=CONTOSO.GETRANGEVALUE("A1")`, where `"A1"` is the address of the cell from which to retrieve the value.
+Create an [Excel.RequestContext](/javascript/api/excel/excel.requestcontext) object to access the workbook. Load the properties that the function needs, call `context.sync()`, and then return the result.
+
+The following custom function uses [Worksheet.getRange](/javascript/api/excel/excel.worksheet#excel-excel-worksheet-getrange-member(1)) to read a cell value. The `address` parameter must be a string. For example, enter `=CONTOSO.GETRANGEVALUE("A1")` in a cell to return the value from cell A1.
 
 ```JavaScript
 /**
@@ -29,16 +30,16 @@ The following code sample shows how to use `Excel.RequestContext` to get a value
  * @returns The value of the cell at the input address.
  **/
 async function getRangeValue(address) {
- // Retrieve the context object. 
- const context = new Excel.RequestContext();
- 
- // Use the context object to access the cell at the input address. 
- const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
- range.load("values");
- await context.sync();
- 
- // Return the value of the cell at the input address.
- return range.values[0][0];
+    // Retrieve the context object.
+    const context = new Excel.RequestContext();
+
+    // Use the context object to access the cell at the input address.
+    const range = context.workbook.worksheets.getActiveWorksheet().getRange(address);
+    range.load("values");
+    await context.sync();
+
+    // Return the value of the cell at the input address.
+    return range.values[0][0];
 }
 ```
 
