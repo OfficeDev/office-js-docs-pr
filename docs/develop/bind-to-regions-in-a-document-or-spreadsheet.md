@@ -1,45 +1,57 @@
 ---
 title: Bind to regions in a document or spreadsheet
-description: Learn how to use binding to ensure consistent access to a specific region or element of a document or spreadsheet through an identifier.
-ms.date: 07/29/2025
+description: Use Office JavaScript API bindings to access, update, and monitor specific regions in Excel workbooks and Word documents.
+ms.date: 08/18/2026
+ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Bind to regions in a document or spreadsheet
 
-[!include[information about the common API](../includes/alert-common-api-info.md)]
+[!INCLUDE [Information about the common API](../includes/alert-common-api-info.md)]
 
-Bindings let your add-in consistently access specific regions of a document or spreadsheet. Think of a binding as a bookmark that remembers a specific location, even if users change their selection or navigate elsewhere in the document. Specifically, here are what bindings offer your add-in.
+Use a binding when your add-in needs reliable access to a specific region of an Excel workbook or Word document. A binding associates the region with a unique ID, so your add-in can return to it after the user changes their selection or reopens the document.
 
-- **Access common data structures** across supported Office applications, such as tables, ranges, or text.
-- **Read and write data** without requiring users to make a selection first.
-- **Create persistent relationships** between your add-in and document data. Bindings are saved with the document and work across sessions.
+With a binding, your add-in can:
 
-To create a binding, call one of these [Bindings] object methods to associate a document region with a unique identifier: [addFromPromptAsync], [addFromSelectionAsync], or [addFromNamedItemAsync]. Once you've established the binding, use its identifier to read from or write to that region anytime.
-
-You can also subscribe to data and selection change events for specific bound regions. This means your add-in only gets notified about changes within the bound area, not the entire document.
+- Access common data structures, such as tables, ranges, or text.
+- Read and write data without requiring the user to select the region first.
+- Monitor data and selection changes within the bound region.
+- Maintain the relationship across sessions because the binding is saved with the document.
 
 ## Choose the right binding type
 
-Office supports [three different types of bindings][Office.BindingType]. You specify the type with the _bindingType_ parameter when creating a binding using [addFromSelectionAsync], [addFromPromptAsync], or [addFromNamedItemAsync].
+> [!IMPORTANT]
+> Use the application-specific [Excel.Binding](/javascript/api/excel/excel.binding) when working with Excel workbooks, instead of [Office.Binding](/javascript/api/office/office.binding).
 
-### Text Binding
+Office supports [three binding types][Office.BindingType]. Choose a type based on the region and the data that your add-in needs to read or write.
 
-**[Text Binding][TextBinding]** - Binds to a document region that can be represented as text.
+| Binding type | Use it for | Excel support | Word support |
+| :----------- | :--------- | :------------ | :----------- |
+| [Text][TextBinding] | Content represented as text | A single cell as plain text | Most contiguous selections as plain text, HTML, or Office Open XML |
+| [Matrix][MatrixBinding] | Tabular data without headers | Any contiguous cell range | Tables only |
+| [Table][TableBinding] | Tabular data with headers | Any table | Any table |
+
+Specify the type with the `bindingType` parameter when you create a binding by using [addFromSelectionAsync], [addFromPromptAsync], or [addFromNamedItemAsync].
+
+### Text binding
+
+A text binding represents a document region as text.
 
 In Word, most contiguous selections work. In Excel, only single cell selections can use text binding. Excel supports only plain text, while Word supports three formats: plain text, HTML, and Open XML for Office.
 
-### Matrix Binding  
+### Matrix binding
 
-**[Matrix Binding][MatrixBinding]** - Binds to a fixed region containing tabular data without headers.
+A matrix binding represents a fixed region of tabular data without headers.
 
-Data in a matrix binding is read or written as a two-dimensional **Array** (an array of arrays in JavaScript). For example, two rows of **string** values in two columns would look like `[['a', 'b'], ['c', 'd']]`, and a single column of three rows would be `[['a'], ['b'], ['c']]`.
+Read or write matrix data as a two-dimensional `Array` (an array of arrays in JavaScript). For example, two rows of `string` values in two columns look like `[['a', 'b'], ['c', 'd']]`, and a single column of three rows looks like `[['a'], ['b'], ['c']]`.
 
 In Excel, any contiguous selection of cells works for matrix binding. In Word, only tables support matrix binding.
 
-### Table Binding
+### Table binding
 
-**[Table Binding][TableBinding]** - Binds to a document region containing a table with headers.
+A table binding represents a table with headers.
 
 Data in a table binding is read or written as a [TableData](/javascript/api/office/office.tabledata) object. The `TableData` object exposes data through the `headers` and `rows` properties.
 
@@ -66,7 +78,7 @@ Office.context.document.bindings.addFromSelectionAsync(Office.BindingType.Text, 
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -124,7 +136,7 @@ function bindNamedItem() {
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 
 ```
@@ -155,7 +167,7 @@ The following function creates a binding in Excel to the first three cells in co
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -167,7 +179,7 @@ The following function creates a text binding in Word to a rich text content con
 
 ```js
 function bindContentControl() {
-    Office.context.document.bindings.addFromNamedItemAsync('FirstName', 
+    Office.context.document.bindings.addFromNamedItemAsync('FirstName',
         Office.BindingType.Text, {id:'firstName'},
         function (result) {
             if (result.status === Office.AsyncResultStatus.Succeeded) {
@@ -180,7 +192,7 @@ function bindContentControl() {
 }
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -199,7 +211,7 @@ Office.context.document.bindings.getAllAsync(function (asyncResult) {
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -221,7 +233,7 @@ Office.context.document.bindings.getByIdAsync('myBinding', function (asyncResult
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -244,7 +256,7 @@ Office.select("bindings#myBinding", function onError(){}).getDataAsync(function 
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -261,7 +273,7 @@ Office.context.document.bindings.releaseByIdAsync('myBinding', function (asyncRe
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -284,7 +296,7 @@ myBinding.getDataAsync(function (asyncResult) {
 
 // Function that writes to a div with id='message' on the page.
 function write(message){
-    document.getElementById('message').innerText += message; 
+    document.getElementById('message').innerText += message;
 }
 ```
 
@@ -368,7 +380,6 @@ function removeEventHandlerFromBinding() {
 [addHandlerAsync]: /javascript/api/office/office.binding#addHandlerAsync_eventType__handler__options__callback_
 [removeHandlerAsync]: /javascript/api/office/office.binding#removeHandlerAsync_eventType__options__callback_
 
-[Bindings]: /javascript/api/office/office.bindings
 [getByIdAsync]: /javascript/api/office/office.bindings#getByIdAsync_id__options__callback_
 [getAllAsync]: /javascript/api/office/office.bindings#getAllAsync_options__callback_
 [addFromNamedItemAsync]: /javascript/api/office/office.bindings#addFromNamedItemAsync_itemName__bindingType__options__callback_
