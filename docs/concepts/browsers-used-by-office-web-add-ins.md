@@ -2,7 +2,7 @@
 title: Browsers and webview controls used by Office Add-ins
 description: Specifies how the operating system and Office version determine what webview is used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 11/06/2025
+ms.date: 08/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -31,7 +31,7 @@ The following table specifies which browser is used for the various platforms an
 
 ### Scroll bar doesn't appear in task pane
 
-By default, scroll bars in WebView2 are hidden until hovered over. To ensure that the scroll bar is always visible, the CSS styling that applies to the `<body>` element of the pages in the task pane should include the [-ms-overflow-style](https://devdoc.net/web/developer.mozilla.org/en-US/docs/Web/CSS/-ms-overflow-style.html) property and it should be set to `scrollbar`.
+By default, scroll bars in WebView2 are hidden until hovered over. To ensure that the vertical scroll bar is always visible, set the [`overflow-y`](https://developer.mozilla.org/docs/Web/CSS/overflow-y) property to `scroll` in the CSS styling for the `<body>` element of each page in the task pane.
 
 ### Get errors trying to download a PDF file
 
