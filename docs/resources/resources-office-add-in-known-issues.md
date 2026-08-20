@@ -14,6 +14,33 @@ This article provides information about current known issues with Office Add-ins
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
+## OUTLOOK ISSUE: Add-ins don't load in Outlook LTSC 2024 for new Exchange Online accounts
+
+Some users running the Outlook LTSC 2024 32-bit version can't access Outlook add-ins. Add-ins that previously worked might no longer appear or load.
+
+### STATUS
+
+We're currently investigating the issue.
+
+Tracking ID: 853980935
+
+### START DATE
+
+Date reported: August 19, 2026
+
+### DETAILS
+
+Affected client: Outlook LTSC 2024 32-bit version
+
+Customer reports indicate that the issue primarily affects Exchange Online accounts created after June 2026. Older accounts in the same environment and with the same licensing configuration might not be affected.
+
+### IMPACT
+
+Users can't access Outlook add-ins.
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
 ## ISSUE: Office Add-ins deployed as Optional or Available may be missing
 
 Some customers may experience issues where centrally deployed Office Add-ins deployed as Optional or Available are missing across Office clients. In affected cases, previously installed add-ins may no longer appear in the ribbon.
@@ -54,33 +81,6 @@ If the problem persists, contact Microsoft Support and include diagnostic inform
 Date reported: July 28th, 2026
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
-***
-
-## OUTLOOK ISSUE: Add-ins don't load in Outlook LTSC 2024 for new Exchange Online accounts
-
-Some users running Outlook LTSC 2024 can't access Outlook add-ins. Add-ins that previously worked might no longer appear or load.
-
-### STATUS
-
-We're currently investigating the issue.
-
-Tracking ID: 853980935
-
-### START DATE
-
-Date reported: August 19, 2026
-
-### DETAILS
-
-Affected client: Outlook LTSC 2024
-
-Customer reports indicate that the issue primarily affects Exchange Online accounts created after June 2026. Older accounts in the same environment and with the same licensing configuration might not be affected.
-
-### IMPACT
-
-Users can't access Outlook add-ins.
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
 ## ISSUE: Users can't find or restore an add-in deployed through optional deployment
