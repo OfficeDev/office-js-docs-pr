@@ -1,7 +1,7 @@
 ---
 title: Show or hide controls on a custom tab
 description: Learn how to programmatically show or hide buttons, menus, and groups on a custom ribbon tab in your Office Add-in.
-ms.date: 08/13/2026
+ms.date: 08/19/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -30,6 +30,10 @@ The following table lists the ribbon controls whose visibility can be changed on
 
 > [!NOTE]
 > To configure a custom tab to only show in certain contexts, see [Create custom contextual tabs in Office Add-ins](contextual-tabs.md).
+
+## Try out a completed add-in sample
+
+To test the visibility of controls on a ribbon, try out the [Show or hide controls on a custom ribbon tab sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-visibility).
 
 ## Configure a shared runtime
 

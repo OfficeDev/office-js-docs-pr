@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 07/15/2026
+ms.date: 08/19/2026
 ms.localizationpriority: high
 ---
 
@@ -105,6 +105,7 @@ If your development background is in building VSTO Add-ins, the following sample
 | [Save custom settings in your Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-save-custom-settings) | Save custom settings inside an Office Add-in. The add-in stores data as key-value pairs, using the JavaScript API for Office property bag, browser cookies, web storage (localStorage and sessionStorage), or by storing the data in a hidden div in the document. |
 | [Use keyboard shortcuts for Office Add-in actions](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-keyboard-shortcuts) | Create custom keyboard shortcuts to invoke certain actions for your Office Add-in. |
 | [Define KeyTips for the ribbon controls of an Office Add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/office-keytips) | Define KeyTips for ribbon controls of an Office Add-in. |
+| [Show or hide controls on a custom ribbon tab](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-visibility) | Set the initial visibility of groups and controls in a custom Office Add-in tab and change their visibility at runtime. |
 
 ## Shared runtime
 
