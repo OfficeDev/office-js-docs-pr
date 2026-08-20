@@ -33,7 +33,7 @@ The following table lists the ribbon controls whose visibility can be changed on
 
 ## Try out a completed add-in sample
 
-To immediately test the visibility of controls on a ribbon, try out the [Show or hide controls on a custom ribbon tab sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-visibility).
+To test the visibility of controls on a ribbon, try out the [Show or hide controls on a custom ribbon tab sample](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-visibility).
 
 ## Configure a shared runtime
 
