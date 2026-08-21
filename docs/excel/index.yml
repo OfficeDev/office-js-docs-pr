@@ -1,49 +1,62 @@
 ### YamlMime:Landing
 
 title: Excel add-ins documentation # < 60 chars
-summary: With Excel add-ins, you can use familiar web technologies such as HTML, CSS, and JavaScript to build a solution that can run in Excel across multiple platforms, including on Windows, Mac, iPad, and in a web browser. Learn how to build, test, debug, and publish Excel add-ins. # < 160 chars
+summary: Build Excel add-ins with HTML, CSS, and JavaScript. Start with a quickstart or tutorial, explore Excel APIs, and learn how to test, deploy, and publish. # < 160 chars
 
 metadata:
   title: Excel add-ins documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Resources for learning about Excel add-ins. # Required; article description that is displayed in search results. < 160 chars.
+  description: Learn to build Excel add-ins that automate workbook tasks, add custom functions, and create web-based experiences across platforms. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: excel #Required
   ms.topic: landing-page # Required
-  ms.date: 02/24/2022 #Required; mm/dd/yyyy format.
+  ms.date: 08/18/2026 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
+  ai-usage: ai-assisted
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
-  # Card (optional)
-  - title: About Excel add-ins
+  - title: Get started with Excel add-ins
     linkLists:
       - linkListType: overview
         links:
-          - text: What are Excel add-ins?
+          - text: Build Excel add-ins with Office Add-ins
             url: excel-add-ins-overview.md
       - linkListType: quickstart
         links:
-          - text: Build your first Excel add-in
+          - text: Build your first Excel task pane add-in
             url: ../quickstarts/excel-quickstart-jquery.md
-          - text: Explore APIs with Script Lab
+      - linkListType: tutorial
+        links:
+          - text: Excel add-in tutorial
+            url: ../tutorials/excel-tutorial.md
+      - linkListType: learn
+        links:
+          - text: Explore Office JavaScript API using Script Lab
             url: ../overview/explore-with-script-lab.md
+
+  - title: Build with Excel JavaScript APIs
+    linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Use the Excel JavaScript API to interact with objects and workbook content
+          - text: Core Excel object model concepts
             url: excel-add-ins-core-concepts.md
           - text: Use data types in an Excel add-in (preview)
             url: excel-data-types-overview.md
-          - text: Add custom functions to Excel
-            url: custom-functions-overview.md           
-          - text: Test and debug an Excel add-in
+          - text: Create custom functions in Excel
+            url: custom-functions-overview.md
+
+  - title: Test, deploy, and publish Excel add-ins
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Test Office Add-ins
             url: ../testing/test-debug-office-add-ins.md
-          - text: Deploy and publish an Excel add-in
+          - text: Deploy and publish Office Add-ins
             url: ../publish/publish.md
 
-  # Card (optional)
-  - title: Key Office Add-ins concepts
+  - title: Learn key Office Add-ins concepts
     linkLists:
       - linkListType: overview
         links:
@@ -51,22 +64,21 @@ landingContent:
             url: ../overview/office-add-ins.md
       - linkListType: concept
         links:
-          - text: Core concepts for Office Add-ins
+          - text: Office Add-in development lifecycle overview
             url: ../overview/core-concepts-office-add-ins.md
-          - text: Design Office Add-ins
+          - text: Design the UI of Office Add-ins
             url: ../design/add-in-design.md
           - text: Develop Office Add-ins
             url: ../develop/develop-overview.md
 
-  # Card
-  - title: Resources
+  - title: Get help and resources
     linkLists:
       - linkListType: reference
         links:
           - text: Ask questions
             url: https://stackoverflow.com/questions/tagged/office-js
-          - text: Request features
-            url: https://aka.ms/m365dev-suggestions
+          - text: Microsoft 365 Developer Platform
+            url: https://techcommunity.microsoft.com/category/microsoft365/ideas/microsoft365developerplatform
           - text: Report issues
             url: https://github.com/officedev/office-js/issues
           - text: Office Add-ins additional resources

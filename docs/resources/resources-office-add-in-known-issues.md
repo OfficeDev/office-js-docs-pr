@@ -1,15 +1,42 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 07/30/2026
+ms.date: 08/20/2026
 ms.localizationpriority: high
 ---
 
 # Office Add-ins known issues
 
-_Last updated July 30, 2026_
+_Last updated August 20, 2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## OUTLOOK ISSUE: Add-ins don't load in Outlook LTSC 2024 for new Exchange Online accounts
+
+Some users running the Outlook LTSC 2024 32-bit version can't access Outlook add-ins. Add-ins that previously worked might no longer appear or load.
+
+### STATUS
+
+We're currently investigating the issue.
+
+Tracking ID: 853980935
+
+### START DATE
+
+Date reported: August 19, 2026
+
+### DETAILS
+
+Affected client: Outlook LTSC 2024 32-bit version
+
+Customer reports indicate that the issue primarily affects Exchange Online accounts created after June 2026. Older accounts in the same environment and with the same licensing configuration might not be affected.
+
+### IMPACT
+
+Users can't access Outlook add-ins.
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
