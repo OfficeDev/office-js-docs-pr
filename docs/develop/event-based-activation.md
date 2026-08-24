@@ -1,7 +1,7 @@
 ---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 07/30/2026
+ms.date: 08/13/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -73,6 +73,7 @@ Support for this feature in Outlook was introduced in [requirement set 1.10](/ja
 |`OnMessageReadWithCustomAttachment`|Not available|On opening a message that contains a specific attachment type in read mode.|[Preview](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview)<sup>4</sup><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
 |`OnMessageReadWithCustomHeader`|Not available|On opening a message that contains a specific internet header name in read mode.|[Preview](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview)<sup>4</sup><ul><li>Windows (classic<sup>1</sup>)</li></ul>|
 |`OnMessageDecrypt`|messageDecrypt|On matching the header of an encrypted message to the header key in an add-in's manifest. To learn more, see [Create an encryption Outlook add-in](../outlook/encryption-decryption.md).|[1.16](/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-16)<ul><li>Web browser</li><li>Windows ([new](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) and classic<sup>1</sup>)</li></ul>|
+|`OnPicturesChanged`|picturesChanged|On adding or removing an inline picture from the body of a message or appointment being composed.<br><br>Event-specific data object: [PicturesChangedEventArgs](/javascript/api/outlook/office.pictureschangedeventargs?view=outlook-js-preview&preserve-view=true)|[Preview](/javascript/api/requirement-sets/outlook/outlook-requirement-set-preview)<ul><li>Web browser</li><li>New Outlook on Windows</li></ul>|
 
 > [!NOTE]
 > <sup>1</sup> Event-based add-ins in classic Outlook on Windows require a minimum of Windows 10 Version 1903 (Build 18362) or Windows Server 2019 Version 1903 to run.
@@ -81,7 +82,7 @@ Support for this feature in Outlook was introduced in [requirement set 1.10](/ja
 >
 > <sup>3</sup> For more information, see [Implement event-based activation in Outlook mobile add-ins](../outlook/mobile-event-based.md).
 >
-> <sup>4</sup> To preview the `OnMessageReadWithCustomAttachment` and `OnMessageReadWithCustomHeader` events, you must install classic Outlook on Windows Version 2312 (Build 17110.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option to access Office beta builds.
+> <sup>4</sup> To preview the `OnMessageReadWithCustomAttachment` and `OnMessageReadWithCustomHeader` events, install classic Outlook on Windows Version 2312 (Build 17110.10000) or later. Then, join the [Microsoft 365 Insider program](https://techcommunity.microsoft.com/blog/microsoft365insiderblog/join-the-microsoft-365-insider-program-on-windows/4206638) and select the **Beta Channel** option to access Office beta builds.
 
 #### Event-based activation in Outlook on mobile devices
 
