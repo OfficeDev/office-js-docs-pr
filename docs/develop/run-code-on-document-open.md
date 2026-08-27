@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
 > [!TIP]
-> This article describes a feature that enables an add-in to programmatically configure itself to run code when a document opens. The technique has *document scope*, meaning that it must be applied to each document individually. This feature should be kept distinct from three similar features:
+> This article describes a feature that enables an add-in to programmatically configure itself to run code when a document opens. The technique has *document scope*, meaning that it must be applied to each document individually. This feature is distinct from three similar features:
 >
 > - An add-in can be configured in the manifest to run code when *any* document opens. This feature has *Office application scope*. After an add-in is installed by a Microsoft 365 admin in the Admin portal of the Microsoft 365 tenant, the add-in launches and runs code on *every* Office document that is opened in the Office applications that the add-in is configured, in the manifest, to support. For more information, see [Activate add-ins with events](event-based-activation.md), especially the information about the `OnDocumentOpened` event.
 > - An add-in can programmatically configure a document to automatically open the add-in's task pane when the document opens. This feature also must be applied to each document individually. For more information, see [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document.md).
