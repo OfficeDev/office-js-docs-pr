@@ -13,7 +13,7 @@ You can use add-in commands in your Office Add-in to extend the Office UI by add
 Some scenarios require that a task pane open automatically when a document opens, without explicit user interaction. You can use the autoopen task pane feature, introduced in the [AddInCommands 1.1 requirement set](/javascript/api/requirement-sets/common/add-in-commands-requirement-sets), to automatically open a task pane when your scenario requires it.
 
 > [!TIP]
-> This article describes a feature that enables an add-in to open its task pane *when the document is opened*. The technique has *document scope*, meaning that it must be applied to each document individually. This feature should be kept distinct from three similar features:
+> This article describes a feature that enables an add-in to open its task pane *when the document is opened*. The technique has *document scope*, meaning that it must be applied to each document individually. This feature is distinct from three similar features:
 >
 > - An add-in can be configured in the manifest to open its task pane *when the add-in is installed* by an end user. This feature is scoped to a *single document*: the one that is open when the add-in is installed. For more information, see [Automatically open a task pane when an add-in is installed](automatically-open-on-installation.md).
 > - An add-in can programmatically configure itself to run code when a document opens. This feature also must be applied to each document individually. For more information, see [Configure a document to run code when it opens](run-code-on-document-open.md).
