@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 You can configure your add-in's task pane to launch immediately after it's installed. This feature increases usage. 
 
 > [!TIP]
-> This article describes a feature that enables an add-in to open its task pane *when the add-in is installed* by an end user. This feature is scoped to a *single document*: the one that is open when the add-in is installed. This feature should be kept distinct from three similar features:
+> This article describes a feature that enables an add-in to open its task pane *when the add-in is installed* by an end user. This feature is scoped to a *single document*: the one that is open when the add-in is installed. This feature is distinct from three similar features:
 >
 > - An add-in can programmatically configure a document to automatically open the add-in's task pane when the document opens. The technique has *document scope*, meaning that it must be applied to each document individually. For more information, see [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document.md).
 > - An add-in can programmatically configure itself to run code when a document opens. This feature also must be applied to each document individually. For more information, see [Configure a document to run code when it opens](run-code-on-document-open.md).
