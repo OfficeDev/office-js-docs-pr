@@ -127,7 +127,7 @@
       - name: Implement event-based activation 
         href: develop/event-based-activation.md
         displayName: event-based activation
-      - name: Run code on document open
+      - name: Configure a document to run code when it opens
         href: develop/run-code-on-document-open.md
     - name: App package and manifest
       items:

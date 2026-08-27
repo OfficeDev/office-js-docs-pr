@@ -1,23 +1,22 @@
 ---
 title: Activate add-ins with events
 description: Learn how to develop an Office Add-in that implements event-based activation.
-ms.date: 07/30/2026
+ms.date: 09/01/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 
 # Activate add-ins with events
 
-Event-based activation automatically triggers your add-in to complete their tasks without explicitly launching it. This allows the add-in to validate, insert, or refresh critical content without any manual operations. The add-in is opened in the background to avoid disrupting the user. You can also integrate event-based activation with the task pane and function commands.
+Event-based activation enables your add-in to launch automatically in response to events, so it can validate, insert, or refresh critical content without direct user action. The add-in is activated in the background to avoid disrupting the user. You can also integrate event-based activation with the task panes and function commands.
 
 ## Overview
 
 While the particular steps to add event-based functionality to your add-in vary by platform and manifest type, the general flow is as follows.
 
-1. Update the manifest with an extension for the event.
-1. Connect the event in the manifest with a JavaScript function to handle the event.
-1. Have the event handler function perform its actions, then call `event.completed` when it finishes.
-1. Call [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) to connect the event handler function with the ID specified in the manifest.
+1. Update the manifest to assign an action to handle the event.
+1. Create a JavaScript function, and ensure that it calls the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method.
+1. Use the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) method to map the function to the action specified in the manifest.
 
 ## Try out event-based activation
 
@@ -46,7 +45,16 @@ The following tables list events that are currently available and the supported 
 
 | Event canonical name</br>and add-in only manifest name | Unified manifest for Microsoft 365 name | Description | Supported clients and channels |
 | ----- | ----- | ----- | ----- |
-| `OnDocumentOpened` | *Not yet supported* | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | <ul><li>Windows (Build >= 16.0.18324.20032)</li><li>Office on the web</li><li>Office on Mac will be available later </li></ul>|
+| `OnDocumentOpened` | *Not yet supported*` | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | <ul><li>Office on the web</li><li>Office on Windows</li><li>Office on Mac will be available later</li></ul>|
+
+For an example of an add-in that activates with this event, see [word-add-label-on-open](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-label-on-open).
+
+> [!TIP]
+> By using the `OnDocumentOpened` event, an add-in can be configured in the manifest to run code when *any* document opens. This feature has *Office application scope*. After the add-in is installed by a Microsoft 365 admin in the Admin portal of the Microsoft 365 tenant, the add-in launches and runs code on *every* Office document that is opened in the Office applications that the add-in is configured, in the manifest, to support. This feature should be kept distinct from three similar features:
+>
+> - An add-in can programmatically configure itself to run code when a document opens. The technique has *document scope*, meaning that it must be applied to each document individually. For more information, see [Configure a document to run code when it opens](run-code-on-document-open.md).
+> - An add-in can programmatically configure a document to automatically open the add-in's task pane when the document opens. This feature also must be applied to each document individually. For more information, see [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document.md).
+> - An add-in can be configured in the manifest to open its task pane *when the add-in is installed* by an end user. This feature is scoped to a *single document*: the one that is open when the add-in is installed. For more information, see [Automatically open a task pane when an add-in is installed](automatically-open-on-installation.md).
 
 ### Outlook events
 
@@ -93,7 +101,7 @@ As you develop an event-based add-in, be mindful of the following feature behavi
 
 - Event-based add-ins work only when deployed by an administrator. If users install them directly from Microsoft Marketplace or the Office Store, they will not automatically launch (for workarounds to the Microsoft Marketplace limitation, see [Microsoft Marketplace listing options for your event-based add-in](../publish/autolaunch-store-options.md)). Admin deployments are done by uploading the manifest to the Microsoft 365 admin center.
 
-- APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel on Windows. This is because the event handler runs in a JavaScript-only runtime. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
+- APIs that interact with the UI or display UI elements are not supported for Word, PowerPoint, and Excel. This is because the event handler runs in a JavaScript-only runtime. For more information, see [Runtimes in Office Add-ins](../testing/runtimes.md).
 
 - Event-based add-ins require an internet connection to be able to launch when a specific event occurs. Add-in event handlers are expected to be short-running, lightweight, and as noninvasive as possible. After activation, your add-in will time out within approximately 300 seconds, the maximum length of time allowed for running event-based add-ins. To signal that your add-in has completed processing a launch event, your associated event handler must call the [event.completed](/javascript/api/outlook/office.mailboxevent#outlook-office-mailboxevent-completed-member(1)) method. (Note that code included after the `event.completed` statement isn't guaranteed to run.) Each time an event that your add-in handles is triggered, the add-in is reactivated and runs the associated event handler, and the timeout window is reset. The add-in ends after it times out, or the user closes the compose window or sends the item.
 
@@ -133,7 +141,7 @@ In Outlook on the web and the new Outlook on Windows, event-based activation is 
 
 ### Unsupported APIs
 
-Some Office.js APIs that change or alter the UI aren't allowed from event-based add-ins. The following are blocked APIs.
+Some Office.js APIs that change or alter the UI aren't allowed in the event handlers of event-based add-ins. The following are blocked APIs.
 
 | API | Methods |
 | --- | --- |
@@ -204,6 +212,17 @@ Admin deployments are done by uploading the manifest to the Microsoft 365 admin 
 
 1. In the admin portal, expand the **Settings** section in the navigation pane then select **Integrated apps**.
 1. On the **Integrated apps** page, choose the **Upload custom apps** action.
+1. The next steps depend on what manifest is being used. 
+
+    - **Unified manifest for Microsoft 365**: 
+        1. In the **App type** drop down box, select **Teams app**. *Not* **Office Add-in**!
+        1. Use the file chooser control to navigate to and select the app package zip file.
+        1. Follow the instructions on the page to complete the installation.
+
+    - **Add-in only manifest**: 
+        1. In the **App type** drop down box, select **Office Add-in**.
+        1. Use the file chooser control to navigate to and select the manifest.
+        1. Follow the instructions on the page to complete the installation.
 
 :::image type="content" source="../images/outlook-deploy-event-based-add-ins.png" alt-text="The Integrated apps page on the Microsoft 365 admin center with the Upload custom apps action highlighted.":::
 

@@ -2,7 +2,7 @@
 title: Automatically open a task pane when an add-in is installed
 description: Learn how to configure an Office Add-in to open automatically when it's installed.
 ms.topic: how-to
-ms.date: 03/23/2026
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,6 +10,13 @@ ms.localizationpriority: medium
 # Automatically open a task pane when an add-in is installed
 
 You can configure your add-in's task pane to launch immediately after it's installed. This feature increases usage. 
+
+> [!TIP]
+> This article describes a feature that enables an add-in to open its task pane *when the add-in is installed* by an end user. This feature is scoped to a *single document*: the one that is open when the add-in is installed. This feature should be kept distinct from three similar features:
+>
+> - An add-in can programmatically configure a document to automatically open the add-in's task pane when the document opens. The technique has *document scope*, meaning that it must be applied to each document individually. For more information, see [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document.md).
+> - An add-in can programmatically configure itself to run code when a document opens. This feature also must be applied to each document individually. For more information, see [Configure a document to run code when it opens](run-code-on-document-open.md).
+> - An add-in can be configured in the manifest to run code when *any* document opens. This feature has *Office application scope*. After an add-in is installed by a Microsoft 365 admin in the Admin portal of the Microsoft 365 tenant, the add-in launches and runs code on *every* Office document that is opened in the Office applications that the add-in is configured, in the manifest, to support. For more information, see [Activate add-ins with events](event-based-activation.md), especially the information about the `OnDocumentOpened` event.
 
 By default, task pane add-ins that do *not* include any [add-in commands](../design/add-in-commands.md) open the task pane immediately upon installation. However, when an add-in has one or more add-in commands, then the user is notified of new add-in, but the add-in doesn't launch automatically. This historic default behavior is changing so add-ins that do have add-in commands will launch automatically in some situations. In addition, if the add-in has more than one task pane page, it's possible for you to control whether the add-in launches upon installation and, if so, which page opens in the task pane.
 
