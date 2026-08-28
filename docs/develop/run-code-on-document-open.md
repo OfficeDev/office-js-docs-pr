@@ -1,21 +1,27 @@
 ---
-title: Run code in your Office Add-in when the document opens
-description: Learn how to run code in your Office Add-in add-in when the document opens.
+title: Configure a document to run code when it opens
+description: Learn how to configure an Office file to run code when the document opens.
 ms.topic: how-to
-ms.date: 09/22/2025
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ---
 
-# Run code in your Office Add-in when the document opens
-
-[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
+# Configure a document to run code when it opens
 
 You can configure your Office Add-in to load and run code as soon as the document is opened. This is useful if you need to register event handlers, pre-load data for the task pane, synchronize UI, or perform other tasks before the add-in is visible.
 
-> [!NOTE]
-> The configuration is implemented with a method that your code calls at runtime. This means that the add-in *won't* run the *first time* a user opens the document. The add-in must be opened manually for the first time on any document. After the method runs, either in [Office.initialize](/javascript/api/office#office-office-initialize-function(1)), [Office.onReady](/javascript/api/office#office-office-onready-function(1)), or because the user takes a code path that runs it; then whenever the document is reopened, the add-in loads immediately and any code in the `Office.initialize` or `Office.onReady` method runs.
+> [!TIP]
+> This article describes a feature that enables an add-in to programmatically configure itself to run code when a document opens. The technique has *document scope*, meaning that it must be applied to each document individually. This feature is distinct from three similar features:
+>
+> - An add-in can be configured in the manifest to run code when *any* document opens. This feature has *Office application scope*. After an add-in is installed by a Microsoft 365 admin in the Admin portal of the Microsoft 365 tenant, the add-in launches and runs code on *every* Office document that is opened in the Office applications that the add-in is configured, in the manifest, to support. For more information, see [Activate add-ins with events](event-based-activation.md), especially the information about the `OnDocumentOpened` event.
+> - An add-in can programmatically configure a document to automatically open the add-in's task pane when the document opens. This feature also must be applied to each document individually. For more information, see [Automatically open a task pane with a document](automatically-open-a-task-pane-with-a-document.md).
+> - An add-in can be configured in the manifest to open its task pane *when the add-in is installed* by an end user. This feature is scoped to a *single document*: the one that is open when the add-in is installed. For more information, see [Automatically open a task pane when an add-in is installed](automatically-open-on-installation.md).
+
+The configuration is implemented with a method that your code calls at runtime. This means that the add-in *won't* run the *first time* a user opens the document. The add-in must be opened manually for the first time on any document. After the method runs, either in [Office.initialize](/javascript/api/office#office-office-initialize-function(1)), [Office.onReady](/javascript/api/office#office-office-onready-function(1)), or because the user takes a code path that runs it; then whenever the document is reopened, the add-in loads immediately and any code in the `Office.initialize` or `Office.onReady` method runs.
 
 [!include[Shared runtime note](../includes/note-requires-shared-runtime.md)]
+
+[!include[Shared runtime requirements](../includes/shared-runtime-requirements-note.md)]
 
 ## Configure your add-in to load when the document opens
 
