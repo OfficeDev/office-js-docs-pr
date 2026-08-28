@@ -28,7 +28,7 @@ With the autoopen feature, you can explicitly define or allow the user to define
 ## Support and availability
 
 > [!IMPORTANT]
-> The autoopen feature is not supported for add-ins published in the Microsoft Marketplace. The autoopen feature is supported only for add-ins that are centrally deployed or sideloaded.
+> The autoopen feature isn't supported for add-ins published in the Microsoft Marketplace. The autoopen feature is supported only for add-ins that are centrally deployed or sideloaded.
 
 The autoopen feature is currently supported in the following products and platforms.
 
