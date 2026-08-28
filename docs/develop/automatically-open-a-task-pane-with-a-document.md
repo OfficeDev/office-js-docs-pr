@@ -28,7 +28,7 @@ With the autoopen feature, you can explicitly define or allow the user to define
 ## Support and availability
 
 > [!IMPORTANT]
-> As of March 2, 2026, the autoopen feature is no longer supported for add-ins published in the Microsoft Marketplace. The autoopen feature is supported only for add-ins that are centrally deployed or sideloaded. Content add-ins in Microsoft Marketplace that are saved with a document still prompt users to install when they open the document. They also autoopen after installation.
+> The autoopen feature is not supported for add-ins published in the Microsoft Marketplace. The autoopen feature is supported only for add-ins that are centrally deployed or sideloaded.
 
 The autoopen feature is currently supported in the following products and platforms.
 
