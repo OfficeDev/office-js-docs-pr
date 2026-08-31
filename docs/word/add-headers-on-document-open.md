@@ -217,19 +217,19 @@ The **webpack.config.js** file needs to be configured so that it creates distinc
 
 1. Add the following line to the top of the file where the other global `const`s are declared.
 
-    ```
+    ```javascript
     const path = require("path");
     ```
 
 1. To ensure that the add-in's icon can appear in the **Integrated Apps** list in the Microsoft 365 Admin portal, add the following property to the `devServer` object near the bottom of the file.
 
-    ```
+    ```javascript
     allowedHosts: "all",
     ```
 
 1. To ensure that the **commands.js** that runs in the JavaScript-only runtime isn't bundled with code that requires a browser runtime, add the following `static` property to the `devServer` object.
 
-    ```
+    ```javascript
     static: {
         directory: path.join(__dirname, "dist"),
         publicPath: "/public",
@@ -238,7 +238,7 @@ The **webpack.config.js** file needs to be configured so that it creates distinc
 
     The entire `devServer` object should now look like the following.
 
-    ```
+    ```javascript
     devServer: {
       allowedHosts: "all",
       static: {
