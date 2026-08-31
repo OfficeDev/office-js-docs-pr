@@ -28,7 +28,7 @@ To enable an event-based add-in, you must configure the following elements in th
 - In the [ExtensionPoint](/javascript/api/manifest/extensionpoint) element, the `xsi:type` is set to `LaunchEvent`. This enables the event-based activation feature in your add-in.
 - In the [SourceLocation](/javascript/api/manifest/customfunctionssourcelocation) element of the **\<ExtensionPoint\>** element, the `resid` value is set to match that of the [Runtime](/javascript/api/manifest/runtime) element that references the HTML file.
 - In the [LaunchEvent](/javascript/api/manifest/launchevent) element, the `Type` is set to `OnDocumentOpened` and the `FunctionName` attribute is set to the JavaScript function name of the event handler.
-- In the `Resources` section, the `JsRuntimeWord.Url` is set to a **\public** subfolder in the web application. In conjunction with the changes you will make in the **webpack.config.js** file, this URL ensures that the **commands.js** that runs in the JavaScript-only runtime isn't bundled with code that requires a browser runtime. See [Configure webpack.config.js](#configure-webpack-config-js).
+- In the `Resources` section, the `JsRuntimeWord.Url` is set to a **\public** subfolder in the web application. In conjunction with the changes you will make in the **webpack.config.js** file, this URL ensures that the **commands.js** that runs in the JavaScript-only runtime isn't bundled with code that requires a browser runtime. See [Configure webpack.config.js](#configure-webpackconfigjs).
 
 Use the following sample manifest code to update your project.
 
@@ -269,7 +269,8 @@ The **webpack.config.js** file needs to be configured so that it creates distinc
 1. Select **Just me** as the user.
 1. Follow the instructions on screen to finish the deployment.
 
-> [!IMPORTANT] You cannot run the add-in until after it has propagated to a platform. Propagation to Word on the web can take several hours, typically 2 to 3 hours. Propagation to Word on Windows can take 24 hours, typically 6 to 12 hours.
+> [!IMPORTANT
+> ] You cannot run the add-in until after it has propagated to a platform. Propagation to Word on the web can take several hours, typically 2 to 3 hours. Propagation to Word on Windows can take 24 hours, typically 6 to 12 hours.
 >
 > To test whether the add-in has propagated, see [Try it out](#try-it-out).
 
@@ -279,7 +280,8 @@ The **webpack.config.js** file needs to be configured so that it creates distinc
 1. Select the **My add-ins** button to open the task pane.
 1. Select any of the links on the task pane to add or change the header.
 
-> [!IMPORTANT] When you're finished working with the sample, [uninstall it](#uninstall-the-add-in).
+> [!IMPORTANT] 
+> When you're finished working with the sample, [uninstall it](#uninstall-the-add-in).
 
 ## Uninstall the add-in
 
@@ -291,7 +293,8 @@ To uninstall the add-in, take the following steps:
 1. On the **Remove apps** page, confirm that you want to remove the app and select **Remove**.
 1. On the **Successfully removed** page, select **Done**.
 
-> [!IMPORTANT] Uninstallation must propagate to the platforms just as installation does. Propagation to Word on the web can take several hours, typically 2 to 3 hours. Propagation to Word on Windows can take 24 hours, typically 6 to 12 hours.
+> [!IMPORTANT] 
+> Uninstallation must propagate to the platforms just as installation does. Propagation to Word on the web can take several hours, typically 2 to 3 hours. Propagation to Word on Windows can take 24 hours, typically 6 to 12 hours.
 >
 > To test if uninstallation has propagated, open a Word file on the platform. If the **My Add-in** button in an **Event-activated add-in** group is still on the **Home** tab of the ribbon, propagation hasn't happened. Close Word and try again in a while.
 
