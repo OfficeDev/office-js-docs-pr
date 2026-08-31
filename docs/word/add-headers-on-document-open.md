@@ -269,8 +269,8 @@ The **webpack.config.js** file needs to be configured so that it creates distinc
 1. Select **Just me** as the user.
 1. Follow the instructions on screen to finish the deployment.
 
-> [!IMPORTANT
-> ] You cannot run the add-in until after it has propagated to a platform. Propagation to Word on the web can take several hours, typically 2 to 3 hours. Propagation to Word on Windows can take 24 hours, typically 6 to 12 hours.
+> [!IMPORTANT]
+> You cannot run the add-in until after it has propagated to a platform. Propagation to Word on the web can take several hours, typically 2 to 3 hours. Propagation to Word on Windows can take 24 hours, typically 6 to 12 hours.
 >
 > To test whether the add-in has propagated, see [Try it out](#try-it-out).
 
