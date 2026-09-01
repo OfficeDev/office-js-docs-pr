@@ -1,7 +1,7 @@
 ﻿---
 title: Use the Outlook REST APIs from an Outlook add-in
 description: The Outlook REST API v2.0 endpoints are deprecated. Learn how to migrate to Microsoft Graph. For add-ins pending migration, this article covers getCallbackTokenAsync, item ID retrieval, and REST API calls.
-ms.date: 04/22/2025
+ms.date: 09/01/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -114,4 +114,3 @@ function getCurrentItem(accessToken) {
 - [Use the Microsoft Graph REST API from an Outlook add-in](microsoft-graph.md)
 - [Authentication and authorization in Outlook add-ins](authentication.md)
 - [Enable SSO in an Office Add-in using nested app authentication](../develop/enable-nested-app-authentication-in-your-add-in.md)
-- [Add-in Command sample](https://github.com/OfficeDev/outlook-add-in-command-demo)

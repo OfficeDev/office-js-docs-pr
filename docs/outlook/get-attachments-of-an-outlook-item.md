@@ -1,7 +1,7 @@
 ---
 title: Get an Outlook item's attachments from Exchange
 description: Learn how to use Office JavaScript API attachment methods and Microsoft Graph to get attachments from Outlook messages and appointments.
-ms.date: 05/12/2026
+ms.date: 09/01/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -92,11 +92,6 @@ In Exchange on-premises environments, your add-in must perform the following ste
 1. Send the callback token and attachment information to the remote service.
 
 1. Get the attachments from the Exchange server using the `ExchangeService.GetAttachments` method or the `GetAttachment` operation.
-
-Each step is covered in detail in the following sections using code from the [Outlook-Add-in-JavaScript-GetAttachments](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-GetAttachments) sample.
-
-> [!NOTE]
-> The code in these examples has been shortened to emphasize the attachment information. The sample contains additional code for authenticating the add-in with the remote server and managing the state of the request.
 
 ## Get a callback token
 

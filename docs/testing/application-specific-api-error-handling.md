@@ -2,7 +2,7 @@
 title: Error handling with the application-specific JavaScript APIs
 description: Learn about Excel, Word, PowerPoint, and other application-specific JavaScript API error handling logic to account for runtime errors.
 ms.topic: error-reference
-ms.date: 06/23/2025
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ---
 
@@ -126,7 +126,7 @@ How you report errors to users depends on the UI system you're using.
   > [!NOTE]
   > The [Alert](https://react.fluentui.dev/?path=/docs/preview-components-alert--default) component can also be used to report errors to users, but it's currently in preview and shouldn't be used in a production add-in. For information about its release status, see the [Fluent UI React v9 Component Roadmap](https://github.com/microsoft/fluentui/wiki/Fluent-UI-React-v9-Component-Roadmap).
 
-- If you're not using React for the UI, consider using the older [Fabric UI](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core) components implemented directly in HTML and JavaScript. Some example templates are in the [Office-Add-in-UX-Design-Patterns-Code](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates) repository. Take a look especially in the dialog and navigation subfolders. The sample [Excel-Add-in-SalesLeads](https://github.com/OfficeDev/Excel-Add-in-SalesLeads) uses a message banner.
+- If you're not using React for the UI, consider using the older [Fabric UI](https://developer.microsoft.com/fluentui#/get-started/web#fabric-core) components implemented directly in HTML and JavaScript.
 
 ## See also
 
