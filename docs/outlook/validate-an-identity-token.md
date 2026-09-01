@@ -1,7 +1,7 @@
 ---
 title: Validate an Exchange add-in identity token
 description: Learn how to validate an Exchange user identity token for your Outlook add-in, including claim checks, signature verification, domain validation, and unique user ID generation.
-ms.date: 07/10/2026
+ms.date: 09/01/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -200,11 +200,7 @@ public class ExchangeAppContext
 }
 ```
 
-For an example that uses this library to validate Exchange tokens and has an implementation of `GetSigningKeys`, see [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer).
-
 ## See also
 
 - [Inside the Exchange identity token in an Outlook add-in](inside-the-identity-token.md)
 - [Authenticate a user with an identity token in an add-in](authenticate-a-user-with-an-identity-token.md)
-- [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer)
-- [Outlook-Add-in-JavaScript-ValidateIdentityToken](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ValidateIdentityToken)
