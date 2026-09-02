@@ -1,7 +1,7 @@
 ﻿---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 07/22/2025
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ---
 
@@ -625,5 +625,6 @@ For instructions on how to debug your on-send add-in, see [Debug function comman
 
 ## See also
 
-- [Overview of Outlook add-ins architecture and features](outlook-add-ins-overview.md)
-- [Add-in Command Demo Outlook add-in](https://github.com/OfficeDev/outlook-add-in-command-demo)
+- [Handle OnMessageSend and OnAppointmentSend events in your Outlook add-in with Smart Alerts](onmessagesend-onappointmentsend-events.md)
+- [Automatically check for an attachment before a message is sent](smart-alerts-onmessagesend-walkthrough.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)

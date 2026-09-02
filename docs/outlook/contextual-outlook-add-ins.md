@@ -1,7 +1,7 @@
 ﻿---
 title: Contextual Outlook add-ins
 description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
-ms.date: 10/30/2025
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ---
 
@@ -87,5 +87,4 @@ const videos = Office.context.mailbox.item.getRegExMatches().videoURL;
 
 ## See also
 
-- [Outlook add-in: Contoso Order Number](https://github.com/OfficeDev/Outlook-Add-In-Contextual-Regex) (sample contextual add-in that activates based on a regular expression match)
-- [Build your first Outlook add-in](../quickstarts/outlook-quickstart-yo.md)
+- [Activate add-ins with events](../develop/event-based-activation.md)

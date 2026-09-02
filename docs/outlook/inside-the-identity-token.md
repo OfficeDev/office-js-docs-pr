@@ -1,7 +1,7 @@
 ﻿---
 title: Exchange identity token structure in an Outlook add-in
 description: Learn the structure of the Exchange user identity token (its header, payload, and signature) and what claims each part contains.
-ms.date: 05/12/2026
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---
@@ -79,8 +79,6 @@ The information in the appctx claim provides you with the unique identifier for 
 The signature is created by hashing the header and payload sections with the algorithm specified in the header and using the self-signed X509 certificate located on the server at the location specified in the payload. Your web service can validate this signature to help make sure that the identity token comes from the server that you expect to send it.
 
 ## See also
-
-For an example that parses the Exchange user identity token, see [Outlook-Add-In-Token-Viewer](https://github.com/OfficeDev/Outlook-Add-In-Token-Viewer).
 
 - [Authentication options in Outlook add-ins](authentication.md)
 - [Authenticate a user with an identity token in an add-in](authenticate-a-user-with-an-identity-token.md)

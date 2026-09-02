@@ -286,7 +286,7 @@ The following sections show examples of manifest v1.1 XML files for content, tas
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
 
-  <!-- See https://github.com/OfficeDev/Office-Add-in-Commands-Samples for documentation. -->
+  <!-- See https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-add-in-commands for documentation. -->
 
   <!-- BeginBasicSettings: Add-in metadata, used for all versions of Office unless override provided. -->
 

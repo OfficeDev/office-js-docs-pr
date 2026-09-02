@@ -2,7 +2,7 @@
 title: Avoid using the context.sync method in loops
 description: Learn how to use the split loop and correlated objects patterns to avoid calling context.sync in a loop.
 ms.topic: best-practice
-ms.date: 09/03/2025
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ---
 
@@ -219,7 +219,6 @@ One further caveat: sometimes it takes more than one loop just to create the arr
 
 - For a very simple example for Excel that uses `Array.forEach` loops, see the accepted answer to this Stack Overflow question: [Is it possible to queue more than one context.load before context.sync?](https://stackoverflow.com/questions/44459604/is-it-possible-to-queue-more-than-one-context-load-before-context-sync)
 - For a simple example for Word that uses `Array.forEach` loops and doesn't use `async`/`await` syntax, see the accepted answer to this Stack Overflow question: [Iterating over all paragraphs with content controls with Office JavaScript API](https://stackoverflow.com/questions/58422113/iterating-over-all-paragraphs-with-content-controls-with-office-javascript-api).
-- For an example for Word that is written in TypeScript, see the sample [Word Add-in Angular2 Style Checker](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker), especially the file [word.document.service.ts](https://github.com/OfficeDev/Word-Add-in-Angular2-StyleChecker/blob/master/app/services/word-document/word.document.service.ts). It has a mixture of `for` and `Array.forEach` loops.
 - For an advanced Word sample, import [this gist](https://gist.github.com/9c5a803e52480ec7f00bb3224292e0ab) into the [Script Lab tool](../overview/explore-with-script-lab.md). For context in using the gist, see the accepted answer to the Stack Overflow question [Document not in sync after replace text](https://stackoverflow.com/questions/48227941/document-not-in-sync-after-replace-text). This sample creates a custom correlating object type that has three properties. It uses a total of three loops to construct the array of correlated objects, and two more loops to do the final processing. There are a mixture of `for` and `Array.forEach` loops.
 - Although not strictly an example of the split loop or correlated objects patterns, there's an advanced Excel sample that shows how to convert a set of cell values to other currencies with just a single `context.sync`. To try it, open the [Script Lab tool](../overview/explore-with-script-lab.md) then search for and navigate to the **Currency Converter** sample.
 

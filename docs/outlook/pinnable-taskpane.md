@@ -1,7 +1,7 @@
 ﻿---
 title: Implement a pinnable task pane in an Outlook add-in
 description: The task pane UX shape for add-in commands opens a vertical task pane to the right of an open message or meeting request, allowing the add-in to provide UI for more detailed interactions.
-ms.date: 11/18/2025
+ms.date: 09/01/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -79,8 +79,6 @@ The `<SupportsPinning>` element is defined in the VersionOverrides v1.1 schema, 
 
 ---
 
-For a full example, see the `msgReadOpenPaneButton` control in the [command-demo sample manifest](https://github.com/OfficeDev/outlook-add-in-command-demo/blob/master/command-demo-manifest.xml).
-
 > [!NOTE]
 > Task pane pinning is automatically supported in an add-in that activates without the Reading Pane enabled or a message first selected. To learn more, see [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md).
 
@@ -134,4 +132,5 @@ If you plan to [publish](../publish/publish.md) your Outlook add-in to [Microsof
 
 ## See also
 
-For an example add-in that implements a pinnable task pane, see [command-demo](https://github.com/OfficeDev/outlook-add-in-command-demo) on GitHub.
+- [Activate your Outlook add-in on multiple messages](item-multi-select.md)
+- [Activate your Outlook add-in without the Reading Pane enabled or a message selected](contextless.md)
