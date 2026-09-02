@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 08/20/2026
+ms.date: 09/03/2026
 ms.localizationpriority: high
 ---
 
@@ -97,7 +97,7 @@ Users can't restore an add-in to the ribbon after they remove it. Even if the ad
 
 ### WORKAROUND
 
-Create a Microsoft 365 group to implement optional deployment. This workaround works for Integrated Apps on both XML manifest and unified manifest (JSON) Office Add-ins.
+Create a Microsoft 365 group to implement optional deployment. This workaround works for both XML manifest and unified manifest (JSON) Office Add-ins that are installed in the **Integrated apps** portal in the Microsoft 365 Admin Center.
 
 1. Create a Microsoft 365 group for a specific group of users who use the add-in. For more information, see [Create a Microsoft 365 group](/microsoft-365/admin/create-groups/create-groups).
     1. Specify a group name such as "My Add-in users".
