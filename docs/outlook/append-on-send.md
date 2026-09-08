@@ -95,15 +95,15 @@ The following shows how to configure your unified manifest to enable the prepend
                         "icons": [
                             {
                                 "size": 16,
-                                "url" "https://localhost:3000/assets/icon-16.png"
+                                "url": "https://localhost:3000/assets/icon-16.png"
                             },
                             {
                                 "size": 32,
-                                "url" "https://localhost:3000/assets/icon-32.png"
+                                "url": "https://localhost:3000/assets/icon-32.png"
                             },
                             {
                                 "size": 80,
-                                "url" "https://localhost:3000/assets/icon-80.png"
+                                "url": "https://localhost:3000/assets/icon-80.png"
                             }
                         ],
                         "controls": [
@@ -114,15 +114,15 @@ The following shows how to configure your unified manifest to enable the prepend
                                 "icons": [
                                     {
                                         "size": 16,
-                                        "url" "https://localhost:3000/assets/icon-16.png"
+                                        "url": "https://localhost:3000/assets/icon-16.png"
                                     },
                                     {
                                         "size": 32,
-                                        "url" "https://localhost:3000/assets/icon-32.png"
+                                        "url": "https://localhost:3000/assets/icon-32.png"
                                     },
                                     {
                                         "size": 80,
-                                        "url" "https://localhost:3000/assets/icon-80.png"
+                                        "url": "https://localhost:3000/assets/icon-80.png"
                                     }
                                 ],
                                 "supertip": {
@@ -138,15 +138,15 @@ The following shows how to configure your unified manifest to enable the prepend
                                 "icons": [
                                     {
                                         "size": 16,
-                                        "url" "https://localhost:3000/assets/icon-16.png"
+                                        "url": "https://localhost:3000/assets/icon-16.png"
                                     },
                                     {
                                         "size": 32,
-                                        "url" "https://localhost:3000/assets/icon-32.png"
+                                        "url": "https://localhost:3000/assets/icon-32.png"
                                     },
                                     {
                                         "size": 80,
-                                        "url" "https://localhost:3000/assets/icon-80.png"
+                                        "url": "https://localhost:3000/assets/icon-80.png"
                                     }
                                 ],
                                 "supertip": {
