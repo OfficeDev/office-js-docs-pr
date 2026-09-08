@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 08/05/2025
+ms.date: 09/08/2026
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -41,6 +41,34 @@ This behavior also applies for enum values like "Unknown".
 ## Get a GeneralException when working with styles
 
 If users are hitting a GeneralException when your add-in calls [Document.insertFileFromBase64](/javascript/api/word/word.document#word-word-document-insertfilefrombase64-member(1)) or Style APIs, it may be that those users are exceeding limits imposed by the Word application. To learn more about these limits, see [Operating parameter limitations and specifications in Word](/office/troubleshoot/word/operating-parameter-limitation).
+
+## Inserting content fails with NotAllowed when the document contains a date picker content control
+
+Word on the web doesn't support every content control type. If the document contains a content control that Word on the web doesn't support, such as a date picker content control, calls to [Body.insertHtml](/javascript/api/word/word.body#word-word-body-inserthtml-member(1)) or [Body.insertFileFromBase64](/javascript/api/word/word.body#word-word-body-insertfilefrombase64-member(1)) that use `Word.InsertLocation.replace` fail. The operation is rejected because it would replace content that the web client can't edit.
+
+The error returned has the code `NotAllowed` and the message "The action isn't supported by Word in a browser." The `errorLocation` property of [OfficeExtension.Error.debugInfo](/javascript/api/office/officeextension.debuginfo) identifies the call that failed, such as `Body.insertHtml`.
+
+Additionally, content controls that Word on the web doesn't support aren't returned by [Body.contentControls](/javascript/api/word/word.body#word-word-body-contentcontrols-member). Your add-in therefore can't enumerate a date picker content control to detect it before attempting the insert operation. This differs from Word on Windows and Word on Mac, where the content control is returned and [ContentControl.type](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-type-member) reports `datePicker`.
+
+Until your add-in can detect these content controls, handle the error when you replace body content, as shown in the following example.
+
+```js
+await Word.run(async (context) => {
+  context.document.body.insertHtml("<p>New content</p>", Word.InsertLocation.replace);
+
+  try {
+    await context.sync();
+  } catch (error) {
+    if (error.code === Word.ErrorCodes.notAllowed) {
+      // The body contains a content control that Word on the web doesn't support,
+      // such as a date picker content control.
+      console.log("Unable to replace the body content in Word on the web.");
+    } else {
+      throw error;
+    }
+  }
+});
+```
 
 ## Layout breaks when using `insertHtml` while cursor is in content control in header
 
