@@ -42,7 +42,7 @@ This behavior also applies for enum values like "Unknown".
 
 If users are hitting a GeneralException when your add-in calls [Document.insertFileFromBase64](/javascript/api/word/word.document#word-word-document-insertfilefrombase64-member(1)) or Style APIs, it may be that those users are exceeding limits imposed by the Word application. To learn more about these limits, see [Operating parameter limitations and specifications in Word](/office/troubleshoot/word/operating-parameter-limitation).
 
-## Inserting content fails with NotAllowed when the document contains a date picker content control
+## Inserting content fails with NotAllowed
 
 Word on the web doesn't support every content control type. If the document contains a content control that Word on the web doesn't support, such as a date picker content control, calls to [Body.insertHtml](/javascript/api/word/word.body#word-word-body-inserthtml-member(1)) or [Body.insertFileFromBase64](/javascript/api/word/word.body#word-word-body-insertfilefrombase64-member(1)) that use `Word.InsertLocation.replace` fail. The operation is rejected because it would replace content that the web client can't edit.
 
