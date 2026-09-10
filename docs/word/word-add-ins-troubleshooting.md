@@ -48,7 +48,7 @@ Word on the web doesn't support every content control type. If the document cont
 
 The error returned has the code `NotAllowed` and the message "The action isn't supported by Word in a browser." The `errorLocation` property of [OfficeExtension.Error.debugInfo](/javascript/api/office/officeextension.debuginfo) identifies the call that failed, such as `Body.insertHtml`.
 
-Additionally, content controls that Word on the web doesn't support aren't returned by [Body.contentControls](/javascript/api/word/word.body#word-word-body-contentcontrols-member). Your add-in therefore can't enumerate a date picker content control to detect it before attempting the insert operation. This differs from Word on Windows and Word on Mac, where the content control is returned and [ContentControl.type](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-type-member) reports `datePicker`.
+Additionally, content controls that Word on the web doesn't support aren't returned by [Body.contentControls](/javascript/api/word/word.body#word-word-body-contentcontrols-member). Your add-in can't get a date picker content control to detect it before attempting the insert operation. This differs from Word on Windows and Word on Mac, where the content control is returned and [ContentControl.type](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-type-member) reports `datePicker`.
 
 Until your add-in can detect these content controls, handle the error when you replace body content, as shown in the following example.
 
