@@ -50,7 +50,7 @@ The error returned has the code `NotAllowed` and the message "The action isn't s
 
 Additionally, content controls that Word on the web doesn't support aren't returned by [Body.contentControls](/javascript/api/word/word.body#word-word-body-contentcontrols-member). Your add-in can't get a date picker content control to detect it before attempting the insert operation. This differs from Word on Windows and Word on Mac, where the content control is returned and [ContentControl.type](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-type-member) reports `datePicker`.
 
-Until your add-in can detect these content controls, handle the error when you replace body content, as shown in the following example.
+Since your add-in can detect these content controls on the web, handle the error when you replace body content, as shown in the following example.
 
 ```js
 await Word.run(async (context) => {
