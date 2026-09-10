@@ -1,7 +1,7 @@
 ---
 title: Explore Office JavaScript API using Script Lab
 description: Use Script Lab to explore the Office JS API and to prototype functionality.
-ms.date: 11/06/2025
+ms.date: 09/10/2026
 ms.topic: concept-article
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -43,7 +43,7 @@ In addition to JavaScript or TypeScript code that calls the Office JS API, each 
 
 #### Preview APIs
 
-To call preview APIs within a snippet, you need to update the snippet's libraries to use the beta content delivery network (CDN) (`https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`) and the preview type definitions `@types/office-js-preview`. Additionally, some preview APIs are only accessible if you've signed up for the [Microsoft 365 Insider program](https://aka.ms/MSFT365InsiderProgram) and are running an Insider build of Office.
+To call preview APIs within a snippet, you need to update the snippet's libraries to use the beta content delivery network (CDN) (`https://officeapis.public.onecdn.static.microsoft/beta/office.js`) and the preview type definitions `@types/office-js-preview`. Additionally, some preview APIs are only accessible if you've signed up for the [Microsoft 365 Insider program](https://aka.ms/MSFT365InsiderProgram) and are running an Insider build of Office.
 
 ### Save and share snippets
 

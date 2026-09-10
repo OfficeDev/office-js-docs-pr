@@ -1,7 +1,7 @@
 ---
 title: Connect Office.js to any JavaScript framework
 description: Learn how to integrate Office.js with any JavaScript framework including React, Angular, Vue, Svelte, and others.
-ms.date: 01/30/2026
+ms.date: 09/10/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -52,7 +52,7 @@ You must reference the Office JavaScript API from the content delivery network (
   <title>My Office Add-in</title>
 
   <!-- Office.js must be loaded from CDN, not bundled -->
-  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+  <script src="https://officeapis.public.onecdn.static.microsoft/1/office.js" type="text/javascript"></script>
 
   <!-- Your framework bundle loads after Office.js -->
 </head>
@@ -264,7 +264,7 @@ Add this code to your HTML file, wrapping the Office.js script tag:
   </script>
 
   <!-- Load Office.js -->
-  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js"></script>
 
   <!-- Restore history methods after Office.js loads -->
   <script type="text/javascript">

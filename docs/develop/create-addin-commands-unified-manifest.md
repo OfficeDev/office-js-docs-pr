@@ -1,7 +1,7 @@
 ---
 title: Create add-in commands with the unified manifest for Microsoft 365
 description: Configure the unified manifest for Microsoft 365 to define add-in commands for Excel, Outlook, PowerPoint, and Word. Use add-in commands to create UI elements, add buttons or lists, and perform actions.
-ms.date: 03/23/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -245,7 +245,7 @@ The following subsections explain how to include a [function command](../design/
             <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 
             <!-- Office JavaScript Library -->
-            <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+            <script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js"></script>
             <!-- Function command file -->
             <script src="commands.js" type="text/javascript"></script>
         </head>

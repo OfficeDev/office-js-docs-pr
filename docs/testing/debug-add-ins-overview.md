@@ -2,7 +2,7 @@
 title: Debug Office Add-ins
 description: Find the Office Add-in debugging guidance for your development environment.
 ms.topic: overview
-ms.date: 05/07/2026
+ms.date: 09/10/2026
 ms.localizationpriority: high
 ---
 
@@ -81,8 +81,8 @@ There are debug versions of the Office JavaScript libraries. These versions are 
 
 The debug versions are found at the following CDN locations.
 
-- Office JavaScript API library: `https://appsforoffice.microsoft.com/lib/1/hosted/office.debug.js`
-- Office JavaScript API (preview) library: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.debug.js`
+- Office JavaScript API library: `https://officeapis.public.onecdn.static.microsoft/1/office.debug.js`
+- Office JavaScript API (preview) library: `https://officeapis.public.onecdn.static.microsoft/beta/office.debug.js`
 
 ## See also
 

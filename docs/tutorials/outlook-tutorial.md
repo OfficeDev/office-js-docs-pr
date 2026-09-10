@@ -1,7 +1,7 @@
 ﻿---
 title: 'Tutorial: Build a message compose Outlook add-in'
 description: Build an Outlook add-in that inserts GitHub gists into the body of a new message.
-ms.date: 09/03/2026
+ms.date: 09/10/2026
 ms.service: outlook
 #Customer intent: As a developer, I want to create a message compose Outlook add-in.
 ms.localizationpriority: high
@@ -512,7 +512,7 @@ Let's start by creating the UI for the dialog.
       <title>Settings</title>
     
       <!-- Office JavaScript API -->
-      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+      <script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js"></script>
     
       <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
       <link rel="stylesheet"
@@ -956,7 +956,7 @@ A function that's invoked by a UI-less button must be defined in the file that's
       <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     
       <!-- Office JavaScript API -->
-      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+      <script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js"></script>
     
       <script type="text/javascript" src="../helpers/addin-config.js"></script>
       <script type="text/javascript" src="../helpers/gist-api.js"></script>
@@ -1214,7 +1214,7 @@ This add-in's **Display gist list** button opens a task pane and displays yours 
       <title>Contoso Task Pane Add-in</title>
     
       <!-- Office JavaScript API -->
-      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+      <script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js"></script>
     
       <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui. -->
       <link rel="stylesheet"
