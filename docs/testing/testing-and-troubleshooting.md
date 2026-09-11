@@ -2,7 +2,7 @@
 title: Troubleshoot user errors with Office Add-ins
 description: Learn how to troubleshoot common user-facing errors in Office Add-ins, including loading, installation, dialog, and activation issues.
 ms.topic: troubleshooting-problem-resolution
-ms.date: 07/10/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -23,6 +23,12 @@ The following table lists common error messages that users might encounter and s
 |Error: Access denied. `E_ACCESSDENIED (0x80070005)` | The antivirus software installed on the machine might prevent the host app from creating a WebView2 process. To resolve this issue, add an exemption or exclusion to the antivirus for the `.exe` files in the Office root folder (`C:\Program Files\Microsoft Office\root\Office16`) or for the entire Office root folder. If this does not fix the issue, add an exemption or exclusion for the WebView2 process (`C:\Program Files (x86)\Microsoft\EdgeWebView\Application[latest installed version]\msedgewebview2.exe`). |
 |Error: Object doesn't support property or method 'defineProperty'|Confirm that Internet Explorer is not running in Compatibility Mode. Go to **Tools** > **Compatibility View Settings**.|
 |Sorry, we couldn't load the app because your browser version is not supported. Click here for a list of supported browser versions.|Make sure that the browser supports HTML5 local storage, or reset your Internet Explorer settings. For information about supported browsers, see [Requirements for running Office Add-ins](../concepts/requirements-for-running-office-add-ins.md).|
+
+## Antivirus software slows down an add-in
+
+Antivirus or antimalware software can inspect the processes and network activity that an Office Add-in uses. This inspection may slow down add-in startup, API calls, and event activation. For example, an Outlook event-based add-in might take longer than expected to respond to an event.
+
+To determine whether security software is causing the slowdown, work with your organization's IT administrator to temporarily disable the software in a controlled environment and then reproduce the issue. If add-in performance improves, contact the security software provider or configure an appropriate exemption or exclusion according to your organization's security policies. Don't disable antivirus or antimalware protection permanently.
 
 ## Errors in an ADD-IN INFORMATION box
 
