@@ -1,7 +1,7 @@
 ﻿---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 03/16/2026
+ms.date: 09/10/2026
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -234,7 +234,7 @@ See also: [application](#application), [client](#client), [Office application, O
 
 ## Office.js
 
-**Office.js** is the JavaScript library that provides the APIs for building Office Add-ins. Add-ins reference Office.js from the Microsoft CDN (`https://appsforoffice.microsoft.com/lib/1/hosted/office.js`), and it includes both the Common API and application-specific APIs for interacting with Office documents, email, presentations, and more. To learn more, see [Referencing the Office JavaScript API library](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
+**Office.js** is the JavaScript library that provides the APIs for building Office Add-ins. Add-ins reference Office.js from the Microsoft CDN (`https://officeapis.public.onecdn.static.microsoft/1/office.js`), and it includes both the Common API and application-specific APIs for interacting with Office documents, email, presentations, and more. To learn more, see [Referencing the Office JavaScript API library](../develop/referencing-the-javascript-api-for-office-library-from-its-cdn.md).
 
 See also: [application-specific API](#application-specific-api), [Common API](#common-api).
 

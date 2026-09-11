@@ -1,7 +1,7 @@
 ---
 title: Get the whole document from an add-in for PowerPoint or Word
 description: Learn to get the whole document from a PowerPoint or Word add-in.
-ms.date: 07/10/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
@@ -166,7 +166,7 @@ Use the following procedure to create a simple user interface for the add-in tha
             <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
             <title>Publish presentation</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+            <script src="https://officeapis.public.onecdn.static.microsoft/1/office.js" type="text/javascript"></script>
             <script src="GetDoc_App.js" defer></script>
         </head>
         <body>
@@ -193,7 +193,7 @@ Use the following procedure to create a simple user interface for the add-in tha
             <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
             <title>Publish document</title>
             <link rel="stylesheet" type="text/css" href="Program.css" />
-            <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+            <script src="https://officeapis.public.onecdn.static.microsoft/1/office.js" type="text/javascript"></script>
             <script src="GetDoc_App.js" defer></script>
         </head>
         <body>
