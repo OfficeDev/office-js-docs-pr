@@ -1,42 +1,15 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 09/03/2026
+ms.date: 09/15/2026
 ms.localizationpriority: high
 ---
 
 # Office Add-ins known issues
 
-_Last updated August 20, 2026_
+_Last updated September 15, 2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
-## OUTLOOK ISSUE: Add-ins don't load in Outlook LTSC 2024 for new Exchange Online accounts
-
-Some users running the Outlook LTSC 2024 32-bit version can't access Outlook add-ins. Add-ins that previously worked might no longer appear or load.
-
-### STATUS
-
-We're currently investigating the issue.
-
-Tracking ID: 853980935
-
-### START DATE
-
-Date reported: August 19, 2026
-
-### DETAILS
-
-Affected client: Outlook LTSC 2024 32-bit version
-
-Customer reports indicate that the issue primarily affects Exchange Online accounts created after June 2026. Older accounts in the same environment and with the same licensing configuration might not be affected.
-
-### IMPACT
-
-Users can't access Outlook add-ins.
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
@@ -308,150 +281,31 @@ Options:
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
-## RESOLVED: ISSUE: Some centrally deployed Office Add-ins disappear or fail to load
+## RESOLVED: OUTLOOK ISSUE: Add-ins don't load in Outlook LTSC 2024 for new Exchange Online accounts
 
-Some customers might experience problems where centrally deployed Office Add-ins are missing, unavailable, or fail to load across Office clients. In affected cases, previously installed add-ins no longer appear in the ribbon or add-in management experience.
+Some users running the Outlook LTSC 2024 32-bit version can't access Outlook add-ins. Add-ins that previously worked might no longer appear or load.
 
 ### STATUS
 
-Resolved. The underlying problem is fixed in the May 2026 Monthly Enterprise Channel release (16.0.20131.20152).
+Resolved. To resolve the issue, users must install LTSC 2024 Version 2408 (Build 17932.20976) or later.
+
+Tracking ID: 853980935
+
+### START DATE
+
+Date reported: August 19, 2026
+
+### RESOLVED DATE
+
+Date fixed: September 8, 2026
 
 ### DETAILS
 
-Impacted add-ins:
+Affected client: Outlook LTSC 2024 32-bit version
 
-- SAP Analytics Cloud for Excel
-- Other centrally deployed and organization-managed Office Add-ins
-
-Affected platforms and clients:
-
-- Excel desktop
-- Excel on the web
-- Additional Office clients in some environments
-
-### USER IMPACT
-
-Users might experience one or more of the following problems:
-
-- Add-ins disappear from the ribbon.
-- Organization-deployed add-ins fail to load.
-- Errors indicate the add-in is unavailable or inaccessible.
-- Add-ins don't appear even though the administrator assigned the deployment.
-
-### WORKAROUND
-
-The following actions might help in some scenarios:
-
-- Restart the Office application.
-- Refresh admin-managed add-ins from the add-ins pane.
-- Wait and retry after some time while mitigations continue to roll out.
-- Verify the user has access to required Microsoft 365 and Exchange Online services.
-- If your organization restricts Exchange Web Services (EWS), verify required access settings are enabled.
-
-If the problem persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
-
-### START DATE
-
-Date reported: June 4, 2026
-
-### RESOLVED DATE
-
-Date fixed: May 30, 2026
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
-## RESOLVED: ISSUE: Office Add-in update failures and activation issues
-
-An issue affects some customers where Office Add-ins don't update through the Store. This problem prevents the add-in from loading successfully. Customers might encounter errors during the Office Add-in update process, and then the add-in is unavailable.
-
-### STATUS
-
-Mitigated. The underlying asset delivery issue is fixed and failures related to missing content have decreased.
-
-### WORKAROUND
-
-While fixes are rolling out, the following actions might help resolve the issue:
-
-- Restart the Office application.
-- Wait and retry the update after some time.
-
-These steps might allow the add-in update to complete successfully in cases where propagation or retries are required.
-
-#### Recommended actions
-
-- Retry updating the add-in if you encountered the issue previously.
-- Ensure the Office application is on a supported and up-to-date version.
-- If the issue persists, collect and share diagnostic information (such as session logs or network traces) with support.
-
-### START DATE
-
-Date reported: April 17, 2026
-
-### RESOLVED DATE
-
-Date fixed: May 21, 2026
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
-## RESOLVED: ISSUE: Unable to remove Office Add-Ins using the Integrated apps portal
-
-In some cases, the Microsoft 365 administrator sees an error when attempting to remove an Office Add-in via the Integrated apps portal.
-
-### STATUS
-
-Resolved. The underlying problem is fixed in the May 2026 Monthly Enterprise Channel release (16.0.20131.20152).
-
-### WORKAROUND
-
-To remove the add-in by using the Office Add-ins advanced management UI:
-
-1. Sign in to the [Microsoft 365 admin center](https://go.microsoft.com/fwlink/p/?linkid=2024339).
-1. From the left navigation bar, select **... Show all**, and then select **Settings** > **Integrated apps**.
-1. Near the top of the page, select **Add-ins** from the advanced management options.
-1. Select the add-in you want to remove.
-1. At the bottom of the pane, select **Remove add-in**.
-1. When prompted to confirm, select **Remove**.
-
-### START DATE
-
-Date reported: April 20, 2026
-
-### RESOLVED DATE
-
-Date fixed: May 11, 2026
+Customer reports indicate that the issue primarily affects Exchange Online accounts created after June 2026. Older accounts in the same environment and with the same licensing configuration might not be affected.
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
-***
-
-## RESOLVED: ISSUE: Missing Office Add-Ins deployed via Centralized Deployment
-
-Following a recent service flight rollback that affects Exchange Web Services (EWS), deployment and acquisition of Office Add-ins currently depend on EWS being enabled. If you turn off this setting at either the organization or mailbox level, Office Add-ins might fail to appear or install successfully.
-
-### STATUS
-
-Mitigated. Tracking ID: EX1255397 and EX1259460
-
-### WORKAROUND
-
-To ensure add-ins function correctly, verify that EWS access is enabled by running the following Exchange Online PowerShell command:
-
-`Set-OrganizationConfig -EwsEnabled:$true`
-
-If application access policies or mailbox-level configuration restrict EWS access (for example, if `EwsEnabled` is set to `$false`), these settings prevent users from seeing Office Add-ins.
-
-For additional guidance on managing EWS access in Exchange Online, see [Control access to EWS in Exchange](/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange).
-
-### START DATE
-
-Date reported: March 23, 2026
-
-### RESOLVED DATE
-
-Date fixed: April 21, 2026
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
 ## RESOLVED: ISSUE: PIM-enabled tenants can't deploy or manage Office Add-ins through centralized deployment
@@ -493,29 +347,6 @@ Thursday, July 2, 2026
 ### RESOLVED DATE
 
 Tuesday, July 14, 2026
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. ADD "RESOLVED:" to H2---------------------------------------------------->
-***
-
-## RESOLVED: ISSUE: Classic Outlook on Windows: Installed add-ins are missing
-
-Some users couldn't find their installed add-ins in classic Outlook on Windows.
-
-Impacted versions: Version 2603 (Build 19822.20114) and later
-
-### STATUS
-
-Resolved. Affected users must restart their Outlook client to load their add-ins. Multiple restarts might be needed.
-
-Tracking IDs: 784225604, 781077848
-
-### START DATE
-
-Date reported: Tuesday, April 14, 2026
-
-### RESOLUTION DATE
-
-Date fixed: Wednesday, April 22, 2026
 
 <!------------LEAVE SEE ALSO---------------------------------------------------->
 ***
