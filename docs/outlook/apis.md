@@ -1,7 +1,7 @@
 ﻿---
 title: Outlook add-in APIs
 description: Learn how to load the Office.js library, specify Mailbox requirement sets, declare permissions, and work with the Mailbox object in your Outlook add-in.
-ms.date: 05/12/2026
+ms.date: 09/10/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ai-usage: ai-assisted
@@ -13,12 +13,12 @@ Before your Outlook add-in can read message data, update items, or call external
 
 ## Office.js library
 
-To interact with the [Outlook add-in API](/javascript/api/outlook), you need to use the JavaScript APIs in Office.js. The content delivery network (CDN) for the library is `https://appsforoffice.microsoft.com/lib/1/hosted/Office.js`. Add-ins submitted to Microsoft Marketplace must reference Office.js by this CDN; they can't use a local reference.
+To interact with the [Outlook add-in API](/javascript/api/outlook), you need to use the JavaScript APIs in Office.js. The content delivery network (CDN) for the library is `https://officeapis.public.onecdn.static.microsoft/1/office.js`. Add-ins submitted to Microsoft Marketplace must reference Office.js by this CDN; they can't use a local reference.
 
 Reference the CDN in a `<script>` tag in the `<head>` tag of the web page (.html, .aspx, or .php file) that implements the UI of your add-in.
 
 ```HTML
-<script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
+<script src="https://officeapis.public.onecdn.static.microsoft/1/office.js" type="text/javascript"></script>
 ```
 
 As we add new APIs, the URL to Office.js will stay the same. We'll change the version in the URL only if we break an existing API behavior.

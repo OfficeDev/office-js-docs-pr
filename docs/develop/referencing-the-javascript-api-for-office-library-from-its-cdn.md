@@ -1,7 +1,7 @@
 ﻿---
 title: Referencing the Office JavaScript API library
 description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
-ms.date: 03/06/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -12,11 +12,13 @@ The [Office JavaScript API](../reference/javascript-api-for-office.md) library p
 ```html
 <head>
     ...
-    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script src="https://officeapis.public.onecdn.static.microsoft/1/office.js" type="text/javascript"></script>
 </head>
 ```
 
 This approach downloads and caches the Office JavaScript API files the first time your add-in loads. It ensures that your add-in uses the most up-to-date implementation of Office.js and its associated files for the specified version.
+
+The CDN uses the `officeapis.public.onecdn.static.microsoft` domain as part of the [unified domain for Microsoft 365 apps and services](https://techcommunity.microsoft.com/blog/microsoft_365blog/introducing-cloud-microsoft-a-unified-domain-for-microsoft-365-apps-and-services/3804961).
 
 > [!IMPORTANT]
 > You must reference the Office JavaScript API from inside the `<head>` section of the page to ensure that the API is fully initialized prior to any body elements.
@@ -34,7 +36,7 @@ Office.js replaces the default [Window.history](https://developer.mozilla.org/do
     };
 </script>
 
-<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+<script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js"></script>
 
 <script type="text/javascript">
     // Restore the history method values after loading Office.js
@@ -53,7 +55,7 @@ In the previous HTML snippet, the `/1/` preceding `office.js` in the CDN URL spe
 If you plan to publish your Office Add-in to the Microsoft Marketplace, you must use this CDN reference. Use local references only for internal, development, and debugging scenarios.
 
 > [!NOTE]
-> To use preview APIs, reference the preview version of the Office JavaScript API library on the CDN: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
+> To use preview APIs, reference the preview version of the Office JavaScript API library on the CDN: `https://officeapis.public.onecdn.static.microsoft/beta/office.js`.
 
 ## Enabling IntelliSense for a TypeScript project
 
