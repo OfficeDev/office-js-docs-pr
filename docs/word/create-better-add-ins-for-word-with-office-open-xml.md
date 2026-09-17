@@ -1,7 +1,7 @@
 ---
 title: Use Office Open XML (OOXML) in Word add-ins for rich content insertion
 description: Learn when and how to use Office Open XML coercion in Word add-ins to insert formatted text, images, charts, SmartArt, tables, and complex content with complete formatting control.
-ms.date: 12/18/2025
+ms.date: 09/17/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -479,8 +479,6 @@ So when might you want to use this approach?
 
 - When you want the user to add data in the document that you can access for use with your add-in, such as to populate fields in the task pane based upon information the user adds in the document.
 
-Download the code sample [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings), which provides a working example of how to insert and bind to a content control, and how to populate the binding.
-
 ### Add and bind to a named content control
 
 As you examine the JavaScript that follows, consider these requirements:
@@ -548,7 +546,7 @@ function populateBinding(filename) {
 As with `setSelectedDataAsync`, you specify the content to be inserted and the coercion type. The only additional requirement for writing to a binding is to identify the binding by ID. Notice how the binding ID used in this code (bindings#myBinding) corresponds to the binding ID established (myBinding) when the binding was created in the previous function.
 
 > [!TIP]
-> The preceding code is all you need whether you are initially populating or replacing the content in a binding. When you insert a new piece of content at a bound location, the existing content in that binding is automatically replaced. Check out an example of this in the previously-referenced code sample [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings), which provides two separate content samples that you can use interchangeably to populate the same binding.
+> The preceding code is all you need whether you are initially populating or replacing the content in a binding. When you insert a new piece of content at a bound location, the existing content in that binding is automatically replaced.
 
 ## Work with complex content: Additional Office Open XML parts
 
@@ -772,6 +770,5 @@ When using templates with your app, whether the add-in will be resident in the t
 
 ### Code samples
 
-- [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml) - Companion sample
-- [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML) - Tool for retrieving and testing markup
-- [Word-Add-in-JavaScript-AddPopulateBindings](https://github.com/OfficeDev/Word-Add-in-JavaScript-AddPopulateBindings) - Work with bindings and content controls
+- [Get, edit, and set OOXML content in a Word document with a Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-get-set-edit-openxml)
+- [Load and write Open XML in your Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-in-load-and-write-open-xml)
