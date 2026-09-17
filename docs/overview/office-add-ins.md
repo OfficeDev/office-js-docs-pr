@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins platform overview
 description:  Use familiar web technologies such as HTML, CSS, and JavaScript to extend and interact with Word, Excel, PowerPoint, OneNote, Project, and Outlook.
-ms.date: 06/17/2026
+ms.date: 09/17/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -119,7 +119,7 @@ Learn how to build the simplest Office Add-in with only a manifest, an HTML web 
 - [Outlook "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/outlook-hello-world)
 - [PowerPoint "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/powerpoint-hello-world)
 - [Word "Hello world" add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/hello-world/word-hello-world)
-- [Create data analysis charts in Excel with a Copilot agent](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-copilot-agent)
+- [Skill for Copilot in Excel (preview)](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-copilot-skill)
 
 ## How are Office Add-ins different from COM and VSTO add-ins?
 

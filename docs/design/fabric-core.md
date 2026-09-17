@@ -1,7 +1,7 @@
 ---
 title: Fabric Core in Office Add-ins
 description: Learn how to use Fabric Core CSS classes for icons, colors, typography, and responsive grids in non-React Office Add-ins.
-ms.date: 09/01/2026
+ms.date: 09/17/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ai-usage: ai-assisted
@@ -62,7 +62,6 @@ The following sample add-ins use Fabric Core and/or Office UI Fabric JS componen
 - [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker): Demonstrates Fabric Core styling in a data-tracking add-in.
 - [Excel Add-in SalesLeads](https://github.com/OfficeDev/Excel-Add-in-SalesLeads): Uses Fabric Core layout and typography in an Excel task pane.
 - [Excel Add-in WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends): Shows Fabric Core colors and fonts in a content add-in.
-- [Office Add-in Fabric UI Sample](https://github.com/OfficeDev/Office-Add-in-Fabric-UI-Sample): Showcases individual Fabric UI components in a task pane.
 - [PowerPoint Add-in Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): Combines Fabric Core styling with Microsoft Graph data.
 - [Word Add-in JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact): Uses Fabric UI components for redaction controls.
 - [Word Add-in MarkdownConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion): Applies Fabric Core icons and styling in a conversion tool.

@@ -2,7 +2,7 @@
 title: Specify Office hosts and API requirements with the add-in only manifest
 description: Learn how to specify Office applications and API requirements for your add-in to work as expected.
 ms.topic: best-practice
-ms.date: 09/10/2026
+ms.date: 09/17/2026
 ms.localizationpriority: medium
 ---
 
@@ -189,4 +189,4 @@ The following is an example.
 
 - [Office Add-ins manifest](add-in-manifests.md)
 - [Office Add-in requirement sets](/javascript/api/requirement-sets/common/office-add-in-requirement-sets)
-- [Word-Add-in-Get-Set-EditOpen-XML](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
+- [Office Add-in samples](https://github.com/OfficeDev/Office-Add-in-samples)
