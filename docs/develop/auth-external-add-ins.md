@@ -1,7 +1,7 @@
 ---
 title: Authorization with non-Microsoft identity providers
 description: Learn how to use OAuth 2.0 flows to authorize an Office Add-in to access non-Microsoft services and data sources.
-ms.date: 07/10/2026
+ms.date: 09/17/2026
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---
@@ -49,7 +49,7 @@ Libraries are available for many languages and platforms, for both the Implicit 
 
 ## Middleman services
 
-Your add-in can use a middleman service such as [OAuth.io](https://oauth.io) or [Auth0](https://auth0.com) to perform authorization. A middleman service might provide access tokens for popular online services, simplify social sign-in for your add-in, or both. Your add-in can connect to the middleman service with either client-side script or server-side code, and the middleman service returns any required tokens for the online service.
+Your add-in can use a middleman service, such as [Auth0](https://auth0.com), to perform authorization. A middleman service might provide access tokens for popular online services, simplify social sign-in for your add-in, or both. Your add-in can connect to the middleman service with either client-side script or server-side code, and the middleman service returns any required tokens for the online service.
 
 We recommend that the UI for authentication and authorization in your add-in use the Office dialog API to open a sign-in page. For more information, see [Authenticate and authorize with the Office dialog API](auth-with-office-dialog-api.md).
 

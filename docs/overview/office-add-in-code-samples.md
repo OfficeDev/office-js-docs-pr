@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 08/19/2026
+ms.date: 09/17/2026
 ms.localizationpriority: high
 ---
 
@@ -40,9 +40,9 @@ The following samples show how to build the simplest Office Add-in with only a m
 
 If your development background is in building VSTO Add-ins, the following samples show how to build Office Web Add-ins using .NET Blazor WebAssembly. You can keep much of your code in C# and Visual Studio.
 
-- [Create a Blazor WebAssembly Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/excel-blazor-add-in)
-- [Create a Blazor WebAssembly Outlook add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/outlook-blazor-add-in)
-- [Create a Blazor WebAssembly Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/word-blazor-add-in)
+- [Create a Blazor WebAssembly Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/Blazor.Excel.AddIn)
+- [Create a Blazor WebAssembly PowerPoint add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/Blazor.PowerPoint.AddIn)
+- [Create a Blazor WebAssembly Word add-in](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/blazor-add-in/Blazor.Word.AddIn)
 
 ## Excel
 
