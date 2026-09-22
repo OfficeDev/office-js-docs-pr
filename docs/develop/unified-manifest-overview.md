@@ -85,12 +85,26 @@ The following tables lists which Office platforms support add-ins that use the u
 | ----- | ----- |
 | Office on the web | Yes |
 | Outlook on Windows (classic) (Version 2307 (Build 16626.20132) or later) connected to a Microsoft 365 subscription | Yes |
-| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes |
+| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes, but see [Feature support](#feature-support). |
 | Excel, PowerPoint, and Word on Windows (Version 2501 (18407.20002) or later) connected to a Microsoft 365 subscription | Yes |
 | Excel, PowerPoint, and Word on Mac (Version 16.103 (25101427) or later) | Yes |
 | Office on Windows (perpetual versions) | No |
 | Outlook on Mac | No |
 | Office on mobile | No |
+
+### Feature support
+
+The following Outlook features are not yet supported by the unified manifest, but we are working hard to provide that support.
+
+- **OnMessageReadWithCustomAttachment** event. 
+- **OnMessageReadWithCustomHeader** event.
+- **Multi-item select** is supported in Outlook for Windows (classic), but not for new Outlook on Windows or Outlook on the web.
+- **Spam reporting** is supported in Outlook for Windows (classic), but not for new Outlook or Outlook on the web.
+
+There are two features of Outlook add-ins that aren't supported with the unified manifest because they're little used or deprecated. They've been replaced by effectively equivalent features.
+
+- [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. But you can provide a nearly identical experience using the unified manifest by [including a Teams Tab with your add-in in a single app](/microsoftteams/platform/m365-apps/combine-office-add-in-and-teams-app).
+- [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. But you can provide similar experiences using the unified manifest and [Event-based activation](../develop/event-based-activation.md).
 
 ## Sample unified manifest
 
