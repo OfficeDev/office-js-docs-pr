@@ -85,7 +85,7 @@ The following tables lists which Office platforms support add-ins that use the u
 | ----- | ----- |
 | Office on the web | Yes |
 | Outlook on Windows (classic) (Version 2307 (Build 16626.20132) or later) connected to a Microsoft 365 subscription | Yes, but see [Outlook feature support](#outlook-feature-support). |
-| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes, but see [Outlook feature support](#outlook-feature-support). |
+| [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes, but see [Outlook feature support](#outlook-feature-support). |
 | Excel, PowerPoint, and Word on Windows (Version 2501 (18407.20002) or later) connected to a Microsoft 365 subscription | Yes |
 | Excel, PowerPoint, and Word on Mac (Version 16.103 (25101427) or later) | Yes |
 | Office on Windows (perpetual versions) | No |
@@ -94,12 +94,12 @@ The following tables lists which Office platforms support add-ins that use the u
 
 ### Outlook feature support
 
-The following Outlook features are not yet supported by the unified manifest, but we are working hard to provide that support.
+The following Outlook features aren't yet supported by the unified manifest, but we're working hard to provide that support.
 
 - **OnMessageReadWithCustomAttachment** event. 
 - **OnMessageReadWithCustomHeader** event.
-- **Multi-item select** is supported in Outlook on Windows (classic), but not for new Outlook on Windows or Outlook on the web.
-- **Spam reporting** is supported in Outlook on Windows (classic), but not for new Outlook on Windows or Outlook on the web.
+- **Multi-item select** is supported in classic Outlook on Windows, but not for new Outlook on Windows or Outlook on the web.
+- **Spam reporting** is supported in classic Outlook on Windows, but not for new Outlook on Windows or Outlook on the web.
 
 There are two features of Outlook add-ins that aren't supported with the unified manifest because they're little used or deprecated. They've been replaced by effectively equivalent features.
 
