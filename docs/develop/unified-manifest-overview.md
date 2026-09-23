@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 05/10/2026
+ms.date: 09/22/2026
 ms.localizationpriority: high
 ---
 
@@ -84,13 +84,27 @@ The following tables lists which Office platforms support add-ins that use the u
 | Client/platform | Supports add-ins with the unified manifest|
 | ----- | ----- |
 | Office on the web | Yes |
-| Outlook on Windows (classic) (Version 2307 (Build 16626.20132) or later) connected to a Microsoft 365 subscription | Yes |
-| [new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes |
+| Outlook on Windows (classic) (Version 2307 (Build 16626.20132) or later) connected to a Microsoft 365 subscription | Yes, but see [Outlook feature support](#outlook-feature-support). |
+| [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes, but see [Outlook feature support](#outlook-feature-support). |
 | Excel, PowerPoint, and Word on Windows (Version 2501 (18407.20002) or later) connected to a Microsoft 365 subscription | Yes |
 | Excel, PowerPoint, and Word on Mac (Version 16.103 (25101427) or later) | Yes |
 | Office on Windows (perpetual versions) | No |
 | Outlook on Mac | No |
 | Office on mobile | No |
+
+### Outlook feature support
+
+The following Outlook features aren't yet supported by the unified manifest, but we're working hard to provide that support.
+
+- **OnMessageReadWithCustomAttachment** event. 
+- **OnMessageReadWithCustomHeader** event.
+- **Multi-item select** is supported in classic Outlook on Windows, but not for new Outlook on Windows or Outlook on the web.
+- **Spam reporting** is supported in classic Outlook on Windows, but not for new Outlook on Windows or Outlook on the web.
+
+There are two features of Outlook add-ins that aren't supported with the unified manifest because they're little used or deprecated. They've been replaced by effectively equivalent features.
+
+- [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. But you can provide a nearly identical experience using the unified manifest by [including a Teams Tab with your add-in in a single app](/microsoftteams/platform/m365-apps/combine-office-add-in-and-teams-app).
+- [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. But you can provide similar experiences using the unified manifest and [Event-based activation](../develop/event-based-activation.md).
 
 ## Sample unified manifest
 
