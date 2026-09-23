@@ -1,7 +1,7 @@
 ---
 title: Visio JavaScript API overview
 description: Overview of the Visio JavaScript API.
-ms.date: 07/15/2025
+ms.date: 09/22/2026
 ms.service: visio
 ms.topic: overview
 ms.custom: scenarios:getting-started
@@ -11,6 +11,9 @@ ms.localizationpriority: medium
 # Visio JavaScript API overview
 
 You can use the Visio JavaScript APIs to embed Visio diagrams in *classic* SharePoint pages in SharePoint Online. (This extensibility feature isn't supported in on-premises SharePoint or SharePoint Framework pages.)
+
+> [!IMPORTANT]
+> Before investing resources creating an embedded Visio diagram, consider that classic SharePoint pages are being retired. You can still create them until March 1, 2027 and still edit them until October 1, 2028. After that date, classic SharePoint pages will become read-only, and all dynamic aspects of the embedded diagram will cease to work.
 
 An embedded Visio diagram is stored in a SharePoint document library and displayed on a SharePoint page. To embed a Visio diagram, display it in an HTML `<iframe>` element. Then use Visio JavaScript APIs to programmatically work with the embedded diagram.
 
