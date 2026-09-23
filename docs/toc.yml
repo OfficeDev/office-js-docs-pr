@@ -1016,17 +1016,20 @@
     - name: Read and write data to the active selection
       href: develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md
       displayName: Word
-    - name: Use annotations
+    - name: Annotations
       href: word/annotations.md
       displayName: Word
-    - name: Use fields
+    - name: Events
+      href: word/word-add-ins-events.md
+      displayName: Word
+    - name: Fields
       href: word/fields-guidance.md
+      displayName: Word
+    - name: Tracked changes
+      href: word/manage-tracked-changes.md
       displayName: Word
     - name: Use search options to find text
       href: word/search-option-guidance.md
-      displayName: Word
-    - name: Use events
-      href: word/word-add-ins-events.md
       displayName: Word
     - name: When and how to use Office Open XML
       href: word/create-better-add-ins-for-word-with-office-open-xml.md

@@ -8,7 +8,7 @@ metadata:
   description: Landing page that lists resources for learning about Word add-ins. # Required; article description that is displayed in search results. < 160 chars.
   ms.service: word #Required
   ms.topic: landing-page # Required
-  ms.date: 02/25/2026 #Required; mm/dd/yyyy format.
+  ms.date: 09/22/2026 #Required; mm/dd/yyyy format.
   ms.localizationpriority: high
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | sample | tutorial | video | whats-new
