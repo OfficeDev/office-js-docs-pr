@@ -1,7 +1,7 @@
 ﻿---
 title: Referencing the Office JavaScript API library
 description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
-ms.date: 09/10/2026
+ms.date: 09/23/2026
 ms.localizationpriority: medium
 ---
 
@@ -74,6 +74,16 @@ Microsoft first introduces new JavaScript APIs in "preview." After sufficient te
 ## CDN references for other Microsoft 365 environments
 
 [!INCLUDE [Information about the China-specific CDN](../includes/21Vianet-CDN.md)]
+
+## Update legacy CDN endpoints
+
+Previously, the Office.js library was served from the `https://appsforoffice.microsoft.com/lib/1/hosted/office.js` endpoint. To switch to the new Office.js CDN endpoint, update the Office.js script reference in each add-in page from `https://appsforoffice.microsoft.com/lib/1/hosted/office.js` to `https://officeapis.public.onecdn.static.microsoft/1/office.js`. The new endpoint serves the same current Office.js release, but it enables additional secure defaults. Before switching:
+
+- If your add-in relies on Microsoft Ajax globals that Office.js previously loaded automatically, replace that dependency with a supported alternative or load and manage the required library directly.
+- If your add-in uses `ExecuteFunction` commands, register every command handler by using `Office.actions.associate(...)`.
+- If your add-in or organization uses restrictive Content Security Policy or Trusted Types settings, verify that the new endpoint and Office.js Trusted Types policy are permitted.
+- Ensure that `*.static.microsoft` is allowed by any applicable network allow lists.
+- Test the add-in in its supported Office applications and environments, including activation, commands, and dialogs.
 
 ## See also
 
