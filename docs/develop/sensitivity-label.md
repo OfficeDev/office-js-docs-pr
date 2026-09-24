@@ -25,26 +25,14 @@ The sensitivity label feature requires a Microsoft 365 E5 subscription. Check wh
 
 ### Supported clients and platforms
 
-Sensitivity label API support varies by Office application and platform. For details, see the following sections.
+Sensitivity label API support varies by Office application and platform. Outlook support requires Exchange Online. The following table lists supported combinations.
 
-- [Excel, PowerPoint, and Word](#excel-powerpoint-and-word)
-- [Outlook](#outlook)
-
-#### Excel, PowerPoint, and Word
-
-The sensitivity label APIs are in preview in Excel, PowerPoint, and Word on Windows, Mac, and the web.
-
-#### Outlook
-
-The following table lists client-server combinations that support the use of the sensitivity label feature in Outlook add-ins. Excluded combinations aren't supported.
-
-|Client|Exchange Online|
-|------|------|
-|**Web browser (modern UI)**<br><br>[new Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627)|Supported|
-|**Windows (classic)**<br>Version 2304 (Build 16327.20248) or later|Supported|
-|**Mac**<br>Version 16.77 (23081600) or later|Supported|
-|**Android**|Not applicable|
-|**iOS**|Not applicable|
+|Application|Web|Windows|Mac|
+|---|---|---|---|
+|Excel|Preview|Preview|Preview|
+|Outlook|Supported|Supported<br>(new and classic (Version 2304 (Build 16327.20248) or later))|Supported<br>(Version 16.77 (23081600) or later)|
+|PowerPoint|Preview|Preview|Preview|
+|Word|Preview|Preview|Preview|
 
 ## Configure sensitivity label support
 
@@ -58,9 +46,9 @@ The following table lists the API members used to access the sensitivity label c
 
 |Application|Sensitivity label catalog|Sensitivity label on the file|
 |---|---|---|
-|Excel|[`context.sensitivityLabelsCatalog`](/javascript/api/excel/excel.requestcontext?view=excel-js-preview&preserve-view=true#excel-excel-requestcontext-sensitivitylabelscatalog-member)|[`context.workbook.sensitivityLabel`](/javascript/api/excel/excel.workbook?view=excel-js-preview&preserve-view=true#excel-excel-workbook-sensitivitylabel-member)|
-|PowerPoint|[`context.sensitivityLabelsCatalog`](/javascript/api/powerpoint/powerpoint.requestcontext?view=powerpoint-js-preview&preserve-view=true#powerpoint-powerpoint-requestcontext-sensitivitylabelscatalog-member)|[`context.presentation.sensitivityLabel`](/javascript/api/powerpoint/powerpoint.presentation?view=powerpoint-js-preview&preserve-view=true#powerpoint-powerpoint-presentation-sensitivitylabel-member)|
-|Word|[`context.sensitivityLabelsCatalog`](/javascript/api/word/word.requestcontext?view=word-js-preview&preserve-view=true#word-word-requestcontext-sensitivitylabelscatalog-member)|[`context.document.sensitivityLabel`](/javascript/api/word/word.document?view=word-js-preview&preserve-view=true#word-word-document-sensitivitylabel-member)|
+|Excel|[`context.sensitivityLabelsCatalog`](/javascript/api/excel/excel.requestcontext#excel-excel-requestcontext-sensitivitylabelscatalog-member)|[`context.workbook.sensitivityLabel`](/javascript/api/excel/excel.workbook#excel-excel-workbook-sensitivitylabel-member)|
+|PowerPoint|[`context.sensitivityLabelsCatalog`](/javascript/api/powerpoint/powerpoint.requestcontext#powerpoint-powerpoint-requestcontext-sensitivitylabelscatalog-member)|[`context.presentation.sensitivityLabel`](/javascript/api/powerpoint/powerpoint.presentation#powerpoint-powerpoint-presentation-sensitivitylabel-member)|
+|Word|[`context.sensitivityLabelsCatalog`](/javascript/api/word/word.requestcontext#word-word-requestcontext-sensitivitylabelscatalog-member)|[`context.document.sensitivityLabel`](/javascript/api/word/word.document#word-word-document-sensitivitylabel-member)|
 
 The examples in the following sections use Word. To use Excel or PowerPoint, substitute the corresponding host namespace and file-level sensitivity label object.
 
@@ -83,7 +71,7 @@ Sensitivity labels and policies are configured by an organization's administrato
 
 # [Excel, PowerPoint, and Word](#tab/excel-powerpoint-word)
 
-To determine whether sensitivity labeling is available to the current user, load `getLabelingCapability` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog?view=excel-js-preview&preserve-view=true#excel-excel-sensitivitylabelscatalog-getlabelingcapability-member), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog?view=powerpoint-js-preview&preserve-view=true#powerpoint-powerpoint-sensitivitylabelscatalog-getlabelingcapability-member), [Word](/javascript/api/word/word.sensitivitylabelscatalog?view=word-js-preview&preserve-view=true#word-word-sensitivitylabelscatalog-getlabelingcapability-member)) from the sensitivity label catalog.
+To determine whether sensitivity labeling is available to the current user, load `getLabelingCapability` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getlabelingcapability-member), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getlabelingcapability-member), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getlabelingcapability-member)) from the sensitivity label catalog.
 
 ```typescript
 await Word.run(async (context) => {
@@ -124,9 +112,9 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 # [Excel, PowerPoint, and Word](#tab/excel-powerpoint-word)
 
-To retrieve the labels published to the current user, call `getLabels()` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog?view=excel-js-preview&preserve-view=true#excel-excel-sensitivitylabelscatalog-getlabels-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog?view=powerpoint-js-preview&preserve-view=true#powerpoint-powerpoint-sensitivitylabelscatalog-getlabels-member(1)), [Word](/javascript/api/word/word.sensitivitylabelscatalog?view=word-js-preview&preserve-view=true#word-word-sensitivitylabelscatalog-getlabels-member(1))) on the catalog.
+To retrieve the labels published to the current user, call `getLabels()` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getlabels-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getlabels-member(1)), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getlabels-member(1))) on the catalog.
 
-The method returns a collection whose items and properties aren't available until you explicitly load them and call `context.sync()`. Load `items` ([Excel](/javascript/api/excel/excel.sensitivitylabeldetailscollection?view=excel-js-preview&preserve-view=true#excel-excel-sensitivitylabeldetailscollection-items-member), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabeldetailscollection?view=powerpoint-js-preview&preserve-view=true#powerpoint-powerpoint-sensitivitylabeldetailscollection-items-member), [Word](/javascript/api/word/word.sensitivitylabeldetailscollection?view=word-js-preview&preserve-view=true#word-word-sensitivitylabeldetailscollection-items-member)) and the label properties your add-in needs. Available properties differ by host. For a complete list, see `SensitivityLabelDetails` ([Excel](/javascript/api/excel/excel.sensitivitylabeldetails?view=excel-js-preview&preserve-view=true), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabeldetails?view=powerpoint-js-preview&preserve-view=true), [Word](/javascript/api/word/word.sensitivitylabeldetails?view=word-js-preview&preserve-view=true)).
+The method returns a collection whose items and properties aren't available until you explicitly load them and call `context.sync()`. For guidance, see [Load from a collection](application-specific-api-model.md#load-from-a-collection). Load `items` and the label properties your add-in needs. Available properties differ by host. For a complete list, see `SensitivityLabelDetails` ([Excel](/javascript/api/excel/excel.sensitivitylabeldetails), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabeldetails), [Word](/javascript/api/word/word.sensitivitylabeldetails)).
 
 ```typescript
 await Word.run(async (context) => {
@@ -194,7 +182,7 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 # [Excel, PowerPoint, and Word](#tab/excel-powerpoint-word)
 
-To retrieve the current label, if one is applied, call `getCurrentOrNullObject()` ([Excel](/javascript/api/excel/excel.sensitivitylabel?view=excel-js-preview&preserve-view=true#excel-excel-sensitivitylabel-getcurrentornullobject-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabel?view=powerpoint-js-preview&preserve-view=true#powerpoint-powerpoint-sensitivitylabel-getcurrentornullobject-member(1)), [Word](/javascript/api/word/word.sensitivitylabel?view=word-js-preview&preserve-view=true#word-word-sensitivitylabel-getcurrentornullobject-member(1))) on the file's sensitivity label object.
+To retrieve the current label, if one is applied, call `getCurrentOrNullObject()` ([Excel](/javascript/api/excel/excel.sensitivitylabel#excel-excel-sensitivitylabel-getcurrentornullobject-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabel#powerpoint-powerpoint-sensitivitylabel-getcurrentornullobject-member(1)), [Word](/javascript/api/word/word.sensitivitylabel#word-word-sensitivitylabel-getcurrentornullobject-member(1))) on the file's sensitivity label object.
 
 ```typescript
 await Word.run(async (context) => {
@@ -243,7 +231,7 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 # [Excel, PowerPoint, and Word](#tab/excel-powerpoint-word)
 
-Before applying a label, call `getLabels()` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog?view=excel-js-preview&preserve-view=true#excel-excel-sensitivitylabelscatalog-getlabels-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog?view=powerpoint-js-preview&preserve-view=true#powerpoint-powerpoint-sensitivitylabelscatalog-getlabels-member(1)), [Word](/javascript/api/word/word.sensitivitylabelscatalog?view=word-js-preview&preserve-view=true#word-word-sensitivitylabelscatalog-getlabels-member(1))) and select an enabled label or sublabel from the returned collection. The `tryToUpdate()` method ([Excel](/javascript/api/excel/excel.sensitivitylabel?view=excel-js-preview&preserve-view=true#excel-excel-sensitivitylabel-trytoupdate-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabel?view=powerpoint-js-preview&preserve-view=true#powerpoint-powerpoint-sensitivitylabel-trytoupdate-member(1)), [Word](/javascript/api/word/word.sensitivitylabel?view=word-js-preview&preserve-view=true#word-word-sensitivitylabel-trytoupdate-member(1))) requires the selected label's ID as its parameter. Calling `getLabels()` first lets you retrieve this required ID and verify that the label is available to the current user. Check the returned `SensitivityLabelUpdateResult` ([Excel](/javascript/api/excel/excel.sensitivitylabelupdateresult?view=excel-js-preview&preserve-view=true), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelupdateresult?view=powerpoint-js-preview&preserve-view=true), [Word](/javascript/api/word/word.sensitivitylabelupdateresult?view=word-js-preview&preserve-view=true)) value to determine whether the update succeeded.
+Before applying a label, call `getLabels()` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getlabels-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getlabels-member(1)), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getlabels-member(1))) and select an enabled label or sublabel from the returned collection. The `tryToUpdate()` method ([Excel](/javascript/api/excel/excel.sensitivitylabel#excel-excel-sensitivitylabel-trytoupdate-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabel#powerpoint-powerpoint-sensitivitylabel-trytoupdate-member(1)), [Word](/javascript/api/word/word.sensitivitylabel#word-word-sensitivitylabel-trytoupdate-member(1))) requires the selected label's ID as its parameter. Calling `getLabels()` first lets you retrieve this required ID and verify that the label is available to the current user. Check the returned `SensitivityLabelUpdateResult` ([Excel](/javascript/api/excel/excel.sensitivitylabelupdateresult), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelupdateresult), [Word](/javascript/api/word/word.sensitivitylabelupdateresult)) value to determine whether the update succeeded.
 
 > [!NOTE]
 > A parent label that has sublabels can't be applied directly. Select one of its enabled sublabels instead.
