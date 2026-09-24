@@ -373,4 +373,4 @@ Add-ins that handle the `OnMessageDecrypt` event automatically display notificat
 - [Activate add-ins with events](../develop/event-based-activation.md)
 - [Troubleshoot event-based and spam-reporting add-ins](../testing/troubleshoot-event-based-and-spam-reporting-add-ins.md)
 - [Get and set internet headers on a message in an Outlook add-in](internet-headers.md)
-- [Manage the sensitivity label of your message or appointment in compose mode](sensitivity-label.md)
+- [Manage sensitivity labels in Office Add-ins](../develop/sensitivity-label.md)

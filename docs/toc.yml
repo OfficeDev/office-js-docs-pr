@@ -129,6 +129,8 @@
         displayName: event-based activation
       - name: Configure a document to run code when it opens
         href: develop/run-code-on-document-open.md
+      - name: Manage sensitivity labels
+        href: develop/sensitivity-label.md
     - name: App package and manifest
       items:
       - name: App package for Microsoft 365
@@ -831,7 +833,7 @@
     - name: Create an online meeting add-in
       href: outlook/online-meeting.md
     - name: Manage sensitivity labels
-      href: outlook/sensitivity-label.md
+      href: develop/sensitivity-label.md
     - name: Manage notifications
       href: outlook/notifications.md
     - name: Get or set body
@@ -1063,4 +1065,3 @@
     href: resources/resources-office-add-in-known-issues.md
   - name: Office Add-ins community call
     href: overview/office-add-ins-community-call.md
-
