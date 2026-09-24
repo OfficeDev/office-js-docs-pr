@@ -84,8 +84,8 @@ The following tables lists which Office platforms support add-ins that use the u
 | Client/platform | Supports add-ins with the unified manifest|
 | ----- | ----- |
 | Office on the web | Yes |
-| Outlook on Windows (classic) (Version 2307 (Build 16626.20132) or later) connected to a Microsoft 365 subscription | Yes, but see [Outlook feature support](#feature-support). |
-| [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes, but see [Outlook feature support](#feature-support). |
+| Outlook on Windows (classic) (Version 2307 (Build 16626.20132) or later) connected to a Microsoft 365 subscription | Yes, but see [Feature support](#feature-support). |
+| [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes, but see [Feature support](#feature-support). |
 | Excel, PowerPoint, and Word on Windows (Version 2501 (18407.20002) or later) connected to a Microsoft 365 subscription | Yes |
 | Excel, PowerPoint, and Word on Mac (Version 16.103 (25101427) or later) | Yes |
 | Office on Windows (perpetual versions) | No |
