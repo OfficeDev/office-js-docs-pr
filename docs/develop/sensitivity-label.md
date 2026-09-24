@@ -12,7 +12,7 @@ Workplace collaboration often extends beyond an organization to external partner
 
 Use the Office JavaScript API to implement sensitivity label solutions in your Office Add-in projects and support the following scenarios.
 
-- Apply sensitivity labels to documents, presentations, workbooks, messages, or appointments to comply with business and legal policies.
+- Apply sensitivity labels to documents, messages, or appointments to comply with business and legal policies.
 - Restrict additional actions if a certain sensitivity label is applied, such as preventing users from adding external recipients to a message.
 - Classify data based on its sensitivity label to support auditing and reporting.
 
