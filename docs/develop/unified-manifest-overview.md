@@ -2,7 +2,7 @@
 title: Office Add-ins with the unified app manifest for Microsoft 365
 description: Get an overview of the unified app manifest for Microsoft 365 for Office Add-ins and its uses.
 ms.topic: overview
-ms.date: 09/22/2026
+ms.date: 09/24/2026
 ms.localizationpriority: high
 ---
 
@@ -84,17 +84,23 @@ The following tables lists which Office platforms support add-ins that use the u
 | Client/platform | Supports add-ins with the unified manifest|
 | ----- | ----- |
 | Office on the web | Yes |
-| Outlook on Windows (classic) (Version 2307 (Build 16626.20132) or later) connected to a Microsoft 365 subscription | Yes, but see [Outlook feature support](#outlook-feature-support). |
-| [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes, but see [Outlook feature support](#outlook-feature-support). |
+| Outlook on Windows (classic) (Version 2307 (Build 16626.20132) or later) connected to a Microsoft 365 subscription | Yes, but see [Feature support](#feature-support). |
+| [New Outlook on Windows](https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627) | Yes, but see [Feature support](#feature-support). |
 | Excel, PowerPoint, and Word on Windows (Version 2501 (18407.20002) or later) connected to a Microsoft 365 subscription | Yes |
 | Excel, PowerPoint, and Word on Mac (Version 16.103 (25101427) or later) | Yes |
 | Office on Windows (perpetual versions) | No |
 | Outlook on Mac | No |
 | Office on mobile | No |
 
-### Outlook feature support
+### Feature support
 
-The following Outlook features aren't yet supported by the unified manifest, but we're working hard to provide that support.
+The following add-in features aren't yet supported by the unified manifest, but we're working hard to provide that support.
+
+### Excel, PowerPoint, and Word
+
+- **OnDocumentOpened** event.
+
+#### Outlook
 
 - **OnMessageReadWithCustomAttachment** event. 
 - **OnMessageReadWithCustomHeader** event.

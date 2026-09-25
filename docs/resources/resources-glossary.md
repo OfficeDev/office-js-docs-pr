@@ -1,7 +1,7 @@
 ﻿---
 title: Office Add-ins glossary of terms
 description: A glossary of terms commonly used throughout the Office Add-ins documentation.
-ms.date: 09/10/2026
+ms.date: 09/23/2026
 ms.topic: glossary
 ms.localizationpriority: medium
 ---
@@ -320,7 +320,7 @@ See also: [custom functions runtime](#custom-functions-runtime), [shared runtime
 
 ## sensitivity label
 
-A **sensitivity label** is a classification marking applied to Office documents or Outlook email messages indicating their confidentiality level, such as Public, Internal, or Confidential. Add-ins can read sensitivity labels and enforce policies based on the applied label. To learn how to manage sensitivity labels in Outlook, see [Manage the sensitivity label of your message or appointment in compose mode](../outlook/sensitivity-label.md).
+A **sensitivity label** is a classification marking applied to Office documents or Outlook email messages indicating their confidentiality level, such as Public, Internal, or Confidential. Add-ins can read sensitivity labels and enforce policies based on the applied label. To learn how to manage sensitivity labels, see [Manage sensitivity labels in Office Add-ins](../develop/sensitivity-label.md).
 
 ## setless API
 

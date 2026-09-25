@@ -26,6 +26,11 @@
           "redirect_document_id": true
         },
         {
+            "source_path": "docs/outlook/sensitivity-label.md",
+            "redirect_url": "/office/dev/add-ins/develop/sensitivity-label",
+            "redirect_document_id": true
+        },
+        {
             "source_path": "docs/develop/agent-and-add-in.md",
             "redirect_url": "/office/dev/add-ins/overview/office-add-ins"
         },
