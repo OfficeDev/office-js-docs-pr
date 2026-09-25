@@ -1,7 +1,7 @@
 ---
 title: Automatically check for an attachment before a message is sent
 description: Learn how to implement an event-based add-in that implements Smart Alerts to automatically check a message for an attachment before it's sent.
-ms.date: 02/27/2026
+ms.date: 07/29/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -412,6 +412,32 @@ In this sample, the dialog button is modified to open a task pane.
     ```
 
 1. Save your changes.
+
+### Programmatically set the width of the task pane
+
+> [!NOTE]
+> The `preferredWidth` property is available for preview in Outlook on the web and the new Outlook on Windows. This property shouldn't be used in a production add-in.
+
+Task panes in Outlook default to a width of 360 pixels. If your Smart Alerts add-in needs more space to display guidance or additional information, you can widen the task pane by specifying the [preferredWidth](/javascript/api/outlook/office.smartalertseventcompletedoptions?view=outlook-js-preview&preserve-view=true#outlook-office-smartalertseventcompletedoptions-preferredwidth-member) property in the `event.completed` call, as shown in the following example.
+
+```javascript
+event.completed({
+  allowEvent: false,
+  errorMessage: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.",
+  errorMessageMarkdown: "Looks like the body of your message includes an image or an inline file. Attach a copy to the message before sending.\n\n**Tip**: For guidance on how to attach a file, see [Attach files in Outlook](https://www.contoso.com/help/attach-files-in-outlook).",
+  cancelLabel: "Add an attachment",
+  commandId: "msgComposeOpenPaneButton",
+  preferredWidth: 480
+});
+```
+
+If you specify the `preferredWidth` property, the task pane is locked at the specified width. Users must close and reopen the task pane to manually resize it.
+
+> [!TIP]
+>
+> - We recommend that the specified task pane width not exceed 40% of the Reading Pane surface.
+>
+> - If your add-in uses the unified manifest, the task pane width can also be specified in the `"extensions.runtimes.actions.taskpane.preferredWidth"` property.
 
 ## Override the send mode option at runtime (optional)
 
