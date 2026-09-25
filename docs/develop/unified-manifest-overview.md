@@ -96,7 +96,7 @@ The following tables lists which Office platforms support add-ins that use the u
 
 The following add-in features aren't yet supported by the unified manifest, but we're working hard to provide that support.
 
-### Excel, PowerPoint, and Word
+#### Excel, PowerPoint, and Word
 
 - **OnDocumentOpened** event.
 
