@@ -2,7 +2,7 @@
 title: Common JavaScript API object model
 description: Learn about the Office JavaScript common API object model.
 ms.topic: overview
-ms.date: 03/06/2026
+ms.date: 09/28/2026
 ms.localizationpriority: medium
 ---
 
@@ -119,7 +119,7 @@ For code examples that demonstrate how to perform tasks by using bindings, see [
 
  **Applies to:** Task pane add-ins for Word
 
-The [CustomXmlParts](/javascript/api/office/office.customxmlparts) and [CustomXmlPart](/javascript/api/office/office.customxmlpart) objects of the API provide access to custom XML parts in Word documents, which enable XML-driven manipulation of the contents of the document. For demonstrations of working with the `CustomXmlParts` and `CustomXmlPart` objects, see the [Word-add-in-Work-with-custom-XML-parts](https://github.com/OfficeDev/Word-Add-in-Work-with-custom-XML-parts) code sample.
+The [CustomXmlParts](/javascript/api/office/office.customxmlparts) and [CustomXmlPart](/javascript/api/office/office.customxmlpart) objects of the API provide access to custom XML parts in Word documents, which enable XML-driven manipulation of the contents of the document. For more information, see [Custom XML data in Excel and Word](persisting-add-in-state-and-settings.md#custom-xml-data-in-excel-and-word).
 
 ## Work with the entire document using the getFileAsync method
 
