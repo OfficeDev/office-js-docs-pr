@@ -1,7 +1,7 @@
 ---
 title: Best practices and rules for the Office Dialog API
 description: Provides rules, limitations, and best practices for the Office Dialog API, such as best practices for a single-page application (SPA).
-ms.date: 03/30/2026
+ms.date: 09/28/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -37,7 +37,7 @@ This article provides rules, limitations, and best practices for the Office Dial
 
 ### Avoid overusing dialog boxes
 
-Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example of a tabbed task pane, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
+Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed.
 
 ### Design a dialog box UI
 

@@ -1,7 +1,7 @@
 ---
 title: Fabric Core in Office Add-ins
 description: Learn how to use Fabric Core CSS classes for icons, colors, typography, and responsive grids in non-React Office Add-ins.
-ms.date: 09/17/2026
+ms.date: 09/28/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ai-usage: ai-assisted
@@ -54,17 +54,6 @@ For the full list of available sizes, see [Typography](https://developer.microso
 If your non-React add-in needs interactive UI components&mdash;buttons, dialogs, dropdowns, pickers, and more&mdash;you can use [Office UI Fabric JS](https://github.com/OfficeDev/office-ui-fabric-js). This library provides pre-built, styled components that match the Office design language without requiring React.
 
 To use a component, reference the Fabric JS script and stylesheet in your HTML, then initialize the component in JavaScript. See the [repository's README](https://github.com/OfficeDev/office-ui-fabric-js#office-ui-fabric-js) for setup instructions and the full component list.
-
-## Samples
-
-The following sample add-ins use Fabric Core and/or Office UI Fabric JS components. Some of these repos are archived, meaning that they're no longer updated with bug or security fixes, but you can still use them to learn how to apply Fabric Core and Fabric UI components.
-
-- [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker): Demonstrates Fabric Core styling in a data-tracking add-in.
-- [Excel Add-in SalesLeads](https://github.com/OfficeDev/Excel-Add-in-SalesLeads): Uses Fabric Core layout and typography in an Excel task pane.
-- [Excel Add-in WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends): Shows Fabric Core colors and fonts in a content add-in.
-- [PowerPoint Add-in Microsoft Graph ASPNET InsertChart](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): Combines Fabric Core styling with Microsoft Graph data.
-- [Word Add-in JS Redact](https://github.com/OfficeDev/Word-Add-in-JS-Redact): Uses Fabric UI components for redaction controls.
-- [Word Add-in MarkdownConversion](https://github.com/OfficeDev/Word-Add-in-MarkdownConversion): Applies Fabric Core icons and styling in a conversion tool.
 
 ## See also
 

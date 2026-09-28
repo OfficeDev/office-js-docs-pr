@@ -1,7 +1,7 @@
 ---
 title: Task panes in Office Add-ins
 description: Task panes give users access to interface controls that run code to modify documents or emails, or display data from a data source.
-ms.date: 11/06/2025
+ms.date: 09/28/2026
 ms.topic: overview
 ms.localizationpriority: medium
 ---
@@ -55,7 +55,7 @@ For Mac, the personality menu measures 26x26 pixels, but floats 8 pixels in from
 
 ## Implementation
 
-For a sample that implements a task pane, see [Excel Add-in JS WoodGrove Expense Trends](https://github.com/OfficeDev/Excel-Add-in-WoodGrove-Expense-Trends) on GitHub.
+For examples of task pane implementations in different Office applications and scenarios, see [Office Add-in code samples](../overview/office-add-in-code-samples.md).
 
 ## See also
 
