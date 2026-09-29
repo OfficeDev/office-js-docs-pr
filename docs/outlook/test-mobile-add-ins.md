@@ -1,7 +1,7 @@
 ---
 title: Test your Outlook add-in on mobile devices
 description: Learn how to run and test your Outlook add-in on mobile device platforms, such as Android and iOS.
-ms.date: 04/28/2026
+ms.date: 09/29/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -22,7 +22,7 @@ To test your add-in in Outlook on mobile, you must meet the following prerequisi
     > Add-ins that use the [unified manifest for Microsoft 365](../develop/unified-manifest-overview.md) aren't supported in Outlook on mobile devices. We're working hard to provide support in mobile devices. For more information, see [Support for add-ins with the unified manifest for Microsoft 365](outlook-mobile-addins.md#support-for-add-ins-with-the-unified-manifest-for-microsoft-365).
 
 - Your manifest is configured for mobile support. For more information, see [Add support for add-in commands in Outlook on mobile devices](add-mobile-support.md).
-- You have a Microsoft 365 or Outlook.com account that supports add-ins in Outlook on mobile.
+- You have a Microsoft 365 or Outlook.com account that supports add-ins in Outlook on mobile. If you're using an account in a government cloud environment, you must install Outlook mobile Version 5.2630.0 or later.
 
     [!INCLUDE [outlook-mobile-on-premises](../includes/outlook-mobile-on-premises.md)]
 - Your add-in is hosted on an HTTPS endpoint that is reachable from the mobile device.

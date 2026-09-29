@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 02/26/2026
+ms.date: 09/29/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -33,6 +33,8 @@ Outlook add-ins are supported in Outlook on the web, Outlook on Windows (new and
 ## Supported accounts
 
 On supported Outlook clients, add-ins can run on Outlook.com (consumer or personal) and Microsoft 365 business mailbox accounts. For more information on Microsoft accounts, see [What's the difference between a Microsoft account and a work or school account?](https://support.microsoft.com/account-billing/72f10e1e-cab8-4950-a8da-7c45339575b0).
+
+Outlook add-ins are also supported in government cloud environments. In Outlook on mobile devices, this support is available starting with Version 5.2630.0. For deployment considerations, see [Guidance for deploying Office Add-ins on government clouds](../publish/government-cloud-guidance.md).
 
 While non-Microsoft mailbox accounts, such as Gmail and Yahoo Mail, can be added to certain Outlook clients, Outlook add-ins aren't always supported on these accounts. The following table outlines add-in support on non-Microsoft accounts for each Outlook client.
 
