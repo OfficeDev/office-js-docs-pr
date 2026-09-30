@@ -71,7 +71,7 @@ function add(first, second){
 
 The manifest file for an add-in that defines custom functions configures the namespace, specifies file locations, and defines the runtime. Select the tab for the manifest type you're using.
 
-Custom functions require [read/write document permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md); specify `Document.ReadWrite.User` in the unified manifest for Microsoft 365 or `ReadWriteDocument` in the add-in only manifest, because read-only permissions can leave cells in `#BUSY!`.
+Custom functions require [read/write document permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md). Specify `Document.ReadWrite.User` in the unified manifest for Microsoft 365 or `ReadWriteDocument` in the add-in only manifest. Read-only permissions can result in functions returning the `#BUSY!` error.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
