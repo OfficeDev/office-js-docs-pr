@@ -103,7 +103,7 @@ When Excel is waiting for a custom function to complete, it displays `#BUSY!` in
 
 ### Ensure the manifest requests read/write permissions
 
-Custom functions require [read/write document permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md); specify `Document.ReadWrite.User` in the unified manifest for Microsoft 365 or `ReadWriteDocument` in the add-in only manifest, because read-only permissions can leave cells in `#BUSY!`.
+Custom functions require [read/write document permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md). Specify `Document.ReadWrite.User` in the unified manifest or `ReadWriteDocument` in the add-in only manifest. Read-only permissions can result in functions returning the `#BUSY!` error.
 
 ### Error: The dev server is already running on port 3000
 
