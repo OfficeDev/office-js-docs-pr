@@ -45,7 +45,7 @@ The following tables list events that are currently available and the supported 
 
 | Event canonical name</br>and add-in only manifest name | Unified manifest for Microsoft 365 name | Description | Supported clients and channels |
 | ----- | ----- | ----- | ----- |
-| `OnDocumentOpened` | *Not yet supported*` | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | <ul><li>Office on the web</li><li>Office on Windows</li><li>Office on Mac will be available later</li></ul>|
+| `OnDocumentOpened` | *Not yet supported* | Occurs when a user opens a document or creates a new document, spreadsheet, or presentation. | <ul><li>Office on the web</li><li>Office on Windows</li><li>Office on Mac will be available later</li></ul>|
 
 For an example of an add-in that activates with this event, see [word-add-label-on-open](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/word-add-label-on-open).
 

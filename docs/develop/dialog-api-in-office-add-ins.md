@@ -1,7 +1,7 @@
 ---
 title: Use the Office dialog API in your Office Add-ins
 description: Learn the basics of creating a dialog box in an Office Add-in.
-ms.date: 06/23/2026
+ms.date: 09/28/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -19,7 +19,7 @@ Use the [Office dialog API](/javascript/api/office/office.ui) to open dialog box
 >
 > - Don't use a dialog box to interact with a document. Use a task pane instead. For guidance, see [Task panes in Office Add-ins](../design/task-pane-add-ins.md).
 >
-> - Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed. For an example of a tabbed task pane, see the [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker) sample.
+> - Because overlapping UI elements are discouraged, avoid opening a dialog box from a task pane unless your scenario requires it. When you consider how to use the surface area of a task pane, note that task panes can be tabbed.
 >
 > To learn more about best practices for implementing a dialog, see [Best practices and rules for the Office dialog API](dialog-best-practices.md).
 
