@@ -1,7 +1,7 @@
 ---
 description: Create an Excel custom function for your Office Add-in.
 title: Create custom functions in Excel
-ms.date: 07/24/2026
+ms.date: 09/30/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -70,6 +70,8 @@ function add(first, second){
 ### Manifest file
 
 The manifest file for an add-in that defines custom functions configures the namespace, specifies file locations, and defines the runtime. Select the tab for the manifest type you're using.
+
+Custom functions require [read/write document permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md); specify `Document.ReadWrite.User` in the unified manifest for Microsoft 365 or `ReadWriteDocument` in the add-in only manifest, because read-only permissions can leave cells in `#BUSY!`.
 
 # [Unified manifest for Microsoft 365](#tab/jsonmanifest)
 
