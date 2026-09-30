@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 09/08/2026
+ms.date: 09/25/2026
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -48,9 +48,32 @@ Word on the web doesn't support every content control type. If the document cont
 
 The error returned has the code `NotAllowed` and the message "The action isn't supported by Word in a browser." The `errorLocation` property of [OfficeExtension.Error.debugInfo](/javascript/api/office/officeextension.debuginfo) identifies the call that failed, such as `Body.insertHtml`.
 
-Additionally, content controls that Word on the web doesn't support aren't returned by [Body.contentControls](/javascript/api/word/word.body#word-word-body-contentcontrols-member). Your add-in can't get a date picker content control to detect it before attempting the insert operation. This differs from Word on Windows and Word on Mac, where the content control is returned and [ContentControl.type](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-type-member) reports `datePicker`.
+Date picker content controls are returned by [Body.contentControls](/javascript/api/word/word.body#word-word-body-contentcontrols-member) in Word on the web, and [ContentControl.type](/javascript/api/word/word.contentcontrol#word-word-contentcontrol-type-member) reports `datePicker`, as it does in Word on Windows and Word on Mac. Your add-in can detect a date picker content control before it attempts the insert operation. Other content control types that Word on the web doesn't support aren't returned by `Body.contentControls`.
 
-Since your add-in can detect these content controls on the web, handle the error when you replace body content, as shown in the following example.
+To avoid the error, check for a date picker content control before you replace body content, as shown in the following example.
+
+```js
+await Word.run(async (context) => {
+  const contentControls = context.document.body.contentControls;
+  contentControls.load("items/type");
+  await context.sync();
+
+  const hasDatePicker = contentControls.items.some(
+    (contentControl) => contentControl.type === Word.ContentControlType.datePicker
+  );
+
+  if (hasDatePicker) {
+    // Replacing the entire body would fail. Target a narrower range instead.
+    console.log("The body contains a date picker content control.");
+    return;
+  }
+
+  context.document.body.insertHtml("<p>New content</p>", Word.InsertLocation.replace);
+  await context.sync();
+});
+```
+
+Because the other content control types that Word on the web doesn't support aren't returned by `Body.contentControls`, also handle the error when you replace body content, as shown in the following example.
 
 ```js
 await Word.run(async (context) => {
