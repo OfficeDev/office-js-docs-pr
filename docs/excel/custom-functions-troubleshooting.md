@@ -101,6 +101,8 @@ If you see the error "TypeError: Network request failed" in your [runtime log](c
 
 When Excel is waiting for a custom function to complete, it displays `#BUSY!` in the cell. If your custom function code returns a promise, but the promise does not return a result, Excel will continue showing `#BUSY!`. Check your functions to make sure that any promises are properly returning a result to a cell.
 
+### Ensure the manifest requests read/write permissions
+
 Custom functions require [read/write document permissions](../develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md); specify `Document.ReadWrite.User` in the unified manifest for Microsoft 365 or `ReadWriteDocument` in the add-in only manifest, because read-only permissions can leave cells in `#BUSY!`.
 
 ### Error: The dev server is already running on port 3000
