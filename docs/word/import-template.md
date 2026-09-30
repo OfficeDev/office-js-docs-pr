@@ -1,7 +1,7 @@
 ---
 title: 'Sample: Import a Word document template with a Word add-in'
 description: Learn how to create a Word add-in that imports a template in a Word document.
-ms.date: 02/26/2026
+ms.date: 09/29/2026
 ms.topic: sample
 ms.localizationpriority: medium
 ---
@@ -23,6 +23,9 @@ This article features a sample add-in that imports a .docx file to use as a temp
 1. The user chooses a .docx file they'd like to use as a template.
 1. The add-in reads the template .docx file then uses [Document.insertFileFromBase64](/javascript/api/word/word.document#word-word-document-insertfilefrombase64-member(1)) to replace the current document's content with the content from the template file.
 1. The user can make updates to the content of the current document.
+
+> [!IMPORTANT]
+> In Word on the web, if Track Changes is enabled when the add-in imports the template, the resulting tracked changes are attributed to **Unknown** instead of the signed-in user. This limitation doesn't apply to Word on Windows or on Mac. For more information, see [Troubleshoot Word add-ins](word-add-ins-troubleshooting.md#tracked-changes-from-insertfilefrombase64-show-an-unknown-author).
 
 ## Make it yours
 
