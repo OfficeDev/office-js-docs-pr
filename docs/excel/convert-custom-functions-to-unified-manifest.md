@@ -21,7 +21,6 @@ This walkthrough assumes that your add-in meets the following conditions.
 
 - The add-in uses a [shared runtime](../testing/runtimes.md#shared-runtime), which is the recommended runtime for custom functions.
 - The project uses Node.js and npm.
-- The add-in has a valid add-in only manifest and can be sideloaded successfully.
 
 > [!IMPORTANT]
 > If your add-in uses the JavaScript-only runtime, you can use the preparation and conversion steps in this article. After conversion, [configure the unified manifest to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) before you configure the custom functions runtime in step 6.
