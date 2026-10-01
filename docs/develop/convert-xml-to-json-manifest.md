@@ -163,7 +163,7 @@ Currently, neither of the tools described in the [Conversion tools and options](
 
 Add a runtime object to the [`"extensions.runtimes."`](/microsoft-365/extensibility/schema/extension-runtimes-array) array. The following is an example. Note the following about this JSON.
 
-- The [`"customFunctions"`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-custom-functions) property has the same information as the [`<ExtensionPoint>` element](/javascript/api/manifest/extensionpoint) element with the `xsi:type` set to `CustomFunctions`.
+- The [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) property has the same information as the [`<ExtensionPoint>` element](/javascript/api/manifest/extensionpoint) element with the `xsi:type` set to `CustomFunctions`.
 - The `"namespace.id"` and `"namespace.name"` have the value of the `<Namespace>` element.
 - The `"metadataUrl"` property has the value of the `<Metadata><SourceLocation>` elmeent. 
 - The `"code.page"` and `"code.script"` properties have the values from the `<Page>` and `<Script>` child elements of the `<ExtensionPoint>` element.
@@ -193,7 +193,7 @@ Add a runtime object to the [`"extensions.runtimes."`](/microsoft-365/extensibil
 The converter tool should have added a runtime object to the [`"extensions.runtimes."`](/microsoft-365/extensibility/schema/extension-runtimes-array) array that has its `"lifetime"` property set to `long`. Edit the object with the following steps.
 
 1. Change the value of the `"code.script"` property to the URL of the JavaScript file that contains your custom functions.
-2. Add a [`"customFunctions"`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-custom-functions) property to the runtime object. The following is an example. The purpose of these properties and the source of their values is the same as described in [For a JavaScript-only runtime](#for-a-javascript-only-runtime).
+2. Add a [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) property to the runtime object. The following is an example. The purpose of these properties and the source of their values is the same as described in [For a JavaScript-only runtime](#for-a-javascript-only-runtime).
 
 ```json
 {
