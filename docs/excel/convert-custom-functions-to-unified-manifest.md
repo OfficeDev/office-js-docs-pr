@@ -1,7 +1,7 @@
 ---
 title: Convert custom functions to the unified manifest
 description: Convert an Excel custom functions add-in from the add-in only manifest to the unified manifest for Microsoft 365.
-ms.date: 09/30/2026
+ms.date: 10/01/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -10,20 +10,14 @@ ms.localizationpriority: medium
 
 This article shows how to convert an existing Excel custom functions add-in from the XML-formatted add-in only manifest to the JSON-formatted unified manifest for Microsoft 365. It supplements [Convert an add-in to use the unified manifest for Microsoft 365](../develop/convert-xml-to-json-manifest.md) with the manual steps that are specific to custom functions.
 
-The manifest conversion tools don't currently add the custom functions configuration to the generated unified manifest. You must map the custom functions runtime, namespace, and metadata URL from the add-in only manifest to the unified manifest.
+The manifest conversion tools don't currently add the custom functions configuration to the generated unified manifest. You must map the custom functions runtime, namespace, metadata URL, and code URLs from the add-in only manifest to the unified manifest.
 
 > [!IMPORTANT]
 > The unified manifest isn't supported on every Office version and platform. Before you convert a production add-in, review [Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support). You might need to maintain and deploy both manifest versions. See [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins.md).
 
 ## Prerequisites
 
-This walkthrough assumes that your add-in meets the following conditions.
-
-- The add-in uses a [shared runtime](../testing/runtimes.md#shared-runtime), which is the recommended runtime for custom functions.
-- The project uses Node.js and npm.
-
-> [!IMPORTANT]
-> If your add-in uses the JavaScript-only runtime, you can use the preparation and conversion steps in this article. After conversion, [configure the unified manifest to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) before you configure the custom functions runtime in step 6.
+This walkthrough assumes that your project uses Node.js and npm. The add-in can use either a [JavaScript-only runtime](../testing/runtimes.md#javascript-only-runtime) or a [shared runtime](../testing/runtimes.md#shared-runtime). The runtime-specific steps in this article preserve the existing runtime configuration.
 
 The filenames and URLs in this article are examples. Use the corresponding values from your project.
 
@@ -93,19 +87,12 @@ Don't change the separate `"version"` property, such as `"version": "1.0.0"`, un
 
 Open the generated unified manifest and find the object in the `"extensions"` array that has `"workbook"` in its `"requirements.scopes"` array.
 
-Ensure that this extension-level requirements object includes the SharedRuntime 1.1 requirement set. The conversion tool normally creates this configuration from the `<Requirements>` element of the add-in only manifest.
-
 ```json
 "requirements": {
   "scopes": [
     "workbook"
-  ],
-  "capabilities": [
-    {
-      "name": "SharedRuntime",
-      "minVersion": "1.1"
-    }
   ]
+...
 }
 ```
 
@@ -126,49 +113,76 @@ At the root of the manifest, verify that the resource-specific permissions inclu
 
 ## 5. Configure the custom functions runtime
 
-In the workbook extension object, find the runtime generated from the `<Runtime>` element. For a shared-runtime project created by the Yeoman generator, this is normally the runtime with `"lifetime": "long"`.
+The runtime configuration depends on whether the existing add-in uses a JavaScript-only runtime or a shared runtime. In both cases, get the namespace, metadata URL, and code URLs from the custom functions `<ExtensionPoint>` in the add-in only manifest.
 
-Add the following elements to the manifest:
+# [JavaScript-only runtime](#tab/javascript-only)
 
-1. A `"customFunctions"` object to the runtime with `"lifetime": "long"`. Don't add it to the short-lived runtime used by the ribbon command.
-    1. Set both `"customFunctions.namespace.id"` and `"customFunctions.namespace.name"` to the existing namespace. The `id` must remain stable. The `name` is the value shown to users and can be localized.
-1. Set `"runtimes.code.script"` to the URL referenced by the XML `<Script>` element.
-1. Set `"customFunctions.metadataUrl"` to the URL referenced by the XML `<Metadata>` element.
+Add a runtime object to the workbook extension's `"runtimes"` array. Configure it as follows.
 
-The following example JSON shows the yo office custom functions in shared runtime project after adding those elements.
+1. Set `"lifetime"` to `"short"`.
+1. Set `"type"` to `"general"`.
+1. Set `"code.page"` to the URL referenced by the XML `<Page>` element.
+1. Set `"code.script"` to the URL referenced by the XML `<Script>` element.
+1. Add a `"customFunctions"` object.
+    1. Set both `"namespace.id"` and `"namespace.name"` to the value of the XML `<Namespace>` element. The `id` must remain stable. The `name` is the value shown to users and can be localized.
+    1. Set `"metadataUrl"` to the URL referenced by the XML `<Metadata>` element.
+
+The following example shows a JavaScript-only custom functions runtime.
 
 ```json
-"runtimes": [
-  {
-    "requirements": {
-      "capabilities": [
-        {
-          "name": "AddinCommands",
-          "minVersion": "1.1"
-        }
-      ],
-      "formFactors": [
-        "desktop"
-      ]
-    },
-    "id": "runtime_1",
-    "type": "general",
-    "code": {
-      "page": "https://localhost:3000/taskpane.html",
-      "script": "https://localhost:3000/functions.js"
-    },
-    "lifetime": "long",
-    "customFunctions": {
-      "namespace": {
-        "id": "CONTOSO",
-        "name": "CONTOSO"
+{
+  "runtimes": [
+    {
+      "id": "FunctionsRuntime",
+      "type": "general",
+      "code": {
+        "page": "https://localhost:3000/functions.html",
+        "script": "https://localhost:3000/functions.js"
       },
-      "metadataUrl": "https://localhost:3000/functions.json"
+      "lifetime": "short",
+      "customFunctions": {
+        "namespace": {
+          "id": "CONTOSO",
+          "name": "CONTOSO"
+        },
+        "metadataUrl": "https://localhost:3000/functions.json"
+      }
     }
-  }
-...
-]
+  ]
+}
 ```
+
+# [Shared runtime](#tab/shared)
+
+In the workbook extension object, find the runtime generated from the XML `<Runtime>` element. This is normally the runtime with `"lifetime": "long"`.
+
+Configure the runtime as follows.
+
+1. Set `"code.script"` to the URL referenced by the XML `<Script>` element.
+1. Add a `"customFunctions"` object to the long-lived runtime. Don't add it to the short-lived runtime used by a ribbon command.
+    1. Set both `"namespace.id"` and `"namespace.name"` to the value of the XML `<Namespace>` element. The `id` must remain stable. The `name` is the value shown to users and can be localized.
+    1. Set `"metadataUrl"` to the URL referenced by the XML `<Metadata>` element.
+
+The following partial example shows the properties to add or update in the shared runtime.
+
+```json
+{
+  "code": {
+    "page": "https://localhost:3000/taskpane.html",
+    "script": "https://localhost:3000/functions.js"
+  },
+  "lifetime": "long",
+  "customFunctions": {
+    "namespace": {
+      "id": "CONTOSO",
+      "name": "CONTOSO"
+    },
+    "metadataUrl": "https://localhost:3000/functions.json"
+  }
+}
+```
+
+---
 
 > [!NOTE]
 > Don't add any custom function ID to the runtime `"actions"` array. The `"actions"` array registers add-in commands. Custom functions are registered by the metadata file and calls to `CustomFunctions.associate`.
@@ -200,8 +214,8 @@ Verify the following behavior.
 1. Confirm that the existing namespace and function names appear in formula autocomplete.
 1. Open representative existing workbooks and confirm that their formulas calculate without changes.
 1. Test streaming, volatile, cancelable, and dynamic array functions, if the add-in defines them.
-1. Open and close the task pane and confirm that functions continue to calculate.
-1. Test any data shared between the task pane and custom functions.
+1. If the add-in has a task pane, open and close it and confirm that functions continue to calculate.
+1. If the add-in shares data between the task pane and custom functions, test that data sharing.
 1. Test authentication and external web requests.
 1. Test localized function names and descriptions, if the add-in supports localization.
 
@@ -222,7 +236,7 @@ Use [Manage both a unified manifest and an add-in only manifest version of your 
 | Manifest validation rejects `customFunctions` | Confirm that `"customFunctions"` is inside the applicable object in `"runtimes"`, not directly in the extension object. |
 | Functions work but ribbon commands don't | Confirm that every ribbon `actionId` matches an `id` in the runtime `"actions"` array. |
 | Changes to functions don't appear | Clear the Office cache and confirm that the current metadata and script files are served at the manifest URLs. |
-| The add-in works on one client but not another | Check unified manifest platform support and the SharedRuntime 1.1 requirement set. |
+| The add-in works on one client but not another | Check unified manifest platform support. For an add-in that uses a shared runtime, also check the SharedRuntime 1.1 requirement set. |
 
 For more help, see [Troubleshoot custom functions](custom-functions-troubleshooting.md).
 
