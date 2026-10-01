@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 08/12/2026
+ms.date: 09/30/2026
 ms.localizationpriority: medium
 ---
 
@@ -157,9 +157,11 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 
 ### Special considerations when converting an add-in with custom functions
 
-Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed custom function support to the unified manifest. We're working hard to update the tools. In the meantime, you must add the [`"extensions.runtimes.customFunctions"`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) property manually. Use the [JSON metadata file](../excel/custom-functions-json.md) from your add-in as the source of data to populate the [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) object. The schema for the `"customFunctions"` property is very similar to the schema for JSON metadata file, but not identical. So, while you can't simply paste the contents of the metadata file into the value of the `"customFunctions"` property, you can cut and paste substantial parts of it. 
+Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed custom function support to the unified manifest. You must manually add the [`"extensions[].runtimes[].customFunctions"`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) property and map the runtime, namespace, and metadata URL from the add-in only manifest.
 
-Some combinations of Office versions and platforms don't yet support the unified manifest. See [Unified manifest - Client and platform support](unified-manifest-overview.md#client-and-platform-support). Currently, to keep your custom functions available on these Office versions, you must [maintain both your existing add-in with the add-in only manifest and your new add-in](../concepts/duplicate-legacy-metaos-add-ins.md). We're working on a system that will enable add-ins that use the unified manifest to be installable on these Office versions. When the system is available, you can unpublish the original add-in. To future proof your new add-in for when that system is available, you should include the optional [metadataUrl](/microsoft-365/extensibility/schema/extension-custom-functions#metadataurl-1) property in the `"customFunctions"` object, and give it the same value that's used in the resource string that's referenced in the [Metadata](/javascript/api/manifest/metadata) element of the add-in only manifest. You should also keep the metadata file in the unified manifest version of the add-in. 
+For a complete walkthrough, including XML-to-JSON examples, validation, and testing, see [Convert custom functions to the unified manifest](../excel/convert-custom-functions-to-unified-manifest.md).
+
+Some combinations of Office versions and platforms don't yet support the unified manifest. See [Unified manifest - Client and platform support](unified-manifest-overview.md#client-and-platform-support). Currently, to keep your custom functions available on these Office versions, you must [maintain both your existing add-in with the add-in only manifest and your new add-in](../concepts/duplicate-legacy-metaos-add-ins.md). Include the optional [metadataUrl](/microsoft-365/extensibility/schema/extension-custom-functions#metadataurl-1) property in the `"customFunctions"` object and give it the same value that's used in the resource string referenced by the [Metadata](/javascript/api/manifest/metadata) element of the add-in only manifest. Also keep the metadata file in the unified manifest version of the add-in.
 
 ## Sideload the add-in
 
