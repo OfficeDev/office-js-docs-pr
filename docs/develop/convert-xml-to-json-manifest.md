@@ -110,7 +110,7 @@ There are several ways to carry out the remaining tasks, depending on the IDE an
 - [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-the-yeoman-generator-for-office-add-ins-yo-office)
 
 > [!NOTE]
-> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md). 
+> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md).
 
 ### Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")
 
@@ -121,6 +121,7 @@ If the project was created with the Yeoman generator for Office Add-ins, convert
     ```command&nbsp;line
     npx office-addin-project convert -m <relative-path-to-XML-manifest>
     ```
+
 1. Carry out the steps in [Edit the new unified manifest](#edit-the-new-unified-manifest).
 
 ### Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)

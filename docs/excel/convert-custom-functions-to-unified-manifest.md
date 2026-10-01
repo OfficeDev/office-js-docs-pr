@@ -22,78 +22,13 @@ This walkthrough assumes that your add-in meets the following conditions.
 - The add-in uses a [shared runtime](../testing/runtimes.md#shared-runtime), which is the recommended runtime for custom functions.
 - The project uses Node.js and npm.
 - The add-in has a valid add-in only manifest and can be sideloaded successfully.
-- The custom functions metadata is stored in a JSON file, such as **functions.json**.
 
 > [!IMPORTANT]
 > If your add-in uses the JavaScript-only runtime, you can use the preparation and conversion steps in this article. After conversion, [configure the unified manifest to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) before you configure the custom functions runtime in step 6.
 
 The filenames and URLs in this article are examples. Use the corresponding values from your project.
 
-## 1. Record the custom functions configuration
-
-Before running a conversion tool, record the values that configure custom functions in the add-in only manifest. The following example shows the relevant parts of a typical shared-runtime manifest.
-
-```xml
-<Requirements>
-  <Sets DefaultMinVersion="1.1">
-    <Set Name="SharedRuntime" MinVersion="1.1"/>
-  </Sets>
-</Requirements>
-
-<Permissions>ReadWriteDocument</Permissions>
-
-<VersionOverrides ...>
-  <Hosts>
-    <Host xsi:type="Workbook">
-      <Runtimes>
-        <Runtime resid="Shared.Url" lifetime="long"/>
-      </Runtimes>
-      <AllFormFactors>
-        <ExtensionPoint xsi:type="CustomFunctions">
-          <Script>
-            <SourceLocation resid="Functions.Script.Url"/>
-          </Script>
-          <Page>
-            <SourceLocation resid="Shared.Url"/>
-          </Page>
-          <Metadata>
-            <SourceLocation resid="Functions.Metadata.Url"/>
-          </Metadata>
-          <Namespace resid="Functions.Namespace"/>
-        </ExtensionPoint>
-      </AllFormFactors>
-    </Host>
-  </Hosts>
-  <Resources>
-    <bt:Urls>
-      <bt:Url id="Functions.Script.Url"
-              DefaultValue="https://localhost:3000/functions.js"/>
-      <bt:Url id="Functions.Metadata.Url"
-              DefaultValue="https://localhost:3000/functions.json"/>
-      <bt:Url id="Shared.Url"
-              DefaultValue="https://localhost:3000/taskpane.html"/>
-    </bt:Urls>
-    <bt:ShortStrings>
-      <bt:String id="Functions.Namespace" DefaultValue="CONTOSO"/>
-    </bt:ShortStrings>
-  </Resources>
-</VersionOverrides>
-```
-
-Record the resolved values, rather than only the resource IDs.
-
-| Add-in only manifest setting | Example resolved value |
-| --- | --- |
-| Runtime page, referenced by `<Runtime>` and `<Page>` | `https://localhost:3000/taskpane.html` |
-| Function script, referenced by `<Script>` | `https://localhost:3000/functions.js` |
-| Metadata file, referenced by `<Metadata>` | `https://localhost:3000/functions.json` |
-| Namespace, referenced by `<Namespace>` | `CONTOSO` |
-| Runtime lifetime | `long` |
-| Permission | `ReadWriteDocument` |
-
-Also record any locale-specific namespace and metadata overrides. This walkthrough configures the default locale. Don't retire the add-in only manifest version until you've validated the localized experience in the unified manifest version.
-
-## 2. Prepare the custom functions metadata
+## 1. Prepare the custom functions metadata
 
 The unified manifest enforces some metadata requirements that older Office clients or Microsoft Marketplace submissions might not have enforced for the add-in only manifest.
 
@@ -111,7 +46,7 @@ For all metadata requirements, see [Custom functions naming and localization](cu
 
 After making any corrections, validate and sideload the add-in only manifest again. Resolve any problems before continuing.
 
-## 3. Convert the project
+## 2. Convert the project
 
 The conversion command depends on how the project was created.
 
@@ -139,7 +74,10 @@ This command creates the unified manifest in a subfolder named after the add-in 
 
 Complete the general post-conversion steps in [Edit the new unified manifest](../develop/convert-xml-to-json-manifest.md#edit-the-new-unified-manifest), including adding the required developer URLs. Don't sideload the add-in yet.
 
-## 4. Update the manifest schema version
+> [!IMPORTANT]
+> The add-in only manifest will be stored in a backup zip file in the root of the project. To update the unified manifest, it's helpful to reference the old manifest's values. Keep it accessible while following this guide.
+
+## 3. Update the manifest schema version
 
 The conversion tool might generate a manifest that uses an old version of the manifest schema. Update it to the latest version. See [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
@@ -152,7 +90,7 @@ At the beginning of the generated unified manifest, update `"$schema"` and `"man
 
 Don't change the separate `"version"` property, such as `"version": "1.0.0"`, unless you're also releasing a new version of the add-in.
 
-## 5. Configure the extension requirements and permissions
+## 4. Configure the extension requirements and permissions
 
 Open the generated unified manifest and find the object in the `"extensions"` array that has `"workbook"` in its `"requirements.scopes"` array.
 
@@ -187,11 +125,18 @@ At the root of the manifest, verify that the resource-specific permissions inclu
 }
 ```
 
-## 6. Configure the custom functions runtime
+## 5. Configure the custom functions runtime
 
-In the workbook extension object, find the runtime generated from the `<Runtime>` element. For a shared-runtime project created by the Yeoman generator, this is normally the runtime with `"lifetime": "long"`. The conversion tool might name it `"runtime_1"` and create a second, short-lived runtime for a ribbon command.
+In the workbook extension object, find the runtime generated from the `<Runtime>` element. For a shared-runtime project created by the Yeoman generator, this is normally the runtime with `"lifetime": "long"`.
 
-Add `"code.script"` and a `"customFunctions"` object to the long-lived runtime. Keep the runtime's generated ID and requirements. The following example shows the relevant part of a typical manifest generated from a Yeoman custom functions project.
+Add the following elements to the manifest:
+
+1. A `"customFunctions"` object to the runtime with `"lifetime": "long"`. Don't add it to the short-lived runtime used by the ribbon command.
+    1. Set both `"customFunctions.namespace.id"` and `"customFunctions.namespace.name"` to the existing namespace. The `id` must remain stable. The `name` is the value shown to users and can be localized.
+1. Set `"runtimes.code.script"` to the URL referenced by the XML `<Script>` element.
+1. Set `"customFunctions.metadataUrl"` to the URL referenced by the XML `<Metadata>` element.
+
+The following example JSON shows the yo office custom functions in shared runtime project after adding those elements.
 
 ```json
 "runtimes": [
@@ -221,73 +166,15 @@ Add `"code.script"` and a `"customFunctions"` object to the long-lived runtime. 
       },
       "metadataUrl": "https://localhost:3000/functions.json"
     }
-  },
-  {
-    "requirements": {
-      "capabilities": [
-        {
-          "name": "AddinCommands",
-          "minVersion": "1.1"
-        }
-      ],
-      "formFactors": [
-        "desktop"
-      ]
-    },
-    "id": "runtime_2",
-    "type": "general",
-    "code": {
-      "page": "https://localhost:3000/taskpane.html"
-    },
-    "lifetime": "short",
-    "actions": [
-      {
-        "id": "ButtonId1_1",
-        "type": "openPage",
-        "displayName": "ButtonId1_1",
-        "view": "ButtonId1"
-      }
-    ]
   }
+...
 ]
 ```
-
-Adapt the example as follows.
-
-- Add the custom functions configuration to the runtime with `"lifetime": "long"`. Don't add it to the short-lived runtime used by the ribbon command.
-- Set `"code.page"` to the URL referenced by both the XML `<Runtime>` and `<Page>` elements.
-- Set `"code.script"` to the URL referenced by the XML `<Script>` element.
-- Keep `"lifetime"` set to `"long"` to preserve the shared runtime.
-- Set both `"customFunctions.namespace.id"` and `"customFunctions.namespace.name"` to the existing namespace. The `id` must remain stable. The `name` is the value shown to users and can be localized.
-- Set `"customFunctions.metadataUrl"` to the URL referenced by the XML `<Metadata>` element.
-- If the runtime has an `"actions"` array for ribbon commands, keep the actions created by the conversion tool. Ensure that each ribbon control's `actionId` matches a runtime action `id`.
-
-The extension-level and runtime-level `"requirements"` objects have different purposes. The extension-level `SharedRuntime` capability controls whether the add-in can be installed. A runtime-level requirements object filters only that runtime. You don't need to move or duplicate the `SharedRuntime` capability in the long-lived runtime when it is already present in the extension-level requirements.
 
 > [!NOTE]
 > Don't add any custom function ID to the runtime `"actions"` array. The `"actions"` array registers add-in commands. Custom functions are registered by the metadata file and calls to `CustomFunctions.associate`.
 
-The following table summarizes the custom functions mapping.
-
-| Add-in only manifest | Unified manifest |
-| --- | --- |
-| `<Set Name="SharedRuntime" MinVersion="1.1"/>` | `requirements.capabilities` entry for `SharedRuntime` 1.1 |
-| `<Runtime resid="..." lifetime="long">` | Runtime `code.page` and `lifetime` |
-| Custom Functions `<Script>` | Runtime `code.script` |
-| Custom Functions `<Page>` | Runtime `code.page` |
-| Custom Functions `<Metadata>` | Runtime `customFunctions.metadataUrl` |
-| Custom Functions `<Namespace>` | Runtime `customFunctions.namespace` |
-| `<Permissions>ReadWriteDocument</Permissions>` | `Document.ReadWrite.User` resource-specific permission |
-
-## 7. Preserve the metadata file
-
-Keep the custom functions metadata file in the converted project and continue serving it from the URL in `"metadataUrl"`. Don't copy the complete metadata file into the manifest.
-
-The `"customFunctions"` object in the manifest identifies the namespace and metadata location. The metadata file continues to define each function's ID, name, parameters, result, descriptions, and other options.
-
-If your build generates the metadata file from JSDoc comments, run the normal build and verify that the generated file is available at the configured URL. For more information, see [Autogenerate JSON metadata for custom functions](custom-functions-json-autogeneration.md).
-
-## 8. Validate the unified manifest
+## 6. Validate the unified manifest
 
 From the root of a project created with the Yeoman generator or Agents Toolkit, run the following command.
 
@@ -303,7 +190,7 @@ npx office-addin-manifest validate -p manifest.json
 
 Resolve all schema and configuration errors before sideloading. For more validation options, see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md). The manifest reference is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
-## 9. Sideload and test the converted add-in
+## 7. Sideload and test the converted add-in
 
 Follow [Sideload Office Add-ins that use the unified manifest for Microsoft 365](../testing/sideload-add-in-with-unified-manifest.md) for your project type.
 
@@ -321,7 +208,7 @@ Verify the following behavior.
 
 If updated functions don't appear, [clear the Office cache](../testing/clear-cache.md) and sideload the add-in again.
 
-## 10. Plan production deployment
+## 8. Plan production deployment
 
 The conversion creates an add-in with a new manifest identity. Don't remove the add-in only manifest version until all targeted clients can install and run the unified manifest version.
 
