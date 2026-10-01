@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 08/12/2026
+ms.date: 09/30/2026
 ms.localizationpriority: medium
 ---
 
@@ -157,7 +157,57 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 
 ### Special considerations when converting an add-in with custom functions
 
-Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed custom function support to the unified manifest. We're working hard to update the tools. In the meantime, you must add the [`"extensions.runtimes.customFunctions"`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) property manually. Use the [JSON metadata file](../excel/custom-functions-json.md) from your add-in as the source of data to populate the [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) object. The schema for the `"customFunctions"` property is very similar to the schema for JSON metadata file, but not identical. So, while you can't simply paste the contents of the metadata file into the value of the `"customFunctions"` property, you can cut and paste substantial parts of it. 
+Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed custom function support to the unified manifest. We're working hard to update the tools. In the meantime, you must manually add some JSON to the manifest. The exact steps depend on whether your existing add-in uses a shared runtime for the custom functions or a JavaScript-only runtime. 
+
+#### For a JavaScript-only runtime
+
+Add a runtime object to the [`"extensions.runtimes."`](/microsoft-365/extensibility/schema/extension-runtimes-array) array. The following is an example. Note the following about this JSON.
+
+- The [`"customFunctions"`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-custom-functions) property has the same information as the [`<ExtensionPoint>` element](/javascript/api/manifest/extensionpoint) element with the `xsi:type` set to `CustomFunctions`.
+- The `"namespace.id"` and `"namespace.name"` have the value of the `<Namespace>` element.
+- The `"metadataUrl"` property has the value of the `<Metadata><SourceLocation>` elmeent. 
+- The `"code.page"` and `"code.script"` properties have the values from the `<Page>` and `<Script>` child elements of the `<ExtensionPoint>` element.
+- The `"lifetime"` is set to `short` because this is not a shared runtime.
+
+```json
+{
+   "id": "FunctionsRuntime",
+   "type": "general",
+   "code": {
+      "page": "https://localhost:3000/functions.html",
+      "script": "https://localhost:3000/public/functions.js"
+   },
+   "lifetime": "short",
+   "customFunctions": {
+      "namespace": {
+         "id": "CONTOSO",
+         "name": "CONTOSO"
+      },
+      "metadataUrl": "https://localhost:3000/public/functions.json"
+   }
+}
+```
+
+#### For a shared runtime
+
+The converter tool should have added a runtime object to the [`"extensions.runtimes."`](/microsoft-365/extensibility/schema/extension-runtimes-array) array that has its `"lifetime"` property set to `long`. Edit the object with the following steps.
+
+1. Change the value of the `"code.script"` property to the URL of the JavaScript file that contains your custom functions.
+2. Add a [`"customFunctions"`](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/extension-custom-functions) property to the runtime object. The following is an example. The purpose of these properties and the source of their values is the same as described in [For a JavaScript-only runtime](#for-a-javascript-only-runtime).
+
+```json
+{
+   "customFunctions": {
+      "namespace": {
+         "id": "CONTOSO",
+         "name": "CONTOSO"
+      },
+      "metadataUrl": "https://localhost:3000/public/functions.json"
+   }
+}
+```
+
+#### Platform limitations
 
 Some combinations of Office versions and platforms don't yet support the unified manifest. See [Unified manifest - Client and platform support](unified-manifest-overview.md#client-and-platform-support). Currently, to keep your custom functions available on these Office versions, you must [maintain both your existing add-in with the add-in only manifest and your new add-in](../concepts/duplicate-legacy-metaos-add-ins.md). We're working on a system that will enable add-ins that use the unified manifest to be installable on these Office versions. When the system is available, you can unpublish the original add-in. To future proof your new add-in for when that system is available, you should include the optional [metadataUrl](/microsoft-365/extensibility/schema/extension-custom-functions#metadataurl-1) property in the `"customFunctions"` object, and give it the same value that's used in the resource string that's referenced in the [Metadata](/javascript/api/manifest/metadata) element of the add-in only manifest. You should also keep the metadata file in the unified manifest version of the add-in. 
 
