@@ -13,7 +13,7 @@ This article shows how to convert an existing Excel custom functions add-in from
 The manifest conversion tools don't currently add the custom functions configuration to the generated unified manifest. You must map the custom functions runtime, namespace, and metadata URL from the add-in only manifest to the unified manifest.
 
 > [!IMPORTANT]
-> The unified manifest isn't supported on every Office version and platform. Before you convert a production add-in, review [Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support). You might need to maintain and deploy both manifest versions.
+> The unified manifest isn't supported on every Office version and platform. Before you convert a production add-in, review [Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support). You might need to maintain and deploy both manifest versions. See [Manage both a unified manifest and an add-in only manifest version of your Office Add-in](../concepts/duplicate-legacy-metaos-add-ins.md).
 
 ## Prerequisites
 
@@ -24,7 +24,8 @@ This walkthrough assumes that your add-in meets the following conditions.
 - The add-in has a valid add-in only manifest and can be sideloaded successfully.
 - The custom functions metadata is stored in a JSON file, such as **functions.json**.
 
-If your add-in uses the JavaScript-only runtime, you can use the preparation and conversion steps in this article. After conversion, [configure the unified manifest to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) before you configure the custom functions runtime in step 6.
+> [!IMPORTANT]
+> If your add-in uses the JavaScript-only runtime, you can use the preparation and conversion steps in this article. After conversion, [configure the unified manifest to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) before you configure the custom functions runtime in step 6.
 
 The filenames and URLs in this article are examples. Use the corresponding values from your project.
 
@@ -140,9 +141,9 @@ Complete the general post-conversion steps in [Edit the new unified manifest](..
 
 ## 4. Update the manifest schema version
 
-The conversion tool might generate a manifest that uses schema version 1.17. The `customFunctions.metadataUrl` property isn't available in that schema version.
+The conversion tool might generate a manifest that uses an old version of the manifest schema. Update it to the latest version. See [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
-At the beginning of the generated unified manifest, update `"$schema"` and `"manifestVersion"` to version 1.30.
+At the beginning of the generated unified manifest, update `"$schema"` and `"manifestVersion"` to the latest version. The following is an example.
 
 ```json
 "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json#",
@@ -264,7 +265,7 @@ Adapt the example as follows.
 The extension-level and runtime-level `"requirements"` objects have different purposes. The extension-level `SharedRuntime` capability controls whether the add-in can be installed. A runtime-level requirements object filters only that runtime. You don't need to move or duplicate the `SharedRuntime` capability in the long-lived runtime when it is already present in the extension-level requirements.
 
 > [!NOTE]
-> Don't add every custom function ID to the runtime `"actions"` array. The `"actions"` array registers add-in commands. Custom functions are registered by the metadata file and calls to `CustomFunctions.associate`.
+> Don't add any custom function ID to the runtime `"actions"` array. The `"actions"` array registers add-in commands. Custom functions are registered by the metadata file and calls to `CustomFunctions.associate`.
 
 The following table summarizes the custom functions mapping.
 
@@ -300,7 +301,7 @@ If the project doesn't have a validation script, run the following command. Repl
 npx office-addin-manifest validate -p manifest.json
 ```
 
-Resolve all schema and configuration errors before sideloading. For more validation options, see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md).
+Resolve all schema and configuration errors before sideloading. For more validation options, see [Validate an Office Add-in's manifest](../testing/troubleshoot-manifest.md). The manifest reference is at [Microsoft 365 app manifest schema reference](/microsoft-365/extensibility/schema).
 
 ## 9. Sideload and test the converted add-in
 

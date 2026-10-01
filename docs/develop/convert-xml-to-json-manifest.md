@@ -157,7 +157,7 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 
 ### Special considerations when converting an add-in with custom functions
 
-Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed custom function support to the unified manifest. You must manually add the [`"extensions[].runtimes[].customFunctions"`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) property and map the runtime, namespace, and metadata URL from the add-in only manifest.
+Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed custom function support to the unified manifest. You must manually add a [`"extensions.runtimes.customFunctions"`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) property and map the runtime, namespace, and metadata URL from the add-in only manifest.
 
 For a complete walkthrough, including XML-to-JSON examples, validation, and testing, see [Convert custom functions to the unified manifest](../excel/convert-custom-functions-to-unified-manifest.md).
 
