@@ -208,7 +208,7 @@ Follow [Sideload Office Add-ins that use the unified manifest for Microsoft 365]
 
 Verify the following behavior.
 
-1. Open a new workbook and confirm that the add-in loads.
+1. Open a new workbook and confirm that the add-in loads. It may take as long as 2 minutes.
 1. Enter a formula that uses each custom function category in your add-in.
 1. Confirm that the existing namespace and function names appear in formula autocomplete.
 1. Open representative existing workbooks and confirm that their formulas calculate without changes.
@@ -234,7 +234,7 @@ Use [Manage both a unified manifest and an add-in only manifest version of your 
 | Cells remain `#BUSY!` | Verify `Document.ReadWrite.User`, promise completion, and network requests. |
 | Manifest validation rejects `customFunctions` | Confirm that `"customFunctions"` is inside the applicable object in `"runtimes"`, not directly in the extension object. |
 | Functions work but ribbon commands don't | Confirm that every ribbon `actionId` matches an `id` in the runtime `"actions"` array. |
-| Changes to functions don't appear | Clear the Office cache and confirm that the current metadata and script files are served at the manifest URLs. |
+| Changes to functions don't appear | [Clear the Office cache](../testing/clear-cache.md) and confirm that the current metadata and script files are served at the manifest URLs. |
 | The add-in works on one client but not another | Check unified manifest platform support. For an add-in that uses a shared runtime, also check the SharedRuntime 1.1 requirement set. |
 
 For more help, see [Troubleshoot custom functions](custom-functions-troubleshooting.md).
