@@ -110,7 +110,7 @@ There are several ways to carry out the remaining tasks, depending on the IDE an
 - [Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)](#convert-nodejs-and-npm-projects-that-werent-created-with-the-yeoman-generator-for-office-add-ins-yo-office)
 
 > [!NOTE]
-> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md). 
+> Conversion of the manifest is one of the effects of importing the add-in project into Agents Toolkit if you do so using the toolkit's importation feature. For details, see [Import an add-in project to Agents Toolkit](import-teams-toolkit.md).
 
 ### Convert projects created with the Yeoman generator for Office Add-ins (aka "Yo Office")
 
@@ -121,6 +121,7 @@ If the project was created with the Yeoman generator for Office Add-ins, convert
     ```command&nbsp;line
     npx office-addin-project convert -m <relative-path-to-XML-manifest>
     ```
+
 1. Carry out the steps in [Edit the new unified manifest](#edit-the-new-unified-manifest).
 
 ### Convert NodeJS and npm projects that weren't created with the Yeoman generator for Office Add-ins (Yo Office)
@@ -132,6 +133,7 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
    ```command&nbsp;line
    npx office-addin-manifest-converter convert <relative-path-to-XML-manifest>
    ```
+
 1. Carry out the steps in [Edit the new unified manifest](#edit-the-new-unified-manifest).
 
 ## Edit the new unified manifest
@@ -157,59 +159,11 @@ If your project wasn't created with Yo Office, use the office-addin-manifest-con
 
 ### Special considerations when converting an add-in with custom functions
 
-Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed custom function support to the unified manifest. We're working hard to update the tools. In the meantime, you must manually add some JSON to the manifest. The exact steps depend on whether your existing add-in uses a shared runtime for the custom functions or a JavaScript-only runtime. 
+Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed custom function support to the unified manifest. You must manually add a [`"extensions.runtimes.customFunctions"`](/microsoft-365/extensibility/schema/extension-runtimes-array#customFunctions-property) property and map the runtime, namespace, metadata URL, and code URLs from the add-in only manifest. The exact runtime configuration depends on whether the existing add-in uses a JavaScript-only runtime or a shared runtime.
 
-#### For a JavaScript-only runtime
+For a complete walkthrough, including XML-to-JSON examples, validation, and testing, see [Convert custom functions to the unified manifest](../excel/convert-custom-functions-to-unified-manifest.md).
 
-Add a runtime object to the [`"extensions.runtimes."`](/microsoft-365/extensibility/schema/extension-runtimes-array) array. The following is an example. Note the following about this JSON.
-
-- The [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) property has the same information as the [`<ExtensionPoint>` element](/javascript/api/manifest/extensionpoint) element with the `xsi:type` set to `CustomFunctions`.
-- The `"namespace.id"` and `"namespace.name"` have the value of the `<Namespace>` element.
-- The `"metadataUrl"` property has the value of the `<Metadata><SourceLocation>` elmeent. 
-- The `"code.page"` and `"code.script"` properties have the values from the `<Page>` and `<Script>` child elements of the `<ExtensionPoint>` element.
-- The `"lifetime"` is set to `short` because this is not a shared runtime.
-
-```json
-{
-   "id": "FunctionsRuntime",
-   "type": "general",
-   "code": {
-      "page": "https://localhost:3000/functions.html",
-      "script": "https://localhost:3000/public/functions.js"
-   },
-   "lifetime": "short",
-   "customFunctions": {
-      "namespace": {
-         "id": "CONTOSO",
-         "name": "CONTOSO"
-      },
-      "metadataUrl": "https://localhost:3000/public/functions.json"
-   }
-}
-```
-
-#### For a shared runtime
-
-The converter tool should have added a runtime object to the [`"extensions.runtimes."`](/microsoft-365/extensibility/schema/extension-runtimes-array) array that has its `"lifetime"` property set to `long`. Edit the object with the following steps.
-
-1. Change the value of the `"code.script"` property to the URL of the JavaScript file that contains your custom functions.
-2. Add a [`"customFunctions"`](/microsoft-365/extensibility/schema/extension-custom-functions) property to the runtime object. The following is an example. The purpose of these properties and the source of their values is the same as described in [For a JavaScript-only runtime](#for-a-javascript-only-runtime).
-
-```json
-{
-   "customFunctions": {
-      "namespace": {
-         "id": "CONTOSO",
-         "name": "CONTOSO"
-      },
-      "metadataUrl": "https://localhost:3000/public/functions.json"
-   }
-}
-```
-
-#### Platform limitations
-
-Some combinations of Office versions and platforms don't yet support the unified manifest. See [Unified manifest - Client and platform support](unified-manifest-overview.md#client-and-platform-support). Currently, to keep your custom functions available on these Office versions, you must [maintain both your existing add-in with the add-in only manifest and your new add-in](../concepts/duplicate-legacy-metaos-add-ins.md). We're working on a system that will enable add-ins that use the unified manifest to be installable on these Office versions. When the system is available, you can unpublish the original add-in. To future proof your new add-in for when that system is available, you should include the optional [metadataUrl](/microsoft-365/extensibility/schema/extension-custom-functions#metadataurl-1) property in the `"customFunctions"` object, and give it the same value that's used in the resource string that's referenced in the [Metadata](/javascript/api/manifest/metadata) element of the add-in only manifest. You should also keep the metadata file in the unified manifest version of the add-in. 
+Some combinations of Office versions and platforms don't yet support the unified manifest. See [Unified manifest - Client and platform support](unified-manifest-overview.md#client-and-platform-support). Currently, to keep your custom functions available on these Office versions, you must [maintain both your existing add-in with the add-in only manifest and your new add-in](../concepts/duplicate-legacy-metaos-add-ins.md). Include the optional [metadataUrl](/microsoft-365/extensibility/schema/extension-custom-functions#metadataurl-1) property in the `"customFunctions"` object and give it the same value that's used in the resource string referenced by the [Metadata](/javascript/api/manifest/metadata) element of the add-in only manifest. Also keep the metadata file in the unified manifest version of the add-in.
 
 ## Sideload the add-in
 

@@ -115,6 +115,7 @@ Another easy way to try out custom functions is to use [Script Lab](https://apps
 
 ## See also
 
+- [Convert custom functions to the unified manifest](convert-custom-functions-to-unified-manifest.md)
 - [Learn about the Microsoft 365 Developer Program](https://aka.ms/m365devprogram)
 - [Custom functions requirement sets](/javascript/api/requirement-sets/excel/custom-functions-requirement-sets)
 - [Custom functions naming guidelines](custom-functions-naming.md)

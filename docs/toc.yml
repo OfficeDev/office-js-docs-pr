@@ -147,6 +147,9 @@
           href: develop/json-manifest-overview.md
         - name: Convert an add-in to use the unified manifest for Microsoft 365
           href: develop/convert-xml-to-json-manifest.md
+        - name: Convert to the unified manifest
+          href: excel/convert-custom-functions-to-unified-manifest.md
+          displayName: Excel, Custom Functions
       - name: Add-in only manifest
         items:
         - name: Office Add-ins with the add-in only manifest
@@ -718,6 +721,9 @@
         - name: Debugging
           href: excel/custom-functions-debugging.md
           displayName: Excel, Custom Functions
+    - name: Convert to the unified manifest
+      href: excel/convert-custom-functions-to-unified-manifest.md
+      displayName: Excel, Custom Functions, manifest
     - name: Troubleshoot custom functions
       href: excel/custom-functions-troubleshooting.md
       displayName: Excel, Custom Functions
