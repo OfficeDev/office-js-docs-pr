@@ -214,7 +214,7 @@ The following is an example.
 
 If the ancestor `<VersionOverrides>` element of the `<LaunchEvent>` element has a `<Requirements>` element, then you should add a `"requirements"` property to the autorun event object. The following is an example. Note the following about this code. 
 
-- The value of the `"capabilities.name"` property comes from the `Name` attribute of the `<Requirements><Sets><Set> element.
+- The value of the `"capabilities.name"` property comes from the `Name` attribute of the `\<Requirements\>\<Sets\>\<Set\>` element.
 - The value of the `"capabilities.minVersion"` come from the `MinVersion` attribute, if there is one, of the `<Requirements><Sets><Set>` element. Otherwise, it comes from the `DefaultMinVersion` attribute of the parent `<Requirements><Sets>` element.
 
 
