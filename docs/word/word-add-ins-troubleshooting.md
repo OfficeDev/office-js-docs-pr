@@ -1,7 +1,7 @@
 ---
 title: Troubleshoot Word add-ins
 description: Learn how to troubleshoot development errors in Word add-ins.
-ms.date: 09/08/2026
+ms.date: 09/29/2026
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
@@ -29,6 +29,12 @@ For more about this problem, see [GitHub issue 4953](https://github.com/OfficeDe
 It's by design that the [Body.insertFileFromBase64](/javascript/api/word/word.body#word-word-body-insertfilefrombase64-member(1)) method excludes any header or footer that was in the source file.
 
 To include any headers or footers from the source file, use [Document.insertFileFromBase64](/javascript/api/word/word.document#word-word-document-insertfilefrombase64-member(1)) instead.
+
+## Tracked changes from insertFileFromBase64 show an Unknown author
+
+In Word on the web, when Track Changes is enabled and an add-in uses [Document.insertFileFromBase64](/javascript/api/word/word.document#word-word-document-insertfilefrombase64-member(1)) to insert or replace content, the resulting tracked changes are attributed to **Unknown** instead of the signed-in user. This limitation doesn't apply to Word on Windows or on Mac.
+
+There isn't an API to assign the signed-in user as the author of these tracked changes. If your workflow requires accurate author attribution, don't use `Document.insertFileFromBase64` in Word on the web. Run the workflow in Word on Windows or on Mac instead. For more information, see [OfficeDev/office-js issue 5472](https://github.com/OfficeDev/office-js/issues/5472).
 
 ## Can't use Mixed to set a property
 

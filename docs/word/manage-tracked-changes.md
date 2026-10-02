@@ -1,7 +1,7 @@
 ---
 title: Work with tracked changes in Word
 description: Build review workflows that inspect, filter, accept, and reject tracked changes in Word documents.
-ms.date: 09/22/2026
+ms.date: 09/29/2026
 ms.localizationpriority: medium
 ms.topic: how-to
 ---
@@ -59,6 +59,9 @@ Each [Word.TrackedChange](/javascript/api/word/word.trackedchange) object provid
 | `date` | The date and time when the change was created. |
 | `text` | The text associated with the change. |
 | `type` | The change type: `Added`, `Deleted`, or `Formatted` |
+
+> [!IMPORTANT]
+> In Word on the web, tracked changes created when an add-in uses [Document.insertFileFromBase64](/javascript/api/word/word.document#word-word-document-insertfilefrombase64-member(1)) are attributed to **Unknown** instead of the signed-in user. This limitation doesn't apply to Word on Windows or on Mac. If your workflow depends on author metadata, don't use this method in Word on the web. For more information, see [Troubleshoot Word add-ins](word-add-ins-troubleshooting.md#tracked-changes-from-insertfilefrombase64-show-an-unknown-author).
 
 Call `getRange()` on a tracked change to get its location in the document. This information is useful when your review rules depend on where a revision appears, such as inside a contract clause or a designated content control.
 
