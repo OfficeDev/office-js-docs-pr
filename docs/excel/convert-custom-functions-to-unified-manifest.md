@@ -83,19 +83,9 @@ At the beginning of the generated unified manifest, update `"$schema"` and `"man
 
 Don't change the separate `"version"` property, such as `"version": "1.0.0"`, unless you're also releasing a new version of the add-in.
 
-## 4. Configure the extension requirements and permissions
+## 4. Verify permissions
 
-Open the generated unified manifest and find the object in the `"extensions"` array that has `"workbook"` in its `"requirements.scopes"` array.
-
-```json
-"requirements": {
-  "scopes": [
-    "workbook"
-  ]
-}
-```
-
-At the root of the manifest, verify that the resource-specific permissions include `Document.ReadWrite.User`. This permission is the unified manifest equivalent of `<Permissions>ReadWriteDocument</Permissions>`.
+At the root of the manifest, verify that the resource-specific permissions include `Document.ReadWrite.User`. This is necessary for custom functions. This permission is the unified manifest equivalent of `<Permissions>ReadWriteDocument</Permissions>`.
 
 ```json
 "authorization": {
@@ -230,8 +220,8 @@ Use [Manage both a unified manifest and an add-in only manifest version of your 
 
 | Symptom | Check |
 | --- | --- |
-| Cells show `#NAME?` | Verify the namespace, metadata URL, metadata IDs, and `CustomFunctions.associate` calls. |
-| Cells remain `#BUSY!` | Verify `Document.ReadWrite.User`, promise completion, and network requests. |
+| Cells show `#NAME?` | Verify the namespace, metadata URL, metadata IDs, and `CustomFunctions.associate` calls. Note that the sideloading process may take several minutes to complete the registration of custom functions. |
+| Cells remain `#BUSY!` | Verify `Document.ReadWrite.User`, promise completion, and network requests. Note that the sideloading process may take several minutes to complete the registration of custom functions. |
 | Manifest validation rejects `customFunctions` | Confirm that `"customFunctions"` is inside the applicable object in `"runtimes"`, not directly in the extension object. |
 | Functions work but ribbon commands don't | Confirm that every ribbon `actionId` matches an `id` in the runtime `"actions"` array. |
 | Changes to functions don't appear | Clear the Office cache and confirm that the current metadata and script files are served at the manifest URLs. |
