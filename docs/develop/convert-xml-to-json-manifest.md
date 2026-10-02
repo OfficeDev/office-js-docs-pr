@@ -2,7 +2,7 @@
 title: Convert an add-in to use the unified manifest for Microsoft 365
 description: Learn the various methods for converting an add-in with an add-in only manifest to the unified manifest for Microsoft 365 and sideload the add-in.
 ms.topic: how-to
-ms.date: 09/30/2026
+ms.date: 10/2/2026
 ms.localizationpriority: medium
 ---
 
@@ -164,6 +164,75 @@ Currently, neither of the tools described in the [Conversion tools and options](
 For a complete walkthrough, including XML-to-JSON examples, validation, and testing, see [Convert custom functions to the unified manifest](../excel/convert-custom-functions-to-unified-manifest.md).
 
 Some combinations of Office versions and platforms don't yet support the unified manifest. See [Unified manifest - Client and platform support](unified-manifest-overview.md#client-and-platform-support). Currently, to keep your custom functions available on these Office versions, you must [maintain both your existing add-in with the add-in only manifest and your new add-in](../concepts/duplicate-legacy-metaos-add-ins.md). Include the optional [metadataUrl](/microsoft-365/extensibility/schema/extension-custom-functions#metadataurl-1) property in the `"customFunctions"` object and give it the same value that's used in the resource string referenced by the [Metadata](/javascript/api/manifest/metadata) element of the add-in only manifest. Also keep the metadata file in the unified manifest version of the add-in.
+
+### Special considerations when converting an add-in with event-based activation
+
+Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed [event-based activation](event-based-activation.md) support to the unified manifest. We're working hard to update the tools. In the meantime, you must manually add some JSON to the manifest. Specifically, you must add an [`"autoRunEvents"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array) object as a direct child of the `"extensions"` property, and populate it with data copied from the add-in only manifest. The following is an example. Note the following about this code.
+
+- For each `<LaunchEvent>` element in the add-in only manifest, there is an object in the `"events"` array. 
+- The `"type"` property of each event object gets the value that is in the `Type` attribute of the `<LaunchEvent>` element. But the naming convention is different in the unified manifest. See the tables at [Supported events](event-based-activation.md#supported-events) to find the unified manifest name that maps to the name in your add-in only manifest.
+- The `"actionId"` property of each event object gets the value that is in the `FunctionName` attribute of the `<LaunchEvent>` element.
+
+```json
+"autoRunEvents": [
+   {
+      "events": [
+         {
+            "type": "newMessageComposeCreated",
+            "actionId": "onNewMessageComposeHandler"
+         },
+         {
+            "type": "newAppointmentOrganizerCreated",
+            "actionId": "onNewAppointmentComposeHandler"
+         }
+      ]
+   }
+]
+```
+
+If there is a `SendMode` attribute in the `<LaunchEvent>`, the event object should have an `"options"` property with a `"sendMode"` child property that has the same value as the attribute, except that the property's value should begin with a lower case letter. So, if `SoftBlock` is the value in the add-in only manifest, then `"softBlock"` should be used in the unified manifest. If there is a `HeaderName` attribute in the `<LaunchEvent>`, the event object should have an `"options"` property with a `"headerName"` child property that has the same value as the attribute.
+The following is an example.
+
+```json
+"autoRunEvents": [
+   {
+      "events": [
+         {
+            "type": "newMessageComposeCreated",
+            "actionId": "onNewMessageComposeHandler",
+            "options": {
+               "sendMode": "softBlock",
+               "headerName": "contoso-encrypted"
+            }
+         },
+          ...
+      ]
+   }
+]
+```
+
+
+If the ancestor `<VersionOverrides>` element of the `<LaunchEvent>` element has a `<Requirements>` element, then you should add a `"requirements"` property to the autorun event object. The following is an example. Note the following about this code. 
+
+- The value of the `"capabilities.name"` property comes from the `Name` attribute of the `<Requirements><Sets><Set> element.
+- The value of the `"capabilities.minVersion"` come from the `MinVersion` attribute, if there is one, of the `<Requirements><Sets><Set>` element. Otherwise, it comes from the `DefaultMinVersion` attribute of the parent `<Requirements><Sets>` element.
+
+
+```json
+"autoRunEvents": [
+   {
+      "requirements": {
+          "capabilities": [
+              {
+                  "name": "Mailbox",
+                  "minVersion": "1.10"
+              }
+          ]
+      },
+      "events": [ ...  ]
+   }
+]
+```
 
 ## Sideload the add-in
 
