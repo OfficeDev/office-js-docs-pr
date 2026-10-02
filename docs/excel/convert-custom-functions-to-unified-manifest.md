@@ -92,7 +92,6 @@ Open the generated unified manifest and find the object in the `"extensions"` ar
   "scopes": [
     "workbook"
   ]
-...
 }
 ```
 
