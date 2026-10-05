@@ -169,9 +169,9 @@ Some combinations of Office versions and platforms don't yet support the unified
 
 Currently, neither of the tools described in the [Conversion tools and options](#conversion-tools-and-options) section add the needed [event-based activation](event-based-activation.md) support to the unified manifest. We're working hard to update the tools. In the meantime, you must manually add some JSON to the manifest. Specifically, you must add an [`"autoRunEvents"`](/microsoft-365/extensibility/schema/extension-auto-run-events-array) object as a direct child of the `"extensions"` property, and populate it with data copied from the add-in only manifest. The following is an example. Note the following about this code.
 
-- For each `<LaunchEvent>` element in the add-in only manifest, there is an object in the `"events"` array. 
-- The `"type"` property of each event object gets the value that is in the `Type` attribute of the `<LaunchEvent>` element. But the naming convention is different in the unified manifest. See the tables at [Supported events](event-based-activation.md#supported-events) to find the unified manifest name that maps to the name in your add-in only manifest.
-- The `"actionId"` property of each event object gets the value that is in the `FunctionName` attribute of the `<LaunchEvent>` element.
+- For each `<LaunchEvent>` element in the add-in only manifest, there's an object in the `"events"` array. 
+- The `"type"` property of each event object gets the value that's in the `Type` attribute of the `<LaunchEvent>` element. But the naming convention is different in the unified manifest. See the tables at [Supported events](event-based-activation.md#supported-events) to find the unified manifest name that maps to the name in your add-in only manifest.
+- The `"actionId"` property of each event object gets the value that's in the `FunctionName` attribute of the `<LaunchEvent>` element.
 
 ```json
 "autoRunEvents": [
@@ -190,7 +190,7 @@ Currently, neither of the tools described in the [Conversion tools and options](
 ]
 ```
 
-If there is a `SendMode` attribute in the `<LaunchEvent>`, the event object should have an `"options"` property with a `"sendMode"` child property that has the same value as the attribute, except that the property's value should begin with a lower case letter. So, if `SoftBlock` is the value in the add-in only manifest, then `"softBlock"` should be used in the unified manifest. If there is a `HeaderName` attribute in the `<LaunchEvent>`, the event object should have an `"options"` property with a `"headerName"` child property that has the same value as the attribute.
+If there's a `SendMode` attribute in the `<LaunchEvent>`, the event object should have an `"options"` property with a `"sendMode"` child property that has the same value as the attribute, except that the property's value should begin with a lower case letter. So, if `SoftBlock` is the value in the add-in only manifest, then `"softBlock"` should be used in the unified manifest. If there's a `HeaderName` attribute in the `<LaunchEvent>`, the event object should have an `"options"` property with a `"headerName"` child property that has the same value as the attribute.
 The following is an example.
 
 ```json
