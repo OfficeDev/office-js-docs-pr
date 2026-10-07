@@ -7,12 +7,15 @@ ms.localizationpriority: medium
 
 # Contextual Outlook add-ins
 
+> [!IMPORTANT]
+> This article is aimed at developers troubleshooting existing contextual Outlook add-ins. We recommend that you not create new contextual Outlook add-ins.
+>
+> - Entity-based contextual Outlook add-ins are now retired.  
+> - Scenarios that previously required regular expression rules in contextual add-ins can now be implemented with Event-based Outlook add-ins, which are activated automatically in response to events such as creating a new message or meeting. JavaScript has built-in support for regular expressions, and you can also reference JavaScript libraries that provide advanced regular expression functionality. Unlike contextual add-ins, Event-based add-ins can work in compose contexts as well as read mode.
+
 Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a mail item without leaving the item itself. For example, a contextual add-in can choose a string in the body of a mail item that opens a meeting suggestion add-in.
 
 You can specify regular expression rules to activate a contextual add-in when a match is found in specific fields of the message. Contextual add-ins only activate in read mode. Outlook doesn't activate contextual add-ins when the user is composing an item.
-
-> [!IMPORTANT]
-> Entity-based contextual Outlook add-ins are now retired. As an alternative solution, implement regular expression rules in your contextual add-in.
 
 ## Configure the manifest
 
