@@ -1,7 +1,7 @@
 ﻿---
 title: Contextual Outlook add-ins
 description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
-ms.date: 09/01/2026
+ms.date: 10/08/2026
 ms.localizationpriority: medium
 ---
 
