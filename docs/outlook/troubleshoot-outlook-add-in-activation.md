@@ -1,16 +1,16 @@
 ---
 title: Troubleshoot Outlook contextual add-in activation
 description: Possible reasons your contextual Outlook add-in doesn't activate as you expect.
-ms.date: 07/14/2025
+ms.date: 10/08/2026
 ms.topic: troubleshooting
 ms.localizationpriority: medium
 ---
 
 # Troubleshoot Outlook contextual add-in activation
 
-Outlook contextual add-in activation is based on the activation rules in an add-in only manifest for the add-in. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
-
 [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
+
+Outlook contextual add-in activation is based on the activation rules in an add-in only manifest for the add-in. When conditions for the currently selected item satisfy the activation rules for the add-in, the application activates and displays the add-in button in the Outlook UI (add-in selection pane for compose add-ins, add-in bar for read add-ins). However, if your add-in doesn't activate as you expect, you should look into the following areas for possible reasons.
 
 ## Is user mailbox on a version of Exchange Server that is at least Exchange 2016?
 

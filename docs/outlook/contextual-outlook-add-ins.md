@@ -1,18 +1,17 @@
 ﻿---
 title: Contextual Outlook add-ins
 description: Initiate tasks related to a message without leaving the message itself to result in an easier and richer user experience.
-ms.date: 09/01/2026
+ms.date: 10/08/2026
 ms.localizationpriority: medium
 ---
 
 # Contextual Outlook add-ins
 
+[!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
+
 Contextual add-ins are Outlook add-ins that activate based on text in a message or appointment. By using contextual add-ins, a user can initiate tasks related to a mail item without leaving the item itself. For example, a contextual add-in can choose a string in the body of a mail item that opens a meeting suggestion add-in.
 
 You can specify regular expression rules to activate a contextual add-in when a match is found in specific fields of the message. Contextual add-ins only activate in read mode. Outlook doesn't activate contextual add-ins when the user is composing an item.
-
-> [!IMPORTANT]
-> Entity-based contextual Outlook add-ins are now retired. As an alternative solution, implement regular expression rules in your contextual add-in.
 
 ## Configure the manifest
 

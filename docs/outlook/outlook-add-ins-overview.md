@@ -1,7 +1,7 @@
 ---
 title: Outlook add-ins overview
 description: Outlook add-ins extend or customize the Outlook UI and are developed by Microsoft and partners using our web-based platform.
-ms.date: 09/29/2026
+ms.date: 10/08/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -79,10 +79,6 @@ Add-ins can integrate with Outlook in the following ways.
 - Add-ins can perform tasks when a specific event occurs. For more information, see [Activate add-ins with events](../develop/event-based-activation.md).
 
 - Add-ins can be invoked from an [actionable message](/outlook/actionable-messages/invoke-add-in).
-
-- Add-ins can link off regular expression matches in messages and appointments. For more information, see [Contextual Outlook add-ins](contextual-outlook-add-ins.md).
-
-    [!INCLUDE [outlook-contextual-add-ins-retirement](../includes/outlook-contextual-add-ins-retirement.md)]
 
 ### Add-in activation limitations
 
