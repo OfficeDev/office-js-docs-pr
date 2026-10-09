@@ -1,6 +1,6 @@
 ---
 title: Create a Copilot skill for Excel that uses custom functions (preview)
-description: Learn how to create an Excel Copilot skill that inserts formulas that call custom functions.
+description: Learn how to create a Copilot skill for Excel that inserts formulas that call custom functions.
 ms.date: 10/09/2026
 ms.topic: tutorial
 ms.custom: scenarios:getting-started
