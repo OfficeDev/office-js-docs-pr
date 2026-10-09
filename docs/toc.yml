@@ -1015,9 +1015,6 @@
     - name: API reference
       href: reference/word-api-reference.md
       displayName: Word
-    - name: Dictionary task pane add-ins
-      href: word/dictionary-task-pane-add-ins.md
-      displayName: Word
     - name: Get the whole document from an add-in
       href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
       displayName: Word
