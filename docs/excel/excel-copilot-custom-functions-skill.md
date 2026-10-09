@@ -1251,7 +1251,7 @@ Add the required package icons, **color.png** and **outline.png**, in the **appP
 1. Invoke the skill again. Verify that the skill doesn't modify the invalid table. If no other table qualifies, Copilot should report the exact error from the script.
 1. Restore the quote table, and then in the **Settings** table, enter an invalid currency code or a nonnumber as the warning threshold.
 1. Invoke the skill again. Verify that it stops without modifying the quote table and reports the settings error.
-1. After each test session, uninstall the skill with the following steps.
+1. If an add-in is not fully uninstalled it can leave artifacts on your computer that can cause problems if you work with the add-in again in the future, or work with an add-in that has identical labels or names, such as "Open Task Pane" or "Contoso". So, after each test session, uninstall the skill with the following steps.
 
     1. Close Excel.
     1. Open Teams and sign in with the same account that you used to install the skill.
