@@ -478,6 +478,9 @@
     - name: Create a Copilot skill for Excel
       href: excel/excel-copilot-skill.md
       displayName: Excel
+    - name: Create a Copilot skill for Excel that uses custom functions
+      href: excel/excel-copilot-custom-functions-skill.md
+      displayName: Excel
   - name: Build your first Excel add-in
     items:
     - name: Task pane
@@ -1014,9 +1017,6 @@
       displayName: Word
     - name: API reference
       href: reference/word-api-reference.md
-      displayName: Word
-    - name: Dictionary task pane add-ins
-      href: word/dictionary-task-pane-add-ins.md
       displayName: Word
     - name: Get the whole document from an add-in
       href: develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md
