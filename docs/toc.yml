@@ -481,6 +481,20 @@
     - name: Create a Copilot skill for Excel that uses custom functions
       href: excel/excel-copilot-custom-functions-skill.md
       displayName: Excel
+  - name: Create Office JavaScript Library actions for Excel (preview)
+    items: 
+    - name: Overview of Office JavaScript Library actions in Copilot
+      href: design/office-js-action-overview.md
+      displayName: Excel
+    - name: Office JavaScript Library action quickstart
+      href: quickstarts/office-js-action-quickstart.md
+      displayName: Excel
+    - name: Add an Office JavaScript Library action to Copilot
+      href: develop/office-js-action.md
+      displayName: Excel
+    - name: Action file schema 1.0 for Office
+      href: develop/action-file-schema-1.0.md
+      displayName: Excel
   - name: Build your first Excel add-in
     items:
     - name: Task pane
