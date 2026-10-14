@@ -101,4 +101,4 @@ See [Troubleshooting Office.js actions in Copilot](../design/office-js-action-ov
 ## See also
 
 - [Combine Copilot with Office.js actions](../design/office-js-action-overview.md)
-- [Action file schema 1.0 for Office.js actions](action-file-schema-1.0.md)
+- [Action file schema 1.0 for Office.js actions](../develop/action-file-schema-1.0.md)

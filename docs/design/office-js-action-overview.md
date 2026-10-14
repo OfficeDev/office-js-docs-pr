@@ -65,10 +65,10 @@ In the manifest, create an action object that identifies the JavaScript function
 - The "page" property specifies the URL of the web page that contains an embedded `<script>` tag that, in turn, specifies the URL of the JavaScript file where the function is defined. That JavaScript file calls the [Office.actions.associate](/javascript/api/office/office.actions#office-office-actions-associate-member(1)) method to map the function to an action ID.
 - The [`"actions.id"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#id) property in the manifest is the same action ID that's passed to the call of `associate`.
 - The [`"actions.type"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#type) property is set to `"executeDataFunction"`, which is the type that can accept parameters and can be invoked by Copilot.
-- The [`"actions.actionFile"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#actionFile) property is the path, relative to the manifest, to the action file that describes this action. The action file must conform to the [action file schema](action-file-schema-1.0.md).
+- The [`"actions.actionFile"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#actionFile) property is the path, relative to the manifest, to the action file that describes this action. The action file must conform to the [action file schema](../develop/action-file-schema-1.0.md).
 
    > [!NOTE]
-   > During the preview period for Office.js actions, you must use the [preview version of the unified manifest for Microsoft 365](https://learn.microsoft.com/en-us/microsoft-365/extensibility/schema/?view=m365-app-prev).
+   > During the preview period for Office.js actions, you must use the [preview version of the unified manifest for Microsoft 365](/microsoft-365/extensibility/schema/?view=m365-app-prev).
 
 ```json
 "extensions": [
@@ -129,7 +129,7 @@ An action file describes a single Office.js action: its ID, a description of wha
 }
 ```
 
-The reference documentation for action files is at [Action file schema 1.0 for Office.js actions](action-file-schema-1.0.md).
+The reference documentation for action files is at [Action file schema 1.0 for Office.js actions](../develop/action-file-schema-1.0.md).
 
 ## Create the JavaScript functions
 
