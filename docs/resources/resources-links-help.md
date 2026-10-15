@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins additional resources
 description: Useful resources about developing Office Add-ins.
-ms.date: 10/16/2025
+ms.date: 10/15/2026
 ms.localizationpriority: medium
 ---
 
@@ -21,7 +21,7 @@ Use **Microsoft 365 Admin Center** or **Azure portal**  for any **business-criti
 
 ## Developer community help
 
-Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to connect with other developers to ideate, get clarifications, and submit queries. You can also get latest updates in our [Microsoft Office Add-ins community call](../overview/office-add-ins-community-call.md).
+Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to connect with other developers to ideate, get clarifications, and submit queries. For Office Add-ins updates and development practices, join the [Copilot, Microsoft 365, and Power Platform call](https://pnp.github.io/#events).
 
 ### Developer community forums
 
