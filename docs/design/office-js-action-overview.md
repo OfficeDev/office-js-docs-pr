@@ -6,7 +6,7 @@ ms.topic: overview
 ms.localizationpriority: medium
 ---
 
-# Combine Copilot with Office JavaScript Libraray actions (preview)
+# Combine Copilot with Office JavaScript Library actions (preview)
 
 Office JavaScript Library (Office.js) *actions* are JavaScript functions that are invoked from Copilot in Office and call [Office.js APIs](../develop/understand-the-javascript-api-for-office.md) to read and write to an open Office document. Enabling Copilot to invoke Office.js actions provides two benefits:
 
