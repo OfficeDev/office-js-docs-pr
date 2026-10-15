@@ -68,7 +68,7 @@ In the manifest, create an action object that identifies the JavaScript function
 - The [`"actions.actionFile"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item#actionFile) property is the path, relative to the manifest, to the action file that describes this action. The action file must conform to the [action file schema](../develop/action-file-schema-1.0.md).
 
    > [!NOTE]
-   > During the preview period for Office.js actions, you must use the [preview version of the unified manifest for Microsoft 365](/microsoft-365/extensibility/schema/?view=m365-app-prev).
+   > During the preview period for Office.js actions, you must use the [preview version of the unified manifest for Microsoft 365](/microsoft-365/extensibility/schema/?view=m365-app-prev&preserve-view=true).
 
 ```json
 "extensions": [
