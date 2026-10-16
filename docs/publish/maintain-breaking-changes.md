@@ -2,7 +2,7 @@
 title: Update and maintain your Office Add-in
 description: Understand Microsoft's commitments to compatibility, and learn how to update your add-in, handle breaking changes in Office.js, and version your manifest.
 ms.topic: best-practice
-ms.date: 05/07/2026
+ms.date: 10/15/2026
 ms.localizationpriority: medium
 ---
 
@@ -87,8 +87,6 @@ This guidance also applies to copies of samples taken from the [Office Add-in co
 ## Community engagement
 
 As updates are proposed for the Microsoft 365 Developer Platform, we will be listening for feedback. Please report concerns, potential consequences, or other questions to the channels listed in [Office Add-ins additional resources](../resources/resources-links-help.md).
-
-Stay informed of new features and evolving best practices through our monthly [Office Add-ins Community Call](../overview/office-add-ins-community-call.md).
 
 ## See also
 
