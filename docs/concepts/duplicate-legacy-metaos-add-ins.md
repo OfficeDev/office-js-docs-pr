@@ -2,7 +2,7 @@
 title: Manage both a unified manifest and an add-in only manifest version of your Office Add-in
 description: Learn when and how to maintain versions of your add-in for each type of manifest.
 ms.topic: best-practice
-ms.date: 05/10/2026
+ms.date: 10/14/2026
 ms.localizationpriority: medium
 ---
 
@@ -92,10 +92,7 @@ However, there is an exception: if the user's Microsoft 365 administrator deploy
 
 If you have users on older or perpetual license versions for which this exception doesn't apply, then you will need to maintain both versions of the add-in. When all of your users are working with Office versions that support the unified manifest, you can remove the version with the add-in only manifest from deployment.
 
-There are also some scenarios where you might want to maintain both versions of the add-in for an extended period. For example, there are two features of add-ins that aren't supported with the unified manifest because they're little used or deprecated. You may choose to maintain a version of your add-in that uses these features. The following are the features that aren't supported in the unified manifest.
-
-- [Outlook modules](../outlook/extension-module-outlook-add-ins.md) aren't supported. But you can provide a nearly identical experience using the unified manifest by [including a Teams Tab with your add-in in a single app](/microsoftteams/platform/m365-apps/combine-office-add-in-and-teams-app).
-- [Outlook contextual add-ins](../outlook/contextual-outlook-add-ins.md) (also known as "activation rules") aren't supported. But you can provide similar experiences using the unified manifest and [Event-based activation](../develop/event-based-activation.md).
+There are also some scenarios where you might want to maintain both versions of the add-in for an extended period. For example, there are a few features that are not yet supported in the unified manifest. For more information, see [Client and platform support](../develop/unified-manifest-overview.md#client-and-platform-support).
 
 The critical requirement for making two versions available is to be sure that the two of them appear distinct in the Office UI; the [Integrated apps portal](../publish/publish.md), and where applicable, the UI of [Microsoft Marketplace](https://marketplace.microsoft.com).
 

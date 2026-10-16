@@ -875,8 +875,6 @@
         href: outlook/contextual-outlook-add-ins.md
       - name: Troubleshoot contextual add-in activation
         href: outlook/troubleshoot-outlook-add-in-activation.md
-    - name: Module extension add-ins
-      href: outlook/extension-module-outlook-add-ins.md
     - name: On-send add-ins
       href: outlook/outlook-on-send-addins.md
     - name: External API integration
