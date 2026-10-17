@@ -1,57 +1,20 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 09/15/2026
+ms.date: 10/19/2026
 ms.localizationpriority: high
 ---
 
 # Office Add-ins known issues
 
-_Last updated September 15, 2026_
+_Last updated October 19, 2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
-## ISSUE: Office Add-ins deployed as Optional or Available may be missing
 
-Some customers may experience issues where centrally deployed Office Add-ins deployed as Optional or Available are missing across Office clients. In affected cases, previously installed add-ins may no longer appear in the ribbon.
-
-### STATUS
-
-Investigating.
-
-### DETAILS
-
-Impacted add-ins:
-
-- CodeTwo
-- Letsignit
-- Other organization-managed Office Add-ins centrally deployed as Optional or Available
-
-Affected platforms and clients:
-
-- Excel desktop
-- Excel on the web
-- Additional Office clients in some environments
-
-### USER IMPACT
-
-Users might experience one or more of the following problems:
-
-- Add-ins disappearing from the ribbon.
-- Failure to load organization-deployed add-ins.
-
-### WORKAROUND
-
-IT Admins should change the deployment type of the affected add-ins to Fixed (Default).
-
-If the problem persists, contact Microsoft Support and include diagnostic information such as session IDs, correlation IDs, logs, or network traces where available.
-
-### START DATE
-
-Date reported: July 28th, 2026
 
 <!-- ----------------------------------------For readability, copy and paste this line between each issue. -------------------------------------------------------- -->
 ***
@@ -277,6 +240,40 @@ Options:
 1. Roll back Office from version 2508 to 2507.
 
 <!-- --------RESOLVED SECTION: Move resolved issues to the top of this section. Delete after 90 days.-------- -->
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## ISSUE: Office Add-ins deployed as Optional or Available may be missing
+
+Some customers may experience issues where centrally deployed Office Add-ins deployed as Optional or Available are missing across Office clients. In affected cases, previously installed add-ins may no longer appear in the ribbon.
+
+### STATUS
+
+Resolved.
+
+### DETAILS
+
+Impacted add-ins:
+
+- CodeTwo
+- Letsignit
+- Other organization-managed Office Add-ins centrally deployed as Optional or Available
+
+### USER IMPACT
+
+Users might experience one or more of the following problems:
+
+- Add-ins disappearing from the ribbon.
+- Failure to load organization-deployed add-ins.
+
+### START DATE
+
+Date reported: July 28th, 2026
+
+### RESOLVED DATE
+
+Date fixed: September 28, 2026
+
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
@@ -324,29 +321,6 @@ Admins can't deploy Office Add-ins through central deployment when using PIM-ena
 
 Don't use PIM-enabled roles if this issue blocks you.
 
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. ADD "RESOLVED:" to H2---------------------------------------------------->
-***
-
-## RESOLVED: OUTLOOK ISSUE: Classic Outlook on Windows crashes when using signature add-ins
-
-Some users reported that classic Outlook on Windows crashes when using signature add-ins in the following scenarios:
-
-- Sending mail items through applications other than Outlook. For example, using the **Send to** > **Mail recipient** option from a file in File Explorer.
-- Editing an existing calendar item where the user is an organizer.
-
-Affected client version: Classic Outlook on Windows Version 2606 (Build 20131.20090)
-
-#### STATUS
-
-The fix is included in Version 2606 (Build 20131.20142), Version 2607 (Build 20228.20056), and later. These versions roll out gradually and might not yet be available to all users. Users can update manually once the new version is available, or get the update automatically in a few days.
-
-#### START DATE
-
-Thursday, July 2, 2026
-
-### RESOLVED DATE
-
-Tuesday, July 14, 2026
 
 <!------------LEAVE SEE ALSO---------------------------------------------------->
 ***
