@@ -238,7 +238,7 @@ Options:
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
-## ISSUE: Office Add-ins deployed as Optional or Available may be missing
+## RESOLVED ISSUE: Office Add-ins deployed as Optional or Available may be missing
 
 Some customers may experience issues where centrally deployed Office Add-ins deployed as Optional or Available are missing across Office clients. In affected cases, previously installed add-ins may no longer appear in the ribbon.
 
