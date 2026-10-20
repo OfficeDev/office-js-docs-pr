@@ -1,7 +1,7 @@
 ﻿---
 title: Referencing the Office JavaScript API library
 description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
-ms.date: 09/23/2026
+ms.date: 10/20/2026
 ms.localizationpriority: medium
 ---
 
@@ -47,6 +47,28 @@ Office.js replaces the default [Window.history](https://developer.mozilla.org/do
 ```
 
 Thank you to [@stepper and the Stack Overflow community](https://stackoverflow.com/questions/42642863/office-js-nullifies-browser-history-functions-breaking-history-usage) for suggesting and verifying this workaround.
+
+### Workaround for Next.js
+
+The previous workaround doesn't work in Next.js, because Next.js manages the page `<head>` and its client-side router depends on the history methods. Instead, prevent Office.js from overwriting the methods. Add the following script so that it runs before Office.js loads. For example, in a project that uses the App Router, add it to the `<head>` in `app/layout.tsx` before the Office.js script.
+
+```jsx
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      ["replaceState", "pushState"].forEach((methodName) => {
+        const browserMethod = window.history[methodName];
+        Object.defineProperty(window.history, methodName, {
+          configurable: true,
+          get: () => browserMethod,
+          set: () => {},
+          });
+      });
+    `,
+  }}
+/>
+<script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js" />
+```
 
 ## API versioning and backward compatibility
 
