@@ -57,12 +57,16 @@ The previous workaround doesn't work in Next.js, because Next.js manages the pag
   dangerouslySetInnerHTML={{
     __html: `
       ["replaceState", "pushState"].forEach((methodName) => {
-        const browserMethod = window.history[methodName];
+        let browserMethod = window.history[methodName];
         Object.defineProperty(window.history, methodName, {
           configurable: true,
           get: () => browserMethod,
-          set: () => {},
-          });
+          set: (value) => {
+            if (typeof value === "function") {
+              browserMethod = value;
+            }
+          },
+        });
       });
     `,
   }}
