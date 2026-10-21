@@ -28,12 +28,13 @@ Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to con
 > [!NOTE]
 > The Office Add-ins community call merged with the weekly Copilot, Microsoft 365, and Power Platform calls. Office Add-ins updates and demos are now part of these broader community calls. Join the following calls to learn about Office Add-ins and connecting with Microsoft and the developer community.
 
-The two weekly calls cover Copilot, SharePoint, Power Apps, Office Add-ins, and more, with different speakers and content.
+The two weekly calls cover Copilot, SharePoint, Power Apps, Office Add-ins, and more, with different speakers and content. For a focus on extending Copilot, join the monthly Copilot Extensibility call presented by Microsoft.
 
 | Call | What to expect | Recurring calendar invite |
 |:-----|:---------------|:--------------------------|
 | **Copilot, Microsoft 365, and Power Platform** | Weekly product updates and demos from Microsoft speakers. | [Add the Microsoft speakers call to your calendar](https://aka.ms/community/ms-speakers-call-invite). |
 | **Copilot, Microsoft 365, and Power Platform community** | Weekly demos and development practices shared by community speakers. | [Add the community speakers call to your calendar](https://aka.ms/community/m365-powerplat-call-invite). |
+| **Copilot Extensibility** | Monthly call about extending Copilot, presented by Microsoft on the second Wednesday of each month. | [Add the Copilot Extensibility call to your calendar](https://aka.ms/community/CopilotExtensibility-call-invite). |
 
 Find upcoming agendas on the [community Meetup page](https://aka.ms/community/meetup). For the full list of community calls and recurring invites, see [Microsoft 365 and Power Platform community calls](https://aka.ms/community/calls).
 
