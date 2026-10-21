@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins additional resources
 description: Useful resources about developing Office Add-ins.
-ms.date: 10/15/2026
+ms.date: 10/21/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins additional resources
 
-These resources provide additional information and support for developing Office Add-ins.
+These resources provide more information and support for developing Office Add-ins.
 
 ## Product support and service issues
 
@@ -21,15 +21,29 @@ Use **Microsoft 365 Admin Center** or **Azure portal**  for any **business-criti
 
 ## Developer community help
 
-Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to connect with other developers to ideate, get clarifications, and submit queries. For Office Add-ins updates and development practices, join the [Copilot, Microsoft 365, and Power Platform call](https://pnp.github.io/#events).
+Our community of developers use Stack Overflow, GitHub, and Microsoft Q&A to connect with other developers to brainstorm, get clarifications, and submit queries.
+
+### Community calls
+
+> [!NOTE]
+> The Office Add-ins community call merged with the weekly Copilot, Microsoft 365, and Power Platform calls. Office Add-ins updates and demos are now part of these broader community calls. Join the following calls to learn about Office Add-ins and connecting with Microsoft and the developer community.
+
+The two weekly calls cover Copilot, SharePoint, Power Apps, Office Add-ins, and more, with different speakers and content.
+
+| Call | What to expect | Recurring calendar invite |
+|:-----|:---------------|:--------------------------|
+| **Copilot, Microsoft 365, and Power Platform** | Weekly product updates and demos from Microsoft speakers. | [Add the Microsoft speakers call to your calendar](https://aka.ms/community/ms-speakers-call-invite). |
+| **Copilot, Microsoft 365, and Power Platform community** | Weekly demos and development practices shared by community speakers. | [Add the community speakers call to your calendar](https://aka.ms/community/m365-powerplat-call-invite). |
+
+Find upcoming agendas on the [community Meetup page](https://aka.ms/community/meetup). For the full list of community calls and recurring invites, see [Microsoft 365 and Power Platform community calls](https://aka.ms/community/calls).
 
 ### Developer community forums
 
-Post your questions and help other community members by sharing and responding to Office Add-in development questions. 
+Post your questions and help other community members by sharing and responding to Office Add-in development questions.
 
 | Developer need | Contact |
 |:---------------------|:---------------|
-| **Office Add-in / Office JavaScript API questions** | <ul> <li> Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Please note that Stack Overflow has guidelines such as requiring a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic; new users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details. </li> <li> You can also post questions on [Microsoft Q&A](/answers/) using one of the following tags.<ul> <li>[Microsoft 365 and Office | Development | Office JavaScript API](/answers/tags/255/m365-office-development-routing-javascript-api)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 Publishing](/answers/tags/367/m365-office-development-routing-m365-publishing)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 App Publishing](/answers/tags/665/m365-office-development-routing-m365-app-publishing)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 Developer Program](/answers/tags/666/m365-office-development-routing-m365-developer-program)</li> <li>[Microsoft 365 and Office | Development | Other](/answers/tags/321/m365-office-development-routing-development-other)</li> </ul> </li></ul> |
+| **Office Add-in / Office JavaScript API questions** | <ul> <li> Post API questions to [Stack Overflow](https://stackoverflow.com/questions/tagged/office-js) using the `office-js` tag, and also include the `outlook-web-addins` tag if your question relates to Outlook add-ins. Stack Overflow requires a descriptive title, a complete and concise problem statement, and sufficient details to reproduce your issue. Feature requests or overly broad questions are off-topic. New users should visit the [Stack Overflow Help Center](https://stackoverflow.com/help/how-to-ask) for more details. </li> <li> You can also post questions on [Microsoft Q&A](/answers/) using one of the following tags.<ul> <li>[Microsoft 365 and Office | Development | Office JavaScript API](/answers/tags/255/m365-office-development-routing-javascript-api)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 Publishing](/answers/tags/367/m365-office-development-routing-m365-publishing)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 App Publishing](/answers/tags/665/m365-office-development-routing-m365-app-publishing)</li> <li>[Microsoft 365 and Office | Development | Microsoft 365 Developer Program](/answers/tags/666/m365-office-development-routing-m365-developer-program)</li> <li>[Microsoft 365 and Office | Development | Other](/answers/tags/321/m365-office-development-routing-development-other)</li> </ul> </li></ul> |
 | **Documentation gaps** | If the documentation is missing something that would help you understand how to create add-ins, please submit an issue to the [Office Add-ins documentation GitHub repository](https://github.com/officedev/office-js-docs-pr/issues)|
 
 ### Report issues
@@ -44,7 +58,7 @@ Submit issues and ask general questions related to add-ins, documentation, and s
 
 ### Documentation feedback
 
-Submit documentation feedback or updates using the community help channels.
+Submit documentation feedback or updates by using the community help channels.
 
 | Feedback type | Contact |
 |:--------------------------|:--------------------------|
@@ -58,7 +72,7 @@ Suggest a feature or vote up existing feature requests.
 | Support need | Contact |
 |:----------------------|:------------|
 |**Office Add-ins or Office JavaScript API feature requests**| To submit a feature request for the Office JavaScript API, please post your idea to the [Microsoft 365 Developer Platform Tech Community](https://aka.ms/m365dev-suggestions).|
-| **General questions** | Send general questions about the Office Add-ins platform to [Office Add-ins Community Help](mailto:officeaddinsdev@microsoft.com). We encourage posting questions on the channels mentioned here and using email only if no other mode of communication is applicable. |
+| **General questions** | Send general questions about the Office Add-ins platform to [Office Add-ins Community Help](mailto:officeaddinsdev@microsoft.com). We encourage posting questions on the channels mentioned in this article and using email only if no other mode of communication is applicable. |
 
 ## External learning resources
 
