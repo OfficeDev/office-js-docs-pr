@@ -1,13 +1,13 @@
 ---
 title: Work with events using the Word JavaScript API
 description: A list of events for Word JavaScript objects. This includes information on using event handlers and the associated patterns.
-ms.date: 08/05/2025
+ms.date: 10/21/2026
 ms.localizationpriority: medium
 ---
 
 # Work with events using the Word JavaScript API
 
-This article introduces key concepts for working with events in Word using the JavaScript API. You'll find practical code samples for registering, handling, and removing event handlers, along with explanations of event life cycles and coauthoring scenarios. Explore the event tables to discover which triggers and objects are supported.
+This article introduces key concepts for working with events in Word using the JavaScript API. You find practical code samples for registering, handling, and removing event handlers, along with explanations of event life cycles and coauthoring scenarios. Explore the event tables to discover which triggers and objects are supported.
 
 ## Events in Word
 
@@ -47,20 +47,20 @@ When certain changes occur in a Word document, event notifications fire. The Wor
 
 Events within a Word document can be triggered by:
 
-- User interaction via the Word user interface (UI) that changes the document.
-- Office Add-in (JavaScript) code that changes the document.
-- VBA add-in (macro) code that changes the document.
-- A coauthor who remotely changes the document using the Word UI or add-in code. For more information, see [Events and coauthoring](#events-and-coauthoring).
+- Interacting with the Word user interface (UI) in a way that changes the document.
+- Running Office Add-in (JavaScript) code that changes the document.
+- Running VBA add-in (macro) code that changes the document.
+- Coauthoring remotely and changing the document by using the Word UI or add-in code. For more information, see [Events and coauthoring](#events-and-coauthoring).
 
-Any change that complies with default behavior of Word will trigger the corresponding events in a document.
+Any change that follows the default behavior of Word triggers the corresponding events in a document.
 
 ## Life cycle of an event handler
 
-An event handler is created when an add-in registers the event handler. It's destroyed when the add-in deregisters the event handler or when the add-in is refreshed, reloaded, or closed. Event handlers don't persist as part of the Word file, or across sessions with Word on the web.
+An add-in creates an event handler when it registers the event handler. The event handler is destroyed when the add-in deregisters the event handler or when the add-in is refreshed, reloaded, or closed. Event handlers don't persist as part of the Word file, or across sessions with Word on the web.
 
 ## Events and coauthoring
 
-With coauthoring, multiple people can work together and edit the same Word document simultaneously. For events that can be triggered by a coauthor, such as `onParagraphChanged`, the corresponding **Event** object will contain a **source** property that indicates whether the event was triggered locally by the current user (`event.source == Local`) or was triggered by the remote coauthor (`event.source == Remote`).
+With coauthoring, multiple people can work together and edit the same Word document simultaneously. For events that a coauthor can trigger, such as `onParagraphChanged`, the corresponding **Event** object contains a **source** property that indicates whether the current user triggered the event locally (`event.source == Local`) or the remote coauthor triggered the event (`event.source == Remote`).
 
 Events that use the following data objects are triggered during coauthoring.
 
@@ -102,7 +102,7 @@ async function handleChange(event) {
 
 ## Remove an event handler
 
-The following code sample registers an event handler for the `onParagraphChanged` event in the document and defines the `handleChange` function that will run when the event occurs. It also defines the `deregisterEventHandler()` function that can subsequently be called to remove that event handler. Note that the `RequestContext` used to create the event handler is needed to remove it.
+The following code sample registers an event handler for the `onParagraphChanged` event in the document and defines the `handleChange` function that runs when the event occurs. It also defines the `deregisterEventHandler()` function that you can call later to remove that event handler. You need the `RequestContext` used to create the event handler to remove it.
 
 ```js
 let eventContext;
@@ -181,29 +181,107 @@ await Word.run(async (context) => {
 });
 ```
 
-The following code sample shows how to register comment event handlers on the document's body object and includes a `body.track()` call.
+The following code sample registers all five preview comment event handlers on the document's body and removes them when they're no longer needed. It retains one tracked `Word.Body` and the registration handles for cleanup. Call `registerCommentEventHandlers()` to register the handlers, then call `deregisterCommentEventHandlers()` to remove them.
+
+For these body comment events, call `body.track()` and then `await context.sync()` **before** adding the handlers. This synchronization resolves the body's host-assigned reference ID, which Word on the web uses to route comment events. Keep the second synchronization after adding the handlers to complete registration.
+
+The example prevents duplicate registrations and overlapping registration and removal calls. Cleanup uses the original request context, removes all retained handlers, and untracks the shared body once. Errors are logged to the console. If registration fails, run cleanup before trying to register again.
 
 ```typescript
-let eventContexts = [];
+let commentBody: Word.Body | null = null;
+const commentEventHandlers: OfficeExtension.EventHandlerResult<Word.CommentEventArgs>[] = [];
+let commentEventsBusy = false;
 
-// Registers event handlers.
-await Word.run(async (context) => {
-  const body: Word.Body = context.document.body;
+async function registerCommentEventHandlers() {
+  if (commentEventsBusy || commentBody !== null) {
+    console.warn("Wait for the current operation and remove existing comment handlers before registering again.");
+    return;
+  }
 
-  // Track the body object since you're adding comment events to it.
-  body.track();
-  await context.sync();
+  commentEventsBusy = true;
+  try {
+    await Word.run(async (context) => {
+      const body: Word.Body = context.document.body;
+      commentBody = body;
 
-  eventContexts[0] = body.onCommentAdded.add(onEventHandler);
-  eventContexts[1] = body.onCommentChanged.add(onChangedHandler);
-  eventContexts[2] = body.onCommentDeleted.add(onEventHandler);
-  eventContexts[3] = body.onCommentDeselected.add(onEventHandler);
-  eventContexts[4] = body.onCommentSelected.add(onEventHandler);
-  await context.sync();
+      body.track();
+      // Resolve the tracked body's host reference before subscribing.
+      await context.sync();
 
-  console.log("Event handlers registered.");
-});
+      commentEventHandlers.push(
+        body.onCommentAdded.add(onEventHandler),
+        body.onCommentChanged.add(onChangedHandler),
+        body.onCommentDeleted.add(onEventHandler),
+        body.onCommentDeselected.add(onEventHandler),
+        body.onCommentSelected.add(onEventHandler)
+      );
+      await context.sync();
+
+      console.log("Comment event handlers registered.");
+    });
+  } catch (error) {
+    console.error(error);
+  } finally {
+    commentEventsBusy = false;
+  }
+}
+
+async function deregisterCommentEventHandlers() {
+  if (commentEventsBusy) {
+    console.warn("Wait for the current comment event operation to finish before removing handlers.");
+    return;
+  }
+  if (commentBody === null) {
+    console.warn("There are no comment event registrations to remove.");
+    return;
+  }
+
+  const body: Word.Body = commentBody;
+  commentEventsBusy = true;
+  try {
+    // Passing the tracked body reuses the request context for all five handlers.
+    await Word.run(body, async (context) => {
+      for (const handler of commentEventHandlers) {
+        handler.remove();
+      }
+      body.untrack();
+      await context.sync();
+    });
+
+    commentEventHandlers.length = 0;
+    commentBody = null;
+    console.log("Comment event handlers removed and body untracked.");
+  } catch (error) {
+    console.error(error);
+  } finally {
+    commentEventsBusy = false;
+  }
+}
 ```
+
+The callbacks below log the event type, source, and affected comment and reply IDs. The changed-event callback also reports the kind of change. These values are included in the event payload, so logging them doesn't require a `Word.run` batch or `context.sync()`.
+
+```typescript
+async function onEventHandler(event: Word.CommentEventArgs) {
+  console.log(`${event.type} event. Source: ${event.source}.`);
+  if (event.source === Word.EventSource.remote) {
+    console.log("A coauthor triggered this event.");
+  }
+  event.commentDetails.forEach((comment: Word.CommentDetail) => {
+    console.log("Affected comment:", { id: comment.id, replyIds: comment.replyIds });
+  });
+}
+
+async function onChangedHandler(event: Word.CommentEventArgs) {
+  console.log(`Comment change: ${event.changeType}.`);
+  if (event.changeType === Word.CommentChangeType.edited) {
+    console.log("The comment text was edited.");
+  }
+  await onEventHandler(event);
+}
+```
+
+For a complete runnable example, try [Comment events (preview)](https://github.com/OfficeDev/office-js-snippets/blob/main/samples/word/99-preview-apis/comment-events.yaml) in [Script Lab](../overview/explore-with-script-lab.md). It provides deterministic setup by replacing the document body with a sample paragraph, plus create, edit, and delete actions to trigger the events. To exercise selection and deselection, select a comment in Word's Comments pane, then click elsewhere in the document. The sample requires the preview Office.js library and TypeScript definitions described in [Events in preview](#events-in-preview), and a Word client that supports these preview APIs.
 
 ## See also
 
