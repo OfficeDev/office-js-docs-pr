@@ -291,4 +291,4 @@ For a complete runnable example, try [Comment events (preview)](https://github.c
 - These and other examples are available in our [Script Lab](../overview/explore-with-script-lab.md) tool:
   - [On changing content in paragraphs](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/25-paragraph/onchanged-event.yaml)
   - [On deleting content controls](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/10-content-controls/content-control-ondeleted-event.yaml)
-  - [Manage comments](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/99-preview-apis/manage-comments.yaml) (preview)
+  - [Comment events](https://github.com/OfficeDev/office-js-snippets/blob/prod/samples/word/99-preview-apis/comment-events.yaml) (preview)
