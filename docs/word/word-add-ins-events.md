@@ -212,13 +212,11 @@ async function registerCommentEventHandlers() {
       // Resolve the tracked body's host reference before subscribing.
       await context.sync();
 
-      commentEventHandlers.push(
-        body.onCommentAdded.add(onEventHandler),
-        body.onCommentChanged.add(onChangedHandler),
-        body.onCommentDeleted.add(onEventHandler),
-        body.onCommentDeselected.add(onEventHandler),
-        body.onCommentSelected.add(onEventHandler)
-      );
+      commentEventHandlers.push(body.onCommentAdded.add(onEventHandler));
+      commentEventHandlers.push(body.onCommentChanged.add(onChangedHandler));
+      commentEventHandlers.push(body.onCommentDeleted.add(onEventHandler));
+      commentEventHandlers.push(body.onCommentDeselected.add(onEventHandler));
+      commentEventHandlers.push(body.onCommentSelected.add(onEventHandler));
       await context.sync();
 
       console.log("Comment event handlers registered.");
