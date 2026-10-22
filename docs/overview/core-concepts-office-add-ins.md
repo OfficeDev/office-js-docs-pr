@@ -31,7 +31,7 @@ Start with the following documentation for the core lifecycle stages and support
 :::row-end:::
 :::row:::
    :::column span="":::
-       :::image type="content" source="../images/office-add-ins-lifecycle-prototype.png" alt-text="Illustration of a route winding through mountains." border="false":::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-1a-prototype.png" alt-text="Illustration of cube with a pencil." border="false":::
    :::column-end:::
    :::column span="3":::
        <br>**Prototype**<br>
