@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 
 # Work with events using the Word JavaScript API
 
-This article introduces key concepts for working with events in Word using the JavaScript API. You find practical code samples for registering, handling, and removing event handlers, along with explanations of event life cycles and coauthoring scenarios. Explore the event tables to discover which triggers and objects are supported.
+This article introduces key concepts for working with events in Word using the JavaScript API. It contains code samples for registering, handling, and removing event handlers, along with explanations of event life cycles and coauthoring scenarios. Explore the event tables to discover which triggers and objects are supported.
 
 ## Events in Word
 
@@ -153,6 +153,8 @@ Certain event types also require you to call `track()` on the object you're addi
   - `onCommentDeselected`
   - `onCommentSelected`
 
+### Example: Content controls events
+
 The following code sample shows how to register an event handler on each content control. Because you're adding the event to the content controls, `track()` is called on each content control in the collection.
 
 ```typescript
@@ -180,6 +182,8 @@ await Word.run(async (context) => {
   }
 });
 ```
+
+### Example: Comment events
 
 The following code sample registers all five preview comment event handlers on the document's body and removes them when they're no longer needed. It retains one tracked `Word.Body` and the registration handles for cleanup. Call `registerCommentEventHandlers()` to register the handlers, then call `deregisterCommentEventHandlers()` to remove them.
 
