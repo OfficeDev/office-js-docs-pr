@@ -77,6 +77,9 @@
     - name: Explore Office JS APIs using Script Lab
       href: overview/explore-with-script-lab.md
       displayName: Excel, Word, PowerPoint, Outlook
+    - name: Experiment with GitHub Copilot prompts
+      href: resources/resources-github-copilot-prompt-library.md
+      displayName: Excel, Word, PowerPoint
   - name: Develop
     items:
     - name: Overview
@@ -1061,9 +1064,6 @@
     displayName: manifest
 - name: Resources
   items:
-  - name: GitHub Copilot prompt library
-    href: resources/resources-github-copilot-prompt-library.md
-    displayName: Excel, Word, PowerPoint
   - name: Glossary
     href: resources/resources-glossary.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
