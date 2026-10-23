@@ -1,15 +1,15 @@
 ---
 title: Office Add-ins prompts for GitHub Copilot
 description: An Office Add-ins prompt library to use with GitHub Copilot.
-ms.date: 12/17/2025
+ms.date: 10/23/2026
 ms.localizationpriority: medium
 ---
 
 # Office Add-ins prompts for GitHub Copilot
 
-The Office Add-ins prompt library is a collection of prompt examples to use with [GitHub Copilot](https://github.com/features/copilot/plans) when you develop Office add-ins. GitHub Copilot is an AI pair-programmer that helps you write code. It's available as an extension for many code editors, such as [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [Visual Studio](https://marketplace.visualstudio.com/items?itemName=GitHub.copilotvs). You can install and launch the extensions directly through your code editor.
+The Office Add-ins prompt library is a collection of prompt examples to use with [GitHub Copilot](https://github.com/features/copilot/plans) when you experiment with and develop Office Add-ins. GitHub Copilot is an AI pair-programmer that helps you write code. It's available as an extension for many code editors, such as [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) and [Visual Studio](https://marketplace.visualstudio.com/items?itemName=GitHub.copilotvs). You can install and launch the extensions directly through your code editor.
 
-Copy the prompts from this article and enter them into the GitHub Copilot chat to begin experimenting. You can also open the prompt list in your code editor by downloading the file from GitHub at [Office Add-ins prompts for GitHub Copilot on GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/main/docs/resources/resources-github-copilot-prompt-library.md).
+Copy the prompts from this article and enter them into the GitHub Copilot chat to begin experimenting. You can also open the prompt list in your code editor by downloading the file from GitHub at [Office Add-ins prompts for GitHub Copilot on GitHub](https://github.com/OfficeDev/office-js-docs-pr/blob/live/docs/resources/resources-github-copilot-prompt-library.md).
 
 > [!IMPORTANT]
 > The prompts in this article are designed to work in English with GitHub Copilot. They've been tested to ensure that Copilot returns relevant responses, but generative AI can inherently return variable responses. Always review code produced by GitHub Copilot for accuracy before publishing or distributing your add-in to users.
@@ -36,7 +36,7 @@ commands to get started in *Visual Studio Code*.
 ### Import a document as a Word template
 
 ```code
-Create an Office JavaScript add-in for *Word* to *import a 
+Create an Office JavaScript Add-in for *Word* to *import a 
 document as a template*. List the steps to follow in *Visual 
 Studio Code* to create the add-in and insert code snippets in 
 the correct files.
@@ -184,7 +184,7 @@ or APIs.
 
 ```code
 Tell me how to deploy and distribute the local Office JavaScript 
-add-in code to *all employees in my organization* after 
+Add-in code to *all employees in my organization* after 
 development. Provide the steps to follow.
 ```
 
@@ -192,7 +192,7 @@ development. Provide the steps to follow.
 
 ```code
 Tell me how to deploy and distribute the local Office JavaScript 
-add-in code to the *add-in store* after development. Provide the 
+Add-in code to the *add-in store* after development. Provide the 
 steps to follow.
 ```
 
