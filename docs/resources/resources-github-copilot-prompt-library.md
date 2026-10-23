@@ -14,7 +14,7 @@ Copy the prompts from this article and enter them into the GitHub Copilot chat t
 > [!IMPORTANT]
 > The prompts in this article are designed to work in English with GitHub Copilot. They've been tested to ensure that Copilot returns relevant responses, but generative AI can inherently return variable responses. Always review code produced by GitHub Copilot for accuracy before publishing or distributing your add-in to users.
 
-We encourage you to customize your own prompts for developing Office Add-ins with GitHub Copilot. To contribute your ideas to this prompt library, review the guidance for [contributing to the Office Add-ins](https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md) documentation through GitHub. You can also share your prompts and feedback through the survey at [Office Add-ins prompts feedback](https://aka.ms/promptfeedback).
+We encourage you to customize your own prompts for developing Office Add-ins with GitHub Copilot. To contribute your ideas to this prompt library, review the guidance for [contributing to the Office Add-ins](https://github.com/OfficeDev/office-js-docs-pr/blob/main/Contributing.md) documentation through GitHub.
 
 ## Prompt examples
 
