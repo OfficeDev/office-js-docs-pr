@@ -1,6 +1,6 @@
 ---
 title: Development frameworks FAQ
-description: Development frameworks FAQ
+description: Frequently asked questions about tools and scaffolding for Office Add-in projects.
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
