@@ -1,7 +1,7 @@
 ---
 title: Create an Outlook add-in for an online-meeting provider
 description: Discusses how to set up an Outlook add-in for an online-meeting service provider.
-ms.date: 02/18/2026
+ms.date: 10/27/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -480,6 +480,9 @@ The **Join** and **Chat** buttons only appear in the meeting UI if:
 - The add-in is registered.
 - The meeting participant is using Outlook on the web, on Mac, on Android, on iOS, or the new Outlook on Windows.
 - **Chat button only**: The chat URL in the meeting body must be appended with the `owa-chat=1` query parameter.
+
+> [!IMPORTANT]
+> Beginning November 30, 2026, Outlook will no longer display the **Join** button for meetings that contain only an HTTP join URL. Meetings with HTTPS join URLs will continue to display the **Join** button if they meet the requirements in this section.
 
 ### Register your online-meeting template
 
