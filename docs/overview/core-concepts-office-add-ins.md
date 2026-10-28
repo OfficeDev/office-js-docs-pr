@@ -2,7 +2,7 @@
 title: Office Add-in development lifecycle overview
 description: Learn how to plan, develop, test, debug, publish, and reference Office Add-ins across the development lifecycle.
 ms.topic: overview
-ms.date: 07/10/2026
+ms.date: 10/22/2026
 ms.localizationpriority: high
 ---
 
@@ -27,6 +27,15 @@ Start with the following documentation for the core lifecycle stages and support
    :::column span="3":::
        <br>**Plan**<br>
        [Learn the best practices and system requirements for Office Add-ins.](../concepts/add-in-development-best-practices.md)
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="":::
+       :::image type="content" source="../images/office-add-ins-lifecycle-step-1a-prototype.png" alt-text="Illustration of cube with a pencil." border="false":::
+   :::column-end:::
+   :::column span="3":::
+       <br>**Prototype**<br>
+       [Learn about using Script Lab to test and experiment with Office JavaScript APIs.](../overview/explore-with-script-lab.md)
    :::column-end:::
 :::row-end:::
 :::row:::

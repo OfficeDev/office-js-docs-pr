@@ -32,7 +32,7 @@
       href: quickstarts/word-quickstart-yo.md
   - name: Explore Office JS APIs using Script Lab
     href: overview/explore-with-script-lab.md
-    displayName: Excel, Word, PowerPoint
+    displayName: Excel, Word, PowerPoint, Outlook
   - name: Copy Script Lab snippet to Yo Office
     href: overview/create-an-office-add-in-from-script-lab.md
     displayName: 'code samples'
@@ -72,6 +72,14 @@
     - name: Extend your solution to other parts of Microsoft 365
       href: concepts/extend-to-microsoft-365.md
       displayName: Excel, Word, PowerPoint, Outlook, Copilot, Teams
+  - name: Prototype
+    items:
+    - name: Explore Office JS APIs using Script Lab
+      href: overview/explore-with-script-lab.md
+      displayName: Excel, Word, PowerPoint, Outlook
+    - name: Experiment with GitHub Copilot prompts
+      href: resources/resources-github-copilot-prompt-library.md
+      displayName: Excel, Word, PowerPoint
   - name: Develop
     items:
     - name: Overview
@@ -341,6 +349,8 @@
           href: develop/get-javascript-intellisense-in-visual-studio.md
         - name: Convert JavaScript projects to TypeScript
           href: develop/convert-javascript-to-typescript.md
+      - name: Development frameworks FAQ
+        href: develop/develop-frameworks-faq.md
     - name: Special requirements for add-ins on the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
   - name: Test and debug
@@ -1056,9 +1066,6 @@
     displayName: manifest
 - name: Resources
   items:
-  - name: GitHub Copilot prompt library
-    href: resources/resources-github-copilot-prompt-library.md
-    displayName: Excel, Word, PowerPoint
   - name: Glossary
     href: resources/resources-glossary.md
     displayName: Excel, Word, OneNote, Project, PowerPoint, Visio, Outlook
