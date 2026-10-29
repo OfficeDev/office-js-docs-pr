@@ -482,7 +482,7 @@ The **Join** and **Chat** buttons only appear in the meeting UI if:
 - **Chat button only**: The chat URL in the meeting body must be appended with the `owa-chat=1` query parameter.
 
 > [!IMPORTANT]
-> Beginning November 30, 2026, Outlook will no longer display the **Join** button for meetings that contain only an HTTP join URL. Meetings with HTTPS join URLs will continue to display the **Join** button if they meet the requirements in this section.
+> Beginning November 30, 2026, Outlook no longer displays the **Join** button for meetings that contain only an HTTP join URL. Meetings with HTTPS join URLs continue to display the **Join** button if they meet the requirements in this section.
 
 ### Register your online-meeting template
 
