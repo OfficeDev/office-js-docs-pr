@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 10/27/2026
+ms.date: 10/29/2026
 ms.localizationpriority: high
 ---
 
@@ -67,7 +67,7 @@ If your development background is in building VSTO Add-ins, the following sample
 |:--------------------|:--------------------|
 | [Encrypt and decrypt messages in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/outlook-encrypt-decrypt-messages) | Use Outlook Smart Alerts and the `OnMessageDecrypt` event to encrypt and decrypt messages. |
 | [Report spam or phishing emails in Outlook](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-spam-reporting) | Build an integrated spam-reporting solution that's easily discoverable in the Outlook client ribbon. The solution provides the user with a dialog to report an email. It also saves a copy of the reported email to a file for further processing in your backend system. |
-| [Encrypt attachments, process meeting request attendees, and react to appointment date/time changes using Outlook event-based activation](https://github.com/OfficeDev/PnP-OfficeAddins/tree/main/Samples/outlook-encrypt-attachments) | Use event-based activation to encrypt attachments when added by the user. Also use event handling for recipients changed in a meeting request, and changes to the start or end date or time in a meeting request. |
+| [Manage attachments and meeting details while composing in Outlook with event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-attachments) | Use event-based activation to encrypt attachments when added by the user. Also use event handling for recipients changed in a meeting request, and changes to the start or end date or time in a meeting request. |
 | [Identify and tag external recipients using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-tag-external) | Use event-based activation to update the subject and display a notification when the user adds external recipients while composing a message. |
 | [Set your signature using Outlook event-based activation](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-set-signature) | Use event-based activation to run an Outlook add-in when the user creates a new message or appointment. The add-in can respond to events, even when the task pane isn't open. It also uses the `setSignatureAsync` API. |
 | [Verify the color categories of a message or appointment before it's sent using Smart Alerts](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-check-item-categories) | Use Outlook Smart Alerts to verify that required color categories are applied to a new message or appointment before it's sent. |
