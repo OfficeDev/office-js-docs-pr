@@ -1,7 +1,7 @@
 ﻿---
 title: On-send feature for Outlook add-ins
 description: Provides a way to handle an item or block users from certain actions, and allows an add-in to set certain properties on send.
-ms.date: 09/01/2026
+ms.date: 11/02/2026
 ms.localizationpriority: medium
 ---
 
@@ -114,10 +114,10 @@ The on-send feature in Outlook requires that add-ins are configured for the send
 
 Add-ins for Outlook on the web (modern) and new Outlook on Windows that use the on-send feature should run for any users who have them installed. However, if users are required to run on-send add-ins to meet compliance standards, then the mailbox policy must have the *OnSendAddinsEnabled* flag set to `true` so that editing the item isn't allowed while the add-ins are processing on send.
 
-To install a new add-in, run the following Exchange Online PowerShell cmdlets.
+To install a new add-in, run the following Exchange Online PowerShell cmdlets. Replace `manifest.xml` with the path to your add-in's manifest file.
 
 ```powershell
-$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte -ReadCount 0
+$Data=Get-Content -Path '.\manifest.xml' -Encoding Byte -ReadCount 0
 ```
 
 ```powershell
@@ -204,10 +204,10 @@ Get-OwaMailboxPolicy OWAOnSendAddinAllUserPolicy | Set-OwaMailboxPolicy –OnSen
 
 Add-ins for Outlook on the web (classic) that use the on-send feature will run for users who are assigned an Outlook on the web mailbox policy that has the *OnSendAddinsEnabled* flag set to `true`.
 
-To install a new add-in, run the following Exchange Online PowerShell cmdlets.
+To install a new add-in, run the following Exchange Online PowerShell cmdlets. Replace `manifest.xml` with the path to your add-in's manifest file.
 
 ```powershell
-$Data=Get-Content -Path '.\Contoso Message Body Checker.xml' -Encoding Byte -ReadCount 0
+$Data=Get-Content -Path '.\manifest.xml' -Encoding Byte -ReadCount 0
 ```
 
 ```powershell
@@ -414,20 +414,21 @@ In your on-send handler:
 
 ## Code examples
 
-The following code examples show you how to create a simple on-send add-in. To download the code sample that these examples are based on, see [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send).
+The following code examples demonstrate two on-send checks.
+
+- **Message body checker**: Checks the message body for restricted words and blocks sending if any are found.
+- **Subject and CC checker**: Verifies that the message has a subject, adds a subject prefix, and sets a CC recipient.
+
+Each example uses a separate manifest configuration and an `ItemSend` event handler. The manifest excerpts and JavaScript snippets illustrate the on-send configuration and logic, rather than a complete add-in project.
 
 > [!TIP]
 > If you use a dialog with the on-send event, make sure to close the dialog before completing the event.
 
 ### Manifest, version override, and event
 
-The [Outlook-Add-in-On-Send](https://github.com/OfficeDev/Outlook-Add-in-On-Send) code sample includes two manifests:
+For the message body checker, include the function file and the `validateBody` function in your manifest's `ItemSend` event configuration. The operation runs synchronously.
 
-- `Contoso Message Body Checker.xml` &ndash; Shows how to check the body of a message for restricted words or sensitive information on send.  
-
-- `Contoso Subject and CC Checker.xml` &ndash; Shows how to add a recipient to the CC line and verify that the message includes a subject line on send.  
-
-In the `Contoso Message Body Checker.xml` manifest file, you include the function file and function name that should be called on the `ItemSend` event. The operation runs synchronously.
+In each manifest, define a URL resource with the ID `residUILessFunctionFileUrl` in the `Resources` element. Point this resource to an HTML function file that loads the JavaScript containing the corresponding event handler. For more information, see [FunctionFile](/javascript/api/manifest/functionfile).
 
 ```xml
 <Hosts>
@@ -449,7 +450,7 @@ In the `Contoso Message Body Checker.xml` manifest file, you include the functio
 > "This is an invalid xsi:type `'http://schemas.microsoft.com/office/mailappversionoverrides/1.1:Events'`."
 > To work around this, you'll need a newer version of the MailAppVersionOverridesV1_1.xsd which has been provided as a GitHub gist in a [blog about this warning](https://theofficecontext.com/2018/11/29/visual-studio-2017-this-is-an-invalid-xsitype-mailappversionoverrides-1-1event/).
 
-For the `Contoso Subject and CC Checker.xml` manifest file, the following example shows the function file and function name to call on message send event.
+For the subject and CC checker, use the following manifest configuration to call `validateSubjectAndCC` on the `ItemSend` event.
 
 ```xml
 <Hosts>
@@ -484,14 +485,16 @@ The on-send API requires `VersionOverrides v1_1`. The following shows you how to
 
 To access the currently selected message or meeting item (in this example, the newly composed message), use the `Office.context.mailbox.item` namespace. The `ItemSend` event is automatically passed by the on-send feature to the function specified in the manifest&mdash;in this example, the `validateBody` function.
 
+Both examples use the `mailboxItem` variable and `Office.onReady` function shown below. Include this shared initialization in the JavaScript loaded by each example's function file. For the message body checker, also include `validateBody` and the `checkBodyOnlyOnSendCallBack` function shown in the next section.
+
 ```js
 let mailboxItem;
 
-Office.initialize = function (reason) {
+Office.onReady(function () {
     mailboxItem = Office.context.mailbox.item;
-}
+});
 
-// Entry point for Contoso Message Body Checker add-in before send is allowed.
+// Entry point for the message body checker before send is allowed.
 // <param name="event">ItemSend event is automatically passed by on-send code to the function specified in the manifest.</param>
 function validateBody(event) {
     mailboxItem.body.getAsync("html", { asyncContext: event }, checkBodyOnlyOnSendCallBack);
@@ -523,6 +526,7 @@ function checkBodyOnlyOnSendCallBack(asyncResult) {
         mailboxItem.notificationMessages.addAsync('NoSend', { type: 'errorMessage', message: 'Blocked words have been found in the body of this email. Please remove them.' });
         // Block send.
         asyncResult.asyncContext.completed({ allowEvent: false });
+        return;
     }
 
     // Allow send.
@@ -544,10 +548,10 @@ In addition to the `addAsync` method, the `NotificationMessages` object also inc
 
 ### Subject and CC checker code
 
-The following code example shows you how to add a recipient to the CC line and verify that the message includes a subject on send. This example uses the on-send feature to allow or disallow an email from sending.  
+The following code example shows you how to add a recipient to the CC line and verify that the message includes a subject on send. This example uses the on-send feature to allow or disallow an email from sending. Include these functions and the shared `mailboxItem` initialization shown earlier in the JavaScript loaded by the subject and CC checker's function file.
 
 ```js
-// Invoke by Contoso Subject and CC Checker add-in before send is allowed.
+// Run the subject and CC checks when the user selects Send.
 // <param name="event">ItemSend event is automatically passed by on-send code to the function specified in the manifest.</param>
 function validateSubjectAndCC(event) {
     shouldChangeSubjectOnSend(event);
@@ -613,8 +617,6 @@ function subjectOnSendChange(subject, event) {
         });
 }
 ```
-
-To learn more about how to add a recipient to the CC line and verify that the email message includes a subject line on send, and to see the APIs you can use, see the [Outlook-Add-in-On-Send sample](https://github.com/OfficeDev/Outlook-Add-in-On-Send). The code is well commented.
 
 ## Debug Outlook add-ins that use on-send
 
