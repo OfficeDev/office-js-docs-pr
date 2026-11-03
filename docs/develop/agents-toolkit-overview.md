@@ -1,7 +1,7 @@
 ---
 title: Create Office Add-in projects using Microsoft 365 Agents Toolkit
 description: Learn how to create Office Add-in projects using Microsoft 365 Agents Toolkit.
-ms.date: 03/23/2026
+ms.date: 11/03/2026
 ms.localizationpriority: high
 ---
 
@@ -14,9 +14,6 @@ Add-ins created with Agents Toolkit use the [unified manifest for Microsoft 365]
    [!INCLUDE [non-unified manifest clients note](../includes/non-unified-manifest-clients.md)]
 
 Install the latest version of Agents Toolkit into Visual Studio Code as described in [Install Microsoft 365 Agents Toolkit](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode).
-
-> [!IMPORTANT]
-> You can create an Outlook add-in with the latest released version of Agents Toolkit. To create an add-in for Excel, PowerPoint, or Word, install the prerelease version as described in [Install a prerelease version](/microsoftteams/platform/toolkit/install-teams-toolkit?tabs=vscode#install-a-prerelease-version). The toolkit creates projects that use the [unified manifest for Microsoft 365](json-manifest-overview.md). Support for this manifest in Excel, PowerPoint, and Word is preview only. 
 
 ## Create an Office Add-in project
 
@@ -33,11 +30,12 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 
     :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The option 'Task pane' is selected.":::
 
+1. A dropdown menu listing Office applications to support opens. Select one or more applications.
 1. In the **Workspace Folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Agents Toolkit will create the project with basic files and scaffolding. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 
    > [!NOTE]
-   > The project that's generated is configured to be installable on Excel, Outlook, PowerPoint, and Word. You can edit the manifest and source files as needed to change which Office applications are supported.
+   > The project that's generated is configured to be installable on the Office applications you selected earlier. You can edit the manifest and source files as needed to change which Office applications are supported.
 
 1. In the Visual Studio Code **TERMINAL** navigate to the root of the project and run `npm install`.
 1. After the installation completes, verify that you can sideload your add-in from Visual Studio Code. The steps to sideload vary depending on the Office application on which you want to test the add-in.
