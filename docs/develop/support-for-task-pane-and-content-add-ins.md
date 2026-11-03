@@ -106,7 +106,7 @@ For detailed information about how to manage custom XML parts with a task pane a
 
 ## Persisting add-in settings
 
-Often you need to save custom data for your add-in, such as a user's preferences or the add-in's state, and access that data the next time the add-in is opened. Use browser cookies or HTML5 web storage for temporary or recoverable data, or as a local cache. Use an online database associated with the user's identity to persist data that needs to persist across sessions even if the user's browser cache is cleared.
+Often you need to save custom data for your add-in, such as a user's preferences or the add-in's state, and access that data the next time the add-in is opened. Use browser cookies or HTML5 web storage for temporary or recoverable data, or as a local cache. Use an online database associated with the user's identity to persist data across sessions even if the user's browser cache is cleared.
 
 For data that should persist with a document, if your add-in runs in Excel, PowerPoint, or Word, you can use the methods of the [Settings](/javascript/api/office/office.settings) object. Data created with the `Settings` object is stored in the spreadsheet, presentation, or document that the add-in was inserted into and saved with. This data is available to only the add-in that created it.
 
