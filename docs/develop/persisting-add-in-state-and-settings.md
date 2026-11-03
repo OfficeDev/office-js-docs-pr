@@ -1,7 +1,7 @@
 ---
 title: Persist add-in state and settings
 description: Learn how to persist data in Office Web Add-in applications running in the stateless environment of a browser control.
-ms.date: 03/24/2026
+ms.date: 11/03/2026
 ms.localizationpriority: medium
 ---
 
@@ -12,14 +12,17 @@ Office Add-ins are essentially web applications running in the stateless environ
 - [Use techniques provided by the underlying browser control](#browser-storage).
 - [Use the application-specific Office JavaScript APIs for Excel, Word, and Outlook that store data](#application-specific-settings-and-persistence).
 
-If you need to persist state across documents, such as tracking user preferences across any documents they open, use a different approach. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user identity, and then save the user ID and their settings to an online database.
+If your add-in needs to preserve user-level data, such as preferences or conversation history, use an online database associated with the user's identity rather than relying solely on browser storage. This approach keeps the data available across sessions and documents, even if local browser storage is cleared or becomes unavailable. For example, you could use [SSO](use-sso-to-get-office-signed-in-user-token.md) to obtain the user's identity and associate their saved data with that identity in a database.
 
 > [!NOTE]
-> This article applies only to persisting state in the same Office application. Don't use cookies or `localStorage` to persist or share state across Office applications (for example, don't save data in Word and attempt to read it in Excel). Cross‑app persistence is not supported and is not guaranteed to work on any platform.
+> This article applies only to persisting state in the same Office application. Don't use cookies or `localStorage` to persist or share state across Office applications (for example, don't save data in Word and attempt to read it in Excel). Cross‑app persistence isn't supported and isn't guaranteed to work on any platform.
 
 ## Browser storage
 
 Persist data across add-in instances by using tools from the underlying browser control, such as browser cookies or HTML5 web storage ([localStorage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage)).
+
+> [!NOTE]
+> Browser storage is tied to the browser or webview profile and can be cleared by the user, including through Office Add-in cache-clearing operations. Use it for temporary or recoverable data, or as a local cache, rather than the only persisted copy of important user data.
 
 Some browsers or the user's browser settings might block browser-based storage techniques. Test for availability as documented in [Using the Web Storage API](https://developer.mozilla.org/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API).
 
@@ -237,7 +240,7 @@ function write(message){
 }
 ```
 
-The anonymous function passed into the `saveAsync` method as the *callback* parameter runs when the operation is completed. The *asyncResult* parameter of the callback provides access to an `AsyncResult` object that contains the status of the operation. In the example, the function checks the `AsyncResult.status` property to see if the save operation succeeded or failed, and then displays the result in the add-in's page.
+The anonymous function passed into the `saveAsync` method as the *callback* parameter runs when the operation is completed. The *asyncResult* parameter of the callback provides access to an `AsyncResult` object that contains the status of the operation. In the following example, the function checks the `AsyncResult.status` property to see if the save operation succeeded or failed, and then displays the result in the add-in's page.
 
 ### How to save custom XML to the document
 

@@ -1,7 +1,7 @@
 ---
 title: Office JavaScript API support for content and task pane add-ins
 description: Use the Office JavaScript API to create a task pane or content add-in.
-ms.date: 03/23/2026
+ms.date: 11/03/2026
 ms.localizationpriority: medium
 ---
 
@@ -9,9 +9,9 @@ ms.localizationpriority: medium
 
 [!include[information about the common API](../includes/alert-common-api-info.md)]
 
-You can use the [Office JavaScript API](../reference/javascript-api-for-office.md) to create task pane or content add-ins for Office client applications. The objects and methods that content and task pane add-ins support are categorized as follows:
+Use the [Office JavaScript API](../reference/javascript-api-for-office.md) to create task pane or content add-ins for Office client applications. The following categories describe the objects and methods that content and task pane add-ins support.
 
-1. **Common objects shared with other Office Add-ins.** These objects include [Office](/javascript/api/office), [Context](/javascript/api/office/office.context), and [AsyncResult](/javascript/api/office/office.asyncresult). The `Office` object is the root object of the Office JavaScript API. The `Context` object represents the add-in's runtime environment. Both `Office` and `Context` are the fundamental objects for any Office Add-in. The `AsyncResult` object represents the results of an asynchronous operation, such as the data returned to the `getSelectedDataAsync` method, which reads what a user has selected in a document.
+1. **Common objects shared with other Office Add-ins.** These objects include [Office](/javascript/api/office), [Context](/javascript/api/office/office.context), and [AsyncResult](/javascript/api/office/office.asyncresult). The `Office` object is the root object of the Office JavaScript API. The `Context` object represents the add-in's runtime environment. Both `Office` and `Context` are the fundamental objects for any Office Add-in. The `AsyncResult` object represents the results of an asynchronous operation, such as the data returned to the `getSelectedDataAsync` method, which reads what a user selects in a document.
 
 2. **The Document object.** The majority of the API available to content and task pane add-ins is exposed through the methods, properties, and events of the [Document](/javascript/api/office/office.document) object. A content or task pane add-in can use the [Office.context.document](/javascript/api/office/office.context#office-office-context-document-member) property to access the **Document** object, and through it, can access the key members of the API for working with data in documents, such as the [Bindings](/javascript/api/office/office.bindings) and [CustomXmlParts](/javascript/api/office/office.customxmlparts) objects, and the [getSelectedDataAsync](/javascript/api/office/office.document#office-office-document-getselecteddataasync-member(1)), [setSelectedDataAsync](/javascript/api/office/office.document#office-office-document-setselecteddataasync-member(1)), and [getFileAsync](/javascript/api/office/office.document#office-office-document-getfileasync-member(1)) methods. The `Document` object also provides the [mode](/javascript/api/office/office.document#office-office-document-mode-member) property for determining whether a document is read-only or in edit mode, the [url](/javascript/api/office/office.document#office-office-document-url-member) property to get the URL of the current document, and access to the [Settings](/javascript/api/office/office.settings) object. The `Document` object also supports adding event handlers for the [SelectionChanged](/javascript/api/office/office.documentselectionchangedeventargs) event, so you can detect when a user changes their selection in the document.
 
@@ -106,7 +106,9 @@ For detailed information about how to manage custom XML parts with a task pane a
 
 ## Persisting add-in settings
 
-Often you need to save custom data for your add-in, such as a user's preferences or the add-in's state, and access that data the next time the add-in is opened. You can use common web programming techniques to save that data, such as browser cookies or HTML 5 web storage. Alternatively, if your add-in runs in Excel, PowerPoint, or Word, you can use the methods of the [Settings](/javascript/api/office/office.settings) object. Data created with the `Settings` object is stored in the spreadsheet, presentation, or document that the add-in was inserted into and saved with. This data is available to only the add-in that created it.
+Often you need to save custom data for your add-in, such as a user's preferences or the add-in's state, and access that data the next time the add-in is opened. Use browser cookies or HTML5 web storage for temporary or recoverable data, or as a local cache. Use an online database associated with the user's identity to persist data that needs to persist across sessions even if the user's browser cache is cleared.
+
+For data that should persist with a document, if your add-in runs in Excel, PowerPoint, or Word, you can use the methods of the [Settings](/javascript/api/office/office.settings) object. Data created with the `Settings` object is stored in the spreadsheet, presentation, or document that the add-in was inserted into and saved with. This data is available to only the add-in that created it.
 
 To avoid round trips to the server where the document is stored, the add-in manages data created by using the `Settings` object in memory at run time. When the add-in initializes, it loads previously saved settings data into memory. The add-in saves changes to that data back to the document only when you call the [Settings.saveAsync](/javascript/api/office/office.settings#office-office-settings-saveasync-member(1)) method. Internally, the data is stored in a serialized JSON object as name/value pairs. Use the [get](/javascript/api/office/office.settings#office-office-settings-get-member(1)), [set](/javascript/api/office/office.settings#office-office-settings-set-member(1)), and [remove](/javascript/api/office/office.settings#office-office-settings-remove-member(1)) methods of the **Settings** object to read, write, and delete items from the in-memory copy of the data. The following line of code shows how to create a setting named `themeColor` and set its value to 'green'.
 
