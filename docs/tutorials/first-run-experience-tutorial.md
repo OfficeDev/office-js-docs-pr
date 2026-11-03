@@ -1,7 +1,7 @@
 ---
 title: First-run experience tutorial
 description: Learn how to implement a first-run experience for your Office Add-in.
-ms.date: 02/11/2026
+ms.date: 11/03/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,10 @@ Implementing a first-run experience helps onboard users and highlights your add-
 
 ## Overview
 
-When a user opens your add-in for the first time, you'll display a welcome message and a list of key features. On subsequent launches, the add-in will skip the welcome and show the main UI. This is accomplished by checking for a flag in local storage and updating the UI accordingly.
+When a user opens your add-in for the first time, you'll display a welcome message and a list of key features. On subsequent launches, the add-in will skip the welcome and show the main UI while the flag remains in local storage. This is accomplished by checking for a flag in local storage and updating the UI accordingly.
+
+> [!NOTE]
+> Local storage is tied to the browser or webview profile and can be cleared, including through Office Add-in cache-clearing operations. If the flag is cleared or the user switches profiles, the first-run experience can appear again. This is appropriate for recoverable onboarding state, but not for tracking that must be preserved across sessions or devices.
 
 This tutorial provides instructions and screenshots for Excel but you can use a similar pattern to implement a first-run experience in other Office applications where Office Web Add-ins are supported.
 
@@ -165,9 +168,9 @@ Using this tutorial, you implemented a basic [first-run experience](../design/fi
 
 - Update the features listed in the value placemat to match what your add-in actually does.
 - Implement a different pattern (for example, video placemat or carousel) that better showcases the benefits of your add-in.
-- Use a more secure and robust option for tracking first-run state. For example, use storage partitioning if available, or implement a Single Sign-on (SSO) authentication solution.
-  - For more about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md).
-  - For more about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
+- If you need to preserve first-run state across sessions or devices, save it in an online database associated with the user's identity. Use single sign-on (SSO) to obtain that identity. Storage partitioning helps isolate local data, but it doesn't make the data durable. Authentication alone doesn't save the state.
+  - For more information about available settings options, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md).
+  - For more information about available authentication options, see [Overview of authentication and authorization](../develop/overview-authn-authz.md).
 
 If you're planning to make your add-in available in Microsoft Marketplace, you must have a robust and useful first-run experience. For more information, see [Best practices for developing Office Add-ins](../concepts/add-in-development-best-practices.md).
 

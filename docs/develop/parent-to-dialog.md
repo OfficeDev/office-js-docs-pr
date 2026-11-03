@@ -1,13 +1,13 @@
 ---
 title: Pass data to a dialog box using local storage or query parameters
 description: Use local storage or URL query parameters to pass data from a host page to a dialog box in your Office Add-in when the messageChild API isn't available.
-ms.date: 05/14/2026
+ms.date: 11/03/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 ---
 
-# Pass data to a dialog box using local storage or query parameters
+# Pass data to a dialog box by using local storage or query parameters
 
 If your add-in runs on a platform or host that doesn't support the [DialogApi 1.2 requirement set](/javascript/api/requirement-sets/common/dialog-api-requirement-sets), you can't use the [`messageChild`](/javascript/api/office/office.dialog#office-office-dialog-messagechild-member(1)) method to send data from a host page to a dialog box. Instead, use one of the following approaches.
 
@@ -21,8 +21,8 @@ For the recommended approach using `messageChild`, see [Pass information to the 
 | Consideration | Local storage | Query parameters |
 | --- | --- | --- |
 | **Data size** | Suitable for larger payloads. | Best for small values. |
-| **Data availability** | Available anytime after the dialog opens. | Available in the URL when the dialog loads.<br><br>**Tip**: Save the values to variables to read them while the dialog remains open. |
-| **Persistence across navigation** | Persists until explicitly cleared. | Lost if the dialog redirects. |
+| **Data availability** | Available after the dialog opens if storage is accessible and the data hasn't been cleared. | Available in the URL when the dialog loads.<br><br>**Tip**: Save the values to variables to read them while the dialog remains open. |
+| **Persistence across navigation** | Normally survives navigation, but can be cleared or become unavailable. | Lost if the dialog redirects. |
 
 ## Use local storage
 

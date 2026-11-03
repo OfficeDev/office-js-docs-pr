@@ -2,19 +2,19 @@
 title: Runtimes in Office Add-ins
 description: Learn about the runtimes that are used by Office Add-ins.
 ms.topic: concept-article
-ms.date: 11/06/2025
+ms.date: 11/03/2026
 ms.localizationpriority: medium
 ---
 
 # Runtimes in Office Add-ins
 
-Office Add-ins execute in runtimes embedded in Office. As an interpreted language, JavaScript must run in a JavaScript runtime. [Node.js](https://nodejs.org) and modern browsers are examples of such runtimes.
+Office Add-ins run in runtimes that are embedded in Office. As an interpreted language, JavaScript runs in a JavaScript runtime. Examples of JavaScript runtimes include [Node.js](https://nodejs.org) and modern browsers.
 
 ## Types of runtimes
 
-There are two types of runtimes used by Office Add-ins:
+Office Add-ins use two types of runtimes:
 
-- **JavaScript-only runtime**: A JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and client-side storage of data. It doesn't support [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or cookies.
+- **JavaScript-only runtime**: A JavaScript engine with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and client-side data storage. It doesn't support [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage) or cookies.
 - **Browser runtime**: Includes all the features of a JavaScript-only runtime and adds support for [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage), a [rendering engine](https://developer.mozilla.org/docs/Glossary/Rendering_engine) that renders HTML, and cookies.
 
 Details about these types are later in this article at [JavaScript-only runtime](#javascript-only-runtime) and [Browser runtime](#browser-runtime).
@@ -99,28 +99,30 @@ For Excel, PowerPoint, and Word add-ins, use a [Shared runtime](#shared-runtime)
     > Starting in Version 115 of Chromium-based browsers, such as Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent specific side-channel cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means that data stored by storage APIs, such as local storage, are only available to contexts with the same origin and the same top-level site.
 
     > [!TIP]
-    > Data in `Window.localStorage` persists between sessions of the add-in and is shared by add-ins with the same origin. Both of these characteristics are often undesirable for an add-in.
+    > Data in `Window.localStorage` normally persists between sessions of the add-in and is shared by add-ins with the same origin, subject to storage partitioning. Both of these characteristics are often undesirable for an add-in.
     >
-    > - To ensure that each session of a given add-in starts fresh call the [Window.localStorage.clear](https://developer.mozilla.org/docs/Web/API/Storage/clear) method when the add-in starts.
+    > Persistence isn't guaranteed: browser or webview storage can be cleared or become unavailable, including through Office Add-in cache-clearing operations. Use it for temporary or recoverable data, or as a local cache, rather than as the only persisted copy of important user data. For durable user-level data, use an online database associated with the user's identity.
+    >
+    > - To ensure that each session of a given add-in starts fresh, call the [Window.localStorage.clear](https://developer.mozilla.org/docs/Web/API/Storage/clear) method when the add-in starts.
     > - To allow some stored values to persist, but reinitialize other values, use [Window.localStorage.setItem](https://developer.mozilla.org/docs/Web/API/Storage/setItem) when the add-in starts for each item that should be reset to an initial value.
     > - To delete an item entirely, call [Window.localStorage.removeItem](https://developer.mozilla.org/docs/Web/API/Storage/removeItem).
 
 - To share data between an Excel custom function and any other runtime, use [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage).
 - To share data between an Outlook event-based task and a task pane or function command, you must branch your code by the value of the [Office.context.platform](/javascript/api/office/office.context#office-office-context-platform-member) property.
 
-  - When the value is `PC` (Windows), store and retrieve data using the [Office.sessionData](/javascript/api/outlook/office.sessiondata) APIs.
+  - When the value is `PC` (Windows), store and retrieve data by using the [Office.sessionData](/javascript/api/outlook/office.sessiondata) APIs.
   - When the value is `Mac`, use `Window.localStorage` as described earlier in this list.
 
 Other ways to share data include the following:
 
-- Store shared data in an online database that is accessible to all the runtimes.
+- Store shared data in an online database that's accessible to all the runtimes.
 - Store shared data in a cookie for the add-in's domain to share it between browser runtimes. JavaScript-only runtimes don't support cookies.
 
 For more information, see [Persist add-in state and settings](../develop/persisting-add-in-state-and-settings.md) and [Get and set add-in metadata for an Outlook add-in](../outlook/metadata-for-an-outlook-add-in.md).
 
 ## JavaScript-only runtime
 
-The JavaScript-only runtime that is used in Office Add-ins is a modification of an open source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
+The JavaScript-only runtime that Office Add-ins use is a modification of an open-source runtime originally created for [React Native](https://reactnative.dev/). It contains a JavaScript engine supplemented with support for [WebSockets](https://developer.mozilla.org/docs/Web/API/WebSockets_API), [Full CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/docs/Web/HTTP/CORS), and [OfficeRuntime.storage](/javascript/api/office-runtime/officeruntime.storage). It doesn't have a rendering engine, and it doesn't support cookies or [local storage](https://developer.mozilla.org/docs/Web/API/Window/localStorage).
 
 This type of runtime is used in event-based and spam-reporting add-ins in classic Outlook on Windows only and in Excel custom functions *except* when the custom functions are [sharing a runtime](#shared-runtime).
 
@@ -134,7 +136,7 @@ This type of runtime is used in event-based and spam-reporting add-ins in classi
   > [!NOTE]
   > The [event-based activation](../develop/event-based-activation.md) and [integrated spam reporting](../outlook/spam-reporting.md) features in Outlook must use the same runtime. Multiple runtimes aren't currently supported in Outlook.
 
-A JavaScript-only runtime uses less memory and starts up faster than a browser runtime, but has fewer features.
+A JavaScript-only runtime uses less memory and starts up faster than a browser runtime, but it has fewer features.
 
 ## Browser runtime
 
@@ -154,13 +156,13 @@ A browser runtime lifespan varies depending on the feature that it implements an
 - When an Excel custom function is using a shared runtime, then a browser-type runtime starts when the custom function calculates if the shared runtime hasn't already started for some other reason. It shuts down when the document is closed.
 
 > [!NOTE]
-> When a runtime is being [shared](#shared-runtime), it's possible for your code to close the task pane without shutting down the add-in. See [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md) for more information.
+> When a runtime is being [shared](#shared-runtime), your code can close the task pane without shutting down the add-in. See [Show or hide the task pane of your Office Add-in](../develop/show-hide-add-in.md) for more information.
 
 A browser runtime has more features than a JavaScript-only runtime, but starts up slower and uses more memory.
 
 ### Shared runtime
 
-A "shared runtime" isn't a type of runtime. It refers to a [browser-type runtime](#browser-runtime) that's being shared by features of the add-in that would otherwise each have their own runtime. Specifically, you have the option of configuring the add-in's task pane and function commands to share a runtime. In an Excel add-in, you can also configure custom functions to share the runtime of a task pane or function command or both. When you do this, the custom functions are running in a browser-type runtime, instead of a [JavaScript-only runtime](#javascript-only-runtime) as it otherwise would. See [Configure your add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) for information about the benefits and limitations of sharing runtimes and instructions for configuring the add-in to use a shared runtime. In brief, the JavaScript-only runtime uses less memory and starts up faster, but has fewer features.
+A "shared runtime" isn't a type of runtime. It refers to a [browser-type runtime](#browser-runtime) that's being shared by features of the add-in that would otherwise each have their own runtime. Specifically, you have the option of configuring the add-in's task pane and function commands to share a runtime. In an Excel add-in, you can also configure custom functions to share the runtime of a task pane or function command or both. When you do this, the custom functions run in a browser-type runtime, instead of a [JavaScript-only runtime](#javascript-only-runtime) as it otherwise would. See [Configure your add-in to use a shared runtime](../develop/configure-your-add-in-to-use-a-shared-runtime.md) for information about the benefits and limitations of sharing runtimes and instructions for configuring the add-in to use a shared runtime. In brief, the JavaScript-only runtime uses less memory and starts up faster, but has fewer features.
 
 > [!NOTE]
 >

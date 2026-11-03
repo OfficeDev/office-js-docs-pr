@@ -1,7 +1,7 @@
 ---
 title: Navigation patterns for Office Add-ins
 description: Learn best practices for using command bars, tab bars, and back buttons to design the navigation of an Office Add-in.
-ms.date: 02/20/2026
+ms.date: 11/03/2026
 ms.topic: best-practice
 ms.localizationpriority: medium
 ---
@@ -116,7 +116,7 @@ Use recognizable icons with tooltips to make icon-only commands that save space.
 
 The tab bar navigates with buttons that use vertically stacked text and icons. Tabs appear at the top of the task pane and switch between major sections.
 
-:::image type="content" source="../images/add-in-tab-bar.png" alt-text="Illustration showing a tab bar within an Office desktop application task pane. This example shows a tab bar immediately below the add-in name with 'Home', 'Settings', 'Favorites', and 'Account' tabs.":::
+:::image type="content" source="../images/add-in-tab-bar.png" alt-text="Illustration showing a tab bar within an Office desktop application task pane. This example shows a tab bar immediately below the add-in name with Home, Settings, Favorites, and Account tabs.":::
 
 Use a tab bar when:
 
@@ -134,24 +134,24 @@ Because task panes have a narrow width, design tab bars with the following consi
 - **Icon + text** - Stack the icon above text to reduce width. Use 20x20px icons.
 - **Responsive behavior** - On very narrow views (mobile web), consider switching to a command bar.
 
-For accessibility, make sure the active tab is visually distinct and use `aria-current="page"` on the active tab.
+For accessibility, ensure the active tab is visually distinct and use `aria-current="page"` on the active tab.
 
 ### Back button
 
-The back button allows users to navigate backward through a linear workflow or return from detail views to list views.
+The back button helps you navigate backward through a linear workflow or return from detail views to list views.
 
 :::image type="content" source="../images/add-in-back-button.png" alt-text="Illustration showing a back button within an Office desktop application task pane. This example shows a back button immediately below the add-in name, in the top left.":::
 
 Use a back button when:
 
-- You want drill-down navigation, such as when the user selects an item from a list to see details.
+- You want drill-down navigation, such as when you select an item from a list to see details.
 - You have multistep workflows, such as wizard-like flows with sequential steps (such as Setup → Configure → Confirm).
 - You have modal detail views, such as temporary views that users exit to return to main content.
 
-Position the back button in the top-left corner, immediately below the add-in name, within the title/header area. Make it at least 32x32px, but 44x44px is recommended for better touch accessibility. In narrow task panes, show the current location as text next to the back button instead of a full breadcrumb trail. For example, `[← Back] Display Options` (minimal) or `[← Back] Settings > Display Options` (if space allows). Consider including a home or close icon to allow users to exit multistep flows entirely. Include keyboard shortcuts (Alt+Left Arrow or Escape) for accessibility. Make the back button visually distinct from other navigation elements.
+Position the back button in the top-left corner, immediately below the add-in name, within the title/header area. Make it at least 32x32 px, but 44x44 px is recommended for better touch accessibility. In narrow task panes, show the current location as text next to the back button instead of a full breadcrumb trail. For example, `[← Back] Display Options` (minimal) or `[← Back] Settings > Display Options` (if space allows). Consider including a home or close icon to allow users to exit multistep flows entirely. Include keyboard shortcuts (Alt+Left Arrow or Escape) for accessibility. Make the back button visually distinct from other navigation elements.
 
 > [!NOTE]
-> Breadcrumbs aren't recommended for most add-ins. They consume valuable vertical space and often truncate in narrow task panes.
+> Don't use breadcrumbs for most add-ins. They consume valuable vertical space and often truncate in narrow task panes.
 
 Don't use a back button for tab-based navigation (tabs should be persistent), undo operations (use explicit Undo commands), or browser-like history (add-ins don't have page-based navigation).
 
@@ -188,7 +188,7 @@ Don't use accordion navigation for primary navigation (use tabs or vertical navi
 
 Users might close and reopen the task pane multiple times during a work session. Preserve navigation state to reduce friction by saving the current view, selected tab, or navigation context.
 
-Use `Office.context.document.settings` to store navigation state that should persist with the document, or use `localStorage` for user-specific preferences that apply across all documents.
+Use `Office.context.document.settings` to store navigation state that should persist with the document, or use `localStorage` to cache navigation preferences across documents in the same Office application and browser or webview profile. Browser storage can be cleared or become unavailable, so provide a default view when the cached state is missing. For user-specific preferences that must be preserved, use an online database associated with the user's identity rather than relying solely on `localStorage`.
 
 ```javascript
 // Save navigation state.
@@ -197,7 +197,7 @@ function navigateTo(view) {
   Office.context.document.settings.set('currentView', view);
   Office.context.document.settings.saveAsync();
 
-  // You can also use localStorage for user-specific state.
+  // Cache the navigation state locally.
   localStorage.setItem('lastView', view);
 }
 
