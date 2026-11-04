@@ -30,7 +30,7 @@ Install the latest version of Agents Toolkit into Visual Studio Code as describe
 
     :::image type="content" source="../images/teams-toolkit-create-office-task-pane-capability.png" alt-text="The options in the App Features Using an Office Add-in dropdown menu. The option 'Task pane' is selected.":::
 
-1. A dropdown menu listing Office applications to support opens. Select one or more applications in which you want your add-in to run.
+1. A dropdown menu listing Office applications to support opens. Select one or more applications where you want your add-in to run.
 1. In the **Workspace Folder** dialog that opens, select the folder where you want to create the project.
 1. Give a name to the project (with no spaces) when prompted. Agents Toolkit will create the project with basic files and scaffolding. It will then open the project *in a second Visual Studio Code window*. Close the original Visual Studio Code window.
 
