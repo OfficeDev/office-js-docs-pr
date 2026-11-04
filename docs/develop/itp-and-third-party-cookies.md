@@ -1,7 +1,7 @@
 ---
 title: Develop your Office Add-in to work with ITP when using third-party cookies
 description: How to work with ITP and Office Add-ins when using third-party cookies.
-ms.date: 09/24/2025
+ms.date: 11/03/2026
 ms.localizationpriority: medium
 ---
 
@@ -14,7 +14,7 @@ If your Office Add-in and website must rely on third-party cookies, follow these
 1. **Set up [OAuth 2.0 Authorization](https://tools.ietf.org/html/rfc6749)** so that the authenticating domain (the third-party that expects cookies) forwards an authorization token to your website. Use the token to establish a first-party session with a server-set Secure and [HttpOnly cookie](https://developer.mozilla.org/docs/Web/HTTP/Cookies#Secure_and_HttpOnly_cookies).
 1. **Use the [Storage Access API](https://webkit.org/blog/8124/introducing-storage-access-api/)** so that the third-party can request permission to access its first-party cookies. Current versions of Office on Mac and Office on the web both support this API.
     > [!NOTE]
-    > For non-authentication purposes, consider using `localStorage` instead of cookies.
+    > For non-authentication purposes, consider using `localStorage` instead of cookies for temporary or recoverable data, or as a local cache. Browser storage can be cleared or become unavailable, so don't use it as the only persisted copy of important user data. To preserve user-level data, use an online database associated with the user's identity. For more information, see [Persist add-in state and settings](persisting-add-in-state-and-settings.md#browser-storage).
     >
     > However, starting in Version 115 of Chromium-based browsers like Chrome and Edge, [storage partitioning](https://developer.chrome.com/docs/privacy-sandbox/storage-partitioning/) is enabled to prevent cross-site tracking (see also [Microsoft Edge browser policies](/deployedge/microsoft-edge-policies#defaultthirdpartystoragepartitioningsetting)). This means storage APIs like local storage are only available to contexts with the same origin and top-level site.
 
@@ -52,7 +52,7 @@ if (document.hasStorageAccess) {
 Third-party cookies are cookies loaded in an iframe where the domain differs from the top-level frame. ITP can affect:
 
 - **Complex authentication scenarios** where a pop-up dialog handles credentials and the add-in iframe needs cookie access to complete authentication.
-- **Silent authentication scenarios** where you've previously authenticated through a pop-up but subsequent attempts try to authenticate through a hidden iframe.
+- **Silent authentication scenarios** where you previously authenticated through a pop-up but subsequent attempts try to authenticate through a hidden iframe.
 
 ### Platform-specific behavior
 
