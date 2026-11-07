@@ -1,9 +1,10 @@
 ---
 title: Manage sensitivity labels in Office Add-ins
 description: Learn how to manage sensitivity labels in Excel, Outlook, PowerPoint, and Word add-ins.
-ms.date: 09/23/2026
+ms.date: 11/06/2026
 ms.topic: how-to
 ms.localizationpriority: medium
+ai-usage: ai-assisted
 ---
 
 # Manage sensitivity labels in Office Add-ins
@@ -65,6 +66,29 @@ Add-ins that handle the `OnSensitivityLabelChanged` event require additional man
 
 ---
 
+## Try out the APIs in Script Lab
+
+# [Excel, PowerPoint, and Word](#tab/excel-powerpoint-word)
+
+Get the [Script Lab add-in](https://appsource.microsoft.com/product/office/WA104380862) and try the **Manage sensitivity labels** sample for your Office application.
+
+- [Excel: Manage sensitivity labels](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/main/samples/excel/98-preview-apis/manage-sensitivity-labels.yaml)
+- [PowerPoint: Manage sensitivity labels](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/main/samples/powerpoint/preview-apis/manage-sensitivity-labels.yaml)
+- [Word: Manage sensitivity labels](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/main/samples/word/99-preview-apis/manage-sensitivity-labels.yaml)
+
+The samples show how to check labeling capabilities, list labels and sublabels, retrieve ABAC attributes, get the current label, and apply a label with or without ABAC attributes.
+
+# [Outlook](#tab/outlook)
+
+Get the [Script Lab for Outlook add-in](https://appsource.microsoft.com/product/office/wa200001603) and try the following samples.
+
+- [Work with the sensitivity labels catalog](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/main/samples/outlook/60-sensitivity-label/sensitivity-labels-catalog.yaml): Check whether sensitivity labels are enabled on the mailbox and retrieve the available labels.
+- [Work with sensitivity labels (Compose)](https://raw.githubusercontent.com/OfficeDev/office-js-snippets/main/samples/outlook/60-sensitivity-label/sensitivity-label.yaml): Get or set the sensitivity label on a message or appointment in compose mode.
+
+---
+
+To learn more about Script Lab, see [Explore Office JavaScript API using Script Lab](../overview/explore-with-script-lab.md).
+
 ## Verify sensitivity labeling is available
 
 Sensitivity labels and policies are configured by an organization's administrator through the [Microsoft Purview compliance portal](/microsoft-365/compliance/microsoft-365-compliance-center). For guidance on how to configure sensitivity labels in your tenant, see [Create and configure sensitivity labels and their policies](/microsoft-365/compliance/create-sensitivity-labels).
@@ -72,6 +96,8 @@ Sensitivity labels and policies are configured by an organization's administrato
 # [Excel, PowerPoint, and Word](#tab/excel-powerpoint-word)
 
 To determine whether sensitivity labeling is available to the current user, load `getLabelingCapability` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getlabelingcapability-member), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getlabelingcapability-member), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getlabelingcapability-member)) from the sensitivity label catalog.
+
+The status is a `LabelingCapability` value ([Excel](/javascript/api/excel/excel.labelingcapability), [PowerPoint](/javascript/api/powerpoint/powerpoint.labelingcapability), [Word](/javascript/api/word/word.labelingcapability)), such as `labelingEnabled`, `labelingDisabled`, `labelingPolicyNotFound`, or `noLicense`. To check for additional capabilities, load the `getLabelingCapabilities` array ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getlabelingcapabilities-member), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getlabelingcapabilities-member), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getlabelingcapabilities-member)). For example, check for `attributeBasedAccessControlEnabled` before retrieving attribute-based access control (ABAC) attributes.
 
 ```typescript
 await Word.run(async (context) => {
@@ -83,11 +109,12 @@ await Word.run(async (context) => {
     }
 
     // Load the labeling capability status before reading it.
-    labelCatalog.load("getLabelingCapability");
+    labelCatalog.load("getLabelingCapability,getLabelingCapabilities");
     await context.sync();
 
     // Display whether sensitivity labeling is enabled and available.
     console.log(`Sensitivity labeling capability: ${labelCatalog.getLabelingCapability}`);
+    console.log("Available labeling capabilities:", labelCatalog.getLabelingCapabilities);
 });
 ```
 
@@ -114,7 +141,12 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 To retrieve the labels published to the current user, call `getLabels()` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getlabels-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getlabels-member(1)), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getlabels-member(1))) on the catalog.
 
-The method returns a collection whose items and properties aren't available until you explicitly load them and call `context.sync()`. For guidance, see [Load from a collection](application-specific-api-model.md#load-from-a-collection). Load `items` and the label properties your add-in needs. Available properties differ by host. For a complete list, see `SensitivityLabelDetails` ([Excel](/javascript/api/excel/excel.sensitivitylabeldetails), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabeldetails), [Word](/javascript/api/word/word.sensitivitylabeldetails)).
+The method returns a collection whose items and properties aren't available until you explicitly load them and call `context.sync()`. For guidance, see [Load from a collection](application-specific-api-model.md#load-from-a-collection). Load `items` and the label properties your add-in needs. The `SensitivityLabelDetails` object ([Excel](/javascript/api/excel/excel.sensitivitylabeldetails), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabeldetails), [Word](/javascript/api/word/word.sensitivitylabeldetails)) provides the following information.
+
+- The label's ID, name, description (`tooltip`), color, order, and tenant ID (`siteId`).
+- Whether the label is enabled (`isEnabled`) and its protection type (`protectionType`).
+- Sublabels in the `children` collection. Explicitly load the properties of sublabels that your add-in needs.
+- Whether the label supports ABAC (`isAbacEnabled`) and requires attribute selections (`isAbacAttributesRequired`).
 
 ```typescript
 await Word.run(async (context) => {
@@ -127,13 +159,22 @@ await Word.run(async (context) => {
 
     // Get the available labels and load the properties used by the add-in.
     const availableLabels = labelCatalog.getLabels();
-    availableLabels.load("items/id,items/name,items/isEnabled");
+    availableLabels.load(
+        "items/id,items/name,items/isEnabled,items/isAbacEnabled,items/isAbacAttributesRequired," +
+        "items/children/items/id,items/children/items/name,items/children/items/isEnabled"
+    );
     await context.sync();
 
     // Display the available labels.
     console.log("Available sensitivity labels:");
     availableLabels.items.forEach((label) => {
         console.log(`${label.name} (${label.id}) - ${label.isEnabled ? "Enabled" : "Disabled"}`);
+        console.log(`ABAC enabled: ${label.isAbacEnabled}; attributes required: ${label.isAbacAttributesRequired}`);
+        if (label.children) {
+            label.children.items.forEach((sublabel) => {
+                console.log(`  ${sublabel.name} (${sublabel.id}) - ${sublabel.isEnabled ? "Enabled" : "Disabled"}`);
+            });
+        }
     });
 });
 ```
@@ -189,9 +230,9 @@ await Word.run(async (context) => {
     // Access the sensitivity label applied to the current document.
     const documentLabel = context.document.sensitivityLabel;
 
-    // Get the current label, if one is applied, and load its ID and name.
+    // Get the current label, if one is applied.
     const currentLabel = documentLabel.getCurrentOrNullObject();
-    currentLabel.load("id,name");
+    currentLabel.load("id,name,isAbacEnabled");
     await context.sync();
 
     // Display the current label or report that the document isn't labeled.
@@ -199,6 +240,11 @@ await Word.run(async (context) => {
         console.log("The document doesn't have a sensitivity label.");
     } else {
         console.log(`Current label: ${currentLabel.name} (${currentLabel.id})`);
+        if (currentLabel.isAbacEnabled) {
+            currentLabel.load("abacAttributeValues");
+            await context.sync();
+            console.log("Applied ABAC attribute values:", currentLabel.abacAttributeValues);
+        }
     }
 });
 ```
@@ -231,30 +277,72 @@ Office.context.sensitivityLabelsCatalog.getIsEnabledAsync((asyncResult) => {
 
 # [Excel, PowerPoint, and Word](#tab/excel-powerpoint-word)
 
-Before applying a label, call `getLabels()` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getlabels-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getlabels-member(1)), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getlabels-member(1))) and select an enabled label or sublabel from the returned collection. The `tryToUpdate()` method ([Excel](/javascript/api/excel/excel.sensitivitylabel#excel-excel-sensitivitylabel-trytoupdate-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabel#powerpoint-powerpoint-sensitivitylabel-trytoupdate-member(1)), [Word](/javascript/api/word/word.sensitivitylabel#word-word-sensitivitylabel-trytoupdate-member(1))) requires the selected label's ID as its parameter. Calling `getLabels()` first lets you retrieve this required ID and verify that the label is available to the current user. Check the returned `SensitivityLabelUpdateResult` ([Excel](/javascript/api/excel/excel.sensitivitylabelupdateresult), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelupdateresult), [Word](/javascript/api/word/word.sensitivitylabelupdateresult)) value to determine whether the update succeeded.
+Before applying a label, call `getLabels()` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getlabels-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getlabels-member(1)), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getlabels-member(1))) and select an enabled label or sublabel from the returned collection. The `tryToUpdate()` method ([Excel](/javascript/api/excel/excel.sensitivitylabel#excel-excel-sensitivitylabel-trytoupdate-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabel#powerpoint-powerpoint-sensitivitylabel-trytoupdate-member(1)), [Word](/javascript/api/word/word.sensitivitylabel#word-word-sensitivitylabel-trytoupdate-member(1))) requires the selected label's ID as its first parameter and accepts an optional `SensitivityLabelTryUpdateOptions` object ([Excel](/javascript/api/excel/excel.sensitivitylabeltryupdateoptions), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabeltryupdateoptions), [Word](/javascript/api/word/word.sensitivitylabeltryupdateoptions)) for ABAC attribute selections. Calling `getLabels()` first lets you retrieve the required ID and verify that the label is available to the current user.
+
+After calling `context.sync()`, read `updateResult.value.status` from the returned `SensitivityLabelUpdateResult` object ([Excel](/javascript/api/excel/excel.sensitivitylabelupdateresult), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelupdateresult), [Word](/javascript/api/word/word.sensitivitylabelupdateresult)). Compare it with `SensitivityLabelUpdateStatus.success` ([Excel](/javascript/api/excel/excel.sensitivitylabelupdatestatus), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelupdatestatus), [Word](/javascript/api/word/word.sensitivitylabelupdatestatus)) to determine whether the update succeeded.
 
 > [!NOTE]
 > A parent label that has sublabels can't be applied directly. Select one of its enabled sublabels instead.
 
 ```typescript
-async function setDocumentSensitivityLabel(labelId: string) {
+async function setDocumentSensitivityLabel(labelId: string, options?: Word.SensitivityLabelTryUpdateOptions) {
     await Word.run(async (context) => {
         // Access the sensitivity label applied to the current document.
         const documentLabel = context.document.sensitivityLabel;
 
         // Apply the selected label.
-        const updateResult = documentLabel.tryToUpdate(labelId);
+        const updateResult = documentLabel.tryToUpdate(labelId, options);
         await context.sync();
 
         // Check whether the label update succeeded.
-        if (updateResult.value === Word.SensitivityLabelUpdateResult.success) {
+        if (updateResult.value.status === Word.SensitivityLabelUpdateStatus.success) {
             console.log("Applied the sensitivity label to the document.");
         } else {
-            console.error(`The sensitivity label wasn't applied. Result: ${updateResult.value}`);
+            console.error(`The sensitivity label wasn't applied. Status: ${updateResult.value.status}`);
         }
     });
 }
 ```
+
+### Apply a label with ABAC attributes
+
+For ABAC-enabled labels, retrieve the available attributes through `SensitivityLabelsCatalog.getAttributes()` ([Excel](/javascript/api/excel/excel.sensitivitylabelscatalog#excel-excel-sensitivitylabelscatalog-getattributes-member(1)), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelscatalog#powerpoint-powerpoint-sensitivitylabelscatalog-getattributes-member(1)), [Word](/javascript/api/word/word.sensitivitylabelscatalog#word-word-sensitivitylabelscatalog-getattributes-member(1))). First, load `getLabelingCapabilities` and verify that it includes `LabelingCapability.attributeBasedAccessControlEnabled`. The method returns a `ClientResult` whose `value` property contains an array of `SensitivityLabelAbacAttribute` objects ([Excel](/javascript/api/excel/excel.sensitivitylabelabacattribute), [PowerPoint](/javascript/api/powerpoint/powerpoint.sensitivitylabelabacattribute), [Word](/javascript/api/word/word.sensitivitylabelabacattribute)). Call `context.sync()` before reading this property.
+
+Each attribute has a display name, display order, data type, active status, an `isMultiValued` flag, and a `values` array.
+
+```typescript
+await Word.run(async (context) => {
+    const labelCatalog = context.sensitivityLabelsCatalog;
+    if (!labelCatalog) {
+        console.warn("The sensitivity label catalog isn't available.");
+        return;
+    }
+
+    labelCatalog.load("getLabelingCapabilities");
+    await context.sync();
+
+    if (!labelCatalog.getLabelingCapabilities.includes(Word.LabelingCapability.attributeBasedAccessControlEnabled)) {
+        console.warn("ABAC attributes aren't enabled or available for the current user.");
+        return;
+    }
+
+    const catalogAttributes: OfficeExtension.ClientResult<Word.SensitivityLabelAbacAttribute[]> =
+        labelCatalog.getAttributes();
+    await context.sync();
+
+    console.log("Available ABAC attributes:", catalogAttributes.value);
+});
+```
+
+To apply a label with ABAC attributes, use attributes from the catalog and include only the user-selected values in each attribute's `values` array. Use only active attributes and active values, and allow multiple values only when `isMultiValued` is `true`. Validate the selections against the current policy before applying the label.
+
+Pass the selected attributes through the `abacAttributes` property of the options object supplied to `tryToUpdate()`. The following rules apply.
+
+- If `isAbacEnabled` is `false`, omit `abacAttributes` or pass an empty array. Otherwise, the update status is `abacAttributesNotAllowed`.
+- If `isAbacEnabled` and `isAbacAttributesRequired` are both `true`, supply attribute selections. Otherwise, the update status is `abacAttributesRequired`.
+- Check the update status for other failures, such as `unsupportedAbac`, `labelDisabled`, or `insufficientPermission`. A completed `context.sync()` doesn't by itself mean the label was applied.
+
+To read the ABAC values currently applied to a file, load `abacAttributeValues` on the object returned by `getCurrentOrNullObject()`, as shown in [Get the sensitivity label](#get-the-sensitivity-label). Check `isNullObject` and `isAbacEnabled` before loading the values.
 
 # [Outlook](#tab/outlook)
 
