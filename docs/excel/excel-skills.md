@@ -1,7 +1,7 @@
 ---
 title: Overview of Copilot skills for Excel (preview)
 description: Learn how to create agent skills that call the Office JavaScript Library (Office.js) that can be plugged into Copilot agents in Excel.
-ms.date: 08/13/2026
+ms.date: 11/12/2026
 ms.topic: overview
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -165,6 +165,10 @@ It's important to cleanly uninstall the skill after each test session. Follow th
 1. Select the add-in from the list of apps to expand its row.
 1. Select the trash can icon and then select **Remove** in the prompt.
 
+## Publish the skill
+
+[!INCLUDE [publish as plugin](../includes/package-as-plugin.md)]
+
 ## Next steps
 
-- [Create a Copilot skill for Excel that finds use the Office JavaScript Library (preview)](excel-copilot-skill.md).
+- [Create a Copilot skill for Excel that uses the Office JavaScript Library (preview)](excel-copilot-skill.md).

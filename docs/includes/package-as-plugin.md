@@ -1,0 +1,1 @@
+When custom Copilot skills for Excel are released to general availability, package and distribute the skill as a Copilot plugin. For more information, see [Copilot Plugins](/microsoft-365/copilot/extensibility/plugins-overview).

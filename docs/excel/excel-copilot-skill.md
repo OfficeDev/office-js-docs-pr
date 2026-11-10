@@ -1,7 +1,7 @@
 ---
 title: Create a Copilot skill for Excel that uses the Office JavaScript Library (preview)
 description: Learn how to create an Excel Copilot skill that uses Office.js.
-ms.date: 08/13/2026
+ms.date: 10/12/2026
 ms.topic: tutorial
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -568,3 +568,7 @@ From the `my-copilot-plugin-skills` root, use any ZIP utility to create a ZIP fi
 | The skill doesn't trigger. | The user request doesn't match the skill description, or the skill package isn't installed. | Go through the uninstall procedure and then reinstall the package. |
 | Copilot says it can't run the script. | The skill is running outside Excel. | Open the workbook in Excel and invoke the skill there. |
 | The wrong table is analyzed. | An earlier table on the first worksheet also qualifies. | Move, rename, or adjust tables so the intended table is the first qualifying table. |
+
+## Publish the skill
+
+[!INCLUDE [publish as plugin](../includes/package-as-plugin.md)]

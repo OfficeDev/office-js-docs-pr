@@ -1,7 +1,7 @@
 ---
 title: Create a Copilot skill for Excel that uses custom functions (preview)
 description: Learn how to create a Copilot skill for Excel that inserts formulas that call custom functions.
-ms.date: 10/09/2026
+ms.date: 10/12/2026
 ms.topic: tutorial
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -1271,3 +1271,7 @@ Add the required package icons, **color.png** and **outline.png**, in the **appP
 | A function remains at `#BUSY!` and doesn't resolve to a formula or value even after several minutes. | The function bundle or exchange-rate service can't be reached. | Confirm that the server provides `https://localhost:3000/public/functions.js` and that `api.frankfurter.dev` is reachable. |
 | A formula is displayed as text. | The table column uses the **Text** number format. | Change the column format to **General** or **Number**, and then invoke the skill again. |
 | Copilot says it can't run the script. | The skill is running outside Excel. | Open the workbook in Excel and invoke the skill there. |
+
+## Publish the skill
+
+[!INCLUDE [publish as plugin](../includes/package-as-plugin.md)]
