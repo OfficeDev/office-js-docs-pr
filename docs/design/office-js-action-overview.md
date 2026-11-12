@@ -98,33 +98,30 @@ In the manifest, create an action object that identifies the JavaScript function
 
 ### Action file
 
-An action file describes a single Office.js action: its ID, a description of what it does and when to use it, its parameters, its return value, and optional per-state instructions for the Copilot orchestrator.  The following is an example. Note the following about this JSON.
+An action file describes a single Office.js action: its ID, a description of what it does and when to use it, its parameters, and its return value. The following is an example. Note the following about this JSON.
 
 - The `"id"` property must be an exact match for the `"actions.id"` property of the corresponding action object in the manifest, and for the first parameter of the call to `Office.actions.associate` in the JavaScript function that implements the action.
-- Copilot passes all the parameters in the `"parameters"` array as a JSON object, even when there is only one, as in this example. So, the JavaScript function that is called by the action receives an object like `{ "rangeAddress": "A1:A12" }` as the parameter.
-- The `"states.responding"` property only provides *guidance* to Copilot about how to respond. It doesn't put any limits or structural requirements on the response.
+- The `"parameters"` object uses `"type": "object"` and defines named parameters in `"properties"`. The `"required"` array lists the names of required parameters.
+- Copilot passes parameter values as a JSON object, even when there is only one, as in this example. So, the JavaScript function that is called by the action receives an object like `{ "rangeAddress": "A1:A12" }` as the parameter.
 
 ```json
 {
     "$schema": "https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json",
     "id": "ApplyContosoFinancialStyle",
-    "actionDescription": "Applies the Contoso financial reporting style to an Excel range, including Contoso's required header colors, fonts, alignment, borders, and number formatting.",
-    "parameters": [
-        {
-            "name": "rangeAddress",
-            "parameterDataType": "string",
-            "parameterDescription": "The address of the Excel range to format, such as A1:F12.",
-            "isRequired": true
-        }
-    ],
-    "returnedValue": {
-        "dataType": "string",
-        "returnedValueDescription": "A string indicating the result of the action."
+    "description": "Applies the Contoso financial reporting style to an Excel range, including Contoso's required header colors, fonts, alignment, borders, and number formatting.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "rangeAddress": {
+                "type": "string",
+                "description": "The address of the Excel range to format, such as A1:F12."
+            }
+        },
+        "required": ["rangeAddress"]
     },
-    "states": {
-        "responding": {
-            "stateDescription": "If there is no error, tell the user which range was formatted with the Contoso financial reporting style."
-        }
+    "returns": {
+        "type": "string",
+        "description": "A string indicating the result of the action."
     }
 }
 ```

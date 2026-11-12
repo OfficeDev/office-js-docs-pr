@@ -40,6 +40,10 @@ In this article, you'll walk through the process of building a simple Office Jav
 1. The project opens in a new Visual Studio Code window. Close the original Visual Studio Code window.
 1. Open the Agents Toolkit, and in the **ACCOUNTS** section, ensure that you're logged into your Microsoft 365 tenancy and that both **Custom App Upload** and **Copilot Access** are enabled.
 
+### Check the action file
+
+Before running the project, open the JSON action file referenced by the manifest's `"extensions.runtimes.actions.actionFile"` property and check that it uses the current [action file schema](../develop/action-file-schema-1.0.md). The action file uses `"description"` for the action description, a `"parameters"` object with `"type": "object"`, named parameter definitions in `"properties"`, and a `"required"` array for required parameter names. Each parameter definition uses `"type"` and an optional `"description"`. The optional `"returns"` object uses `"type": "string"` and an optional `"description"`. Per-state instructions aren't supported. If the generated file uses an older format, update it to match the example in [Create the action file](../develop/office-js-action.md#create-the-action-file).
+
 ## Run the project
 
 1. Close all Office applications.

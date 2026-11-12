@@ -163,23 +163,20 @@ The runtime object should look similar to the following. There may be other prop
    {
        "$schema": "https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json",
        "id": "applyContosoFinancialStyle",
-       "actionDescription": "Applies the Contoso financial reporting style to an Excel range, including Contoso's required header colors, fonts, alignment, borders, and number formatting.",
-       "parameters": [
-           {
-               "name": "rangeAddress",
-               "parameterDataType": "string",
-               "parameterDescription": "The address of the Excel range to format, such as A1:F12.",
-               "isRequired": true
-           }
-       ],
-       "returnedValue": {
-           "dataType": "string",
-           "returnedValueDescription": "A string indicating the result of the action."
+       "description": "Applies the Contoso financial reporting style to an Excel range, including Contoso's required header colors, fonts, alignment, borders, and number formatting.",
+       "parameters": {
+           "type": "object",
+           "properties": {
+               "rangeAddress": {
+                   "type": "string",
+                   "description": "The address of the Excel range to format, such as A1:F12."
+               }
+           },
+           "required": ["rangeAddress"]
        },
-       "states": {
-           "responding": {
-               "stateDescription": "If there is no error, tell the user which range was formatted with the Contoso financial reporting style."
-           }
+       "returns": {
+           "type": "string",
+           "description": "A string indicating the result of the action."
        }
    }
    ```
@@ -193,8 +190,7 @@ The runtime object should look similar to the following. There may be other prop
       - An `"extensions.runtimes.actions.id"` property in the manifest (for an action of type "executeDataFunction").
       - The first parameter of the call to `Office.actions.associate` in a function that you created in [Update the function file](#update-the-function-file).
 
-   - Add additonal parameter objects to the `"parameters"` array as needed. Copilot passes to the JavaScript function an object with each parameter name and value; for example, `{ rangeAddress: "A1:C4", color: "blue" }`
-   - Add a `"states.reasoning"` property if appropriate.
+   - Add additional named parameter definitions to `"parameters.properties"` as needed, and list the names of required parameters in `"parameters.required"`. Copilot passes to the JavaScript function an object with each parameter name and value; for example, `{ rangeAddress: "A1:C4", color: "blue" }`
 
 ### Create the app package
 

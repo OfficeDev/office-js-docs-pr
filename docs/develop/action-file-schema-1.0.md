@@ -8,7 +8,7 @@ ms.topic: reference
 
 # Action file schema 1.0 for Office
 
-An action file describes the data format for a single Office.js action that's referenced by an Office Add-in's `actionFile` property. The action file provides metadata about the action, such as its ID and description, and it describes the action's parameters, its return value, and per-state instructions for the Copilot orchestrator.
+An action file describes the data format for a single Office.js action that's referenced by an Office Add-in's `actionFile` property. The action file provides metadata about the action, such as its ID and description, and it describes the action's parameters and its return value.
 
 The following article describes the 1.0 schema used by action files. For more information about Office.js actions and how they're referenced from an add-in, see QUESTION4.
 
@@ -26,10 +26,9 @@ The action file object contains the following properties.
 | -------- | ---- | ----------- |
 | `$schema` | String | Optional. The URI/URL of this schema. In a production app this should always be set to `https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json`. |
 | `id` | String | Required. The ID of the action, which must match an action ID in the manifest. Max chars: 64. |
-| `actionDescription` | String | Required. Describes what the action does and when to use it. Max chars: 1024. |
-| `parameters` | Array of [Parameter object](#parameter-object) | Optional. The parameters that can be passed to the action. |
-| `returnedValue` | [Returned value object](#returned-value-object) | Optional. The value returned by the action. |
-| `states` | [States object](#states-object) | Optional. Per-state instructions for the Copilot orchestrator. |
+| `description` | String | Required. Describes what the action does and when to use it. Max chars: 1024. |
+| `parameters` | [Parameters object](#parameters-object) | Optional. The parameters that can be passed to the action. |
+| `returns` | [Returns object](#returns-object) | Optional. The value returned by the action. |
 
 Unrecognized properties in the action file object aren't allowed.
 
@@ -39,19 +38,52 @@ Unrecognized properties in the action file object aren't allowed.
 {
   "$schema": "https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json",
   "id": "addTodo",
-  "actionDescription": "Adds a new to-do item to the current list.",
-  "parameters": [
-    {
-      "name": "description",
-      "parameterDataType": "string",
-      "parameterDescription": "The text of the to-do item.",
-      "isRequired": true
-    }
-  ],
-  "returnedValue": {
-    "dataType": "string",
-    "returnedValueDescription": "The ID of the newly created to-do item."
+  "description": "Adds a new to-do item to the current list.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string",
+        "description": "The text of the to-do item."
+      }
+    },
+    "required": ["description"]
+  },
+  "returns": {
+    "type": "string",
+    "description": "The ID of the newly created to-do item."
   }
+}
+```
+
+### Parameters object
+
+Describes the parameters that can be passed to the action. This object mirrors the shape of an MCP tool's `inputSchema`, but supports only the subset of JSON Schema keywords described here.
+
+The parameters object contains the following properties.
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| `type` | String | Required. Must be `object`. |
+| `properties` | Object | Required. Maps parameter names to [Parameter objects](#parameter-object). Each name must match the `^[A-Za-z0-9_]+$` regular expression. |
+| `required` | Array of String | Optional. The names of the required parameters. Each name must match a key in `properties`. Parameters not listed here are optional. |
+| `additionalProperties` | Boolean | Optional. Whether parameters not listed in `properties` are allowed. |
+
+Unrecognized properties in the parameters object aren't allowed. The `additionalProperties` property controls extra parameters in the action's input, not extra fields in the parameters object itself.
+
+#### Parameters object example
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "The text of the to-do item."
+    }
+  },
+  "required": ["description"],
+  "additionalProperties": false
 }
 ```
 
@@ -63,92 +95,41 @@ The parameter object contains the following properties.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `name` | String | Required. The name of the parameter. Value must match the `^[A-Za-z0-9_]+$` regular expression. Max chars: 64. |
-| `parameterDataType` | String | Required. Specifies the parameter's type. Possible values are: `string`, `boolean`, `number`. |
-| `parameterDescription` | String | Optional. The description of the parameter. Max chars: 512. |
-| `isRequired` | Boolean | Optional. Whether the parameter is required. Defaults to `false`. |
-| `defaultValue` | String, Boolean, Number | Optional. The default value for an optional parameter. |
+| `type` | String | Required. Specifies the parameter's type. Possible values are: `string`, `number`, `integer`, `boolean`. |
+| `description` | String | Optional. The description of the parameter. Max chars: 512. |
+| `enum` | Array of String | Optional. The valid values for this parameter. Only valid when `type` is `string`. |
+| `default` | String, Number, Integer, Boolean | Optional. The default value for an optional parameter. Must match the type specified by `type`. |
 
-Unrecognized properties in the parameter object aren't allowed.
+Unrecognized properties in the parameter object aren't allowed. The parameter's name is its key in `parameters.properties`, and whether it's required is specified in `parameters.required`.
 
 #### Parameter object example
 
 ```json
 {
-  "name": "description",
-  "parameterDataType": "string",
-  "parameterDescription": "The text of the to-do item.",
-  "isRequired": true
+  "type": "string",
+  "description": "The text of the to-do item."
 }
 ```
 
-### Returned value object
+### Returns object
 
 Describes the value returned by the action.
 
-The returned value object contains the following properties.
+The returns object contains the following properties.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `dataType` | String | Required. The type of the returned value. Possible values are: `string`. |
-| `returnedValueDescription` | String | Optional. The description of the returned value. Max chars: 512. |
+| `type` | String | Required. The type of the returned value. Possible values are: `string`. |
+| `description` | String | Optional. The description of the returned value. Max chars: 512. |
 
-Unrecognized properties in the returned value object aren't allowed.
+Unrecognized properties in the returns object aren't allowed.
 
-#### Returned value object example
-
-```json
-{
-  "dataType": "string",
-  "returnedValueDescription": "The ID of the newly created to-do item."
-}
-```
-
-### States object
-
-Contains per-state instructions for the Copilot orchestrator.
-
-The states object contains the following properties. At least one property MUST be present.
-
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `reasoning` | [State configuration object](#state-configuration-object) | Optional. The state where the model can call actions. |
-| `responding` | [State configuration object](#state-configuration-object) | Optional. The state where the model responds to the user. |
-
-Unrecognized properties in the states object aren't allowed.
-
-#### States object example
+#### Returns object example
 
 ```json
 {
-  "states": {
-    "reasoning": {
-      "stateDescription": "Use this action to add a to-do item when the user asks to track a new task."
-    },
-    "responding": {
-      "stateDescription": "Confirm to the user that the to-do item was added."
-    }
-  }
-}
-```
-
-### State configuration object
-
-Contains instructions for the action in a specific orchestrator state.
-
-The state configuration object contains the following property.
-
-| Property | Type | Description |
-| -------- | ---- | ----------- |
-| `stateDescription` | String | Required. The purpose of the action in this state. Max chars: 512. |
-
-Unrecognized properties in the state configuration object aren't allowed.
-
-#### State configuration object example
-
-```json
-{
-  "stateDescription": "Use this action to add a to-do item when the user asks to track a new task."
+  "type": "string",
+  "description": "The ID of the newly created to-do item."
 }
 ```
 
@@ -160,32 +141,31 @@ The following example shows an action file that uses all of the properties descr
 {
   "$schema": "https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json",
   "id": "addTodo",
-  "actionDescription": "Adds a new to-do item to the current list.",
-  "parameters": [
-    {
-      "name": "description",
-      "parameterDataType": "string",
-      "parameterDescription": "The text of the to-do item.",
-      "isRequired": true
+  "description": "Adds a new to-do item to the current list.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "description": {
+        "type": "string",
+        "description": "The text of the to-do item."
+      },
+      "dueDate": {
+        "type": "string",
+        "description": "The due date of the to-do item, in ISO 8601 format."
+      },
+      "priority": {
+        "type": "string",
+        "description": "The priority of the to-do item.",
+        "enum": ["low", "normal", "high"],
+        "default": "normal"
+      }
     },
-    {
-      "name": "dueDate",
-      "parameterDataType": "string",
-      "parameterDescription": "The due date of the to-do item, in ISO 8601 format.",
-      "isRequired": false
-    }
-  ],
-  "returnedValue": {
-    "dataType": "string",
-    "returnedValueDescription": "The ID of the newly created to-do item."
+    "required": ["description"],
+    "additionalProperties": false
   },
-  "states": {
-    "reasoning": {
-      "stateDescription": "Use this action to add a to-do item when the user asks to track a new task."
-    },
-    "responding": {
-      "stateDescription": "Confirm to the user that the to-do item was added."
-    }
+  "returns": {
+    "type": "string",
+    "description": "The ID of the newly created to-do item."
   }
 }
 ```
@@ -193,4 +173,3 @@ The following example shows an action file that uses all of the properties descr
 ## Related content
 
 - QUESTION7
-
