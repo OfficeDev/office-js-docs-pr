@@ -14,7 +14,7 @@ The following article describes the 1.0 schema used by action files. For more in
 
 ## JSON schema
 
-The schema described in this document is available in [JSON Schema format](https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json).
+The schema described in this document is available in [JSON Schema format](https://developer.microsoft.com/json-schemas/office-js//action-schema/1.0/action.schema.json).
 
 ## Action file object
 
@@ -24,7 +24,7 @@ The action file object contains the following properties.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `$schema` | String | Optional. The URI/URL of this schema. In a production app this should always be set to `https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json`. |
+| `$schema` | String | Optional. The URI/URL of this schema. In a production app this should always be set to `https://developer.microsoft.com/json-schemas/office-js/action-schema/1.0/action.schema.json`. |
 | `id` | String | Required. The ID of the action, which must match an action ID in the manifest. Max chars: 64. |
 | `description` | String | Required. Describes what the action does and when to use it. Max chars: 1024. |
 | `parameters` | [Parameters object](#parameters-object) | Optional. The parameters that can be passed to the action. |
@@ -36,7 +36,7 @@ Unrecognized properties in the action file object aren't allowed.
 
 ```json
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/office-js/action-schema/1.0/action.schema.json",
   "id": "addTodo",
   "description": "Adds a new to-do item to the current list.",
   "parameters": {
@@ -139,7 +139,7 @@ The following example shows an action file that uses all of the properties descr
 
 ```json
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/office-js/action-schema/1.0/action.schema.json",
   "id": "addTodo",
   "description": "Adds a new to-do item to the current list.",
   "parameters": {
