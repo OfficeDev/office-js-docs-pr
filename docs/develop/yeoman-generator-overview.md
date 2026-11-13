@@ -2,7 +2,7 @@
 title: Create Office Add-in projects using the Yeoman Generator
 description: Learn how to create Office Add-in projects using the Yeoman generator for Office Add-ins.
 ms.topic: tutorial
-ms.date: 06/09/2026
+ms.date: 11/12/2026
 ms.localizationpriority: high
 ---
 
@@ -47,19 +47,16 @@ A lot needs to load, so it may take 40 seconds before the tool starts. The tool 
 The first question asks you to choose between several types of projects. The options are:
 
 - **Office Add-in Task Pane project**
-- **Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)**
 - **Office Add-in Task Pane project using React framework**
 - **Excel Custom Functions using a Shared Runtime**
 - **Excel Custom Functions using a JavaScript-only Runtime**
-- **Office Add-in Task Pane project supporting single sign-on**
-- **Office Add-in Task Pane project supporting Nested App Auth single sign-on (preview)**
+- **Office Add-in Task Pane project supporting Nested App Auth single sign-on**
 - **Office Add-in project containing the manifest only**
 
-:::image type="content" source="../images/yo-office-project-type-prompt.png" alt-text="The prompt for project type, and the possible answers, in the Yeoman generator.":::
+:::image type="content" source="../images/yo-office-project-type-prompt-1.png" alt-text="The prompt for project type, and the possible answers, in the Yeoman generator.":::
 
 > [!NOTE]
 > - The **Office Add-in project containing the manifest only** option produces a project that contains a basic add-in manifest and minimal scaffolding. For more information about the option, see [Manifest-only option](#manifest-only-option).
-> - The **Excel, PowerPoint, and/or Word Task Pane with unified manifest for Microsoft 365 (preview)** option creates a project for Excel, PowerPoint, Word, or all three, that uses the unified manifest for Microsoft 365. For more information about the option, see [Word, PowerPoint, or Excel with unified manifest option](#word-powerpoint-or-excel-with-unified-manifest-option).
 
 The next question asks you to choose between **TypeScript** and **JavaScript**. (This question is skipped if you chose the manifest-only option in the preceding question.)
 
@@ -99,10 +96,6 @@ This option creates only a manifest for an add-in. The resulting project doesn't
 
 - You want to use different tools from the ones a Yeoman generator project installs and configures by default. For example, you want to use a different bundler, transpiler, task runner, or development server.
 - You want to use a web application development framework, other than React, such as Vue.
-
-## Word, PowerPoint, or Excel with unified manifest option
-
-The unified manifest for Microsoft 365 is in preview for Excel, PowerPoint, and Word add-ins. It should not be used for production add-ins, but you can select this option in Yo Office to create an add-in for one (or all three) of those Office applications. You'll be asked to choose which Office application. You can also choose **All** to create an add-in that is installable on all three Office applications. The project that is created uses TypeScript.
 
 ## Use command line parameters
 
