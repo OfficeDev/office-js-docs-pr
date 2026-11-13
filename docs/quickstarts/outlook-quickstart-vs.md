@@ -145,7 +145,7 @@ When you've completed the wizard, Visual Studio creates a solution that contains
 
 ## Try it out
 
-[!INCLUDE [ews-retirement-visual-studio-debugging](../includes/ews-retirement-visual-studio-debugging.md)]
+[!INCLUDE [exchange-web-services-retirement](../includes/exchange-web-services-retirement.md)]
 
 1. Using Visual Studio, test the newly created Outlook add-in by pressing <kbd>F5</kbd> or choosing the **Start** button. The add-in will be hosted locally on IIS.
 

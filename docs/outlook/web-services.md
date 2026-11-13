@@ -13,7 +13,7 @@ Your Outlook add-in can use Exchange Web Services (EWS) from an environment that
 [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
 
 > [!NOTE]
-> EWS is being retired in Exchange Online. This retirement doesn't apply to Exchange Server on-premises. For more information, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](../concepts/faq-ews-deprecation.md).
+> EWS is being retired in Exchange Online. This retirement doesn't apply to Exchange Server on-premises. For more information, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](../concepts/faq-exchange-web-services.md).
 
 The way you call a web service varies based on where the web service is located. The following tables list the different ways you can call a web service based on location.
 

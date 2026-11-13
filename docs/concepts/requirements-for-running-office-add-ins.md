@@ -29,7 +29,7 @@ For content and task pane add-ins, in the supported Office client applications -
 To test and run an Outlook add-in, the user's Outlook email account must reside on Exchange 2016 or later, which is available through Microsoft 365, Exchange Online, or through an on-premises installation. The user or administrator installs manifest files for Outlook add-ins on that server.
 
 > [!NOTE]
-> EWS is being retired in Exchange Online. This retirement doesn't apply to the Exchange on-premises requirements above. For more information, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](faq-ews-deprecation.md).
+> EWS is being retired in Exchange Online. This retirement doesn't apply to the Exchange on-premises requirements above. For more information, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](faq-exchange-web-services.md).
 
 For Exchange on-premises installations, the following requirements apply.
 

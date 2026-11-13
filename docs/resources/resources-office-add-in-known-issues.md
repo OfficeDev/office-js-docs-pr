@@ -143,7 +143,7 @@ No customer action is required. Microsoft applied targeted mitigations to restor
 
 For more information, see [Deprecation of Exchange Web Services (EWS) in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online).
 
-For information about EWS retirement and its effects on Office Add-ins, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](../concepts/faq-ews-deprecation.md).
+For information about EWS retirement and its effects on Office Add-ins, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](../concepts/faq-exchange-web-services.md).
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***

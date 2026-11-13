@@ -69,7 +69,7 @@ This section describes how to start and debug an add-in in desktop Office on Win
 
 ### Start the add-in project
 
-[!INCLUDE [ews-retirement-visual-studio-debugging](../includes/ews-retirement-visual-studio-debugging.md)]
+[!INCLUDE [exchange-web-services-retirement](../includes/exchange-web-services-retirement.md)]
 
 Start the project by choosing **Debug** > **Start Debugging** from the menu bar or press the <kbd>F5</kbd> button. Visual Studio automatically builds the solution and starts the Office host application.
 
