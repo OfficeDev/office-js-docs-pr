@@ -353,6 +353,9 @@
         href: develop/develop-frameworks-faq.md
     - name: Special requirements for add-ins on the iPad
       href: develop/develop-office-add-ins-for-the-ipad.md
+    - name: EWS deprecation FAQ
+      href: concepts/faq-ews-deprecation.md
+      displayName: Excel, Word, PowerPoint, Outlook, Exchange
   - name: Test and debug
     items:
     - name: Test Office Add-ins
