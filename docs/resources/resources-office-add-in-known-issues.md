@@ -1,13 +1,13 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 10/19/2026
+ms.date: 11/13/2026
 ms.localizationpriority: high
 ---
 
 # Office Add-ins known issues
 
-_Last updated October 19, 2026_
+_Last updated November 13, 2026_
 
 This article provides information about current known issues with Office Add-ins. For more information about common error messages you might encounter, see [Troubleshoot user errors with Office Add-ins](/office/dev/add-ins/testing/testing-and-troubleshooting) or contact the add-in developer on the **Details + support** tab on the add-in's detail page in [Microsoft Marketplace](https://marketplace.microsoft.com).
 
@@ -143,6 +143,8 @@ No customer action is required. Microsoft applied targeted mitigations to restor
 
 For more information, see [Deprecation of Exchange Web Services (EWS) in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online).
 
+For information about EWS retirement and its effects on Office Add-ins, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](../concepts/faq-exchange-web-services.md).
+
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
@@ -269,7 +271,6 @@ Date reported: July 28th, 2026
 
 Date fixed: September 28, 2026
 
-
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
@@ -315,7 +316,6 @@ Admins can't deploy Office Add-ins through central deployment when using PIM-ena
 ### WORKAROUND
 
 Don't use PIM-enabled roles if this issue blocks you.
-
 
 <!------------LEAVE SEE ALSO---------------------------------------------------->
 ***

@@ -1,7 +1,7 @@
 ﻿---
 title: Use Exchange Web Services (EWS) from an Outlook add-in in Exchange on-premises
 description: Provides an example that shows how an Outlook add-in in an Exchange on-premises environment can request information from Exchange Web Services.
-ms.date: 11/14/2025
+ms.date: 11/13/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -11,6 +11,9 @@ ms.localizationpriority: medium
 Your Outlook add-in can use Exchange Web Services (EWS) from an environment that runs Exchange Server (on-premises). EWS is a web service that's available on the server that provides the source location for the add-in's UI. This article provides an example that shows how an Outlook add-in can request information from EWS.
 
 [!INCLUDE [legacy-exchange-token-deprecation](../includes/legacy-exchange-token-deprecation.md)]
+
+> [!NOTE]
+> EWS is being retired in Exchange Online. This retirement doesn't apply to Exchange Server on-premises. For more information, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](../concepts/faq-exchange-web-services.md).
 
 The way you call a web service varies based on where the web service is located. The following tables list the different ways you can call a web service based on location.
 
