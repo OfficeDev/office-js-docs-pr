@@ -161,7 +161,7 @@ The runtime object should look similar to the following. There may be other prop
 
    ```json
    {
-       "$schema": "https://developer.microsoft.com/json-schemas/office-js/1.0/action.schema.json",
+       "$schema": "https://developer.microsoft.com/json-schemas/office-js/action-schema/1.0/action.schema.json",
        "id": "applyContosoFinancialStyle",
        "description": "Applies the Contoso financial reporting style to an Excel range, including Contoso's required header colors, fonts, alignment, borders, and number formatting.",
        "parameters": {
