@@ -13,9 +13,9 @@ ms.date: 11/13/2026
 
 Exchange Web Services (EWS) is being retired in Exchange Online. Phased disablement began in October 2026, and permanent shutdown starts April 1, 2027. This retirement doesn't apply to EWS in Exchange Server on-premises.
 
-Add-ins and Office client features that depend on Exchange Online EWS must move to supported alternatives. For add-in code that calls EWS, Microsoft recommends migrating to Microsoft Graph.
+Add-ins and Office client features that depend on Exchange Online EWS must move to supported alternatives. For add-in code that calls EWS, Microsoft recommends migrating to [Microsoft Graph](/graph/overview).
 
-This is separate from the retirement of legacy Exchange Online user identity and callback tokens, which are already turned off across all Microsoft 365 tenants.
+This deprecation is separate from the retirement of legacy Exchange Online user identity and callback tokens, which are already turned off across all Microsoft 365 tenants.
 
 For more information, see [Deprecation of Exchange Web Services in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online).
 
@@ -23,7 +23,7 @@ For more information, see [Deprecation of Exchange Web Services in Exchange Onli
 
 The Exchange Online EWS retirement can affect add-ins and Office client features that depend on EWS. For the Windows desktop versions of Word, Excel, and PowerPoint, we're backporting changes to LTSC 2024 that replace EWS calls used by the affected add-in-management features.
 
-Earlier Office LTSC releases aren't planned to receive this backport because they'll be out of service before the permanent Exchange Online EWS shutdown in April 2027.
+Earlier Office LTSC releases won't receive this backport because they'll be out of service before the permanent Exchange Online EWS shutdown in April 2027.
 
 ## Can my add-in be affected even if its code doesn't call EWS?
 
