@@ -1,16 +1,16 @@
 ---
-title: Action file schema 1.0 for Office
+title: Action file schema 1.0 for Office (Preview)
 description: Learn about the 1.0 schema for an action file referenced by the manifest's actionFile property.
 ms.localizationpriority: medium
 ms.date: 10/19/2026
 ms.topic: reference
 ---
 
-# Action file schema 1.0 for Office
+# Action file schema 1.0 for Office (Preview)
 
 An action file describes the data format for a single Office.js action that's referenced by an Office Add-in's `actionFile` property. The action file provides metadata about the action, such as its ID and description, and it describes the action's parameters and its return value.
 
-The following article describes the 1.0 schema used by action files. For more information about Office.js actions and how they're referenced from an add-in, see QUESTION4.
+The following article describes the 1.0 schema used by action files. For more information about Office.js actions and how they're referenced from an add-in, see [Combine Copilot with Office JavaScript Library actions](../design/office-js-action-overview.md).
 
 ## JSON schema
 
@@ -24,8 +24,8 @@ The action file object contains the following properties.
 
 | Property | Type | Description |
 | -------- | ---- | ----------- |
-| `$schema` | String | Optional. The URI/URL of this schema. In a production app this should always be set to `https://developer.microsoft.com/json-schemas/office-js/action-schema/1.0/action.schema.json`. |
-| `id` | String | Required. The ID of the action, which must match an action ID in the manifest. Max chars: 64. |
+| `$schema` | String | Optional. The URI/URL of this schema. In a production app, this should always be set to `https://developer.microsoft.com/json-schemas/office-js/action-schema/1.0/action.schema.json`. |
+| `id` | String | Required. The ID of the action, which must match (case sensitive) an action ID in the manifest. Max chars: 64. |
 | `description` | String | Required. Describes what the action does and when to use it. Max chars: 1024. |
 | `parameters` | [Parameters object](#parameters-object) | Optional. The parameters that can be passed to the action. |
 | `returns` | [Returns object](#returns-object) | Optional. The value returned by the action. |
@@ -170,6 +170,6 @@ The following example shows an action file that uses all of the properties descr
 }
 ```
 
-## Related content
+## See also
 
-- QUESTION7
+- [Combine Copilot with Office JavaScript Library actions](../design/office-js-action-overview.md)
