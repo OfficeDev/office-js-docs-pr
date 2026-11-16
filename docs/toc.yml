@@ -483,7 +483,7 @@
       displayName: Excel, preview
   - name: Create Office JavaScript Library actions for Excel
     items: 
-    - name: Overview of Office JavaScript Library actions in Copilot
+    - name: Overview
       href: design/office-js-action-overview.md
       displayName: Excel
     - name: Office JavaScript Library action quick start
