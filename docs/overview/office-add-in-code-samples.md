@@ -1,7 +1,7 @@
 ---
 title: Office Add-in code samples
 description: A list of Office Add-in code samples to help you learn and build your own add-ins.
-ms.date: 10/29/2026
+ms.date: 11/13/2026
 ms.localizationpriority: high
 ---
 
@@ -50,8 +50,10 @@ If your development background is in building VSTO Add-ins, the following sample
 |:--------------------|:--------------------|
 | [Create an Excel workbook from a web site with an auto-open task pane](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-create-worksheet-from-web-site) | Create an Excel workbook from web site data using Node.js, and configure it so that a custom Office Add-in task pane automatically opens when the document is opened. |
 | [Data types explorer](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-data-types-explorer) | Create and explore data types in your workbooks. Data types enable add-in developers to organize complex data structures as objects, such as formatted number values, web images, and entity values. |
-| [Open in Teams](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | Create a new Excel spreadsheet in Microsoft Teams containing data you define.|
-| [Insert an external Excel file and populate it with JSON data](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file)  | Insert an existing template from an external Excel file into the currently open Excel workbook. Then, populate the template with data from a JSON web service. |
+| [Open in Teams](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-open-in-teams) | Create a new Excel spreadsheet in Microsoft Teams containing data you define. |
+| [Insert an external Excel file and populate it with JSON data](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-insert-file) | Insert an existing template from an external Excel file into the currently open Excel workbook. Then, populate the template with data from a JSON web service. |
+| [Mail merge with an Excel add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-add-in-mail-merge) | Create an Excel add-in that uses Microsoft Graph and Excel data to send bulk emails. |
+| [Import and visualize sales data in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-track-sales) | Shows how to import demo sales data filtered by product and date range into an Excel table, customize table styles and column visibility, and create and customize charts using the Excel JavaScript API. |
 | [Create custom contextual tabs on the ribbon](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/office-contextual-tabs) | Create a custom contextual tab on the ribbon in the Office UI. The sample creates a table, and when the user moves the focus inside the table, the custom tab is displayed. When the user moves outside the table, the custom tab is hidden. |
 | [Custom function sample using web worker](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Excel-custom-functions/web-worker) | Use web workers in custom functions to prevent blocking the UI of your Office Add-in. |
 | [Use storage techniques to access data from an Office Add-in when offline](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/Excel.OfflineStorageAddin) | Implement localStorage to enable limited functionality for your Office Add-in when a user experiences lost connection. |
@@ -59,7 +61,8 @@ If your development background is in building VSTO Add-ins, the following sample
 | [Excel content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-content-add-in) | Embed a content add-in in the Excel grid. |
 | [Data visualization in a content add-in](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-content-data-visualization) | Create an Excel content add-in that includes data visualization. |
 | [Synchronous custom function sample](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-custom-functions-sync) (preview) | Use `@supportSync` to create a synchronous custom function that reads a cell value in tandem with Excel's calculation process. This feature is in public preview. |
-| [Skill for Copilot in Excel](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-copilot-skill) (preview) | Create a custom skill for Copilot in Excel that uses the Excel-specific APIs in the Office JavaScript library. This feature is in public preview.|
+| [Skill for Copilot in Excel](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Samples/excel-copilot-skill) (preview) | Create a custom skill for Copilot in Excel that uses the Excel-specific APIs in the Office JavaScript library. This feature is in public preview. |
+| [Skill for custom functions](https://github.com/OfficeDev/Office-Add-in-samples/blob/main/Excel-custom-functions%5CCopilotExtensions%5Ccustom-functions-skill) (preview) | Create a custom skill for Copilot in Excel that inserts custom functions into cells in a table to compare purchasing quotes. This feature is in public preview. |
 
 ## Outlook
 

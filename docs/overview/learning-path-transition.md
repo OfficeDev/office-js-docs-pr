@@ -1,7 +1,7 @@
 ﻿---
 title: VSTO add-in developer's guide to Office Web Add-ins
 description: A recommended path for experienced VSTO add-in developers who are transitioning to Office Web Add-ins.
-ms.date: 07/10/2026
+ms.date: 11/13/2026
 ms.topic: get-started
 ms.custom: scenarios:getting-started
 ms.localizationpriority: high
@@ -52,7 +52,7 @@ Then, explore the Office JavaScript APIs with the [Script Lab tool](explore-with
 
 ### Special resource for VSTO add-in developers
 
-This would be a good place to take a look at the sample add-in, [Excel Add-in JavaScript SalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker). It was created to highlight the similarities and differences between VSTO add-ins and Office Web Add-ins, and the readme of the sample calls out the important points of comparison.
+Try out the [Import and visualize sales data in Excel](https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/excel-track-sales) sample. This sample highlights the similarities and differences between VSTO add-ins and Office Web Add-ins.
 
 ## Step 5: Understand the manifest
 
