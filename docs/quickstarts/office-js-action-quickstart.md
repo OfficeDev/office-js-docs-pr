@@ -1,5 +1,5 @@
 ---
-title: Build your first Office JavaScript Library action
+title: Build your first Office JavaScript Library action (preview)
 description: Learn how to build a simple Office.js action that Copilot in Excel can invoke.
 ms.date: 10/19/2026
 ms.topic: how-to
@@ -7,7 +7,7 @@ ms.service: microsoft-365
 ms.localizationpriority: high
 ---
 
-# Build your first Office JavaScript Library action
+# Build your first Office JavaScript Library action (preview)
 
 In this article, you'll walk through the process of building a simple Office JavaScript Library (Office.js) action that Copilot can invoke to perform actions on the content of an Office document. The project also includes a task pane.
 

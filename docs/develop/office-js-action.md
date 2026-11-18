@@ -1,5 +1,5 @@
 ---
-title: Add an Office JavaScript Library action to Copilot
+title: Add an Office JavaScript Library action to Copilot (preview)
 description: Learn how to enable Copilot to invoke an Office JavaScript Library action.
 ms.date: 10/19/2026
 ms.topic: how-to
@@ -7,7 +7,7 @@ ms.service: microsoft-365
 ms.localizationpriority: medium
 ---
 
-# Add an Office JavaScript Library action to Copilot
+# Add an Office JavaScript Library action to Copilot (preview)
 
 In this tutorial, you'll create an action that enables Copilot to do something in an open Excel workbook that Copilot doesn't know how to do natively. 
 

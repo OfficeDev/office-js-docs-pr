@@ -1,5 +1,5 @@
 ---
-title: Action file schema 1.0 for Office (Preview)
+title: Action file schema 1.0 for Office (preview)
 description: Learn about the 1.0 schema for an action file referenced by the manifest's actionFile property.
 ms.localizationpriority: medium
 ms.date: 10/19/2026
