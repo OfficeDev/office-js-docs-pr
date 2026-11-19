@@ -6,7 +6,7 @@ ms.date: 10/19/2026
 ms.topic: reference
 ---
 
-# Action file schema 1.0 for Office (Preview)
+# Action file schema 1.0 for Office (preview)
 
 An action file describes the data format for a single Office.js action that's referenced by an Office Add-in's `actionFile` property. The action file provides metadata about the action, such as its ID and description, and it describes the action's parameters and its return value.
 

@@ -38,7 +38,7 @@ In this article, you'll walk through the process of building a simple Office Jav
 1. In the **Workspace Folder** control that opens, choose a folder for the project.
 1. In the **Application Name** text box, enter "My Office.js Action".
 1. The project opens in a new Visual Studio Code window. Close the original Visual Studio Code window.
-1. Open the Agents Toolkit, and in the **ACCOUNTS** section, ensure that you're logged into your Microsoft 365 tenancy and that both **Custom App Upload** and **Copilot Access** are enabled.
+1. Open the Agents Toolkit, and in the **ACCOUNTS** section, ensure that you're signed in to your Microsoft 365 tenancy and that both **Custom App Upload** and **Copilot Access** are enabled.
 
 ### Check the action file
 

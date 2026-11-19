@@ -83,7 +83,7 @@ Office.onReady(function() {
 });
 
 async function applyContosoFinancialStyleFromUserData(message) {
-    // message is { rangeAddress: "A1:C4" }, for some range address
+    // message is { rangeAddress: "A1:C4" }, for some range address.
     const {rangeAddress} = JSON.parse(message);
     await Excel.run(async (context) => {
         const sheet = context.workbook.worksheets.getActiveWorksheet();
@@ -125,7 +125,7 @@ Ensure that the manifest references the preview version of the manifest schema w
 
 1. In the [`"extensions.runtimes"`](/microsoft-365/extensibility/schema/extension-runtimes-array) array, ensure that there's a runtime object that is oriented to running UI-less JavaScript functions. It's critical that the object have a [`"code.page"`](/microsoft-365/extensibility/schema/extension-runtime-code#page) property that specifies the absolute URL to the UI-less HTML file that you created (or edited) earlier in [Update the function file](#update-the-function-file).
 1. In the [`"actions"`](/microsoft-365/extensibility/schema/extension-runtimes-actions-item) array of that same runtime object, add an object with the following properties.
-   - `"id"`: an exact match for the first parameter of the call to `Office.actions.associate` in a function that you created in [Update the function file](#update-the-function-file).
+   - `"id"`: an exact case-sensitive match for the first parameter of the call to `Office.actions.associate` in a function that you created in [Update the function file](#update-the-function-file).
    - `"type"`: set to "executeDataFunction".
    - `"actionFile"`: the path, relative to the manifest, to the action file you create in [Create the action file](#create-the-action-file).
 1. Repeat the preceding step for each function you created to implement an action.
@@ -227,7 +227,7 @@ Sideloading is done through Teams even when there's no Teams feature in the proj
 
 #### Start the server
 
-Your task is to start a local web server that hosts your project's HTML and JavaScript files. How you do this depends on several factors including the folder structure of your project, the tools you use, such as a bundler, task manager, server application, and how you have configured those tools. Since you're adding an action to an existing project, you already know how to do this. The following instruction applies only to projects that meet the following conditions.
+Your task is to start a local web server that hosts your project's HTML and JavaScript files. How you do this depends on several factors including the folder structure of your project, the tools you use, such as a bundler, task manager, server application, and how you have configured those tools. Since you're adding an action to an existing project, you already know how to do this. The following instruction applies only to projects that meet these conditions:
 
 - There's a **webpack.config.js** file in the root of the project that is similar to the ones in Office Add-in projects that are created with the [Microsoft 365 Agent Toolkit](teams-toolkit-overview.md).
 - There's a **package.json** file in the root of the project similar to the ones created by Agent Toolkit and the file has a "scripts" section with the following script in it.
@@ -243,13 +243,13 @@ In a command prompt or Visual Studio Code **TERMINAL** in the root of the projec
 1. Open the Excel. Wait until the project has loaded. This may take as much as three minutes. Depending on your version of Office, ribbon buttons and other artifacts may appear automatically. If they don't, you need to manually activate the project by selecting the **Add-ins** button on the **Home** tab, and then selecting your app from the flyout that opens.
 1. Select the dynamic action button for Copilot Chat on the surface of the open document.
 
-    :::image type="content" source="../images/copilot-dynamic-action-button.png" alt-text="The dynamic action button for Copilot: a round button with the Copilot symbol. There is no text on the button.":::
+    :::image type="content" source="../images/copilot-dynamic-action-button.png" alt-text="The dynamic action button for Copilot: a round button with the Copilot symbol. There's no text on the button.":::
 
 1. Try entering prompts in the conversation box that your action should be able to handle. Remember that Copilot can natively make almost any kind of read or write operation to the open document, so be sure that your prompt mentions your custom action. For example, "Apply Contoso's required formatting to the range A1:C4.", not "Format the range A1:C4." 
 
 ### Make changes in the project
 
-Live reloading and hot reloading aren't supported in the preview period. To make changes, first shut down the server and uninstall the project with these steps.
+Live reloading and hot reloading aren't supported in the preview period. To make changes, first shut down the server and uninstall the project with the following steps.
 
 1. Close the Office application.
 1. If the web server is running in the Visual Studio Code **TERMINAL**, give the terminal focus and press <kbd>Ctrl</kbd>+<kbd>C</kbd>. Choose "Y" in response to the prompt to end the process. Then go to the next step. If the web server is running in a separate window, skip this step and go to the next step.
