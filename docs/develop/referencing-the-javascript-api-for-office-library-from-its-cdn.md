@@ -1,7 +1,7 @@
 ﻿---
 title: Referencing the Office JavaScript API library
 description: Learn how to reference the Office JavaScript API library and type definitions in your add-in.
-ms.date: 10/20/2026
+ms.date: 11/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -12,13 +12,11 @@ The [Office JavaScript API](../reference/javascript-api-for-office.md) library p
 ```html
 <head>
     ...
-    <script src="https://officeapis.public.onecdn.static.microsoft/1/office.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
 </head>
 ```
 
 This approach downloads and caches the Office JavaScript API files the first time your add-in loads. It ensures that your add-in uses the most up-to-date implementation of Office.js and its associated files for the specified version.
-
-The CDN uses the `officeapis.public.onecdn.static.microsoft` domain as part of the [unified domain for Microsoft 365 apps and services](https://techcommunity.microsoft.com/blog/microsoft_365blog/introducing-cloud-microsoft-a-unified-domain-for-microsoft-365-apps-and-services/3804961).
 
 > [!IMPORTANT]
 > You must reference the Office JavaScript API from inside the `<head>` section of the page to ensure that the API is fully initialized prior to any body elements.
@@ -36,7 +34,7 @@ Office.js replaces the default [Window.history](https://developer.mozilla.org/do
     };
 </script>
 
-<script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js"></script>
+<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 
 <script type="text/javascript">
     // Restore the history method values after loading Office.js
@@ -71,7 +69,7 @@ The previous workaround doesn't work in Next.js, because Next.js manages the pag
     `,
   }}
 />
-<script type="text/javascript" src="https://officeapis.public.onecdn.static.microsoft/1/office.js" />
+<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" />
 ```
 
 ## API versioning and backward compatibility
@@ -81,7 +79,7 @@ In the previous HTML snippet, the `/1/` preceding `office.js` in the CDN URL spe
 If you plan to publish your Office Add-in to the Microsoft Marketplace, you must use this CDN reference. Use local references only for internal, development, and debugging scenarios.
 
 > [!NOTE]
-> To use preview APIs, reference the preview version of the Office JavaScript API library on the CDN: `https://officeapis.public.onecdn.static.microsoft/beta/office.js`.
+> To use preview APIs, reference the preview version of the Office JavaScript API library on the CDN: `https://appsforoffice.microsoft.com/lib/beta/hosted/office.js`.
 
 ## Enabling IntelliSense for a TypeScript project
 
@@ -100,16 +98,6 @@ Microsoft first introduces new JavaScript APIs in "preview." After sufficient te
 ## CDN references for other Microsoft 365 environments
 
 [!INCLUDE [Information about the China-specific CDN](../includes/21Vianet-CDN.md)]
-
-## Update legacy CDN endpoints
-
-Previously, the Office.js library was served from the `https://appsforoffice.microsoft.com/lib/1/hosted/office.js` endpoint. To switch to the new Office.js CDN endpoint, update the Office.js script reference in each add-in page from `https://appsforoffice.microsoft.com/lib/1/hosted/office.js` to `https://officeapis.public.onecdn.static.microsoft/1/office.js`. The new endpoint serves the same current Office.js release, but it enables additional secure defaults. Before switching:
-
-- If your add-in relies on Microsoft Ajax globals that Office.js previously loaded automatically, replace that dependency with a supported alternative or load and manage the required library directly.
-- If your add-in uses `ExecuteFunction` commands, register every command handler by using `Office.actions.associate(...)`.
-- If your add-in or organization uses restrictive Content Security Policy or Trusted Types settings, verify that the new endpoint and Office.js Trusted Types policy are permitted.
-- Ensure that `*.static.microsoft` is allowed by any applicable network allow lists.
-- Test the add-in in its supported Office applications and environments, including activation, commands, and dialogs.
 
 ## See also
 
