@@ -1,7 +1,7 @@
 ---
 title: Create a Copilot skill for Excel that uses custom functions (preview)
 description: Learn how to create a Copilot skill for Excel that inserts formulas that call custom functions.
-ms.date: 10/09/2026
+ms.date: 11/19/2026
 ms.topic: tutorial
 ms.custom: scenarios:getting-started
 ms.localizationpriority: medium
@@ -391,7 +391,7 @@ A task pane runtime is required because custom functions in a JavaScript-only ru
       <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>Purchase Planner</title>
-      <script src=" https://officeapis.public.onecdn.static.microsoft/1/office.js"></script>
+      <script src=" https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
     </head>
     <body>
       <main>
