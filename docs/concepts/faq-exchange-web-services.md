@@ -4,7 +4,7 @@ description: Learn how Exchange Online EWS retirement affects Office Add-ins, Of
 ms.service: microsoft-365
 ms.subservice: add-ins
 ms.topic: faq
-ms.date: 11/13/2026
+ms.date: 11/20/2026
 ---
 
 # Exchange Web Services (EWS) deprecation FAQ for Office Add-ins
