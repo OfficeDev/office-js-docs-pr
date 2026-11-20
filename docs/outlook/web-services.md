@@ -1,7 +1,7 @@
 ﻿---
 title: Use Exchange Web Services (EWS) from an Outlook add-in in Exchange on-premises
 description: Provides an example that shows how an Outlook add-in in an Exchange on-premises environment can request information from Exchange Web Services.
-ms.date: 11/13/2026
+ms.date: 11/20/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
