@@ -1,7 +1,7 @@
 ---
 title: Office Add-ins known issues
 description: This article documents active and resolved issues with Office Add-ins.
-ms.date: 11/20/2026
+ms.date: 11/24/2026
 ms.localizationpriority: high
 ---
 
