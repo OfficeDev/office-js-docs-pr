@@ -47,68 +47,6 @@ For more information about the previous deployment steps, see:
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
-## OUTLOOK ISSUE: Users can't access the My Templates add-in in Exchange Online across all Outlook clients
-
-Users report that the **My Templates** add-in is missing and undiscoverable across all Outlook surfaces. The add-in subscription exists on affected mailboxes and Centralized Deployment returns it correctly, but client-side discovery within Outlook and Exchange services fails to surface the add-in to end users. Users can't find it in the toolbar, ribbon, **Add Apps** search, All Apps, Integrated Apps in Admin Center, or via PowerShell Get-App in some cases. The issue presents as a service-side discovery or authentication regression, rather than an admin configuration or Centralized Deployment failure.
-
-### STATUS
-
-We're currently working on a fix.
-
-### START DATE
-
-Date reported: January 20, 2026
-
-### DETAILS
-
-Impacted add-ins: My Templates (primary); Viva Insights (confirmed also impacted as of March 3, 2026); other default add-ins (Bing Maps, Unsubscribe, Common Actions) intermittently affected.
-
-Severity level: High
-
-Affected platforms/clients: Outlook Classic (Desktop, Windows),  New Outlook (Desktop, Windows), Outlook on the web, Outlook mobile
-
-### USER IMPACT
-
-Widespread, multitenant impact. Impact is tenant-wide in most cases.
-
-### CAUSE
-
-Partially identified. Engineering confirmed two contributing factors:
-
-1. A recent backend change that switched authentication from Exchange Web Services (EWS) to REST for the My Templates add-in caused access errors. The REST auth change was rolled back on March 3, 2026. This change caused a significant drop in errors, but it didn't fully fix the problem. The subscription is present on the mailbox, but add-in information isn't returned to clients.
-1. Historical or recurring root cause: A prior wave was resolved through rollback and cache resets in December 2025, but some tenants never fully recovered.
-
-### WORKAROUND (steps to mitigate)
-
-No reliable universal workaround exists. Support teams have tried the following steps with limited or inconsistent success:
-
-1. **Global Admin PowerShell - re-enable the add-in org-wide** (the change can take up to 72 hours to reflect; some tenants encounter 401 errors):
-
-   ```PowerShell
-
-   Set-App -Identity a216ceed-7791-4635-a752-5a4ac0a5eb93 -OrganizationApp -Enabled $true
-
-   ```
-
-1. **Verify the add-in status**:
-
-   ```PowerShell
-
-   Get-App -Identity a216ceed-7791-4635-a752-5a4ac0a5eb93
-
-   ```
-
-1. **Refresh the Outlook client** - In some cases, a page refresh or Outlook restart triggered the add-in to reappear temporarily.
-1. **Submit in-app feedback with diagnostic logs** - Go to **Help** > **Feedback** > **Report a Problem in Outlook** and share the Session ID and User ID with support so engineering can pull diagnostics.
-1. **Reference the public support article** - See [My Templates are missing from Outlook](https://support.microsoft.com/office/34967a7a-7a80-4d72-bb45-a43ecdc93678).
-
-### NOTES TO ADMIN
-
-Re-enabling the add-in through PowerShell or the Admin Center doesn't guarantee resolution while the service-side issue is active. Engineering is working on a fix and will post updates to the Service Health Dashboard (SHD).
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
 ## ISSUE: Intermittent failure to load or deploy Office Add-ins due to Exchange authentication changes
 
 Some users experience problems where Office add-ins fail to load, appear missing, or can't be deployed through the Microsoft 365 admin center. In affected scenarios, admins can see the add-ins in the admin experience or store but they don't render or appear correctly in Outlook or other Office clients.
@@ -144,46 +82,6 @@ No customer action is required. Microsoft applied targeted mitigations to restor
 For more information, see [Deprecation of Exchange Web Services (EWS) in Exchange Online](/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online).
 
 For information about EWS retirement and its effects on Office Add-ins, see [Exchange Web Services (EWS) deprecation FAQ for Office Add-ins](../concepts/faq-exchange-web-services.md).
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
-## OUTLOOK ISSUE: Base64-encoded images become corrupted when forwarding messages from a shared mailbox with Cached Exchange Mode turned off
-
-In classic Outlook on Windows, when Cached Exchange Mode is turned off, Base64-encoded images in a message may become corrupted when a user forwards the message from a shared mailbox.
-
-Clients affected: Classic Outlook on Windows
-
-### STATUS
-
-We're currently working on a fix.
-
-### START DATE
-
-Date reported: November 3, 2025
-
-### WORKAROUND
-
-If possible, turn on Cached Exchange Mode when sending emails with Base64-encoded images from a shared mailbox. For guidance, see [Turn on Cached Exchange Mode](https://support.microsoft.com/office/7885af08-9a60-4ec3-850a-e221c1ed0c1c). Alternatively, include the Base64-encoded image as a file attachment instead.
-
-<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
-***
-
-## OUTLOOK ISSUE: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
-
-### STATUS
-
-We've determined that a recent update to an authentication component of attachment logging introduced a regression which is resulting in impact. We're reverting this update to resolve the issue.
-
-Tracking ID: 706911563
-
-### IMPACT
-
-Some users may experience delays of up to ten seconds loading images in Exchange Online. This section will be updated as our investigation continues.
-
-### START DATE
-
-Monday, November 3, 2025, at 4:31 PM UTC
 
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
@@ -237,6 +135,67 @@ Options:
 1. Roll back Office from version 2508 to 2507.
 
 <!-- --------RESOLVED SECTION: Move resolved issues to the top of this section. Delete after 90 days.-------- -->
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## RESOLVED: OUTLOOK ISSUE: Users can't access the My Templates add-in in Exchange Online across all Outlook clients
+
+### STATUS
+
+Resolved.
+
+### RESOLVED DATE
+
+Date fixed: March 23, 2026
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## RESOLVED: OUTLOOK ISSUE: Base64-encoded images become corrupted when forwarding messages from a shared mailbox with Cached Exchange Mode turned off
+
+In classic Outlook on Windows, when Cached Exchange Mode is turned off, Base64-encoded images in a message may become corrupted when a user forwards the message from a shared mailbox.
+
+Clients affected: Classic Outlook on Windows
+
+### STATUS
+
+Resolved.
+
+### START DATE
+
+Date reported: November 3, 2025
+
+### RESOLVED DATE
+
+Date fixed: December 16, 2025
+
+### WORKAROUND
+
+If possible, turn on Cached Exchange Mode when sending emails with Base64-encoded images from a shared mailbox. For guidance, see [Turn on Cached Exchange Mode](https://support.microsoft.com/office/7885af08-9a60-4ec3-850a-e221c1ed0c1c). Alternatively, include the Base64-encoded image as a file attachment instead.
+
+<!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
+***
+
+## RESOLVED: OUTLOOK ISSUE: Users may experience delays of up to ten seconds loading signature add-in images in Exchange Online
+
+### STATUS
+
+Resolved.
+
+Tracking ID: 706911563
+
+### IMPACT
+
+Some users may experience delays of up to ten seconds loading images in Exchange Online.
+
+### START DATE
+
+Monday, November 3, 2025, at 4:31 PM UTC
+
+### RESOLVED DATE
+
+Date fixed: November 17, 2025
+
 <!-------------Copy and paste this line and the following ***. Paste between each issue for readability. (Inserts a line in topic) ---------------------------------------------------->
 ***
 
